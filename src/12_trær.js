@@ -13,7 +13,7 @@ const NOISE_GLSL=`float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*4
 function lovMatLag(){
   return new THREE.ShaderMaterial({
     lights:true,
-    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()}, camDir:{value:new THREE.Vector3()}, invSpan:{value:1} }]),
+    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()}, camDir:{value:new THREE.Vector3()}, invSpan:{value:1}, uStoy:{value:STIL.stoy} }]),
     vertexShader:`#include <common>
       #include <shadowmap_pars_vertex>
       uniform vec3 sunDir;
@@ -41,7 +41,7 @@ function lovMatLag(){
       #include <lights_pars_begin>
       #include <shadowmap_pars_fragment>
       #include <shadowmask_pars_fragment>
-      uniform vec3 sunDir; uniform float invSpan;
+      uniform vec3 sunDir; uniform float invSpan, uStoy;
       varying vec2 vUv; varying vec3 vCol; varying float vSeed; varying float vRad;
       ${NOISE_GLSL}
       void main(){
@@ -56,7 +56,7 @@ function lovMatLag(){
         float rr=min(r/0.97,1.), z=sqrt(max(0.,1.-rr*rr));
         // svake buler i normalen gjør tonegrensene organiske
         vec2 b=vec2(n2(vUv*2.2+vSeed*13.),n2(vUv*2.2+vSeed*13.+5.3))-0.5;
-        vec3 nV=normalize(vec3(vUv/0.97+b*0.6, z+0.08));
+        vec3 nV=normalize(vec3(vUv/0.97+b*0.6*uStoy, z+0.08));
         vec3 sV=normalize((viewMatrix*vec4(sunDir,0.)).xyz);
         float sm=getShadowMask();
         float w=dot(nV,sV)*0.5+0.5;
@@ -67,9 +67,9 @@ function lovMatLag(){
         vec3 c=mix(mork, mix(vCol,lysF,lys), mid);
         // malte lyse flekker på solsiden, mørke løvmerker i skyggen
         float p=n2(vUv*1.7+vSeed*21.);
-        c=mix(c, lysF*1.08+vec3(0.03,0.035,0.0), smoothstep(0.68,0.70,p)*lys*0.9);
+        c=mix(c, lysF*1.08+vec3(0.03,0.035,0.0), smoothstep(0.68,0.70,p)*lys*0.9*uStoy);
         float q=n2(vUv*6.5+vSeed*3.);
-        c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9);
+        c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9*uStoy);
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
         gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;

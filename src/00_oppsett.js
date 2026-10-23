@@ -11,6 +11,15 @@ const DATA = JSON.parse(document.getElementById('bydata').textContent);
 const INK = 0x3a2c26;
 // ---- kartmotoren: MapLibre GL JS eier kamera, gester, zoom og koordinater; byen tegnes som et custom layer i three.js ----
 const Q0=new URLSearchParams(location.search);
+// ---- tegnestil (23.10, bestemt med Vegar): streken er stikkets, flatene er flate, lyset er glatt. 2015-teknikkens varme (akvarellvask,
+// penselbrudd, papirkorn, vignett, skyskygger, løvflekker) er av. ?stil=c viser den gamle til sammenligning, ?stil=b legger skravur i skyggene.
+const STIL=(()=>{ const v=Q0.get('stil')||'a';
+  const a={vask:0, pensel:0, korn:0, vignett:0, sky:0, stoy:0, skravur:0};
+  if(v==='b') return {...a, skravur:1};
+  if(v==='c') return {vask:1, pensel:1, korn:1, vignett:1, sky:1, stoy:1, skravur:0};
+  return a; })();
+// sola står fast i byen (modell), ikke i øyet (plakat): hjemmevisningen er lik trykket, og skyggene snur seg med byen. ?sol=plakat gir den gamle.
+const SOL_FAST = Q0.get('sol')!=='plakat';
 const ORIGO={lon:10.952745, lat:59.202835};   // modellens (0,0) i grader (KILDER.md); x = øst, y = nord i meter
 const M_PER_MERC=1/maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0).meterInMercatorCoordinateUnits();
 function tilLngLat(x,y){ const m=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0); const s=1/M_PER_MERC; return new maplibregl.MercatorCoordinate(m.x+x*s, m.y-y*s, 0).toLngLat(); }

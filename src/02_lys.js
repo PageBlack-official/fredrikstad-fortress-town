@@ -38,7 +38,10 @@ function plakatSol(){
   solFargeFor(35*GRAD); skyggeSkitten=true;
 }
 window.__sol=()=>({sd:_sd.toArray(), q:cam.quaternion.toArray(), grunner:dekning.grunner}); window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
-function lysFraVenstre(){ plakatSol(); }
+// fast sol: asimut 250° (VSV) og 42° høyde gir samme lysside som plakaten i hjemmevisningen, litt høyere så baksiden fortsatt leser som farge
+function lysFraVenstre(){ plakatSol(); if(SOL_FAST) setSol(250*GRAD, 42*GRAD); }
+// skravur i skyggene (stil b): parallelle streker forankret i byen; avstanden settes per bilde i meter (0 = av)
+const U_SKRAVUR={value:0};
 // skyggekartet er forankret i byen og tegnes på nytt bare når det må: bildet har gått ut av dekningen, zoomen eller
 // solretningen har endret seg merkbart, eller sola/husene har flyttet seg. Flytting (dra) innenfor dekningen koster ingen skyggetegning.
 sun.shadow.autoUpdate=false; let skyggeSkitten=true, kameraBeveget=true; const sistKam=new THREE.Matrix4();
@@ -74,15 +77,18 @@ function oppdaterSol(){
 // felles GLSL for materialer som skal ta imot kastskygger og følge sola
 const GL_SOL_V=`#include <common>
 #include <shadowmap_pars_vertex>
+varying vec3 vWq;
 `;
 const glSolVMain=(wp,wn)=>`
 #if defined(USE_SHADOWMAP) && NUM_DIR_LIGHT_SHADOWS>0
   vDirectionalShadowCoord[0]=directionalShadowMatrix[0]*(${wp}+vec4((${wn})*directionalLightShadows[0].shadowNormalBias,0.));
 #endif
+  vWq=(${wp}).xyz;
 `;
 const GL_SOL_F=`#include <common>
 #include <packing>
 #include <shadowmap_pars_fragment>
+varying vec3 vWq;
 #if NUM_DIR_LIGHTS>0
 struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
@@ -115,13 +121,20 @@ vec3 solFarge(){
   return vec3(1.);
 #endif
 }
+uniform float skravur;
+// skravurmaske: 1 der det skal ligge en strek, 0 ellers; k er skyggemengden (0 lys, 1 skygge). Tynnes ut når strekene blir for tette på skjermen
+float skravurMaske(vec3 wq, float k){ if(skravur<=0.) return 0.;
+  float t=dot(wq, normalize(vec3(0.6,1.0,0.4)))/skravur; float fw=fwidth(t);
+  float f=abs(fract(t)*2.-1.); float linje=smoothstep(0.62-fw*1.5, 0.62+fw*1.5, f);
+  float tetthet=1.-smoothstep(0.25,0.5,fw);
+  return linje*tetthet*smoothstep(0.15,0.6,k); }
 const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){
-  m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights));
+  m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights), {skravur:U_SKRAVUR});
   m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
-  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask());\n#include <colorspace_fragment>');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask());\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }

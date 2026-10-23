@@ -4,9 +4,9 @@ const post=(()=>{
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
+    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uSky:{value:STIL.sky}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -46,7 +46,7 @@ const post=(()=>{
         float s1=max(1.,floor(wi*dpr*sk*0.75+0.5)), s2=max(s1+1.,floor(wi*dpr*sk*1.2+0.5)); // hele piksler: ingen falske linjer på flat mark
         // lavfrekvent skjelving (bølgelengde ca. 40 px), som en tusj som ikke følger linjalen
         float fq=1./(40.*mpp);
-        vec2 wob=vec2(vn(wxz*fq)-0.5, vn(wxz*fq+17.3)-0.5)*0.5*px; // liten, myk forskyvning: større gir sikksakk på lange linjer
+        vec2 wob=vec2(vn(wxz*fq)-0.5, vn(wxz*fq+17.3)-0.5)*0.5*px*uPensel; // skjelving bare i stil c; stikkstreken (a/b) er rett
         float ec=Dm(wob);
         float a1=Dm(wob+vec2(-s1,0.)), b1=Dm(wob+vec2(s1,0.)), c1=Dm(wob+vec2(0.,s1)), d1=Dm(wob+vec2(0.,-s1));
         float a2=Dm(wob+vec2(-s2,0.)), b2=Dm(wob+vec2(s2,0.)), c2=Dm(wob+vec2(0.,s2)), d2=Dm(wob+vec2(0.,-s2));
@@ -62,9 +62,9 @@ const post=(()=>{
         // trykk og brudd fra penselpakken: teksturen leses i byens koordinater, så strøket står stille når kameraet går
         float pen=texture2D(tPensel, wxz*fq*0.55).r;
         float pen2=texture2D(tPensel, wxz*fq*1.7+vec2(0.37,0.61)).r;
-        ink*=0.62+0.38*pen2;
+        ink*=mix(1., 0.62+0.38*pen2, uPensel);
         float brudd=smoothstep(0.36,0.52, pen);
-        ink*=mix(0.10,1.,brudd);
+        ink*=mix(1., mix(0.10,1.,brudd), uPensel);
         // terrenget (alfa 0) får ikke strek i egne knekker, men kanten mot hus, trær og vann får strek
         float aC=texture2D(tCol,vUv).a;
         float aN=max(max(texture2D(tCol,vUv+(wob+vec2(s2,0.))/res).a,texture2D(tCol,vUv+(wob-vec2(s2,0.))/res).a),max(texture2D(tCol,vUv+(wob+vec2(0.,s2))/res).a,texture2D(tCol,vUv+(wob-vec2(0.,s2))/res).a));
@@ -92,15 +92,15 @@ const post=(()=>{
         // skyskygger som driver sakte over byen
         vec2 cp=wxz*0.0035+vec2(tid*0.006,tid*0.0025);
         float sky=vn(cp)*0.6+vn(cp*2.3+3.1)*0.3+vn(cp*5.1-1.7)*0.1;
-        col*=1.-0.09*smoothstep(0.52,0.78,sky);
+        col*=1.-0.09*smoothstep(0.52,0.78,sky)*uSky;
         col=mix(col, blekkF, ink*0.9*(1.-tb*0.8));
         // kartet toner ut i papiret rundt Gamlebyen, så kantene av kartdataene aldri synes
         float rr=length((wxz-vec2(10.,0.))*vec2(0.85,1.0));
         col=mix(col, vec3(0.925,0.915,0.885), smoothstep(380.,600.,rr));
         // svak vignett, som papir under lampe
-        vec2 vv=vUv-0.5; col*=1.-0.10*pow(clamp(length(vv)*1.35,0.,1.),2.2);
+        vec2 vv=vUv-0.5; col*=1.-0.10*pow(clamp(length(vv)*1.35,0.,1.),2.2)*uVignett;
         // papirkorn
-        col*=0.985+0.03*h(floor(gl_FragCoord.xy*0.5));
+        col*=1.+(0.03*h(floor(gl_FragCoord.xy*0.5))-0.015)*uKorn;
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
       }`

@@ -12,10 +12,10 @@ function mat(rgb, dim, sk, opt={}){
     let s; if(sk && !dim){ s=new THREE.Color(`rgb(${sk[0]},${sk[1]},${sk[2]})`); } else { s=c.clone(); s.r*=0.72; s.g*=0.80; s.b*=0.80; }
     const m=new THREE.ShaderMaterial({
       lights:true,
-      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, topp:{value:topp} }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, topp:{value:topp}, uVask:{value:STIL.vask}, skravur:U_SKRAVUR }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
       vertexShader:GL_SOL_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; void main(){ lp=position; vec4 wp=modelMatrix*vec4(position,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
-      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
+      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float topp, uVask; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
         float nn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hh(i),hh(i+vec2(1,0)),f.x),mix(hh(i+vec2(0,1)),hh(i+vec2(1,1)),f.x),f.y);}
         void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge
@@ -27,14 +27,15 @@ function mat(rgb, dim, sk, opt={}){
           // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
           vec3 nq=normalize(cross(dFdx(lp),dFdy(lp)));
           float vask=nn(wq.xz*0.045+wq.y*0.031)*0.62+nn(wq.xz*0.17+vec2(wq.y*0.23,3.1))*0.38;
-          c*=0.955+0.09*vask;
+          c*=1.-0.28*skravurMaske(wq, k);
+          c*=1.+(vask-0.5)*0.09*uVask;   // akvarellvask, av i stil a/b
           float fwq=max(fwidth(wq.x)+fwidth(wq.z)+fwidth(wq.y),1e-4);
           float naerhet=1.-smoothstep(0.12,0.45,fwq);   // detaljer forsvinner på avstand
           if(abs(nq.y)<0.3){
             // vegg: vannrette penselstrøk
             vec2 tq=normalize(vec2(-nq.z,nq.x)); float uq=dot(wq.xz,tq);
             float strok=nn(vec2(uq*0.7, wq.y*6.0))*0.7+nn(vec2(uq*2.1, wq.y*15.))*0.3;
-            c*=1.+(strok-0.5)*0.05*naerhet;
+            c*=1.+(strok-0.5)*0.05*naerhet*uVask;
           } else if(abs(nq.y)<0.985){
             // tak: rader med takstein langs fallet, antydet, borte på avstand
             vec2 ned=normalize(nq.xz); vec2 lang=vec2(-ned.y,ned.x);

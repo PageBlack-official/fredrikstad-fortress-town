@@ -1,5 +1,11 @@
 # Endringslogg
 
+## 28 (23.10.2026, ikke publisert) – tegnestil bestemt med Vegar: stikkstrek, flate farger, fast sol
+- Sola står fast i byen (asimut 250°, høyde 42°), satt så hjemmevisningen har samme lysside som plakaten. Skyggene snur seg med byen når den dreies; skyggekartet trenger ikke tegnes på nytt ved rotasjon. ?sol=plakat gir den gamle.
+- Stilbryter STIL (00_oppsett): a = stikkstrek uten skjelving og penselbrudd, flate fasadefarger uten akvarellvask, ingen papirkorn, vignett eller skyskygger, trær i tre toner uten flekker. b = a + skravur i skyggene (vegger og bakke, forankret i byen, 5 skjermpunkter mellom strekene, tynnes ut når de blir for tette). c = 2015-varmen som før, som nullpunkt. Standard er a.
+- Stilprøve: ut/stil-{a,b,c}.png og -mobil.png, kontaktark levert til Vegar (stilprove-kirka-ABC.png). Avgjørelse ventes.
+- Bakgrunn: Vegar har aldri likt akvarellgreiene og trærne fra 2015-teknikken. Det gamle skal sitte i streken (kobberstikket, jf. Fredrikstad 1776 i kildemappa), det nye i flatene, lyset og UX.
+
 ## 27.1 (23.10.2026) – to regresjoner fra 27 rettet
 - Trekronene forsvant (mobil, og alle utsnitt tettere enn zoom 1): en kommentar i 13_kart.js svelget resten av linja, så kameraets matriser aldri ble oppdatert. Kronene (billboards fra viewMatrix) og solretningen gikk på gamle matriser. Rettet; øyet ligger nå minst 0,5 m bak nærpunktet, så lookAt aldri degenererer.
 - Hvitt blink ved hver bevegelse: «const grunn» ble tilordnet på nytt i oppdaterSol → TypeError i hvert bilde i fart → laget vårt tegnet ikke, kartet viste papirfargen. Rettet (let). Ny regel 07: interaksjonstesten kjøres som regel, og én JS-feil i bruk er rødt.

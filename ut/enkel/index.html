@@ -59,6 +59,15 @@ const DATA = JSON.parse(document.getElementById('bydata').textContent);
 const INK = 0x3a2c26;
 // ---- kartmotoren: MapLibre GL JS eier kamera, gester, zoom og koordinater; byen tegnes som et custom layer i three.js ----
 const Q0=new URLSearchParams(location.search);
+// ---- tegnestil (23.10, bestemt med Vegar): streken er stikkets, flatene er flate, lyset er glatt. 2015-teknikkens varme (akvarellvask,
+// penselbrudd, papirkorn, vignett, skyskygger, løvflekker) er av. ?stil=c viser den gamle til sammenligning, ?stil=b legger skravur i skyggene.
+const STIL=(()=>{ const v=Q0.get('stil')||'a';
+  const a={vask:0, pensel:0, korn:0, vignett:0, sky:0, stoy:0, skravur:0};
+  if(v==='b') return {...a, skravur:1};
+  if(v==='c') return {vask:1, pensel:1, korn:1, vignett:1, sky:1, stoy:1, skravur:0};
+  return a; })();
+// sola står fast i byen (modell), ikke i øyet (plakat): hjemmevisningen er lik trykket, og skyggene snur seg med byen. ?sol=plakat gir den gamle.
+const SOL_FAST = Q0.get('sol')!=='plakat';
 const ORIGO={lon:10.952745, lat:59.202835};   // modellens (0,0) i grader (KILDER.md); x = øst, y = nord i meter
 const M_PER_MERC=1/maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0).meterInMercatorCoordinateUnits();
 function tilLngLat(x,y){ const m=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0); const s=1/M_PER_MERC; return new maplibregl.MercatorCoordinate(m.x+x*s, m.y-y*s, 0).toLngLat(); }
@@ -103,9 +112,9 @@ const post=(()=>{
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
+    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uSky:{value:STIL.sky}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -145,7 +154,7 @@ const post=(()=>{
         float s1=max(1.,floor(wi*dpr*sk*0.75+0.5)), s2=max(s1+1.,floor(wi*dpr*sk*1.2+0.5)); // hele piksler: ingen falske linjer på flat mark
         // lavfrekvent skjelving (bølgelengde ca. 40 px), som en tusj som ikke følger linjalen
         float fq=1./(40.*mpp);
-        vec2 wob=vec2(vn(wxz*fq)-0.5, vn(wxz*fq+17.3)-0.5)*0.5*px; // liten, myk forskyvning: større gir sikksakk på lange linjer
+        vec2 wob=vec2(vn(wxz*fq)-0.5, vn(wxz*fq+17.3)-0.5)*0.5*px*uPensel; // skjelving bare i stil c; stikkstreken (a/b) er rett
         float ec=Dm(wob);
         float a1=Dm(wob+vec2(-s1,0.)), b1=Dm(wob+vec2(s1,0.)), c1=Dm(wob+vec2(0.,s1)), d1=Dm(wob+vec2(0.,-s1));
         float a2=Dm(wob+vec2(-s2,0.)), b2=Dm(wob+vec2(s2,0.)), c2=Dm(wob+vec2(0.,s2)), d2=Dm(wob+vec2(0.,-s2));
@@ -161,9 +170,9 @@ const post=(()=>{
         // trykk og brudd fra penselpakken: teksturen leses i byens koordinater, så strøket står stille når kameraet går
         float pen=texture2D(tPensel, wxz*fq*0.55).r;
         float pen2=texture2D(tPensel, wxz*fq*1.7+vec2(0.37,0.61)).r;
-        ink*=0.62+0.38*pen2;
+        ink*=mix(1., 0.62+0.38*pen2, uPensel);
         float brudd=smoothstep(0.36,0.52, pen);
-        ink*=mix(0.10,1.,brudd);
+        ink*=mix(1., mix(0.10,1.,brudd), uPensel);
         // terrenget (alfa 0) får ikke strek i egne knekker, men kanten mot hus, trær og vann får strek
         float aC=texture2D(tCol,vUv).a;
         float aN=max(max(texture2D(tCol,vUv+(wob+vec2(s2,0.))/res).a,texture2D(tCol,vUv+(wob-vec2(s2,0.))/res).a),max(texture2D(tCol,vUv+(wob+vec2(0.,s2))/res).a,texture2D(tCol,vUv+(wob-vec2(0.,s2))/res).a));
@@ -191,15 +200,15 @@ const post=(()=>{
         // skyskygger som driver sakte over byen
         vec2 cp=wxz*0.0035+vec2(tid*0.006,tid*0.0025);
         float sky=vn(cp)*0.6+vn(cp*2.3+3.1)*0.3+vn(cp*5.1-1.7)*0.1;
-        col*=1.-0.09*smoothstep(0.52,0.78,sky);
+        col*=1.-0.09*smoothstep(0.52,0.78,sky)*uSky;
         col=mix(col, blekkF, ink*0.9*(1.-tb*0.8));
         // kartet toner ut i papiret rundt Gamlebyen, så kantene av kartdataene aldri synes
         float rr=length((wxz-vec2(10.,0.))*vec2(0.85,1.0));
         col=mix(col, vec3(0.925,0.915,0.885), smoothstep(380.,600.,rr));
         // svak vignett, som papir under lampe
-        vec2 vv=vUv-0.5; col*=1.-0.10*pow(clamp(length(vv)*1.35,0.,1.),2.2);
+        vec2 vv=vUv-0.5; col*=1.-0.10*pow(clamp(length(vv)*1.35,0.,1.),2.2)*uVignett;
         // papirkorn
-        col*=0.985+0.03*h(floor(gl_FragCoord.xy*0.5));
+        col*=1.+(0.03*h(floor(gl_FragCoord.xy*0.5))-0.015)*uKorn;
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
       }`
@@ -273,7 +282,10 @@ function plakatSol(){
   solFargeFor(35*GRAD); skyggeSkitten=true;
 }
 window.__sol=()=>({sd:_sd.toArray(), q:cam.quaternion.toArray(), grunner:dekning.grunner}); window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
-function lysFraVenstre(){ plakatSol(); }
+// fast sol: asimut 250° (VSV) og 42° høyde gir samme lysside som plakaten i hjemmevisningen, litt høyere så baksiden fortsatt leser som farge
+function lysFraVenstre(){ plakatSol(); if(SOL_FAST) setSol(250*GRAD, 42*GRAD); }
+// skravur i skyggene (stil b): parallelle streker forankret i byen; avstanden settes per bilde i meter (0 = av)
+const U_SKRAVUR={value:0};
 // skyggekartet er forankret i byen og tegnes på nytt bare når det må: bildet har gått ut av dekningen, zoomen eller
 // solretningen har endret seg merkbart, eller sola/husene har flyttet seg. Flytting (dra) innenfor dekningen koster ingen skyggetegning.
 sun.shadow.autoUpdate=false; let skyggeSkitten=true, kameraBeveget=true; const sistKam=new THREE.Matrix4();
@@ -309,15 +321,18 @@ function oppdaterSol(){
 // felles GLSL for materialer som skal ta imot kastskygger og følge sola
 const GL_SOL_V=`#include <common>
 #include <shadowmap_pars_vertex>
+varying vec3 vWq;
 `;
 const glSolVMain=(wp,wn)=>`
 #if defined(USE_SHADOWMAP) && NUM_DIR_LIGHT_SHADOWS>0
   vDirectionalShadowCoord[0]=directionalShadowMatrix[0]*(${wp}+vec4((${wn})*directionalLightShadows[0].shadowNormalBias,0.));
 #endif
+  vWq=(${wp}).xyz;
 `;
 const GL_SOL_F=`#include <common>
 #include <packing>
 #include <shadowmap_pars_fragment>
+varying vec3 vWq;
 #if NUM_DIR_LIGHTS>0
 struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
@@ -350,14 +365,21 @@ vec3 solFarge(){
   return vec3(1.);
 #endif
 }
+uniform float skravur;
+// skravurmaske: 1 der det skal ligge en strek, 0 ellers; k er skyggemengden (0 lys, 1 skygge). Tynnes ut når strekene blir for tette på skjermen
+float skravurMaske(vec3 wq, float k){ if(skravur<=0.) return 0.;
+  float t=dot(wq, normalize(vec3(0.6,1.0,0.4)))/skravur; float fw=fwidth(t);
+  float f=abs(fract(t)*2.-1.); float linje=smoothstep(0.62-fw*1.5, 0.62+fw*1.5, f);
+  float tetthet=1.-smoothstep(0.25,0.5,fw);
+  return linje*tetthet*smoothstep(0.15,0.6,k); }
 const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){
-  m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights));
+  m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights), {skravur:U_SKRAVUR});
   m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
-  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask());\n#include <colorspace_fragment>');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask());\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }
 
@@ -495,10 +517,10 @@ function mat(rgb, dim, sk, opt={}){
     let s; if(sk && !dim){ s=new THREE.Color(`rgb(${sk[0]},${sk[1]},${sk[2]})`); } else { s=c.clone(); s.r*=0.72; s.g*=0.80; s.b*=0.80; }
     const m=new THREE.ShaderMaterial({
       lights:true,
-      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, topp:{value:topp} }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, topp:{value:topp}, uVask:{value:STIL.vask}, skravur:U_SKRAVUR }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
       vertexShader:GL_SOL_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; void main(){ lp=position; vec4 wp=modelMatrix*vec4(position,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
-      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
+      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float topp, uVask; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
         float nn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hh(i),hh(i+vec2(1,0)),f.x),mix(hh(i+vec2(0,1)),hh(i+vec2(1,1)),f.x),f.y);}
         void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge
@@ -510,14 +532,15 @@ function mat(rgb, dim, sk, opt={}){
           // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
           vec3 nq=normalize(cross(dFdx(lp),dFdy(lp)));
           float vask=nn(wq.xz*0.045+wq.y*0.031)*0.62+nn(wq.xz*0.17+vec2(wq.y*0.23,3.1))*0.38;
-          c*=0.955+0.09*vask;
+          c*=1.-0.28*skravurMaske(wq, k);
+          c*=1.+(vask-0.5)*0.09*uVask;   // akvarellvask, av i stil a/b
           float fwq=max(fwidth(wq.x)+fwidth(wq.z)+fwidth(wq.y),1e-4);
           float naerhet=1.-smoothstep(0.12,0.45,fwq);   // detaljer forsvinner på avstand
           if(abs(nq.y)<0.3){
             // vegg: vannrette penselstrøk
             vec2 tq=normalize(vec2(-nq.z,nq.x)); float uq=dot(wq.xz,tq);
             float strok=nn(vec2(uq*0.7, wq.y*6.0))*0.7+nn(vec2(uq*2.1, wq.y*15.))*0.3;
-            c*=1.+(strok-0.5)*0.05*naerhet;
+            c*=1.+(strok-0.5)*0.05*naerhet*uVask;
           } else if(abs(nq.y)<0.985){
             // tak: rader med takstein langs fallet, antydet, borte på avstand
             vec2 ned=normalize(nq.xz); vec2 lang=vec2(-ned.y,ned.x);
@@ -1096,7 +1119,7 @@ const NOISE_GLSL=`float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*4
 function lovMatLag(){
   return new THREE.ShaderMaterial({
     lights:true,
-    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()}, camDir:{value:new THREE.Vector3()}, invSpan:{value:1} }]),
+    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()}, camDir:{value:new THREE.Vector3()}, invSpan:{value:1}, uStoy:{value:STIL.stoy} }]),
     vertexShader:`#include <common>
       #include <shadowmap_pars_vertex>
       uniform vec3 sunDir;
@@ -1124,7 +1147,7 @@ function lovMatLag(){
       #include <lights_pars_begin>
       #include <shadowmap_pars_fragment>
       #include <shadowmask_pars_fragment>
-      uniform vec3 sunDir; uniform float invSpan;
+      uniform vec3 sunDir; uniform float invSpan, uStoy;
       varying vec2 vUv; varying vec3 vCol; varying float vSeed; varying float vRad;
       ${NOISE_GLSL}
       void main(){
@@ -1139,7 +1162,7 @@ function lovMatLag(){
         float rr=min(r/0.97,1.), z=sqrt(max(0.,1.-rr*rr));
         // svake buler i normalen gjør tonegrensene organiske
         vec2 b=vec2(n2(vUv*2.2+vSeed*13.),n2(vUv*2.2+vSeed*13.+5.3))-0.5;
-        vec3 nV=normalize(vec3(vUv/0.97+b*0.6, z+0.08));
+        vec3 nV=normalize(vec3(vUv/0.97+b*0.6*uStoy, z+0.08));
         vec3 sV=normalize((viewMatrix*vec4(sunDir,0.)).xyz);
         float sm=getShadowMask();
         float w=dot(nV,sV)*0.5+0.5;
@@ -1150,9 +1173,9 @@ function lovMatLag(){
         vec3 c=mix(mork, mix(vCol,lysF,lys), mid);
         // malte lyse flekker på solsiden, mørke løvmerker i skyggen
         float p=n2(vUv*1.7+vSeed*21.);
-        c=mix(c, lysF*1.08+vec3(0.03,0.035,0.0), smoothstep(0.68,0.70,p)*lys*0.9);
+        c=mix(c, lysF*1.08+vec3(0.03,0.035,0.0), smoothstep(0.68,0.70,p)*lys*0.9*uStoy);
         float q=n2(vUv*6.5+vSeed*3.);
-        c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9);
+        c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9*uStoy);
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
         gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;
@@ -1368,6 +1391,7 @@ function oppdater(){
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
   oppdaterSol();
+  U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
   const kamFlytt = !_sisteProj.equals(cam.projectionMatrix); _sisteProj.copy(cam.projectionMatrix);
   if(kamFlytt || anim || !introDone) sistBeveg=naa;
