@@ -1,0 +1,4 @@
+{"kilde":"Google Maps flyfoto, skjermbilder 23.10.2026, fire ruter på 281 m satt sammen mot oversikt på 562 m",
+ "modell_origo":{"lat":59.202835,"lon":10.952745,"merknad":"utledet fra kirka og Fredrik II-statuen (Google-nåler), feil ca. 3 m"},
+ "anker":{"modell_xy":[-14.8,-58.9],"px":[948,512],"m_per_px_oversikt":0.78,"forstorrelse":2,"forskyvning":400},
+ "transform":"px = 2*(anker.px + (xy - anker.modell_xy)/m_per_px * [1,-1]) + 400"}

@@ -1,0 +1,58 @@
+# 02_hoyder_fra_tegning: FEIL
+
+54 hus avviker fra tegnet høyde; 18 hus uten tegnet høyde står med OSM-rundetall
+- bygg 6 (Labratoriet): h 6.0 m, tegning gir 1.4 m
+- bygg 9 (Artillerigården): h 6.0 m, tegning gir 2.0 m
+- bygg 10 (Krutthuset): h 6.0 m, tegning gir 1.0 m
+- bygg 11 (Kiørboegården): h 6.0 m, tegning gir 1.9 m
+- bygg 16 (Artillerismiens uthus): h 6.0 m, tegning gir 2.0 m
+- bygg 17 (Vollmesterboligen): h 6.0 m, tegning gir 1.2 m
+- bygg 21 (Kommandantgården): h 6.0 m, tegning gir 1.7 m
+- bygg 28 (Kruttårnet): h 6.0 m, tegning gir 1.3 m
+- bygg 29 (Sprøytehuset / Proviantboden): h 6.0 m, tegning gir 1.3 m
+- bygg 99 (Annekset): h 3.0 m, tegning gir 1.0 m
+- bygg 100 (Isegranhuset): h 6.0 m, tegning gir 0.9 m
+- bygg 101 (warehouse): h 3.0 m, tegning gir 1.7 m
+- bygg 111 (house): h 6.0 m, tegning gir 2.0 m
+- bygg 112 (house): h 6.0 m, tegning gir 1.7 m
+- bygg 116 (house): h 6.0 m, tegning gir 1.3 m
+- bygg 118 (garage): h 3.2 m, tegning gir 1.1 m
+- bygg 119 (house): h 3.2 m, tegning gir 2.5 m
+- bygg 121 (house): h 3.2 m, tegning gir 2.5 m
+- bygg 124 (garage): h 3.2 m, tegning gir 1.3 m
+- bygg 125 (house): h 6.0 m, tegning gir 1.6 m
+- bygg 129 (house): h 6.0 m, tegning gir 1.5 m
+- bygg 131 (house): h 6.0 m, tegning gir 1.9 m
+- bygg 133 (house): h 6.0 m, tegning gir 2.0 m
+- bygg 135 (house): h 6.0 m, tegning gir 1.6 m
+- bygg 137 (house): h 6.0 m, tegning gir 1.1 m
+- bygg 139 (house): h 6.0 m, tegning gir 2.2 m
+- bygg 141 (house): h 6.0 m, tegning gir 1.7 m
+- bygg 149 (house): h 6.0 m, tegning gir 2.0 m
+- bygg 151 (house): h 6.0 m, tegning gir 2.3 m
+- bygg 162 (retail): h 6.0 m, tegning gir 1.7 m
+- bygg 171 (toilets): h 6.0 m, tegning gir 1.3 m
+- bygg 173 (house): h 6.0 m, tegning gir 2.3 m
+- bygg 181 (house): h 3.2 m, tegning gir 2.7 m
+- bygg 188 (residential): h 6.0 m, tegning gir 2.0 m
+- bygg 194 (apartments): h 9.0 m, tegning gir 1.3 m
+- bygg 229 (garages): h 6.0 m, tegning gir 2.3 m
+- bygg 248 (Vennehaabet): h 6.0 m, tegning gir 2.3 m
+- bygg 265 (Kongeporten): h 3.2 m, tegning gir 1.6 m
+- bygg 277 (house): h 6.0 m, tegning gir 2.3 m
+- bygg 296 (garage): h 6.0 m, tegning gir 1.3 m
+- bygg 297 (house): h 6.0 m, tegning gir 1.6 m
+- bygg 298 (garage): h 3.2 m, tegning gir 1.4 m
+- bygg 334 (garage): h 3.2 m, tegning gir 2.8 m
+- bygg 336 (garage): h 6.0 m, tegning gir 2.0 m
+- bygg 355 (garages): h 6.0 m, tegning gir 2.2 m
+- bygg 365 (garage): h 3.2 m, tegning gir 1.6 m
+- bygg 369 (garage): h 6.0 m, tegning gir 2.2 m
+- bygg 371 (garage): h 3.2 m, tegning gir 1.9 m
+- bygg 372 (garage): h 6.0 m, tegning gir 2.2 m
+- bygg 382 (garage): h 3.2 m, tegning gir 2.5 m
+- bygg 401 (garage): h 6.0 m, tegning gir 2.2 m
+- bygg 406 (garage): h 6.0 m, tegning gir 2.0 m
+- bygg 438 (Kruttmagasinet): h 6.0 m, tegning gir 1.1 m
+- bygg 440 (house): h 6.0 m, tegning gir 2.0 m
+- rundetall uten tegning: 27, 42, 43, 49, 55, 56, 62, 73, 76, 89, 94, 104, 105, 267, 426, 429, 431, 432

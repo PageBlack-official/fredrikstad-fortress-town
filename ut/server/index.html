@@ -1,0 +1,1496 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gamle Fredrikstad</title>
+<meta name="description" content="Gamlebyen i Fredrikstad som tegnet 3D-kart. Versjon 25.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="ikon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Gamlebyen"><meta name="theme-color" content="#e2e1d6">
+<style>
+:root{--bg:#e2e1d6;--ink:#2b2420;--paper:#f6f3ea;--muted:#7a7166}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#e2e1d6;--ink:#2b2420;--paper:#f6f3ea;--muted:#7a7166}}
+:root[data-theme="dark"]{--bg:#e2e1d6;--ink:#2b2420;--paper:#f6f3ea;--muted:#7a7166}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);-webkit-tap-highlight-color:transparent}
+canvas{display:block;touch-action:none;position:fixed;inset:0;opacity:0;transition:opacity .45s ease-out}
+:root{color-scheme:light}
+#hint{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(246,243,234,.82);padding:8px 14px;border-radius:20px;opacity:0;transition:opacity 1.2s;pointer-events:none;white-space:normal;max-width:min(88vw,560px);text-align:center;line-height:1.45}
+#hjem{z-index:5;position:fixed;right:max(16px,env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;align-items:center;gap:6px;border:0;border-radius:22px;padding:10px 14px;background:rgba(246,243,234,.92);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;box-shadow:0 4px 16px rgba(40,30,20,.14);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .4s,transform .4s}
+#hjem.vis{opacity:1;pointer-events:auto;transform:none}
+#hjem:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+#kort{z-index:5;position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:380px;margin:0 auto;background:var(--paper);border-radius:14px;padding:16px 18px;box-shadow:0 10px 30px rgba(40,30,20,.18);transform:translateY(140%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+#kort.vis{transform:none}
+#kort h2{margin:0 0 4px;font-size:18px;font-weight:600}
+#kort p{margin:2px 0;font-size:13px;color:var(--muted)}
+#kort .lukk{position:absolute;right:12px;top:10px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}
+#kort .farge{display:flex;gap:6px;margin-top:10px;align-items:center;font-size:12px;color:var(--muted)}
+#kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
+</style>
+</head>
+<body>
+<button id="hjem" aria-label="Vis hele byen" title="Vis hele byen (Esc)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Hele byen</span></button>
+<div id="hint">Dra for å snu byen · sveip for å flytte kartet · dobbeltklikk for å gå nærmere</div><script>if(matchMedia("(pointer:coarse)").matches)document.getElementById("hint").textContent="Én finger flytter kartet · to fingre snur og zoomer · trykk på et hus";</script>
+<div id="kort"><button class="lukk" aria-label="Lukk">×</button><h2></h2><p class="a"></p><p class="b"></p><div class="farge"></div></div>
+<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
+
+const TEX_VANN='assets/vann.png';
+const texLoader=new THREE.TextureLoader();
+// Penselstrøk: bakt fra The Intergalactic Liquid & Irregular Brushes (Illustrator CC-installfil, tegnebrett 1–3, 23 strøk). Kilde: 05 Grafisk design/Illustrator Brushes.
+const TEX_PENSEL='assets/pensel.png';
+const penselTex=texLoader.load(TEX_PENSEL, t=>{ t.wrapS=t.wrapT=THREE.RepeatWrapping; t.minFilter=THREE.LinearMipmapLinearFilter; t.magFilter=THREE.LinearFilter; t.needsUpdate=true; });
+const DATA = await (await fetch('data/by.json')).json();
+const INK = 0x3a2c26;
+const renderer = new THREE.WebGLRenderer({antialias:true});
+// pikselbudsjett: store skjermer (5K/4K) starter med færre piksler, så introen går jevnt; heves etter introen hvis maskinen har overskudd
+// skjermen tegnes alltid skarpt (full pikseltetthet). Mens kartet beveger seg regnes 3D-bildet i lavere oppløsning,
+// og når det står stille tegnes det på nytt i full kvalitet - slik kart-apper gjør det.
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const PIX_BEVEG=3.0e6, PIX_STILLE=11e6;
+let skalaBeveg=1, skalaStille=1;
+function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaBeveg=THREE.MathUtils.clamp(Math.sqrt(PIX_BEVEG/n),0.4,1); skalaStille=1; /* stillbilde alltid i full oppløsning */ }
+renderer.setSize(innerWidth,innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFShadowMap; // myk filtrering gjøres i skyggeMask()
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.prepend(renderer.domElement);
+renderer.domElement.addEventListener('webglcontextlost',e=>{ e.preventDefault(); if(!sessionStorage.getItem('gl-tapt')){ sessionStorage.setItem('gl-tapt','1'); location.reload(); } });
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xe2e1d6);
+
+// Ortografisk kamera = plakatens isometri
+let VIEW = 300;
+const cam = new THREE.OrthographicCamera(-1,1,1,-1,-4000,4000);
+function fit(){
+  const a = innerWidth/innerHeight;
+  const v = a < 1 ? VIEW*1.15 : VIEW*0.62;
+  cam.left=-v*a/1; cam.right=v*a/1; cam.top=v; cam.bottom=-v;
+  if (a<1){ cam.left=-v*a; cam.right=v*a; }
+  cam.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+  post.size();
+}
+addEventListener('resize',fit);
+
+// ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
+const post=(()=>{
+  let W=2, H=2, skala=1;
+  const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
+  rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
+  const m=new THREE.ShaderMaterial({
+    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
+    vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN; uniform mat4 invPV; uniform vec3 blekk;
+ varying vec2 vUv;
+      float D(vec2 o){ return texture2D(tDep, vUv+o/res).x*span; }
+      // dybde med lukking: hårfine sprekker mellom takflater (1 px) lukkes, så de ikke blir prikker i streken
+      float Dm(vec2 o){ return min(D(o), min(D(o+vec2(1.,0.)), D(o+vec2(0.,1.)))); }
+      // strekstyrke ved en forskyvning (piksler): knekker (inner) og dybdesprang (silhuett)
+      float strekVed(vec2 o, float s1, float s2, float mpp){
+        float ec=Dm(o);
+        float a1=Dm(o+vec2(-s1,0.)), b1=Dm(o+vec2(s1,0.)), c1=Dm(o+vec2(0.,s1)), d1=Dm(o+vec2(0.,-s1));
+        float a2=Dm(o+vec2(-s2,0.)), b2=Dm(o+vec2(s2,0.)), c2=Dm(o+vec2(0.,s2)), d2=Dm(o+vec2(0.,-s2));
+        float L1=max(abs(a1+b1-2.*ec), abs(c1+d1-2.*ec))/(mpp*s1);
+        float L2=max(abs(a2+b2-2.*ec), abs(c2+d2-2.*ec))/(mpp*s2);
+        return max(smoothstep(0.34,0.85,L1)*0.78, smoothstep(3.5,7.0,L2));
+      }
+      float h(vec2 p){ return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453); }
+      float vn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      void main(){
+        vec3 col=texture2D(tCol,vUv).rgb;
+        // miniatyr-effekt: myk uskarphet øverst og nederst i bildet (sterkest i introen)
+        float tb=tilt*smoothstep(0.16,0.5,abs(vUv.y-0.52));
+        if(tb>0.01){ vec3 acc=col; float wsum=1.;
+          for(int i=0;i<12;i++){ float a=float(i)*2.39996; float r=tb*7.*sqrt((float(i)+.5)/12.);
+            acc+=texture2D(tCol, vUv+vec2(cos(a),sin(a))*r/res).rgb; wsum+=1.; }
+          col=acc/wsum; }
+        float zc=D(vec2(0.));
+        if(zc>span*0.999){ gl_FragColor=vec4(col,1.);
+          #include <colorspace_fragment>
+          return; }
+        // verdensposisjon for pikselen: støyen i streken forankres i byen, så den ikke kryper når kameraet beveger seg
+        vec4 wp4=invPV*vec4(vUv*2.-1., texture2D(tDep,vUv).x*2.-1., 1.); vec2 wxz=wp4.xz/wp4.w;
+        float zl=D(vec2(-px,0.)), zr=D(vec2(px,0.)), zu=D(vec2(0.,px)), zd=D(vec2(0.,-px));
+        // ---- organisk blekkstrek ----
+        // tykkelse etter zoom: tynn i oversikten, fyldigere tett på
+        // strekbredden regnes i skjermpunkter (CSS-px), så den er lik på alle skjermer og i både rask og skarp tegning
+        float mppC=mpp*sk/dpr;                              // meter per skjermpunkt
+        float wi=clamp(0.22/mppC, 0.65, 1.5);               // tynn i oversikten, fyldigere tett på
+        float s1=max(1.,floor(wi*dpr*sk*0.75+0.5)), s2=max(s1+1.,floor(wi*dpr*sk*1.2+0.5)); // hele piksler: ingen falske linjer på flat mark
+        // lavfrekvent skjelving (bølgelengde ca. 40 px), som en tusj som ikke følger linjalen
+        float fq=1./(40.*mpp);
+        vec2 wob=vec2(vn(wxz*fq)-0.5, vn(wxz*fq+17.3)-0.5)*0.5*px; // liten, myk forskyvning: større gir sikksakk på lange linjer
+        float ec=Dm(wob);
+        float a1=Dm(wob+vec2(-s1,0.)), b1=Dm(wob+vec2(s1,0.)), c1=Dm(wob+vec2(0.,s1)), d1=Dm(wob+vec2(0.,-s1));
+        float a2=Dm(wob+vec2(-s2,0.)), b2=Dm(wob+vec2(s2,0.)), c2=Dm(wob+vec2(0.,s2)), d2=Dm(wob+vec2(0.,-s2));
+        // sprekkpiksel: dypere enn alle naboene -> vis naboenes farge i stedet for det som ligger bak
+        if(zc>min(min(zl,zr),min(zu,zd))+0.4 && zc>max(max(zl,zr),max(zu,zd))-0.05){
+          col=0.25*(texture2D(tCol,vUv+vec2(px,0.)/res).rgb+texture2D(tCol,vUv-vec2(px,0.)/res).rgb+texture2D(tCol,vUv+vec2(0.,px)/res).rgb+texture2D(tCol,vUv-vec2(0.,px)/res).rgb); }
+        // kantutjevnet strek: snitt av fire forskjøvne prøver (roterte rutenett), så skrå linjer blir glatte og ikke trappete
+        float ink;
+        if(ssN>1.5){ ink=0.25*(strekVed(wob+vec2(0.375,-0.125)*2.,s1,s2,mpp)+strekVed(wob+vec2(-0.125,-0.375)*2.,s1,s2,mpp)
+                              +strekVed(wob+vec2(-0.375,0.125)*2.,s1,s2,mpp)+strekVed(wob+vec2(0.125,0.375)*2.,s1,s2,mpp)); ink=smoothstep(0.,0.85,ink); }
+        else ink=strekVed(wob,s1,s2,mpp);
+        // trykkvariasjon og små brudd langs streken
+        // trykk og brudd fra penselpakken: teksturen leses i byens koordinater, så strøket står stille når kameraet går
+        float pen=texture2D(tPensel, wxz*fq*0.55).r;
+        float pen2=texture2D(tPensel, wxz*fq*1.7+vec2(0.37,0.61)).r;
+        ink*=0.62+0.38*pen2;
+        float brudd=smoothstep(0.36,0.52, pen);
+        ink*=mix(0.10,1.,brudd);
+        // terrenget (alfa 0) får ikke strek i egne knekker, men kanten mot hus, trær og vann får strek
+        float aC=texture2D(tCol,vUv).a;
+        float aN=max(max(texture2D(tCol,vUv+(wob+vec2(s2,0.))/res).a,texture2D(tCol,vUv+(wob-vec2(s2,0.))/res).a),max(texture2D(tCol,vUv+(wob+vec2(0.,s2))/res).a,texture2D(tCol,vUv+(wob-vec2(0.,s2))/res).a));
+        ink*=max(aC,aN);
+        // strekfargen er en mørk versjon av flaten som ligger foran (som i tegningen), ikke ren svart
+        vec3 cn=texture2D(tCol,vUv+wob/res).rgb; float zn=ec;
+        if(a2<zn){ zn=a2; cn=texture2D(tCol,vUv+(wob+vec2(-s2,0.))/res).rgb; }
+        if(b2<zn){ zn=b2; cn=texture2D(tCol,vUv+(wob+vec2(s2,0.))/res).rgb; }
+        if(c2<zn){ zn=c2; cn=texture2D(tCol,vUv+(wob+vec2(0.,s2))/res).rgb; }
+        if(d2<zn){ zn=d2; cn=texture2D(tCol,vUv+(wob+vec2(0.,-s2))/res).rgb; }
+        vec3 blekkF=mix(blekk, cn*0.38, 0.65); // strekfarge nær flatens egen mørke tone: ingen svart halo
+        // skygge i hjørner og der hus møter bakken (planbevisst, så flat bakke ikke mørkner)
+        float gX=abs(zr-zc)<abs(zc-zl)? zr-zc : zc-zl; float gY=abs(zu-zc)<abs(zc-zd)? zu-zc : zc-zd;
+        float R=clamp(2.4/mpp, 4., 48.); float ao=0.; float j=h(gl_FragCoord.xy)*6.2831;
+        for(int i=0;i<14;i++){
+          if(float(i)>=aoN) break;
+          float a=float(i)*2.39996+j; float r=R*sqrt((float(i)+.5)/aoN);
+          vec2 o=vec2(cos(a),sin(a))*r;
+          float zs=D(o); float zp=zc+(gX*o.x+gY*o.y)/px;
+          float dz=zp-zs;
+          ao+=smoothstep(0.12,0.7,dz)*(1.-smoothstep(3.5,7.,dz));
+        }
+        ao/=max(aoN,1.);
+        col*=mix(vec3(1.),vec3(0.60,0.645,0.76),ao*aC); // hjørneskygge i himmeltone, ikke grå
+        // skyskygger som driver sakte over byen
+        vec2 cp=wxz*0.0035+vec2(tid*0.006,tid*0.0025);
+        float sky=vn(cp)*0.6+vn(cp*2.3+3.1)*0.3+vn(cp*5.1-1.7)*0.1;
+        col*=1.-0.09*smoothstep(0.52,0.78,sky);
+        col=mix(col, blekkF, ink*0.9*(1.-tb*0.8));
+        // kartet toner ut i papiret rundt Gamlebyen, så kantene av kartdataene aldri synes
+        float rr=length((wxz-vec2(10.,0.))*vec2(0.85,1.0));
+        col=mix(col, vec3(0.925,0.915,0.885), smoothstep(380.,600.,rr));
+        // svak vignett, som papir under lampe
+        vec2 vv=vUv-0.5; col*=1.-0.10*pow(clamp(length(vv)*1.35,0.,1.),2.2);
+        // papirkorn
+        col*=0.985+0.03*h(floor(gl_FragCoord.xy*0.5));
+        gl_FragColor=vec4(col,1.);
+        #include <colorspace_fragment>
+      }`
+  });
+  const q=new THREE.Mesh(new THREE.PlaneGeometry(2,2),m); q.frustumCulled=false;
+  // kantutjevning til slutt (FXAA): blekkstreken regnes fra dybden og får ellers trappetrinn
+  const rtF=new THREE.WebGLRenderTarget(2,2); rtF.texture.colorSpace=THREE.SRGBColorSpace;
+  const fx=new THREE.ShaderMaterial({ uniforms:{ tDiffuse:{value:rtF.texture}, resolution:{value:new THREE.Vector2(0.5,0.5)} },
+    vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
+    fragmentShader:FXAAShader.fragmentShader.replace(/\}\s*$/, '  #include <colorspace_fragment>\n}') });
+  const fq=new THREE.Mesh(new THREE.PlaneGeometry(2,2),fx); fq.frustumCulled=false; const fs=new THREE.Scene(); fs.add(fq);
+  const ps=new THREE.Scene(); ps.add(q); const pc=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+  return {
+    setAO(n){ m.uniforms.aoN.value=n; },
+    setSS(n){ m.uniforms.ssN.value=n; },
+    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
+    settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
+    skala(){ return skala; },
+    render(){ const u=m.uniforms; u.mpp.value=(cam.right-cam.left)/cam.zoom/u.res.value.x; u.span.value=cam.far-cam.near; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introDone? 0.0 : 1.0; // miniatyr-uskarphet bare i introen
+      const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const _t1=performance.now(); renderer.setRenderTarget(rtF); renderer.render(ps,pc); renderer.setRenderTarget(null); renderer.render(fs,pc); window.__pt={scene:_t1-_t0, blekk:performance.now()-_t1, kall:renderer.info.render.calls, tri:renderer.info.render.triangles}; }
+  };
+})();
+
+// koordinater: x = øst, z = -nord
+const V = (p)=> new THREE.Vector2(p[0], p[1]);
+
+// ---- lys: sola ----
+// Plakatsolen (standard): sola står øverst til venstre i bildet uansett hvordan byen snus, som i trykkfila.
+// Ekte sol: setSol(asimut, høyde) i radianer, asimut fra nord med klokka. Skyggene følger sola i begge moduser.
+const hemi = new THREE.HemisphereLight(0xffffff, 0xe6e2d6, 1.0); scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xffffff, 0.85);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048,2048);
+const sc = sun.shadow.camera; sc.left=-520; sc.right=520; sc.top=520; sc.bottom=-520; sc.near=1; sc.far=4000;
+sun.shadow.bias=-0.0005; sun.shadow.normalBias=0.25; sun.shadow.radius=4; sun.shadow.blurSamples=12;
+const LYS = new THREE.Vector3(-0.66, 0.52, 0.54).normalize(); // lyset penselmatcapen til trærne er tegnet med (kamerarommet)
+// plakatsolen i kamerarommet: fra venstre og litt over, så venstre fasader og tak er lyse, høyre fasader i skygge (som trykket),
+// og kastskyggene faller mot høyre i bildet der de synes, ikke bak husene
+const PLAKAT = new THREE.Vector3(-0.75, 0.65, 0.10).normalize();
+const GRAD=Math.PI/180;
+// solposisjon (samme formler som SunCalc): asimut fra nord med klokka og høyde over horisonten, i radianer
+function solposisjon(dato, lat=59.2075, lon=10.9545){
+  const dager=dato.valueOf()/864e5-0.5+2440588-2451545;
+  const M=GRAD*(357.5291+0.98560028*dager);
+  const C=GRAD*(1.9148*Math.sin(M)+0.02*Math.sin(2*M)+0.0003*Math.sin(3*M));
+  const L=M+C+GRAD*102.9372+Math.PI, e=GRAD*23.4397;
+  const dek=Math.asin(Math.sin(e)*Math.sin(L)), ra=Math.atan2(Math.sin(L)*Math.cos(e),Math.cos(L));
+  const phi=GRAD*lat, H=GRAD*(280.16+360.9856235*dager)+GRAD*lon-ra;
+  const hoyde=Math.asin(Math.sin(phi)*Math.sin(dek)+Math.cos(phi)*Math.cos(dek)*Math.cos(H));
+  const azSor=Math.atan2(Math.sin(H),Math.cos(H)*Math.sin(phi)-Math.tan(dek)*Math.cos(phi));
+  return {asimut:azSor+Math.PI, hoyde};
+}
+const SOL={modus:'plakat', asimut:0, hoyde:35*GRAD};
+// sollyset blir varmere jo lavere sola står
+function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,34*GRAD);
+  sun.color.setRGB(1.0, THREE.MathUtils.lerp(0.80,0.985,k), THREE.MathUtils.lerp(0.62,0.95,k)); }
+function setSol(asimut, hoyde){
+  SOL.modus='ekte'; SOL.asimut=asimut; SOL.hoyde=Math.max(hoyde,3*GRAD);
+  if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
+  solFargeFor(SOL.hoyde); skyggeSkitten=true;
+}
+function plakatSol(){
+  SOL.modus='plakat';
+  if(sun.parent!==cam){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); cam.add(sun); cam.add(sun.target); }
+  sun.target.position.set(0,0,-900); sun.position.copy(PLAKAT).multiplyScalar(1500).add(sun.target.position);
+  solFargeFor(35*GRAD); skyggeSkitten=true;
+}
+window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
+function lysFraVenstre(){ plakatSol(); }
+// skyggekartet tegnes bare på nytt når kameraet, sola eller byen beveger seg
+sun.shadow.autoUpdate=false; let skyggeSkitten=true, skyggeTakt=0, kameraBeveget=true; const sistKam=new THREE.Matrix4(); let sistZoom=0;
+const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4();
+function oppdaterSol(){
+  if(SOL.modus==='ekte'){
+    const tg=controls.target; const ca=Math.cos(SOL.hoyde);
+    sun.target.position.copy(tg); sun.position.set(tg.x+Math.sin(SOL.asimut)*ca*1500, tg.y+Math.sin(SOL.hoyde)*1500, tg.z-Math.cos(SOL.asimut)*ca*1500);
+    sun.target.updateMatrixWorld();
+  }
+  // skyggekameraet dekker det som er i bildet, så skyggene er skarpe nok også tett på
+  const hw=(cam.right-cam.left)/2/cam.zoom, hh=(cam.top-cam.bottom)/2/cam.zoom;
+  const r=Math.min(950, Math.max(hw, hh/Math.sin(ELEV))*1.08+45);
+  if(Math.abs(sc.right-r)>0.5){ sc.left=-r; sc.right=r; sc.top=r; sc.bottom=-r; sc.updateProjectionMatrix(); skyggeSkitten=true; }
+  sun.shadow.radius=THREE.MathUtils.clamp(1.1/(2*r/sun.shadow.mapSize.x),1.5,9);
+  cam.updateMatrixWorld();
+  kameraBeveget = !sistKam.equals(cam.matrixWorld) || sistZoom!==cam.zoom || !introDone;
+  if(kameraBeveget){ sistKam.copy(cam.matrixWorld); sistZoom=cam.zoom; skyggeSkitten=true; }
+  skyggeTakt++; if(skyggeSkitten && (skyggeTakt%3===0 || !kameraBeveget)){ sun.shadow.needsUpdate=true; skyggeSkitten=false; }
+  // trærne henter solretningen selv (se tre-blokken)
+}
+// felles GLSL for materialer som skal ta imot kastskygger og følge sola
+const GL_SOL_V=`#include <common>
+#include <shadowmap_pars_vertex>
+`;
+const glSolVMain=(wp,wn)=>`
+#if defined(USE_SHADOWMAP) && NUM_DIR_LIGHT_SHADOWS>0
+  vDirectionalShadowCoord[0]=directionalShadowMatrix[0]*(${wp}+vec4((${wn})*directionalLightShadows[0].shadowNormalBias,0.));
+#endif
+`;
+const GL_SOL_F=`#include <common>
+#include <packing>
+#include <shadowmap_pars_fragment>
+#if NUM_DIR_LIGHTS>0
+struct DirectionalLight { vec3 direction; vec3 color; };
+uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
+#endif
+// myk kastskygge: 16 prøver i en roterende spiral, halvskyggen er ca. én meter bred uansett zoom
+float skyggeMask(){ float s=1.;
+#if defined(USE_SHADOWMAP) && NUM_DIR_LIGHT_SHADOWS>0
+  DirectionalLightShadow dl=directionalLightShadows[0];
+  vec4 sc=vDirectionalShadowCoord[0]; vec3 p=sc.xyz/sc.w; p.z+=dl.shadowBias;
+  if(p.x>=0.&&p.x<=1.&&p.y>=0.&&p.y<=1.&&p.z<=1.){
+    vec2 tx=dl.shadowRadius/dl.shadowMapSize; float acc=0.;
+    float ang=fract(52.9829189*fract(dot(gl_FragCoord.xy,vec2(0.06711056,0.00583715))))*6.2831853;
+    for(int i=0;i<16;i++){ float r=sqrt((float(i)+0.5)/16.); float a=float(i)*2.3999632+ang;
+      acc+=texture2DCompare(directionalShadowMap[0], p.xy+vec2(cos(a),sin(a))*r*tx, p.z); }
+    s=acc/16.;
+  }
+#endif
+  return s; }
+vec3 solRetning(){
+#if NUM_DIR_LIGHTS>0
+  return directionalLights[0].direction;
+#else
+  return normalize(vec3(-0.66,0.52,0.54));
+#endif
+}
+vec3 solFarge(){
+#if NUM_DIR_LIGHTS>0
+  vec3 c=directionalLights[0].color; return c/max(max(c.r,c.g),max(c.b,1e-4));
+#else
+  return vec3(1.);
+#endif
+}
+const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
+const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
+`;
+// gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
+function medSkygge(m){
+  m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights));
+  m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask());\n#include <colorspace_fragment>');
+  m.needsUpdate=true; return m;
+}
+
+// ---- bakke, vann, grønt ----
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(6000,6000), new THREE.MeshBasicMaterial({color:0xefece4}));
+ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; scene.add(ground);
+
+function polyShape(pts){
+  const s = new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0], p[1])));
+  return s;
+}
+function flat(pts, y, mat){
+  if (pts.length<3) return null;
+  const g = new THREE.ShapeGeometry(polyShape(pts));
+  g.rotateX(-Math.PI/2); // (x,y)->(x,0,-y)
+  const m = new THREE.Mesh(g, mat); m.position.y=y; m.receiveShadow=true; scene.add(m); return m;
+}
+// vann med levende overflate: malt blått som trykket, lysere grunt vann mot land, skumkant langs strendene og
+// en tynn ring litt ute (som Townscaper), Vegars penselstrøk svakt over, og myke speilinger av hus og trær
+const VF = DATA.vannfelt || null;
+const waterMat = new THREE.ShaderMaterial({
+  uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
+    grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
+    tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
+    tRefl:{value:null}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}},
+  vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; varying vec3 wp;
+  float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+  float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+  // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
+  float linje(float d, float r, float w, float pm){ float ww=max(w,pm*1.2); return (1.-smoothstep(ww*0.5, ww*0.5+pm, abs(d-r))) * min(1., w/ww+0.25); }
+  void main(){ vec2 p=wp.xz*0.02; float a=n(p*1.3+vec2(t*.05,t*.03)); float b=n(p*3.1-vec2(t*.07,0.));
+    float pm=max(fwidth(wp.x),fwidth(wp.z));                       // meter per piksel her
+    vec3 c=mix(c1,c2,a*.8);
+    float s1=texture2D(strek, wp.xz/vec2(140.,110.)+vec2(t*.006,t*.002)).a; float s2=texture2D(strek, wp.xz/vec2(220.,180.)*vec2(-1.,1.)+vec2(-t*.004,t*.003)+.37).a;
+    float s=max(s1*smoothstep(.25,.75,b), s2*.7*smoothstep(.3,.8,a));
+    float d=maks;
+    if(harFelt>0.5){ d=texture2D(tFelt, vec2((wp.x-felt.x)/felt.z, (-wp.z-felt.y)/felt.w)).r*maks; }
+    // grunt vann nær land: lysere og litt grønnere, med myk overgang
+    float grunn=1.-smoothstep(0.,24.,d);
+    c=mix(c, grunt, grunn*grunn*0.62);
+    // speilinger av hus og trær (rendret speilvendt i et eget lag), med rolig krusning
+    if(reflStyrke>0.){ vec2 uv=gl_FragCoord.xy/res; vec2 kr=vec2(n(wp.xz*0.18+vec2(0.,t*0.35))-0.5, n(wp.xz*0.07-vec2(t*0.2,0.))-0.5)*vec2(0.004,0.010);
+      vec4 r=texture2D(tRefl, uv+kr); float rk=reflStyrke*r.a*(0.75+0.25*b); c=mix(c, mix(c,r.rgb,0.55)*0.97, rk); }
+    // penselstrøkene, svakere enn før og borte i skumkanten
+    c=mix(c,hi,s*.42*(1.-grunn*0.7));
+    // skumkant langs land: bølgete, pustende, minst ca. halvannen piksel bred så den holder i oversikten
+    float wob=(n(wp.xz*0.32+vec2(t*0.11,-t*0.07))-0.5)*1.1+(n(wp.xz*1.4-vec2(t*0.17,0.))-0.5)*0.45;
+    float bw=max(1.7, pm*2.0);
+    float skumK=1.-smoothstep(bw*0.55, bw*0.55+max(pm,0.35), d+wob*0.55);
+    // lys glorie like utenfor skummet
+    float glor=(1.-smoothstep(0.,8.,d))*0.26;
+    // tynn ring et stykke ute som puster sakte inn og ut
+    float rr=4.6+0.9*sin(t*0.55+n(wp.xz*0.02)*6.28)+wob*0.9;
+    float ring=linje(d, rr, 0.45, pm)*0.42*(1.-smoothstep(8.,12.,rr));
+    c=mix(c, skum, max(max(skumK, ring), glor));
+    // langt ute: vannet blir lysere og roligere, så byen står i fokus
+    float u=smoothstep(650.,1500.,length(wp.xz-vec2(sentrum.x,-sentrum.y)));
+    c=mix(c, fjern, u*0.55);
+    gl_FragColor=vec4(c,1.);
+  #include <colorspace_fragment>
+  }`
+});
+const vTex=texLoader.load(TEX_VANN); vTex.wrapS=vTex.wrapT=THREE.RepeatWrapping; waterMat.uniforms.strek.value=vTex;
+if(VF){ const ft=texLoader.load(VF.png); ft.minFilter=THREE.LinearFilter; ft.magFilter=THREE.LinearFilter; ft.generateMipmaps=false; ft.colorSpace=THREE.NoColorSpace;
+  waterMat.uniforms.tFelt.value=ft; waterMat.uniforms.felt.value.set(VF.x0,VF.y0,VF.w,VF.h); }
+const waterLayer = [];
+function flatH(pts, holes, y, mat){
+  if (pts.length<3) return null;
+  const sh=polyShape(pts); (holes||[]).forEach(hh=>{ if(hh.length>2) sh.holes.push(new THREE.Path(hh.map(p=>new THREE.Vector2(p[0],p[1])))); });
+  const g=new THREE.ShapeGeometry(sh); g.rotateX(-Math.PI/2);
+  const m=new THREE.Mesh(g,mat); m.position.y=y; m.receiveShadow=true; scene.add(m); return m;
+}
+DATA.vann.forEach(w=>{ const t=w.t; if (t.natural==='water'||t.water||['riverbank','dock','canal'].includes(t.waterway)) { const m=flatH(w.p,w.h,0.15,waterMat); if(m) waterLayer.push(m);} });
+
+
+// elva Glomma rundt byen: fallback-stripe hvis data mangler
+
+// ---- brostein i hele Gamlebyen ----
+const stoneMat = new THREE.ShaderMaterial({
+  uniforms:{ base:{value:new THREE.Color('rgb(146,140,132)')}, fuge:{value:new THREE.Color('rgb(96,92,88)')}, ang:{value:THREE.MathUtils.degToRad(DATA.gatevinkel||0)} },
+  vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+  fragmentShader:`uniform vec3 base,fuge; uniform float ang; varying vec3 wp;
+  float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+  float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+  void main(){
+    float c0=cos(ang), s0=sin(ang); vec2 q=vec2(c0*wp.x+s0*wp.z, -s0*wp.x+c0*wp.z);
+    // brostein lagt i rader langs gatenettet, forskjøvet annenhver rad
+    vec2 S=vec2(1.05,0.8); vec2 p=q/S; float rad=floor(p.y); p.x+=fract(rad*0.5)*1.0+h(vec2(rad,3.))*0.3;
+    vec2 id=floor(p), f=fract(p);
+    vec2 e=min(f,1.-f)*S; float kant=min(e.x,e.y);
+    float j=smoothstep(0.03,0.11,kant);
+    float v=h(id);
+    vec3 stein=base*(0.92+0.14*v);
+    // sola øverst til venstre: lys kant oppe til venstre på hver stein
+    float lys=smoothstep(0.30,0.0,f.x)*0.5+smoothstep(0.70,1.0,f.y)*0.5; stein*=1.0+0.07*lys*j;
+    vec3 c=mix(fuge,stein,j);
+    // akvarell-flekker i stor skala, som i tegningen
+    float m=n(q*0.035)*0.6+n(q*0.11)*0.4; vec3 flekk=c*(0.93+0.13*m);
+    float px=length(fwidth(p));
+    vec3 fjern=mix(base,fuge,0.18)*(0.94+0.12*m);
+    c=mix(flekk, fjern, smoothstep(0.22,0.6,px));
+    gl_FragColor=vec4(c,1.);
+    #include <colorspace_fragment>
+  }`
+});
+medSkygge(stoneMat);
+if (DATA.brostein){ const m=flat(DATA.brostein,0.05,stoneMat); }
+const greenMat = new THREE.MeshLambertMaterial({color:0x9dcfa5});
+const plenMat=new THREE.ShaderMaterial({
+  uniforms:{ c1:{value:new THREE.Color('rgb(126,180,134)')} },
+  vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+  fragmentShader:`uniform vec3 c1; varying vec3 wp;
+    float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+    void main(){ float m=n(wp.xz*0.03)*0.6+n(wp.xz*0.12)*0.4; float gs=n(vec2(wp.x*0.55+wp.z*0.22, wp.z*1.9-wp.x*0.3))*0.6+n(vec2(wp.x*1.7, wp.z*4.3))*0.4; gl_FragColor=vec4(c1*(0.93+0.13*m)*(0.975+0.05*gs),1.);
+    #include <colorspace_fragment>
+    }`
+});
+medSkygge(plenMat);
+DATA.gront.forEach(g=>{ const m=flat(g.p,0.28,plenMat); });
+(DATA.gardsrom||[]).forEach(g=>{ if(g.typ==='gress') flat(g.p,0.3,plenMat); });
+
+// ---- bygg ----
+const city = new THREE.Group(); scene.add(city);
+const edgeMat = new THREE.LineBasicMaterial({color:INK, transparent:true, opacity:.4}); edgeMat.visible=false; // blekkstreken tegnes i etterbehandlingen
+const mats = new Map();
+// to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
+function mat(rgb, dim, sk, opt={}){
+  const topp = (opt.vindu && !dim) ? Math.round(opt.vindu*2)/2 : 0;
+  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+'v'+topp;
+  if(!mats.has(key)){
+    const c=new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`); if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8);
+    // skyggetonen hentes fra trykkfila når bygget har en; ellers samme forhold som tegningen bruker
+    let s; if(sk && !dim){ s=new THREE.Color(`rgb(${sk[0]},${sk[1]},${sk[2]})`); } else { s=c.clone(); s.r*=0.72; s.g*=0.80; s.b*=0.80; }
+    const m=new THREE.ShaderMaterial({
+      lights:true,
+      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, topp:{value:topp} }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+      vertexShader:GL_SOL_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; void main(){ lp=position; vec4 wp=modelMatrix*vec4(position,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
+        vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
+      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
+        float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+        float nn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hh(i),hh(i+vec2(1,0)),f.x),mix(hh(i+vec2(0,1)),hh(i+vec2(1,1)),f.x),f.y);}
+        void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge
+          // tegningens to toner (lys- og skyggetonen fra trykkfila) blandes av ekte lys: Lambert mot sola og kastskygger, myk overgang
+          float lam=smoothstep(-0.12,0.52,d);
+          float lit=lam*skyggeMask();
+          float k=1.-lit;
+          vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6), lit);
+          // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
+          vec3 nq=normalize(cross(dFdx(lp),dFdy(lp)));
+          float vask=nn(wq.xz*0.045+wq.y*0.031)*0.62+nn(wq.xz*0.17+vec2(wq.y*0.23,3.1))*0.38;
+          c*=0.955+0.09*vask;
+          float fwq=max(fwidth(wq.x)+fwidth(wq.z)+fwidth(wq.y),1e-4);
+          float naerhet=1.-smoothstep(0.12,0.45,fwq);   // detaljer forsvinner på avstand
+          if(abs(nq.y)<0.3){
+            // vegg: vannrette penselstrøk
+            vec2 tq=normalize(vec2(-nq.z,nq.x)); float uq=dot(wq.xz,tq);
+            float strok=nn(vec2(uq*0.7, wq.y*6.0))*0.7+nn(vec2(uq*2.1, wq.y*15.))*0.3;
+            c*=1.+(strok-0.5)*0.05*naerhet;
+          } else if(abs(nq.y)<0.985){
+            // tak: rader med takstein langs fallet, antydet, borte på avstand
+            vec2 ned=normalize(nq.xz); vec2 lang=vec2(-ned.y,ned.x);
+            float sF=dot(lp.xz,ned)/max(abs(nq.y),0.2)/0.38; float rF=dot(lp.xz,lang)/0.30;
+            float rad=floor(sF); float fr=fract(sF);
+            float fws=max(fwidth(sF),1e-4);
+            float rLinje=1.-smoothstep(0.,fws*1.4,fr);
+            float sk=fract(rF+0.5*mod(rad,2.)); float fwr=max(fwidth(rF),1e-4);
+            float sLinje=(1.-smoothstep(0.,fwr*1.2,sk))*0.45;
+            float vis=(1.-smoothstep(0.22,0.55,max(fws,fwr)))*naerhet;
+            c*=1.-0.11*max(rLinje,sLinje)*vis; c*=1.-0.055*(1.-fr)*vis;
+            c*=1.+(hh(vec2(floor(rF+0.5*mod(rad,2.)),rad))-0.5)*0.06*vis;
+            // strøk langs fallet
+            c*=1.+(nn(vec2(dot(wq.xz,lang)*1.3, dot(wq.xz,ned)*0.25))-0.5)*0.05;
+          }
+          if(topp>0.){
+            vec3 nl=normalize(cross(dFdx(lp),dFdy(lp)));
+            if(abs(nl.y)<0.3){
+              vec2 t=normalize(vec2(-nl.z,nl.x)); float u=dot(lp.xz,t);
+              float rad=floor(lp.y/3.0); float fy=lp.y-rad*3.0; float fu=mod(u,2.6);
+              vec2 q=vec2(fu-1.3, fy-1.55); vec2 dd=abs(q)-vec2(0.42,0.68); float inn=max(dd.x,dd.y);
+              float fw=max(fwidth(u),fwidth(lp.y));
+              float ok = step(rad*3.0+2.35, topp-0.25);
+              float ramme=(1.-smoothstep(0.,fw,inn))*ok;
+              float glass=(1.-smoothstep(-0.08,-0.08+fw,inn))*ok;
+              float post=(1.-smoothstep(0.03,0.03+fw,abs(q.x)))*(1.-smoothstep(0.03,0.03+fw,abs(q.y-0.18)));
+              float kryss=max(1.-smoothstep(0.03,0.03+fw,abs(q.x)), 1.-smoothstep(0.03,0.03+fw,abs(q.y-0.18)));
+              vec3 hvit=vec3(0.96,0.94,0.90)*mix(1.,0.74,k);
+              vec3 glas=mix(vec3(0.27,0.31,0.36),vec3(0.20,0.22,0.27),k);
+              glas=mix(glas, glas*1.35, smoothstep(0.2,-0.4,q.x+q.y*0.5)*0.6);
+              vec3 w=mix(hvit, glas, glass*(1.-kryss));
+              float fjern=smoothstep(0.12,0.3,fw);
+              // dør på gateplan i annenhver fjerde akse, som i tegningen
+              float akse=floor(u/2.6);
+              float dor = (rad<0.5 && mod(akse,4.)==1. && topp>3.2) ? 1. : 0.;
+              vec2 qd=vec2(fu-1.3, fy-1.15); vec2 ddd=abs(qd)-vec2(0.55,1.15); float innd=max(ddd.x,ddd.y);
+              float dramme=(1.-smoothstep(0.,fw,innd))*dor; float dfyll=(1.-smoothstep(-0.09,-0.09+fw,innd))*dor;
+              vec3 dorf=mix(vec3(0.33,0.24,0.19),vec3(0.24,0.18,0.15),k);
+              ramme*=1.-dor;
+              vec3 naer=mix(c, w, ramme); naer=mix(naer, hvit, dramme); naer=mix(naer, dorf, dfyll);
+              vec3 langt=mix(c, glas, 0.16*ok);
+              c=mix(naer, langt, fjern);
+              // sokkel og gesims
+              float fwy=max(fwidth(lp.y),0.001);
+              c*=mix(1.,0.84, 1.-smoothstep(0.42,0.42+fwy,lp.y));
+              float ges=smoothstep(topp-0.42,topp-0.42+fwy,lp.y)*(1.-smoothstep(topp-0.12,topp-0.12+fwy,lp.y));
+              c=mix(c, hvit, ges*0.55);
+            }
+          }
+          gl_FragColor=vec4(c,1.);
+          #include <colorspace_fragment>
+        }`
+    });
+    if(opt.ds) m.side=THREE.DoubleSide;
+    mats.set(key,m);
+  }
+  return mats.get(key);
+}
+
+// ---- kirka, bygget etter 2017-tegningen: hvitt tårn, grønt kobber, korsformet skip med valmede skifertak ----
+function sentr(p){ return p.reduce((a,q)=>[a[0]+q[0]/p.length,a[1]+q[1]/p.length],[0,0]); }
+function skaler(p,f){ const c=sentr(p); return p.map(q=>[c[0]+(q[0]-c[0])*f, c[1]+(q[1]-c[1])*f]); }
+function oktagon(c,r,rot){ const o=[]; for(let i=0;i<8;i++){ const a=rot+i*Math.PI/4+Math.PI/8; o.push([c[0]+Math.cos(a)*r, c[1]+Math.sin(a)*r]); } return o; }
+function loft(pb, pt, y0, y1, farge, grp, lukk=true){
+  const pos=[]; const n=pb.length;
+  for(let i=0;i<n;i++){ const a=pb[i], b2=pb[(i+1)%n], c=pt[(i+1)%n], d=pt[i];
+    pos.push(a[0],y0,-a[1], b2[0],y0,-b2[1], c[0],y1,-c[1],  a[0],y0,-a[1], c[0],y1,-c[1], d[0],y1,-d[1]); }
+  if(lukk){ const cc=sentr(pt); for(let i=0;i<n;i++){ const a=pt[i], b2=pt[(i+1)%n]; pos.push(a[0],y1,-a[1], b2[0],y1,-b2[1], cc[0],y1,-cc[1]); } }
+  const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  // sørg for at flatene vender utover
+  const m=new THREE.Mesh(g,mat(farge,false)); m.material.side=THREE.FrontSide; m.castShadow=true;
+  const g2=g.clone(); g2.computeVertexNormals();
+  const dbl=new THREE.Mesh(g, new THREE.ShaderMaterial(Object.assign({}, mat(farge,false)))); 
+  const mm=new THREE.Mesh(g,mat(farge,false)); mm.castShadow=true; mm.material=mm.material.clone(); mm.material.side=THREE.DoubleSide; grp.add(mm);
+  grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(g,20),edgeMat));
+}
+function spiss(pb, y0, y1, farge, grp){ loft(pb, pb.map(()=>sentr(pb)), y0, y1, farge, grp, false); }
+function bygKirke(k, grp){
+  // Domkirken slik den er tegnet i trykkfila 2019: korsformet skip med saltak i skifer, hvitt tårn med salviegrønn hjelm, lanterne og spir
+  const HVIT=[252,252,252], HVIT_S=[192,196,196], SKIFER=[128,128,132], SKIFER_S=[68,68,72];
+  const SALVIE=[196,228,202], SALVIE_S=[128,146,138], LANT=[176,212,190], LANT_S=[92,100,100], MORK=[92,100,100], MORK_S=[52,52,52];
+  const GLASS=[62,70,82], GLASS_S=[44,50,60];
+  const M=(f,sk)=>mat(f,false,sk,{ds:true});
+  const add=(g,f,sk)=>{ const m=new THREE.Mesh(g,M(f,sk)); m.castShadow=true; m.receiveShadow=true; grp.add(m); return m; };
+  const W3=(p,y)=>new THREE.Vector3(p[0],y,-p[1]);
+  function loftK(pb, pt, y0, y1, f, sk, lukk=true){
+    const pos=[]; const n=pb.length;
+    for(let i=0;i<n;i++){ const a=pb[i], b2=pb[(i+1)%n], c=pt[(i+1)%n], d=pt[i];
+      pos.push(a[0],y0,-a[1], b2[0],y0,-b2[1], c[0],y1,-c[1],  a[0],y0,-a[1], c[0],y1,-c[1], d[0],y1,-d[1]); }
+    if(lukk){ const cc=sentr(pt); for(let i=0;i<n;i++){ const a=pt[i], b2=pt[(i+1)%n]; pos.push(a[0],y1,-a[1], b2[0],y1,-b2[1], cc[0],y1,-cc[1]); } }
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals(); return add(g,f,sk);
+  }
+  // flat ornament (vindu, urskive) lagt på en flate: basis = tangent, opp, normal
+  function legg(geo, P, tan, opp, nor, off, f, sk){
+    const m4=new THREE.Matrix4().makeBasis(tan,opp,nor); m4.setPosition(P.clone().addScaledVector(nor,off)); geo.applyMatrix4(m4); return add(geo,f,sk);
+  }
+  function bue(w,h){ const s=new THREE.Shape(); const r=w/2; s.moveTo(-r,0); s.lineTo(r,0); s.lineTo(r,h-r); s.absarc(0,h-r,r,0,Math.PI,false); s.lineTo(-r,0); return s; }
+  function buevindu(P, tan, opp, nor, w, h, sprosser=true){
+    legg(new THREE.ShapeGeometry(bue(w+0.36,h+0.18),10), P.clone().addScaledVector(opp,-0.09), tan, opp, nor, 0.06, HVIT, HVIT_S);
+    legg(new THREE.ShapeGeometry(bue(w,h),10), P, tan, opp, nor, 0.10, GLASS, GLASS_S);
+    if(sprosser){
+      legg(new THREE.PlaneGeometry(0.09,h-0.05).translate(0,(h-0.05)/2,0), P, tan, opp, nor, 0.13, HVIT, HVIT_S);
+      legg(new THREE.PlaneGeometry(w,0.09).translate(0,h-w/2,0), P, tan, opp, nor, 0.13, HVIT, HVIT_S);
+    }
+  }
+  function rundvindu(P, tan, opp, nor, r, kors=true){
+    legg(new THREE.CircleGeometry(r+0.17,20), P, tan, opp, nor, 0.06, HVIT, HVIT_S);
+    legg(new THREE.CircleGeometry(r,20), P, tan, opp, nor, 0.10, GLASS, GLASS_S);
+    if(kors){ legg(new THREE.PlaneGeometry(0.08,2*r), P, tan, opp, nor, 0.13, HVIT, HVIT_S); legg(new THREE.PlaneGeometry(2*r,0.08), P, tan, opp, nor, 0.13, HVIT, HVIT_S); }
+  }
+  // flatene til en mangekant: utovervendt normal og tangent
+  function flater(poly){
+    const c=sentr(poly); const out=[];
+    for(let i=0;i<poly.length;i++){ const p0=poly[i], p1=poly[(i+1)%poly.length]; const dx=p1[0]-p0[0], dy=p1[1]-p0[1]; const L=Math.hypot(dx,dy);
+      let nx=dy/L, ny=-dx/L; const mx=(p0[0]+p1[0])/2, my=(p0[1]+p1[1])/2; if((mx-c[0])*nx+(my-c[1])*ny<0){ nx=-nx; ny=-ny; }
+      out.push({p0,p1,L,mid:[mx,my],tan:new THREE.Vector3(dx/L,0,-dy/L), nor:new THREE.Vector3(nx,0,-ny)}); }
+    return out;
+  }
+  // tårnet tegnes bredere enn grunnrisset i kartdataene (som i trykkfila): skaler 1,3 om midten av siden som møter skipet
+  const t0=k.torn, skc=sentr(k.skip);
+  const øst=t0.map((p,i)=>[p,t0[(i+1)%t0.length]]).reduce((a,e)=>{ const m=[(e[0][0]+e[1][0])/2,(e[0][1]+e[1][1])/2]; const dd=Math.hypot(m[0]-skc[0],m[1]-skc[1]); return (!a||dd<a.d)?{m,d:dd}:a; },null).m;
+  const t=t0.map(p=>[øst[0]+(p[0]-øst[0])*1.3, øst[1]+(p[1]-øst[1])*1.3]);
+  const tc=sentr(t); const side=Math.hypot(t[1][0]-t[0][0],t[1][1]-t[0][1]); const rot=Math.atan2(t[1][1]-t[0][1],t[1][0]-t[0][0]);
+  const nærTårn=(p)=>Math.hypot(p[0]-tc[0],p[1]-tc[1])<side*0.75;
+
+  // ---- skipet ----
+  const WH=9.5, RISE=8.2, OH=0.35;
+  const sk=k.skip;
+  const eg=new THREE.ExtrudeGeometry(polyShape(sk),{depth:WH,bevelEnabled:false}); eg.rotateX(-Math.PI/2);
+  add(eg,HVIT,HVIT_S);
+  // korsarmene: endeveggene er de lange kantene (>12 m); motstående ende ligger seks kanter unna
+  const kanter=sk.map((p,i)=>[i,Math.hypot(sk[(i+1)%sk.length][0]-p[0],sk[(i+1)%sk.length][1]-p[1])]);
+  const ender=kanter.filter(e=>e[1]>12).map(e=>e[0]);
+  const armer=[]; ender.forEach(i=>{ const j=(i+sk.length/2)%sk.length; if(ender.includes(j) && i<j) armer.push([i,j]); });
+  armer.forEach(([i,j])=>{
+    const a0=sk[i], a1=sk[(i+1)%sk.length], b0=sk[j], b1=sk[(j+1)%sk.length];
+    const m1=[(a0[0]+a1[0])/2,(a0[1]+a1[1])/2], m2=[(b0[0]+b1[0])/2,(b0[1]+b1[1])/2];
+    const ax=[m2[0]-m1[0],m2[1]-m1[1]]; const L=Math.hypot(ax[0],ax[1]); const u=[ax[0]/L,ax[1]/L], n=[-u[1],u[0]];
+    const w=Math.hypot(a1[0]-a0[0],a1[1]-a0[1])/2;
+    const P=(s_,t_,y)=>new THREE.Vector3(m1[0]+u[0]*s_+n[0]*t_, y, -(m1[1]+u[1]*s_+n[1]*t_));
+    const s0=-0.3, s1=L+0.3, we=w+OH, yE=WH-OH*RISE/w, yR=WH+RISE;
+    const q=(A,B,C,D,arr)=>arr.push(...[A,B,C,A,C,D].flatMap(v=>[v.x,v.y,v.z]));
+    const tak=[]; q(P(s0,-we,yE),P(s1,-we,yE),P(s1,0,yR),P(s0,0,yR),tak); q(P(s0,we,yE),P(s0,0,yR),P(s1,0,yR),P(s1,we,yE),tak);
+    const tg=new THREE.BufferGeometry(); tg.setAttribute('position',new THREE.Float32BufferAttribute(tak,3)); add(tg,SKIFER,SKIFER_S);
+    const gv=[]; [[0,1],[L,-1]].forEach(([s_])=>{ const A=P(s_,-w,WH),B=P(s_,w,WH),C=P(s_,0,yR-0.25); gv.push(A.x,A.y,A.z,B.x,B.y,B.z,C.x,C.y,C.z); });
+    const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(gv,3)); add(gg,HVIT,HVIT_S);
+    // rundvindu i gavlene som ikke står mot tårnet
+    [[0,-1],[L,1]].forEach(([s_,sg])=>{ const mid=[m1[0]+u[0]*s_, m1[1]+u[1]*s_]; if(nærTårn(mid)) return;
+      const nor=new THREE.Vector3(u[0]*sg,0,-u[1]*sg), tan=new THREE.Vector3(n[0],0,-n[1]); rundvindu(P(s_,0,WH+RISE*0.38), tan, new THREE.Vector3(0,1,0), nor, 1.05); });
+  });
+  // høye buevinduer i alle frie skipsvegger
+  flater(sk).forEach(f=>{
+    if(nærTårn(f.mid) || f.L<3) return;
+    const n=f.L>12 ? 3 : 2; const step=f.L/n;
+    for(let i=0;i<n;i++){ const s_=step*(i+0.5); const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_/f.L, f.p0[1]+(f.p1[1]-f.p0[1])*s_/f.L];
+      buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); }
+  });
+
+  // ---- tårnet ----
+  const SH=34, SK1=40.1, OV1=46.0, LA0=47.6, LA1=51.2, KU1=53.3, SP1=60.0;   // høyder etter forholdene i trykkfila
+  const te=new THREE.ExtrudeGeometry(polyShape(t),{depth:SH,bevelEnabled:false}); te.rotateX(-Math.PI/2); add(te,HVIT,HVIT_S);
+  loftK(t, skaler(t,1.06), SH, SH+0.5, HVIT, HVIT_S);                     // gesims
+  const ov=skaler(t,0.52);
+  loftK(skaler(t,1.06), ov, SH+0.5, SK1, SALVIE, SALVIE_S);                // salviegrønt skjørt
+  loftK(ov, ov, SK1, OV1, SALVIE, SALVIE_S);                               // øvre etasje
+  loftK(ov, skaler(t,0.58), OV1, OV1+0.4, SALVIE, SALVIE_S);               // gesims
+  const o3=oktagon(tc, side*0.235, rot);
+  loftK(skaler(t,0.58), o3, OV1+0.4, LA0, LANT, LANT_S);                  // overgang til lanterne
+  loftK(o3, o3, LA0, LA1, LANT, LANT_S);                                   // lanterne
+  loftK(o3, oktagon(tc, side*0.265, rot), LA1, LA1+0.35, LANT, LANT_S);    // gesims
+  // klokkeformet kuppel over lanternen (åttekantet dreiing)
+  const R0=side*0.25, prof=[[R0,0],[R0*0.98,0.35],[R0*0.8,0.95],[R0*0.52,1.5],[R0*0.3,1.85],[R0*0.18,2.15],[R0*0.2,2.4],[R0*0.12,2.6],[0.001,2.75]];
+  const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y)),8); lat.rotateY(-rot+Math.PI/8);
+  const kup=new THREE.Mesh(lat,M(LANT,LANT_S)); kup.position.set(tc[0],LA1+0.35,-tc[1]); kup.castShadow=true; grp.add(kup);
+  const sp=oktagon(tc, 0.3, rot); loftK(sp, sp.map(()=>tc), KU1+0.6, SP1, MORK, MORK_S, false);   // spir
+  const kule=new THREE.Mesh(new THREE.SphereGeometry(0.28,10,8), M(MORK,MORK_S)); kule.position.set(tc[0],SP1-1.6,-tc[1]); grp.add(kule);
+  const fløy=new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.55), M(MORK,MORK_S)); fløy.position.set(tc[0]+0.45,SP1-0.7,-tc[1]); fløy.rotation.y=-rot; grp.add(fløy);
+  // vinduer, urskiver og takarker på alle fire sider
+  const opp=new THREE.Vector3(0,1,0);
+  flater(t).forEach(f=>{
+    const c2=f.mid;
+    buevindu(W3(c2,SH*0.6), f.tan, opp, f.nor, 1.8, 4.4);
+    rundvindu(W3(c2,SH*0.42), f.tan, opp, f.nor, 0.95);
+    rundvindu(W3(c2,SH*0.27), f.tan, opp, f.nor, 0.95);
+    // øvre etasje: buevindu og urskive
+    const ov2=[tc[0]+(c2[0]-tc[0])*0.52, tc[1]+(c2[1]-tc[1])*0.52];
+    buevindu(W3(ov2,SK1+1.3), f.tan, opp, f.nor, 1.35, 3.9);        // høyt buevindu i øvre etasje, som i tegningen
+    // liten takark med lydluke midt på skjørtet
+    const fr=0.5, ys=SH+0.5+(SK1-SH-0.5)*fr; const k1=1.06+(0.52-1.06)*fr;
+    const ap=[tc[0]+(c2[0]-tc[0])*k1, tc[1]+(c2[1]-tc[1])*k1];
+    const box=new THREE.BoxGeometry(1.5,1.9,1.4); const bm=new THREE.Mesh(box,M(SALVIE,SALVIE_S));
+    bm.position.copy(W3(ap,ys+0.55)).addScaledVector(f.nor,0.25); bm.lookAt(bm.position.clone().add(f.nor)); bm.castShadow=true; grp.add(bm);
+    const hatt=new THREE.Mesh(new THREE.ConeGeometry(1.12,0.9,4,1), M(LANT,LANT_S)); hatt.position.copy(bm.position).add(new THREE.Vector3(0,1.4,0)); hatt.rotation.y=-rot+Math.PI/4; grp.add(hatt);
+    const luke=W3(ap,ys+0.05).addScaledVector(f.nor,0.95);
+    legg(new THREE.ShapeGeometry(bue(0.9,1.3),8), luke, f.tan, opp, f.nor, 0.0, MORK, MORK_S);
+    for(let r=0;r<3;r++) legg(new THREE.PlaneGeometry(0.9,0.07).translate(0,0.3+r*0.3,0), luke, f.tan, opp, f.nor, 0.03, LANT, LANT_S);
+  });
+  // lanternens smale vinduer
+  flater(o3).forEach(f=>{ buevindu(W3(f.mid,LA0+1.0), f.tan, opp, f.nor, 0.5, 2.4, false); });
+  // inngangsdør i tårnfoten mot vest (siden lengst fra skipet)
+  const fot=flater(t).reduce((a,f)=>{ const d=Math.hypot(f.mid[0]-sentr(sk)[0],f.mid[1]-sentr(sk)[1]); return (!a||d>a.d)?{f,d}:a; },null).f;
+  legg(new THREE.ShapeGeometry(bue(2.6,4.8),12), W3(fot.mid,0).addScaledVector(opp,-0.05), fot.tan, opp, fot.nor, 0.06, HVIT, HVIT_S);
+  legg(new THREE.ShapeGeometry(bue(2.1,4.4),12), W3(fot.mid,0), fot.tan, opp, fot.nor, 0.10, [104,86,72], [72,60,52]);
+}
+
+const buildings=[];
+
+// ---- vinduer, dører og porter: plassering og størrelse fra Vegars kvartaltegninger (etter/42_fasader.py); alt tegnes her ----
+const VIND_GEO=new THREE.PlaneGeometry(1,1); VIND_GEO.translate(0,0,0);
+const vindMat=new THREE.ShaderMaterial({
+  lights:true,
+  uniforms:THREE.UniformsUtils.clone(THREE.UniformsLib.lights),
+  vertexShader:GL_SOL_V+`attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+    void main(){ vUv=uv; vInfo=aInfo; vSz=vec2(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz));
+      vN=normalize(mat3(modelMatrix)*aNorm);
+      vec4 wp=modelMatrix*instanceMatrix*vec4(position,1.);
+      gl_Position=projectionMatrix*viewMatrix*wp;`+glSolVMain('wp','vN')+`}`,
+  fragmentShader:GL_SOL_F+`varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+    void main(){
+      float typ=vInfo.x, bue=vInfo.y;
+      vec2 m=vUv*vSz;
+      float d=dot(normalize(vN),solRetning());
+      float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
+      vec3 sf=mix(vec3(1.),solFarge(),0.6);
+      if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
+      float fw=max(fwidth(m.x),fwidth(m.y));
+      float kant=min(min(m.x,vSz.x-m.x),min(m.y,vSz.y-m.y));
+      if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
+      vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
+      vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
+      vec3 c;
+      if(typ<0.5){
+        float ramme=0.08;
+        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*0.62);
+        float spr=max(1.-smoothstep(0.03,0.03+fw,pv),1.-smoothstep(0.03,0.03+fw,ph));
+        float inn=smoothstep(ramme,ramme+fw,kant);
+        c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn);
+        c=mix(c, glas*1.4, smoothstep(0.25,-0.3,(m.x/vSz.x-0.5)+(m.y/vSz.y-0.5))*0.3*inn*(1.-spr));
+      } else {
+        vec3 dorf=mix(vec3(0.24,0.18,0.15), vec3(0.36,0.26,0.20)*sf, lit);
+        if(typ>1.5) dorf=mix(vec3(0.14,0.13,0.13), vec3(0.22,0.20,0.19), lit);
+        c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
+        c=mix(c, dorf*0.75, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.6);
+      }
+      c=mix(c, mix(glas,hvit,0.35), smoothstep(0.08,0.2,fw)*0.6);
+      gl_FragColor=vec4(c,1.);
+      #include <colorspace_fragment>
+    }`
+});
+const _X=new THREE.Vector3(), _Y=new THREE.Vector3(0,1,0), _Z=new THREE.Vector3(), _M=new THREE.Matrix4();
+function lagVinduer(V){
+  const im=new THREE.InstancedMesh(VIND_GEO, vindMat, V.length);
+  const info=new Float32Array(V.length*4), nrm=new Float32Array(V.length*3);
+  V.forEach((v,k)=>{
+    const [x,y,z,tx,ty,nx,ny,w,h,typ,bue,ant]=v;
+    _X.set(-tx,0,ty); _Z.set(nx,0,-ny);   // høyrehendt basis (ellers snus trekantene og plata vises ikke)
+    _M.makeBasis(_X.clone().multiplyScalar(w), _Y.clone().multiplyScalar(h), _Z);
+    _M.setPosition(x+nx*0.05, z, -(y+ny*0.05));
+    im.setMatrixAt(k,_M);
+    info.set([typ,bue,ant,0],k*4); nrm.set([nx,0,-ny],k*3);
+  });
+  im.geometry=VIND_GEO.clone();
+  im.geometry.setAttribute('aInfo',new THREE.InstancedBufferAttribute(info,4));
+  im.geometry.setAttribute('aNorm',new THREE.InstancedBufferAttribute(nrm,3));
+  im.frustumCulled=false;
+  return im;
+}
+const PIPE_GEO=new THREE.BoxGeometry(0.9,3.4,0.75), KAPP_GEO=new THREE.BoxGeometry(1.08,0.2,0.92);
+DATA.bygg.forEach((b,i)=>{
+  const pts=b.p; if(pts.length<3 || b.skjul) return;
+  const dim=!b.gml;
+  const wall = b.vegg || (dim? [214,210,198] : [238,230,214]);
+  const roof = b.tak || (dim? [196,170,160] : [232,124,104]);
+  const grp = new THREE.Group();
+  const shape = polyShape(pts);
+  (b.ph||[]).forEach(r=>{ if(r.length>2) shape.holes.push(new THREE.Path(r.map(V))); });
+  const h = b.h;
+  const eg = new THREE.ExtrudeGeometry(shape,{depth:h,bevelEnabled:false});
+  eg.rotateX(-Math.PI/2);
+  const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs,{vindu:(b.vind&&b.vind.length)||b.gml?0:h})]); // [tak/topp, sider]
+  walls.castShadow=true; walls.receiveShadow=true; grp.add(walls);
+  grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(eg,30), edgeMat));
+  // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
+  if (b.tak2 && !window.utvidFlate){ window.utvidFlate=(f,e)=>{ const n=f.length; if(n<3) return f;
+      let cx=0,cy=0; f.forEach(q=>{cx+=q[0]/n; cy+=q[1]/n;});
+      // planet t = a*x + b*y + c fra de tre punktene som spenner størst trekant
+      let best=null, A=0; for(let i=0;i<n;i++) for(let j=i+1;j<n;j++) for(let k=j+1;k<n;k++){ const p=f[i],q=f[j],r=f[k]; const ar=Math.abs((q[0]-p[0])*(r[1]-p[1])-(r[0]-p[0])*(q[1]-p[1])); if(ar>A){A=ar;best=[p,q,r];} if(n>12&&k>i+6) break; }
+      if(!best||A<1e-6) return f; const [p,q,r]=best;
+      const ux=q[0]-p[0],uy=q[1]-p[1],ut=q[2]-p[2], vx=r[0]-p[0],vy=r[1]-p[1],vt=r[2]-p[2];
+      const nx=uy*vt-ut*vy, ny=ut*vx-ux*vt, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return f;
+      const pa=-nx/nz, pb=-ny/nz, pc=p[2]-pa*p[0]-pb*p[1];
+      return f.map(v=>{ let dx=v[0]-cx, dy=v[1]-cy; const L=Math.hypot(dx,dy)||1; const x=v[0]+dx/L*e, y=v[1]+dy/L*e; return [x,y,Math.max(0,pa*x+pb*y+pc)]; }); }; }
+  if (b.tak2){
+    // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
+    const SLOPE=0.82; const pos=[];
+    b.tak2.forEach(f0=>{
+      // hver takflate utvides 6 cm i sitt eget plan, så nabotak i en rekke overlapper og ingen lyse sprekker vises langs møner og grenser
+      const f=utvidFlate(f0,0.06);
+      const v2=f.map(q=>new THREE.Vector2(q[0],q[1])); const tri=THREE.ShapeUtils.triangulateShape(v2,[]);
+      tri.forEach(t=>{ const P=t.map(k=>{const q=f[k]; return new THREE.Vector3(q[0], h+q[2]*SLOPE, -q[1]);}); const nrm=new THREE.Vector3().subVectors(P[1],P[0]).cross(new THREE.Vector3().subVectors(P[2],P[0])); if(nrm.y<0) P.reverse(); P.forEach(v=>pos.push(v.x,v.y,v.z)); });
+    });
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals();
+    const rm=new THREE.Mesh(g,mat(roof,dim,b.taks,{ds:true})); rm.castShadow=rm.receiveShadow=true; grp.add(rm);
+    if (b.gavl2 && b.gavl2.length){
+      const gp=[];
+      b.gavl2.forEach(pl=>{ for(let k=0;k<pl.length-1;k++){ const a=pl[k], c=pl[k+1]; const za=h+a[2]*SLOPE, zc=h+c[2]*SLOPE;
+        if(za-h<0.02 && zc-h<0.02) continue;
+        gp.push(a[0],h,-a[1], c[0],h,-c[1], c[0],zc,-c[1],  a[0],h,-a[1], c[0],zc,-c[1], a[0],za,-a[1]); } });
+      const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(gp,3)); gg.computeVertexNormals();
+      const gm=new THREE.Mesh(gg,mat(wall,dim,b.veggs,{ds:true})); gm.castShadow=gm.receiveShadow=true; grp.add(gm);
+    }
+  } else if (b.sk && !b.flatt){
+    const SLOPE=0.82, CAP=7.5; const pos=[];
+    b.sk.forEach(f=>{
+      const v2=f.map(q=>new THREE.Vector2(q[0],q[1])); let tri=THREE.ShapeUtils.triangulateShape(v2,[]); if(tri.length<f.length-2){ tri=[]; for(let j=1;j<f.length-1;j++) tri.push([0,j,j+1]); }
+      tri.forEach(t=>{ const P=t.map(k=>{const q=f[k]; return new THREE.Vector3(q[0], h+Math.min(q[2]*SLOPE,CAP), -q[1]);}); const nrm=new THREE.Vector3().subVectors(P[1],P[0]).cross(new THREE.Vector3().subVectors(P[2],P[0])); if(nrm.y<0) P.reverse(); P.forEach(v=>pos.push(v.x,v.y,v.z)); });
+    });
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals();
+    const rm=new THREE.Mesh(g,mat(roof,dim,b.taks,{ds:true})); rm.castShadow=rm.receiveShadow=true; grp.add(rm);
+    grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(g,25),edgeMat));
+  }
+  let rects = (b.sk||b.tak2||b.flatt) ? [] : (b.tk && b.tk.length) ? b.tk.filter((r,k)=>k===0 || Math.min(r[2],r[3])>=4.5).slice(0,3) : (b.rf>0.78 ? [[b.r[0],b.r[1],b.r[2],b.r[3],b.r[4]]] : []);
+  rects.forEach(([rx,ry,rw,rh,ang])=>{
+    const long=Math.max(rw,rh), short=Math.min(rw,rh);
+    if (short<2.5 || short>24) return;
+    const rise=Math.min(short*0.48,7.5);
+    const a = THREE.MathUtils.degToRad(ang) + (rw<rh? Math.PI/2:0);
+    const L=long/2+0.25, S=short/2+0.35;
+    const geo=new THREE.BufferGeometry();
+    const v=[-L,0,-S, L,0,-S, L,0,S, -L,0,S, -L,rise,0, L,rise,0];
+    geo.setAttribute('position',new THREE.Float32BufferAttribute(v,3)); geo.setIndex([0,1,5, 0,5,4, 3,4,5, 3,5,2, 0,4,3, 1,2,5]); geo.computeVertexNormals(); geo.addGroup(0,12,0); geo.addGroup(12,6,1);
+    const rm=new THREE.Mesh(geo,[mat(roof,dim,b.taks,{ds:true}),mat(wall,dim,b.veggs,{ds:true})]); rm.castShadow=true; rm.receiveShadow=true;
+    rm.position.set(rx,h,-ry); rm.rotation.y=a; grp.add(rm);
+    const re=new THREE.LineSegments(new THREE.EdgesGeometry(geo),edgeMat); re.position.copy(rm.position); re.rotation.copy(rm.rotation); grp.add(re);
+  });
+  if (b.kirke) bygKirke(b.kirke, grp);
+  // bygningsdeler (eldre vei)
+  (b.kirke?[]:(b.deler||[])).forEach(dp=>{
+    const sh=polyShape(dp.p); const mh=dp.mh||0; let top=dp.h, rh=0;
+    if (dp.roof==='pyramidal'){ rh = (top-mh)<=6 ? (top-mh) : Math.min(5,(top-mh)*0.3); } else if (dp.roof==='gabled'){ rh=5; }
+    const wallTop=top-rh;
+    const white=[244,242,236], copper=[122,172,142], slate=[132,134,142];
+    if (wallTop-mh>0.3){
+      const eg=new THREE.ExtrudeGeometry(sh,{depth:wallTop-mh,bevelEnabled:false}); eg.rotateX(-Math.PI/2); eg.translate(0,mh,0);
+      const m=new THREE.Mesh(eg,[mat(dp.tak||(dp.roof==='gabled'?slate:copper),false),mat(dp.vegg||white,false)]); m.castShadow=m.receiveShadow=true; grp.add(m);
+      grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(eg,30),edgeMat));
+    }
+    if (dp.roof==='pyramidal'){
+      const c=dp.p.reduce((a,q)=>[a[0]+q[0]/dp.p.length,a[1]+q[1]/dp.p.length],[0,0]);
+      const pos=[], idx=[]; dp.p.forEach(q=>pos.push(q[0],wallTop,-q[1])); pos.push(c[0],top,-c[1]); const n=dp.p.length;
+      for(let k=0;k<n;k++) idx.push(k,(k+1)%n,n);
+      const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.setIndex(idx); g.computeVertexNormals();
+      const m=new THREE.Mesh(g,new THREE.MeshLambertMaterial({color:new THREE.Color(dp.tak?`rgb(${dp.tak})`:'rgb(122,172,142)'),side:THREE.DoubleSide,flatShading:true})); m.castShadow=true; grp.add(m);
+      grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(g),edgeMat));
+    } else if (dp.roof==='gabled'){
+      const P2=dp.p; let best=0,ang=0; for(let k=0;k<P2.length;k++){const q=P2[k],w=P2[(k+1)%P2.length];const l=Math.hypot(w[0]-q[0],w[1]-q[1]); if(l>best){best=l;ang=Math.atan2(w[1]-q[1],w[0]-q[0]);}}
+      // bredde = utstrekning vinkelrett på lengste kant
+      const ca=Math.cos(ang), sa=Math.sin(ang); let mn=[1e9,1e9],mx=[-1e9,-1e9];
+      P2.forEach(q=>{const u=q[0]*ca+q[1]*sa, v=-q[0]*sa+q[1]*ca; mn=[Math.min(mn[0],u),Math.min(mn[1],v)]; mx=[Math.max(mx[0],u),Math.max(mx[1],v)];});
+      const L=(mx[0]-mn[0])/2, S=(mx[1]-mn[1])/2, cu=(mx[0]+mn[0])/2, cv=(mx[1]+mn[1])/2; const rise=rh;
+      const geo=new THREE.BufferGeometry(); geo.setAttribute('position',new THREE.Float32BufferAttribute([-L,0,-S, L,0,-S, L,0,S, -L,0,S, -L,rise,0, L,rise,0],3)); geo.setIndex([0,1,5, 0,5,4, 3,4,5, 3,5,2, 0,4,3, 1,2,5]); geo.computeVertexNormals();
+      const m=new THREE.Mesh(geo,mat([132,134,142],false)); m.castShadow=true; m.position.set(cu*ca-cv*sa, wallTop-rise*0.0, -(cu*sa+cv*ca)); m.rotation.y=ang; m.position.y=wallTop; grp.add(m);
+      const re=new THREE.LineSegments(new THREE.EdgesGeometry(geo),edgeMat); re.position.copy(m.position); re.rotation.copy(m.rotation); grp.add(re);
+    }
+  });
+  // piper på mønet (posisjoner fra etter/40_detaljer_piper.py)
+  if(b.piper && !dim){ b.piper.forEach(([x,y,z,ang])=>{
+    const r=THREE.MathUtils.degToRad(ang);
+    const pm=new THREE.Mesh(PIPE_GEO, mat([204,98,82],false,[150,76,64])); pm.position.set(x,z-0.3,-y); pm.rotation.y=r; pm.castShadow=true; grp.add(pm);
+    const ck=new THREE.Mesh(KAPP_GEO, mat([74,68,66],false)); ck.position.set(x,z+1.48,-y); ck.rotation.y=r; grp.add(ck);
+  }); }
+  // takarker (antall og fordeling fra tegningene): front i veggfarge, saltak i takfarge
+  if(b.arker && !dim) b.arker.forEach(([x,y,z,nx,ny,bw,hb])=>{
+    const D=1.9, ang=Math.atan2(ny,nx);
+    const g=new THREE.Group(); g.position.set(x,z-0.25,-y); g.rotation.y=ang;
+    const kropp=new THREE.Mesh(new THREE.BoxGeometry(D,hb+0.25,bw), mat(wall,dim,b.veggs)); kropp.position.set(-D/2,(hb+0.25)/2,0); kropp.castShadow=true; g.add(kropp);
+    const rr=bw*0.55; const tg=new THREE.BufferGeometry();
+    const H=hb+0.25, r0=-bw/2-0.08, r1=bw/2+0.08, xf=0.12, xb=-D;
+    tg.setAttribute('position',new THREE.Float32BufferAttribute([xf,H,r0, xf,H+rr,0, xb,H+rr,0,  xf,H,r0, xb,H+rr,0, xb,H,r0,  xf,H,r1, xb,H,r1, xb,H+rr,0,  xf,H,r1, xb,H+rr,0, xf,H+rr,0],3));
+    tg.computeVertexNormals();
+    const tk=new THREE.Mesh(tg, mat(roof,dim,b.taks,{ds:true})); tk.castShadow=true; g.add(tk);
+    const gv=new THREE.BufferGeometry(); gv.setAttribute('position',new THREE.Float32BufferAttribute([0,H,-bw/2, 0,H,bw/2, 0,H+rr*0.98,0],3)); gv.computeVertexNormals();
+    g.add(new THREE.Mesh(gv, mat(wall,dim,b.veggs,{ds:true})));
+    grp.add(g);
+  });
+  if(b.vind && b.vind.length && !dim) grp.add(lagVinduer(b.vind));
+  grp.userData={i, b, h};
+  city.add(grp); buildings.push(grp);
+});
+
+// ---- festningsterrenget: voller med skråninger, grønt som plenene i tegningen ----
+const TER = DATA.landskap && DATA.landskap.terreng;
+let hAt = ()=>0;
+if (TER){
+  const b64=s=>{ const b=atob(s); const a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
+  const MB=b64(TER.m), nx=TER.nx, ny=TER.ny, G=TER.g;
+  const inn=i=>(MB[i>>3]>>(7-(i&7)))&1;
+  // høydene ligger bare for punktene i masken (rad for rad); utenfor er bakken null
+  const H=new Uint8Array(nx*ny); H.fill(Math.round((TER.off||0)*20)); { const hk=b64(TER.h); let c=0; for(let i=0;i<nx*ny;i++) if(inn(i)) H[i]=hk[c++]; }
+  const hv=(i,j)=>H[j*nx+i]/20-(TER.off||0);
+  hAt=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
+    const tx=fx-i, ty=fy-j; return (hv(i,j)*(1-tx)+hv(i+1,j)*tx)*(1-ty)+(hv(i,j+1)*(1-tx)+hv(i+1,j+1)*tx)*ty; };
+  const pos=new Float32Array(nx*ny*3);
+  for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const k=(j*nx+i)*3; pos[k]=TER.x0+i*G; pos[k+1]=hv(i,j)+0.03; pos[k+2]=-(TER.y0+j*G); }
+  const idx=[];
+  for(let j=0;j<ny-1;j++) for(let i=0;i<nx-1;i++){ const a=j*nx+i, b=a+1, c=a+nx, d=c+1; if(inn(a)+inn(b)+inn(c)+inn(d)>=2){ idx.push(a,b,c, b,d,c); } }
+  const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.BufferAttribute(pos,3)); g.setIndex(idx); g.computeVertexNormals();
+  const terMat=new THREE.ShaderMaterial({
+    uniforms:{ lysF:{value:new THREE.Color('rgb(128,180,136)')}, skyggeF:{value:new THREE.Color('rgb(92,142,108)')} },
+    vertexShader:`varying vec3 vn; varying vec3 wp; varying float ny; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; vn=normalize(normalMatrix*normal); ny=normal.y; gl_Position=projectionMatrix*viewMatrix*w; }`,
+    fragmentShader:`uniform vec3 lysF, skyggeF; varying vec3 vn; varying vec3 wp; varying float ny;
+      float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      void main(){ vec3 nn=normalize(vn); float d=dot(nn,solRetning()); float hell=1.-ny;
+        // to toner som tegningen: skråninger bort fra sola får skyggegrønt, med myk overgang
+        float k = 1.-smoothstep(0.437,0.443,d);
+        k *= smoothstep(0.108,0.112,hell) * smoothstep(2.2,3.4,wp.y);  // bare ekte voller (over ca. 3 m) får skyggegrønt, ikke små dumper                     // flat mark og slake banker er alltid lyse
+        vec3 c=mix(lysF, skyggeF, k);
+        // lys kant på vollkronen mot sola
+        c=mix(c, lysF*1.06, smoothstep(0.62,0.75,d)*smoothstep(0.05,0.15,hell)*0.6);
+        float m=n(wp.xz*0.025)*0.6+n(wp.xz*0.09)*0.4; c*=0.94+0.12*m;
+        // gresset malt med korte penselstrøk som tegningens plener
+        float gs=n(vec2(wp.x*0.55+wp.z*0.22, wp.z*1.9-wp.x*0.3))*0.6+n(vec2(wp.x*1.7, wp.z*4.3))*0.4; c*=0.975+0.05*gs;
+        gl_FragColor=vec4(c,0.); // alfa 0 = terreng: ingen blekkstrek i rutenettets knekker, svakere hjørneskygge
+        #include <colorspace_fragment>
+      }`
+  });
+  medSkygge(terMat);
+  const ter=new THREE.Mesh(g,terMat); ter.receiveShadow=true; scene.add(ter);
+  // festningsområdet som flate under terrenget: gir eksakt kant mot bakken og vannet
+  (DATA.landskap.fest||[]).forEach(p=>flatH(p,[],0.02,terMat));
+}
+// veier som bånd i tegningens gategrå; bruer ligger over vannet med sider (slått sammen til tre mesher)
+{
+  const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}};
+  const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
+  (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
+    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.k==='gang'?buf.G:buf.K;
+    const L=[], R=[];
+    for(let k=0;k<n;k++){
+      const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
+      const nx=-dy*w, ny=dx*w, z=P[k][2]+dz;
+      L.push([P[k][0]+nx, z, -(P[k][1]+ny)]); R.push([P[k][0]-nx, z, -(P[k][1]-ny)]);
+    }
+    for(let k=0;k<n-1;k++){
+      quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
+      if(v.b && (P[k][2]>0.5 || P[k+1][2]>0.5)){
+        [L,R].forEach(E=>{ const a=E[k], c=E[k+1]; quad(buf.S,[...a, ...c, a[0],Math.max(0.1,a[1]-0.8),a[2], c[0],Math.max(0.1,c[1]-0.8),c[2]]); });
+      }
+    }
+  });
+  [[buf.K,mat([128,124,120],false)],[buf.G,mat([146,142,134],false)],[buf.S,mat([120,112,104],false)]].forEach(([B,m])=>{
+    if(!B.p.length) return; const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3)); g.setIndex(B.i);
+    const mm=m.clone(); mm.side=THREE.DoubleSide; const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
+}
+
+// ---- murer, plankegjerder og voller ----
+function wallAlong(pts, hgt, thick, color, y0=0){
+  const m=mat(color,false);
+  for(let k=0;k<pts.length-1;k++){
+    const a=pts[k], c=pts[k+1]; const dx=c[0]-a[0], dy=c[1]-a[1]; const len=Math.hypot(dx,dy); if(len<0.3) continue;
+    const g=new THREE.BoxGeometry(len+thick*0.5,hgt,thick); const w=new THREE.Mesh(g,m);
+    w.position.set((a[0]+c[0])/2, y0+hAt((a[0]+c[0])/2,(a[1]+c[1])/2)+hgt/2, -(a[1]+c[1])/2); w.rotation.y=Math.atan2(dy,dx); w.castShadow=w.receiveShadow=true; scene.add(w);
+    const e=new THREE.LineSegments(new THREE.EdgesGeometry(g),edgeMat); e.position.copy(w.position); e.rotation.copy(w.rotation); scene.add(e);
+  }
+}
+(DATA.murer||[]).forEach(w=>{ if(w.t==='ruin') wallAlong(w.p, 3.6, 2.2, [196,188,174]); else wallAlong(w.p, w.t==='fence'?1.8:2.4, 0.6, w.t==='fence'?[206,192,170]:[214,206,192]); });
+(DATA.gjerder||[]).forEach(p=>wallAlong(p, 1.5, 0.35, [196,184,166]));
+
+// ---- porter: huset står oppå en portblokk med buet passasje (retning = veien gjennom bygget) ----
+(DATA.porter||[]).forEach(pt=>{
+  const grp=buildings.find(g=>g.userData.i===pt.bygg); if(!grp) return;
+  const b=DATA.bygg[pt.bygg]; const [cx,cy]=b.r;
+  if(pt.typ==='mur'){ grp.clear(); } else { grp.children.forEach(c=>{ c.position.y += pt.h; }); }   // mur: portalen er hele bygget; hus: huset opp på portblokken (gruppa selv styres av hover-animasjonen)
+  const W=pt.tvers, D=pt.dyp, H=pt.h, pw=pt.pw, ph=pt.ph;
+  // tverrsnitt i (x=tvers, y=opp) med buet hull, ekstrudert langs passasjen
+  const sh=new THREE.Shape(); sh.moveTo(-W/2,0); sh.lineTo(W/2,0); sh.lineTo(W/2,H); sh.lineTo(-W/2,H); sh.closePath();
+  const hul=new THREE.Path(); const r=pw/2, yb=Math.max(0.2, ph-r);
+  hul.moveTo(-r,0); hul.lineTo(-r,yb); hul.absarc(0,yb,r,Math.PI,0,true); hul.lineTo(r,0); hul.closePath(); sh.holes.push(hul);
+  const eg=new THREE.ExtrudeGeometry(sh,{depth:D,bevelEnabled:false}); eg.translate(0,0,-D/2);
+  const wall=b.vegg||[230,220,200];
+  const m=new THREE.Mesh(eg,[mat(wall,false,b.veggs,{ds:true}),mat(wall,false,b.veggs,{ds:true})]); m.castShadow=m.receiveShadow=true;
+  const ang=Math.atan2(pt.ret[1],pt.ret[0]);
+  m.position.set(cx, hAt(cx,cy), -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
+  grp.add(m);
+  const e=new THREE.LineSegments(new THREE.EdgesGeometry(eg,25),edgeMat); e.position.copy(m.position); e.rotation.copy(m.rotation); grp.add(e);
+});
+
+// ---- broer: tredekke, gitterrekkverk, pilarer; vindebro får heiseverk (to stolper, tverrbjelke, vippebommer) som i brosjyretegningen ----
+(DATA.broer||[]).forEach((br,bi)=>{
+  const g=new THREE.Group(); g.userData={i:-1-bi, b:{navn:br.navn||'Bro', tekst:br.tekst||'', nr:br.nr}, h:2};
+  const tre=mat([150,112,78],false), mork=mat([96,70,48],false), stein=mat([176,170,156],false);
+  const pts=br.p; const W=br.w; const yd=1.35;
+  const kant=geo=>new THREE.LineSegments(new THREE.EdgesGeometry(geo,20),edgeMat);
+  for(let k=0;k<pts.length-1;k++){
+    const a=pts[k], c=pts[k+1]; const dx=c[0]-a[0], dy=c[1]-a[1]; const len=Math.hypot(dx,dy); if(len<0.5) continue;
+    const ang=Math.atan2(dy,dx); const mx=(a[0]+c[0])/2, my=(a[1]+c[1])/2;
+    // lokalt: x langs broa, z tvers (mot høyre sett i kjøreretning), y opp
+    const place=(mesh,ox,oy,oz,rz=0,rx=0)=>{ mesh.position.set(mx+Math.cos(ang)*ox + Math.sin(ang)*oz, oy, -(my+Math.sin(ang)*ox - Math.cos(ang)*oz)); mesh.rotation.set(rx,ang,rz,'YXZ'); mesh.castShadow=mesh.receiveShadow=true; g.add(mesh); return mesh; };
+    const L=len+0.8;
+    const dekke=place(new THREE.Mesh(new THREE.BoxGeometry(L,0.35,W),tre),0,yd,0);
+    const kd=kant(dekke.geometry); kd.position.copy(dekke.position); kd.rotation.copy(dekke.rotation); g.add(kd);
+    // plankeskjøter som tynne mørke striper tvers over dekket
+    for(let q=-L/2+0.6;q<L/2;q+=1.2) place(new THREE.Mesh(new THREE.BoxGeometry(0.06,0.03,W-0.1),mork),q,yd+0.19,0);
+    // gitterrekkverk: topp- og midtlist, stolper, kryss i hvert fag
+    const RH=1.25, n=Math.max(2,Math.round(L/2.2)), fag=L/n;
+    [-1,1].forEach(s=>{ const z=s*(W/2-0.1);
+      const topp=place(new THREE.Mesh(new THREE.BoxGeometry(L,0.12,0.12),mork),0,yd+RH,z); const kt=kant(topp.geometry); kt.position.copy(topp.position); kt.rotation.copy(topp.rotation); g.add(kt);
+      place(new THREE.Mesh(new THREE.BoxGeometry(L,0.08,0.08),mork),0,yd+0.45,z);
+      for(let q=0;q<=n;q++) place(new THREE.Mesh(new THREE.BoxGeometry(0.14,RH+0.1,0.14),mork),-L/2+fag*q,yd+RH/2,z);
+      const dl=Math.hypot(fag,RH-0.4), v=Math.atan2(RH-0.4,fag);
+      for(let q=0;q<n;q++){ const x=-L/2+fag*(q+0.5); place(new THREE.Mesh(new THREE.BoxGeometry(dl,0.05,0.05),mork),x,yd+0.45+(RH-0.4)/2,z,v); place(new THREE.Mesh(new THREE.BoxGeometry(dl,0.05,0.05),mork),x,yd+0.45+(RH-0.4)/2,z,-v); }
+    });
+    // pilarer i vannet
+    const np=Math.max(1,Math.round(len/7)); for(let q=1;q<=np;q++){ const pil=place(new THREE.Mesh(new THREE.BoxGeometry(1.0,1.6,W*0.8),stein),-len/2+len*(q-0.5)/np,yd-1.0,0); const kp=kant(pil.geometry); kp.position.copy(pil.position); kp.rotation.copy(pil.rotation); g.add(kp); }
+    // heiseverket: to stolper med tverrbjelke, og to vippebommer som peker skrått opp over broa
+    if(br.vindebro && k===0){
+      const PH=5.2, x0=-L/2+L*0.42;
+      [-1,1].forEach(s=>{ const z=s*(W/2-0.05); const st=place(new THREE.Mesh(new THREE.BoxGeometry(0.3,PH,0.3),mork),x0,yd+PH/2,z); const ks=kant(st.geometry); ks.position.copy(st.position); ks.rotation.copy(st.rotation); g.add(ks);
+        place(new THREE.Mesh(new THREE.BoxGeometry(0.25,0.25,0.25),mork),x0+0.6,yd+PH+0.1,z);
+        const bom=place(new THREE.Mesh(new THREE.BoxGeometry(6.0,0.22,0.22),mork),x0+2.3,yd+PH+0.9,z,0.32); const kb=kant(bom.geometry); kb.position.copy(bom.position); kb.rotation.copy(bom.rotation); g.add(kb); });
+      const tv=place(new THREE.Mesh(new THREE.BoxGeometry(0.25,0.25,W),mork),x0,yd+PH+0.05,0); const kv=kant(tv.geometry); kv.position.copy(tv.position); kv.rotation.copy(tv.rotation); g.add(kv);
+      place(new THREE.Mesh(new THREE.BoxGeometry(0.2,0.2,W),mork),x0+2.3+2.8*Math.cos(0.32),yd+PH+0.9+2.8*Math.sin(0.32),0);
+    }
+  }
+  city.add(g);
+});
+// voller: tegnes nå som terreng (se festningsterrenget)
+// Fredrik II på Torvet, som i trykkfila: mørk sokkel i trinn, høy blokk med gesims, kongen i lys patina
+(DATA.statue||[]).forEach(st=>{
+  const g=new THREE.Group(); const [x,y]=st.xy;
+  const STEIN=[148,152,156], STEIN_S=[68,68,72], PATINA=[208,232,212], PATINA_S=[156,168,160];
+  const M=(f,sk)=>mat(f,false,sk,{ds:true});
+  const boks=(w,h,d,y0,f,sk,dx=0,dz=0)=>{ const ge=new THREE.BoxGeometry(w,h,d); const m=new THREE.Mesh(ge,M(f,sk)); m.position.set(dx,y0+h/2,dz); m.castShadow=true; g.add(m); return m; };
+  const del=(geo,px,py,pz,f=PATINA,sk=PATINA_S)=>{ const m=new THREE.Mesh(geo,M(f,sk)); m.position.set(px,py,pz); m.castShadow=true; g.add(m); return m; };
+  // sokkel
+  boks(3.6,0.45,3.6,0,STEIN,STEIN_S); boks(3.0,0.45,3.0,0.45,STEIN,STEIN_S);
+  boks(2.6,0.35,2.6,0.9,STEIN,STEIN_S);
+  boks(2.1,3.1,2.1,1.25,STEIN,STEIN_S);                       // høy blokk
+  boks(1.5,1.2,0.06,2.2,[118,122,126],[58,58,62],0,1.08);       // innfelt tavle
+  boks(2.5,0.35,2.5,4.35,STEIN,STEIN_S); boks(2.15,0.3,2.15,4.7,STEIN,STEIN_S);
+  boks(1.5,0.25,1.5,5.0,PATINA,PATINA_S);                      // bronseplate
+  // kongen, ca. like høy som sokkelen (som i tegningen)
+  const k=new THREE.Group(); g.add(k); const sy=5.25;
+  const kd=(geo,px,py,pz)=>{ const m=new THREE.Mesh(geo,M(PATINA,PATINA_S)); m.position.set(px,py,pz); m.castShadow=true; k.add(m); return m; };
+  kd(new THREE.CylinderGeometry(0.2,0.17,1.9,8), -0.24,sy+0.95,0.05);           // bein
+  kd(new THREE.CylinderGeometry(0.2,0.17,1.9,8),  0.26,sy+0.95,-0.12);
+  kd(new THREE.CylinderGeometry(0.62,0.42,1.1,10), 0,sy+2.15,0);               // skjørt/rustning
+  kd(new THREE.CylinderGeometry(0.55,0.6,1.25,10), 0,sy+3.2,0);                // overkropp
+  const kappe=kd(new THREE.CylinderGeometry(0.62,0.95,2.6,10,1,true,Math.PI*0.65,Math.PI*0.7), 0,sy+2.55,0); // kappe bak
+  kd(new THREE.CylinderGeometry(0.28,0.3,0.25,8), 0,sy+3.95,0);               // krage
+  kd(new THREE.SphereGeometry(0.36,12,10), 0,sy+4.35,0.02);                     // hode
+  kd(new THREE.CylinderGeometry(0.5,0.5,0.1,12), 0,sy+4.68,0);                  // hattebrem
+  kd(new THREE.CylinderGeometry(0.3,0.34,0.32,10), 0,sy+4.88,0);                // hatt
+  const arm1=kd(new THREE.CylinderGeometry(0.16,0.14,1.25,8), 0.7,sy+3.05,0.15); arm1.rotation.z=0.55;   // arm i siden
+  const arm2=kd(new THREE.CylinderGeometry(0.16,0.14,1.3,8), -0.66,sy+2.95,0.2); arm2.rotation.z=-0.25;
+  const sverd=kd(new THREE.BoxGeometry(0.1,2.1,0.1), -0.9,sy+1.55,0.35); sverd.rotation.z=-0.12;             // sverd mot bakken
+  kd(new THREE.BoxGeometry(0.55,0.08,0.12), -0.83,sy+2.45,0.35);
+  k.rotation.y=0.7;  // vender mot torget og betrakteren i startvinkelen
+  g.scale.setScalar(1.3);  // tegningen gjør statuen tydelig større enn virkeligheten
+  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:'Torvet'}}; city.add(g);
+});
+
+// ---- trær: posisjoner fra trykkfila; tegnet som i Messenger: stamme og greiner, krone av løvklaser med takket kant og 3 toner ----
+let seed=11; const rnd=()=>{seed=(seed*16807)%2147483647; return seed/2147483647;};
+// Kronene tegnes som løvklaser vendt mot kameraet: takket, buet silhuett og en kuleformet normal, så lys- og skyggetonene
+// blir rene og myke som i Messenger. Dybden skrives som en kule, så klasene skjærer hverandre og blekkstreken følger dem.
+// Alt er prosedyralt i shaderen (ingen tegnede omriss eller teksturer fra 2015-tegningene).
+const KLASE=new THREE.PlaneGeometry(2,2);
+const STAMME=new THREE.CylinderGeometry(0.55,1,1,7,1,true); STAMME.translate(0,0.5,0);
+const SKYGGEKROPP=new THREE.IcosahedronGeometry(1,1);
+const sunW=new THREE.Vector3(), tgtW=new THREE.Vector3(), camF=new THREE.Vector3();
+const treU={ sunDir:{value:new THREE.Vector3(-0.5,0.7,0.5)}, camDir:{value:new THREE.Vector3(0,-1,0)}, invSpan:{value:1/8000} };
+const NOISE_GLSL=`float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
+      float n2(vec2 p){ vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f); return mix(mix(h2(i),h2(i+vec2(1,0)),f.x),mix(h2(i+vec2(0,1)),h2(i+vec2(1,1)),f.x),f.y); }`;
+function lovMatLag(){
+  return new THREE.ShaderMaterial({
+    lights:true,
+    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()}, camDir:{value:new THREE.Vector3()}, invSpan:{value:1} }]),
+    vertexShader:`#include <common>
+      #include <shadowmap_pars_vertex>
+      uniform vec3 sunDir;
+      varying vec2 vUv; varying vec3 vCol; varying float vSeed; varying float vRad;
+      void main(){
+        vec3 c=(modelMatrix*instanceMatrix*vec4(0.,0.,0.,1.)).xyz;
+        float sx=length(instanceMatrix[0].xyz), sy=length(instanceMatrix[1].xyz);
+        vec3 right=vec3(viewMatrix[0][0],viewMatrix[1][0],viewMatrix[2][0]);
+        vec3 up=vec3(viewMatrix[0][1],viewMatrix[1][1],viewMatrix[2][1]);
+        vec3 wp=c+right*position.x*sx+up*position.y*sy;
+        vUv=position.xy; vRad=sx;
+        vSeed=fract(sin(dot(c.xz,vec2(12.9898,78.233)))*43758.5453);
+        vCol=vec3(1.);
+        #ifdef USE_INSTANCING_COLOR
+        vCol=instanceColor;
+        #endif
+        gl_Position=projectionMatrix*viewMatrix*vec4(wp,1.);
+        // skyggeoppslag fra klasens solside, så klasen ikke skygger seg selv
+        vec4 worldPosition=vec4(wp+normalize(sunDir)*sx*1.05,1.);
+        vec3 transformedNormal=vec3(0.,0.,1.);
+        #include <shadowmap_vertex>
+      }`,
+    fragmentShader:`#include <common>
+      #include <packing>
+      #include <lights_pars_begin>
+      #include <shadowmap_pars_fragment>
+      #include <shadowmask_pars_fragment>
+      uniform vec3 sunDir; uniform float invSpan;
+      varying vec2 vUv; varying vec3 vCol; varying float vSeed; varying float vRad;
+      ${NOISE_GLSL}
+      void main(){
+        float r=length(vUv), th=atan(vUv.y,vUv.x);
+        // buet, takket løvsilhuett: 8-12 buer, ujevne, med små løvtagger
+        float k=8.+floor(vSeed*5.);
+        float sc=0.80+0.13*pow(abs(sin(th*k*0.5+vSeed*31.)),0.55);
+        sc+=(n2(vec2(th*3.2+vSeed*17.,vSeed*9.))-0.5)*0.12;
+        sc+=(n2(vec2(th*26.+vSeed*7.,3.))-0.5)*0.05;
+        if(r>sc) discard;
+        // glatt kule (uavhengig av buene i kanten), så verken tonene eller dybden får stråler
+        float rr=min(r/0.97,1.), z=sqrt(max(0.,1.-rr*rr));
+        // svake buler i normalen gjør tonegrensene organiske
+        vec2 b=vec2(n2(vUv*2.2+vSeed*13.),n2(vUv*2.2+vSeed*13.+5.3))-0.5;
+        vec3 nV=normalize(vec3(vUv/0.97+b*0.6, z+0.08));
+        vec3 sV=normalize((viewMatrix*vec4(sunDir,0.)).xyz);
+        float sm=getShadowMask();
+        float w=dot(nV,sV)*0.5+0.5;
+        w=mix(w, w*0.55, (1.-sm)*0.85);
+        float lys=smoothstep(0.60,0.62,w), mid=smoothstep(0.38,0.40,w);
+        vec3 lysF=vCol*vec3(1.30,1.22,0.98)+vec3(0.04,0.045,0.0);
+        vec3 mork=vCol*vec3(0.50,0.60,0.68);
+        vec3 c=mix(mork, mix(vCol,lysF,lys), mid);
+        // malte lyse flekker på solsiden, mørke løvmerker i skyggen
+        float p=n2(vUv*1.7+vSeed*21.);
+        c=mix(c, lysF*1.08+vec3(0.03,0.035,0.0), smoothstep(0.68,0.70,p)*lys*0.9);
+        float q=n2(vUv*6.5+vSeed*3.);
+        c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9);
+        gl_FragColor=vec4(c,1.);
+        #include <colorspace_fragment>
+        gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;
+      }`
+  });
+}
+function stammeMatLag(){
+  return new THREE.ShaderMaterial({
+    lights:true,
+    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()} }]),
+    vertexShader:`#include <common>
+      #include <shadowmap_pars_vertex>
+      varying vec3 vN; varying vec3 vCol;
+      void main(){
+        #include <beginnormal_vertex>
+        #include <defaultnormal_vertex>
+        #include <begin_vertex>
+        #include <project_vertex>
+        #include <worldpos_vertex>
+        #include <shadowmap_vertex>
+        vN=normalize(mat3(modelMatrix)*mat3(instanceMatrix)*objectNormal);
+        vCol=vec3(1.);
+        #ifdef USE_INSTANCING_COLOR
+        vCol=instanceColor;
+        #endif
+      }`,
+    fragmentShader:`#include <common>
+      #include <packing>
+      #include <lights_pars_begin>
+      #include <shadowmap_pars_fragment>
+      #include <shadowmask_pars_fragment>
+      uniform vec3 sunDir; varying vec3 vN; varying vec3 vCol;
+      void main(){
+        float w=dot(normalize(vN),sunDir)*0.5+0.5; w=mix(w,w*0.6,(1.-getShadowMask())*0.8);
+        vec3 c=mix(vCol*0.62, vCol, smoothstep(0.50,0.53,w));
+        gl_FragColor=vec4(c,1.);
+        #include <colorspace_fragment>
+      }`
+  });
+}
+const lovMat=lovMatLag(), stammeMat=stammeMatLag();
+lovMat.uniforms.sunDir=treU.sunDir; lovMat.uniforms.camDir=treU.camDir; lovMat.uniforms.invSpan=treU.invSpan; stammeMat.uniforms.sunDir=treU.sunDir;
+// usynlige kropper som bare kaster kroneskyggen (én per tre)
+const skyggeMat=new THREE.MeshBasicMaterial({colorWrite:false, depthWrite:false});
+// palett fra trykkfilas trær, med Messengers varmere lysgrønn
+const GREENS=[[96,148,104],[86,140,98],[104,156,106],[90,136,104],[110,160,100],[80,130,96]].map(c=>new THREE.Color(`rgb(${c[0]},${c[1]},${c[2]})`));
+const BARK=[[112,92,78],[100,84,74],[122,100,84]].map(c=>new THREE.Color(`rgb(${c[0]},${c[1]},${c[2]})`));
+const TP = DATA.traer;
+const klaseData=[], skyggeData=[], stammeData=[];
+TP.forEach((p,i)=>{
+  const s=p[2]?p[2]:2.6+rnd()*2.8; const g0=p[3]||0; const col=GREENS[(rnd()*GREENS.length)|0];
+  const delay=0.6+1.6*((p[0]+p[1]+500)/1000);
+  const x=p[0], z=-p[1];
+  const kj=(k)=>col.clone().offsetHSL((rnd()-.5)*0.02,0,(rnd()-.5)*0.05+k);
+  const legg=(liste,px,py,pz,r,sy,k)=>liste.push({pos:[px,py,pz],r,sy,rot:[rnd()*6.28,rnd()*6.28,rnd()*6.28],c:kj(k),delay});
+  // hovedklase, sideklaser, toppklase
+  legg(klaseData, x, g0+s*1.30, z, s*0.74, 0.92, 0);
+  skyggeData.push({pos:[x,g0+s*1.35,z], r:s*0.95, sy:0.9, rot:[0,0,0], c:col, delay});
+  const n=3+((rnd()*2)|0), a0=rnd()*6.28;
+  for(let k=0;k<n;k++){ const a=a0+k*6.28/n+(rnd()-.5)*0.8, rr=s*(0.48+rnd()*0.18);
+    legg(klaseData, x+Math.cos(a)*s*0.58, g0+s*(0.95+rnd()*0.55), z+Math.sin(a)*s*0.58, rr, 0.9, (rnd()-.5)*0.04); }
+  legg(klaseData, x+(rnd()-.5)*s*0.3, g0+s*1.95, z+(rnd()-.5)*s*0.3, s*(0.42+rnd()*0.1), 0.88, 0.02);
+  // små løvbiter som stikker ut
+  for(let k=0;k<2;k++){ const a=rnd()*6.28; legg(klaseData, x+Math.cos(a)*s*1.0, g0+s*(0.8+rnd()*0.9), z+Math.sin(a)*s*1.0, s*(0.16+rnd()*0.08), 1.0, (rnd()-.5)*0.05); }
+  // stamme og to greiner
+  const bark=BARK[(rnd()*BARK.length)|0].clone().offsetHSL(0,0,(rnd()-.5)*0.04);
+  const tr=0.22+s*0.05;
+  stammeData.push({pos:[x,g0,z], r:tr, h:s*1.35, rx:0, rz:0, ry:0, c:bark, delay});
+  for(let k=0;k<2;k++){ const a=a0+k*3.14+0.7; stammeData.push({pos:[x,g0+s*0.75,z], r:tr*0.45, h:s*0.75, rx:Math.sin(a)*0.75, rz:-Math.cos(a)*0.75, ry:0, c:bark, delay}); }
+});
+const trMesh=[];
+function lagInst(geo,mat,data){ const m=new THREE.InstancedMesh(geo,mat,Math.max(1,data.length)); m.count=data.length; m.castShadow=true; m.receiveShadow=true; m.frustumCulled=false;
+  data.forEach((d,i)=>m.setColorAt(i,d.c)); if(m.instanceColor) m.instanceColor.needsUpdate=true; m.userData.data=data; trMesh.push(m); scene.add(m); return m; }
+const crowns=[lagInst(KLASE,lovMat,klaseData)]; crowns[0].receiveShadow=true; crowns[0].castShadow=false;
+const skyggeKropper=lagInst(SKYGGEKROPP,skyggeMat,skyggeData); skyggeKropper.receiveShadow=false;
+const stammer=lagInst(STAMME,stammeMat,stammeData); stammer.userData.stamme=true;
+const dummy=new THREE.Object3D();
+function setCrowns(t){
+  trMesh.forEach(m=>{ const st=m.userData.stamme;
+    m.userData.data.forEach((c,i)=>{ const k=t===null?1:THREE.MathUtils.clamp((t-c.delay)/0.7,0,1); const e=1-Math.pow(1-k,3);
+      if(st){ dummy.position.set(c.pos[0],c.pos[1],c.pos[2]); dummy.rotation.set(c.rx,0,c.rz); dummy.scale.set(c.r*(0.3+0.7*e)+0.001, c.h*e+0.001, c.r*(0.3+0.7*e)+0.001); }
+      else { const g0=c.pos[1]; dummy.position.set(c.pos[0], g0*e, c.pos[2]); dummy.rotation.set(c.rot[0],c.rot[1],c.rot[2]); dummy.scale.set(c.r*e+0.001, c.r*c.sy*e+0.001, c.r*e+0.001); }
+      dummy.updateMatrix(); m.setMatrixAt(i,dummy.matrix); });
+    m.instanceMatrix.needsUpdate=true; });
+}
+// solretningen hentes fra sola hver ramme, så trærne følger samme lys som byen
+crowns[0].onBeforeRender=(r,sc_,c)=>{ sun.getWorldPosition(sunW); sun.target.getWorldPosition(tgtW); treU.sunDir.value.copy(sunW).sub(tgtW).normalize(); c.getWorldDirection(camF); treU.camDir.value.copy(camF); if(c.isOrthographicCamera) treU.invSpan.value=1/(c.far-c.near); };
+setCrowns(0);
+
+// ---- kamera og intro ----
+const target = new THREE.Vector3(10,0,0);
+const R = 900, ELEV = THREE.MathUtils.degToRad(33);
+const AZ0 = THREE.MathUtils.degToRad(innerWidth/innerHeight<0.8 ? 130 : 40); // plakatvinkelen; på stående mobil dreid 90° så byens lengde fyller skjermen
+function place(az, el=ELEV){ cam.position.set(target.x+Math.cos(el)*Math.sin(az)*R, target.y+Math.sin(el)*R, target.z+Math.cos(el)*Math.cos(az)*R); cam.lookAt(target); }
+// introen: starter høyt over byen og nærmere, senker seg til plakatens vinkel mens byen snurrer én gang
+const EL0=THREE.MathUtils.degToRad(52), Z0=0.82, SVEIP=THREE.MathUtils.degToRad(110); // intro: rask sveip inn mot plakatvinkelen, litt zoom inn
+fit(); place(AZ0); scene.add(cam); lysFraVenstre();
+const Q0=new URLSearchParams(location.search);
+const controls = new OrbitControls(cam, renderer.domElement);
+controls.target.copy(target); controls.enableDamping=true; controls.dampingFactor=0.07; controls.rotateSpeed=0.65;
+controls.minPolarAngle=THREE.MathUtils.degToRad(20); controls.maxPolarAngle=THREE.MathUtils.degToRad(72);
+controls.minZoom=0.85; controls.maxZoom=6; controls.enablePan=true; controls.screenSpacePanning=false; controls.panSpeed=1.0;
+controls.mouseButtons={LEFT:THREE.MOUSE.ROTATE, MIDDLE:THREE.MOUSE.PAN, RIGHT:THREE.MOUSE.PAN}; // dra = snu byen, høyreklikk/sveip = flytte kartet
+controls.enableZoom=false;                      // zoom styres av kartet selv: myk, mot pekeren, klyp på mobil
+controls.touches={ONE:THREE.TOUCH.ROTATE, TWO:-1};   // to fingre håndteres under (klyp, vri, flytt)
+controls.enabled=false;
+
+// byen tegner seg opp: høyden vokser kvartal for kvartal (sortert sørvest -> nordøst)
+const order = buildings.map(g=>{const c=g.userData.b.r; return [g, c[0]+c[1]];}).sort((a,b)=>a[1]-b[1]);
+order.forEach(([g],k)=>{ g.userData.delay = 1.1*k/order.length; g.scale.y=0.001; });
+let vokst=false;   // husene og trærne har vokst ferdig
+function vokse(t){
+  let ferdig=true;
+  buildings.forEach(g=>{ const k=THREE.MathUtils.clamp((t-g.userData.delay)/0.5,0,1); g.scale.y=Math.max(0.001, 1-Math.pow(1-k,3)); if(k<1) ferdig=false; });
+  if(t<3.4){ setCrowns(t); ferdig=false; } else setCrowns(null);
+  if(ferdig) vokst=true;
+}
+
+// ---- speilinger i vannet: hus, trær og terreng tegnes speilvendt om vannflaten i et eget, halvt så stort lag ----
+const speil=(()=>{
+  const Y=0.15, LAG=1;
+  const rt=new THREE.WebGLRenderTarget(2,2,{type:THREE.HalfFloatType});
+  const deler=[city, ...[].concat(crowns)];
+  scene.traverse(o=>{ if(o.isMesh && o.material && o.material.uniforms && o.material.uniforms.skyggeF) deler.push(o); });  // festningsterrenget skjuler det som står bak vollene
+  deler.forEach(o=>o.traverse(c=>c.layers.enable(LAG)));
+  let paa=!Q0.get('nospeil');
+  const cc=new THREE.Color();
+  return {
+    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; rt.setSize(Math.max(2,w>>1), Math.max(2,h>>1)); },
+    av(){ paa=false; waterMat.uniforms.reflStyrke.value=0; },
+    render(endret){
+      if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
+      // tegnes bare på nytt når kameraet eller husene har flyttet seg (stillestående bilde koster ingenting ekstra)
+      const e=cam.matrixWorld.elements, nok=e.join(',')+cam.zoom+(endret?Math.random():'');
+      if(nok===this._sist) return; this._sist=nok;
+      const lagre=deler.map(o=>[o.position.y,o.scale.y]);
+      deler.forEach(o=>{ o.position.y=2*Y-o.position.y; o.scale.y=-o.scale.y; });
+      const bg=scene.background; scene.background=null; renderer.getClearColor(cc); const ca=renderer.getClearAlpha();
+      const au=renderer.shadowMap.autoUpdate; renderer.shadowMap.autoUpdate=false;
+      cam.layers.set(LAG); renderer.setRenderTarget(rt); renderer.setClearColor(0x000000,0); renderer.clear(); renderer.render(scene,cam);
+      cam.layers.set(0); renderer.setRenderTarget(null); renderer.setClearColor(cc,ca); renderer.shadowMap.autoUpdate=au; scene.background=bg;
+      deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
+      waterMat.uniforms.tRefl.value=rt.texture;
+      // speilingen tones ned i oversikten og kommer fram når man går nærmere, så den aldri popper
+      waterMat.uniforms.reflStyrke.value=THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(cam.zoom,0.5)),0.1,0.36);
+    }
+  };
+})();
+
+const clock=new THREE.Clock(); let _synlig=false;
+const INTRO_GROW=1.3, SPIN_START=0.15, SPIN=3.4, VEKST_FART=1.8;
+const Q=Q0; let introDone=false;
+if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
+  const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
+if(Q.get('tx')){ target.set(+Q.get('tx'),0,-(+Q.get('ty'))); controls.target.copy(target); }
+if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); place(Q.get('az')?THREE.MathUtils.degToRad(+Q.get('az')):AZ0); controls.enabled=true; if(Q.get('zoom')){cam.zoom=+Q.get('zoom'); cam.updateProjectionMatrix();} controls.update(); }
+// testkrok for kvalitetssjekk (skjermbilder uten ny sidelasting)
+window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
+window.__kam=()=>{ const v=vinkler(cam.position.clone().sub(controls.target)); let vs=null; if(valgt){ const bb=new THREE.Box3().setFromObject(valgt); const c=bb.getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:controls.target.x,z:controls.target.z,zoom:cam.zoom,az:v.az,pol:v.pol,anim:!!anim,valgt:vs,intro:!introDone,t:clock.getElapsedTime()}; };
+window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; anim=null; buildings.forEach(g=>g.scale.y=1); setCrowns(null); target.set(tx,0,-ty); controls.target.copy(target); place(THREE.MathUtils.degToRad(az)); cam.zoom=zoom; zoomMaal=zoom; cam.updateProjectionMatrix(); controls.enabled=true; controls.update(); };
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const easeUt=t=>1-Math.pow(1-t,4);
+// ytelse: måler bildefrekvensen og senker oppløsning/AO på svake maskiner (mobil), så spinnet holder seg mykt
+let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0;
+function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(cam.zoom,0.5)),0.1,0.36); }
+let ssStille=4;
+let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14, aoBeveg=6; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
+function maalYtelse(){ const n=performance.now(), dt=n-perfLast; perfLast=n; if(perfNivaa>=2 || document.hidden || (n-sistBeveg>300 && n-sistTegnet>40)) return;
+  perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
+    if(avg>30){ perfNivaa++; if(perfNivaa===1){ skalaBeveg=Math.max(0.35,skalaBeveg*0.75); aoBeveg=0; } else { skalaBeveg=Math.max(0.3,skalaBeveg*0.8); aoStille=7; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map){ sun.shadow.map.dispose(); sun.shadow.map=null; } skyggeSkitten=true; } } } } }
+
+// ---- kamera: alle bevegelser er myke (fjær/easing), zoom holder punktet under pekeren fast ----
+const HOME={zoom:1, target:target.clone(), az:AZ0};
+let anim=null, zoomMaal=cam.zoom, zoomAnker=null, sisteTid=performance.now();
+const GRENSE=560;                                         // hvor langt fra byen man kan flytte seg (meter)
+const _pl=new THREE.Plane(new THREE.Vector3(0,1,0),0), _rc=new THREE.Raycaster(), _v2=new THREE.Vector2();
+function bakkeVed(x,y){ _v2.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); _rc.setFromCamera(_v2,cam); const v=new THREE.Vector3(); return _rc.ray.intersectPlane(_pl,v)?v:null; }
+function flytt(dx,dz){ controls.target.x+=dx; controls.target.z+=dz; cam.position.x+=dx; cam.position.z+=dz; }
+function settZoom(z, anker){ // ortografisk: å skalere avstanden til ankeret med z/z' holder ankeret fast på skjermen
+  z=THREE.MathUtils.clamp(z, controls.minZoom, controls.maxZoom);
+  if(anker){ const f=cam.zoom/z; const tx=anker.x+(controls.target.x-anker.x)*f, tz=anker.z+(controls.target.z-anker.z)*f; flytt(tx-controls.target.x, tz-controls.target.z); }
+  cam.zoom=z; cam.updateProjectionMatrix();
+}
+function innenforGrense(dt){ // myk fjær tilbake hvis man har dratt byen ut av syne
+  const dx=controls.target.x-HOME.target.x, dz=controls.target.z-HOME.target.z, d=Math.hypot(dx,dz);
+  if(d>GRENSE){ const k=1-Math.exp(-dt*6); const ny=(d-GRENSE)*k/d; flytt(-dx*ny,-dz*ny); }
+}
+function vinkler(off){ const r=off.length(); return {az:Math.atan2(off.x,off.z), pol:Math.acos(THREE.MathUtils.clamp(off.y/r,-1,1))}; }
+function kortVei(a,b){ let d=b-a; while(d>Math.PI) d-=2*Math.PI; while(d<-Math.PI) d+=2*Math.PI; return a+d; }
+// flyTo: myk bane for mål, zoom (logaritmisk), asimut (korteste vei) og helning. Med anker: punktet står stille under pekeren.
+function flyTo(nyTarget, nyZoom, az, opt={}){
+  const off=cam.position.clone().sub(controls.target); const v=vinkler(off);
+  const tilAz = az===undefined ? v.az : kortVei(v.az, az);
+  const tilPol = opt.pol!==undefined ? opt.pol : (az===undefined ? v.pol : Math.PI/2-ELEV);
+  const z0=cam.zoom, z1=THREE.MathUtils.clamp(nyZoom, controls.minZoom, controls.maxZoom);
+  const spenn=(cam.right-cam.left)/z0;
+  const avst=nyTarget? Math.hypot(nyTarget.x-controls.target.x, nyTarget.z-controls.target.z) : 0;
+  const dur = opt.dur || THREE.MathUtils.clamp(420 + 330*Math.abs(Math.log(z1/z0)) + 380*Math.abs(tilAz-v.az) + 260*Math.abs(tilPol-v.pol) + 520*Math.min(1, avst/spenn), 450, 1500);
+  anim={t0:performance.now(), dur, e: opt.e || ease, fra:{t:controls.target.clone(), z:z0, az:v.az, pol:v.pol, r:off.length()}, til:{t:nyTarget?nyTarget.clone():controls.target.clone(), z:z1, az:tilAz, pol:tilPol}, anker:opt.anker||null};
+  zoomAnker=null;
+}
+function stepAnim(){
+  if(!anim) return; const k=Math.min(1,(performance.now()-anim.t0)/anim.dur); const e=anim.e(k);
+  const z=Math.exp(THREE.MathUtils.lerp(Math.log(anim.fra.z), Math.log(anim.til.z), e));
+  if(anim.anker){ const A=anim.anker, f=anim.fra.z/z; controls.target.set(A.x+(anim.fra.t.x-A.x)*f, 0, A.z+(anim.fra.t.z-A.z)*f); }
+  else controls.target.lerpVectors(anim.fra.t, anim.til.t, e);
+  const az=THREE.MathUtils.lerp(anim.fra.az, anim.til.az, e), pol=THREE.MathUtils.lerp(anim.fra.pol, anim.til.pol, e), r=anim.fra.r;
+  cam.position.set(controls.target.x+r*Math.sin(pol)*Math.sin(az), controls.target.y+r*Math.cos(pol), controls.target.z+r*Math.sin(pol)*Math.cos(az));
+  cam.zoom=z; cam.updateProjectionMatrix(); cam.lookAt(controls.target);
+  if(k>=1){ anim=null; zoomMaal=cam.zoom; controls.update(); }
+}
+function stoppAnim(){ if(anim){ anim=null; zoomMaal=cam.zoom; } }
+
+// avbryt introen når brukeren tar tak: kameraet blir stående der det er, byen vokser ferdig av seg selv
+function overta(){ if(introDone) return; introDone=true; zoomMaal=cam.zoom; controls.enabled=true; controls.update(); }
+
+function tick(){
+  maalYtelse();
+  const naa=performance.now(), dt=Math.min(0.1,(naa-sisteTid)/1000); sisteTid=naa;
+  const t=Q.get('t')?+Q.get('t'):clock.getElapsedTime();
+  waterMat.uniforms.t.value=t;
+  if(!vokst) vokse(t*VEKST_FART+0.45);
+  if(!introDone){
+    const k=THREE.MathUtils.clamp((t-SPIN_START)/SPIN,0,1); const e=1-Math.pow(1-k,4); // rask start, myk landing
+    cam.zoom=THREE.MathUtils.lerp(Z0,1,e); cam.updateProjectionMatrix();
+    place(AZ0 + SVEIP*(1-e), THREE.MathUtils.lerp(EL0,ELEV,e));
+    if(t>SPIN_START){ if(k>=1){ introDone=true; zoomMaal=cam.zoom; controls.enabled=true; controls.update(); setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000);} }
+  } else {
+    if(anim) stepAnim();
+    else {
+      // myk zoom mot målet (hjul/styreflate), ankeret står stille under pekeren
+      if(Math.abs(Math.log(zoomMaal/cam.zoom))>1e-4){ const k=1-Math.exp(-dt*13); settZoom(Math.exp(Math.log(cam.zoom)+(Math.log(zoomMaal)-Math.log(cam.zoom))*k), zoomAnker); }
+      innenforGrense(dt);
+      controls.update();
+    }
+    visHjem();
+  }
+  // løftet hus (valgt) og svakt løftet hus (pekeren over), uavhengig av bildefrekvens
+  const kl=1-Math.exp(-dt*11);
+  let husBeveger=!vokst;
+  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-4){ g.position.y+=dy; husBeveger=true; } });
+  if(husBeveger) skyggeSkitten=true;
+  if(!introDone) skyggeSkitten=true;
+  oppdaterSol();
+  // beveger kartet seg? da tegnes det raskt; står det stille, tegnes det skarpt én gang og deretter rolig (vannet lever)
+  const kamFlytt = !_sisteKam.equals(cam.matrixWorld) || _sisteZ!==cam.zoom; _sisteKam.copy(cam.matrixWorld); _sisteZ=cam.zoom;
+  // kvaliteten følger bare kameraet: hus som løfter seg tegnes i full kvalitet hvert bilde, så et klikk ikke bytter tilstand
+  if(kamFlytt || anim || !introDone) sistBeveg=naa;
+  const stille = naa-sistBeveg>300;
+  post.settSkala(stille? skalaStille : skalaBeveg); post.setAO(stille? aoStille : aoBeveg); post.setSS(stille && perfNivaa<2 ? ssStille : 1);
+  if(introDone && stille){ speilInn=Math.min(1,speilInn+dt*2.8); speil.render(husBeveger || speilInn<1 || !speilFrisk); speilFrisk=true; }
+  else if(!stille){ speilFrisk=false; speilInn=Math.max(0,speilInn-dt*8); } // gammelt speil vises aldri mens kartet beveger seg
+  waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
+  if(!stille || husBeveger || !fullTegnet || naa-sistTegnet>100){ post.render(); sistTegnet=naa; fullTegnet=stille && !husBeveger; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>renderer.domElement.style.opacity=1); } }
+  dbgTegn(naa);
+  requestAnimationFrame(tick);
+}
+
+// ---- klikk, dobbeltklikk, hjul, klyp og tilbake til hele byen ----
+const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let down=null, valgt=null, klikkTimer=null, sisteTrykk=0, hover=null;
+const kort=document.getElementById('kort'); const hjem=document.getElementById('hjem');
+function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam);
+  const hit=ray.intersectObjects(city.children,true).find(h=>h.object.isMesh); if(!hit) return null;
+  let g=hit.object; while(g.parent!==city) g=g.parent; return {g, p:hit.point}; }
+function bakkepunkt(e){ const h=treffHus(e.clientX,e.clientY); if(h) return new THREE.Vector3(h.p.x,0,h.p.z); return bakkeVed(e.clientX,e.clientY); }
+function velg(e){
+  const h=treffHus(e.clientX,e.clientY);
+  if(valgt){valgt.userData.lift=false; valgt=null;}
+  if(!h){kort.classList.remove('vis'); return;}
+  const g=h.g; valgt=g; g.userData.lift=true;
+  const b=g.userData.b;
+  kort.querySelector('h2').textContent = b.navn || b.adr || 'Bygg i Gamlebyen';
+  kort.querySelector('.a').textContent = b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
+  kort.querySelector('.b').textContent = b.tekst || 'Historie, bilder og bruk kommer her.';
+  const f=kort.querySelector('.farge'); f.innerHTML='';
+  if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
+  kort.classList.add('vis');
+  // står huset under kortet eller utenfor bildet, glir kartet rolig så huset blir synlig over kortet
+  const B=new THREE.Vector3(h.p.x,0,h.p.z); const s=B.clone().project(cam);
+  const kortTopp = 1-2*Math.max(0.2, (kort.offsetTop||innerHeight*0.72)/innerHeight);   // kortets plass uten innglidningen
+  if(s.y < kortTopp+0.12 || Math.abs(s.x)>0.85 || s.y>0.88){
+    const G=bakkeVed(innerWidth/2, innerHeight*0.4); if(G) flyTo(new THREE.Vector3(controls.target.x+B.x-G.x,0,controls.target.z+B.z-G.z), cam.zoom, undefined, {dur:700});
+  }
+}
+function zoomInn(e, ut){
+  const p=bakkepunkt(e); if(!p) return;
+  const z = ut ? Math.max(1, cam.zoom/2.2) : Math.min(controls.maxZoom, cam.zoom*2.2);
+  if(ut && z<=1.01) flyTo(HOME.target, 1, undefined, {e:ease});
+  else flyTo(null, z, undefined, {anker:p, e:easeUt, dur:560});   // punktet man dobbeltklikket står stille mens kartet zoomer
+}
+function hjemNaa(){ flyTo(HOME.target, HOME.zoom, HOME.az); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
+hjem.onclick=()=>{ overta(); hjemNaa(); };
+addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
+const el=renderer.domElement;
+// hjul og styreflate: myk zoom mot pekeren
+const gest={t:0,hjul:false};
+const dbg={paa:false, rader:[], el:null, fps:[]};
+function dbgLogg(e,hjul){ if(!dbg.paa) return; dbg.rader.push(`${(performance.now()%100000|0)} dx${e.deltaX.toFixed(1)} dy${e.deltaY.toFixed(1)} w${e.wheelDeltaY} m${e.deltaMode} ${e.ctrlKey?'ctrl ':''}${hjul?'ZOOM':'flytt'}`); if(dbg.rader.length>40) dbg.rader.shift(); }
+function dbgTegn(naa){ if(!dbg.paa) return; dbg.fps.push(naa); while(dbg.fps.length&&naa-dbg.fps[0]>1000) dbg.fps.shift();
+  dbg.el.textContent=`fps ${dbg.fps.length}  zoom ${cam.zoom.toFixed(2)}  perfNivaa ${perfNivaa}  skalaBeveg ${skalaBeveg.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  anim ${anim?1:0}  ss ${ssStille} ao ${aoStille} skalaS ${skalaStille}  skygge ${sun.shadow.needsUpdate?1:0}\n3D ${(window.__pt||{}).scene|0} ms  blekk ${(window.__pt||{}).blekk|0} ms  kall ${(window.__pt||{}).kall}  tri ${(window.__pt||{}).tri}  tegnet ${naa-sistTegnet<20?1:0}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
+addEventListener('keydown',e=>{ if(!dbg.paa) return; if(e.key==='s'){ ssStille=ssStille===4?2:ssStille===2?1:4; } if(e.key==='a'){ aoStille=aoStille===14?7:aoStille===7?0:14; } if(e.key==='x'){ skalaStille=skalaStille===1?0.75:1; } if(e.key==='p'){ speil.av(); } });
+addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createElement('pre'); dbg.el.style.cssText='position:fixed;left:8px;top:8px;z-index:9;margin:0;padding:8px;font:11px/1.25 ui-monospace,monospace;background:rgba(255,255,255,.92);color:#222;max-height:92vh;overflow:hidden;pointer-events:none;border-radius:6px'; document.body.appendChild(dbg.el); } dbg.el.style.display=dbg.paa?'block':'none'; } });
+el.addEventListener('wheel',e=>{ e.preventDefault(); overta(); stoppAnim();
+  // vanlig kartpraksis på Mac: sveip med to fingre (styreflate/Magic Mouse) flytter kartet, klyp zoomer,
+  // et vanlig musehjul (hakk) zoomer. Hjulhakk kjennes på wheelDeltaY i hele 120-steg uten sidelengs bevegelse.
+  // én gest er én ting: første hendelse avgjør om det er flytting (to fingre) eller zoom (hjul/klyp); hendelser innen 120 ms arver valget
+  const naa=performance.now();
+  let hjul = !e.ctrlKey && (e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY));
+  if(!e.ctrlKey && gest.t && naa-gest.t<120) hjul=gest.hjul;
+  gest.t=naa; gest.hjul=hjul; dbgLogg(e,hjul);
+  if(!e.ctrlKey && !hjul){
+    const P0=bakkeVed(e.clientX,e.clientY), P1=bakkeVed(e.clientX-e.deltaX, e.clientY-e.deltaY);   // innholdet følger fingrene
+    if(P0&&P1) flytt(P0.x-P1.x, P0.z-P1.z); zoomMaal=cam.zoom; return;
+  }
+  const dy=e.deltaMode===1? e.deltaY*16 : e.deltaMode===2? e.deltaY*400 : e.deltaY;
+  const f=Math.exp(-dy*(e.ctrlKey?0.012:0.0018));                       // ctrl = klyp på styreflate
+  zoomMaal=THREE.MathUtils.clamp(zoomMaal*f, controls.minZoom, controls.maxZoom);
+  zoomAnker=bakkeVed(e.clientX,e.clientY);
+},{passive:false});
+el.addEventListener('pointerdown',e=>{ const varIntro=!introDone; overta(); down=varIntro?null:[e.clientX,e.clientY]; stoppAnim(); zoomMaal=cam.zoom; });   // klikket som stopper introen velger ikke et hus
+el.addEventListener('pointerup',e=>{
+  if(!introDone||!down) return; if(Math.hypot(e.clientX-down[0],e.clientY-down[1])>(e.pointerType==='touch'?12:6)) return;
+  if(fingre.size>1 || toFinger) return;   // ett fingertrykk er et klikk (fingeren slippes først i slipp())
+  const naa=performance.now();
+  if(naa-sisteTrykk<300){ clearTimeout(klikkTimer); sisteTrykk=0; zoomInn(e, e.shiftKey||e.altKey); return; }
+  sisteTrykk=naa; const ev={clientX:e.clientX, clientY:e.clientY};
+  klikkTimer=setTimeout(()=>velg(ev),300);
+});
+// peker over et hus (bare mus): huset løfter seg litt
+let sisteHover=0;
+el.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse' || e.buttons || anim || !introDone) { if(e.buttons && hover){ hover=null; el.style.cursor=''; } return; }
+  const n=performance.now(); if(n-sisteHover<45) return; sisteHover=n;
+  const h=treffHus(e.clientX,e.clientY); hover=h?h.g:null; el.style.cursor=hover?'pointer':''; });
+el.addEventListener('pointerleave',()=>{ hover=null; el.style.cursor=''; });
+// to fingre: klyp = zoom rundt midtpunktet, vri = snu byen, flytt = flytte kartet, parallelt opp/ned = vippe. Kort trykk med to fingre = zoom ut.
+let fingre=new Map(), toFinger=null;
+el.addEventListener('pointerdown',e=>{ if(e.pointerType==='mouse') return; fingre.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(fingre.size===2){ const [a,b]=[...fingre.values()]; toFinger={t0:performance.now(), d:Math.hypot(b.x-a.x,b.y-a.y), v:Math.atan2(b.y-a.y,b.x-a.x), m:{x:(a.x+b.x)/2,y:(a.y+b.y)/2}, flyttet:0}; clearTimeout(klikkTimer); } });
+el.addEventListener('pointermove',e=>{ if(!fingre.has(e.pointerId)) return; fingre.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(fingre.size!==2 || !toFinger) return;
+  const [a,b]=[...fingre.values()]; const d=Math.hypot(b.x-a.x,b.y-a.y), v=Math.atan2(b.y-a.y,b.x-a.x), m={x:(a.x+b.x)/2,y:(a.y+b.y)/2};
+  // to fingre som glir parallelt opp/ned = vippe kartet (som Google og Apple Maps); ellers følger kartet fingrene
+  const mdx=m.x-toFinger.m.x, mdy=m.y-toFinger.m.y, a0=[...fingre.values()];
+  const parallellVipp = Math.abs(mdy)>2*Math.abs(mdx) && Math.abs(Math.log(d/toFinger.d))<0.01 && Math.abs(a.y-b.y)<0.35*Math.abs(a.x-b.x)+60;
+  if(parallellVipp){ const off=cam.position.clone().sub(controls.target); const sp=new THREE.Spherical().setFromVector3(off);
+    sp.phi=THREE.MathUtils.clamp(sp.phi-mdy*0.006, controls.minPolarAngle, controls.maxPolarAngle); off.setFromSpherical(sp); cam.position.copy(controls.target).add(off); cam.lookAt(controls.target); }
+  else { const P0=bakkeVed(toFinger.m.x,toFinger.m.y), P1=bakkeVed(m.x,m.y); if(P0&&P1) flytt(P0.x-P1.x, P0.z-P1.z); }
+  // klyp
+  const A=bakkeVed(m.x,m.y); if(toFinger.d>0) settZoom(cam.zoom*d/toFinger.d, A); zoomMaal=cam.zoom;
+  // vri: snu kameraet rundt midtpunktet
+  let dv=v-toFinger.v; if(dv>Math.PI) dv-=2*Math.PI; if(dv<-Math.PI) dv+=2*Math.PI;
+  if(A && Math.abs(dv)>0.0005){ const q=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0), dv);   // innholdet følger fingrene
+    const ot=controls.target.clone().sub(A).applyQuaternion(q), oc=cam.position.clone().sub(A).applyQuaternion(q);
+    controls.target.copy(A).add(ot); cam.position.copy(A).add(oc); cam.lookAt(controls.target); }
+  toFinger.flyttet+=Math.abs(Math.log(d/toFinger.d))*120+Math.hypot(m.x-toFinger.m.x,m.y-toFinger.m.y)+Math.abs(dv)*120;
+  toFinger.d=d; toFinger.v=v; toFinger.m=m; });
+function slipp(e){ if(!fingre.has(e.pointerId)) return; fingre.delete(e.pointerId);
+  if(toFinger && fingre.size<2){ const kort_=performance.now()-toFinger.t0<260 && toFinger.flyttet<14; toFinger=null; down=null;
+    if(kort_ && introDone){ clearTimeout(klikkTimer); const z=Math.max(1,cam.zoom/2.2); if(z<=1.01) flyTo(HOME.target,1); else flyTo(null, z, undefined, {anker:controls.target.clone(), e:easeUt, dur:520}); } } }
+el.addEventListener('pointerup',slipp); el.addEventListener('pointercancel',slipp);
+el.addEventListener('dblclick',e=>e.preventDefault());
+function visHjem(){ const borte = Math.abs(Math.log(cam.zoom))>0.05 || controls.target.distanceTo(HOME.target)>8 || Math.abs(controls.getAzimuthalAngle()-HOME.az)>0.08; hjem.classList.toggle('vis', introDone && borte); }
+kort.querySelector('.lukk').onclick=()=>{kort.classList.remove('vis'); if(valgt){valgt.userData.lift=false; valgt=null;}};
+speil.size(); addEventListener('resize',()=>speil.size());
+tick();
+
+// Tjenestearbeider: kartet virker uten nett etter første besøk. Versjonen i navnet byttes av bygg.py, så ny versjon rydder gammel buffer.
+const NAVN='gamlebyen-25';
+const FILER=['./','index.html','data/by.json','assets/vann.png','assets/pensel.png',
+ 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js',
+ 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js',
+ 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/FXAAShader.js'];
+self.addEventListener('install',e=>{ e.waitUntil(caches.open(NAVN).then(c=>c.addAll(FILER)).then(()=>self.skipWaiting())); });
+self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==NAVN).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });
+self.addEventListener('fetch',e=>{ e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))); });
+
+</script>
+</body>
+</html>
