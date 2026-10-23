@@ -4,11 +4,12 @@ const post=(()=>{
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
+    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
-      float D(vec2 o){ return texture2D(tDep, vUv+o/res).x*span; }
+      // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
+      float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
       // dybde med lukking: hårfine sprekker mellom takflater (1 px) lukkes, så de ikke blir prikker i streken
       float Dm(vec2 o){ return min(D(o), min(D(o+vec2(1.,0.)), D(o+vec2(0.,1.)))); }
       // strekstyrke ved en forskyvning (piksler): knekker (inner) og dybdesprang (silhuett)
@@ -31,7 +32,7 @@ const post=(()=>{
             acc+=texture2D(tCol, vUv+vec2(cos(a),sin(a))*r/res).rgb; wsum+=1.; }
           col=acc/wsum; }
         float zc=D(vec2(0.));
-        if(zc>span*0.999){ gl_FragColor=vec4(col,1.);
+        if(texture2D(tDep,vUv).x>0.99999){ gl_FragColor=vec4(col,1.);   // bakgrunn (ingenting tegnet): dybden står på fjernplanet
           #include <colorspace_fragment>
           return; }
         // verdensposisjon for pikselen: støyen i streken forankres i byen, så den ikke kryper når kameraet beveger seg
@@ -118,7 +119,7 @@ const post=(()=>{
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
     settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },
-    render(){ const u=m.uniforms; u.mpp.value=(cam.right-cam.left)/cam.zoom/u.res.value.x; u.span.value=cam.far-cam.near; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introDone? 0.0 : 1.0; // miniatyr-uskarphet bare i introen
+    render(){ const u=m.uniforms; u.mpp.value=kam.mpp*innerWidth/u.res.value.x; u.span.value=kam.mpp; u.naer.value=kam.naer; u.fjern.value=kam.fjern; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introDone? 0.0 : 1.0; // miniatyr-uskarphet bare i introen
       const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const _t1=performance.now(); renderer.setRenderTarget(rtF); renderer.render(ps,pc); renderer.setRenderTarget(null); renderer.render(fs,pc); window.__pt={scene:_t1-_t0, blekk:performance.now()-_t1, kall:renderer.info.render.calls, tri:renderer.info.render.triangles}; }
   };
 })();

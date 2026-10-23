@@ -30,13 +30,11 @@ function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,34*
   sun.color.setRGB(1.0, THREE.MathUtils.lerp(0.80,0.985,k), THREE.MathUtils.lerp(0.62,0.95,k)); }
 function setSol(asimut, hoyde){
   SOL.modus='ekte'; SOL.asimut=asimut; SOL.hoyde=Math.max(hoyde,3*GRAD);
-  if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
   solFargeFor(SOL.hoyde); skyggeSkitten=true;
 }
 function plakatSol(){
   SOL.modus='plakat';
-  if(sun.parent!==cam){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); cam.add(sun); cam.add(sun.target); }
-  sun.target.position.set(0,0,-900); sun.position.copy(PLAKAT).multiplyScalar(1500).add(sun.target.position);
+  if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
   solFargeFor(35*GRAD); skyggeSkitten=true;
 }
 window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
@@ -45,19 +43,23 @@ function lysFraVenstre(){ plakatSol(); }
 sun.shadow.autoUpdate=false; let skyggeSkitten=true, skyggeTakt=0, kameraBeveget=true; const sistKam=new THREE.Matrix4(); let sistZoom=0;
 const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4();
 function oppdaterSol(){
+  const tg=kam.senter;
   if(SOL.modus==='ekte'){
-    const tg=controls.target; const ca=Math.cos(SOL.hoyde);
+    const ca=Math.cos(SOL.hoyde);
     sun.target.position.copy(tg); sun.position.set(tg.x+Math.sin(SOL.asimut)*ca*1500, tg.y+Math.sin(SOL.hoyde)*1500, tg.z-Math.cos(SOL.asimut)*ca*1500);
-    sun.target.updateMatrixWorld();
+  } else {
+    // plakatsola: står øverst til venstre i bildet uansett hvordan byen snus (retningen følger kameraet)
+    _sd.copy(PLAKAT).applyQuaternion(cam.quaternion); sun.target.position.copy(tg); sun.position.copy(tg).addScaledVector(_sd,1500);
   }
+  sun.target.updateMatrixWorld();
   // skyggekameraet dekker det som er i bildet, så skyggene er skarpe nok også tett på
-  const hw=(cam.right-cam.left)/2/cam.zoom, hh=(cam.top-cam.bottom)/2/cam.zoom;
-  const r=Math.min(950, Math.max(hw, hh/Math.sin(ELEV))*1.08+45);
+  const hw=kam.mpp*innerWidth/2, hh=kam.mpp*innerHeight/2;
+  const r=Math.min(950, Math.max(hw, hh/Math.sin((90-kam.pitch)*GRAD))*1.08+45);
   if(Math.abs(sc.right-r)>0.5){ sc.left=-r; sc.right=r; sc.top=r; sc.bottom=-r; sc.updateProjectionMatrix(); skyggeSkitten=true; }
   sun.shadow.radius=THREE.MathUtils.clamp(1.1/(2*r/sun.shadow.mapSize.x),1.5,9);
   cam.updateMatrixWorld();
-  kameraBeveget = !sistKam.equals(cam.matrixWorld) || sistZoom!==cam.zoom || !introDone;
-  if(kameraBeveget){ sistKam.copy(cam.matrixWorld); sistZoom=cam.zoom; skyggeSkitten=true; }
+  kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !introDone;
+  if(kameraBeveget){ sistKam.copy(cam.projectionMatrix); skyggeSkitten=true; }
   skyggeTakt++; if(skyggeSkitten && (skyggeTakt%3===0 || !kameraBeveget)){ sun.shadow.needsUpdate=true; skyggeSkitten=false; }
   // trærne henter solretningen selv (se tre-blokken)
 }

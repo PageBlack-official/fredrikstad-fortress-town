@@ -1,0 +1,14 @@
+import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const [,, file, kode] = process.argv; const dir=path.dirname(file);
+const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[0]==='/'?'index.html':q.url.split('?')[0]); if(fs.existsSync(p)&&fs.statSync(p).isFile()){ r.end(fs.readFileSync(p)); } else { r.statusCode=404; r.end(); } });
+await new Promise(r=>server.listen(0,'127.0.0.1',r)); const port=server.address().port;
+const browser=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const ctx=await browser.newContext({viewport:{width:900,height:600}}); const page=await ctx.newPage(); page.on('pageerror',e=>console.log('ERR',e.message));
+await page.goto(`http://127.0.0.1:${port}/index.html?skip=1`); await page.waitForTimeout(4000);
+await page.evaluate(kode); await page.waitForTimeout(3000);
+const P=JSON.parse(process.env.PUNKTER||'[[-22.5,45,66],[-30,45,70],[-40,45,74],[-22.5,45,100],[-90,45,100],[-22.5,45,50]]'); const pts=await page.evaluate(P=>P.map(q=>window.__skjerm3(q[0],q[1],q[2]).map(Math.round)),P);
+const cdp=await ctx.newCDPSession(page); const {data}=await cdp.send('Page.captureScreenshot',{format:'png'}); fs.writeFileSync(process.env.UT||'/tmp/px.png',Buffer.from(data,'base64'));
+await browser.close(); server.close();
+const { PNG } = await import('/opt/npm-tools/node_modules/pngjs/lib/png.js').catch(()=>({PNG:null}));
+console.log(JSON.stringify(pts)); fs.writeFileSync((process.env.UT||'/tmp/px.png')+'.json',JSON.stringify(pts));

@@ -13,7 +13,7 @@ const speil=(()=>{
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
       // tegnes bare på nytt når kameraet eller husene har flyttet seg (stillestående bilde koster ingenting ekstra)
-      const e=cam.matrixWorld.elements, nok=e.join(',')+cam.zoom+(endret?Math.random():'');
+      const e=cam.projectionMatrix.elements, nok=e.join(',')+(endret?Math.random():'');
       if(nok===this._sist) return; this._sist=nok;
       const lagre=deler.map(o=>[o.position.y,o.scale.y]);
       deler.forEach(o=>{ o.position.y=2*Y-o.position.y; o.scale.y=-o.scale.y; });
@@ -24,27 +24,22 @@ const speil=(()=>{
       deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
       waterMat.uniforms.tRefl.value=rt.texture;
       // speilingen tones ned i oversikten og kommer fram når man går nærmere, så den aldri popper
-      waterMat.uniforms.reflStyrke.value=THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(cam.zoom,0.5)),0.1,0.36);
+      waterMat.uniforms.reflStyrke.value=speilStyrke();
     }
   };
 })();
 
 const clock=new THREE.Clock(); let _synlig=false;
-const INTRO_GROW=1.3, SPIN_START=0.15, SPIN=3.4, VEKST_FART=1.8;
+
 const Q=Q0; let introDone=false;
 if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
   const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
-if(Q.get('tx')){ target.set(+Q.get('tx'),0,-(+Q.get('ty'))); controls.target.copy(target); }
-if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); place(Q.get('az')?THREE.MathUtils.degToRad(+Q.get('az')):AZ0); controls.enabled=true; if(Q.get('zoom')){cam.zoom=+Q.get('zoom'); cam.updateProjectionMatrix();} controls.update(); }
-// testkrok for kvalitetssjekk (skjermbilder uten ny sidelasting)
-window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
-window.__kam=()=>{ const v=vinkler(cam.position.clone().sub(controls.target)); let vs=null; if(valgt){ const bb=new THREE.Box3().setFromObject(valgt); const c=bb.getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:controls.target.x,z:controls.target.z,zoom:cam.zoom,az:v.az,pol:v.pol,anim:!!anim,valgt:vs,intro:!introDone,t:clock.getElapsedTime()}; };
-window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; anim=null; buildings.forEach(g=>g.scale.y=1); setCrowns(null); target.set(tx,0,-ty); controls.target.copy(target); place(THREE.MathUtils.degToRad(az)); cam.zoom=zoom; zoomMaal=zoom; cam.updateProjectionMatrix(); controls.enabled=true; controls.update(); };
+const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : [10,0];   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen og senker oppløsning/AO på svake maskiner (mobil), så spinnet holder seg mykt
 let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0;
-function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(cam.zoom,0.5)),0.1,0.36); }
+function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
 let ssStille=4;
 let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14, aoBeveg=6; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
 function maalYtelse(){ const n=performance.now(), dt=n-perfLast; perfLast=n; if(perfNivaa>=2 || document.hidden || (n-sistBeveg>300 && n-sistTegnet>40)) return;

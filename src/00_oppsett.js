@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as maplibregl from 'maplibre-gl';
 import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
 
 const TEX_VANN=__TEKSTUR('vann.png');
@@ -9,34 +9,39 @@ const TEX_PENSEL=__TEKSTUR('pensel.png');
 const penselTex=texLoader.load(TEX_PENSEL, t=>{ t.wrapS=t.wrapT=THREE.RepeatWrapping; t.minFilter=THREE.LinearMipmapLinearFilter; t.magFilter=THREE.LinearFilter; t.needsUpdate=true; });
 const DATA = JSON.parse(document.getElementById('bydata').textContent);
 const INK = 0x3a2c26;
-const renderer = new THREE.WebGLRenderer({antialias:true});
-// pikselbudsjett: store skjermer (5K/4K) starter med færre piksler, så introen går jevnt; heves etter introen hvis maskinen har overskudd
-// skjermen tegnes alltid skarpt (full pikseltetthet). Mens kartet beveger seg regnes 3D-bildet i lavere oppløsning,
-// og når det står stille tegnes det på nytt i full kvalitet - slik kart-apper gjør det.
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+// ---- kartmotoren: MapLibre GL JS eier kamera, gester, zoom og koordinater; byen tegnes som et custom layer i three.js ----
+const Q0=new URLSearchParams(location.search);
+const ORIGO={lon:10.952745, lat:59.202835};   // modellens (0,0) i grader (KILDER.md); x = øst, y = nord i meter
+const M_PER_MERC=1/maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0).meterInMercatorCoordinateUnits();
+function tilLngLat(x,y){ const m=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0); const s=1/M_PER_MERC; return new maplibregl.MercatorCoordinate(m.x+x*s, m.y-y*s, 0).toLngLat(); }
+function tilModell(ll){ const o=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0), m=maplibregl.MercatorCoordinate.fromLngLat(ll,0); return [(m.x-o.x)*M_PER_MERC, -(m.y-o.y)*M_PER_MERC]; }
+// plakatvinkelen: samme utsnitt som den ortografiske v25 (VIEW 300 → 372 m synlig høyde ved zoom 1)
+const PITCH0=90-33, AZ0_GRADER=innerWidth/innerHeight<0.8 ? 130 : 40;
+function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*mpp)); }
+const Z_HJEM=zoomFor(1);
+const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
+  center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
+  attributionControl:false, antialias:true, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
+window.map=map;
+map.scrollZoom.setWheelZoomRate(1/150); map.touchZoomRotate.enable(); map.dragRotate.enable(); map.keyboard.enable();
+const gl2 = map.getCanvas().getContext('webgl2');
+const renderer = new THREE.WebGLRenderer({canvas: map.getCanvas(), context: gl2, antialias:true});
+renderer.autoClear=false;
+// pikselbudsjett: mens kartet beveger seg regnes 3D-bildet i lavere oppløsning, og når det står stille tegnes det på nytt i full kvalitet
 const PIX_BEVEG=3.0e6, PIX_STILLE=11e6;
 let skalaBeveg=1, skalaStille=1;
-function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaBeveg=THREE.MathUtils.clamp(Math.sqrt(PIX_BEVEG/n),0.4,1); skalaStille=1; /* stillbilde alltid i full oppløsning */ }
-renderer.setSize(innerWidth,innerHeight);
+function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaBeveg=THREE.MathUtils.clamp(Math.sqrt(PIX_BEVEG/n),0.4,1); skalaStille=1; }
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap; // myk filtrering gjøres i skyggeMask()
 renderer.outputColorSpace = THREE.SRGBColorSpace;
-document.body.prepend(renderer.domElement);
-renderer.domElement.addEventListener('webglcontextlost',e=>{ e.preventDefault(); if(!sessionStorage.getItem('gl-tapt')){ sessionStorage.setItem('gl-tapt','1'); location.reload(); } });
+map.on('webglcontextlost',()=>{ if(!sessionStorage.getItem('gl-tapt')){ sessionStorage.setItem('gl-tapt','1'); location.reload(); } });
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xe2e1d6);
 
-// Ortografisk kamera = plakatens isometri
-let VIEW = 300;
-const cam = new THREE.OrthographicCamera(-1,1,1,-1,-4000,4000);
-function fit(){
-  const a = innerWidth/innerHeight;
-  const v = a < 1 ? VIEW*1.15 : VIEW*0.62;
-  cam.left=-v*a/1; cam.right=v*a/1; cam.top=v; cam.bottom=-v;
-  if (a<1){ cam.left=-v*a; cam.right=v*a; }
-  cam.updateProjectionMatrix();
-  renderer.setSize(innerWidth,innerHeight);
-  post.size();
-}
-addEventListener('resize',fit);
+// kameraet: posisjon og retning hentes fra MapLibre hvert bilde (se 13_kart.js); projeksjonen er kartets egen
+const cam = new THREE.PerspectiveCamera(60, 1, 1, 10000);
+cam.matrixAutoUpdate=false;
+const kam={zoomfaktor:1, mpp:1, pitch:PITCH0, bearing:-AZ0_GRADER, naer:1, fjern:10000};   // avledet av kartet hvert bilde
+function fit(){ post.size(); }
+map.on('resize',fit);

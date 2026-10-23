@@ -4,14 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Gamle Fredrikstad</title>
-<meta name="description" content="Gamlebyen i Fredrikstad som tegnet 3D-kart. Versjon 25.">
+<meta name="description" content="Gamlebyen i Fredrikstad som tegnet 3D-kart. Versjon 26.">
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="ikon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Gamlebyen"><meta name="theme-color" content="#e2e1d6">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.css">
 <style>
 :root{--bg:#e2e1d6;--ink:#2b2420;--paper:#f6f3ea;--muted:#7a7166}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#e2e1d6;--ink:#2b2420;--paper:#f6f3ea;--muted:#7a7166}}
 :root[data-theme="dark"]{--bg:#e2e1d6;--ink:#2b2420;--paper:#f6f3ea;--muted:#7a7166}
 html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);-webkit-tap-highlight-color:transparent}
-canvas{display:block;touch-action:none;position:fixed;inset:0;opacity:0;transition:opacity .45s ease-out}
+#kart{position:fixed;inset:0;background:var(--bg)}
+.maplibregl-canvas{opacity:0;transition:opacity .45s ease-out;outline:none}
+.maplibregl-ctrl-attrib{display:none}
 :root{color-scheme:light}
 #hint{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(246,243,234,.82);padding:8px 14px;border-radius:20px;opacity:0;transition:opacity 1.2s;pointer-events:none;white-space:normal;max-width:min(88vw,560px);text-align:center;line-height:1.45}
 #hjem{z-index:5;position:fixed;right:max(16px,env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;align-items:center;gap:6px;border:0;border-radius:22px;padding:10px 14px;background:rgba(246,243,234,.92);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;box-shadow:0 4px 16px rgba(40,30,20,.14);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .4s,transform .4s}
@@ -27,15 +30,16 @@ canvas{display:block;touch-action:none;position:fixed;inset:0;opacity:0;transiti
 </style>
 </head>
 <body>
+<div id="kart" aria-label="Kart over Gamlebyen"></div>
 <button id="hjem" aria-label="Vis hele byen" title="Vis hele byen (Esc)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Hele byen</span></button>
-<div id="hint">Dra for å snu byen · sveip for å flytte kartet · dobbeltklikk for å gå nærmere</div><script>if(matchMedia("(pointer:coarse)").matches)document.getElementById("hint").textContent="Én finger flytter kartet · to fingre snur og zoomer · trykk på et hus";</script>
+<div id="hint">Dra for å flytte kartet · hjul eller klyp for å zoome · høyreklikk og dra for å snu byen · klikk på et hus</div><script>if(matchMedia("(pointer:coarse)").matches)document.getElementById("hint").textContent="Én finger flytter kartet · to fingre snur og zoomer · trykk på et hus";</script>
 <div id="kort"><button class="lukk" aria-label="Lukk">×</button><h2></h2><p class="a"></p><p class="b"></p><div class="farge"></div></div>
 <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","maplibre-gl":"https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.mjs"}}</script>
 
 <script type="module">
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as maplibregl from 'maplibre-gl';
 import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
 
 const TEX_VANN='assets/vann.png';
@@ -45,37 +49,42 @@ const TEX_PENSEL='assets/pensel.png';
 const penselTex=texLoader.load(TEX_PENSEL, t=>{ t.wrapS=t.wrapT=THREE.RepeatWrapping; t.minFilter=THREE.LinearMipmapLinearFilter; t.magFilter=THREE.LinearFilter; t.needsUpdate=true; });
 const DATA = await (await fetch('data/by.json')).json();
 const INK = 0x3a2c26;
-const renderer = new THREE.WebGLRenderer({antialias:true});
-// pikselbudsjett: store skjermer (5K/4K) starter med færre piksler, så introen går jevnt; heves etter introen hvis maskinen har overskudd
-// skjermen tegnes alltid skarpt (full pikseltetthet). Mens kartet beveger seg regnes 3D-bildet i lavere oppløsning,
-// og når det står stille tegnes det på nytt i full kvalitet - slik kart-apper gjør det.
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+// ---- kartmotoren: MapLibre GL JS eier kamera, gester, zoom og koordinater; byen tegnes som et custom layer i three.js ----
+const Q0=new URLSearchParams(location.search);
+const ORIGO={lon:10.952745, lat:59.202835};   // modellens (0,0) i grader (KILDER.md); x = øst, y = nord i meter
+const M_PER_MERC=1/maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0).meterInMercatorCoordinateUnits();
+function tilLngLat(x,y){ const m=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0); const s=1/M_PER_MERC; return new maplibregl.MercatorCoordinate(m.x+x*s, m.y-y*s, 0).toLngLat(); }
+function tilModell(ll){ const o=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0), m=maplibregl.MercatorCoordinate.fromLngLat(ll,0); return [(m.x-o.x)*M_PER_MERC, -(m.y-o.y)*M_PER_MERC]; }
+// plakatvinkelen: samme utsnitt som den ortografiske v25 (VIEW 300 → 372 m synlig høyde ved zoom 1)
+const PITCH0=90-33, AZ0_GRADER=innerWidth/innerHeight<0.8 ? 130 : 40;
+function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*mpp)); }
+const Z_HJEM=zoomFor(1);
+const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
+  center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
+  attributionControl:false, antialias:true, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
+window.map=map;
+map.scrollZoom.setWheelZoomRate(1/150); map.touchZoomRotate.enable(); map.dragRotate.enable(); map.keyboard.enable();
+const gl2 = map.getCanvas().getContext('webgl2');
+const renderer = new THREE.WebGLRenderer({canvas: map.getCanvas(), context: gl2, antialias:true});
+renderer.autoClear=false;
+// pikselbudsjett: mens kartet beveger seg regnes 3D-bildet i lavere oppløsning, og når det står stille tegnes det på nytt i full kvalitet
 const PIX_BEVEG=3.0e6, PIX_STILLE=11e6;
 let skalaBeveg=1, skalaStille=1;
-function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaBeveg=THREE.MathUtils.clamp(Math.sqrt(PIX_BEVEG/n),0.4,1); skalaStille=1; /* stillbilde alltid i full oppløsning */ }
-renderer.setSize(innerWidth,innerHeight);
+function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaBeveg=THREE.MathUtils.clamp(Math.sqrt(PIX_BEVEG/n),0.4,1); skalaStille=1; }
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap; // myk filtrering gjøres i skyggeMask()
 renderer.outputColorSpace = THREE.SRGBColorSpace;
-document.body.prepend(renderer.domElement);
-renderer.domElement.addEventListener('webglcontextlost',e=>{ e.preventDefault(); if(!sessionStorage.getItem('gl-tapt')){ sessionStorage.setItem('gl-tapt','1'); location.reload(); } });
+map.on('webglcontextlost',()=>{ if(!sessionStorage.getItem('gl-tapt')){ sessionStorage.setItem('gl-tapt','1'); location.reload(); } });
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xe2e1d6);
 
-// Ortografisk kamera = plakatens isometri
-let VIEW = 300;
-const cam = new THREE.OrthographicCamera(-1,1,1,-1,-4000,4000);
-function fit(){
-  const a = innerWidth/innerHeight;
-  const v = a < 1 ? VIEW*1.15 : VIEW*0.62;
-  cam.left=-v*a/1; cam.right=v*a/1; cam.top=v; cam.bottom=-v;
-  if (a<1){ cam.left=-v*a; cam.right=v*a; }
-  cam.updateProjectionMatrix();
-  renderer.setSize(innerWidth,innerHeight);
-  post.size();
-}
-addEventListener('resize',fit);
+// kameraet: posisjon og retning hentes fra MapLibre hvert bilde (se 13_kart.js); projeksjonen er kartets egen
+const cam = new THREE.PerspectiveCamera(60, 1, 1, 10000);
+cam.matrixAutoUpdate=false;
+const kam={zoomfaktor:1, mpp:1, pitch:PITCH0, bearing:-AZ0_GRADER, naer:1, fjern:10000};   // avledet av kartet hvert bilde
+function fit(){ post.size(); }
+map.on('resize',fit);
 
 // ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
 const post=(()=>{
@@ -83,11 +92,12 @@ const post=(()=>{
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
+    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
-      float D(vec2 o){ return texture2D(tDep, vUv+o/res).x*span; }
+      // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
+      float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
       // dybde med lukking: hårfine sprekker mellom takflater (1 px) lukkes, så de ikke blir prikker i streken
       float Dm(vec2 o){ return min(D(o), min(D(o+vec2(1.,0.)), D(o+vec2(0.,1.)))); }
       // strekstyrke ved en forskyvning (piksler): knekker (inner) og dybdesprang (silhuett)
@@ -110,7 +120,7 @@ const post=(()=>{
             acc+=texture2D(tCol, vUv+vec2(cos(a),sin(a))*r/res).rgb; wsum+=1.; }
           col=acc/wsum; }
         float zc=D(vec2(0.));
-        if(zc>span*0.999){ gl_FragColor=vec4(col,1.);
+        if(texture2D(tDep,vUv).x>0.99999){ gl_FragColor=vec4(col,1.);   // bakgrunn (ingenting tegnet): dybden står på fjernplanet
           #include <colorspace_fragment>
           return; }
         // verdensposisjon for pikselen: støyen i streken forankres i byen, så den ikke kryper når kameraet beveger seg
@@ -197,7 +207,7 @@ const post=(()=>{
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
     settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },
-    render(){ const u=m.uniforms; u.mpp.value=(cam.right-cam.left)/cam.zoom/u.res.value.x; u.span.value=cam.far-cam.near; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introDone? 0.0 : 1.0; // miniatyr-uskarphet bare i introen
+    render(){ const u=m.uniforms; u.mpp.value=kam.mpp*innerWidth/u.res.value.x; u.span.value=kam.mpp; u.naer.value=kam.naer; u.fjern.value=kam.fjern; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introDone? 0.0 : 1.0; // miniatyr-uskarphet bare i introen
       const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const _t1=performance.now(); renderer.setRenderTarget(rtF); renderer.render(ps,pc); renderer.setRenderTarget(null); renderer.render(fs,pc); window.__pt={scene:_t1-_t0, blekk:performance.now()-_t1, kall:renderer.info.render.calls, tri:renderer.info.render.triangles}; }
   };
 })();
@@ -237,13 +247,11 @@ function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,34*
   sun.color.setRGB(1.0, THREE.MathUtils.lerp(0.80,0.985,k), THREE.MathUtils.lerp(0.62,0.95,k)); }
 function setSol(asimut, hoyde){
   SOL.modus='ekte'; SOL.asimut=asimut; SOL.hoyde=Math.max(hoyde,3*GRAD);
-  if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
   solFargeFor(SOL.hoyde); skyggeSkitten=true;
 }
 function plakatSol(){
   SOL.modus='plakat';
-  if(sun.parent!==cam){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); cam.add(sun); cam.add(sun.target); }
-  sun.target.position.set(0,0,-900); sun.position.copy(PLAKAT).multiplyScalar(1500).add(sun.target.position);
+  if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
   solFargeFor(35*GRAD); skyggeSkitten=true;
 }
 window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
@@ -252,19 +260,23 @@ function lysFraVenstre(){ plakatSol(); }
 sun.shadow.autoUpdate=false; let skyggeSkitten=true, skyggeTakt=0, kameraBeveget=true; const sistKam=new THREE.Matrix4(); let sistZoom=0;
 const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4();
 function oppdaterSol(){
+  const tg=kam.senter;
   if(SOL.modus==='ekte'){
-    const tg=controls.target; const ca=Math.cos(SOL.hoyde);
+    const ca=Math.cos(SOL.hoyde);
     sun.target.position.copy(tg); sun.position.set(tg.x+Math.sin(SOL.asimut)*ca*1500, tg.y+Math.sin(SOL.hoyde)*1500, tg.z-Math.cos(SOL.asimut)*ca*1500);
-    sun.target.updateMatrixWorld();
+  } else {
+    // plakatsola: står øverst til venstre i bildet uansett hvordan byen snus (retningen følger kameraet)
+    _sd.copy(PLAKAT).applyQuaternion(cam.quaternion); sun.target.position.copy(tg); sun.position.copy(tg).addScaledVector(_sd,1500);
   }
+  sun.target.updateMatrixWorld();
   // skyggekameraet dekker det som er i bildet, så skyggene er skarpe nok også tett på
-  const hw=(cam.right-cam.left)/2/cam.zoom, hh=(cam.top-cam.bottom)/2/cam.zoom;
-  const r=Math.min(950, Math.max(hw, hh/Math.sin(ELEV))*1.08+45);
+  const hw=kam.mpp*innerWidth/2, hh=kam.mpp*innerHeight/2;
+  const r=Math.min(950, Math.max(hw, hh/Math.sin((90-kam.pitch)*GRAD))*1.08+45);
   if(Math.abs(sc.right-r)>0.5){ sc.left=-r; sc.right=r; sc.top=r; sc.bottom=-r; sc.updateProjectionMatrix(); skyggeSkitten=true; }
   sun.shadow.radius=THREE.MathUtils.clamp(1.1/(2*r/sun.shadow.mapSize.x),1.5,9);
   cam.updateMatrixWorld();
-  kameraBeveget = !sistKam.equals(cam.matrixWorld) || sistZoom!==cam.zoom || !introDone;
-  if(kameraBeveget){ sistKam.copy(cam.matrixWorld); sistZoom=cam.zoom; skyggeSkitten=true; }
+  kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !introDone;
+  if(kameraBeveget){ sistKam.copy(cam.projectionMatrix); skyggeSkitten=true; }
   skyggeTakt++; if(skyggeSkitten && (skyggeTakt%3===0 || !kameraBeveget)){ sun.shadow.needsUpdate=true; skyggeSkitten=false; }
   // trærne henter solretningen selv (se tre-blokken)
 }
@@ -1204,34 +1216,33 @@ function setCrowns(t){
 crowns[0].onBeforeRender=(r,sc_,c)=>{ sun.getWorldPosition(sunW); sun.target.getWorldPosition(tgtW); treU.sunDir.value.copy(sunW).sub(tgtW).normalize(); c.getWorldDirection(camF); treU.camDir.value.copy(camF); if(c.isOrthographicCamera) treU.invSpan.value=1/(c.far-c.near); };
 setCrowns(0);
 
-// ---- kamera og intro ----
-const target = new THREE.Vector3(10,0,0);
-const R = 900, ELEV = THREE.MathUtils.degToRad(33);
-const AZ0 = THREE.MathUtils.degToRad(innerWidth/innerHeight<0.8 ? 130 : 40); // plakatvinkelen; på stående mobil dreid 90° så byens lengde fyller skjermen
-function place(az, el=ELEV){ cam.position.set(target.x+Math.cos(el)*Math.sin(az)*R, target.y+Math.sin(el)*R, target.z+Math.cos(el)*Math.cos(az)*R); cam.lookAt(target); }
-// introen: starter høyt over byen og nærmere, senker seg til plakatens vinkel mens byen snurrer én gang
-const EL0=THREE.MathUtils.degToRad(52), Z0=0.82, SVEIP=THREE.MathUtils.degToRad(110); // intro: rask sveip inn mot plakatvinkelen, litt zoom inn
-fit(); place(AZ0); scene.add(cam); lysFraVenstre();
-const Q0=new URLSearchParams(location.search);
-const controls = new OrbitControls(cam, renderer.domElement);
-controls.target.copy(target); controls.enableDamping=true; controls.dampingFactor=0.07; controls.rotateSpeed=0.65;
-controls.minPolarAngle=THREE.MathUtils.degToRad(20); controls.maxPolarAngle=THREE.MathUtils.degToRad(72);
-controls.minZoom=0.85; controls.maxZoom=6; controls.enablePan=true; controls.screenSpacePanning=false; controls.panSpeed=1.0;
-controls.mouseButtons={LEFT:THREE.MOUSE.ROTATE, MIDDLE:THREE.MOUSE.PAN, RIGHT:THREE.MOUSE.PAN}; // dra = snu byen, høyreklikk/sveip = flytte kartet
-controls.enableZoom=false;                      // zoom styres av kartet selv: myk, mot pekeren, klyp på mobil
-controls.touches={ONE:THREE.TOUCH.ROTATE, TWO:-1};   // to fingre håndteres under (klyp, vri, flytt)
-controls.enabled=false;
-
-// byen tegner seg opp: høyden vokser kvartal for kvartal (sortert sørvest -> nordøst)
-const order = buildings.map(g=>{const c=g.userData.b.r; return [g, c[0]+c[1]];}).sort((a,b)=>a[1]-b[1]);
-order.forEach(([g],k)=>{ g.userData.delay = 1.1*k/order.length; g.scale.y=0.001; });
-let vokst=false;   // husene og trærne har vokst ferdig
-function vokse(t){
-  let ferdig=true;
-  buildings.forEach(g=>{ const k=THREE.MathUtils.clamp((t-g.userData.delay)/0.5,0,1); g.scale.y=Math.max(0.001, 1-Math.pow(1-k,3)); if(k<1) ferdig=false; });
-  if(t<3.4){ setCrowns(t); ferdig=false; } else setCrowns(null);
-  if(ferdig) vokst=true;
+// ---- kamerabroen: MapLibre eier kameraet; three.js-kameraet settes fra kartets matrise hvert bilde ----
+// Modellen er i meter (x øst, y opp, z = -nord). MapLibre regner i mercator (x øst, y sør, z opp), så
+// modellmatrisen er: flytt til origo · skaler(s,-s,s) · roter 90° om x.  (Samme oppskrift som MapLibres three.js-eksempel.)
+const _merc=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0);
+const MODELL=new THREE.Matrix4().makeTranslation(_merc.x,_merc.y,_merc.z)
+  .multiply(new THREE.Matrix4().makeScale(1/M_PER_MERC,-1/M_PER_MERC,1/M_PER_MERC))
+  .multiply(new THREE.Matrix4().makeRotationAxis(new THREE.Vector3(1,0,0),Math.PI/2));
+const _mvp=new THREE.Matrix4(), _full=new THREE.Matrix4(), _inv=new THREE.Matrix4(), _pn=new THREE.Vector3(), _pf=new THREE.Vector3(), _dir=new THREE.Vector3();
+kam.senter=new THREE.Vector3(10,0,0); kam.oye=new THREE.Vector3();
+function kameraFraKartet(args){
+  _mvp.fromArray(args.defaultProjectionData.mainMatrix); _full.multiplyMatrices(_mvp,MODELL); _inv.copy(_full).invert();
+  // øyet: nær- og fjernpunktet på midtstrålen gir synsretningen; øyet ligger nærplanavstanden bak nærpunktet
+  _pn.set(0,0,-1).applyMatrix4(_inv); _pf.set(0,0,1).applyMatrix4(_inv); _dir.subVectors(_pf,_pn).normalize();
+  kam.naer=args.nearZ; kam.fjern=args.farZ; kam.fov=args.fov;
+  kam.zoomfaktor=Math.pow(2,map.getZoom()-Z_HJEM); kam.pitch=map.getPitch(); kam.bearing=map.getBearing();
+  kam.mpp=40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*Math.pow(2,map.getZoom()));
+  kam.oye.copy(_pn).addScaledVector(_dir,-args.nearZ*kam.mpp);   // nearZ er i kartets pikselrom; mpp gjør det om til meter
+  cam.position.copy(kam.oye); cam.up.set(0,1,0); cam.lookAt(_pn); cam.updateMatrix(); cam.updateMatrixWorld(true); cam.matrixWorldInverse.copy(cam.matrixWorld).invert();
+  cam.projectionMatrix.multiplyMatrices(_full,cam.matrixWorld); cam.projectionMatrixInverse.copy(cam.projectionMatrix).invert();
+  // bakkepunktet midt i bildet, og meter per skjermpunkt der
+  const t=-_pn.y/_dir.y; if(isFinite(t)&&t>0) kam.senter.copy(_pn).addScaledVector(_dir,t);
 }
+// synsvinkler slik resten av koden forventer dem (asimut fra bearing, polarvinkel fra pitch)
+function vinkler(){ return {az:-kam.bearing*Math.PI/180, pol:kam.pitch*Math.PI/180}; }
+// kartet får vite hvor byen ligger, så det ikke kan dras ut av syne
+const GRENSE=560;
+map.setMaxBounds([tilLngLat(-GRENSE-300,-GRENSE-300), tilLngLat(GRENSE+300,GRENSE+300)]);
 
 // ---- speilinger i vannet: hus, trær og terreng tegnes speilvendt om vannflaten i et eget, halvt så stort lag ----
 const speil=(()=>{
@@ -1248,7 +1259,7 @@ const speil=(()=>{
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
       // tegnes bare på nytt når kameraet eller husene har flyttet seg (stillestående bilde koster ingenting ekstra)
-      const e=cam.matrixWorld.elements, nok=e.join(',')+cam.zoom+(endret?Math.random():'');
+      const e=cam.projectionMatrix.elements, nok=e.join(',')+(endret?Math.random():'');
       if(nok===this._sist) return; this._sist=nok;
       const lagre=deler.map(o=>[o.position.y,o.scale.y]);
       deler.forEach(o=>{ o.position.y=2*Y-o.position.y; o.scale.y=-o.scale.y; });
@@ -1259,129 +1270,107 @@ const speil=(()=>{
       deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
       waterMat.uniforms.tRefl.value=rt.texture;
       // speilingen tones ned i oversikten og kommer fram når man går nærmere, så den aldri popper
-      waterMat.uniforms.reflStyrke.value=THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(cam.zoom,0.5)),0.1,0.36);
+      waterMat.uniforms.reflStyrke.value=speilStyrke();
     }
   };
 })();
 
 const clock=new THREE.Clock(); let _synlig=false;
-const INTRO_GROW=1.3, SPIN_START=0.15, SPIN=3.4, VEKST_FART=1.8;
+
 const Q=Q0; let introDone=false;
 if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
   const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
-if(Q.get('tx')){ target.set(+Q.get('tx'),0,-(+Q.get('ty'))); controls.target.copy(target); }
-if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); place(Q.get('az')?THREE.MathUtils.degToRad(+Q.get('az')):AZ0); controls.enabled=true; if(Q.get('zoom')){cam.zoom=+Q.get('zoom'); cam.updateProjectionMatrix();} controls.update(); }
-// testkrok for kvalitetssjekk (skjermbilder uten ny sidelasting)
-window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
-window.__kam=()=>{ const v=vinkler(cam.position.clone().sub(controls.target)); let vs=null; if(valgt){ const bb=new THREE.Box3().setFromObject(valgt); const c=bb.getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:controls.target.x,z:controls.target.z,zoom:cam.zoom,az:v.az,pol:v.pol,anim:!!anim,valgt:vs,intro:!introDone,t:clock.getElapsedTime()}; };
-window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; anim=null; buildings.forEach(g=>g.scale.y=1); setCrowns(null); target.set(tx,0,-ty); controls.target.copy(target); place(THREE.MathUtils.degToRad(az)); cam.zoom=zoom; zoomMaal=zoom; cam.updateProjectionMatrix(); controls.enabled=true; controls.update(); };
+const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : [10,0];   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen og senker oppløsning/AO på svake maskiner (mobil), så spinnet holder seg mykt
 let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0;
-function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(cam.zoom,0.5)),0.1,0.36); }
+function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
 let ssStille=4;
 let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14, aoBeveg=6; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
 function maalYtelse(){ const n=performance.now(), dt=n-perfLast; perfLast=n; if(perfNivaa>=2 || document.hidden || (n-sistBeveg>300 && n-sistTegnet>40)) return;
   perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
     if(avg>30){ perfNivaa++; if(perfNivaa===1){ skalaBeveg=Math.max(0.35,skalaBeveg*0.75); aoBeveg=0; } else { skalaBeveg=Math.max(0.3,skalaBeveg*0.8); aoStille=7; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map){ sun.shadow.map.dispose(); sun.shadow.map=null; } skyggeSkitten=true; } } } } }
 
-// ---- kamera: alle bevegelser er myke (fjær/easing), zoom holder punktet under pekeren fast ----
-const HOME={zoom:1, target:target.clone(), az:AZ0};
-let anim=null, zoomMaal=cam.zoom, zoomAnker=null, sisteTid=performance.now();
-const GRENSE=560;                                         // hvor langt fra byen man kan flytte seg (meter)
-const _pl=new THREE.Plane(new THREE.Vector3(0,1,0),0), _rc=new THREE.Raycaster(), _v2=new THREE.Vector2();
-function bakkeVed(x,y){ _v2.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); _rc.setFromCamera(_v2,cam); const v=new THREE.Vector3(); return _rc.ray.intersectPlane(_pl,v)?v:null; }
-function flytt(dx,dz){ controls.target.x+=dx; controls.target.z+=dz; cam.position.x+=dx; cam.position.z+=dz; }
-function settZoom(z, anker){ // ortografisk: å skalere avstanden til ankeret med z/z' holder ankeret fast på skjermen
-  z=THREE.MathUtils.clamp(z, controls.minZoom, controls.maxZoom);
-  if(anker){ const f=cam.zoom/z; const tx=anker.x+(controls.target.x-anker.x)*f, tz=anker.z+(controls.target.z-anker.z)*f; flytt(tx-controls.target.x, tz-controls.target.z); }
-  cam.zoom=z; cam.updateProjectionMatrix();
+// ---- tegneløkka: MapLibre kaller lagets render() hvert bilde det tegner; vi ber om nye bilder når noe beveger seg ----
+lysFraVenstre();
+// byen tegner seg opp: høyden vokser kvartal for kvartal (sortert sørvest -> nordøst)
+const order = buildings.map(g=>{const c=g.userData.b.r; return [g, c[0]+c[1]];}).sort((a,b)=>a[1]-b[1]);
+order.forEach(([g],k)=>{ g.userData.delay = 1.1*k/order.length; g.scale.y=0.001; });
+let vokst=false;   // husene og trærne har vokst ferdig
+function vokse(t){
+  let ferdig=true;
+  buildings.forEach(g=>{ const k=THREE.MathUtils.clamp((t-g.userData.delay)/0.5,0,1); g.scale.y=Math.max(0.001, 1-Math.pow(1-k,3)); if(k<1) ferdig=false; });
+  if(t<3.4){ setCrowns(t); ferdig=false; } else setCrowns(null);
+  if(ferdig) vokst=true;
 }
-function innenforGrense(dt){ // myk fjær tilbake hvis man har dratt byen ut av syne
-  const dx=controls.target.x-HOME.target.x, dz=controls.target.z-HOME.target.z, d=Math.hypot(dx,dz);
-  if(d>GRENSE){ const k=1-Math.exp(-dt*6); const ny=(d-GRENSE)*k/d; flytt(-dx*ny,-dz*ny); }
-}
-function vinkler(off){ const r=off.length(); return {az:Math.atan2(off.x,off.z), pol:Math.acos(THREE.MathUtils.clamp(off.y/r,-1,1))}; }
-function kortVei(a,b){ let d=b-a; while(d>Math.PI) d-=2*Math.PI; while(d<-Math.PI) d+=2*Math.PI; return a+d; }
-// flyTo: myk bane for mål, zoom (logaritmisk), asimut (korteste vei) og helning. Med anker: punktet står stille under pekeren.
-function flyTo(nyTarget, nyZoom, az, opt={}){
-  const off=cam.position.clone().sub(controls.target); const v=vinkler(off);
-  const tilAz = az===undefined ? v.az : kortVei(v.az, az);
-  const tilPol = opt.pol!==undefined ? opt.pol : (az===undefined ? v.pol : Math.PI/2-ELEV);
-  const z0=cam.zoom, z1=THREE.MathUtils.clamp(nyZoom, controls.minZoom, controls.maxZoom);
-  const spenn=(cam.right-cam.left)/z0;
-  const avst=nyTarget? Math.hypot(nyTarget.x-controls.target.x, nyTarget.z-controls.target.z) : 0;
-  const dur = opt.dur || THREE.MathUtils.clamp(420 + 330*Math.abs(Math.log(z1/z0)) + 380*Math.abs(tilAz-v.az) + 260*Math.abs(tilPol-v.pol) + 520*Math.min(1, avst/spenn), 450, 1500);
-  anim={t0:performance.now(), dur, e: opt.e || ease, fra:{t:controls.target.clone(), z:z0, az:v.az, pol:v.pol, r:off.length()}, til:{t:nyTarget?nyTarget.clone():controls.target.clone(), z:z1, az:tilAz, pol:tilPol}, anker:opt.anker||null};
-  zoomAnker=null;
-}
-function stepAnim(){
-  if(!anim) return; const k=Math.min(1,(performance.now()-anim.t0)/anim.dur); const e=anim.e(k);
-  const z=Math.exp(THREE.MathUtils.lerp(Math.log(anim.fra.z), Math.log(anim.til.z), e));
-  if(anim.anker){ const A=anim.anker, f=anim.fra.z/z; controls.target.set(A.x+(anim.fra.t.x-A.x)*f, 0, A.z+(anim.fra.t.z-A.z)*f); }
-  else controls.target.lerpVectors(anim.fra.t, anim.til.t, e);
-  const az=THREE.MathUtils.lerp(anim.fra.az, anim.til.az, e), pol=THREE.MathUtils.lerp(anim.fra.pol, anim.til.pol, e), r=anim.fra.r;
-  cam.position.set(controls.target.x+r*Math.sin(pol)*Math.sin(az), controls.target.y+r*Math.cos(pol), controls.target.z+r*Math.sin(pol)*Math.cos(az));
-  cam.zoom=z; cam.updateProjectionMatrix(); cam.lookAt(controls.target);
-  if(k>=1){ anim=null; zoomMaal=cam.zoom; controls.update(); }
-}
-function stoppAnim(){ if(anim){ anim=null; zoomMaal=cam.zoom; } }
+const SPIN=3.4, VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
+let anim=false, husBeveger=false, sisteTid=performance.now();
+const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0});
+const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
-// avbryt introen når brukeren tar tak: kameraet blir stående der det er, byen vokser ferdig av seg selv
-function overta(){ if(introDone) return; introDone=true; zoomMaal=cam.zoom; controls.enabled=true; controls.update(); }
+// intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
+function startIntro(){
+  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
+  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: t=>1-Math.pow(1-t,4), essential:true});
+  map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
+}
+function overta(){ if(introDone) return; introDone=true; map.stop(); }
+map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
-function tick(){
+// tilstand per bilde: vekst, hus som løfter seg, sol/skygge, tegnekvalitet
+const _sisteProj=new THREE.Matrix4();
+function oppdater(){
   maalYtelse();
   const naa=performance.now(), dt=Math.min(0.1,(naa-sisteTid)/1000); sisteTid=naa;
   const t=Q.get('t')?+Q.get('t'):clock.getElapsedTime();
   waterMat.uniforms.t.value=t;
   if(!vokst) vokse(t*VEKST_FART+0.45);
-  if(!introDone){
-    const k=THREE.MathUtils.clamp((t-SPIN_START)/SPIN,0,1); const e=1-Math.pow(1-k,4); // rask start, myk landing
-    cam.zoom=THREE.MathUtils.lerp(Z0,1,e); cam.updateProjectionMatrix();
-    place(AZ0 + SVEIP*(1-e), THREE.MathUtils.lerp(EL0,ELEV,e));
-    if(t>SPIN_START){ if(k>=1){ introDone=true; zoomMaal=cam.zoom; controls.enabled=true; controls.update(); setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000);} }
-  } else {
-    if(anim) stepAnim();
-    else {
-      // myk zoom mot målet (hjul/styreflate), ankeret står stille under pekeren
-      if(Math.abs(Math.log(zoomMaal/cam.zoom))>1e-4){ const k=1-Math.exp(-dt*13); settZoom(Math.exp(Math.log(cam.zoom)+(Math.log(zoomMaal)-Math.log(cam.zoom))*k), zoomAnker); }
-      innenforGrense(dt);
-      controls.update();
-    }
-    visHjem();
-  }
+  anim=map.isMoving();
   // løftet hus (valgt) og svakt løftet hus (pekeren over), uavhengig av bildefrekvens
   const kl=1-Math.exp(-dt*11);
-  let husBeveger=!vokst;
+  husBeveger=!vokst;
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-4){ g.position.y+=dy; husBeveger=true; } });
   if(husBeveger) skyggeSkitten=true;
   if(!introDone) skyggeSkitten=true;
   oppdaterSol();
-  // beveger kartet seg? da tegnes det raskt; står det stille, tegnes det skarpt én gang og deretter rolig (vannet lever)
-  const kamFlytt = !_sisteKam.equals(cam.matrixWorld) || _sisteZ!==cam.zoom; _sisteKam.copy(cam.matrixWorld); _sisteZ=cam.zoom;
   // kvaliteten følger bare kameraet: hus som løfter seg tegnes i full kvalitet hvert bilde, så et klikk ikke bytter tilstand
+  const kamFlytt = !_sisteProj.equals(cam.projectionMatrix); _sisteProj.copy(cam.projectionMatrix);
   if(kamFlytt || anim || !introDone) sistBeveg=naa;
   const stille = naa-sistBeveg>300;
   post.settSkala(stille? skalaStille : skalaBeveg); post.setAO(stille? aoStille : aoBeveg); post.setSS(stille && perfNivaa<2 ? ssStille : 1);
   if(introDone && stille){ speilInn=Math.min(1,speilInn+dt*2.8); speil.render(husBeveger || speilInn<1 || !speilFrisk); speilFrisk=true; }
   else if(!stille){ speilFrisk=false; speilInn=Math.max(0,speilInn-dt*8); } // gammelt speil vises aldri mens kartet beveger seg
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
-  if(!stille || husBeveger || !fullTegnet || naa-sistTegnet>100){ post.render(); sistTegnet=naa; fullTegnet=stille && !husBeveger; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>renderer.domElement.style.opacity=1); } }
+  sistTegnet=naa; fullTegnet=stille && !husBeveger;
   dbgTegn(naa);
-  requestAnimationFrame(tick);
 }
+// laget: kartet tegner byen gjennom dette
+const byLag={ id:'byen', type:'custom', renderingMode:'3d',
+  onAdd(){ post.size(); speil.size(); },
+  render(gl,args){ kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); post.render(); if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet (vannet lever)
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
+map.on('load', ()=>{
+  map.addLayer(byLag);
+  if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
+  else startIntro();
+  puls();
+});
+// testkroker (skjermbilder uten ny sidelasting)
+window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
+window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const bb=new THREE.Box3().setFromObject(valgt); const c=bb.getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
+window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 
-// ---- klikk, dobbeltklikk, hjul, klyp og tilbake til hele byen ----
-const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let down=null, valgt=null, klikkTimer=null, sisteTrykk=0, hover=null;
+// ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
+const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
 const kort=document.getElementById('kort'); const hjem=document.getElementById('hjem');
 function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam);
   const hit=ray.intersectObjects(city.children,true).find(h=>h.object.isMesh); if(!hit) return null;
   let g=hit.object; while(g.parent!==city) g=g.parent; return {g, p:hit.point}; }
-function bakkepunkt(e){ const h=treffHus(e.clientX,e.clientY); if(h) return new THREE.Vector3(h.p.x,0,h.p.z); return bakkeVed(e.clientX,e.clientY); }
-function velg(e){
-  const h=treffHus(e.clientX,e.clientY);
+function velg(x,y){
+  const h=treffHus(x,y);
   if(valgt){valgt.userData.lift=false; valgt=null;}
   if(!h){kort.classList.remove('vis'); return;}
   const g=h.g; valgt=g; g.userData.lift=true;
@@ -1393,99 +1382,56 @@ function velg(e){
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
   kort.classList.add('vis');
   // står huset under kortet eller utenfor bildet, glir kartet rolig så huset blir synlig over kortet
-  const B=new THREE.Vector3(h.p.x,0,h.p.z); const s=B.clone().project(cam);
+  const s=new THREE.Vector3(h.p.x,0,h.p.z).project(cam);
   const kortTopp = 1-2*Math.max(0.2, (kort.offsetTop||innerHeight*0.72)/innerHeight);   // kortets plass uten innglidningen
   if(s.y < kortTopp+0.12 || Math.abs(s.x)>0.85 || s.y>0.88){
-    const G=bakkeVed(innerWidth/2, innerHeight*0.4); if(G) flyTo(new THREE.Vector3(controls.target.x+B.x-G.x,0,controls.target.z+B.z-G.z), cam.zoom, undefined, {dur:700});
+    const px=(s.x+1)/2*innerWidth, py=(1-s.y)/2*innerHeight;
+    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:700, easing:t=>1-Math.pow(1-t,3)});
   }
 }
-function zoomInn(e, ut){
-  const p=bakkepunkt(e); if(!p) return;
-  const z = ut ? Math.max(1, cam.zoom/2.2) : Math.min(controls.maxZoom, cam.zoom*2.2);
-  if(ut && z<=1.01) flyTo(HOME.target, 1, undefined, {e:ease});
-  else flyTo(null, z, undefined, {anker:p, e:easeUt, dur:560});   // punktet man dobbeltklikket står stille mens kartet zoomer
-}
-function hjemNaa(){ flyTo(HOME.target, HOME.zoom, HOME.az); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
+function hjemNaa(){ map.easeTo({...hjemVisning(), duration:900, easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
 hjem.onclick=()=>{ overta(); hjemNaa(); };
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
-const el=renderer.domElement;
-// hjul og styreflate: myk zoom mot pekeren
+// ett klikk velger et hus (ventes 300 ms så et dobbeltklikk kan zoome i stedet)
+map.on('click', e=>{ if(!introDone) return; clearTimeout(klikkTimer); const p=e.point; klikkTimer=setTimeout(()=>velg(p.x,p.y),300); });
+map.on('dblclick', ()=>clearTimeout(klikkTimer));
+// peker over et hus (bare mus): huset løfter seg litt
+let sisteHover=0;
+map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }
+  const n=performance.now(); if(n-sisteHover<45) return; sisteHover=n;
+  const h=treffHus(e.point.x,e.point.y); hover=h?h.g:null; map.getCanvas().style.cursor=hover?'pointer':''; });
+map.on('mouseout', ()=>{ hover=null; map.getCanvas().style.cursor=''; });
+// styreflate på Mac: to fingre flytter kartet (som Apple og Google Maps), klyp zoomer (ctrl+hjul), et musehjul zoomer.
+// Én gest er én ting: første hendelse avgjør, hendelser innen 120 ms arver valget.
 const gest={t:0,hjul:false};
+map.getCanvasContainer().addEventListener('wheel', e=>{
+  if(e.ctrlKey) return;                                   // klyp på styreflaten = zoom, MapLibre tar den
+  const naa=performance.now();
+  let hjul = e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY);
+  if(gest.t && naa-gest.t<120) hjul=gest.hjul;
+  gest.t=naa; gest.hjul=hjul; dbgLogg(e,hjul);
+  if(hjul) return;                                        // musehjul = zoom, MapLibre tar den
+  e.preventDefault(); e.stopImmediatePropagation(); overta();
+  map.panBy([e.deltaX, e.deltaY], {animate:false});       // innholdet følger fingrene
+}, {capture:true, passive:false});
+function visHjem(){ const c=tilModell(map.getCenter()); const borte = Math.abs(map.getZoom()-Z_HJEM)>0.07 || Math.hypot(c[0]-START[0], c[1]-START[1])>8 || Math.abs(((map.getBearing()+AZ0_GRADER+540)%360)-180)>4; hjem.classList.toggle('vis', introDone && borte); }
+map.on('move', visHjem); map.on('moveend', visHjem);
+kort.querySelector('.lukk').onclick=()=>{kort.classList.remove('vis'); if(valgt){valgt.userData.lift=false; valgt=null;}};
+// feilsøkingsrute (tast d): bildefrekvens, tegnetilstand og styreflatehendelser som tall. Taster s/a/x/p prøver stillbildekvalitet.
 const dbg={paa:false, rader:[], el:null, fps:[]};
 function dbgLogg(e,hjul){ if(!dbg.paa) return; dbg.rader.push(`${(performance.now()%100000|0)} dx${e.deltaX.toFixed(1)} dy${e.deltaY.toFixed(1)} w${e.wheelDeltaY} m${e.deltaMode} ${e.ctrlKey?'ctrl ':''}${hjul?'ZOOM':'flytt'}`); if(dbg.rader.length>40) dbg.rader.shift(); }
 function dbgTegn(naa){ if(!dbg.paa) return; dbg.fps.push(naa); while(dbg.fps.length&&naa-dbg.fps[0]>1000) dbg.fps.shift();
-  dbg.el.textContent=`fps ${dbg.fps.length}  zoom ${cam.zoom.toFixed(2)}  perfNivaa ${perfNivaa}  skalaBeveg ${skalaBeveg.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  anim ${anim?1:0}  ss ${ssStille} ao ${aoStille} skalaS ${skalaStille}  skygge ${sun.shadow.needsUpdate?1:0}\n3D ${(window.__pt||{}).scene|0} ms  blekk ${(window.__pt||{}).blekk|0} ms  kall ${(window.__pt||{}).kall}  tri ${(window.__pt||{}).tri}  tegnet ${naa-sistTegnet<20?1:0}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
+  const pt=window.__pt||{};
+  dbg.el.textContent=`fps ${dbg.fps.length}  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skalaBeveg ${skalaBeveg.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille}`
+    +String.fromCharCode(10)+`3D ${pt.scene|0} ms  blekk ${pt.blekk|0} ms  kall ${pt.kall}  tri ${pt.tri}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
 addEventListener('keydown',e=>{ if(!dbg.paa) return; if(e.key==='s'){ ssStille=ssStille===4?2:ssStille===2?1:4; } if(e.key==='a'){ aoStille=aoStille===14?7:aoStille===7?0:14; } if(e.key==='x'){ skalaStille=skalaStille===1?0.75:1; } if(e.key==='p'){ speil.av(); } });
 addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createElement('pre'); dbg.el.style.cssText='position:fixed;left:8px;top:8px;z-index:9;margin:0;padding:8px;font:11px/1.25 ui-monospace,monospace;background:rgba(255,255,255,.92);color:#222;max-height:92vh;overflow:hidden;pointer-events:none;border-radius:6px'; document.body.appendChild(dbg.el); } dbg.el.style.display=dbg.paa?'block':'none'; } });
-el.addEventListener('wheel',e=>{ e.preventDefault(); overta(); stoppAnim();
-  // vanlig kartpraksis på Mac: sveip med to fingre (styreflate/Magic Mouse) flytter kartet, klyp zoomer,
-  // et vanlig musehjul (hakk) zoomer. Hjulhakk kjennes på wheelDeltaY i hele 120-steg uten sidelengs bevegelse.
-  // én gest er én ting: første hendelse avgjør om det er flytting (to fingre) eller zoom (hjul/klyp); hendelser innen 120 ms arver valget
-  const naa=performance.now();
-  let hjul = !e.ctrlKey && (e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY));
-  if(!e.ctrlKey && gest.t && naa-gest.t<120) hjul=gest.hjul;
-  gest.t=naa; gest.hjul=hjul; dbgLogg(e,hjul);
-  if(!e.ctrlKey && !hjul){
-    const P0=bakkeVed(e.clientX,e.clientY), P1=bakkeVed(e.clientX-e.deltaX, e.clientY-e.deltaY);   // innholdet følger fingrene
-    if(P0&&P1) flytt(P0.x-P1.x, P0.z-P1.z); zoomMaal=cam.zoom; return;
-  }
-  const dy=e.deltaMode===1? e.deltaY*16 : e.deltaMode===2? e.deltaY*400 : e.deltaY;
-  const f=Math.exp(-dy*(e.ctrlKey?0.012:0.0018));                       // ctrl = klyp på styreflate
-  zoomMaal=THREE.MathUtils.clamp(zoomMaal*f, controls.minZoom, controls.maxZoom);
-  zoomAnker=bakkeVed(e.clientX,e.clientY);
-},{passive:false});
-el.addEventListener('pointerdown',e=>{ const varIntro=!introDone; overta(); down=varIntro?null:[e.clientX,e.clientY]; stoppAnim(); zoomMaal=cam.zoom; });   // klikket som stopper introen velger ikke et hus
-el.addEventListener('pointerup',e=>{
-  if(!introDone||!down) return; if(Math.hypot(e.clientX-down[0],e.clientY-down[1])>(e.pointerType==='touch'?12:6)) return;
-  if(fingre.size>1 || toFinger) return;   // ett fingertrykk er et klikk (fingeren slippes først i slipp())
-  const naa=performance.now();
-  if(naa-sisteTrykk<300){ clearTimeout(klikkTimer); sisteTrykk=0; zoomInn(e, e.shiftKey||e.altKey); return; }
-  sisteTrykk=naa; const ev={clientX:e.clientX, clientY:e.clientY};
-  klikkTimer=setTimeout(()=>velg(ev),300);
-});
-// peker over et hus (bare mus): huset løfter seg litt
-let sisteHover=0;
-el.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse' || e.buttons || anim || !introDone) { if(e.buttons && hover){ hover=null; el.style.cursor=''; } return; }
-  const n=performance.now(); if(n-sisteHover<45) return; sisteHover=n;
-  const h=treffHus(e.clientX,e.clientY); hover=h?h.g:null; el.style.cursor=hover?'pointer':''; });
-el.addEventListener('pointerleave',()=>{ hover=null; el.style.cursor=''; });
-// to fingre: klyp = zoom rundt midtpunktet, vri = snu byen, flytt = flytte kartet, parallelt opp/ned = vippe. Kort trykk med to fingre = zoom ut.
-let fingre=new Map(), toFinger=null;
-el.addEventListener('pointerdown',e=>{ if(e.pointerType==='mouse') return; fingre.set(e.pointerId,{x:e.clientX,y:e.clientY});
-  if(fingre.size===2){ const [a,b]=[...fingre.values()]; toFinger={t0:performance.now(), d:Math.hypot(b.x-a.x,b.y-a.y), v:Math.atan2(b.y-a.y,b.x-a.x), m:{x:(a.x+b.x)/2,y:(a.y+b.y)/2}, flyttet:0}; clearTimeout(klikkTimer); } });
-el.addEventListener('pointermove',e=>{ if(!fingre.has(e.pointerId)) return; fingre.set(e.pointerId,{x:e.clientX,y:e.clientY});
-  if(fingre.size!==2 || !toFinger) return;
-  const [a,b]=[...fingre.values()]; const d=Math.hypot(b.x-a.x,b.y-a.y), v=Math.atan2(b.y-a.y,b.x-a.x), m={x:(a.x+b.x)/2,y:(a.y+b.y)/2};
-  // to fingre som glir parallelt opp/ned = vippe kartet (som Google og Apple Maps); ellers følger kartet fingrene
-  const mdx=m.x-toFinger.m.x, mdy=m.y-toFinger.m.y, a0=[...fingre.values()];
-  const parallellVipp = Math.abs(mdy)>2*Math.abs(mdx) && Math.abs(Math.log(d/toFinger.d))<0.01 && Math.abs(a.y-b.y)<0.35*Math.abs(a.x-b.x)+60;
-  if(parallellVipp){ const off=cam.position.clone().sub(controls.target); const sp=new THREE.Spherical().setFromVector3(off);
-    sp.phi=THREE.MathUtils.clamp(sp.phi-mdy*0.006, controls.minPolarAngle, controls.maxPolarAngle); off.setFromSpherical(sp); cam.position.copy(controls.target).add(off); cam.lookAt(controls.target); }
-  else { const P0=bakkeVed(toFinger.m.x,toFinger.m.y), P1=bakkeVed(m.x,m.y); if(P0&&P1) flytt(P0.x-P1.x, P0.z-P1.z); }
-  // klyp
-  const A=bakkeVed(m.x,m.y); if(toFinger.d>0) settZoom(cam.zoom*d/toFinger.d, A); zoomMaal=cam.zoom;
-  // vri: snu kameraet rundt midtpunktet
-  let dv=v-toFinger.v; if(dv>Math.PI) dv-=2*Math.PI; if(dv<-Math.PI) dv+=2*Math.PI;
-  if(A && Math.abs(dv)>0.0005){ const q=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0), dv);   // innholdet følger fingrene
-    const ot=controls.target.clone().sub(A).applyQuaternion(q), oc=cam.position.clone().sub(A).applyQuaternion(q);
-    controls.target.copy(A).add(ot); cam.position.copy(A).add(oc); cam.lookAt(controls.target); }
-  toFinger.flyttet+=Math.abs(Math.log(d/toFinger.d))*120+Math.hypot(m.x-toFinger.m.x,m.y-toFinger.m.y)+Math.abs(dv)*120;
-  toFinger.d=d; toFinger.v=v; toFinger.m=m; });
-function slipp(e){ if(!fingre.has(e.pointerId)) return; fingre.delete(e.pointerId);
-  if(toFinger && fingre.size<2){ const kort_=performance.now()-toFinger.t0<260 && toFinger.flyttet<14; toFinger=null; down=null;
-    if(kort_ && introDone){ clearTimeout(klikkTimer); const z=Math.max(1,cam.zoom/2.2); if(z<=1.01) flyTo(HOME.target,1); else flyTo(null, z, undefined, {anker:controls.target.clone(), e:easeUt, dur:520}); } } }
-el.addEventListener('pointerup',slipp); el.addEventListener('pointercancel',slipp);
-el.addEventListener('dblclick',e=>e.preventDefault());
-function visHjem(){ const borte = Math.abs(Math.log(cam.zoom))>0.05 || controls.target.distanceTo(HOME.target)>8 || Math.abs(controls.getAzimuthalAngle()-HOME.az)>0.08; hjem.classList.toggle('vis', introDone && borte); }
-kort.querySelector('.lukk').onclick=()=>{kort.classList.remove('vis'); if(valgt){valgt.userData.lift=false; valgt=null;}};
-speil.size(); addEventListener('resize',()=>speil.size());
-tick();
 
 // Tjenestearbeider: kartet virker uten nett etter første besøk. Versjonen i navnet byttes av bygg.py, så ny versjon rydder gammel buffer.
-const NAVN='gamlebyen-25';
+const NAVN='gamlebyen-26';
 const FILER=['./','index.html','data/by.json','assets/vann.png','assets/pensel.png',
  'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js',
- 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js',
+ 'https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.mjs','https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl-shared.mjs','https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl-worker.mjs','https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.css',
  'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/FXAAShader.js'];
 self.addEventListener('install',e=>{ e.waitUntil(caches.open(NAVN).then(c=>c.addAll(FILER)).then(()=>self.skipWaiting())); });
 self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==NAVN).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });

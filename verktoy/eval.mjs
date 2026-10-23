@@ -1,0 +1,10 @@
+import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const [,, file, kode] = process.argv; const dir=path.dirname(file);
+const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[0]==='/'?'index.html':q.url.split('?')[0]); if(fs.existsSync(p)&&fs.statSync(p).isFile()){ r.end(fs.readFileSync(p)); } else { r.statusCode=404; r.end(); } });
+await new Promise(r=>server.listen(0,'127.0.0.1',r)); const port=server.address().port;
+const browser=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage(); page.on('pageerror',e=>console.log('ERR',e.message));
+await page.goto(`http://127.0.0.1:${port}/index.html?skip=1${process.env.EKSTRA||''}`); await page.waitForTimeout(4000);
+console.log(JSON.stringify(await page.evaluate(kode)));
+await browser.close(); server.close();
