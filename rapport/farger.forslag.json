@@ -1,0 +1,7619 @@
+{
+ "0": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4509,
+   3600
+  ]
+ },
+ "1": {
+  "px": [
+   820,
+   1571
+  ],
+  "skift": [
+   14,
+   -16
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "veggs": [
+   218,
+   165,
+   125
+  ],
+  "merknad": "lest av trykket"
+ },
+ "2": {
+  "px": [
+   768,
+   1473
+  ],
+  "skift": [
+   -4,
+   24
+  ],
+  "dekning": 0.97,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "3": {
+  "px": [
+   2439,
+   1369
+  ],
+  "skift": [
+   14,
+   2
+  ],
+  "dekning": 0.87,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "veggs": [
+   189,
+   124,
+   112
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 102, 88)×119, (242, 123, 106)×69, (246, 148, 129)×50)"
+ },
+ "4": {
+  "px": [
+   2031,
+   1537
+  ],
+  "skift": [
+   12,
+   24
+  ],
+  "dekning": 0.52,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   128,
+   130,
+   133
+  ],
+  "vegg": [
+   194,
+   196,
+   198
+  ],
+  "merknad": "bare 52% av fotavtrykket på husflate"
+ },
+ "5": {
+  "px": [
+   1571,
+   1771
+  ],
+  "skift": [
+   2,
+   1
+  ],
+  "dekning": 0.88,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "6": {
+  "px": [
+   1860,
+   2406
+  ],
+  "skift": [
+   0,
+   46
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   246,
+   147,
+   128
+  ],
+  "merknad": "flyttet 46 px for å treffe huset"
+ },
+ "7": {
+  "px": [
+   626,
+   1528
+  ],
+  "skift": [
+   50,
+   4
+  ],
+  "dekning": 0.96,
+  "tak": [
+   212,
+   183,
+   170
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   218,
+   165,
+   125
+  ],
+  "vegg": [
+   253,
+   253,
+   254
+  ],
+  "merknad": "flyttet 50 px for å treffe huset; takflaten er ikke ensfarget i trykket ((212, 183, 170)×24, (218, 165, 125)×9, (253, 253, 254)×9)"
+ },
+ "8": {
+  "px": [
+   2728,
+   905
+  ],
+  "skift": [
+   -8,
+   26
+  ],
+  "dekning": 0.98,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 100, 86)×24, (239, 240, 240)×12, (244, 123, 106)×9)"
+ },
+ "9": {
+  "px": [
+   3730,
+   1025
+  ],
+  "skift": [
+   -48,
+   16
+  ],
+  "dekning": 0.51,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "lav",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "bare 51% av fotavtrykket på husflate; flyttet 51 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×19, (173, 100, 86)×10, (246, 147, 128)×6)"
+ },
+ "10": {
+  "px": [
+   4041,
+   1306
+  ],
+  "skift": [
+   0,
+   -6
+  ],
+  "dekning": 0.22,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "11": {
+  "px": [
+   1582,
+   1182
+  ],
+  "skift": [
+   4,
+   14
+  ],
+  "dekning": 0.64,
+  "tak": [
+   188,
+   190,
+   189
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   123,
+   127,
+   128
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "veggs": [
+   237,
+   238,
+   238
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((123, 127, 128)×26, (188, 190, 189)×18, (237, 238, 238)×13)"
+ },
+ "12": {
+  "px": [
+   3180,
+   2002
+  ],
+  "skift": [
+   24,
+   -26
+  ],
+  "dekning": 0.28,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "13": {
+  "px": [
+   2387,
+   1509
+  ],
+  "skift": [
+   0,
+   -1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   189,
+   124,
+   112
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "14": {
+  "px": [
+   1101,
+   1517
+  ],
+  "skift": [
+   10,
+   8
+  ],
+  "dekning": 0.95,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "lest av trykket"
+ },
+ "15": {
+  "px": [
+   3643,
+   1082
+  ],
+  "skift": [
+   -6,
+   -7
+  ],
+  "dekning": 0.98,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "merknad": "lest av trykket"
+ },
+ "16": {
+  "px": [
+   3684,
+   557
+  ],
+  "skift": [
+   -22,
+   42
+  ],
+  "dekning": 0.63,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "merknad": "flyttet 47 px for å treffe huset; takflaten er ikke ensfarget i trykket ((173, 100, 86)×14, (255, 255, 255)×12, (217, 110, 94)×7)"
+ },
+ "17": {
+  "px": [
+   2923,
+   2010
+  ],
+  "skift": [
+   0,
+   6
+  ],
+  "dekning": 0.23,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "18": {
+  "px": [
+   3577,
+   1629
+  ],
+  "skift": [
+   -32,
+   38
+  ],
+  "dekning": 0.39,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "lav",
+  "merknad": "bare 39% av fotavtrykket på husflate; flyttet 50 px for å treffe huset; ingen synlig vegg funnet"
+ },
+ "19": {
+  "px": [
+   3615,
+   1231
+  ],
+  "skift": [
+   -36,
+   40
+  ],
+  "dekning": 0.94,
+  "tak": [
+   247,
+   150,
+   82
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   178,
+   110,
+   95
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 54 px for å treffe huset; takflaten er ikke ensfarget i trykket ((178, 110, 95)×15, (247, 150, 82)×7, (246, 147, 128)×7)"
+ },
+ "20": {
+  "px": [
+   1466,
+   1178
+  ],
+  "skift": [
+   12,
+   30
+  ],
+  "dekning": 0.71,
+  "tak": [
+   123,
+   127,
+   128
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "21": {
+  "px": [
+   1460,
+   1300
+  ],
+  "skift": [
+   8,
+   -6
+  ],
+  "dekning": 0.61,
+  "tak": [
+   204,
+   204,
+   204
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 102, 88)×65, (204, 204, 204)×21, (242, 123, 106)×19)"
+ },
+ "22": {
+  "px": [
+   955,
+   1513
+  ],
+  "skift": [
+   14,
+   16
+  ],
+  "dekning": 1.0,
+  "tak": [
+   199,
+   200,
+   202
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   253,
+   253,
+   254
+  ],
+  "merknad": "lest av trykket"
+ },
+ "23": {
+  "px": [
+   3636,
+   531
+  ],
+  "skift": [
+   16,
+   52
+  ],
+  "dekning": 0.88,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "flyttet 54 px for å treffe huset"
+ },
+ "24": {
+  "px": [
+   1721,
+   1455
+  ],
+  "skift": [
+   -4,
+   13
+  ],
+  "dekning": 0.83,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "25": {
+  "px": [
+   2747,
+   599
+  ],
+  "skift": [
+   -26,
+   -2
+  ],
+  "dekning": 0.54,
+  "tak": [
+   253,
+   253,
+   253
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   249,
+   224,
+   204
+  ],
+  "vegg": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "bare 54% av fotavtrykket på husflate; takflaten er ikke ensfarget i trykket ((253, 253, 253)×8, (249, 224, 204)×7, (226, 204, 187)×6)"
+ },
+ "26": {
+  "px": [
+   4148,
+   1985
+  ],
+  "skift": [
+   24,
+   26
+  ],
+  "dekning": 0.36,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "bare 36% av fotavtrykket på husflate; ingen synlig vegg funnet"
+ },
+ "27": {
+  "px": [
+   3648,
+   780
+  ],
+  "skift": [
+   42,
+   -12
+  ],
+  "dekning": 0.87,
+  "tak": [
+   252,
+   190,
+   143
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   218,
+   165,
+   125
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "flyttet 44 px for å treffe huset; takflaten er ikke ensfarget i trykket ((252, 190, 143)×17, (218, 165, 125)×11, (244, 123, 106)×10)"
+ },
+ "28": {
+  "px": [
+   614,
+   1758
+  ],
+  "skift": [
+   38,
+   -14
+  ],
+  "dekning": 0.27,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "29": {
+  "px": [
+   919,
+   1428
+  ],
+  "skift": [
+   -52,
+   34
+  ],
+  "dekning": 0.8,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "merknad": "flyttet 62 px for å treffe huset"
+ },
+ "30": {
+  "px": [
+   3579,
+   567
+  ],
+  "skift": [
+   -20,
+   21
+  ],
+  "dekning": 0.79,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   218,
+   165,
+   125
+  ],
+  "merknad": "lest av trykket"
+ },
+ "31": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   77,
+   -765
+  ]
+ },
+ "32": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   212,
+   -936
+  ]
+ },
+ "33": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   247,
+   -1035
+  ]
+ },
+ "34": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   152,
+   -847
+  ]
+ },
+ "35": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   179,
+   -989
+  ]
+ },
+ "36": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2709,
+   -658
+  ]
+ },
+ "37": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1439,
+   -485
+  ]
+ },
+ "38": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2270,
+   -727
+  ]
+ },
+ "39": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2498,
+   -775
+  ]
+ },
+ "40": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1858,
+   -571
+  ]
+ },
+ "41": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1628,
+   -596
+  ]
+ },
+ "42": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   174,
+   -1249
+  ]
+ },
+ "43": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   56,
+   -1327
+  ]
+ },
+ "44": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   697,
+   -1438
+  ]
+ },
+ "45": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   585,
+   -1080
+  ]
+ },
+ "46": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   377,
+   -1526
+  ]
+ },
+ "47": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   645,
+   -1273
+  ]
+ },
+ "48": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   647,
+   -1494
+  ]
+ },
+ "49": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   90,
+   -1505
+  ]
+ },
+ "50": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   241,
+   -1302
+  ]
+ },
+ "51": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1571,
+   -1157
+  ]
+ },
+ "52": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   562,
+   -1329
+  ]
+ },
+ "53": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -4,
+   -1114
+  ]
+ },
+ "54": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   410,
+   -1299
+  ]
+ },
+ "55": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   235,
+   -1630
+  ]
+ },
+ "56": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   290,
+   -1410
+  ]
+ },
+ "57": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   598,
+   -1510
+  ]
+ },
+ "58": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   226,
+   -1382
+  ]
+ },
+ "59": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   772,
+   -1353
+  ]
+ },
+ "60": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1752,
+   -1111
+  ]
+ },
+ "61": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1004,
+   -1296
+  ]
+ },
+ "62": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   208,
+   -1453
+  ]
+ },
+ "63": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -51,
+   -991
+  ]
+ },
+ "64": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   685,
+   -1390
+  ]
+ },
+ "65": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   740,
+   -1229
+  ]
+ },
+ "66": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   527,
+   -1454
+  ]
+ },
+ "67": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   593,
+   -1556
+  ]
+ },
+ "68": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1113,
+   -1366
+  ]
+ },
+ "69": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   682,
+   -1539
+  ]
+ },
+ "70": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1036,
+   -1362
+  ]
+ },
+ "71": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   987,
+   -1029
+  ]
+ },
+ "72": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1090,
+   -940
+  ]
+ },
+ "73": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   134,
+   -1617
+  ]
+ },
+ "74": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   888,
+   -1451
+  ]
+ },
+ "75": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   979,
+   -1158
+  ]
+ },
+ "76": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   217,
+   -1595
+  ]
+ },
+ "77": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   792,
+   -1495
+  ]
+ },
+ "78": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   539,
+   -1278
+  ]
+ },
+ "79": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   867,
+   -1396
+  ]
+ },
+ "80": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1234,
+   -896
+  ]
+ },
+ "81": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   361,
+   -1151
+  ]
+ },
+ "82": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   841,
+   -1335
+  ]
+ },
+ "83": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   348,
+   -1226
+  ]
+ },
+ "84": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1092,
+   -1103
+  ]
+ },
+ "85": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   716,
+   -1043
+  ]
+ },
+ "86": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1331,
+   -1282
+  ]
+ },
+ "87": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1245,
+   -742
+  ]
+ },
+ "88": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1189,
+   -1331
+  ]
+ },
+ "89": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   65,
+   -1137
+  ]
+ },
+ "90": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1111,
+   -1279
+  ]
+ },
+ "91": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -151,
+   -816
+  ]
+ },
+ "92": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   901,
+   -1001
+  ]
+ },
+ "93": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1256,
+   -1053
+  ]
+ },
+ "94": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   142,
+   -1482
+  ]
+ },
+ "95": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1146,
+   -986
+  ]
+ },
+ "96": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   552,
+   -1216
+  ]
+ },
+ "97": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   494,
+   -1389
+  ]
+ },
+ "98": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   789,
+   -1412
+  ]
+ },
+ "99": {
+  "px": [
+   109,
+   383
+  ],
+  "skift": [
+   8,
+   46
+  ],
+  "dekning": 0.92,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "flyttet 47 px for å treffe huset"
+ },
+ "100": {
+  "px": [
+   370,
+   180
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "101": {
+  "px": [
+   276,
+   331
+  ],
+  "skift": [
+   -10,
+   10
+  ],
+  "dekning": 0.26,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "102": {
+  "px": [
+   388,
+   623
+  ],
+  "skift": [
+   0,
+   1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "lest av trykket"
+ },
+ "103": {
+  "px": [
+   390,
+   312
+  ],
+  "skift": [
+   6,
+   24
+  ],
+  "dekning": 0.24,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "104": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -91,
+   388
+  ]
+ },
+ "105": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -541,
+   245
+  ]
+ },
+ "106": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -517,
+   374
+  ]
+ },
+ "107": {
+  "px": [
+   2465,
+   1041
+  ],
+  "skift": [
+   -6,
+   8
+  ],
+  "dekning": 0.98,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((255, 255, 255)×17, (173, 100, 86)×14, (244, 123, 106)×8)"
+ },
+ "108": {
+  "px": [
+   2582,
+   981
+  ],
+  "skift": [
+   -20,
+   41
+  ],
+  "dekning": 0.83,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 46 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×16, (173, 100, 86)×14, (215, 109, 94)×8)"
+ },
+ "109": {
+  "px": [
+   2337,
+   1063
+  ],
+  "skift": [
+   30,
+   45
+  ],
+  "dekning": 0.89,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   218,
+   165,
+   125
+  ],
+  "merknad": "flyttet 54 px for å treffe huset; takflaten er ikke ensfarget i trykket ((255, 255, 255)×24, (218, 165, 125)×12, (244, 123, 106)×10)"
+ },
+ "110": {
+  "px": [
+   2522,
+   1057
+  ],
+  "skift": [
+   -6,
+   48
+  ],
+  "dekning": 0.94,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   215,
+   109,
+   94
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "flyttet 48 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×17, (253, 235, 174)×12, (215, 109, 94)×11)"
+ },
+ "111": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3539,
+   3058
+  ]
+ },
+ "112": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3656,
+   3037
+  ]
+ },
+ "113": {
+  "px": [
+   3878,
+   2894
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "114": {
+  "px": [
+   3370,
+   2824
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "115": {
+  "px": [
+   3790,
+   2832
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "116": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3444,
+   3107
+  ]
+ },
+ "117": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3364,
+   2958
+  ]
+ },
+ "118": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3440,
+   3034
+  ]
+ },
+ "119": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3756,
+   3001
+  ]
+ },
+ "120": {
+  "px": [
+   3648,
+   2817
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "121": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3862,
+   2966
+  ]
+ },
+ "122": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3755,
+   2934
+  ]
+ },
+ "123": {
+  "px": [
+   3527,
+   2812
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "124": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3547,
+   3001
+  ]
+ },
+ "125": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2745,
+   3278
+  ]
+ },
+ "126": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2449,
+   3004
+  ]
+ },
+ "127": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2712,
+   3651
+  ]
+ },
+ "128": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2998,
+   3791
+  ]
+ },
+ "129": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2555,
+   3082
+  ]
+ },
+ "130": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2569,
+   3687
+  ]
+ },
+ "131": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3955,
+   3242
+  ]
+ },
+ "132": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2260,
+   3092
+  ]
+ },
+ "133": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3845,
+   3272
+  ]
+ },
+ "134": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2325,
+   3045
+  ]
+ },
+ "135": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4054,
+   3195
+  ]
+ },
+ "136": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2192,
+   3162
+  ]
+ },
+ "137": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4283,
+   3120
+  ]
+ },
+ "138": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2021,
+   3282
+  ]
+ },
+ "139": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4163,
+   3165
+  ]
+ },
+ "140": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2105,
+   3228
+  ]
+ },
+ "141": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4401,
+   3092
+  ]
+ },
+ "142": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1982,
+   3354
+  ]
+ },
+ "143": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2138,
+   3505
+  ]
+ },
+ "144": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3371,
+   3955
+  ]
+ },
+ "145": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3086,
+   3641
+  ]
+ },
+ "146": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2362,
+   3486
+  ]
+ },
+ "147": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2264,
+   3512
+  ]
+ },
+ "148": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2455,
+   3453
+  ]
+ },
+ "149": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2657,
+   3386
+  ]
+ },
+ "150": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2815,
+   3595
+  ]
+ },
+ "151": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2563,
+   3434
+  ]
+ },
+ "152": {
+  "px": [
+   3512,
+   849
+  ],
+  "skift": [
+   -32,
+   -26
+  ],
+  "dekning": 0.96,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   128,
+   130,
+   133
+  ],
+  "merknad": "flyttet 41 px for å treffe huset"
+ },
+ "153": {
+  "px": [
+   2894,
+   1179
+  ],
+  "skift": [
+   6,
+   -10
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "154": {
+  "px": [
+   3108,
+   1543
+  ],
+  "skift": [
+   12,
+   -4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "veggs": [
+   217,
+   110,
+   94
+  ],
+  "merknad": "lest av trykket"
+ },
+ "155": {
+  "px": [
+   2987,
+   1230
+  ],
+  "skift": [
+   4,
+   7
+  ],
+  "dekning": 0.94,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((255, 255, 255)×21, (244, 123, 106)×15, (246, 147, 128)×8)"
+ },
+ "156": {
+  "px": [
+   3508,
+   958
+  ],
+  "skift": [
+   0,
+   39
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "merknad": "lest av trykket"
+ },
+ "157": {
+  "px": [
+   2797,
+   1121
+  ],
+  "skift": [
+   0,
+   -33
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   252,
+   252,
+   253
+  ],
+  "merknad": "lest av trykket"
+ },
+ "158": {
+  "px": [
+   2644,
+   801
+  ],
+  "skift": [
+   18,
+   36
+  ],
+  "dekning": 0.98,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   164,
+   84,
+   72
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 40 px for å treffe huset; takflaten er ikke ensfarget i trykket ((246, 147, 128)×21, (164, 84, 72)×12, (135, 81, 70)×9)"
+ },
+ "159": {
+  "px": [
+   3133,
+   684
+  ],
+  "skift": [
+   0,
+   42
+  ],
+  "dekning": 0.71,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "flyttet 42 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×33, (173, 100, 86)×30, (239, 240, 240)×17)"
+ },
+ "160": {
+  "px": [
+   3573,
+   1290
+  ],
+  "skift": [
+   -16,
+   -38
+  ],
+  "dekning": 0.94,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   115,
+   116,
+   119
+  ],
+  "vegg": [
+   209,
+   211,
+   212
+  ],
+  "merknad": "flyttet 41 px for å treffe huset; takflaten er ikke ensfarget i trykket ((188, 190, 192)×16, (209, 211, 212)×15, (115, 116, 119)×10)"
+ },
+ "161": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen ved Kirkegaten)",
+  "sikkerhet": "lav"
+ },
+ "162": {
+  "px": [
+   2127,
+   950
+  ],
+  "skift": [
+   6,
+   20
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   115,
+   116,
+   119
+  ],
+  "vegg": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "lest av trykket"
+ },
+ "163": {
+  "px": [
+   3022,
+   553
+  ],
+  "skift": [
+   42,
+   50
+  ],
+  "dekning": 0.98,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 65 px for å treffe huset"
+ },
+ "164": {
+  "px": [
+   2885,
+   1019
+  ],
+  "skift": [
+   -12,
+   30
+  ],
+  "dekning": 1.0,
+  "tak": [
+   222,
+   206,
+   154
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   253,
+   235,
+   174
+  ],
+  "merknad": "lest av trykket"
+ },
+ "165": {
+  "px": [
+   3365,
+   1041
+  ],
+  "skift": [
+   12,
+   -13
+  ],
+  "dekning": 0.82,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "merknad": "lest av trykket"
+ },
+ "166": {
+  "px": [
+   3370,
+   678
+  ],
+  "skift": [
+   -48,
+   -4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   211,
+   107,
+   92
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   218,
+   219,
+   220
+  ],
+  "merknad": "flyttet 48 px for å treffe huset"
+ },
+ "167": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen i bakgård)",
+  "sikkerhet": "lav"
+ },
+ "168": {
+  "px": [
+   2544,
+   764
+  ],
+  "skift": [
+   36,
+   45
+  ],
+  "dekning": 0.86,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   128,
+   130,
+   133
+  ],
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "veggs": [
+   226,
+   204,
+   187
+  ],
+  "merknad": "flyttet 58 px for å treffe huset; takflaten er ikke ensfarget i trykket ((128, 130, 133)×16, (244, 123, 106)×13, (226, 204, 187)×7)"
+ },
+ "169": {
+  "px": [
+   3319,
+   741
+  ],
+  "skift": [
+   -12,
+   -11
+  ],
+  "dekning": 1.0,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   218,
+   219,
+   220
+  ],
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "veggs": [
+   211,
+   107,
+   92
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((239, 240, 240)×20, (244, 123, 106)×14, (218, 219, 220)×8)"
+ },
+ "170": {
+  "px": [
+   3383,
+   1295
+  ],
+  "skift": [
+   36,
+   -38
+  ],
+  "dekning": 0.93,
+  "tak": [
+   226,
+   204,
+   187
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "flyttet 52 px for å treffe huset"
+ },
+ "171": {
+  "px": [
+   1997,
+   736
+  ],
+  "skift": [
+   -2,
+   0
+  ],
+  "dekning": 0.18,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "172": {
+  "px": [
+   3299,
+   853
+  ],
+  "skift": [
+   -2,
+   2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   252,
+   190,
+   143
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   222,
+   206,
+   154
+  ],
+  "veggs": [
+   218,
+   165,
+   125
+  ],
+  "merknad": "lest av trykket"
+ },
+ "173": {
+  "px": [
+   3212,
+   1541
+  ],
+  "skift": [
+   12,
+   -54
+  ],
+  "dekning": 0.96,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 55 px for å treffe huset; takflaten er ikke ensfarget i trykket ((105, 109, 110)×22, (217, 110, 94)×20, (188, 190, 192)×5)"
+ },
+ "174": {
+  "px": [
+   3557,
+   1038
+  ],
+  "skift": [
+   30,
+   18
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "merknad": "lest av trykket"
+ },
+ "175": {
+  "merknad": "skjult (flyfoto 2026-10-23: brygga ved Toldbodgaten, grus)",
+  "sikkerhet": "lav"
+ },
+ "176": {
+  "px": [
+   3106,
+   434
+  ],
+  "skift": [
+   -6,
+   -37
+  ],
+  "dekning": 0.6,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "177": {
+  "px": [
+   2230,
+   831
+  ],
+  "skift": [
+   30,
+   27
+  ],
+  "dekning": 0.87,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   132,
+   134,
+   136
+  ],
+  "merknad": "flyttet 40 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×23, (239, 240, 240)×13, (132, 134, 136)×9)"
+ },
+ "178": {
+  "px": [
+   3415,
+   953
+  ],
+  "skift": [
+   24,
+   -15
+  ],
+  "dekning": 0.94,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   237,
+   213,
+   196
+  ],
+  "veggs": [
+   222,
+   206,
+   154
+  ],
+  "merknad": "lest av trykket"
+ },
+ "179": {
+  "px": [
+   2905,
+   1285
+  ],
+  "skift": [
+   4,
+   20
+  ],
+  "dekning": 0.94,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((244, 123, 106)×24, (247, 150, 82)×16, (252, 190, 143)×6)"
+ },
+ "180": {
+  "px": [
+   2793,
+   1337
+  ],
+  "skift": [
+   24,
+   21
+  ],
+  "dekning": 0.98,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   135,
+   81,
+   70
+  ],
+  "vegg": [
+   252,
+   252,
+   253
+  ],
+  "merknad": "lest av trykket"
+ },
+ "181": {
+  "px": [
+   3259,
+   408
+  ],
+  "skift": [
+   20,
+   -32
+  ],
+  "dekning": 0.27,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "182": {
+  "px": [
+   3029,
+   930
+  ],
+  "skift": [
+   -26,
+   22
+  ],
+  "dekning": 0.86,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "veggs": [
+   115,
+   116,
+   119
+  ],
+  "merknad": "lest av trykket"
+ },
+ "183": {
+  "px": [
+   3574,
+   1222
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   178,
+   110,
+   95
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   218,
+   219,
+   218
+  ],
+  "merknad": "lest av trykket"
+ },
+ "184": {
+  "px": [
+   2649,
+   1146
+  ],
+  "skift": [
+   -4,
+   12
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   126,
+   128,
+   131
+  ],
+  "vegg": [
+   251,
+   224,
+   171
+  ],
+  "merknad": "lest av trykket"
+ },
+ "185": {
+  "px": [
+   2933,
+   1410
+  ],
+  "skift": [
+   18,
+   3
+  ],
+  "dekning": 0.96,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   251,
+   202,
+   163
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((244, 123, 106)×24, (247, 150, 82)×12, (217, 110, 94)×10)"
+ },
+ "186": {
+  "px": [
+   3673,
+   1312
+  ],
+  "skift": [
+   28,
+   14
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   246,
+   147,
+   128
+  ],
+  "merknad": "lest av trykket"
+ },
+ "187": {
+  "px": [
+   3425,
+   1151
+  ],
+  "skift": [
+   28,
+   -54
+  ],
+  "dekning": 0.96,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   197,
+   99,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 61 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×24, (246, 147, 128)×17, (197, 99, 86)×8)"
+ },
+ "188": {
+  "px": [
+   2988,
+   1459
+  ],
+  "skift": [
+   4,
+   -22
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   247,
+   150,
+   82
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((217, 110, 94)×21, (188, 190, 192)×18, (247, 150, 82)×9)"
+ },
+ "189": {
+  "px": [
+   3015,
+   1086
+  ],
+  "skift": [
+   -6,
+   -4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "190": {
+  "px": [
+   2084,
+   889
+  ],
+  "skift": [
+   -10,
+   24
+  ],
+  "dekning": 0.91,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   219,
+   111,
+   95
+  ],
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "veggs": [
+   211,
+   161,
+   122
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((219, 111, 95)×16, (255, 255, 255)×16, (211, 161, 122)×9)"
+ },
+ "191": {
+  "px": [
+   2770,
+   1092
+  ],
+  "skift": [
+   -2,
+   29
+  ],
+  "dekning": 1.0,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "192": {
+  "px": [
+   3218,
+   1081
+  ],
+  "skift": [
+   -24,
+   -21
+  ],
+  "dekning": 0.96,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   135,
+   81,
+   70
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((135, 81, 70)×25, (217, 110, 94)×17, (244, 123, 106)×8)"
+ },
+ "193": {
+  "px": [
+   2323,
+   819
+  ],
+  "skift": [
+   0,
+   48
+  ],
+  "dekning": 0.72,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   132,
+   134,
+   136
+  ],
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "veggs": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "flyttet 48 px for å treffe huset"
+ },
+ "194": {
+  "px": [
+   2612,
+   1158
+  ],
+  "skift": [
+   12,
+   -42
+  ],
+  "dekning": 0.89,
+  "tak": [
+   251,
+   224,
+   171
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   126,
+   128,
+   131
+  ],
+  "vegg": [
+   152,
+   154,
+   157
+  ],
+  "merknad": "flyttet 44 px for å treffe huset"
+ },
+ "195": {
+  "px": [
+   3111,
+   1033
+  ],
+  "skift": [
+   -8,
+   -3
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "lest av trykket"
+ },
+ "196": {
+  "px": [
+   3128,
+   1136
+  ],
+  "skift": [
+   16,
+   -26
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "veggs": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "lest av trykket"
+ },
+ "197": {
+  "px": [
+   3411,
+   721
+  ],
+  "skift": [
+   -20,
+   16
+  ],
+  "dekning": 0.7,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   218,
+   219,
+   220
+  ],
+  "merknad": "lest av trykket"
+ },
+ "198": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen i bakgård)",
+  "sikkerhet": "lav"
+ },
+ "199": {
+  "px": [
+   3415,
+   1298
+  ],
+  "skift": [
+   2,
+   2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   226,
+   204,
+   187
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "200": {
+  "px": [
+   3434,
+   929
+  ],
+  "skift": [
+   -8,
+   8
+  ],
+  "dekning": 1.0,
+  "tak": [
+   247,
+   154,
+   135
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   237,
+   213,
+   196
+  ],
+  "merknad": "lest av trykket"
+ },
+ "201": {
+  "px": [
+   3466,
+   971
+  ],
+  "skift": [
+   -8,
+   -36
+  ],
+  "dekning": 0.94,
+  "tak": [
+   237,
+   213,
+   196
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((237, 213, 196)×17, (173, 100, 86)×16, (249, 224, 204)×13)"
+ },
+ "202": {
+  "px": [
+   3284,
+   577
+  ],
+  "skift": [
+   -50,
+   12
+  ],
+  "dekning": 0.43,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "lav",
+  "taks": [
+   128,
+   130,
+   133
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "bare 43% av fotavtrykket på husflate; flyttet 51 px for å treffe huset"
+ },
+ "203": {
+  "px": [
+   3479,
+   1173
+  ],
+  "skift": [
+   8,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   247,
+   150,
+   82
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   197,
+   99,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "204": {
+  "px": [
+   3239,
+   842
+  ],
+  "skift": [
+   0,
+   28
+  ],
+  "dekning": 1.0,
+  "tak": [
+   218,
+   165,
+   125
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "lest av trykket"
+ },
+ "205": {
+  "px": [
+   3265,
+   1492
+  ],
+  "skift": [
+   -30,
+   -26
+  ],
+  "dekning": 1.0,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   246,
+   147,
+   128
+  ],
+  "merknad": "lest av trykket"
+ },
+ "206": {
+  "px": [
+   2391,
+   870
+  ],
+  "skift": [
+   -10,
+   51
+  ],
+  "dekning": 0.89,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "veggs": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "flyttet 52 px for å treffe huset"
+ },
+ "207": {
+  "px": [
+   3290,
+   1045
+  ],
+  "skift": [
+   -14,
+   -26
+  ],
+  "dekning": 0.9,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "veggs": [
+   135,
+   81,
+   70
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((217, 110, 94)×19, (173, 100, 86)×9, (244, 123, 106)×8)"
+ },
+ "208": {
+  "px": [
+   2177,
+   982
+  ],
+  "skift": [
+   -40,
+   35
+  ],
+  "dekning": 0.98,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   115,
+   116,
+   119
+  ],
+  "vegg": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "flyttet 53 px for å treffe huset"
+ },
+ "209": {
+  "px": [
+   3119,
+   1317
+  ],
+  "skift": [
+   8,
+   -1
+  ],
+  "dekning": 0.98,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   244,
+   123,
+   106
+  ],
+  "vegg": [
+   251,
+   202,
+   163
+  ],
+  "merknad": "lest av trykket"
+ },
+ "210": {
+  "px": [
+   2727,
+   1193
+  ],
+  "skift": [
+   -8,
+   35
+  ],
+  "dekning": 0.96,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   193,
+   121,
+   107
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((246, 147, 128)×21, (193, 121, 107)×14, (239, 240, 240)×11)"
+ },
+ "211": {
+  "px": [
+   2527,
+   926
+  ],
+  "skift": [
+   -16,
+   45
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 48 px for å treffe huset"
+ },
+ "212": {
+  "px": [
+   3232,
+   1397
+  ],
+  "skift": [
+   -12,
+   -10
+  ],
+  "dekning": 0.94,
+  "tak": [
+   249,
+   224,
+   204
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "merknad": "lest av trykket"
+ },
+ "213": {
+  "px": [
+   2458,
+   956
+  ],
+  "skift": [
+   10,
+   4
+  ],
+  "dekning": 0.98,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   241,
+   95,
+   93
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((244, 123, 106)×17, (255, 255, 255)×17, (241, 95, 93)×13)"
+ },
+ "214": {
+  "px": [
+   2807,
+   1230
+  ],
+  "skift": [
+   -2,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "215": {
+  "px": [
+   3291,
+   1238
+  ],
+  "skift": [
+   0,
+   -1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   178,
+   110,
+   95
+  ],
+  "merknad": "lest av trykket"
+ },
+ "216": {
+  "px": [
+   2732,
+   773
+  ],
+  "skift": [
+   -44,
+   27
+  ],
+  "dekning": 0.9,
+  "tak": [
+   226,
+   204,
+   187
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 52 px for å treffe huset; takflaten er ikke ensfarget i trykket ((173, 100, 86)×22, (226, 204, 187)×10, (188, 190, 192)×8)"
+ },
+ "217": {
+  "px": [
+   3211,
+   1498
+  ],
+  "skift": [
+   6,
+   8
+  ],
+  "dekning": 1.0,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((217, 110, 94)×21, (246, 147, 128)×20, (135, 81, 70)×5)"
+ },
+ "218": {
+  "px": [
+   3301,
+   1411
+  ],
+  "skift": [
+   2,
+   -16
+  ],
+  "dekning": 0.83,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   165,
+   167,
+   170
+  ],
+  "veggs": [
+   128,
+   130,
+   133
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((105, 109, 110)×10, (217, 110, 94)×10, (128, 130, 133)×9)"
+ },
+ "219": {
+  "px": [
+   3529,
+   1219
+  ],
+  "skift": [
+   10,
+   -18
+  ],
+  "dekning": 1.0,
+  "tak": [
+   218,
+   219,
+   218
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   188,
+   190,
+   192
+  ],
+  "vegg": [
+   197,
+   99,
+   86
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((218, 219, 218)×21, (188, 190, 192)×15, (197, 99, 86)×11)"
+ },
+ "220": {
+  "px": [
+   3520,
+   1356
+  ],
+  "skift": [
+   34,
+   -25
+  ],
+  "dekning": 0.87,
+  "tak": [
+   247,
+   150,
+   82
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   226,
+   204,
+   187
+  ],
+  "merknad": "flyttet 42 px for å treffe huset; takflaten er ikke ensfarget i trykket ((173, 100, 86)×24, (247, 150, 82)×19, (244, 123, 106)×8)"
+ },
+ "221": {
+  "px": [
+   3236,
+   1560
+  ],
+  "skift": [
+   -4,
+   28
+  ],
+  "dekning": 0.92,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((217, 110, 94)×21, (255, 255, 255)×18, (188, 190, 192)×4)"
+ },
+ "222": {
+  "px": [
+   3148,
+   1105
+  ],
+  "skift": [
+   -18,
+   -19
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "lest av trykket"
+ },
+ "223": {
+  "px": [
+   2652,
+   701
+  ],
+  "skift": [
+   -22,
+   48
+  ],
+  "dekning": 0.71,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   226,
+   204,
+   187
+  ],
+  "merknad": "flyttet 53 px for å treffe huset; takflaten er ikke ensfarget i trykket ((173, 100, 86)×17, (244, 123, 106)×11, (226, 204, 187)×6)"
+ },
+ "224": {
+  "px": [
+   2612,
+   1114
+  ],
+  "skift": [
+   10,
+   20
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   126,
+   128,
+   131
+  ],
+  "vegg": [
+   152,
+   154,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "225": {
+  "px": [
+   3192,
+   1388
+  ],
+  "skift": [
+   24,
+   12
+  ],
+  "dekning": 1.0,
+  "tak": [
+   128,
+   130,
+   133
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((105, 109, 110)×34, (128, 130, 133)×15, (255, 255, 255)×14)"
+ },
+ "226": {
+  "px": [
+   3197,
+   974
+  ],
+  "skift": [
+   -2,
+   8
+  ],
+  "dekning": 0.89,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((244, 123, 106)×22, (188, 190, 192)×13, (173, 100, 86)×10)"
+ },
+ "227": {
+  "px": [
+   2935,
+   612
+  ],
+  "skift": [
+   -26,
+   48
+  ],
+  "dekning": 0.69,
+  "tak": [
+   140,
+   142,
+   144
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   128,
+   130,
+   133
+  ],
+  "vegg": [
+   253,
+   235,
+   174
+  ],
+  "veggs": [
+   222,
+   206,
+   154
+  ],
+  "merknad": "flyttet 55 px for å treffe huset"
+ },
+ "228": {
+  "px": [
+   2341,
+   1762
+  ],
+  "skift": [
+   -24,
+   24
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   215,
+   167,
+   129
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 102, 88)×25, (242, 123, 106)×16, (215, 167, 129)×5)"
+ },
+ "229": {
+  "px": [
+   1989,
+   1000
+  ],
+  "skift": [
+   6,
+   6
+  ],
+  "dekning": 0.96,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   237,
+   238,
+   238
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 102, 88)×18, (242, 123, 106)×18, (215, 167, 129)×11)"
+ },
+ "230": {
+  "px": [
+   2252,
+   1790
+  ],
+  "skift": [
+   -8,
+   26
+  ],
+  "dekning": 0.71,
+  "tak": [
+   215,
+   167,
+   129
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "231": {
+  "px": [
+   1907,
+   996
+  ],
+  "skift": [
+   28,
+   -8
+  ],
+  "dekning": 0.94,
+  "tak": [
+   215,
+   167,
+   129
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "veggs": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((215, 167, 129)×22, (242, 123, 106)×18, (250, 188, 142)×6)"
+ },
+ "232": {
+  "px": [
+   2406,
+   1903
+  ],
+  "skift": [
+   -12,
+   9
+  ],
+  "dekning": 0.98,
+  "tak": [
+   246,
+   148,
+   129
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   244,
+   130,
+   112
+  ],
+  "merknad": "lest av trykket"
+ },
+ "233": {
+  "px": [
+   2859,
+   1610
+  ],
+  "skift": [
+   -6,
+   -23
+  ],
+  "dekning": 1.0,
+  "tak": [
+   250,
+   188,
+   142
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   253,
+   203,
+   165
+  ],
+  "merknad": "lest av trykket"
+ },
+ "234": {
+  "px": [
+   2205,
+   2094
+  ],
+  "skift": [
+   -18,
+   4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   232,
+   233,
+   234
+  ],
+  "merknad": "lest av trykket"
+ },
+ "235": {
+  "px": [
+   2576,
+   1965
+  ],
+  "skift": [
+   -10,
+   4
+  ],
+  "dekning": 0.98,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   247,
+   171,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "236": {
+  "px": [
+   2519,
+   1543
+  ],
+  "skift": [
+   -20,
+   -36
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "merknad": "flyttet 41 px for å treffe huset"
+ },
+ "237": {
+  "px": [
+   2690,
+   1904
+  ],
+  "skift": [
+   16,
+   -19
+  ],
+  "dekning": 0.96,
+  "tak": [
+   156,
+   157,
+   158
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   189
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((156, 157, 158)×19, (188, 190, 189)×15, (242, 123, 106)×11)"
+ },
+ "238": {
+  "px": [
+   2057,
+   1024
+  ],
+  "skift": [
+   -8,
+   22
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   102,
+   88
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   253,
+   229,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "239": {
+  "px": [
+   2709,
+   1542
+  ],
+  "skift": [
+   4,
+   18
+  ],
+  "dekning": 0.96,
+  "tak": [
+   247,
+   150,
+   84
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   250,
+   188,
+   142
+  ],
+  "merknad": "lest av trykket"
+ },
+ "240": {
+  "px": [
+   2175,
+   1085
+  ],
+  "skift": [
+   -2,
+   9
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   102,
+   88
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   253,
+   229,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "241": {
+  "px": [
+   2019,
+   1188
+  ],
+  "skift": [
+   6,
+   5
+  ],
+  "dekning": 0.85,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   237,
+   238,
+   238
+  ],
+  "merknad": "lest av trykket"
+ },
+ "242": {
+  "px": [
+   2716,
+   1869
+  ],
+  "skift": [
+   4,
+   -22
+  ],
+  "dekning": 0.94,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   254,
+   243,
+   206
+  ],
+  "veggs": [
+   188,
+   190,
+   189
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((242, 123, 106)×17, (188, 190, 189)×15, (254, 243, 206)×9)"
+ },
+ "243": {
+  "px": [
+   2953,
+   1661
+  ],
+  "skift": [
+   -4,
+   -6
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   133,
+   80,
+   68
+  ],
+  "vegg": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "lest av trykket"
+ },
+ "244": {
+  "px": [
+   2746,
+   1492
+  ],
+  "skift": [
+   -22,
+   26
+  ],
+  "dekning": 0.88,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((242, 123, 106)×20, (247, 150, 84)×20, (255, 255, 255)×4)"
+ },
+ "245": {
+  "px": [
+   2866,
+   1540
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   247,
+   150,
+   84
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   253,
+   203,
+   165
+  ],
+  "veggs": [
+   250,
+   188,
+   142
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((247, 150, 84)×17, (242, 123, 106)×10, (173, 102, 88)×10)"
+ },
+ "246": {
+  "px": [
+   2596,
+   1698
+  ],
+  "skift": [
+   -20,
+   15
+  ],
+  "dekning": 0.98,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   195,
+   181,
+   170
+  ],
+  "veggs": [
+   123,
+   127,
+   128
+  ],
+  "merknad": "lest av trykket"
+ },
+ "247": {
+  "px": [
+   2330,
+   1835
+  ],
+  "skift": [
+   0,
+   1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   246,
+   148,
+   129
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   242,
+   123,
+   106
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 102, 88)×25, (246, 148, 129)×14, (242, 123, 106)×12)"
+ },
+ "248": {
+  "px": [
+   1690,
+   1042
+  ],
+  "skift": [
+   -4,
+   2
+  ],
+  "dekning": 0.98,
+  "tak": [
+   237,
+   238,
+   238
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   141,
+   143,
+   143
+  ],
+  "vegg": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "lest av trykket"
+ },
+ "249": {
+  "px": [
+   2931,
+   1782
+  ],
+  "skift": [
+   -8,
+   -7
+  ],
+  "dekning": 0.94,
+  "tak": [
+   253,
+   203,
+   165
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   250,
+   188,
+   142
+  ],
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "veggs": [
+   215,
+   167,
+   129
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((253, 203, 165)×18, (250, 188, 142)×14, (215, 167, 129)×9)"
+ },
+ "250": {
+  "px": [
+   2593,
+   1841
+  ],
+  "skift": [
+   16,
+   10
+  ],
+  "dekning": 0.85,
+  "tak": [
+   254,
+   243,
+   206
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   205,
+   194,
+   150
+  ],
+  "vegg": [
+   244,
+   130,
+   112
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((254, 243, 206)×25, (242, 123, 106)×19, (205, 194, 150)×16)"
+ },
+ "251": {
+  "px": [
+   2344,
+   1991
+  ],
+  "skift": [
+   26,
+   17
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   215,
+   193,
+   119
+  ],
+  "merknad": "lest av trykket"
+ },
+ "252": {
+  "px": [
+   1934,
+   961
+  ],
+  "skift": [
+   -10,
+   22
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   250,
+   188,
+   142
+  ],
+  "veggs": [
+   215,
+   167,
+   129
+  ],
+  "merknad": "lest av trykket"
+ },
+ "253": {
+  "px": [
+   2817,
+   1719
+  ],
+  "skift": [
+   -24,
+   44
+  ],
+  "dekning": 0.98,
+  "tak": [
+   214,
+   113,
+   98
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   123,
+   127,
+   128
+  ],
+  "vegg": [
+   226,
+   205,
+   190
+  ],
+  "veggs": [
+   215,
+   167,
+   129
+  ],
+  "merknad": "flyttet 50 px for å treffe huset"
+ },
+ "254": {
+  "px": [
+   3061,
+   1689
+  ],
+  "skift": [
+   0,
+   11
+  ],
+  "dekning": 0.91,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   253,
+   235,
+   174
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((242, 123, 106)×24, (237, 238, 238)×13, (249, 224, 204)×6)"
+ },
+ "255": {
+  "px": [
+   2986,
+   1733
+  ],
+  "skift": [
+   -2,
+   -1
+  ],
+  "dekning": 0.98,
+  "tak": [
+   253,
+   235,
+   174
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   253,
+   203,
+   165
+  ],
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "veggs": [
+   242,
+   123,
+   106
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((253, 235, 174)×23, (242, 123, 106)×12, (246, 148, 129)×8)"
+ },
+ "256": {
+  "px": [
+   2536,
+   1566
+  ],
+  "skift": [
+   18,
+   -55
+  ],
+  "dekning": 0.88,
+  "tak": [
+   209,
+   211,
+   211
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   242,
+   123,
+   106
+  ],
+  "merknad": "flyttet 58 px for å treffe huset; takflaten er ikke ensfarget i trykket ((209, 211, 211)×15, (242, 123, 106)×13, (246, 148, 129)×12)"
+ },
+ "257": {
+  "px": [
+   2942,
+   1648
+  ],
+  "skift": [
+   -48,
+   27
+  ],
+  "dekning": 0.98,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   226,
+   205,
+   190
+  ],
+  "merknad": "flyttet 55 px for å treffe huset; takflaten er ikke ensfarget i trykket ((173, 102, 88)×25, (242, 123, 106)×13, (226, 205, 190)×7)"
+ },
+ "258": {
+  "px": [
+   2857,
+   1723
+  ],
+  "skift": [
+   22,
+   -46
+  ],
+  "dekning": 0.96,
+  "tak": [
+   226,
+   205,
+   190
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   214,
+   113,
+   98
+  ],
+  "merknad": "flyttet 51 px for å treffe huset; takflaten er ikke ensfarget i trykket ((226, 205, 190)×45, (214, 113, 98)×28, (123, 127, 128)×11)"
+ },
+ "259": {
+  "px": [
+   2321,
+   2058
+  ],
+  "skift": [
+   -4,
+   22
+  ],
+  "dekning": 0.87,
+  "tak": [
+   213,
+   215,
+   216
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   113,
+   114,
+   117
+  ],
+  "vegg": [
+   190,
+   192,
+   194
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((113, 114, 117)×20, (213, 215, 216)×14, (244, 123, 106)×12)"
+ },
+ "260": {
+  "px": [
+   2492,
+   1950
+  ],
+  "skift": [
+   -6,
+   -16
+  ],
+  "dekning": 1.0,
+  "tak": [
+   246,
+   148,
+   129
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "261": {
+  "px": [
+   2547,
+   1765
+  ],
+  "skift": [
+   40,
+   -2
+  ],
+  "dekning": 0.71,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   205,
+   194,
+   150
+  ],
+  "veggs": [
+   195,
+   181,
+   170
+  ],
+  "merknad": "flyttet 40 px for å treffe huset"
+ },
+ "262": {
+  "px": [
+   2144,
+   1213
+  ],
+  "skift": [
+   12,
+   10
+  ],
+  "dekning": 0.98,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   236,
+   206
+  ],
+  "merknad": "lest av trykket"
+ },
+ "263": {
+  "px": [
+   2805,
+   1864
+  ],
+  "skift": [
+   -42,
+   15
+  ],
+  "dekning": 0.79,
+  "tak": [
+   237,
+   238,
+   238
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   123,
+   127,
+   128
+  ],
+  "vegg": [
+   242,
+   123,
+   106
+  ],
+  "merknad": "flyttet 45 px for å treffe huset"
+ },
+ "264": {
+  "px": [
+   2703,
+   494
+  ],
+  "skift": [
+   -52,
+   -32
+  ],
+  "dekning": 0.88,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "merknad": "flyttet 61 px for å treffe huset; ingen synlig vegg funnet"
+ },
+ "265": {
+  "px": [
+   1097,
+   1247
+  ],
+  "skift": [
+   -42,
+   -18
+  ],
+  "dekning": 0.43,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "lav",
+  "merknad": "bare 43% av fotavtrykket på husflate; flyttet 46 px for å treffe huset; ingen synlig vegg funnet"
+ },
+ "266": {
+  "px": [
+   1912,
+   845
+  ],
+  "skift": [
+   -20,
+   -8
+  ],
+  "dekning": 0.71,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "middels",
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "267": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2593,
+   -544
+  ]
+ },
+ "268": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   5469,
+   277
+  ]
+ },
+ "269": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   5322,
+   178
+  ]
+ },
+ "270": {
+  "px": [
+   4020,
+   2479
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "271": {
+  "px": [
+   3998,
+   2757
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "272": {
+  "px": [
+   4186,
+   2839
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "273": {
+  "px": [
+   4284,
+   2662
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "274": {
+  "px": [
+   4109,
+   2725
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "275": {
+  "px": [
+   4037,
+   2630
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "276": {
+  "px": [
+   4123,
+   2577
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "277": {
+  "px": [
+   4078,
+   2893
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "278": {
+  "px": [
+   4311,
+   2802
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "279": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1216,
+   3206
+  ]
+ },
+ "280": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1104,
+   3140
+  ]
+ },
+ "281": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1029,
+   3020
+  ]
+ },
+ "282": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   883,
+   3029
+  ]
+ },
+ "283": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   866,
+   2994
+  ]
+ },
+ "284": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   940,
+   2947
+  ]
+ },
+ "285": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   849,
+   3040
+  ]
+ },
+ "286": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   738,
+   2991
+  ]
+ },
+ "287": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   813,
+   3004
+  ]
+ },
+ "288": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   768,
+   3070
+  ]
+ },
+ "289": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2050,
+   3399
+  ]
+ },
+ "290": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2150,
+   3331
+  ]
+ },
+ "291": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2207,
+   3270
+  ]
+ },
+ "292": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2282,
+   3200
+  ]
+ },
+ "293": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2426,
+   3080
+  ]
+ },
+ "294": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2460,
+   3064
+  ]
+ },
+ "295": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2464,
+   3091
+  ]
+ },
+ "296": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2614,
+   3147
+  ]
+ },
+ "297": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2677,
+   3194
+  ]
+ },
+ "298": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2661,
+   3273
+  ]
+ },
+ "299": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2418,
+   3363
+  ]
+ },
+ "300": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1453,
+   3312
+  ]
+ },
+ "301": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1562,
+   3338
+  ]
+ },
+ "302": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1708,
+   3379
+  ]
+ },
+ "303": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1773,
+   3383
+  ]
+ },
+ "304": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1834,
+   3433
+  ]
+ },
+ "305": {
+  "px": [
+   2901,
+   1165
+  ],
+  "skift": [
+   18,
+   23
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "306": {
+  "px": [
+   2847,
+   1117
+  ],
+  "skift": [
+   -20,
+   2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "307": {
+  "px": [
+   3015,
+   572
+  ],
+  "skift": [
+   -28,
+   2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 100, 86)×16, (188, 190, 192)×15, (239, 240, 240)×14)"
+ },
+ "308": {
+  "px": [
+   3183,
+   1429
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   105,
+   109,
+   110
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   246,
+   147,
+   128
+  ],
+  "veggs": [
+   135,
+   81,
+   70
+  ],
+  "merknad": "lest av trykket"
+ },
+ "309": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4240,
+   3204
+  ]
+ },
+ "310": {
+  "px": [
+   4173,
+   2747
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "311": {
+  "px": [
+   2635,
+   830
+  ],
+  "skift": [
+   -26,
+   -1
+  ],
+  "dekning": 0.98,
+  "tak": [
+   246,
+   147,
+   128
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   135,
+   81,
+   70
+  ],
+  "vegg": [
+   173,
+   100,
+   86
+  ],
+  "veggs": [
+   164,
+   84,
+   72
+  ],
+  "merknad": "lest av trykket"
+ },
+ "312": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2805,
+   3697
+  ]
+ },
+ "313": {
+  "px": [
+   2250,
+   996
+  ],
+  "skift": [
+   10,
+   22
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   115,
+   116,
+   119
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "314": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3344,
+   3935
+  ]
+ },
+ "315": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3319,
+   3906
+  ]
+ },
+ "316": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3297,
+   3881
+  ]
+ },
+ "317": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2991,
+   3533
+  ]
+ },
+ "318": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3060,
+   3613
+  ]
+ },
+ "319": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3039,
+   3588
+  ]
+ },
+ "320": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3013,
+   3559
+  ]
+ },
+ "321": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3183,
+   3757
+  ]
+ },
+ "322": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3155,
+   3721
+  ]
+ },
+ "323": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3132,
+   3695
+  ]
+ },
+ "324": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3108,
+   3666
+  ]
+ },
+ "325": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen ved Kirkegaten)",
+  "sikkerhet": "lav"
+ },
+ "326": {
+  "px": [
+   2454,
+   1905
+  ],
+  "skift": [
+   -26,
+   22
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   130,
+   112
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "merknad": "lest av trykket"
+ },
+ "327": {
+  "px": [
+   2492,
+   1827
+  ],
+  "skift": [
+   14,
+   -24
+  ],
+  "dekning": 1.0,
+  "tak": [
+   205,
+   194,
+   150
+  ],
+  "sikkerhet": "middels",
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "328": {
+  "px": [
+   2945,
+   1247
+  ],
+  "skift": [
+   16,
+   22
+  ],
+  "dekning": 0.97,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "merknad": "lest av trykket"
+ },
+ "329": {
+  "px": [
+   2838,
+   1565
+  ],
+  "skift": [
+   8,
+   9
+  ],
+  "dekning": 1.0,
+  "tak": [
+   250,
+   188,
+   142
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   242,
+   123,
+   106
+  ],
+  "veggs": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "lest av trykket"
+ },
+ "330": {
+  "px": [
+   3080,
+   1094
+  ],
+  "skift": [
+   -6,
+   -12
+  ],
+  "dekning": 1.0,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "lest av trykket"
+ },
+ "331": {
+  "px": [
+   3003,
+   1064
+  ],
+  "skift": [
+   4,
+   8
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "332": {
+  "px": [
+   3487,
+   1297
+  ],
+  "skift": [
+   12,
+   6
+  ],
+  "dekning": 0.98,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "merknad": "lest av trykket"
+ },
+ "333": {
+  "px": [
+   3058,
+   1036
+  ],
+  "skift": [
+   10,
+   12
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "lest av trykket"
+ },
+ "334": {
+  "px": [
+   3163,
+   924
+  ],
+  "skift": [
+   20,
+   -2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   115,
+   116,
+   119
+  ],
+  "vegg": [
+   152,
+   154,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "335": {
+  "px": [
+   1937,
+   1055
+  ],
+  "skift": [
+   2,
+   3
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   237,
+   238,
+   238
+  ],
+  "merknad": "lest av trykket"
+ },
+ "336": {
+  "px": [
+   1786,
+   1016
+  ],
+  "skift": [
+   6,
+   22
+  ],
+  "dekning": 0.98,
+  "tak": [
+   246,
+   148,
+   129
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   221,
+   207,
+   158
+  ],
+  "merknad": "lest av trykket"
+ },
+ "337": {
+  "px": [
+   1812,
+   1024
+  ],
+  "skift": [
+   0,
+   -2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   246,
+   148,
+   129
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   221,
+   207,
+   158
+  ],
+  "merknad": "lest av trykket"
+ },
+ "338": {
+  "px": [
+   2742,
+   675
+  ],
+  "skift": [
+   -20,
+   -18
+  ],
+  "dekning": 0.81,
+  "tak": [
+   249,
+   224,
+   204
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   226,
+   204,
+   187
+  ],
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "merknad": "lest av trykket"
+ },
+ "339": {
+  "px": [
+   2486,
+   1810
+  ],
+  "skift": [
+   18,
+   23
+  ],
+  "dekning": 1.0,
+  "tak": [
+   205,
+   194,
+   150
+  ],
+  "sikkerhet": "middels",
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "340": {
+  "px": [
+   2720,
+   778
+  ],
+  "skift": [
+   4,
+   6
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   164,
+   84,
+   72
+  ],
+  "vegg": [
+   226,
+   204,
+   187
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 100, 86)×15, (188, 190, 192)×11, (164, 84, 72)×9)"
+ },
+ "341": {
+  "px": [
+   2492,
+   1925
+  ],
+  "skift": [
+   -4,
+   17
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   246,
+   148,
+   129
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((242, 123, 106)×25, (173, 102, 88)×24, (246, 148, 129)×5)"
+ },
+ "342": {
+  "px": [
+   3270,
+   1461
+  ],
+  "skift": [
+   -2,
+   6
+  ],
+  "dekning": 1.0,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "lest av trykket"
+ },
+ "343": {
+  "px": [
+   3455,
+   873
+  ],
+  "skift": [
+   0,
+   -6
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   247,
+   154,
+   135
+  ],
+  "veggs": [
+   173,
+   100,
+   86
+  ],
+  "merknad": "lest av trykket"
+ },
+ "344": {
+  "px": [
+   3182,
+   1081
+  ],
+  "skift": [
+   10,
+   11
+  ],
+  "dekning": 1.0,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "345": {
+  "px": [
+   3146,
+   1530
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "346": {
+  "px": [
+   2431,
+   1853
+  ],
+  "skift": [
+   -28,
+   37
+  ],
+  "dekning": 0.85,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   247,
+   171,
+   157
+  ],
+  "veggs": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "flyttet 46 px for å treffe huset"
+ },
+ "347": {
+  "px": [
+   2476,
+   898
+  ],
+  "skift": [
+   0,
+   2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   241,
+   95,
+   93
+  ],
+  "merknad": "lest av trykket"
+ },
+ "348": {
+  "px": [
+   2944,
+   1162
+  ],
+  "skift": [
+   -12,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   152,
+   154,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "349": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen i bakgård)",
+  "sikkerhet": "lav"
+ },
+ "350": {
+  "px": [
+   2844,
+   1522
+  ],
+  "skift": [
+   44,
+   -13
+  ],
+  "dekning": 1.0,
+  "tak": [
+   247,
+   150,
+   84
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   250,
+   188,
+   142
+  ],
+  "veggs": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "flyttet 46 px for å treffe huset"
+ },
+ "351": {
+  "px": [
+   3550,
+   1248
+  ],
+  "skift": [
+   -2,
+   -1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   218,
+   219,
+   218
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   178,
+   110,
+   95
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "veggs": [
+   115,
+   116,
+   119
+  ],
+  "merknad": "lest av trykket"
+ },
+ "352": {
+  "px": [
+   3567,
+   1296
+  ],
+  "skift": [
+   14,
+   -6
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((173, 100, 86)×7, (115, 116, 119)×5, (246, 147, 128)×3)"
+ },
+ "353": {
+  "px": [
+   2595,
+   1602
+  ],
+  "skift": [
+   28,
+   -32
+  ],
+  "dekning": 1.0,
+  "tak": [
+   209,
+   211,
+   211
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   109,
+   113,
+   114
+  ],
+  "merknad": "flyttet 43 px for å treffe huset; ingen synlig vegg funnet"
+ },
+ "354": {
+  "px": [
+   3002,
+   1657
+  ],
+  "skift": [
+   6,
+   -4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   226,
+   205,
+   190
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   242,
+   123,
+   106
+  ],
+  "merknad": "lest av trykket"
+ },
+ "355": {
+  "px": [
+   3048,
+   1492
+  ],
+  "skift": [
+   -26,
+   38
+  ],
+  "dekning": 1.0,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "flyttet 46 px for å treffe huset"
+ },
+ "356": {
+  "px": [
+   3077,
+   1504
+  ],
+  "skift": [
+   0,
+   -1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   217,
+   110,
+   94
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "357": {
+  "px": [
+   3182,
+   1443
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   128,
+   130,
+   133
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   135,
+   81,
+   70
+  ],
+  "merknad": "lest av trykket"
+ },
+ "358": {
+  "px": [
+   2924,
+   1684
+  ],
+  "skift": [
+   18,
+   17
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   253,
+   203,
+   165
+  ],
+  "merknad": "lest av trykket"
+ },
+ "359": {
+  "px": [
+   3145,
+   1485
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   226,
+   204,
+   187
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((226, 204, 187)×15, (105, 109, 110)×12, (135, 81, 70)×8)"
+ },
+ "360": {
+  "px": [
+   3458,
+   954
+  ],
+  "skift": [
+   -2,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "veggs": [
+   237,
+   213,
+   196
+  ],
+  "merknad": "lest av trykket"
+ },
+ "361": {
+  "px": [
+   2654,
+   1661
+  ],
+  "skift": [
+   12,
+   2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   247,
+   150,
+   84
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   209,
+   211,
+   211
+  ],
+  "veggs": [
+   226,
+   205,
+   190
+  ],
+  "merknad": "lest av trykket"
+ },
+ "362": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen ved Tøihusgaten)",
+  "sikkerhet": "lav"
+ },
+ "363": {
+  "px": [
+   2773,
+   1676
+  ],
+  "skift": [
+   0,
+   20
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   189
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   123,
+   127,
+   128
+  ],
+  "vegg": [
+   226,
+   205,
+   190
+  ],
+  "merknad": "lest av trykket"
+ },
+ "364": {
+  "px": [
+   3146,
+   1559
+  ],
+  "skift": [
+   0,
+   1
+  ],
+  "dekning": 1.0,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   105,
+   109,
+   110
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "365": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4474,
+   3133
+  ]
+ },
+ "366": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2938,
+   3655
+  ]
+ },
+ "367": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2845,
+   3729
+  ]
+ },
+ "368": {
+  "px": [
+   3990,
+   2554
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "369": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4022,
+   3274
+  ]
+ },
+ "370": {
+  "px": [
+   4306,
+   2740
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "371": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4138,
+   3241
+  ]
+ },
+ "372": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   4355,
+   3172
+  ]
+ },
+ "373": {
+  "px": [
+   3822,
+   2857
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "374": {
+  "px": [
+   4199,
+   2776
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "375": {
+  "px": [
+   3612,
+   1265
+  ],
+  "skift": [
+   0,
+   -4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   178,
+   110,
+   95
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   236,
+   237,
+   235
+  ],
+  "veggs": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "376": {
+  "px": [
+   3542,
+   931
+  ],
+  "skift": [
+   2,
+   5
+  ],
+  "dekning": 1.0,
+  "tak": [
+   239,
+   240,
+   240
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   128,
+   130,
+   133
+  ],
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "merknad": "lest av trykket"
+ },
+ "377": {
+  "px": [
+   3338,
+   872
+  ],
+  "skift": [
+   -22,
+   23
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   222,
+   206,
+   154
+  ],
+  "merknad": "lest av trykket"
+ },
+ "378": {
+  "px": [
+   2599,
+   1894
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 1.0,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   247,
+   171,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "379": {
+  "px": [
+   2421,
+   944
+  ],
+  "skift": [
+   52,
+   -26
+  ],
+  "dekning": 0.7,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "flyttet 58 px for å treffe huset"
+ },
+ "380": {
+  "px": [
+   3464,
+   1208
+  ],
+  "skift": [
+   4,
+   -4
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "middels",
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "381": {
+  "px": [
+   2827,
+   1625
+  ],
+  "skift": [
+   32,
+   26
+  ],
+  "dekning": 0.89,
+  "tak": [
+   250,
+   188,
+   142
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   253,
+   203,
+   165
+  ],
+  "merknad": "flyttet 41 px for å treffe huset; takflaten er ikke ensfarget i trykket ((250, 188, 142)×16, (173, 102, 88)×9, (253, 203, 165)×9)"
+ },
+ "382": {
+  "px": [
+   3031,
+   1458
+  ],
+  "skift": [
+   -2,
+   6
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   217,
+   110,
+   94
+  ],
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "lest av trykket"
+ },
+ "383": {
+  "px": [
+   2761,
+   819
+  ],
+  "skift": [
+   -42,
+   43
+  ],
+  "dekning": 0.92,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "middels",
+  "taks": [
+   173,
+   100,
+   86
+  ],
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "veggs": [
+   249,
+   224,
+   204
+  ],
+  "merknad": "flyttet 60 px for å treffe huset; takflaten er ikke ensfarget i trykket ((244, 123, 106)×23, (173, 100, 86)×11, (226, 204, 187)×11)"
+ },
+ "384": {
+  "px": [
+   2097,
+   1102
+  ],
+  "skift": [
+   28,
+   9
+  ],
+  "dekning": 0.9,
+  "tak": [
+   242,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   253,
+   229,
+   157
+  ],
+  "merknad": "lest av trykket"
+ },
+ "385": {
+  "px": [
+   2148,
+   1144
+  ],
+  "skift": [
+   4,
+   -8
+  ],
+  "dekning": 1.0,
+  "tak": [
+   253,
+   229,
+   157
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   150,
+   79,
+   67
+  ],
+  "merknad": "lest av trykket"
+ },
+ "386": {
+  "px": [
+   3224,
+   664
+  ],
+  "skift": [
+   -6,
+   -11
+  ],
+  "dekning": 1.0,
+  "tak": [
+   128,
+   130,
+   133
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((128, 130, 133)×19, (173, 100, 86)×11, (188, 190, 192)×11)"
+ },
+ "387": {
+  "px": [
+   3282,
+   1238
+  ],
+  "skift": [
+   16,
+   -14
+  ],
+  "dekning": 1.0,
+  "tak": [
+   178,
+   110,
+   95
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((178, 110, 95)×17, (173, 100, 86)×16, (252, 190, 143)×12)"
+ },
+ "388": {
+  "px": [
+   3449,
+   1244
+  ],
+  "skift": [
+   14,
+   20
+  ],
+  "dekning": 1.0,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "merknad": "lest av trykket"
+ },
+ "389": {
+  "px": [
+   2610,
+   1603
+  ],
+  "skift": [
+   18,
+   -26
+  ],
+  "dekning": 1.0,
+  "tak": [
+   109,
+   113,
+   114
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   209,
+   211,
+   211
+  ],
+  "merknad": "lest av trykket"
+ },
+ "390": {
+  "px": [
+   2924,
+   1563
+  ],
+  "skift": [
+   -6,
+   -9
+  ],
+  "dekning": 0.94,
+  "tak": [
+   249,
+   224,
+   204
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   226,
+   205,
+   190
+  ],
+  "vegg": [
+   242,
+   123,
+   106
+  ],
+  "veggs": [
+   173,
+   102,
+   88
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((249, 224, 204)×16, (242, 123, 106)×13, (226, 205, 190)×13)"
+ },
+ "391": {
+  "merknad": "skjult (flyfoto 2026-10-23: parkeringsplass ved Tøihusgaten)",
+  "sikkerhet": "lav"
+ },
+ "392": {
+  "merknad": "skjult (flyfoto 2026-10-23: plen på vollen ved Voldgaten)",
+  "sikkerhet": "lav"
+ },
+ "393": {
+  "px": [
+   2052,
+   1151
+  ],
+  "skift": [
+   4,
+   28
+  ],
+  "dekning": 1.0,
+  "tak": [
+   201,
+   107,
+   94
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   173,
+   102,
+   88
+  ],
+  "vegg": [
+   202,
+   129,
+   72
+  ],
+  "merknad": "lest av trykket"
+ },
+ "394": {
+  "px": [
+   3147,
+   514
+  ],
+  "skift": [
+   -34,
+   48
+  ],
+  "dekning": 0.78,
+  "tak": [
+   173,
+   100,
+   86
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "merknad": "flyttet 59 px for å treffe huset"
+ },
+ "395": {
+  "px": [
+   3564,
+   2788
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "396": {
+  "px": [
+   4043,
+   2541
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "397": {
+  "px": [
+   4066,
+   2552
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "398": {
+  "px": [
+   2832,
+   1227
+  ],
+  "skift": [
+   16,
+   23
+  ],
+  "dekning": 1.0,
+  "tak": [
+   188,
+   190,
+   192
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   252,
+   190,
+   143
+  ],
+  "veggs": [
+   246,
+   147,
+   128
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((188, 190, 192)×19, (244, 123, 106)×15, (247, 150, 82)×7)"
+ },
+ "399": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3271,
+   3852
+  ]
+ },
+ "400": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2958,
+   3500
+  ]
+ },
+ "401": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3909,
+   3314
+  ]
+ },
+ "402": {
+  "px": [
+   2785,
+   1732
+  ],
+  "skift": [
+   2,
+   -2
+  ],
+  "dekning": 1.0,
+  "tak": [
+   226,
+   205,
+   190
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   214,
+   113,
+   98
+  ],
+  "merknad": "lest av trykket"
+ },
+ "403": {
+  "px": [
+   4066,
+   2830
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "404": {
+  "px": [
+   2862,
+   627
+  ],
+  "skift": [
+   16,
+   -23
+  ],
+  "dekning": 0.94,
+  "tak": [
+   140,
+   142,
+   144
+  ],
+  "sikkerhet": "høy",
+  "taks": [
+   128,
+   130,
+   133
+  ],
+  "vegg": [
+   222,
+   206,
+   154
+  ],
+  "merknad": "takflaten er ikke ensfarget i trykket ((140, 142, 144)×18, (222, 206, 154)×15, (128, 130, 133)×12)"
+ },
+ "405": {
+  "px": [
+   4179,
+   2679
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "406": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   3636,
+   2975
+  ]
+ },
+ "407": {
+  "px": [
+   3975,
+   2818
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "408": {
+  "px": [
+   3432,
+   829
+  ],
+  "skift": [
+   12,
+   -20
+  ],
+  "dekning": 1.0,
+  "tak": [
+   253,
+   253,
+   253
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "merknad": "lest av trykket"
+ },
+ "409": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   522,
+   -1106
+  ]
+ },
+ "410": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1014,
+   -971
+  ]
+ },
+ "411": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   293,
+   -1603
+  ]
+ },
+ "412": {
+  "px": [
+   260,
+   60
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "413": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -101,
+   -782
+  ]
+ },
+ "414": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   591,
+   -1494
+  ]
+ },
+ "415": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   189,
+   -1003
+  ]
+ },
+ "416": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   189,
+   -1386
+  ]
+ },
+ "417": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   895,
+   -1091
+  ]
+ },
+ "418": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   76,
+   -838
+  ]
+ },
+ "419": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   585,
+   -1163
+  ]
+ },
+ "420": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   580,
+   -1206
+  ]
+ },
+ "421": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   567,
+   -1308
+  ]
+ },
+ "422": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   479,
+   -1336
+  ]
+ },
+ "423": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   434,
+   -1220
+  ]
+ },
+ "424": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   404,
+   -1585
+  ]
+ },
+ "425": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   1815,
+   -1090
+  ]
+ },
+ "426": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   292,
+   -1555
+  ]
+ },
+ "427": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   607,
+   -1424
+  ]
+ },
+ "428": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2537,
+   -828
+  ]
+ },
+ "429": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   271,
+   -1656
+  ]
+ },
+ "430": {
+  "px": [
+   406,
+   61
+  ],
+  "skift": [
+   0,
+   0
+  ],
+  "dekning": 0.0,
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander; skjult bak trær/andre hus eller ikke tegnet)",
+  "sikkerhet": "lav"
+ },
+ "431": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -299,
+   71
+  ]
+ },
+ "432": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   -322,
+   108
+  ]
+ },
+ "433": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2542,
+   3307
+  ]
+ },
+ "434": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2520,
+   3321
+  ]
+ },
+ "435": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2445,
+   3337
+  ]
+ },
+ "436": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2317,
+   3392
+  ]
+ },
+ "437": {
+  "merknad": "ikke i trykket (utenfor arket)",
+  "sikkerhet": "lav",
+  "px": [
+   2308,
+   3480
+  ]
+ },
+ "438": {
+  "px": [
+   95,
+   569
+  ],
+  "skift": [
+   -28,
+   48
+  ],
+  "dekning": 1.0,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "sikkerhet": "middels",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "merknad": "flyttet 56 px for å treffe huset"
+ },
+ "439": {
+  "px": [
+   2119,
+   2109
+  ],
+  "skift": [
+   8,
+   3
+  ],
+  "dekning": 0.98,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   222,
+   242,
+   246
+  ],
+  "merknad": "lest av trykket"
+ },
+ "440": {
+  "px": [
+   2034,
+   2119
+  ],
+  "skift": [
+   8,
+   -16
+  ],
+  "dekning": 0.98,
+  "tak": [
+   244,
+   123,
+   106
+  ],
+  "sikkerhet": "høy",
+  "vegg": [
+   222,
+   242,
+   246
+  ],
+  "merknad": "lest av trykket"
+ }
+}

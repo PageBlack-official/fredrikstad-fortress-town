@@ -1,0 +1,172 @@
+{
+ "Glasshytta": {
+  "navn": "Glasshytta",
+  "antall": 1,
+  "kvartaltegning": 0,
+  "tegnet_h": 1,
+  "vind": 32,
+  "piper": 2,
+  "arker": 0,
+  "mangler_bilde": []
+ },
+ "Kvartal10": {
+  "navn": "Kvartal10",
+  "antall": 17,
+  "kvartaltegning": 12,
+  "tegnet_h": 17,
+  "vind": 410,
+  "piper": 23,
+  "arker": 14,
+  "mangler_bilde": []
+ },
+ "Kvartal11": {
+  "navn": "Kvartal11",
+  "antall": 12,
+  "kvartaltegning": 5,
+  "tegnet_h": 12,
+  "vind": 415,
+  "piper": 14,
+  "arker": 16,
+  "mangler_bilde": []
+ },
+ "Kvartal12": {
+  "navn": "Kvartal12",
+  "antall": 37,
+  "kvartaltegning": 16,
+  "tegnet_h": 37,
+  "vind": 563,
+  "piper": 45,
+  "arker": 10,
+  "mangler_bilde": []
+ },
+ "Kvartal13": {
+  "navn": "Kvartal13",
+  "antall": 4,
+  "kvartaltegning": 3,
+  "tegnet_h": 4,
+  "vind": 198,
+  "piper": 13,
+  "arker": 4,
+  "mangler_bilde": []
+ },
+ "Kvartal14": {
+  "navn": "Kvartal14",
+  "antall": 26,
+  "kvartaltegning": 14,
+  "tegnet_h": 26,
+  "vind": 535,
+  "piper": 28,
+  "arker": 8,
+  "mangler_bilde": []
+ },
+ "Kvartal2BITMP": {
+  "navn": "Kvartal2BITMP",
+  "antall": 22,
+  "kvartaltegning": 11,
+  "tegnet_h": 21,
+  "vind": 324,
+  "piper": 28,
+  "arker": 8,
+  "mangler_bilde": []
+ },
+ "Kvartal3": {
+  "navn": "Kvartal3",
+  "antall": 14,
+  "kvartaltegning": 9,
+  "tegnet_h": 13,
+  "vind": 293,
+  "piper": 28,
+  "arker": 4,
+  "mangler_bilde": []
+ },
+ "Kvartal4BITMP": {
+  "navn": "Kvartal4BITMP",
+  "antall": 15,
+  "kvartaltegning": 8,
+  "tegnet_h": 15,
+  "vind": 351,
+  "piper": 17,
+  "arker": 9,
+  "mangler_bilde": []
+ },
+ "Kvartal8BITMAP": {
+  "navn": "Kvartal8BITMAP",
+  "antall": 24,
+  "kvartaltegning": 12,
+  "tegnet_h": 24,
+  "vind": 585,
+  "piper": 35,
+  "arker": 22,
+  "mangler_bilde": []
+ },
+ "Kvartal9": {
+  "navn": "Kvartal9",
+  "antall": 29,
+  "kvartaltegning": 18,
+  "tegnet_h": 29,
+  "vind": 643,
+  "piper": 42,
+  "arker": 20,
+  "mangler_bilde": []
+ },
+ "kvartal5": {
+  "navn": "kvartal5",
+  "antall": 23,
+  "kvartaltegning": 14,
+  "tegnet_h": 23,
+  "vind": 415,
+  "piper": 26,
+  "arker": 11,
+  "mangler_bilde": []
+ },
+ "kvartal6": {
+  "navn": "kvartal6",
+  "antall": 21,
+  "kvartaltegning": 16,
+  "tegnet_h": 21,
+  "vind": 414,
+  "piper": 31,
+  "arker": 14,
+  "mangler_bilde": []
+ },
+ "kvartal7": {
+  "navn": "kvartal7",
+  "antall": 17,
+  "kvartaltegning": 11,
+  "tegnet_h": 17,
+  "vind": 468,
+  "piper": 24,
+  "arker": 11,
+  "mangler_bilde": []
+ },
+ "sistekvartal": {
+  "navn": "sistekvartal",
+  "antall": 8,
+  "kvartaltegning": 5,
+  "tegnet_h": 8,
+  "vind": 200,
+  "piper": 9,
+  "arker": 3,
+  "mangler_bilde": []
+ },
+ "tell": {
+  "navn": "tell",
+  "antall": 1,
+  "kvartaltegning": 1,
+  "tegnet_h": 1,
+  "vind": 22,
+  "piper": 5,
+  "arker": 0,
+  "mangler_bilde": []
+ },
+ "kirke": {
+  "navn": "kirke",
+  "antall": 1,
+  "kvartaltegning": 0,
+  "tegnet_h": 1,
+  "vind": 0,
+  "piper": 0,
+  "arker": 0,
+  "mangler_bilde": []
+ }
+}
