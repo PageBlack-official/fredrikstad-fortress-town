@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import * as maplibregl from 'maplibre-gl';
 import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 const TEX_VANN=__TEKSTUR('vann.png');
 const texLoader=new THREE.TextureLoader();

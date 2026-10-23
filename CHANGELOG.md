@@ -1,6 +1,14 @@
 # Endringslogg
 
-## 28 (23.10.2026, ikke publisert) – tegnestil bestemt med Vegar: stikkstrek, flate farger, fast sol
+## 29 (23.10.2026) – sammenslått geometri: 3 077 tegnekall ble 174
+- Alle vanlige hus (vegger, tak, gavler, arker, piper) ligger nå i ett nett per materiale i stedet for sju–tolv nett per hus. Hvert punkt bærer byggindeks (aBygg) og høyde for tegnede vinduer (aTopp). Løft (klikk/peker) og vekst (introen) styres per bygg gjennom en 512×1-tekstur (tHus, 05_bygg: settHus), også i skyggekartet (husDybde). Vinduene er ett instansert nett for hele byen.
+- Kirka, portbygg og bygg med deler er fortsatt egne grupper (de flyttes som objekter), men hver gruppe er slått sammen til ett nett per materiale (flatGruppe). Det samme for broene, statuen og alle murer og gjerder (09). De usynlige strek-objektene (EdgesGeometry, slått av siden blekkpasset tok over) er borte.
+- Peking: treff i et sammenslått nett oversettes fra trekantnummer til bygg (husDeler); treff i vinduer fra instansnummer. Kortet, løftet og kameraglidningen virker som før (d-test.mjs: samme hus valgt, samme skjermpunkt).
+- Målt i hodeløs Chrome: tegnekall 3 077 → 174, trekanter 519 k → 525 k (flate normaler på kirka). Bildene er pikselidentiske med v28 i hjemmevisningen, ved klikk og i nærbilde (for-etter-*.png i rapport/d-sammenligning; største avvik 66 av 255 i 1 piksel).
+- Igjen: 87 flater i 03 (gress/vann-lapper) og 79 materialnett kan slås videre sammen når det trengs.
+- Nye verktøy: verktoy/d-test.mjs (tegnekall, klikk, peker, nærbilde før/etter), verktoy/tell.mjs (teller tegnbare objekter per type og forelder).
+
+## 28 (23.10.2026) – tegnestil bestemt med Vegar: stikkstrek, flate farger, fast sol
 - Sola står fast i byen (asimut 250°, høyde 42°), satt så hjemmevisningen har samme lysside som plakaten. Skyggene snur seg med byen når den dreies; skyggekartet trenger ikke tegnes på nytt ved rotasjon. ?sol=plakat gir den gamle.
 - Stilbryter STIL (00_oppsett): a = stikkstrek uten skjelving og penselbrudd, flate fasadefarger uten akvarellvask, ingen papirkorn, vignett eller skyskygger, trær i tre toner uten flekker. b = a + skravur i skyggene (vegger og bakke, forankret i byen, 5 skjermpunkter mellom strekene, tynnes ut når de blir for tette). c = 2015-varmen som før, som nullpunkt. Standard er a.
 - Stilprøve: ut/stil-{a,b,c}.png og -mobil.png, kontaktark levert til Vegar (stilprove-kirka-ABC.png). Avgjørelse ventes.

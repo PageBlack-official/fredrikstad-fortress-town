@@ -6,8 +6,8 @@ html = open(os.path.join(ROT, 'ut', 'enkel', 'index.html'), encoding='utf8').rea
 m = re.search(r'<script type="module">(.*?)</script>', html, re.S)
 ok = m is not None; linjer = []
 if m:
-    p = os.path.join(ROT, 'ut', 'modul.js'); open(p, 'w', encoding='utf8').write(m.group(1))   # må ligge i prosjektet, ellers ignorerer eslint fila stille
-    r = subprocess.run([os.path.join(ROT, 'node_modules', '.bin', 'eslint'), '-c', os.path.join(ROT, 'verktoy', 'eslint.config.mjs'), '--no-config-lookup', p], capture_output=True, text=True)
+    p = os.path.join(ROT, 'ut', 'modul.js'); open(p, 'w', encoding='utf8').write(m.group(1))   # må ligge i prosjektet og kjøres derfra, ellers ignorerer eslint fila (som en advarsel)
+    r = subprocess.run([os.path.join(ROT, 'node_modules', '.bin', 'eslint'), '-c', os.path.join(ROT, 'verktoy', 'eslint.config.mjs'), '--no-config-lookup', p], capture_output=True, text=True, cwd=ROT)   # eslint 9 ignorer filer utenfor arbeidsmappa
     ut = (r.stdout + r.stderr).strip()
     ok = r.returncode == 0 and 'ignored' not in ut and 'modul.js' in ut + 'modul.js'
     if 'ignored' in ut: ok = False

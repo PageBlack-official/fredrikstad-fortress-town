@@ -1,0 +1,11573 @@
+{
+ "241": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 180,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.46,
+    "px": 4172,
+    "cmyk": [
+     0.808,
+     0.506,
+     0.247
+    ],
+    "retning": "h",
+    "areal_pt": 10514.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 271,
+    "farge2019": [
+     198,
+     197,
+     196
+    ],
+    "andel": 0.1,
+    "px": 119,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 380.8,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 260,
+    "farge2019": [
+     205,
+     130,
+     63
+    ],
+    "andel": 0.66,
+    "px": 346,
+    "cmyk": [
+     0.808,
+     0.506,
+     0.247
+    ],
+    "retning": "h",
+    "areal_pt": 949.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 270,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.46,
+    "px": 85,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 384.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 273,
+    "farge2019": [
+     238,
+     120,
+     105
+    ],
+    "andel": 0.66,
+    "px": 122,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "retning": "v",
+    "areal_pt": 347.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 277,
+    "farge2019": [
+     179,
+     102,
+     87
+    ],
+    "andel": 0.43,
+    "px": 90,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "retning": "h",
+    "areal_pt": 297.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 278,
+    "farge2019": [
+     205,
+     104,
+     87
+    ],
+    "andel": 0.54,
+    "px": 57,
+    "cmyk": [
+     0.804,
+     0.408,
+     0.349
+    ],
+    "retning": "h",
+    "areal_pt": 270.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 279,
+    "farge2019": [
+     203,
+     105,
+     89
+    ],
+    "andel": 0.44,
+    "px": 77,
+    "cmyk": [
+     0.804,
+     0.408,
+     0.349
+    ],
+    "retning": "h",
+    "areal_pt": 266.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 280,
+    "farge2019": [
+     242,
+     242,
+     242
+    ],
+    "andel": 0.46,
+    "px": 80,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 255.0,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 282,
+    "farge2019": [
+     244,
+     243,
+     244
+    ],
+    "andel": 0.41,
+    "px": 73,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 238.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 269,
+    "farge2019": [
+     199,
+     198,
+     197
+    ],
+    "andel": 0.24,
+    "px": 127,
+    "cmyk": [
+     0.89,
+     0.89,
+     0.886
+    ],
+    "areal_pt": 398.6,
+    "kontakt": 8.2,
+    "vegg": 180
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 272,
+    "farge2019": [
+     204,
+     129,
+     62
+    ],
+    "andel": 0.68,
+    "px": 38,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "areal_pt": 370.6,
+    "kontakt": 49.1,
+    "vegg": 180
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 196,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.78,
+    "px": 778,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 1946.9,
+    "kontakt": 11.3,
+    "vegg": 270
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 274,
+    "farge2019": [
+     182,
+     104,
+     86
+    ],
+    "andel": 0.54,
+    "px": 110,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 337.2,
+    "kontakt": 13.5,
+    "vegg": 278
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 284,
+    "farge2019": [
+     238,
+     120,
+     102
+    ],
+    "andel": 0.3,
+    "px": 70,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 224.7,
+    "kontakt": 4.0,
+    "vegg": 278
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 275,
+    "farge2019": [
+     180,
+     103,
+     87
+    ],
+    "andel": 0.44,
+    "px": 107,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 335.1,
+    "kontakt": 7.5,
+    "vegg": 279
+   }
+  ]
+ },
+ "262": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 230,
+    "farge2019": [
+     254,
+     242,
+     201
+    ],
+    "andel": 0.49,
+    "px": 650,
+    "cmyk": [
+     1.0,
+     0.949,
+     0.788
+    ],
+    "retning": "v",
+    "areal_pt": 1662.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 220,
+    "farge2019": [
+     253,
+     240,
+     216
+    ],
+    "andel": 0.35,
+    "px": 668,
+    "cmyk": [
+     0.992,
+     0.941,
+     0.839
+    ],
+    "retning": "v",
+    "areal_pt": 1830.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 207,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.52,
+    "px": 1684,
+    "cmyk": [
+     0.953,
+     0.584,
+     0.29
+    ],
+    "retning": "v",
+    "areal_pt": 4255.9,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 166,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.53,
+    "px": 1628,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 3989.8,
+    "kontakt": 16.1,
+    "vegg": 230
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 194,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.6,
+    "px": 951,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 2402.4,
+    "kontakt": 45.6,
+    "vegg": 220
+   }
+  ]
+ },
+ "11": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 261,
+    "farge2019": [
+     244,
+     243,
+     243
+    ],
+    "andel": 0.1,
+    "px": 281,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 894.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 1067,
+    "farge2019": [
+     97,
+     131,
+     98
+    ],
+    "andel": 0.48,
+    "px": 462,
+    "cmyk": [
+     1.0,
+     0.949,
+     0.788
+    ],
+    "retning": "v",
+    "areal_pt": 1254.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 259,
+    "farge2019": [
+     199,
+     198,
+     196
+    ],
+    "andel": 0.48,
+    "px": 819,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 2220.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 198,
+    "farge2019": [
+     198,
+     198,
+     197
+    ],
+    "andel": 0.22,
+    "px": 926,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 2429.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 206,
+    "farge2019": [
+     243,
+     243,
+     243
+    ],
+    "andel": 0.57,
+    "px": 763,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 2005.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 235,
+    "farge2019": [
+     97,
+     131,
+     98
+    ],
+    "andel": 0.75,
+    "px": 234,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 774.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 244,
+    "farge2019": [
+     243,
+     243,
+     243
+    ],
+    "andel": 0.5,
+    "px": 288,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 784.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 264,
+    "farge2019": [
+     199,
+     198,
+     197
+    ],
+    "andel": 0.5,
+    "px": 62,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 222.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 256,
+    "farge2019": [
+     117,
+     117,
+     115
+    ],
+    "andel": 0.57,
+    "px": 348,
+    "cmyk": [
+     0.455,
+     0.459,
+     0.455
+    ],
+    "areal_pt": 972.3,
+    "kontakt": 23.4,
+    "vegg": 259
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 183,
+    "farge2019": [
+     67,
+     67,
+     65
+    ],
+    "andel": 0.82,
+    "px": 1157,
+    "cmyk": [
+     0.259,
+     0.259,
+     0.255
+    ],
+    "areal_pt": 3007.8,
+    "kontakt": 20.4,
+    "vegg": 198
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 207,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.78,
+    "px": 603,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 1592.4,
+    "kontakt": 43.8,
+    "vegg": 206
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 218,
+    "farge2019": [
+     243,
+     243,
+     243
+    ],
+    "andel": 0.09,
+    "px": 458,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "areal_pt": 1408.1,
+    "kontakt": 5.1,
+    "vegg": 235
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 231,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.76,
+    "px": 321,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 872.7,
+    "kontakt": 23.1,
+    "vegg": 244
+   }
+  ]
+ },
+ "229": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 236,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.58,
+    "px": 1940,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "h",
+    "areal_pt": 4930.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "231": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 249,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.51,
+    "px": 1116,
+    "cmyk": [
+     0.976,
+     0.761,
+     0.576
+    ],
+    "retning": "v",
+    "areal_pt": 2892.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "385": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 202,
+    "farge2019": [
+     255,
+     232,
+     162
+    ],
+    "andel": 0.6,
+    "px": 648,
+    "cmyk": [
+     1.0,
+     0.91,
+     0.631
+    ],
+    "retning": "h",
+    "areal_pt": 1768.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 287,
+    "farge2019": [
+     236,
+     119,
+     104
+    ],
+    "andel": 0.31,
+    "px": 91,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "v",
+    "areal_pt": 265.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 166,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.53,
+    "px": 1628,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 3989.8,
+    "kontakt": 34.4,
+    "vegg": 202
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 267,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.56,
+    "px": 140,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 423.7,
+    "kontakt": 11.0,
+    "vegg": 287
+   }
+  ]
+ },
+ "336": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 240,
+    "farge2019": [
+     221,
+     174,
+     132
+    ],
+    "andel": 0.64,
+    "px": 465,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "h",
+    "areal_pt": 1217.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "248": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 254,
+    "farge2019": [
+     243,
+     243,
+     243
+    ],
+    "andel": 0.51,
+    "px": 941,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 2578.1,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 192,
+    "farge2019": [
+     150,
+     150,
+     150
+    ],
+    "andel": 0.74,
+    "px": 976,
+    "cmyk": [
+     0.592,
+     0.588,
+     0.584
+    ],
+    "areal_pt": 2457.9,
+    "kontakt": 37.1,
+    "vegg": 254
+   },
+   {
+    "kvartal": "Kvartal10",
+    "flate": 195,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.68,
+    "px": 914,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 2302.0,
+    "kontakt": 4.4,
+    "vegg": 254
+   }
+  ]
+ },
+ "393": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 255,
+    "farge2019": [
+     243,
+     243,
+     243
+    ],
+    "andel": 0.43,
+    "px": 316,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 968.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 186,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.72,
+    "px": 1290,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 3173.2,
+    "kontakt": 41.0,
+    "vegg": 255
+   }
+  ]
+ },
+ "337": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 266,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.47,
+    "px": 193,
+    "cmyk": [
+     0.894,
+     0.835,
+     0.639
+    ],
+    "retning": "h",
+    "areal_pt": 569.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal10",
+    "flate": 195,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.68,
+    "px": 914,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 2302.0,
+    "kontakt": 20.6,
+    "vegg": 266
+   }
+  ]
+ },
+ "384": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal10",
+    "fasade": 285,
+    "farge2019": [
+     196,
+     196,
+     194
+    ],
+    "andel": 0.71,
+    "px": 28,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 237.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "13": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 208,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.47,
+    "px": 1333,
+    "cmyk": [
+     0.769,
+     0.502,
+     0.447
+    ],
+    "retning": "h",
+    "areal_pt": 3852.3,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal11",
+    "flate": 167,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.7,
+    "px": 2147,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 5326.6,
+    "kontakt": 79.8,
+    "vegg": 208
+   },
+   {
+    "kvartal": "Kvartal11",
+    "flate": 276,
+    "farge2019": [
+     91,
+     88,
+     85
+    ],
+    "andel": 0.2,
+    "px": 81,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 363.7,
+    "kontakt": 29.5,
+    "vegg": 208
+   }
+  ]
+ },
+ "239": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 236,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.52,
+    "px": 1719,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "v",
+    "areal_pt": 4656.6,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 219,
+    "farge2019": [
+     244,
+     150,
+     76
+    ],
+    "andel": 0.75,
+    "px": 713,
+    "cmyk": [
+     0.953,
+     0.584,
+     0.29
+    ],
+    "retning": "h",
+    "areal_pt": 1797.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 258,
+    "farge2019": [
+     244,
+     177,
+     184
+    ],
+    "andel": 0.6,
+    "px": 449,
+    "cmyk": [
+     0.953,
+     0.694,
+     0.718
+    ],
+    "retning": "v",
+    "areal_pt": 1201.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal11",
+    "flate": 167,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.7,
+    "px": 2147,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 5326.6,
+    "kontakt": 21.7,
+    "vegg": 236
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 190,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.67,
+    "px": 1003,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 2550.1,
+    "kontakt": 17.0,
+    "vegg": 219
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 257,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.57,
+    "px": 506,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 1322.7,
+    "kontakt": 40.9,
+    "vegg": 258
+   }
+  ]
+ },
+ "3": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 247,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.35,
+    "px": 1669,
+    "cmyk": [
+     0.769,
+     0.502,
+     0.447
+    ],
+    "retning": "h",
+    "areal_pt": 4258.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 271,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.35,
+    "px": 1590,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "v",
+    "areal_pt": 4119.6,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 202,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.52,
+    "px": 4640,
+    "cmyk": [
+     0.769,
+     0.502,
+     0.447
+    ],
+    "retning": "h",
+    "areal_pt": 11436.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 181,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.41,
+    "px": 4618,
+    "cmyk": [
+     0.769,
+     0.502,
+     0.447
+    ],
+    "retning": "h",
+    "areal_pt": 11498.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 235,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.47,
+    "px": 3146,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "v",
+    "areal_pt": 7937.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal11",
+    "fasade": 261,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.44,
+    "px": 2140,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "v",
+    "areal_pt": 5424.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 268,
+    "farge2019": [
+     102,
+     101,
+     101
+    ],
+    "andel": 0.08,
+    "px": 618,
+    "cmyk": [
+     0.392,
+     0.0,
+     0.102,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 1571.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal11",
+    "flate": 275,
+    "farge2019": [
+     199,
+     197,
+     200
+    ],
+    "andel": 0.27,
+    "px": 62,
+    "cmyk": [
+     0.961,
+     0.671,
+     0.604
+    ],
+    "areal_pt": 476.5,
+    "kontakt": 13.9,
+    "vegg": 271
+   },
+   {
+    "kvartal": "Kvartal11",
+    "flate": 274,
+    "farge2019": [
+     128,
+     125,
+     119
+    ],
+    "andel": 0.84,
+    "px": 124,
+    "cmyk": [
+     0.941,
+     0.541,
+     0.467
+    ],
+    "areal_pt": 539.7,
+    "kontakt": 42.8,
+    "vegg": 181
+   },
+   {
+    "kvartal": "Kvartal11",
+    "flate": 277,
+    "farge2019": [
+     126,
+     124,
+     118
+    ],
+    "andel": 0.44,
+    "px": 50,
+    "cmyk": [
+     0.561,
+     0.341,
+     0.282
+    ],
+    "areal_pt": 228.1,
+    "kontakt": 19.3,
+    "vegg": 235
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 295,
+    "farge2019": [
+     243,
+     151,
+     132
+    ],
+    "andel": 0.51,
+    "px": 286,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 781.2,
+    "kontakt": 4.5,
+    "vegg": 268
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 354,
+    "farge2019": [
+     176,
+     104,
+     85
+    ],
+    "andel": 0.43,
+    "px": 91,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 290.0,
+    "kontakt": 9.2,
+    "vegg": 268
+   }
+  ]
+ },
+ "363": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 201,
+    "farge2019": [
+     232,
+     213,
+     200
+    ],
+    "andel": 0.47,
+    "px": 1055,
+    "cmyk": [
+     0.91,
+     0.835,
+     0.776
+    ],
+    "retning": "h",
+    "areal_pt": 2694.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 359,
+    "farge2019": [
+     251,
+     230,
+     214
+    ],
+    "andel": 0.5,
+    "px": 70,
+    "cmyk": [
+     0.98,
+     0.898,
+     0.831
+    ],
+    "retning": "h",
+    "areal_pt": 228.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 191,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.64,
+    "px": 933,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 2467.5,
+    "kontakt": 40.4,
+    "vegg": 201
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 276,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.5,
+    "px": 309,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 866.7,
+    "kontakt": 10.3,
+    "vegg": 359
+   }
+  ]
+ },
+ "263": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 212,
+    "farge2019": [
+     220,
+     174,
+     133
+    ],
+    "andel": 0.45,
+    "px": 1058,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "h",
+    "areal_pt": 2661.8,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 342,
+    "farge2019": [
+     243,
+     151,
+     76
+    ],
+    "andel": 0.29,
+    "px": 424,
+    "cmyk": [
+     0.953,
+     0.584,
+     0.29
+    ],
+    "retning": "h",
+    "areal_pt": 1221.9,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 189,
+    "farge2019": [
+     216,
+     110,
+     94
+    ],
+    "andel": 0.75,
+    "px": 1025,
+    "cmyk": [
+     0.847,
+     0.427,
+     0.365
+    ],
+    "areal_pt": 2573.6,
+    "kontakt": 35.5,
+    "vegg": 212
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 191,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.64,
+    "px": 933,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 2467.5,
+    "kontakt": 4.3,
+    "vegg": 212
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 260,
+    "farge2019": [
+     216,
+     110,
+     94
+    ],
+    "andel": 0.62,
+    "px": 394,
+    "cmyk": [
+     0.847,
+     0.427,
+     0.365
+    ],
+    "areal_pt": 1058.5,
+    "kontakt": 22.7,
+    "vegg": 342
+   }
+  ]
+ },
+ "254": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 305,
+    "farge2019": [
+     250,
+     229,
+     214
+    ],
+    "andel": 0.45,
+    "px": 660,
+    "cmyk": [
+     0.98,
+     0.898,
+     0.831
+    ],
+    "retning": "v",
+    "areal_pt": 1855.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 354,
+    "farge2019": [
+     243,
+     243,
+     244
+    ],
+    "andel": 0.43,
+    "px": 427,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 1241.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 255,
+    "farge2019": [
+     254,
+     238,
+     180
+    ],
+    "andel": 0.43,
+    "px": 713,
+    "cmyk": [
+     1.0,
+     0.929,
+     0.706
+    ],
+    "retning": "v",
+    "areal_pt": 1830.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 231,
+    "farge2019": [
+     250,
+     209,
+     172
+    ],
+    "andel": 0.46,
+    "px": 798,
+    "cmyk": [
+     0.984,
+     0.816,
+     0.671
+    ],
+    "retning": "v",
+    "areal_pt": 1994.6,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 282,
+    "farge2019": [
+     248,
+     194,
+     147
+    ],
+    "andel": 0.55,
+    "px": 355,
+    "cmyk": [
+     0.976,
+     0.761,
+     0.576
+    ],
+    "retning": "v",
+    "areal_pt": 963.8,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 202,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.72,
+    "px": 849,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 2127.5,
+    "kontakt": 42.0,
+    "vegg": 255
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 217,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.73,
+    "px": 746,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "areal_pt": 1877.1,
+    "kontakt": 39.4,
+    "vegg": 231
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 344,
+    "farge2019": [
+     236,
+     120,
+     102
+    ],
+    "andel": 0.53,
+    "px": 143,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 408.6,
+    "kontakt": 13.4,
+    "vegg": 282
+   }
+  ]
+ },
+ "350": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 240,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.12,
+    "px": 769,
+    "cmyk": [
+     0.976,
+     0.761,
+     0.576
+    ],
+    "retning": "v",
+    "areal_pt": 1964.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 190,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.67,
+    "px": 1003,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 2550.1,
+    "kontakt": 36.5,
+    "vegg": 240
+   }
+  ]
+ },
+ "381": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 283,
+    "farge2019": [
+     244,
+     150,
+     76
+    ],
+    "andel": 0.4,
+    "px": 961,
+    "cmyk": [
+     0.976,
+     0.761,
+     0.576
+    ],
+    "retning": "v",
+    "areal_pt": 2590.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 361,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 1.0,
+    "px": 41,
+    "cmyk": [
+     0.91,
+     0.835,
+     0.776
+    ],
+    "retning": "h",
+    "areal_pt": 203.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 221,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.58,
+    "px": 602,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 1591.0,
+    "kontakt": 34.6,
+    "vegg": 283
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 276,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.5,
+    "px": 309,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 866.7,
+    "kontakt": 20.7,
+    "vegg": 361
+   }
+  ]
+ },
+ "257": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 349,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.44,
+    "px": 939,
+    "cmyk": [
+     0.608,
+     0.604,
+     0.604
+    ],
+    "retning": "h",
+    "areal_pt": 2585.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 284,
+    "farge2019": [
+     232,
+     213,
+     200
+    ],
+    "andel": 0.38,
+    "px": 614,
+    "cmyk": [
+     0.259,
+     0.259,
+     0.255
+    ],
+    "retning": "h",
+    "areal_pt": 1688.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 357,
+    "farge2019": [
+     93,
+     90,
+     86
+    ],
+    "andel": 0.74,
+    "px": 47,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "areal_pt": 241.6,
+    "kontakt": 25.9,
+    "vegg": 349
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 259,
+    "farge2019": [
+     133,
+     134,
+     134
+    ],
+    "andel": 0.13,
+    "px": 422,
+    "cmyk": [
+     0.259,
+     0.259,
+     0.255
+    ],
+    "areal_pt": 1141.9,
+    "kontakt": 21.5,
+    "vegg": 284
+   }
+  ]
+ },
+ "253": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 336,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.38,
+    "px": 433,
+    "cmyk": [
+     0.984,
+     0.816,
+     0.671
+    ],
+    "retning": "h",
+    "areal_pt": 1405.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 346,
+    "farge2019": [
+     248,
+     195,
+     146
+    ],
+    "andel": 0.6,
+    "px": 109,
+    "cmyk": [
+     0.976,
+     0.761,
+     0.576
+    ],
+    "retning": "h",
+    "areal_pt": 329.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 294,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.28,
+    "px": 186,
+    "cmyk": [
+     0.557,
+     0.318,
+     0.259
+    ],
+    "areal_pt": 684.5,
+    "kontakt": 57.9,
+    "vegg": 336
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 323,
+    "farge2019": [
+     236,
+     119,
+     104
+    ],
+    "andel": 0.83,
+    "px": 175,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 502.0,
+    "kontakt": 16.2,
+    "vegg": 336
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 306,
+    "farge2019": [
+     248,
+     194,
+     146
+    ],
+    "andel": 0.26,
+    "px": 202,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 565.9,
+    "kontakt": 9.9,
+    "vegg": 346
+   }
+  ]
+ },
+ "233": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 265,
+    "farge2019": [
+     248,
+     194,
+     146
+    ],
+    "andel": 0.5,
+    "px": 371,
+    "cmyk": [
+     0.976,
+     0.761,
+     0.576
+    ],
+    "retning": "h",
+    "areal_pt": 1062.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 307,
+    "farge2019": [
+     250,
+     209,
+     172
+    ],
+    "andel": 0.47,
+    "px": 200,
+    "cmyk": [
+     0.984,
+     0.816,
+     0.671
+    ],
+    "retning": "v",
+    "areal_pt": 560.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 188,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.68,
+    "px": 1122,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 2826.8,
+    "kontakt": 29.9,
+    "vegg": 265
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 306,
+    "farge2019": [
+     248,
+     194,
+     146
+    ],
+    "andel": 0.26,
+    "px": 202,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 565.9,
+    "kontakt": 6.5,
+    "vegg": 265
+   }
+  ]
+ },
+ "390": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 316,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.5,
+    "px": 562,
+    "cmyk": [
+     0.98,
+     0.898,
+     0.831
+    ],
+    "retning": "h",
+    "areal_pt": 1557.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 355,
+    "farge2019": [
+     231,
+     212,
+     199
+    ],
+    "andel": 0.49,
+    "px": 87,
+    "cmyk": [
+     0.91,
+     0.835,
+     0.776
+    ],
+    "retning": "h",
+    "areal_pt": 271.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 221,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.58,
+    "px": 602,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 1591.0,
+    "kontakt": 14.4,
+    "vegg": 316
+   }
+  ]
+ },
+ "353": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 332,
+    "farge2019": [
+     218,
+     218,
+     218
+    ],
+    "andel": 0.44,
+    "px": 620,
+    "cmyk": [
+     0.855,
+     0.855,
+     0.855
+    ],
+    "retning": "h",
+    "areal_pt": 1835.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 222,
+    "farge2019": [
+     119,
+     119,
+     117
+    ],
+    "andel": 0.69,
+    "px": 572,
+    "cmyk": [
+     0.467,
+     0.467,
+     0.463
+    ],
+    "areal_pt": 1544.3,
+    "kontakt": 25.8,
+    "vegg": 332
+   }
+  ]
+ },
+ "354": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 326,
+    "farge2019": [
+     233,
+     212,
+     201
+    ],
+    "andel": 0.26,
+    "px": 163,
+    "cmyk": [
+     0.91,
+     0.835,
+     0.776
+    ],
+    "retning": "v",
+    "areal_pt": 542.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 337,
+    "farge2019": [
+     132,
+     134,
+     134
+    ],
+    "andel": 0.34,
+    "px": 128,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 382.3,
+    "kontakt": 4.4,
+    "vegg": 326
+   }
+  ]
+ },
+ "361": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 348,
+    "farge2019": [
+     232,
+     212,
+     199
+    ],
+    "andel": 0.37,
+    "px": 76,
+    "cmyk": [
+     0.91,
+     0.835,
+     0.776
+    ],
+    "retning": "v",
+    "areal_pt": 322.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "261": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 1371,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.49,
+    "px": 692,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "retning": "h",
+    "areal_pt": 1772.1,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 1376,
+    "farge2019": [
+     206,
+     190,
+     177
+    ],
+    "andel": 0.49,
+    "px": 45,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 276.1,
+    "kontakt": 74.7,
+    "vegg": 1371
+   }
+  ]
+ },
+ "250": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 1374,
+    "farge2019": [
+     214,
+     202,
+     154
+    ],
+    "andel": 0.54,
+    "px": 98,
+    "cmyk": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "retning": "v",
+    "areal_pt": 307.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal12",
+    "fasade": 1375,
+    "farge2019": [
+     214,
+     202,
+     154
+    ],
+    "andel": 0.54,
+    "px": 98,
+    "cmyk": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "retning": "v",
+    "areal_pt": 307.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 268,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.56,
+    "px": 966,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "retning": "v",
+    "areal_pt": 2612.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 303,
+    "farge2019": [
+     95,
+     91,
+     90
+    ],
+    "andel": 0.5,
+    "px": 756,
+    "cmyk": [
+     0.839,
+     0.788,
+     0.604
+    ],
+    "retning": "h",
+    "areal_pt": 2089.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 331,
+    "farge2019": [
+     96,
+     91,
+     90
+    ],
+    "andel": 0.28,
+    "px": 162,
+    "cmyk": [
+     0.839,
+     0.788,
+     0.604
+    ],
+    "retning": "h",
+    "areal_pt": 531.0,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 1487,
+    "farge2019": [
+     94,
+     90,
+     90
+    ],
+    "andel": 0.51,
+    "px": 55,
+    "cmyk": [
+     0.361,
+     0.353,
+     0.349
+    ],
+    "retning": "h",
+    "areal_pt": 210.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal12",
+    "flate": 1379,
+    "farge2019": [
+     238,
+     124,
+     106
+    ],
+    "andel": 0.54,
+    "px": 352,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "areal_pt": 940.0,
+    "kontakt": 235.5,
+    "vegg": 1374
+   },
+   {
+    "kvartal": "Kvartal12",
+    "flate": 1384,
+    "farge2019": [
+     214,
+     202,
+     154
+    ],
+    "andel": 0.81,
+    "px": 328,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 873.1,
+    "kontakt": 53.2,
+    "vegg": 1374
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 301,
+    "farge2019": [
+     180,
+     103,
+     86
+    ],
+    "andel": 0.47,
+    "px": 405,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 1136.7,
+    "kontakt": 22.4,
+    "vegg": 268
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 289,
+    "farge2019": [
+     95,
+     91,
+     90
+    ],
+    "andel": 0.77,
+    "px": 335,
+    "cmyk": [
+     0.361,
+     0.353,
+     0.349
+    ],
+    "areal_pt": 945.6,
+    "kontakt": 20.3,
+    "vegg": 331
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 358,
+    "farge2019": [
+     95,
+     93,
+     91
+    ],
+    "andel": 0.22,
+    "px": 255,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 758.8,
+    "kontakt": 312.6,
+    "vegg": 1487
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 359,
+    "farge2019": [
+     188,
+     189,
+     187
+    ],
+    "andel": 0.16,
+    "px": 398,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 1096.7,
+    "kontakt": 323.4,
+    "vegg": 1487
+   }
+  ]
+ },
+ "21": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 217,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.37,
+    "px": 617,
+    "cmyk": [
+     0.835,
+     0.831,
+     0.831
+    ],
+    "retning": "h",
+    "areal_pt": 1799.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 187,
+    "farge2019": [
+     243,
+     242,
+     244
+    ],
+    "andel": 0.07,
+    "px": 942,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 2396.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 188,
+    "farge2019": [
+     199,
+     198,
+     196
+    ],
+    "andel": 0.14,
+    "px": 734,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 2096.1,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 229,
+    "farge2019": [
+     199,
+     198,
+     196
+    ],
+    "andel": 0.57,
+    "px": 436,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 1121.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 234,
+    "farge2019": [
+     115,
+     151,
+     115
+    ],
+    "andel": 0.95,
+    "px": 350,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "h",
+    "areal_pt": 929.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 238,
+    "farge2019": [
+     243,
+     242,
+     243
+    ],
+    "andel": 0.12,
+    "px": 284,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 858.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 253,
+    "farge2019": [
+     115,
+     151,
+     115
+    ],
+    "andel": 0.73,
+    "px": 190,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 557.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 260,
+    "farge2019": [
+     237,
+     119,
+     104
+    ],
+    "andel": 0.27,
+    "px": 254,
+    "cmyk": [
+     0.988,
+     0.988,
+     0.988
+    ],
+    "retning": "v",
+    "areal_pt": 781.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal13",
+    "flate": 186,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.6,
+    "px": 976,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 2613.4,
+    "kontakt": 66.4,
+    "vegg": 217
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 262,
+    "farge2019": [
+     184,
+     111,
+     94
+    ],
+    "andel": 0.4,
+    "px": 101,
+    "cmyk": [
+     0.667,
+     0.333,
+     0.263
+    ],
+    "areal_pt": 397.1,
+    "kontakt": 38.1,
+    "vegg": 187
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 182,
+    "farge2019": [
+     184,
+     111,
+     94
+    ],
+    "andel": 0.57,
+    "px": 1711,
+    "cmyk": [
+     0.722,
+     0.435,
+     0.365
+    ],
+    "areal_pt": 4372.3,
+    "kontakt": 63.2,
+    "vegg": 188
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 224,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.17,
+    "px": 426,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 1162.8,
+    "kontakt": 8.5,
+    "vegg": 188
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 230,
+    "farge2019": [
+     233,
+     100,
+     86
+    ],
+    "andel": 0.47,
+    "px": 321,
+    "cmyk": [
+     0.922,
+     0.388,
+     0.333
+    ],
+    "areal_pt": 921.7,
+    "kontakt": 10.4,
+    "vegg": 188
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 258,
+    "farge2019": [
+     234,
+     100,
+     86
+    ],
+    "andel": 0.43,
+    "px": 163,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "areal_pt": 517.2,
+    "kontakt": 8.6,
+    "vegg": 188
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 231,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.76,
+    "px": 321,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 872.7,
+    "kontakt": 16.4,
+    "vegg": 229
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 240,
+    "farge2019": [
+     237,
+     120,
+     102
+    ],
+    "andel": 0.29,
+    "px": 254,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 689.3,
+    "kontakt": 15.0,
+    "vegg": 234
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 208,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.62,
+    "px": 600,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 1558.4,
+    "kontakt": 48.6,
+    "vegg": 238
+   },
+   {
+    "kvartal": "Kvartal13",
+    "flate": 239,
+    "farge2019": [
+     232,
+     100,
+     86
+    ],
+    "andel": 0.11,
+    "px": 202,
+    "cmyk": [
+     0.957,
+     0.647,
+     0.576
+    ],
+    "areal_pt": 783.7,
+    "kontakt": 12.2,
+    "vegg": 260
+   }
+  ]
+ },
+ "24": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 223,
+    "farge2019": [
+     205,
+     130,
+     64
+    ],
+    "andel": 0.43,
+    "px": 681,
+    "cmyk": [
+     0.808,
+     0.506,
+     0.247
+    ],
+    "retning": "h",
+    "areal_pt": 1895.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 248,
+    "farge2019": [
+     236,
+     121,
+     103
+    ],
+    "andel": 0.33,
+    "px": 243,
+    "cmyk": [
+     0.953,
+     0.584,
+     0.29
+    ],
+    "retning": "v",
+    "areal_pt": 790.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal13",
+    "fasade": 252,
+    "farge2019": [
+     94,
+     127,
+     96
+    ],
+    "andel": 0.97,
+    "px": 235,
+    "cmyk": [
+     0.953,
+     0.584,
+     0.29
+    ],
+    "retning": "v",
+    "areal_pt": 751.1,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal13",
+    "flate": 181,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.41,
+    "px": 3284,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 7896.7,
+    "kontakt": 32.5,
+    "vegg": 223
+   }
+  ]
+ },
+ "260": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 210,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.36,
+    "px": 2092,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "h",
+    "areal_pt": 5375.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 264,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.46,
+    "px": 1153,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "h",
+    "areal_pt": 2998.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 266,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.77,
+    "px": 745,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 2024.5,
+    "kontakt": 16.3,
+    "vegg": 210
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 373,
+    "farge2019": [
+     240,
+     120,
+     104
+    ],
+    "andel": 0.73,
+    "px": 41,
+    "cmyk": [
+     0.937,
+     0.502,
+     0.431
+    ],
+    "areal_pt": 248.5,
+    "kontakt": 49.0,
+    "vegg": 210
+   }
+  ]
+ },
+ "242": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 318,
+    "farge2019": [
+     243,
+     243,
+     243
+    ],
+    "andel": 0.54,
+    "px": 603,
+    "cmyk": [
+     0.953,
+     0.953,
+     0.953
+    ],
+    "retning": "v",
+    "areal_pt": 1780.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 325,
+    "farge2019": [
+     198,
+     197,
+     196
+    ],
+    "andel": 0.43,
+    "px": 786,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "v",
+    "areal_pt": 2279.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 365,
+    "farge2019": [
+     167,
+     165,
+     167
+    ],
+    "andel": 0.45,
+    "px": 198,
+    "cmyk": [
+     0.961,
+     0.69,
+     0.639
+    ],
+    "retning": "v",
+    "areal_pt": 678.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 276,
+    "farge2019": [
+     246,
+     176,
+     164
+    ],
+    "andel": 0.41,
+    "px": 1675,
+    "cmyk": [
+     0.961,
+     0.69,
+     0.639
+    ],
+    "retning": "v",
+    "areal_pt": 4526.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 241,
+    "farge2019": [
+     255,
+     244,
+     212
+    ],
+    "andel": 0.63,
+    "px": 1137,
+    "cmyk": [
+     1.0,
+     0.961,
+     0.835
+    ],
+    "retning": "h",
+    "areal_pt": 3217.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 363,
+    "farge2019": [
+     198,
+     198,
+     195
+    ],
+    "andel": 0.87,
+    "px": 83,
+    "cmyk": [
+     0.776,
+     0.776,
+     0.773
+    ],
+    "retning": "v",
+    "areal_pt": 283.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 270,
+    "farge2019": [
+     133,
+     135,
+     134
+    ],
+    "andel": 0.85,
+    "px": 596,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 1586.3,
+    "kontakt": 32.2,
+    "vegg": 318
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 254,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.83,
+    "px": 872,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 2235.2,
+    "kontakt": 60.1,
+    "vegg": 325
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 315,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.63,
+    "px": 245,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 692.0,
+    "kontakt": 16.2,
+    "vegg": 365
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 200,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.8,
+    "px": 1176,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 3070.1,
+    "kontakt": 47.7,
+    "vegg": 276
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 373,
+    "farge2019": [
+     240,
+     120,
+     104
+    ],
+    "andel": 0.73,
+    "px": 41,
+    "cmyk": [
+     0.937,
+     0.502,
+     0.431
+    ],
+    "areal_pt": 248.5,
+    "kontakt": 5.7,
+    "vegg": 276
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 269,
+    "farge2019": [
+     95,
+     91,
+     90
+    ],
+    "andel": 0.85,
+    "px": 657,
+    "cmyk": [
+     0.361,
+     0.353,
+     0.349
+    ],
+    "areal_pt": 1827.4,
+    "kontakt": 56.3,
+    "vegg": 241
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 343,
+    "farge2019": [
+     238,
+     124,
+     108
+    ],
+    "andel": 0.56,
+    "px": 97,
+    "cmyk": [
+     0.937,
+     0.502,
+     0.431
+    ],
+    "areal_pt": 407.1,
+    "kontakt": 10.8,
+    "vegg": 241
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 359,
+    "farge2019": [
+     188,
+     189,
+     187
+    ],
+    "andel": 0.16,
+    "px": 398,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 1096.7,
+    "kontakt": 27.1,
+    "vegg": 241
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 361,
+    "farge2019": [
+     95,
+     92,
+     91
+    ],
+    "andel": 0.27,
+    "px": 62,
+    "cmyk": [
+     0.937,
+     0.502,
+     0.431
+    ],
+    "areal_pt": 316.0,
+    "kontakt": 7.8,
+    "vegg": 241
+   }
+  ]
+ },
+ "247": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 277,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.6,
+    "px": 1860,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "v",
+    "areal_pt": 4820.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 313,
+    "farge2019": [
+     246,
+     177,
+     164
+    ],
+    "andel": 0.7,
+    "px": 249,
+    "cmyk": [
+     0.961,
+     0.69,
+     0.639
+    ],
+    "retning": "h",
+    "areal_pt": 728.0,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 353,
+    "farge2019": [
+     218,
+     174,
+     138
+    ],
+    "andel": 0.32,
+    "px": 158,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "h",
+    "areal_pt": 542.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 267,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.77,
+    "px": 724,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 1930.6,
+    "kontakt": 25.7,
+    "vegg": 313
+   }
+  ]
+ },
+ "230": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 240,
+    "farge2019": [
+     221,
+     174,
+     132
+    ],
+    "andel": 0.38,
+    "px": 1497,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "h",
+    "areal_pt": 3758.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 326,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.5,
+    "px": 467,
+    "cmyk": [
+     0.922,
+     0.812,
+     0.71
+    ],
+    "retning": "h",
+    "areal_pt": 1325.0,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 334,
+    "farge2019": [
+     237,
+     118,
+     104
+    ],
+    "andel": 0.38,
+    "px": 144,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "retning": "h",
+    "areal_pt": 450.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 342,
+    "farge2019": [
+     219,
+     174,
+     133
+    ],
+    "andel": 0.34,
+    "px": 194,
+    "cmyk": [
+     0.867,
+     0.682,
+     0.518
+    ],
+    "retning": "h",
+    "areal_pt": 611.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 201,
+    "farge2019": [
+     196,
+     205,
+     174
+    ],
+    "andel": 0.09,
+    "px": 1092,
+    "cmyk": [
+     0.259,
+     0.259,
+     0.255
+    ],
+    "areal_pt": 2861.5,
+    "kontakt": 29.6,
+    "vegg": 240
+   }
+  ]
+ },
+ "251": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 252,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.46,
+    "px": 1309,
+    "cmyk": [
+     0.949,
+     0.584,
+     0.51
+    ],
+    "retning": "h",
+    "areal_pt": 3291.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 253,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.75,
+    "px": 857,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "areal_pt": 2244.2,
+    "kontakt": 41.3,
+    "vegg": 252
+   }
+  ]
+ },
+ "378": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 278,
+    "farge2019": [
+     214,
+     202,
+     154
+    ],
+    "andel": 0.85,
+    "px": 530,
+    "cmyk": [
+     0.839,
+     0.788,
+     0.604
+    ],
+    "retning": "h",
+    "areal_pt": 1445.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 356,
+    "farge2019": [
+     254,
+     245,
+     212
+    ],
+    "andel": 0.5,
+    "px": 111,
+    "cmyk": [
+     1.0,
+     0.961,
+     0.835
+    ],
+    "retning": "v",
+    "areal_pt": 352.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 343,
+    "farge2019": [
+     238,
+     124,
+     108
+    ],
+    "andel": 0.56,
+    "px": 97,
+    "cmyk": [
+     0.937,
+     0.502,
+     0.431
+    ],
+    "areal_pt": 407.1,
+    "kontakt": 25.4,
+    "vegg": 278
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 357,
+    "farge2019": [
+     133,
+     134,
+     135
+    ],
+    "andel": 0.47,
+    "px": 105,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "areal_pt": 349.6,
+    "kontakt": 18.7,
+    "vegg": 356
+   }
+  ]
+ },
+ "232": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 379,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.76,
+    "px": 463,
+    "cmyk": [
+     0.961,
+     0.69,
+     0.639
+    ],
+    "retning": "v",
+    "areal_pt": 1338.7,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 377,
+    "farge2019": [
+     246,
+     177,
+     165
+    ],
+    "andel": 0.45,
+    "px": 58,
+    "cmyk": [
+     0.961,
+     0.69,
+     0.639
+    ],
+    "retning": "h",
+    "areal_pt": 221.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 267,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.77,
+    "px": 724,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 1930.6,
+    "kontakt": 8.2,
+    "vegg": 379
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 333,
+    "farge2019": [
+     251,
+     229,
+     215
+    ],
+    "andel": 0.45,
+    "px": 148,
+    "cmyk": [
+     0.98,
+     0.898,
+     0.831
+    ],
+    "areal_pt": 445.7,
+    "kontakt": 20.1,
+    "vegg": 379
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 280,
+    "farge2019": [
+     237,
+     120,
+     103
+    ],
+    "andel": 0.72,
+    "px": 453,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 1255.4,
+    "kontakt": 21.0,
+    "vegg": 377
+   }
+  ]
+ },
+ "258": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 288,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.75,
+    "px": 373,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "retning": "h",
+    "areal_pt": 1007.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 361,
+    "farge2019": [
+     95,
+     92,
+     91
+    ],
+    "andel": 0.27,
+    "px": 62,
+    "cmyk": [
+     0.937,
+     0.502,
+     0.431
+    ],
+    "areal_pt": 316.0,
+    "kontakt": 11.3,
+    "vegg": 288
+   }
+  ]
+ },
+ "237": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 332,
+    "farge2019": [
+     167,
+     165,
+     166
+    ],
+    "andel": 0.75,
+    "px": 403,
+    "cmyk": [
+     0.655,
+     0.651,
+     0.651
+    ],
+    "retning": "h",
+    "areal_pt": 1232.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "391": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 1508,
+    "farge2019": [
+     180,
+     182,
+     181
+    ],
+    "andel": 0.27,
+    "px": 73,
+    "cmyk": [
+     0.525,
+     0.525,
+     0.525
+    ],
+    "retning": "h",
+    "areal_pt": 258.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 276,
+    "farge2019": [
+     255,
+     232,
+     162
+    ],
+    "andel": 0.41,
+    "px": 182,
+    "cmyk": [
+     0.014,
+     0.09,
+     0.55,
+     0.171
+    ],
+    "retning": "v",
+    "areal_pt": 521.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "sistekvartal",
+    "flate": 244,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.75,
+    "px": 397,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1042.0,
+    "kontakt": 13.8,
+    "vegg": 276
+   }
+  ]
+ },
+ "259": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal14",
+    "fasade": 1512,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.47,
+    "px": 411,
+    "cmyk": [
+     0.706,
+     0.4,
+     0.329
+    ],
+    "retning": "h",
+    "areal_pt": 1169.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 216,
+    "farge2019": [
+     222,
+     222,
+     221
+    ],
+    "andel": 0.4,
+    "px": 1545,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.18
+    ],
+    "retning": "v",
+    "areal_pt": 3798.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 229,
+    "farge2019": [
+     238,
+     238,
+     238
+    ],
+    "andel": 0.44,
+    "px": 1046,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.09
+    ],
+    "retning": "v",
+    "areal_pt": 2501.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 252,
+    "farge2019": [
+     255,
+     232,
+     162
+    ],
+    "andel": 0.44,
+    "px": 535,
+    "cmyk": [
+     0.012,
+     0.074,
+     0.453,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1315.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 287,
+    "farge2019": [
+     254,
+     233,
+     162
+    ],
+    "andel": 0.38,
+    "px": 664,
+    "cmyk": [
+     0.27,
+     0.074,
+     0.453,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1756.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 269,
+    "farge2019": [
+     232,
+     245,
+     248
+    ],
+    "andel": 0.47,
+    "px": 281,
+    "cmyk": [
+     0.115,
+     0.0,
+     0.03,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 756.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 255,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.41,
+    "px": 2973,
+    "cmyk": [
+     0.115,
+     0.0,
+     0.03,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 7538.6,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 277,
+    "farge2019": [
+     222,
+     201,
+     123
+    ],
+    "andel": 0.41,
+    "px": 166,
+    "cmyk": [
+     0.014,
+     0.09,
+     0.55,
+     0.171
+    ],
+    "retning": "h",
+    "areal_pt": 464.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal14",
+    "flate": 1504,
+    "farge2019": [
+     97,
+     131,
+     98
+    ],
+    "andel": 0.82,
+    "px": 83,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 380.0,
+    "kontakt": 4.9,
+    "vegg": 1512
+   },
+   {
+    "kvartal": "Kvartal14",
+    "flate": 1516,
+    "farge2019": [
+     137,
+     180,
+     135
+    ],
+    "andel": 1.0,
+    "px": 83,
+    "cmyk": [
+     0.929,
+     0.467,
+     0.4
+    ],
+    "areal_pt": 380.0,
+    "kontakt": 85.7,
+    "vegg": 1512
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 231,
+    "farge2019": [
+     117,
+     117,
+     115
+    ],
+    "andel": 0.63,
+    "px": 677,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.68
+    ],
+    "areal_pt": 1703.9,
+    "kontakt": 15.1,
+    "vegg": 216
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 256,
+    "farge2019": [
+     117,
+     117,
+     115
+    ],
+    "andel": 0.59,
+    "px": 307,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.68
+    ],
+    "areal_pt": 859.3,
+    "kontakt": 38.2,
+    "vegg": 216
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 230,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.61,
+    "px": 666,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1768.5,
+    "kontakt": 28.1,
+    "vegg": 229
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 283,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.63,
+    "px": 108,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 315.1,
+    "kontakt": 9.8,
+    "vegg": 229
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 217,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.72,
+    "px": 984,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2398.2,
+    "kontakt": 15.4,
+    "vegg": 252
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 265,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.56,
+    "px": 264,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 721.4,
+    "kontakt": 19.5,
+    "vegg": 255
+   },
+   {
+    "kvartal": "sistekvartal",
+    "flate": 218,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.74,
+    "px": 907,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 2205.5,
+    "kontakt": 10.8,
+    "vegg": 277
+   }
+  ]
+ },
+ "156": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 228,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.42,
+    "px": 1049,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 2840.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 235,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.84,
+    "px": 223,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 607.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 267,
+    "farge2019": [
+     237,
+     120,
+     105
+    ],
+    "andel": 0.83,
+    "px": 78,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 230.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 193,
+    "farge2019": [
+     135,
+     135,
+     135
+    ],
+    "andel": 0.64,
+    "px": 347,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.6
+    ],
+    "areal_pt": 910.3,
+    "kontakt": 13.8,
+    "vegg": 228
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 270,
+    "farge2019": [
+     136,
+     179,
+     136
+    ],
+    "andel": 0.76,
+    "px": 54,
+    "cmyk": [
+     0.236,
+     0.81,
+     0.7,
+     0.192
+    ],
+    "areal_pt": 211.8,
+    "kontakt": 15.0,
+    "vegg": 228
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 189,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.55,
+    "px": 315,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 980.7,
+    "kontakt": 19.1,
+    "vegg": 235
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 260,
+    "farge2019": [
+     240,
+     119,
+     102
+    ],
+    "andel": 0.47,
+    "px": 98,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 291.0,
+    "kontakt": 8.3,
+    "vegg": 267
+   }
+  ]
+ },
+ "201": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 258,
+    "farge2019": [
+     240,
+     222,
+     208
+    ],
+    "andel": 0.44,
+    "px": 151,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.05
+    ],
+    "retning": "h",
+    "areal_pt": 465.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 178,
+    "farge2019": [
+     226,
+     213,
+     165
+    ],
+    "andel": 0.48,
+    "px": 502,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 1392.3,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 208,
+    "farge2019": [
+     236,
+     221,
+     206
+    ],
+    "andel": 0.33,
+    "px": 342,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.05
+    ],
+    "areal_pt": 970.9,
+    "kontakt": 33.4,
+    "vegg": 258
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 159,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.79,
+    "px": 948,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 2346.5,
+    "kontakt": 31.7,
+    "vegg": 178
+   }
+  ]
+ },
+ "172": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 188,
+    "farge2019": [
+     221,
+     175,
+     133
+    ],
+    "andel": 0.47,
+    "px": 516,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.15
+    ],
+    "retning": "h",
+    "areal_pt": 1368.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 234,
+    "farge2019": [
+     247,
+     195,
+     149
+    ],
+    "andel": 0.39,
+    "px": 679,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 1897.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 190,
+    "farge2019": [
+     249,
+     195,
+     148
+    ],
+    "andel": 0.49,
+    "px": 344,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 950.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 164,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.36,
+    "px": 794,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1982.9,
+    "kontakt": 24.5,
+    "vegg": 188
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 162,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.73,
+    "px": 779,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1951.2,
+    "kontakt": 31.2,
+    "vegg": 234
+   }
+  ]
+ },
+ "376": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 247,
+    "farge2019": [
+     237,
+     120,
+     104
+    ],
+    "andel": 0.66,
+    "px": 150,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 487.8,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 220,
+    "farge2019": [
+     243,
+     244,
+     243
+    ],
+    "andel": 0.4,
+    "px": 377,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 1012.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 5,
+    "farge2019": [
+     239,
+     120,
+     103
+    ],
+    "andel": 0.33,
+    "px": 3134,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 7215.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 219,
+    "farge2019": [
+     239,
+     121,
+     103
+    ],
+    "andel": 0.44,
+    "px": 484,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1319.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 194,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.62,
+    "px": 342,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 910.8,
+    "kontakt": 25.7,
+    "vegg": 247
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 193,
+    "farge2019": [
+     135,
+     135,
+     135
+    ],
+    "andel": 0.64,
+    "px": 347,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.6
+    ],
+    "areal_pt": 910.3,
+    "kontakt": 18.4,
+    "vegg": 220
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 226,
+    "farge2019": [
+     181,
+     205,
+     177
+    ],
+    "andel": 0.42,
+    "px": 107,
+    "cmyk": [
+     0.239,
+     0.0,
+     0.246,
+     0.0
+    ],
+    "areal_pt": 479.3,
+    "kontakt": 479.3,
+    "vegg": 5
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 229,
+    "farge2019": [
+     241,
+     120,
+     103
+    ],
+    "andel": 0.52,
+    "px": 112,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 307.8,
+    "kontakt": 307.8,
+    "vegg": 5
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 230,
+    "farge2019": [
+     238,
+     122,
+     104
+    ],
+    "andel": 0.25,
+    "px": 99,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 295.6,
+    "kontakt": 295.6,
+    "vegg": 5
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 213,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.44,
+    "px": 650,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1636.3,
+    "kontakt": 59.5,
+    "vegg": 219
+   }
+  ]
+ },
+ "360": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 160,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.78,
+    "px": 936,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "retning": "h",
+    "areal_pt": 2328.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 252,
+    "farge2019": [
+     237,
+     120,
+     104
+    ],
+    "andel": 0.56,
+    "px": 95,
+    "cmyk": [
+     0.0,
+     0.483,
+     0.41,
+     0.0
+    ],
+    "areal_pt": 336.3,
+    "kontakt": 34.3,
+    "vegg": 160
+   }
+  ]
+ },
+ "169": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 165,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.73,
+    "px": 694,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 1792.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 200,
+    "farge2019": [
+     225,
+     225,
+     225
+    ],
+    "andel": 0.36,
+    "px": 332,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.16
+    ],
+    "retning": "v",
+    "areal_pt": 865.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 167,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.62,
+    "px": 727,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1859.4,
+    "kontakt": 30.0,
+    "vegg": 165
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 169,
+    "farge2019": [
+     213,
+     107,
+     91
+    ],
+    "andel": 0.49,
+    "px": 427,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.15
+    ],
+    "areal_pt": 1107.2,
+    "kontakt": 17.2,
+    "vegg": 200
+   }
+  ]
+ },
+ "325": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 201,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.67,
+    "px": 276,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 758.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 254,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.53,
+    "px": 113,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 328.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 261,
+    "farge2019": [
+     239,
+     120,
+     104
+    ],
+    "andel": 0.74,
+    "px": 93,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 286.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 192,
+    "farge2019": [
+     178,
+     102,
+     84
+    ],
+    "andel": 0.55,
+    "px": 406,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1056.1,
+    "kontakt": 7.0,
+    "vegg": 201
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 241,
+    "farge2019": [
+     123,
+     120,
+     116
+    ],
+    "andel": 0.27,
+    "px": 149,
+    "cmyk": [
+     0.236,
+     0.81,
+     0.7,
+     0.192
+    ],
+    "areal_pt": 480.3,
+    "kontakt": 21.1,
+    "vegg": 201
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 237,
+    "farge2019": [
+     244,
+     243,
+     243
+    ],
+    "andel": 0.3,
+    "px": 186,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 522.3,
+    "kontakt": 14.8,
+    "vegg": 261
+   }
+  ]
+ },
+ "204": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 248,
+    "farge2019": [
+     197,
+     199,
+     198
+    ],
+    "andel": 0.66,
+    "px": 95,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 383.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 259,
+    "farge2019": [
+     238,
+     222,
+     206
+    ],
+    "andel": 0.44,
+    "px": 89,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.05
+    ],
+    "retning": "h",
+    "areal_pt": 300.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 167,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.62,
+    "px": 727,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1859.4,
+    "kontakt": 11.7,
+    "vegg": 248
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 197,
+    "farge2019": [
+     239,
+     121,
+     103
+    ],
+    "andel": 0.47,
+    "px": 336,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 915.2,
+    "kontakt": 22.5,
+    "vegg": 248
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 268,
+    "farge2019": [
+     236,
+     121,
+     100
+    ],
+    "andel": 0.35,
+    "px": 31,
+    "cmyk": [
+     0.0,
+     0.483,
+     0.41,
+     0.0
+    ],
+    "areal_pt": 217.5,
+    "kontakt": 8.8,
+    "vegg": 259
+   }
+  ]
+ },
+ "408": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 249,
+    "farge2019": [
+     240,
+     121,
+     103
+    ],
+    "andel": 0.62,
+    "px": 125,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 376.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 250,
+    "farge2019": [
+     196,
+     113,
+     93
+    ],
+    "andel": 0.29,
+    "px": 200,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 603.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 934,
+    "farge2019": [
+     194,
+     199,
+     195
+    ],
+    "andel": 0.24,
+    "px": 46,
+    "cmyk": [
+     0.0,
+     0.483,
+     0.41,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 248.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 253,
+    "farge2019": [
+     198,
+     198,
+     199
+    ],
+    "andel": 0.2,
+    "px": 106,
+    "cmyk": [
+     0.236,
+     0.81,
+     0.7,
+     0.192
+    ],
+    "areal_pt": 329.1,
+    "kontakt": 8.6,
+    "vegg": 249
+   },
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 241,
+    "farge2019": [
+     123,
+     120,
+     116
+    ],
+    "andel": 0.27,
+    "px": 149,
+    "cmyk": [
+     0.236,
+     0.81,
+     0.7,
+     0.192
+    ],
+    "areal_pt": 480.3,
+    "kontakt": 9.6,
+    "vegg": 250
+   }
+  ]
+ },
+ "197": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 264,
+    "farge2019": [
+     225,
+     225,
+     225
+    ],
+    "andel": 0.37,
+    "px": 78,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.16
+    ],
+    "retning": "v",
+    "areal_pt": 260.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 265,
+    "farge2019": [
+     131,
+     127,
+     123
+    ],
+    "andel": 0.28,
+    "px": 81,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 254.2,
+    "kontakt": 5.9,
+    "vegg": 264
+   }
+  ]
+ },
+ "377": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 269,
+    "farge2019": [
+     243,
+     244,
+     244
+    ],
+    "andel": 0.5,
+    "px": 72,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "h",
+    "areal_pt": 214.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "flate": 243,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.42,
+    "px": 147,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 416.8,
+    "kontakt": 7.7,
+    "vegg": 269
+   }
+  ]
+ },
+ "27": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal2BITMP",
+    "fasade": 925,
+    "farge2019": [
+     131,
+     128,
+     123
+    ],
+    "andel": 0.35,
+    "px": 742,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.05
+    ],
+    "retning": "h",
+    "areal_pt": 1906.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 173,
+    "farge2019": [
+     138,
+     72,
+     61
+    ],
+    "andel": 0.12,
+    "px": 91,
+    "cmyk": [
+     0.365,
+     0.768,
+     0.747,
+     0.25
+    ],
+    "retning": "v",
+    "areal_pt": 287.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 225,
+    "farge2019": [
+     249,
+     195,
+     148
+    ],
+    "andel": 0.44,
+    "px": 309,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 811.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 228,
+    "farge2019": [
+     221,
+     174,
+     136
+    ],
+    "andel": 0.31,
+    "px": 141,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.15
+    ],
+    "retning": "h",
+    "areal_pt": 369.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal3",
+    "flate": 229,
+    "farge2019": [
+     241,
+     120,
+     103
+    ],
+    "andel": 0.52,
+    "px": 112,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 307.8,
+    "kontakt": 8.2,
+    "vegg": 225
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 230,
+    "farge2019": [
+     238,
+     122,
+     104
+    ],
+    "andel": 0.25,
+    "px": 99,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 295.6,
+    "kontakt": 7.4,
+    "vegg": 225
+   }
+  ]
+ },
+ "15": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 283,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.61,
+    "px": 114,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.15
+    ],
+    "retning": "h",
+    "areal_pt": 313.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 278,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.67,
+    "px": 634,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "retning": "h",
+    "areal_pt": 1772.1,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal3",
+    "flate": 4,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.53,
+    "px": 3832,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "areal_pt": 8466.8,
+    "kontakt": 432.8,
+    "vegg": 283
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 273,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.66,
+    "px": 1786,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 4167.9,
+    "kontakt": 7.2,
+    "vegg": 283
+   }
+  ]
+ },
+ "9": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 281,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.42,
+    "px": 286,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 799.8,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal3",
+    "flate": 4,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.53,
+    "px": 3832,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "areal_pt": 8466.8,
+    "kontakt": 1001.4,
+    "vegg": 281
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 273,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.66,
+    "px": 1786,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 4167.9,
+    "kontakt": 11.6,
+    "vegg": 281
+   }
+  ]
+ },
+ "174": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 232,
+    "farge2019": [
+     219,
+     110,
+     93
+    ],
+    "andel": 0.41,
+    "px": 112,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "retning": "h",
+    "areal_pt": 336.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal3",
+    "flate": 213,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.44,
+    "px": 650,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1636.3,
+    "kontakt": 8.4,
+    "vegg": 232
+   }
+  ]
+ },
+ "30": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 338,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.52,
+    "px": 1390,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.15
+    ],
+    "retning": "h",
+    "areal_pt": 3393.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 339,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.13,
+    "px": 270,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 765.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal3",
+    "fasade": 354,
+    "farge2019": [
+     177,
+     103,
+     85
+    ],
+    "andel": 0.72,
+    "px": 162,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "retning": "h",
+    "areal_pt": 537.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal3",
+    "flate": 3,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.42,
+    "px": 2143,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "areal_pt": 4794.6,
+    "kontakt": 970.0,
+    "vegg": 339
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 1,
+    "farge2019": [
+     179,
+     102,
+     85
+    ],
+    "andel": 0.33,
+    "px": 800,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "areal_pt": 1892.2,
+    "kontakt": 758.3,
+    "vegg": 354
+   },
+   {
+    "kvartal": "Kvartal3",
+    "flate": 353,
+    "farge2019": [
+     174,
+     104,
+     88
+    ],
+    "andel": 0.18,
+    "px": 249,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 696.0,
+    "kontakt": 46.9,
+    "vegg": 354
+   }
+  ]
+ },
+ "8": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 212,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.19,
+    "px": 1772,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 4305.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 191,
+    "farge2019": [
+     252,
+     252,
+     252
+    ],
+    "andel": 0.5,
+    "px": 715,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 1841.6,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 180,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.37,
+    "px": 1327,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 3273.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 215,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.5,
+    "px": 644,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 1638.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 237,
+    "farge2019": [
+     231,
+     216,
+     200
+    ],
+    "andel": 0.72,
+    "px": 92,
+    "cmyk": [
+     0.0,
+     0.471,
+     0.4,
+     0.0
+    ],
+    "areal_pt": 359.4,
+    "kontakt": 23.7,
+    "vegg": 212
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 219,
+    "farge2019": [
+     171,
+     82,
+     66
+    ],
+    "andel": 0.64,
+    "px": 260,
+    "cmyk": [
+     0.234,
+     0.729,
+     0.693,
+     0.19
+    ],
+    "areal_pt": 660.8,
+    "kontakt": 15.2,
+    "vegg": 215
+   }
+  ]
+ },
+ "206": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 218,
+    "farge2019": [
+     239,
+     121,
+     103
+    ],
+    "andel": 0.47,
+    "px": 354,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 900.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 187,
+    "farge2019": [
+     243,
+     149,
+     132
+    ],
+    "andel": 0.37,
+    "px": 539,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1405.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 259,
+    "farge2019": [
+     140,
+     140,
+     138
+    ],
+    "andel": 0.44,
+    "px": 649,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 1737.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 229,
+    "farge2019": [
+     119,
+     119,
+     117
+    ],
+    "andel": 0.74,
+    "px": 164,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.67
+    ],
+    "areal_pt": 454.6,
+    "kontakt": 24.6,
+    "vegg": 218
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 167,
+    "farge2019": [
+     135,
+     135,
+     135
+    ],
+    "andel": 0.69,
+    "px": 576,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.6
+    ],
+    "areal_pt": 1505.5,
+    "kontakt": 34.1,
+    "vegg": 187
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 248,
+    "farge2019": [
+     119,
+     119,
+     118
+    ],
+    "andel": 0.62,
+    "px": 76,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.67
+    ],
+    "areal_pt": 226.3,
+    "kontakt": 7.2,
+    "vegg": 187
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 209,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.51,
+    "px": 1006,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2473.3,
+    "kontakt": 12.4,
+    "vegg": 259
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 287,
+    "farge2019": [
+     139,
+     140,
+     137
+    ],
+    "andel": 0.51,
+    "px": 266,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.58
+    ],
+    "areal_pt": 710.1,
+    "kontakt": 9.0,
+    "vegg": 259
+   }
+  ]
+ },
+ "108": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 243,
+    "farge2019": [
+     179,
+     102,
+     86
+    ],
+    "andel": 0.34,
+    "px": 454,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 1202.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 194,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.7,
+    "px": 346,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 895.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 255,
+    "farge2019": [
+     255,
+     238,
+     184
+    ],
+    "andel": 0.23,
+    "px": 753,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1966.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 301,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.36,
+    "px": 179,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 519.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 227,
+    "farge2019": [
+     143,
+     88,
+     71
+    ],
+    "andel": 0.3,
+    "px": 168,
+    "cmyk": [
+     0.193,
+     0.6,
+     0.57,
+     0.406
+    ],
+    "areal_pt": 504.1,
+    "kontakt": 17.1,
+    "vegg": 194
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 251,
+    "farge2019": [
+     215,
+     109,
+     93
+    ],
+    "andel": 0.61,
+    "px": 394,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.13
+    ],
+    "areal_pt": 1015.6,
+    "kontakt": 8.8,
+    "vegg": 255
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 250,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.64,
+    "px": 387,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1036.1,
+    "kontakt": 20.9,
+    "vegg": 301
+   }
+  ]
+ },
+ "211": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 235,
+    "farge2019": [
+     238,
+     121,
+     103
+    ],
+    "andel": 0.43,
+    "px": 183,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 509.3,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 227,
+    "farge2019": [
+     143,
+     88,
+     71
+    ],
+    "andel": 0.3,
+    "px": 168,
+    "cmyk": [
+     0.193,
+     0.6,
+     0.57,
+     0.406
+    ],
+    "areal_pt": 504.1,
+    "kontakt": 10.0,
+    "vegg": 235
+   }
+  ]
+ },
+ "25": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 0,
+    "farge2019": [
+     178,
+     102,
+     85
+    ],
+    "andel": 0.14,
+    "px": 661,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.009
+    ],
+    "retning": "h",
+    "areal_pt": 1585.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 373,
+    "farge2019": [
+     230,
+     214,
+     200
+    ],
+    "andel": 0.11,
+    "px": 277,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 780.3,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 374,
+    "farge2019": [
+     243,
+     121,
+     103
+    ],
+    "andel": 0.21,
+    "px": 128,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 365.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "158": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 192,
+    "farge2019": [
+     251,
+     230,
+     213
+    ],
+    "andel": 0.66,
+    "px": 373,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 957.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 168,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.73,
+    "px": 534,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1308.9,
+    "kontakt": 26.9,
+    "vegg": 192
+   }
+  ]
+ },
+ "340": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 196,
+    "farge2019": [
+     232,
+     215,
+     199
+    ],
+    "andel": 0.72,
+    "px": 337,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 862.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 246,
+    "farge2019": [
+     177,
+     103,
+     84
+    ],
+    "andel": 0.64,
+    "px": 81,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 246.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 197,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.62,
+    "px": 329,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 859.0,
+    "kontakt": 22.8,
+    "vegg": 196
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 236,
+    "farge2019": [
+     179,
+     102,
+     85
+    ],
+    "andel": 0.63,
+    "px": 144,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 386.0,
+    "kontakt": 4.1,
+    "vegg": 196
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 193,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.61,
+    "px": 370,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 948.6,
+    "kontakt": 24.4,
+    "vegg": 246
+   }
+  ]
+ },
+ "311": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 224,
+    "farge2019": [
+     244,
+     150,
+     132
+    ],
+    "andel": 0.65,
+    "px": 221,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 599.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 249,
+    "farge2019": [
+     197,
+     199,
+     199
+    ],
+    "andel": 0.45,
+    "px": 73,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 215.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 259,
+    "farge2019": [
+     172,
+     83,
+     67
+    ],
+    "andel": 0.45,
+    "px": 64,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 212.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 226,
+    "farge2019": [
+     144,
+     86,
+     73
+    ],
+    "andel": 0.23,
+    "px": 175,
+    "cmyk": [
+     0.193,
+     0.6,
+     0.57,
+     0.406
+    ],
+    "areal_pt": 512.2,
+    "kontakt": 21.0,
+    "vegg": 224
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 245,
+    "farge2019": [
+     172,
+     82,
+     69
+    ],
+    "andel": 0.3,
+    "px": 83,
+    "cmyk": [
+     0.234,
+     0.729,
+     0.693,
+     0.19
+    ],
+    "areal_pt": 247.4,
+    "kontakt": 10.3,
+    "vegg": 249
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 219,
+    "farge2019": [
+     171,
+     82,
+     66
+    ],
+    "andel": 0.64,
+    "px": 260,
+    "cmyk": [
+     0.234,
+     0.729,
+     0.693,
+     0.19
+    ],
+    "areal_pt": 660.8,
+    "kontakt": 11.2,
+    "vegg": 259
+   }
+  ]
+ },
+ "168": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 228,
+    "farge2019": [
+     232,
+     215,
+     200
+    ],
+    "andel": 0.67,
+    "px": 166,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 468.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 168,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.73,
+    "px": 534,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1308.9,
+    "kontakt": 17.7,
+    "vegg": 228
+   }
+  ]
+ },
+ "338": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 230,
+    "farge2019": [
+     131,
+     129,
+     124
+    ],
+    "andel": 0.6,
+    "px": 149,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 440.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "223": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 239,
+    "farge2019": [
+     239,
+     121,
+     105
+    ],
+    "andel": 0.4,
+    "px": 124,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 387.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 244,
+    "farge2019": [
+     144,
+     88,
+     76
+    ],
+    "andel": 0.44,
+    "px": 95,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 297.0,
+    "kontakt": 17.1,
+    "vegg": 239
+   }
+  ]
+ },
+ "383": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 240,
+    "farge2019": [
+     177,
+     103,
+     86
+    ],
+    "andel": 0.63,
+    "px": 113,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 327.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 251,
+    "farge2019": [
+     238,
+     122,
+     105
+    ],
+    "andel": 0.81,
+    "px": 58,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 214.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 253,
+    "farge2019": [
+     90,
+     98,
+     83
+    ],
+    "andel": 0.05,
+    "px": 61,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 205.5,
+    "kontakt": 14.4,
+    "vegg": 251
+   }
+  ]
+ },
+ "216": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "fasade": 247,
+    "farge2019": [
+     237,
+     121,
+     102
+    ],
+    "andel": 0.42,
+    "px": 72,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 243.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal4BITMP",
+    "flate": 231,
+    "farge2019": [
+     178,
+     102,
+     84
+    ],
+    "andel": 0.83,
+    "px": 103,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "areal_pt": 391.2,
+    "kontakt": 6.2,
+    "vegg": 247
+   }
+  ]
+ },
+ "155": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 321,
+    "farge2019": [
+     252,
+     253,
+     253
+    ],
+    "andel": 0.33,
+    "px": 303,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.01
+    ],
+    "retning": "v",
+    "areal_pt": 760.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 335,
+    "farge2019": [
+     254,
+     254,
+     255
+    ],
+    "andel": 0.28,
+    "px": 955,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 2562.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 313,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.4,
+    "px": 292,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 854.8,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 290,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.39,
+    "px": 390,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.01
+    ],
+    "retning": "v",
+    "areal_pt": 1071.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 350,
+    "farge2019": [
+     180,
+     101,
+     83
+    ],
+    "andel": 0.51,
+    "px": 111,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.475
+    ],
+    "retning": "h",
+    "areal_pt": 341.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 257,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.69,
+    "px": 719,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1752.7,
+    "kontakt": 17.6,
+    "vegg": 313
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 255,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.69,
+    "px": 1113,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2682.5,
+    "kontakt": 35.7,
+    "vegg": 290
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 296,
+    "farge2019": [
+     102,
+     101,
+     97
+    ],
+    "andel": 0.34,
+    "px": 245,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 763.3,
+    "kontakt": 15.1,
+    "vegg": 350
+   }
+  ]
+ },
+ "180": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 303,
+    "farge2019": [
+     198,
+     197,
+     198
+    ],
+    "andel": 0.35,
+    "px": 365,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.01
+    ],
+    "retning": "h",
+    "areal_pt": 920.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 277,
+    "farge2019": [
+     208,
+     230,
+     234
+    ],
+    "andel": 0.07,
+    "px": 508,
+    "cmyk": [
+     0.235,
+     0.0,
+     0.061,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1301.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 255,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.69,
+    "px": 1113,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2682.5,
+    "kontakt": 14.7,
+    "vegg": 303
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 281,
+    "farge2019": [
+     143,
+     88,
+     77
+    ],
+    "andel": 0.22,
+    "px": 302,
+    "cmyk": [
+     0.193,
+     0.6,
+     0.57,
+     0.406
+    ],
+    "areal_pt": 892.7,
+    "kontakt": 9.9,
+    "vegg": 303
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 295,
+    "farge2019": [
+     243,
+     151,
+     132
+    ],
+    "andel": 0.51,
+    "px": 286,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 781.2,
+    "kontakt": 32.4,
+    "vegg": 277
+   }
+  ]
+ },
+ "349": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 269,
+    "farge2019": [
+     197,
+     130,
+     114
+    ],
+    "andel": 0.76,
+    "px": 435,
+    "cmyk": [
+     0.0,
+     0.486,
+     0.413,
+     0.25
+    ],
+    "retning": "h",
+    "areal_pt": 1100.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 330,
+    "farge2019": [
+     162,
+     162,
+     162
+    ],
+    "andel": 0.45,
+    "px": 181,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.475
+    ],
+    "retning": "h",
+    "areal_pt": 480.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 353,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.37,
+    "px": 94,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 295.6,
+    "kontakt": 13.5,
+    "vegg": 330
+   }
+  ]
+ },
+ "179": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 291,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.26,
+    "px": 295,
+    "cmyk": [
+     0.0,
+     0.492,
+     0.75,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 792.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 344,
+    "farge2019": [
+     249,
+     195,
+     148
+    ],
+    "andel": 0.56,
+    "px": 156,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 417.8,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 358,
+    "farge2019": [
+     161,
+     160,
+     162
+    ],
+    "andel": 0.19,
+    "px": 88,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.475
+    ],
+    "retning": "v",
+    "areal_pt": 259.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 362,
+    "farge2019": [
+     94,
+     127,
+     96
+    ],
+    "andel": 0.71,
+    "px": 77,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 233.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 257,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.69,
+    "px": 719,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1752.7,
+    "kontakt": 13.0,
+    "vegg": 291
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 278,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.57,
+    "px": 352,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 905.4,
+    "kontakt": 8.6,
+    "vegg": 344
+   }
+  ]
+ },
+ "210": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 294,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.57,
+    "px": 350,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 909.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 325,
+    "farge2019": [
+     244,
+     244,
+     245
+    ],
+    "andel": 0.64,
+    "px": 191,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "h",
+    "areal_pt": 526.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 254,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.74,
+    "px": 1465,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 3521.8,
+    "kontakt": 19.6,
+    "vegg": 294
+   }
+  ]
+ },
+ "305": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 315,
+    "farge2019": [
+     196,
+     198,
+     198
+    ],
+    "andel": 0.35,
+    "px": 152,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "v",
+    "areal_pt": 610.9,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 343,
+    "farge2019": [
+     197,
+     199,
+     198
+    ],
+    "andel": 0.34,
+    "px": 217,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 582.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 351,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.81,
+    "px": 106,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 337.1,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 260,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.49,
+    "px": 491,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1240.0,
+    "kontakt": 29.0,
+    "vegg": 315
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 361,
+    "farge2019": [
+     144,
+     87,
+     73
+    ],
+    "andel": 0.52,
+    "px": 83,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.01
+    ],
+    "areal_pt": 244.4,
+    "kontakt": 8.6,
+    "vegg": 315
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 254,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.74,
+    "px": 1465,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 3521.8,
+    "kontakt": 13.8,
+    "vegg": 343
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 323,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.34,
+    "px": 203,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 550.8,
+    "kontakt": 15.7,
+    "vegg": 351
+   }
+  ]
+ },
+ "157": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 327,
+    "farge2019": [
+     196,
+     198,
+     197
+    ],
+    "andel": 0.27,
+    "px": 180,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 575.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 254,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.74,
+    "px": 1465,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 3521.8,
+    "kontakt": 20.8,
+    "vegg": 327
+   }
+  ]
+ },
+ "194": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 329,
+    "farge2019": [
+     133,
+     133,
+     133
+    ],
+    "andel": 0.37,
+    "px": 128,
+    "cmyk": [
+     0.017,
+     0.11,
+     0.37,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 490.7,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 360,
+    "farge2019": [
+     198,
+     197,
+     199
+    ],
+    "andel": 0.47,
+    "px": 77,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "v",
+    "areal_pt": 245.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 256,
+    "farge2019": [
+     133,
+     133,
+     131
+    ],
+    "andel": 0.73,
+    "px": 796,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.61
+    ],
+    "areal_pt": 1944.4,
+    "kontakt": 20.8,
+    "vegg": 329
+   },
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 297,
+    "farge2019": [
+     243,
+     151,
+     132
+    ],
+    "andel": 0.39,
+    "px": 262,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 733.7,
+    "kontakt": 7.9,
+    "vegg": 360
+   }
+  ]
+ },
+ "214": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "fasade": 352,
+    "farge2019": [
+     243,
+     150,
+     74
+    ],
+    "andel": 0.3,
+    "px": 105,
+    "cmyk": [
+     0.0,
+     0.492,
+     0.75,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 311.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal8BITMAP",
+    "flate": 278,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.57,
+    "px": 352,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 905.4,
+    "kontakt": 7.1,
+    "vegg": 352
+   }
+  ]
+ },
+ "154": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 131,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.45,
+    "px": 3545,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 9287.7,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": []
+ },
+ "218": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 214,
+    "farge2019": [
+     241,
+     120,
+     102
+    ],
+    "andel": 0.27,
+    "px": 170,
+    "cmyk": [
+     0.0,
+     0.387,
+     0.59,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 533.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 172,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.23,
+    "px": 462,
+    "cmyk": [
+     0.235,
+     0.0,
+     0.061,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1266.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 191,
+    "farge2019": [
+     254,
+     254,
+     254
+    ],
+    "andel": 0.39,
+    "px": 306,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.008
+    ],
+    "retning": "v",
+    "areal_pt": 864.3,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 159,
+    "farge2019": [
+     250,
+     229,
+     214
+    ],
+    "andel": 0.39,
+    "px": 543,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1555.7,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 226,
+    "farge2019": [
+     154,
+     155,
+     154
+    ],
+    "andel": 0.52,
+    "px": 60,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 214.1,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 160,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.76,
+    "px": 438,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1156.8,
+    "kontakt": 19.7,
+    "vegg": 214
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 136,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.75,
+    "px": 793,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 1989.1,
+    "kontakt": 33.3,
+    "vegg": 172
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 150,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.55,
+    "px": 558,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 1466.3,
+    "kontakt": 14.9,
+    "vegg": 191
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 220,
+    "farge2019": [
+     253,
+     254,
+     253
+    ],
+    "andel": 0.43,
+    "px": 54,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 270.0,
+    "kontakt": 4.8,
+    "vegg": 191
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 134,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.74,
+    "px": 781,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2018.3,
+    "kontakt": 44.7,
+    "vegg": 159
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 137,
+    "farge2019": [
+     155,
+     155,
+     153
+    ],
+    "andel": 0.79,
+    "px": 754,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.51
+    ],
+    "areal_pt": 1937.5,
+    "kontakt": 18.7,
+    "vegg": 226
+   }
+  ]
+ },
+ "173": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 201,
+    "farge2019": [
+     252,
+     254,
+     253
+    ],
+    "andel": 0.24,
+    "px": 178,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.008
+    ],
+    "retning": "h",
+    "areal_pt": 558.8,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 197,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.32,
+    "px": 248,
+    "cmyk": [
+     0.0,
+     0.492,
+     0.75,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 839.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 186,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.64,
+    "px": 296,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 803.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 221,
+    "farge2019": [
+     197,
+     198,
+     197
+    ],
+    "andel": 0.58,
+    "px": 86,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 263.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 222,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.39,
+    "px": 72,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "v",
+    "areal_pt": 249.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 150,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.55,
+    "px": 558,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 1466.3,
+    "kontakt": 19.0,
+    "vegg": 201
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 132,
+    "farge2019": [
+     115,
+     115,
+     115
+    ],
+    "andel": 0.78,
+    "px": 827,
+    "cmyk": [
+     0.527,
+     0.422,
+     0.421,
+     0.264
+    ],
+    "areal_pt": 2103.3,
+    "kontakt": 10.6,
+    "vegg": 197
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 133,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.67,
+    "px": 805,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 2049.1,
+    "kontakt": 13.1,
+    "vegg": 222
+   }
+  ]
+ },
+ "225": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 183,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.69,
+    "px": 1367,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 3593.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 349,
+    "farge2019": [
+     255,
+     255,
+     255
+    ],
+    "andel": 0.39,
+    "px": 117,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "v",
+    "areal_pt": 351.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 715,
+    "farge2019": [
+     249,
+     208,
+     172
+    ],
+    "andel": 0.43,
+    "px": 89,
+    "cmyk": [
+     0.006,
+     0.234,
+     0.358,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 290.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 206,
+    "farge2019": [
+     113,
+     110,
+     106
+    ],
+    "andel": 0.98,
+    "px": 58,
+    "cmyk": [
+     0.193,
+     0.6,
+     0.57,
+     0.406
+    ],
+    "areal_pt": 362.8,
+    "kontakt": 50.0,
+    "vegg": 183
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 343,
+    "farge2019": [
+     135,
+     135,
+     135
+    ],
+    "andel": 0.58,
+    "px": 482,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.6
+    ],
+    "areal_pt": 1266.6,
+    "kontakt": 14.8,
+    "vegg": 715
+   }
+  ]
+ },
+ "355": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 148,
+    "farge2019": [
+     248,
+     208,
+     173
+    ],
+    "andel": 0.28,
+    "px": 775,
+    "cmyk": [
+     0.006,
+     0.234,
+     0.358,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1971.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 149,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.65,
+    "px": 575,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1506.2,
+    "kontakt": 29.5,
+    "vegg": 148
+   }
+  ]
+ },
+ "188": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 219,
+    "farge2019": [
+     245,
+     151,
+     74
+    ],
+    "andel": 0.47,
+    "px": 574,
+    "cmyk": [
+     0.0,
+     0.492,
+     0.75,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 1653.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "221": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 178,
+    "farge2019": [
+     254,
+     255,
+     255
+    ],
+    "andel": 0.34,
+    "px": 346,
+    "cmyk": [
+     0.392,
+     0.0,
+     0.102,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 920.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 223,
+    "farge2019": [
+     196,
+     205,
+     174
+    ],
+    "andel": 0.2,
+    "px": 76,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "h",
+    "areal_pt": 253.7,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 228,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.42,
+    "px": 62,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 205.1,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 232,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.2,
+    "px": 61,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 221.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 136,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.75,
+    "px": 793,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 1989.1,
+    "kontakt": 16.6,
+    "vegg": 178
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 133,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.67,
+    "px": 805,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 2049.1,
+    "kontakt": 7.1,
+    "vegg": 223
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 138,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.49,
+    "px": 744,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 1902.9,
+    "kontakt": 14.7,
+    "vegg": 223
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 132,
+    "farge2019": [
+     115,
+     115,
+     115
+    ],
+    "andel": 0.78,
+    "px": 827,
+    "cmyk": [
+     0.527,
+     0.422,
+     0.421,
+     0.264
+    ],
+    "areal_pt": 2103.3,
+    "kontakt": 6.1,
+    "vegg": 228
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 135,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.75,
+    "px": 794,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 2008.8,
+    "kontakt": 10.4,
+    "vegg": 232
+   }
+  ]
+ },
+ "205": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 203,
+    "farge2019": [
+     243,
+     244,
+     245
+    ],
+    "andel": 0.52,
+    "px": 141,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 435.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 227,
+    "farge2019": [
+     221,
+     136,
+     68
+    ],
+    "andel": 0.46,
+    "px": 59,
+    "cmyk": [
+     0.109,
+     0.526,
+     0.787,
+     0.014
+    ],
+    "retning": "h",
+    "areal_pt": 207.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 135,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.75,
+    "px": 794,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 2008.8,
+    "kontakt": 17.0,
+    "vegg": 203
+   },
+   {
+    "kvartal": "Kvartal9",
+    "flate": 196,
+    "farge2019": [
+     218,
+     110,
+     92
+    ],
+    "andel": 0.6,
+    "px": 170,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 511.8,
+    "kontakt": 5.7,
+    "vegg": 227
+   }
+  ]
+ },
+ "185": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 225,
+    "farge2019": [
+     241,
+     119,
+     102
+    ],
+    "andel": 0.5,
+    "px": 30,
+    "cmyk": [
+     0.174,
+     0.323,
+     0.439,
+     0.049
+    ],
+    "retning": "h",
+    "areal_pt": 231.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 149,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.65,
+    "px": 575,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1506.2,
+    "kontakt": 12.0,
+    "vegg": 225
+   }
+  ]
+ },
+ "209": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 346,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.7,
+    "px": 309,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "retning": "v",
+    "areal_pt": 846.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "345": {
+  "vegger": [
+   {
+    "kvartal": "Kvartal9",
+    "fasade": 701,
+    "farge2019": [
+     232,
+     215,
+     199
+    ],
+    "andel": 0.48,
+    "px": 157,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "v",
+    "areal_pt": 462.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "Kvartal9",
+    "flate": 344,
+    "farge2019": [
+     144,
+     86,
+     72
+    ],
+    "andel": 0.45,
+    "px": 329,
+    "cmyk": [
+     0.193,
+     0.6,
+     0.57,
+     0.406
+    ],
+    "areal_pt": 954.2,
+    "kontakt": 19.5,
+    "vegg": 701
+   }
+  ]
+ },
+ "189": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 210,
+    "farge2019": [
+     197,
+     197,
+     198
+    ],
+    "andel": 0.51,
+    "px": 508,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 1340.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 293,
+    "farge2019": [
+     198,
+     199,
+     198
+    ],
+    "andel": 0.33,
+    "px": 180,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 560.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 296,
+    "farge2019": [
+     227,
+     213,
+     164
+    ],
+    "andel": 0.37,
+    "px": 195,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 546.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 280,
+    "farge2019": [
+     179,
+     102,
+     85
+    ],
+    "andel": 0.3,
+    "px": 252,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 704.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 304,
+    "farge2019": [
+     226,
+     214,
+     165
+    ],
+    "andel": 0.43,
+    "px": 164,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 475.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 289,
+    "farge2019": [
+     226,
+     213,
+     165
+    ],
+    "andel": 0.32,
+    "px": 183,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 538.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 273,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.53,
+    "px": 190,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 613.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 196,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.74,
+    "px": 987,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2487.0,
+    "kontakt": 18.5,
+    "vegg": 210
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 194,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.56,
+    "px": 1523,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 3767.6,
+    "kontakt": 10.2,
+    "vegg": 296
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 287,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.52,
+    "px": 166,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 484.4,
+    "kontakt": 9.9,
+    "vegg": 273
+   }
+  ]
+ },
+ "196": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 220,
+    "farge2019": [
+     241,
+     222,
+     208
+    ],
+    "andel": 0.25,
+    "px": 730,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.05
+    ],
+    "retning": "h",
+    "areal_pt": 1975.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 321,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.58,
+    "px": 77,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 245.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 317,
+    "farge2019": [
+     199,
+     199,
+     199
+    ],
+    "andel": 0.42,
+    "px": 93,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "v",
+    "areal_pt": 292.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 287,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.52,
+    "px": 166,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 484.4,
+    "kontakt": 10.9,
+    "vegg": 317
+   }
+  ]
+ },
+ "165": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 263,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.35,
+    "px": 267,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 796.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 253,
+    "farge2019": [
+     214,
+     111,
+     96
+    ],
+    "andel": 0.3,
+    "px": 340,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "retning": "v",
+    "areal_pt": 1009.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 239,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.32,
+    "px": 394,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 1127.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 307,
+    "farge2019": [
+     250,
+     241,
+     233
+    ],
+    "andel": 0.28,
+    "px": 177,
+    "cmyk": [
+     0.019,
+     0.066,
+     0.094,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 533.2,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 285,
+    "farge2019": [
+     238,
+     121,
+     102
+    ],
+    "andel": 0.63,
+    "px": 153,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 495.2,
+    "kontakt": 24.3,
+    "vegg": 263
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 276,
+    "farge2019": [
+     142,
+     88,
+     74
+    ],
+    "andel": 0.47,
+    "px": 172,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 536.0,
+    "kontakt": 26.3,
+    "vegg": 253
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 198,
+    "farge2019": [
+     217,
+     110,
+     92
+    ],
+    "andel": 0.81,
+    "px": 909,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.12
+    ],
+    "areal_pt": 2285.2,
+    "kontakt": 26.1,
+    "vegg": 239
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 297,
+    "farge2019": [
+     198,
+     198,
+     199
+    ],
+    "andel": 0.38,
+    "px": 111,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "areal_pt": 419.6,
+    "kontakt": 4.8,
+    "vegg": 239
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 309,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.46,
+    "px": 124,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 377.1,
+    "kontakt": 7.2,
+    "vegg": 307
+   }
+  ]
+ },
+ "195": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 203,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.81,
+    "px": 521,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 1337.6,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 274,
+    "farge2019": [
+     162,
+     162,
+     162
+    ],
+    "andel": 0.68,
+    "px": 191,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.475
+    ],
+    "retning": "h",
+    "areal_pt": 543.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 318,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.55,
+    "px": 66,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.77
+    ],
+    "areal_pt": 276.7,
+    "kontakt": 19.4,
+    "vegg": 274
+   }
+  ]
+ },
+ "344": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 221,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.57,
+    "px": 364,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 1002.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 202,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.76,
+    "px": 583,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1508.6,
+    "kontakt": 15.2,
+    "vegg": 221
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 223,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.6,
+    "px": 323,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 888.1,
+    "kontakt": 9.0,
+    "vegg": 221
+   }
+  ]
+ },
+ "164": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 226,
+    "farge2019": [
+     231,
+     215,
+     199
+    ],
+    "andel": 0.47,
+    "px": 352,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 921.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 201,
+    "farge2019": [
+     255,
+     255,
+     255
+    ],
+    "andel": 0.44,
+    "px": 627,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1686.6,
+    "kontakt": 13.7,
+    "vegg": 226
+   }
+  ]
+ },
+ "331": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 228,
+    "farge2019": [
+     255,
+     239,
+     182
+    ],
+    "andel": 0.24,
+    "px": 314,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 894.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 194,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.56,
+    "px": 1523,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 3767.6,
+    "kontakt": 10.9,
+    "vegg": 228
+   }
+  ]
+ },
+ "226": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 241,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.44,
+    "px": 266,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 762.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 256,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.81,
+    "px": 230,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 623.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 200,
+    "farge2019": [
+     119,
+     119,
+     117
+    ],
+    "andel": 0.75,
+    "px": 676,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.67
+    ],
+    "areal_pt": 1754.0,
+    "kontakt": 24.2,
+    "vegg": 241
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 242,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.64,
+    "px": 274,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 751.7,
+    "kontakt": 8.3,
+    "vegg": 256
+   }
+  ]
+ },
+ "330": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 269,
+    "farge2019": [
+     238,
+     120,
+     103
+    ],
+    "andel": 0.46,
+    "px": 236,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 741.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 197,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.76,
+    "px": 931,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2348.1,
+    "kontakt": 24.9,
+    "vegg": 269
+   }
+  ]
+ },
+ "182": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 284,
+    "farge2019": [
+     207,
+     226,
+     224
+    ],
+    "andel": 0.11,
+    "px": 236,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 676.0,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 298,
+    "farge2019": [
+     243,
+     244,
+     244
+    ],
+    "andel": 0.34,
+    "px": 139,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 422.5,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal5",
+    "fasade": 314,
+    "farge2019": [
+     239,
+     120,
+     103
+    ],
+    "andel": 0.63,
+    "px": 134,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 398.8,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 195,
+    "farge2019": [
+     255,
+     255,
+     254
+    ],
+    "andel": 0.26,
+    "px": 1178,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2949.5,
+    "kontakt": 22.6,
+    "vegg": 284
+   },
+   {
+    "kvartal": "kvartal5",
+    "flate": 201,
+    "farge2019": [
+     255,
+     255,
+     255
+    ],
+    "andel": 0.44,
+    "px": 627,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1686.6,
+    "kontakt": 13.3,
+    "vegg": 314
+   }
+  ]
+ },
+ "207": {
+  "vegger": [
+   {
+    "kvartal": "kvartal5",
+    "fasade": 302,
+    "farge2019": [
+     250,
+     230,
+     213
+    ],
+    "andel": 0.37,
+    "px": 154,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 518.3,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal5",
+    "flate": 315,
+    "farge2019": [
+     241,
+     120,
+     104
+    ],
+    "andel": 0.42,
+    "px": 95,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 313.2,
+    "kontakt": 20.2,
+    "vegg": 302
+   }
+  ]
+ },
+ "220": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 222,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.44,
+    "px": 1882,
+    "cmyk": [
+     0.0,
+     0.492,
+     0.75,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 5339.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 182,
+    "farge2019": [
+     231,
+     215,
+     200
+    ],
+    "andel": 0.48,
+    "px": 1410,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.1
+    ],
+    "retning": "h",
+    "areal_pt": 4084.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 207,
+    "farge2019": [
+     248,
+     195,
+     148
+    ],
+    "andel": 0.48,
+    "px": 680,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 2081.3,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 278,
+    "farge2019": [
+     244,
+     150,
+     132
+    ],
+    "andel": 0.65,
+    "px": 104,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 359.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 271,
+    "farge2019": [
+     175,
+     104,
+     89
+    ],
+    "andel": 0.29,
+    "px": 121,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "areal_pt": 463.3,
+    "kontakt": 17.6,
+    "vegg": 222
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 157,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.82,
+    "px": 1583,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 4486.9,
+    "kontakt": 57.8,
+    "vegg": 182
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 257,
+    "farge2019": [
+     184,
+     113,
+     96
+    ],
+    "andel": 0.64,
+    "px": 245,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 954.7,
+    "kontakt": 4.2,
+    "vegg": 182
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 184,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.68,
+    "px": 943,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 2763.3,
+    "kontakt": 10.8,
+    "vegg": 278
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 259,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.64,
+    "px": 196,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 862.3,
+    "kontakt": 6.3,
+    "vegg": 278
+   }
+  ]
+ },
+ "186": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 254,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.19,
+    "px": 559,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1717.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 240,
+    "farge2019": [
+     243,
+     188,
+     143
+    ],
+    "andel": 0.3,
+    "px": 737,
+    "cmyk": [
+     0.025,
+     0.322,
+     0.474,
+     0.001
+    ],
+    "retning": "v",
+    "areal_pt": 2241.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 286,
+    "farge2019": [
+     186,
+     113,
+     96
+    ],
+    "andel": 0.52,
+    "px": 161,
+    "cmyk": [
+     0.011,
+     0.423,
+     0.634,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 659.3,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 269,
+    "farge2019": [
+     244,
+     166,
+     102
+    ],
+    "andel": 0.72,
+    "px": 157,
+    "cmyk": [
+     0.011,
+     0.423,
+     0.634,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 506.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 275,
+    "farge2019": [
+     242,
+     243,
+     241
+    ],
+    "andel": 0.6,
+    "px": 124,
+    "cmyk": [
+     0.061,
+     0.044,
+     0.055,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 421.1,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 289,
+    "farge2019": [
+     245,
+     151,
+     78
+    ],
+    "andel": 0.52,
+    "px": 67,
+    "cmyk": [
+     0.0,
+     0.492,
+     0.75,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 248.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 195,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.66,
+    "px": 670,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 1963.1,
+    "kontakt": 32.1,
+    "vegg": 254
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 183,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.74,
+    "px": 962,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2791.7,
+    "kontakt": 47.9,
+    "vegg": 240
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 260,
+    "farge2019": [
+     100,
+     100,
+     98
+    ],
+    "andel": 0.84,
+    "px": 210,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "areal_pt": 844.2,
+    "kontakt": 9.6,
+    "vegg": 269
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 162,
+    "farge2019": [
+     186,
+     113,
+     96
+    ],
+    "andel": 0.83,
+    "px": 1202,
+    "cmyk": [
+     0.189,
+     0.59,
+     0.561,
+     0.154
+    ],
+    "areal_pt": 3353.0,
+    "kontakt": 17.3,
+    "vegg": 275
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 256,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.56,
+    "px": 315,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 975.6,
+    "kontakt": 10.0,
+    "vegg": 289
+   }
+  ]
+ },
+ "19": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 282,
+    "farge2019": [
+     243,
+     165,
+     106
+    ],
+    "andel": 0.27,
+    "px": 96,
+    "cmyk": [
+     0.011,
+     0.423,
+     0.634,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 431.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 284,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.88,
+    "px": 74,
+    "cmyk": [
+     0.011,
+     0.423,
+     0.634,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 330.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 265,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.6,
+    "px": 215,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 677.4,
+    "kontakt": 11.9,
+    "vegg": 282
+   },
+   {
+    "kvartal": "kvartal6",
+    "flate": 256,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.56,
+    "px": 315,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 975.6,
+    "kontakt": 22.4,
+    "vegg": 284
+   }
+  ]
+ },
+ "212": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 1187,
+    "farge2019": [
+     255,
+     255,
+     255
+    ],
+    "andel": 0.6,
+    "px": 121,
+    "cmyk": [
+     0.011,
+     0.423,
+     0.634,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 416.8,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": []
+ },
+ "380": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 202,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.49,
+    "px": 656,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 1967.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 161,
+    "farge2019": [
+     199,
+     102,
+     86
+    ],
+    "andel": 0.8,
+    "px": 1277,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.22
+    ],
+    "areal_pt": 3617.5,
+    "kontakt": 37.1,
+    "vegg": 202
+   }
+  ]
+ },
+ "187": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 244,
+    "farge2019": [
+     115,
+     112,
+     108
+    ],
+    "andel": 0.08,
+    "px": 548,
+    "cmyk": [
+     0.62,
+     0.0,
+     0.593,
+     0.25
+    ],
+    "retning": "h",
+    "areal_pt": 1616.1,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 266,
+    "farge2019": [
+     244,
+     150,
+     133
+    ],
+    "andel": 0.33,
+    "px": 408,
+    "cmyk": [
+     0.45,
+     0.0,
+     0.43,
+     0.17
+    ],
+    "retning": "v",
+    "areal_pt": 1363.6,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 223,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.69,
+    "px": 558,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1624.2,
+    "kontakt": 17.1,
+    "vegg": 244
+   }
+  ]
+ },
+ "160": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 261,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.27,
+    "px": 626,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "v",
+    "areal_pt": 1961.4,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "kvartal6",
+    "fasade": 258,
+    "farge2019": [
+     218,
+     218,
+     218
+    ],
+    "andel": 0.55,
+    "px": 268,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.2
+    ],
+    "retning": "v",
+    "areal_pt": 892.5,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 162,
+    "farge2019": [
+     186,
+     113,
+     96
+    ],
+    "andel": 0.83,
+    "px": 1202,
+    "cmyk": [
+     0.189,
+     0.59,
+     0.561,
+     0.154
+    ],
+    "areal_pt": 3353.0,
+    "kontakt": 45.4,
+    "vegg": 261
+   }
+  ]
+ },
+ "203": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 268,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.6,
+    "px": 168,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 556.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "215": {
+  "vegger": [
+   {
+    "kvartal": "kvartal6",
+    "fasade": 277,
+    "farge2019": [
+     249,
+     208,
+     173
+    ],
+    "andel": 0.46,
+    "px": 111,
+    "cmyk": [
+     0.006,
+     0.234,
+     0.358,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 385.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal6",
+    "flate": 263,
+    "farge2019": [
+     240,
+     121,
+     103
+    ],
+    "andel": 0.43,
+    "px": 242,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 765.4,
+    "kontakt": 13.0,
+    "vegg": 277
+   }
+  ]
+ },
+ "107": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 269,
+    "farge2019": [
+     146,
+     146,
+     146
+    ],
+    "andel": 0.1,
+    "px": 1293,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 3605.1,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 205,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.54,
+    "px": 1387,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "areal_pt": 3366.6,
+    "kontakt": 5.7,
+    "vegg": 269
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 206,
+    "farge2019": [
+     243,
+     150,
+     132
+    ],
+    "andel": 0.4,
+    "px": 1328,
+    "cmyk": [
+     0.0,
+     0.519,
+     0.441,
+     0.0
+    ],
+    "areal_pt": 3274.7,
+    "kontakt": 58.4,
+    "vegg": 269
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 298,
+    "farge2019": [
+     215,
+     109,
+     93
+    ],
+    "andel": 0.53,
+    "px": 157,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.13
+    ],
+    "areal_pt": 442.4,
+    "kontakt": 17.2,
+    "vegg": 269
+   }
+  ]
+ },
+ "109": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 242,
+    "farge2019": [
+     221,
+     175,
+     133
+    ],
+    "andel": 0.54,
+    "px": 538,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.15
+    ],
+    "retning": "h",
+    "areal_pt": 1380.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 306,
+    "farge2019": [
+     230,
+     213,
+     166
+    ],
+    "andel": 0.34,
+    "px": 65,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.14
+    ],
+    "retning": "h",
+    "areal_pt": 220.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 286,
+    "farge2019": [
+     247,
+     194,
+     150
+    ],
+    "andel": 0.18,
+    "px": 405,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 1142.5,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 294,
+    "farge2019": [
+     198,
+     198,
+     200
+    ],
+    "andel": 0.13,
+    "px": 188,
+    "cmyk": [
+     0.009,
+     0.059,
+     0.37,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 763.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 210,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.78,
+    "px": 1002,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2444.8,
+    "kontakt": 12.6,
+    "vegg": 242
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 205,
+    "farge2019": [
+     198,
+     198,
+     198
+    ],
+    "andel": 0.54,
+    "px": 1387,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "areal_pt": 3366.6,
+    "kontakt": 27.4,
+    "vegg": 294
+   }
+  ]
+ },
+ "252": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 249,
+    "farge2019": [
+     215,
+     170,
+     130
+    ],
+    "andel": 0.49,
+    "px": 553,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.18
+    ],
+    "retning": "h",
+    "areal_pt": 1378.0,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 208,
+    "farge2019": [
+     218,
+     111,
+     93
+    ],
+    "andel": 0.33,
+    "px": 1206,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.11
+    ],
+    "areal_pt": 2922.3,
+    "kontakt": 8.5,
+    "vegg": 249
+   }
+  ]
+ },
+ "313": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 274,
+    "farge2019": [
+     180,
+     103,
+     85
+    ],
+    "andel": 0.31,
+    "px": 357,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "retning": "h",
+    "areal_pt": 1051.9,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 211,
+    "farge2019": [
+     119,
+     119,
+     117
+    ],
+    "andel": 0.55,
+    "px": 905,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.67
+    ],
+    "areal_pt": 2221.4,
+    "kontakt": 35.1,
+    "vegg": 274
+   }
+  ]
+ },
+ "238": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 290,
+    "farge2019": [
+     119,
+     119,
+     117
+    ],
+    "andel": 0.32,
+    "px": 254,
+    "cmyk": [
+     0.19,
+     0.0,
+     0.17,
+     0.12
+    ],
+    "retning": "h",
+    "areal_pt": 756.7,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 236,
+    "farge2019": [
+     119,
+     119,
+     117
+    ],
+    "andel": 0.7,
+    "px": 511,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.67
+    ],
+    "areal_pt": 1297.6,
+    "kontakt": 25.2,
+    "vegg": 290
+   }
+  ]
+ },
+ "224": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 310,
+    "farge2019": [
+     240,
+     120,
+     102
+    ],
+    "andel": 0.46,
+    "px": 105,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 323.0,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 313,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.51,
+    "px": 75,
+    "cmyk": [
+     0.016,
+     0.122,
+     0.177,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 274.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "kvartal7",
+    "fasade": 297,
+    "farge2019": [
+     244,
+     244,
+     246
+    ],
+    "andel": 0.29,
+    "px": 180,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 569.9,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 237,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.59,
+    "px": 475,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1227.4,
+    "kontakt": 11.4,
+    "vegg": 310
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 251,
+    "farge2019": [
+     215,
+     109,
+     93
+    ],
+    "andel": 0.61,
+    "px": 394,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.13
+    ],
+    "areal_pt": 1015.6,
+    "kontakt": 20.1,
+    "vegg": 297
+   }
+  ]
+ },
+ "208": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 221,
+    "farge2019": [
+     244,
+     244,
+     244
+    ],
+    "andel": 0.28,
+    "px": 1002,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.06
+    ],
+    "retning": "v",
+    "areal_pt": 2485.7,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 209,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.51,
+    "px": 1006,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 2473.3,
+    "kontakt": 42.9,
+    "vegg": 221
+   }
+  ]
+ },
+ "162": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 231,
+    "farge2019": [
+     250,
+     196,
+     148
+    ],
+    "andel": 0.18,
+    "px": 730,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 1901.0,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 208,
+    "farge2019": [
+     218,
+     111,
+     93
+    ],
+    "andel": 0.33,
+    "px": 1206,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.11
+    ],
+    "areal_pt": 2922.3,
+    "kontakt": 55.4,
+    "vegg": 231
+   }
+  ]
+ },
+ "110": {
+  "vegger": [
+   {
+    "kvartal": "kvartal7",
+    "fasade": 302,
+    "farge2019": [
+     197,
+     198,
+     199
+    ],
+    "andel": 0.43,
+    "px": 127,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.3
+    ],
+    "retning": "h",
+    "areal_pt": 433.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "kvartal7",
+    "flate": 234,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.63,
+    "px": 500,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1381.7,
+    "kontakt": 24.0,
+    "vegg": 302
+   },
+   {
+    "kvartal": "kvartal7",
+    "flate": 235,
+    "farge2019": [
+     234,
+     86,
+     86
+    ],
+    "andel": 0.56,
+    "px": 513,
+    "cmyk": [
+     0.0,
+     0.782,
+     0.59,
+     0.0
+    ],
+    "areal_pt": 1329.6,
+    "kontakt": 7.6,
+    "vegg": 302
+   }
+  ]
+ },
+ "440": {
+  "vegger": [
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 275,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.37,
+    "px": 1314,
+    "cmyk": [
+     0.115,
+     0.0,
+     0.03,
+     0.2
+    ],
+    "retning": "h",
+    "areal_pt": 3449.7,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 270,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.39,
+    "px": 208,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 566.4,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": []
+ },
+ "234": {
+  "vegger": [
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 266,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.52,
+    "px": 250,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.09
+    ],
+    "retning": "v",
+    "areal_pt": 688.1,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 289,
+    "farge2019": [
+     240,
+     120,
+     102
+    ],
+    "andel": 0.28,
+    "px": 74,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.09
+    ],
+    "retning": "v",
+    "areal_pt": 253.9,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "sistekvartal",
+    "flate": 233,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.68,
+    "px": 630,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1577.5,
+    "kontakt": 27.2,
+    "vegg": 266
+   }
+  ]
+ },
+ "439": {
+  "vegger": [
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 278,
+    "farge2019": [
+     255,
+     232,
+     163
+    ],
+    "andel": 0.16,
+    "px": 129,
+    "cmyk": [
+     0.012,
+     0.074,
+     0.453,
+     0.0
+    ],
+    "retning": "v",
+    "areal_pt": 447.0,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 279,
+    "farge2019": [
+     255,
+     247,
+     226
+    ],
+    "andel": 0.27,
+    "px": 148,
+    "cmyk": [
+     0.004,
+     0.026,
+     0.16,
+     0.0
+    ],
+    "retning": "h",
+    "areal_pt": 419.2,
+    "mot_betrakter": false
+   },
+   {
+    "kvartal": "sistekvartal",
+    "fasade": 284,
+    "farge2019": [
+     254,
+     247,
+     226
+    ],
+    "andel": 0.49,
+    "px": 107,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.39
+    ],
+    "retning": "h",
+    "areal_pt": 314.2,
+    "mot_betrakter": false
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "sistekvartal",
+    "flate": 233,
+    "farge2019": [
+     179,
+     102,
+     84
+    ],
+    "andel": 0.68,
+    "px": 630,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 1577.5,
+    "kontakt": 15.5,
+    "vegg": 284
+   }
+  ]
+ },
+ "12": {
+  "vegger": [
+   {
+    "kvartal": "tell",
+    "fasade": 35,
+    "farge2019": [
+     208,
+     207,
+     208
+    ],
+    "andel": 0.07,
+    "px": 397,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.25
+    ],
+    "retning": "h",
+    "areal_pt": 880.8,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 0,
+    "farge2019": [
+     178,
+     102,
+     83
+    ],
+    "andel": 0.2,
+    "px": 712,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.008
+    ],
+    "retning": "h",
+    "areal_pt": 1567.9,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 67,
+    "farge2019": [
+     178,
+     103,
+     84
+    ],
+    "andel": 0.32,
+    "px": 211,
+    "cmyk": [
+     0.0,
+     0.295,
+     0.45,
+     0.15
+    ],
+    "retning": "h",
+    "areal_pt": 559.2,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 56,
+    "farge2019": [
+     106,
+     102,
+     97
+    ],
+    "andel": 0.08,
+    "px": 277,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.25
+    ],
+    "retning": "h",
+    "areal_pt": 636.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 1,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.21,
+    "px": 1302,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.008
+    ],
+    "retning": "v",
+    "areal_pt": 2709.7,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 34,
+    "farge2019": [
+     236,
+     236,
+     236
+    ],
+    "andel": 0.52,
+    "px": 643,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.1
+    ],
+    "retning": "v",
+    "areal_pt": 1399.4,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 43,
+    "farge2019": [
+     236,
+     236,
+     236
+    ],
+    "andel": 0.2,
+    "px": 393,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.1
+    ],
+    "retning": "v",
+    "areal_pt": 878.1,
+    "mot_betrakter": true
+   },
+   {
+    "kvartal": "tell",
+    "fasade": 61,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.43,
+    "px": 266,
+    "cmyk": [
+     0.0,
+     0.0,
+     0.0,
+     0.1
+    ],
+    "retning": "v",
+    "areal_pt": 658.4,
+    "mot_betrakter": true
+   }
+  ],
+  "tak": [
+   {
+    "kvartal": "tell",
+    "flate": 45,
+    "farge2019": [
+     178,
+     103,
+     84
+    ],
+    "andel": 0.34,
+    "px": 100,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 264.2,
+    "kontakt": 17.5,
+    "vegg": 35
+   },
+   {
+    "kvartal": "tell",
+    "flate": 68,
+    "farge2019": [
+     106,
+     102,
+     98
+    ],
+    "andel": 0.45,
+    "px": 200,
+    "cmyk": [
+     0.205,
+     0.64,
+     0.608,
+     0.167
+    ],
+    "areal_pt": 551.8,
+    "kontakt": 551.8,
+    "vegg": 0
+   },
+   {
+    "kvartal": "tell",
+    "flate": 55,
+    "farge2019": [
+     240,
+     121,
+     103
+    ],
+    "andel": 0.28,
+    "px": 343,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 818.6,
+    "kontakt": 9.5,
+    "vegg": 56
+   },
+   {
+    "kvartal": "tell",
+    "flate": 32,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.43,
+    "px": 716,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 1542.5,
+    "kontakt": 19.7,
+    "vegg": 34
+   },
+   {
+    "kvartal": "tell",
+    "flate": 44,
+    "farge2019": [
+     240,
+     120,
+     103
+    ],
+    "andel": 0.63,
+    "px": 351,
+    "cmyk": [
+     0.0,
+     0.648,
+     0.551,
+     0.0
+    ],
+    "areal_pt": 806.2,
+    "kontakt": 17.2,
+    "vegg": 43
+   }
+  ]
+ }
+}

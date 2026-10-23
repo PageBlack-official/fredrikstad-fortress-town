@@ -14,5 +14,4 @@
   const ang=Math.atan2(pt.ret[1],pt.ret[0]);
   m.position.set(cx, hAt(cx,cy), -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
   grp.add(m);
-  const e=new THREE.LineSegments(new THREE.EdgesGeometry(eg,25),edgeMat); e.position.copy(m.position); e.rotation.copy(m.rotation); grp.add(e);
 });

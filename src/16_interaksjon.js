@@ -1,9 +1,19 @@
 // ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
 const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
 const kort=document.getElementById('kort'); const hjem=document.getElementById('hjem');
+// treff: strålen mot alt i byen; i de sammenslåtte nettene gir trekantnummeret hvilket bygg som ble truffet (husDeler, 07)
+function byggFraTreff(hit){
+  if(hit.object.isInstancedMesh && hit.object.geometry.getAttribute('aBygg')){ const k=hit.object.geometry.getAttribute('aBygg').getX(hit.instanceId)-1; return k>=0 ? buildings.find(g=>g.userData.i===k) : null; }
+  const f=hit.faceIndex*3;
+  for(const [i,deler] of husDeler){ for(const d of deler){ if(d.mesh===hit.object && f>=d.start && f<d.start+d.antall) return buildings.find(g=>g.userData.i===i); } }
+  let g=hit.object; while(g.parent && g.parent!==city) g=g.parent; return g.parent===city && g.userData && g.userData.b ? g : null;
+}
 function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam);
   const hit=ray.intersectObjects(city.children,true).find(h=>h.object.isMesh); if(!hit) return null;
-  let g=hit.object; while(g.parent!==city) g=g.parent; return {g, p:hit.point}; }
+  const g=byggFraTreff(hit); return g ? {g, p:hit.point} : null; }
+// bygget som boks (til kamera og kort): egne grupper måles, sammenslåtte bygg regnes ut fra grunnrisset og høyden
+function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE.Box3().setFromObject(g);
+  const bb=new THREE.Box3(); g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,0,-y)); bb.expandByPoint(new THREE.Vector3(x,g.userData.h+g.position.y,-y)); }); return bb; }
 function velg(x,y){
   const h=treffHus(x,y);
   if(valgt){valgt.userData.lift=false; valgt=null;}

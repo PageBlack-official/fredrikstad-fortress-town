@@ -1,0 +1,42 @@
+{
+ "kilde": "kilder/flyfoto-google-2026-10-23.jpg (Google Maps, skjermbilder 23.10.2026), transform fra kilder/flyfoto-google-2026-10-23.json",
+ "metode": "HSV-vegetasjon (H 30-95, S>45, ExG>10) → trekroner = tekstur (lokal std i V, 7x7, glattet, >11) og mørkere enn plen (V<125) → avstandstransform, topper med min. 3,5 m avstand, Voronoi-celler rundt toppene, felt bredere enn 11 m delt med k-means i kroner på ca. 7,6 m → filtrert mot hus (bygg.json +1 m), kjørevei (landskap.veier k=kjore, 0,8 x bredde) og vann lest fra fotoet; punkt inntil 2,5-3 m inne flyttes ut, lenger inne forkastes.",
+ "felt": "[x, y, s, bakke, sikkerhet]: x øst, y nord i modellmeter; s = størrelse som i 12_trær.js (kronediameter ≈ 2,3·s, kronetopp ≈ 2,4·s); bakke = terrenghøyde fra landskap.terreng; sikkerhet 0,1-1,0 (0,2 = gammelt punkt utenfor fotoet, beholdt)",
+ "s_omregning": "s = (D/2,3 + H/2,4)/2 der D = kronediameter fra kroneareal (D = 2·sqrt(A/π)) og H = anslått høyde; klemt til 1,6-7,5",
+ "hoyde": "H = 1,2·D (løvtrær); der skyggen var målbar (ingen annen krone/hus/vann i skyggeretningen) ble H satt til snittet av skyggehøyden og 1,2·D",
+ "sol": {
+  "skyggeretning_bildevinkel": 307,
+  "skyggelengde_per_m_hoyde": 0.9,
+  "solhoyde_grader": 48.1,
+  "fra_n_bygg": 36
+ },
+ "m_per_px": 0.39,
+ "dekning_modell": {
+  "x": [
+   -256,
+   439
+  ],
+  "y": [
+   -262,
+   319
+  ],
+  "merknad": "Isegran og sørvollene (y < ca. -250) er ikke med i fotoet"
+ },
+ "antall": {
+  "kroner_fra_foto": 1451,
+  "gamle_punkter_utenfor_foto_beholdt": 365,
+  "totalt": 1816,
+  "gamle_i_dekket_omrade": 2020,
+  "gamle_totalt": 2385,
+  "forkastet": {
+   "i kanten av fotoet": 30,
+   "i hus": 15,
+   "for liten (< 6 m2)": 216
+  },
+  "hoy_sikkerhet": 597,
+  "delt_med_kmeans": 830,
+  "skygge_brukt": 83
+ },
+ "dato": "2026-10-23",
+ "laget_av": "Claude (treregister fra flyfoto), forslag – ikke lagt inn i data/"
+}

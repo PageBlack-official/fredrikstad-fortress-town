@@ -35,7 +35,7 @@
       place(new THREE.Mesh(new THREE.BoxGeometry(0.2,0.2,W),mork),x0+2.3+2.8*Math.cos(0.32),yd+PH+0.9+2.8*Math.sin(0.32),0);
     }
   }
-  city.add(g);
+  flatGruppe(g); city.add(g);
 });
 // voller: tegnes nå som terreng (se festningsterrenget)
 // Fredrik II på Torvet, som i trykkfila: mørk sokkel i trinn, høy blokk med gesims, kongen i lys patina
@@ -70,5 +70,5 @@
   kd(new THREE.BoxGeometry(0.55,0.08,0.12), -0.83,sy+2.45,0.35);
   k.rotation.y=0.7;  // vender mot torget og betrakteren i startvinkelen
   g.scale.setScalar(1.3);  // tegningen gjør statuen tydelig større enn virkeligheten
-  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:'Torvet'}}; city.add(g);
+  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:'Torvet'}}; flatGruppe(g); city.add(g);
 });

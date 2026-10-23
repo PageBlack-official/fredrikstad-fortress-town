@@ -2,20 +2,63 @@
 const city = new THREE.Group(); scene.add(city);
 const edgeMat = new THREE.LineBasicMaterial({color:INK, transparent:true, opacity:.4}); edgeMat.visible=false; // blekkstreken tegnes i etterbehandlingen
 const mats = new Map();
+// ---- hustilstand i en tekstur: hvert bygg har løft (r) og vekst (g) i én texel, lest i vertex-shaderen. Slik kan alle hus med samme
+// materiale tegnes som ett nett (under 50 tegnekall i stedet for 3 300) og likevel løfte seg og vokse hver for seg. Texel 0 er «ikke et bygg».
+const HUS_N=512, husData=new Float32Array(HUS_N*4);
+for(let i=0;i<HUS_N;i++){ husData[i*4]=0; husData[i*4+1]=1; husData[i*4+2]=0; husData[i*4+3]=1; }
+const tHus=new THREE.DataTexture(husData, HUS_N, 1, THREE.RGBAFormat, THREE.FloatType); tHus.minFilter=tHus.magFilter=THREE.NearestFilter; tHus.needsUpdate=true;
+const U_HUS={value:tHus};
+function settHus(i, loft, vekst){ const k=(i+1)*4; if(husData[k]!==loft || husData[k+1]!==vekst){ husData[k]=loft; husData[k+1]=vekst; tHus.needsUpdate=true; } }
+// GLSL som alle husmaterialer deler: aBygg (bygg + 1, 0 = ikke et bygg) peker på texelen; aTopp er hushøyden der veggen skal få tegnede vinduer
+const GL_HUS_V=`attribute float aBygg; attribute float aTopp; uniform sampler2D tHus;
+  vec3 husPos(vec3 p){ vec4 h=texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)); p.y=p.y*h.g+h.r; return p; }`;
+// skyggekartet må løfte og vokse husene likt: ett dybdemateriale for alle sammenslåtte nett
+const husDybde=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking});
+husDybde.onBeforeCompile=sh=>{ sh.uniforms.tHus=U_HUS;
+  // løft og vekst legges på etter instansmatrisen (vinduene er instanser), i byens rom; byen (city) står i origo
+  sh.vertexShader=sh.vertexShader.replace('#include <common>', '#include <common>\n'+GL_HUS_V).replace('#include <project_vertex>',
+    'vec4 mvPosition=vec4(transformed,1.0);\n#ifdef USE_INSTANCING\nmvPosition=instanceMatrix*mvPosition;\n#endif\nmvPosition.xyz=husPos(mvPosition.xyz); mvPosition=modelViewMatrix*mvPosition; gl_Position=projectionMatrix*mvPosition;'); };
+// ---- sammenslåing: en gruppe av mange små nett (kirka, broer, murer, bygg med deler) blir ett nett per materiale.
+// Gruppa beholdes (den flyttes ved løft), strek-objektene (EdgesGeometry, usynlige) kastes, instanserte nett (vinduer) står urørt.
+// Attributtene aBygg/aTopp følger med der de finnes (0 ellers), uv kastes (ingen av stoffene bruker den).
+const _mFlat=new THREE.Matrix4();
+function bitAv(geo, start, antall, ekstra){
+  const ut=new THREE.BufferGeometry(), n=antall;
+  for(const navn of ['position','normal']){ const a=geo.getAttribute(navn); ut.setAttribute(navn, new THREE.BufferAttribute(a.array.slice(start*a.itemSize,(start+n)*a.itemSize), a.itemSize)); }
+  ekstra.forEach(navn=>{ const a=geo.getAttribute(navn); ut.setAttribute(navn, new THREE.BufferAttribute(a ? a.array.slice(start,start+n) : new Float32Array(n), 1)); });
+  return ut;
+}
+function biterAv(mesh, matrise, ekstra){   // [materiale, geometri] per materialgruppe, i gitt koordinatsystem
+  let geo=mesh.geometry.index ? mesh.geometry.toNonIndexed() : mesh.geometry;
+  if(!geo.getAttribute('normal')) geo.computeVertexNormals();
+  const n=geo.getAttribute('position').count;
+  const grupper = Array.isArray(mesh.material) && geo.groups.length ? geo.groups.map(g=>[mesh.material[g.materialIndex], g.start, Math.min(g.count, n-g.start)]) : [[Array.isArray(mesh.material)?mesh.material[0]:mesh.material, 0, n]];
+  return grupper.map(([m,start,antall])=>[m, bitAv(geo,start,antall,ekstra).applyMatrix4(matrise)]);
+}
+function flatGruppe(grp, ekstra=['aBygg','aTopp']){
+  const samling=new Map(), vekk=[];
+  (function gaa(o, forelder){ o.children.forEach(c=>{ c.updateMatrix(); const m=_mFlat.multiplyMatrices(forelder, c.matrix).clone();
+    if(c.isLine){ vekk.push(c); return; }
+    if(c.isMesh && !c.isInstancedMesh && c.geometry){ biterAv(c, m, ekstra).forEach(([mt,g])=>{ if(!samling.has(mt)) samling.set(mt,{biter:[], cs:false, rs:false}); const s=samling.get(mt); s.biter.push(g); s.cs=s.cs||c.castShadow; s.rs=s.rs||c.receiveShadow; }); vekk.push(c); }
+    gaa(c, m); }); })(grp, new THREE.Matrix4());
+  vekk.forEach(o=>o.removeFromParent());
+  samling.forEach((s,mt)=>{ const geo=mergeGeometries(s.biter,false); if(!geo) return; s.biter.forEach(b=>b.dispose()); const mesh=new THREE.Mesh(geo,mt); mesh.castShadow=s.cs; mesh.receiveShadow=s.rs; mesh.customDepthMaterial=husDybde; grp.add(mesh); });
+  grp.children.filter(c=>c.isGroup && !c.children.length).forEach(c=>c.removeFromParent());
+  return grp;
+}
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
-  const topp = (opt.vindu && !dim) ? Math.round(opt.vindu*2)/2 : 0;
-  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+'v'+topp;
+  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'');
   if(!mats.has(key)){
     const c=new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`); if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8);
     // skyggetonen hentes fra trykkfila når bygget har en; ellers samme forhold som tegningen bruker
     let s; if(sk && !dim){ s=new THREE.Color(`rgb(${sk[0]},${sk[1]},${sk[2]})`); } else { s=c.clone(); s.r*=0.72; s.g*=0.80; s.b*=0.80; }
     const m=new THREE.ShaderMaterial({
       lights:true,
-      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, topp:{value:topp}, uVask:{value:STIL.vask}, skravur:U_SKRAVUR }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
-      vertexShader:GL_SOL_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; void main(){ lp=position; vec4 wp=modelMatrix*vec4(position,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
+      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, tHus:U_HUS, uVask:{value:STIL.vask}, skravur:U_SKRAVUR }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+      vertexShader:GL_SOL_V+GL_HUS_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos; vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
-      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float topp, uVask; varying vec3 vp; varying vec3 lp; varying vec3 wq;
+      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
         float nn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hh(i),hh(i+vec2(1,0)),f.x),mix(hh(i+vec2(0,1)),hh(i+vec2(1,1)),f.x),f.y);}
         void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge

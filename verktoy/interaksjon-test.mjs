@@ -6,7 +6,7 @@ const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[
 await new Promise(r=>server.listen(0,'127.0.0.1',r)); const port=server.address().port;
 const browser=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const ctx=await browser.newContext({viewport:{width:900,height:600}}); const page=await ctx.newPage(); const errs=[]; page.on('pageerror',e=>errs.push(e.message+' @ '+(e.stack||'').split('\n').slice(0,3).join(' | ')));
-const cdp=await ctx.newCDPSession(page); const shot=async n=>{ const {data}=await cdp.send('Page.captureScreenshot',{format:'png'}); fs.writeFileSync(`ut/ia-${n}.png`,Buffer.from(data,'base64')); };
+const cdp=await ctx.newCDPSession(page); const shot=async n=>{ const {data}=await cdp.send('Page.captureScreenshot',{format:'png'}); fs.writeFileSync(path.join(path.dirname(file),'..',`ia-${n}.png`),Buffer.from(data,'base64')); };
 await page.goto(`http://127.0.0.1:${port}/index.html`); await page.waitForTimeout(1500);
 const k0=await page.evaluate(()=>window.__kam()); await shot('intro'); await page.waitForTimeout(6000);
 const k1=await page.evaluate(()=>window.__kam()); console.log('intro: underveis az',k0.az.toFixed(2),'zoom',k0.zoom.toFixed(2),'→ ferdig az',k1.az.toFixed(2),'zoom',k1.zoom.toFixed(2),'intro',k1.intro);

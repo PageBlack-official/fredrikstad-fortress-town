@@ -1,0 +1,7712 @@
+{
+ "0": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2253,
+   1799
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "1": {
+  "vegg": [
+   222,
+   175,
+   133
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   410,
+   785
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "2": {
+  "vegg": [
+   254,
+   254,
+   254
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   384,
+   736
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "3": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   243,
+   151,
+   132
+  ],
+  "veggs": [
+   180,
+   103,
+   85
+  ],
+  "taks": [
+   128,
+   125,
+   119
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1213,
+   678
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "4": {
+  "vegg": [
+   204,
+   204,
+   204
+  ],
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "veggs": [
+   135,
+   135,
+   135
+  ],
+  "taks": [
+   135,
+   135,
+   135
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1015,
+   768
+  ],
+  "merknad": "bare 52% av fotavtrykket på husflate"
+ },
+ "5": {
+  "vegg": [
+   221,
+   175,
+   133
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   785,
+   885
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "6": {
+  "vegg": [
+   242,
+   151,
+   132
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   929,
+   1202
+  ],
+  "merknad": "flyttet 46 px (2015-px) for å treffe huset"
+ },
+ "7": {
+  "vegg": [
+   240,
+   120,
+   103
+  ],
+  "tak": [
+   217,
+   193,
+   181
+  ],
+  "veggs": null,
+  "taks": [
+   222,
+   175,
+   133
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   313,
+   763
+  ],
+  "merknad": "flyttet 50 px (2015-px) for å treffe huset"
+ },
+ "8": {
+  "vegg": [
+   252,
+   252,
+   252
+  ],
+  "tak": [
+   171,
+   82,
+   66
+  ],
+  "veggs": [
+   198,
+   198,
+   198
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1368,
+   439
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "9": {
+  "vegg": [
+   249,
+   195,
+   148
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1877,
+   518
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig"
+ },
+ "10": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2019,
+   653
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "11": {
+  "vegg": [
+   243,
+   243,
+   243
+  ],
+  "tak": [
+   133,
+   135,
+   134
+  ],
+  "veggs": [
+   198,
+   198,
+   197
+  ],
+  "taks": [
+   67,
+   67,
+   65
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   778,
+   591
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "12": {
+  "vegg": [
+   236,
+   236,
+   236
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   178,
+   103,
+   84
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1577,
+   1014
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "13": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1193,
+   754
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "14": {
+  "vegg": [
+   252,
+   196,
+   148
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   550,
+   758
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "15": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1824,
+   544
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 2 flater; 2019 valgt der den er tydelig"
+ },
+ "16": {
+  "vegg": [
+   89,
+   119,
+   91
+  ],
+  "tak": [
+   180,
+   102,
+   86
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1841,
+   278
+  ],
+  "merknad": "flyttet 47 px (2015-px) for å treffe huset"
+ },
+ "17": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1461,
+   1004
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "18": {
+  "vegg": null,
+  "tak": [
+   115,
+   151,
+   115
+  ],
+  "veggs": null,
+  "taks": [
+   94,
+   126,
+   96
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1788,
+   814
+  ],
+  "merknad": "bare 39% av fotavtrykket på husflate; flyttet 50 px (2015-px) for å treffe huset; ingen synlig vegg funnet"
+ },
+ "19": {
+  "vegg": [
+   243,
+   165,
+   106
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1824,
+   597
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "20": {
+  "vegg": [
+   199,
+   198,
+   197
+  ],
+  "tak": [
+   133,
+   135,
+   134
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   733,
+   589
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "21": {
+  "vegg": [
+   243,
+   242,
+   244
+  ],
+  "tak": [
+   184,
+   111,
+   94
+  ],
+  "veggs": [
+   199,
+   198,
+   196
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   726,
+   651
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "22": {
+  "vegg": [
+   249,
+   195,
+   148
+  ],
+  "tak": [
+   208,
+   208,
+   208
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   477,
+   756
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "23": {
+  "vegg": null,
+  "tak": [
+   180,
+   102,
+   86
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1817,
+   265
+  ],
+  "merknad": "flyttet 54 px (2015-px) for å treffe huset; ingen synlig vegg funnet"
+ },
+ "24": {
+  "vegg": [
+   205,
+   130,
+   64
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   878,
+   718
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "25": {
+  "vegg": [
+   251,
+   230,
+   213
+  ],
+  "tak": [
+   178,
+   102,
+   85
+  ],
+  "veggs": [
+   230,
+   214,
+   200
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1385,
+   289
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "26": {
+  "vegg": null,
+  "tak": [
+   115,
+   151,
+   115
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   2073,
+   992
+  ],
+  "merknad": "bare 36% av fotavtrykket på husflate; ingen synlig vegg funnet"
+ },
+ "27": {
+  "vegg": [
+   249,
+   195,
+   148
+  ],
+  "tak": [
+   241,
+   120,
+   103
+  ],
+  "veggs": [
+   131,
+   128,
+   123
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1806,
+   405
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "28": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   307,
+   878
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "29": {
+  "vegg": [
+   240,
+   120,
+   103
+  ],
+  "tak": [
+   255,
+   254,
+   254
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   459,
+   714
+  ],
+  "merknad": "flyttet 62 px (2015-px) for å treffe huset"
+ },
+ "30": {
+  "vegg": [
+   249,
+   195,
+   148
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": [
+   179,
+   102,
+   84
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1807,
+   279
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 3 av 3 flater; 2019 valgt der den er tydelig"
+ },
+ "31": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   39,
+   -381
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "32": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   106,
+   -467
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "33": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   124,
+   -517
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "34": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   76,
+   -422
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "35": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   89,
+   -493
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "36": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1354,
+   -328
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "37": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   719,
+   -242
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "38": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1134,
+   -363
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "39": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1248,
+   -387
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "40": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   928,
+   -285
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "41": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   814,
+   -297
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "42": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   87,
+   -623
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "43": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   28,
+   -663
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "44": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   349,
+   -718
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "45": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   292,
+   -539
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "46": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   189,
+   -762
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "47": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   323,
+   -636
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "48": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   323,
+   -746
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "49": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   45,
+   -752
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "50": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   121,
+   -650
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "51": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   785,
+   -578
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "52": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   281,
+   -664
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "53": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -1,
+   -556
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "54": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   205,
+   -649
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "55": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   117,
+   -814
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "56": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   145,
+   -704
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "57": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   299,
+   -754
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "58": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   113,
+   -690
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "59": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   386,
+   -675
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "60": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   876,
+   -554
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "61": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   502,
+   -647
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "62": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   104,
+   -726
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "63": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -24,
+   -495
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "64": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   342,
+   -694
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "65": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   370,
+   -613
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "66": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   263,
+   -726
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "67": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   296,
+   -777
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "68": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   557,
+   -682
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "69": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   341,
+   -768
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "70": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   518,
+   -680
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "71": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   494,
+   -514
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "72": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   545,
+   -469
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "73": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   67,
+   -807
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "74": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   444,
+   -725
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "75": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   489,
+   -578
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "76": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   109,
+   -796
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "77": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   396,
+   -747
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "78": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   270,
+   -638
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "79": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   433,
+   -697
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "80": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   617,
+   -447
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "81": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   181,
+   -574
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "82": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   421,
+   -666
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "83": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   174,
+   -612
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "84": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   546,
+   -550
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "85": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   358,
+   -521
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "86": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   665,
+   -640
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "87": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   623,
+   -370
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "88": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   595,
+   -664
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "89": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   33,
+   -568
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "90": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   556,
+   -639
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "91": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -74,
+   -407
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "92": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   450,
+   -499
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "93": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   628,
+   -525
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "94": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   71,
+   -740
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "95": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   573,
+   -492
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "96": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   276,
+   -607
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "97": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   247,
+   -693
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "98": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   395,
+   -705
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "99": {
+  "vegg": [
+   90,
+   120,
+   91
+  ],
+  "tak": [
+   198,
+   198,
+   198
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   55,
+   191
+  ],
+  "merknad": "flyttet 47 px (2015-px) for å treffe huset"
+ },
+ "100": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   185,
+   90
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "101": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   138,
+   165
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "102": {
+  "vegg": [
+   244,
+   243,
+   245
+  ],
+  "tak": [
+   198,
+   198,
+   198
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   194,
+   311
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "103": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   195,
+   155
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "104": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -44,
+   194
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "105": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -269,
+   122
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "106": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -257,
+   187
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "107": {
+  "vegg": [
+   146,
+   146,
+   146
+  ],
+  "tak": [
+   243,
+   150,
+   132
+  ],
+  "veggs": null,
+  "taks": [
+   215,
+   109,
+   93
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1237,
+   521
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "108": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": [
+   143,
+   88,
+   71
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1301,
+   470
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "109": {
+  "vegg": [
+   247,
+   194,
+   150
+  ],
+  "tak": [
+   198,
+   198,
+   198
+  ],
+  "veggs": [
+   221,
+   175,
+   133
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1153,
+   508
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "110": {
+  "vegg": [
+   197,
+   198,
+   199
+  ],
+  "tak": [
+   234,
+   86,
+   86
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1264,
+   505
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "111": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1769,
+   1528
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "112": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1827,
+   1518
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "113": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1938,
+   1447
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "114": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1684,
+   1411
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "115": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1894,
+   1416
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "116": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1721,
+   1552
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "117": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1681,
+   1478
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "118": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1719,
+   1516
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "119": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1877,
+   1500
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "120": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1823,
+   1408
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "121": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1930,
+   1482
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "122": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1876,
+   1466
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "123": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1763,
+   1405
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "124": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1772,
+   1500
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "125": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1372,
+   1638
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "126": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1224,
+   1501
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "127": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1355,
+   1824
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "128": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1498,
+   1894
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "129": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1277,
+   1540
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "130": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1284,
+   1842
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "131": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1977,
+   1620
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "132": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1129,
+   1545
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "133": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1921,
+   1635
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "134": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1162,
+   1522
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "135": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2026,
+   1597
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "136": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1095,
+   1580
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "137": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2140,
+   1559
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "138": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1010,
+   1640
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "139": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2080,
+   1582
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "140": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1052,
+   1613
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "141": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2199,
+   1545
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "142": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   990,
+   1676
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "143": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1068,
+   1752
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "144": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1685,
+   1976
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "145": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1542,
+   1820
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "146": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1180,
+   1742
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "147": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1131,
+   1755
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "148": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1227,
+   1726
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "149": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1328,
+   1692
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "150": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1407,
+   1797
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "151": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1281,
+   1716
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "152": {
+  "vegg": [
+   99,
+   100,
+   97
+  ],
+  "tak": [
+   245,
+   243,
+   243
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1755,
+   424
+  ],
+  "merknad": "flyttet 41 px (2015-px) for å treffe huset"
+ },
+ "153": {
+  "vegg": [
+   246,
+   244,
+   246
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1446,
+   589
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "154": {
+  "vegg": [
+   217,
+   110,
+   92
+  ],
+  "tak": [
+   198,
+   197,
+   198
+  ],
+  "veggs": null,
+  "taks": [
+   115,
+   115,
+   115
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1547,
+   773
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "155": {
+  "vegg": [
+   254,
+   254,
+   255
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": [
+   162,
+   162,
+   162
+  ],
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1491,
+   611
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "156": {
+  "vegg": [
+   251,
+   230,
+   213
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1753,
+   459
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "157": {
+  "vegg": [
+   196,
+   198,
+   197
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1398,
+   577
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "158": {
+  "vegg": [
+   251,
+   230,
+   213
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1313,
+   382
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "159": {
+  "vegg": [
+   245,
+   244,
+   245
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1566,
+   342
+  ],
+  "merknad": "flyttet 42 px (2015-px) for å treffe huset"
+ },
+ "160": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   186,
+   113,
+   96
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1793,
+   664
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "161": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen ved Kirkegaten)"
+ },
+ "162": {
+  "vegg": [
+   250,
+   196,
+   148
+  ],
+  "tak": [
+   218,
+   111,
+   93
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1060,
+   464
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "163": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1510,
+   276
+  ],
+  "merknad": "flyttet 65 px (2015-px) for å treffe huset"
+ },
+ "164": {
+  "vegg": [
+   231,
+   215,
+   199
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1447,
+   493
+  ],
+  "merknad": "tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "165": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": [
+   142,
+   88,
+   74
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1676,
+   527
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "166": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   213,
+   107,
+   91
+  ],
+  "veggs": [
+   131,
+   126,
+   123
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1684,
+   339
+  ],
+  "merknad": "flyttet 48 px (2015-px) for å treffe huset"
+ },
+ "167": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen i bakgård)"
+ },
+ "168": {
+  "vegg": [
+   232,
+   215,
+   200
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1254,
+   359
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "169": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   213,
+   107,
+   91
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1664,
+   376
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "170": {
+  "vegg": [
+   184,
+   113,
+   96
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1691,
+   647
+  ],
+  "merknad": "flyttet 52 px (2015-px) for å treffe huset"
+ },
+ "171": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   998,
+   368
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "172": {
+  "vegg": [
+   247,
+   195,
+   149
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1644,
+   421
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "173": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1600,
+   796
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "174": {
+  "vegg": [
+   219,
+   110,
+   93
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1763,
+   510
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "175": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: brygga ved Toldbodgaten, grus)"
+ },
+ "176": {
+  "vegg": null,
+  "tak": [
+   103,
+   137,
+   104
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1552,
+   217
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "177": {
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1115,
+   415
+  ],
+  "merknad": "flyttet 40 px (2015-px) for å treffe huset"
+ },
+ "178": {
+  "vegg": [
+   240,
+   222,
+   208
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": [
+   227,
+   212,
+   165
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1707,
+   476
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "179": {
+  "vegg": [
+   249,
+   195,
+   148
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1450,
+   632
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "180": {
+  "vegg": [
+   208,
+   230,
+   234
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": [
+   198,
+   197,
+   198
+  ],
+  "taks": [
+   143,
+   88,
+   77
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1383,
+   657
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "181": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1629,
+   204
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "182": {
+  "vegg": [
+   243,
+   244,
+   244
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1525,
+   449
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 2 av 3 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 2 av 2 flater"
+ },
+ "183": {
+  "vegg": [
+   226,
+   226,
+   226
+  ],
+  "tak": [
+   186,
+   113,
+   96
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1786,
+   611
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "184": {
+  "vegg": [
+   199,
+   198,
+   199
+  ],
+  "tak": [
+   198,
+   197,
+   199
+  ],
+  "veggs": [
+   133,
+   133,
+   131
+  ],
+  "taks": [
+   133,
+   133,
+   131
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1324,
+   573
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "185": {
+  "vegg": [
+   241,
+   119,
+   102
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1457,
+   703
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "186": {
+  "vegg": [
+   243,
+   188,
+   143
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   186,
+   113,
+   96
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1821,
+   649
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 3 av 6 flater; 2019 valgt der den er tydelig"
+ },
+ "187": {
+  "vegg": [
+   115,
+   112,
+   108
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1698,
+   602
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "188": {
+  "vegg": [
+   245,
+   151,
+   74
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1491,
+   741
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "189": {
+  "vegg": [
+   197,
+   197,
+   198
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1510,
+   544
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "190": {
+  "vegg": [
+   254,
+   255,
+   254
+  ],
+  "tak": [
+   218,
+   111,
+   93
+  ],
+  "veggs": [
+   119,
+   119,
+   117
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1042,
+   444
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "191": {
+  "vegg": [
+   198,
+   199,
+   198
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1384,
+   546
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "192": {
+  "vegg": [
+   218,
+   110,
+   92
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": [
+   180,
+   103,
+   85
+  ],
+  "taks": [
+   144,
+   86,
+   72
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1608,
+   540
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "193": {
+  "vegg": [
+   244,
+   244,
+   245
+  ],
+  "tak": [
+   244,
+   244,
+   244
+  ],
+  "veggs": null,
+  "taks": [
+   140,
+   140,
+   138
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1161,
+   409
+  ],
+  "merknad": "flyttet 48 px (2015-px) for å treffe huset"
+ },
+ "194": {
+  "vegg": [
+   198,
+   197,
+   199
+  ],
+  "tak": [
+   133,
+   133,
+   131
+  ],
+  "veggs": [
+   133,
+   133,
+   133
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1299,
+   599
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "195": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   244,
+   244,
+   244
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1559,
+   517
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "196": {
+  "vegg": [
+   241,
+   222,
+   208
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": [
+   199,
+   199,
+   199
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1555,
+   581
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "197": {
+  "vegg": [
+   225,
+   225,
+   225
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1710,
+   348
+  ],
+  "merknad": "tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "198": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen i bakgård)"
+ },
+ "199": {
+  "vegg": null,
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1707,
+   649
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "200": {
+  "vegg": [
+   240,
+   222,
+   208
+  ],
+  "tak": [
+   238,
+   120,
+   104
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1716,
+   464
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "201": {
+  "vegg": [
+   226,
+   213,
+   165
+  ],
+  "tak": [
+   236,
+   221,
+   206
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1736,
+   503
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "202": {
+  "vegg": [
+   115,
+   151,
+   115
+  ],
+  "tak": [
+   135,
+   135,
+   135
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1641,
+   288
+  ],
+  "merknad": "bare 43% av fotavtrykket på husflate; flyttet 51 px (2015-px) for å treffe huset"
+ },
+ "203": {
+  "vegg": [
+   240,
+   120,
+   103
+  ],
+  "tak": [
+   199,
+   102,
+   86
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1735,
+   586
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "204": {
+  "vegg": [
+   197,
+   199,
+   198
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1629,
+   412
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "205": {
+  "vegg": [
+   243,
+   244,
+   245
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1647,
+   758
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "206": {
+  "vegg": [
+   243,
+   149,
+   132
+  ],
+  "tak": [
+   135,
+   135,
+   135
+  ],
+  "veggs": [
+   239,
+   121,
+   103
+  ],
+  "taks": [
+   119,
+   119,
+   117
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1200,
+   409
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "207": {
+  "vegg": [
+   250,
+   230,
+   213
+  ],
+  "tak": [
+   241,
+   120,
+   104
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1651,
+   535
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "208": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1108,
+   473
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "209": {
+  "vegg": [
+   217,
+   110,
+   92
+  ],
+  "tak": [
+   243,
+   150,
+   132
+  ],
+  "veggs": null,
+  "taks": [
+   240,
+   120,
+   103
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1555,
+   659
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "210": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1367,
+   579
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "211": {
+  "vegg": [
+   238,
+   121,
+   103
+  ],
+  "tak": [
+   143,
+   88,
+   71
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1271,
+   440
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "212": {
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "tak": [
+   115,
+   115,
+   115
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1621,
+   703
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "213": {
+  "vegg": [
+   240,
+   120,
+   102
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   234,
+   86,
+   86
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1228,
+   478
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "214": {
+  "vegg": [
+   243,
+   150,
+   74
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1404,
+   615
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "215": {
+  "vegg": [
+   249,
+   208,
+   173
+  ],
+  "tak": [
+   240,
+   121,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1645,
+   619
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "216": {
+  "vegg": [
+   251,
+   230,
+   213
+  ],
+  "tak": [
+   232,
+   215,
+   199
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1387,
+   373
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "217": {
+  "vegg": [
+   115,
+   115,
+   115
+  ],
+  "tak": [
+   243,
+   150,
+   132
+  ],
+  "veggs": null,
+  "taks": [
+   217,
+   110,
+   92
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1605,
+   748
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "218": {
+  "vegg": [
+   250,
+   229,
+   214
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   217,
+   110,
+   92
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1649,
+   712
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "219": {
+  "vegg": [
+   226,
+   226,
+   226
+  ],
+  "tak": [
+   226,
+   226,
+   226
+  ],
+  "veggs": null,
+  "taks": [
+   198,
+   198,
+   198
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1764,
+   609
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "220": {
+  "vegg": [
+   231,
+   215,
+   200
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1742,
+   690
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "221": {
+  "vegg": [
+   254,
+   255,
+   255
+  ],
+  "tak": [
+   243,
+   150,
+   132
+  ],
+  "veggs": [
+   244,
+   244,
+   244
+  ],
+  "taks": [
+   217,
+   110,
+   92
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1620,
+   763
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "222": {
+  "vegg": [
+   255,
+   255,
+   255
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1573,
+   552
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "223": {
+  "vegg": [
+   251,
+   230,
+   213
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1337,
+   326
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "224": {
+  "vegg": [
+   244,
+   244,
+   246
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   215,
+   109,
+   93
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1300,
+   546
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 2 av 3 flater; 2019 valgt der den er tydelig"
+ },
+ "225": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   135,
+   135,
+   135
+  ],
+  "veggs": null,
+  "taks": [
+   113,
+   110,
+   106
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1583,
+   687
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 2 av 3 flater; 2019 valgt der den er tydelig"
+ },
+ "226": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   119,
+   119,
+   117
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1599,
+   483
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "227": {
+  "vegg": [
+   139,
+   139,
+   138
+  ],
+  "tak": [
+   148,
+   148,
+   148
+  ],
+  "veggs": null,
+  "taks": [
+   135,
+   135,
+   135
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1467,
+   306
+  ],
+  "merknad": "flyttet 55 px (2015-px) for å treffe huset"
+ },
+ "228": {
+  "vegg": [
+   246,
+   176,
+   164
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": [
+   243,
+   150,
+   132
+  ],
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1170,
+   881
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "229": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   991,
+   497
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "230": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   67,
+   67,
+   65
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1130,
+   882
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 3 av 4 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "231": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   220,
+   174,
+   133
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   945,
+   496
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "232": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1209,
+   946
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "233": {
+  "vegg": [
+   250,
+   209,
+   172
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": [
+   248,
+   194,
+   146
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1432,
+   816
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "234": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1111,
+   1044
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 2 flater; 2019 valgt der den er tydelig"
+ },
+ "235": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1287,
+   982
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "236": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1259,
+   771
+  ],
+  "merknad": "flyttet 41 px (2015-px) for å treffe huset"
+ },
+ "237": {
+  "vegg": [
+   167,
+   165,
+   166
+  ],
+  "tak": [
+   167,
+   165,
+   166
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1336,
+   961
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "238": {
+  "vegg": [
+   119,
+   119,
+   117
+  ],
+  "tak": [
+   119,
+   119,
+   117
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1032,
+   500
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "239": {
+  "vegg": [
+   244,
+   150,
+   76
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": [
+   237,
+   120,
+   103
+  ],
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1352,
+   762
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "240": {
+  "vegg": [
+   255,
+   232,
+   162
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1087,
+   542
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "241": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1004,
+   592
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "242": {
+  "vegg": [
+   255,
+   244,
+   212
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": [
+   246,
+   176,
+   164
+  ],
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1355,
+   945
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "243": {
+  "vegg": null,
+  "tak": [
+   237,
+   119,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   104,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1476,
+   830
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "244": {
+  "vegg": [
+   244,
+   177,
+   184
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1372,
+   746
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "245": {
+  "vegg": [
+   231,
+   212,
+   199
+  ],
+  "tak": [
+   244,
+   150,
+   76
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1432,
+   770
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "246": {
+  "vegg": [
+   214,
+   202,
+   154
+  ],
+  "tak": [
+   180,
+   104,
+   86
+  ],
+  "veggs": [
+   95,
+   93,
+   92
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1297,
+   849
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "247": {
+  "vegg": [
+   246,
+   177,
+   164
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": [
+   180,
+   103,
+   85
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1165,
+   916
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "248": {
+  "vegg": [
+   243,
+   243,
+   243
+  ],
+  "tak": [
+   150,
+   150,
+   150
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   847,
+   520
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "249": {
+  "vegg": [
+   236,
+   120,
+   103
+  ],
+  "tak": [
+   250,
+   209,
+   171
+  ],
+  "veggs": null,
+  "taks": [
+   249,
+   194,
+   147
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1465,
+   891
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "250": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   238,
+   124,
+   106
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   86
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1288,
+   915
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "251": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1158,
+   986
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig"
+ },
+ "252": {
+  "vegg": [
+   215,
+   170,
+   130
+  ],
+  "tak": [
+   218,
+   111,
+   93
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   972,
+   469
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig"
+ },
+ "253": {
+  "vegg": [
+   248,
+   195,
+   146
+  ],
+  "tak": [
+   236,
+   119,
+   104
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1420,
+   837
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "254": {
+  "vegg": [
+   250,
+   209,
+   172
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1530,
+   839
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "255": {
+  "vegg": null,
+  "tak": [
+   254,
+   238,
+   180
+  ],
+  "veggs": null,
+  "taks": [
+   250,
+   209,
+   171
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1492,
+   866
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "256": {
+  "vegg": [
+   119,
+   119,
+   117
+  ],
+  "tak": [
+   218,
+   217,
+   218
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1267,
+   783
+  ],
+  "merknad": "flyttet 58 px (2015-px) for å treffe huset"
+ },
+ "257": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   67,
+   67,
+   65
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1494,
+   810
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 2 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 2 av 2 flater"
+ },
+ "258": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   95,
+   92,
+   91
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1417,
+   884
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "259": {
+  "vegg": [
+   222,
+   222,
+   221
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1162,
+   1017
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "260": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1248,
+   982
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 2 av 2 flater; 2019 valgt der den er tydelig"
+ },
+ "261": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1253,
+   883
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "262": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1071,
+   597
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "263": {
+  "vegg": [
+   220,
+   174,
+   133
+  ],
+  "tak": [
+   216,
+   110,
+   94
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1423,
+   924
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "264": {
+  "vegg": null,
+  "tak": [
+   255,
+   255,
+   255
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1351,
+   247
+  ],
+  "merknad": "flyttet 61 px (2015-px) for å treffe huset; ingen synlig vegg funnet"
+ },
+ "265": {
+  "vegg": null,
+  "tak": [
+   115,
+   151,
+   115
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   548,
+   623
+  ],
+  "merknad": "bare 43% av fotavtrykket på husflate; flyttet 46 px (2015-px) for å treffe huset; ingen synlig vegg funnet"
+ },
+ "266": {
+  "vegg": null,
+  "tak": [
+   89,
+   119,
+   91
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   955,
+   422
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "267": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1296,
+   -271
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "268": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2733,
+   139
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "269": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2660,
+   89
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "270": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2009,
+   1239
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "271": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1998,
+   1378
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "272": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2092,
+   1419
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "273": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2141,
+   1330
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "274": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2053,
+   1362
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "275": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2017,
+   1314
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "276": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2060,
+   1288
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "277": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2038,
+   1446
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "278": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2154,
+   1401
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "279": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   607,
+   1602
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "280": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   551,
+   1569
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "281": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   514,
+   1509
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "282": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   441,
+   1514
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "283": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   433,
+   1496
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "284": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   470,
+   1473
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "285": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   424,
+   1519
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "286": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   369,
+   1494
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "287": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   406,
+   1501
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "288": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   384,
+   1534
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "289": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1024,
+   1698
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "290": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1074,
+   1664
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "291": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1103,
+   1634
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "292": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1140,
+   1599
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "293": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1212,
+   1539
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "294": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1229,
+   1531
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "295": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1231,
+   1545
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "296": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1306,
+   1573
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "297": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1338,
+   1596
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "298": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1330,
+   1636
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "299": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1208,
+   1680
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "300": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   726,
+   1655
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "301": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   780,
+   1668
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "302": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   853,
+   1689
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "303": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   886,
+   1690
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "304": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   916,
+   1716
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "305": {
+  "vegg": [
+   197,
+   199,
+   198
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": [
+   144,
+   87,
+   73
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1441,
+   571
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "306": {
+  "vegg": [
+   240,
+   120,
+   103
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": [
+   144,
+   87,
+   72
+  ],
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1423,
+   558
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "307": {
+  "vegg": null,
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1507,
+   286
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "308": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   115,
+   115,
+   115
+  ],
+  "veggs": [
+   144,
+   86,
+   72
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1591,
+   714
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "309": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2119,
+   1601
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "310": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2085,
+   1373
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "311": {
+  "vegg": [
+   244,
+   150,
+   132
+  ],
+  "tak": [
+   171,
+   82,
+   66
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1330,
+   415
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "312": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1402,
+   1848
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "313": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   119,
+   119,
+   117
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1120,
+   486
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "314": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1671,
+   1966
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "315": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1658,
+   1952
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "316": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1647,
+   1940
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "317": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1495,
+   1766
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "318": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1529,
+   1805
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "319": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1518,
+   1793
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "320": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1506,
+   1779
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "321": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1591,
+   1878
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "322": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1577,
+   1859
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "323": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1565,
+   1846
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "324": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1553,
+   1832
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "325": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen ved Kirkegaten)"
+ },
+ "326": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   237,
+   120,
+   102
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1226,
+   952
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "327": {
+  "vegg": null,
+  "tak": [
+   214,
+   202,
+   154
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1245,
+   913
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "328": {
+  "vegg": [
+   246,
+   244,
+   246
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1472,
+   623
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "329": {
+  "vegg": [
+   238,
+   120,
+   104
+  ],
+  "tak": [
+   248,
+   194,
+   147
+  ],
+  "veggs": [
+   180,
+   103,
+   85
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1418,
+   782
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "330": {
+  "vegg": [
+   238,
+   120,
+   103
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1542,
+   553
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig"
+ },
+ "331": {
+  "vegg": [
+   255,
+   239,
+   182
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1499,
+   528
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "332": {
+  "vegg": [
+   234,
+   120,
+   106
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": [
+   179,
+   102,
+   84
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1742,
+   648
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "333": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1528,
+   518
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "334": {
+  "vegg": [
+   162,
+   162,
+   162
+  ],
+  "tak": [
+   244,
+   244,
+   244
+  ],
+  "veggs": null,
+  "taks": [
+   119,
+   119,
+   117
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1581,
+   462
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "335": {
+  "vegg": [
+   243,
+   243,
+   243
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   968,
+   527
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "336": {
+  "vegg": [
+   221,
+   174,
+   132
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   889,
+   497
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "337": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   906,
+   513
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig"
+ },
+ "338": {
+  "vegg": [
+   131,
+   129,
+   124
+  ],
+  "tak": [
+   249,
+   230,
+   214
+  ],
+  "veggs": null,
+  "taks": [
+   131,
+   129,
+   124
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1381,
+   346
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 1 av 1 flater; 2019 valgt der den er tydelig; tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "339": {
+  "vegg": null,
+  "tak": [
+   214,
+   202,
+   154
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1242,
+   905
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "340": {
+  "vegg": [
+   232,
+   215,
+   199
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1357,
+   386
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "341": {
+  "vegg": [
+   243,
+   150,
+   132
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1245,
+   962
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "342": {
+  "vegg": [
+   243,
+   244,
+   246
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": [
+   196,
+   206,
+   174
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1634,
+   730
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "343": {
+  "vegg": [
+   244,
+   159,
+   139
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": [
+   179,
+   102,
+   84
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1727,
+   436
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "344": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1585,
+   535
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "345": {
+  "vegg": [
+   232,
+   215,
+   199
+  ],
+  "tak": [
+   144,
+   86,
+   72
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1572,
+   764
+  ],
+  "merknad": "tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "346": {
+  "vegg": [
+   180,
+   103,
+   85
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1215,
+   926
+  ],
+  "merknad": "flyttet 46 px (2015-px) for å treffe huset"
+ },
+ "347": {
+  "vegg": [
+   234,
+   86,
+   86
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   179,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1237,
+   449
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "348": {
+  "vegg": [
+   163,
+   162,
+   163
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   177,
+   102,
+   84
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1471,
+   580
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "349": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen i bakgård)"
+ },
+ "350": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1399,
+   767
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "351": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   186,
+   113,
+   96
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1774,
+   624
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "352": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1783,
+   648
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "353": {
+  "vegg": [
+   218,
+   218,
+   218
+  ],
+  "tak": [
+   119,
+   119,
+   117
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1283,
+   816
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "354": {
+  "vegg": [
+   233,
+   212,
+   201
+  ],
+  "tak": [
+   132,
+   134,
+   134
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1497,
+   830
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "355": {
+  "vegg": [
+   248,
+   208,
+   173
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1536,
+   727
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "356": {
+  "vegg": [
+   198,
+   197,
+   198
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1538,
+   752
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "357": {
+  "vegg": [
+   113,
+   114,
+   114
+  ],
+  "tak": [
+   135,
+   135,
+   135
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1590,
+   721
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "358": {
+  "vegg": [
+   180,
+   104,
+   84
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1461,
+   841
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "359": {
+  "vegg": [
+   244,
+   244,
+   244
+  ],
+  "tak": [
+   232,
+   215,
+   199
+  ],
+  "veggs": [
+   198,
+   198,
+   198
+  ],
+  "taks": [
+   115,
+   115,
+   115
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1572,
+   742
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "360": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   237,
+   120,
+   104
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1729,
+   477
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "361": {
+  "vegg": [
+   232,
+   212,
+   199
+  ],
+  "tak": [
+   244,
+   150,
+   77
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1320,
+   829
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "362": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen ved Tøihusgaten)"
+ },
+ "363": {
+  "vegg": [
+   232,
+   213,
+   200
+  ],
+  "tak": [
+   133,
+   135,
+   134
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1386,
+   828
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "364": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   244,
+   244,
+   244
+  ],
+  "veggs": null,
+  "taks": [
+   115,
+   115,
+   115
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1572,
+   779
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "365": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2236,
+   1566
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "366": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1468,
+   1827
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "367": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1422,
+   1863
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "368": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1994,
+   1276
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "369": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2010,
+   1636
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "370": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2152,
+   1369
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "371": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2068,
+   1620
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "372": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2177,
+   1585
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "373": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1910,
+   1428
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "374": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2099,
+   1388
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "375": {
+  "vegg": [
+   242,
+   243,
+   241
+  ],
+  "tak": [
+   186,
+   113,
+   96
+  ],
+  "veggs": [
+   218,
+   218,
+   218
+  ],
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1805,
+   632
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "376": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1769,
+   463
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "377": {
+  "vegg": [
+   243,
+   244,
+   244
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1679,
+   424
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "378": {
+  "vegg": [
+   254,
+   245,
+   212
+  ],
+  "tak": [
+   238,
+   124,
+   108
+  ],
+  "veggs": [
+   214,
+   202,
+   154
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1299,
+   946
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "379": {
+  "vegg": [
+   146,
+   146,
+   146
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1210,
+   472
+  ],
+  "merknad": "flyttet 58 px (2015-px) for å treffe huset"
+ },
+ "380": {
+  "vegg": [
+   198,
+   198,
+   198
+  ],
+  "tak": [
+   199,
+   102,
+   86
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1729,
+   606
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "381": {
+  "vegg": [
+   244,
+   150,
+   76
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": [
+   180,
+   103,
+   85
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1397,
+   799
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "382": {
+  "vegg": [
+   198,
+   197,
+   198
+  ],
+  "tak": [
+   217,
+   110,
+   92
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1515,
+   729
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "383": {
+  "vegg": [
+   251,
+   230,
+   213
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": [
+   232,
+   215,
+   199
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "middels",
+  "px2019": [
+   1401,
+   388
+  ],
+  "merknad": "vegg: 2019 og kvartaltegning uenige på 2 av 2 flater; 2019 valgt der den er tydelig; tak: 2019 og kvartaltegning uenige på 1 av 1 flater"
+ },
+ "384": {
+  "vegg": [
+   196,
+   196,
+   194
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": [
+   180,
+   103,
+   85
+  ],
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1034,
+   546
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ },
+ "385": {
+  "vegg": [
+   255,
+   232,
+   162
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1072,
+   575
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "386": {
+  "vegg": [
+   178,
+   102,
+   86
+  ],
+  "tak": [
+   135,
+   135,
+   135
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1611,
+   332
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "387": {
+  "vegg": null,
+  "tak": [
+   249,
+   195,
+   148
+  ],
+  "veggs": null,
+  "taks": [
+   186,
+   113,
+   96
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1640,
+   619
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "388": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1724,
+   622
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "389": {
+  "vegg": [
+   218,
+   217,
+   218
+  ],
+  "tak": [
+   119,
+   119,
+   117
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1304,
+   801
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "390": {
+  "vegg": [
+   237,
+   120,
+   103
+  ],
+  "tak": [
+   180,
+   103,
+   85
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1464,
+   786
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "391": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: parkeringsplass ved Tøihusgaten)"
+ },
+ "392": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": null,
+  "merknad": "ikke i trykket (skjult: flyfoto 2026-10-23: plen på vollen ved Voldgaten)"
+ },
+ "393": {
+  "vegg": [
+   243,
+   243,
+   243
+  ],
+  "tak": [
+   237,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1024,
+   561
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "394": {
+  "vegg": [
+   179,
+   102,
+   85
+  ],
+  "tak": [
+   178,
+   102,
+   84
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1573,
+   257
+  ],
+  "merknad": "flyttet 59 px (2015-px) for å treffe huset"
+ },
+ "395": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1781,
+   1393
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "396": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2020,
+   1270
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "397": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2032,
+   1276
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "398": {
+  "vegg": [
+   249,
+   195,
+   148
+  ],
+  "tak": [
+   197,
+   198,
+   200
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1416,
+   613
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "399": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1635,
+   1925
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "400": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1478,
+   1749
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "401": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1953,
+   1656
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "402": {
+  "vegg": [
+   232,
+   212,
+   199
+  ],
+  "tak": [
+   231,
+   213,
+   200
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1392,
+   866
+  ],
+  "merknad": "fotavtrykk innpasset mot 2015-vektor, farge lest i 2019"
+ },
+ "403": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2032,
+   1414
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "404": {
+  "vegg": null,
+  "tak": [
+   148,
+   148,
+   148
+  ],
+  "veggs": null,
+  "taks": [
+   135,
+   135,
+   135
+  ],
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   1430,
+   313
+  ],
+  "merknad": "ingen synlig vegg funnet"
+ },
+ "405": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   2088,
+   1339
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "406": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1817,
+   1487
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "407": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1986,
+   1408
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "408": {
+  "vegg": [
+   240,
+   121,
+   103
+  ],
+  "tak": [
+   198,
+   198,
+   199
+  ],
+  "veggs": null,
+  "taks": [
+   123,
+   120,
+   116
+  ],
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1709,
+   424
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "409": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   261,
+   -552
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "410": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   507,
+   -485
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "411": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   147,
+   -801
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "412": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   130,
+   30
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "413": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -49,
+   -390
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "414": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   296,
+   -746
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "415": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   94,
+   -501
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "416": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   95,
+   -692
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "417": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   447,
+   -545
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "418": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   38,
+   -418
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "419": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   293,
+   -580
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "420": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   290,
+   -602
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "421": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   283,
+   -653
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "422": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   240,
+   -667
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "423": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   217,
+   -609
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "424": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   202,
+   -791
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "425": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   907,
+   -544
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "426": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   146,
+   -777
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "427": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   303,
+   -711
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "428": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1268,
+   -413
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "429": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   136,
+   -827
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "430": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   203,
+   30
+  ],
+  "merknad": "ikke i trykket (ingen husflate der fotavtrykket lander)"
+ },
+ "431": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -149,
+   35
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "432": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   -160,
+   54
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "433": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1270,
+   1652
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "434": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1259,
+   1660
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "435": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1222,
+   1667
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "436": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1158,
+   1695
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "437": {
+  "vegg": null,
+  "tak": null,
+  "veggs": null,
+  "taks": null,
+  "kilde": null,
+  "sikkerhet": "lav",
+  "px2019": [
+   1153,
+   1739
+  ],
+  "merknad": "ikke i trykket (utenfor arket)"
+ },
+ "438": {
+  "vegg": null,
+  "tak": [
+   198,
+   198,
+   198
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "lav",
+  "px2019": [
+   47,
+   284
+  ],
+  "merknad": "flyttet 56 px (2015-px) for å treffe huset; ingen synlig vegg funnet"
+ },
+ "439": {
+  "vegg": [
+   255,
+   247,
+   226
+  ],
+  "tak": [
+   179,
+   102,
+   84
+  ],
+  "veggs": [
+   255,
+   232,
+   163
+  ],
+  "taks": null,
+  "kilde": "2019+kvartaltegning",
+  "sikkerhet": "høy",
+  "px2019": [
+   1055,
+   1052
+  ],
+  "merknad": "kvartaltegningens flater lagt på 2019-bildet; farger enige"
+ },
+ "440": {
+  "vegg": [
+   179,
+   102,
+   84
+  ],
+  "tak": [
+   240,
+   120,
+   103
+  ],
+  "veggs": null,
+  "taks": null,
+  "kilde": "2019",
+  "sikkerhet": "middels",
+  "px2019": [
+   1012,
+   1067
+  ],
+  "merknad": "tak fra innpassing (ingen takflate grenser til veggen i kvartaltegningen)"
+ }
+}

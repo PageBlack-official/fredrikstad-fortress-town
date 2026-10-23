@@ -6,7 +6,7 @@ order.forEach(([g],k)=>{ g.userData.delay = 1.1*k/order.length; g.scale.y=0.001;
 let vokst=false;   // husene og trærne har vokst ferdig
 function vokse(t){
   let ferdig=true;
-  buildings.forEach(g=>{ const k=THREE.MathUtils.clamp((t-g.userData.delay)/0.5,0,1); g.scale.y=Math.max(0.001, 1-Math.pow(1-k,3)); if(k<1) ferdig=false; });
+  buildings.forEach(g=>{ const k=THREE.MathUtils.clamp((t-g.userData.delay)/0.5,0,1); g.scale.y=Math.max(0.001, 1-Math.pow(1-k,3)); if(k<1) ferdig=false; husTil(g); });
   if(t<3.4){ setCrowns(t); ferdig=false; } else setCrowns(null);
   if(ferdig) vokst=true;
 }
@@ -24,6 +24,8 @@ function startIntro(){
 function overta(){ if(introDone) return; introDone=true; map.stop(); }
 map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
+// husets løft og vekst: egne grupper (kirka, portbygg, bygg med deler) flyttes som objekter; alle andre ligger i de sammenslåtte nettene og styres per bygg via hus-teksturen (05_bygg)
+function husTil(g){ if(!g.userData.spesiell) settHus(g.userData.i, g.position.y, g.scale.y); }
 // tilstand per bilde: vekst, hus som løfter seg, sol/skygge, tegnekvalitet
 const _sisteProj=new THREE.Matrix4();
 function oppdater(){
@@ -37,7 +39,7 @@ function oppdater(){
   const kl=1-Math.exp(-dt*11);
   husBeveger=!vokst;
   // skyggekartet tegnes på nytt bare mens et hus flytter seg merkbart (over 2 cm per bilde); halen av glidningen synes ikke i skyggen
-  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
+  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
@@ -62,13 +64,14 @@ function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeve
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
   map.addLayer(byLag);
-  if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
+  if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
   else startIntro();
   puls();
 });
 // testkroker (skjermbilder uten ny sidelasting)
 window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
-window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const bb=new THREE.Box3().setFromObject(valgt); const c=bb.getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
-window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
+window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__scene=()=>({scene, city});   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
