@@ -59,6 +59,16 @@ function lagVinduer(V){
   return im;
 }
 const PIPE_GEO=new THREE.BoxGeometry(0.9,3.4,0.75), KAPP_GEO=new THREE.BoxGeometry(1.08,0.2,0.92);
+// utvider en takflate e meter i sitt eget plan (nabotak i en rekke overlapper, ingen lyse sprekker langs møner)
+function utvidFlate(f,e){ const n=f.length; if(n<3) return f;
+      let cx=0,cy=0; f.forEach(q=>{cx+=q[0]/n; cy+=q[1]/n;});
+      // planet t = a*x + b*y + c fra de tre punktene som spenner størst trekant
+      let best=null, A=0; for(let i=0;i<n;i++) for(let j=i+1;j<n;j++) for(let k=j+1;k<n;k++){ const p=f[i],q=f[j],r=f[k]; const ar=Math.abs((q[0]-p[0])*(r[1]-p[1])-(r[0]-p[0])*(q[1]-p[1])); if(ar>A){A=ar;best=[p,q,r];} if(n>12&&k>i+6) break; }
+      if(!best||A<1e-6) return f; const [p,q,r]=best;
+      const ux=q[0]-p[0],uy=q[1]-p[1],ut=q[2]-p[2], vx=r[0]-p[0],vy=r[1]-p[1],vt=r[2]-p[2];
+      const nx=uy*vt-ut*vy, ny=ut*vx-ux*vt, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return f;
+      const pa=-nx/nz, pb=-ny/nz, pc=p[2]-pa*p[0]-pb*p[1];
+      return f.map(v=>{ let dx=v[0]-cx, dy=v[1]-cy; const L=Math.hypot(dx,dy)||1; const x=v[0]+dx/L*e, y=v[1]+dy/L*e; return [x,y,Math.max(0,pa*x+pb*y+pc)]; }); }
 DATA.bygg.forEach((b,i)=>{
   const pts=b.p; if(pts.length<3 || b.skjul) return;
   const dim=!b.gml;
@@ -74,15 +84,6 @@ DATA.bygg.forEach((b,i)=>{
   walls.castShadow=true; walls.receiveShadow=true; grp.add(walls);
   grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(eg,30), edgeMat));
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
-  if (b.tak2 && !window.utvidFlate){ window.utvidFlate=(f,e)=>{ const n=f.length; if(n<3) return f;
-      let cx=0,cy=0; f.forEach(q=>{cx+=q[0]/n; cy+=q[1]/n;});
-      // planet t = a*x + b*y + c fra de tre punktene som spenner størst trekant
-      let best=null, A=0; for(let i=0;i<n;i++) for(let j=i+1;j<n;j++) for(let k=j+1;k<n;k++){ const p=f[i],q=f[j],r=f[k]; const ar=Math.abs((q[0]-p[0])*(r[1]-p[1])-(r[0]-p[0])*(q[1]-p[1])); if(ar>A){A=ar;best=[p,q,r];} if(n>12&&k>i+6) break; }
-      if(!best||A<1e-6) return f; const [p,q,r]=best;
-      const ux=q[0]-p[0],uy=q[1]-p[1],ut=q[2]-p[2], vx=r[0]-p[0],vy=r[1]-p[1],vt=r[2]-p[2];
-      const nx=uy*vt-ut*vy, ny=ut*vx-ux*vt, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return f;
-      const pa=-nx/nz, pb=-ny/nz, pc=p[2]-pa*p[0]-pb*p[1];
-      return f.map(v=>{ let dx=v[0]-cx, dy=v[1]-cy; const L=Math.hypot(dx,dy)||1; const x=v[0]+dx/L*e, y=v[1]+dy/L*e; return [x,y,Math.max(0,pa*x+pb*y+pc)]; }); }; }
   if (b.tak2){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
     const SLOPE=0.82; const pos=[];

@@ -19,11 +19,24 @@ for fil in sorted(os.listdir(os.path.join(ROT, 'data'))):
     if fil.endswith('.json'):
         data[fil[:-5]] = json.load(open(os.path.join(ROT, 'data', fil), encoding='utf8'))
 versjon = les('VERSJON').strip()
-data['logg'].append(f'bygd fra kilde, versjon {versjon}, modus {MODUS}')
+# ---- rettelseslaget: data/rettelser.json legges oppå grunndataene ved hvert bygg, én linje per rettelse (hva, hvem, når, hvorfor).
+# Grunndataene er generert og kan lages på nytt; rettelsene overlever. Operasjoner: sett (felt = verdi), skjul (bygg skjules med grunn).
+rettelser = data.pop('rettelser', [])
+for r in rettelser:
+    emne, i, op = r['emne'], r.get('i'), r['op']
+    if emne not in data or i is None or i >= len(data[emne]):
+        raise SystemExit(f"rettelse peker på noe som ikke finnes: {r}")
+    if op == 'sett':
+        data[emne][i][r['felt']] = r['verdi']
+    elif op == 'skjul':
+        data[emne][i]['skjul'] = f"{r.get('hvem','?')} {r.get('dato','?')}: {r.get('grunn','')}"
+    else:
+        raise SystemExit(f"ukjent rettelse-operasjon: {op}")
+data['logg'].append(f'bygd fra kilde, versjon {versjon}, modus {MODUS}, {len(rettelser)} rettelser lagt oppå')
 datatekst = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
 
 # ---- js: seksjonene i rekkefølge ----
-js = '\n'.join(les('src/' + f) for f in sorted(os.listdir(os.path.join(ROT, 'src'))) if f.endswith('.js'))
+js = '\n'.join(les('src/' + f) for f in sorted(os.listdir(os.path.join(ROT, 'src'))) if re.match(r'\d\d_.*\.js$', f))   # bare de nummererte seksjonene; sw.js er tjenestearbeideren og hører ikke hjemme i siden (lint fant den 23.10)
 
 def tekstur(fil):
     if MODUS == 'enkel':
