@@ -15,6 +15,6 @@ Kilden til kartet. Alt som publiseres bygges herfra; ingenting rettes i ferdig H
 - verktoy/   hjelpere (hodeløs lasting, rendring)
 - ut/        bygd resultat (ikke kilde)
 
-## Status 23.10.2026
-Koden er delt opp som filer men er fortsatt ett modulskop som settes sammen i rekkefølge (ikke ekte ES-moduler).
-Neste: MapLibre GL JS som motor (kamera, gester, koordinater), byen som custom layer. Deretter kvalitetssikring kvartal for kvartal.
+## Status 23.10.2026 (v26)
+Motor: MapLibre GL JS 6.14.0 (kamera, gester, koordinater). Byen: three.js 0.160 som custom layer. Koden er filer i rekkefølge i ett modulskop (ikke ekte ES-moduler ennå).
+Neste: kvalitetssikring kvartal for kvartal (bevisark tegning mot modell), deretter regel 02–04 grønne.

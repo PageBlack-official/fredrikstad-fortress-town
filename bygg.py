@@ -45,7 +45,8 @@ else:
 
 importmap = les('src/importmap.json').strip()
 html = les('src/mal.html')
-html = (html.replace('{{STIL}}', les('src/stil.css').strip())
+html = (html.replace('{{MAPLIBRE_CSS}}', les('assets/maplibre-gl-6.14.0.css').strip())
+            .replace('{{STIL}}', les('src/stil.css').strip())
             .replace('{{KROPP}}', les('src/kropp.html').strip())
             .replace('{{IMPORTMAP}}', importmap)
             .replace('{{DATA}}', datascript)
