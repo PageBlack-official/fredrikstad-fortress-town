@@ -4,7 +4,7 @@
 const hemi = new THREE.HemisphereLight(0xffffff, 0xe6e2d6, 1.0); scene.add(hemi);
 const sun = new THREE.DirectionalLight(0xffffff, 0.85);
 sun.castShadow = true;
-sun.shadow.mapSize.set(2048,2048);
+sun.shadow.mapSize.set(innerWidth*devicePixelRatio>=2000?3072:2048, innerWidth*devicePixelRatio>=2000?3072:2048); // kartet dekker 40 % mer enn bildet (se oppdaterSol), så store skjermer får flere tekster
 const sc = sun.shadow.camera; sc.left=-520; sc.right=520; sc.top=520; sc.bottom=-520; sc.near=1; sc.far=4000;
 sun.shadow.bias=-0.0005; sun.shadow.normalBias=0.25; sun.shadow.radius=4; sun.shadow.blurSamples=12;
 const LYS = new THREE.Vector3(-0.66, 0.52, 0.54).normalize(); // lyset penselmatcapen til trærne er tegnet med (kamerarommet)
@@ -37,30 +37,38 @@ function plakatSol(){
   if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
   solFargeFor(35*GRAD); skyggeSkitten=true;
 }
-window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
+window.__sol=()=>({sd:_sd.toArray(), q:cam.quaternion.toArray(), grunner:dekning.grunner}); window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
 function lysFraVenstre(){ plakatSol(); }
-// skyggekartet tegnes bare på nytt når kameraet, sola eller byen beveger seg
-sun.shadow.autoUpdate=false; let skyggeSkitten=true, skyggeTakt=0, kameraBeveget=true; const sistKam=new THREE.Matrix4(); let sistZoom=0;
+// skyggekartet er forankret i byen og tegnes på nytt bare når det må: bildet har gått ut av dekningen, zoomen eller
+// solretningen har endret seg merkbart, eller sola/husene har flyttet seg. Flytting (dra) innenfor dekningen koster ingen skyggetegning.
+sun.shadow.autoUpdate=false; let skyggeSkitten=true, kameraBeveget=true; const sistKam=new THREE.Matrix4();
+const dekning={r:0, senter:new THREE.Vector3(), retning:new THREE.Vector3(), grunner:{}, sist:0};
 const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4();
 function oppdaterSol(){
   const tg=kam.senter;
-  if(SOL.modus==='ekte'){
-    const ca=Math.cos(SOL.hoyde);
-    sun.target.position.copy(tg); sun.position.set(tg.x+Math.sin(SOL.asimut)*ca*1500, tg.y+Math.sin(SOL.hoyde)*1500, tg.z-Math.cos(SOL.asimut)*ca*1500);
-  } else {
-    // plakatsola: står øverst til venstre i bildet uansett hvordan byen snus (retningen følger kameraet)
-    _sd.copy(PLAKAT).applyQuaternion(cam.quaternion); sun.target.position.copy(tg); sun.position.copy(tg).addScaledVector(_sd,1500);
-  }
-  sun.target.updateMatrixWorld();
-  // skyggekameraet dekker det som er i bildet, så skyggene er skarpe nok også tett på
+  cam.updateMatrixWorld(); kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !introDone; if(kameraBeveget) sistKam.copy(cam.projectionMatrix);
+  // solretningen (lyset på fasadene) følger kameraet hvert bilde; skyggekartet følger etter i steg
+  if(SOL.modus==='ekte'){ const ca=Math.cos(SOL.hoyde); _sd.set(Math.sin(SOL.asimut)*ca, Math.sin(SOL.hoyde), -Math.cos(SOL.asimut)*ca); }
+  else _sd.copy(PLAKAT).applyQuaternion(cam.quaternion);   // plakatsola: øverst til venstre i bildet uansett hvordan byen snus
+  sun.target.position.copy(tg); sun.position.copy(tg).addScaledVector(_sd,1500); sun.target.updateMatrixWorld(); // lysretningen hvert bilde; skyggekartets matriser oppdateres bare når kartet tegnes på nytt
+  // bildet dekkes av skyggekameraet med margin, så skyggene er skarpe nok tett på og et dra ikke går ut av kartet med en gang
   const hw=kam.mpp*innerWidth/2, hh=kam.mpp*innerHeight/2;
   const r=Math.min(950, Math.max(hw, hh/Math.sin((90-kam.pitch)*GRAD))*1.08+45);
-  if(Math.abs(sc.right-r)>0.5){ sc.left=-r; sc.right=r; sc.top=r; sc.bottom=-r; sc.updateProjectionMatrix(); skyggeSkitten=true; }
-  sun.shadow.radius=THREE.MathUtils.clamp(1.1/(2*r/sun.shadow.mapSize.x),1.5,9);
-  cam.updateMatrixWorld();
-  kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !introDone;
-  if(kameraBeveget){ sistKam.copy(cam.projectionMatrix); skyggeSkitten=true; }
-  skyggeTakt++; if(skyggeSkitten && (skyggeTakt%3===0 || !kameraBeveget)){ sun.shadow.needsUpdate=true; skyggeSkitten=false; }
+  const grunn = dekning.r===0 ? 'start' : (r>dekning.r*0.78 || r<dekning.r*0.45) ? 'zoom'   // zoomet: kartet dekker for lite eller er for grovt
+    : Math.hypot(tg.x-dekning.senter.x, tg.z-dekning.senter.z) > dekning.r*0.3 ? 'dratt'    // dratt ut av marginen
+    : _sd.angleTo(dekning.retning) > 1.5*GRAD ? 'snudd'                                      // snudd eller vippet: sola står et annet sted
+    : skyggeSkitten ? 'by' : '';                                                             // sola, husene eller introen
+  // myke grunner (litt snudd, hus som glir) ventes med til 150 ms har gått mens kameraet er i fart, så et dra ikke tegner skyggekartet hvert bilde;
+  // står kameraet stille, tegnes det med en gang, så det siste bildet alltid er riktig
+  const naa=performance.now();
+  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150) grunn='';
+  if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
+    const R=Math.min(1100, r*1.4);                                                          // 40 % margin rundt bildet
+    if(Math.abs(sc.right-R)>0.5){ sc.left=-R; sc.right=R; sc.top=R; sc.bottom=-R; sc.updateProjectionMatrix(); }
+    sun.shadow.radius=THREE.MathUtils.clamp(1.1/(2*R/sun.shadow.mapSize.x),1.5,9);
+    dekning.r=R; dekning.senter.copy(tg); dekning.retning.copy(_sd);
+    sun.shadow.needsUpdate=true; skyggeSkitten=false;
+  }
   // trærne henter solretningen selv (se tre-blokken)
 }
 // felles GLSL for materialer som skal ta imot kastskygger og følge sola

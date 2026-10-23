@@ -115,12 +115,19 @@ const post=(()=>{
   const ps=new THREE.Scene(); ps.add(q); const pc=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
   return {
     setAO(n){ m.uniforms.aoN.value=n; },
+    msaa(n){ rt.samples=n; rt.dispose(); },   // kantutjevning i 3D-passet av/på (feilsøking: tast n)
+    samples(){ return rt.samples; },
     setSS(n){ m.uniforms.ssN.value=n; },
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
     settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },
     render(){ const u=m.uniforms; u.mpp.value=kam.mpp*innerWidth/u.res.value.x; u.span.value=kam.mpp; u.naer.value=kam.naer; u.fjern.value=kam.fjern; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introDone? 0.0 : 1.0; // miniatyr-uskarphet bare i introen
-      const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const _t1=performance.now(); renderer.setRenderTarget(rtF); renderer.render(ps,pc); renderer.setRenderTarget(null); renderer.render(fs,pc); window.__pt={scene:_t1-_t0, blekk:performance.now()-_t1, kall:renderer.info.render.calls, tri:renderer.info.render.triangles}; }
+      // måling (tast m i feilsøkingsruta): gl.finish() etter hvert pass gir ekte GPU-tid per pass, ikke bare CPU-tid
+      const maal=!!window.__maal, fin=()=>{ if(maal) gl2.finish(); }, skyggeNaa=sun.shadow.needsUpdate;
+      const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const kall=renderer.info.render.calls, tri=renderer.info.render.triangles; fin(); const _t1=performance.now();
+      renderer.setRenderTarget(rtF); renderer.render(ps,pc); fin(); const _t2=performance.now();
+      renderer.setRenderTarget(null); renderer.render(fs,pc); fin(); const _t3=performance.now();
+      window.__pt={scene:_t1-_t0, blekk:_t2-_t1, fxaa:_t3-_t2, kall, tri, skygge:skyggeNaa?1:0, maal}; }
   };
 })();
 

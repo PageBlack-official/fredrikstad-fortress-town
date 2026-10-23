@@ -37,11 +37,18 @@ if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10)
 const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : [10,0];   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
-// ytelse: måler bildefrekvensen og senker oppløsning/AO på svake maskiner (mobil), så spinnet holder seg mykt
+// ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.
+// Trinnet gjelder både i fart og i ro, så bildet aldri bytter utseende når en gest starter eller slutter.
 let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0;
 function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
 let ssStille=4;
-let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14, aoBeveg=6; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
-function maalYtelse(){ const n=performance.now(), dt=n-perfLast; perfLast=n; if(perfNivaa>=2 || document.hidden || (n-sistBeveg>300 && n-sistTegnet>40)) return;
+let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
+// Måler tiden vår egen tegning tar (render(), CPU-siden), ikke avstanden mellom bildene: den styres også av verten og skjermen, og
+// lavere kvalitet hjelper ikke mot den. Introen (vekst + skygge hvert bilde) måles ikke; den er dyrere enn vanlig bruk.
+function maalYtelse(){ const n=performance.now(); perfLast=n; if(perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
+  const dt=window.__ramme||0;
   perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
-    if(avg>30){ perfNivaa++; if(perfNivaa===1){ skalaBeveg=Math.max(0.35,skalaBeveg*0.75); aoBeveg=0; } else { skalaBeveg=Math.max(0.3,skalaBeveg*0.8); aoStille=7; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map){ sun.shadow.map.dispose(); sun.shadow.map=null; } skyggeSkitten=true; } } } } }
+    if(avg>30){ perfNivaa++;
+      if(perfNivaa===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning
+      else { ssStille=1; skalaMaskin=0.6; aoStille=8; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map){ sun.shadow.map.dispose(); sun.shadow.map=null; } skyggeSkitten=true; } // trinn 2: mobil som sliter
+      beregnSkala(); } } } }

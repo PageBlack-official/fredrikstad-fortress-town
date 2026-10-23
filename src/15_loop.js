@@ -36,15 +36,15 @@ function oppdater(){
   // løftet hus (valgt) og svakt løftet hus (pekeren over), uavhengig av bildefrekvens
   const kl=1-Math.exp(-dt*11);
   husBeveger=!vokst;
-  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-4){ g.position.y+=dy; husBeveger=true; } });
-  if(husBeveger) skyggeSkitten=true;
+  // skyggekartet tegnes på nytt bare mens et hus flytter seg merkbart (over 2 cm per bilde); halen av glidningen synes ikke i skyggen
+  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
   oppdaterSol();
-  // kvaliteten følger bare kameraet: hus som løfter seg tegnes i full kvalitet hvert bilde, så et klikk ikke bytter tilstand
+  // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
   const kamFlytt = !_sisteProj.equals(cam.projectionMatrix); _sisteProj.copy(cam.projectionMatrix);
   if(kamFlytt || anim || !introDone) sistBeveg=naa;
   const stille = naa-sistBeveg>300;
-  post.settSkala(stille? skalaStille : skalaBeveg); post.setAO(stille? aoStille : aoBeveg); post.setSS(stille && perfNivaa<2 ? ssStille : 1);
+  post.settSkala(skalaStille); post.setAO(aoStille); post.setSS(ssStille);
   if(introDone && stille){ speilInn=Math.min(1,speilInn+dt*2.8); speil.render(husBeveger || speilInn<1 || !speilFrisk); speilFrisk=true; }
   else if(!stille){ speilFrisk=false; speilInn=Math.max(0,speilInn-dt*8); } // gammelt speil vises aldri mens kartet beveger seg
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
@@ -54,7 +54,7 @@ function oppdater(){
 // laget: kartet tegner byen gjennom dette
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
-  render(gl,args){ kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); post.render(); if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+  render(gl,args){ const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
 // ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet (vannet lever)
 function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
 map.on('load', ()=>{
@@ -67,4 +67,5 @@ map.on('load', ()=>{
 window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const bb=new THREE.Box3().setFromObject(valgt); const c=bb.getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
 window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };

@@ -15,7 +15,7 @@ function kameraFraKartet(args){
   kam.zoomfaktor=Math.pow(2,map.getZoom()-Z_HJEM); kam.pitch=map.getPitch(); kam.bearing=map.getBearing();
   kam.mpp=40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*Math.pow(2,map.getZoom()));
   kam.oye.copy(_pn).addScaledVector(_dir,-args.nearZ*kam.mpp);   // nearZ er i kartets pikselrom; mpp gjør det om til meter
-  cam.position.copy(kam.oye); cam.up.set(0,1,0); cam.lookAt(_pn); cam.updateMatrix(); cam.updateMatrixWorld(true); cam.matrixWorldInverse.copy(cam.matrixWorld).invert();
+  cam.position.copy(kam.oye); cam.up.set(0,1,0); cam.lookAt(_pf); // sikter mot fjernplanet, aldri mot nærplanet: når nearZ er nær null faller øyet sammen med nærpunktet og retningen blir tilfeldig cam.updateMatrix(); cam.updateMatrixWorld(true); cam.matrixWorldInverse.copy(cam.matrixWorld).invert();
   cam.projectionMatrix.multiplyMatrices(_full,cam.matrixWorld); cam.projectionMatrixInverse.copy(cam.projectionMatrix).invert();
   // bakkepunktet midt i bildet, og meter per skjermpunkt der
   const t=-_pn.y/_dir.y; if(isFinite(t)&&t>0) kam.senter.copy(_pn).addScaledVector(_dir,t);

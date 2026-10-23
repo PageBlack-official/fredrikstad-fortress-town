@@ -1,3 +1,5 @@
 # 05_kvalitet_bare_kamera: OK
 
-sistBeveg settes av: kamFlytt || anim || !introDone
+settSkala(skalaStille) uavhengig av bevegelse
+setAO(aoStille) uavhengig av bevegelse
+setSS(ssStille) uavhengig av bevegelse

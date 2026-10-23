@@ -21,16 +21,19 @@ function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(400
 const Z_HJEM=zoomFor(1);
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
   center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
-  attributionControl:false, antialias:true, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
+  attributionControl:false, antialias:true, respectPrefersReducedMotion:false, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
 window.map=map;
 map.scrollZoom.setWheelZoomRate(1/150); map.touchZoomRotate.enable(); map.dragRotate.enable(); map.keyboard.enable();
+// pluss/minus og kompass (snu byen, nordvend): synlig vei til zoom og rotasjon for mus uten klyp
+map.addControl(new maplibregl.NavigationControl({showZoom:true, showCompass:true, visualizePitch:true}), 'bottom-right');
 const gl2 = map.getCanvas().getContext('webgl2');
 const renderer = new THREE.WebGLRenderer({canvas: map.getCanvas(), context: gl2, antialias:true});
 renderer.autoClear=false;
-// pikselbudsjett: mens kartet beveger seg regnes 3D-bildet i lavere oppløsning, og når det står stille tegnes det på nytt i full kvalitet
-const PIX_BEVEG=3.0e6, PIX_STILLE=11e6;
-let skalaBeveg=1, skalaStille=1;
-function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaBeveg=THREE.MathUtils.clamp(Math.sqrt(PIX_BEVEG/n),0.4,1); skalaStille=1; }
+// én tegnekvalitet: bildet tegnes likt om kartet beveger seg eller står stille, så skygger og strek aldri hopper mellom grov og fin.
+// Oppløsningen settes av skjermen (pikselbudsjett) og senkes én gang for godt på svake maskiner (maalYtelse), aldri per gest.
+const PIX=11e6;
+let skalaStille=1, skalaMaskin=1;   // skalaMaskin: 1 på vanlige maskiner, lavere når maalYtelse har målt at maskinen ikke holder følge
+function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaStille=THREE.MathUtils.clamp(Math.sqrt(PIX/n),0.5,1)*skalaMaskin; }
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap; // myk filtrering gjøres i skyggeMask()
 renderer.outputColorSpace = THREE.SRGBColorSpace;

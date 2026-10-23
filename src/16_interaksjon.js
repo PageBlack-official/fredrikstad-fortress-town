@@ -25,7 +25,7 @@ function velg(x,y){
   }
 }
 function hjemNaa(){ map.easeTo({...hjemVisning(), duration:900, easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
-hjem.onclick=()=>{ overta(); hjemNaa(); };
+hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
 // ett klikk velger et hus (ventes 300 ms så et dobbeltklikk kan zoome i stedet)
 map.on('click', e=>{ if(!introDone) return; clearTimeout(klikkTimer); const p=e.point; klikkTimer=setTimeout(()=>velg(p.x,p.y),300); });
@@ -40,7 +40,7 @@ map.on('mouseout', ()=>{ hover=null; map.getCanvas().style.cursor=''; });
 // Én gest er én ting: første hendelse avgjør, hendelser innen 120 ms arver valget.
 const gest={t:0,hjul:false};
 map.getCanvasContainer().addEventListener('wheel', e=>{
-  if(e.ctrlKey) return;                                   // klyp på styreflaten = zoom, MapLibre tar den
+  if(e.ctrlKey || e.metaKey) return;                      // klyp på styreflaten (ctrl) eller ⌘ og rull (Magic Mouse) = zoom, MapLibre tar den
   const naa=performance.now();
   let hjul = e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY);
   if(gest.t && naa-gest.t<120) hjul=gest.hjul;
@@ -53,11 +53,18 @@ function visHjem(){ const c=tilModell(map.getCenter()); const borte = Math.abs(m
 map.on('move', visHjem); map.on('moveend', visHjem);
 kort.querySelector('.lukk').onclick=()=>{kort.classList.remove('vis'); if(valgt){valgt.userData.lift=false; valgt=null;}};
 // feilsøkingsrute (tast d): bildefrekvens, tegnetilstand og styreflatehendelser som tall. Taster s/a/x/p prøver stillbildekvalitet.
-const dbg={paa:false, rader:[], el:null, fps:[]};
+const dbg={paa:false, rader:[], el:null, fps:[], pek:{ned:0,flytt:0,opp:0,sist:'',knapper:0,type:''}};
+// pekerhendelser som når kartet (for å se om dra virker der kartet vises)
+['pointerdown','pointermove','pointerup'].forEach(t=>map.getCanvasContainer().addEventListener(t,e=>{ if(!dbg.paa) return; dbg.pek[t==='pointerdown'?'ned':t==='pointermove'?'flytt':'opp']++; dbg.pek.sist=`${t} ${e.clientX|0},${e.clientY|0}`; dbg.pek.knapper=e.buttons; dbg.pek.type=e.pointerType; },{capture:true,passive:true}));
 function dbgLogg(e,hjul){ if(!dbg.paa) return; dbg.rader.push(`${(performance.now()%100000|0)} dx${e.deltaX.toFixed(1)} dy${e.deltaY.toFixed(1)} w${e.wheelDeltaY} m${e.deltaMode} ${e.ctrlKey?'ctrl ':''}${hjul?'ZOOM':'flytt'}`); if(dbg.rader.length>40) dbg.rader.shift(); }
+// bildefrekvens i siste bevegelse (dra, animasjon): telles mens kartet beveger seg og står igjen etterpå, så den kan leses av i ro
+const fart={i:false, t0:0, n:0, sist:''};
 function dbgTegn(naa){ if(!dbg.paa) return; dbg.fps.push(naa); while(dbg.fps.length&&naa-dbg.fps[0]>1000) dbg.fps.shift();
   const pt=window.__pt||{};
-  dbg.el.textContent=`tegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skalaBeveg ${skalaBeveg.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille}`
-    +String.fromCharCode(10)+`3D ${pt.scene|0} ms  blekk ${pt.blekk|0} ms  kall ${pt.kall}  tri ${pt.tri}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
-addEventListener('keydown',e=>{ if(!dbg.paa) return; if(e.key==='s'){ ssStille=ssStille===4?2:ssStille===2?1:4; } if(e.key==='a'){ aoStille=aoStille===14?7:aoStille===7?0:14; } if(e.key==='x'){ skalaStille=skalaStille===1?0.75:1; } if(e.key==='p'){ speil.av(); } });
+  if(map.isMoving()){ if(!fart.i){ fart.i=true; fart.t0=naa; fart.n=0; fart.s=0; fart.b=0; fart.f=0; fart.sk=0; fart.r=0; fart.m=0; } fart.n++; fart.s+=pt.scene||0; fart.b+=pt.blekk||0; fart.f+=pt.fxaa||0; fart.sk+=pt.skygge||0; fart.r+=window.__ramme||0; fart.m+=window.__mellom||0; }
+  else if(fart.i){ fart.i=false; const ms=naa-fart.t0, n=fart.n; if(ms>150) fart.sist=`siste bevegelse ${ms|0} ms, ${n} bilder = ${(n*1000/ms).toFixed(0)}/s  (snitt per bilde: 3D ${(fart.s/n).toFixed(0)} ms, blekk ${(fart.b/n).toFixed(0)} ms, fxaa ${(fart.f/n).toFixed(0)} ms, skyggekart i ${fart.sk} av ${n}, hele render() ${(fart.r/n).toFixed(0)} ms, mellom bildene ${(fart.m/n).toFixed(0)} ms${pt.maal?', GPU-målt':', CPU-målt, tast m for GPU'})`; }
+  dbg.el.textContent=`tegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skala ${skalaStille.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille} msaa ${post.samples()}`
+    +String.fromCharCode(10)+fart.sist
+    +String.fromCharCode(10)+`3D ${pt.scene|0} ms  blekk ${pt.blekk|0} ms  fxaa ${pt.fxaa|0} ms  kall ${pt.kall}  tri ${pt.tri}  skyggekart ${pt.skygge} (grunner: ${JSON.stringify(dekning.grunner)})  ${pt.maal?'GPU-målt':'CPU-målt'}`+String.fromCharCode(10)+`peker: ned ${dbg.pek.ned} flytt ${dbg.pek.flytt} opp ${dbg.pek.opp}  sist ${dbg.pek.sist}  knapper ${dbg.pek.knapper} ${dbg.pek.type}  senter ${tilModell(map.getCenter()).map(v=>v.toFixed(0)).join(',')}  dragPan ${map.dragPan.isEnabled()?'på':'av'} aktiv ${map.dragPan.isActive()?'ja':'nei'}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
+addEventListener('keydown',e=>{ if(!dbg.paa) return; if(e.key==='s'){ ssStille=ssStille===4?2:ssStille===2?1:4; } if(e.key==='a'){ aoStille=aoStille===14?7:aoStille===7?0:14; } if(e.key==='x'){ skalaStille=skalaStille===1?0.75:1; } if(e.key==='p'){ speil.av(); } if(e.key==='m'){ window.__maal=!window.__maal; } if(e.key==='n'){ post.msaa(post.samples()?0:2); } });
 addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createElement('pre'); dbg.el.style.cssText='position:fixed;left:8px;top:8px;z-index:9;margin:0;padding:8px;font:11px/1.25 ui-monospace,monospace;background:rgba(255,255,255,.92);color:#222;max-height:92vh;overflow:hidden;pointer-events:none;border-radius:6px'; document.body.appendChild(dbg.el); } dbg.el.style.display=dbg.paa?'block':'none'; } });
