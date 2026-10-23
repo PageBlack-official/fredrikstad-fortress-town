@@ -1,5 +1,12 @@
 # Endringslogg
 
+## 30 (23.10.2026) – husfarger dømt mot 2019-trykket, trær fra flyfoto på flatene
+- Husfarger: 245 hus som står i 2019-trykket er dømt visuelt, ett og ett, mot kontrollark (rapport/farger-dom/ark-01…21.png: 2019-utsnitt med fotavtrykk, dagens farge og agentforslaget). 105 stemte som de stod, 69 er rettet (53 vegger, 45 tak), 65 var ikke synlige (trær, tekstfelt, vann), 4 er egne bygg (kirka, portene). Rettelsene ligger i data/rettelser.json (265 linjer, hvem/dato/grunn), palettbokstavene i farger-dom/palett.json, dommen i farger-dom/dom.txt. Skyggetonene (veggs/taks) nullstilles der fargen byttes, så de avledes av fargen.
+- Agentforslaget farger2019.json ble underkjent i mottakskontrollen (bygg 194: lyseblått i trykket, grått i forslaget med «høy sikkerhet»; koblingen fasade→bygg tar nabohuset). Funn underveis: tegneren la plantegningen på mønehøyde og tegnet veggene nedover, så fotavtrykket projisert med affin2 treffer mønet, ikke grunnmuren (rapport/farger2019-hoydeskala.png).
+- Trær: flyfoto-forslaget (rapport/traer-flyfoto.json) brukes på flatene (bakke ≤ 1 m, 1 200 punkter), dagens rekker beholdes på vollene (bakke > 1 m, 1 143 punkter): forslaget alene gjorde vollene for tynne mot både trykket og fotoet (rapport/d-sammenligning/traer-for-etter.png mot traer-c-for-etter.png).
+- Regel 09: publisert versjon på Pages og i artefaktbygget skal være lik VERSJON. Regel 07 og 08 kjører nå fra hvilken som helst mappe (de var grønne bare fra prosjektmappa).
+- Mottakskontroll for agenter i LESMEG: mot briefen, mot kilden (egne stikkprøver), mot beviset.
+
 ## 29 (23.10.2026) – sammenslått geometri: 3 077 tegnekall ble 174
 - Alle vanlige hus (vegger, tak, gavler, arker, piper) ligger nå i ett nett per materiale i stedet for sju–tolv nett per hus. Hvert punkt bærer byggindeks (aBygg) og høyde for tegnede vinduer (aTopp). Løft (klikk/peker) og vekst (introen) styres per bygg gjennom en 512×1-tekstur (tHus, 05_bygg: settHus), også i skyggekartet (husDybde). Vinduene er ett instansert nett for hele byen.
 - Kirka, portbygg og bygg med deler er fortsatt egne grupper (de flyttes som objekter), men hver gruppe er slått sammen til ett nett per materiale (flatGruppe). Det samme for broene, statuen og alle murer og gjerder (09). De usynlige strek-objektene (EdgesGeometry, slått av siden blekkpasset tok over) er borte.

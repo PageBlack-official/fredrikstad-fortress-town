@@ -1,1 +1,3044 @@
-[]
+[
+{
+"emne": "bygg",
+"i": 2,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 2,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 2,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 7,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+243,
+150,
+132
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 7,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 7,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 8,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 8,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 8,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 9,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 9,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 9,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 22,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 22,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 22,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 30,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 30,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 30,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+218,
+218,
+218
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 159,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+248,
+224,
+204
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 159,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 159,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 160,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 160,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 160,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 172,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+251,
+227,
+161
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 172,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 172,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 177,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 177,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 177,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 179,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+148,
+80
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 179,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 179,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 182,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 182,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 182,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+148,
+80
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+148,
+80
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+179,
+102,
+84
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+248,
+224,
+204
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 205,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 205,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 205,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 215,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 215,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 215,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 222,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 222,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 222,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 226,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 226,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 226,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 227,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 227,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 227,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 229,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 229,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 229,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 230,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+243,
+150,
+132
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 230,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 230,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 237,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 237,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 237,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 243,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 243,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 243,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 245,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+148,
+80
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 245,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 245,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 250,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 250,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 250,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+119,
+119,
+117
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 250,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 250,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 252,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 252,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 252,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 262,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+243,
+150,
+132
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 262,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 262,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 306,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 306,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 306,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 308,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 308,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 308,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 329,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+252,
+188,
+144
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 329,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 329,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 332,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 332,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 332,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 334,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 334,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 334,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 335,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 335,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 335,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 337,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 337,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 337,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 339,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+243,
+150,
+132
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 339,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 339,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 339,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 339,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 342,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 342,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 342,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 352,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 352,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 352,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 352,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 352,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 357,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+179,
+102,
+84
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 357,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 357,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 363,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+248,
+224,
+204
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 363,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 363,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 363,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 363,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 364,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 364,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 364,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 364,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 364,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 375,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 375,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 375,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 376,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 376,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 376,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 376,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 376,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 377,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 377,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 377,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 378,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+243,
+150,
+132
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 378,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 378,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 385,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+243,
+150,
+132
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 385,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 385,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+240,
+120,
+103
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 385,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 385,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 386,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 386,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 386,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 389,
+"op": "sett",
+"felt": "vegg",
+"verdi": [
+244,
+244,
+244
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 389,
+"op": "sett",
+"felt": "veggs",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 389,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 398,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+198,
+198,
+198
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 398,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 398,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+},
+{
+"emne": "bygg",
+"i": 404,
+"op": "sett",
+"felt": "tak",
+"verdi": [
+135,
+135,
+135
+],
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 404,
+"op": "sett",
+"felt": "taks",
+"verdi": null,
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "2019-trykket, dømt visuelt (rapport/farger-dom/ark-NN.png)"
+},
+{
+"emne": "bygg",
+"i": 404,
+"op": "sett",
+"felt": "fasade_kilde",
+"verdi": "2019-trykket (visuelt)",
+"hvem": "Claude",
+"dato": "2026-10-23",
+"grunn": "farger-dom"
+}
+]
