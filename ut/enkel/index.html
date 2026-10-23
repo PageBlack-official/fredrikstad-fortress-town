@@ -289,7 +289,7 @@ function oppdaterSol(){
   // bildet dekkes av skyggekameraet med margin, så skyggene er skarpe nok tett på og et dra ikke går ut av kartet med en gang
   const hw=kam.mpp*innerWidth/2, hh=kam.mpp*innerHeight/2;
   const r=Math.min(950, Math.max(hw, hh/Math.sin((90-kam.pitch)*GRAD))*1.08+45);
-  const grunn = dekning.r===0 ? 'start' : (r>dekning.r*0.78 || r<dekning.r*0.45) ? 'zoom'   // zoomet: kartet dekker for lite eller er for grovt
+  let grunn = dekning.r===0 ? 'start' : (r>dekning.r*0.78 || r<dekning.r*0.45) ? 'zoom'   // zoomet: kartet dekker for lite eller er for grovt
     : Math.hypot(tg.x-dekning.senter.x, tg.z-dekning.senter.z) > dekning.r*0.3 ? 'dratt'    // dratt ut av marginen
     : _sd.angleTo(dekning.retning) > 1.5*GRAD ? 'snudd'                                      // snudd eller vippet: sola står et annet sted
     : skyggeSkitten ? 'by' : '';                                                             // sola, husene eller introen
@@ -1258,8 +1258,9 @@ function kameraFraKartet(args){
   kam.naer=args.nearZ; kam.fjern=args.farZ; kam.fov=args.fov;
   kam.zoomfaktor=Math.pow(2,map.getZoom()-Z_HJEM); kam.pitch=map.getPitch(); kam.bearing=map.getBearing();
   kam.mpp=40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*Math.pow(2,map.getZoom()));
-  kam.oye.copy(_pn).addScaledVector(_dir,-args.nearZ*kam.mpp);   // nearZ er i kartets pikselrom; mpp gjør det om til meter
-  cam.position.copy(kam.oye); cam.up.set(0,1,0); cam.lookAt(_pf); // sikter mot fjernplanet, aldri mot nærplanet: når nearZ er nær null faller øyet sammen med nærpunktet og retningen blir tilfeldig cam.updateMatrix(); cam.updateMatrixWorld(true); cam.matrixWorldInverse.copy(cam.matrixWorld).invert();
+  // øyet ligger minst en halvmeter bak nærpunktet, så lookAt aldri får et nullvektor når kartets nearZ er nær null
+  kam.oye.copy(_pn).addScaledVector(_dir,-Math.max(args.nearZ*kam.mpp,0.5));   // nearZ er i kartets pikselrom; mpp gjør det om til meter
+  cam.position.copy(kam.oye); cam.up.set(0,1,0); cam.lookAt(_pn); cam.updateMatrix(); cam.updateMatrixWorld(true); cam.matrixWorldInverse.copy(cam.matrixWorld).invert();
   cam.projectionMatrix.multiplyMatrices(_full,cam.matrixWorld); cam.projectionMatrixInverse.copy(cam.projectionMatrix).invert();
   // bakkepunktet midt i bildet, og meter per skjermpunkt der
   const t=-_pn.y/_dir.y; if(isFinite(t)&&t>0) kam.senter.copy(_pn).addScaledVector(_dir,t);
@@ -1381,9 +1382,11 @@ function oppdater(){
 // laget: kartet tegner byen gjennom dette
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
-  render(gl,args){ const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
 // ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet (vannet lever)
 function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
+// teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
+window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
   map.addLayer(byLag);
   if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>g.scale.y=1); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
@@ -1460,8 +1463,8 @@ function dbgLogg(e,hjul){ if(!dbg.paa) return; dbg.rader.push(`${(performance.no
 const fart={i:false, t0:0, n:0, sist:''};
 function dbgTegn(naa){ if(!dbg.paa) return; dbg.fps.push(naa); while(dbg.fps.length&&naa-dbg.fps[0]>1000) dbg.fps.shift();
   const pt=window.__pt||{};
-  if(map.isMoving()){ if(!fart.i){ fart.i=true; fart.t0=naa; fart.n=0; fart.s=0; fart.b=0; fart.f=0; fart.sk=0; fart.r=0; fart.m=0; } fart.n++; fart.s+=pt.scene||0; fart.b+=pt.blekk||0; fart.f+=pt.fxaa||0; fart.sk+=pt.skygge||0; fart.r+=window.__ramme||0; fart.m+=window.__mellom||0; }
-  else if(fart.i){ fart.i=false; const ms=naa-fart.t0, n=fart.n; if(ms>150) fart.sist=`siste bevegelse ${ms|0} ms, ${n} bilder = ${(n*1000/ms).toFixed(0)}/s  (snitt per bilde: 3D ${(fart.s/n).toFixed(0)} ms, blekk ${(fart.b/n).toFixed(0)} ms, fxaa ${(fart.f/n).toFixed(0)} ms, skyggekart i ${fart.sk} av ${n}, hele render() ${(fart.r/n).toFixed(0)} ms, mellom bildene ${(fart.m/n).toFixed(0)} ms${pt.maal?', GPU-målt':', CPU-målt, tast m for GPU'})`; }
+  if(map.isMoving()){ if(!fart.i){ fart.i=true; fart.t0=naa; fart.n=0; fart.s=0; fart.b=0; fart.f=0; fart.sk=0; fart.r=0; fart.m=0; fart.k0=window.__kartBilder; fart.v0=window.__vaareBilder; } fart.n++; fart.s+=pt.scene||0; fart.b+=pt.blekk||0; fart.f+=pt.fxaa||0; fart.sk+=pt.skygge||0; fart.r+=window.__ramme||0; fart.m+=window.__mellom||0; }
+  else if(fart.i){ fart.i=false; const ms=naa-fart.t0, n=fart.n; if(ms>150) fart.sist=`siste bevegelse ${ms|0} ms, ${n} bilder = ${(n*1000/ms).toFixed(0)}/s  (snitt per bilde: 3D ${(fart.s/n).toFixed(0)} ms, blekk ${(fart.b/n).toFixed(0)} ms, fxaa ${(fart.f/n).toFixed(0)} ms, skyggekart i ${fart.sk} av ${n}, hele render() ${(fart.r/n).toFixed(0)} ms, mellom bildene ${(fart.m/n).toFixed(0)} ms, kartet tegnet ${window.__kartBilder-fart.k0} bilder, laget vårt ${window.__vaareBilder-fart.v0}${pt.maal?', GPU-målt':', CPU-målt, tast m for GPU'})`; }
   dbg.el.textContent=`tegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skala ${skalaStille.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille} msaa ${post.samples()}`
     +String.fromCharCode(10)+fart.sist
     +String.fromCharCode(10)+`3D ${pt.scene|0} ms  blekk ${pt.blekk|0} ms  fxaa ${pt.fxaa|0} ms  kall ${pt.kall}  tri ${pt.tri}  skyggekart ${pt.skygge} (grunner: ${JSON.stringify(dekning.grunner)})  ${pt.maal?'GPU-målt':'CPU-målt'}`+String.fromCharCode(10)+`peker: ned ${dbg.pek.ned} flytt ${dbg.pek.flytt} opp ${dbg.pek.opp}  sist ${dbg.pek.sist}  knapper ${dbg.pek.knapper} ${dbg.pek.type}  senter ${tilModell(map.getCenter()).map(v=>v.toFixed(0)).join(',')}  dragPan ${map.dragPan.isEnabled()?'på':'av'} aktiv ${map.dragPan.isActive()?'ja':'nei'}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }

@@ -1,5 +1,11 @@
 # Endringslogg
 
+## 27.1 (23.10.2026) – to regresjoner fra 27 rettet
+- Trekronene forsvant (mobil, og alle utsnitt tettere enn zoom 1): en kommentar i 13_kart.js svelget resten av linja, så kameraets matriser aldri ble oppdatert. Kronene (billboards fra viewMatrix) og solretningen gikk på gamle matriser. Rettet; øyet ligger nå minst 0,5 m bak nærpunktet, så lookAt aldri degenererer.
+- Hvitt blink ved hver bevegelse: «const grunn» ble tilordnet på nytt i oppdaterSol → TypeError i hvert bilde i fart → laget vårt tegnet ikke, kartet viste papirfargen. Rettet (let). Ny regel 07: interaksjonstesten kjøres som regel, og én JS-feil i bruk er rødt.
+- Målt i Vegars Chrome etterpå: kartet tegnet 10 bilder, laget vårt 10 (ingen tapte bilder); shift+dobbeltklikk zoomer ut; + zoomer inn; − er grå ved minste zoom (riktig).
+- Lærdom: begge feilene kom av tekstpatching (sed/replace) uten å lese linja etterpå, og ingen test beveget kartet. Begge vaktene finnes nå (regel 07; og moduler med lint står i ørneblikk-planen).
+
 ## 27 (23.10.2026) – én kvalitet, skyggekart forankret i byen, Mac-knapper
 - Én tegnekvalitet i fart og i ro. Før tegnet kartet 3D-bildet i lavere oppløsning og med færre skyggeprøver mens det beveget seg, og skarpt når det stod stille; Vegar så det som pikslete skygger under dra (Mac og mobil). Nå er oppløsning, hjørneskygge og strek like hele tiden (regel 05 skjerpet, kvalitet-test.mjs).
 - Skyggekartet er forankret i byen med 40 % margin rundt bildet og tegnes på nytt bare når bildet går ut av dekningen, zoomer, snur over 1,5°, eller husene flytter seg merkbart; myke grunner ventes 150 ms i fart. Før ble det tegnet hvert bilde i fart, og det var det som kostet (målt i Vegars Chrome: 3D-passet 129 ms med skyggekart, 37 ms uten). Store skjermer får 3072²-kart.
