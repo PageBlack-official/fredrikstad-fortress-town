@@ -5,10 +5,10 @@
 - FEIL 03_fasader_fra_tegning  (97 hus med fasade fra tegning, 170 antatt (må kvalitetssikres kvartal for kvartal))
 - FEIL 04_vinduer_ikke_i_hjorner  (50 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(skalaStille) uavhengig av bevegelse)
-- OK   06_bygger_og_laster  (- bygd enkel -> /tmp/claude-0/-home-claude/906a72dc-ab38-5838-984d-9da0bf1a01a5/scratchpad/soc/ut/enkel/index.html 2092 kB versjon 31)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az 1.03 zoom 0.97 → ferdig az 0.70 zoom 1.00 intro false)
+- OK   06_bygger_og_laster  (- bygd enkel -> /tmp/claude-0/-home-claude/906a72dc-ab38-5838-984d-9da0bf1a01a5/scratchpad/soc/ut/enkel/index.html 2094 kB versjon 31.1)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az 1.14 zoom 0.96 → ferdig az 0.70 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
-- FEIL 09_publisert  (- Pages: versjon 30.4 (ønsket 31))
-- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 17687 px, trinn 2: 17013 px)
+- FEIL 09_publisert  (- Pages: versjon 31 (ønsket 31.1))
+- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19332 px, trinn 2: 18570 px)
 
 Detaljer per regel i samme mappe.

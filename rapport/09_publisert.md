@@ -1,4 +1,4 @@
 # 09_publisert: FEIL
 
-- Pages: versjon 30.4 (ønsket 31)
-- artefaktbygg: versjon 31
+- Pages: versjon 31 (ønsket 31.1)
+- artefaktbygg: versjon 31.1

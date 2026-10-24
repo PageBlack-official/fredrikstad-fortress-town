@@ -8,7 +8,8 @@ const browser=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftsh
 const ctx=await browser.newContext({viewport:{width:+W,height:+H}, deviceScaleFactor:+(process.env.DPR||1), isMobile:!!process.env.MOBIL, hasTouch:!!process.env.MOBIL}); const page=await ctx.newPage();
 const errs=[]; page.on('pageerror',e=>errs.push(e.message)); page.on('console',m=>{ if(m.type()==='error') errs.push('console: '+m.text().slice(0,160)); });
 await page.goto(`http://127.0.0.1:${port}/index.html?skip=1${process.env.EKSTRA||''}`,{waitUntil:'load'}); await page.waitForTimeout(+vent);
-if(az!==undefined){ await page.evaluate(a=>window.__vis(...a),[+az,+z,+tx,+ty]); await page.waitForTimeout(2500); }
+// venter til kameraet faktisk står der (hodeløs Chrome med programvare-GPU kan bruke mange sekunder per bilde), så skjermbildet og __kam() stemmer overens
+if(az!==undefined){ await page.evaluate(a=>window.__vis(...a),[+az,+z,+tx,+ty]); const t0=Date.now(); while(Date.now()-t0<90000){ await page.waitForTimeout(500); const k=await page.evaluate(()=>window.__kam()); if(Math.abs(k.zoom-(+z))<0.02 && !k.anim) break; } await page.waitForTimeout(1500); }
 const k=await page.evaluate(()=>window.__kam?window.__kam():null);
 const cdp=await ctx.newCDPSession(page); const {data}=await cdp.send('Page.captureScreenshot',{format:'png'});
 fs.writeFileSync(out,Buffer.from(data,'base64')); console.log('ok',out,'kam',JSON.stringify(k),'feil',JSON.stringify(errs));

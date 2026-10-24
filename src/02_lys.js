@@ -46,7 +46,7 @@ const U_SKRAVUR={value:0};
 // solretningen har endret seg merkbart, eller sola/husene har flyttet seg. Flytting (dra) innenfor dekningen koster ingen skyggetegning.
 sun.shadow.autoUpdate=false; let skyggeSkitten=true, kameraBeveget=true; const sistKam=new THREE.Matrix4();
 const dekning={r:0, senter:new THREE.Vector3(), retning:new THREE.Vector3(), grunner:{}, sist:0};
-const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4();
+const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4(), _hoyre=new THREE.Vector3(), _opp=new THREE.Vector3(), _senter=new THREE.Vector3();
 function oppdaterSol(){
   const tg=kam.senter;
   cam.updateMatrixWorld(); kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !introDone; if(kameraBeveget) sistKam.copy(cam.projectionMatrix);
@@ -66,10 +66,20 @@ function oppdaterSol(){
   const naa=performance.now();
   if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150) grunn='';
   if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
-    const R=Math.min(1100, r*1.4);                                                          // 40 % margin rundt bildet
+    // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
+    // marginen ofte, og hver ny tegning med ny skala og nytt senter flyttet tekselrutenettet, så de myke kantene krøp. Nå er
+    // dekningen trinnvis (1100 m delt på 1,5^k) og senteret låst til tekselrutenettet i lysets plan, så to tegninger av samme
+    // sted gir samme teksler; bare innholdet (hus som løfter seg) kan endre seg.
+    const trinn=Math.max(0, Math.ceil(Math.log(1100/Math.min(1100, r*1.4))/Math.log(1.5)));
+    const R=1100/Math.pow(1.5,trinn);                                                        // minst 40 % margin rundt bildet
     if(Math.abs(sc.right-R)>0.5){ sc.left=-R; sc.right=R; sc.top=R; sc.bottom=-R; sc.updateProjectionMatrix(); }
     sun.shadow.radius=THREE.MathUtils.clamp(1.1/(2*R/sun.shadow.mapSize.x),1.5,9);
-    dekning.r=R; dekning.senter.copy(tg); dekning.retning.copy(_sd);
+    const teksel=2*R/sun.shadow.mapSize.x;
+    _hoyre.set(0,1,0).cross(_sd).normalize(); _opp.copy(_sd).cross(_hoyre).normalize();     // lysets plan: høyre og opp
+    const cx=tg.dot(_hoyre), cy=tg.dot(_opp);
+    _senter.copy(tg).addScaledVector(_hoyre, Math.round(cx/teksel)*teksel-cx).addScaledVector(_opp, Math.round(cy/teksel)*teksel-cy);
+    sun.target.position.copy(_senter); sun.position.copy(_senter).addScaledVector(_sd,1500); sun.target.updateMatrixWorld(); sun.updateMatrixWorld();
+    dekning.r=R; dekning.senter.copy(_senter); dekning.retning.copy(_sd);
     sun.shadow.needsUpdate=true; skyggeSkitten=false;
   }
   // trærne henter solretningen selv (se tre-blokken)

@@ -9,7 +9,7 @@ ut = os.path.join(ROT, 'rapport', '_mobiltrinn'); os.makedirs(ut, exist_ok=True)
 def tegn(nivaa):
     p = os.path.join(ut, f'nivaa{nivaa}.png')
     env = {**os.environ, 'MOBIL': '1', 'DPR': '2', 'EKSTRA': f'&nivaa={nivaa}'}
-    for forsok in range(3):   # __vis treffer ikke alltid zoomen i første forsøk på mobilflate; kameraet sjekkes (mpp ≈ 0,11 m/px ved zoom 4)
+    for forsok in range(2):   # bilde-mobil venter selv til kameraet står; sjekkes likevel (mpp ≈ 0,11 m/px ved zoom 4)
         r = subprocess.run(['node', os.path.join(ROT, 'verktoy', 'bilde-mobil.mjs'), os.path.join(ROT, 'ut', 'enkel', 'index.html'), p, '40', '4', '40', '-20', '390', '844'], capture_output=True, text=True, cwd=ROT, env=env)
         m = re.search(r'"mpp":([\d.]+)', r.stdout)
         if m and abs(float(m.group(1)) - 0.110) < 0.01: break

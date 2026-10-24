@@ -1,5 +1,8 @@
 # Endringslogg
 
+## 31.1 (24.10.2026) – stabilt skyggekart
+- Vegar på mobil etter v31: «skyggene tegnes hele tiden så det flakker». På en smal skjerm går et dra ut av skyggekartets margin ofte, og hver ny tegning fikk ny skala (R = r·1,4) og nytt senter, så tekselrutenettet flyttet seg og de myke kantene krøp. Nå er dekningen trinnvis (1100 m / 1,5^k) og senteret låst til tekselrutenettet i lysets plan: to tegninger av samme sted gir samme teksler. (Standard metode for stabile skyggekaskader.)
+
 ## 31 (24.10.2026) – trekronene er geometri
 - Vegar fra mobilen: kronene forsvant fortsatt (nå ved dra oppover), med perfNivaa 0, ingen GL-feil, og samme feil med ?kroner=enkel, utendybde, utenskygge og nospeil. Samme utsnitt tegnet riktig i hodeløs Chrome. Konklusjon: billboard-kronene (tegnede skiver med egen dybdeskriving) oppførte seg annerledes på iPhone-brikken uten at delen kunne pekes ut. Vegar: «lås størrelsene og la dem zoomes som husene».
 - Kronene er nå kuler i klaser (SphereGeometry 14×10, instansert, samme klasedata som før) med samme sol, skyggemaske og blekkstrek som husene. Tre toner som før. Skyggekroppene beholdes (kronene skygger ikke seg selv). Nærbilde og hjemmevisning er nesten like v30 (rapport/d-sammenligning/kuler-for-etter-naer.png).
