@@ -1,5 +1,8 @@
 # Endringslogg
 
+## 30.1 (24.10.2026) – Torvgata: tre gule hus tilbake
+- Vegar fra mobilen: «legg spesielt merke til Torvgata. Her mangler det to gule hus bl.a.» Bygg 238, 240 og 313 (Dunkejongården-rekka) var dømt W/G i v30; fotavtrykket projisert på mønehøyde traff det hvite huset med arker bak, ikke det gule foran. Dagens gule beholdt, rettelsene trukket, linje med Vegar som kilde i rettelser.json. Lærdom (i LESMEG): i tette rekker treffer projeksjonen nabohuset bak; dommen må leses mot huset som står under polygonet, og Vegars øye vinner.
+
 ## 30 (23.10.2026) – husfarger dømt mot 2019-trykket, trær fra flyfoto på flatene
 - Husfarger: 245 hus som står i 2019-trykket er dømt visuelt, ett og ett, mot kontrollark (rapport/farger-dom/ark-01…21.png: 2019-utsnitt med fotavtrykk, dagens farge og agentforslaget). 105 stemte som de stod, 69 er rettet (53 vegger, 45 tak), 65 var ikke synlige (trær, tekstfelt, vann), 4 er egne bygg (kirka, portene). Rettelsene ligger i data/rettelser.json (265 linjer, hvem/dato/grunn), palettbokstavene i farger-dom/palett.json, dommen i farger-dom/dom.txt. Skyggetonene (veggs/taks) nullstilles der fargen byttes, så de avledes av fargen.
 - Agentforslaget farger2019.json ble underkjent i mottakskontrollen (bygg 194: lyseblått i trykket, grått i forslaget med «høy sikkerhet»; koblingen fasade→bygg tar nabohuset). Funn underveis: tegneren la plantegningen på mønehøyde og tegnet veggene nedover, så fotavtrykket projisert med affin2 treffer mønet, ikke grunnmuren (rapport/farger2019-hoydeskala.png).

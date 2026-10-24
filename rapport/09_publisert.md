@@ -1,4 +1,4 @@
-# 09_publisert: FEIL
+# 09_publisert: OK
 
-- Pages: versjon 29 (ønsket 30)
-- artefaktbygg: versjon 29
+- Pages: versjon 30 (ønsket 30)
+- artefaktbygg: versjon 30

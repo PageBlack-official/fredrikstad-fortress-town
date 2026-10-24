@@ -125,9 +125,9 @@
 235 I
 236 I
 237 W/H
-238 W/G
+238 I   # Vegar 24.10: gult hus i Torvgata, dommen W/G var feil (polygonet traff nabohuset bak)
 239 I
-240 W/G
+240 I   # Vegar 24.10: gult hus i Torvgata, dommen W/G var feil (polygonet traff nabohuset bak)
 241 I
 242 ?
 243 P/R
@@ -169,7 +169,7 @@
 308 L/R
 310 ?
 311 I
-313 W/G
+313 I   # Vegar 24.10: gult hus i Torvgata, dommen W/G var feil (polygonet traff nabohuset bak)
 326 I
 327 I
 328 I
