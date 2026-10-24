@@ -10,6 +10,7 @@ const errs=[]; page.on('pageerror',e=>errs.push(e.message)); page.on('console',m
 await page.goto(`http://127.0.0.1:${port}/index.html?skip=1${process.env.EKSTRA||''}`,{waitUntil:'load'}); await page.waitForTimeout(+vent);
 // venter til kameraet faktisk står der (hodeløs Chrome med programvare-GPU kan bruke mange sekunder per bilde), så skjermbildet og __kam() stemmer overens
 if(az!==undefined){ await page.evaluate(a=>window.__vis(...a),[+az,+z,+tx,+ty]); const t0=Date.now(); while(Date.now()-t0<90000){ await page.waitForTimeout(500); const k=await page.evaluate(()=>window.__kam()); if(Math.abs(k.zoom-(+z))<0.02 && !k.anim) break; } await page.waitForTimeout(1500); }
+if(process.env.UI==='0') await page.addStyleTag({content:'#hjem,#hint,#kort,.maplibregl-ctrl{display:none!important}'});   // UI=0: bare lerretet (til måling)
 const k=await page.evaluate(()=>window.__kam?window.__kam():null);
 const cdp=await ctx.newCDPSession(page); const {data}=await cdp.send('Page.captureScreenshot',{format:'png'});
 fs.writeFileSync(out,Buffer.from(data,'base64')); console.log('ok',out,'kam',JSON.stringify(k),'feil',JSON.stringify(errs));

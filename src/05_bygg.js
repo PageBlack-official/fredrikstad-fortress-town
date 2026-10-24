@@ -46,6 +46,37 @@ function flatGruppe(grp, ekstra=['aBygg','aTopp']){
   grp.children.filter(c=>c.isGroup && !c.children.length).forEach(c=>c.removeFromParent());
   return grp;
 }
+// ---- kontaktskygge (lys-og-bevegelse pkt. 1, 24.10): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
+// Geometri på bakken (ikke skjermeffekt): et bånd rundt hver husfot og en skive under hvert tre, med alfa 1 inne og 0 ute,
+// multiplisert inn i bakken. Stabilt i fart, ingen prikking, skalerer som husene. Styrken er KONTAKT_STYRKE, bredden settes der båndene lages.
+const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : 0.42;
+const kontaktMat=new THREE.ShaderMaterial({
+  transparent:true, depthWrite:false, blending:THREE.MultiplyBlending, polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-2,
+  uniforms:{ styrke:{value:KONTAKT_STYRKE} },
+  vertexShader:`attribute float aAlfa; varying float vA; void main(){ vA=aAlfa; vec4 p=vec4(position,1.);
+    #ifdef USE_INSTANCING
+    p=instanceMatrix*p;
+    #endif
+    gl_Position=projectionMatrix*modelViewMatrix*p; }`,
+  fragmentShader:`uniform float styrke; varying float vA; void main(){ float a=vA*vA*(3.-2.*vA)*styrke; gl_FragColor=vec4(mix(vec3(1.), vec3(0.62,0.66,0.78), a), 1.); }`
+});
+// bånd rundt et polygon (modellkoordinater x,y → verden x,-y), bredde d meter; returnerer posisjoner og alfa
+function fotBaand(pts, d, y){
+  const n=pts.length; let areal=0; for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; areal+=a[0]*c[1]-c[0]*a[1]; }
+  const ut=areal>0 ? 1 : -1;                        // orientering avgjør hvilken side som er ut
+  const pos=[], alfa=[], nrm=[];
+  for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; const ex=c[0]-a[0], ey=c[1]-a[1], L=Math.hypot(ex,ey)||1; nrm.push([ -ey/L*ut, ex/L*ut ]); }
+  const P=(x,yy,al)=>{ pos.push(x,y,-yy); alfa.push(al); };
+  for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n], m=nrm[i];
+    const a2=[a[0]+m[0]*d, a[1]+m[1]*d], c2=[c[0]+m[0]*d, c[1]+m[1]*d];
+    P(a[0],a[1],1); P(c[0],c[1],1); P(c2[0],c2[1],0);  P(a[0],a[1],1); P(c2[0],c2[1],0); P(a2[0],a2[1],0);
+    // hjørnevifte mellom dette og neste bånd (bare utvendige hjørner)
+    const m2=nrm[(i+1)%n]; const kryss=(m[0]*m2[1]-m[1]*m2[0])*ut;
+    if(kryss>1e-6){ P(c[0],c[1],1); P(c[0]+m[0]*d,c[1]+m[1]*d,0); P(c[0]+m2[0]*d,c[1]+m2[1]*d,0); }
+    else if(kryss<-1e-6){ P(c[0],c[1],1); P(c[0]+m2[0]*d,c[1]+m2[1]*d,0); P(c[0]+m[0]*d,c[1]+m[1]*d,0); }
+  }
+  return {pos, alfa};
+}
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
   const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'');

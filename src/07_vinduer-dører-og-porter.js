@@ -218,3 +218,8 @@ samler.forEach((biter, m)=>{
 });
 if(vinduSamling.length) city.add(lagVinduer(vinduSamling));
 samler.clear();
+// kontaktskygge rundt alle husføtter: ett nett for hele byen
+{ const pos=[], alfa=[];
+  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, 1.3, 0.04); pos.push(...f.pos); alfa.push(...f.alfa); });
+  const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setAttribute('aAlfa', new THREE.Float32BufferAttribute(alfa,1));
+  const m=new THREE.Mesh(g, kontaktMat); m.frustumCulled=false; m.renderOrder=1; city.add(m); }

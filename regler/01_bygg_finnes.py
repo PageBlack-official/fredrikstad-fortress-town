@@ -1,4 +1,5 @@
-"""Regel: hvert bygg i Gamlebyen skal ha en bygning under seg i flyfoto. Bygg uten skal ha skjul-feltet med grunn.
+"""Regel: hvert bygg i Gamlebyen skal ha en bygning under seg i flyfoto. Bygg uten skal ha skjul-feltet med grunn, eller bekreftet-feltet
+(sett med egne øyne: huset står der, men er dekket av trær eller flyfotoet er forskjøvet), også med grunn.
 Måler andel vegetasjon og åpen bakke under fotavtrykket; lager kontaktark som bevis."""
 import cv2, numpy as np, math
 from _felles import *
@@ -9,7 +10,7 @@ for i, x in gamleby(b):
     if m.sum() < 10: continue
     h, s = hsv[..., 0][m == 1], hsv[..., 1][m == 1]
     gront = float(((h > 30) & (h < 90) & (s > 60)).mean())
-    if gront > 0.45 and not x.get('skjul'):
+    if gront > 0.45 and not x.get('skjul') and not x.get('bekreftet'):   # bekreftet = sett av menneske/Claude i flyfoto, med grunn i rettelser.json
         feil.append(f"- bygg {i} ({x.get('navn') or x.get('type')}): {int(gront*100)} % vegetasjon under fotavtrykket, ikke skjult")
         c = px(x['r'][0], x['r'][1]); R = 80; x0, y0 = int(c[0] - R), int(c[1] - R); fl = im[y0:y0 + 2 * R, x0:x0 + 2 * R].copy()
         cv2.polylines(fl, [P - [x0, y0]], True, (0, 80, 255), 2); cv2.putText(fl, str(i), (4, 16), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1); fliser.append(cv2.resize(fl, (200, 200)))

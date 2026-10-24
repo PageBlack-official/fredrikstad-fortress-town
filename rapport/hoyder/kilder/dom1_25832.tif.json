@@ -1,0 +1,4 @@
+{
+ "url": "https://wcs.geonorge.no/skwms1/wcs.hoyde-dom-nhm-25832?service=WCS&version=1.0.0&request=GetCoverage&coverage=nhm_dom_topo_25832&crs=EPSG:25832&bbox=610991,6563830,612003,6564767&width=1012&height=937&format=GeoTIFF",
+ "lisens": "CC BY 4.0, \u00a9 Kartverket"
+}

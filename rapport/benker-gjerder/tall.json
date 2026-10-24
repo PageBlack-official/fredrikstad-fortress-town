@@ -1,0 +1,1129 @@
+{
+ "osm_bytes": 5680936,
+ "trykklinjer": [
+  {
+   "id": "T1",
+   "type": "plankegjerde",
+   "sikkerhet": "høy",
+   "lengde_m": 31.8,
+   "naermeste": "gjerder.json[3]",
+   "avstand_m": 2.7,
+   "inne_i_hus_m": 0.0,
+   "status": "finnes",
+   "merknad": "Tøihusgaten mellom 9 og 8. Også nevnt i rapport/dekning.md.",
+   "p": [
+    [
+     -107.35,
+     -67.65
+    ],
+    [
+     -77.08,
+     -77.31
+    ]
+   ]
+  },
+  {
+   "id": "T2",
+   "type": "mur/gjerde",
+   "sikkerhet": "middels",
+   "lengde_m": 15.7,
+   "naermeste": "gjerder.json[5]",
+   "avstand_m": 11.8,
+   "inne_i_hus_m": 0.0,
+   "status": "ny",
+   "merknad": "Kasernegaten sørside, øst for 10, lukker hagen mot gata.",
+   "p": [
+    [
+     -75.68,
+     -12.99
+    ],
+    [
+     -61.43,
+     -19.6
+    ]
+   ]
+  },
+  {
+   "id": "T3",
+   "type": "mur/gjerde",
+   "sikkerhet": "høy",
+   "lengde_m": 8.9,
+   "naermeste": "gjerder.json[5]",
+   "avstand_m": 3.6,
+   "inne_i_hus_m": 11.4,
+   "status": "finnes",
+   "merknad": "Kasernegaten nordside, langs plenen foran 45-kvartalet.",
+   "p": [
+    [
+     -66.7,
+     -5.53
+    ],
+    [
+     -62.25,
+     2.18
+    ]
+   ]
+  },
+  {
+   "id": "T4",
+   "type": "mur/gjerde",
+   "sikkerhet": "lav",
+   "lengde_m": 13.8,
+   "naermeste": "gjerder.json[5]",
+   "avstand_m": 0.4,
+   "inne_i_hus_m": 0.0,
+   "status": "finnes",
+   "merknad": "Kasernegaten nordside vest; kan være sokkel på huset.",
+   "p": [
+    [
+     -81.85,
+     1.93
+    ],
+    [
+     -69.57,
+     -4.28
+    ]
+   ]
+  },
+  {
+   "id": "T5",
+   "type": "hekk eller grønn mur",
+   "sikkerhet": "middels",
+   "lengde_m": 19.8,
+   "naermeste": "murer.json[1]",
+   "avstand_m": 1.7,
+   "inne_i_hus_m": 0.0,
+   "status": "finnes",
+   "merknad": "Tøihusparken nordvest (fra 12 til hjørnet). OSM har muren her (murer.json).",
+   "p": [
+    [
+     -142.32,
+     -130.22
+    ],
+    [
+     -151.47,
+     -147.82
+    ]
+   ]
+  },
+  {
+   "id": "T6",
+   "type": "hekk eller grønn mur",
+   "sikkerhet": "middels",
+   "lengde_m": 55.7,
+   "naermeste": "murer.json[1]",
+   "avstand_m": 2.2,
+   "inne_i_hus_m": 0.0,
+   "status": "finnes",
+   "merknad": "Tøihusparken mot Laboratoriegaten. OSM har muren her.",
+   "p": [
+    [
+     -151.28,
+     -148.6
+    ],
+    [
+     -97.73,
+     -164.09
+    ]
+   ]
+  },
+  {
+   "id": "T7",
+   "type": "mur",
+   "sikkerhet": "høy",
+   "lengde_m": 53.0,
+   "naermeste": "murer.json[1]",
+   "avstand_m": 0.5,
+   "inne_i_hus_m": 0.0,
+   "status": "finnes",
+   "merknad": "Tøihusparken sørøst, med lite tårnhus i muren.",
+   "p": [
+    [
+     -97.73,
+     -164.09
+    ],
+    [
+     -82.62,
+     -113.26
+    ]
+   ]
+  },
+  {
+   "id": "T8",
+   "type": "hekk",
+   "sikkerhet": "middels",
+   "lengde_m": 30.3,
+   "naermeste": "gjerder.json[8]",
+   "avstand_m": 3.6,
+   "inne_i_hus_m": 9.2,
+   "status": "finnes",
+   "merknad": "Hagen nord for 20 (Nye rådhus); hjørnet ligger under et tre i trykket.",
+   "p": [
+    [
+     43.77,
+     -62.02
+    ],
+    [
+     49.61,
+     -53.21
+    ],
+    [
+     69.36,
+     -53.69
+    ]
+   ]
+  },
+  {
+   "id": "T9",
+   "type": "mur/gjerde",
+   "sikkerhet": "lav",
+   "lengde_m": 24.8,
+   "naermeste": "gjerder.json[7]",
+   "avstand_m": 22.4,
+   "inne_i_hus_m": 0.0,
+   "status": "ny",
+   "merknad": "Gårdsrom bak de gule husene sør for 20; kan være husvegg.",
+   "p": [
+    [
+     31.58,
+     -135.08
+    ],
+    [
+     38.04,
+     -122.75
+    ],
+    [
+     48.76,
+     -124.54
+    ]
+   ]
+  },
+  {
+   "id": "T10",
+   "type": "mur/gjerde",
+   "sikkerhet": "lav",
+   "lengde_m": 2.7,
+   "naermeste": "gjerder.json[25]",
+   "avstand_m": 4.6,
+   "inne_i_hus_m": 10.7,
+   "status": "ny",
+   "merknad": "Raadhusgaten, lukker gårdsrommet mellom det blå huset og naboen.",
+   "p": [
+    [
+     76.3,
+     23.24
+    ],
+    [
+     78.01,
+     25.33
+    ]
+   ]
+  },
+  {
+   "id": "T11",
+   "type": "mur/gjerde",
+   "sikkerhet": "lav",
+   "lengde_m": 12.6,
+   "naermeste": "gjerder.json[45]",
+   "avstand_m": 6.1,
+   "inne_i_hus_m": 10.9,
+   "status": "ny",
+   "merknad": "Ved 37, lukker gårdsrommet mot gata.",
+   "p": [
+    [
+     74.27,
+     176.83
+    ],
+    [
+     82.2,
+     186.63
+    ]
+   ]
+  },
+  {
+   "id": "T12",
+   "type": "gjerde eller sti",
+   "sikkerhet": "usikker",
+   "lengde_m": 4.7,
+   "naermeste": "gjerder.json[39]",
+   "avstand_m": 17.6,
+   "inne_i_hus_m": 15.4,
+   "status": "ny",
+   "merknad": "Fra 30 mot 29. Ser ut som to skinner, men kan være en smal sti.",
+   "p": [
+    [
+     170.87,
+     198.29
+    ],
+    [
+     175.02,
+     196.1
+    ]
+   ]
+  }
+ ],
+ "osm_barrierer": [
+  {
+   "id": "osm52381461",
+   "barrier": "wall",
+   "lengde_m": 17.8,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    559.0,
+    164.0
+   ]
+  },
+  {
+   "id": "osm83128998",
+   "barrier": "wall",
+   "lengde_m": 192.2,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    -296.0,
+    7.0
+   ]
+  },
+  {
+   "id": "osm104800420",
+   "barrier": "retaining_wall",
+   "lengde_m": 276.0,
+   "avstand_m": 660.1,
+   "status": "ny",
+   "sentrum": [
+    582.0,
+    -547.0
+   ]
+  },
+  {
+   "id": "osm118436071",
+   "barrier": "retaining_wall",
+   "lengde_m": 225.2,
+   "avstand_m": 75.5,
+   "status": "ny",
+   "sentrum": [
+    -372.0,
+    -4.0
+   ]
+  },
+  {
+   "id": "osm118474665",
+   "barrier": "wall",
+   "lengde_m": 149.1,
+   "avstand_m": 0.3,
+   "status": "finnes",
+   "sentrum": [
+    -117.0,
+    -137.0
+   ]
+  },
+  {
+   "id": "osm205612128",
+   "barrier": "retaining_wall",
+   "lengde_m": 50.6,
+   "avstand_m": 640.8,
+   "status": "ny",
+   "sentrum": [
+    589.0,
+    -523.0
+   ]
+  },
+  {
+   "id": "osm205612134",
+   "barrier": "retaining_wall",
+   "lengde_m": 52.5,
+   "avstand_m": 646.2,
+   "status": "ny",
+   "sentrum": [
+    563.0,
+    -546.0
+   ]
+  },
+  {
+   "id": "osm205759579",
+   "barrier": "retaining_wall",
+   "lengde_m": 146.4,
+   "avstand_m": 0.4,
+   "status": "finnes",
+   "sentrum": [
+    -21.0,
+    153.0
+   ]
+  },
+  {
+   "id": "osm205759584",
+   "barrier": "retaining_wall",
+   "lengde_m": 174.0,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    -109.0,
+    36.0
+   ]
+  },
+  {
+   "id": "osm205759585",
+   "barrier": "retaining_wall",
+   "lengde_m": 190.4,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    68.0,
+    269.0
+   ]
+  },
+  {
+   "id": "osm205760860",
+   "barrier": "retaining_wall",
+   "lengde_m": 253.6,
+   "avstand_m": 0.4,
+   "status": "finnes",
+   "sentrum": [
+    -195.0,
+    -119.0
+   ]
+  },
+  {
+   "id": "osm207093940",
+   "barrier": "wall",
+   "lengde_m": 29.3,
+   "avstand_m": 643.0,
+   "status": "ny",
+   "sentrum": [
+    627.0,
+    -523.0
+   ]
+  },
+  {
+   "id": "osm207093941",
+   "barrier": "wall",
+   "lengde_m": 24.9,
+   "avstand_m": 594.8,
+   "status": "ny",
+   "sentrum": [
+    577.0,
+    -477.0
+   ]
+  },
+  {
+   "id": "osm207093945",
+   "barrier": "retaining_wall",
+   "lengde_m": 32.4,
+   "avstand_m": 625.6,
+   "status": "ny",
+   "sentrum": [
+    622.0,
+    -505.0
+   ]
+  },
+  {
+   "id": "osm207093946",
+   "barrier": "retaining_wall",
+   "lengde_m": 34.4,
+   "avstand_m": 601.3,
+   "status": "ny",
+   "sentrum": [
+    591.0,
+    -483.0
+   ]
+  },
+  {
+   "id": "osm584692614",
+   "barrier": "wall",
+   "lengde_m": 15.2,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    571.0,
+    150.0
+   ]
+  },
+  {
+   "id": "osm584692616",
+   "barrier": "wall",
+   "lengde_m": 5.5,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    558.0,
+    137.0
+   ]
+  },
+  {
+   "id": "osm584692617",
+   "barrier": "fence",
+   "lengde_m": 49.6,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    540.0,
+    133.0
+   ]
+  },
+  {
+   "id": "osm584692618",
+   "barrier": "wall",
+   "lengde_m": 5.5,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    566.0,
+    148.0
+   ]
+  },
+  {
+   "id": "osm584692619",
+   "barrier": "wall",
+   "lengde_m": 28.2,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    552.0,
+    126.0
+   ]
+  },
+  {
+   "id": "osm584692620",
+   "barrier": "wall",
+   "lengde_m": 13.7,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    564.0,
+    141.0
+   ]
+  },
+  {
+   "id": "osm584692629",
+   "barrier": "wall",
+   "lengde_m": 5.5,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    562.0,
+    142.0
+   ]
+  },
+  {
+   "id": "osm584692633",
+   "barrier": "wall",
+   "lengde_m": 13.7,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    559.0,
+    144.0
+   ]
+  },
+  {
+   "id": "osm1017903530",
+   "barrier": "fence",
+   "lengde_m": 85.3,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    -258.0,
+    753.0
+   ]
+  },
+  {
+   "id": "osm1017903534",
+   "barrier": "fence",
+   "lengde_m": 188.7,
+   "avstand_m": 0.6,
+   "status": "finnes",
+   "sentrum": [
+    -7.0,
+    690.0
+   ]
+  },
+  {
+   "id": "osm1017903536",
+   "barrier": "fence",
+   "lengde_m": 145.5,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    -220.0,
+    743.0
+   ]
+  },
+  {
+   "id": "osm1017964739",
+   "barrier": "retaining_wall",
+   "lengde_m": 190.1,
+   "avstand_m": 0.5,
+   "status": "finnes",
+   "sentrum": [
+    163.0,
+    725.0
+   ]
+  },
+  {
+   "id": "osm1267585402",
+   "barrier": "retaining_wall",
+   "lengde_m": 59.2,
+   "avstand_m": 259.9,
+   "status": "ny",
+   "sentrum": [
+    -302.0,
+    477.0
+   ]
+  },
+  {
+   "id": "osm1484177463",
+   "barrier": "fence",
+   "lengde_m": 5.8,
+   "avstand_m": 125.3,
+   "status": "ny",
+   "sentrum": [
+    -435.0,
+    -23.0
+   ]
+  },
+  {
+   "id": "osm1484177464",
+   "barrier": "fence",
+   "lengde_m": 21.0,
+   "avstand_m": 134.7,
+   "status": "ny",
+   "sentrum": [
+    -443.0,
+    -26.0
+   ]
+  },
+  {
+   "id": "osm1484177466",
+   "barrier": "retaining_wall",
+   "lengde_m": 61.2,
+   "avstand_m": 65.5,
+   "status": "ny",
+   "sentrum": [
+    -337.0,
+    78.0
+   ]
+  }
+ ],
+ "eksisterende_gjerder": [
+  {
+   "i": 0,
+   "lengde_m": 8.1,
+   "naer_trykklinje_m": 33.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 1,
+   "lengde_m": 11.4,
+   "naer_trykklinje_m": 17.9,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 2,
+   "lengde_m": 318.2,
+   "naer_trykklinje_m": 53.8,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 3,
+   "lengde_m": 78.9,
+   "naer_trykklinje_m": 12.5,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 4,
+   "lengde_m": 2.9,
+   "naer_trykklinje_m": 27.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 5,
+   "lengde_m": 105.9,
+   "naer_trykklinje_m": 21.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 6,
+   "lengde_m": 259.4,
+   "naer_trykklinje_m": 59.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 7,
+   "lengde_m": 71.9,
+   "naer_trykklinje_m": 24.8,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 8,
+   "lengde_m": 157.5,
+   "naer_trykklinje_m": 30.9,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 9,
+   "lengde_m": 129.6,
+   "naer_trykklinje_m": 54.9,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 10,
+   "lengde_m": 49.4,
+   "naer_trykklinje_m": 35.8,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 11,
+   "lengde_m": 39.2,
+   "naer_trykklinje_m": 39.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 12,
+   "lengde_m": 5.6,
+   "naer_trykklinje_m": 44.1,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 13,
+   "lengde_m": 19.9,
+   "naer_trykklinje_m": 61.8,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 14,
+   "lengde_m": 21.7,
+   "naer_trykklinje_m": 8.5,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 15,
+   "lengde_m": 18.1,
+   "naer_trykklinje_m": 23.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 16,
+   "lengde_m": 3.5,
+   "naer_trykklinje_m": 46.8,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 17,
+   "lengde_m": 84.3,
+   "naer_trykklinje_m": 66.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 18,
+   "lengde_m": 16.2,
+   "naer_trykklinje_m": 35.5,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 19,
+   "lengde_m": 4.3,
+   "naer_trykklinje_m": 14.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 20,
+   "lengde_m": 70.4,
+   "naer_trykklinje_m": 73.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 21,
+   "lengde_m": 217.7,
+   "naer_trykklinje_m": 66.2,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 22,
+   "lengde_m": 22.8,
+   "naer_trykklinje_m": 57.5,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 23,
+   "lengde_m": 10.9,
+   "naer_trykklinje_m": 64.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 24,
+   "lengde_m": 111.8,
+   "naer_trykklinje_m": 54.7,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 25,
+   "lengde_m": 55.2,
+   "naer_trykklinje_m": 31.7,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 26,
+   "lengde_m": 167.6,
+   "naer_trykklinje_m": 103.7,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 27,
+   "lengde_m": 62.6,
+   "naer_trykklinje_m": 97.0,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 28,
+   "lengde_m": 8.2,
+   "naer_trykklinje_m": 69.3,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 29,
+   "lengde_m": 8.2,
+   "naer_trykklinje_m": 70.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 30,
+   "lengde_m": 131.8,
+   "naer_trykklinje_m": 58.1,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 31,
+   "lengde_m": 3.1,
+   "naer_trykklinje_m": 72.2,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 32,
+   "lengde_m": 4.2,
+   "naer_trykklinje_m": 97.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 33,
+   "lengde_m": 120.9,
+   "naer_trykklinje_m": 80.2,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 34,
+   "lengde_m": 110.7,
+   "naer_trykklinje_m": 28.8,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 35,
+   "lengde_m": 50.3,
+   "naer_trykklinje_m": 74.2,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 36,
+   "lengde_m": 10.6,
+   "naer_trykklinje_m": 86.0,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 37,
+   "lengde_m": 4.0,
+   "naer_trykklinje_m": 37.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 38,
+   "lengde_m": 12.8,
+   "naer_trykklinje_m": 32.7,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 39,
+   "lengde_m": 8.9,
+   "naer_trykklinje_m": 18.2,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 40,
+   "lengde_m": 34.1,
+   "naer_trykklinje_m": 30.1,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 41,
+   "lengde_m": 3.3,
+   "naer_trykklinje_m": 59.6,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 42,
+   "lengde_m": 60.4,
+   "naer_trykklinje_m": 41.1,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 43,
+   "lengde_m": 10.8,
+   "naer_trykklinje_m": 49.4,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 44,
+   "lengde_m": 15.5,
+   "naer_trykklinje_m": 58.2,
+   "inne_i_hus_m": 0.0
+  },
+  {
+   "i": 45,
+   "lengde_m": 5.6,
+   "naer_trykklinje_m": 5.9,
+   "inne_i_hus_m": 0.0
+  }
+ ],
+ "forslag": 7,
+ "benker": 78,
+ "benker_i_trykket": 51,
+ "benker_utenfor": [
+  {
+   "id": "3670534237",
+   "x": -514.9,
+   "y": 225.7,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3670534241",
+   "x": -485.6,
+   "y": 222.2,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3673299651",
+   "x": -642.8,
+   "y": 668.6,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3673299652",
+   "x": -638.0,
+   "y": 659.7,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3673299653",
+   "x": -647.5,
+   "y": 678.6,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3684677954",
+   "x": -169.7,
+   "y": 641.0,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3684744986",
+   "x": -195.3,
+   "y": 621.5,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "3684745765",
+   "x": -154.7,
+   "y": 595.9,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388910804",
+   "x": -178.2,
+   "y": 696.9,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388910805",
+   "x": -175.5,
+   "y": 697.4,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388910806",
+   "x": -174.0,
+   "y": 694.2,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388910807",
+   "x": -188.8,
+   "y": 705.0,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388910808",
+   "x": -185.1,
+   "y": 703.3,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388915835",
+   "x": -132.8,
+   "y": 701.2,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388915836",
+   "x": -123.9,
+   "y": 699.0,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9388915837",
+   "x": -128.3,
+   "y": 700.0,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "9389462317",
+   "x": 155.2,
+   "y": 677.6,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "11182963743",
+   "x": -137.5,
+   "y": 683.3,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "11182965942",
+   "x": -140.1,
+   "y": 683.8,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "11772697798",
+   "x": -172.6,
+   "y": 645.4,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "11772697799",
+   "x": -155.3,
+   "y": 612.3,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089076328",
+   "x": -669.1,
+   "y": 756.3,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089076329",
+   "x": -522.7,
+   "y": 725.4,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089085523",
+   "x": -602.0,
+   "y": 766.1,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089113551",
+   "x": -56.8,
+   "y": 668.9,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089114197",
+   "x": -162.7,
+   "y": 690.7,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089118310",
+   "x": -152.4,
+   "y": 685.6,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089123348",
+   "x": -141.6,
+   "y": 668.9,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089127189",
+   "x": -81.2,
+   "y": 672.8,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089131995",
+   "x": -151.4,
+   "y": 691.7,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089139632",
+   "x": -85.1,
+   "y": 673.1,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089140071",
+   "x": -88.3,
+   "y": 673.4,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13089141780",
+   "x": -66.7,
+   "y": 670.1,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13974728570",
+   "x": -523.2,
+   "y": 667.0,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13974728571",
+   "x": -522.1,
+   "y": 675.7,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13974728572",
+   "x": -520.3,
+   "y": 684.0,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13974728573",
+   "x": -518.5,
+   "y": 691.8,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13990812135",
+   "x": -645.5,
+   "y": 305.6,
+   "grunn": "utenfor modellens område"
+  },
+  {
+   "id": "13990827402",
+   "x": -650.1,
+   "y": 310.8,
+   "grunn": "utenfor modellens område"
+  }
+ ],
+ "kontrollark": [
+  2520,
+  1698
+ ]
+}

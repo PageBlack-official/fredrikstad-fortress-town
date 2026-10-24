@@ -1,5 +1,11 @@
 # Endringslogg
 
+## 32 (24.10.2026) – kamera uten bråstopp, kontaktskygger (godkjent av Vegar i hånda, /prove/)
+- Alle animerte kameraflytt bruker én kurve (glid: eksponentiell inn og ut). Dobbeltklikk-zoom er vår egen (800 ms, MapLibres 300 ms med bråstopp er av), hjem 1,3 s, glidning til huskortet 0,9 s, introen samme kurve. ?glid=0 gir de gamle. Regel 11.
+- Kontaktskygger: bånd 1,3 m rundt hver husfot og skive under hvert tre, geometri på bakken (multipliseres inn), stabilt i fart. ?kontakt=0 slår av. Regel 12.
+- Filmkurve (lys-og-bevegelse pkt. 1) bygd og testet uten synlig forskjell; avslått (kurve:0), koden ligger for introfilmen. Vignett droppet.
+- Lærdom: bevegelse dømmes i bevegelse. Prøvebygg legges på /prove/ (sh publiser.sh prove) og Vegar dømmer i hånda; stills dømmer bare stills. verktoy/film.mjs (styrt klokke) virker, men programvare-GPU-en her bruker ca. 1 min per bilde; opptak gjøres i Vegars Chrome (canvas.captureStream).
+
 ## 31.1 (24.10.2026) – stabilt skyggekart
 - Vegar på mobil etter v31: «skyggene tegnes hele tiden så det flakker». På en smal skjerm går et dra ut av skyggekartets margin ofte, og hver ny tegning fikk ny skala (R = r·1,4) og nytt senter, så tekselrutenettet flyttet seg og de myke kantene krøp. Nå er dekningen trinnvis (1100 m / 1,5^k) og senteret låst til tekselrutenettet i lysets plan: to tegninger av samme sted gir samme teksler. (Standard metode for stabile skyggekaskader.)
 

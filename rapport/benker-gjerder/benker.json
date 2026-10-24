@@ -1,0 +1,1111 @@
+[
+ {
+  "x": -41.75,
+  "y": -270.71,
+  "retning_grader": 218,
+  "kilde": "OpenStreetMap node 829117158 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (5 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2025-09-13",
+   "material": "wood"
+  },
+  "lon": 10.9520124,
+  "lat": 59.2004031
+ },
+ {
+  "x": 221.07,
+  "y": 178.88,
+  "retning_grader": 51,
+  "kilde": "OpenStreetMap node 829117179 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9566238,
+  "lat": 59.2044419
+ },
+ {
+  "x": 236.24,
+  "y": -41.81,
+  "retning_grader": 82,
+  "kilde": "OpenStreetMap node 829117250 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (5 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-07-29"
+  },
+  "lon": 10.9568898,
+  "lat": 59.2024594
+ },
+ {
+  "x": 42.83,
+  "y": -197.34,
+  "retning_grader": 81,
+  "kilde": "OpenStreetMap node 829117273 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9534964,
+  "lat": 59.2010622
+ },
+ {
+  "x": 179.17,
+  "y": 248.56,
+  "retning_grader": 117,
+  "kilde": "OpenStreetMap node 829117378 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9558886,
+  "lat": 59.2050678
+ },
+ {
+  "x": -155.89,
+  "y": -112.06,
+  "retning_grader": 103,
+  "kilde": "OpenStreetMap node 829117423 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9500099,
+  "lat": 59.2018283
+ },
+ {
+  "x": 122.26,
+  "y": -110.85,
+  "retning_grader": 155,
+  "kilde": "OpenStreetMap node 829117447 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9548901,
+  "lat": 59.2018392
+ },
+ {
+  "x": 285.11,
+  "y": 100.44,
+  "retning_grader": 139,
+  "kilde": "OpenStreetMap node 829117531 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9577473,
+  "lat": 59.2037373
+ },
+ {
+  "x": 74.4,
+  "y": -190.56,
+  "retning_grader": 136,
+  "kilde": "OpenStreetMap node 829117610 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (8 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2025-09-13",
+   "material": "wood"
+  },
+  "lon": 10.9540503,
+  "lat": 59.2011231
+ },
+ {
+  "x": 221.51,
+  "y": 56.46,
+  "retning_grader": 119,
+  "kilde": "OpenStreetMap node 829117694 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2021-07-11"
+  },
+  "lon": 10.9566315,
+  "lat": 59.2033422
+ },
+ {
+  "x": 180.14,
+  "y": 228.26,
+  "retning_grader": 51,
+  "kilde": "OpenStreetMap node 829117759 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no",
+   "check_date": "2023-06-03",
+   "description": "Slange, Mathias Y. Strande 2009",
+   "material": "wood"
+  },
+  "lon": 10.9559056,
+  "lat": 59.2048854
+ },
+ {
+  "x": 231.69,
+  "y": 13.69,
+  "retning_grader": 119,
+  "kilde": "OpenStreetMap node 829117851 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-05-20"
+  },
+  "lon": 10.9568101,
+  "lat": 59.202958
+ },
+ {
+  "x": 150.86,
+  "y": 294.84,
+  "retning_grader": 314,
+  "kilde": "OpenStreetMap node 829117927 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9553918,
+  "lat": 59.2054835
+ },
+ {
+  "x": 52.31,
+  "y": -174.3,
+  "retning_grader": 137,
+  "kilde": "OpenStreetMap node 829117968 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9536628,
+  "lat": 59.2012692
+ },
+ {
+  "x": 291.15,
+  "y": 12.9,
+  "retning_grader": 317,
+  "kilde": "OpenStreetMap node 829117973 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (11 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2021-07-11",
+   "material": "wood"
+  },
+  "lon": 10.9578533,
+  "lat": 59.2029509
+ },
+ {
+  "x": 218.9,
+  "y": 228.78,
+  "retning_grader": 51,
+  "kilde": "OpenStreetMap node 829117994 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (7 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9565857,
+  "lat": 59.2048901
+ },
+ {
+  "x": -66.74,
+  "y": -231.84,
+  "retning_grader": 193,
+  "kilde": "OpenStreetMap node 829118029 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03",
+   "material": "wood"
+  },
+  "lon": 10.9515741,
+  "lat": 59.2007523
+ },
+ {
+  "x": 235.71,
+  "y": 171.09,
+  "retning_grader": 359,
+  "kilde": "OpenStreetMap node 829118042 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9568805,
+  "lat": 59.2043719
+ },
+ {
+  "x": -257.45,
+  "y": -275.87,
+  "retning_grader": 118,
+  "kilde": "OpenStreetMap node 829118076 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (8 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2025-08-30"
+  },
+  "lon": 10.948228,
+  "lat": 59.2003567
+ },
+ {
+  "x": 123.46,
+  "y": -146.72,
+  "retning_grader": 136,
+  "kilde": "OpenStreetMap node 829118097 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (5 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2025-09-13",
+   "material": "wood"
+  },
+  "lon": 10.9549111,
+  "lat": 59.201517
+ },
+ {
+  "x": -117.31,
+  "y": -220.53,
+  "retning_grader": 193,
+  "kilde": "OpenStreetMap node 829118129 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2022-04-10",
+   "material": "wood"
+  },
+  "lon": 10.9506868,
+  "lat": 59.2008539
+ },
+ {
+  "x": 39.33,
+  "y": 217.03,
+  "retning_grader": 303,
+  "kilde": "OpenStreetMap node 829118175 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9534351,
+  "lat": 59.2047846
+ },
+ {
+  "x": 135.74,
+  "y": -110.77,
+  "retning_grader": 202,
+  "kilde": "OpenStreetMap node 829118193 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2024-07-27"
+  },
+  "lon": 10.9551265,
+  "lat": 59.2018399
+ },
+ {
+  "x": 190.69,
+  "y": 352.15,
+  "retning_grader": 72,
+  "kilde": "OpenStreetMap node 829118363 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (5 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "check_date": "2023-06-03"
+  },
+  "lon": 10.9560907,
+  "lat": 59.2059983
+ },
+ {
+  "x": -46.18,
+  "y": -205.97,
+  "retning_grader": 191,
+  "kilde": "OpenStreetMap node 829118376 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (3 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9519347,
+  "lat": 59.2009847
+ },
+ {
+  "x": -116.84,
+  "y": 31.77,
+  "retning_grader": 300,
+  "kilde": "OpenStreetMap node 2393456188 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.950695,
+  "lat": 59.2031204
+ },
+ {
+  "x": -402.31,
+  "y": 227.5,
+  "retning_grader": 162,
+  "kilde": "OpenStreetMap node 3670534235 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9456864,
+  "lat": 59.2048786
+ },
+ {
+  "x": -456.28,
+  "y": 218.64,
+  "retning_grader": 187,
+  "kilde": "OpenStreetMap node 3670534236 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9447395,
+  "lat": 59.204799
+ },
+ {
+  "x": -371.59,
+  "y": 237.74,
+  "retning_grader": 162,
+  "kilde": "OpenStreetMap node 3670534238 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9462254,
+  "lat": 59.2049706
+ },
+ {
+  "x": -423.1,
+  "y": 220.85,
+  "retning_grader": 162,
+  "kilde": "OpenStreetMap node 3670534239 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9453216,
+  "lat": 59.2048189
+ },
+ {
+  "x": -317.16,
+  "y": 254.86,
+  "retning_grader": 162,
+  "kilde": "OpenStreetMap node 3670534240 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9471804,
+  "lat": 59.2051244
+ },
+ {
+  "x": -289.95,
+  "y": 263.96,
+  "retning_grader": 162,
+  "kilde": "OpenStreetMap node 3670534243 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9476578,
+  "lat": 59.2052061
+ },
+ {
+  "x": -344.52,
+  "y": 246.07,
+  "retning_grader": 162,
+  "kilde": "OpenStreetMap node 3670534244 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (6 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9467003,
+  "lat": 59.2050454
+ },
+ {
+  "x": 73.02,
+  "y": 260.94,
+  "retning_grader": 305,
+  "kilde": "OpenStreetMap node 10100804272 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {},
+  "lon": 10.9540262,
+  "lat": 59.205179
+ },
+ {
+  "x": 77.71,
+  "y": 267.88,
+  "retning_grader": 305,
+  "kilde": "OpenStreetMap node 10100861940 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {},
+  "lon": 10.9541084,
+  "lat": 59.2052413
+ },
+ {
+  "x": -211.61,
+  "y": -190.4,
+  "retning_grader": 291,
+  "kilde": "OpenStreetMap node 10100909873 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {},
+  "lon": 10.9490323,
+  "lat": 59.2011246
+ },
+ {
+  "x": -84.2,
+  "y": 70.01,
+  "retning_grader": 15,
+  "kilde": "OpenStreetMap node 10100915278 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {},
+  "lon": 10.9512677,
+  "lat": 59.2034639
+ },
+ {
+  "x": -100.28,
+  "y": 52.24,
+  "retning_grader": 279,
+  "kilde": "OpenStreetMap node 10100921473 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": false,
+  "osm": {},
+  "lon": 10.9509855,
+  "lat": 59.2033043
+ },
+ {
+  "x": -203.9,
+  "y": -169.52,
+  "retning_grader": 291,
+  "kilde": "OpenStreetMap node 10100925512 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9491675,
+  "lat": 59.2013121
+ },
+ {
+  "x": -39.93,
+  "y": 405.37,
+  "retning_grader": 133,
+  "kilde": "OpenStreetMap node 11182963740 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (13 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9520444,
+  "lat": 59.2064763
+ },
+ {
+  "x": -38.68,
+  "y": 404.59,
+  "retning_grader": 133,
+  "kilde": "OpenStreetMap node 11182963741 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (11 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9520663,
+  "lat": 59.2064693
+ },
+ {
+  "x": 52.61,
+  "y": 249.4,
+  "retning_grader": 306,
+  "kilde": "OpenStreetMap node 11182965838 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (7 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.953668,
+  "lat": 59.2050753
+ },
+ {
+  "x": 244.23,
+  "y": 40.33,
+  "retning_grader": 119,
+  "kilde": "OpenStreetMap node 11182965938 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (9 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.95703,
+  "lat": 59.2031973
+ },
+ {
+  "x": 47.13,
+  "y": 244.89,
+  "retning_grader": 306,
+  "kilde": "OpenStreetMap node 11182965940 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (5 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.9535719,
+  "lat": 59.2050348
+ },
+ {
+  "x": -35.59,
+  "y": 410.12,
+  "retning_grader": 133,
+  "kilde": "OpenStreetMap node 11182965941 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot vannet (13 m)",
+  "i_trykket": false,
+  "osm": {
+   "covered": "no"
+  },
+  "lon": 10.9521206,
+  "lat": 59.206519
+ },
+ {
+  "x": 238.62,
+  "y": 127.52,
+  "retning_grader": 257,
+  "kilde": "OpenStreetMap node 11182966139 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (20 m)",
+  "i_trykket": true,
+  "osm": {},
+  "lon": 10.9569317,
+  "lat": 59.2039805
+ },
+ {
+  "x": 53.99,
+  "y": 250.92,
+  "retning_grader": 306,
+  "kilde": "OpenStreetMap node 11182966144 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot vannet (7 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.9536922,
+  "lat": 59.205089
+ },
+ {
+  "x": -37.13,
+  "y": 407.94,
+  "retning_grader": 133,
+  "kilde": "OpenStreetMap node 11182966146 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot vannet (13 m)",
+  "i_trykket": false,
+  "osm": {
+   "covered": "no"
+  },
+  "lon": 10.9520936,
+  "lat": 59.2064994
+ },
+ {
+  "x": -34.51,
+  "y": 412.07,
+  "retning_grader": 133,
+  "kilde": "OpenStreetMap node 11182966237 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot vannet (14 m)",
+  "i_trykket": false,
+  "osm": {
+   "covered": "no"
+  },
+  "lon": 10.9521396,
+  "lat": 59.2065365
+ },
+ {
+  "x": -0.82,
+  "y": 55.85,
+  "retning_grader": 200,
+  "kilde": "OpenStreetMap node 13088947181 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (8 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9527307,
+  "lat": 59.2033367
+ },
+ {
+  "x": 297.65,
+  "y": -1.84,
+  "retning_grader": 319,
+  "kilde": "OpenStreetMap node 13088947182 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (15 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9579674,
+  "lat": 59.2028185
+ },
+ {
+  "x": -86.84,
+  "y": 385.7,
+  "retning_grader": 131,
+  "kilde": "OpenStreetMap node 13088949800 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9512213,
+  "lat": 59.2062996
+ },
+ {
+  "x": 216.39,
+  "y": 91.04,
+  "retning_grader": 115,
+  "kilde": "OpenStreetMap node 13088980568 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.9565416,
+  "lat": 59.2036528
+ },
+ {
+  "x": 291.23,
+  "y": 3.32,
+  "retning_grader": 331,
+  "kilde": "OpenStreetMap node 13088988583 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (7 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9578547,
+  "lat": 59.2028648
+ },
+ {
+  "x": -29.81,
+  "y": 132.88,
+  "retning_grader": 299,
+  "kilde": "OpenStreetMap node 13088992175 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.952222,
+  "lat": 59.2040287
+ },
+ {
+  "x": 3.15,
+  "y": 65.02,
+  "retning_grader": 200,
+  "kilde": "OpenStreetMap node 13088994935 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (18 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9528002,
+  "lat": 59.2034191
+ },
+ {
+  "x": 208.25,
+  "y": 74.44,
+  "retning_grader": 115,
+  "kilde": "OpenStreetMap node 13088997232 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.9563988,
+  "lat": 59.2035037
+ },
+ {
+  "x": 211.11,
+  "y": 81.69,
+  "retning_grader": 115,
+  "kilde": "OpenStreetMap node 13088997233 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.956449,
+  "lat": 59.2035688
+ },
+ {
+  "x": -172.15,
+  "y": 445.11,
+  "retning_grader": 10,
+  "kilde": "OpenStreetMap node 13088997360 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9497246,
+  "lat": 59.2068333
+ },
+ {
+  "x": 18.97,
+  "y": 64.67,
+  "retning_grader": 127,
+  "kilde": "OpenStreetMap node 13088997782 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (10 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9530779,
+  "lat": 59.2034159
+ },
+ {
+  "x": -156.56,
+  "y": 440.45,
+  "retning_grader": 18,
+  "kilde": "OpenStreetMap node 13088998188 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9499982,
+  "lat": 59.2067914
+ },
+ {
+  "x": 25.93,
+  "y": 63.88,
+  "retning_grader": 127,
+  "kilde": "OpenStreetMap node 13089000375 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (4 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9532,
+  "lat": 59.2034088
+ },
+ {
+  "x": -88.89,
+  "y": 383.7,
+  "retning_grader": 135,
+  "kilde": "OpenStreetMap node 13089006619 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9511854,
+  "lat": 59.2062817
+ },
+ {
+  "x": 10.64,
+  "y": 68.07,
+  "retning_grader": 127,
+  "kilde": "OpenStreetMap node 13089006620 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (19 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9529317,
+  "lat": 59.2034465
+ },
+ {
+  "x": -27.69,
+  "y": 136.91,
+  "retning_grader": 297,
+  "kilde": "OpenStreetMap node 13089006847 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9522591,
+  "lat": 59.2040649
+ },
+ {
+  "x": 212.99,
+  "y": 84.68,
+  "retning_grader": 115,
+  "kilde": "OpenStreetMap node 13089007429 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.956482,
+  "lat": 59.2035957
+ },
+ {
+  "x": -19.61,
+  "y": 150.79,
+  "retning_grader": 301,
+  "kilde": "OpenStreetMap node 13089008226 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9524009,
+  "lat": 59.2041895
+ },
+ {
+  "x": 219.87,
+  "y": 98.21,
+  "retning_grader": 115,
+  "kilde": "OpenStreetMap node 13089010107 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.9566027,
+  "lat": 59.2037172
+ },
+ {
+  "x": 221.42,
+  "y": 101.32,
+  "retning_grader": 115,
+  "kilde": "OpenStreetMap node 13089010514 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (0 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "no"
+  },
+  "lon": 10.9566299,
+  "lat": 59.2037452
+ },
+ {
+  "x": -22.55,
+  "y": 145.93,
+  "retning_grader": 297,
+  "kilde": "OpenStreetMap node 13089011807 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (2 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9523493,
+  "lat": 59.2041459
+ },
+ {
+  "x": -14.92,
+  "y": 159.33,
+  "retning_grader": 301,
+  "kilde": "OpenStreetMap node 13089011808 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.9524832,
+  "lat": 59.2042663
+ },
+ {
+  "x": -9.97,
+  "y": 168.15,
+  "retning_grader": 301,
+  "kilde": "OpenStreetMap node 13089011809 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (1 m)",
+  "i_trykket": false,
+  "osm": {
+   "backrest": "yes"
+  },
+  "lon": 10.95257,
+  "lat": 59.2043455
+ },
+ {
+  "x": 45.67,
+  "y": 92.6,
+  "retning_grader": 124,
+  "kilde": "OpenStreetMap node 13108471135 (amenity=bench)",
+  "type": "benk",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (4 m)",
+  "i_trykket": true,
+  "osm": {
+   "backrest": "yes",
+   "material": "wood"
+  },
+  "lon": 10.9535463,
+  "lat": 59.2036668
+ },
+ {
+  "x": -389.34,
+  "y": 43.37,
+  "retning_grader": 174,
+  "kilde": "OpenStreetMap node 13608551629 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (8 m)",
+  "i_trykket": false,
+  "osm": {},
+  "lon": 10.945914,
+  "lat": 59.2032246
+ },
+ {
+  "x": -396.38,
+  "y": 48.85,
+  "retning_grader": 288,
+  "kilde": "OpenStreetMap node 13608551630 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (13 m)",
+  "i_trykket": false,
+  "osm": {},
+  "lon": 10.9457905,
+  "lat": 59.2032738
+ },
+ {
+  "x": -402.6,
+  "y": 53.77,
+  "retning_grader": 281,
+  "kilde": "OpenStreetMap node 13608551631 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (5 m)",
+  "i_trykket": false,
+  "osm": {},
+  "lon": 10.9456813,
+  "lat": 59.203318
+ },
+ {
+  "x": -323.23,
+  "y": 82.41,
+  "retning_grader": 119,
+  "kilde": "OpenStreetMap node 13608551687 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (4 m)",
+  "i_trykket": false,
+  "osm": {},
+  "lon": 10.9470739,
+  "lat": 59.2035753
+ },
+ {
+  "x": -408.23,
+  "y": -66.32,
+  "retning_grader": 62,
+  "kilde": "OpenStreetMap node 13608551892 (leisure=picnic_table)",
+  "type": "piknikbord",
+  "retning_kilde": "antatt: mot nærmeste vei/sti (31 m)",
+  "i_trykket": false,
+  "osm": {},
+  "lon": 10.9455826,
+  "lat": 59.2022392
+ }
+]

@@ -1,0 +1,9 @@
+0s node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Target page, context or browser has been closed
+    at steg (/tmp/claude-0/-home-claude/906a72dc-ab38-5838-984d-9da0bf1a01a5/scratchpad/soc/verktoy/film.mjs:21:26)
+    at /tmp/claude-0/-home-claude/906a72dc-ab38-5838-984d-9da0bf1a01a5/scratchpad/soc/verktoy/film.mjs:24:70
+
+Node.js v22.22.0

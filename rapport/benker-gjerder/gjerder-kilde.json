@@ -1,0 +1,138 @@
+[
+ {
+  "i": 0,
+  "id": "T2",
+  "kilde": "2019-trykket (kilder2019/brosjyre2019-3.jpg), lest med øynene",
+  "px2019": [
+   [
+    854,
+    612
+   ],
+   [
+    900,
+    637
+   ]
+  ],
+  "type": "mur/gjerde",
+  "farge_i_trykket": "hvit",
+  "sikkerhet": "middels",
+  "flytt_m": null,
+  "flytt_grunn": null,
+  "inne_i_hus_m": 0.0,
+  "merknad": "Kasernegaten sørside, øst for 10, lukker hagen mot gata."
+ },
+ {
+  "i": 1,
+  "id": "T9",
+  "kilde": "2019-trykket (kilder2019/brosjyre2019-3.jpg), lest med øynene",
+  "px2019": [
+   [
+    1082,
+    1006
+   ],
+   [
+    1114,
+    982
+   ],
+   [
+    1146,
+    998
+   ]
+  ],
+  "type": "mur/gjerde",
+  "farge_i_trykket": "gul",
+  "sikkerhet": "lav",
+  "flytt_m": null,
+  "flytt_grunn": null,
+  "inne_i_hus_m": 0.0,
+  "merknad": "Gårdsrom bak de gule husene sør for 20; kan være husvegg."
+ },
+ {
+  "i": 2,
+  "id": "T10",
+  "kilde": "2019-trykket (kilder2019/brosjyre2019-3.jpg), lest med øynene",
+  "px2019": [
+   [
+    1364,
+    680
+   ],
+   [
+    1400,
+    666
+   ]
+  ],
+  "type": "mur/gjerde",
+  "farge_i_trykket": "hvit",
+  "sikkerhet": "lav",
+  "flytt_m": null,
+  "flytt_grunn": null,
+  "inne_i_hus_m": 10.7,
+  "merknad": "Raadhusgaten, lukker gårdsrommet mellom det blå huset og naboen."
+ },
+ {
+  "i": 3,
+  "id": "T11",
+  "kilde": "2019-trykket (kilder2019/brosjyre2019-3.jpg), lest med øynene",
+  "px2019": [
+   [
+    1502,
+    336
+   ],
+   [
+    1536,
+    324
+   ]
+  ],
+  "type": "mur/gjerde",
+  "farge_i_trykket": "gul",
+  "sikkerhet": "lav",
+  "flytt_m": null,
+  "flytt_grunn": null,
+  "inne_i_hus_m": 10.9,
+  "merknad": "Ved 37, lukker gårdsrommet mot gata."
+ },
+ {
+  "i": 4,
+  "id": "T12",
+  "kilde": "2019-trykket (kilder2019/brosjyre2019-3.jpg), lest med øynene",
+  "px2019": [
+   [
+    1824,
+    421
+   ],
+   [
+    1860,
+    466
+   ]
+  ],
+  "type": "gjerde eller sti",
+  "farge_i_trykket": "lys grønn med to tynne kanter",
+  "sikkerhet": "usikker",
+  "flytt_m": null,
+  "flytt_grunn": null,
+  "inne_i_hus_m": 15.4,
+  "merknad": "Fra 30 mot 29. Ser ut som to skinner, men kan være en smal sti."
+ },
+ {
+  "i": 5,
+  "id": "osm1484177463",
+  "kilde": "OpenStreetMap way 1484177463 (barrier=fence)",
+  "type": "fence",
+  "sikkerhet": "middels (OSM, ikke i trykket)",
+  "osm_tagger": {
+   "barrier": "fence"
+  },
+  "merknad": "Utenfor trykkets utsnitt"
+ },
+ {
+  "i": 6,
+  "id": "osm1484177464",
+  "kilde": "OpenStreetMap way 1484177464 (barrier=fence)",
+  "type": "fence",
+  "sikkerhet": "middels (OSM, ikke i trykket)",
+  "osm_tagger": {
+   "barrier": "fence"
+  },
+  "merknad": "Utenfor trykkets utsnitt"
+ }
+]

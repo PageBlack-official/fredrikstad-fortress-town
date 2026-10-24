@@ -1,0 +1,17 @@
+{
+ "om": "Gjerder, murer og hekker lest med øynene i 2019-trykket (kilder2019/brosjyre2019-3.jpg, 2480x1754). Punktene er FOTEN av gjerdet (der det møter bakken), i 2019-px. Lest i rutenettutsnitt 2,5-4x forstørret, ca. +-3 px. Lest av Claude 24.10.2026.",
+ "linjer": [
+  {"id": "T1", "px": [[700,707],[797,759]], "type": "plankegjerde", "farge_i_trykket": "brun, tannet", "sikkerhet": "høy", "merknad": "Tøihusgaten mellom 9 og 8. Også nevnt i rapport/dekning.md."},
+  {"id": "T2", "px": [[854,612],[900,637]], "type": "mur/gjerde", "farge_i_trykket": "hvit", "sikkerhet": "middels", "merknad": "Kasernegaten sørside, øst for 10, lukker hagen mot gata."},
+  {"id": "T3", "px": [[894,600],[947,566]], "type": "mur/gjerde", "farge_i_trykket": "hvit", "sikkerhet": "høy", "merknad": "Kasernegaten nordside, langs plenen foran 45-kvartalet."},
+  {"id": "T4", "px": [[845,573],[885,595]], "type": "mur/gjerde", "farge_i_trykket": "hvit", "sikkerhet": "lav", "merknad": "Kasernegaten nordside vest; kan være sokkel på huset."},
+  {"id": "T5", "px": [[518,804],[462,838]], "type": "hekk eller grønn mur", "farge_i_trykket": "mørk grønn kant", "sikkerhet": "middels", "merknad": "Tøihusparken nordvest (fra 12 til hjørnet). OSM har muren her (murer.json)."},
+  {"id": "T6", "px": [[462,840],[635,941]], "type": "hekk eller grønn mur", "farge_i_trykket": "mørk grønn kant", "sikkerhet": "middels", "merknad": "Tøihusparken mot Laboratoriegaten. OSM har muren her."},
+  {"id": "T7", "px": [[635,941],[733,850]], "type": "mur", "farge_i_trykket": "hvit", "sikkerhet": "høy", "merknad": "Tøihusparken sørøst, med lite tårnhus i muren."},
+  {"id": "T8", "px": [[1166,854],[1215,828],[1276,852]], "type": "hekk", "farge_i_trykket": "mørk grønn kant", "sikkerhet": "middels", "merknad": "Hagen nord for 20 (Nye rådhus); hjørnet ligger under et tre i trykket."},
+  {"id": "T9", "px": [[1082,1006],[1114,982],[1146,998]], "type": "mur/gjerde", "farge_i_trykket": "gul", "sikkerhet": "lav", "merknad": "Gårdsrom bak de gule husene sør for 20; kan være husvegg."},
+  {"id": "T10", "px": [[1364,680],[1400,666]], "type": "mur/gjerde", "farge_i_trykket": "hvit", "sikkerhet": "lav", "merknad": "Raadhusgaten, lukker gårdsrommet mellom det blå huset og naboen."},
+  {"id": "T11", "px": [[1502,336],[1536,324]], "type": "mur/gjerde", "farge_i_trykket": "gul", "sikkerhet": "lav", "merknad": "Ved 37, lukker gårdsrommet mot gata."},
+  {"id": "T12", "px": [[1824,421],[1860,466]], "type": "gjerde eller sti", "farge_i_trykket": "lys grønn med to tynne kanter", "sikkerhet": "usikker", "merknad": "Fra 30 mot 29. Ser ut som to skinner, men kan være en smal sti."}
+ ]
+}

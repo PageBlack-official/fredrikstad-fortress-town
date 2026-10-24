@@ -15,9 +15,10 @@ const Q0=new URLSearchParams(location.search);
 // ---- tegnestil (23.10, bestemt med Vegar): streken er stikkets, flatene er flate, lyset er glatt. 2015-teknikkens varme (akvarellvask,
 // penselbrudd, papirkorn, vignett, skyskygger, løvflekker) er av. ?stil=c viser den gamle til sammenligning, ?stil=b legger skravur i skyggene.
 const STIL=(()=>{ const v=Q0.get('stil')||'a';
-  const a={vask:0, pensel:0, korn:0, vignett:0, sky:0, stoy:0, skravur:0};
+  // kurve: filmkurven over høylysene (lys-og-bevegelse pkt. 1, 24.10), avslått i kartet.
+  const a={vask:0, pensel:0, korn:0, vignett:0, sky:0, stoy:0, skravur:0, kurve: Q0.get('kurve')==='1' ? 1 : 0};   // av i kartet (ingen synlig forskjell, 24.10); ?kurve=1 for introfilmen
   if(v==='b') return {...a, skravur:1};
-  if(v==='c') return {vask:1, pensel:1, korn:1, vignett:1, sky:1, stoy:1, skravur:0};
+  if(v==='c') return {vask:1, pensel:1, korn:1, vignett:1, sky:1, stoy:1, skravur:0, kurve:0};
   return a; })();
 // sola står fast i byen (modell), ikke i øyet (plakat): hjemmevisningen er lik trykket, og skyggene snur seg med byen. ?sol=plakat gir den gamle.
 const SOL_FAST = Q0.get('sol')!=='plakat';

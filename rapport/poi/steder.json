@@ -1,0 +1,5408 @@
+[
+ {
+  "id": "parkering-1-1921",
+  "type": "parkering",
+  "navn": "Smedjegaten",
+  "lon": 10.955087,
+  "lat": 59.204963,
+  "x": 133.48,
+  "y": 236.9,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 18,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone  01.06.-31.08.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "64",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-10743",
+  "type": "parkering",
+  "navn": "Bankbrygga",
+  "lon": 10.938946,
+  "lat": 59.210106,
+  "x": -786.51,
+  "y": 809.45,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-261",
+  "type": "parkering",
+  "navn": "Dammyr",
+  "lon": 10.945279,
+  "lat": 59.214273,
+  "x": -425.52,
+  "y": 1273.44,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 12,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 4 t.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12023",
+  "type": "parkering",
+  "navn": "Toldbodgaten",
+  "lon": 10.952764,
+  "lat": 59.204555,
+  "x": 1.11,
+  "y": 191.51,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 1 time 08-18 (08-15)",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4529",
+  "type": "parkering",
+  "navn": "Kronprinsensgate",
+  "lon": 10.94164,
+  "lat": 59.207931,
+  "x": -632.91,
+  "y": 567.33,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-138",
+  "type": "parkering",
+  "navn": "Cityterminalen p-hus",
+  "lon": 10.940132,
+  "lat": 59.214279,
+  "x": -718.87,
+  "y": 1274.17,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 352,
+   "ELBIL": 2,
+   "KOMMENTAR": "Døgnåpent.",
+   "EASYPARK": 9,
+   "TYPE": 2,
+   "AUTOMATNR": "50+52",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/vaare-parkeringshus/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4560",
+  "type": "parkering",
+  "navn": "Ridehusgata",
+  "lon": 10.944867,
+  "lat": 59.207814,
+  "x": -449.04,
+  "y": 554.35,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 21,
+   "PRIS": 6,
+   "ELBIL": 0,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 3,
+   "TYPE": 6,
+   "AUTOMATNR": "43",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15220",
+  "type": "parkering",
+  "navn": "Liv Molvigs allé",
+  "lon": 10.931404,
+  "lat": 59.210157,
+  "x": -1216.32,
+  "y": 815.19,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 30 min. - husk p-skive",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4546",
+  "type": "parkering",
+  "navn": "Vibesgate/Nygaardsgt",
+  "lon": 10.939708,
+  "lat": 59.209868,
+  "x": -743.03,
+  "y": 782.97,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift alle dager 08-21. Maks p-tid 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 1,
+   "AUTOMATNR": "22",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4606",
+  "type": "parkering",
+  "navn": "Labratoriegaten",
+  "lon": 10.951995,
+  "lat": 59.201275,
+  "x": -42.72,
+  "y": -173.63,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 30,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "65",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-3905",
+  "type": "parkering",
+  "navn": "Brønneløkkveien",
+  "lon": 10.952409,
+  "lat": 59.209733,
+  "x": -19.14,
+  "y": 768.01,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 8,
+   "KOMMENTAR": "Parkering forbudt over 2t.",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4652",
+  "type": "parkering",
+  "navn": "Plankestredet",
+  "lon": 10.935872,
+  "lat": 59.212777,
+  "x": -961.7,
+  "y": 1106.94,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Gratis. Parkering kun for tohjulinger",
+   "TYPE": 8,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4552",
+  "type": "parkering",
+  "navn": "St. Croixgate",
+  "lon": 10.941443,
+  "lat": 59.211258,
+  "x": -644.14,
+  "y": 937.75,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 4,
+   "ELBIL": 0,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12372",
+  "type": "parkering",
+  "navn": "Hans Jacob Nilsens gate",
+  "lon": 10.949967,
+  "lat": 59.208839,
+  "x": -158.31,
+  "y": 668.4,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 1,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 10 min.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-6581",
+  "type": "parkering",
+  "navn": "Strandpromenaden",
+  "lon": 10.948403,
+  "lat": 59.205478,
+  "x": -247.5,
+  "y": 294.23,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 18,
+   "TYPE": 6,
+   "AUTOMATNR": "12",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15237",
+  "type": "parkering",
+  "navn": "Liv Molvigs allé",
+  "lon": 10.931147,
+  "lat": 59.21017,
+  "x": -1231.02,
+  "y": 816.57,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 30 min. - husk p-skive",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4517",
+  "type": "parkering",
+  "navn": "Gunnar Nilsensgate",
+  "lon": 10.939125,
+  "lat": 59.213113,
+  "x": -776.27,
+  "y": 1144.31,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 4,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 10 min.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4543",
+  "type": "parkering",
+  "navn": "Arne Stangebyesgate",
+  "lon": 10.940412,
+  "lat": 59.212835,
+  "x": -702.93,
+  "y": 1113.36,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid 8-21 alle dager",
+   "EASYPARK": 8,
+   "TYPE": 4,
+   "AUTOMATNR": "27",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12389",
+  "type": "parkering",
+  "navn": "Bankbrygga",
+  "lon": 10.939031,
+  "lat": 59.210016,
+  "x": -781.66,
+  "y": 799.43,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 10 minutter",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4609",
+  "type": "parkering",
+  "navn": "Torvgaten",
+  "lon": 10.954373,
+  "lat": 59.202924,
+  "x": 92.77,
+  "y": 9.87,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4635",
+  "type": "parkering",
+  "navn": "Ridehusgaten",
+  "lon": 10.945164,
+  "lat": 59.208763,
+  "x": -432.08,
+  "y": 659.99,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5299",
+  "type": "parkering",
+  "navn": "St.Hans gate",
+  "lon": 10.934037,
+  "lat": 59.214248,
+  "x": -1066.29,
+  "y": 1270.73,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4629",
+  "type": "parkering",
+  "navn": "O.P.Pettersensgt.",
+  "lon": 10.937289,
+  "lat": 59.212845,
+  "x": -880.91,
+  "y": 1114.49,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering 08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "18",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15549",
+  "type": "parkering",
+  "navn": "Voldgaten",
+  "lon": 10.95566,
+  "lat": 59.202682,
+  "x": 166.14,
+  "y": -16.99,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone01.06.-31.08.",
+   "TYPE": 1,
+   "AUTOMATNR": "62",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5307",
+  "type": "parkering",
+  "navn": "Lykkeberg",
+  "lon": 10.942191,
+  "lat": 59.210071,
+  "x": -601.53,
+  "y": 805.56,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "KOMMENTAR": "25 kr timen inkludert lading. 16A som gir maks 3,6 kwt.",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4580",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.945336,
+  "lat": 59.209232,
+  "x": -422.26,
+  "y": 712.17,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4623",
+  "type": "parkering",
+  "navn": "Kasernegaten",
+  "lon": 10.952713,
+  "lat": 59.202624,
+  "x": -1.81,
+  "y": -23.49,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-118",
+  "type": "parkering",
+  "navn": "Lykkeberg",
+  "lon": 10.942385,
+  "lat": 59.209888,
+  "x": -590.46,
+  "y": 785.2,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 15,
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 5,
+   "AUTOMATNR": "36",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-10740",
+  "type": "parkering",
+  "navn": "Voldgaten",
+  "lon": 10.956163,
+  "lat": 59.203359,
+  "x": 194.82,
+  "y": 58.37,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 2 timer ",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-3601",
+  "type": "parkering",
+  "navn": "Kongstenhallen",
+  "lon": 10.961023,
+  "lat": 59.201058,
+  "x": 471.81,
+  "y": -197.85,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 4,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12375",
+  "type": "parkering",
+  "navn": "Elias Kræmersgate",
+  "lon": 10.943513,
+  "lat": 59.214527,
+  "x": -526.16,
+  "y": 1301.76,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "TYPE": 6,
+   "AUTOMATNR": "17",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4643",
+  "type": "parkering",
+  "navn": "Dampskipsbrygga",
+  "lon": 10.937748,
+  "lat": 59.21112,
+  "x": -854.74,
+  "y": 922.44,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 10 min",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12020",
+  "type": "parkering",
+  "navn": "Spinneriveien under Fredrikstadbrua",
+  "lon": 10.965308,
+  "lat": 59.208705,
+  "x": 716.04,
+  "y": 653.54,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4603",
+  "type": "parkering",
+  "navn": "Kirkegaten",
+  "lon": 10.952115,
+  "lat": 59.202593,
+  "x": -35.89,
+  "y": -26.99,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 1,
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4589",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.946674,
+  "lat": 59.208926,
+  "x": -346.04,
+  "y": 678.15,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-178",
+  "type": "parkering",
+  "navn": "Elias Kræmersgate",
+  "lon": 10.943654,
+  "lat": 59.214316,
+  "x": -518.12,
+  "y": 1278.24,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 23,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 4,
+   "TYPE": 6,
+   "AUTOMATNR": "17",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15546",
+  "type": "parkering",
+  "navn": "Kasernegaten",
+  "lon": 10.952694,
+  "lat": 59.202627,
+  "x": -2.9,
+  "y": -23.16,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 3,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12392",
+  "type": "parkering",
+  "navn": "Dammyr avlastningsparkering",
+  "lon": 10.944958,
+  "lat": 59.214065,
+  "x": -443.8,
+  "y": 1250.37,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 2,
+   "KOMMENTAR": "1226, Parkering forbudt over 48 timer",
+   "TYPE": 6,
+   "AUTOMATNR": "95",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-129",
+  "type": "parkering",
+  "navn": "DNB taket",
+  "lon": 10.93662,
+  "lat": 59.214493,
+  "x": -919.07,
+  "y": 1298.03,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 27,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid 8-21 alle dager",
+   "EASYPARK": 19,
+   "TYPE": 4,
+   "AUTOMATNR": "9",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4520",
+  "type": "parkering",
+  "navn": "Dronningensgate",
+  "lon": 10.945024,
+  "lat": 59.209151,
+  "x": -440.08,
+  "y": 703.2,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 7,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 3,
+   "TYPE": 6,
+   "AUTOMATNR": "41",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-9140",
+  "type": "parkering",
+  "navn": "Heibergskrysset",
+  "lon": 10.961489,
+  "lat": 59.201918,
+  "x": 498.36,
+  "y": -102.06,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 4,
+   "ELBIL": 2,
+   "KOMMENTAR": "Maks 3 t. 16A som gir maks 3 kwt",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12037",
+  "type": "parkering",
+  "navn": "Spinneriveien under Fredrikstadbrua",
+  "lon": 10.965158,
+  "lat": 59.208763,
+  "x": 707.48,
+  "y": 659.92,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4540",
+  "type": "parkering",
+  "navn": "D.Leegaardsgate",
+  "lon": 10.941681,
+  "lat": 59.213234,
+  "x": -630.61,
+  "y": 1157.79,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 11,
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 5,
+   "AUTOMATNR": "34",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4612",
+  "type": "parkering",
+  "navn": "Toldbodgaten- beboerparkering",
+  "lon": 10.953575,
+  "lat": 59.20472,
+  "x": 47.3,
+  "y": 209.82,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4583",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.945183,
+  "lat": 59.20925,
+  "x": -431.0,
+  "y": 714.13,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15552",
+  "type": "parkering",
+  "navn": "St.Croixhuset",
+  "lon": 10.944908,
+  "lat": 59.211146,
+  "x": -446.69,
+  "y": 925.25,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering 08-16. Parkering forbudt over 2 timer",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4620",
+  "type": "parkering",
+  "navn": "Kasernegaten - beboerparkering",
+  "lon": 10.954734,
+  "lat": 59.202229,
+  "x": 113.34,
+  "y": -67.42,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15944",
+  "type": "parkering",
+  "navn": "General Ohmes vei - beboerparkering",
+  "lon": 10.958163,
+  "lat": 59.201636,
+  "x": 308.81,
+  "y": -133.52,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale 08-16",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4632",
+  "type": "parkering",
+  "navn": "For beboere med p-kort",
+  "lon": 10.944814,
+  "lat": 59.208134,
+  "x": -452.01,
+  "y": 589.95,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-2897",
+  "type": "parkering",
+  "navn": "Ryenplassen",
+  "lon": 10.937704,
+  "lat": 59.212867,
+  "x": -857.28,
+  "y": 1116.87,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 18,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering 08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 21,
+   "TYPE": 4,
+   "AUTOMATNR": "44",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4569",
+  "type": "parkering",
+  "navn": "Gunnar Nilsensgtate",
+  "lon": 10.938451,
+  "lat": 59.214758,
+  "x": -814.7,
+  "y": 1327.54,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "ELBIL": 0,
+   "TYPE": 3,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5310",
+  "type": "parkering",
+  "navn": "Kongstenhallen",
+  "lon": 10.958261,
+  "lat": 59.200162,
+  "x": 314.39,
+  "y": -297.59,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 40,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 3 t fra kl. 08-16 - ingen avgift. Egner seg også for buss",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4626",
+  "type": "parkering",
+  "navn": "Færgeportgaten - beboerparkering",
+  "lon": 10.955354,
+  "lat": 59.204126,
+  "x": 148.71,
+  "y": 143.75,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4526",
+  "type": "parkering",
+  "navn": "Storgata",
+  "lon": 10.934525,
+  "lat": 59.213497,
+  "x": -1038.46,
+  "y": 1187.1,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "08 - 21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "32/33",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11382",
+  "type": "parkering",
+  "navn": "DR. Gibelhausens gate",
+  "lon": 10.938117,
+  "lat": 59.211565,
+  "x": -833.73,
+  "y": 971.9,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-10100",
+  "type": "parkering",
+  "navn": "Dammyr avlastningsparkering",
+  "lon": 10.945298,
+  "lat": 59.21309,
+  "x": -424.44,
+  "y": 1141.74,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 2,
+   "KOMMENTAR": "1226, Parkering forbudt over 48 timer",
+   "TYPE": 1,
+   "AUTOMATNR": "95",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4558",
+  "type": "parkering",
+  "navn": "Phønixgate",
+  "lon": 10.940873,
+  "lat": 59.206475,
+  "x": -676.65,
+  "y": 405.24,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 1 time kl. 08.00-18.00",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4604",
+  "type": "parkering",
+  "navn": "Kirkegaten/Tøihusgaten",
+  "lon": 10.950498,
+  "lat": 59.202209,
+  "x": -128.09,
+  "y": -69.66,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "65",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4650",
+  "type": "parkering",
+  "navn": "Torvbyen",
+  "lon": 10.939946,
+  "lat": 59.214428,
+  "x": -729.49,
+  "y": 1290.73,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Gratis. Parkering kun for tohjulinger",
+   "TYPE": 8,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4541",
+  "type": "parkering",
+  "navn": "Parkering",
+  "lon": 10.941467,
+  "lat": 59.213096,
+  "x": -642.78,
+  "y": 1142.43,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 5,
+   "AUTOMATNR": "34",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15547",
+  "type": "parkering",
+  "navn": "Raadhusgaten - beboerparkering",
+  "lon": 10.954066,
+  "lat": 59.202934,
+  "x": 75.31,
+  "y": 11.01,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4615",
+  "type": "parkering",
+  "navn": "Toldbodgaten - beboerparkering",
+  "lon": 10.950281,
+  "lat": 59.202522,
+  "x": -140.41,
+  "y": -34.81,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-1953",
+  "type": "parkering",
+  "navn": "Kongsten p-plass (Takstgruppe 1241)",
+  "lon": 10.961781,
+  "lat": 59.202193,
+  "x": 515.0,
+  "y": -71.49,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 122,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00) Gratis i 3 t. mot registrering.",
+   "EASYPARK": 30,
+   "TYPE": 6,
+   "AUTOMATNR": "70",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-8500",
+  "type": "parkering",
+  "navn": "Smedjegaten - beboerparkering",
+  "lon": 10.954889,
+  "lat": 59.205072,
+  "x": 122.21,
+  "y": 249.03,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15945",
+  "type": "parkering",
+  "navn": "St.Hans gate",
+  "lon": 10.934024,
+  "lat": 59.214218,
+  "x": -1067.01,
+  "y": 1267.39,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 7,
+   "ELBIL": 2,
+   "KOMMENTAR": "08-21 alle dager. Parkering forbudt over 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "33",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-7220",
+  "type": "parkering",
+  "navn": "Dampskipsbrygga",
+  "lon": 10.937933,
+  "lat": 59.210995,
+  "x": -844.19,
+  "y": 908.44,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "KOMMENTAR": "Gjelder bare tohjulinger",
+   "TYPE": 8,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4564",
+  "type": "parkering",
+  "navn": "Bydalen Allè",
+  "lon": 10.950241,
+  "lat": 59.21217,
+  "x": -142.73,
+  "y": 1039.35,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 13,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 2 t.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4535",
+  "type": "parkering",
+  "navn": "Storgata v/nr.12",
+  "lon": 10.936405,
+  "lat": 59.212382,
+  "x": -931.3,
+  "y": 1062.88,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "18",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4584",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.945025,
+  "lat": 59.208773,
+  "x": -440.02,
+  "y": 661.02,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-14900",
+  "type": "parkering",
+  "navn": "For beboere med p-kort",
+  "lon": 10.945147,
+  "lat": 59.208377,
+  "x": -433.04,
+  "y": 617.03,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5305",
+  "type": "parkering",
+  "navn": "Apenesfjellet p-hus",
+  "lon": 10.944562,
+  "lat": 59.212743,
+  "x": -466.41,
+  "y": 1103.14,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 9,
+   "ELBIL": 5,
+   "KOMMENTAR": "Lading: 25 kr timen. 16A som gir maks 3,6 kwt.",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4521",
+  "type": "parkering",
+  "navn": "Parkering",
+  "lon": 10.945912,
+  "lat": 59.20769,
+  "x": -389.45,
+  "y": 540.47,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 3,
+   "TYPE": 6,
+   "AUTOMATNR": "43",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-193",
+  "type": "parkering",
+  "navn": "Cityterminalen",
+  "lon": 10.939363,
+  "lat": 59.213937,
+  "x": -762.74,
+  "y": 1236.08,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "KOMMENTAR": "Registrer regnummeret på bilen din ved heisen. Les skilt!",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4621",
+  "type": "parkering",
+  "navn": "Tøihusgaten - beboerparkering",
+  "lon": 10.953432,
+  "lat": 59.201835,
+  "x": 39.16,
+  "y": -111.3,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4627",
+  "type": "parkering",
+  "navn": "Torvgaten - beboerparkering",
+  "lon": 10.954532,
+  "lat": 59.202897,
+  "x": 101.83,
+  "y": 6.92,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5311",
+  "type": "parkering",
+  "navn": "Kongsten p-plass (Takstgruppe 1241)",
+  "lon": 10.961229,
+  "lat": 59.195778,
+  "x": 483.55,
+  "y": -785.54,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 215,
+   "ELBIL": 0,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00) Gratis i 3 t. mot registrering.",
+   "EASYPARK": 30,
+   "TYPE": 1,
+   "AUTOMATNR": "71",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15541",
+  "type": "parkering",
+  "navn": "Parkering",
+  "lon": 10.932818,
+  "lat": 59.214469,
+  "x": -1135.73,
+  "y": 1295.35,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "TYPE": 3,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4601",
+  "type": "parkering",
+  "navn": "Kirkegaten",
+  "lon": 10.952005,
+  "lat": 59.202515,
+  "x": -42.18,
+  "y": -35.57,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 25,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "01.09.-31.05. grønn sone  01.06.-31.08. rød sone",
+   "EASYPARK": 29,
+   "TYPE": 1,
+   "AUTOMATNR": "65",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4555",
+  "type": "parkering",
+  "navn": "Kronprinsensgate",
+  "lon": 10.940974,
+  "lat": 59.20776,
+  "x": -670.88,
+  "y": 548.29,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift 08-21 (08-21)",
+   "EASYPARK": 1,
+   "TYPE": 1,
+   "AUTOMATNR": "55",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4532",
+  "type": "parkering",
+  "navn": "J.N.Jacobsensgate",
+  "lon": 10.943892,
+  "lat": 59.209421,
+  "x": -504.59,
+  "y": 733.17,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5620",
+  "type": "parkering",
+  "navn": "Dammyr, Avlastningsparkering",
+  "lon": 10.94591,
+  "lat": 59.212093,
+  "x": -389.57,
+  "y": 1030.74,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 2,
+   "KOMMENTAR": "1226, Parkering forbudt over 48 timer",
+   "TYPE": 1,
+   "AUTOMATNR": "95",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4607",
+  "type": "parkering",
+  "navn": "Labratoriegaten",
+  "lon": 10.951097,
+  "lat": 59.201282,
+  "x": -93.92,
+  "y": -172.9,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 30,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05.  Rød sone 01.06.-31.08.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "65",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4547",
+  "type": "parkering",
+  "navn": "Nygaardsgata",
+  "lon": 10.94254,
+  "lat": 59.207427,
+  "x": -581.65,
+  "y": 511.22,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift 08-21 (08-21)",
+   "EASYPARK": 1,
+   "TYPE": 1,
+   "AUTOMATNR": "54",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4641",
+  "type": "parkering",
+  "navn": "Toldbodgaten - beboerparkering",
+  "lon": 10.95227,
+  "lat": 59.204018,
+  "x": -27.05,
+  "y": 131.73,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 10,
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-13941",
+  "type": "parkering",
+  "navn": "DANIEL LEEGAARDS GATE",
+  "lon": 10.941401,
+  "lat": 59.214738,
+  "x": -646.55,
+  "y": 1325.22,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 0,
+   "ELBIL": 2,
+   "EASYPARK": 8,
+   "TYPE": 1,
+   "AUTOMATNR": "16+21",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15221",
+  "type": "parkering",
+  "navn": "Liv Molvigs allé",
+  "lon": 10.931292,
+  "lat": 59.210315,
+  "x": -1222.7,
+  "y": 832.76,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 30 min. - husk p-skive",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4518",
+  "type": "parkering",
+  "navn": "Kirkebrygga",
+  "lon": 10.939174,
+  "lat": 59.209543,
+  "x": -773.48,
+  "y": 746.8,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering alle dager mot avgift  08-21. P-tid maks 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 1,
+   "AUTOMATNR": "2",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4544",
+  "type": "parkering",
+  "navn": "Nygata",
+  "lon": 10.93918,
+  "lat": 59.211346,
+  "x": -773.13,
+  "y": 947.58,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 10 min.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4524",
+  "type": "parkering",
+  "navn": "Sportsveien",
+  "lon": 10.949335,
+  "lat": 59.212381,
+  "x": -194.36,
+  "y": 1062.83,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 7,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 2 t.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15550",
+  "type": "parkering",
+  "navn": "St.Hans gate",
+  "lon": 10.93414,
+  "lat": 59.214315,
+  "x": -1060.42,
+  "y": 1278.12,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "TYPE": 3,
+   "AUTOMATNR": "33",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15942",
+  "type": "parkering",
+  "navn": "Laboratoriegaten",
+  "lon": 10.95018,
+  "lat": 59.201331,
+  "x": -146.2,
+  "y": -167.48,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Rød sone 01.06.-31.08  grønn sone  01.09.-31.05.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "65",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4581",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.944738,
+  "lat": 59.207391,
+  "x": -456.38,
+  "y": 507.23,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11700",
+  "type": "parkering",
+  "navn": "Innfartsparkering Kråkerøy trafo",
+  "lon": 10.93619,
+  "lat": 59.206995,
+  "x": -943.56,
+  "y": 463.15,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4618",
+  "type": "parkering",
+  "navn": "Færgeportgaten - beboerparkering",
+  "lon": 10.954302,
+  "lat": 59.204374,
+  "x": 88.74,
+  "y": 171.32,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4630",
+  "type": "parkering",
+  "navn": "O.P.Pettersensgt.",
+  "lon": 10.937578,
+  "lat": 59.212599,
+  "x": -864.46,
+  "y": 1087.03,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 3,
+   "KOMMENTAR": "Parkering forbudt over 4 timer",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-6596",
+  "type": "parkering",
+  "navn": "St.Hansfjellet p-hus",
+  "lon": 10.934251,
+  "lat": 59.214644,
+  "x": -1054.08,
+  "y": 1314.83,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 368,
+   "ELBIL": 5,
+   "EASYPARK": 13,
+   "TYPE": 2,
+   "AUTOMATNR": "93+94",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/vaare-parkeringshus/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15544",
+  "type": "parkering",
+  "navn": "Carsten Ankers gate - beboerparkering",
+  "lon": 10.95697,
+  "lat": 59.200632,
+  "x": 240.83,
+  "y": -245.28,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale 08-16",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4625",
+  "type": "parkering",
+  "navn": "Færgeportgaten - beboerparkering",
+  "lon": 10.956338,
+  "lat": 59.203869,
+  "x": 204.78,
+  "y": 115.06,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4602",
+  "type": "parkering",
+  "navn": "Raadhusgaten",
+  "lon": 10.955447,
+  "lat": 59.203941,
+  "x": 154.01,
+  "y": 123.09,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 9,
+   "KOMMENTAR": "Parkering forbudt over 1t 08-18 (08-15)",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-6262",
+  "type": "parkering",
+  "navn": "Apenesfjellet p-hus",
+  "lon": 10.941004,
+  "lat": 59.211615,
+  "x": -669.18,
+  "y": 977.47,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 435,
+   "ELBIL": 5,
+   "EASYPARK": 11,
+   "TYPE": 2,
+   "AUTOMATNR": "90+91",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/vaare-parkeringshus/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4579",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.94627,
+  "lat": 59.209029,
+  "x": -369.02,
+  "y": 689.54,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4556",
+  "type": "parkering",
+  "navn": "Turngata",
+  "lon": 10.942236,
+  "lat": 59.207521,
+  "x": -598.95,
+  "y": 521.65,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 4,
+   "PRIS": 2,
+   "ELBIL": 0,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 5,
+   "AUTOMATNR": "54",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-211",
+  "type": "parkering",
+  "navn": "Tolboden",
+  "lon": 10.950098,
+  "lat": 59.205691,
+  "x": -150.89,
+  "y": 317.96,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 42,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 18,
+   "TYPE": 6,
+   "AUTOMATNR": "12",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4533",
+  "type": "parkering",
+  "navn": "J.N.Jacobsensgate",
+  "lon": 10.94383,
+  "lat": 59.209155,
+  "x": -508.12,
+  "y": 703.6,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4596",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.945469,
+  "lat": 59.207658,
+  "x": -414.68,
+  "y": 536.9,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4656",
+  "type": "parkering",
+  "navn": "Strandpromenaden/Tolboden",
+  "lon": 10.946071,
+  "lat": 59.205087,
+  "x": -380.4,
+  "y": 250.72,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 22,
+   "ELBIL": 2,
+   "KOMMENTAR": "Egner seg også for buss.Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 18,
+   "TYPE": 6,
+   "AUTOMATNR": "12 eller 57",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4642",
+  "type": "parkering",
+  "navn": "Ridehusgata - Beboerparkering",
+  "lon": 10.944624,
+  "lat": 59.207545,
+  "x": -462.84,
+  "y": 524.3,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11380",
+  "type": "parkering",
+  "navn": "Storgaten v/ vis nr. 15",
+  "lon": 10.934931,
+  "lat": 59.213262,
+  "x": -1015.33,
+  "y": 1160.95,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 1,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12376",
+  "type": "parkering",
+  "navn": "Elias Kræmersgate",
+  "lon": 10.943335,
+  "lat": 59.214087,
+  "x": -536.34,
+  "y": 1252.76,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 4,
+   "TYPE": 6,
+   "AUTOMATNR": "17",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12021",
+  "type": "parkering",
+  "navn": "Spinneriveien under Fredrikstadbrua",
+  "lon": 10.966281,
+  "lat": 59.20834,
+  "x": 771.47,
+  "y": 612.88,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 12,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 7,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/innfartsparkering/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4550",
+  "type": "parkering",
+  "navn": "Kongensgate",
+  "lon": 10.944861,
+  "lat": 59.208483,
+  "x": -449.38,
+  "y": 628.82,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 14,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 3,
+   "TYPE": 6,
+   "AUTOMATNR": "40",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4613",
+  "type": "parkering",
+  "navn": "Kirkegaten - beboerparkering",
+  "lon": 10.954638,
+  "lat": 59.204363,
+  "x": 107.9,
+  "y": 170.06,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15545",
+  "type": "parkering",
+  "navn": "General Ohmes vei - beboerparkering",
+  "lon": 10.958073,
+  "lat": 59.201283,
+  "x": 303.7,
+  "y": -172.72,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale 08-16",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4519",
+  "type": "parkering",
+  "navn": "Nygaardsgata",
+  "lon": 10.942002,
+  "lat": 59.207946,
+  "x": -612.29,
+  "y": 569.04,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift 08-21 (08-21)",
+   "EASYPARK": 1,
+   "TYPE": 1,
+   "AUTOMATNR": "54",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4539",
+  "type": "parkering",
+  "navn": "Evjekaja",
+  "lon": 10.931759,
+  "lat": 59.214918,
+  "x": -1196.09,
+  "y": 1345.32,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "TYPE": 3,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5297",
+  "type": "parkering",
+  "navn": "Dr. Gibelhausens gate",
+  "lon": 10.938606,
+  "lat": 59.211654,
+  "x": -805.87,
+  "y": 981.85,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Gratis.Parkering kun for tohjulinger",
+   "TYPE": 8,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4633",
+  "type": "parkering",
+  "navn": "Riddervoldsgate",
+  "lon": 10.940062,
+  "lat": 59.208942,
+  "x": -722.88,
+  "y": 679.93,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5303",
+  "type": "parkering",
+  "navn": "St.Hansfjellet p-hus",
+  "lon": 10.93427,
+  "lat": 59.214619,
+  "x": -1053.0,
+  "y": 1311.98,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 10,
+   "ELBIL": 5,
+   "KOMMENTAR": "Lading: 25 kr timen. 16A som gir maks 3,6 kwt.",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4639",
+  "type": "parkering",
+  "navn": "Bryggeriveien",
+  "lon": 10.94934,
+  "lat": 59.213461,
+  "x": -194.07,
+  "y": 1183.08,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "KOMMENTAR": "Parkering forbudt over 2 t.",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11397",
+  "type": "parkering",
+  "navn": "Strandpromenaden",
+  "lon": 10.948799,
+  "lat": 59.205436,
+  "x": -224.91,
+  "y": 289.6,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "TYPE": 3,
+   "AUTOMATNR": "2",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4562",
+  "type": "parkering",
+  "navn": "Tordenskiolds gate",
+  "lon": 10.940676,
+  "lat": 59.208668,
+  "x": -687.91,
+  "y": 649.41,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift alle dager 08-21. P tid maks 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 1,
+   "AUTOMATNR": "2",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4619",
+  "type": "parkering",
+  "navn": "Kasernegaten - beboerparkering",
+  "lon": 10.953343,
+  "lat": 59.202516,
+  "x": 34.09,
+  "y": -35.48,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15943",
+  "type": "parkering",
+  "navn": "General Ohmes vei - beboerparkering",
+  "lon": 10.957086,
+  "lat": 59.201141,
+  "x": 247.44,
+  "y": -188.59,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale 08-16",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-6597",
+  "type": "parkering",
+  "navn": "Dampskipsbrygga",
+  "lon": 10.93806,
+  "lat": 59.210903,
+  "x": -836.97,
+  "y": 898.23,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "ELBIL": 0,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4527",
+  "type": "parkering",
+  "navn": "Tordenskiolds gate",
+  "lon": 10.939716,
+  "lat": 59.208736,
+  "x": -742.57,
+  "y": 656.92,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift alle dager 08-21. p-tid maks 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 1,
+   "AUTOMATNR": "2",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5309",
+  "type": "parkering",
+  "navn": "Kongstenhallen",
+  "lon": 10.961633,
+  "lat": 59.201099,
+  "x": 506.6,
+  "y": -193.25,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 46,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 3 t",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4530",
+  "type": "parkering",
+  "navn": "J.N.Jacobsensgate",
+  "lon": 10.943067,
+  "lat": 59.206854,
+  "x": -551.61,
+  "y": 447.44,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift 08-18 (08-15)",
+   "EASYPARK": 4,
+   "TYPE": 1,
+   "AUTOMATNR": "58",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11383",
+  "type": "parkering",
+  "navn": "Olaf M.Holwechs gate",
+  "lon": 10.937563,
+  "lat": 59.212428,
+  "x": -865.29,
+  "y": 1068.09,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4553",
+  "type": "parkering",
+  "navn": "Løkkegata",
+  "lon": 10.940245,
+  "lat": 59.213516,
+  "x": -712.47,
+  "y": 1189.21,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 8,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid 8-21 alle dager",
+   "EASYPARK": 8,
+   "TYPE": 4,
+   "AUTOMATNR": "35",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-10742",
+  "type": "parkering",
+  "navn": "Voldgaten",
+  "lon": 10.956238,
+  "lat": 59.203444,
+  "x": 199.06,
+  "y": 67.83,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "KOMMENTAR": "Parkering forbudt over 1 t fra kl. 08. - 18.00 (08.00-15.00)",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12373",
+  "type": "parkering",
+  "navn": "J.N.Jacobsensgate",
+  "lon": 10.942757,
+  "lat": 59.20593,
+  "x": -569.24,
+  "y": 344.53,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift 08-18 (08-15)",
+   "EASYPARK": 4,
+   "TYPE": 1,
+   "AUTOMATNR": "58",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4559",
+  "type": "parkering",
+  "navn": "Sverresgate",
+  "lon": 10.943321,
+  "lat": 59.212085,
+  "x": -537.11,
+  "y": 1029.82,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "KOMMENTAR": "Parkering forbudt over 2 t.",
+   "TYPE": 6,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-14580",
+  "type": "parkering",
+  "navn": "DNB taket",
+  "lon": 10.936893,
+  "lat": 59.214468,
+  "x": -903.49,
+  "y": 1295.16,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "ELBIL": 0,
+   "TYPE": 3,
+   "AUTOMATNR": "9",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4593",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.947879,
+  "lat": 59.208945,
+  "x": -277.37,
+  "y": 680.18,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-128",
+  "type": "parkering",
+  "navn": "Apenesfjellet p-hus",
+  "lon": 10.941208,
+  "lat": 59.211617,
+  "x": -657.56,
+  "y": 977.79,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "ELBIL": 0,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4599",
+  "type": "parkering",
+  "navn": "Raadhusgaten",
+  "lon": 10.954772,
+  "lat": 59.203448,
+  "x": 115.55,
+  "y": 68.24,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 9,
+   "KOMMENTAR": "Parkering forbudt over 1 t. 08-18 (08-15)",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15548",
+  "type": "parkering",
+  "navn": "Smedjegaten - beboerparkering",
+  "lon": 10.954668,
+  "lat": 59.205147,
+  "x": 109.59,
+  "y": 257.39,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4616",
+  "type": "parkering",
+  "navn": "Kasernegaten - beboerparkering",
+  "lon": 10.952148,
+  "lat": 59.202738,
+  "x": -34.04,
+  "y": -10.74,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15946",
+  "type": "parkering",
+  "navn": "St.Croixhuset",
+  "lon": 10.944896,
+  "lat": 59.211146,
+  "x": -447.35,
+  "y": 925.27,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering 08-16, parkering forbudt over 2 timer",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-6580",
+  "type": "parkering",
+  "navn": "Apenesfjellet p-hus",
+  "lon": 10.944552,
+  "lat": 59.212789,
+  "x": -466.97,
+  "y": 1108.24,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 435,
+   "ELBIL": 5,
+   "EASYPARK": 11,
+   "TYPE": 2,
+   "AUTOMATNR": "90+91",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/vaare-parkeringshus/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15236",
+  "type": "parkering",
+  "navn": "Liv Molvigs allé",
+  "lon": 10.931193,
+  "lat": 59.209961,
+  "x": -1228.36,
+  "y": 793.39,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 30 min. - husk p-skive",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4536",
+  "type": "parkering",
+  "navn": "Storgata v/nr.8",
+  "lon": 10.936966,
+  "lat": 59.212057,
+  "x": -899.36,
+  "y": 1026.75,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "18",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-145",
+  "type": "parkering",
+  "navn": "Hollendergata p-plass",
+  "lon": 10.935084,
+  "lat": 59.213784,
+  "x": -1006.6,
+  "y": 1218.99,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 20,
+   "TYPE": 4,
+   "AUTOMATNR": "32",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-14901",
+  "type": "parkering",
+  "navn": "Liv Molvigs allé",
+  "lon": 10.931559,
+  "lat": 59.210307,
+  "x": -1207.51,
+  "y": 831.85,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 30 min. - husk p-skive",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4554",
+  "type": "parkering",
+  "navn": "Nygaardsgata/Vibes gate",
+  "lon": 10.939973,
+  "lat": 59.209936,
+  "x": -727.95,
+  "y": 790.6,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 4 timer",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12380",
+  "type": "parkering",
+  "navn": "Skolegata",
+  "lon": 10.951121,
+  "lat": 59.20765,
+  "x": -92.54,
+  "y": 536.08,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 30 min. kl. 08.00-17.00",
+   "TYPE": 6,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4531",
+  "type": "parkering",
+  "navn": "Cicignongate",
+  "lon": 10.946082,
+  "lat": 59.207482,
+  "x": -379.79,
+  "y": 517.3,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 3,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-6260",
+  "type": "parkering",
+  "navn": "Spinneriveien under Fredrikstadbrua",
+  "lon": 10.964768,
+  "lat": 59.208907,
+  "x": 685.25,
+  "y": 675.95,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 54,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 7,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/innfartsparkering/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4548",
+  "type": "parkering",
+  "navn": "Tordenskiolds gate",
+  "lon": 10.940838,
+  "lat": 59.207651,
+  "x": -678.63,
+  "y": 536.11,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 1,
+   "AUTOMATNR": "55",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12374",
+  "type": "parkering",
+  "navn": "Tordenskiolds gate",
+  "lon": 10.940269,
+  "lat": 59.208252,
+  "x": -711.09,
+  "y": 603.05,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 1,
+   "AUTOMATNR": "55",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4608",
+  "type": "parkering",
+  "navn": "Voldgaten",
+  "lon": 10.954938,
+  "lat": 59.202016,
+  "x": 125.0,
+  "y": -91.22,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 33,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "62",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4594",
+  "type": "parkering",
+  "navn": "For beboere med p-kort",
+  "lon": 10.943897,
+  "lat": 59.208487,
+  "x": -504.31,
+  "y": 629.19,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4654",
+  "type": "parkering",
+  "navn": "Hollendergata/Årumgården",
+  "lon": 10.935385,
+  "lat": 59.213804,
+  "x": -989.43,
+  "y": 1221.22,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Gratis.Parkering kun for tohjulinger",
+   "TYPE": 8,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4648",
+  "type": "parkering",
+  "navn": "Løkkegata",
+  "lon": 10.940463,
+  "lat": 59.213039,
+  "x": -700.0,
+  "y": 1136.1,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 3,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid 8-21 alle dager",
+   "EASYPARK": 8,
+   "TYPE": 4,
+   "AUTOMATNR": "35",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12036",
+  "type": "parkering",
+  "navn": "Spinneriveien, under Fredrikstadbrua",
+  "lon": 10.96613,
+  "lat": 59.208399,
+  "x": 762.91,
+  "y": 619.41,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 1,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-2882",
+  "type": "parkering",
+  "navn": "DNB Taket nedre plass",
+  "lon": 10.936928,
+  "lat": 59.214851,
+  "x": -901.47,
+  "y": 1337.84,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 12,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 Alle dager",
+   "EASYPARK": 19,
+   "TYPE": 4,
+   "AUTOMATNR": "9",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-177",
+  "type": "parkering",
+  "navn": "Nygata",
+  "lon": 10.939726,
+  "lat": 59.211705,
+  "x": -742.05,
+  "y": 987.53,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 25,
+   "PRIS": 3,
+   "ELBIL": 0,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 Alle dager",
+   "EASYPARK": 29,
+   "TYPE": 4,
+   "AUTOMATNR": "11",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4568",
+  "type": "parkering",
+  "navn": "Losjeveien",
+  "lon": 10.952745,
+  "lat": 59.214457,
+  "x": -0.03,
+  "y": 1294.0,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 7,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 2 t.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4588",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.947894,
+  "lat": 59.209374,
+  "x": -276.5,
+  "y": 727.95,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-3921",
+  "type": "parkering",
+  "navn": "Parkering forbudt over 2 t",
+  "lon": 10.952409,
+  "lat": 59.209733,
+  "x": -19.14,
+  "y": 768.01,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4631",
+  "type": "parkering",
+  "navn": "For beboere med p-kort",
+  "lon": 10.948551,
+  "lat": 59.206143,
+  "x": -239.02,
+  "y": 368.23,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15551",
+  "type": "parkering",
+  "navn": "Storgata v/nr.37",
+  "lon": 10.932906,
+  "lat": 59.214529,
+  "x": -1130.73,
+  "y": 1302.0,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering forbudt over 2 timer",
+   "TYPE": 3,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11060",
+  "type": "parkering",
+  "navn": "Kråkerøy Trafo",
+  "lon": 10.936202,
+  "lat": 59.206803,
+  "x": -942.85,
+  "y": 441.8,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 51,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 7,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/innfartsparkering/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15543",
+  "type": "parkering",
+  "navn": "Carsten Ankers gate - beboerparkering",
+  "lon": 10.957221,
+  "lat": 59.200455,
+  "x": 255.11,
+  "y": -264.88,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Parkering med gyldig avtale 08-16",
+   "TYPE": 1,
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11701",
+  "type": "parkering",
+  "navn": "Innfartsparkering",
+  "lon": 10.935997,
+  "lat": 59.206891,
+  "x": -954.56,
+  "y": 451.59,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt mellom kl. 00 - 04 alle dager",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4525",
+  "type": "parkering",
+  "navn": "Storgata",
+  "lon": 10.933713,
+  "lat": 59.213894,
+  "x": -1084.73,
+  "y": 1231.29,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "ELBIL": 2,
+   "KOMMENTAR": "08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "33",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-120",
+  "type": "parkering",
+  "navn": "Biblioteket",
+  "lon": 10.942539,
+  "lat": 59.205928,
+  "x": -581.72,
+  "y": 344.36,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 3,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4557",
+  "type": "parkering",
+  "navn": "Tordenskiolds gate",
+  "lon": 10.941337,
+  "lat": 59.207145,
+  "x": -650.22,
+  "y": 479.78,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 5,
+   "PRIS": 2,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstid kl. 08.00 - 21.00 man. - lørd.",
+   "EASYPARK": 1,
+   "TYPE": 1,
+   "AUTOMATNR": "55",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12377",
+  "type": "parkering",
+  "navn": "Olaf M.Holwechs gate",
+  "lon": 10.937134,
+  "lat": 59.212278,
+  "x": -889.76,
+  "y": 1051.34,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "ELBIL": 0,
+   "KOMMENTAR": "Parkering forbudt over 10 min.",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-9460",
+  "type": "parkering",
+  "navn": "Apenesfjellet P-hus",
+  "lon": 10.941097,
+  "lat": 59.211599,
+  "x": -663.89,
+  "y": 975.72,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 9,
+   "ELBIL": 5,
+   "KOMMENTAR": "Lading: 25 kr timen. 16A som gir maks 3,6 kwt.",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4534",
+  "type": "parkering",
+  "navn": "St. Hansgate",
+  "lon": 10.933763,
+  "lat": 59.214032,
+  "x": -1081.88,
+  "y": 1246.62,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 17,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering forbudt over 2 t. Avgift kl. 08.00 - 21.00 man. - søn.",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "33",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4605",
+  "type": "parkering",
+  "navn": "Kirkegaten/Tøihusgaten",
+  "lon": 10.951703,
+  "lat": 59.202064,
+  "x": -59.41,
+  "y": -85.87,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+   "EASYPARK": 29,
+   "TYPE": 6,
+   "AUTOMATNR": "65",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4545",
+  "type": "parkering",
+  "navn": "Bankbrygga",
+  "lon": 10.938729,
+  "lat": 59.21019,
+  "x": -798.83,
+  "y": 818.86,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift alle dager 08-21. Maks p- tid 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 1,
+   "AUTOMATNR": "3",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4551",
+  "type": "parkering",
+  "navn": "St.Josephsgate",
+  "lon": 10.943773,
+  "lat": 59.207794,
+  "x": -511.37,
+  "y": 552.1,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 3,
+   "TYPE": 6,
+   "AUTOMATNR": "39",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-11381",
+  "type": "parkering",
+  "navn": "Apenesgate",
+  "lon": 10.942698,
+  "lat": 59.213622,
+  "x": -572.64,
+  "y": 1200.98,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "TYPE": 3,
+   "AUTOMATNR": "2",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12022",
+  "type": "parkering",
+  "navn": "Heibergskrysset",
+  "lon": 10.961196,
+  "lat": 59.201728,
+  "x": 481.67,
+  "y": -123.21,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 4,
+   "ELBIL": 2,
+   "KOMMENTAR": "Maks 3 t. 16A som gir maks 3 kwt",
+   "TYPE": 9,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4651",
+  "type": "parkering",
+  "navn": "Torvbyen",
+  "lon": 10.940787,
+  "lat": 59.214799,
+  "x": -681.57,
+  "y": 1332.01,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Gratis. Parkering kun for tohjulinger",
+   "TYPE": 8,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4597",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.950161,
+  "lat": 59.207838,
+  "x": -147.26,
+  "y": 556.96,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4614",
+  "type": "parkering",
+  "navn": "Kirkegaten - beboerparkering",
+  "lon": 10.954106,
+  "lat": 59.203964,
+  "x": 77.58,
+  "y": 125.69,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4591",
+  "type": "parkering",
+  "navn": "Beboerparkering",
+  "lon": 10.944197,
+  "lat": 59.209145,
+  "x": -487.22,
+  "y": 702.45,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ELBIL": 0,
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4640",
+  "type": "parkering",
+  "navn": "Raadhusgaten - beboerparkering",
+  "lon": 10.954045,
+  "lat": 59.202917,
+  "x": 74.09,
+  "y": 9.13,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 9,
+   "KOMMENTAR": "Med gyldig avtale",
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-5298",
+  "type": "parkering",
+  "navn": "Storgata ved nr. 12",
+  "lon": 10.936303,
+  "lat": 59.212419,
+  "x": -937.14,
+  "y": 1067.05,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 1,
+   "TYPE": 3,
+   "LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4634",
+  "type": "parkering",
+  "navn": "Riddervoldsgate",
+  "lon": 10.94031,
+  "lat": 59.208999,
+  "x": -708.76,
+  "y": 686.21,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 2,
+   "KOMMENTAR": "Parkering forbudt over 30 min",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4514",
+  "type": "parkering",
+  "navn": "Agentgata/O.P.Pettersensgt.",
+  "lon": 10.93632,
+  "lat": 59.212544,
+  "x": -936.15,
+  "y": 1080.99,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 17,
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering 08-21 alle dager, maks 2 timer mot avgift",
+   "EASYPARK": 7,
+   "TYPE": 4,
+   "AUTOMATNR": "18",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4585",
+  "type": "parkering",
+  "navn": "St.Josephs gate - Beboerparkering",
+  "lon": 10.944518,
+  "lat": 59.207809,
+  "x": -468.89,
+  "y": 553.79,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Med gyldig avtale",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-15540",
+  "type": "parkering",
+  "navn": "Kråkerøy Trafo",
+  "lon": 10.936355,
+  "lat": 59.206204,
+  "x": -934.17,
+  "y": 375.0,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "TYPE": 1,
+   "AUTOMATNR": "96",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-12388",
+  "type": "parkering",
+  "navn": "J.N.Jacobsensgate",
+  "lon": 10.94288,
+  "lat": 59.206299,
+  "x": -562.27,
+  "y": 385.67,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift 08-18 (08-15)",
+   "EASYPARK": 4,
+   "TYPE": 1,
+   "AUTOMATNR": "58",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-1617",
+  "type": "parkering",
+  "navn": "Ryenveien",
+  "lon": 10.947178,
+  "lat": 59.214606,
+  "x": -317.28,
+  "y": 1310.61,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "KOMMENTAR": "Parkering forbudt over 2t",
+   "TYPE": 1,
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4628",
+  "type": "parkering",
+  "navn": "Gunnar Nilsensgt.",
+  "lon": 10.939413,
+  "lat": 59.212505,
+  "x": -759.84,
+  "y": 1076.64,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 6,
+   "KOMMENTAR": "Parkering forbudt over 10 min.",
+   "TYPE": 1,
+   "AUTOMATNR": "Ingen avgift",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4522",
+  "type": "parkering",
+  "navn": "Cicignongata",
+  "lon": 10.94597,
+  "lat": 59.207089,
+  "x": -386.15,
+  "y": 473.56,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "ANTALL": 8,
+   "PRIS": 6,
+   "ELBIL": 2,
+   "KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "EASYPARK": 3,
+   "TYPE": 6,
+   "AUTOMATNR": "38",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-1-4528",
+  "type": "parkering",
+  "navn": "Nygaardsgata/ Vibes gate",
+  "lon": 10.940796,
+  "lat": 59.209328,
+  "x": -681.03,
+  "y": 722.87,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 1",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "ELBIL": 2,
+   "KOMMENTAR": "Parkering mot avgift alle dager 08-21. Maks p-tid 2 timer",
+   "EASYPARK": 7,
+   "TYPE": 1,
+   "AUTOMATNR": "22",
+   "LENKE": "https://www.fredrikstad.kommune.no/parkering",
+   "lag": "plass (lag 1)"
+  }
+ },
+ {
+  "id": "parkering-0-19",
+  "type": "parkering",
+  "navn": "Automat 34",
+  "lon": 10.941616,
+  "lat": 59.21343,
+  "x": -634.28,
+  "y": 1179.58,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 34,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-20",
+  "type": "parkering",
+  "navn": "Automat 27",
+  "lon": 10.939888,
+  "lat": 59.212784,
+  "x": -732.8,
+  "y": 1107.69,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 27,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-22",
+  "type": "parkering",
+  "navn": "Automat 41",
+  "lon": 10.945067,
+  "lat": 59.209151,
+  "x": -437.63,
+  "y": 703.11,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 41,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-23",
+  "type": "parkering",
+  "navn": "Automat 40",
+  "lon": 10.94408,
+  "lat": 59.208562,
+  "x": -493.86,
+  "y": 637.61,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 40,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-25",
+  "type": "parkering",
+  "navn": "Automat 55",
+  "lon": 10.940943,
+  "lat": 59.207738,
+  "x": -672.67,
+  "y": 545.84,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 55,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-27",
+  "type": "parkering",
+  "navn": "Automat 38",
+  "lon": 10.946,
+  "lat": 59.207126,
+  "x": -384.42,
+  "y": 477.72,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 38,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-28",
+  "type": "parkering",
+  "navn": "Automat 64",
+  "lon": 10.955051,
+  "lat": 59.205092,
+  "x": 131.45,
+  "y": 251.25,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Takstsone 1240. Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 64,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-49",
+  "type": "parkering",
+  "navn": "Automat 3",
+  "lon": 10.939033,
+  "lat": 59.209713,
+  "x": -781.53,
+  "y": 765.74,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 3,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-50",
+  "type": "parkering",
+  "navn": "Automat 2",
+  "lon": 10.939502,
+  "lat": 59.20895,
+  "x": -754.77,
+  "y": 680.78,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 2,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-54",
+  "type": "parkering",
+  "navn": "Automat 35",
+  "lon": 10.940328,
+  "lat": 59.213292,
+  "x": -707.71,
+  "y": 1164.19,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 35,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-56",
+  "type": "parkering",
+  "navn": "Automat 43",
+  "lon": 10.944893,
+  "lat": 59.207781,
+  "x": -447.52,
+  "y": 550.59,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 43,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-65",
+  "type": "parkering",
+  "navn": "Automat 18",
+  "lon": 10.93685,
+  "lat": 59.212758,
+  "x": -905.92,
+  "y": 1104.8,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 18,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-66",
+  "type": "parkering",
+  "navn": "Automat 44",
+  "lon": 10.937529,
+  "lat": 59.212882,
+  "x": -867.22,
+  "y": 1118.56,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 44,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-67",
+  "type": "parkering",
+  "navn": "Automat 21",
+  "lon": 10.941118,
+  "lat": 59.214899,
+  "x": -662.72,
+  "y": 1343.18,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 21,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-69",
+  "type": "parkering",
+  "navn": "Automat 50",
+  "lon": 10.94069,
+  "lat": 59.214151,
+  "x": -687.1,
+  "y": 1259.86,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 50,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-71",
+  "type": "parkering",
+  "navn": "Automat 11",
+  "lon": 10.93989,
+  "lat": 59.211706,
+  "x": -732.65,
+  "y": 987.61,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 11,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-73",
+  "type": "parkering",
+  "navn": "Automat 12",
+  "lon": 10.950098,
+  "lat": 59.205597,
+  "x": -150.84,
+  "y": 307.49,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 12,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-81",
+  "type": "parkering",
+  "navn": "Automat 33",
+  "lon": 10.933689,
+  "lat": 59.213965,
+  "x": -1086.13,
+  "y": 1239.22,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 33,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-84",
+  "type": "parkering",
+  "navn": "Automat 52",
+  "lon": 10.940613,
+  "lat": 59.214131,
+  "x": -691.46,
+  "y": 1257.67,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 52,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-113",
+  "type": "parkering",
+  "navn": "Automat 32",
+  "lon": 10.934987,
+  "lat": 59.213803,
+  "x": -1012.11,
+  "y": 1221.11,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 32,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-115",
+  "type": "parkering",
+  "navn": "Automat 9",
+  "lon": 10.936461,
+  "lat": 59.214527,
+  "x": -928.12,
+  "y": 1301.78,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 9,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-129",
+  "type": "parkering",
+  "navn": "Automat 16",
+  "lon": 10.941113,
+  "lat": 59.214862,
+  "x": -663.0,
+  "y": 1339.05,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 3,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 16,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-145",
+  "type": "parkering",
+  "navn": "Automat 58",
+  "lon": 10.942829,
+  "lat": 59.206315,
+  "x": -565.18,
+  "y": 387.41,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 58,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-146",
+  "type": "parkering",
+  "navn": "Automat 62",
+  "lon": 10.955384,
+  "lat": 59.20229,
+  "x": 150.38,
+  "y": -60.68,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Takstsone 1240. Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 62,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-147",
+  "type": "parkering",
+  "navn": "Automat 65",
+  "lon": 10.951622,
+  "lat": 59.202198,
+  "x": -64.01,
+  "y": -70.93,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Takstsone 1240. Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 65,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-148",
+  "type": "parkering",
+  "navn": "Automat 17",
+  "lon": 10.943454,
+  "lat": 59.214248,
+  "x": -529.54,
+  "y": 1270.74,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 17,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-161",
+  "type": "parkering",
+  "navn": "Automat 54",
+  "lon": 10.942271,
+  "lat": 59.207619,
+  "x": -596.95,
+  "y": 532.55,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 54,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-162",
+  "type": "parkering",
+  "navn": "Automat 70",
+  "lon": 10.96166,
+  "lat": 59.202007,
+  "x": 508.14,
+  "y": -92.21,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Gratis i 3 timer mot registrering",
+   "AUTOMATNR": 70,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-194",
+  "type": "parkering",
+  "navn": "Automat 22",
+  "lon": 10.94034,
+  "lat": 59.209605,
+  "x": -707.04,
+  "y": 753.74,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 18,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 22,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-642",
+  "type": "parkering",
+  "navn": "Automat 95",
+  "lon": 10.94549,
+  "lat": 59.212567,
+  "x": -413.53,
+  "y": 1083.53,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 10,
+   "AUTOMATNR": 95,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-1282",
+  "type": "parkering",
+  "navn": "Automat 36",
+  "lon": 10.942351,
+  "lat": 59.209984,
+  "x": -592.43,
+  "y": 795.91,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 2,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 36,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-1922",
+  "type": "parkering",
+  "navn": "Automat 71",
+  "lon": 10.964029,
+  "lat": 59.201244,
+  "x": 643.12,
+  "y": -177.06,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "PRIS": 6,
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 71,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "parkering-0-2242",
+  "type": "parkering",
+  "navn": "Automat 96",
+  "lon": 10.936075,
+  "lat": 59.206165,
+  "x": -950.14,
+  "y": 370.7,
+  "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering lag 0",
+  "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/0",
+  "hentet": "2026-10-24",
+  "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+  "felt": {
+   "KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone.",
+   "AUTOMATNR": 96,
+   "lag": "automat (lag 0)"
+  }
+ },
+ {
+  "id": "entur-sp-63038",
+  "type": "buss",
+  "navn": "Gamlebyen",
+  "lon": 10.953189,
+  "lat": 59.204843,
+  "x": 25.31,
+  "y": 223.54,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "stopplace": "NSR:StopPlace:63038",
+   "linjer": [],
+   "mode_oppgitt": [
+    "bus"
+   ]
+  }
+ },
+ {
+  "id": "entur-quay-108763",
+  "type": "buss",
+  "navn": "Gamlebyen",
+  "lon": 10.953125,
+  "lat": 59.204797,
+  "x": 21.66,
+  "y": 218.42,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:108763",
+   "stopplace": "NSR:StopPlace:63038",
+   "plattform": null,
+   "linjer": [],
+   "autoritet": [],
+   "merknad": null
+  }
+ },
+ {
+  "id": "entur-sp-2448",
+  "type": "ferje",
+  "navn": "Gamlebyen fergeleie",
+  "lon": 10.953683,
+  "lat": 59.205156,
+  "x": 53.46,
+  "y": 258.38,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "stopplace": "NSR:StopPlace:2448",
+   "linjer": [
+    "803 Gamlebyfergen",
+    "805 Ålekilen-Sentrum"
+   ],
+   "mode_oppgitt": [
+    "water"
+   ]
+  }
+ },
+ {
+  "id": "entur-quay-4260",
+  "type": "ferje",
+  "navn": "Gamlebyen fergeleie",
+  "lon": 10.953672,
+  "lat": 59.205313,
+  "x": 52.83,
+  "y": 275.86,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:4260",
+   "stopplace": "NSR:StopPlace:2448",
+   "plattform": "",
+   "linjer": [
+    "803 Gamlebyfergen"
+   ],
+   "autoritet": [
+    "Fredrikstad kommune"
+   ],
+   "merknad": "mode rapporteres som BUS av Entur; ferje avgjort på stoppested/linje 803/805"
+  }
+ },
+ {
+  "id": "entur-quay-4259",
+  "type": "ferje",
+  "navn": "Gamlebyen fergeleie",
+  "lon": 10.95331,
+  "lat": 59.205097,
+  "x": 32.2,
+  "y": 251.81,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:4259",
+   "stopplace": "NSR:StopPlace:2448",
+   "plattform": "",
+   "linjer": [
+    "805 Ålekilen-Sentrum"
+   ],
+   "autoritet": [
+    "Fredrikstad kommune"
+   ],
+   "merknad": "mode rapporteres som BUS av Entur; ferje avgjort på stoppested/linje 803/805"
+  }
+ },
+ {
+  "id": "entur-sp-2444",
+  "type": "buss",
+  "navn": "Kongsten",
+  "lon": 10.960608,
+  "lat": 59.202008,
+  "x": 448.16,
+  "y": -92.06,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "stopplace": "NSR:StopPlace:2444",
+   "linjer": [
+    "101 Kongsten-Årum-Grålum-Kalnes",
+    "113 Torsnes-Humlekjær-Fredrikstad",
+    "123 Humlekjær-Torsnes-Fredrikstad",
+    "186 Borge ungdomsskole",
+    "8 Øra-Rekustad"
+   ],
+   "mode_oppgitt": [
+    "bus"
+   ]
+  }
+ },
+ {
+  "id": "entur-quay-4255",
+  "type": "buss",
+  "navn": "Kongsten",
+  "lon": 10.960853,
+  "lat": 59.202019,
+  "x": 462.12,
+  "y": -90.84,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:4255",
+   "stopplace": "NSR:StopPlace:2444",
+   "plattform": "",
+   "linjer": [
+    "101 Kongsten-Årum-Grålum-Kalnes",
+    "113 Torsnes-Humlekjær-Fredrikstad",
+    "123 Humlekjær-Torsnes-Fredrikstad",
+    "186 Borge ungdomsskole",
+    "8 Øra-Rekustad"
+   ],
+   "autoritet": [
+    "Østfold kollektivtrafikk"
+   ],
+   "merknad": null
+  }
+ },
+ {
+  "id": "entur-quay-4253",
+  "type": "buss",
+  "navn": "Kongsten",
+  "lon": 10.960364,
+  "lat": 59.201997,
+  "x": 434.25,
+  "y": -93.28,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:4253",
+   "stopplace": "NSR:StopPlace:2444",
+   "plattform": "",
+   "linjer": [
+    "101 Kongsten-Årum-Grålum-Kalnes",
+    "113 Torsnes-Humlekjær-Fredrikstad",
+    "123 Humlekjær-Torsnes-Fredrikstad",
+    "186 Borge ungdomsskole",
+    "8 Øra-Rekustad"
+   ],
+   "autoritet": [
+    "Østfold kollektivtrafikk"
+   ],
+   "merknad": null
+  }
+ },
+ {
+  "id": "entur-sp-63037",
+  "type": "buss",
+  "navn": "Vaterland",
+  "lon": 10.949724,
+  "lat": 59.198434,
+  "x": -172.18,
+  "y": -489.89,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "stopplace": "NSR:StopPlace:63037",
+   "linjer": [],
+   "mode_oppgitt": [
+    "bus"
+   ]
+  }
+ },
+ {
+  "id": "entur-quay-108761",
+  "type": "buss",
+  "navn": "Vaterland",
+  "lon": 10.94967,
+  "lat": 59.198444,
+  "x": -175.26,
+  "y": -488.77,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:108761",
+   "stopplace": "NSR:StopPlace:63037",
+   "plattform": null,
+   "linjer": [],
+   "autoritet": [],
+   "merknad": null
+  }
+ },
+ {
+  "id": "entur-sp-63045",
+  "type": "ferje",
+  "navn": "Vaterland fergeleie",
+  "lon": 10.947002,
+  "lat": 59.198958,
+  "x": -327.33,
+  "y": -431.56,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "stopplace": "NSR:StopPlace:63045",
+   "linjer": [],
+   "mode_oppgitt": [
+    "water"
+   ]
+  }
+ },
+ {
+  "id": "entur-quay-108776",
+  "type": "ferje",
+  "navn": "Vaterland fergeleie",
+  "lon": 10.946862,
+  "lat": 59.198977,
+  "x": -335.31,
+  "y": -429.45,
+  "kilde": "Entur Journey Planner v3 / NSR",
+  "kilde_url": "https://developer.entur.org/pages-journeyplanner-journeyplanner",
+  "hentet": "2026-10-24",
+  "lisens": "NLOD",
+  "felt": {
+   "quay": "NSR:Quay:108776",
+   "stopplace": "NSR:StopPlace:63045",
+   "plattform": null,
+   "linjer": [],
+   "autoritet": [],
+   "merknad": "mode rapporteres som BUS av Entur; ferje avgjort på stoppested/linje 803/805"
+  }
+ },
+ {
+  "id": "osm-n372716536",
+  "type": "restaurant",
+  "navn": "Majorens kro & stue",
+  "lon": 10.955376,
+  "lat": 59.203331,
+  "x": 149.95,
+  "y": 55.18,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/372716536",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "restaurant",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "id": "osm-n372716546",
+  "type": "restaurant",
+  "navn": "(restaurant uten navn)",
+  "lon": 10.952281,
+  "lat": 59.2034,
+  "x": -26.42,
+  "y": 62.85,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/372716546",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe"
+  }
+ },
+ {
+  "id": "osm-n541921838",
+  "type": "restaurant",
+  "navn": "Mormors Café",
+  "lon": 10.955149,
+  "lat": 59.203533,
+  "x": 136.99,
+  "y": 77.65,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/541921838",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe",
+   "opening_hours": "Mo-Fr 11:00-17:00; Sa 11:00-18:00; Su 12:00-18:00",
+   "website": "https://mormorscafe.no",
+   "wheelchair": "no"
+  }
+ },
+ {
+  "id": "osm-n665459759",
+  "type": "restaurant",
+  "navn": "No74",
+  "lon": 10.955601,
+  "lat": 59.203446,
+  "x": 162.78,
+  "y": 68.02,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/665459759",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "restaurant",
+   "wheelchair": "no"
+  }
+ },
+ {
+  "id": "osm-n665479829",
+  "type": "restaurant",
+  "navn": "Balaklava",
+  "lon": 10.954544,
+  "lat": 59.204212,
+  "x": 102.53,
+  "y": 153.35,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/665479829",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "restaurant"
+  }
+ },
+ {
+  "id": "osm-n1127801425",
+  "type": "overnatting",
+  "navn": "Hotell Viktoria",
+  "lon": 10.942216,
+  "lat": 59.207604,
+  "x": -600.11,
+  "y": 530.92,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/1127801425",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "hotel"
+  }
+ },
+ {
+  "id": "osm-n1144451751",
+  "type": "restaurant",
+  "navn": "Art & Urter",
+  "lon": 10.940808,
+  "lat": 59.209085,
+  "x": -680.36,
+  "y": 695.75,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/1144451751",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe"
+  }
+ },
+ {
+  "id": "osm-n2393456191",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.951631,
+  "lat": 59.203708,
+  "x": -63.49,
+  "y": 97.19,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/2393456191",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets",
+   "fee": "no",
+   "wheelchair": "no"
+  }
+ },
+ {
+  "id": "osm-n2393456192",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.949877,
+  "lat": 59.202011,
+  "x": -163.47,
+  "y": -91.68,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/2393456192",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets",
+   "fee": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "id": "osm-n3208292716",
+  "type": "museum",
+  "navn": "Fredrikstad Museum",
+  "lon": 10.95204,
+  "lat": 59.201931,
+  "x": -40.17,
+  "y": -100.6,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/3208292716",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "museum",
+   "fee": "yes"
+  }
+ },
+ {
+  "id": "osm-n3266526861",
+  "type": "restaurant",
+  "navn": "Cafe Cicignon",
+  "lon": 10.944757,
+  "lat": 59.206979,
+  "x": -455.29,
+  "y": 461.31,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/3266526861",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe"
+  }
+ },
+ {
+  "id": "osm-n5638205937",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.942071,
+  "lat": 59.208505,
+  "x": -608.38,
+  "y": 631.22,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/5638205937",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets",
+   "fee": "no",
+   "operator": "Flora Grill og Pizza"
+  }
+ },
+ {
+  "id": "osm-n6591537391",
+  "type": "museum",
+  "navn": "Gamlebyen Modelljernbanesenter",
+  "lon": 10.955546,
+  "lat": 59.202978,
+  "x": 159.66,
+  "y": 15.94,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/6591537391",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "museum",
+   "fee": "yes"
+  }
+ },
+ {
+  "id": "osm-n6591537394",
+  "type": "museum",
+  "navn": "Glasshytta",
+  "lon": 10.95797,
+  "lat": 59.202879,
+  "x": 297.79,
+  "y": 4.86,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/6591537394",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "museum",
+   "opening_hours": "Mo-Fr 12:00-16:00; Sa 12:00-15:00; Su off",
+   "fee": "no",
+   "wheelchair": "limited"
+  }
+ },
+ {
+  "id": "osm-n6591537397",
+  "type": "museum",
+  "navn": "Bastion 5",
+  "lon": 10.949785,
+  "lat": 59.20167,
+  "x": -168.68,
+  "y": -129.65,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/6591537397",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "museum"
+  }
+ },
+ {
+  "id": "osm-n6802559323",
+  "type": "overnatting",
+  "navn": "Magasinet Isegran B&B",
+  "lon": 10.945247,
+  "lat": 59.202865,
+  "x": -427.33,
+  "y": 3.34,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/6802559323",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "guest_house",
+   "website": "https://www.minemagasinet.no/overnatting",
+   "phone": "+47 69 03 29 30"
+  }
+ },
+ {
+  "id": "osm-n6802559327",
+  "type": "overnatting",
+  "navn": "Gamlebyen hotell",
+  "lon": 10.954853,
+  "lat": 59.203624,
+  "x": 120.15,
+  "y": 87.8,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/6802559327",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "hotel"
+  }
+ },
+ {
+  "id": "osm-n7179357338",
+  "type": "restaurant",
+  "navn": "Kjelleren på Hotell Fredrikstad",
+  "lon": 10.940688,
+  "lat": 59.209016,
+  "x": -687.21,
+  "y": 688.15,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/7179357338",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "pub"
+  }
+ },
+ {
+  "id": "osm-n10949233550",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.956319,
+  "lat": 59.203195,
+  "x": 203.73,
+  "y": 40.11,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/10949233550",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets",
+   "opening_hours": "Mo-Fr 09:00-21:00",
+   "fee": "no"
+  }
+ },
+ {
+  "id": "osm-n10949289121",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.95177,
+  "lat": 59.206277,
+  "x": -55.59,
+  "y": 383.17,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/10949289121",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets",
+   "fee": "no",
+   "wheelchair": "no"
+  }
+ },
+ {
+  "id": "osm-n11182965841",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.950357,
+  "lat": 59.208848,
+  "x": -136.13,
+  "y": 669.4,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/11182965841",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets",
+   "fee": "yes"
+  }
+ },
+ {
+  "id": "osm-n12076690887",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.956412,
+  "lat": 59.203888,
+  "x": 209.01,
+  "y": 117.25,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/12076690887",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets"
+  }
+ },
+ {
+  "id": "osm-n13608574756",
+  "type": "restaurant",
+  "navn": "Kafé Magasinet",
+  "lon": 10.945027,
+  "lat": 59.202681,
+  "x": -439.91,
+  "y": -17.09,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/13608574756",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe",
+   "opening_hours": "Jul 01-Aug 16 Tu-Su 11:00-16:00",
+   "website": "https://www.minemagasinet.no/minemagasinet",
+   "phone": "+47 69 03 29 30"
+  }
+ },
+ {
+  "id": "osm-n13717155906",
+  "type": "restaurant",
+  "navn": "Café Numéro 13",
+  "lon": 10.944276,
+  "lat": 59.209719,
+  "x": -482.7,
+  "y": 766.4,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/13717155906",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe",
+   "phone": "+47 92 92 33 00"
+  }
+ },
+ {
+  "id": "osm-n13898699215",
+  "type": "restaurant",
+  "navn": "(restaurant uten navn)",
+  "lon": 10.953734,
+  "lat": 59.203835,
+  "x": 56.4,
+  "y": 111.33,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/13898699215",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe",
+   "cuisine": "coffee_shop"
+  }
+ },
+ {
+  "id": "osm-n13974701753",
+  "type": "restaurant",
+  "navn": "CUBE8 CAFÉ",
+  "lon": 10.94893,
+  "lat": 59.205463,
+  "x": -217.47,
+  "y": 292.5,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/13974701753",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe",
+   "website": "https://cube8gallery.no/pages/visit"
+  }
+ },
+ {
+  "id": "osm-n14014697743",
+  "type": "restaurant",
+  "navn": "Værk",
+  "lon": 10.954409,
+  "lat": 59.203936,
+  "x": 94.85,
+  "y": 122.51,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/14014697743",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "restaurant"
+  }
+ },
+ {
+  "id": "osm-n14014697744",
+  "type": "restaurant",
+  "navn": "Pepo's",
+  "lon": 10.951872,
+  "lat": 59.203534,
+  "x": -49.76,
+  "y": 77.8,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/14014697744",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "restaurant"
+  }
+ },
+ {
+  "id": "osm-n14048116430",
+  "type": "restaurant",
+  "navn": "Cube8 Cafe",
+  "lon": 10.948963,
+  "lat": 59.205506,
+  "x": -215.53,
+  "y": 297.29,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/14048116430",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe"
+  }
+ },
+ {
+  "id": "osm-n14048130216",
+  "type": "restaurant",
+  "navn": "Café Numero 13",
+  "lon": 10.94424,
+  "lat": 59.209788,
+  "x": -484.72,
+  "y": 774.04,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/node/14048130216",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "cafe"
+  }
+ },
+ {
+  "id": "osm-w98934028",
+  "type": "overnatting",
+  "navn": "Hotel Fredrikstad",
+  "lon": 10.940668,
+  "lat": 59.208975,
+  "x": -688.31,
+  "y": 683.56,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/way/98934028",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "tourism": "hotel"
+  }
+ },
+ {
+  "id": "osm-w107107735",
+  "type": "toalett",
+  "navn": "(toalett uten navn)",
+  "lon": 10.964771,
+  "lat": 59.19996,
+  "x": 685.43,
+  "y": -320.03,
+  "kilde": "OpenStreetMap via Overpass",
+  "kilde_url": "https://www.openstreetmap.org/way/107107735",
+  "hentet": "2026-10-24",
+  "lisens": "ODbL 1.0 © OpenStreetMap-bidragsytere",
+  "felt": {
+   "amenity": "toilets"
+  }
+ }
+]

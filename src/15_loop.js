@@ -11,6 +11,12 @@ function vokse(t){
   if(ferdig) vokst=true;
 }
 const SPIN=3.4, VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
+// kamerabevegelser uten bråstopp (lys-og-bevegelse pkt. 2, teknikk 18 og 20): alle animerte flytt bruker samme kurve, eksponentiell inn og ut:
+// farten bygges opp like lenge som den dør ut, og avstanden til målet halveres jevnt mot slutten i stedet for å stoppe på et punkt.
+// ?glid=0 gir de gamle kurvene til sammenligning.
+const GLID = Q0.get('glid')!=='0';
+const glid = t => !GLID ? (t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : t<=0 ? 0 : t>=1 ? 1 : t<0.5 ? Math.pow(2,20*t-10)/2 : (2-Math.pow(2,-20*t+10))/2;
+const glidUt = t => !GLID ? 1-Math.pow(1-t,3) : t>=1 ? 1 : 1-Math.pow(2,-10*t);   // bare utglidning (når bevegelsen alt er i gang)
 let anim=false, husBeveger=false, sisteTid=performance.now();
 const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0});
 const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
@@ -18,7 +24,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
   map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
-  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: t=>1-Math.pow(1-t,4), essential:true});
+  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ if(introDone) return; introDone=true; map.stop(); }

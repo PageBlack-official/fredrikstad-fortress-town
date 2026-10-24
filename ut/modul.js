@@ -16,9 +16,10 @@ const Q0=new URLSearchParams(location.search);
 // ---- tegnestil (23.10, bestemt med Vegar): streken er stikkets, flatene er flate, lyset er glatt. 2015-teknikkens varme (akvarellvask,
 // penselbrudd, papirkorn, vignett, skyskygger, løvflekker) er av. ?stil=c viser den gamle til sammenligning, ?stil=b legger skravur i skyggene.
 const STIL=(()=>{ const v=Q0.get('stil')||'a';
-  const a={vask:0, pensel:0, korn:0, vignett:0, sky:0, stoy:0, skravur:0};
+  // kurve: filmkurven over høylysene (lys-og-bevegelse pkt. 1, 24.10), avslått i kartet.
+  const a={vask:0, pensel:0, korn:0, vignett:0, sky:0, stoy:0, skravur:0, kurve: Q0.get('kurve')==='1' ? 1 : 0};   // av i kartet (ingen synlig forskjell, 24.10); ?kurve=1 for introfilmen
   if(v==='b') return {...a, skravur:1};
-  if(v==='c') return {vask:1, pensel:1, korn:1, vignett:1, sky:1, stoy:1, skravur:0};
+  if(v==='c') return {vask:1, pensel:1, korn:1, vignett:1, sky:1, stoy:1, skravur:0, kurve:0};
   return a; })();
 // sola står fast i byen (modell), ikke i øyet (plakat): hjemmevisningen er lik trykket, og skyggene snur seg med byen. ?sol=plakat gir den gamle.
 const SOL_FAST = Q0.get('sol')!=='plakat';
@@ -66,9 +67,9 @@ const post=(()=>{
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uSky:{value:STIL.sky}},
+    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -85,6 +86,11 @@ const post=(()=>{
       }
       float h(vec2 p){ return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453); }
       float vn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      // filmkurve (teknikk 15, 24.10): toppen bøyes av over KNE (230/255) mot TAK (241/255), alt under står urørt, så husfargene (fasit) ikke flytter seg.
+      // Målet er satt i skjermverdier (99,9-persentilen i hjemmevisningen 222–243, ingen piksel over ca. 240), men dette passet skriver
+      // lineært til et sRGB-mål (skjermkoden legges på av grafikkortet), så knekk og tak står her som lineære verdier: 230/255 → 0,787, 241/255 → 0,880.
+      const float KNE=0.787, TAK=0.880;
+      vec3 kurve(vec3 c){ vec3 t=max(c-KNE,0.); vec3 b=KNE+(TAK-KNE)*(1.-exp(-t/(TAK-KNE))); return mix(c, b, step(KNE,c)*uKurve); }
       void main(){
         vec3 col=texture2D(tCol,vUv).rgb;
         // miniatyr-effekt: myk uskarphet øverst og nederst i bildet (sterkest i introen)
@@ -96,6 +102,7 @@ const post=(()=>{
         float zc=D(vec2(0.));
         if(texture2D(tDep,vUv).x>0.99999){ gl_FragColor=vec4(col,1.);   // bakgrunn (ingenting tegnet): dybden står på fjernplanet
           #include <colorspace_fragment>
+          gl_FragColor.rgb=kurve(gl_FragColor.rgb);
           return; }
         // verdensposisjon for pikselen: støyen i streken forankres i byen, så den ikke kryper når kameraet beveger seg
         vec4 wp4=invPV*vec4(vUv*2.-1., texture2D(tDep,vUv).x*2.-1., 1.); vec2 wxz=wp4.xz/wp4.w;
@@ -165,6 +172,7 @@ const post=(()=>{
         col*=1.+(0.03*h(floor(gl_FragCoord.xy*0.5))-0.015)*uKorn;
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
+        gl_FragColor.rgb=kurve(gl_FragColor.rgb);
       }`
   });
   const q=new THREE.Mesh(new THREE.PlaneGeometry(2,2),m); q.frustumCulled=false;
@@ -514,6 +522,37 @@ function flatGruppe(grp, ekstra=['aBygg','aTopp']){
   samling.forEach((s,mt)=>{ const geo=mergeGeometries(s.biter,false); if(!geo) return; s.biter.forEach(b=>b.dispose()); const mesh=new THREE.Mesh(geo,mt); mesh.castShadow=s.cs; mesh.receiveShadow=s.rs; mesh.customDepthMaterial=husDybde; grp.add(mesh); });
   grp.children.filter(c=>c.isGroup && !c.children.length).forEach(c=>c.removeFromParent());
   return grp;
+}
+// ---- kontaktskygge (lys-og-bevegelse pkt. 1, 24.10): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
+// Geometri på bakken (ikke skjermeffekt): et bånd rundt hver husfot og en skive under hvert tre, med alfa 1 inne og 0 ute,
+// multiplisert inn i bakken. Stabilt i fart, ingen prikking, skalerer som husene. Styrken er KONTAKT_STYRKE, bredden settes der båndene lages.
+const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : 0.42;
+const kontaktMat=new THREE.ShaderMaterial({
+  transparent:true, depthWrite:false, blending:THREE.MultiplyBlending, polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-2,
+  uniforms:{ styrke:{value:KONTAKT_STYRKE} },
+  vertexShader:`attribute float aAlfa; varying float vA; void main(){ vA=aAlfa; vec4 p=vec4(position,1.);
+    #ifdef USE_INSTANCING
+    p=instanceMatrix*p;
+    #endif
+    gl_Position=projectionMatrix*modelViewMatrix*p; }`,
+  fragmentShader:`uniform float styrke; varying float vA; void main(){ float a=vA*vA*(3.-2.*vA)*styrke; gl_FragColor=vec4(mix(vec3(1.), vec3(0.62,0.66,0.78), a), 1.); }`
+});
+// bånd rundt et polygon (modellkoordinater x,y → verden x,-y), bredde d meter; returnerer posisjoner og alfa
+function fotBaand(pts, d, y){
+  const n=pts.length; let areal=0; for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; areal+=a[0]*c[1]-c[0]*a[1]; }
+  const ut=areal>0 ? 1 : -1;                        // orientering avgjør hvilken side som er ut
+  const pos=[], alfa=[], nrm=[];
+  for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; const ex=c[0]-a[0], ey=c[1]-a[1], L=Math.hypot(ex,ey)||1; nrm.push([ -ey/L*ut, ex/L*ut ]); }
+  const P=(x,yy,al)=>{ pos.push(x,y,-yy); alfa.push(al); };
+  for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n], m=nrm[i];
+    const a2=[a[0]+m[0]*d, a[1]+m[1]*d], c2=[c[0]+m[0]*d, c[1]+m[1]*d];
+    P(a[0],a[1],1); P(c[0],c[1],1); P(c2[0],c2[1],0);  P(a[0],a[1],1); P(c2[0],c2[1],0); P(a2[0],a2[1],0);
+    // hjørnevifte mellom dette og neste bånd (bare utvendige hjørner)
+    const m2=nrm[(i+1)%n]; const kryss=(m[0]*m2[1]-m[1]*m2[0])*ut;
+    if(kryss>1e-6){ P(c[0],c[1],1); P(c[0]+m[0]*d,c[1]+m[1]*d,0); P(c[0]+m2[0]*d,c[1]+m2[1]*d,0); }
+    else if(kryss<-1e-6){ P(c[0],c[1],1); P(c[0]+m2[0]*d,c[1]+m2[1]*d,0); P(c[0]+m[0]*d,c[1]+m[1]*d,0); }
+  }
+  return {pos, alfa};
 }
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
@@ -975,6 +1014,11 @@ samler.forEach((biter, m)=>{
 });
 if(vinduSamling.length) city.add(lagVinduer(vinduSamling));
 samler.clear();
+// kontaktskygge rundt alle husføtter: ett nett for hele byen
+{ const pos=[], alfa=[];
+  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, 1.3, 0.04); pos.push(...f.pos); alfa.push(...f.alfa); });
+  const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setAttribute('aAlfa', new THREE.Float32BufferAttribute(alfa,1));
+  const m=new THREE.Mesh(g, kontaktMat); m.frustumCulled=false; m.renderOrder=1; city.add(m); }
 
 // ---- festningsterrenget: voller med skråninger, grønt som plenene i tegningen ----
 const TER = DATA.landskap && DATA.landskap.terreng;
@@ -1260,6 +1304,15 @@ function lagInst(geo,mat,data){ const m=new THREE.InstancedMesh(geo,mat,Math.max
 const crowns=[lagInst(KLASE,lovMat,klaseData)]; crowns[0].receiveShadow=true; crowns[0].castShadow=false;
 const skyggeKropper=lagInst(SKYGGEKROPP,skyggeMat,skyggeData); skyggeKropper.receiveShadow=false;
 const stammer=lagInst(STAMME,stammeMat,stammeData); stammer.userData.stamme=true;
+// kontaktskygge under hvert tre: en skive på bakken, alfa 1 i midten og 0 i kanten
+{ const SKIVE=new THREE.CircleGeometry(1,20); SKIVE.rotateX(-Math.PI/2);
+  const n=SKIVE.getAttribute('position').count, al=new Float32Array(n); const p=SKIVE.getAttribute('position');
+  for(let i=0;i<n;i++) al[i]=1-Math.min(1, Math.hypot(p.getX(i),p.getZ(i)));
+  SKIVE.setAttribute('aAlfa', new THREE.BufferAttribute(al,1));
+  const skiver=new THREE.InstancedMesh(SKIVE, kontaktMat, Math.max(1,TP.length)); skiver.count=TP.length; skiver.frustumCulled=false; skiver.renderOrder=1;
+  const d=new THREE.Object3D();
+  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+0.04, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
+  scene.add(skiver); }
 const dummy=new THREE.Object3D();
 function setCrowns(t){
   trMesh.forEach(m=>{ const st=m.userData.stamme;
@@ -1373,6 +1426,12 @@ function vokse(t){
   if(ferdig) vokst=true;
 }
 const SPIN=3.4, VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
+// kamerabevegelser uten bråstopp (lys-og-bevegelse pkt. 2, teknikk 18 og 20): alle animerte flytt bruker samme kurve, eksponentiell inn og ut:
+// farten bygges opp like lenge som den dør ut, og avstanden til målet halveres jevnt mot slutten i stedet for å stoppe på et punkt.
+// ?glid=0 gir de gamle kurvene til sammenligning.
+const GLID = Q0.get('glid')!=='0';
+const glid = t => !GLID ? (t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : t<=0 ? 0 : t>=1 ? 1 : t<0.5 ? Math.pow(2,20*t-10)/2 : (2-Math.pow(2,-20*t+10))/2;
+const glidUt = t => !GLID ? 1-Math.pow(1-t,3) : t>=1 ? 1 : 1-Math.pow(2,-10*t);   // bare utglidning (når bevegelsen alt er i gang)
 let anim=false, husBeveger=false, sisteTid=performance.now();
 const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0});
 const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
@@ -1380,7 +1439,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
   map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
-  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: t=>1-Math.pow(1-t,4), essential:true});
+  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ if(introDone) return; introDone=true; map.stop(); }
@@ -1471,15 +1530,17 @@ function velg(x,y){
   const kortTopp = 1-2*Math.max(0.2, (kort.offsetTop||innerHeight*0.72)/innerHeight);   // kortets plass uten innglidningen
   if(s.y < kortTopp+0.12 || Math.abs(s.x)>0.85 || s.y>0.88){
     const px=(s.x+1)/2*innerWidth, py=(1-s.y)/2*innerHeight;
-    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:700, easing:t=>1-Math.pow(1-t,3)});
+    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:GLID?900:700, easing:glid});
   }
 }
-function hjemNaa(){ map.easeTo({...hjemVisning(), duration:900, easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
+function hjemNaa(){ map.easeTo({...hjemVisning(), duration:GLID?1300:900, easing:glid}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
 hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
 // ett klikk velger et hus (ventes 300 ms så et dobbeltklikk kan zoome i stedet)
 map.on('click', e=>{ if(!introDone) return; clearTimeout(klikkTimer); const p=e.point; klikkTimer=setTimeout(()=>velg(p.x,p.y),300); });
 map.on('dblclick', ()=>clearTimeout(klikkTimer));
+// dobbeltklikk: MapLibres egen zoom er 300 ms med bråstopp; vår glir inn mot punktet på 800 ms med samme kurve som resten (shift = ut)
+if(GLID){ map.doubleClickZoom.disable(); map.on('dblclick', e=>{ overta(); map.easeTo({center:e.lngLat, zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), duration:800, easing:glid, around:e.lngLat}); }); }
 // peker over et hus (bare mus): huset løfter seg litt
 let sisteHover=0;
 map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }

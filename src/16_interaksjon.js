@@ -31,15 +31,17 @@ function velg(x,y){
   const kortTopp = 1-2*Math.max(0.2, (kort.offsetTop||innerHeight*0.72)/innerHeight);   // kortets plass uten innglidningen
   if(s.y < kortTopp+0.12 || Math.abs(s.x)>0.85 || s.y>0.88){
     const px=(s.x+1)/2*innerWidth, py=(1-s.y)/2*innerHeight;
-    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:700, easing:t=>1-Math.pow(1-t,3)});
+    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:GLID?900:700, easing:glid});
   }
 }
-function hjemNaa(){ map.easeTo({...hjemVisning(), duration:900, easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
+function hjemNaa(){ map.easeTo({...hjemVisning(), duration:GLID?1300:900, easing:glid}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
 hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
 // ett klikk velger et hus (ventes 300 ms så et dobbeltklikk kan zoome i stedet)
 map.on('click', e=>{ if(!introDone) return; clearTimeout(klikkTimer); const p=e.point; klikkTimer=setTimeout(()=>velg(p.x,p.y),300); });
 map.on('dblclick', ()=>clearTimeout(klikkTimer));
+// dobbeltklikk: MapLibres egen zoom er 300 ms med bråstopp; vår glir inn mot punktet på 800 ms med samme kurve som resten (shift = ut)
+if(GLID){ map.doubleClickZoom.disable(); map.on('dblclick', e=>{ overta(); map.easeTo({center:e.lngLat, zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), duration:800, easing:glid, around:e.lngLat}); }); }
 // peker over et hus (bare mus): huset løfter seg litt
 let sisteHover=0;
 map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }

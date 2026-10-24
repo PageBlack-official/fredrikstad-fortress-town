@@ -1,7 +1,15 @@
 """Felles for regelsjekkene: last data, modell->flyfoto-piksel, rapportlinje."""
 import json, os, math
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-def data(navn): return json.load(open(os.path.join(ROT, 'data', navn + '.json'), encoding='utf8'))
+def data(navn, raa=False):
+    """Data slik kartet viser dem: rettelser.json legges oppå (samme regler som bygg.py). raa=True gir grunndataene."""
+    d = json.load(open(os.path.join(ROT, 'data', navn + '.json'), encoding='utf8'))
+    if raa or navn == 'rettelser': return d
+    for r in json.load(open(os.path.join(ROT, 'data', 'rettelser.json'), encoding='utf8')):
+        if r['emne'] != navn: continue
+        if r['op'] == 'sett': d[r['i']][r['felt']] = r['verdi']
+        elif r['op'] == 'skjul': d[r['i']]['skjul'] = f"{r.get('hvem','?')} {r.get('dato','?')}: {r.get('grunn','')}"
+    return d
 def flyfoto():
     import cv2
     k = json.load(open(os.path.join(ROT, 'kilder', 'flyfoto-google-2026-10-23.json')))

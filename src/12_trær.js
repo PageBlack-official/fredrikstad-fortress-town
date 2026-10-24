@@ -109,6 +109,15 @@ function lagInst(geo,mat,data){ const m=new THREE.InstancedMesh(geo,mat,Math.max
 const crowns=[lagInst(KLASE,lovMat,klaseData)]; crowns[0].receiveShadow=true; crowns[0].castShadow=false;
 const skyggeKropper=lagInst(SKYGGEKROPP,skyggeMat,skyggeData); skyggeKropper.receiveShadow=false;
 const stammer=lagInst(STAMME,stammeMat,stammeData); stammer.userData.stamme=true;
+// kontaktskygge under hvert tre: en skive på bakken, alfa 1 i midten og 0 i kanten
+{ const SKIVE=new THREE.CircleGeometry(1,20); SKIVE.rotateX(-Math.PI/2);
+  const n=SKIVE.getAttribute('position').count, al=new Float32Array(n); const p=SKIVE.getAttribute('position');
+  for(let i=0;i<n;i++) al[i]=1-Math.min(1, Math.hypot(p.getX(i),p.getZ(i)));
+  SKIVE.setAttribute('aAlfa', new THREE.BufferAttribute(al,1));
+  const skiver=new THREE.InstancedMesh(SKIVE, kontaktMat, Math.max(1,TP.length)); skiver.count=TP.length; skiver.frustumCulled=false; skiver.renderOrder=1;
+  const d=new THREE.Object3D();
+  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+0.04, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
+  scene.add(skiver); }
 const dummy=new THREE.Object3D();
 function setCrowns(t){
   trMesh.forEach(m=>{ const st=m.userData.stamme;
