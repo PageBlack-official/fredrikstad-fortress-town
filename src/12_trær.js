@@ -58,7 +58,7 @@ function lovMatLag(){
         vec2 b=vec2(n2(vUv*2.2+vSeed*13.),n2(vUv*2.2+vSeed*13.+5.3))-0.5;
         vec3 nV=normalize(vec3(vUv/0.97+b*0.6*uStoy, z+0.08));
         vec3 sV=normalize((viewMatrix*vec4(sunDir,0.)).xyz);
-        float sm=getShadowMask();
+        float sm=${Q0.get('kroner')==='enkel' ? '1.0' : 'getShadowMask()'};   // ?kroner=enkel: feilsøking på mobil, uten dybdeskriving og skyggeoppslag
         float w=dot(nV,sV)*0.5+0.5;
         w=mix(w, w*0.55, (1.-sm)*0.85);
         float lys=smoothstep(0.60,0.62,w), mid=smoothstep(0.38,0.40,w);
@@ -72,7 +72,7 @@ function lovMatLag(){
         c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9*uStoy);
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
-        gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;
+        ${Q0.get('kroner')==='enkel' ? '' : 'gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;'}
       }`
   });
 }

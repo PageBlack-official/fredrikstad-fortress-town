@@ -1199,7 +1199,7 @@ function lovMatLag(){
         vec2 b=vec2(n2(vUv*2.2+vSeed*13.),n2(vUv*2.2+vSeed*13.+5.3))-0.5;
         vec3 nV=normalize(vec3(vUv/0.97+b*0.6*uStoy, z+0.08));
         vec3 sV=normalize((viewMatrix*vec4(sunDir,0.)).xyz);
-        float sm=getShadowMask();
+        float sm=${Q0.get('kroner')==='enkel' ? '1.0' : 'getShadowMask()'};   // ?kroner=enkel: feilsøking på mobil, uten dybdeskriving og skyggeoppslag
         float w=dot(nV,sV)*0.5+0.5;
         w=mix(w, w*0.55, (1.-sm)*0.85);
         float lys=smoothstep(0.60,0.62,w), mid=smoothstep(0.38,0.40,w);
@@ -1213,7 +1213,7 @@ function lovMatLag(){
         c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9*uStoy);
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
-        gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;
+        ${Q0.get('kroner')==='enkel' ? '' : 'gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;'}
       }`
   });
 }
@@ -1540,9 +1540,13 @@ function dbgTegn(naa){ if(!dbg.paa) return; dbg.fps.push(naa); while(dbg.fps.len
   const pt=window.__pt||{};
   if(map.isMoving()){ if(!fart.i){ fart.i=true; fart.t0=naa; fart.n=0; fart.s=0; fart.b=0; fart.f=0; fart.sk=0; fart.r=0; fart.m=0; fart.k0=window.__kartBilder; fart.v0=window.__vaareBilder; } fart.n++; fart.s+=pt.scene||0; fart.b+=pt.blekk||0; fart.f+=pt.fxaa||0; fart.sk+=pt.skygge||0; fart.r+=window.__ramme||0; fart.m+=window.__mellom||0; }
   else if(fart.i){ fart.i=false; const ms=naa-fart.t0, n=fart.n; if(ms>150) fart.sist=`siste bevegelse ${ms|0} ms, ${n} bilder = ${(n*1000/ms).toFixed(0)}/s  (snitt per bilde: 3D ${(fart.s/n).toFixed(0)} ms, blekk ${(fart.b/n).toFixed(0)} ms, fxaa ${(fart.f/n).toFixed(0)} ms, skyggekart i ${fart.sk} av ${n}, hele render() ${(fart.r/n).toFixed(0)} ms, mellom bildene ${(fart.m/n).toFixed(0)} ms, kartet tegnet ${window.__kartBilder-fart.k0} bilder, laget vårt ${window.__vaareBilder-fart.v0}${pt.maal?', GPU-målt':', CPU-målt, tast m for GPU'})`; }
-  dbg.el.textContent=`tegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skala ${skalaStille.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille} msaa ${post.samples()}`
+  const glFeil=gl2.getError();
+  dbg.el.textContent=`v${document.querySelector('meta[name=description]').content.match(/Versjon ([\d.]+)/)[1]}  nær ${kam.naer.toFixed(1)} fjern ${kam.fjern.toFixed(0)}  glFeil ${glFeil}  kall ${(window.__pt||{}).kall}  dpr ${devicePixelRatio}  ${innerWidth}x${innerHeight}\ntegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skala ${skalaStille.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille} msaa ${post.samples()}`
     +String.fromCharCode(10)+fart.sist
     +String.fromCharCode(10)+`3D ${pt.scene|0} ms  blekk ${pt.blekk|0} ms  fxaa ${pt.fxaa|0} ms  kall ${pt.kall}  tri ${pt.tri}  skyggekart ${pt.skygge} (grunner: ${JSON.stringify(dekning.grunner)})  ${pt.maal?'GPU-målt':'CPU-målt'}`+String.fromCharCode(10)+`peker: ned ${dbg.pek.ned} flytt ${dbg.pek.flytt} opp ${dbg.pek.opp}  sist ${dbg.pek.sist}  knapper ${dbg.pek.knapper} ${dbg.pek.type}  senter ${tilModell(map.getCenter()).map(v=>v.toFixed(0)).join(',')}  dragPan ${map.dragPan.isEnabled()?'på':'av'} aktiv ${map.dragPan.isActive()?'ja':'nei'}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
 addEventListener('keydown',e=>{ if(!dbg.paa) return; if(e.key==='s'){ ssStille=ssStille===4?2:ssStille===2?1:4; } if(e.key==='a'){ aoStille=aoStille===14?7:aoStille===7?0:14; } if(e.key==='x'){ skalaStille=skalaStille===1?0.75:1; } if(e.key==='p'){ speil.av(); } if(e.key==='m'){ window.__maal=!window.__maal; } if(e.key==='n'){ post.msaa(post.samples()?0:2); } });
-addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createElement('pre'); dbg.el.style.cssText='position:fixed;left:8px;top:8px;z-index:9;margin:0;padding:8px;font:11px/1.25 ui-monospace,monospace;background:rgba(255,255,255,.92);color:#222;max-height:92vh;overflow:hidden;pointer-events:none;border-radius:6px'; document.body.appendChild(dbg.el); } dbg.el.style.display=dbg.paa?'block':'none'; } });
+function dbgVeksle(){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createElement('pre'); dbg.el.style.cssText='position:fixed;left:8px;top:8px;z-index:9;margin:0;padding:8px;font:11px/1.25 ui-monospace,monospace;background:rgba(255,255,255,.92);color:#222;max-height:92vh;overflow:hidden;pointer-events:none;border-radius:6px'; document.body.appendChild(dbg.el); } dbg.el.style.display=dbg.paa?'block':'none'; }
+addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey) dbgVeksle(); });
+// mobil: ?d=1 slår ruta på fra start (ingen tastatur), større skrift, og glen-feil + nær/fjern tas med
+if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace'; dbg.el.style.maxWidth='96vw'; dbg.el.style.whiteSpace='pre-wrap'; }
 
