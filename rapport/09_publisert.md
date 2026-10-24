@@ -1,4 +1,4 @@
 # 09_publisert: OK
 
-- Pages: versjon 30.2 (ønsket 30.2)
-- artefaktbygg: versjon 30.2
+- Pages: versjon 30.3 (ønsket 30.3)
+- artefaktbygg: versjon 30.3
