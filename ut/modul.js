@@ -1379,10 +1379,13 @@ let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, a
 function maalYtelse(){ const n=performance.now(); perfLast=n; if(perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
   const dt=window.__ramme||0;
   perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
-    if(avg>30){ perfNivaa++;
-      if(perfNivaa===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning
-      else { ssStille=1; skalaMaskin=0.6; aoStille=8; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map){ sun.shadow.map.dispose(); sun.shadow.map=null; } skyggeSkitten=true; } // trinn 2: mobil som sliter
-      beregnSkala(); } } } }
+    if(avg>30){ settNivaa(perfNivaa+1); } } } }
+// trinnene som egen funksjon, så de kan tvinges fram (?nivaa=2) og testes uten å vente på måleren
+function settNivaa(n){ perfNivaa=n;
+  if(n===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning
+  else if(n>=2){ ssStille=1; skalaMaskin=0.6; aoStille=8; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map) sun.shadow.map.setSize(1024,1024); skyggeSkitten=true; }   // setSize beholder teksturobjektet; dispose+null ga skyggekart uten skygger og ødelagte kroner på mobil (24.10) // trinn 2: mobil som sliter
+  beregnSkala(); }
+if(Q.get('nivaa')) settNivaa(+Q.get('nivaa'));
 
 // ---- tegneløkka: MapLibre kaller lagets render() hvert bilde det tegner; vi ber om nye bilder når noe beveger seg ----
 lysFraVenstre();

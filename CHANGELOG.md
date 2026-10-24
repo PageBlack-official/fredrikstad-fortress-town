@@ -1,5 +1,10 @@
 # Endringslogg
 
+## 30.2 (24.10.2026) – trekronene på mobil
+- Vegar fanget det på mobilen (skjermbilde kl. 16.55): ved innzooming forsvant alle kronene, stammene stod igjen, og skyggene var borte. Årsak: ytelsestrinn 2 (mobil som sliter) kastet skyggekartet (dispose + null) for å få det bygd på nytt i 1024; etter det tegnet verken skyggene eller kronene (kronene sampler skyggekartet). Reprodusert i hodeløs Chrome med ?nivaa=2 (rapport/d-sammenligning/mobil-nivaa-0-2fix-2.png). Rettet: skyggekartet beholdes og får setSize(1024,1024).
+- Trinnene er nå en funksjon (settNivaa) som kan tvinges med ?nivaa=N, så de kan testes uten å vente på måleren.
+- Ny regel 10: trinn 2 skal tegne samme bilde som trinn 0 på mobilflate i nærbilde (kronegrønt og avvik måles).
+
 ## 30.1 (24.10.2026) – Torvgata: tre gule hus tilbake
 - Vegar fra mobilen: «legg spesielt merke til Torvgata. Her mangler det to gule hus bl.a.» Bygg 238, 240 og 313 (Dunkejongården-rekka) var dømt W/G i v30; fotavtrykket projisert på mønehøyde traff det hvite huset med arker bak, ikke det gule foran. Dagens gule beholdt, rettelsene trukket, linje med Vegar som kilde i rettelser.json. Lærdom (i LESMEG): i tette rekker treffer projeksjonen nabohuset bak; dommen må leses mot huset som står under polygonet, og Vegars øye vinner.
 
