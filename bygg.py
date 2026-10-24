@@ -32,6 +32,15 @@ for r in rettelser:
         data[emne][i]['skjul'] = f"{r.get('hvem','?')} {r.get('dato','?')}: {r.get('grunn','')}"
     else:
         raise SystemExit(f"ukjent rettelse-operasjon: {op}")
+# høyden er grunnlaget for alt som står på huset: endres h (rettelse), flyttes piper og arker like mye, og vinduer som ikke
+# lenger får plass under gesimsen (overkant over h − 0,3 m) tas ut. Ellers svever pipene og vinduene sitter i taket (24.10).
+grunn = json.loads(les('data/bygg.json'))
+for i, x in enumerate(data['bygg']):
+    dh = x.get('h', 0) - grunn[i].get('h', 0)
+    if abs(dh) < 0.05: continue
+    if x.get('piper'): x['piper'] = [[q[0], q[1], round(q[2] + dh, 2)] + q[3:] for q in x['piper']]
+    if x.get('arker'): x['arker'] = [[q[0], q[1], round(q[2] + dh, 2)] + q[3:] for q in x['arker']]
+    if x.get('vind'): x['vind'] = [v for v in x['vind'] if v[2] + v[8] / 2 <= x['h'] - 0.3]
 data['logg'].append(f'bygd fra kilde, versjon {versjon}, modus {MODUS}, {len(rettelser)} rettelser lagt oppå')
 datatekst = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
 
