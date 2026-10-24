@@ -36,10 +36,11 @@ for r in rettelser:
 # lenger får plass under gesimsen (overkant over h − 0,3 m) tas ut. Ellers svever pipene og vinduene sitter i taket (24.10).
 grunn = json.loads(les('data/bygg.json'))
 for i, x in enumerate(data['bygg']):
-    dh = x.get('h', 0) - grunn[i].get('h', 0)
-    if abs(dh) < 0.05: continue
-    if x.get('piper'): x['piper'] = [[q[0], q[1], round(q[2] + dh, 2)] + q[3:] for q in x['piper']]
-    if x.get('arker'): x['arker'] = [[q[0], q[1], round(q[2] + dh, 2)] + q[3:] for q in x['arker']]
+    h0, h1 = grunn[i].get('h', 0), x.get('h', 0); f = x.get('th', 0.82) / 0.82   # takhøyden skaleres med helningen
+    if abs(h1 - h0) < 0.05 and abs(f - 1) < 0.01: continue
+    flytt = lambda z: round(h1 + (z - h0) * f, 2) if z > h0 else round(z + h1 - h0, 2)   # over gesims: følger taket; under: følger veggen
+    if x.get('piper'): x['piper'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['piper']]
+    if x.get('arker'): x['arker'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['arker']]
     if x.get('vind'): x['vind'] = [v for v in x['vind'] if v[2] + v[8] / 2 <= x['h'] - 0.3]
 data['logg'].append(f'bygd fra kilde, versjon {versjon}, modus {MODUS}, {len(rettelser)} rettelser lagt oppå')
 datatekst = json.dumps(data, ensure_ascii=False, separators=(',', ':'))

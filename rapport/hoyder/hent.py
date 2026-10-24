@@ -284,6 +284,16 @@ def main():
         if palitelig(b): m.append('kalibreringshus')
         t = b.get('tegnet_h')
         if t and t / 1.72 < 2.5: m.append(f'tegnet_h {t} gir {t / 1.72:.1f} m (umulig): målingen avgjør')
+        # per hus (24.10, kveld): vegg OG takhelning tilpasses samtidig, v = h + s·t, der t er avstanden inn fra takfoten (kartets takflate / 0,82).
+        # Robust: én runde der rester over 2,5 sigma kastes. Holdes innenfor fysisk rimelige grenser; ellers står fellesverdien.
+        h2 = s2 = None
+        if hf is not None and len(v) >= 40 and np.ptp(rz) > 1:
+            t_ = rz / SLOPE; A = np.c_[np.ones_like(t_), t_]
+            k_ = np.linalg.lstsq(A, v, rcond=None)[0]; rr = v - A @ k_; ok_ = abs(rr) < 2.5 * max(rr.std(), 0.2)
+            k_ = np.linalg.lstsq(A[ok_], v[ok_], rcond=None)[0]
+            if 0.25 <= k_[1] <= 1.1 and 2.4 <= k_[0] <= 16: h2, s2 = float(k_[0]), float(k_[1])
+        if h2 is None and hf is not None: h2, s2 = max(2.4, h_tak), S_TAK
+        e.update(h_per_hus=None if h2 is None else round(h2, 1), takhelning=None if s2 is None else round(s2, 2))
         e.update(p50=round(r['p50'], 2), p90=round(r['p90'], 2), kart_p50=round(r['k50'], 2), kart_p90=round(r['k90'], 2),
                  h_forslag=None if hf is None else round(hf, 1), avvik=None if hf is None else round(hf - h0, 1),
                  h_med_maalt_takhelning=None if hf is None else round(max(2.0, h_tak), 1),

@@ -16483,5 +16483,3945 @@
 "hvem": "Claude",
 "dato": "2026-10-24",
 "grunn": "regel 01, sett i flyfoto (rapport/01-fem.png): offentlig toalett under trekronene ved Toldbodgaten (dekket av løv i flyfotoet)"
+},
+{
+"emne": "bygg",
+"i": 1,
+"op": "sett",
+"felt": "h",
+"verdi": 3.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.1 m"
+},
+{
+"emne": "bygg",
+"i": 1,
+"op": "sett",
+"felt": "th",
+"verdi": 0.89,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.1 m"
+},
+{
+"emne": "bygg",
+"i": 3,
+"op": "sett",
+"felt": "h",
+"verdi": 9.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 3,
+"op": "sett",
+"felt": "th",
+"verdi": 1.06,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 5,
+"op": "sett",
+"felt": "h",
+"verdi": 4.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.4 m"
+},
+{
+"emne": "bygg",
+"i": 5,
+"op": "sett",
+"felt": "th",
+"verdi": 0.96,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.4 m"
+},
+{
+"emne": "bygg",
+"i": 6,
+"op": "sett",
+"felt": "h",
+"verdi": 3.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 6,
+"op": "sett",
+"felt": "th",
+"verdi": 0.94,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 8,
+"op": "sett",
+"felt": "h",
+"verdi": 8.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.6 m"
+},
+{
+"emne": "bygg",
+"i": 8,
+"op": "sett",
+"felt": "th",
+"verdi": 0.56,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.6 m"
+},
+{
+"emne": "bygg",
+"i": 9,
+"op": "sett",
+"felt": "h",
+"verdi": 8.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 9,
+"op": "sett",
+"felt": "th",
+"verdi": 0.86,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 10,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 10,
+"op": "sett",
+"felt": "th",
+"verdi": 0.59,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 11,
+"op": "sett",
+"felt": "h",
+"verdi": 6.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 11,
+"op": "sett",
+"felt": "th",
+"verdi": 0.91,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 12,
+"op": "sett",
+"felt": "h",
+"verdi": 5.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.5 m"
+},
+{
+"emne": "bygg",
+"i": 12,
+"op": "sett",
+"felt": "th",
+"verdi": 0.76,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.5 m"
+},
+{
+"emne": "bygg",
+"i": 13,
+"op": "sett",
+"felt": "h",
+"verdi": 3.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.4 m"
+},
+{
+"emne": "bygg",
+"i": 13,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.4 m"
+},
+{
+"emne": "bygg",
+"i": 14,
+"op": "sett",
+"felt": "h",
+"verdi": 3.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.0 m"
+},
+{
+"emne": "bygg",
+"i": 14,
+"op": "sett",
+"felt": "th",
+"verdi": 1.06,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.0 m"
+},
+{
+"emne": "bygg",
+"i": 15,
+"op": "sett",
+"felt": "h",
+"verdi": 3.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.3 m"
+},
+{
+"emne": "bygg",
+"i": 15,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.3 m"
+},
+{
+"emne": "bygg",
+"i": 17,
+"op": "sett",
+"felt": "h",
+"verdi": 3.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 17,
+"op": "sett",
+"felt": "th",
+"verdi": 0.84,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 18,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.0 m"
+},
+{
+"emne": "bygg",
+"i": 18,
+"op": "sett",
+"felt": "th",
+"verdi": 0.71,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.0 m"
+},
+{
+"emne": "bygg",
+"i": 19,
+"op": "sett",
+"felt": "h",
+"verdi": 4.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.6 m"
+},
+{
+"emne": "bygg",
+"i": 19,
+"op": "sett",
+"felt": "th",
+"verdi": 0.75,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.6 m"
+},
+{
+"emne": "bygg",
+"i": 20,
+"op": "sett",
+"felt": "h",
+"verdi": 4.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.5 m"
+},
+{
+"emne": "bygg",
+"i": 20,
+"op": "sett",
+"felt": "th",
+"verdi": 0.98,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.5 m"
+},
+{
+"emne": "bygg",
+"i": 21,
+"op": "sett",
+"felt": "h",
+"verdi": 6.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 21,
+"op": "sett",
+"felt": "th",
+"verdi": 0.26,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 24,
+"op": "sett",
+"felt": "h",
+"verdi": 5.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.8 m"
+},
+{
+"emne": "bygg",
+"i": 24,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.8 m"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 25,
+"op": "sett",
+"felt": "th",
+"verdi": 0.89,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 26,
+"op": "sett",
+"felt": "h",
+"verdi": 2.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 26,
+"op": "sett",
+"felt": "th",
+"verdi": 0.86,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 27,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 27,
+"op": "sett",
+"felt": "th",
+"verdi": 0.63,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 29,
+"op": "sett",
+"felt": "h",
+"verdi": 3.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 29,
+"op": "sett",
+"felt": "th",
+"verdi": 0.93,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 30,
+"op": "sett",
+"felt": "h",
+"verdi": 2.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.3 m"
+},
+{
+"emne": "bygg",
+"i": 30,
+"op": "sett",
+"felt": "th",
+"verdi": 1.04,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.3 m"
+},
+{
+"emne": "bygg",
+"i": 42,
+"op": "sett",
+"felt": "h",
+"verdi": 6.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 42,
+"op": "sett",
+"felt": "th",
+"verdi": 0.85,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 43,
+"op": "sett",
+"felt": "h",
+"verdi": 4.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 43,
+"op": "sett",
+"felt": "th",
+"verdi": 0.67,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 49,
+"op": "sett",
+"felt": "h",
+"verdi": 2.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 49,
+"op": "sett",
+"felt": "th",
+"verdi": 0.61,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 55,
+"op": "sett",
+"felt": "h",
+"verdi": 3.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 55,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 56,
+"op": "sett",
+"felt": "h",
+"verdi": 5.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 56,
+"op": "sett",
+"felt": "th",
+"verdi": 0.44,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 58,
+"op": "sett",
+"felt": "h",
+"verdi": 3.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 58,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 62,
+"op": "sett",
+"felt": "h",
+"verdi": 4.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 62,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 76,
+"op": "sett",
+"felt": "h",
+"verdi": 3.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 76,
+"op": "sett",
+"felt": "th",
+"verdi": 0.69,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 89,
+"op": "sett",
+"felt": "h",
+"verdi": 6.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 89,
+"op": "sett",
+"felt": "th",
+"verdi": 0.49,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 99,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 99,
+"op": "sett",
+"felt": "th",
+"verdi": 0.66,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 100,
+"op": "sett",
+"felt": "h",
+"verdi": 5.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 100,
+"op": "sett",
+"felt": "th",
+"verdi": 0.86,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 101,
+"op": "sett",
+"felt": "h",
+"verdi": 2.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 101,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 105,
+"op": "sett",
+"felt": "h",
+"verdi": 2.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 105,
+"op": "sett",
+"felt": "th",
+"verdi": 0.69,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 107,
+"op": "sett",
+"felt": "h",
+"verdi": 7.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 107,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 108,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.4 m"
+},
+{
+"emne": "bygg",
+"i": 108,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.4 m"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "h",
+"verdi": 7.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 109,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 110,
+"op": "sett",
+"felt": "h",
+"verdi": 5.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.7 m"
+},
+{
+"emne": "bygg",
+"i": 110,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.7 m"
+},
+{
+"emne": "bygg",
+"i": 111,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 111,
+"op": "sett",
+"felt": "th",
+"verdi": 0.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 112,
+"op": "sett",
+"felt": "h",
+"verdi": 4.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 112,
+"op": "sett",
+"felt": "th",
+"verdi": 0.56,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 116,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 116,
+"op": "sett",
+"felt": "th",
+"verdi": 0.72,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 119,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 119,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 121,
+"op": "sett",
+"felt": "h",
+"verdi": 6.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 121,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 125,
+"op": "sett",
+"felt": "h",
+"verdi": 7.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 125,
+"op": "sett",
+"felt": "th",
+"verdi": 0.69,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 129,
+"op": "sett",
+"felt": "h",
+"verdi": 6.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 129,
+"op": "sett",
+"felt": "th",
+"verdi": 0.46,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 131,
+"op": "sett",
+"felt": "h",
+"verdi": 5.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 131,
+"op": "sett",
+"felt": "th",
+"verdi": 0.38,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 133,
+"op": "sett",
+"felt": "h",
+"verdi": 5.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 133,
+"op": "sett",
+"felt": "th",
+"verdi": 0.81,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 135,
+"op": "sett",
+"felt": "h",
+"verdi": 6.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 135,
+"op": "sett",
+"felt": "th",
+"verdi": 0.38,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 137,
+"op": "sett",
+"felt": "h",
+"verdi": 5.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 137,
+"op": "sett",
+"felt": "th",
+"verdi": 0.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 139,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 139,
+"op": "sett",
+"felt": "th",
+"verdi": 0.58,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 141,
+"op": "sett",
+"felt": "h",
+"verdi": 6.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 141,
+"op": "sett",
+"felt": "th",
+"verdi": 0.44,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 149,
+"op": "sett",
+"felt": "h",
+"verdi": 6.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 149,
+"op": "sett",
+"felt": "th",
+"verdi": 0.89,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 151,
+"op": "sett",
+"felt": "h",
+"verdi": 6.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 151,
+"op": "sett",
+"felt": "th",
+"verdi": 0.74,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "h",
+"verdi": 5.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.2 m"
+},
+{
+"emne": "bygg",
+"i": 152,
+"op": "sett",
+"felt": "th",
+"verdi": 0.44,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.2 m"
+},
+{
+"emne": "bygg",
+"i": 154,
+"op": "sett",
+"felt": "h",
+"verdi": 4.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 154,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 155,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.9 m"
+},
+{
+"emne": "bygg",
+"i": 155,
+"op": "sett",
+"felt": "th",
+"verdi": 0.66,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.9 m"
+},
+{
+"emne": "bygg",
+"i": 156,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 156,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 157,
+"op": "sett",
+"felt": "h",
+"verdi": 5.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.9 m"
+},
+{
+"emne": "bygg",
+"i": 157,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.9 m"
+},
+{
+"emne": "bygg",
+"i": 158,
+"op": "sett",
+"felt": "h",
+"verdi": 4.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.6 m"
+},
+{
+"emne": "bygg",
+"i": 158,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.6 m"
+},
+{
+"emne": "bygg",
+"i": 160,
+"op": "sett",
+"felt": "h",
+"verdi": 7.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 160,
+"op": "sett",
+"felt": "th",
+"verdi": 0.49,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 162,
+"op": "sett",
+"felt": "h",
+"verdi": 5.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 162,
+"op": "sett",
+"felt": "th",
+"verdi": 0.46,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 163,
+"op": "sett",
+"felt": "h",
+"verdi": 6.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.5 m"
+},
+{
+"emne": "bygg",
+"i": 163,
+"op": "sett",
+"felt": "th",
+"verdi": 0.29,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.5 m"
+},
+{
+"emne": "bygg",
+"i": 164,
+"op": "sett",
+"felt": "h",
+"verdi": 5.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 164,
+"op": "sett",
+"felt": "th",
+"verdi": 0.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 166,
+"op": "sett",
+"felt": "h",
+"verdi": 4.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 166,
+"op": "sett",
+"felt": "th",
+"verdi": 0.85,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 168,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 168,
+"op": "sett",
+"felt": "th",
+"verdi": 0.74,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 169,
+"op": "sett",
+"felt": "h",
+"verdi": 4.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.8 m"
+},
+{
+"emne": "bygg",
+"i": 169,
+"op": "sett",
+"felt": "th",
+"verdi": 0.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.8 m"
+},
+{
+"emne": "bygg",
+"i": 170,
+"op": "sett",
+"felt": "h",
+"verdi": 9.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 11.1 m"
+},
+{
+"emne": "bygg",
+"i": 170,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 11.1 m"
+},
+{
+"emne": "bygg",
+"i": 171,
+"op": "sett",
+"felt": "h",
+"verdi": 3.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 171,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 172,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 172,
+"op": "sett",
+"felt": "th",
+"verdi": 0.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 173,
+"op": "sett",
+"felt": "h",
+"verdi": 4.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 173,
+"op": "sett",
+"felt": "th",
+"verdi": 0.68,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 174,
+"op": "sett",
+"felt": "h",
+"verdi": 4.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.6 m"
+},
+{
+"emne": "bygg",
+"i": 174,
+"op": "sett",
+"felt": "th",
+"verdi": 0.98,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.6 m"
+},
+{
+"emne": "bygg",
+"i": 176,
+"op": "sett",
+"felt": "h",
+"verdi": 8.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.3 m"
+},
+{
+"emne": "bygg",
+"i": 176,
+"op": "sett",
+"felt": "th",
+"verdi": 0.41,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.3 m"
+},
+{
+"emne": "bygg",
+"i": 177,
+"op": "sett",
+"felt": "h",
+"verdi": 9.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.8 m"
+},
+{
+"emne": "bygg",
+"i": 177,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.8 m"
+},
+{
+"emne": "bygg",
+"i": 178,
+"op": "sett",
+"felt": "h",
+"verdi": 4.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 178,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 179,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 179,
+"op": "sett",
+"felt": "th",
+"verdi": 0.61,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 180,
+"op": "sett",
+"felt": "h",
+"verdi": 3.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.9 m"
+},
+{
+"emne": "bygg",
+"i": 180,
+"op": "sett",
+"felt": "th",
+"verdi": 0.66,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.9 m"
+},
+{
+"emne": "bygg",
+"i": 181,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 181,
+"op": "sett",
+"felt": "th",
+"verdi": 0.94,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 182,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.5 m"
+},
+{
+"emne": "bygg",
+"i": 182,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.5 m"
+},
+{
+"emne": "bygg",
+"i": 183,
+"op": "sett",
+"felt": "h",
+"verdi": 5.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.5 m"
+},
+{
+"emne": "bygg",
+"i": 183,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.5 m"
+},
+{
+"emne": "bygg",
+"i": 184,
+"op": "sett",
+"felt": "h",
+"verdi": 7.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 184,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 185,
+"op": "sett",
+"felt": "h",
+"verdi": 7.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 185,
+"op": "sett",
+"felt": "th",
+"verdi": 0.56,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "h",
+"verdi": 4.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.6 m"
+},
+{
+"emne": "bygg",
+"i": 186,
+"op": "sett",
+"felt": "th",
+"verdi": 0.74,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.6 m"
+},
+{
+"emne": "bygg",
+"i": 187,
+"op": "sett",
+"felt": "h",
+"verdi": 6.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.6 m"
+},
+{
+"emne": "bygg",
+"i": 187,
+"op": "sett",
+"felt": "th",
+"verdi": 0.87,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.6 m"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "h",
+"verdi": 6.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 188,
+"op": "sett",
+"felt": "th",
+"verdi": 0.95,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 189,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 189,
+"op": "sett",
+"felt": "th",
+"verdi": 0.43,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "h",
+"verdi": 9.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.1 m"
+},
+{
+"emne": "bygg",
+"i": 190,
+"op": "sett",
+"felt": "th",
+"verdi": 0.55,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.1 m"
+},
+{
+"emne": "bygg",
+"i": 191,
+"op": "sett",
+"felt": "h",
+"verdi": 6.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 191,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "h",
+"verdi": 7.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 192,
+"op": "sett",
+"felt": "th",
+"verdi": 0.61,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 193,
+"op": "sett",
+"felt": "h",
+"verdi": 7.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 193,
+"op": "sett",
+"felt": "th",
+"verdi": 0.45,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 194,
+"op": "sett",
+"felt": "h",
+"verdi": 9.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 194,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 195,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 195,
+"op": "sett",
+"felt": "th",
+"verdi": 0.32,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "h",
+"verdi": 5.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 196,
+"op": "sett",
+"felt": "th",
+"verdi": 0.58,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 199,
+"op": "sett",
+"felt": "h",
+"verdi": 4.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 199,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 200,
+"op": "sett",
+"felt": "h",
+"verdi": 3.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 200,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 201,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 201,
+"op": "sett",
+"felt": "th",
+"verdi": 0.36,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 202,
+"op": "sett",
+"felt": "h",
+"verdi": 3.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.0 m"
+},
+{
+"emne": "bygg",
+"i": 202,
+"op": "sett",
+"felt": "th",
+"verdi": 0.78,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.0 m"
+},
+{
+"emne": "bygg",
+"i": 203,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 203,
+"op": "sett",
+"felt": "th",
+"verdi": 0.62,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 204,
+"op": "sett",
+"felt": "h",
+"verdi": 7.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 204,
+"op": "sett",
+"felt": "th",
+"verdi": 0.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 205,
+"op": "sett",
+"felt": "h",
+"verdi": 7.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 205,
+"op": "sett",
+"felt": "th",
+"verdi": 0.41,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 206,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.9 m"
+},
+{
+"emne": "bygg",
+"i": 206,
+"op": "sett",
+"felt": "th",
+"verdi": 0.71,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.9 m"
+},
+{
+"emne": "bygg",
+"i": 207,
+"op": "sett",
+"felt": "h",
+"verdi": 5.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 207,
+"op": "sett",
+"felt": "th",
+"verdi": 0.69,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 208,
+"op": "sett",
+"felt": "h",
+"verdi": 2.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 208,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.4 m"
+},
+{
+"emne": "bygg",
+"i": 209,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.9 m"
+},
+{
+"emne": "bygg",
+"i": 209,
+"op": "sett",
+"felt": "th",
+"verdi": 0.59,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.9 m"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "h",
+"verdi": 4.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.8 m"
+},
+{
+"emne": "bygg",
+"i": 210,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.8 m"
+},
+{
+"emne": "bygg",
+"i": 211,
+"op": "sett",
+"felt": "h",
+"verdi": 5.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.3 m"
+},
+{
+"emne": "bygg",
+"i": 211,
+"op": "sett",
+"felt": "th",
+"verdi": 0.33,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.3 m"
+},
+{
+"emne": "bygg",
+"i": 212,
+"op": "sett",
+"felt": "h",
+"verdi": 5.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 212,
+"op": "sett",
+"felt": "th",
+"verdi": 0.47,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 213,
+"op": "sett",
+"felt": "h",
+"verdi": 4.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 5.7 m"
+},
+{
+"emne": "bygg",
+"i": 213,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 5.7 m"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 214,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 215,
+"op": "sett",
+"felt": "h",
+"verdi": 4.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.3 m"
+},
+{
+"emne": "bygg",
+"i": 215,
+"op": "sett",
+"felt": "th",
+"verdi": 0.82,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.3 m"
+},
+{
+"emne": "bygg",
+"i": 216,
+"op": "sett",
+"felt": "h",
+"verdi": 4.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 216,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 217,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 218,
+"op": "sett",
+"felt": "h",
+"verdi": 8.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 218,
+"op": "sett",
+"felt": "th",
+"verdi": 0.52,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 219,
+"op": "sett",
+"felt": "h",
+"verdi": 4.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 219,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 220,
+"op": "sett",
+"felt": "h",
+"verdi": 8.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.9 m"
+},
+{
+"emne": "bygg",
+"i": 220,
+"op": "sett",
+"felt": "th",
+"verdi": 0.56,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.9 m"
+},
+{
+"emne": "bygg",
+"i": 221,
+"op": "sett",
+"felt": "h",
+"verdi": 6.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 221,
+"op": "sett",
+"felt": "th",
+"verdi": 0.54,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.7 m"
+},
+{
+"emne": "bygg",
+"i": 222,
+"op": "sett",
+"felt": "h",
+"verdi": 7.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 222,
+"op": "sett",
+"felt": "th",
+"verdi": 0.56,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 223,
+"op": "sett",
+"felt": "h",
+"verdi": 7.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.5 m"
+},
+{
+"emne": "bygg",
+"i": 223,
+"op": "sett",
+"felt": "th",
+"verdi": 0.37,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.5 m"
+},
+{
+"emne": "bygg",
+"i": 224,
+"op": "sett",
+"felt": "h",
+"verdi": 8.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 224,
+"op": "sett",
+"felt": "th",
+"verdi": 0.53,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 225,
+"op": "sett",
+"felt": "h",
+"verdi": 5.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.6 m"
+},
+{
+"emne": "bygg",
+"i": 225,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.6 m"
+},
+{
+"emne": "bygg",
+"i": 226,
+"op": "sett",
+"felt": "h",
+"verdi": 4.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.1 m"
+},
+{
+"emne": "bygg",
+"i": 226,
+"op": "sett",
+"felt": "th",
+"verdi": 0.38,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.1 m"
+},
+{
+"emne": "bygg",
+"i": 227,
+"op": "sett",
+"felt": "h",
+"verdi": 6.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.7 m"
+},
+{
+"emne": "bygg",
+"i": 227,
+"op": "sett",
+"felt": "th",
+"verdi": 0.73,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.7 m"
+},
+{
+"emne": "bygg",
+"i": 229,
+"op": "sett",
+"felt": "h",
+"verdi": 4.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 229,
+"op": "sett",
+"felt": "th",
+"verdi": 0.44,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 230,
+"op": "sett",
+"felt": "h",
+"verdi": 8.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 230,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 231,
+"op": "sett",
+"felt": "h",
+"verdi": 5.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.5 m"
+},
+{
+"emne": "bygg",
+"i": 231,
+"op": "sett",
+"felt": "th",
+"verdi": 0.53,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.5 m"
+},
+{
+"emne": "bygg",
+"i": 232,
+"op": "sett",
+"felt": "h",
+"verdi": 8.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 232,
+"op": "sett",
+"felt": "th",
+"verdi": 0.43,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 233,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 233,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 234,
+"op": "sett",
+"felt": "h",
+"verdi": 7.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 234,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 236,
+"op": "sett",
+"felt": "h",
+"verdi": 7.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 236,
+"op": "sett",
+"felt": "th",
+"verdi": 0.43,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 237,
+"op": "sett",
+"felt": "h",
+"verdi": 9.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 237,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "h",
+"verdi": 6.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 238,
+"op": "sett",
+"felt": "th",
+"verdi": 0.72,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 239,
+"op": "sett",
+"felt": "h",
+"verdi": 6.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.0 m"
+},
+{
+"emne": "bygg",
+"i": 239,
+"op": "sett",
+"felt": "th",
+"verdi": 0.68,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.0 m"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "h",
+"verdi": 7.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 240,
+"op": "sett",
+"felt": "th",
+"verdi": 0.96,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 241,
+"op": "sett",
+"felt": "h",
+"verdi": 5.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.4 m"
+},
+{
+"emne": "bygg",
+"i": 241,
+"op": "sett",
+"felt": "th",
+"verdi": 0.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.4 m"
+},
+{
+"emne": "bygg",
+"i": 242,
+"op": "sett",
+"felt": "h",
+"verdi": 9.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 242,
+"op": "sett",
+"felt": "th",
+"verdi": 0.58,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 243,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 243,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 244,
+"op": "sett",
+"felt": "h",
+"verdi": 7.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.6 m"
+},
+{
+"emne": "bygg",
+"i": 244,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.6 m"
+},
+{
+"emne": "bygg",
+"i": 245,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 245,
+"op": "sett",
+"felt": "th",
+"verdi": 0.41,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 246,
+"op": "sett",
+"felt": "h",
+"verdi": 7.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.3 m"
+},
+{
+"emne": "bygg",
+"i": 246,
+"op": "sett",
+"felt": "th",
+"verdi": 0.49,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.3 m"
+},
+{
+"emne": "bygg",
+"i": 247,
+"op": "sett",
+"felt": "h",
+"verdi": 7.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 247,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "h",
+"verdi": 7.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 248,
+"op": "sett",
+"felt": "th",
+"verdi": 0.65,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "h",
+"verdi": 7.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 249,
+"op": "sett",
+"felt": "th",
+"verdi": 0.71,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 251,
+"op": "sett",
+"felt": "h",
+"verdi": 5.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.3 m"
+},
+{
+"emne": "bygg",
+"i": 251,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.3 m"
+},
+{
+"emne": "bygg",
+"i": 252,
+"op": "sett",
+"felt": "h",
+"verdi": 8.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 252,
+"op": "sett",
+"felt": "th",
+"verdi": 0.83,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 253,
+"op": "sett",
+"felt": "h",
+"verdi": 4.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 253,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 254,
+"op": "sett",
+"felt": "h",
+"verdi": 7.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 254,
+"op": "sett",
+"felt": "th",
+"verdi": 0.69,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 255,
+"op": "sett",
+"felt": "h",
+"verdi": 8.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 255,
+"op": "sett",
+"felt": "th",
+"verdi": 0.73,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 256,
+"op": "sett",
+"felt": "h",
+"verdi": 7.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.3 m"
+},
+{
+"emne": "bygg",
+"i": 256,
+"op": "sett",
+"felt": "th",
+"verdi": 0.31,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.3 m"
+},
+{
+"emne": "bygg",
+"i": 257,
+"op": "sett",
+"felt": "h",
+"verdi": 7.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 257,
+"op": "sett",
+"felt": "th",
+"verdi": 0.55,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.6 m"
+},
+{
+"emne": "bygg",
+"i": 258,
+"op": "sett",
+"felt": "th",
+"verdi": 0.52,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 5.6 m"
+},
+{
+"emne": "bygg",
+"i": 259,
+"op": "sett",
+"felt": "h",
+"verdi": 5.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 259,
+"op": "sett",
+"felt": "th",
+"verdi": 0.59,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.2 m"
+},
+{
+"emne": "bygg",
+"i": 260,
+"op": "sett",
+"felt": "h",
+"verdi": 9.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 260,
+"op": "sett",
+"felt": "th",
+"verdi": 0.52,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.0 m"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "h",
+"verdi": 8.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 261,
+"op": "sett",
+"felt": "th",
+"verdi": 0.68,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 262,
+"op": "sett",
+"felt": "h",
+"verdi": 5.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.2 m"
+},
+{
+"emne": "bygg",
+"i": 262,
+"op": "sett",
+"felt": "th",
+"verdi": 0.83,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.2 m"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "h",
+"verdi": 8.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 263,
+"op": "sett",
+"felt": "th",
+"verdi": 0.55,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 264,
+"op": "sett",
+"felt": "h",
+"verdi": 2.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.1 m"
+},
+{
+"emne": "bygg",
+"i": 264,
+"op": "sett",
+"felt": "th",
+"verdi": 0.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 4.1 m"
+},
+{
+"emne": "bygg",
+"i": 277,
+"op": "sett",
+"felt": "h",
+"verdi": 4.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 277,
+"op": "sett",
+"felt": "th",
+"verdi": 1.01,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 297,
+"op": "sett",
+"felt": "h",
+"verdi": 5.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 297,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 305,
+"op": "sett",
+"felt": "h",
+"verdi": 3.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.3 m"
+},
+{
+"emne": "bygg",
+"i": 305,
+"op": "sett",
+"felt": "th",
+"verdi": 0.61,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.3 m"
+},
+{
+"emne": "bygg",
+"i": 306,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 306,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.7 m"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "h",
+"verdi": 3.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 307,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 311,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.4 m"
+},
+{
+"emne": "bygg",
+"i": 311,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.4 m"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "h",
+"verdi": 4.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 313,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.0 m"
+},
+{
+"emne": "bygg",
+"i": 328,
+"op": "sett",
+"felt": "h",
+"verdi": 6.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.7 m"
+},
+{
+"emne": "bygg",
+"i": 328,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.7 m"
+},
+{
+"emne": "bygg",
+"i": 331,
+"op": "sett",
+"felt": "h",
+"verdi": 3.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.5 m"
+},
+{
+"emne": "bygg",
+"i": 331,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.5 m"
+},
+{
+"emne": "bygg",
+"i": 333,
+"op": "sett",
+"felt": "h",
+"verdi": 3.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 333,
+"op": "sett",
+"felt": "th",
+"verdi": 0.45,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 336,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 338,
+"op": "sett",
+"felt": "h",
+"verdi": 5.1,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 338,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 341,
+"op": "sett",
+"felt": "h",
+"verdi": 7.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 341,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 342,
+"op": "sett",
+"felt": "h",
+"verdi": 5.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.2 m"
+},
+{
+"emne": "bygg",
+"i": 342,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.2 m"
+},
+{
+"emne": "bygg",
+"i": 345,
+"op": "sett",
+"felt": "h",
+"verdi": 3.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 345,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 346,
+"op": "sett",
+"felt": "h",
+"verdi": 4.9,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.3 m"
+},
+{
+"emne": "bygg",
+"i": 346,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.3 m"
+},
+{
+"emne": "bygg",
+"i": 347,
+"op": "sett",
+"felt": "h",
+"verdi": 4.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 347,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 348,
+"op": "sett",
+"felt": "h",
+"verdi": 6.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.1 m"
+},
+{
+"emne": "bygg",
+"i": 348,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.1 m"
+},
+{
+"emne": "bygg",
+"i": 351,
+"op": "sett",
+"felt": "h",
+"verdi": 4.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.9 m"
+},
+{
+"emne": "bygg",
+"i": 351,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.9 m"
+},
+{
+"emne": "bygg",
+"i": 355,
+"op": "sett",
+"felt": "h",
+"verdi": 5.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 355,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 358,
+"op": "sett",
+"felt": "h",
+"verdi": 5.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 358,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.3 m"
+},
+{
+"emne": "bygg",
+"i": 359,
+"op": "sett",
+"felt": "h",
+"verdi": 5.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 359,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 360,
+"op": "sett",
+"felt": "h",
+"verdi": 3.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.6 m"
+},
+{
+"emne": "bygg",
+"i": 360,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 9.6 m"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "h",
+"verdi": 5.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 361,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 369,
+"op": "sett",
+"felt": "h",
+"verdi": 2.5,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 369,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 379,
+"op": "sett",
+"felt": "h",
+"verdi": 5.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.6 m"
+},
+{
+"emne": "bygg",
+"i": 379,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.6 m"
+},
+{
+"emne": "bygg",
+"i": 381,
+"op": "sett",
+"felt": "h",
+"verdi": 3.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 381,
+"op": "sett",
+"felt": "th",
+"verdi": 0.84,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 10.1 m"
+},
+{
+"emne": "bygg",
+"i": 383,
+"op": "sett",
+"felt": "h",
+"verdi": 6.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 383,
+"op": "sett",
+"felt": "th",
+"verdi": 0.27,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 9.9 m"
+},
+{
+"emne": "bygg",
+"i": 384,
+"op": "sett",
+"felt": "h",
+"verdi": 3.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.9 m"
+},
+{
+"emne": "bygg",
+"i": 384,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.9 m"
+},
+{
+"emne": "bygg",
+"i": 386,
+"op": "sett",
+"felt": "h",
+"verdi": 5.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.8 m"
+},
+{
+"emne": "bygg",
+"i": 386,
+"op": "sett",
+"felt": "th",
+"verdi": 0.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 7.8 m"
+},
+{
+"emne": "bygg",
+"i": 387,
+"op": "sett",
+"felt": "h",
+"verdi": 6.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.7 m"
+},
+{
+"emne": "bygg",
+"i": 387,
+"op": "sett",
+"felt": "th",
+"verdi": 0.69,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 7.7 m"
+},
+{
+"emne": "bygg",
+"i": 388,
+"op": "sett",
+"felt": "h",
+"verdi": 4.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 388,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 3.2 m"
+},
+{
+"emne": "bygg",
+"i": 389,
+"op": "sett",
+"felt": "h",
+"verdi": 6.0,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 389,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.6 m"
+},
+{
+"emne": "bygg",
+"i": 390,
+"op": "sett",
+"felt": "h",
+"verdi": 6.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.9 m"
+},
+{
+"emne": "bygg",
+"i": 390,
+"op": "sett",
+"felt": "th",
+"verdi": 0.64,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 6.9 m"
+},
+{
+"emne": "bygg",
+"i": 394,
+"op": "sett",
+"felt": "h",
+"verdi": 3.6,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 394,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 4.2 m"
+},
+{
+"emne": "bygg",
+"i": 398,
+"op": "sett",
+"felt": "h",
+"verdi": 4.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.3 m"
+},
+{
+"emne": "bygg",
+"i": 398,
+"op": "sett",
+"felt": "th",
+"verdi": 0.67,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 8.3 m"
+},
+{
+"emne": "bygg",
+"i": 402,
+"op": "sett",
+"felt": "h",
+"verdi": 2.8,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 5.5 m"
+},
+{
+"emne": "bygg",
+"i": 402,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 5.5 m"
+},
+{
+"emne": "bygg",
+"i": 426,
+"op": "sett",
+"felt": "h",
+"verdi": 4.4,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 426,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet høy, før 3.0 m"
+},
+{
+"emne": "bygg",
+"i": 429,
+"op": "sett",
+"felt": "h",
+"verdi": 3.7,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 429,
+"op": "sett",
+"felt": "th",
+"verdi": 0.3,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 440,
+"op": "sett",
+"felt": "h",
+"verdi": 6.2,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 440,
+"op": "sett",
+"felt": "th",
+"verdi": 0.57,
+"hvem": "Claude",
+"dato": "2026-10-24",
+"grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
 }
 ]

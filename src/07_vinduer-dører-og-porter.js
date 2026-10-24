@@ -117,7 +117,7 @@ DATA.bygg.forEach((b,i)=>{
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
-    const SLOPE=0.82; const pos=[];
+    const SLOPE=b.th||0.82; const pos=[];   // takhelning per hus (th) fra Kartverkets høydemodell der den er målt (24.10)
     b.tak2.forEach(f0=>{
       // hver takflate utvides 6 cm i sitt eget plan, så nabotak i en rekke overlapper og ingen lyse sprekker vises langs møner og grenser
       const f=utvidFlate(f0,0.06);
@@ -135,7 +135,7 @@ DATA.bygg.forEach((b,i)=>{
       const gm=new THREE.Mesh(gg,mat(wall,dim,b.veggs,{ds:true})); gm.castShadow=gm.receiveShadow=true; legg(gm);
     }
   } else if (b.sk && !b.flatt){
-    const SLOPE=0.82, CAP=7.5; const pos=[];
+    const SLOPE=b.th||0.82, CAP=7.5*(b.th||0.82)/0.82; const pos=[];
     b.sk.forEach(f=>{
       const v2=f.map(q=>new THREE.Vector2(q[0],q[1])); let tri=THREE.ShapeUtils.triangulateShape(v2,[]); if(tri.length<f.length-2){ tri=[]; for(let j=1;j<f.length-1;j++) tri.push([0,j,j+1]); }
       tri.forEach(t=>{ const P=t.map(k=>{const q=f[k]; return new THREE.Vector3(q[0], h+Math.min(q[2]*SLOPE,CAP), -q[1]);}); const nrm=new THREE.Vector3().subVectors(P[1],P[0]).cross(new THREE.Vector3().subVectors(P[2],P[0])); if(nrm.y<0) P.reverse(); P.forEach(v=>pos.push(v.x,v.y,v.z)); });
@@ -147,7 +147,7 @@ DATA.bygg.forEach((b,i)=>{
   rects.forEach(([rx,ry,rw,rh,ang])=>{
     const long=Math.max(rw,rh), short=Math.min(rw,rh);
     if (short<2.5 || short>24) return;
-    const rise=Math.min(short*0.48,7.5);
+    const rise=Math.min(short*0.48,7.5)*(b.th||0.82)/0.82;
     const a = THREE.MathUtils.degToRad(ang) + (rw<rh? Math.PI/2:0);
     const L=long/2+0.25, S=short/2+0.35;
     const geo=new THREE.BufferGeometry();
