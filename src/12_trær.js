@@ -3,76 +3,39 @@ let seed=11; const rnd=()=>{seed=(seed*16807)%2147483647; return seed/2147483647
 // Kronene tegnes som løvklaser vendt mot kameraet: takket, buet silhuett og en kuleformet normal, så lys- og skyggetonene
 // blir rene og myke som i Messenger. Dybden skrives som en kule, så klasene skjærer hverandre og blekkstreken følger dem.
 // Alt er prosedyralt i shaderen (ingen tegnede omriss eller teksturer fra 2015-tegningene).
-const KLASE=new THREE.PlaneGeometry(2,2);
+const KLASE=new THREE.SphereGeometry(1,14,10);   // glatte normaler: streken (blekkpasset) tegner silhuetten, ikke fasettene
 const STAMME=new THREE.CylinderGeometry(0.55,1,1,7,1,true); STAMME.translate(0,0.5,0);
 const SKYGGEKROPP=new THREE.IcosahedronGeometry(1,1);
 const sunW=new THREE.Vector3(), tgtW=new THREE.Vector3(), camF=new THREE.Vector3();
-const treU={ sunDir:{value:new THREE.Vector3(-0.5,0.7,0.5)}, camDir:{value:new THREE.Vector3(0,-1,0)}, invSpan:{value:1/8000} };
-const NOISE_GLSL=`float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
-      float n2(vec2 p){ vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f); return mix(mix(h2(i),h2(i+vec2(1,0)),f.x),mix(h2(i+vec2(0,1)),h2(i+vec2(1,1)),f.x),f.y); }`;
+const treU={ sunDir:{value:new THREE.Vector3(-0.5,0.7,0.5)} };   // stammene får solretningen herfra
+// Kronene er geometri (kuler i klaser), tegnet med samme sol, skygge og strek som husene. De var tegnede skiver (billboards) med egen
+// dybdeskriving og egen skyggeoppslag fram til 24.10; på iPhone forsvant de ved zoom og dra uten at noen av delene kunne pekes ut
+// (?kroner=enkel/utendybde/utenskygge/nospeil ga samme feil). Vegar: «lås størrelsene og la dem zoomes som husene.»
 function lovMatLag(){
   return new THREE.ShaderMaterial({
     lights:true,
-    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ sunDir:{value:new THREE.Vector3()}, camDir:{value:new THREE.Vector3()}, invSpan:{value:1}, uStoy:{value:STIL.stoy} }]),
-    vertexShader:`#include <common>
-      #include <shadowmap_pars_vertex>
-      uniform vec3 sunDir;
-      varying vec2 vUv; varying vec3 vCol; varying float vSeed; varying float vRad;
+    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.lights,{ uStoy:{value:STIL.stoy} }]),
+    vertexShader:GL_SOL_V+`varying vec3 vN; varying vec3 vCol;
       void main(){
-        vec3 c=(modelMatrix*instanceMatrix*vec4(0.,0.,0.,1.)).xyz;
-        float sx=length(instanceMatrix[0].xyz), sy=length(instanceMatrix[1].xyz);
-        vec3 right=vec3(viewMatrix[0][0],viewMatrix[1][0],viewMatrix[2][0]);
-        vec3 up=vec3(viewMatrix[0][1],viewMatrix[1][1],viewMatrix[2][1]);
-        vec3 wp=c+right*position.x*sx+up*position.y*sy;
-        vUv=position.xy; vRad=sx;
-        vSeed=fract(sin(dot(c.xz,vec2(12.9898,78.233)))*43758.5453);
+        vec4 wp=modelMatrix*instanceMatrix*vec4(position,1.);
+        vN=normalize(mat3(modelMatrix)*mat3(instanceMatrix)*normal);
         vCol=vec3(1.);
         #ifdef USE_INSTANCING_COLOR
         vCol=instanceColor;
         #endif
-        gl_Position=projectionMatrix*viewMatrix*vec4(wp,1.);
-        // skyggeoppslag fra klasens solside, så klasen ikke skygger seg selv
-        vec4 worldPosition=vec4(wp+normalize(sunDir)*sx*1.05,1.);
-        vec3 transformedNormal=vec3(0.,0.,1.);
-        #include <shadowmap_vertex>
-      }`,
-    fragmentShader:`#include <common>
-      #include <packing>
-      #include <lights_pars_begin>
-      #include <shadowmap_pars_fragment>
-      #include <shadowmask_pars_fragment>
-      uniform vec3 sunDir; uniform float invSpan, uStoy;
-      varying vec2 vUv; varying vec3 vCol; varying float vSeed; varying float vRad;
-      ${NOISE_GLSL}
+        gl_Position=projectionMatrix*viewMatrix*wp;`+glSolVMain('wp','vN')+`}`,
+    fragmentShader:GL_SOL_F+`varying vec3 vN; varying vec3 vCol; uniform float uStoy;
       void main(){
-        float r=length(vUv), th=atan(vUv.y,vUv.x);
-        // buet, takket løvsilhuett: 8-12 buer, ujevne, med små løvtagger
-        float k=8.+floor(vSeed*5.);
-        float sc=0.80+0.13*pow(abs(sin(th*k*0.5+vSeed*31.)),0.55);
-        sc+=(n2(vec2(th*3.2+vSeed*17.,vSeed*9.))-0.5)*0.12;
-        sc+=(n2(vec2(th*26.+vSeed*7.,3.))-0.5)*0.05;
-        if(r>sc) discard;
-        // glatt kule (uavhengig av buene i kanten), så verken tonene eller dybden får stråler
-        float rr=min(r/0.97,1.), z=sqrt(max(0.,1.-rr*rr));
-        // svake buler i normalen gjør tonegrensene organiske
-        vec2 b=vec2(n2(vUv*2.2+vSeed*13.),n2(vUv*2.2+vSeed*13.+5.3))-0.5;
-        vec3 nV=normalize(vec3(vUv/0.97+b*0.6*uStoy, z+0.08));
-        vec3 sV=normalize((viewMatrix*vec4(sunDir,0.)).xyz);
-        float sm=${['enkel','utenskygge'].includes(Q0.get('kroner')) ? '1.0' : 'getShadowMask()'};   // feilsøking på mobil: ?kroner=enkel (uten dybdeskriving og skyggeoppslag), utendybde, utenskygge
-        float w=dot(nV,sV)*0.5+0.5;
-        w=mix(w, w*0.55, (1.-sm)*0.85);
-        float lys=smoothstep(0.60,0.62,w), mid=smoothstep(0.38,0.40,w);
+        vec3 n=normalize(vN);
+        float w=dot(n,solRetning())*0.5+0.5;
+        w=mix(w, w*0.55, (1.-skyggeMask())*0.85);
+        // tre toner som i tegningen: lys solside, grunnfarge, kjølig skyggeside
+        float lys=smoothstep(0.60,0.64,w), mid=smoothstep(0.36,0.40,w);
         vec3 lysF=vCol*vec3(1.30,1.22,0.98)+vec3(0.04,0.045,0.0);
         vec3 mork=vCol*vec3(0.50,0.60,0.68);
         vec3 c=mix(mork, mix(vCol,lysF,lys), mid);
-        // malte lyse flekker på solsiden, mørke løvmerker i skyggen
-        float p=n2(vUv*1.7+vSeed*21.);
-        c=mix(c, lysF*1.08+vec3(0.03,0.035,0.0), smoothstep(0.68,0.70,p)*lys*0.9*uStoy);
-        float q=n2(vUv*6.5+vSeed*3.);
-        c=mix(c, mork*0.82, smoothstep(0.80,0.82,q)*(1.-lys)*0.9*uStoy);
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
-        ${['enkel','utendybde'].includes(Q0.get('kroner')) ? '' : 'gl_FragDepth=gl_FragCoord.z - z*vRad*invSpan;'}
       }`
   });
 }
@@ -111,7 +74,7 @@ function stammeMatLag(){
   });
 }
 const lovMat=lovMatLag(), stammeMat=stammeMatLag();
-lovMat.uniforms.sunDir=treU.sunDir; lovMat.uniforms.camDir=treU.camDir; lovMat.uniforms.invSpan=treU.invSpan; stammeMat.uniforms.sunDir=treU.sunDir;
+stammeMat.uniforms.sunDir=treU.sunDir;
 // usynlige kropper som bare kaster kroneskyggen (én per tre)
 const skyggeMat=new THREE.MeshBasicMaterial({colorWrite:false, depthWrite:false});
 // palett fra trykkfilas trær, med Messengers varmere lysgrønn
@@ -156,5 +119,5 @@ function setCrowns(t){
     m.instanceMatrix.needsUpdate=true; });
 }
 // solretningen hentes fra sola hver ramme, så trærne følger samme lys som byen
-crowns[0].onBeforeRender=(r,sc_,c)=>{ sun.getWorldPosition(sunW); sun.target.getWorldPosition(tgtW); treU.sunDir.value.copy(sunW).sub(tgtW).normalize(); c.getWorldDirection(camF); treU.camDir.value.copy(camF); if(c.isOrthographicCamera) treU.invSpan.value=1/(c.far-c.near); };
+crowns[0].onBeforeRender=(r,sc_,c)=>{ sun.getWorldPosition(sunW); sun.target.getWorldPosition(tgtW); treU.sunDir.value.copy(sunW).sub(tgtW).normalize(); c.getWorldDirection(camF); };
 setCrowns(0);

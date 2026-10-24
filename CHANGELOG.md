@@ -1,5 +1,10 @@
 # Endringslogg
 
+## 31 (24.10.2026) – trekronene er geometri
+- Vegar fra mobilen: kronene forsvant fortsatt (nå ved dra oppover), med perfNivaa 0, ingen GL-feil, og samme feil med ?kroner=enkel, utendybde, utenskygge og nospeil. Samme utsnitt tegnet riktig i hodeløs Chrome. Konklusjon: billboard-kronene (tegnede skiver med egen dybdeskriving) oppførte seg annerledes på iPhone-brikken uten at delen kunne pekes ut. Vegar: «lås størrelsene og la dem zoomes som husene».
+- Kronene er nå kuler i klaser (SphereGeometry 14×10, instansert, samme klasedata som før) med samme sol, skyggemaske og blekkstrek som husene. Tre toner som før. Skyggekroppene beholdes (kronene skygger ikke seg selv). Nærbilde og hjemmevisning er nesten like v30 (rapport/d-sammenligning/kuler-for-etter-naer.png).
+- Borte: lovMat-billboarden, NOISE_GLSL i kronene, gl_FragDepth, ?kroner-bryterne fra 30.3/30.4. ?d=1 (målerute på mobil) og ?nivaa=N står.
+
 ## 30.2 (24.10.2026) – trekronene på mobil
 - Vegar fanget det på mobilen (skjermbilde kl. 16.55): ved innzooming forsvant alle kronene, stammene stod igjen, og skyggene var borte. Årsak: ytelsestrinn 2 (mobil som sliter) kastet skyggekartet (dispose + null) for å få det bygd på nytt i 1024; etter det tegnet verken skyggene eller kronene (kronene sampler skyggekartet). Reprodusert i hodeløs Chrome med ?nivaa=2 (rapport/d-sammenligning/mobil-nivaa-0-2fix-2.png). Rettet: skyggekartet beholdes og får setSize(1024,1024).
 - Trinnene er nå en funksjon (settNivaa) som kan tvinges med ?nivaa=N, så de kan testes uten å vente på måleren.
