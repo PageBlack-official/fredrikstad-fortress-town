@@ -20423,5 +20423,49 @@
 "hvem": "Claude",
 "dato": "2026-10-24",
 "grunn": "Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet middels, før 6.0 m"
+},
+{
+"emne": "bygg",
+"i": 230,
+"op": "sett",
+"felt": "deler",
+"verdi": [
+{
+"p": [
+[
+25.28,
+-89.0
+],
+[
+29.5,
+-90.82
+],
+[
+31.32,
+-86.6
+],
+[
+27.1,
+-84.78
+]
+],
+"h": 21.0,
+"mh": 0,
+"roof": "pyramidal",
+"vegg": [
+252,
+188,
+144
+],
+"tak": [
+132,
+134,
+142
+]
+}
+],
+"hvem": "Claude",
+"dato": "2026-10-25",
+"grunn": "Vegar 25.10: «tårnet bak kirka er ikke frittstående». Tårnet stod 17 m for langt nord, utenfor kroppen (gatehjørnet). Kartverkets DOM og flyfotoet viser tårnet midt på vestfløyen (28.3,-87.8), topp målt 20 m (spir klippes i 1 m-modell) → 21 m. Før: senter (29.8,-70.9), h 25."
 }
 ]
