@@ -7,8 +7,8 @@ b = json.load(open(os.path.join(ROT, 'data/bygg.json')))
 ret = json.load(open(os.path.join(ROT, 'data/rettelser.json')))
 # egne, tidligere regel 04-rettelser tas ut først, så kjøringen alltid starter fra det samme grunnlaget (idempotent); andre rettelser legges oppå
 ret = [r for r in ret if not (r['emne'] == 'bygg' and r['felt'] == 'vind' and r.get('grunn', '').startswith('regel 04'))]
-for r in ret:
-    if r['emne'] == 'bygg' and r['op'] == 'sett': b[r['i']][r['felt']] = r['verdi']
+sys.path.insert(0, ROT); import datalag
+b = datalag.legg_paa_rettelser({'bygg': b}, ret)['bygg']
 flyttet = fjernet = 0; nye = []
 for i, x in gamleby(b):
     if x.get('skjul') or not x.get('vind'): continue
@@ -34,6 +34,6 @@ for i, x in gamleby(b):
         if kolli: fjernet += 1; endret = True; continue
         behold.append(v2); flyttet += 1; endret = True
     if endret:
-        nye.append({"emne": "bygg", "i": i, "op": "sett", "felt": "vind", "verdi": behold, "hvem": "Claude", "dato": "2026-10-24", "grunn": "regel 04: vinduer flyttet inn fra hjørnet (halv bredde + 0,3 m) eller fjernet når de ikke fikk plass"})
-json.dump(ret + nye, open(os.path.join(ROT, 'data/rettelser.json'), 'w'), ensure_ascii=False, indent=0)
+        nye.append({"emne": "bygg", "id": b[i]["id"], "op": "sett", "felt": "vind", "verdi": behold, "hvem": "Claude", "dato": "2026-10-24", "grunn": "regel 04: vinduer flyttet inn fra hjørnet (halv bredde + 0,3 m) eller fjernet når de ikke fikk plass"})
+datalag.skriv_rettelser(ret + nye)
 print(f'{len(nye)} bygg, {flyttet} vinduer flyttet, {fjernet} fjernet')
