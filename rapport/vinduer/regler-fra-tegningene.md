@@ -49,3 +49,5 @@ De lave antatte garasjene (h under 2,6 m) får ingen vinduer fordi høyden ikke 
 
 Kontrollark: `kontrollark.png` (15 antatte hus før og etter), `kontrollark-fasit.png` (6 fasit-hus til sammenligning). Lages på nytt med
 `python3 rapport/vinduer/kontrollark.py`.
+
+3D-kontroll: `3d-etter-kjorbogarden.png` (verktoy/bilde.mjs UI=0, az 200, zoom 5, rundt Kjørbogårdens sidebygning): vinduene vender ut og ligger på veggene i bygget kart.
