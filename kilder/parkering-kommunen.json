@@ -1,0 +1,2408 @@
+{
+"kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering",
+"url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer",
+"hentet": "2026-10-27",
+"lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
+"lag": {
+"automater": [
+{
+"type": "Feature",
+"id": 27,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.94600022204529,
+59.20712614706819
+]
+},
+"properties": {
+"OBJECTID": 27,
+"AUTOMATNR": 38,
+"PRIS": 6,
+"KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone."
+}
+},
+{
+"type": "Feature",
+"id": 28,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.955051356155995,
+59.20509194854414
+]
+},
+"properties": {
+"OBJECTID": 28,
+"AUTOMATNR": 64,
+"PRIS": 6,
+"KOMMENTAR": "Takstsone 1240. Er det feil på automat må du betale på en annen automat i samme sone."
+}
+},
+{
+"type": "Feature",
+"id": 56,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.944893119138433,
+59.20778065205976
+]
+},
+"properties": {
+"OBJECTID": 56,
+"AUTOMATNR": 43,
+"PRIS": 6,
+"KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone."
+}
+},
+{
+"type": "Feature",
+"id": 73,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.950098467589779,
+59.20559711771856
+]
+},
+"properties": {
+"OBJECTID": 73,
+"AUTOMATNR": 12,
+"PRIS": 6,
+"KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone."
+}
+},
+{
+"type": "Feature",
+"id": 146,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.955383503647168,
+59.2022898545883
+]
+},
+"properties": {
+"OBJECTID": 146,
+"AUTOMATNR": 62,
+"PRIS": 6,
+"KOMMENTAR": "Takstsone 1240. Er det feil på automat må du betale på en annen automat i samme sone."
+}
+},
+{
+"type": "Feature",
+"id": 147,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95162201276427,
+59.202197835640824
+]
+},
+"properties": {
+"OBJECTID": 147,
+"AUTOMATNR": 65,
+"PRIS": 6,
+"KOMMENTAR": "Takstsone 1240. Er det feil på automat må du betale på en annen automat i samme sone."
+}
+},
+{
+"type": "Feature",
+"id": 162,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.961660492328642,
+59.20200663165534
+]
+},
+"properties": {
+"OBJECTID": 162,
+"AUTOMATNR": 70,
+"PRIS": 6,
+"KOMMENTAR": "Gratis i 3 timer mot registrering"
+}
+},
+{
+"type": "Feature",
+"id": 1922,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.964028669632558,
+59.20124437171788
+]
+},
+"properties": {
+"OBJECTID": 1922,
+"AUTOMATNR": 71,
+"PRIS": 6,
+"KOMMENTAR": "Er det feil på automat må du betale på en annen automat i samme sone."
+}
+}
+],
+"plasser": [
+{
+"type": "Feature",
+"id": 1921,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.955086898801687,
+59.20496306710969
+]
+},
+"properties": {
+"GlobalID": "{5E0ACFB0-805B-4506-B862-0B8B9FCA2A0C}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790238971000,
+"Field": null,
+"OBJECTID": 1921,
+"TYPE": 6,
+"NAVN": "Smedjegaten",
+"AUTOMATNR": "64",
+"ANTALL": 18,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone  01.06.-31.08.",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 12023,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.952764400875834,
+59.20455528815042
+]
+},
+"properties": {
+"GlobalID": "{72400322-A70C-48DC-9591-BD60832EEA15}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1788867996000,
+"Field": null,
+"OBJECTID": 12023,
+"TYPE": 1,
+"NAVN": "Toldbodgaten",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": 0,
+"KOMMENTAR": "Parkering forbudt over 1 time 08-18 (08-15)",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4606,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.951995474261809,
+59.201275209375986
+]
+},
+"properties": {
+"GlobalID": "{B955CCB7-4219-47B8-A93B-D0DD1B4D5739}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790237007000,
+"Field": null,
+"OBJECTID": 4606,
+"TYPE": 6,
+"NAVN": "Labratoriegaten",
+"AUTOMATNR": "65",
+"ANTALL": 30,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4609,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954372746968023,
+59.202923661870145
+]
+},
+"properties": {
+"GlobalID": "{58D71763-49E0-4196-B1A6-FD410050F7BC}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790244815000,
+"Field": null,
+"OBJECTID": 4609,
+"TYPE": 3,
+"NAVN": "Torvgaten",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 2 timer",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15549,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.955660026552001,
+59.20268233354614
+]
+},
+"properties": {
+"GlobalID": "{0C8C6953-3213-4A20-880E-E50D01CB66D3}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790247860000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790247944000,
+"Field": null,
+"OBJECTID": 15549,
+"TYPE": 1,
+"NAVN": "Voldgaten",
+"AUTOMATNR": "62",
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone01.06.-31.08.",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4623,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95271332139405,
+59.2026240013631
+]
+},
+"properties": {
+"GlobalID": "{5C7C7821-81BC-44FA-BCD1-2AE934B9ADAA}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790080023000,
+"Field": null,
+"OBJECTID": 4623,
+"TYPE": null,
+"NAVN": "Kasernegaten",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 2 timer",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 10740,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.956163144104542,
+59.203359311796234
+]
+},
+"properties": {
+"GlobalID": "{181926AE-AC48-4D1D-B8BB-D8086EDB891C}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790248208000,
+"Field": null,
+"OBJECTID": 10740,
+"TYPE": 3,
+"NAVN": "Voldgaten",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 2 timer ",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 3601,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.96102296676107,
+59.20105767276435
+]
+},
+"properties": {
+"GlobalID": "{8369827E-62C4-4F37-B40B-14F75B083763}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 3601,
+"TYPE": 3,
+"NAVN": "Kongstenhallen",
+"AUTOMATNR": null,
+"ANTALL": 4,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": null,
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4603,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.952115377854991,
+59.202592564496676
+]
+},
+"properties": {
+"GlobalID": "{2C287DAE-9ECD-4F98-AB1D-FA11760B34D4}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790080836000,
+"Field": null,
+"OBJECTID": 4603,
+"TYPE": 3,
+"NAVN": "Kirkegaten",
+"AUTOMATNR": null,
+"ANTALL": 1,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 2 timer",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15546,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.952694039873407,
+59.202626931053665
+]
+},
+"properties": {
+"GlobalID": "{A392F484-DBFB-406E-B1C5-F1FAFF1F094F}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790080185000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790080185000,
+"Field": null,
+"OBJECTID": 15546,
+"TYPE": 3,
+"NAVN": "Kasernegaten",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 2 timer",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 9140,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.961488861384826,
+59.20191815770608
+]
+},
+"properties": {
+"GlobalID": "{2F442262-F9C4-4D0F-ACAD-C4C0A8B30D9D}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 9140,
+"TYPE": 9,
+"NAVN": "Heibergskrysset",
+"AUTOMATNR": null,
+"ANTALL": 4,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": 2,
+"KOMMENTAR": "Maks 3 t. 16A som gir maks 3 kwt",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4612,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95357483373864,
+59.20471976497166
+]
+},
+"properties": {
+"GlobalID": "{85E095A5-F9D4-4F80-A7B6-9D42BB09E24F}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790239674000,
+"Field": null,
+"OBJECTID": 4612,
+"TYPE": 1,
+"NAVN": "Toldbodgaten- beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4620,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954733574141141,
+59.20222939319249
+]
+},
+"properties": {
+"GlobalID": "{7940D1E9-C95B-4035-AC4B-FCCA57362D86}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790079456000,
+"Field": null,
+"OBJECTID": 4620,
+"TYPE": 1,
+"NAVN": "Kasernegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15944,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.958163092726815,
+59.20163556927495
+]
+},
+"properties": {
+"GlobalID": "{3D6BC6E6-975D-451A-B955-576566D6314C}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790077229000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790077229000,
+"Field": null,
+"OBJECTID": 15944,
+"TYPE": 1,
+"NAVN": "General Ohmes vei - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale 08-16",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 5310,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.958261109270637,
+59.200161626823494
+]
+},
+"properties": {
+"GlobalID": "{90D5A34C-ABAB-4081-9242-68A57DD35E77}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1788865755000,
+"Field": null,
+"OBJECTID": 5310,
+"TYPE": 1,
+"NAVN": "Kongstenhallen",
+"AUTOMATNR": null,
+"ANTALL": 40,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": 0,
+"KOMMENTAR": "Parkering forbudt over 3 t fra kl. 08-16 - ingen avgift. Egner seg også for buss",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4626,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95535422233615,
+59.20412632935684
+]
+},
+"properties": {
+"GlobalID": "{98E8A428-B376-4B2D-921B-8DCCF0BDBDE2}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790078868000,
+"Field": null,
+"OBJECTID": 4626,
+"TYPE": 1,
+"NAVN": "Færgeportgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4604,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.950497635080565,
+59.20220924056927
+]
+},
+"properties": {
+"GlobalID": "{A60E431D-3681-40C7-A375-2E383A040CDE}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790245952000,
+"Field": null,
+"OBJECTID": 4604,
+"TYPE": 6,
+"NAVN": "Kirkegaten/Tøihusgaten",
+"AUTOMATNR": "65",
+"ANTALL": null,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15547,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954066289812832,
+59.202933922597325
+]
+},
+"properties": {
+"GlobalID": "{346E10B1-F370-4B83-B4DE-37EB1770B67C}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790237784000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790237784000,
+"Field": null,
+"OBJECTID": 15547,
+"TYPE": 1,
+"NAVN": "Raadhusgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 8500,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954889217501048,
+59.205071966500235
+]
+},
+"properties": {
+"GlobalID": "{F203E669-AD22-410B-A2C0-4D88E745C8D4}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790239216000,
+"Field": null,
+"OBJECTID": 8500,
+"TYPE": 1,
+"NAVN": "Smedjegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4615,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.950281488226327,
+59.202522289048595
+]
+},
+"properties": {
+"GlobalID": "{3814B4BB-9ED4-48E2-A046-FCB3A97BF441}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790240186000,
+"Field": null,
+"OBJECTID": 4615,
+"TYPE": 1,
+"NAVN": "Toldbodgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 1953,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.961780803622705,
+59.20219275111919
+]
+},
+"properties": {
+"GlobalID": "{97187E2C-40C1-462C-903E-D80BEDF5E594}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 1953,
+"TYPE": 6,
+"NAVN": "Kongsten p-plass (Takstgruppe 1241)",
+"AUTOMATNR": "70",
+"ANTALL": 122,
+"EASYPARK": 30,
+"PRIS": null,
+"ELBIL": 2,
+"KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00) Gratis i 3 t. mot registrering.",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4521,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.9459120700882,
+59.20768978122358
+]
+},
+"properties": {
+"GlobalID": "{CC919822-CA76-48F7-AB0A-89B82C93A1F3}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 4521,
+"TYPE": 6,
+"NAVN": null,
+"AUTOMATNR": "43",
+"ANTALL": null,
+"EASYPARK": 3,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4627,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954531710849885,
+59.20289719697435
+]
+},
+"properties": {
+"GlobalID": "{D3A7E204-6F8D-42D8-9068-27229B39F1B3}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790244981000,
+"Field": null,
+"OBJECTID": 4627,
+"TYPE": 1,
+"NAVN": "Torvgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4621,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95343213994676,
+59.201835170502676
+]
+},
+"properties": {
+"GlobalID": "{D53AAD8D-DD05-485A-A643-CBEC583A7873}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790245628000,
+"Field": null,
+"OBJECTID": 4621,
+"TYPE": 1,
+"NAVN": "Tøihusgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4601,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.952004866089299,
+59.2025154947549
+]
+},
+"properties": {
+"GlobalID": "{94175D98-0F35-4211-8045-4198A5C9A4EE}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790236411000,
+"Field": 0,
+"OBJECTID": 4601,
+"TYPE": 1,
+"NAVN": "Kirkegaten",
+"AUTOMATNR": "65",
+"ANTALL": 25,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "01.09.-31.05. grønn sone  01.06.-31.08. rød sone",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4607,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.951097178737978,
+59.20128181349414
+]
+},
+"properties": {
+"GlobalID": "{EBE08FFF-23D2-49E0-818E-031E648DCC51}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790236825000,
+"Field": null,
+"OBJECTID": 4607,
+"TYPE": 6,
+"NAVN": "Labratoriegaten",
+"AUTOMATNR": "65",
+"ANTALL": 30,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05.  Rød sone 01.06.-31.08.",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4641,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.952270345520734,
+59.2040183223101
+]
+},
+"properties": {
+"GlobalID": "{BBF99D9F-0CD0-48AA-BCB4-A574F89D9297}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790240026000,
+"Field": null,
+"OBJECTID": 4641,
+"TYPE": 1,
+"NAVN": "Toldbodgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": 10,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4618,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.9543019291114,
+59.20437397678276
+]
+},
+"properties": {
+"GlobalID": "{5C00A0B7-284A-466C-A177-1A395CDFA27A}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790079066000,
+"Field": null,
+"OBJECTID": 4618,
+"TYPE": 1,
+"NAVN": "Færgeportgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15942,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.950179873249581,
+59.20133050003093
+]
+},
+"properties": {
+"GlobalID": "{D4B328BE-91A4-4414-A01E-505D0D6682A8}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1789037793000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790236514000,
+"Field": null,
+"OBJECTID": 15942,
+"TYPE": 6,
+"NAVN": "Laboratoriegaten",
+"AUTOMATNR": "65",
+"ANTALL": null,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Rød sone 01.06.-31.08  grønn sone  01.09.-31.05.",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15544,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.956970391236222,
+59.200631541577316
+]
+},
+"properties": {
+"GlobalID": "{56BA7A87-8201-407C-8467-8C6A6E07CC59}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790076011000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790076011000,
+"Field": null,
+"OBJECTID": 15544,
+"TYPE": 1,
+"NAVN": "Carsten Ankers gate - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale 08-16",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4625,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.956337948016223,
+59.20386860502834
+]
+},
+"properties": {
+"GlobalID": "{6A2549A8-F4D8-419E-BB39-CCC72EE523C9}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790078731000,
+"Field": null,
+"OBJECTID": 4625,
+"TYPE": 1,
+"NAVN": "Færgeportgaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4602,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.955447056335597,
+59.20394070553037
+]
+},
+"properties": {
+"GlobalID": "{B7912AB9-93E5-4780-A62C-A5955828FC20}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790238223000,
+"Field": null,
+"OBJECTID": 4602,
+"TYPE": 1,
+"NAVN": "Raadhusgaten",
+"AUTOMATNR": "Ingen avgift",
+"ANTALL": 9,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 1t 08-18 (08-15)",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 211,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.950097524038323,
+59.205691137224484
+]
+},
+"properties": {
+"GlobalID": "{7197AA2C-4960-47A0-A0F6-D0FC5A1D97B2}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 211,
+"TYPE": 6,
+"NAVN": "Tolboden",
+"AUTOMATNR": "12",
+"ANTALL": 42,
+"EASYPARK": 18,
+"PRIS": null,
+"ELBIL": 2,
+"KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4596,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.945469414421662,
+59.20765772232185
+]
+},
+"properties": {
+"GlobalID": "{C9ECD485-9DEE-4916-BEED-BD7DA63E7826}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 4596,
+"TYPE": 1,
+"NAVN": "Beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4656,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.94627603892978,
+59.20502768198663
+]
+},
+"properties": {
+"GlobalID": "{A5ED0BEA-624D-4DA6-BD13-9C7BE0556B92}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1793021998000,
+"Field": null,
+"OBJECTID": 4656,
+"TYPE": 1,
+"NAVN": "Strandpromenaden/Tolboden",
+"AUTOMATNR": "12 ",
+"ANTALL": null,
+"EASYPARK": 18,
+"PRIS": null,
+"ELBIL": 2,
+"KOMMENTAR": "Egner seg også for buss.Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4613,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954638176050926,
+59.20436262365063
+]
+},
+"properties": {
+"GlobalID": "{337E8590-2C6F-4DF1-8A3B-683A809DB5DA}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790081332000,
+"Field": null,
+"OBJECTID": 4613,
+"TYPE": 1,
+"NAVN": "Kirkegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15545,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.958073422918327,
+59.20128338340983
+]
+},
+"properties": {
+"GlobalID": "{FCF0F439-A658-4894-82E0-4593DF520E27}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790076854000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790076854000,
+"Field": null,
+"OBJECTID": 15545,
+"TYPE": 1,
+"NAVN": "General Ohmes vei - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale 08-16",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 11397,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.948798939329444,
+59.2054364144199
+]
+},
+"properties": {
+"GlobalID": "{DD20C4A1-E3CA-46B7-862A-7496174464C0}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 11397,
+"TYPE": 3,
+"NAVN": "Strandpromenaden",
+"AUTOMATNR": "2",
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": null,
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4619,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95334315053334,
+59.20251624776559
+]
+},
+"properties": {
+"GlobalID": "{A3239EF0-DDD5-4E83-8A49-8CB1976E16C3}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790079756000,
+"Field": null,
+"OBJECTID": 4619,
+"TYPE": 1,
+"NAVN": "Kasernegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15943,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.957086409803487,
+59.20114078922145
+]
+},
+"properties": {
+"GlobalID": "{BEF15CBD-0C82-4BD4-9282-EA4CC682A62D}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790076376000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790076376000,
+"Field": null,
+"OBJECTID": 15943,
+"TYPE": 1,
+"NAVN": "General Ohmes vei - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale 08-16",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 5309,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.96163334213371,
+59.20109892641467
+]
+},
+"properties": {
+"GlobalID": "{950AE8E7-CF61-4F77-A692-890C001130A3}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1788865912000,
+"Field": null,
+"OBJECTID": 5309,
+"TYPE": 1,
+"NAVN": "Kongstenhallen",
+"AUTOMATNR": null,
+"ANTALL": 46,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": 0,
+"KOMMENTAR": "Parkering forbudt over 3 t",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 10742,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.956237517923226,
+59.203444348949795
+]
+},
+"properties": {
+"GlobalID": "{3D28B852-6DC9-42C0-A738-73ACBB790094}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1788866673000,
+"Field": null,
+"OBJECTID": 10742,
+"TYPE": 1,
+"NAVN": "Voldgaten",
+"AUTOMATNR": null,
+"ANTALL": 6,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 1 t fra kl. 08. - 18.00 (08.00-15.00)",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4599,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954772337534123,
+59.203447987694766
+]
+},
+"properties": {
+"GlobalID": "{F0EEF358-88EA-4E27-81CB-2BCDE7A43615}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790238004000,
+"Field": null,
+"OBJECTID": 4599,
+"TYPE": 1,
+"NAVN": "Raadhusgaten",
+"AUTOMATNR": "Ingen avgift",
+"ANTALL": 9,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering forbudt over 1 t. 08-18 (08-15)",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15548,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95466776083901,
+59.20514710980181
+]
+},
+"properties": {
+"GlobalID": "{60CE7DE3-0881-4270-9FD8-7FB4D8B73CC8}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790239388000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790239388000,
+"Field": null,
+"OBJECTID": 15548,
+"TYPE": 1,
+"NAVN": "Smedjegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4616,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.952147807657235,
+59.202738483460465
+]
+},
+"properties": {
+"GlobalID": "{FF07F1DB-8E21-4B67-9AB7-F35C41D6BA50}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790080407000,
+"Field": null,
+"OBJECTID": 4616,
+"TYPE": 1,
+"NAVN": "Kasernegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 12380,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.951121406452712,
+59.20765032747083
+]
+},
+"properties": {
+"GlobalID": "{4BA1B372-0AD3-420F-8E42-591F5C823952}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 12380,
+"TYPE": 6,
+"NAVN": "Skolegata",
+"AUTOMATNR": "Ingen avgift",
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": 0,
+"KOMMENTAR": "Parkering forbudt over 30 min. kl. 08.00-17.00",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4531,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.946081549594549,
+59.207481659091584
+]
+},
+"properties": {
+"GlobalID": "{8CFC62E0-00B5-460B-A3A1-9F507EEE7E71}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790062880000,
+"Field": null,
+"OBJECTID": 4531,
+"TYPE": 3,
+"NAVN": "Cicignongate",
+"AUTOMATNR": null,
+"ANTALL": 3,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": null,
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkeringstillatelse-for-forflytningshemmede/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4608,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954938146092957,
+59.20201557652361
+]
+},
+"properties": {
+"GlobalID": "{3F39C5E3-08C5-4B01-AFD1-B258020C129F}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790247569000,
+"Field": null,
+"OBJECTID": 4608,
+"TYPE": 6,
+"NAVN": "Voldgaten",
+"AUTOMATNR": "62",
+"ANTALL": 33,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4631,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.948551354414976,
+59.20614267805579
+]
+},
+"properties": {
+"GlobalID": "{F40CA0EE-7352-40CD-887D-EA767221FCC2}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 4631,
+"TYPE": 1,
+"NAVN": "For beboere med p-kort",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 15543,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.957220950370234,
+59.20045545647506
+]
+},
+"properties": {
+"GlobalID": "{6F3F9B8D-73AC-4DEA-BD30-5B62149012F2}",
+"created_user": "haor@FREDRIKSTAD",
+"created_date": 1790073875000,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790073875000,
+"Field": null,
+"OBJECTID": 15543,
+"TYPE": 1,
+"NAVN": "Carsten Ankers gate - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Parkering med gyldig avtale 08-16",
+"LENKE": null,
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4605,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.95170267439438,
+59.20206364444346
+]
+},
+"properties": {
+"GlobalID": "{16200E6B-0A4C-4663-8536-6DF7354050DE}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790246239000,
+"Field": null,
+"OBJECTID": 4605,
+"TYPE": 6,
+"NAVN": "Kirkegaten/Tøihusgaten",
+"AUTOMATNR": "65",
+"ANTALL": null,
+"EASYPARK": 29,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 12022,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.961195929622077,
+59.20172816756136
+]
+},
+"properties": {
+"GlobalID": "{4982B84E-B828-4176-8AE2-D5E8AC51CB27}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 12022,
+"TYPE": 9,
+"NAVN": "Heibergskrysset",
+"AUTOMATNR": null,
+"ANTALL": 4,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": 2,
+"KOMMENTAR": "Maks 3 t. 16A som gir maks 3 kwt",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4597,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.950161324274855,
+59.20783786129546
+]
+},
+"properties": {
+"GlobalID": "{BAF55089-BE32-4F32-9AB2-486D842296E7}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 4597,
+"TYPE": 1,
+"NAVN": "Beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4614,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954106122100526,
+59.20396408570425
+]
+},
+"properties": {
+"GlobalID": "{4312B164-18AC-42CF-B87F-FE037305A3B3}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790081166000,
+"Field": null,
+"OBJECTID": 4614,
+"TYPE": 1,
+"NAVN": "Kirkegaten - beboerparkering",
+"AUTOMATNR": null,
+"ANTALL": null,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4640,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.954044875814,
+59.202917034247314
+]
+},
+"properties": {
+"GlobalID": "{E462A0F0-BD6C-45EE-A9C5-82E08BC43EB8}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": "haor@FREDRIKSTAD",
+"last_edited_date": 1790237576000,
+"Field": null,
+"OBJECTID": 4640,
+"TYPE": null,
+"NAVN": "Raadhusgaten - beboerparkering",
+"AUTOMATNR": "Ingen avgift",
+"ANTALL": 9,
+"EASYPARK": null,
+"PRIS": null,
+"ELBIL": null,
+"KOMMENTAR": "Med gyldig avtale",
+"LENKE": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+"VEDTAKSNUMMER": null
+}
+},
+{
+"type": "Feature",
+"id": 4522,
+"geometry": {
+"type": "Point",
+"coordinates": [
+10.945969978139845,
+59.20708879556383
+]
+},
+"properties": {
+"GlobalID": "{D99CF6A0-BFEA-4416-B8A4-5E35B2709C5C}",
+"created_user": null,
+"created_date": null,
+"last_edited_user": null,
+"last_edited_date": null,
+"Field": null,
+"OBJECTID": 4522,
+"TYPE": 6,
+"NAVN": "Cicignongata",
+"AUTOMATNR": "38",
+"ANTALL": 8,
+"EASYPARK": 3,
+"PRIS": 6,
+"ELBIL": 2,
+"KOMMENTAR": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+"LENKE": "https://www.fredrikstad.kommune.no/parkering",
+"VEDTAKSNUMMER": null
+}
+}
+],
+"soner": [
+{
+"type": "Feature",
+"id": 1025,
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+10.957587444165037,
+59.20252699904536
+],
+[
+10.956197087004055,
+59.20292820352437
+],
+[
+10.956050660574972,
+59.203203729904935
+],
+[
+10.956989076976368,
+59.20408895251192
+],
+[
+10.955886638526069,
+59.20466407220369
+],
+[
+10.954543523753864,
+59.20521095666741
+],
+[
+10.953237624387993,
+59.2048621930401
+],
+[
+10.952925269443638,
+59.204864410043484
+],
+[
+10.952103459544727,
+59.20433910302838
+],
+[
+10.952223919919161,
+59.20425353182787
+],
+[
+10.95200454750503,
+59.20383039348503
+],
+[
+10.952170516588877,
+59.2037731670172
+],
+[
+10.951744085262089,
+59.203497801624465
+],
+[
+10.95260874471261,
+59.20330603604579
+],
+[
+10.952548730724299,
+59.2032477701728
+],
+[
+10.951614276071801,
+59.20342533212813
+],
+[
+10.951128433941252,
+59.20303772771299
+],
+[
+10.950971513613204,
+59.20308468802289
+],
+[
+10.94982201582609,
+59.20231136750775
+],
+[
+10.950017134688041,
+59.20222485364179
+],
+[
+10.949940880625094,
+59.20198519006869
+],
+[
+10.949139923877041,
+59.20145105375305
+],
+[
+10.949327482058095,
+59.20145034512035
+],
+[
+10.949807731554902,
+59.20136272284502
+],
+[
+10.952309555012805,
+59.20113132238561
+],
+[
+10.953152735763354,
+59.20117856910042
+],
+[
+10.954986676760589,
+59.2020194926096
+],
+[
+10.955794719739636,
+59.20277977157158
+],
+[
+10.95737434714756,
+59.20244702303615
+],
+[
+10.957791986933012,
+59.20231989555741
+],
+[
+10.958003657892553,
+59.201389120498206
+],
+[
+10.956865873512763,
+59.2012170473996
+],
+[
+10.956693213199983,
+59.20113982929786
+],
+[
+10.95664924270947,
+59.20095112446699
+],
+[
+10.956826478748985,
+59.20054921260787
+],
+[
+10.957294068298651,
+59.200324818235316
+],
+[
+10.957392159950105,
+59.20038772135405
+],
+[
+10.956978260325585,
+59.20066130278812
+],
+[
+10.956839301714469,
+59.20108115591415
+],
+[
+10.958110215709045,
+59.20126854734745
+],
+[
+10.958643309888503,
+59.20101381980446
+],
+[
+10.958825009541545,
+59.20111933259214
+],
+[
+10.958300595984262,
+59.20136766366032
+],
+[
+10.95811313595737,
+59.20221540984743
+],
+[
+10.959707621290542,
+59.201826179520886
+],
+[
+10.959815972044586,
+59.20192254278926
+],
+[
+10.957587444165037,
+59.20252699904536
+]
+]
+]
+},
+"properties": {
+"OBJECTID": 1025,
+"SONE": 2,
+"NAVN": "Gamlebyen parkering forbudt",
+"PRIS": null,
+"KOMMENTAR": "Beboerparkering på anviste plasser",
+"LENKE": null,
+"SHAPE.STArea()": 118048.83754862,
+"SHAPE.STLength()": 2621.3577475369366
+}
+},
+{
+"type": "Feature",
+"id": 1041,
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+10.94461720982206,
+59.20702972496865
+],
+[
+10.943302254030979,
+59.207132572453865
+],
+[
+10.942956175423184,
+59.20613952712285
+],
+[
+10.942725764016451,
+59.20534677419946
+],
+[
+10.942683279572956,
+59.20521074811002
+],
+[
+10.94321585864018,
+59.205000768528045
+],
+[
+10.943735741709741,
+59.204975171006346
+],
+[
+10.944810569660731,
+59.20492938732325
+],
+[
+10.945205821780805,
+59.20495318269886
+],
+[
+10.946001395313989,
+59.205089820657435
+],
+[
+10.946088917723072,
+59.20581340640232
+],
+[
+10.947759876212567,
+59.20585968443892
+],
+[
+10.948353280924685,
+59.20590426820359
+],
+[
+10.948580325202215,
+59.20602564221698
+],
+[
+10.948285631803124,
+59.20654699371725
+],
+[
+10.948340656478956,
+59.20690267597043
+],
+[
+10.9458865277747,
+59.20693943147013
+],
+[
+10.94572446312991,
+59.20694185708044
+],
+[
+10.94461720982206,
+59.20702972496865
+]
+]
+]
+},
+"properties": {
+"OBJECTID": 1041,
+"SONE": 1,
+"NAVN": "Cicignon Syd 03,",
+"PRIS": null,
+"KOMMENTAR": "08.00-21.00 alle dager",
+"LENKE": null,
+"SHAPE.STArea()": 56139.97198503,
+"SHAPE.STLength()": 1036.3753383150565
+}
+},
+{
+"type": "Feature",
+"id": 3571,
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+10.944200740585062,
+59.20984264509677
+],
+[
+10.943338658508916,
+59.20722656252989
+],
+[
+10.945791220368884,
+59.207034650281756
+],
+[
+10.946014476254643,
+59.20768750284089
+],
+[
+10.94484733619187,
+59.207784392005635
+],
+[
+10.944966406062063,
+59.20813832762966
+],
+[
+10.945730715053662,
+59.208072626903665
+],
+[
+10.945807511455003,
+59.208298355716295
+],
+[
+10.946359143057414,
+59.208265936525564
+],
+[
+10.946491958867538,
+59.208633637886116
+],
+[
+10.94729963515128,
+59.20858700680129
+],
+[
+10.947435577405306,
+59.20885049385499
+],
+[
+10.948317068412507,
+59.2087774982805
+],
+[
+10.949015021905417,
+59.20873695626142
+],
+[
+10.94879602793364,
+59.20802270341414
+],
+[
+10.948972353857974,
+59.20801105404865
+],
+[
+10.94878613103547,
+59.20748731175554
+],
+[
+10.948634196066557,
+59.20697884709923
+],
+[
+10.949620950738883,
+59.20696423194334
+],
+[
+10.950008624691442,
+59.206960319357165
+],
+[
+10.950469186154091,
+59.20687735549898
+],
+[
+10.951374136698231,
+59.2074270567453
+],
+[
+10.950165342416168,
+59.20789605647746
+],
+[
+10.950218165851481,
+59.208003166767114
+],
+[
+10.948932048174058,
+59.20809518059559
+],
+[
+10.949218172227342,
+59.20894123071165
+],
+[
+10.949090177230625,
+59.20910814170074
+],
+[
+10.948095406275874,
+59.20949400758826
+],
+[
+10.944200740585062,
+59.20984264509677
+]
+]
+]
+},
+"properties": {
+"OBJECTID": 3571,
+"SONE": 3,
+"NAVN": "Cicignon Nord",
+"PRIS": null,
+"KOMMENTAR": "Dette er ikke en boligsone, men har beboerparkering på enkelte steder.",
+"LENKE": null,
+"SHAPE.STArea()": 65618.43295431,
+"SHAPE.STLength()": 1909.0345008539516
+}
+},
+{
+"type": "Feature",
+"id": 4212,
+"geometry": {
+"type": "Polygon",
+"coordinates": [
+[
+[
+10.95113520699942,
+59.20304347657911
+],
+[
+10.951605711759177,
+59.203433894689375
+],
+[
+10.95254194230886,
+59.20325010077714
+],
+[
+10.952591415584193,
+59.20330951758137
+],
+[
+10.951705775091916,
+59.20349899750764
+],
+[
+10.952165365112325,
+59.20377140828326
+],
+[
+10.95201332131273,
+59.20382310780706
+],
+[
+10.950974426024944,
+59.20308886085853
+],
+[
+10.95113520699942,
+59.20304347657911
+]
+]
+]
+},
+"properties": {
+"OBJECTID": 4212,
+"SONE": 5,
+"NAVN": null,
+"PRIS": null,
+"KOMMENTAR": null,
+"LENKE": null,
+"SHAPE.STArea()": 1298.18142626,
+"SHAPE.STLength()": 332.4507792466383
+}
+}
+]
+},
+"koder": {
+"TYPE": {
+"1": "Parkering",
+"2": "Parkeringshus",
+"3": "Parkering forflytningshemmede",
+"4": "Rød sone",
+"5": "Gul sone, progressiv",
+"6": "Grønn sone",
+"7": "Innfartsparkering",
+"8": "Gateparkering MC",
+"9": "Parkering el-bil",
+"10": "Parkering bobil",
+"11": "Avlastningsparkering"
+},
+"EASYPARK": {
+"1": "1200",
+"6": "1212",
+"10": "1213",
+"31": "1214",
+"18": "1215",
+"32": "1216",
+"19": "1223",
+"2": "1225",
+"20": "1227",
+"21": "1228",
+"3": "1230",
+"7": "1235",
+"29": "1240",
+"30": "1241",
+"4": "1250",
+"5": "1260",
+"15": "1280",
+"16": "1281",
+"17": "1282",
+"11": "1290",
+"9": "1291",
+"12": "1292",
+"13": "1293",
+"8": "1294",
+"14": "1295",
+"22": "1300",
+"23": "1301",
+"24": "1303",
+"25": "1304",
+"26": "1305",
+"27": "1307",
+"28": "1308"
+},
+"PRIS": {
+"1": "Ukjent",
+"5": "Kr 25 pr time hele døgnet",
+"7": "100 kroner pr døgn",
+"8": "150 kroner pr døgn",
+"9": "260 kroner pr døgn",
+"11": "Alle dager 00-00 10 kr timen 40 kr dagen, maks 2 døgn",
+"12": "25kr pr time, hverdager 00-14.00 og lørdag 00-0900. Søndag 00 – 0900 kr 10.00 pr. time",
+"13": "Kr 40 pr time",
+"14": "26 kr timen",
+"15": "62 kr pr.dag",
+"16": "Mandag til fredag 08-14: 42, 44, 46, deretter 48. Lørdag 08-09 kr 42",
+"17": "60 kr timen",
+"2": "Gul sone: 44 kr første time, 46 kr for andre time, 48 kr for tredje time deretter 50 kr pr time 8-21 (8-21).",
+"3": "Rød sone: Kr 62 pr time",
+"4": "Lilla sone: Kr 16 pr time, kr 64 pr dag",
+"6": "Grønn sone: Kr 30 pr time",
+"10": "12 kr pr time, 45 kr pr dag, maks 2 døgn",
+"18": "Rød sone: 62 kr pr time, maks 2 timer"
+},
+"ELBIL": {
+"0": "Ikke ladeplass",
+"1": "Ingen avgift",
+"2": "Må betale avgift",
+"3": "Gratis med elbilavtale i p-app, avgift på natten",
+"4": "Ingen avgift ved lading",
+"5": "50 prosent parkeringsavgift med Elbilavtale i Fredrikstad P-app",
+"6": "50 prosent parkeringsavgift"
+}
+}
+}

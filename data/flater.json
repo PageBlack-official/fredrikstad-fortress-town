@@ -1,0 +1,6 @@
+[
+{"id":"fl-1","typ":"grus","navn":"grusplassen ved Smedjegaten","p":[[86,251],[104,260],[116,259],[128,247],[140,243],[148,236],[152,226],[140,219],[131,222],[110,236]],"grunn":"ortofoto 2024: lys grus, ikke brostein","kilde":"målt i ortofoto 2024 (kilder/flater-maalt.json)"},
+{"id":"fl-2","typ":"heller","navn":"Toldbodbrygga","p":[[-37,166],[13,227],[31,231],[31,224],[6,191],[-12,180],[-24,152],[-36,152]],"grunn":"ortofoto 2024: belagt kai, var tegnet som vollgress","kilde":"målt i ortofoto 2024 (kilder/flater-maalt.json)"},
+{"id":"fl-3","typ":"asfalt","navn":"kaia med båtopplag (vest)","p":[[-80,118],[-70,112],[-82,88],[-112,62],[-118,30],[-136,10],[-146,-30],[-164,-30],[-154,-10],[-136,26],[-112,70]],"grunn":"ortofoto 2024: belagt kai med båter og biler, var tegnet som vollgress","kilde":"målt i ortofoto 2024 (kilder/flater-maalt.json)"},
+{"id":"fl-4","typ":"grus","navn":"Laboratoriegaten","p":[[-150,-160],[-20,-176],[-20,-184],[-150,-167]],"grunn":"ortofoto 2024: grusvei under trerekka; parkeringen langs (2 x 30 plasser) synes ikke i fotoet","kilde":"målt i ortofoto 2024 (kilder/flater-maalt.json)"}
+]
