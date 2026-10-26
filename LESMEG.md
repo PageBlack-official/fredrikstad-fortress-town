@@ -20,13 +20,25 @@ Motor: MapLibre GL JS 6.14.0 (kamera, gester, koordinater). Byen: three.js 0.160
 Geometrien er slått sammen (v29): vanlige hus ligger i ett nett per materiale med byggindeks per punkt; løft og vekst per bygg går gjennom hus-teksturen tHus (05_bygg: settHus). Et hus som skal endres, endres i data (rettelser.json) og bygges på nytt, ikke i scenen. Grupper som flyttes som objekter (kirka, portbygg, bygg med deler, broer) slås sammen med flatGruppe.
 Neste: kvalitetssikring kvartal for kvartal (bevisark tegning mot modell), deretter regel 02–04 grønne. v30: husfarger dømt visuelt mot 2019-trykket (rapport/farger-dom, rettelser i data/rettelser.json), trær fra flyfoto på flatene og dagens rekker på vollene. Åpne datakilder til POI-laget: rapport/apne-data.md.
 
+## Faste ID-er: bygningsnummeret fra Matrikkelen (26.10)
+Hvert bygg har en fast nøkkel i `id`: `bnr-<bygningsnummer>` når bygget finnes i Matrikkelen (Kartverket, CC BY 4.0), ellers `pb-<løpenummer>`. Bygningsnummeret er statens nøkkel, den samme kommunen, Forsvarsbygg, meglere og Riksantikvaren bruker, og det finnes i alle norske byer. `matrikkel` på bygget har bygningsnummer, uuid, bygningstype, kulturminne/SEFRAK og adresse- og matrikkelenhet-id (eierkoblingen).
+Rettelser, porter og legende peker på id, aldri på plass i lista. Alle id-er som er delt ut, står i kilder/id-register.txt; en id slettes aldri, bygget skjules med grunn. Regel 14 passer på dette.
+
+    python3 verktoy/matrikkel.py hent     henter bygningspunktene (kilder/matrikkel-bygningspunkt.json)
+    python3 verktoy/matrikkel.py koble    gir nye bygg id, oppdaterer matrikkelfeltet, rører aldri en id som finnes
+
+All lesing og retting av data går gjennom datalag.py, som bygg.py, regelsjekkene og verktøyene deler.
+
 ## Rettelseslaget (23.10)
 Grunndataene i data/ er generert (OSM, trykkfila, kvartaltegningene) og kan lages på nytt. Alt Vegar retter ligger i data/rettelser.json, én linje per rettelse, og legges oppå ved hvert bygg:
 
-    [{"emne":"bygg","i":184,"op":"sett","felt":"vegg","verdi":[214,96,80],"hvem":"Vegar","dato":"2026-10-24","grunn":"trykkfila"},
-     {"emne":"bygg","i":391,"op":"skjul","hvem":"Claude","dato":"2026-10-23","grunn":"flyfoto: parkeringsplass"}]
+    [{"emne":"bygg","id":"bnr-193867537","op":"sett","felt":"vegg","verdi":[214,96,80],"hvem":"Vegar","dato":"2026-10-24","grunn":"trykkfila"},
+     {"emne":"bygg","id":"pb-12","op":"skjul","hvem":"Claude","dato":"2026-10-23","grunn":"flyfoto: parkeringsplass"}]
 
 Operasjoner: sett (felt = verdi) og skjul. Flytting og nye objekter kommer med redigeringsmodusen. Rettelser slettes aldri, de overstyres av en nyere linje.
+
+## Oppsett på en ny maskin
+Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
 ## Regler som må være grønne før publisering
 01–04 innhold mot kildene, 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde). `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).

@@ -2,14 +2,12 @@
 import json, os, math
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def data(navn, raa=False):
-    """Data slik kartet viser dem: rettelser.json legges oppå (samme regler som bygg.py). raa=True gir grunndataene."""
-    d = json.load(open(os.path.join(ROT, 'data', navn + '.json'), encoding='utf8'))
-    if raa or navn == 'rettelser': return d
-    for r in json.load(open(os.path.join(ROT, 'data', 'rettelser.json'), encoding='utf8')):
-        if r['emne'] != navn: continue
-        if r['op'] == 'sett': d[r['i']][r['felt']] = r['verdi']
-        elif r['op'] == 'skjul': d[r['i']]['skjul'] = f"{r.get('hvem','?')} {r.get('dato','?')}: {r.get('grunn','')}"
-    return d
+    """Data slik kartet viser dem, fra datalag.py (samme kode som bygg.py). raa=True gir grunndataene."""
+    import sys
+    if ROT not in sys.path: sys.path.insert(0, ROT)
+    import datalag
+    if raa or navn == 'rettelser': return datalag.les(navn)
+    return datalag.koble_til_plass(datalag.alle())[navn]
 def flyfoto():
     import cv2
     k = json.load(open(os.path.join(ROT, 'kilder', 'flyfoto-google-2026-10-23.json')))

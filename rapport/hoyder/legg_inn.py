@@ -10,8 +10,8 @@ for k, x in sorted(H.items(), key=lambda t: int(t[0])):
     i = int(k)
     if x.get('sikkerhet') not in ('høy', 'middels') or x.get('h_per_hus') is None or B[i].get('kirke'): continue
     g = f"Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet {x['sikkerhet']}, før {B[i]['h']} m"
-    R.append({"emne": "bygg", "i": i, "op": "sett", "felt": "h", "verdi": x['h_per_hus'], "hvem": "Claude", "dato": "2026-10-24", "grunn": g})
-    R.append({"emne": "bygg", "i": i, "op": "sett", "felt": "th", "verdi": x['takhelning'], "hvem": "Claude", "dato": "2026-10-24", "grunn": g})
+    R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "h", "verdi": x['h_per_hus'], "hvem": "Claude", "dato": "2026-10-24", "grunn": g})
+    R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "th", "verdi": x['takhelning'], "hvem": "Claude", "dato": "2026-10-24", "grunn": g})
     n += 1
-json.dump(R, open(os.path.join(ROT, 'data/rettelser.json'), 'w'), ensure_ascii=False, indent=0)
+import sys; sys.path.insert(0, ROT); import datalag; datalag.skriv_rettelser(R)
 print(n, 'hus fått målt høyde og takhelning')

@@ -13,35 +13,12 @@ os.makedirs(UT, exist_ok=True)
 
 def les(p): return open(os.path.join(ROT, p), encoding='utf8').read()
 
-# ---- data: én JSON per emne -> ett objekt ----
-data = {}
-for fil in sorted(os.listdir(os.path.join(ROT, 'data'))):
-    if fil.endswith('.json'):
-        data[fil[:-5]] = json.load(open(os.path.join(ROT, 'data', fil), encoding='utf8'))
+# ---- data: alt går gjennom datalag.py (rettelser på id, høyden som styrer piper/arker/vinduer, koblinger), samme som regelsjekkene ----
+sys.path.insert(0, ROT)
+import datalag
+data = datalag.koble_til_plass(datalag.alle())
+rettelser = datalag.les('rettelser')
 versjon = les('VERSJON').strip()
-# ---- rettelseslaget: data/rettelser.json legges oppå grunndataene ved hvert bygg, én linje per rettelse (hva, hvem, når, hvorfor).
-# Grunndataene er generert og kan lages på nytt; rettelsene overlever. Operasjoner: sett (felt = verdi), skjul (bygg skjules med grunn).
-rettelser = data.pop('rettelser', [])
-for r in rettelser:
-    emne, i, op = r['emne'], r.get('i'), r['op']
-    if emne not in data or i is None or i >= len(data[emne]):
-        raise SystemExit(f"rettelse peker på noe som ikke finnes: {r}")
-    if op == 'sett':
-        data[emne][i][r['felt']] = r['verdi']
-    elif op == 'skjul':
-        data[emne][i]['skjul'] = f"{r.get('hvem','?')} {r.get('dato','?')}: {r.get('grunn','')}"
-    else:
-        raise SystemExit(f"ukjent rettelse-operasjon: {op}")
-# høyden er grunnlaget for alt som står på huset: endres h (rettelse), flyttes piper og arker like mye, og vinduer som ikke
-# lenger får plass under gesimsen (overkant over h − 0,3 m) tas ut. Ellers svever pipene og vinduene sitter i taket (24.10).
-grunn = json.loads(les('data/bygg.json'))
-for i, x in enumerate(data['bygg']):
-    h0, h1 = grunn[i].get('h', 0), x.get('h', 0); f = x.get('th', 0.82) / 0.82   # takhøyden skaleres med helningen
-    if abs(h1 - h0) < 0.05 and abs(f - 1) < 0.01: continue
-    flytt = lambda z: round(h1 + (z - h0) * f, 2) if z > h0 else round(z + h1 - h0, 2)   # over gesims: følger taket; under: følger veggen
-    if x.get('piper'): x['piper'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['piper']]
-    if x.get('arker'): x['arker'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['arker']]
-    if x.get('vind'): x['vind'] = [v for v in x['vind'] if v[2] + v[8] / 2 <= x['h'] - 0.3]
 data['logg'].append(f'bygd fra kilde, versjon {versjon}, modus {MODUS}, {len(rettelser)} rettelser lagt oppå')
 datatekst = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
 
