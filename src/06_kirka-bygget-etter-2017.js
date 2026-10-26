@@ -65,7 +65,7 @@ function bygKirke(k, grp){
   const nærTårn=(p)=>Math.hypot(p[0]-tc[0],p[1]-tc[1])<side*0.75;
 
   // ---- skipet ----
-  const WH=9.5, RISE=8.2, OH=0.35;
+  const WH=8.8, RISE=5.6, OH=0.35;   // målt i Kartverkets DOM−DTM 25.10: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
   const sk=k.skip;
   const eg=new THREE.ExtrudeGeometry(polyShape(sk),{depth:WH,bevelEnabled:false}); eg.rotateX(-Math.PI/2);
   add(eg,HVIT,HVIT_S);

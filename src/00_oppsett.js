@@ -27,9 +27,12 @@ const M_PER_MERC=1/maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat
 function tilLngLat(x,y){ const m=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0); const s=1/M_PER_MERC; return new maplibregl.MercatorCoordinate(m.x+x*s, m.y-y*s, 0).toLngLat(); }
 function tilModell(ll){ const o=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0), m=maplibregl.MercatorCoordinate.fromLngLat(ll,0); return [(m.x-o.x)*M_PER_MERC, -(m.y-o.y)*M_PER_MERC]; }
 // plakatvinkelen: samme utsnitt som den ortografiske v25 (VIEW 300 → 372 m synlig høyde ved zoom 1)
-const PITCH0=90-33, AZ0_GRADER=innerWidth/innerHeight<0.8 ? 130 : 40;
+// hjemmevisningen (26.10, Vegar: «sluttbildet i dette utsnittet»): byen sett fra elva, kirka oppe til høyre, litt brattere enn plakaten.
+// Før: plakatvinkelen (asimut 40/130, høyde 33°). ?hjem=plakat gir den gamle.
+const HJEM_PLAKAT=Q0.get('hjem')==='plakat';
+const PITCH0=90-(HJEM_PLAKAT?33:+(Q0.get('hoyde')||48)), AZ0_GRADER=HJEM_PLAKAT ? (innerWidth/innerHeight<0.8 ? 130 : 40) : +(Q0.get('az0')||(innerWidth/innerHeight<0.8 ? 290 : 200));
 function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*mpp)); }
-const Z_HJEM=zoomFor(1);
+const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||1.3));
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
   center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
   attributionControl:false, antialias:true, respectPrefersReducedMotion:false, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });

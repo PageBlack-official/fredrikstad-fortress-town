@@ -1,5 +1,9 @@
 # Endringslogg
 
+## 33 (26.10.2026, /prove/) – ny intro og hjemmevisning tilbake i kilden
+- Light leak i introen, ny hjemmevisning (byen sett fra elva, kirka oppe til høyre, 48°), kirkeskipet senket til målt høyde, vinduer og dører fra v33. Publisert 26.10 kl. 18.43 fra en økt som aldri pushet kilden; hentet tilbake fra den publiserte fila og lagt i main. Vinduene ligger som rettelser med grunn.
+- Regel 12 (kontaktskygge) måler 0,1–0,2 % med v33 i hodeløs Chrome mot 2,5 % med v32. Ikke løst; må sjekkes i ekte nettleser.
+
 ## På prøve (26.10.2026, /prove/, ikke godkjent) – huskortet bruker statens nøkler
 - Hvert bygg har fast id fra Matrikkelen (bygningsnummer), se LESMEG. Huskortet viser offisiell adresse (Kartverket), virksomhetene som holder til i bygget (Brønnøysund), bygningsnummer og om bygget er registrert kulturminne.
 - Virksomheter: bare steder en besøkende går inn i (butikk, servering, overnatting, museum). Enkeltpersonforetak uten ansatte og selskapsnavn som ikke er stedsnavn, vises ikke (rettelser med grunn), før virksomhetene legger seg inn selv.

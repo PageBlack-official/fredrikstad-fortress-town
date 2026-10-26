@@ -84,7 +84,8 @@ def hoyden_styrer(data, grunn):
         flytt = lambda z: round(h1 + (z - h0) * f, 2) if z > h0 else round(z + h1 - h0, 2)   # over gesims følger taket, under veggen
         if x.get('piper'): x['piper'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['piper']]
         if x.get('arker'): x['arker'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['arker']]
-        if x.get('vind'): x['vind'] = [v for v in x['vind'] if v[2] + v[8] / 2 <= x['h'] - 0.3]
+        if x.get('vind') and x['vind'] is g.get('vind'):   # vinduer satt med egen rettelse er allerede lest mot målt høyde (v33)
+            x['vind'] = [v for v in x['vind'] if v[2] + v[8] / 2 <= x['h'] - 0.3]
     return data
 
 

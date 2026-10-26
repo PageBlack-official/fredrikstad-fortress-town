@@ -34,7 +34,7 @@ const clock=new THREE.Clock(); let _synlig=false;
 const Q=Q0; let introDone=false;
 if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
   const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
-const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : [10,0];   // ?tx=&ty= setter startpunktet (test)
+const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : (HJEM_PLAKAT ? [10,0] : [25,25]);   // ny hjemmevisning (26.10): midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.
