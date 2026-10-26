@@ -37,6 +37,15 @@ Grunndataene i data/ er generert (OSM, trykkfila, kvartaltegningene) og kan lage
 
 Operasjoner: sett (felt = verdi) og skjul. Flytting og nye objekter kommer med redigeringsmodusen. Rettelser slettes aldri, de overstyres av en nyere linje.
 
+## Vinduer og dører på hus uten tegning (27.10)
+Fasit er husene lest fra kvartaltegningene (`fasade_kilde: kvartaltegning` og v33-rettelser). De andre (`antatt`) får vinduer og dører fra reglene målt på fasiten:
+
+    python3 rapport/vinduer/mal_tegningene.py    måler fasit-husene på nytt (rapport/vinduer/maalinger.json)
+    python3 verktoy/vinduer_regler.py           lager vind for de antatte husene som rettelser (idempotent; --tørt viser bare)
+    python3 rapport/vinduer/kontrollark.py      fasadetegninger før/etter og fasit til sammenligning
+
+Endres h på et antatt hus, kjøres vinduer_regler.py på nytt (rettelser følger ikke høyden av seg selv; regel 17 sier fra).
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 

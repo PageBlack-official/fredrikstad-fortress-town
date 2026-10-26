@@ -1,0 +1,246 @@
+{
+ "hus": 121,
+ "vinduer": 2518,
+ "dorer": 121,
+ "vindu_bredde": [
+  [
+   0.85,
+   1717
+  ],
+  [
+   0.95,
+   271
+  ],
+  [
+   1.5,
+   156
+  ],
+  [
+   0.69,
+   91
+  ]
+ ],
+ "vindu_hoyde": [
+  [
+   1.4,
+   1912
+  ],
+  [
+   1.5,
+   116
+  ],
+  [
+   0.81,
+   91
+  ],
+  [
+   1.9,
+   61
+  ]
+ ],
+ "brystning": [
+  [
+   0.9,
+   1096
+  ],
+  [
+   3.9,
+   489
+  ],
+  [
+   6.9,
+   132
+  ],
+  [
+   0.8,
+   87
+  ],
+  [
+   1.72,
+   42
+  ],
+  [
+   3.8,
+   25
+  ]
+ ],
+ "dor_bredde": [
+  [
+   1.05,
+   62
+  ],
+  [
+   1.1,
+   23
+  ],
+  [
+   1.0,
+   5
+  ]
+ ],
+ "dor_hoyde": [
+  [
+   2.2,
+   62
+  ],
+  [
+   2.1,
+   23
+  ],
+  [
+   2.9,
+   12
+  ]
+ ],
+ "dor_underkant": [
+  [
+   0.0,
+   121
+  ]
+ ],
+ "dor_bue_andel": 0.16,
+ "etasjer_som_formelen_andel": 0.82,
+ "etasjer_over_formelen_andel": 0.07,
+ "cc_p10_25_50_75_90": [
+  2.54,
+  2.71,
+  2.82,
+  3.01,
+  4.43
+ ],
+ "cc_lik_innen_vegg_andel": 0.69,
+ "kant_til_senter_p10_25_50_75_90": [
+  0.85,
+  0.85,
+  0.85,
+  1.87,
+  3.2
+ ],
+ "kant_085_andel": 0.56,
+ "symmetri_andel_under_0_3m": 0.52,
+ "loddrett_andel": 0.72,
+ "veggklasser": {
+  "hoved/hus": {
+   "vegger_over_3m": 103,
+   "med_vindu": 0.93,
+   "med_dor": 0.49
+  },
+  "hoved/uthus": {
+   "vegger_over_3m": 15,
+   "med_vindu": 0.87,
+   "med_dor": 0.13
+  },
+  "gate/hus": {
+   "vegger_over_3m": 91,
+   "med_vindu": 0.9,
+   "med_dor": 0.35
+  },
+  "gate/uthus": {
+   "vegger_over_3m": 6,
+   "med_vindu": 1.0,
+   "med_dor": 0.0
+  },
+  "side/hus": {
+   "vegger_over_3m": 108,
+   "med_vindu": 0.76,
+   "med_dor": 0.03
+  },
+  "side/uthus": {
+   "vegger_over_3m": 20,
+   "med_vindu": 0.9,
+   "med_dor": 0.0
+  },
+  "bak/hus": {
+   "vegger_over_3m": 118,
+   "med_vindu": 0.81,
+   "med_dor": 0.06
+  },
+  "bak/uthus": {
+   "vegger_over_3m": 10,
+   "med_vindu": 1.0,
+   "med_dor": 0.2
+  },
+  "felles/hus": {
+   "vegger_over_3m": 173,
+   "med_vindu": 0.04,
+   "med_dor": 0.01
+  },
+  "felles/uthus": {
+   "vegger_over_3m": 44,
+   "med_vindu": 0.05,
+   "med_dor": 0.02
+  }
+ },
+ "lengde": {
+  "0-2": {
+   "vegger": 70,
+   "med_vindu": 0.01,
+   "akser_median": 0
+  },
+  "2-3": {
+   "vegger": 56,
+   "med_vindu": 0.23,
+   "akser_median": 1.0
+  },
+  "3-4": {
+   "vegger": 56,
+   "med_vindu": 0.79,
+   "akser_median": 1.0
+  },
+  "4-6": {
+   "vegger": 62,
+   "med_vindu": 0.82,
+   "akser_median": 2.0
+  },
+  "6-9": {
+   "vegger": 78,
+   "med_vindu": 0.88,
+   "akser_median": 2.0
+  },
+  "9-13": {
+   "vegger": 101,
+   "med_vindu": 0.82,
+   "akser_median": 3.0
+  },
+  "13-20": {
+   "vegger": 98,
+   "med_vindu": 0.87,
+   "akser_median": 4.0
+  },
+  "20-999": {
+   "vegger": 76,
+   "med_vindu": 0.92,
+   "akser_median": 7.5
+  }
+ },
+ "dor_klasse": {
+  "hoved": 64,
+  "gate": 38,
+  "side": 5,
+  "bak": 11,
+  "felles": 3
+ },
+ "dor_rel_p10_25_50_75_90": [
+  0.19,
+  0.43,
+  0.5,
+  0.59,
+  0.71
+ ],
+ "dor_i_vindusrytmen_andel": 0.53,
+ "dor_aksen_naer_midten_andel": 0.68,
+ "dor_vindu_over_andel": 0.31,
+ "dorer_per_hus": {
+  "0": 57,
+  "1": 32,
+  "2": 18,
+  "3": 7,
+  "4": 4,
+  "5": 2,
+  "6": 1
+ },
+ "gatevalg": {
+  "gate": 107,
+  "mest åpne vegg": 14
+ }
+}

@@ -1,5 +1,10 @@
 # Endringslogg
 
+## Uten versjon (27.10.2026, ikke publisert) – vinduer og dører etter reglene fra kvartaltegningene
+- De 142 antatte husene har fått vinduer og dører etter reglene Gamlebyens hus følger i tegningene, målt på 121 fasit-hus: vindu 0,85 × 1,4 m, brystning 0,9 m, etasjehøyde 3,0 m, akser med lik avstand rundt 2,8 m fra 0,85 m inn fra hjørnet, symmetrisk om veggens midtakse, samme akser i alle etasjer, ingen vinduer under 3 m vegg eller mot nabohus, én dør 1,05 × 2,2 m på gatesiden i midtaksen (ikke på uthus). Rapport: rapport/vinduer/regler-fra-tegningene.md, kontrollark i rapport/vinduer/.
+- Regel 17 (vinduer i rytme) passer på dette for de antatte husene. På de gamle dataene: 94 brudd (91 vinduer/dører mot nabohus). Nå 0.
+- verktoy/vegger.py: felles kode for veggene på et hus (gatesiden, felles vegg, gårdsrom), brukt av verktøyet, målingen og regelen.
+
 ## 33 (26.10.2026, /prove/) – ny intro og hjemmevisning tilbake i kilden
 - Light leak i introen, ny hjemmevisning (byen sett fra elva, kirka oppe til høyre, 48°), kirkeskipet senket til målt høyde, vinduer og dører fra v33. Publisert 26.10 kl. 18.43 fra en økt som aldri pushet kilden; hentet tilbake fra den publiserte fila og lagt i main. Vinduene ligger som rettelser med grunn.
 - Regel 12 (kontaktskygge) måler 0,1–0,2 % med v33 i hodeløs Chrome mot 2,5 % med v32. Ikke løst; må sjekkes i ekte nettleser.

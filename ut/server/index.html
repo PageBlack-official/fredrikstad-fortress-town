@@ -1594,7 +1594,7 @@ function velg(x,y){
   const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
   kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
   kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
-  kort.querySelector('.b').textContent = b.tekst || (her.length ? '' : 'Historie, bilder og bruk kommer her.');
+  kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig (27.10)
   const hl=kort.querySelector('.her'); hl.innerHTML=''; her.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; hl.appendChild(li); });
   const m=b.matrikkel&&b.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
   kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';

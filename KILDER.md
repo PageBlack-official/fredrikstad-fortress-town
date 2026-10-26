@@ -5,7 +5,7 @@
 | bygg.p (fotavtrykk) | OpenStreetMap | Ikke FKB. 9 bygg uten bygning i flyfoto er skjult (`skjul`, med grunn). Resten ikke verifisert enkeltvis. |
 | bygg.h (høyde) | Kvartaltegningene via `tegnet_h` (h = tegnet_h/1,72) der de finnes; ellers OSM | 18 hus står med OSM-rundetall 3,0/6,0 m |
 | bygg.vegg / tak (farge) | Trykkfila 2015 (kartbrosjyren), 128 rettet manuelt | Godkjente fasadefarger per bygg (Vegar 2015) |
-| bygg.vind (vinduer/dører) | Kvartaltegningene (strektegninger/Kvartal*.ai) for 97 hus (`fasade_kilde: kvartaltegning`); generisk rutenett for 170 (`antatt`) | Må kvalitetssikres kvartal for kvartal |
+| bygg.vind (vinduer/dører) | Kvartaltegningene (strektegninger/Kvartal*.ai) for 97 hus (`fasade_kilde: kvartaltegning`) + 25 lest på ny i v33 (rettelser); de 142 andre (`antatt`) har vinduer og dører etter reglene målt på tegningene (verktoy/vinduer_regler.py, rapport/vinduer/regler-fra-tegningene.md, rettelser med grunn «regler fra kvartaltegningene (27.10)») | De antatte er regler, ikke tegning: må fortsatt kvalitetssikres kvartal for kvartal |
 | bygg.navn / nr / tekst | Tegnforklaringen i kartbrosjyren 2015 (1–46), norsk | Engelsk/tysk finnes i PDF-en, ikke lagt inn |
 | bygg.tak2 / gavl2 / sk (takform) | Beregnet (rett skjelett) fra fotavtrykket | |
 | bygg.deler (rådhustårn) | Trykkfila | |
