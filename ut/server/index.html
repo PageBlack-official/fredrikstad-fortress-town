@@ -26,6 +26,9 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #kort p{margin:2px 0;font-size:13px;color:var(--muted)}
 #kort .lukk{position:absolute;right:12px;top:10px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}
 #kort .farge{display:flex;gap:6px;margin-top:10px;align-items:center;font-size:12px;color:var(--muted)}
+#kort .her{list-style:none;margin:8px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
+#kort .her:empty,#kort .id:empty,#kort .b:empty{display:none}
+#kort .id{margin-top:8px;font-size:11px;letter-spacing:.02em;opacity:.8}
 #kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
 
 /* MapLibre-knappene i kartets papirtone */
@@ -41,7 +44,7 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 <div id="kart" aria-label="Kart over Gamlebyen"></div>
 <button id="hjem" aria-label="Vis hele byen" title="Vis hele byen (Esc)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Hele byen</span></button>
 <div id="hint">Dra for å flytte · ctrl og dra for å snu byen · ⌘ og rull, klyp eller +/− for å zoome · dobbeltklikk nærmere, shift og dobbeltklikk lenger vekk</div><script>if(matchMedia("(pointer:coarse)").matches)document.getElementById("hint").textContent="Én finger flytter kartet · to fingre snur og zoomer · trykk på et hus";</script>
-<div id="kort"><button class="lukk" aria-label="Lukk">×</button><h2></h2><p class="a"></p><p class="b"></p><div class="farge"></div></div>
+<div id="kort"><button class="lukk" aria-label="Lukk">×</button><h2></h2><p class="a"></p><p class="b"></p><ul class="her"></ul><div class="farge"></div><p class="id"></p></div>
 <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","maplibre-gl":"https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.mjs"}}</script>
 
@@ -960,7 +963,7 @@ DATA.bygg.forEach((b,i)=>{
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
-    const SLOPE=0.82; const pos=[];
+    const SLOPE=b.th||0.82; const pos=[];   // takhelning per hus (th) fra Kartverkets høydemodell der den er målt (24.10)
     b.tak2.forEach(f0=>{
       // hver takflate utvides 6 cm i sitt eget plan, så nabotak i en rekke overlapper og ingen lyse sprekker vises langs møner og grenser
       const f=utvidFlate(f0,0.06);
@@ -978,7 +981,7 @@ DATA.bygg.forEach((b,i)=>{
       const gm=new THREE.Mesh(gg,mat(wall,dim,b.veggs,{ds:true})); gm.castShadow=gm.receiveShadow=true; legg(gm);
     }
   } else if (b.sk && !b.flatt){
-    const SLOPE=0.82, CAP=7.5; const pos=[];
+    const SLOPE=b.th||0.82, CAP=7.5*(b.th||0.82)/0.82; const pos=[];
     b.sk.forEach(f=>{
       const v2=f.map(q=>new THREE.Vector2(q[0],q[1])); let tri=THREE.ShapeUtils.triangulateShape(v2,[]); if(tri.length<f.length-2){ tri=[]; for(let j=1;j<f.length-1;j++) tri.push([0,j,j+1]); }
       tri.forEach(t=>{ const P=t.map(k=>{const q=f[k]; return new THREE.Vector3(q[0], h+Math.min(q[2]*SLOPE,CAP), -q[1]);}); const nrm=new THREE.Vector3().subVectors(P[1],P[0]).cross(new THREE.Vector3().subVectors(P[2],P[0])); if(nrm.y<0) P.reverse(); P.forEach(v=>pos.push(v.x,v.y,v.z)); });
@@ -990,7 +993,7 @@ DATA.bygg.forEach((b,i)=>{
   rects.forEach(([rx,ry,rw,rh,ang])=>{
     const long=Math.max(rw,rh), short=Math.min(rw,rh);
     if (short<2.5 || short>24) return;
-    const rise=Math.min(short*0.48,7.5);
+    const rise=Math.min(short*0.48,7.5)*(b.th||0.82)/0.82;
     const a = THREE.MathUtils.degToRad(ang) + (rw<rh? Math.PI/2:0);
     const L=long/2+0.25, S=short/2+0.35;
     const geo=new THREE.BufferGeometry();
@@ -1546,7 +1549,10 @@ window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); retur
 
 // ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
 const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
-const kort=document.getElementById('kort'); const hjem=document.getElementById('hjem');
+const kort=document.getElementById('kort');
+// adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
+const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
+const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const hjem=document.getElementById('hjem');
 // treff: strålen mot alt i byen; i de sammenslåtte nettene gir trekantnummeret hvilket bygg som ble truffet (husDeler, 07)
 function byggFraTreff(hit){
   if(hit.object.isInstancedMesh && hit.object.geometry.getAttribute('aBygg')){ const k=hit.object.geometry.getAttribute('aBygg').getX(hit.instanceId)-1; return k>=0 ? buildings.find(g=>g.userData.i===k) : null; }
@@ -1566,9 +1572,13 @@ function velg(x,y){
   if(!h){kort.classList.remove('vis'); return;}
   const g=h.g; valgt=g; g.userData.lift=true;
   const b=g.userData.b;
-  kort.querySelector('h2').textContent = b.navn || b.adr || 'Bygg i Gamlebyen';
-  kort.querySelector('.a').textContent = b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
-  kort.querySelector('.b').textContent = b.tekst || 'Historie, bilder og bruk kommer her.';
+  const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
+  kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
+  kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
+  kort.querySelector('.b').textContent = b.tekst || (her.length ? '' : 'Historie, bilder og bruk kommer her.');
+  const hl=kort.querySelector('.her'); hl.innerHTML=''; her.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; hl.appendChild(li); });
+  const m=b.matrikkel&&b.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
+  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
   kort.classList.add('vis');

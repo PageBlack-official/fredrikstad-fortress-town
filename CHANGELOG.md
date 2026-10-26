@@ -1,5 +1,10 @@
 # Endringslogg
 
+## På prøve (26.10.2026, /prove/, ikke godkjent) – huskortet bruker statens nøkler
+- Hvert bygg har fast id fra Matrikkelen (bygningsnummer), se LESMEG. Huskortet viser offisiell adresse (Kartverket), virksomhetene som holder til i bygget (Brønnøysund), bygningsnummer og om bygget er registrert kulturminne.
+- Virksomheter: bare steder en besøkende går inn i (butikk, servering, overnatting, museum). Enkeltpersonforetak uten ansatte og selskapsnavn som ikke er stedsnavn, vises ikke (rettelser med grunn), før virksomhetene legger seg inn selv.
+- verktoy/adresser.py hent/koble er byvertens verktøy: kjøres når registrene endrer seg, kobler alt på byggets id.
+
 ## 32 (24.10.2026) – kamera uten bråstopp, kontaktskygger (godkjent av Vegar i hånda, /prove/)
 - Alle animerte kameraflytt bruker én kurve (glid: eksponentiell inn og ut). Dobbeltklikk-zoom er vår egen (800 ms, MapLibres 300 ms med bråstopp er av), hjem 1,3 s, glidning til huskortet 0,9 s, introen samme kurve. ?glid=0 gir de gamle. Regel 11.
 - Kontaktskygger: bånd 1,3 m rundt hver husfot og skive under hvert tre, geometri på bakken (multipliseres inn), stabilt i fart. ?kontakt=0 slår av. Regel 12.

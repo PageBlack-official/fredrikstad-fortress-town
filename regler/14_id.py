@@ -16,9 +16,14 @@ if borte: feil.append(f"- {len(borte)} id-er er slettet (skal skjules, aldri sle
 uregistrert = sorted(set(i for i in ids if i) - set(reg))
 if uregistrert: feil.append(f"- {len(uregistrert)} id-er står ikke i id-registeret (del dem ut med verktoy/matrikkel.py koble)")
 finnes = set(ids)
+emneid = {'bygg': finnes}
 for r in data('rettelser'):
     if 'i' in r: feil.append(f"- rettelse peker på plass i lista (i={r['i']}), ikke id"); break
-    if r.get('id') not in finnes: feil.append(f"- rettelse peker på id som ikke finnes: {r.get('id')}")
+    if r['emne'] not in emneid: emneid[r['emne']] = {x.get('id') for x in data(r['emne'], raa=True)}
+    if r.get('id') not in emneid[r['emne']]: feil.append(f"- rettelse peker på {r['emne']}-id som ikke finnes: {r.get('id')}")
+for emne in ('adresser', 'virksomheter'):
+    for x in data(emne, raa=True):
+        if x['bygg_id'] not in finnes: feil.append(f"- {emne} peker på bygg som ikke finnes: {x['bygg_id']}")
 for emne in ('porter', 'legende'):
     for x in data(emne, raa=True):
         if 'bygg' in x: feil.append(f"- {emne} bruker plass i lista (bygg), ikke bygg_id"); break

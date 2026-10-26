@@ -1,6 +1,9 @@
 // ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
 const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
-const kort=document.getElementById('kort'); const hjem=document.getElementById('hjem');
+const kort=document.getElementById('kort');
+// adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
+const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
+const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const hjem=document.getElementById('hjem');
 // treff: strålen mot alt i byen; i de sammenslåtte nettene gir trekantnummeret hvilket bygg som ble truffet (husDeler, 07)
 function byggFraTreff(hit){
   if(hit.object.isInstancedMesh && hit.object.geometry.getAttribute('aBygg')){ const k=hit.object.geometry.getAttribute('aBygg').getX(hit.instanceId)-1; return k>=0 ? buildings.find(g=>g.userData.i===k) : null; }
@@ -20,9 +23,13 @@ function velg(x,y){
   if(!h){kort.classList.remove('vis'); return;}
   const g=h.g; valgt=g; g.userData.lift=true;
   const b=g.userData.b;
-  kort.querySelector('h2').textContent = b.navn || b.adr || 'Bygg i Gamlebyen';
-  kort.querySelector('.a').textContent = b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
-  kort.querySelector('.b').textContent = b.tekst || 'Historie, bilder og bruk kommer her.';
+  const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
+  kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
+  kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
+  kort.querySelector('.b').textContent = b.tekst || (her.length ? '' : 'Historie, bilder og bruk kommer her.');
+  const hl=kort.querySelector('.her'); hl.innerHTML=''; her.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; hl.appendChild(li); });
+  const m=b.matrikkel&&b.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
+  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
   kort.classList.add('vis');
