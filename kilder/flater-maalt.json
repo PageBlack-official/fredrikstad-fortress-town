@@ -1,0 +1,31 @@
+{"_merknad":"Bakkeflater målt for hånd i ortofoto 2024 (kilder/ortofoto-2024, utsnitt med 5 m rutenett), modellmeter (x øst, y nord). Antatt nøyaktighet ±2 m. «linje» + «bredde» = rad med biler (senterlinje gjennom bilene). verktoy/flater.py parkering lager data/parkering.json og data/flater.json av denne fila. Målt 27.10.2026 av Claude.",
+"parkering":{
+ "parkering-1-1953":{"p":[[455,-124],[477,-129],[538,-58],[522,-44]],"flate":"asfalt","grunn":"ortofoto 2024: oppmerket langparkering, to rader og kjørebane"},
+ "parkering-1-5309":{"p":[[494,-170],[532,-187],[520,-220],[474,-196],[478,-184]],"flate":"asfalt","grunn":"ortofoto 2024: oppmerket plass nord for Kongstenhallen"},
+ "parkering-1-5310":{"p":[[310,-271],[326,-272],[344,-287],[349,-316],[330,-319],[312,-321],[298,-310],[296,-296],[301,-283]],"flate":"asfalt","grunn":"ortofoto 2024: åpen asfaltplass vest for Kongstenhallen"},
+ "parkering-1-211":{"p":[[-189,311],[-150,322.5],[-121,329],[-111,327],[-111,307],[-188,284]],"flate":"asfalt","grunn":"ortofoto 2024: oppmerket plass ved Tolboden (vestsiden av elva); østenden er usikker"},
+ "parkering-1-1921":{"linje":[[127,239],[143,221]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad på grusplassen ved Smedjegaten"},
+ "parkering-1-8500":{"linje":[[115,248],[125,239.5]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad langs grøntkanten"},
+ "parkering-1-15548":{"linje":[[106,256],[115,248]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad langs grøntkanten"},
+ "parkering-1-4625":{"p":[[170,140],[178,158],[240,158],[240,124],[215,118],[172,136]],"flate":"grus","grunn":"ortofoto 2024: grusplass nordøst i byen, biler langs alle kanter; nordkanten er usikker"},
+ "parkering-1-4599":{"linje":[[113,62],[96,36]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Raadhusgaten"},
+ "parkering-1-4602":{"linje":[[156,123],[134,92]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Raadhusgaten"},
+ "parkering-1-4626":{"linje":[[116,156],[150,139.5]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Færgeportgaten"},
+ "parkering-1-4608":{"linje":[[129,-80],[145,-42]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad under trærne langs Voldgaten"},
+ "parkering-1-4620":{"linje":[[82,-57],[113,-69]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Kasernegaten"},
+ "parkering-1-4641":{"linje":[[-24,132],[-42,104]],"bredde":5,"flate":"gate","grunn":"ortofoto 2024: skråparkering langs Toldbodgaten"},
+ "parkering-1-10742":{"linje":[[205,82],[197,52]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Voldgaten"},
+ "parkering-1-4618":{"linje":[[71,177],[93,165.5]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering nord for Tamburparken"},
+ "parkering-1-12023":{"linje":[[9,201],[-5,179]],"bredde":5,"flate":"heller","grunn":"ortofoto 2024: biler på rad på Toldbodbrygga"}
+},
+"uten_flate":{
+ "parkering-1-4601":"Kirkegaten (25): gateparkering under trekronene ved kirka, radene synes ikke i ortofotoet",
+ "parkering-1-4606":"Laboratoriegaten (30): langs grusveien (fl-4), ingen biler i ortofotoet (april), plasseringen av radene er ukjent",
+ "parkering-1-4607":"Laboratoriegaten (30): langs grusveien (fl-4), ingen biler i ortofotoet (april), plasseringen av radene er ukjent"
+},
+"flater":[
+ {"id":"fl-1","typ":"grus","navn":"grusplassen ved Smedjegaten","p":[[86,251],[104,260],[116,259],[128,247],[140,243],[148,236],[152,226],[140,219],[131,222],[110,236]],"grunn":"ortofoto 2024: lys grus, ikke brostein"},
+ {"id":"fl-2","typ":"heller","navn":"Toldbodbrygga","p":[[-37,166],[13,227],[31,231],[31,224],[6,191],[-12,180],[-24,152],[-36,152]],"grunn":"ortofoto 2024: belagt kai, var tegnet som vollgress"},
+ {"id":"fl-3","typ":"asfalt","navn":"kaia med båtopplag (vest)","p":[[-80,118],[-70,112],[-82,88],[-112,62],[-118,30],[-136,10],[-146,-30],[-164,-30],[-154,-10],[-136,26],[-112,70]],"grunn":"ortofoto 2024: belagt kai med båter og biler, var tegnet som vollgress"},
+ {"id":"fl-4","typ":"grus","navn":"Laboratoriegaten","p":[[-150,-160],[-20,-176],[-20,-184],[-150,-167]],"grunn":"ortofoto 2024: grusvei under trerekka; parkeringen langs (2 x 30 plasser) synes ikke i fotoet"}
+]}

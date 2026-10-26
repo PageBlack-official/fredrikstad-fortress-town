@@ -40,5 +40,4 @@ const plenMat=new THREE.ShaderMaterial({
     }`
 });
 medSkygge(plenMat);
-DATA.gront.forEach(g=>{ const m=flat(g.p,0.28,plenMat); });
-(DATA.gardsrom||[]).forEach(g=>{ if(g.typ==='gress') flat(g.p,0.3,plenMat); });
+// plenene og gårdsrommene tegnes i 17_bakkeflater-og-parkering.js (sammen med parkering og flatene målt i ortofotoet)

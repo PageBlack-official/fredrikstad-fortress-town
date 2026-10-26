@@ -28,9 +28,12 @@ const M_PER_MERC=1/maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat
 function tilLngLat(x,y){ const m=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0); const s=1/M_PER_MERC; return new maplibregl.MercatorCoordinate(m.x+x*s, m.y-y*s, 0).toLngLat(); }
 function tilModell(ll){ const o=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.lon,ORIGO.lat],0), m=maplibregl.MercatorCoordinate.fromLngLat(ll,0); return [(m.x-o.x)*M_PER_MERC, -(m.y-o.y)*M_PER_MERC]; }
 // plakatvinkelen: samme utsnitt som den ortografiske v25 (VIEW 300 → 372 m synlig høyde ved zoom 1)
-const PITCH0=90-33, AZ0_GRADER=innerWidth/innerHeight<0.8 ? 130 : 40;
+// hjemmevisningen (26.10, Vegar: «sluttbildet i dette utsnittet»): byen sett fra elva, kirka oppe til høyre, litt brattere enn plakaten.
+// Før: plakatvinkelen (asimut 40/130, høyde 33°). ?hjem=plakat gir den gamle.
+const HJEM_PLAKAT=Q0.get('hjem')==='plakat';
+const PITCH0=90-(HJEM_PLAKAT?33:+(Q0.get('hoyde')||48)), AZ0_GRADER=HJEM_PLAKAT ? (innerWidth/innerHeight<0.8 ? 130 : 40) : +(Q0.get('az0')||(innerWidth/innerHeight<0.8 ? 290 : 200));
 function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*mpp)); }
-const Z_HJEM=zoomFor(1);
+const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||1.3));
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
   center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
   attributionControl:false, antialias:true, respectPrefersReducedMotion:false, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
@@ -472,8 +475,7 @@ const plenMat=new THREE.ShaderMaterial({
     }`
 });
 medSkygge(plenMat);
-DATA.gront.forEach(g=>{ const m=flat(g.p,0.28,plenMat); });
-(DATA.gardsrom||[]).forEach(g=>{ if(g.typ==='gress') flat(g.p,0.3,plenMat); });
+// plenene og gårdsrommene tegnes i 17_bakkeflater-og-parkering.js (sammen med parkering og flatene målt i ortofotoet)
 
 // ---- bygg ----
 const city = new THREE.Group(); scene.add(city);
@@ -713,7 +715,7 @@ function bygKirke(k, grp){
   const nærTårn=(p)=>Math.hypot(p[0]-tc[0],p[1]-tc[1])<side*0.75;
 
   // ---- skipet ----
-  const WH=9.5, RISE=8.2, OH=0.35;
+  const WH=8.8, RISE=5.6, OH=0.35;   // målt i Kartverkets DOM−DTM 25.10: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
   const sk=k.skip;
   const eg=new THREE.ExtrudeGeometry(polyShape(sk),{depth:WH,bevelEnabled:false}); eg.rotateX(-Math.PI/2);
   add(eg,HVIT,HVIT_S);
@@ -1391,7 +1393,7 @@ const clock=new THREE.Clock(); let _synlig=false;
 const Q=Q0; let introDone=false;
 if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
   const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
-const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : [10,0];   // ?tx=&ty= setter startpunktet (test)
+const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : (HJEM_PLAKAT ? [10,0] : [25,25]);   // ny hjemmevisning (26.10): midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.
@@ -1439,6 +1441,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
   map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
+  const lk=document.getElementById('lekkasje'); if(lk && Q0.get('lekkasje')!=='0'){ lk.classList.add('paa'); }   // ?lekkasje=0 slår av
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
@@ -1493,13 +1496,17 @@ map.on('load', ()=>{
 window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
 window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
 window.__scene=()=>({scene, city});   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 
 // ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
 const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
-const kort=document.getElementById('kort'); const hjem=document.getElementById('hjem');
+const kort=document.getElementById('kort');
+// adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
+const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
+const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const hjem=document.getElementById('hjem');
 // treff: strålen mot alt i byen; i de sammenslåtte nettene gir trekantnummeret hvilket bygg som ble truffet (husDeler, 07)
 function byggFraTreff(hit){
   if(hit.object.isInstancedMesh && hit.object.geometry.getAttribute('aBygg')){ const k=hit.object.geometry.getAttribute('aBygg').getX(hit.instanceId)-1; return k>=0 ? buildings.find(g=>g.userData.i===k) : null; }
@@ -1519,9 +1526,13 @@ function velg(x,y){
   if(!h){kort.classList.remove('vis'); return;}
   const g=h.g; valgt=g; g.userData.lift=true;
   const b=g.userData.b;
-  kort.querySelector('h2').textContent = b.navn || b.adr || 'Bygg i Gamlebyen';
-  kort.querySelector('.a').textContent = b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
-  kort.querySelector('.b').textContent = b.tekst || 'Historie, bilder og bruk kommer her.';
+  const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
+  kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
+  kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
+  kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig (27.10)
+  const hl=kort.querySelector('.her'); hl.innerHTML=''; her.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; hl.appendChild(li); });
+  const m=b.matrikkel&&b.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
+  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
   kort.classList.add('vis');
@@ -1583,4 +1594,40 @@ function dbgVeksle(){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createEleme
 addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey) dbgVeksle(); });
 // mobil: ?d=1 slår ruta på fra start (ingen tastatur), større skrift, og glen-feil + nær/fjern tas med
 if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace'; dbg.el.style.maxWidth='96vw'; dbg.el.style.whiteSpace='pre-wrap'; }
+
+// ---- bakkeflater og parkering (27.10): plenene (OSM, rettet mot ortofoto 2024), gresset i gårdsrommene slik ortofotoet viser det,
+// flatene målt i ortofotoet (grus, heller, asfalt) og parkeringsplassene fra kommunens lag. Flate farger, tynn strek fra
+// etterbehandlingen (høydesprang mellom flatene), ingen tekst på bakken. Skjulte objekter (rettelse «skjul») tegnes ikke.
+{
+  // én flat farge med svak flekk i stor skala, som plenene; tar kastskygge
+  const flateMat=(rgb)=>medSkygge(new THREE.ShaderMaterial({
+    uniforms:{ c1:{value:new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`)} },
+    vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+    fragmentShader:`uniform vec3 c1; varying vec3 wp;
+      float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      void main(){ float m=n(wp.xz*0.03)*0.6+n(wp.xz*0.12)*0.4; gl_FragColor=vec4(c1*(0.95+0.08*m),1.);
+      #include <colorspace_fragment>
+      }`
+  }));
+  const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152] };
+  const MAT={}; const matFor=k=>MAT[k]||(MAT[k]=flateMat(FARGE[k]));
+  // flaten legges på terrenget (vollene og kaiene ligger på terrengnettet), aldri lavere enn y0
+  const legg=(pts, y0, mat)=>{
+    if(!pts || pts.length<3) return null;
+    const g=new THREE.ShapeGeometry(polyShape(pts)); g.rotateX(-Math.PI/2);
+    const P=g.attributes.position; for(let i=0;i<P.count;i++) P.setY(i, Math.max(y0, hAt(P.getX(i), -P.getZ(i))+y0));
+    P.needsUpdate=true; g.computeVertexNormals();
+    const m=new THREE.Mesh(g, mat); m.receiveShadow=true; scene.add(m); return m;
+  };
+  // plenene (flyttet hit fra 04)
+  DATA.gront.forEach(g=>{ if(!g.skjul) flat(g.p,0.28,plenMat); });
+  // gårdsrommene: målt gress (felt «gress») tegnes som polygoner; uten måling gjelder typen for hele gårdsrommet
+  (DATA.gardsrom||[]).forEach(g=>{ if(g.skjul) return;
+    if(g.gress) g.gress.forEach(p=>flat(p,0.3,plenMat)); else if(g.typ==='gress') flat(g.p,0.3,plenMat); });
+  // flater målt i ortofotoet
+  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ]) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
+  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
+}
 

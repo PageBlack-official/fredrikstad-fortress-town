@@ -37,6 +37,17 @@ Grunndataene i data/ er generert (OSM, trykkfila, kvartaltegningene) og kan lage
 
 Operasjoner: sett (felt = verdi) og skjul. Flytting og nye objekter kommer med redigeringsmodusen. Rettelser slettes aldri, de overstyres av en nyere linje.
 
+## Bakkeflatene mot ortofoto 2024 (27.10)
+Fasit for torg, gater, plener, gårdsrom og parkering er kommunens ortofoto 2024 (bare kontroll, ikke i git, se KILDER.md).
+
+    python3 verktoy/flater.py hent        ortofotofliser + kommunens parkeringslag
+    python3 verktoy/flater.py id          faste id-er til grønt (gr-) og gårdsrom (ga-)
+    python3 verktoy/flater.py parkering   data/parkering.json og data/flater.json fra kilder/flater-maalt.json (flater målt for hånd)
+    python3 verktoy/flater.py maal        gress i gårdsrommene og klipping av grønt over parkering, som rettelser
+    python3 verktoy/flater.py ark etter   kontrollark per område i rapport/flater/
+
+Tegnes i src/17_bakkeflater-og-parkering.js (plener, gårdsrom, målte flater, parkering). Regel 15 måler avvikene.
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
