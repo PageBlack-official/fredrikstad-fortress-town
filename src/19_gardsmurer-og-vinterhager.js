@@ -29,7 +29,7 @@
   (DATA.vinterhager||[]).forEach(v=>{
     if(v.skjul) return;
     const p=v.p, H=v.h; const y0=Math.min(...p.map(q=>hAt(q[0],q[1])));
-    const glass=mat([96,112,108],false,[60,72,70]), ramme=mat([44,64,52],false), tak=mat([70,86,76],false);
+    const glass=mat([168,182,170],false,[120,132,124]), ramme=mat([52,78,60],false), tak=mat([92,112,98],false);   // lyst glass med varmt innhold bak, grønne sprosser (SG&CO-illustrasjonene)
     const sh=polyShape(p); const eg=new THREE.ExtrudeGeometry(sh,{depth:H,bevelEnabled:false}); eg.rotateX(-Math.PI/2); eg.translate(0,y0,0);
     const kropp=new THREE.Mesh(eg,[tak,glass]); kropp.castShadow=kropp.receiveShadow=true; anlegg.add(kropp);
     // sprosser: stolper hver 1,1 m langs de tre frie sidene, losholt i dørhøyde og takgesims
