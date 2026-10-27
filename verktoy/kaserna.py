@@ -83,7 +83,9 @@ def main():
     lang = [k for k in torg if k['L'] >= 25]                                            # langfløyene mot torget
     inngang = set(id(k) for k in hjorne + lang)
     # glasshuset står mot hjørnets gårdsfasade (den kanten som vender mot sørvest og er nærmest gården midt i)
-    gard_hjorne = min((k for k in K if k['n'][1] < -0.7 and 15 < k['L'] < 25), key=lambda k: k['mid'][0])
+    # (gården ligger mellom fløyene og brannstasjonen: nærmest brannstasjonens midte, ikke gavlene)
+    bc = [sum(q[0] for q in brann['p']) / len(brann['p']), sum(q[1] for q in brann['p']) / len(brann['p'])]
+    gard_hjorne = min((k for k in K if k['n'][1] < -0.7 and 17 < k['L'] < 25), key=lambda k: math.hypot(k['mid'][0] - bc[0] + 10, k['mid'][1] - bc[1]))
     GH_B, GH_D, GH_H = 17.0, 6.5, 4.4
     vind, arker = [], []
     for k in K:
