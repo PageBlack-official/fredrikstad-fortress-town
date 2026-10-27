@@ -6,3 +6,7 @@ kilder/ortofoto-2024/*.jpg
 # utsnitt av kommunens ortofoto: lisens ikke avklart, bare lokalt (27.10)
 rapport/flater/*.jpg
 rapport/15_flater.jpg
+# vannmaske avledet av ortofotoet og kontrollark for vann: samme forbehold (27.10)
+kilder/ortofoto-2024/*.png
+rapport/vann/*.jpg
+rapport/16_vann.jpg

@@ -43,24 +43,34 @@ def til_merc(x, y):
     return x / datalag._S + datalag._MX0, y / datalag._S + datalag._MY0
 
 
-def hent():
+def hent_fliser(omraade=OMRAADE):
+    """Ortofotoflisene over omraade (modellmeter). Samme rutenett (256 m fra OMRAADE-hjørnet), samme oppløsning og samme transform
+    for alle verktøy; fliser som står i ortofoto-2024.json fra før, blir stående (verktoy/vann.py henter elva rundt hele kartrammen)."""
     os.makedirs(ORTO, exist_ok=True)
-    x0, y0, x1, y1 = OMRAADE; n = int(FLIS / MPP); fliser = []
-    for ty in range(y0, y1, FLIS):
-        for tx in range(x0, x1, FLIS):
+    mf = os.path.join(ORTO, 'ortofoto-2024.json')
+    gml = {f['fil']: f for f in json.load(open(mf, encoding='utf8'))['fliser']} if os.path.exists(mf) else {}
+    n = int(FLIS / MPP)
+    rute = lambda v, a: a + math.floor((v - a) / FLIS) * FLIS   # rutenettet står fast på OMRAADE-hjørnet
+    for ty in range(rute(omraade[1], OMRAADE[1]), omraade[3], FLIS):
+        for tx in range(rute(omraade[0], OMRAADE[0]), omraade[2], FLIS):
             navn = f'flis_{tx}_{ty}.jpg'; fil = os.path.join(ORTO, navn)
             a, b = til_merc(tx, ty); c, d = til_merc(tx + FLIS, ty + FLIS)
             if not os.path.exists(fil):
                 q = urllib.parse.urlencode({'bbox': f'{a},{b},{c},{d}', 'bboxSR': 3857, 'imageSR': 3857, 'size': f'{n},{n}',
                                             'format': 'jpg', 'f': 'image', 'transparent': 'false'})
                 _hent(ORTO_URL + '?' + q, fil); print('hentet', navn)
-            fliser.append({'fil': navn, 'x0': tx, 'y0': ty, 'x1': tx + FLIS, 'y1': ty + FLIS})
+            gml[navn] = {'fil': navn, 'x0': tx, 'y0': ty, 'x1': tx + FLIS, 'y1': ty + FLIS}
     meta = {'kilde': 'Fredrikstad kommune, Bakgrunnskart/Ortofoto_2024 (ArcGIS MapServer export)', 'url': ORTO_URL,
             'hentet': time.strftime('%Y-%m-%d'), 'lisens': 'ikke avklart: bare til kontroll, aldri vist i kartet, ikke i git',
             'srs': 'EPSG:3857 (bboxSR=imageSR=3857)', 'm_per_px': MPP, 'piksler': n,
             'transform': 'modell x = flis.x0 + (kolonne + 0,5) * m_per_px; modell y = flis.y1 - (rad + 0,5) * m_per_px (rad 0 øverst = nord)',
-            'fliser': fliser}
-    json.dump(meta, open(os.path.join(ORTO, 'ortofoto-2024.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+            'fliser': sorted(gml.values(), key=lambda f: (f['y0'], f['x0']))}
+    json.dump(meta, open(mf, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+
+
+def hent():
+    hent_fliser(OMRAADE)
+    x0, y0, x1, y1 = OMRAADE
     # parkering: alle tre lagene, hele området (modell -> grader via 3857)
     import pyproj
     tr = pyproj.Transformer.from_crs(3857, 4326, always_xy=True)
