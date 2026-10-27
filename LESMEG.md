@@ -67,6 +67,15 @@ Fasit for strandlinja (Glomma, vollgravene, kaiene, Isegran) er det samme ortofo
 
 Tegnes i src/03_bakke-vann-grønt.js: naturlig kant skyller inn med skum, kai og mur står rett og rolig. Regel 16 måler.
 
+## Bryggene mot ortofoto 2024 (27.10)
+Fergeleiet (Gamlebyen og Sentrum), gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma. OSM gir strukturen (omriss, flytende eller fast); ortofotoet avgjør om brygga finnes og hvor. Det OSM mangler, er målt for hånd i fotoet (kilder/brygger-maalt.json, med grunn), og «sett» der er lista over bryggene som synes i fotoet, som regel 18 teller mot. Faste id-er (br-) med ankerpunkt (kilder/brygger-anker.json) som vannflatene. Typer: fast (på stolper, ca. 1 m over vannet), flytebrygge (ca. 0,4 m), utrigger (smal bom).
+
+    python3 verktoy/brygger.py hent     OSM over kartrammen (kilder/brygger-osm.json)
+    python3 verktoy/brygger.py maal     data/brygger.json (utriggerne i en «rad» flyttes til der fotoet viser bommene)
+    python3 verktoy/brygger.py ark      kontrollark før/etter per område i rapport/brygger/ (bildene med ortofoto ligger bare lokalt)
+
+Tegnes i src/18_brygger.js. Regel 18 måler dekning, at ingen brygge står på land (data/vann.json), og at fotoet viser brygge under hver av dem.
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 

@@ -15,6 +15,7 @@
 | landskap.terreng (voller) | Beregnet fra OSM-voller + brosjyren | |
 | porter | Regel: bygg med «port» i navnet + vei gjennom fotavtrykket | |
 | broer | Regel: gang-/sykkelnett som krysser vann, land til land, 5–35 m | Vindebroen = nærmest legendepunkt 26 |
+| brygger | OpenStreetMap (man_made=pier, ODbL; kilder/brygger-osm.json) sjekket mot ortofoto 2024, og målt for hånd i ortofotoet der OSM mangler (kilder/brygger-maalt.json, verktoy/brygger.py) | Utriggerne nord for Gamlebyen er plassert der fotoet viser bommene; ortofotoet er fra april, så sommerbrygger kan mangle |
 | assets/pensel.png | The Intergalactic Liquid & Irregular Brushes (Vegars kjøpte pakke) | |
 | assets/ikon-*.png, logo | FortressTown_Gamlebyen_Fredrikstad.ai (Page Black 2016) | Ikonet er C5-monogrammet fra O-en i TOWN |
 | kilder/flyfoto-google-2026-10-23 | Google Maps flyfoto, skjermbilder | Bare til kontroll, ikke til visning |
