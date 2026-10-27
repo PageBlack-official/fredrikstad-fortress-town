@@ -11,9 +11,9 @@ if None in ids: feil.append(f"- {ids.count(None)} bygg uten id")
 dobbel = sorted({i for i in ids if i and ids.count(i) > 1})
 if dobbel: feil.append(f"- id brukt flere ganger: {', '.join(dobbel)}")
 reg = [l.strip() for l in open(os.path.join(ROT, 'kilder', 'id-register.txt'), encoding='utf8') if l.strip()]
-# bakkeflatene har også faste id-er i samme register (27.10): gr- grøntflater, ga- gårdsrom, fl- flater målt i ortofotoet (verktoy/flater.py), vn- vannflater (verktoy/vann.py lag)
+# bakkeflatene har også faste id-er i samme register (27.10): gr- grøntflater, ga- gårdsrom, fl- flater målt i ortofotoet (verktoy/flater.py), vn- vannflater (verktoy/vann.py lag), br- brygger (verktoy/brygger.py maal)
 flate_ids = []
-for emne in ('gront', 'gardsrom', 'flater', 'vann'):
+for emne in ('gront', 'gardsrom', 'flater', 'vann', 'brygger'):
     try: fx = data(emne, raa=True)
     except FileNotFoundError: continue
     fi = [x.get('id') for x in fx]
@@ -24,7 +24,7 @@ for emne in ('gront', 'gardsrom', 'flater', 'vann'):
 borte = sorted(set(reg) - set(ids) - set(flate_ids))
 if borte: feil.append(f"- {len(borte)} id-er er slettet (skal skjules, aldri slettes): {', '.join(borte[:10])}")
 uregistrert = sorted(set(i for i in ids + flate_ids if i) - set(reg))
-if uregistrert: feil.append(f"- {len(uregistrert)} id-er står ikke i id-registeret (del dem ut med verktoy/matrikkel.py koble eller verktoy/flater.py id)")
+if uregistrert: feil.append(f"- {len(uregistrert)} id-er står ikke i id-registeret (del dem ut med verktoy/matrikkel.py koble, verktoy/flater.py id, verktoy/vann.py lag eller verktoy/brygger.py maal)")
 finnes = set(ids)
 emneid = {'bygg': finnes}
 for r in data('rettelser'):
