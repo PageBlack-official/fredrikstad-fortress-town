@@ -824,16 +824,18 @@ const vindMat=new THREE.ShaderMaterial({
       float d=dot(normalize(vN),solRetning());
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
       vec3 sf=mix(vec3(1.),solFarge(),0.6);
-      if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
+      if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
+      else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
       float fw=max(fwidth(m.x),fwidth(m.y));
       float kant=min(min(m.x,vSz.x-m.x),min(m.y,vSz.y-m.y));
-      if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
+      if(typ>2.5) kant=vSz.x*0.5-length(m-vSz*0.5);
+      else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
       vec3 c;
-      if(typ<0.5){
+      if(typ<0.5 || typ>2.5){
         float ramme=0.08;
-        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*0.62);
+        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*(typ>2.5?0.5:0.62));
         float spr=max(1.-smoothstep(0.03,0.03+fw,pv),1.-smoothstep(0.03,0.03+fw,ph));
         float inn=smoothstep(ramme,ramme+fw,kant);
         c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn);
@@ -843,6 +845,12 @@ const vindMat=new THREE.ShaderMaterial({
         if(typ>1.5) dorf=mix(vec3(0.14,0.13,0.13), vec3(0.22,0.20,0.19), lit);
         c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
         c=mix(c, dorf*0.75, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.6);
+        if(bue>1.5){   // grønn fløydør med overlys (bue=2, Kaserna etter ombyggingen)
+          dorf=mix(vec3(0.10,0.17,0.13), vec3(0.19,0.30,0.23)*sf, lit);
+          c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
+          c=mix(c, dorf*0.7, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.7);
+          float ol=vSz.y-0.78; if(m.y>ol){ c=mix(glas, hvit, 1.-smoothstep(0.05,0.05+fw,min(kant,abs(m.y-ol)))); }
+        }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.08,0.2,fw)*0.6);
       gl_FragColor=vec4(c,1.);
@@ -1110,7 +1118,9 @@ function wallAlong(pts, hgt, thick, color, y0=0){
   }
 }
 (DATA.murer||[]).forEach(w=>{ if(w.t==='ruin') wallAlong(w.p, 3.6, 2.2, [196,188,174]); else wallAlong(w.p, w.t==='fence'?1.8:2.4, 0.6, w.t==='fence'?[206,192,170]:[214,206,192]); });
-(DATA.gjerder||[]).forEach(p=>wallAlong(p, 1.5, 0.35, [196,184,166]));
+// gjerdelinjer som ligger i sporet til en teglmur (data/teglmurer.json), tegnes ikke: teglmuren erstatter dem (27.10, Kaserna)
+const _iMur=(q)=>(DATA.teglmurer||[]).some(m=>{ const [a,c]=m.p, dx=c[0]-a[0], dy=c[1]-a[1], L2=dx*dx+dy*dy; const t=Math.max(0,Math.min(1,((q[0]-a[0])*dx+(q[1]-a[1])*dy)/L2)); return Math.hypot(q[0]-a[0]-t*dx,q[1]-a[1]-t*dy)<3; });
+(DATA.gjerder||[]).forEach(p=>{ if(p.every(_iMur)) return; wallAlong(p, 1.5, 0.35, [196,184,166]); });
 flatGruppe(murer);   // ett nett per murfarge
 
 // ---- porter: huset står oppå en portblokk med buet passasje (retning = veien gjennom bygget) ----
@@ -1640,5 +1650,116 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
   (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ]) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
   (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
+}
+
+// ---- brygger (27.10): fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
+// (verktoy/brygger.py: OSM rettet mot ortofoto 2024 og målt for hånd). Husstilen som broene: treplanker i flat farge med mørke
+// skjøter på tvers, blekkstreken kommer fra etterbehandlingen. Faste brygger står på stolper ca. 1 m over vannet, flytebrygger
+// ligger lavt (ca. 0,4 m) som en ponton uten stolper, utriggerne er smale bommer på vannet. Bryggene kaster skygge og står
+// oppå vannflaten (y = 0,15); vannets skum ligger under dem. Et mykt mørke på vannet rundt hver brygge (kontaktskyggen fra
+// husene) gir skyggen der vannet selv ikke tar kastskygge. Skjulte brygger (rettelse «skjul») tegnes ikke.
+{
+  const VANN_Y=0.15, PLANKE=0.9, STOLPE_AVSTAND=2.6;
+  const FARGE={ tre:[[150,112,78],[96,70,48]], metall:[[168,170,168],[92,94,96]], plast:[[218,186,78],[140,112,40]] };
+  const T_DEKK={ fast:0.28, flytebrygge:0.42, utrigger:0.32 };   // dekket for faste brygger; flytebrygga og bommen er pontonen helt ned i vannet
+  const g=new THREE.Group(); g.name='brygger';
+  const mork=f=>mat((FARGE[f]||FARGE.tre)[1],false), lys=f=>mat((FARGE[f]||FARGE.tre)[0],false);
+  // én kloss (lengde langs retningen v i modellplanet), sentrert i (x,y), mellom høydene y0 og y1
+  const kloss=(x,y,v,lengde,bredde,y0,y1,m)=>{ const k=new THREE.Mesh(new THREE.BoxGeometry(lengde,y1-y0,bredde),m);
+    k.position.set(x,(y0+y1)/2,-y); k.rotation.y=v; k.castShadow=k.receiveShadow=true; g.add(k); return k; };
+  const kontakt={pos:[], alfa:[]};
+  (DATA.brygger||[]).forEach(b=>{
+    if(b.skjul || !b.p || b.p.length<3) return;
+    const topp=VANN_Y+b.z, t=b.typ==='fast' ? T_DEKK.fast : topp-VANN_Y+0.1, bunn=topp-t;
+    // dekket (fast) eller pontonen (flytebrygge, utrigger): omrisset ekstrudert, plant oppå
+    const geo=new THREE.ExtrudeGeometry(polyShape(b.p),{depth:t, bevelEnabled:false}); geo.rotateX(-Math.PI/2);
+    const dekk=new THREE.Mesh(geo, lys(b.flate)); dekk.position.y=bunn; dekk.castShadow=dekk.receiveShadow=true; g.add(dekk);
+    // planker: mørke skjøter på tvers av bryggas lange side, klippet mot omrisset (tre; metall og plast er glatte)
+    const a=b.retning||0, ux=Math.cos(a), uy=Math.sin(a), vx=-uy, vy=ux;
+    if(b.flate==='tre' && b.typ!=='utrigger'){
+      const U=b.p.map(q=>q[0]*ux+q[1]*uy), V=b.p.map(q=>q[0]*vx+q[1]*vy), n=b.p.length;
+      for(let s=Math.min(...U)+PLANKE/2; s<Math.max(...U); s+=PLANKE){
+        const kr=[];
+        for(let i=0;i<n;i++){ const j=(i+1)%n, di=U[i]-s, dj=U[j]-s; if((di<0)!==(dj<0)) kr.push(V[i]+(V[j]-V[i])*di/(di-dj)); }
+        kr.sort((p,q)=>p-q);
+        for(let k=0;k+1<kr.length;k+=2){ const L=kr[k+1]-kr[k]-0.08; if(L<0.2) continue; const w=(kr[k]+kr[k+1])/2;
+          kloss(s*ux+w*vx, s*uy+w*vy, Math.atan2(vy,vx), L, 0.05, topp, topp+0.015, mork(b.flate)); }
+      }
+    }
+    // stolper under faste brygger: langs kantene, litt inn fra kanten, ned i vannet
+    if(b.typ==='fast'){
+      let areal=0; for(let i=0;i<b.p.length;i++){ const p=b.p[i], q=b.p[(i+1)%b.p.length]; areal+=p[0]*q[1]-q[0]*p[1]; }
+      const inn=areal>0 ? 1 : -1;   // mot klokka: innsiden er til venstre for kanten
+      for(let i=0;i<b.p.length;i++){ const p=b.p[i], q=b.p[(i+1)%b.p.length], dx=q[0]-p[0], dy=q[1]-p[1], L=Math.hypot(dx,dy); if(L<0.8) continue;
+        const nx=-dy/L*inn*0.16, ny=dx/L*inn*0.16, m=Math.max(1,Math.round(L/STOLPE_AVSTAND));
+        for(let k=0;k<m;k++){ const f=Math.max(k/m, 0.12/L); const x=p[0]+dx*f+nx, y=p[1]+dy*f+ny;   // én stolpe i hvert hjørne og hver ~2,6 m
+          kloss(x, y, Math.atan2(dy,dx), 0.2, 0.2, VANN_Y-0.3, bunn, mork(b.flate)); } }
+    }
+    // mørket på vannet rundt brygga (skygge og kontakt), bredere under de høye
+    const f=fotBaand(b.p, b.typ==='fast' ? 1.1 : 0.55, VANN_Y+0.01); kontakt.pos.push(...f.pos); kontakt.alfa.push(...f.alfa);
+  });
+  flatGruppe(g); city.add(g);
+  if(kontakt.pos.length){ const kg=new THREE.BufferGeometry(); kg.setAttribute('position', new THREE.Float32BufferAttribute(kontakt.pos,3)); kg.setAttribute('aAlfa', new THREE.Float32BufferAttribute(kontakt.alfa,1));
+    const km=new THREE.Mesh(kg, kontaktMat); km.frustumCulled=false; km.renderOrder=1; city.add(km); }
+  g.traverse(c=>c.layers.enable(1));   // speilingen i vannet (14_speilinger) tar med bryggene
+}
+
+// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) og granittsokkel (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
+{
+  const anlegg=new THREE.Group(); scene.add(anlegg);
+  const fra=id=>DATA.bygg.find(b=>b.id===id)||{};
+  // murene: tegl som huset de hører til, lys dekkstein på toppen. Porten er en høyere pilar med rundbue gjennom.
+  (DATA.teglmurer||[]).forEach(mu=>{
+    if(mu.skjul) return;
+    const hus=fra(mu.farge_fra); const tegl=mat(hus.vegg||[200,120,100],false,hus.veggs,{ds:true}), dekk=mat([214,208,198],false,undefined,{ds:true});
+    const [a,c]=mu.p; const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx);
+    const del=(s0,s1)=>{ if(s1-s0<0.2) return;
+      const mx=a[0]+dx*(s0+s1)/2/L, my=a[1]+dy*(s0+s1)/2/L, y0=hAt(mx,my);
+      const w=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,mu.h,mu.tykk),tegl); w.position.set(mx,y0+mu.h/2,-my); w.rotation.y=ang; w.castShadow=w.receiveShadow=true; anlegg.add(w);
+      const k=new THREE.Mesh(new THREE.BoxGeometry(s1-s0+0.1,0.16,mu.tykk+0.16),dekk); k.position.set(mx,y0+mu.h+0.08,-my); k.rotation.y=ang; k.castShadow=true; anlegg.add(k); };
+    const pt=mu.port;
+    if(!pt){ del(0,L); return; }
+    const sp=pt.s*L, P=pt.pilar; del(0,sp-P/2); del(sp+P/2,L);
+    // portpilaren: rektangel med rundbuehull, ekstrudert gjennom muren
+    const sh=new THREE.Shape(); sh.moveTo(-P/2,0); sh.lineTo(P/2,0); sh.lineTo(P/2,pt.pilar_h); sh.lineTo(-P/2,pt.pilar_h); sh.closePath();
+    const r=pt.bredde/2, yb=pt.hoyde-r; const hul=new THREE.Path(); hul.moveTo(-r,0); hul.lineTo(-r,yb); hul.absarc(0,yb,r,Math.PI,0,true); hul.lineTo(r,0); hul.closePath(); sh.holes.push(hul);
+    const D=mu.tykk+0.4; const eg=new THREE.ExtrudeGeometry(sh,{depth:D,bevelEnabled:false,curveSegments:16}); eg.translate(0,0,-D/2);
+    const mx=a[0]+dx*pt.s, my=a[1]+dy*pt.s, y0=hAt(mx,my);
+    const m=new THREE.Mesh(eg,tegl); m.position.set(mx,y0,-my); m.rotation.y=ang; m.castShadow=m.receiveShadow=true; anlegg.add(m);
+    const k=new THREE.Mesh(new THREE.BoxGeometry(P+0.2,0.22,D+0.2),dekk); k.position.set(mx,y0+pt.pilar_h+0.11,-my); k.rotation.y=ang; k.castShadow=true; anlegg.add(k);
+    // lys buekant (stikk) rundt åpningen på begge sider
+    const bk=new THREE.Shape(); bk.absarc(0,yb,r+0.32,0,Math.PI,false); bk.lineTo(-r,yb); bk.absarc(0,yb,r,Math.PI,0,true); bk.closePath();
+    [1,-1].forEach(sd=>{ const g=new THREE.Mesh(new THREE.ShapeGeometry(bk,16),dekk); g.position.set(mx,y0,-my); g.rotation.y=ang; g.translateZ(sd*(D/2+0.01)); if(sd<0) g.rotateY(Math.PI); anlegg.add(g); });
+  });
+  // glasshus: mørkt grønne sprosser, glass, flatt tak med lanterne (som i illustrasjonene)
+  (DATA.vinterhager||[]).forEach(v=>{
+    if(v.skjul) return;
+    const p=v.p, H=v.h; const y0=Math.min(...p.map(q=>hAt(q[0],q[1])));
+    const glass=mat([168,182,170],false,[120,132,124]), ramme=mat([52,78,60],false), tak=mat([92,112,98],false);   // lyst glass med varmt innhold bak, grønne sprosser (SG&CO-illustrasjonene)
+    const sh=polyShape(p); const eg=new THREE.ExtrudeGeometry(sh,{depth:H,bevelEnabled:false}); eg.rotateX(-Math.PI/2); eg.translate(0,y0,0);
+    const kropp=new THREE.Mesh(eg,[tak,glass]); kropp.castShadow=kropp.receiveShadow=true; anlegg.add(kropp);
+    // sprosser: stolper hver 1,1 m langs de tre frie sidene, losholt i dørhøyde og takgesims
+    const gx=p.reduce((s,q)=>s+q[0],0)/p.length, gy=p.reduce((s,q)=>s+q[1],0)/p.length;
+    for(let i=1;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length];   // første kant står mot husveggen
+      const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx), n=Math.max(1,Math.round(L/1.1));
+      let nx=dy/L, ny=-dx/L; if(nx*((a[0]+c[0])/2-gx)+ny*((a[1]+c[1])/2-gy)<0){ nx=-nx; ny=-ny; }   // utover fra glasshusets midte
+      for(let j=0;j<=n;j++){ const s=j/n; const st=new THREE.Mesh(new THREE.BoxGeometry(0.12,H,0.12),ramme); st.position.set(a[0]+dx*s+nx*0.03, y0+H/2, -(a[1]+dy*s+ny*0.03)); anlegg.add(st); }
+      [2.5, H-0.12].forEach(z=>{ const b=new THREE.Mesh(new THREE.BoxGeometry(L,z>3?0.3:0.1,0.14),ramme); b.position.set((a[0]+c[0])/2+nx*0.03, y0+z, -((a[1]+c[1])/2+ny*0.03)); b.rotation.y=ang; anlegg.add(b); });
+    }
+    const cx=p.reduce((s,q)=>s+q[0],0)/p.length, cy=p.reduce((s,q)=>s+q[1],0)/p.length;
+    const a=Math.atan2(p[1][1]-p[0][1],p[1][0]-p[0][0]), L=Math.hypot(p[1][0]-p[0][0],p[1][1]-p[0][1]);
+    const lt=new THREE.Mesh(new THREE.BoxGeometry(L*0.45,0.45,1.8),glass); lt.position.set(cx,y0+H+0.22,-cy); lt.rotation.y=a; lt.castShadow=true; anlegg.add(lt);
+  });
+  // granittsokkel: lys stein rundt foten av huset (bygg med feltet sokkel)
+  DATA.bygg.forEach(b=>{
+    if(!b.sokkel || b.skjul || !b.p) return;
+    const stein=mat(b.sokkel.farge,false); const p=b.p;
+    const A=p.reduce((s,q,i)=>{ const c=p[(i+1)%p.length]; return s+q[0]*c[1]-c[0]*q[1]; },0), sg=A<0?1:-1;   // med klokka: utover er til venstre
+    for(let i=0;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length]; const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy); if(L<0.3) continue;
+      const nx=-dy/L*sg, ny=dx/L*sg;   // sokkelen står 0,16 m utenfor veggen, kjellervinduene ligger foran den
+      const mx=(a[0]+c[0])/2+nx*0.08, my=(a[1]+c[1])/2+ny*0.08, y0=hAt(mx,my);
+      const s=new THREE.Mesh(new THREE.BoxGeometry(L+0.32,b.sokkel.h,0.16),stein); s.position.set(mx,y0+b.sokkel.h/2,-my); s.rotation.y=Math.atan2(dy,dx); s.receiveShadow=true; anlegg.add(s); }
+  });
+  flatGruppe(anlegg);
 }
 
