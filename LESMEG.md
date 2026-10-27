@@ -57,6 +57,16 @@ Fasit for torg, gater, plener, gårdsrom og parkering er kommunens ortofoto 2024
 
 Tegnes i src/17_bakkeflater-og-parkering.js (plener, gårdsrom, målte flater, parkering). Regel 15 måler avvikene.
 
+## Vannet mot ortofoto 2024 (27.10)
+Fasit for strandlinja (Glomma, vollgravene, kaiene, Isegran) er det samme ortofotoet. data/vann.json er OSM-vannet (kilder/vann-osm.json) rettet mot vannmasken fra fotoet, med fast id (vn-) og kanttype per kant: k = kai/mur/brygge, n = naturlig. Kanttypen og det fotoet ikke ser (smale grøfter i sivet) står for hånd med grunn i kilder/vann-maalt.json. Under trekroner og takutstikk (kartets egne trær og hus) gjelder OSM-kanten.
+
+    python3 verktoy/vann.py hent        ortofotoflisene over hele kartrammen
+    python3 verktoy/vann.py maske       vannmasken (kilder/ortofoto-2024/vannfasit.png, ikke i git)
+    python3 verktoy/vann.py lag         data/vann.json og data/vannfelt.json (g-kanalen = kai, r = avstand til land)
+    python3 verktoy/vann.py kontroll    kontrollark før/etter per strekning i rapport/vann/ (bildene ikke i git) og avvik.json
+
+Tegnes i src/03_bakke-vann-grønt.js: naturlig kant skyller inn med skum, kai og mur står rett og rolig. Regel 16 måler.
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
