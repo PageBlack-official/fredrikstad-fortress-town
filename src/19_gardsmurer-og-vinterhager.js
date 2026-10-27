@@ -44,6 +44,23 @@
     const a=Math.atan2(p[1][1]-p[0][1],p[1][0]-p[0][0]), L=Math.hypot(p[1][0]-p[0][0],p[1][1]-p[0][1]);
     const lt=new THREE.Mesh(new THREE.BoxGeometry(L*0.45,0.45,1.8),glass); lt.position.set(cx,y0+H+0.22,-cy); lt.rotation.y=a; lt.castShadow=true; anlegg.add(lt);
   });
+  // verandaer: lav platting i granitt med smijernsrekkverk og trapp ned foran døra (te-, verktoy/kaserna.py)
+  (DATA.terrasser||[]).forEach(v=>{
+    if(v.skjul) return;
+    const p=v.p, y0=Math.min(...p.map(q=>hAt(q[0],q[1]))), stein=mat([206,202,192],false), jern=mat([40,44,42],false);
+    const eg=new THREE.ExtrudeGeometry(polyShape(p),{depth:v.h,bevelEnabled:false}); eg.rotateX(-Math.PI/2); eg.translate(0,y0,0);
+    const pl=new THREE.Mesh(eg,[mat([196,190,180],false),stein]); pl.castShadow=pl.receiveShadow=true; anlegg.add(pl);
+    const tr=v.trapp, tb=tr.bredde, ang=Math.atan2(tr.ret[1],tr.ret[0]);
+    // rekkverk langs de tre frie sidene, åpning der trappa går ned
+    for(let i=1;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length]; const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy);
+      const deler = i===2 ? [[0,(L-tb)/2],[(L+tb)/2,L]] : [[0,L]];
+      deler.forEach(([s0,s1])=>{ if(s1-s0<0.2) return; const mx=a[0]+dx*(s0+s1)/2/L, my=a[1]+dy*(s0+s1)/2/L;
+        const r=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,0.06,0.06),jern); r.position.set(mx,y0+v.h+0.95,-my); r.rotation.y=Math.atan2(dy,dx); anlegg.add(r);
+        for(let s=s0;s<=s1+0.01;s+=1.2){ const st=new THREE.Mesh(new THREE.BoxGeometry(0.05,0.95,0.05),jern); st.position.set(a[0]+dx*s/L, y0+v.h+0.475, -(a[1]+dy*s/L)); anlegg.add(st); } });
+    }
+    for(let k=0;k<tr.trinn;k++){ const d=0.32*(k+1), hh=v.h*(tr.trinn-k)/(tr.trinn+1);
+      const t=new THREE.Mesh(new THREE.BoxGeometry(0.32,hh,tb),stein); t.position.set(tr.xy[0]+tr.ret[0]*(d-0.16), y0+hh/2, -(tr.xy[1]+tr.ret[1]*(d-0.16))); t.rotation.y=ang; t.receiveShadow=true; anlegg.add(t); }
+  });
   // granittsokkel: lys stein rundt foten av huset (bygg med feltet sokkel)
   DATA.bygg.forEach(b=>{
     if(!b.sokkel || b.skjul || !b.p) return;

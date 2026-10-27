@@ -1,7 +1,7 @@
 # Endringslogg
 
 ## Uten versjon (27.10.2026, ikke publisert) – Kaserna slik den blir som hotell
-- Infanterikasernen (bnr-193867537) tegnet etter SG&CO-illustrasjonene for Fredriksborg: to høye etasjer over lys granittsokkel, vinduene i faste akser (3,4 m) rundt hele bygget, kjellervinduer i sokkelen, fire grønne fløydører med overlys mot torget, oksøye i arkene over hjørneinngangene, takarker over annenhver akse, 12 piper (årets måneder). Rettelser med grunn, laget av verktoy/kaserna.py.
+- Infanterikasernen (bnr-193867537) tegnet etter SG&CO-illustrasjonene for Fredriksborg: to høye etasjer over lys granittsokkel, vinduene i faste akser (3,4 m) rundt hele bygget, kjellervinduer i sokkelen, to grønne fløydører med overlys mot torget (de to nye inngangene Riksantikvaren godkjente i 2025, én på hver side av hjørnet), veranda med trapp og rekkverk foran døra mot statuen (te-1), oksøye i arkene over hjørneinngangene, takarker over annenhver akse, 12 piper (årets måneder). Rettelser med grunn, laget av verktoy/kaserna.py.
 - Gården lukket: teglmur fra fløyene til brannstasjonen (mu-1, mu-2, sporet målt i ortofoto 2024), porten inn fra gata med rundbue midt i muren. Gjerdelinjene i samme spor tegnes ikke lenger.
 - Vinterhagen (vh-1): glasshus med grønne sprosser og taklanterne mot hjørnets gårdsfasade, dør fra hotellet ut i glasshuset.
 - Nye vindustyper i tegnekoden: oksøye (typ 3) og grønn fløydør med overlys (bue 2). Regel 14 passer på mu- og vh-id-ene.

@@ -7,7 +7,8 @@
 Fasaden følger illustrasjonene og bygget slik det står:
 - to høye etasjer over en lys granittsokkel, vinduene i faste akser (omtrent 3,4 m) og like store i hele bygget
 - små kjellervinduer i sokkelen under vinduene
-- fire innganger mot torget: midt på hver langfløy og midt på hver side av hjørnet, grønne fløydører med overlys
+- to nye innganger fra torget (godkjent av Riksantikvaren 2025): midt på hver side av hjørnet, grønne fløydører med overlys
+- veranda (uteservering på en lav steinplatting med trapp) foran inngangen som vender mot statuen
 - over inngangene i hjørnet et oksøye i en arke; ellers takarker over annenhver akse på langsidene
 - 12 piper på mønene (det kalendariske systemet: årets måneder)
 - gården lukkes av en teglmur fra fløyene til brannstasjonen; inngangen fra gata er en port med rundbue (målt i ortofoto 2024:
@@ -81,7 +82,9 @@ def main():
     torg = [k for k in K if k['n'][1] > 0.3 and k['L'] > 10]
     hjorne = sorted([k for k in torg if k['L'] < 25], key=lambda k: k['mid'][0])      # de to sidene av hjørnet mot torget
     lang = [k for k in torg if k['L'] >= 25]                                            # langfløyene mot torget
-    inngang = set(id(k) for k in hjorne + lang)
+    # Riksantikvaren (dispensasjon juni 2025, FB 21.06.25): to nye innganger fra Kongens torv, én på hver side av hjørnet
+    # (resepsjonen og bakeriet), kopier av eksisterende dører. Langfløyene har ingen dør mot torget.
+    inngang = set(id(k) for k in hjorne)
     # glasshuset står mot hjørnets gårdsfasade (den kanten som vender mot sørvest og er nærmest gården midt i)
     # (gården ligger mellom fløyene og brannstasjonen: nærmest brannstasjonens midte, ikke gavlene)
     bc = [sum(q[0] for q in brann['p']) / len(brann['p']), sum(q[1] for q in brann['p']) / len(brann['p'])]
@@ -143,8 +146,16 @@ def main():
     ]
     g = gard_hjorne; m = g['mid']; t = g['t']; n = g['n']
     hj = [[m[0] + t[0] * sa * GH_B / 2 + n[0] * dd, m[1] + t[1] * sa * GH_B / 2 + n[1] * dd] for sa, dd in ((-1, 0), (1, 0), (1, GH_D), (-1, GH_D))]
+    # verandaen: foran inngangen nærmest statuen (Fredrik II), lav platting i granitt med trapp ned mot torget foran døra
+    st = datalag.les('statue')[0]['xy']
+    vk = min(hjorne, key=lambda k: math.hypot(k['mid'][0] - st[0], k['mid'][1] - st[1]))
+    VB_, VD_, VH_ = min(12.0, vk['L'] - 2.0), 3.6, 0.55
+    m, t, n = vk['mid'], vk['t'], vk['n']
+    vp = [[m[0] + t[0] * sa * VB_ / 2 + n[0] * dd, m[1] + t[1] * sa * VB_ / 2 + n[1] * dd] for sa, dd in ((-1, 0.1), (1, 0.1), (1, VD_), (-1, VD_))]
+    terrasser = [{'id': 'te-1', 'navn': 'Verandaen mot torget', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in vp], 'h': VH_,
+                  'trapp': {'xy': [round(m[0] + n[0] * VD_, 2), round(m[1] + n[1] * VD_, 2)], 'ret': [round(n[0], 4), round(n[1], 4)], 'bredde': 2.4, 'trinn': 3}}]
     vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H}]
-    for navn, rader in (('teglmurer', murer), ('vinterhager', vinterhager)):
+    for navn, rader in (('teglmurer', murer), ('vinterhager', vinterhager), ('terrasser', terrasser)):
         with open(os.path.join(ROT, 'data', navn + '.json'), 'w', encoding='utf8') as fh:
             fh.write('[\n' + ',\n'.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) for r in rader) + '\n]\n')
     # rettelsene: én linje per felt, eldre Kaserna-linjer for samme felt erstattes
@@ -156,9 +167,9 @@ def main():
     reg = os.path.join(ROT, 'kilder', 'id-register.txt')
     har = set(l.strip() for l in open(reg, encoding='utf8'))
     with open(reg, 'a', encoding='utf8') as fh:
-        fh.write(''.join(i + '\n' for i in ('mu-1', 'mu-2', 'vh-1') if i not in har))
+        fh.write(''.join(i + '\n' for i in ('mu-1', 'mu-2', 'vh-1', 'te-1') if i not in har))
     vin = sum(1 for v in vind if v[9] in (0, 3)); dor = sum(1 for v in vind if v[9] == 1)
-    print(f'Kaserna: {vin} vinduer, {dor} dører, {len(arker)} takarker, {len(piper)} piper; 2 gårdsmurer med port, 1 vinterhage')
+    print(f'Kaserna: {vin} vinduer, {dor} dører, {len(arker)} takarker, {len(piper)} piper; 2 gårdsmurer med port, 1 vinterhage, 1 veranda')
 
 
 if __name__ == '__main__':
