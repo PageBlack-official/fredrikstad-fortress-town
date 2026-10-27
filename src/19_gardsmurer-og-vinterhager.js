@@ -44,22 +44,32 @@
     const a=Math.atan2(p[1][1]-p[0][1],p[1][0]-p[0][0]), L=Math.hypot(p[1][0]-p[0][0],p[1][1]-p[0][1]);
     const lt=new THREE.Mesh(new THREE.BoxGeometry(L*0.45,0.45,1.8),glass); lt.position.set(cx,y0+H+0.22,-cy); lt.rotation.y=a; lt.castShadow=true; anlegg.add(lt);
   });
-  // verandaer: lav platting i granitt med smijernsrekkverk og trapp ned foran døra (te-, verktoy/kaserna.py)
+  // verandaer: uteservering langs fasaden som i SG&CO-kveldsbildet: lavt dekke, plantekasser langs ytterkanten med åpning
+  // midt foran, parasoller med bord under (te-, verktoy/kaserna.py)
   (DATA.terrasser||[]).forEach(v=>{
     if(v.skjul) return;
-    const p=v.p, y0=Math.min(...p.map(q=>hAt(q[0],q[1]))), stein=mat([206,202,192],false), jern=mat([40,44,42],false);
+    const p=v.p, y0=Math.min(...p.map(q=>hAt(q[0],q[1])));
+    const dekk=mat([150,122,98],false), kasse=mat([70,58,48],false), gront=mat([86,124,72],false), duk=mat([222,214,198],false,undefined,{ds:true}), jern=mat([46,46,44],false), bord=mat([120,92,70],false);
     const eg=new THREE.ExtrudeGeometry(polyShape(p),{depth:v.h,bevelEnabled:false}); eg.rotateX(-Math.PI/2); eg.translate(0,y0,0);
-    const pl=new THREE.Mesh(eg,[mat([196,190,180],false),stein]); pl.castShadow=pl.receiveShadow=true; anlegg.add(pl);
-    const tr=v.trapp, tb=tr.bredde, ang=Math.atan2(tr.ret[1],tr.ret[0]);
-    // rekkverk langs de tre frie sidene, åpning der trappa går ned
-    for(let i=1;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length]; const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy);
-      const deler = i===2 ? [[0,(L-tb)/2],[(L+tb)/2,L]] : [[0,L]];
-      deler.forEach(([s0,s1])=>{ if(s1-s0<0.2) return; const mx=a[0]+dx*(s0+s1)/2/L, my=a[1]+dy*(s0+s1)/2/L;
-        const r=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,0.06,0.06),jern); r.position.set(mx,y0+v.h+0.95,-my); r.rotation.y=Math.atan2(dy,dx); anlegg.add(r);
-        for(let s=s0;s<=s1+0.01;s+=1.2){ const st=new THREE.Mesh(new THREE.BoxGeometry(0.05,0.95,0.05),jern); st.position.set(a[0]+dx*s/L, y0+v.h+0.475, -(a[1]+dy*s/L)); anlegg.add(st); } });
+    const pl=new THREE.Mesh(eg,[dekk,kasse]); pl.receiveShadow=true; anlegg.add(pl);
+    const top=y0+v.h, a0=p[0], a1=p[1], ux=(a1[0]-a0[0]), uy=(a1[1]-a0[1]), L=Math.hypot(ux,uy), tx=ux/L, ty=uy/L;
+    const nx=p[3][0]-p[0][0], ny=p[3][1]-p[0][1], D=Math.hypot(nx,ny), ex=nx/D, ey=ny/D, ang=Math.atan2(ty,tx);
+    const P=(s,d)=>[a0[0]+tx*s+ex*d, a0[1]+ty*s+ey*d];
+    // plantekasser: ytterkanten (åpning midt foran) og begge ender
+    const kasseLangs=(s0,s1,d)=>{ if(s1-s0<0.3) return; const [x,y]=P((s0+s1)/2,d);
+      const k=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,0.55,0.5),kasse); k.position.set(x,top+0.275,-y); k.rotation.y=ang; k.castShadow=true; anlegg.add(k);
+      const g=new THREE.Mesh(new THREE.BoxGeometry(s1-s0-0.1,0.35,0.42),gront); g.position.set(x,top+0.72,-y); g.rotation.y=ang; g.castShadow=true; anlegg.add(g); };
+    const ap=v.aapning||2.4; kasseLangs(0,(L-ap)/2,D-0.25); kasseLangs((L+ap)/2,L,D-0.25);
+    [0.25,L-0.25].forEach(s=>{ const [x,y]=P(s,(D-0.5)/2+0.2); const k=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.55,D-0.9),kasse); k.position.set(x,top+0.275,-y); k.rotation.y=ang; k.castShadow=true; anlegg.add(k);
+      const g=new THREE.Mesh(new THREE.BoxGeometry(0.42,0.35,D-1.0),gront); g.position.set(x,top+0.72,-y); g.rotation.y=ang; anlegg.add(g); });
+    // parasoller med bord: jevnt fordelt langs dekket, halvveis ut
+    const n=v.parasoller||4;
+    for(let i=0;i<n;i++){ const [x,y]=P(L*(i+0.5)/n, D*0.52);
+      const st=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,2.5,6),jern); st.position.set(x,top+1.25,-y); anlegg.add(st);
+      const sk=new THREE.Mesh(new THREE.ConeGeometry(1.55,0.55,8,1,true),duk); sk.position.set(x,top+2.55,-y); sk.castShadow=true; anlegg.add(sk);
+      [-0.75,0.75].forEach(o=>{ const b=new THREE.Mesh(new THREE.CylinderGeometry(0.38,0.38,0.06,10),bord); b.position.set(x+tx*o,top+0.74,-(y+ty*o)); b.castShadow=true; anlegg.add(b);
+        const f=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.72,5),jern); f.position.set(x+tx*o,top+0.36,-(y+ty*o)); anlegg.add(f); });
     }
-    for(let k=0;k<tr.trinn;k++){ const d=0.32*(k+1), hh=v.h*(tr.trinn-k)/(tr.trinn+1);
-      const t=new THREE.Mesh(new THREE.BoxGeometry(0.32,hh,tb),stein); t.position.set(tr.xy[0]+tr.ret[0]*(d-0.16), y0+hh/2, -(tr.xy[1]+tr.ret[1]*(d-0.16))); t.rotation.y=ang; t.receiveShadow=true; anlegg.add(t); }
   });
   // granittsokkel: lys stein rundt foten av huset (bygg med feltet sokkel)
   DATA.bygg.forEach(b=>{

@@ -8,7 +8,7 @@ Fasaden følger illustrasjonene og bygget slik det står:
 - to høye etasjer over en lys granittsokkel, vinduene i faste akser (omtrent 3,4 m) og like store i hele bygget
 - små kjellervinduer i sokkelen under vinduene
 - to nye innganger fra torget (godkjent av Riksantikvaren 2025): midt på hver side av hjørnet, grønne fløydører med overlys
-- veranda (uteservering på en lav steinplatting med trapp) foran inngangen som vender mot statuen
+- veranda: uteservering med plantekasser og parasoller langs hjørnesiden mot vest, der statuen står (SG&CO-kveldsbildet)
 - over inngangene i hjørnet et oksøye i en arke; ellers takarker over annenhver akse på langsidene
 - 12 piper på mønene (det kalendariske systemet: årets måneder)
 - gården lukkes av en teglmur fra fløyene til brannstasjonen; inngangen fra gata er en port med rundbue (målt i ortofoto 2024:
@@ -146,14 +146,14 @@ def main():
     ]
     g = gard_hjorne; m = g['mid']; t = g['t']; n = g['n']
     hj = [[m[0] + t[0] * sa * GH_B / 2 + n[0] * dd, m[1] + t[1] * sa * GH_B / 2 + n[1] * dd] for sa, dd in ((-1, 0), (1, 0), (1, GH_D), (-1, GH_D))]
-    # verandaen: foran inngangen nærmest statuen (Fredrik II), lav platting i granitt med trapp ned mot torget foran døra
-    st = datalag.les('statue')[0]['xy']
-    vk = min(hjorne, key=lambda k: math.hypot(k['mid'][0] - st[0], k['mid'][1] - st[1]))
-    VB_, VD_, VH_ = min(12.0, vk['L'] - 2.0), 3.6, 0.55
+    # verandaen (uteservering): langs hjørnesiden som vender mot vest, med statuen ved enden (SG&CO-kveldsbildet med Fredrik II),
+    # lavt dekke på torget, plantekasser rundt og parasoller; åpning midt foran
+    vk = min(hjorne, key=lambda k: k['n'][0])
+    VB_, VD_, VH_ = round(vk['L'] - 1.0, 2), 5.0, 0.18
     m, t, n = vk['mid'], vk['t'], vk['n']
-    vp = [[m[0] + t[0] * sa * VB_ / 2 + n[0] * dd, m[1] + t[1] * sa * VB_ / 2 + n[1] * dd] for sa, dd in ((-1, 0.1), (1, 0.1), (1, VD_), (-1, VD_))]
-    terrasser = [{'id': 'te-1', 'navn': 'Verandaen mot torget', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in vp], 'h': VH_,
-                  'trapp': {'xy': [round(m[0] + n[0] * VD_, 2), round(m[1] + n[1] * VD_, 2)], 'ret': [round(n[0], 4), round(n[1], 4)], 'bredde': 2.4, 'trinn': 3}}]
+    vp = [[m[0] + t[0] * sa * VB_ / 2 + n[0] * dd, m[1] + t[1] * sa * VB_ / 2 + n[1] * dd] for sa, dd in ((-1, 0.3), (1, 0.3), (1, VD_), (-1, VD_))]
+    terrasser = [{'id': 'te-1', 'navn': 'Uteserveringen mot torget', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in vp], 'h': VH_,
+                  'parasoller': 5, 'aapning': 2.4}]
     vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H}]
     for navn, rader in (('teglmurer', murer), ('vinterhager', vinterhager), ('terrasser', terrasser)):
         with open(os.path.join(ROT, 'data', navn + '.json'), 'w', encoding='utf8') as fh:
