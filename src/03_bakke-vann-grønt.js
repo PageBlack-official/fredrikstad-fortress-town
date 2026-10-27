@@ -13,7 +13,9 @@ function flat(pts, y, mat){
   const m = new THREE.Mesh(g, mat); m.position.y=y; m.receiveShadow=true; scene.add(m); return m;
 }
 // vann med levende overflate: malt blått som trykket, lysere grunt vann mot land, skumkant langs strendene og
-// en tynn ring litt ute (som Townscaper), Vegars penselstrøk svakt over, og myke speilinger av hus og trær
+// en tynn ring litt ute (som Townscaper), Vegars penselstrøk svakt over, og myke speilinger av hus og trær.
+// Kanttypen kommer fra data (data/vann.json «kant», målt mot ortofoto 2024 i verktoy/vann.py, bakt inn i vannfeltets g-kanal):
+// naturlig kant skyller inn med skum, kai og mur står rett og rolig
 const VF = DATA.vannfelt || null;
 const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
@@ -31,10 +33,11 @@ const waterMat = new THREE.ShaderMaterial({
     vec3 c=mix(c1,c2,a*.8);
     float s1=texture2D(strek, wp.xz/vec2(140.,110.)+vec2(t*.006,t*.002)).a; float s2=texture2D(strek, wp.xz/vec2(220.,180.)*vec2(-1.,1.)+vec2(-t*.004,t*.003)+.37).a;
     float s=max(s1*smoothstep(.25,.75,b), s2*.7*smoothstep(.3,.8,a));
-    float d=maks;
-    if(harFelt>0.5){ d=texture2D(tFelt, vec2((wp.x-felt.x)/felt.z, (-wp.z-felt.y)/felt.w)).r*maks; }
-    // grunt vann nær land: lysere og litt grønnere, med myk overgang
-    float grunn=1.-smoothstep(0.,24.,d);
+    float d=maks, kai=0.;
+    // vannfeltet (verktoy/vann.py): r = avstand til land, g = 1 der nærmeste strandkant er kai, mur eller brygge
+    if(harFelt>0.5){ vec4 fe=texture2D(tFelt, vec2((wp.x-felt.x)/felt.z, (-wp.z-felt.y)/felt.w)); d=fe.r*maks; kai=smoothstep(0.25,0.75,fe.g); }
+    // grunt vann nær land: lysere og litt grønnere, med myk overgang; ved kaia er det dypt helt inn
+    float grunn=(1.-smoothstep(0.,24.,d))*(1.-0.75*kai);
     c=mix(c, grunt, grunn*grunn*0.62);
     // speilinger av hus og trær (rendret speilvendt i et eget lag), med rolig krusning
     if(reflStyrke>0.){ vec2 uv=gl_FragCoord.xy/res; vec2 kr=vec2(n(wp.xz*0.18+vec2(0.,t*0.35))-0.5, n(wp.xz*0.07-vec2(t*0.2,0.))-0.5)*vec2(0.004,0.010);
@@ -50,7 +53,15 @@ const waterMat = new THREE.ShaderMaterial({
     // tynn ring et stykke ute som puster sakte inn og ut
     float rr=4.6+0.9*sin(t*0.55+n(wp.xz*0.02)*6.28)+wob*0.9;
     float ring=linje(d, rr, 0.45, pm)*0.42*(1.-smoothstep(8.,12.,rr));
-    c=mix(c, skum, max(max(skumK, ring), glor));
+    // naturlig kant (gress, stein, siv): vannet skyller inn med skum, glorie og ringen som puster.
+    // kai og mur: rett, rolig kant uten skum; en smal, mørk stripe der muren går ned i vannet og en svak lys refleks like utenfor
+    float nat=1.-kai;
+    c=mix(c, skum, max(max(skumK, ring), glor)*nat);
+    float kw=max(0.55, pm*1.3);
+    float murK=(1.-smoothstep(kw*0.5, kw*0.5+max(pm,0.25), d))*kai;
+    float refl=(1.-smoothstep(0.,3.5,d))*smoothstep(kw*0.5,kw*1.2,d)*kai*0.16;
+    c=mix(c, hi, refl);
+    c=mix(c, c*vec3(0.62,0.70,0.74), murK*0.85);
     // langt ute: vannet blir lysere og roligere, så byen står i fokus
     float u=smoothstep(650.,1500.,length(wp.xz-vec2(sentrum.x,-sentrum.y)));
     c=mix(c, fjern, u*0.55);
