@@ -1,0 +1,4 @@
+[
+{"id":"mu-1","navn":"Gårdsmuren mot gata","p":[[68.6,2.92],[46.85,-27.1]],"h":3.0,"tykk":0.5,"farge_fra":"bnr-193867537","port":{"s":0.5,"bredde":3.4,"hoyde":4.0,"pilar":5.4,"pilar_h":5.0,"navn":"Porten inn til gården"}},
+{"id":"mu-2","navn":"Gårdsmuren mot kirka","p":[[-0.36,-22.13],[21.979999999999997,-27.185000000000002]],"h":3.0,"tykk":0.5,"farge_fra":"bnr-193867537"}
+]

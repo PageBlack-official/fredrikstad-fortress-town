@@ -13,7 +13,7 @@ if dobbel: feil.append(f"- id brukt flere ganger: {', '.join(dobbel)}")
 reg = [l.strip() for l in open(os.path.join(ROT, 'kilder', 'id-register.txt'), encoding='utf8') if l.strip()]
 # bakkeflatene har også faste id-er i samme register (27.10): gr- grøntflater, ga- gårdsrom, fl- flater målt i ortofotoet (verktoy/flater.py), vn- vannflater (verktoy/vann.py lag)
 flate_ids = []
-for emne in ('gront', 'gardsrom', 'flater', 'vann'):
+for emne in ('gront', 'gardsrom', 'flater', 'vann', 'teglmurer', 'vinterhager'):   # mu- gårdsmurer i tegl, vh- glasshus (verktoy/kaserna.py, 27.10)
     try: fx = data(emne, raa=True)
     except FileNotFoundError: continue
     fi = [x.get('id') for x in fx]

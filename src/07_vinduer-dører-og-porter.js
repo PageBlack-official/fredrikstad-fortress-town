@@ -15,16 +15,18 @@ const vindMat=new THREE.ShaderMaterial({
       float d=dot(normalize(vN),solRetning());
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
       vec3 sf=mix(vec3(1.),solFarge(),0.6);
-      if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
+      if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
+      else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
       float fw=max(fwidth(m.x),fwidth(m.y));
       float kant=min(min(m.x,vSz.x-m.x),min(m.y,vSz.y-m.y));
-      if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
+      if(typ>2.5) kant=vSz.x*0.5-length(m-vSz*0.5);
+      else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
       vec3 c;
-      if(typ<0.5){
+      if(typ<0.5 || typ>2.5){
         float ramme=0.08;
-        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*0.62);
+        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*(typ>2.5?0.5:0.62));
         float spr=max(1.-smoothstep(0.03,0.03+fw,pv),1.-smoothstep(0.03,0.03+fw,ph));
         float inn=smoothstep(ramme,ramme+fw,kant);
         c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn);
@@ -34,6 +36,12 @@ const vindMat=new THREE.ShaderMaterial({
         if(typ>1.5) dorf=mix(vec3(0.14,0.13,0.13), vec3(0.22,0.20,0.19), lit);
         c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
         c=mix(c, dorf*0.75, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.6);
+        if(bue>1.5){   // grønn fløydør med overlys (bue=2, Kaserna etter ombyggingen)
+          dorf=mix(vec3(0.10,0.17,0.13), vec3(0.19,0.30,0.23)*sf, lit);
+          c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
+          c=mix(c, dorf*0.7, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.7);
+          float ol=vSz.y-0.78; if(m.y>ol){ c=mix(glas, hvit, 1.-smoothstep(0.05,0.05+fw,min(kant,abs(m.y-ol)))); }
+        }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.08,0.2,fw)*0.6);
       gl_FragColor=vec4(c,1.);

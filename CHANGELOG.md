@@ -1,5 +1,11 @@
 # Endringslogg
 
+## Uten versjon (27.10.2026, ikke publisert) – Kaserna slik den blir som hotell
+- Infanterikasernen (bnr-193867537) tegnet etter SG&CO-illustrasjonene for Fredriksborg: to høye etasjer over lys granittsokkel, vinduene i faste akser (3,4 m) rundt hele bygget, kjellervinduer i sokkelen, fire grønne fløydører med overlys mot torget, oksøye i arkene over hjørneinngangene, takarker over annenhver akse, 12 piper (årets måneder). Rettelser med grunn, laget av verktoy/kaserna.py.
+- Gården lukket: teglmur fra fløyene til brannstasjonen (mu-1, mu-2, sporet målt i ortofoto 2024), porten inn fra gata med rundbue midt i muren. Gjerdelinjene i samme spor tegnes ikke lenger.
+- Vinterhagen (vh-1): glasshus med grønne sprosser og taklanterne mot hjørnets gårdsfasade, dør fra hotellet ut i glasshuset.
+- Nye vindustyper i tegnekoden: oksøye (typ 3) og grønn fløydør med overlys (bue 2). Regel 14 passer på mu- og vh-id-ene.
+
 ## Uten versjon (27.10.2026, ikke publisert) – vinduer og dører etter reglene fra kvartaltegningene
 - De 142 antatte husene har fått vinduer og dører etter reglene Gamlebyens hus følger i tegningene, målt på 121 fasit-hus: vindu 0,85 × 1,4 m, brystning 0,9 m, etasjehøyde 3,0 m, akser med lik avstand rundt 2,8 m fra 0,85 m inn fra hjørnet, symmetrisk om veggens midtakse, samme akser i alle etasjer, ingen vinduer under 3 m vegg eller mot nabohus, én dør 1,05 × 2,2 m på gatesiden i midtaksen (ikke på uthus). Rapport: rapport/vinduer/regler-fra-tegningene.md, kontrollark i rapport/vinduer/.
 - Regel 17 (vinduer i rytme) passer på dette for de antatte husene. På de gamle dataene: 94 brudd (91 vinduer/dører mot nabohus). Nå 0.
