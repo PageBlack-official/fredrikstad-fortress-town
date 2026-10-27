@@ -98,6 +98,7 @@ UTE = 4.0        # m: lenger ut på land enn dette fra OSM-vannet er mørke flat
 NAER = 5.0     # m: så langt fra OSM-vannet godtas det grumsete vannet
 BRYGGE = 3.0     # m (radius): båter og brygger smalere enn ca. 6 m som stikker ut fra land, er vann i kartet (bare der OSM har vann)
 INNE = 12.0     # m: lenger enn dette inne i OSM-vannet regnes alt som vann (krusninger og solglimt midt i elva er ikke land)
+KANT_VOKS = 2.0  # m: så langt vokser vannet tilbake gjennom mørke piksler mot kanten (teksturvinduet og skyggen av kaimuren)
 
 
 def maske():
@@ -114,7 +115,8 @@ def maske():
     naer = cv2.dilate(O, el(NAER))   # grumsete, grunt vann (vollgravene) godtas lysere, men bare nær vannet OSM kjenner
     H = cv2.medianBlur(cv2.cvtColor(M, cv2.COLOR_BGR2HSV)[..., 0], 5); S = cv2.medianBlur(cv2.cvtColor(M, cv2.COLOR_BGR2HSV)[..., 1], 5)
     gronn = (H >= GRONN[0]) & (H <= GRONN[1]) & (S >= GRONN[2]); del H, S   # skygge av trær på gress er grønn, vannet er brunt
-    kand = (((Vm <= MORK) | ((Vm <= MORK_GRUMS) & (naer > 0))) & (sd <= GLATT_SD) & ~gronn).astype(np.uint8); del sd, Vm, naer, gronn
+    kand = (((Vm <= MORK) | ((Vm <= MORK_GRUMS) & (naer > 0))) & (sd <= GLATT_SD) & ~gronn).astype(np.uint8); del sd, naer
+    mork = ((Vm <= MORK) & ~gronn).astype(np.uint8); del Vm, gronn   # til å vokse vannet helt inn til kanten (under)
     kand = cv2.morphologyEx(kand, cv2.MORPH_CLOSE, el(0.75))   # sømmer i ortofotomosaikken og tynne linjer (ferjewiren)
     kand = cv2.morphologyEx(kand, cv2.MORPH_OPEN, el(0.5))
     n, lab, st, _ = cv2.connectedComponentsWithStats(kand, connectivity=4)
@@ -124,6 +126,14 @@ def maske():
     W = behold[lab].astype(np.uint8); del lab, kand
     W &= cv2.dilate(O, el(UTE))      # mørke trær og skygger på land: fotoet flytter strandlinja høyst UTE m ut fra OSM
     W |= cv2.erode(O, el(INNE))
+    # teksturtesten (vindu 2,25 m) spiser vannet ca. 1 m inn fra en lys kai, og skyggen av kaimuren er mørk, men ikke glatt.
+    # Vannet vokser derfor tilbake gjennom mørke piksler, høyst KANT_VOKS m (målt 27.10 ved Toldbodgaten: fasiten lå 1,5–2 m ute)
+    k3 = np.ones((3, 3), np.uint8)
+    for _ in range(int(KANT_VOKS / MPP)):
+        W |= cv2.dilate(W, k3) & mork
+    del mork
+    W &= cv2.dilate(O, el(UTE))
+    W |= baater(M, O, W)
     W |= cv2.morphologyEx(W, cv2.MORPH_CLOSE, el(BRYGGE)) & O   # båter og brygger ut fra land: vannet går under dem
     land = 1 - W
     n, lab, st, _ = cv2.connectedComponentsWithStats(land, connectivity=4)
@@ -135,6 +145,29 @@ def maske():
         cv2.fillPoly(W, [P], 1 if f['vann'] else 0, shift=3)
     cv2.imwrite(FASIT, W * 255, [cv2.IMWRITE_PNG_COMPRESSION, 9])
     print('fasit ->', os.path.relpath(FASIT, ROT), f'{W.sum() * MPP * MPP / 1e6:.3f} km² vann i ortofotoet (hele flisområdet)')
+
+
+BAAT_LYS = (215, 45)   # HSV-verdi minst / metning høyst: hvite skrog (målt 27.10: 240–255); kaidekket ved fergeleiet når 190–210
+BAAT_MAKS = 300.0      # m²: en lys flekk større enn dette er kai, plass eller tak, ikke båt
+
+
+def baater(M, O, W):
+    """Båter som ligger fortøyd langs land og brygger, er vann i kartet (vannet går under dem). Fotoet ser dem som land
+    fordi de henger sammen med land; de kjennes på at de er hvite, små og ligger der OSM har vann. Skyggen og presenningen
+    rundt tas med av en lukking på 1 m. Gir masken som legges til vannet (bare innenfor OSM-vannet)."""
+    import cv2, numpy as np
+    el = lambda meter: cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(2 * meter / MPP) | 1,) * 2)
+    hsv = cv2.cvtColor(M, cv2.COLOR_BGR2HSV)
+    lys = ((hsv[..., 2] >= BAAT_LYS[0]) & (hsv[..., 1] <= BAAT_LYS[1])).astype(np.uint8); del hsv
+    lys &= cv2.dilate(O, el(1.0)) & (1 - W)
+    n, lab, st, _ = cv2.connectedComponentsWithStats(lys, connectivity=8)
+    liten = st[:, cv2.CC_STAT_AREA] * MPP * MPP <= BAAT_MAKS; liten[0] = False
+    ved = np.bincount(lab.ravel(), weights=cv2.dilate(W, el(1.0)).ravel(), minlength=n) > 0   # flyter: rører vannet
+    liten &= ved
+    B = liten[lab].astype(np.uint8); del lab
+    B = cv2.morphologyEx(B, cv2.MORPH_CLOSE, el(1.0))
+    B = cv2.dilate(B, el(0.75))      # skyggen og fenderne rundt skroget
+    return B & O
 
 
 def les_fasit():
