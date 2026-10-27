@@ -1,0 +1,83 @@
+{
+ "glomma-vest": {
+  "for": [
+   0.75,
+   3.2,
+   28.17
+  ],
+  "etter": [
+   0.25,
+   0.8,
+   1.65
+  ]
+ },
+ "fergeleiet": {
+  "for": [
+   0.0,
+   3.3,
+   4.0
+  ],
+  "etter": [
+   0.25,
+   0.55,
+   1.89
+  ]
+ },
+ "vollgrav-nord": {
+  "for": [
+   0.9,
+   5.28,
+   45.96
+  ],
+  "etter": [
+   0.25,
+   0.9,
+   1.6
+  ]
+ },
+ "vollgrav-sor": {
+  "for": [
+   0.8,
+   2.7,
+   5.3
+  ],
+  "etter": [
+   0.25,
+   0.9,
+   1.6
+  ]
+ },
+ "isegran": {
+  "for": [
+   0.5,
+   3.5,
+   17.37
+  ],
+  "etter": [
+   0.25,
+   0.7,
+   1.75
+  ]
+ },
+ "_rammen": {
+  "for": [
+   0.9702,
+   0.9889
+  ],
+  "etter": [
+   0.994,
+   0.9948
+  ],
+  "forklaring": "[andel av kartets vann som er vann i ortofotoet, andel av ortofotoets vann kartet dekker], innen \u00b1860 m",
+  "kantavvik_for": [
+   0.55,
+   3.9,
+   58.68
+  ],
+  "kantavvik_etter": [
+   0.25,
+   0.8,
+   1.75
+  ]
+ }
+}

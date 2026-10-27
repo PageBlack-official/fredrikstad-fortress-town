@@ -134,13 +134,17 @@ def maske():
     del mork
     W &= cv2.dilate(O, el(UTE))
     W |= baater(M, O, W)
+    W |= skjult() & O
     W |= cv2.morphologyEx(W, cv2.MORPH_CLOSE, el(BRYGGE)) & O   # båter og brygger ut fra land: vannet går under dem
     land = 1 - W
     n, lab, st, _ = cv2.connectedComponentsWithStats(land, connectivity=4)
     smaa = st[:, cv2.CC_STAT_AREA] * MPP * MPP < BAAT
     kant = np.zeros(n, bool); kant[np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))] = True
     W[(smaa & ~kant)[lab] & (land > 0)] = 1; del lab, land
-    for f in maalt()['vann']:   # målt for hånd: vann fotoet ikke ser (under broer), eller land fotoet tror er vann
+    for f in maalt()['vann']:   # målt for hånd: vann fotoet ikke ser (under broer, smale grøfter i sivet), eller land fotoet tror er vann
+        if 'linje' in f:          # grøft: midtlinje og bredde
+            from shapely.geometry import LineString
+            f = dict(f, p=list(LineString(f['linje']).buffer(f['bredde'] / 2, cap_style=2, join_style=2).exterior.coords))
         P = np.round(np.array([til_px(x, y) for x, y in f['p']]) * 8).astype(np.int32)
         cv2.fillPoly(W, [P], 1 if f['vann'] else 0, shift=3)
     cv2.imwrite(FASIT, W * 255, [cv2.IMWRITE_PNG_COMPRESSION, 9])
@@ -168,6 +172,35 @@ def baater(M, O, W):
     B = cv2.morphologyEx(B, cv2.MORPH_CLOSE, el(1.0))
     B = cv2.dilate(B, el(0.75))      # skyggen og fenderne rundt skroget
     return B & O
+
+
+LUTNING = 0.15    # m sideveis per m høyde: hus lener ut i ortofotoet (ikke sant ortofoto); sett 27.10 ved lagerbygget sør for Toldbodgaten: taket 1–2 m ut over vannet
+LUTNING_MAKS = 3.0
+
+
+def skjult():
+    """Der fotoet ikke ser vannkanten: under trekronene (data/traer.json) og under taket på hus som lener ut over vannet
+    (data/bygg.json, fotavtrykket utvidet med LUTNING * høyde). Der gjelder OSM-kanten; fotoet tar den ikke bort."""
+    import cv2, numpy as np
+    S = np.zeros((N, N), np.uint8)
+    D = datalag.alle()
+    for t in D['traer']:
+        c, r = til_px(t[0], t[1])
+        cv2.circle(S, (int(round(c * 8)), int(round(r * 8))), int(round(t[2] / MPP * 8)), 1, -1, shift=3)
+    for b in D['bygg']:
+        if b.get('skjul') or len(b.get('p') or []) < 3:
+            continue
+        u = min(LUTNING * (b.get('h') or 6), LUTNING_MAKS); pad = int(u / MPP) + 2
+        Pf = np.array([til_px(x, y) for x, y in b['p']])
+        c0, r0 = np.floor(Pf.min(0)).astype(int) - pad; c1, r1 = np.ceil(Pf.max(0)).astype(int) + pad
+        if c1 <= 0 or r1 <= 0 or c0 >= N or r0 >= N:
+            continue
+        m = np.zeros((r1 - r0, c1 - c0), np.uint8)
+        cv2.fillPoly(m, [np.round((Pf - [c0, r0]) * 8).astype(np.int32)], 1, shift=3)
+        m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(2 * u / MPP) | 1,) * 2))
+        a, b_, c, d = max(r0, 0), max(c0, 0), min(r1, N), min(c1, N)
+        S[a:c, b_:d] |= m[a - r0:c - r0, b_ - c0:d - c0]
+    return S
 
 
 def les_fasit():
@@ -213,7 +246,6 @@ BRO_FLATE = 400.0    # m²: en stripe som deler vannet i to store flater (bro, d
 MIN_RETT = 10.0      # m²: minste flate som legges til eller tas bort
 MIN_FLATE = 100.0    # m²: mindre biter som blir igjen, tas ikke med
 FORENKLE = 0.35      # m: toleranse når kanten gjøres om fra piksler til linje
-KAI_LENGDE = 10.0    # m: en kai er rett (±12°) minst så langt
 
 
 def _ider(polys):
@@ -249,46 +281,18 @@ def _ringer(pg):
     return r(pg.exterior), [r(h) for h in pg.interiors]
 
 
-def kanttyper(ring, Wm, hsv, hand):
+def kanttyper(ring, hand):
     """Én bokstav per kant (kant i går fra ring[i] til ring[i+1]): k = kai/mur/brygge (rett, hard kant), n = naturlig (gress, stein, siv).
-    Målt: kanten er rett (±12°) minst KAI_LENGDE m, og 1,5–3,5 m inn på land er under 35 % gress og minst 40 % lys grå flate
-    (stein, betong, treverk). For hånd (kilder/vann-maalt.json «kant»): et belte langs en linje overstyrer målingen."""
+    Kanttypen settes per strekning for hånd (kilder/vann-maalt.json «kant»: et belte langs en linje, sjekket mot ortofotoet);
+    alt annet er naturlig. (27.10: en automatisk måling av «hard flate på land» tok vissent aprilgress, grusstier og tak
+    for kai i vollgravene og bommet på halve Toldbodkaia; den ble forkastet.)"""
     import numpy as np
     from shapely.geometry import Point
-    n = len(ring); P = np.array(ring, float)
-    Q = np.roll(P, -1, 0); D = Q - P; L = np.hypot(D[:, 0], D[:, 1]) + 1e-9
-    U = D / L[:, None]
-    nrm = np.stack([U[:, 1], -U[:, 0]], 1)   # mot land (høyre side)
-    veg = np.full(n, np.nan); hard = np.zeros(n)
-    lo, hi = OMRAADE[0] + 5, OMRAADE[2] - 5
-    for i in range(n):
-        if not (lo < min(P[i].min(), Q[i].min()) and max(P[i].max(), Q[i].max()) < hi):
-            continue
-        v = []
-        for tt in np.linspace(0.1, 0.9, max(2, int(L[i]))):
-            for o in (1.5, 2.5, 3.5):
-                c, r = til_px(*(P[i] + D[i] * tt + nrm[i] * o)); c, r = int(c), int(r)
-                if 0 <= r < N and 0 <= c < N and not Wm[r, c]:
-                    h, s, val = hsv[r, c]
-                    g = 30 <= h <= 90 and s > 45 and val > 50
-                    v.append((1.0 if g else 0.0, 1.0 if (not g and s < 70 and val > 100) else 0.0))
-        if v:
-            veg[i], hard[i] = np.mean(v, 0)
-    lop = np.zeros(n); i = 0
-    while i < n:
-        j, tot = i, 0.0
-        while j < n and np.dot(U[j], U[i]) > math.cos(math.radians(12)):
-            tot += L[j]; j += 1
-        lop[i:max(j, i + 1)] = tot; i = max(j, i + 1)
-    k = (lop >= KAI_LENGDE) & (np.nan_to_num(veg, nan=1.0) < 0.35) & (hard >= 0.4)
-    for _ in range(2):   # et naturlig stykke under 3 m mellom to kaier er et hjørne i kaia
-        for i in range(n):
-            if not k[i] and L[i] < 3 and k[i - 1] and k[(i + 1) % n]:
-                k[i] = True
-    for b in hand:       # for hånd vinner over målingen
-        for i in range(n):
-            mid = (P[i] + Q[i]) / 2
-            if b['geo'].distance(Point(*mid)) <= b['bredde'] / 2:
+    P = np.array(ring, float); Q = np.roll(P, -1, 0)
+    k = np.zeros(len(ring), bool)
+    for b in hand:
+        for i in range(len(ring)):
+            if b['geo'].distance(Point(*((P[i] + Q[i]) / 2))) <= b['bredde'] / 2:
                 k[i] = b['kant'] == 'k'
     return ''.join('k' if x else 'n' for x in k)
 
@@ -333,7 +337,6 @@ def lag():
     E = tab[idx] * Wm; del idx, zr, zc
     B = box(*[v + s for v, s in zip((-RAMME, -RAMME, RAMME, RAMME), (0.5, 0.5, -0.5, -0.5))])
     Bindre = box(-RAMME + 1, -RAMME + 1, RAMME - 1, RAMME - 1)
-    hsv = cv2.cvtColor(mosaikk(), cv2.COLOR_BGR2HSV)
     polys, tags = [], []
     for i, w in enumerate(raa):
         src = Polygon(w['p'], [h for h in w.get('h', []) if len(h) > 2]).buffer(0)
@@ -361,12 +364,13 @@ def lag():
             if pg.geom_type == 'Polygon' and pg.area > MIN_FLATE:
                 polys.append(pg); tags.append(w['t'])
     ider, borte = _ider(polys)
-    hand = [{'geo': LineString(b['linje']), 'bredde': b.get('bredde', 6), 'kant': b['kant']} for b in maalt()['kant']]
+    hand = [{'geo': LineString(b['linje']) if 'linje' in b else Polygon(b['omraade']), 'bredde': b.get('bredde', 0), 'kant': b['kant']}
+            for b in maalt()['kant']]
     vann = []
     for pg, t, idd in sorted(zip(polys, tags, ider), key=lambda z: int(z[2][3:])):
         p, h = _ringer(pg)
-        vann.append({'id': idd, 'p': p, 'h': h, 't': t, 'kant': kanttyper(p, Wm, hsv, hand),
-                     'hkant': [kanttyper(r, Wm, hsv, hand) for r in h], 'kilde': 'OSM rettet mot ortofoto 2024 (verktoy/vann.py lag)'})
+        vann.append({'id': idd, 'p': p, 'h': h, 't': t, 'kant': kanttyper(p, hand),
+                     'hkant': [kanttyper(r, hand) for r in h], 'kilde': 'OSM rettet mot ortofoto 2024 (verktoy/vann.py lag)'})
     for idd in borte:   # en id slettes aldri: flaten som ikke finnes lenger, står skjult med grunn
         vann.append({'id': idd, 'p': [], 'h': [], 't': {'natural': 'water'}, 'kant': '', 'hkant': [],
                      'skjul': 'verktoy/vann.py: flaten finnes ikke lenger i ortofoto 2024'})
