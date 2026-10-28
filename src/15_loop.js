@@ -48,13 +48,21 @@ function solTil(u){   // u 0..1 langs kameraets vei
   setSol(250*GRAD, (58-16*k)*GRAD);
   if(k>=1 && u>=0.999){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; solVei.ferdig=true; }
 }
+// u = hvor langt kameraet har kommet langs introveien, lest av kartets bearing uansett hjemmevisning (AZ0 er 200/290 fra v33, ikke 40):
+// avstanden fra startvinkelen, målt den korte veien rundt, delt på sveipet. Før 28.10 kl. 16 ble u regnet med fortegn fra plakatvinkelen
+// og ble 1 fra første bilde i den nye hjemmevisningen, så sola stod ferdig hele introen (Vegar: «ingen effekt når jeg starter introen»).
+function introU(){ const b0=-(AZ0_GRADER+SVEIP); let d=((map.getBearing()-b0)%360+540)%360-180; return THREE.MathUtils.clamp(Math.abs(d)/SVEIP,0,1); }
 function solOppdater(dt){
   if(solVei.ferdig) return;
-  if(!introDone){ const b0=-(AZ0_GRADER+SVEIP), b1=-AZ0_GRADER; solVei.u=THREE.MathUtils.clamp((map.getBearing()-b0)/(b1-b0),0,1); solTil(solVei.u); }
+  if(!introDone){ solVei.u=introU(); solTil(solVei.u); }
   else { solVei.u=Math.min(1, solVei.u+dt/0.8); solTil(solVei.u); if(solVei.u>=1) solTil(1); }   // introen ble avbrutt: hent inn resten
   skyggeSkitten=true;
 }
-window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig});
+// miniatyr-uskarpheten i introen glir ut i takt med kameraet (samme kurve), i stedet for å hoppe fra 1 til 0 når introen er ferdig
+// (Vegar 28.10: «ytterkantene er blury helt til introen er ferdig, og da blir alt skarpt samtidig»). Uten solintro: ut over de siste 40 %.
+let tiltU=0;
+function introTilt(){ if(introDone && solVei.ferdig) return 0; tiltU=Math.max(tiltU, introDone ? 1 : introU()); return 1-glid(THREE.MathUtils.clamp((tiltU-0.35)/0.55,0,1)); }
+window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig, tilt:introTilt()});
 window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, START[0], START[1]); window.__solTil(u); };   // kamera + lys ved u langs introveien
 window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
 map.on('movestart', e=>{ if(e.originalEvent) overta(); });

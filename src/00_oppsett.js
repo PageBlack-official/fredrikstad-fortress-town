@@ -30,7 +30,8 @@ function tilModell(ll){ const o=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.
 // hjemmevisningen (26.10, Vegar: «sluttbildet i dette utsnittet»): byen sett fra elva, kirka oppe til høyre, litt brattere enn plakaten.
 // Før: plakatvinkelen (asimut 40/130, høyde 33°). ?hjem=plakat gir den gamle.
 const HJEM_PLAKAT=Q0.get('hjem')==='plakat';
-const PITCH0=90-(HJEM_PLAKAT?33:+(Q0.get('hoyde')||48)), AZ0_GRADER=HJEM_PLAKAT ? (innerWidth/innerHeight<0.8 ? 130 : 40) : +(Q0.get('az0')||(innerWidth/innerHeight<0.8 ? 290 : 200));
+// hjemmevisningens høyde over horisonten: 48° på bred skjerm; 40° på smal (stående telefon), der 48° leses som «for mye ovenfra» (Vegar 28.10)
+const PITCH0=90-(HJEM_PLAKAT?33:+(Q0.get('hoyde')||(innerWidth/innerHeight<0.8 ? 40 : 48))), AZ0_GRADER=HJEM_PLAKAT ? (innerWidth/innerHeight<0.8 ? 130 : 40) : +(Q0.get('az0')||(innerWidth/innerHeight<0.8 ? 290 : 200));
 function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*mpp)); }
 const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||1.3));
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
@@ -45,7 +46,10 @@ const renderer = new THREE.WebGLRenderer({canvas: map.getCanvas(), context: gl2,
 renderer.autoClear=false;
 // én tegnekvalitet: bildet tegnes likt om kartet beveger seg eller står stille, så skygger og strek aldri hopper mellom grov og fin.
 // Oppløsningen settes av skjermen (pikselbudsjett) og senkes én gang for godt på svake maskiner (maalYtelse), aldri per gest.
-const PIX=11e6;
+// pikselbudsjett per bilde: 11 M på en maskin, 5 M på berøringsskjerm (telefon/nettbrett tegner på DPR 2–3 og hang etter fingeren,
+// Vegar 28.10; ytelsesmåleren trappet først ned etter 75 trege bilder). ?pix=<millioner> overstyrer.
+const BERORING = matchMedia('(pointer: coarse)').matches;
+const PIX=Q0.get('pix') ? +Q0.get('pix')*1e6 : (BERORING ? 5e6 : 11e6);
 let skalaStille=1, skalaMaskin=1;   // skalaMaskin: 1 på vanlige maskiner, lavere når maalYtelse har målt at maskinen ikke holder følge
 function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaStille=THREE.MathUtils.clamp(Math.sqrt(PIX/n),0.5,1)*skalaMaskin; }
 renderer.shadowMap.enabled = true;
