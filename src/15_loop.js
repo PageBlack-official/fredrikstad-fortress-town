@@ -43,7 +43,9 @@ function solStart(){
   U_SOL.ute.value=0; U_SOL.front.value=solVei.v0; setSol(250*GRAD, 58*GRAD);
 }
 function solTil(u){   // u 0..1 langs kameraets vei
-  const k=glid(THREE.MathUtils.clamp((u-0.08)/0.80, 0, 1));            // kanten går mellom 8 % og 88 % av veien, med samme kurve som kameraet
+  // kameraets u har alt glid-kurven i seg (80 % av svingen skjer på det midterste sekundet), så kanten følger u rett fram over hele veien;
+  // en kurve til oppå gjorde at sola var over byen på 0,6 s (målt i Vegars Chrome 28.10 kl. 16.30)
+  const k=THREE.MathUtils.clamp(u/0.97, 0, 1);
   U_SOL.front.value=solVei.v0+(solVei.v1-solVei.v0)*k;
   setSol(250*GRAD, (58-16*k)*GRAD);
   if(k>=1 && u>=0.999){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; solVei.ferdig=true; }

@@ -48,7 +48,7 @@ renderer.autoClear=false;
 // Oppløsningen settes av skjermen (pikselbudsjett) og senkes én gang for godt på svake maskiner (maalYtelse), aldri per gest.
 // pikselbudsjett per bilde: 11 M på en maskin, 5 M på berøringsskjerm (telefon/nettbrett tegner på DPR 2–3 og hang etter fingeren,
 // Vegar 28.10; ytelsesmåleren trappet først ned etter 75 trege bilder). ?pix=<millioner> overstyrer.
-const BERORING = matchMedia('(pointer: coarse)').matches;
+const BERORING = window.matchMedia('(pointer: coarse)').matches;
 const PIX=Q0.get('pix') ? +Q0.get('pix')*1e6 : (BERORING ? 5e6 : 11e6);
 let skalaStille=1, skalaMaskin=1;   // skalaMaskin: 1 på vanlige maskiner, lavere når maalYtelse har målt at maskinen ikke holder følge
 function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaStille=THREE.MathUtils.clamp(Math.sqrt(PIX/n),0.5,1)*skalaMaskin; }

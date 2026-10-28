@@ -152,7 +152,7 @@ const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
 // solfronten deles av alle materialer: ett objekt per uniform, koblet inn etter at scenen er bygd (kobleSol, kalles fra 15_loop)
-const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:90}, dir:{value:new THREE.Vector3(1,0,0)} };
+const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:160}, dir:{value:new THREE.Vector3(1,0,0)} };   // kanten er 160 m myk: et gløtt som vandrer, ikke en linje
 function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(o.material):[]; for(const m of ms){ if(m.isShaderMaterial && m.fragmentShader.includes('solHer(')){ m.uniforms.solUte=U_SOL.ute; m.uniforms.solFront=U_SOL.front; m.uniforms.solBredde=U_SOL.bredde; m.uniforms.solFrontDir=U_SOL.dir; m.needsUpdate=true; n++; } } }); return n; }
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){

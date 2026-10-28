@@ -1,6 +1,6 @@
 # Regelrapport
 
-Kilde: 6568e4b versjon 34 kjørt 2026-10-28 16:11
+Kilde: 6568e4b+urettet versjon 34 kjørt 2026-10-28 16:13
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 9 skjult med grunn)
 - OK   02_hoyder_maalt  (197 hus står med Kartverkets målte høyde; 0 avviker; 78 hus uten sikker måling beholder tegning/OSM)
@@ -9,7 +9,7 @@ Kilde: 6568e4b versjon 34 kjørt 2026-10-28 16:11
 - OK   05_kvalitet_bare_kamera  (settSkala(skalaStille) uavhengig av bevegelse)
 - OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/fredrikstad-fortress-town/ut/enkel/index.html 2319 kB versjon 34)
 - OK   07_ingen_feil_i_bruk  (- intro: underveis az -1.13 zoom 0.69 → ferdig az -2.79 zoom 1.00 intro false)
-- FEIL 08_lint  (- 52:18  error  'matchMedia' is not defined  no-undef)
+- OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 32 (ønsket 33))
 - OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 21386 px, trinn 2: 20947 px)
 - OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)

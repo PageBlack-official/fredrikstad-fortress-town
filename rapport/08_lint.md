@@ -1,4 +1,3 @@
-# 08_lint: FEIL
+# 08_lint: OK
 
-- 52:18  error  'matchMedia' is not defined  no-undef
-- ✖ 1 problem (1 error, 0 warnings)
+- ingen feil
