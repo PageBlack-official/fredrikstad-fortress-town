@@ -274,7 +274,7 @@ function oppdaterSol(){
   // myke grunner (litt snudd, hus som glir) ventes med til 150 ms har gått mens kameraet er i fart, så et dra ikke tegner skyggekartet hvert bilde;
   // står kameraet stille, tegnes det med en gang, så det siste bildet alltid er riktig
   const naa=performance.now();
-  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150) grunn='';
+  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150 && introDone) grunn='';   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
   if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
     // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
     // marginen ofte, og hver ny tegning med ny skala og nytt senter flyttet tekselrutenettet, så de myke kantene krøp. Nå er
@@ -312,6 +312,12 @@ const GL_SOL_F=`#include <common>
 #include <packing>
 #include <shadowmap_pars_fragment>
 varying vec3 vWq;
+// Sola finner byen (28.10, Vegar: «A»): i introen er byen overskyet (ingen kastskygger, kjølig), og en solkant vandrer over byen.
+// Kanten er et plan i verden (solFrontDir), flyttet av solFront, myk over solBredde meter; høye punkter (kirketårnet) får lys litt før.
+// Etter introen er solUte 1 og alt dette er én sammenligning per piksel. Ingen overlegg: skyggene som vokser fram er ekte skygger.
+uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
+float solHer(vec3 wq){ if(solUte>=1.) return 1.; float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; return smoothstep(solFront, solFront+solBredde, v); }
+const vec3 OVERSKYET=vec3(0.86,0.90,0.97);   // overskyet: mørkere og kjøligere enn sol, så det synes at sola kommer
 #if NUM_DIR_LIGHTS>0
 struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
@@ -329,7 +335,7 @@ float skyggeMask(){ float s=1.;
     s=acc/16.;
   }
 #endif
-  return s; }
+  return mix(1., s, solHer(vWq)); }
 vec3 solRetning(){
 #if NUM_DIR_LIGHTS>0
   return directionalLights[0].direction;
@@ -354,11 +360,14 @@ float skravurMaske(vec3 wq, float k){ if(skravur<=0.) return 0.;
 const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
+// solfronten deles av alle materialer: ett objekt per uniform, koblet inn etter at scenen er bygd (kobleSol, kalles fra 15_loop)
+const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:90}, dir:{value:new THREE.Vector3(1,0,0)} };
+function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(o.material):[]; for(const m of ms){ if(m.isShaderMaterial && m.fragmentShader.includes('solHer(')){ m.uniforms.solUte=U_SOL.ute; m.uniforms.solFront=U_SOL.front; m.uniforms.solBredde=U_SOL.bredde; m.uniforms.solFrontDir=U_SOL.dir; m.needsUpdate=true; n++; } } }); return n; }
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){
   m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights), {skravur:U_SKRAVUR});
   m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
-  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask());\n#include <colorspace_fragment>');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(gl_FragColor.rgb*OVERSKYET, sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); }\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }
 
@@ -591,7 +600,8 @@ function mat(rgb, dim, sk, opt={}){
           float lam=smoothstep(-0.12,0.52,d);
           float lit=lam*skyggeMask();
           float k=1.-lit;
-          vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6), lit);
+          float su=solHer(wq);
+          vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6*su), lit); c=mix(c*OVERSKYET, c, su);
           // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
           vec3 nq=normalize(cross(dFdx(lp),dFdy(lp)));
           float vask=nn(wq.xz*0.045+wq.y*0.031)*0.62+nn(wq.xz*0.17+vec2(wq.y*0.23,3.1))*0.38;
@@ -827,7 +837,7 @@ const vindMat=new THREE.ShaderMaterial({
       vec2 m=vUv*vSz;
       float d=dot(normalize(mat3(viewMatrix)*vN),solRetning());   // kamerarom som husene (28.10)
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
-      vec3 sf=mix(vec3(1.),solFarge(),0.6);
+      vec3 sf=mix(vec3(1.),solFarge(),0.6*solHer(vWq));
       if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
       else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
       float fw=max(fwidth(m.x),fwidth(m.y));
@@ -1255,7 +1265,7 @@ function lovMatLag(){
         float lys=smoothstep(0.60,0.64,w), mid=smoothstep(0.36,0.40,w);
         vec3 lysF=vCol*vec3(1.30,1.22,0.98)+vec3(0.04,0.045,0.0);
         vec3 mork=vCol*vec3(0.50,0.60,0.68);
-        vec3 c=mix(mork, mix(vCol,lysF,lys), mid);
+        vec3 c=mix(mork, mix(vCol,lysF,lys), mid); c=mix(c*OVERSKYET, c, solHer(vWq));
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
       }`
@@ -1466,11 +1476,39 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
   map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
-  const lk=document.getElementById('lekkasje'); if(lk && Q0.get('lekkasje')!=='0'){ lk.classList.add('paa'); }   // ?lekkasje=0 slår av
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ if(introDone) return; introDone=true; map.stop(); }
+// ---- Sola finner byen (28.10, Vegar: «A») ----
+// Introen starter overskyet: tegningens to toner, ingen kastskygger, litt kjøligere. Mens kameraet svinger inn, vandrer en solkant
+// over byen fra solsiden (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de
+// godkjente 42° (23.10), så skyggene blir lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka
+// (teknikk 12): stopper du introen, henter solkanten seg inn på 0,8 s. ?solintro=0 hopper over det hele.
+const SOLINTRO = SOL_FAST && !Q0.get('sol') && Q0.get('solintro')!=='0' && !Q.get('skip');   // ?solintro=0 gir den gamle introen med fast sol
+const solVei={ v0:0, v1:0, u:0, ferdig:!SOLINTRO, tHent:0 };
+function solStart(){
+  // kanten vandrer langs solas horisontale retning: solsiden av byen først
+  const ca=Math.cos(42*GRAD); U_SOL.dir.value.set(Math.sin(250*GRAD)*ca, 0, -Math.cos(250*GRAD)*ca).normalize();
+  let lo=1e9, hi=-1e9; buildings.forEach(g=>{ const r=g.userData.b.r; const v=r[0]*U_SOL.dir.value.x+(-r[1])*U_SOL.dir.value.z; lo=Math.min(lo,v); hi=Math.max(hi,v); });
+  solVei.v0=hi+U_SOL.bredde.value+40; solVei.v1=lo-U_SOL.bredde.value-40;   // fra «ingenting lyst» til «alt lyst», litt utenfor byen i begge ender
+  U_SOL.ute.value=0; U_SOL.front.value=solVei.v0; setSol(250*GRAD, 58*GRAD);
+}
+function solTil(u){   // u 0..1 langs kameraets vei
+  const k=glid(THREE.MathUtils.clamp((u-0.08)/0.80, 0, 1));            // kanten går mellom 8 % og 88 % av veien, med samme kurve som kameraet
+  U_SOL.front.value=solVei.v0+(solVei.v1-solVei.v0)*k;
+  setSol(250*GRAD, (58-16*k)*GRAD);
+  if(k>=1 && u>=0.999){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; solVei.ferdig=true; }
+}
+function solOppdater(dt){
+  if(solVei.ferdig) return;
+  if(!introDone){ const b0=-(AZ0_GRADER+SVEIP), b1=-AZ0_GRADER; solVei.u=THREE.MathUtils.clamp((map.getBearing()-b0)/(b1-b0),0,1); solTil(solVei.u); }
+  else { solVei.u=Math.min(1, solVei.u+dt/0.8); solTil(solVei.u); if(solVei.u>=1) solTil(1); }   // introen ble avbrutt: hent inn resten
+  skyggeSkitten=true;
+}
+window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig});
+window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, START[0], START[1]); window.__solTil(u); };   // kamera + lys ved u langs introveien
+window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
 map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
 // husets løft og vekst: egne grupper (kirka, portbygg, bygg med deler) flyttes som objekter; alle andre ligger i de sammenslåtte nettene og styres per bygg via hus-teksturen (05_bygg)
@@ -1490,6 +1528,7 @@ function oppdater(){
   // skyggekartet tegnes på nytt bare mens et hus flytter seg merkbart (over 2 cm per bilde); halen av glidningen synes ikke i skyggen
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
+  solOppdater(dt);
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
@@ -1513,6 +1552,7 @@ function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeve
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
   map.addLayer(byLag);
+  kobleSol(); if(SOLINTRO) solStart();
   if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
   else startIntro();
   puls();
