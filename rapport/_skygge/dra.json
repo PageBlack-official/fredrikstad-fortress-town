@@ -1,17 +1,13 @@
 {
  "res": {
   "zoom1.2": {
-   "R": 325.9259259259259,
+   "R": 488.8888888888889,
    "r": 296.1000000000002,
-   "dekning": 1.1,
-   "iRo": {
-    "zoom": 5
-   },
+   "dekning": 1.65,
+   "iRo": {},
    "iRoBilder": 5,
-   "dra": {
-    "zoom": 7
-   },
-   "draBilder": 7
+   "dra": {},
+   "draBilder": 6
   },
   "zoom2.5": {
    "R": 325.9259259259259,
@@ -20,16 +16,16 @@
    "iRo": {},
    "iRoBilder": 5,
    "dra": {},
-   "draBilder": 5
+   "draBilder": 4
   },
   "zoom5": {
-   "R": 144.8559670781893,
+   "R": 217.28395061728395,
    "r": 105.26400000000002,
-   "dekning": 1.38,
+   "dekning": 2.06,
    "iRo": {},
    "iRoBilder": 5,
    "dra": {},
-   "draBilder": 8
+   "draBilder": 7
   }
  },
  "feil": []

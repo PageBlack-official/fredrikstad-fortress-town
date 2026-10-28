@@ -2,7 +2,7 @@
 
 38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet
 57 av 57 brygger står minst 50% over vannet
-fotoet viser brygge (ikke vann) under 38 av 38 brygger (median 100% av flaten); 19 av 19 tynne bommer (utriggere under 0,6 m) synes som lys linje i fotoet (krav: alle)
+fotoet viser brygge (ikke vann) under 38 av 38 brygger (median 93% av flaten); 19 av 19 tynne bommer (utriggere under 0,6 m) synes som lys linje i fotoet (krav: alle)
 
 | område | fast | flytebrygge | utrigger | sett i fotoet |
 |---|---|---|---|---|
