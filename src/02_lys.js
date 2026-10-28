@@ -108,7 +108,7 @@ varying vec3 vWq;
 // Etter introen er solUte 1 og alt dette er én sammenligning per piksel. Ingen overlegg: skyggene som vokser fram er ekte skygger.
 uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
 float solHer(vec3 wq){ if(solUte>=1.) return 1.; float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; return smoothstep(solFront, solFront+solBredde, v); }
-const vec3 OVERSKYET=vec3(0.90,0.93,0.98);   // overskyet: litt mørkere og kjøligere enn sol
+const vec3 OVERSKYET=vec3(0.86,0.90,0.97);   // overskyet: mørkere og kjøligere enn sol, så det synes at sola kommer
 #if NUM_DIR_LIGHTS>0
 struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];

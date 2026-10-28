@@ -17,4 +17,9 @@ for(const u of [0,0.25,0.5,0.75,1]){
   const {data}=await cdp.send('Page.captureScreenshot',{format:'jpeg',quality:85}); fs.writeFileSync(`${ut}/u${u}.jpg`,Buffer.from(data,'base64'));
   console.log('u', u, await page.evaluate(()=>JSON.stringify({...window.__solvei(), sol:window.__sol().sd.map(v=>+v.toFixed(2))})));
 }
+// samme kamera (hjemmevisningen), lyset ved u 0 / 0,5 / 1: viser solkanten uten at kameraet flytter seg
+for(const u of [0,0.5,1]){
+  await page.evaluate(u=>{ window.__introStill(1); window.__solTil(u); }, u); await frames(3);
+  const {data}=await cdp.send('Page.captureScreenshot',{format:'jpeg',quality:85}); fs.writeFileSync(`${ut}/hjem-u${u}.jpg`,Buffer.from(data,'base64'));
+}
 console.log('feil', JSON.stringify(errs.slice(0,3))); await browser.close(); server.close();
