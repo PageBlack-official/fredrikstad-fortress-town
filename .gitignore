@@ -20,3 +20,7 @@ rapport/farger-tegning/*.jpg
 # kommunekartet (PDF fra kommunens kartportal) ligger bare lokalt; kontrollarkene i rapport/grunnmur viser ortofoto (29.10)
 kilder/kommunekart/*.pdf
 rapport/grunnmur/*.png
+
+# kvartaltegningene (Dropbox, åndsverk) og arbeidsfilene til kvartal-QA (masker, modellbilder): bare lokalt (28.10)
+kilder/kvartal-ai/
+rapport/kvartal-qa/_arbeid/
