@@ -33,7 +33,7 @@ function lovMatLag(){
         float lys=smoothstep(0.60,0.64,w), mid=smoothstep(0.36,0.40,w);
         vec3 lysF=vCol*vec3(1.30,1.22,0.98)+vec3(0.04,0.045,0.0);
         vec3 mork=vCol*vec3(0.50,0.60,0.68);
-        vec3 c=mix(mork, mix(vCol,lysF,lys), mid);
+        vec3 c=mix(mork, mix(vCol,lysF,lys), mid); c=mix(c*OVERSKYET, c, solHer(vWq));
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
       }`

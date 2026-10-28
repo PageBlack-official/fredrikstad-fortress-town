@@ -1,5 +1,14 @@
 # Endringslogg
 
+## 34 (28.10.2026, /prove/, ikke godkjent) – sola finner byen, skyggekartet dekker bildet
+- **Sola finner byen** (Vegar: «Kjør A»): introen starter overskyet (tegningens to toner, ingen kastskygger, litt kjøligere), en solkant vandrer over byen fra solsiden mens kameraet svinger inn (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de godkjente 42° så skyggene er lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka. Avbrutt intro henter solkanten inn på 0,8 s. Alt i lyskoden (02_lys: solHer, U_SOL, kobleSol; 15_loop: solStart/solTil/solOppdater); ingen overlegg. Light leak-overlegget fra 26.10 er tatt ut. ?solintro=0 gir fast sol fra start.
+- **Skyggekartet dekket mindre enn bildet** siden v31.1 (trinnet rundet opp): skyggene ble kuttet i kanten av dekningen, kanten fulgte kameraet, og «zoom» tegnet kartet hvert bilde (Vegar: «trærnes skygge tegnes på nytt hver gang jeg flytter meg»). Nå rundes trinnet ned (R minst 1,4·r, opptil 1650 m; sola 2500 m ute, fjernplan 6000). Regel 19 måler dekning og ny tegning i ro og under dra; rød på v33, grønn nå.
+- **Trekroner og vinduer lyses fra sola, ikke kameraet:** solRetning() er i kamerarommet; normalen transformeres dit som husene gjør. Før dreide lyssiden med kameraet.
+- **Regel 02 måler mot Kartverket** (fasit for høyde, Vegar 28.10); tegningene er fasit for fasade (03). 197 hus grønne, 78 uten sikker måling listes til kvartal-QA.
+- **Sperre i publiser.sh:** samlerapporten stemples med siste kilde-commit; ingen publisering uten fersk rapport, uten urettede endringer, eller med røde regler utenom 09 (/prove/ slipper røde gjennom, men listes). regler/kjor.py kan kjøre et utvalg og bygger sammendraget fra regel-filene.
+- Grå hus: ikke løst (se LESMEG). Kaserna med veranda og uteservering, bryggene, vann og flater mot ortofoto 2024 (27.10) er med.
+
+
 ## Uten versjon (27.10.2026, ikke publisert) – Kaserna slik den blir som hotell
 - Infanterikasernen (bnr-193867537) tegnet etter SG&CO-illustrasjonene for Fredriksborg: to høye etasjer over lys granittsokkel, vinduene i faste akser (3,4 m) rundt hele bygget, kjellervinduer i sokkelen, to grønne fløydører med overlys mot torget (de to nye inngangene Riksantikvaren godkjente i 2025, én på hver side av hjørnet), uteservering mot torget der statuen står (te-1: lavt dekke, plantekasser, parasoller, som i SG&CO-kveldsbildet), oksøye i arkene over hjørneinngangene, takarker over annenhver akse, 12 piper (årets måneder). Rettelser med grunn, laget av verktoy/kaserna.py.
 - Gården lukket: teglmur fra fløyene til brannstasjonen (mu-1, mu-2, sporet målt i ortofoto 2024), porten inn fra gata med rundbue midt i muren. Gjerdelinjene i samme spor tegnes ikke lenger.

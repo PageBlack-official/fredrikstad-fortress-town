@@ -20,6 +20,13 @@ Motor: MapLibre GL JS 6.14.0 (kamera, gester, koordinater). Byen: three.js 0.160
 Geometrien er slått sammen (v29): vanlige hus ligger i ett nett per materiale med byggindeks per punkt; løft og vekst per bygg går gjennom hus-teksturen tHus (05_bygg: settHus). Et hus som skal endres, endres i data (rettelser.json) og bygges på nytt, ikke i scenen. Grupper som flyttes som objekter (kirka, portbygg, bygg med deler, broer) slås sammen med flatGruppe.
 Neste: kvalitetssikring kvartal for kvartal (bevisark tegning mot modell), deretter regel 02–04 grønne. v30: husfarger dømt visuelt mot 2019-trykket (rapport/farger-dom, rettelser i data/rettelser.json), trær fra flyfoto på flatene og dagens rekker på vollene. Åpne datakilder til POI-laget: rapport/apne-data.md.
 
+## Sola finner byen (28.10)
+Introen: overskyet → solkant vandrer over byen → kastskygger vokser fram → sola lander på 250°/42°. Lyset følger kameraets vei (bearing),
+så det er riktig uansett bildefrekvens; avbrutt intro henter resten inn på 0,8 s. Shaderen: `solHer(wq)` i GL_SOL_F (02_lys) gir 0–1 per
+punkt, `skyggeMask()` og de lyse tonene blandes med den; `U_SOL` deles av alle materialer gjennom `kobleSol()` (15_loop ved load).
+Stillbilder langs veien: `node verktoy/sol-intro-stills.mjs ut/enkel/index.html rapport/_sol` (u 0, 0,25, 0,5, 0,75, 1), fordi
+programvare-GPU-en ikke kan vise introen i fart; dommen i fart er Vegars, på /prove/.
+
 ## Faste ID-er: bygningsnummeret fra Matrikkelen (26.10)
 Hvert bygg har en fast nøkkel i `id`: `bnr-<bygningsnummer>` når bygget finnes i Matrikkelen (Kartverket, CC BY 4.0), ellers `pb-<løpenummer>`. Bygningsnummeret er statens nøkkel, den samme kommunen, Forsvarsbygg, meglere og Riksantikvaren bruker, og det finnes i alle norske byer. `matrikkel` på bygget har bygningsnummer, uuid, bygningstype, kulturminne/SEFRAK og adresse- og matrikkelenhet-id (eierkoblingen).
 Rettelser, porter og legende peker på id, aldri på plass i lista. Alle id-er som er delt ut, står i kilder/id-register.txt; en id slettes aldri, bygget skjules med grunn. Regel 14 passer på dette.

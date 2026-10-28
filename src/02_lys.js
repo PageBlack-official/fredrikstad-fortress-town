@@ -65,7 +65,7 @@ function oppdaterSol(){
   // myke grunner (litt snudd, hus som glir) ventes med til 150 ms har gått mens kameraet er i fart, så et dra ikke tegner skyggekartet hvert bilde;
   // står kameraet stille, tegnes det med en gang, så det siste bildet alltid er riktig
   const naa=performance.now();
-  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150) grunn='';
+  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150 && introDone) grunn='';   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
   if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
     // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
     // marginen ofte, og hver ny tegning med ny skala og nytt senter flyttet tekselrutenettet, så de myke kantene krøp. Nå er
@@ -103,6 +103,12 @@ const GL_SOL_F=`#include <common>
 #include <packing>
 #include <shadowmap_pars_fragment>
 varying vec3 vWq;
+// Sola finner byen (28.10, Vegar: «A»): i introen er byen overskyet (ingen kastskygger, kjølig), og en solkant vandrer over byen.
+// Kanten er et plan i verden (solFrontDir), flyttet av solFront, myk over solBredde meter; høye punkter (kirketårnet) får lys litt før.
+// Etter introen er solUte 1 og alt dette er én sammenligning per piksel. Ingen overlegg: skyggene som vokser fram er ekte skygger.
+uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
+float solHer(vec3 wq){ if(solUte>=1.) return 1.; float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; return smoothstep(solFront, solFront+solBredde, v); }
+const vec3 OVERSKYET=vec3(0.90,0.93,0.98);   // overskyet: litt mørkere og kjøligere enn sol
 #if NUM_DIR_LIGHTS>0
 struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
@@ -120,7 +126,7 @@ float skyggeMask(){ float s=1.;
     s=acc/16.;
   }
 #endif
-  return s; }
+  return mix(1., s, solHer(vWq)); }
 vec3 solRetning(){
 #if NUM_DIR_LIGHTS>0
   return directionalLights[0].direction;
@@ -145,10 +151,13 @@ float skravurMaske(vec3 wq, float k){ if(skravur<=0.) return 0.;
 const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
+// solfronten deles av alle materialer: ett objekt per uniform, koblet inn etter at scenen er bygd (kobleSol, kalles fra 15_loop)
+const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:90}, dir:{value:new THREE.Vector3(1,0,0)} };
+function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(o.material):[]; for(const m of ms){ if(m.isShaderMaterial && m.fragmentShader.includes('solHer(')){ m.uniforms.solUte=U_SOL.ute; m.uniforms.solFront=U_SOL.front; m.uniforms.solBredde=U_SOL.bredde; m.uniforms.solFrontDir=U_SOL.dir; m.needsUpdate=true; n++; } } }); return n; }
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){
   m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights), {skravur:U_SKRAVUR});
   m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
-  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','gl_FragColor.rgb=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask());\n#include <colorspace_fragment>');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(gl_FragColor.rgb*OVERSKYET, sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); }\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }

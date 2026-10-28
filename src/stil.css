@@ -29,15 +29,3 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .maplibregl-ctrl button:not(:disabled):hover{background-color:rgba(43,36,32,.06)}
 #kort.vis~.maplibregl-control-container .maplibregl-ctrl-bottom-right{opacity:.35}
 
-/* light leak i introen (26.10, Vegar: «en fet light leak i introen»): varme lysflekker som glir over bildet mens byen vokser og
-   sveipet lander, lagt oppå lerretet med screen-blanding. Ingen pekerhendelser; borte når introen er ferdig. */
-#lekkasje{position:fixed;inset:0;pointer-events:none;z-index:4;mix-blend-mode:screen;opacity:0}
-#lekkasje.paa{animation:lekk-inn 4.6s cubic-bezier(.3,0,.2,1) forwards}
-#lekkasje i{position:absolute;border-radius:50%;filter:blur(40px)}
-#lekkasje i:nth-child(1){left:-25vmax;top:-30vmax;width:85vmax;height:75vmax;background:radial-gradient(closest-side,rgba(255,150,60,.95),rgba(255,90,40,.55) 45%,rgba(255,60,90,0) 100%);animation:lekk-gli1 4.6s ease-out forwards}
-#lekkasje i:nth-child(2){right:-30vmax;top:10vh;width:70vmax;height:90vmax;background:radial-gradient(closest-side,rgba(255,210,140,.8),rgba(255,120,80,.35) 50%,rgba(255,80,120,0) 100%);animation:lekk-gli2 4.6s ease-out forwards}
-#lekkasje i:nth-child(3){left:20vw;bottom:-45vmax;width:90vmax;height:60vmax;background:radial-gradient(closest-side,rgba(255,170,90,.45),rgba(255,120,60,0) 100%);animation:lekk-gli1 4.6s ease-out reverse forwards}
-@keyframes lekk-inn{0%{opacity:0}12%{opacity:.95}45%{opacity:.75}100%{opacity:0}}
-@keyframes lekk-gli1{from{transform:translate(0,0) scale(1)}to{transform:translate(18vw,10vh) scale(1.25)}}
-@keyframes lekk-gli2{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-14vw,-8vh) scale(.9)}}
-@media (prefers-reduced-motion:reduce){#lekkasje.paa{animation-duration:2s}}
