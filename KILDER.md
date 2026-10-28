@@ -3,7 +3,7 @@
 | Emne / felt | Kilde | Merknad |
 |---|---|---|
 | bygg.p (fotavtrykk) | OpenStreetMap | Ikke FKB. 9 bygg uten bygning i flyfoto er skjult (`skjul`, med grunn). Resten ikke verifisert enkeltvis. |
-| bygg.h (høyde) | Kvartaltegningene via `tegnet_h` (h = tegnet_h/1,72) der de finnes; ellers OSM | 18 hus står med OSM-rundetall 3,0/6,0 m |
+| bygg.h / th (vegghøyde, takhelning) | Kartverket DOM−DTM 1 m (rapport/hoyder), lagt inn som rettelser 24.10 for 197 hus med sikker måling; fasit for høyde fra 28.10 (Vegar). De 78 uten sikker måling står med tegning (`tegnet_h`/1,72) eller OSM til kvartal-QA | Tegningene viser høyde fra tegnevinkelen, ikke målt vegg; de er fasit for fasade, ikke høyde |
 | bygg.vegg / tak (farge) | Trykkfila 2015 (kartbrosjyren), 128 rettet manuelt | Godkjente fasadefarger per bygg (Vegar 2015) |
 | bygg.vind (vinduer/dører) | Kvartaltegningene (strektegninger/Kvartal*.ai) for 97 hus (`fasade_kilde: kvartaltegning`) + 25 lest på ny i v33 (rettelser); de 142 andre (`antatt`) har vinduer og dører etter reglene målt på tegningene (verktoy/vinduer_regler.py, rapport/vinduer/regler-fra-tegningene.md, rettelser med grunn «regler fra kvartaltegningene (27.10)») | De antatte er regler, ikke tegning: må fortsatt kvalitetssikres kvartal for kvartal |
 | bygg.navn / nr / tekst | Tegnforklaringen i kartbrosjyren 2015 (1–46), norsk | Engelsk/tysk finnes i PDF-en, ikke lagt inn |

@@ -80,7 +80,7 @@ Tegnes i src/18_brygger.js. Regel 18 måler dekning, at ingen brygge står på l
 Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
 ## Regler som må være grønne før publisering
-01–04 innhold mot kildene, 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde). `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
+01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra. `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
 
 ## Agenter: brief og mottakskontroll (23.10)
 Vegar: «jeg liker ikke at du ikke merker noe agenter glipper.» Derfor:
