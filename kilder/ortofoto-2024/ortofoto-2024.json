@@ -1,7 +1,7 @@
 {
  "kilde": "Fredrikstad kommune, Bakgrunnskart/Ortofoto_2024 (ArcGIS MapServer export)",
  "url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/Bakgrunnskart/Ortofoto_2024/MapServer/export",
- "hentet": "2026-10-27",
+ "hentet": "2026-10-28",
  "lisens": "ikke avklart: bare til kontroll, aldri vist i kartet, ikke i git",
  "srs": "EPSG:3857 (bboxSR=imageSR=3857)",
  "m_per_px": 0.125,

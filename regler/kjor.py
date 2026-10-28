@@ -21,7 +21,7 @@ for f in sorted(glob.glob(os.path.join(ROT, 'regler', '[0-9]*.py'))):
     linjer = [l.rstrip('\n') for l in open(p, encoding='utf8')]
     m = re.match(r'# (\S+): (OK|FEIL)', linjer[0]); forste = next((l for l in linjer[1:] if l.strip()), '')
     ut.append(f"{'OK  ' if m and m.group(2) == 'OK' else 'FEIL'} {navn}  ({forste.strip()[:160]})")
-hash_ = git('log', '-1', '--format=%h', '--', 'src', 'data', 'regler', 'bygg.py', 'datalag.py', 'assets');   # siste commit som rørte kilden, så en rapport-commit ikke gjør rapporten gammel urettet = git('status', '--porcelain', '--', 'src', 'data', 'regler', 'bygg.py', 'datalag.py', 'assets')
+hash_ = git('log', '-1', '--format=%h', '--', 'src', 'data', 'regler', 'bygg.py', 'datalag.py', 'assets'); urettet = git('status', '--porcelain', '--', 'src', 'data', 'regler', 'bygg.py', 'datalag.py', 'assets')   # siste commit som rørte kilden, så en rapport-commit ikke gjør rapporten gammel urettet = git('status', '--porcelain', '--', 'src', 'data', 'regler', 'bygg.py', 'datalag.py', 'assets')
 versjon = open(os.path.join(ROT, 'VERSJON')).read().strip()
 hode = f"Kilde: {hash_}{'+urettet' if urettet else ''} versjon {versjon} kjørt {datetime.datetime.now():%Y-%m-%d %H:%M}"
 open(os.path.join(ROT, 'rapport', 'rapport.md'), 'w', encoding='utf8').write('# Regelrapport\n\n' + hode + '\n\n' + '\n'.join('- ' + u for u in ut) + '\n\nDetaljer per regel i samme mappe.\n')
