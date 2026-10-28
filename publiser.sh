@@ -5,7 +5,7 @@ set -e
 ROT=$(cd "$(dirname "$0")" && pwd)
 # Sperre (28.10): ingen publisering uten fersk samlerapport kjørt mot akkurat denne kilden (regler/kjor.py), og ingen røde regler
 # utenom 09 (publisert versjon er alltid gammel rett før en ny publisering). På /prove/ slipper røde regler gjennom, men listes.
-HASH=$(git -C "$ROT" rev-parse --short HEAD); URETTET=$(git -C "$ROT" status --porcelain -- src data regler bygg.py datalag.py assets)
+HASH=$(git -C "$ROT" log -1 --format=%h -- src data regler bygg.py datalag.py assets); URETTET=$(git -C "$ROT" status --porcelain -- src data regler bygg.py datalag.py assets)
 RAPP="$ROT/rapport/rapport.md"
 if [ -n "$URETTET" ]; then echo "STOPP: urettede endringer i kilden; commit først, så regler/kjor.py"; exit 1; fi
 if ! grep -q "^Kilde: $HASH versjon $(cat "$ROT/VERSJON") " "$RAPP" 2>/dev/null; then echo "STOPP: rapport/rapport.md er ikke kjørt mot $HASH (kjør: PYTHONPATH=regler python3 regler/kjor.py)"; exit 1; fi
