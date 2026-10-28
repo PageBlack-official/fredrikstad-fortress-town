@@ -98,7 +98,7 @@ function mat(rgb, dim, sk, opt={}){
           float lit=lam*skyggeMask();
           float k=1.-lit;
           float su=solHer(wq);
-          vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6*su), lit); c=mix(c*OVERSKYET, c, su);
+          vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6*su), lit); c=mix(graavaer(c), c, su);
           // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
           vec3 nq=normalize(cross(dFdx(lp),dFdy(lp)));
           float vask=nn(wq.xz*0.045+wq.y*0.031)*0.62+nn(wq.xz*0.17+vec2(wq.y*0.23,3.1))*0.38;

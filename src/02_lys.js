@@ -26,7 +26,7 @@ function solposisjon(dato, lat=59.2075, lon=10.9545){
 }
 const SOL={modus:'plakat', asimut:0, hoyde:35*GRAD};
 // sollyset blir varmere jo lavere sola står
-function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,34*GRAD);
+function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,48*GRAD);   // 48°: den faste sola (42°) er svakt gyllen, ikke hvit (28.10)
   sun.color.setRGB(1.0, THREE.MathUtils.lerp(0.80,0.985,k), THREE.MathUtils.lerp(0.62,0.95,k)); }
 function setSol(asimut, hoyde){
   SOL.modus='ekte'; SOL.asimut=asimut; SOL.hoyde=Math.max(hoyde,3*GRAD);
@@ -108,7 +108,9 @@ varying vec3 vWq;
 // Etter introen er solUte 1 og alt dette er én sammenligning per piksel. Ingen overlegg: skyggene som vokser fram er ekte skygger.
 uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
 float solHer(vec3 wq){ if(solUte>=1.) return 1.; float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; return smoothstep(solFront, solFront+solBredde, v); }
-const vec3 OVERSKYET=vec3(0.86,0.90,0.97);   // overskyet: mørkere og kjøligere enn sol, så det synes at sola kommer
+const vec3 OVERSKYET=vec3(0.74,0.80,0.92);   // overskyet: tydelig mørkere og blåere (28.10 kl. 16.40: 0,86/0,90/0,97 var usynlig i Vegars Chrome)
+// overskyet tar også metningen ned: byen ser ut som tegningen i gråvær, og sola gir fargene tilbake
+vec3 graavaer(vec3 c){ float g=dot(c, vec3(0.299,0.587,0.114)); return mix(vec3(g), c, 0.72)*OVERSKYET; }
 #if NUM_DIR_LIGHTS>0
 struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
@@ -158,6 +160,6 @@ function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(
 function medSkygge(m){
   m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights), {skravur:U_SKRAVUR});
   m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
-  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(gl_FragColor.rgb*OVERSKYET, sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); }\n#include <colorspace_fragment>');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(graavaer(gl_FragColor.rgb), sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); }\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }
