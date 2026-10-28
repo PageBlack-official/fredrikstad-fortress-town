@@ -99,7 +99,7 @@ renderer.autoClear=false;
 // Oppløsningen settes av skjermen (pikselbudsjett) og senkes én gang for godt på svake maskiner (maalYtelse), aldri per gest.
 // pikselbudsjett per bilde: 11 M på en maskin, 5 M på berøringsskjerm (telefon/nettbrett tegner på DPR 2–3 og hang etter fingeren,
 // Vegar 28.10; ytelsesmåleren trappet først ned etter 75 trege bilder). ?pix=<millioner> overstyrer.
-const BERORING = matchMedia('(pointer: coarse)').matches;
+const BERORING = window.matchMedia('(pointer: coarse)').matches;
 const PIX=Q0.get('pix') ? +Q0.get('pix')*1e6 : (BERORING ? 5e6 : 11e6);
 let skalaStille=1, skalaMaskin=1;   // skalaMaskin: 1 på vanlige maskiner, lavere når maalYtelse har målt at maskinen ikke holder følge
 function beregnSkala(){ const n=renderer.domElement.width*renderer.domElement.height; skalaStille=THREE.MathUtils.clamp(Math.sqrt(PIX/n),0.5,1)*skalaMaskin; }
@@ -415,7 +415,7 @@ const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
 // solfronten deles av alle materialer: ett objekt per uniform, koblet inn etter at scenen er bygd (kobleSol, kalles fra 15_loop)
-const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:90}, dir:{value:new THREE.Vector3(1,0,0)} };
+const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:160}, dir:{value:new THREE.Vector3(1,0,0)} };   // kanten er 160 m myk: et gløtt som vandrer, ikke en linje
 function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(o.material):[]; for(const m of ms){ if(m.isShaderMaterial && m.fragmentShader.includes('solHer(')){ m.uniforms.solUte=U_SOL.ute; m.uniforms.solFront=U_SOL.front; m.uniforms.solBredde=U_SOL.bredde; m.uniforms.solFrontDir=U_SOL.dir; m.needsUpdate=true; n++; } } }); return n; }
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){
@@ -1549,7 +1549,9 @@ function solStart(){
   U_SOL.ute.value=0; U_SOL.front.value=solVei.v0; setSol(250*GRAD, 58*GRAD);
 }
 function solTil(u){   // u 0..1 langs kameraets vei
-  const k=glid(THREE.MathUtils.clamp((u-0.08)/0.80, 0, 1));            // kanten går mellom 8 % og 88 % av veien, med samme kurve som kameraet
+  // kameraets u har alt glid-kurven i seg (80 % av svingen skjer på det midterste sekundet), så kanten følger u rett fram over hele veien;
+  // en kurve til oppå gjorde at sola var over byen på 0,6 s (målt i Vegars Chrome 28.10 kl. 16.30)
+  const k=THREE.MathUtils.clamp(u/0.97, 0, 1);
   U_SOL.front.value=solVei.v0+(solVei.v1-solVei.v0)*k;
   setSol(250*GRAD, (58-16*k)*GRAD);
   if(k>=1 && u>=0.999){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; solVei.ferdig=true; }
