@@ -1529,7 +1529,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
-  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
+  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true;
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
@@ -1562,14 +1562,16 @@ function solTil(u){   // u 0..1 langs kameraets vei
 function introU(){ const b0=-(AZ0_GRADER+SVEIP); let d=((map.getBearing()-b0)%360+540)%360-180; return THREE.MathUtils.clamp(Math.abs(d)/SVEIP,0,1); }
 function solOppdater(dt){
   if(solVei.ferdig) return;
-  if(!introDone){ solVei.u=introU(); solTil(solVei.u); }
+  if(!introDone){ if(!introStartet) return; solVei.u=introU(); solTil(solVei.u); }
   else { solVei.u=Math.min(1, solVei.u+dt/0.8); solTil(solVei.u); if(solVei.u>=1) solTil(1); }   // introen ble avbrutt: hent inn resten
   skyggeSkitten=true;
 }
 // miniatyr-uskarpheten i introen glir ut i takt med kameraet (samme kurve), i stedet for å hoppe fra 1 til 0 når introen er ferdig
 // (Vegar 28.10: «ytterkantene er blury helt til introen er ferdig, og da blir alt skarpt samtidig»). Uten solintro: ut over de siste 40 %.
 let tiltU=0;
-function introTilt(){ if(introDone && solVei.ferdig) return 0; tiltU=Math.max(tiltU, introDone ? 1 : introU()); return 1-glid(THREE.MathUtils.clamp((tiltU-0.35)/0.55,0,1)); }
+// tiltU låses til maks først etter at introen har satt startvinkelen (introStartet): før det står kartet i hjemmevisningen og introU() er 1
+let introStartet=false;
+function introTilt(){ if(!introStartet) return 1; if(introDone && solVei.ferdig) return 0; tiltU=Math.max(tiltU, introDone ? 1 : introU()); return 1-glid(THREE.MathUtils.clamp((tiltU-0.35)/0.55,0,1)); }
 window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig, tilt:introTilt()});
 window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, START[0], START[1]); window.__solTil(u); };   // kamera + lys ved u langs introveien
 window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
@@ -1617,14 +1619,14 @@ window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__k
 map.on('load', ()=>{
   map.addLayer(byLag);
   kobleSol(); if(SOLINTRO) solStart();
-  if(Q.get('skip')){ introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
+  if(Q.get('skip')){ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
   else startIntro();
   puls();
 });
 // testkroker (skjermbilder uten ny sidelasting)
 window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
-window.__vis=(az,zoom,tx,ty)=>{ introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
 window.__scene=()=>({scene, city});   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
