@@ -1,13 +1,13 @@
 # Regelrapport
 
-Kilde: a3bf440 versjon 34 kjørt 2026-10-28 16:29
+Kilde: c75c25a versjon 34 kjørt 2026-10-28 16:39
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 9 skjult med grunn)
 - OK   02_hoyder_maalt  (197 hus står med Kartverkets målte høyde; 0 avviker; 78 hus uten sikker måling beholder tegning/OSM)
 - FEIL 03_fasader_fra_tegning  (97 hus med fasade fra tegning, 170 antatt (må kvalitetssikres kvartal for kvartal))
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(skalaStille) uavhengig av bevegelse)
-- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/fredrikstad-fortress-town/ut/enkel/index.html 2319 kB versjon 34)
+- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/fredrikstad-fortress-town/ut/enkel/index.html 2320 kB versjon 34)
 - OK   07_ingen_feil_i_bruk  (- intro: underveis az -1.04 zoom 0.68 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 32 (ønsket 33))
