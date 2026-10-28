@@ -12,7 +12,7 @@ const vindMat=new THREE.ShaderMaterial({
     void main(){
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
-      float d=dot(normalize(vN),solRetning());
+      float d=dot(normalize(mat3(viewMatrix)*vN),solRetning());   // kamerarom som husene (28.10)
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
       vec3 sf=mix(vec3(1.),solFarge(),0.6);
       if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)

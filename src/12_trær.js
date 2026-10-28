@@ -27,7 +27,7 @@ function lovMatLag(){
     fragmentShader:GL_SOL_F+`varying vec3 vN; varying vec3 vCol; uniform float uStoy;
       void main(){
         vec3 n=normalize(vN);
-        float w=dot(n,solRetning())*0.5+0.5;
+        float w=dot(normalize(mat3(viewMatrix)*n),solRetning())*0.5+0.5;   // solRetning() er i kamerarommet (three.js); normalen må dit, ellers dreier lyssiden med kameraet (28.10)
         w=mix(w, w*0.55, (1.-skyggeMask())*0.85);
         // tre toner som i tegningen: lys solside, grunnfarge, kjølig skyggeside
         float lys=smoothstep(0.60,0.64,w), mid=smoothstep(0.36,0.40,w);
