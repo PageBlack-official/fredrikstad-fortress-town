@@ -1,0 +1,1263 @@
+{
+ "laget": "2026-10-28",
+ "verktoy": "verktoy/kvartal_qa.py",
+ "metode": "SIFT + RANSAC similaritet tegning->2019-trykk over flere rasterskalaer; bygg = gml=1, ikke skjult, px2019 (rapport/farger2019.json) innenfor tegningens tegnede omriss utvidet 15 px i trykket. «kant» = bygg som bare treffer små biter av nabokvartal i kanten av tegningen (< 15 % av hovedmotivet). Runde 2: en tegnet bit uten bygg får nærmeste ukoblede bygg innenfor 65 px (bygg_naer); bygg_manuelt er satt for hånd med grunn.",
+ "gml_bygg_uten_px2019": [],
+ "bygg_i_flere_tegninger": {
+  "bnr-193868088": [
+   "Kvartal2BITMP",
+   "Kvartal3"
+  ],
+  "bnr-193868339": [
+   "Kvartal4BITMP",
+   "kvartal7"
+  ],
+  "bnr-193868525": [
+   "Kvartal4BITMP",
+   "kvartal7"
+  ],
+  "bnr-193971946": [
+   "Kvartal4BITMP",
+   "kvartal7"
+  ],
+  "bnr-193868290": [
+   "kvartal7",
+   "Kvartal8BITMAP"
+  ],
+  "bnr-13394024": [
+   "kvartal7",
+   "Kvartal10"
+  ],
+  "bnr-193867588": [
+   "kvartal7",
+   "Kvartal10"
+  ],
+  "bnr-193867839": [
+   "Kvartal11",
+   "Kvartal12"
+  ],
+  "bnr-193867804": [
+   "Kvartal12",
+   "Kvartal14"
+  ],
+  "bnr-193867715": [
+   "Kvartal12",
+   "Kvartal14"
+  ],
+  "bnr-193972403": [
+   "Kvartal14",
+   "sistekvartal"
+  ]
+ },
+ "tegninger": [
+  {
+   "navn": "Kvartal2BITMP",
+   "fil": "strektegninger/Kvartal2BITMP.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.320502,
+     -0.000981,
+     1556.297557
+    ],
+    [
+     0.000981,
+     0.320502,
+     322.872578
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.3205,
+   "rotasjon_grader": 0.175,
+   "residual_median_px": 0.25,
+   "inliers": 23,
+   "treff": 31,
+   "rasterskala_ved_matching": 0.4,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1556.3,
+     322.9
+    ],
+    [
+     1828.4,
+     323.7
+    ],
+    [
+     1827.8,
+     525.3
+    ],
+    [
+     1555.7,
+     524.5
+    ]
+   ],
+   "bygg": [
+    "bnr-193972373",
+    "bnr-193868118",
+    "bnr-193868126",
+    "bnr-193868134",
+    "bnr-193868150",
+    "bnr-193868088",
+    "bnr-193972292",
+    "bnr-193972314",
+    "bnr-193972365",
+    "bnr-193868096",
+    "bnr-193868142",
+    "bnr-193971350",
+    "bnr-193972349",
+    "bnr-193868681",
+    "bnr-193868703",
+    "bnr-300399132"
+   ],
+   "antall": 16,
+   "fasade_kvartaltegning": 9,
+   "fasade_antatt": 7,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Kvartal3",
+   "fil": "strektegninger/Kvartal3.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.336075,
+     -0.000455,
+     1749.358979
+    ],
+    [
+     0.000455,
+     0.336075,
+     255.922102
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.33608,
+   "rotasjon_grader": 0.077,
+   "residual_median_px": 0.3,
+   "inliers": 42,
+   "treff": 50,
+   "rasterskala_ved_matching": 0.35,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1749.4,
+     255.9
+    ],
+    [
+     2077.0,
+     256.4
+    ],
+    [
+     2076.5,
+     626.0
+    ],
+    [
+     1748.9,
+     625.6
+    ]
+   ],
+   "bygg": [
+    "bnr-193868053",
+    "bnr-193868037",
+    "bnr-193867324",
+    "bnr-193868088",
+    "bnr-193869556",
+    "bnr-193868061"
+   ],
+   "antall": 6,
+   "fasade_kvartaltegning": 5,
+   "fasade_antatt": 1,
+   "fasade_ingen": 0,
+   "bygg_naer": [
+    {
+     "id": "bnr-193869556",
+     "avstand_px": 28.3
+    },
+    {
+     "id": "bnr-193868061",
+     "avstand_px": 14.4,
+     "grunn": "fasade_kilde=kvartaltegning, ellers ukoblet"
+    }
+   ],
+   "bygg_manuelt": [],
+   "kant": [
+    "bnr-193867308"
+   ]
+  },
+  {
+   "navn": "Kvartal4BITMP",
+   "fil": "strektegninger/Kvartal4BITMP.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.325225,
+     -0.005402,
+     1198.967557
+    ],
+    [
+     0.005402,
+     0.325225,
+     278.715037
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32527,
+   "rotasjon_grader": 0.952,
+   "residual_median_px": 0.25,
+   "inliers": 18,
+   "treff": 28,
+   "rasterskala_ved_matching": 0.5,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1199.0,
+     278.7
+    ],
+    [
+     1437.7,
+     282.7
+    ],
+    [
+     1434.0,
+     504.8
+    ],
+    [
+     1195.3,
+     500.8
+    ]
+   ],
+   "bygg": [
+    "bnr-193868363",
+    "bnr-193868339",
+    "bnr-193971954",
+    "bnr-193868371",
+    "bnr-193868525",
+    "bnr-193971946",
+    "bnr-193971970",
+    "bnr-193868398",
+    "bnr-194006187",
+    "bnr-193971962",
+    "bnr-193971989",
+    "bnr-193868401",
+    "bnr-193868428"
+   ],
+   "antall": 13,
+   "fasade_kvartaltegning": 8,
+   "fasade_antatt": 5,
+   "fasade_ingen": 0,
+   "bygg_naer": [
+    {
+     "id": "bnr-193868428",
+     "avstand_px": 27.3,
+     "grunn": "fasade_kilde=kvartaltegning, ellers ukoblet"
+    }
+   ],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "kvartal5",
+   "fil": "strektegninger/kvartal5.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.315819,
+     0.005971,
+     1388.306996
+    ],
+    [
+     -0.005971,
+     0.315819,
+     397.874353
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.31588,
+   "rotasjon_grader": -1.083,
+   "residual_median_px": 0.24,
+   "inliers": 66,
+   "treff": 88,
+   "rasterskala_ved_matching": 0.6,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1388.3,
+     397.9
+    ],
+    [
+     1705.4,
+     391.9
+    ],
+    [
+     1709.7,
+     617.7
+    ],
+    [
+     1392.6,
+     623.7
+    ]
+   ],
+   "bygg": [
+    "bnr-193868223",
+    "bnr-6242812",
+    "bnr-193868231",
+    "bnr-16290424",
+    "bnr-6251323",
+    "bnr-193987397",
+    "bnr-193868207",
+    "bnr-6251331",
+    "bnr-6251218",
+    "bnr-193868215",
+    "bnr-193972195",
+    "bnr-193972187",
+    "bnr-193972225",
+    "bnr-193972209",
+    "bnr-193971342"
+   ],
+   "antall": 15,
+   "fasade_kvartaltegning": 10,
+   "fasade_antatt": 5,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "kvartal6",
+   "fil": "strektegninger/kvartal6.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.300882,
+     -0.000118,
+     1601.297771
+    ],
+    [
+     0.000118,
+     0.300882,
+     527.038019
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.30088,
+   "rotasjon_grader": 0.022,
+   "residual_median_px": 0.22,
+   "inliers": 75,
+   "treff": 85,
+   "rasterskala_ved_matching": 0.3,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1601.3,
+     527.0
+    ],
+    [
+     1899.8,
+     527.2
+    ],
+    [
+     1899.7,
+     739.3
+    ],
+    [
+     1601.2,
+     739.2
+    ]
+   ],
+   "bygg": [
+    "bnr-193868045",
+    "bnr-6247822",
+    "bnr-193867979",
+    "pb-6",
+    "bnr-193868029",
+    "bnr-193971334",
+    "bnr-193868630",
+    "bnr-193868002",
+    "bnr-193971318",
+    "bnr-193972179",
+    "bnr-193867952",
+    "bnr-193867995",
+    "bnr-193868010",
+    "bnr-193971296",
+    "bnr-193868665",
+    "bnr-193868657",
+    "bnr-193867987",
+    "pb-15"
+   ],
+   "antall": 18,
+   "fasade_kvartaltegning": 8,
+   "fasade_antatt": 9,
+   "fasade_ingen": 1,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "kvartal7",
+   "fil": "strektegninger/kvartal7.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.325449,
+     -6.6e-05,
+     984.122041
+    ],
+    [
+     6.6e-05,
+     0.325449,
+     380.216924
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32545,
+   "rotasjon_grader": 0.012,
+   "residual_median_px": 0.28,
+   "inliers": 29,
+   "treff": 51,
+   "rasterskala_ved_matching": 0.6,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     984.1,
+     380.2
+    ],
+    [
+     1348.3,
+     380.3
+    ],
+    [
+     1348.3,
+     579.1
+    ],
+    [
+     984.1,
+     579.1
+    ]
+   ],
+   "bygg": [
+    "bnr-193868355",
+    "bnr-193868339",
+    "bnr-193867626",
+    "bnr-193868347",
+    "bnr-193971369",
+    "bnr-193868320",
+    "bnr-193867618",
+    "bnr-193918239",
+    "bnr-193868525",
+    "bnr-6251765",
+    "bnr-193971946",
+    "bnr-6275109",
+    "bnr-193868290",
+    "bnr-13394024",
+    "bnr-193867588",
+    "bnr-193991718",
+    "bnr-193971202",
+    "bnr-193868517"
+   ],
+   "antall": 18,
+   "fasade_kvartaltegning": 10,
+   "fasade_antatt": 8,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Kvartal8BITMAP",
+   "fil": "strektegninger/Kvartal8BITMAP.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.326767,
+     -0.008173,
+     1271.386255
+    ],
+    [
+     0.008173,
+     0.326767,
+     503.964894
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32687,
+   "rotasjon_grader": 1.433,
+   "residual_median_px": 0.24,
+   "inliers": 22,
+   "treff": 25,
+   "rasterskala_ved_matching": 0.5,
+   "enige_skalaer": 6,
+   "omriss_i_trykket": [
+    [
+     1271.4,
+     504.0
+    ],
+    [
+     1551.4,
+     511.0
+    ],
+    [
+     1546.3,
+     715.5
+    ],
+    [
+     1266.3,
+     708.5
+    ]
+   ],
+   "bygg": [
+    "bnr-193972152",
+    "bnr-193868258",
+    "pb-5",
+    "bnr-193868266",
+    "bnr-193868274",
+    "bnr-193868312",
+    "bnr-193868282",
+    "bnr-13414904",
+    "bnr-193972136",
+    "bnr-300279164",
+    "bnr-193868290",
+    "bnr-193868533",
+    "pb-13",
+    "bnr-193972144",
+    "bnr-193971288",
+    "bnr-16313173"
+   ],
+   "antall": 16,
+   "fasade_kvartaltegning": 7,
+   "fasade_antatt": 9,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Kvartal9",
+   "fil": "strektegninger/Kvartal9.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.322687,
+     0.001578,
+     1429.808611
+    ],
+    [
+     -0.001578,
+     0.322687,
+     631.486174
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32269,
+   "rotasjon_grader": -0.28,
+   "residual_median_px": 0.24,
+   "inliers": 41,
+   "treff": 66,
+   "rasterskala_ved_matching": 0.6,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1429.8,
+     631.5
+    ],
+    [
+     1768.3,
+     629.8
+    ],
+    [
+     1769.3,
+     837.6
+    ],
+    [
+     1430.8,
+     839.3
+    ]
+   ],
+   "bygg": [
+    "bnr-193972489",
+    "bnr-193867855",
+    "bnr-193867936",
+    "bnr-193867863",
+    "bnr-193867901",
+    "bnr-193867944",
+    "bnr-193972519",
+    "bnr-193972624",
+    "bnr-193867928",
+    "bnr-193867898",
+    "bnr-193868622",
+    "pb-14",
+    "bnr-193971377",
+    "bnr-193971385",
+    "bnr-193972543",
+    "bnr-193972535",
+    "bnr-193972616",
+    "bnr-193972632",
+    "bnr-193972497",
+    "bnr-193868614"
+   ],
+   "antall": 20,
+   "fasade_kvartaltegning": 8,
+   "fasade_antatt": 12,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": [
+    "bnr-193868592",
+    "bnr-193972594",
+    "bnr-193972101",
+    "bnr-193972446",
+    "bnr-193867766",
+    "bnr-193972128",
+    "bnr-193972578",
+    "bnr-193972608",
+    "bnr-193867774"
+   ]
+  },
+  {
+   "navn": "Kvartal10",
+   "fil": "strektegninger/Kvartal10.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.322261,
+     0.004088,
+     798.457799
+    ],
+    [
+     -0.004088,
+     0.322261,
+     440.677161
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32229,
+   "rotasjon_grader": -0.727,
+   "residual_median_px": 0.2,
+   "inliers": 48,
+   "treff": 69,
+   "rasterskala_ved_matching": 0.6,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     798.5,
+     440.7
+    ],
+    [
+     1139.4,
+     436.4
+    ],
+    [
+     1142.5,
+     677.7
+    ],
+    [
+     801.5,
+     682.1
+    ]
+   ],
+   "bygg": [
+    "bnr-193971938",
+    "bnr-193972411",
+    "bnr-13394024",
+    "bnr-193867588",
+    "bnr-193987370",
+    "bnr-193867596",
+    "bnr-193868711",
+    "bnr-193867545",
+    "bnr-193971911",
+    "bnr-193971903",
+    "bnr-193971873",
+    "bnr-193868479",
+    "bnr-193868495",
+    "bnr-193867553"
+   ],
+   "antall": 14,
+   "fasade_kvartaltegning": 9,
+   "fasade_antatt": 5,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Kvartal11",
+   "fil": "strektegninger/Kvartal11.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.321144,
+     -0.000189,
+     1043.849238
+    ],
+    [
+     0.000189,
+     0.321144,
+     594.150708
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32114,
+   "rotasjon_grader": 0.034,
+   "residual_median_px": 0.23,
+   "inliers": 29,
+   "treff": 43,
+   "rasterskala_ved_matching": 0.5,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1043.8,
+     594.2
+    ],
+    [
+     1381.1,
+     594.3
+    ],
+    [
+     1380.9,
+     808.2
+    ],
+    [
+     1043.7,
+     808.0
+    ]
+   ],
+   "bygg": [
+    "bnr-193867537",
+    "bnr-193868568",
+    "bnr-193867820",
+    "bnr-193867839"
+   ],
+   "antall": 4,
+   "fasade_kvartaltegning": 2,
+   "fasade_antatt": 2,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Kvartal12",
+   "fil": "strektegninger/Kvartal12.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.322418,
+     0.00014,
+     1267.417798
+    ],
+    [
+     -0.00014,
+     0.322418,
+     715.04393
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32242,
+   "rotasjon_grader": -0.025,
+   "residual_median_px": 0.3,
+   "inliers": 65,
+   "treff": 69,
+   "rasterskala_ved_matching": 0.3,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1267.4,
+     715.0
+    ],
+    [
+     1597.6,
+     714.9
+    ],
+    [
+     1597.7,
+     929.3
+    ],
+    [
+     1267.5,
+     929.5
+    ]
+   ],
+   "bygg": [
+    "bnr-193868592",
+    "bnr-193867782",
+    "bnr-193972594",
+    "bnr-193867790",
+    "bnr-193972101",
+    "bnr-193867804",
+    "bnr-193867723",
+    "bnr-193972446",
+    "bnr-193867758",
+    "bnr-193867731",
+    "bnr-193867839",
+    "bnr-193867766",
+    "bnr-193972462",
+    "bnr-193867715",
+    "bnr-193972128",
+    "bnr-193971253",
+    "bnr-193972772",
+    "bnr-193972578",
+    "bnr-193972608",
+    "bnr-193972438",
+    "bnr-193972454",
+    "bnr-193868606",
+    "bnr-193867812",
+    "bnr-193867774",
+    "bnr-6246753"
+   ],
+   "antall": 25,
+   "fasade_kvartaltegning": 13,
+   "fasade_antatt": 11,
+   "fasade_ingen": 1,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": [
+    "bnr-16308102",
+    "bnr-193867847"
+   ]
+  },
+  {
+   "navn": "Kvartal13",
+   "fil": "strektegninger/Kvartal13.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.320685,
+     0.001653,
+     615.639336
+    ],
+    [
+     -0.001653,
+     0.320685,
+     542.830249
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32069,
+   "rotasjon_grader": -0.295,
+   "residual_median_px": 0.3,
+   "inliers": 13,
+   "treff": 26,
+   "rasterskala_ved_matching": 0.6,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     615.6,
+     542.8
+    ],
+    [
+     926.4,
+     541.2
+    ],
+    [
+     927.7,
+     787.8
+    ],
+    [
+     616.9,
+     789.4
+    ]
+   ],
+   "bygg": [
+    "bnr-193867502",
+    "bnr-193868460",
+    "bnr-193867499",
+    "bnr-193867510"
+   ],
+   "antall": 4,
+   "fasade_kvartaltegning": 3,
+   "fasade_antatt": 1,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Kvartal14",
+   "fil": "strektegninger/Kvartal14.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.318682,
+     0.001909,
+     1061.309671
+    ],
+    [
+     -0.001909,
+     0.318682,
+     817.55091
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.31869,
+   "rotasjon_grader": -0.343,
+   "residual_median_px": 0.32,
+   "inliers": 47,
+   "treff": 52,
+   "rasterskala_ved_matching": 0.25,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     1061.3,
+     817.6
+    ],
+    [
+     1430.3,
+     815.3
+    ],
+    [
+     1431.7,
+     1041.0
+    ],
+    [
+     1062.7,
+     1043.2
+    ]
+   ],
+   "bygg": [
+    "bnr-193972039",
+    "bnr-193972012",
+    "bnr-193870260",
+    "pb-7",
+    "bnr-193867693",
+    "bnr-193867707",
+    "bnr-193867804",
+    "pb-8",
+    "bnr-16308102",
+    "bnr-193972403",
+    "bnr-193972063",
+    "bnr-193867847",
+    "bnr-193867715",
+    "bnr-193972098",
+    "bnr-193972071",
+    "bnr-193972004",
+    "bnr-193972055",
+    "bnr-193971229",
+    "bnr-193868584"
+   ],
+   "antall": 19,
+   "fasade_kvartaltegning": 8,
+   "fasade_antatt": 11,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": [
+    "bnr-193870236",
+    "bnr-193870252",
+    "bnr-193870228"
+   ]
+  },
+  {
+   "navn": "sistekvartal",
+   "fil": "strektegninger/sistekvartal.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.325636,
+     -0.005665,
+     880.901807
+    ],
+    [
+     0.005665,
+     0.325636,
+     966.214128
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT",
+   "skala": 0.32569,
+   "rotasjon_grader": 0.997,
+   "residual_median_px": 0.27,
+   "inliers": 44,
+   "treff": 49,
+   "rasterskala_ved_matching": 0.4,
+   "enige_skalaer": 7,
+   "omriss_i_trykket": [
+    [
+     880.9,
+     966.2
+    ],
+    [
+     1244.0,
+     972.5
+    ],
+    [
+     1239.1,
+     1251.9
+    ],
+    [
+     876.0,
+     1245.6
+    ]
+   ],
+   "bygg": [
+    "bnr-193870198",
+    "bnr-193870236",
+    "bnr-193972403",
+    "bnr-193870252",
+    "bnr-193870228",
+    "bnr-193870201"
+   ],
+   "antall": 6,
+   "fasade_kvartaltegning": 5,
+   "fasade_antatt": 1,
+   "fasade_ingen": 0,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "tell",
+   "fil": "strektegninger/tell.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": false,
+   "tegning_til_trykk": [
+    [
+     0.334353,
+     0.0,
+     1517.0
+    ],
+    [
+     0.0,
+     0.334353,
+     931.0
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "anker satt ved å se på trykket + malmatching per del (fast skala, rotasjon 0); USIKKER",
+   "skala": 0.33435,
+   "rotasjon_grader": 0.0,
+   "residual_median_px": null,
+   "inliers": 0,
+   "treff": 0,
+   "rasterskala_ved_matching": null,
+   "enige_skalaer": null,
+   "omriss_i_trykket": [
+    [
+     1517.0,
+     931.0
+    ],
+    [
+     1704.2,
+     931.0
+    ],
+    [
+     1704.2,
+     1048.4
+    ],
+    [
+     1517.0,
+     1048.4
+    ]
+   ],
+   "bygg": [
+    "bnr-193867677",
+    "bnr-193867634"
+   ],
+   "antall": 2,
+   "fasade_kvartaltegning": 1,
+   "fasade_antatt": 1,
+   "fasade_ingen": 0,
+   "bygg_naer": [
+    {
+     "id": "bnr-193867634",
+     "avstand_px": 48.1
+    }
+   ],
+   "bygg_manuelt": [],
+   "kant": []
+  },
+  {
+   "navn": "Glasshytta",
+   "fil": "strektegninger/Glasshytta.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": false,
+   "tegning_til_trykk": [
+    [
+     0.322353,
+     0.0,
+     1824.0
+    ],
+    [
+     0.0,
+     0.322353,
+     719.0
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "anker satt ved å se på trykket + malmatching per del (fast skala, rotasjon 0); USIKKER",
+   "skala": 0.32235,
+   "rotasjon_grader": 0.0,
+   "residual_median_px": null,
+   "inliers": 0,
+   "treff": 0,
+   "rasterskala_ved_matching": null,
+   "enige_skalaer": null,
+   "omriss_i_trykket": [
+    [
+     1824.0,
+     719.0
+    ],
+    [
+     2101.9,
+     719.0
+    ],
+    [
+     2101.9,
+     846.3
+    ],
+    [
+     1824.0,
+     846.3
+    ]
+   ],
+   "deler": [
+    {
+     "utsnitt_i_tegningen": [
+      29,
+      22,
+      154,
+      155
+     ],
+     "tegning_til_trykk": [
+      [
+       0.322353,
+       0.0,
+       1824.0
+      ],
+      [
+       0.0,
+       0.322353,
+       719.0
+      ]
+     ]
+    },
+    {
+     "utsnitt_i_tegningen": [
+      668,
+      254,
+      172,
+      131
+     ],
+     "tegning_til_trykk": [
+      [
+       0.334353,
+       0.0,
+       1866.652529
+      ],
+      [
+       0.0,
+       0.334353,
+       745.074465
+      ]
+     ]
+    }
+   ],
+   "bygg": [
+    "bnr-193869548",
+    "bnr-193869580"
+   ],
+   "antall": 2,
+   "fasade_kvartaltegning": 0,
+   "fasade_antatt": 2,
+   "fasade_ingen": 0,
+   "bygg_naer": [
+    {
+     "id": "bnr-193869548",
+     "avstand_px": 62.2
+    }
+   ],
+   "bygg_manuelt": [
+    {
+     "id": "bnr-193869580",
+     "grunn": "legendenummer 27 (Ravelinporten) står ved huset i trykket; px2019 for Voldportravelinet ligger ~150 px unna"
+    }
+   ],
+   "kant": []
+  },
+  {
+   "navn": "kirke",
+   "fil": "strektegninger/kirke.ai",
+   "raster": "150 dpi, alle lag synlige",
+   "sikker_registrering": true,
+   "tegning_til_trykk": [
+    [
+     0.324777,
+     -0.000601,
+     924.905472
+    ],
+    [
+     0.000601,
+     0.324777,
+     580.216493
+    ]
+   ],
+   "enhet": "tegning: piksler i 150 dpi-rasteret (= PDF-punkt × 150/72); trykk: piksler i brosjyre2019-3.jpg (2480×1754)",
+   "registreringsmetode": "SIFT, kryssjekket med malmatching (avvik 0.7 px)",
+   "skala": 0.32478,
+   "rotasjon_grader": 0.106,
+   "residual_median_px": 0.38,
+   "inliers": 9,
+   "treff": 11,
+   "rasterskala_ved_matching": 0.35,
+   "enige_skalaer": 4,
+   "omriss_i_trykket": [
+    [
+     924.9,
+     580.2
+    ],
+    [
+     1114.9,
+     580.6
+    ],
+    [
+     1114.4,
+     856.6
+    ],
+    [
+     924.4,
+     856.3
+    ]
+   ],
+   "bygg": [
+    "bnr-193867529"
+   ],
+   "antall": 1,
+   "fasade_kvartaltegning": 0,
+   "fasade_antatt": 0,
+   "fasade_ingen": 1,
+   "bygg_naer": [],
+   "bygg_manuelt": [],
+   "kant": []
+  }
+ ]
+}

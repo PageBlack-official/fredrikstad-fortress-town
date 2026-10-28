@@ -16,3 +16,6 @@ rapport/brygger/*.jpg
 # tegningene som vektor og 2019-trykket: åndsverk, bare lokalt (28.10)
 kilder/ai/
 rapport/farger-tegning/*.jpg
+# kvartaltegningene (Dropbox, åndsverk) og arbeidsfilene til kvartal-QA (masker, modellbilder): bare lokalt (28.10)
+kilder/kvartal-ai/
+rapport/kvartal-qa/_arbeid/
