@@ -76,6 +76,15 @@ Fergeleiet (Gamlebyen og Sentrum), gjestebrygga i Toldbodgaten, Isegran og båtp
 
 Tegnes i src/18_brygger.js. Regel 18 måler dekning, at ingen brygge står på land (data/vann.json), og at fotoet viser brygge under hver av dem.
 
+## Grå hus: fargene i tegningen som vektor (28.10, forsøk, ikke lagt inn)
+132 hus i Gamlebyen står hvite/grå; 48 av dem er dømt riktige mot 2019-trykket (hvite hus), 39 har fått trykkets farge, og 43 mangler dom
+(20 var skjult av trær/tekst i trykket, 23 står utenfor det dømte arket). 165 hus utenfor vollene har ingen farge i noen tegning.
+Gamlebyen+Isegran2017.ai (Dropbox, Gamlebyen kart tegning) er samme artwork som 2019-trykket og har lagene i behold, så husflatene kan
+leses som vektor uten trær (verktoy/farger_tegning.py, kilder/ai bare lokalt). Registreringen tegning→trykk er på 1,4 px, men
+modell→trykk (fra px2019 i rapport/farger2019.json) er på 5–25 px, og husene er tegnet fritt, så fotavtrykket treffer ofte nabohus,
+gate eller tre. Forslagene i rapport/farger-tegning/forslag.json er derfor ikke lagt inn. Veien videre er den samme som for v30:
+kontrollark per hus der Vegar dømmer, eller Street View-runde som i 2015.
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 

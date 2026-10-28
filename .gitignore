@@ -12,3 +12,7 @@ rapport/vann/*.jpg
 rapport/16_vann.jpg
 # kontrollark for bryggene viser ortofotoet: samme forbehold (27.10)
 rapport/brygger/*.jpg
+
+# tegningene som vektor og 2019-trykket: åndsverk, bare lokalt (28.10)
+kilder/ai/
+rapport/farger-tegning/*.jpg
