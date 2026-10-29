@@ -447,5 +447,96 @@
   },
   "tegnet": 6,
   "regler": 22
+ },
+ {
+  "id": "bnr-193867952",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "kvartal6",
+    "rader": [
+     7,
+     7
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "kvartal6",
+    "rader": [
+     7,
+     8
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 30,
+  "regler": 24
+ },
+ {
+  "id": "bnr-193867979",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "kvartal6",
+    "rader": [
+     11,
+     7
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 19,
+  "regler": 24
+ },
+ {
+  "id": "bnr-6247822",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "kvartal6",
+    "rader": [
+     8
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 4
+ },
+ {
+  "id": "bnr-193867987",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "kvartal6",
+    "rader": [
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 4,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193868029",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "kvartal6",
+    "rader": [
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 7
  }
 ]
