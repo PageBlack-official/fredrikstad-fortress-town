@@ -149,7 +149,11 @@ def plan():
     ret_ovrige = [r for r in ret_alle if not egen(r)]
     # tilstanden uten egne linjer (linjer andre verktøy har skrevet for mine nye bygg hoppes over her, de skrives tilbake)
     d = datalag.alle(raa=True); grunn = [dict(x) for x in d['bygg']]
-    d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(d, [r for r in ret_ovrige if r.get('id') not in mine_ny]), grunn)
+    # id etter Matrikkelen (verktoy/id_flytt.py) kjøres etter grunnmuren og bygger på den: linjene og id-ene den har laget,
+    # er ikke med når omrissene planlegges (ellers planlegger grunnmuren på et hus som er flyttet til en annen id)
+    id_nye = {r['id'] for r in ret_ovrige if r['op'] == 'ny' and r.get('grunn', '').startswith('id etter Matrikkelen')}
+    d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(d, [r for r in ret_ovrige if r.get('id') not in mine_ny and r.get('id') not in id_nye
+                                                             and not r.get('grunn', '').startswith('id etter Matrikkelen')]), grunn)
     B = d['bygg']; plass = {x['id']: i for i, x in enumerate(B)}
     grunn_h = {x['id']: x.get('h', 0) for x in grunn}
     K = kommunekart.omriss(); DEK = kommunekart.dekning()
@@ -572,6 +576,14 @@ def flytt_vinduer(vind, P_gml, G, h, rest=None):
         if u @ u_g < 0:
             u = -u; a, b = b, a
         t = float((q - a) @ u)
+        # aksen holder sin andel av veggen (29.10: vinduene ble skjøvet sammen i hjørnene og tynnet ut på 78 fasithus når
+        # det nye omrisset var kortere eller forskjøvet): plassen på den gamle veggen i andel, lagt på den nye veggen
+        gv = ny_vegg(q, u_g, P_gml, maks=0.6)
+        if gv is not None:
+            _, ga, gb, gu, gL = gv
+            if gu @ u < 0:
+                gu = -gu; ga, gb = gb, ga
+            t = float((q - ga) @ gu) / max(gL, 1e-6) * L
         lo, hi = w / 2 + 0.32, L - w / 2 - 0.32
         if lo > hi:
             borte += 1; continue

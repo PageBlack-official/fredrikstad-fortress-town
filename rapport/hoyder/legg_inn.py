@@ -17,8 +17,12 @@ def dato(i, felt, v):
     r = FOER.get((i, felt))
     return r['dato'] if r and r['verdi'] == v else datetime.date.today().isoformat()
 n = 0
+# målingen hører til huset med samme id (29.10: plassen i lista flyttet seg når et nytt bygg kom inn foran de andre nye,
+# så høydene havnet på nabohuset); gamle målinger uten id faller tilbake til plassen
+PLASS = {b['id']: j for j, b in enumerate(B)}
 for k, x in sorted(H.items(), key=lambda t: int(t[0])):
-    i = int(k)
+    i = PLASS.get(x['id']) if x.get('id') else int(k)
+    if i is None: continue
     if x.get('sikkerhet') not in ('høy', 'middels') or x.get('h_per_hus') is None or B[i].get('kirke'): continue
     g = f"Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet {x['sikkerhet']}, før {raa[i]['h'] if i < len(raa) else NY_H.get(B[i]['id'])} m"
     R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "h", "verdi": x['h_per_hus'], "hvem": "Claude", "dato": dato(B[i]['id'], 'h', x['h_per_hus']), "grunn": g})

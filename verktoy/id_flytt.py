@@ -21,14 +21,18 @@ UTEN = {'id'}
 
 def main(tørt=False):
     cfg = json.load(open(os.path.join(ROT, 'kilder', 'id-etter-matrikkel.json'), encoding='utf8'))
-    ret = [r for r in datalag.les('rettelser') if not r.get('grunn', '').startswith(GRUNN)]
+    alle = datalag.les('rettelser')
+    # egne ny-linjer blir stående der de står (andre verktøy kan ha linjer som peker på id-ene), innholdet fornyes under;
+    # egne sett/skjul tas ut og legges på nytt
+    ret = [r for r in alle if not r.get('grunn', '').startswith(GRUNN) or r['op'] == 'ny']
+    egne_nye = {r['id'] for r in ret if r['op'] == 'ny' and r.get('grunn', '').startswith(GRUNN)}
     d = datalag.alle(raa=True); grunn = [dict(x) for x in d['bygg']]
     d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(d, ret), grunn)
     B = d['bygg']; BY = {x['id']: x for x in B}
     pkt = {p['bygningsnummer']: p for p in json.load(open(os.path.join(ROT, 'kilder', 'matrikkel-bygningspunkt.json')))['punkter']}
     kilde = {}
     for f in cfg['flytt']:
-        her = [x for x in B if not x.get('skjul') and x.get('gml') and Polygon(x['p']).buffer(0.05).contains(Point(*f['punkt']))]
+        her = [x for x in B if not x.get('skjul') and x.get('gml') and x['id'] not in egne_nye and Polygon(x['p']).buffer(0.05).contains(Point(*f['punkt']))]
         if len(her) != 1:
             raise SystemExit(f"{f['id']}: {len(her)} hus i punktet {f['punkt']}")
         kilde[f['id']] = her[0]['id']
@@ -53,6 +57,10 @@ def main(tørt=False):
                 nye.append({"emne": "bygg", "id": t, "op": "sett", "felt": k, "verdi": inn.get(k), "hvem": "Claude", "dato": DATO, "grunn": g})
             if BY[t].get('skjul'):
                 nye.append({"emne": "bygg", "id": t, "op": "sett", "felt": "skjul", "verdi": None, "hvem": "Claude", "dato": DATO, "grunn": g})
+        elif t in egne_nye:
+            for r in ret:
+                if r['op'] == 'ny' and r['id'] == t:
+                    r.update(verdi=dict(id=t, **inn), grunn=g, dato=DATO)
         else:
             nye.append({"emne": "bygg", "id": t, "op": "ny", "verdi": dict(id=t, **inn), "hvem": "Claude", "dato": DATO, "grunn": g})
         logg.append(f"{t} <- huset som hadde {s}")

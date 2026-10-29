@@ -89,9 +89,26 @@ function bygKirke(k, grp){
     [[0,-1],[L,1]].forEach(([s_,sg])=>{ const mid=[m1[0]+u[0]*s_, m1[1]+u[1]*s_]; if(nærTårn(mid)) return;
       const nor=new THREE.Vector3(u[0]*sg,0,-u[1]*sg), tan=new THREE.Vector3(n[0],0,-n[1]); rundvindu(P(s_,0,WH+RISE*0.38), tan, new THREE.Vector3(0,1,0), nor, 1.05); });
   });
+  // kompassretningen en flate vender mot (grader, 0 = nord, 90 = øst), fra utovernormalen
+  const kompass=f=>((Math.atan2(f.nor.x,-f.nor.z)*180/Math.PI)+360)%360;
+  const mot=(f,az)=>Math.abs(((kompass(f)-az)%360+540)%360-180)<30;
+  // korsarmenes endevegger mot sør og øst har dør, som i kvartaltegningen (Vegar 29.10: «det mangler en dør plassert inni en
+  // oval form» på den ene, «der mangler det også en dør» på den andre): sørenden stor rundbuet dør i rundbuet omramming og
+  // ett buevindu, østenden ett buevindu og en mindre rundbuet dør. Plass langs veggen i andel, lest fra tegningen.
+  const DORER={186:{dor:0.34, vindu:[0.72], stor:true}, 96:{dor:0.74, vindu:[0.3], stor:false}};
+  function kirkedor(f, s_, stor){
+    const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; const opp=new THREE.Vector3(0,1,0);
+    if(stor){ legg(new THREE.ShapeGeometry(bue(3.6,5.6),16), W3(p,-0.05), f.tan, opp, f.nor, 0.05, HVIT, HVIT_S);     // omramming
+              legg(new THREE.ShapeGeometry(bue(3.1,5.3),16), W3(p,0), f.tan, opp, f.nor, 0.07, [214,214,210], [150,150,148]); }
+    legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, [104,86,72], [72,60,52]);
+  }
   // høye buevinduer i alle frie skipsvegger
   flater(sk).forEach(f=>{
     if(nærTårn(f.mid) || f.L<3) return;
+    const d=f.L>12 ? Object.entries(DORER).find(([az])=>mot(f,+az)) : null;
+    if(d){ const q=d[1]; kirkedor(f, q.dor, q.stor);
+      q.vindu.forEach(s_=>{ const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); });
+      return; }
     const n=f.L>12 ? 3 : 2; const step=f.L/n;
     for(let i=0;i<n;i++){ const s_=step*(i+0.5); const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_/f.L, f.p0[1]+(f.p1[1]-f.p0[1])*s_/f.L];
       buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); }
@@ -120,9 +137,11 @@ function bygKirke(k, grp){
   const opp=new THREE.Vector3(0,1,0);
   flater(t).forEach(f=>{
     const c2=f.mid;
-    buevindu(W3(c2,SH*0.6), f.tan, opp, f.nor, 1.8, 4.4);
-    rundvindu(W3(c2,SH*0.42), f.tan, opp, f.nor, 0.95);
-    rundvindu(W3(c2,SH*0.27), f.tan, opp, f.nor, 0.95);
+    if(!mot(f,96)){   // tårnfoten mot øst har ingen vinduer i tegningen (Vegar 29.10: «på tårnet skal det ikke være vindu vendt mot sør øst»)
+      buevindu(W3(c2,SH*0.6), f.tan, opp, f.nor, 1.8, 4.4);
+      rundvindu(W3(c2,SH*0.42), f.tan, opp, f.nor, 0.95);
+      rundvindu(W3(c2,SH*0.27), f.tan, opp, f.nor, 0.95);
+    }
     // øvre etasje: buevindu og urskive
     const ov2=[tc[0]+(c2[0]-tc[0])*0.52, tc[1]+(c2[1]-tc[1])*0.52];
     buevindu(W3(ov2,SK1+1.3), f.tan, opp, f.nor, 1.35, 3.9);        // høyt buevindu i øvre etasje, som i tegningen

@@ -1,5 +1,6 @@
 {
  "1": {
+  "id": "bnr-193870325",
   "navn": "Hovedvakten – det gamle slaveri",
   "h_naa": 4.0,
   "h_per_hus": 4.0,
@@ -17,6 +18,7 @@
   "merknad": ""
  },
  "2": {
+  "id": "bnr-193870317",
   "navn": "Det grundmurede provianthus",
   "h_naa": 9.6,
   "h_per_hus": 6.9,
@@ -34,6 +36,7 @@
   "merknad": "stor rest etter tilpasning (1.5 m): takform, trær eller nabobygg i omrisset"
  },
  "3": {
+  "id": "bnr-193867537",
   "navn": "Infanterikasernen",
   "h_naa": 9.2,
   "h_per_hus": 9.2,
@@ -51,6 +54,7 @@
   "merknad": "kalibreringshus"
  },
  "4": {
+  "id": "bnr-193867529",
   "navn": "Kirken",
   "h_naa": 0.01,
   "h_per_hus": null,
@@ -68,6 +72,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -2.3 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; p50 og p90 sier ulikt (-2.1/-16.7 m); kirka bygges i 06_kirka (vegg 9,5, møne 17,7, tårn 34+), ikke av h — se stikkprøve; har deler (tårn); h gjelder hovedkroppen"
  },
  "5": {
+  "id": "bnr-193870279",
   "navn": "Tøihuset",
   "h_naa": 4.4,
   "h_per_hus": 4.4,
@@ -85,6 +90,7 @@
   "merknad": ""
  },
  "6": {
+  "id": "bnr-193870198",
   "navn": "Labratoriet",
   "h_naa": 3.4,
   "h_per_hus": 3.4,
@@ -102,6 +108,7 @@
   "merknad": "tegnet_h 2.4 gir 1.4 m (umulig): målingen avgjør"
  },
  "7": {
+  "id": "pb-1",
   "navn": "Brannbatteriet",
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -119,6 +126,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -3.2 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; stor rest etter tilpasning (2.2 m): takform, trær eller nabobygg i omrisset; p50 og p90 sier ulikt (-9.3/-12.0 m); 98 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
  "8": {
+  "id": "bnr-193868363",
   "navn": "Binggården",
   "h_naa": 8.6,
   "h_per_hus": 8.6,
@@ -136,6 +144,7 @@
   "merknad": "kalibreringshus"
  },
  "9": {
+  "id": "bnr-193868061",
   "navn": "Artillerigården",
   "h_naa": 8.5,
   "h_per_hus": 8.5,
@@ -153,6 +162,7 @@
   "merknad": "tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "10": {
+  "id": "bnr-193869556",
   "navn": "Krutthuset",
   "h_naa": 5.4,
   "h_per_hus": 5.4,
@@ -170,6 +180,7 @@
   "merknad": "rest 0.9 m; tegnet_h 1.8 gir 1.0 m (umulig): målingen avgjør"
  },
  "11": {
+  "id": "bnr-193867502",
   "navn": "Kiørboegården",
   "h_naa": 6.2,
   "h_per_hus": 6.2,
@@ -187,6 +198,7 @@
   "merknad": "rest 1.0 m; tegnet_h 3.2 gir 1.9 m (umulig): målingen avgjør"
  },
  "12": {
+  "id": "bnr-193867677",
   "navn": "Ingeniørgården",
   "h_naa": 6.0,
   "h_per_hus": 6.0,
@@ -204,6 +216,7 @@
   "merknad": "kalibreringshus"
  },
  "13": {
+  "id": "bnr-193868568",
   "navn": "Brannstasjon - uthus til Infanterikasernen",
   "h_naa": 2.8,
   "h_per_hus": 2.8,
@@ -221,6 +234,7 @@
   "merknad": ""
  },
  "14": {
+  "id": "bnr-193870295",
   "navn": "Bakeriet",
   "h_naa": 3.7,
   "h_per_hus": 3.7,
@@ -238,6 +252,7 @@
   "merknad": ""
  },
  "15": {
+  "id": "bnr-193868053",
   "navn": "Undervisningsbrakke",
   "h_naa": 3.4,
   "h_per_hus": 3.4,
@@ -255,23 +270,25 @@
   "merknad": "kalibreringshus"
  },
  "16": {
+  "id": "bnr-193867308",
   "navn": "Artillerismiens uthus",
-  "h_naa": 6.0,
+  "h_naa": 3.5,
   "h_per_hus": 3.5,
   "takhelning": 0.87,
   "p50": 4.73,
   "p90": 11.29,
-  "kart_p50": 7.81,
-  "kart_p90": 8.68,
+  "kart_p50": 5.31,
+  "kart_p90": 6.18,
   "h_forslag": 2.8,
-  "avvik": -3.2,
+  "avvik": -0.7,
   "h_med_maalt_takhelning": 3.3,
   "sikkerhet": "lav",
   "n_piksler": 98,
   "rest_m": 0.62,
-  "merknad": "p50 og p90 sier ulikt (-3.1/+2.6 m); stor spredning (tårn, trær eller høyere nabobygg i omrisset); tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
+  "merknad": "p50 og p90 sier ulikt (-0.6/+5.1 m); stor spredning (tårn, trær eller høyere nabobygg i omrisset); tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "17": {
+  "id": "bnr-193867634",
   "navn": "Vollmesterboligen",
   "h_naa": 3.8,
   "h_per_hus": 3.8,
@@ -289,6 +306,7 @@
   "merknad": "tegnet_h 2.0 gir 1.2 m (umulig): målingen avgjør"
  },
  "18": {
+  "id": "bnr-193869548",
   "navn": "Voldporten med vaktstuen",
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -306,6 +324,7 @@
   "merknad": ""
  },
  "19": {
+  "id": "bnr-193868045",
   "navn": "Den gamle spisesal",
   "h_naa": 4.2,
   "h_per_hus": 4.2,
@@ -323,6 +342,7 @@
   "merknad": "kalibreringshus"
  },
  "20": {
+  "id": "bnr-193868460",
   "navn": "Kjørbogårdens sidebygning",
   "h_naa": 4.1,
   "h_per_hus": 4.1,
@@ -340,6 +360,7 @@
   "merknad": ""
  },
  "21": {
+  "id": "bnr-193867499",
   "navn": "Kommandantgården",
   "h_naa": 6.3,
   "h_per_hus": 6.3,
@@ -357,6 +378,7 @@
   "merknad": "rest 1.3 m; tegnet_h 3.0 gir 1.7 m (umulig): målingen avgjør"
  },
  "22": {
+  "id": "bnr-193870309",
   "navn": "Offisersvakten",
   "h_naa": 5.5,
   "h_per_hus": 4.4,
@@ -374,6 +396,7 @@
   "merknad": "bare 11 piksler; rest 0.9 m"
  },
  "24": {
+  "id": "bnr-193867510",
   "navn": "Ekserserhuset",
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -391,6 +414,7 @@
   "merknad": "kalibreringshus"
  },
  "25": {
+  "id": "bnr-193868428",
   "navn": "Kommisjonsgården",
   "h_naa": 4.8,
   "h_per_hus": 4.8,
@@ -408,6 +432,7 @@
   "merknad": "rest 0.8 m; kalibreringshus"
  },
  "26": {
+  "id": "bnr-193869580",
   "navn": "Voldportravelinet",
   "h_naa": 3.1,
   "h_per_hus": 3.1,
@@ -425,6 +450,7 @@
   "merknad": ""
  },
  "27": {
+  "id": "bnr-193868037",
   "navn": "Marketenteriet",
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -442,6 +468,7 @@
   "merknad": ""
  },
  "28": {
+  "id": "bnr-193870333",
   "navn": "Kruttårnet",
   "h_naa": 6.0,
   "h_per_hus": 6.0,
@@ -459,6 +486,7 @@
   "merknad": "rest 1.3 m; p50 og p90 sier ulikt (-1.4/+0.8 m); tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "29": {
+  "id": "pb-2",
   "navn": "Sprøytehuset / Proviantboden",
   "h_naa": 3.7,
   "h_per_hus": 3.7,
@@ -476,6 +504,7 @@
   "merknad": "36 piksler; tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "30": {
+  "id": "bnr-193867324",
   "navn": "Artillerismien",
   "h_naa": 4.2,
   "h_per_hus": 4.2,
@@ -493,6 +522,7 @@
   "merknad": "kalibreringshus"
  },
  "42": {
+  "id": "bnr-13415889",
   "navn": null,
   "h_naa": 6.9,
   "h_per_hus": 6.9,
@@ -510,6 +540,7 @@
   "merknad": ""
  },
  "43": {
+  "id": "bnr-13416575",
   "navn": null,
   "h_naa": 4.4,
   "h_per_hus": 4.4,
@@ -527,6 +558,7 @@
   "merknad": ""
  },
  "49": {
+  "id": "bnr-13416370",
   "navn": null,
   "h_naa": 2.7,
   "h_per_hus": 2.7,
@@ -544,6 +576,7 @@
   "merknad": ""
  },
  "53": {
+  "id": "bnr-193820417",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -561,6 +594,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 8 piksler"
  },
  "55": {
+  "id": "bnr-193820883",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 3.2,
@@ -578,6 +612,7 @@
   "merknad": "37 piksler"
  },
  "56": {
+  "id": "bnr-13415897",
   "navn": null,
   "h_naa": 5.9,
   "h_per_hus": 5.9,
@@ -595,6 +630,7 @@
   "merknad": "rest 0.8 m"
  },
  "58": {
+  "id": "bnr-193820832",
   "navn": null,
   "h_naa": 3.0,
   "h_per_hus": 3.0,
@@ -612,6 +648,7 @@
   "merknad": "18 piksler"
  },
  "62": {
+  "id": "bnr-13416362",
   "navn": null,
   "h_naa": 4.3,
   "h_per_hus": 4.3,
@@ -629,6 +666,7 @@
   "merknad": "rest 0.8 m"
  },
  "73": {
+  "id": "bnr-13418292",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -646,6 +684,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
  },
  "76": {
+  "id": "bnr-13416427",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 3.2,
@@ -663,6 +702,7 @@
   "merknad": ""
  },
  "83": {
+  "id": "bnr-193820573",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -680,6 +720,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.2 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 14 piksler; 93 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
  "89": {
+  "id": "bnr-193820409",
   "navn": null,
   "h_naa": 6.3,
   "h_per_hus": 6.3,
@@ -697,6 +738,7 @@
   "merknad": ""
  },
  "94": {
+  "id": "pb-3",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -714,6 +756,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
  },
  "99": {
+  "id": "bnr-193867448",
   "navn": "Annekset",
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -731,6 +774,7 @@
   "merknad": "tegnet_h 1.8 gir 1.0 m (umulig): målingen avgjør"
  },
  "100": {
+  "id": "bnr-193867464",
   "navn": "Isegranhuset",
   "h_naa": 5.2,
   "h_per_hus": 5.2,
@@ -748,6 +792,7 @@
   "merknad": "tegnet_h 1.6 gir 0.9 m (umulig): målingen avgjør"
  },
  "101": {
+  "id": "bnr-193867472",
   "navn": null,
   "h_naa": 2.4,
   "h_per_hus": 2.4,
@@ -765,6 +810,7 @@
   "merknad": "37 piksler; tegnet_h 3.0 gir 1.7 m (umulig): målingen avgjør"
  },
  "102": {
+  "id": "pb-4",
   "navn": null,
   "h_naa": 5.9,
   "h_per_hus": 2.4,
@@ -782,6 +828,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; stor rest etter tilpasning (1.6 m): takform, trær eller nabobygg i omrisset; 46 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
  "104": {
+  "id": "bnr-193867421",
   "navn": "Kabelmagasinet",
   "h_naa": 3.0,
   "h_per_hus": 2.4,
@@ -799,6 +846,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; rest 0.8 m"
  },
  "105": {
+  "id": "bnr-193867405",
   "navn": null,
   "h_naa": 2.6,
   "h_per_hus": 2.6,
@@ -816,6 +864,7 @@
   "merknad": ""
  },
  "107": {
+  "id": "bnr-193868355",
   "navn": "Det gamle raadhus",
   "h_naa": 7.7,
   "h_per_hus": 7.7,
@@ -833,6 +882,7 @@
   "merknad": "kalibreringshus"
  },
  "108": {
+  "id": "bnr-193868339",
   "navn": null,
   "h_naa": 4.8,
   "h_per_hus": 4.8,
@@ -850,6 +900,7 @@
   "merknad": "kalibreringshus"
  },
  "109": {
+  "id": "bnr-193867626",
   "navn": null,
   "h_naa": 7.4,
   "h_per_hus": 7.4,
@@ -867,6 +918,7 @@
   "merknad": "kalibreringshus"
  },
  "110": {
+  "id": "bnr-193868347",
   "navn": null,
   "h_naa": 6.1,
   "h_per_hus": 6.1,
@@ -884,6 +936,7 @@
   "merknad": "kalibreringshus"
  },
  "111": {
+  "id": "bnr-6276504",
   "navn": null,
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -901,6 +954,7 @@
   "merknad": "tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "112": {
+  "id": "bnr-6276512",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -918,6 +972,7 @@
   "merknad": "tegnet_h 3.0 gir 1.7 m (umulig): målingen avgjør"
  },
  "116": {
+  "id": "bnr-13384452",
   "navn": null,
   "h_naa": 4.8,
   "h_per_hus": 4.8,
@@ -935,6 +990,7 @@
   "merknad": "tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "118": {
+  "id": "bnr-193874363",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -952,6 +1008,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.2 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 10 piksler; tegnet_h 1.9 gir 1.1 m (umulig): målingen avgjør"
  },
  "119": {
+  "id": "bnr-13384460",
   "navn": null,
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -969,6 +1026,7 @@
   "merknad": "rest 1.0 m"
  },
  "121": {
+  "id": "bnr-6276520",
   "navn": null,
   "h_naa": 6.8,
   "h_per_hus": 6.8,
@@ -986,6 +1044,7 @@
   "merknad": "rest 0.9 m"
  },
  "124": {
+  "id": "bnr-193874371",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -1003,6 +1062,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 10 piksler; tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "125": {
+  "id": "bnr-6276482",
   "navn": null,
   "h_naa": 7.1,
   "h_per_hus": 7.1,
@@ -1020,6 +1080,7 @@
   "merknad": "tegnet_h 2.7 gir 1.6 m (umulig): målingen avgjør"
  },
  "129": {
+  "id": "bnr-6276822",
   "navn": null,
   "h_naa": 6.1,
   "h_per_hus": 6.1,
@@ -1037,6 +1098,7 @@
   "merknad": "tegnet_h 2.6 gir 1.5 m (umulig): målingen avgjør"
  },
  "131": {
+  "id": "bnr-6276415",
   "navn": null,
   "h_naa": 5.8,
   "h_per_hus": 5.8,
@@ -1054,6 +1116,7 @@
   "merknad": "tegnet_h 3.2 gir 1.9 m (umulig): målingen avgjør"
  },
  "133": {
+  "id": "bnr-6276393",
   "navn": null,
   "h_naa": 5.4,
   "h_per_hus": 5.4,
@@ -1071,6 +1134,7 @@
   "merknad": "tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "135": {
+  "id": "bnr-13384444",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 6.0,
@@ -1088,6 +1152,7 @@
   "merknad": "tegnet_h 2.7 gir 1.6 m (umulig): målingen avgjør"
  },
  "137": {
+  "id": "bnr-6276474",
   "navn": null,
   "h_naa": 5.8,
   "h_per_hus": 5.8,
@@ -1105,6 +1170,7 @@
   "merknad": "rest 0.9 m; tegnet_h 1.9 gir 1.1 m (umulig): målingen avgjør"
  },
  "139": {
+  "id": "bnr-6276458",
   "navn": null,
   "h_naa": 5.7,
   "h_per_hus": 5.7,
@@ -1122,6 +1188,7 @@
   "merknad": "tegnet_h 3.8 gir 2.2 m (umulig): målingen avgjør"
  },
  "141": {
+  "id": "bnr-6276490",
   "navn": null,
   "h_naa": 5.9,
   "h_per_hus": 5.9,
@@ -1139,6 +1206,7 @@
   "merknad": "rest 0.9 m; tegnet_h 3.0 gir 1.7 m (umulig): målingen avgjør"
  },
  "149": {
+  "id": "bnr-6276466",
   "navn": null,
   "h_naa": 6.5,
   "h_per_hus": 6.5,
@@ -1156,6 +1224,7 @@
   "merknad": "tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "151": {
+  "id": "bnr-6276431",
   "navn": null,
   "h_naa": 6.2,
   "h_per_hus": 6.2,
@@ -1173,6 +1242,7 @@
   "merknad": "tegnet_h 4.0 gir 2.3 m (umulig): målingen avgjør"
  },
  "152": {
+  "id": "bnr-193972373",
   "navn": null,
   "h_naa": 5.2,
   "h_per_hus": 5.2,
@@ -1190,6 +1260,7 @@
   "merknad": ""
  },
  "153": {
+  "id": "bnr-193972152",
   "navn": null,
   "h_naa": 6.6,
   "h_per_hus": 2.4,
@@ -1207,6 +1278,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
  },
  "154": {
+  "id": "bnr-193972489",
   "navn": null,
   "h_naa": 3.8,
   "h_per_hus": 3.8,
@@ -1224,6 +1296,7 @@
   "merknad": "31 piksler; kalibreringshus"
  },
  "155": {
+  "id": "bnr-193868258",
   "navn": null,
   "h_naa": 5.8,
   "h_per_hus": 5.8,
@@ -1241,6 +1314,7 @@
   "merknad": "kalibreringshus"
  },
  "156": {
+  "id": "bnr-193868118",
   "navn": null,
   "h_naa": 4.3,
   "h_per_hus": 4.3,
@@ -1258,6 +1332,7 @@
   "merknad": "rest 1.5 m; kalibreringshus"
  },
  "157": {
+  "id": "pb-5",
   "navn": null,
   "h_naa": 5.2,
   "h_per_hus": 5.2,
@@ -1275,6 +1350,7 @@
   "merknad": "28 piksler; kalibreringshus"
  },
  "158": {
+  "id": "bnr-193971954",
   "navn": null,
   "h_naa": 4.1,
   "h_per_hus": 4.1,
@@ -1292,6 +1368,7 @@
   "merknad": "kalibreringshus"
  },
  "159": {
+  "id": "bnr-193868436",
   "navn": "Skolebygningen",
   "h_naa": 7.9,
   "h_per_hus": 7.9,
@@ -1309,6 +1386,7 @@
   "merknad": "rest 1.4 m"
  },
  "160": {
+  "id": "bnr-6247822",
   "navn": null,
   "h_naa": 7.5,
   "h_per_hus": 7.5,
@@ -1326,6 +1404,7 @@
   "merknad": "kalibreringshus"
  },
  "161": {
+  "id": "bnr-193972322",
   "navn": null,
   "h_naa": 4.2,
   "h_per_hus": 2.4,
@@ -1343,6 +1422,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.3 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler"
  },
  "162": {
+  "id": "bnr-193971369",
   "navn": null,
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -1360,6 +1440,7 @@
   "merknad": "tegnet_h 3.0 gir 1.7 m (umulig): målingen avgjør"
  },
  "163": {
+  "id": "bnr-16312916",
   "navn": null,
   "h_naa": 5.9,
   "h_per_hus": 5.9,
@@ -1377,6 +1458,7 @@
   "merknad": "rest 1.1 m"
  },
  "164": {
+  "id": "bnr-193868223",
   "navn": "Muldvadgården",
   "h_naa": 5.8,
   "h_per_hus": 5.8,
@@ -1394,6 +1476,7 @@
   "merknad": "kalibreringshus"
  },
  "165": {
+  "id": "bnr-6242812",
   "navn": null,
   "h_naa": 8.4,
   "h_per_hus": 5.5,
@@ -1411,6 +1494,7 @@
   "merknad": "stor rest etter tilpasning (2.3 m): takform, trær eller nabobygg i omrisset; kalibreringshus"
  },
  "166": {
+  "id": "bnr-193868126",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -1428,6 +1512,7 @@
   "merknad": ""
  },
  "167": {
+  "id": "bnr-193868541",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 4.2,
@@ -1445,6 +1530,7 @@
   "merknad": "bare 8 piksler"
  },
  "168": {
+  "id": "bnr-193868371",
   "navn": null,
   "h_naa": 5.6,
   "h_per_hus": 5.6,
@@ -1462,6 +1548,7 @@
   "merknad": ""
  },
  "169": {
+  "id": "bnr-193868134",
   "navn": null,
   "h_naa": 4.1,
   "h_per_hus": 4.1,
@@ -1479,6 +1566,7 @@
   "merknad": "kalibreringshus"
  },
  "170": {
+  "id": "bnr-193867979",
   "navn": null,
   "h_naa": 9.1,
   "h_per_hus": 9.1,
@@ -1496,6 +1584,7 @@
   "merknad": "kalibreringshus"
  },
  "171": {
+  "id": "bnr-193971199",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 3.2,
@@ -1513,6 +1602,7 @@
   "merknad": "17 piksler; tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "172": {
+  "id": "bnr-193868150",
   "navn": "Salamandergården",
   "h_naa": 5.8,
   "h_per_hus": 5.8,
@@ -1530,6 +1620,7 @@
   "merknad": "kalibreringshus"
  },
  "173": {
+  "id": "bnr-193867855",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -1547,6 +1638,7 @@
   "merknad": "tegnet_h 4.0 gir 2.3 m (umulig): målingen avgjør"
  },
  "174": {
+  "id": "bnr-193868088",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -1564,6 +1656,7 @@
   "merknad": "kalibreringshus"
  },
  "175": {
+  "id": "bnr-193918247",
   "navn": null,
   "h_naa": 3.1,
   "h_per_hus": 3.1,
@@ -1581,6 +1674,7 @@
   "merknad": ""
  },
  "176": {
+  "id": "bnr-193972276",
   "navn": null,
   "h_naa": 6.3,
   "h_per_hus": 8.4,
@@ -1598,6 +1692,7 @@
   "merknad": "stor rest etter tilpasning (1.6 m): takform, trær eller nabobygg i omrisset"
  },
  "177": {
+  "id": "bnr-193868320",
   "navn": null,
   "h_naa": 9.1,
   "h_per_hus": 9.1,
@@ -1615,6 +1710,7 @@
   "merknad": ""
  },
  "178": {
+  "id": "bnr-193972292",
   "navn": null,
   "h_naa": 4.9,
   "h_per_hus": 4.9,
@@ -1632,6 +1728,7 @@
   "merknad": "kalibreringshus"
  },
  "179": {
+  "id": "bnr-193868266",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -1649,6 +1746,7 @@
   "merknad": "kalibreringshus"
  },
  "180": {
+  "id": "bnr-193868274",
   "navn": null,
   "h_naa": 3.8,
   "h_per_hus": 3.8,
@@ -1666,6 +1764,7 @@
   "merknad": "kalibreringshus"
  },
  "181": {
+  "id": "bnr-193974686",
   "navn": null,
   "h_naa": 4.6,
   "h_per_hus": 4.6,
@@ -1683,6 +1782,7 @@
   "merknad": ""
  },
  "182": {
+  "id": "bnr-193868231",
   "navn": "Balaklava",
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -1700,6 +1800,7 @@
   "merknad": "rest 1.2 m; kalibreringshus"
  },
  "183": {
+  "id": "pb-6",
   "navn": null,
   "h_naa": 3.9,
   "h_per_hus": 3.9,
@@ -1717,6 +1818,7 @@
   "merknad": ""
  },
  "184": {
+  "id": "bnr-193868312",
   "navn": "Rosinggården",
   "h_naa": 5.4,
   "h_per_hus": 5.4,
@@ -1734,6 +1836,7 @@
   "merknad": "rest 1.0 m"
  },
  "185": {
+  "id": "bnr-193867936",
   "navn": null,
   "h_naa": 7.4,
   "h_per_hus": 7.4,
@@ -1751,6 +1854,7 @@
   "merknad": ""
  },
  "186": {
+  "id": "bnr-193868029",
   "navn": null,
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -1768,6 +1872,7 @@
   "merknad": "kalibreringshus"
  },
  "187": {
+  "id": "bnr-193971334",
   "navn": null,
   "h_naa": 7.5,
   "h_per_hus": 7.5,
@@ -1785,6 +1890,7 @@
   "merknad": "kalibreringshus"
  },
  "188": {
+  "id": "bnr-193867863",
   "navn": null,
   "h_naa": 6.6,
   "h_per_hus": 6.6,
@@ -1802,6 +1908,7 @@
   "merknad": "tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "189": {
+  "id": "bnr-16290424",
   "navn": null,
   "h_naa": 5.5,
   "h_per_hus": 5.5,
@@ -1819,6 +1926,7 @@
   "merknad": "kalibreringshus"
  },
  "190": {
+  "id": "bnr-193867618",
   "navn": null,
   "h_naa": 9.7,
   "h_per_hus": 9.7,
@@ -1836,6 +1944,7 @@
   "merknad": ""
  },
  "191": {
+  "id": "bnr-193868282",
   "navn": null,
   "h_naa": 6.1,
   "h_per_hus": 6.1,
@@ -1853,6 +1962,7 @@
   "merknad": ""
  },
  "192": {
+  "id": "bnr-6251323",
   "navn": null,
   "h_naa": 7.3,
   "h_per_hus": 7.3,
@@ -1870,6 +1980,7 @@
   "merknad": "kalibreringshus"
  },
  "193": {
+  "id": "bnr-193918239",
   "navn": "Bullgården",
   "h_naa": 7.2,
   "h_per_hus": 7.2,
@@ -1887,6 +1998,7 @@
   "merknad": "rest 0.8 m"
  },
  "194": {
+  "id": "bnr-13414904",
   "navn": null,
   "h_naa": 8.9,
   "h_per_hus": 8.9,
@@ -1904,6 +2016,7 @@
   "merknad": "tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "195": {
+  "id": "bnr-193987397",
   "navn": null,
   "h_naa": 4.6,
   "h_per_hus": 4.6,
@@ -1921,6 +2034,7 @@
   "merknad": ""
  },
  "196": {
+  "id": "bnr-193868207",
   "navn": null,
   "h_naa": 5.0,
   "h_per_hus": 5.0,
@@ -1938,6 +2052,7 @@
   "merknad": "rest 0.8 m; kalibreringshus"
  },
  "197": {
+  "id": "bnr-193972314",
   "navn": "Feiergården",
   "h_naa": 4.7,
   "h_per_hus": 2.4,
@@ -1955,6 +2070,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler"
  },
  "198": {
+  "id": "bnr-24218023",
   "navn": null,
   "h_naa": 6.9,
   "h_per_hus": 6.9,
@@ -1972,6 +2088,7 @@
   "merknad": "rest 1.0 m"
  },
  "199": {
+  "id": "bnr-193868630",
   "navn": null,
   "h_naa": 4.6,
   "h_per_hus": 4.6,
@@ -1989,6 +2106,7 @@
   "merknad": ""
  },
  "200": {
+  "id": "bnr-193972365",
   "navn": null,
   "h_naa": 3.3,
   "h_per_hus": 3.3,
@@ -2006,6 +2124,7 @@
   "merknad": "37 piksler"
  },
  "201": {
+  "id": "bnr-193868096",
   "navn": null,
   "h_naa": 5.2,
   "h_per_hus": 5.2,
@@ -2023,6 +2142,7 @@
   "merknad": "kalibreringshus"
  },
  "202": {
+  "id": "bnr-193867359",
   "navn": null,
   "h_naa": 3.7,
   "h_per_hus": 3.7,
@@ -2040,6 +2160,7 @@
   "merknad": ""
  },
  "203": {
+  "id": "bnr-193868002",
   "navn": null,
   "h_naa": 4.8,
   "h_per_hus": 4.8,
@@ -2057,6 +2178,7 @@
   "merknad": ""
  },
  "204": {
+  "id": "bnr-193868142",
   "navn": "Prestegården",
   "h_naa": 7.1,
   "h_per_hus": 7.1,
@@ -2074,6 +2196,7 @@
   "merknad": "kalibreringshus"
  },
  "205": {
+  "id": "bnr-193867901",
   "navn": null,
   "h_naa": 5.0,
   "h_per_hus": 5.0,
@@ -2091,6 +2214,7 @@
   "merknad": "kalibreringshus"
  },
  "206": {
+  "id": "bnr-193868525",
   "navn": null,
   "h_naa": 6.5,
   "h_per_hus": 6.5,
@@ -2108,6 +2232,7 @@
   "merknad": "rest 1.3 m; kalibreringshus"
  },
  "207": {
+  "id": "bnr-6251331",
   "navn": null,
   "h_naa": 5.6,
   "h_per_hus": 5.6,
@@ -2125,6 +2250,7 @@
   "merknad": "kalibreringshus"
  },
  "208": {
+  "id": "bnr-6251765",
   "navn": null,
   "h_naa": 8.4,
   "h_per_hus": 2.4,
@@ -2142,6 +2268,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; rest 0.8 m; kalibreringshus"
  },
  "209": {
+  "id": "bnr-193867944",
   "navn": null,
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -2159,6 +2286,7 @@
   "merknad": ""
  },
  "210": {
+  "id": "bnr-193972136",
   "navn": null,
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -2176,6 +2304,7 @@
   "merknad": "kalibreringshus"
  },
  "211": {
+  "id": "bnr-193971946",
   "navn": null,
   "h_naa": 4.9,
   "h_per_hus": 4.9,
@@ -2193,6 +2322,7 @@
   "merknad": "kalibreringshus"
  },
  "212": {
+  "id": "bnr-193972519",
   "navn": null,
   "h_naa": 4.6,
   "h_per_hus": 4.6,
@@ -2210,6 +2340,7 @@
   "merknad": ""
  },
  "213": {
+  "id": "bnr-6275109",
   "navn": null,
   "h_naa": 4.4,
   "h_per_hus": 4.4,
@@ -2227,6 +2358,7 @@
   "merknad": "rest 0.9 m"
  },
  "214": {
+  "id": "bnr-300279164",
   "navn": null,
   "h_naa": 4.9,
   "h_per_hus": 4.9,
@@ -2244,6 +2376,7 @@
   "merknad": "16 piksler"
  },
  "215": {
+  "id": "bnr-193971318",
   "navn": null,
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -2261,6 +2394,7 @@
   "merknad": "39 piksler"
  },
  "216": {
+  "id": "bnr-193971970",
   "navn": null,
   "h_naa": 3.6,
   "h_per_hus": 3.6,
@@ -2278,6 +2412,7 @@
   "merknad": "rest 1.1 m"
  },
  "217": {
+  "id": "bnr-193972624",
   "navn": null,
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -2295,6 +2430,7 @@
   "merknad": "rest 1.1 m"
  },
  "218": {
+  "id": "bnr-193867928",
   "navn": null,
   "h_naa": 8.0,
   "h_per_hus": 8.0,
@@ -2312,6 +2448,7 @@
   "merknad": "kalibreringshus"
  },
  "219": {
+  "id": "bnr-193972179",
   "navn": null,
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -2329,6 +2466,7 @@
   "merknad": ""
  },
  "220": {
+  "id": "bnr-193867952",
   "navn": null,
   "h_naa": 8.0,
   "h_per_hus": 8.0,
@@ -2346,6 +2484,7 @@
   "merknad": "kalibreringshus"
  },
  "221": {
+  "id": "bnr-193867898",
   "navn": "Gamlebyen modelljernbanesenter",
   "h_naa": 6.4,
   "h_per_hus": 6.4,
@@ -2363,6 +2502,7 @@
   "merknad": "kalibreringshus"
  },
  "222": {
+  "id": "bnr-6251218",
   "navn": null,
   "h_naa": 7.3,
   "h_per_hus": 7.3,
@@ -2380,6 +2520,7 @@
   "merknad": "kalibreringshus"
  },
  "223": {
+  "id": "bnr-193868398",
   "navn": null,
   "h_naa": 7.1,
   "h_per_hus": 7.1,
@@ -2397,6 +2538,7 @@
   "merknad": "rest 1.2 m; kalibreringshus"
  },
  "224": {
+  "id": "bnr-193868290",
   "navn": null,
   "h_naa": 8.9,
   "h_per_hus": 8.9,
@@ -2414,6 +2556,7 @@
   "merknad": "kalibreringshus"
  },
  "225": {
+  "id": "bnr-193868622",
   "navn": null,
   "h_naa": 6.6,
   "h_per_hus": 4.1,
@@ -2431,6 +2574,7 @@
   "merknad": "stor rest etter tilpasning (2.6 m): takform, trær eller nabobygg i omrisset; kalibreringshus"
  },
  "226": {
+  "id": "bnr-193868215",
   "navn": null,
   "h_naa": 4.9,
   "h_per_hus": 4.9,
@@ -2448,23 +2592,25 @@
   "merknad": "rest 1.4 m"
  },
  "227": {
+  "id": "bnr-193868452",
   "navn": null,
   "h_naa": 6.0,
-  "h_per_hus": 6.0,
-  "takhelning": 0.78,
+  "h_per_hus": 5.9,
+  "takhelning": 0.59,
   "p50": 8.67,
   "p90": 10.3,
-  "kart_p50": 8.47,
-  "kart_p90": 10.38,
-  "h_forslag": 5.6,
-  "avvik": -0.4,
-  "h_med_maalt_takhelning": 6.6,
-  "sikkerhet": "høy",
+  "kart_p50": 9.64,
+  "kart_p90": 10.78,
+  "h_forslag": 4.8,
+  "avvik": -1.2,
+  "h_med_maalt_takhelning": 5.9,
+  "sikkerhet": "middels",
   "n_piksler": 272,
-  "rest_m": 0.65,
-  "merknad": ""
+  "rest_m": 0.84,
+  "merknad": "rest 0.8 m"
  },
  "228": {
+  "id": "bnr-193972039",
   "navn": null,
   "h_naa": 7.8,
   "h_per_hus": 7.8,
@@ -2482,6 +2628,7 @@
   "merknad": ""
  },
  "229": {
+  "id": "bnr-193971938",
   "navn": null,
   "h_naa": 4.0,
   "h_per_hus": 4.0,
@@ -2499,6 +2646,7 @@
   "merknad": "rest 0.9 m; tegnet_h 4.0 gir 2.3 m (umulig): målingen avgjør"
  },
  "230": {
+  "id": "bnr-193972012",
   "navn": "Det nye rådhus",
   "h_naa": 7.8,
   "h_per_hus": 7.8,
@@ -2516,6 +2664,7 @@
   "merknad": "rest 1.3 m; har deler (tårn); h gjelder hovedkroppen; kalibreringshus"
  },
  "231": {
+  "id": "bnr-193972411",
   "navn": "Sindinggården",
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -2533,6 +2682,7 @@
   "merknad": "kalibreringshus"
  },
  "232": {
+  "id": "bnr-193870260",
   "navn": null,
   "h_naa": 8.2,
   "h_per_hus": 8.2,
@@ -2550,6 +2700,7 @@
   "merknad": "rest 1.1 m"
  },
  "233": {
+  "id": "bnr-193868592",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -2567,6 +2718,7 @@
   "merknad": "36 piksler; kalibreringshus"
  },
  "234": {
+  "id": "bnr-193870236",
   "navn": null,
   "h_naa": 6.6,
   "h_per_hus": 6.6,
@@ -2584,6 +2736,7 @@
   "merknad": "kalibreringshus"
  },
  "235": {
+  "id": "pb-7",
   "navn": null,
   "h_naa": 2.8,
   "h_per_hus": 2.8,
@@ -2601,6 +2754,7 @@
   "merknad": "32 piksler; rest 1.0 m"
  },
  "236": {
+  "id": "bnr-193867820",
   "navn": null,
   "h_naa": 6.6,
   "h_per_hus": 6.6,
@@ -2618,6 +2772,7 @@
   "merknad": ""
  },
  "237": {
+  "id": "bnr-193867693",
   "navn": null,
   "h_naa": 8.8,
   "h_per_hus": 8.8,
@@ -2635,6 +2790,7 @@
   "merknad": "kalibreringshus"
  },
  "238": {
+  "id": "bnr-13394024",
   "navn": null,
   "h_naa": 6.7,
   "h_per_hus": 6.7,
@@ -2652,6 +2808,7 @@
   "merknad": "rest 0.9 m; kalibreringshus"
  },
  "239": {
+  "id": "bnr-193867782",
   "navn": null,
   "h_naa": 7.0,
   "h_per_hus": 7.0,
@@ -2669,6 +2826,7 @@
   "merknad": ""
  },
  "240": {
+  "id": "bnr-193867588",
   "navn": "Dunkejongården",
   "h_naa": 6.9,
   "h_per_hus": 6.9,
@@ -2686,6 +2844,7 @@
   "merknad": ""
  },
  "241": {
+  "id": "bnr-193987370",
   "navn": null,
   "h_naa": 6.2,
   "h_per_hus": 6.2,
@@ -2703,6 +2862,7 @@
   "merknad": "rest 1.2 m; kalibreringshus"
  },
  "242": {
+  "id": "bnr-193867707",
   "navn": null,
   "h_naa": 9.5,
   "h_per_hus": 9.5,
@@ -2720,6 +2880,7 @@
   "merknad": "kalibreringshus"
  },
  "243": {
+  "id": "bnr-193972594",
   "navn": null,
   "h_naa": 5.0,
   "h_per_hus": 5.0,
@@ -2737,6 +2898,7 @@
   "merknad": "37 piksler"
  },
  "244": {
+  "id": "bnr-193867790",
   "navn": null,
   "h_naa": 7.2,
   "h_per_hus": 7.2,
@@ -2754,6 +2916,7 @@
   "merknad": ""
  },
  "245": {
+  "id": "bnr-193972101",
   "navn": null,
   "h_naa": 5.6,
   "h_per_hus": 5.6,
@@ -2771,6 +2934,7 @@
   "merknad": ""
  },
  "246": {
+  "id": "bnr-193867804",
   "navn": null,
   "h_naa": 7.0,
   "h_per_hus": 7.0,
@@ -2788,6 +2952,7 @@
   "merknad": ""
  },
  "247": {
+  "id": "pb-8",
   "navn": null,
   "h_naa": 9.0,
   "h_per_hus": 9.0,
@@ -2805,6 +2970,7 @@
   "merknad": "rest 1.2 m; kalibreringshus"
  },
  "248": {
+  "id": "bnr-193867596",
   "navn": "Vennehaabet",
   "h_naa": 7.8,
   "h_per_hus": 7.8,
@@ -2822,6 +2988,7 @@
   "merknad": "tegnet_h 4.0 gir 2.3 m (umulig): målingen avgjør"
  },
  "249": {
+  "id": "bnr-193867723",
   "navn": null,
   "h_naa": 7.5,
   "h_per_hus": 7.5,
@@ -2839,6 +3006,7 @@
   "merknad": "kalibreringshus"
  },
  "250": {
+  "id": "bnr-16308102",
   "navn": null,
   "h_naa": 9.6,
   "h_per_hus": 7.6,
@@ -2856,6 +3024,7 @@
   "merknad": "stor rest etter tilpasning (2.7 m): takform, trær eller nabobygg i omrisset; kalibreringshus"
  },
  "251": {
+  "id": "bnr-193972403",
   "navn": null,
   "h_naa": 5.2,
   "h_per_hus": 5.2,
@@ -2873,6 +3042,7 @@
   "merknad": "kalibreringshus"
  },
  "252": {
+  "id": "bnr-193868711",
   "navn": null,
   "h_naa": 8.0,
   "h_per_hus": 8.0,
@@ -2890,6 +3060,7 @@
   "merknad": "kalibreringshus"
  },
  "253": {
+  "id": "bnr-193972446",
   "navn": null,
   "h_naa": 5.3,
   "h_per_hus": 5.3,
@@ -2907,6 +3078,7 @@
   "merknad": ""
  },
  "254": {
+  "id": "bnr-193867758",
   "navn": null,
   "h_naa": 7.2,
   "h_per_hus": 7.2,
@@ -2924,6 +3096,7 @@
   "merknad": "kalibreringshus"
  },
  "255": {
+  "id": "bnr-193867731",
   "navn": null,
   "h_naa": 8.7,
   "h_per_hus": 8.7,
@@ -2941,6 +3114,7 @@
   "merknad": "kalibreringshus"
  },
  "256": {
+  "id": "bnr-193867839",
   "navn": null,
   "h_naa": 7.4,
   "h_per_hus": 7.4,
@@ -2958,6 +3132,7 @@
   "merknad": "kalibreringshus"
  },
  "257": {
+  "id": "bnr-193867766",
   "navn": null,
   "h_naa": 7.1,
   "h_per_hus": 7.1,
@@ -2975,6 +3150,7 @@
   "merknad": "kalibreringshus"
  },
  "258": {
+  "id": "bnr-193972462",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 6.0,
@@ -2992,6 +3168,7 @@
   "merknad": "rest 1.3 m; kalibreringshus"
  },
  "259": {
+  "id": "bnr-193870252",
   "navn": null,
   "h_naa": 5.4,
   "h_per_hus": 5.4,
@@ -3009,6 +3186,7 @@
   "merknad": "kalibreringshus"
  },
  "260": {
+  "id": "bnr-193972063",
   "navn": null,
   "h_naa": 9.7,
   "h_per_hus": 9.7,
@@ -3026,6 +3204,7 @@
   "merknad": "kalibreringshus"
  },
  "261": {
+  "id": "bnr-193867847",
   "navn": null,
   "h_naa": 8.3,
   "h_per_hus": 8.3,
@@ -3043,6 +3222,7 @@
   "merknad": ""
  },
  "262": {
+  "id": "bnr-193867545",
   "navn": "Arnesgården",
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -3060,6 +3240,7 @@
   "merknad": "kalibreringshus"
  },
  "263": {
+  "id": "bnr-193867715",
   "navn": null,
   "h_naa": 8.5,
   "h_per_hus": 8.5,
@@ -3077,6 +3258,7 @@
   "merknad": "kalibreringshus"
  },
  "264": {
+  "id": "pb-9",
   "navn": "Færgeporten",
   "h_naa": 2.6,
   "h_per_hus": 2.6,
@@ -3094,6 +3276,7 @@
   "merknad": ""
  },
  "265": {
+  "id": "pb-10",
   "navn": "Kongeporten",
   "h_naa": 3.2,
   "h_per_hus": 5.7,
@@ -3111,6 +3294,7 @@
   "merknad": "bare 9 piksler; krympet bare 0.5 m; tegnet_h 2.8 gir 1.6 m (umulig): målingen avgjør"
  },
  "266": {
+  "id": "pb-11",
   "navn": "Mellomporten",
   "h_naa": 3.5,
   "h_per_hus": 5.0,
@@ -3128,6 +3312,7 @@
   "merknad": "bare 8 piksler; krympet bare 0.5 m"
  },
  "267": {
+  "id": "bnr-193992765",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.8,
@@ -3145,6 +3330,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
  },
  "277": {
+  "id": "bnr-6276539",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 5.6,
@@ -3162,6 +3348,7 @@
   "merknad": "stor rest etter tilpasning (1.5 m): takform, trær eller nabobygg i omrisset; tegnet_h 4.0 gir 2.3 m (umulig): målingen avgjør"
  },
  "296": {
+  "id": "bnr-300216650",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -3179,6 +3366,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.2 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 2.2 gir 1.3 m (umulig): målingen avgjør"
  },
  "297": {
+  "id": "bnr-6276830",
   "navn": null,
   "h_naa": 5.3,
   "h_per_hus": 5.3,
@@ -3196,6 +3384,7 @@
   "merknad": "rest 1.4 m; tegnet_h 2.7 gir 1.6 m (umulig): målingen avgjør"
  },
  "298": {
+  "id": "bnr-193870163",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -3213,6 +3402,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 2.4 gir 1.4 m (umulig): målingen avgjør"
  },
  "305": {
+  "id": "bnr-193868533",
   "navn": null,
   "h_naa": 4.1,
   "h_per_hus": 4.1,
@@ -3230,6 +3420,7 @@
   "merknad": "kalibreringshus"
  },
  "306": {
+  "id": "pb-13",
   "navn": null,
   "h_naa": 5.0,
   "h_per_hus": 5.0,
@@ -3247,6 +3438,7 @@
   "merknad": "33 piksler"
  },
  "307": {
+  "id": "bnr-193974767",
   "navn": null,
   "h_naa": 3.4,
   "h_per_hus": 3.4,
@@ -3264,6 +3456,7 @@
   "merknad": ""
  },
  "308": {
+  "id": "pb-14",
   "navn": null,
   "h_naa": 8.6,
   "h_per_hus": 2.4,
@@ -3281,6 +3474,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 13 piksler"
  },
  "311": {
+  "id": "bnr-194006187",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 6.0,
@@ -3298,6 +3492,7 @@
   "merknad": "rest 1.1 m; kalibreringshus"
  },
  "313": {
+  "id": "bnr-193991718",
   "navn": null,
   "h_naa": 4.5,
   "h_per_hus": 4.5,
@@ -3315,6 +3510,7 @@
   "merknad": ""
  },
  "325": {
+  "id": "bnr-193972306",
   "navn": null,
   "h_naa": 4.7,
   "h_per_hus": 4.7,
@@ -3332,6 +3528,7 @@
   "merknad": "25 piksler"
  },
  "326": {
+  "id": "bnr-193972098",
   "navn": null,
   "h_naa": 8.6,
   "h_per_hus": 5.2,
@@ -3349,6 +3546,7 @@
   "merknad": "bare 13 piksler"
  },
  "327": {
+  "id": "bnr-193972071",
   "navn": null,
   "h_naa": 3.5,
   "h_per_hus": 4.8,
@@ -3366,6 +3564,7 @@
   "merknad": "bare 11 piksler"
  },
  "328": {
+  "id": "bnr-193972144",
   "navn": null,
   "h_naa": 5.8,
   "h_per_hus": 5.8,
@@ -3383,6 +3582,7 @@
   "merknad": "22 piksler"
  },
  "329": {
+  "id": "bnr-193972128",
   "navn": null,
   "h_naa": 8.8,
   "h_per_hus": 2.9,
@@ -3400,6 +3600,7 @@
   "merknad": "bare 9 piksler; krympet bare 0.5 m"
  },
  "330": {
+  "id": "bnr-193972195",
   "navn": null,
   "h_naa": 9.0,
   "h_per_hus": 2.4,
@@ -3417,6 +3618,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; kalibreringshus"
  },
  "331": {
+  "id": "bnr-193972187",
   "navn": null,
   "h_naa": 3.8,
   "h_per_hus": 3.8,
@@ -3434,23 +3636,25 @@
   "merknad": "31 piksler; kalibreringshus"
  },
  "332": {
+  "id": "bnr-193867995",
   "navn": null,
-  "h_naa": 9.2,
-  "h_per_hus": 3.7,
-  "takhelning": 0.38,
-  "p50": 5.56,
-  "p90": 6.62,
-  "kart_p50": 12.69,
-  "kart_p90": 14.04,
-  "h_forslag": 2.0,
-  "avvik": -7.2,
-  "h_med_maalt_takhelning": 2.9,
-  "sikkerhet": "lav",
-  "n_piksler": 129,
-  "rest_m": 1.09,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.9 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; rest 1.1 m"
+  "h_naa": 3.2,
+  "h_per_hus": 3.9,
+  "takhelning": 0.55,
+  "p50": 5.83,
+  "p90": 6.79,
+  "kart_p50": 5.96,
+  "kart_p90": 7.43,
+  "h_forslag": 3.0,
+  "avvik": -0.2,
+  "h_med_maalt_takhelning": 3.7,
+  "sikkerhet": "høy",
+  "n_piksler": 44,
+  "rest_m": 0.54,
+  "merknad": ""
  },
  "333": {
+  "id": "bnr-193972225",
   "navn": null,
   "h_naa": 3.3,
   "h_per_hus": 3.3,
@@ -3468,6 +3672,7 @@
   "merknad": ""
  },
  "334": {
+  "id": "bnr-193972209",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -3485,6 +3690,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 11 piksler"
  },
  "335": {
+  "id": "bnr-193971911",
   "navn": null,
   "h_naa": 3.3,
   "h_per_hus": 2.4,
@@ -3502,6 +3708,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler"
  },
  "336": {
+  "id": "bnr-193971903",
   "navn": null,
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -3519,6 +3726,7 @@
   "merknad": "21 piksler; rest 0.9 m; tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "337": {
+  "id": "bnr-193971873",
   "navn": null,
   "h_naa": 3.5,
   "h_per_hus": 3.2,
@@ -3536,16 +3744,17 @@
   "merknad": "bare 7 piksler; krympet bare 0.5 m"
  },
  "338": {
+  "id": "bnr-193971962",
   "navn": null,
-  "h_naa": 4.9,
+  "h_naa": 5.0,
   "h_per_hus": 4.9,
   "takhelning": 0.59,
   "p50": 6.39,
   "p90": 6.91,
-  "kart_p50": 6.61,
-  "kart_p90": 7.41,
+  "kart_p50": 6.71,
+  "kart_p90": 7.51,
   "h_forslag": 4.4,
-  "avvik": -0.5,
+  "avvik": -0.6,
   "h_med_maalt_takhelning": 4.9,
   "sikkerhet": "middels",
   "n_piksler": 25,
@@ -3553,6 +3762,7 @@
   "merknad": "25 piksler"
  },
  "339": {
+  "id": "bnr-193972004",
   "navn": null,
   "h_naa": 7.9,
   "h_per_hus": 5.9,
@@ -3570,6 +3780,7 @@
   "merknad": "bare 9 piksler"
  },
  "340": {
+  "id": "bnr-193971989",
   "navn": null,
   "h_naa": 8.7,
   "h_per_hus": 4.3,
@@ -3587,6 +3798,7 @@
   "merknad": "24 piksler; stor rest etter tilpasning (2.7 m): takform, trær eller nabobygg i omrisset"
  },
  "341": {
+  "id": "bnr-193972055",
   "navn": null,
   "h_naa": 7.8,
   "h_per_hus": 7.8,
@@ -3604,6 +3816,7 @@
   "merknad": ""
  },
  "342": {
+  "id": "bnr-193971377",
   "navn": null,
   "h_naa": 5.5,
   "h_per_hus": 5.5,
@@ -3621,6 +3834,7 @@
   "merknad": "17 piksler"
  },
  "343": {
+  "id": "bnr-193971350",
   "navn": null,
   "h_naa": 5.6,
   "h_per_hus": 2.4,
@@ -3638,6 +3852,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 9 piksler"
  },
  "344": {
+  "id": "bnr-193971342",
   "navn": null,
   "h_naa": 3.8,
   "h_per_hus": 2.6,
@@ -3655,6 +3870,7 @@
   "merknad": "bare 7 piksler"
  },
  "345": {
+  "id": "bnr-193971385",
   "navn": null,
   "h_naa": 3.8,
   "h_per_hus": 3.8,
@@ -3672,6 +3888,7 @@
   "merknad": "38 piksler"
  },
  "346": {
+  "id": "bnr-193971229",
   "navn": null,
   "h_naa": 5.3,
   "h_per_hus": 5.3,
@@ -3689,6 +3906,7 @@
   "merknad": "rest 0.9 m"
  },
  "347": {
+  "id": "bnr-193971202",
   "navn": null,
   "h_naa": 4.6,
   "h_per_hus": 4.6,
@@ -3706,6 +3924,7 @@
   "merknad": "rest 0.9 m"
  },
  "348": {
+  "id": "bnr-193971288",
   "navn": null,
   "h_naa": 6.3,
   "h_per_hus": 6.3,
@@ -3723,6 +3942,7 @@
   "merknad": "21 piksler"
  },
  "349": {
+  "id": "bnr-193971261",
   "navn": null,
   "h_naa": 8.4,
   "h_per_hus": 4.0,
@@ -3740,6 +3960,7 @@
   "merknad": "bare 13 piksler"
  },
  "350": {
+  "id": "bnr-193971253",
   "navn": null,
   "h_naa": 4.3,
   "h_per_hus": 2.8,
@@ -3757,6 +3978,7 @@
   "merknad": "bare 9 piksler; kalibreringshus"
  },
  "351": {
+  "id": "bnr-193868010",
   "navn": null,
   "h_naa": 4.4,
   "h_per_hus": 4.4,
@@ -3774,6 +3996,7 @@
   "merknad": "37 piksler"
  },
  "352": {
+  "id": "bnr-193971296",
   "navn": null,
   "h_naa": 8.5,
   "h_per_hus": 4.9,
@@ -3791,6 +4014,7 @@
   "merknad": "bare 12 piksler"
  },
  "353": {
+  "id": "bnr-193972772",
   "navn": null,
   "h_naa": 9.6,
   "h_per_hus": 5.5,
@@ -3808,6 +4032,7 @@
   "merknad": "bare 8 piksler; rest 1.0 m; kalibreringshus"
  },
  "354": {
+  "id": "bnr-193972578",
   "navn": null,
   "h_naa": 8.6,
   "h_per_hus": 2.4,
@@ -3825,6 +4050,7 @@
   "merknad": "bare 4 piksler; krympet bare 0.5 m; rest 0.9 m; kalibreringshus"
  },
  "355": {
+  "id": "bnr-193972543",
   "navn": null,
   "h_naa": 5.1,
   "h_per_hus": 5.1,
@@ -3842,6 +4068,7 @@
   "merknad": "rest 1.1 m; tegnet_h 3.8 gir 2.2 m (umulig): målingen avgjør"
  },
  "356": {
+  "id": "bnr-193972535",
   "navn": null,
   "h_naa": 7.8,
   "h_per_hus": 2.4,
@@ -3859,6 +4086,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
  },
  "357": {
+  "id": "bnr-193972616",
   "navn": null,
   "h_naa": 8.6,
   "h_per_hus": 2.4,
@@ -3876,6 +4104,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 10 piksler"
  },
  "358": {
+  "id": "bnr-193972608",
   "navn": null,
   "h_naa": 5.2,
   "h_per_hus": 5.2,
@@ -3893,6 +4122,7 @@
   "merknad": "23 piksler"
  },
  "359": {
+  "id": "bnr-193972632",
   "navn": null,
   "h_naa": 4.0,
   "h_per_hus": 4.0,
@@ -3910,6 +4140,7 @@
   "merknad": "27 piksler; rest 0.9 m"
  },
  "360": {
+  "id": "bnr-193972349",
   "navn": null,
   "h_naa": 3.6,
   "h_per_hus": 3.6,
@@ -3927,6 +4158,7 @@
   "merknad": "35 piksler; rest 1.1 m; kalibreringshus"
  },
  "361": {
+  "id": "bnr-193972438",
   "navn": null,
   "h_naa": 5.5,
   "h_per_hus": 5.5,
@@ -3944,6 +4176,7 @@
   "merknad": "28 piksler"
  },
  "362": {
+  "id": "bnr-193972381",
   "navn": null,
   "h_naa": 6.3,
   "h_per_hus": 2.5,
@@ -3961,6 +4194,7 @@
   "merknad": "bare 4 piksler"
  },
  "363": {
+  "id": "bnr-193972454",
   "navn": null,
   "h_naa": 5.5,
   "h_per_hus": 2.4,
@@ -3978,6 +4212,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; kalibreringshus"
  },
  "364": {
+  "id": "bnr-193972497",
   "navn": null,
   "h_naa": 8.4,
   "h_per_hus": 2.4,
@@ -3995,6 +4230,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler; krympet bare 0.5 m"
  },
  "365": {
+  "id": "bnr-193967132",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -4012,6 +4248,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 11 piksler; tegnet_h 2.7 gir 1.6 m (umulig): målingen avgjør"
  },
  "369": {
+  "id": "bnr-193874525",
   "navn": null,
   "h_naa": 2.5,
   "h_per_hus": 2.5,
@@ -4029,6 +4266,7 @@
   "merknad": "37 piksler; tegnet_h 3.8 gir 2.2 m (umulig): målingen avgjør"
  },
  "371": {
+  "id": "bnr-193874533",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -4046,6 +4284,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 3.2 gir 1.9 m (umulig): målingen avgjør"
  },
  "372": {
+  "id": "bnr-193874568",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -4063,6 +4302,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 3.8 gir 2.2 m (umulig): målingen avgjør"
  },
  "375": {
+  "id": "bnr-193868665",
   "navn": null,
   "h_naa": 8.6,
   "h_per_hus": 3.2,
@@ -4080,6 +4320,7 @@
   "merknad": "bare 7 piksler"
  },
  "376": {
+  "id": "bnr-193868681",
   "navn": null,
   "h_naa": 6.9,
   "h_per_hus": 2.4,
@@ -4097,6 +4338,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.9 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; kalibreringshus"
  },
  "377": {
+  "id": "bnr-193868703",
   "navn": null,
   "h_naa": 4.9,
   "h_per_hus": 2.4,
@@ -4114,6 +4356,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
  },
  "378": {
+  "id": "bnr-193868584",
   "navn": null,
   "h_naa": 3.6,
   "h_per_hus": 4.2,
@@ -4131,6 +4374,7 @@
   "merknad": "bare 6 piksler"
  },
  "379": {
+  "id": "bnr-193868517",
   "navn": null,
   "h_naa": 5.4,
   "h_per_hus": 5.4,
@@ -4148,6 +4392,7 @@
   "merknad": "rest 1.0 m"
  },
  "380": {
+  "id": "bnr-193868657",
   "navn": null,
   "h_naa": 8.6,
   "h_per_hus": 2.4,
@@ -4165,6 +4410,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 13 piksler; kalibreringshus"
  },
  "381": {
+  "id": "bnr-193868606",
   "navn": null,
   "h_naa": 4.1,
   "h_per_hus": 4.1,
@@ -4182,6 +4428,7 @@
   "merknad": ""
  },
  "382": {
+  "id": "bnr-193868614",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 4.3,
@@ -4199,6 +4446,7 @@
   "merknad": "bare 9 piksler"
  },
  "383": {
+  "id": "bnr-193868401",
   "navn": null,
   "h_naa": 4.9,
   "h_per_hus": 4.9,
@@ -4216,6 +4464,7 @@
   "merknad": ""
  },
  "384": {
+  "id": "bnr-193868479",
   "navn": null,
   "h_naa": 3.6,
   "h_per_hus": 3.6,
@@ -4233,6 +4482,7 @@
   "merknad": "26 piksler; rest 1.1 m"
  },
  "385": {
+  "id": "bnr-193868495",
   "navn": null,
   "h_naa": 10.1,
   "h_per_hus": 7.8,
@@ -4250,6 +4500,7 @@
   "merknad": "25 piksler; stor rest etter tilpasning (2.1 m): takform, trær eller nabobygg i omrisset; p50 og p90 sier ulikt (-2.8/+0.4 m); kalibreringshus"
  },
  "386": {
+  "id": "bnr-193868444",
   "navn": null,
   "h_naa": 5.5,
   "h_per_hus": 5.5,
@@ -4267,6 +4518,7 @@
   "merknad": ""
  },
  "387": {
+  "id": "bnr-193867987",
   "navn": null,
   "h_naa": 6.2,
   "h_per_hus": 6.2,
@@ -4284,23 +4536,17 @@
   "merknad": "rest 0.8 m; kalibreringshus"
  },
  "388": {
+  "id": "pb-15",
   "navn": null,
-  "h_naa": 3.9,
-  "h_per_hus": 3.9,
-  "takhelning": 0.55,
+  "h_naa": 3.2,
   "p50": 5.83,
   "p90": 6.79,
-  "kart_p50": 6.66,
-  "kart_p90": 8.13,
-  "h_forslag": 3.0,
-  "avvik": -0.9,
-  "h_med_maalt_takhelning": 3.7,
-  "sikkerhet": "høy",
-  "n_piksler": 44,
-  "rest_m": 0.54,
-  "merknad": ""
+  "h_forslag": null,
+  "sikkerhet": "ingen",
+  "merknad": "skjult i kartet (Claude 2026-10-29: id etter Matrikkelen (29.10): huset har id bnr-193867995 (Matrikkelen); denne id-en brukes ikke lenger)"
  },
  "389": {
+  "id": "bnr-193867812",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 6.0,
@@ -4318,6 +4564,7 @@
   "merknad": "16 piksler"
  },
  "390": {
+  "id": "bnr-193867774",
   "navn": null,
   "h_naa": 6.4,
   "h_per_hus": 6.4,
@@ -4335,6 +4582,7 @@
   "merknad": "kalibreringshus"
  },
  "391": {
+  "id": "bnr-193870244",
   "navn": null,
   "h_naa": 3.6,
   "h_per_hus": 3.6,
@@ -4352,6 +4600,7 @@
   "merknad": ""
  },
  "392": {
+  "id": "bnr-193867685",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -4369,6 +4618,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.5 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 2.4 gir 1.4 m (umulig): målingen avgjør"
  },
  "393": {
+  "id": "bnr-193867553",
   "navn": null,
   "h_naa": 5.7,
   "h_per_hus": 2.4,
@@ -4386,6 +4636,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler"
  },
  "394": {
+  "id": "bnr-193867332",
   "navn": null,
   "h_naa": 3.5,
   "h_per_hus": 3.5,
@@ -4403,6 +4654,7 @@
   "merknad": "29 piksler"
  },
  "398": {
+  "id": "bnr-16313173",
   "navn": null,
   "h_naa": 4.4,
   "h_per_hus": 4.4,
@@ -4420,6 +4672,7 @@
   "merknad": "rest 1.1 m"
  },
  "401": {
+  "id": "bnr-6254179",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -4437,6 +4690,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 3.8 gir 2.2 m (umulig): målingen avgjør"
  },
  "402": {
+  "id": "bnr-6246753",
   "navn": null,
   "h_naa": 2.6,
   "h_per_hus": 2.6,
@@ -4454,6 +4708,7 @@
   "merknad": "20 piksler"
  },
  "404": {
+  "id": "bnr-193971210",
   "navn": null,
   "h_naa": 3.4,
   "h_per_hus": 2.7,
@@ -4471,6 +4726,7 @@
   "merknad": "p50 og p90 sier ulikt (-1.1/+1.8 m)"
  },
  "406": {
+  "id": "bnr-300506942",
   "navn": null,
   "h_naa": 6.0,
   "h_per_hus": 2.4,
@@ -4488,6 +4744,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "408": {
+  "id": "bnr-300399132",
   "navn": null,
   "h_naa": 5.2,
   "h_per_hus": 2.4,
@@ -4505,6 +4762,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.9 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 13 piksler"
  },
  "411": {
+  "id": "bnr-193971539",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.9,
@@ -4522,6 +4780,7 @@
   "merknad": "bare 14 piksler"
  },
  "413": {
+  "id": "bnr-193820387",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -4539,6 +4798,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.5 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 13 piksler; 69 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
  "416": {
+  "id": "bnr-193820824",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 3.5,
@@ -4556,6 +4816,7 @@
   "merknad": "bare 14 piksler"
  },
  "423": {
+  "id": "bnr-193820557",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 2.4,
@@ -4573,6 +4834,7 @@
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.5 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 11 piksler"
  },
  "426": {
+  "id": "bnr-13416419",
   "navn": null,
   "h_naa": 4.4,
   "h_per_hus": 4.4,
@@ -4590,6 +4852,7 @@
   "merknad": ""
  },
  "429": {
+  "id": "bnr-13418268",
   "navn": null,
   "h_naa": 3.7,
   "h_per_hus": 3.7,
@@ -4607,6 +4870,7 @@
   "merknad": "rest 1.3 m"
  },
  "431": {
+  "id": "pb-17",
   "navn": null,
   "h_naa": 3.0,
   "h_per_hus": 5.5,
@@ -4624,6 +4888,7 @@
   "merknad": "bare 7 piksler; rest 1.1 m"
  },
  "432": {
+  "id": "pb-18",
   "navn": null,
   "h_naa": 3.0,
   "h_per_hus": 6.1,
@@ -4641,23 +4906,25 @@
   "merknad": "bare 11 piksler; stor rest etter tilpasning (4.4 m): takform, trær eller nabobygg i omrisset; p50 og p90 sier ulikt (+2.7/+5.9 m)"
  },
  "438": {
+  "id": "pb-22",
   "navn": "Kruttmagasinet",
-  "h_naa": 6.0,
+  "h_naa": 0.5,
   "h_per_hus": 2.4,
   "takhelning": 0.59,
   "p50": 0.01,
   "p90": 0.02,
-  "kart_p50": 7.84,
-  "kart_p90": 8.78,
+  "kart_p50": 0.5,
+  "kart_p90": 0.5,
   "h_forslag": 2.0,
-  "avvik": -4.0,
+  "avvik": 1.5,
   "h_med_maalt_takhelning": 2.0,
   "sikkerhet": "lav",
   "n_piksler": 62,
-  "rest_m": 0.85,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; rest 0.8 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet); tegnet_h 1.9 gir 1.1 m (umulig): målingen avgjør"
+  "rest_m": 0.01,
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet); tegnet_h 1.9 gir 1.1 m (umulig): målingen avgjør"
  },
  "439": {
+  "id": "bnr-193870228",
   "navn": null,
   "h_naa": 6.3,
   "h_per_hus": 6.3,
@@ -4675,6 +4942,7 @@
   "merknad": "kalibreringshus"
  },
  "440": {
+  "id": "bnr-193870201",
   "navn": null,
   "h_naa": 6.1,
   "h_per_hus": 6.1,
@@ -4692,6 +4960,25 @@
   "merknad": "tegnet_h 3.5 gir 2.0 m (umulig): målingen avgjør"
  },
  "441": {
+  "id": "bnr-193972160",
+  "navn": null,
+  "h_naa": 3.9,
+  "h_per_hus": 3.7,
+  "takhelning": 0.38,
+  "p50": 5.56,
+  "p90": 6.62,
+  "kart_p50": 7.39,
+  "kart_p90": 8.74,
+  "h_forslag": 2.0,
+  "avvik": -1.9,
+  "h_med_maalt_takhelning": 2.9,
+  "sikkerhet": "lav",
+  "n_piksler": 129,
+  "rest_m": 1.09,
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.9 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; rest 1.1 m"
+ },
+ "442": {
+  "id": "bnr-193869572",
   "navn": null,
   "h_naa": 8.1,
   "h_per_hus": 8.1,
@@ -4708,7 +4995,8 @@
   "rest_m": 0.18,
   "merknad": ""
  },
- "442": {
+ "443": {
+  "id": "bnr-193972047",
   "navn": null,
   "h_naa": 4.6,
   "h_per_hus": 5.0,
@@ -4725,7 +5013,8 @@
   "rest_m": 2.04,
   "merknad": "stor rest etter tilpasning (2.0 m): takform, trær eller nabobygg i omrisset"
  },
- "443": {
+ "444": {
+  "id": "bnr-193868673",
   "navn": null,
   "h_naa": 2.9,
   "h_per_hus": 2.9,
@@ -4742,7 +5031,8 @@
   "rest_m": 0.25,
   "merknad": ""
  },
- "444": {
+ "445": {
+  "id": "bnr-193868576",
   "navn": null,
   "h_naa": 4.1,
   "h_per_hus": 4.1,
@@ -4759,7 +5049,8 @@
   "rest_m": 0.55,
   "merknad": "35 piksler"
  },
- "445": {
+ "446": {
+  "id": "bnr-193868649",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4776,7 +5067,8 @@
   "rest_m": 0.78,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 10 piksler"
  },
- "446": {
+ "447": {
+  "id": "pb-23",
   "navn": null,
   "h_naa": 3.2,
   "h_per_hus": 3.4,
@@ -4793,7 +5085,8 @@
   "rest_m": 0.19,
   "merknad": "bare 8 piksler"
  },
- "447": {
+ "448": {
+  "id": "bnr-193870287",
   "navn": null,
   "h_naa": 3.6,
   "h_per_hus": 3.6,
@@ -4810,7 +5103,8 @@
   "rest_m": 0.43,
   "merknad": "bare 11 piksler"
  },
- "448": {
+ "449": {
+  "id": "bnr-193972217",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4827,7 +5121,8 @@
   "rest_m": 0.25,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 9 piksler"
  },
- "449": {
+ "450": {
+  "id": "pb-24",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4844,7 +5139,8 @@
   "rest_m": 0.27,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.5 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 8 piksler"
  },
- "450": {
+ "451": {
+  "id": "pb-25",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4861,7 +5157,8 @@
   "rest_m": 0.44,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "451": {
+ "452": {
+  "id": "pb-26",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4878,7 +5175,8 @@
   "rest_m": 0.15,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler"
  },
- "452": {
+ "453": {
+  "id": "pb-27",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4895,7 +5193,8 @@
   "rest_m": 0.52,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.2 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 9 piksler; krympet bare 0.5 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "453": {
+ "454": {
+  "id": "pb-28",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4912,7 +5211,8 @@
   "rest_m": 0.41,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler"
  },
- "454": {
+ "455": {
+  "id": "pb-29",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4929,7 +5229,8 @@
   "rest_m": 0.18,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler"
  },
- "455": {
+ "456": {
+  "id": "pb-30",
   "navn": null,
   "h_naa": 2.6,
   "h_per_hus": 2.6,
@@ -4946,7 +5247,8 @@
   "rest_m": 0.34,
   "merknad": "15 piksler; krympet bare 0.5 m"
  },
- "456": {
+ "457": {
+  "id": "bnr-300002508",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4963,7 +5265,8 @@
   "rest_m": 0.05,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.3 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler"
  },
- "457": {
+ "458": {
+  "id": "pb-31",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4980,7 +5283,8 @@
   "rest_m": 1.06,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; rest 1.1 m; 50 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "458": {
+ "459": {
+  "id": "pb-32",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -4997,7 +5301,8 @@
   "rest_m": 0.14,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.3 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler"
  },
- "459": {
+ "460": {
+  "id": "pb-33",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5014,7 +5319,8 @@
   "rest_m": 0.4,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 10 piksler; krympet bare 0.5 m"
  },
- "460": {
+ "461": {
+  "id": "pb-34",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5031,7 +5337,8 @@
   "rest_m": 0.27,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 9 piksler; krympet bare 0.5 m"
  },
- "461": {
+ "462": {
+  "id": "pb-35",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5048,7 +5355,8 @@
   "rest_m": 0.2,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler"
  },
- "462": {
+ "463": {
+  "id": "pb-36",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5065,7 +5373,8 @@
   "rest_m": 0.1,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.9 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "463": {
+ "464": {
+  "id": "pb-37",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5082,7 +5391,8 @@
   "rest_m": 0.18,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.5 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler; krympet bare 0.5 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "464": {
+ "465": {
+  "id": "pb-38",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5099,7 +5409,8 @@
   "rest_m": 0.32,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler; krympet bare 0.5 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "465": {
+ "466": {
+  "id": "pb-39",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5116,7 +5427,8 @@
   "rest_m": 0.23,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.5 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler; krympet bare 0.5 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "466": {
+ "467": {
+  "id": "bnr-193820565",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5133,7 +5445,8 @@
   "rest_m": 0.22,
   "merknad": "bare 8 piksler; krympet bare 0.5 m"
  },
- "467": {
+ "468": {
+  "id": "pb-40",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5150,7 +5463,8 @@
   "rest_m": 0.95,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -1.3 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 5 piksler; krympet bare 0.5 m; rest 0.9 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "468": {
+ "469": {
+  "id": "pb-41",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5167,7 +5481,8 @@
   "rest_m": 0.06,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; krympet bare 0.5 m"
  },
- "469": {
+ "470": {
+  "id": "pb-42",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5184,7 +5499,8 @@
   "rest_m": 0.6,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler; krympet bare 0.5 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "470": {
+ "471": {
+  "id": "pb-43",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5201,7 +5517,8 @@
   "rest_m": 0.15,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 5 piksler; krympet bare 0.5 m"
  },
- "471": {
+ "472": {
+  "id": "pb-44",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5218,7 +5535,8 @@
   "rest_m": 0.39,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 5 piksler; krympet bare 0.5 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "472": {
+ "473": {
+  "id": "pb-45",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5235,7 +5553,8 @@
   "rest_m": 0.64,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt -0.2 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 5 piksler; krympet bare 0.5 m; p50 og p90 sier ulikt (-2.0/+0.6 m); 60 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "473": {
+ "474": {
+  "id": "pb-46",
   "navn": null,
   "h_naa": 2.5,
   "h_per_hus": 3.1,
@@ -5252,7 +5571,8 @@
   "rest_m": 1.1,
   "merknad": "bare 10 piksler; krympet bare 0 m; rest 1.1 m; 30 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "474": {
+ "475": {
+  "id": "pb-47",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5269,7 +5589,8 @@
   "rest_m": 0.33,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.1 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; krympet bare 0.5 m; 75 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "475": {
+ "476": {
+  "id": "pb-48",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5286,7 +5607,8 @@
   "rest_m": 0.24,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 5 piksler; krympet bare 0.5 m"
  },
- "476": {
+ "477": {
+  "id": "pb-49",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5303,7 +5625,8 @@
   "rest_m": 0.71,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.0 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 5 piksler; krympet bare 0.5 m; 40 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "477": {
+ "478": {
+  "id": "pb-50",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5320,7 +5643,8 @@
   "rest_m": 0.34,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; krympet bare 0.5 m"
  },
- "478": {
+ "479": {
+  "id": "pb-51",
   "navn": null,
   "h_naa": 2.4,
   "h_per_hus": 3.0,
@@ -5337,7 +5661,8 @@
   "rest_m": 1.05,
   "merknad": "bare 8 piksler; krympet bare 0 m; rest 1.0 m"
  },
- "479": {
+ "480": {
+  "id": "pb-52",
   "navn": null,
   "h_naa": 2.8,
   "h_per_hus": 3.4,
@@ -5354,7 +5679,8 @@
   "rest_m": 0.61,
   "merknad": "bare 8 piksler; krympet bare 0 m"
  },
- "480": {
+ "481": {
+  "id": "pb-53",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.5,
@@ -5371,7 +5697,8 @@
   "rest_m": 1.72,
   "merknad": "bare 8 piksler; krympet bare 0 m; stor rest etter tilpasning (1.7 m): takform, trær eller nabobygg i omrisset; 38 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "481": {
+ "482": {
+  "id": "pb-54",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5388,7 +5715,8 @@
   "rest_m": 0.73,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 8 piksler; krympet bare 0 m; 88 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "482": {
+ "483": {
+  "id": "pb-55",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,
@@ -5405,7 +5733,8 @@
   "rest_m": 0.56,
   "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.3 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler; krympet bare 0 m; 100 % av pikslene under 2 m (gårdsrom, feil omriss eller revet)"
  },
- "483": {
+ "484": {
+  "id": "pb-56",
   "navn": null,
   "h_naa": 2.2,
   "h_per_hus": 2.4,

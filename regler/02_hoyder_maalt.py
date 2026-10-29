@@ -9,9 +9,10 @@ from _felles import *
 H = json.load(open(os.path.join(ROT, 'rapport', 'hoyder', 'hoyder.json')))
 b = data('bygg')
 feil = []; maalt = 0; umaalt = []; navnfeil = []
+HID = {e['id']: e for e in H.values() if e.get('id')}     # målingen følger id-en (29.10), plassen bare for gamle målinger
 for i, x in gamleby(b):
     if x.get('skjult') or x.get('kirke'): continue
-    m = H.get(str(i))
+    m = HID.get(x['id']) if HID else H.get(str(i))
     if m and m.get('navn') and x.get('navn') and m['navn'] != x['navn']: navnfeil.append(f"- bygg {i}: hoyder.json sier «{m['navn']}», data sier «{x['navn']}» (rekkefølgen i bygg.json er endret?)")
     if m and m.get('sikkerhet') in ('høy', 'middels') and m.get('h_per_hus') is not None:
         maalt += 1

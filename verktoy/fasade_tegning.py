@@ -388,7 +388,7 @@ def koble_flater(F, hus, BY, G, k):
         kand.append((i, 'tak', tak_proj(x, pr)))
     ut = []
     for f in F:
-        if min(f['farge']) > 0.97 or max(f['farge']) < 0.3 or f['ytre'].area < 6:
+        if min(f['farge']) > 0.97 or max(f['farge']) < 0.3 or f['ytre'].area < 15:
             continue
         P = f['ytre']; best = None
         for i, kk, q in kand:
@@ -413,7 +413,7 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
     element har u (0-1 langs veggen fra venstre i tegningen), v (0-1 opp fra bunnen til gesims), bredde/høyde i andel,
     hvit (andel glass), mork (andel svart), buet (topp smalere enn midten)."""
     import cv2
-    U = unary_union([f['ytre'] for f in F_vegg]).buffer(0.3).buffer(-0.3)
+    U = unary_union([f['ytre'].buffer(1.3) for f in F_vegg]).buffer(-1.3)   # flater skilt av en strek (rekkehus) blir én vegg
     if U.geom_type != 'Polygon':
         U = max(U.geoms, key=lambda g: g.area)
     x0, y0, x1, y1 = U.bounds
@@ -427,6 +427,14 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
     d = np.min([np.abs(im - c).sum(axis=2) for c in farger], axis=0)
     annet = ((d > 60) & (inn > 0)).astype(np.uint8)
     annet = cv2.morphologyEx(annet, cv2.MORPH_CLOSE, np.ones((int(R * 0.5) | 1,) * 2, np.uint8))
+    # elementene: hullene i flatene (vinduer og dører er hull i veggflaten), og det som er tegnet oppå flaten uten å være hull
+    hullmaske = np.zeros(im.shape[:2], np.uint8)
+    for f in F_vegg:
+        for hp in f['hull']:
+            if hp.area > 0.15:
+                cv2.fillPoly(hullmaske, [tilpx(hp.exterior.coords)], 1)
+    annet = np.maximum(annet, hullmaske) * (inn > 0)
+    annet = cv2.morphologyEx(annet.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((int(R * 0.4) | 1,) * 2, np.uint8))
     n, lab, st, cen = cv2.connectedComponentsWithStats(annet, 8)
     # flatens geometri: venstre/høyre loddkant, bunn og gesims
     fx0, fx1 = x0, x1
@@ -448,8 +456,10 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
         if a < (R * 0.35) ** 2:          # flekker under 0,35 pt
             continue
         sel = lab[y:y + hh, x:x + w] == j
+        if hh > 4 * w and w < R * 1.2:      # loddrett skillestrek mellom rekkehus, ikke et element
+            continue
         px = im[y:y + hh, x:x + w][sel]
-        hvit = float((px.min(axis=1) > 225).mean()); mork = float((px.max(axis=1) < 80).mean())
+        hvit = float((px.min(axis=1) > 190).mean()); mork = float((px.max(axis=1) < 80).mean())
         cx, cy = clip.x0 + (x + w / 2) / R, clip.y0 + (y + hh / 2) / R
         yb, yg = bunn(cx), gesims(cx)
         H = max(yb - yg, 1e-6)
@@ -506,6 +516,17 @@ def les(navn, d=None, logg=print):
     logg(f"{navn}: {len(B)} kandidater, {len(res)} blokker lagt, {len(hus)} hus")
     F, _ = flater(navn)
     kob_f = koble_flater(F, hus, BY, G, k)
+    # koblinger satt for hånd (kilder/fasade-kobling.json): flate -> "id/vegg", "id/tak" eller "ingen"
+    man = (json.load(open(KOBLING_FIL, encoding='utf8')).get(navn, {}) if os.path.exists(KOBLING_FIL) else {}).get('flater', {})
+    if man:
+        FI = {f['i']: f for f in F}
+        kob_f = [kf for kf in kob_f if str(kf['flate']['i']) not in man]
+        for fi, mal in man.items():
+            if mal == 'ingen' or int(fi) not in FI: continue
+            i, kk = mal.rsplit('/', 1)
+            kob_f.append(dict(flate=FI[int(fi)], id=i, vegg='tak' if kk == 'tak' else int(kk), andel=None, for_haand=True))
+            if i not in hus and i in BY:      # huset er ikke lagt av tilpasningen: start-kameraet
+                hus[i] = dict(s=1.0, kz=1.0, d=[0.0, 0.0], rot=0.0, sk=0.0, c0=[0.0, 0.0], for_haand=True)
     side = fitz.open(os.path.join(AI, navn + '.ai'))[0]
     vegger = {}
     for kf in kob_f:
@@ -518,7 +539,10 @@ def les(navn, d=None, logg=print):
         if geo is None:
             continue
         x = BY[i]; pr = proj_par(G, k, hus[i]['c0'], hus[i])
-        v = next(v for v in vegger_proj(x, pr, G) if v['k'] == kk)
+        v = next((v for v in vegger_proj(x, pr, G) if v['k'] == kk), None)
+        if v is None:            # for hånd koblet til en vegg som ikke vender mot tegneren med dette kameraet
+            P_ = x['p']; a_, b_ = P_[kk], P_[(kk + 1) % len(P_)]
+            v = dict(a=a_, b=b_, L=math.dist(a_, b_), venstre=a_ if pr(*a_, 0)[0] <= pr(*b_, 0)[0] else b_)
         lest.append(dict(id=i, vegg=kk, a=v['a'], b=v['b'], L=round(v['L'], 2), venstre=v['venstre'], flater=[f['i'] for f in FF],
                          farger=[f['farge'] for f in FF], elementer=el, geo=geo))
     tak = {}
@@ -621,3 +645,150 @@ def tosidig(E, R, Pt, Lm, shape):
     dt = cv2.distanceTransform(T, cv2.DIST_L2, 3) / R
     b = float(np.exp(-map_coordinates(dt, [Pt[:, 1] * R, Pt[:, 0] * R], order=1, mode='nearest') ** 2 / (2 * 2.5 ** 2)).mean())
     return a + b
+
+
+# ---------------------------------------------------------------- fra avlesning til vind
+
+AVL = os.path.join(ROT, 'kilder', 'fasade-tegning')
+KOBLING_FIL = os.path.join(ROT, 'kilder', 'fasade-kobling.json')
+
+
+def lagre_avlesning(L):
+    """Avlesningen (bare tall: kamera per hus, vegger og elementer i andel av veggen) i kilder/fasade-tegning/<tegning>.json,
+    så vind kan lages på nytt uten tegningene (de er åndsverk og ligger bare lokalt)."""
+    os.makedirs(AVL, exist_ok=True)
+    ut = dict(tegning=L['navn'], laget=__import__('datetime').date.today().isoformat(), verktoy='verktoy/fasade_tegning.py les',
+              kamera=dict(G=L['G'], k=L['k']), hus=L['hus'],
+              vegger=[{k: v for k, v in vg.items() if k != 'farger'} | dict(farger=[[round(c * 255) for c in f] for f in vg['farger']]) for vg in L['vegger']],
+              tak=L['tak'])
+    json.dump(ut, open(os.path.join(AVL, L['navn'] + '.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0, default=float)
+
+
+def klassifiser(el, L):
+    """Element -> (typ, b, h): 0 vindu, 1 dør, 2 port med buet topp; None = ikke et element (strek, flekk)."""
+    bu_m, hv = el['bu'] * L, el['hv']
+    if el['vb'] < 0.13 and hv > 0.33 and el['hvit'] < 0.2:
+        if bu_m > 1.7 or el['buet']:
+            return 2, round(min(max(bu_m, 1.6), 3.2), 2), 2.6 if bu_m > 1.7 else 2.4
+        return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
+    if hv > 0.08 and el['bu'] > 0.01:
+        return 0, round(min(max(bu_m, 0.6), 1.3), 2), None
+    return None
+
+
+def vegg_vind(vg, x, P):
+    """En tegnet vegg til vind-elementer på modellveggen: aksene i andel av veggen fra venstre i tegningen, radene til
+    etasjene huset har plass til (brystning 0,9 m, etasje 3,0 m, som reglene); rader over gesims (gavl) står i gavlen."""
+    import vinduer_regler as VR
+    a, b = np.array(vg['a'], float), np.array(vg['b'], float)
+    v0 = np.array(vg['venstre'], float); v1 = b if np.allclose(v0, a) else a
+    L = float(np.linalg.norm(v1 - v0)); u = (v1 - v0) / L
+    n = np.array([u[1], -u[0]])
+    if Polygon(x['p']).contains(Point(*(v0 + u * L / 2 + n * 0.3))):
+        n = -n
+    h = x['h']
+    el = [(e, klassifiser(e, L)) for e in vg['elementer']]
+    el = [(e, k) for e, k in el if k is not None]
+    vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['v'])
+    rader = []
+    for e in vin:
+        if rader and e['v'] - rader[-1][-1]['v'] < 0.17:
+            rader[-1].append(e)
+        else:
+            rader.append([e])
+    brystn = VR.rader(h)
+    # kjeller: nederste rad med små vinduer helt nede (høyde under 60 % av de andre radene)
+    hv_med = np.median([e['hv'] for e in vin]) if vin else 0
+    ut = []; notat = []
+    rad_z = []
+    k = 0
+    for r in rader:
+        vm = np.mean([e['v'] for e in r]); hm = np.mean([e['hv'] for e in r])
+        if vm < 0.22 and hm < 0.7 * hv_med and len(rader) > 1:
+            rad_z.append(('kjeller', 0.55, 0.6, 0.5)); continue
+        if k < len(brystn):
+            rad_z.append(('etg', brystn[k] + VR.R['vh'] / 2, VR.R['vh'], None)); k += 1
+        else:
+            notat.append(f"rad {len(rad_z) + 1} fikk ikke plass under gesims (h {h} m)"); rad_z.append(None)
+    for r, rz in zip(rader, rad_z):
+        if rz is None: continue
+        slag, zc, hh, bb = rz
+        for e in r:
+            t = min(max(e['u'] * L, 0), L)
+            bw = bb or klassifiser(e, L)[1]
+            t = min(max(t, bw / 2 + 0.32), L - bw / 2 - 0.32) if L > bw + 0.64 else L / 2
+            ut.append(VR.element(P, v0 + u * t, bw, n, zc, bw, hh, 0))
+    for e, kk in el:
+        if kk[0] in (1, 2):
+            t = min(max(e['u'] * L, kk[1] / 2 + 0.32), L - kk[1] / 2 - 0.32) if L > kk[1] + 0.64 else L / 2
+            ut.append(VR.element(P, v0 + u * t, kk[1], n, kk[2] / 2, kk[1], kk[2], kk[0]))
+    # dør tar plassen til vinduet i 1. etasje der de står oppå hverandre
+    dorer = [q for q in ut if q[9] in (1, 2)]
+    ut = [q for q in ut if not (q[9] == 0 and q[2] < 3 and any(math.dist(q[:2], d[:2]) < (q[7] + d[7]) / 2 for d in dorer))]
+    gavl = [e for e, k in el if k[0] == 0 and e['v'] > 1.05]
+    if gavl:
+        notat.append(f"{len(gavl)} vindu(er) over gesims i tegningen (gavl/ark)")
+    for q in ut:
+        q[11] = 0          # fra tegning, ikke antatt
+    return ut, dict(rader=[len(r) for r in rader], dorer=sum(1 for q in ut if q[9] in (1, 2)), notat=notat)
+
+
+def legg_inn(tørt=False, bare=None):
+    """Vind fra avlesningene (kilder/fasade-tegning/*.json) som rettelser. Tegnede vegger får tegningens elementer; veggene
+    tegningen ikke viser, får reglene (vinduer_regler). Idempotent: egne linjer (GRUNN) tas ut først."""
+    import datalag, vegger as VG, vinduer_regler as VR, glob as _g
+    GRUNN = 'kvartaltegning som vektor (verktoy/fasade_tegning.py, 29.10)'
+    ret = [r for r in datalag.les('rettelser') if r.get('grunn') != GRUNN]
+    raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
+    d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, ret), grunn)
+    BY = {x['id']: x for x in d['bygg']}; omg = VG.Omgivelser(d['bygg'], d['veier'], d['gardsrom'])
+    per_hus = {}
+    for f in sorted(_g.glob(os.path.join(AVL, '*.json'))):
+        A = json.load(open(f, encoding='utf8'))
+        if bare and A['tegning'] not in bare: continue
+        for vg in A['vegger']:
+            per_hus.setdefault(vg['id'], []).append((A['tegning'], vg))
+    nye, logg = [], []
+    for i, lst in per_hus.items():
+        x = BY.get(i)
+        if not x or x.get('skjul') or x.get('kirke') or x.get('deler'):
+            continue
+        P = np.array(x['p'], float); V = VG.vegger(x, omg, slaa_sammen=False)
+        # samme vegg i to tegninger: den med flest elementer
+        beste = {}
+        for tg, vg in lst:
+            mid = (np.array(vg['a']) + np.array(vg['b'])) / 2
+            kk, _ = VG.naermeste_vegg(V, mid)
+            if kk is None: continue
+            if kk not in beste or len(vg['elementer']) > len(beste[kk][1]['elementer']):
+                beste[kk] = (tg, vg)
+        tegnet, info = [], {}
+        for kk, (tg, vg) in beste.items():
+            w = V[kk]
+            vg2 = dict(vg, a=list(w['a']), b=list(w['c']),
+                       venstre=list(w['a']) if np.linalg.norm(np.array(vg['venstre']) - w['a']) <= np.linalg.norm(np.array(vg['venstre']) - w['c']) else list(w['c']))
+            el, inf = vegg_vind(vg2, x, P)
+            tegnet += el; info[kk] = dict(tegning=tg, **inf)
+        regler = [v for v in VR.lag_vind(x, omg)[0] if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in beste]
+        vind = regler + tegnet
+        nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "vind", "verdi": vind, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
+        nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_kilde", "verdi": "kvartaltegning", "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
+        nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_tegning", "verdi": {str(k): v for k, v in info.items()}, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
+        logg.append(dict(id=i, navn=x.get('navn'), vegger=info, tegnet=len(tegnet), regler=len(regler)))
+    if not tørt:
+        datalag.skriv_rettelser(ret + nye)
+    json.dump(logg, open(os.path.join(ROT, 'rapport', 'bygg', 'fasade-tegning.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    print(f"{len(logg)} hus fikk vind fra tegningene ({sum(l['tegnet'] for l in logg)} elementer fra tegning, {sum(l['regler'] for l in logg)} etter reglene)")
+    return logg
+
+
+if __name__ == '__main__':
+    a = sys.argv[1:]
+    if a and a[0] == 'les':
+        for n in a[1:]:
+            L = les(n); lagre_avlesning(L)
+            os.makedirs(ARB, exist_ok=True); ark_kobling(L, os.path.join(ARB, n + '-kobling.png'))
+    elif a and a[0] == 'legg_inn':
+        legg_inn('--tørt' in a, [n for n in a[1:] if not n.startswith('--')] or None)
+    else:
+        print(__doc__)

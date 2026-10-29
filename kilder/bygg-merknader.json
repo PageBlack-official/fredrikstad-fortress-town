@@ -1,0 +1,323 @@
+{
+ "om": "Merknader på enkelthus, med kilde og grunn. Legges inn av verktoy/bygg_merknader.py sist i kjeden. Sider er kompassretningen veggen vender mot (som Street View-avlesningen); u = andel fra venstre sett utenfra. Kvartaltegningene er tegnet fra sør-sørøst: venstre flate i tegningen vender mot SV, høyre mot SØ.",
+ "hus": [
+  {
+   "id": "bnr-193867324",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10",
+   "grunn": "hovedhuset mangler port med buet topp (tegningen og Street View: stor rundbuet tofløyet port midt); tre takvinduer på tegningen",
+   "vegg": [
+    {
+     "side": "SV",
+     "rader": [
+      8
+     ],
+     "dorer": [
+      {
+       "u": 0.5,
+       "typ": 2,
+       "b": 2.4,
+       "h": 2.6
+      }
+     ]
+    }
+   ],
+   "takvinduer": [
+    {
+     "side": "SV",
+     "andeler": [
+      0.35,
+      0.55,
+      0.74
+     ],
+     "b": 0.6,
+     "h": 0.8
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867308",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10",
+   "grunn": "huset til høyre for Artillerismien skal være rødt og lavere; fargen fra tegningen (Street View ser ikke huset), høyden fra Kartverket (tilpasset per hus 3,5 m, lav sikkerhet under trærne)",
+   "sett": {
+    "vegg": [
+     217,
+     110,
+     94
+    ],
+    "veggs": null,
+    "tak": [
+     245,
+     122,
+     105
+    ],
+    "taks": null,
+    "h": 3.5,
+    "farge_kilde": "kvartaltegning (Street View ser ikke huset)"
+   }
+  },
+  {
+   "id": "bnr-193868037",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10",
+   "grunn": "mangler vinduet i taket (arken mot SØ), skal ikke ha pipe; to vinduer på hver side i 1. etg og inngangsdør i midten",
+   "vegg": [
+    {
+     "side": "SØ",
+     "rader": [
+      4
+     ],
+     "dorer": [
+      {
+       "u": 0.5,
+       "typ": 1,
+       "b": 1.4
+      }
+     ]
+    }
+   ],
+   "arker_legg": [
+    {
+     "side": "SØ",
+     "andeler": [
+      0.5
+     ]
+    }
+   ],
+   "piper": "ingen"
+  },
+  {
+   "id": "bnr-193868053",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10",
+   "grunn": "mangler to inngangsdører i front (tegningen: to dører i langveggen mot SØ, fem vinduer); fjern største pipe (beholder én)",
+   "vegg": [
+    {
+     "side": "SØ",
+     "rader": [
+      5
+     ],
+     "dorer": [
+      {
+       "u": 0.42,
+       "typ": 1
+      },
+      {
+       "u": 0.81,
+       "typ": 1
+      }
+     ]
+    }
+   ],
+   "piper": [
+    0
+   ]
+  },
+  {
+   "id": "bnr-193868061",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 + Street View",
+   "grunn": "mangler steinstrukturen (mørkere brun natursteinsetasje i tegningen, grå/rosa naturstein i Street View) og takvinduene (13 i tegningen over hele Artillerigården, 6 på denne delen)",
+   "sett": {
+    "sokkel": {
+     "h": 3.1,
+     "farge": [
+      178,
+      150,
+      138
+     ],
+     "skygge": [
+      128,
+      108,
+      100
+     ]
+    }
+   },
+   "takvinduer": [
+    {
+     "side": "SV",
+     "andeler": [
+      0.1,
+      0.26,
+      0.42,
+      0.58,
+      0.74,
+      0.9
+     ],
+     "b": 0.55,
+     "h": 0.75
+    }
+   ]
+  },
+  {
+   "id": "bnr-193869572",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 + Street View",
+   "grunn": "samme bygning som Artillerigården i tegningen: natursteinsetasjen og 7 av de 13 takvinduene",
+   "sett": {
+    "sokkel": {
+     "h": 3.1,
+     "farge": [
+      178,
+      150,
+      138
+     ],
+     "skygge": [
+      128,
+      108,
+      100
+     ]
+    }
+   },
+   "takvinduer": [
+    {
+     "side": "SV",
+     "andeler": [
+      0.08,
+      0.22,
+      0.36,
+      0.5,
+      0.64,
+      0.78,
+      0.92
+     ],
+     "b": 0.55,
+     "h": 0.75
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868363",
+   "kilde": "Vegar, kvartalskontroll Kvartal4BITMP 29.10",
+   "grunn": "skal ikke ha vindu i taket; veggen mot veien (SV) 9 vinduer med sprosser over to etasjer; veggen mot SØ: dør til venstre med vindu over, og vinduer i 1. og 2. etg til høyre",
+   "arker": "ingen",
+   "vegg": [
+    {
+     "side": "SSV",
+     "rader": [
+      5,
+      4
+     ]
+    },
+    {
+     "side": "SØ",
+     "rader": [
+      1,
+      2
+     ],
+     "dorer": [
+      {
+       "u": 0.25,
+       "typ": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-194006187",
+   "kilde": "Vegar, kvartalskontroll Kvartal4BITMP 29.10 (merknaden sier 09187/06187)",
+   "grunn": "lite hus som vender mot veien: to vinduer mot veien oppe og to vinduer i 1. etg",
+   "vegg": [
+    {
+     "side": "S",
+     "rader": [
+      2,
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pb-22",
+   "kilde": "ortofoto 2024 + Kartverket DOM−DTM (29.10)",
+   "grunn": "Kruttmagasinet finnes ikke i kommunekartet; ortofotoet viser gress over hele omrisset og DOM−DTM er 0 m (100 % av pikslene under 2 m): magasinet er overdekket i vollen. Vises som en lav gressdekt flate med navnet sitt, ikke som et hus",
+   "sett": {
+    "h": 0.5,
+    "flatt": true,
+    "tak2": null,
+    "gavl2": null,
+    "sk": null,
+    "tak": [
+     128,
+     166,
+     112
+    ],
+    "taks": null,
+    "vegg": [
+     150,
+     146,
+     138
+    ],
+    "veggs": null,
+    "vind": [],
+    "piper": [],
+    "arker": [],
+    "farge_kilde": "ortofoto 2024 (gress på vollen)"
+   }
+  },
+  {
+   "id": "bnr-193868452",
+   "kilde": "Street View (hovedagenten 29.10)",
+   "grunn": "Toldbodgaten 39B har knekktak (mansard) med arker, sett fra NØ-gavlen",
+   "sett": {
+    "takform": "knekk"
+   }
+  },
+  {
+   "id": "bnr-193867936",
+   "kilde": "Street View (hovedagenten 29.10) + ortofoto 2024",
+   "grunn": "Raadhusgaten 16: ett omriss og ett bygningsnummer i kommunekartet/Matrikkelen, men to fasader mot Raadhusgaten: rød teglgård (0–0,63) og gul pussgård (0,63–1); ortofotoet viser to taktyper, Matrikkelen ett bygg: ett hus, to fasadefarger",
+   "sett": {
+    "vegg": [
+     184,
+     98,
+     78
+    ],
+    "veggs": null
+   },
+   "veggfelt": [
+    {
+     "side": "NV",
+     "fra": 0.63,
+     "til": 1.0,
+     "farge": [
+      232,
+      184,
+      92
+     ]
+    },
+    {
+     "side": "SV",
+     "fra": 0.0,
+     "til": 1.0,
+     "farge": [
+      232,
+      184,
+      92
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868134",
+   "kilde": "Street View (hovedagenten 29.10) + ortofoto 2024",
+   "grunn": "Kirkegaten 32A: ett omriss og ett bygningsnummer, men to fasader mot Kirkegaten: grå gård med fronton (venstre) og lys rosa panelgård med port (høyre); ortofotoet viser ett sammenhengende tak: ett hus, to fasadefarger. Skillet ved knekken i omrisset (ca. 0,62, anslått)",
+   "sett": {
+    "vegg": [
+     196,
+     198,
+     196
+    ],
+    "veggs": null
+   },
+   "veggfelt": [
+    {
+     "side": "NV",
+     "fra": 0.62,
+     "til": 1.0,
+     "farge": [
+      226,
+      170,
+      160
+     ]
+    }
+   ]
+  }
+ ]
+}

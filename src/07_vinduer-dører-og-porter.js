@@ -105,6 +105,15 @@ function samleObjekt(obj, forelder, i, topp){   // mesh eller gruppe med barn; s
   if(obj.isMesh) samleMesh(obj, m, i, topp);
   obj.children.forEach(c=>samleObjekt(c, m, i, topp));
 }
+// polygon utvidet d meter utover (sokkel oppå veggen uten å flimre)
+function utvidPoly(P,d){ let A=0; for(let k=0;k<P.length;k++){ const a=P[k],c=P[(k+1)%P.length]; A+=a[0]*c[1]-c[0]*a[1]; } const sg=A>0?1:-1;
+  return P.map((q,k)=>{ const a=P[(k-1+P.length)%P.length], c=P[(k+1)%P.length];
+    const n1=[(q[1]-a[1]),-(q[0]-a[0])], n2=[(c[1]-q[1]),-(c[0]-q[0])]; const l1=Math.hypot(...n1)||1, l2=Math.hypot(...n2)||1;
+    const m=[(n1[0]/l1+n2[0]/l2)/2*sg,(n1[1]/l1+n2[1]/l2)/2*sg]; const lm=Math.hypot(...m)||1; const f=d/Math.max(lm,0.3);
+    return [q[0]+m[0]/lm*f*lm, q[1]+m[1]/lm*f*lm]; }); }
+function iPoly(p,f){ let inne=false; for(let k=0,j=f.length-1;k<f.length;j=k++){ const a=f[k],c=f[j]; if((a[1]>p[1])!==(c[1]>p[1]) && p[0]<(c[0]-a[0])*(p[1]-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
+function planZ(f,x,y){ const [a,b2,c]=f; const ux=b2[0]-a[0],uy=b2[1]-a[1],uz=b2[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2];
+  const nx=uy*vz-uz*vy, ny=uz*vx-ux*vz, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return a[2]; return a[2]-(nx*(x-a[0])+ny*(y-a[1]))/nz; }
 DATA.bygg.forEach((b,i)=>{
   const pts=b.p; if(pts.length<3 || b.skjul) return;
   const spesiell = !!(b.kirke || (b.deler && b.deler.length) || PORT_BYGG.has(i));
@@ -122,6 +131,11 @@ DATA.bygg.forEach((b,i)=>{
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
+  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»)
+  if(b.sokkel && b.sokkel.h>0.2 && !dim){
+    const sg=new THREE.ExtrudeGeometry(polyShape(utvidPoly(pts,0.03)),{depth:Math.min(b.sokkel.h,h-0.05),bevelEnabled:false}); sg.rotateX(-Math.PI/2);
+    const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge)]); sm.receiveShadow=true; legg(sm);
+  }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
@@ -211,6 +225,30 @@ DATA.bygg.forEach((b,i)=>{
     g.add(new THREE.Mesh(gv, mat(wall,dim,b.veggs,{ds:true})));
     legg(g);
   });
+  // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård; 29.10)
+  if(b.veggfelt && !dim){
+    b.veggfelt.forEach(([x1,y1,x2,y2,r,g,bb])=>{
+      const L=Math.hypot(x2-x1,y2-y1); if(L<0.3) return; let nx=(y2-y1)/L, ny=-(x2-x1)/L;
+      if(iPoly([(x1+x2)/2+nx*0.2,(y1+y2)/2+ny*0.2],pts)){ nx=-nx; ny=-ny; }
+      const o=0.025, A=[x1+nx*o,y1+ny*o], B=[x2+nx*o,y2+ny*o];
+      const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
+      gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat([r,g,bb],dim,null,{ds:true})));
+    });
+  }
+  // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
+  if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
+    b.takvinduer.forEach(([x,y,bw,bh])=>{
+      const f=b.tak2.find(f=>iPoly([x,y],f)); if(!f) return;
+      const W=f.slice(0,3).map(q=>new THREE.Vector3(q[0], h+q[2]*S, -q[1]));
+      let nr=new THREE.Vector3().subVectors(W[1],W[0]).cross(new THREE.Vector3().subVectors(W[2],W[0])).normalize(); if(nr.y<0) nr.negate();
+      if(nr.y>0.995) return;                                  // flatt tak: ingen takvindu
+      const z=h+planZ(f,x,y)*S, P=new THREE.Vector3(x,z,-y);
+      const oppF=new THREE.Vector3(0,1,0).sub(nr.clone().multiplyScalar(nr.y)).normalize(), tan=new THREE.Vector3().crossVectors(oppF,nr).normalize();
+      [[bw+0.16,bh+0.16,0.03,[244,242,236]],[bw,bh,0.05,[52,58,68]]].forEach(([w2,h2,off,c])=>{
+        const g=new THREE.PlaneGeometry(w2,h2); g.applyMatrix4(new THREE.Matrix4().makeBasis(tan,oppF,nr)); g.translate(P.x+nr.x*off,P.y+nr.y*off,P.z+nr.z*off);
+        legg(new THREE.Mesh(g,mat(c,false))); });
+    });
+  }
   if(b.vind && b.vind.length && !dim){ const vd=vindusData(b.vind, spesiell?-1:i); if(spesiell) grp.add(lagVinduer([vd])); else vinduSamling.push(vd); }
   grp.userData={i, b, h, spesiell};
   if(spesiell){ flatGruppe(grp); city.add(grp); }

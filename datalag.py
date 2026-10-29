@@ -169,6 +169,45 @@ def knekktak(tak2, th):
     return ut
 
 
+def til_monet(x, px, py):
+    """Pipa står på mønet (Vegar 29.10: «pipene skal plasseres på toppen av taket»): fra punktet oppover takflaten til
+    flatens øverste kant (mønet), 0,25 m inn. Punktet beholdes når huset ikke har takflater eller punktet ikke står på dem."""
+    import numpy as np
+    flater = x.get('tak2') or x.get('sk')
+    if not flater:
+        return px, py
+    for f in flater:
+        if len(f) < 3:
+            continue
+        xs, ys = [q[0] for q in f], [q[1] for q in f]
+        if not (min(xs) - 0.05 <= px <= max(xs) + 0.05 and min(ys) - 0.05 <= py <= max(ys) + 0.05):
+            continue
+        inne = False
+        for k in range(len(f)):
+            (x1, y1), (x2, y2) = f[k][:2], f[k - 1][:2]
+            if (y1 > py) != (y2 > py) and px < (x2 - x1) * (py - y1) / (y2 - y1 + 1e-12) + x1:
+                inne = not inne
+        if not inne:
+            continue
+        A = np.array([[q[0], q[1], 1] for q in f]); kz = np.linalg.lstsq(A, np.array([q[2] for q in f]), rcond=None)[0]
+        g = np.array(kz[:2]); ng = np.linalg.norm(g)
+        if ng < 1e-6:
+            return px, py                       # flatt
+        g = g / ng; best = None
+        for k in range(len(f)):                  # strålen oppover flaten mot kantene
+            a = np.array(f[k - 1][:2], float); b = np.array(f[k][:2], float); e = b - a
+            M = np.array([[g[0], -e[0]], [g[1], -e[1]]])
+            if abs(np.linalg.det(M)) < 1e-9: continue
+            t, s_ = np.linalg.solve(M, a - np.array([px, py]))
+            if t > 1e-6 and -1e-6 <= s_ <= 1 + 1e-6 and (best is None or t < best):
+                best = t
+        if best is None:
+            return px, py
+        t = max(0.0, best - 0.25)
+        return round(float(px + g[0] * t), 2), round(float(py + g[1] * t), 2)
+    return px, py
+
+
 def hoyden_styrer(data, grunn):
     """Høyden er grunnlaget for alt som står på huset (24.10).
     Piper og arker står på taket: høyden deres regnes alltid fra takflatene og husets høyde (h + t·th, samme formel som kartet
@@ -179,13 +218,15 @@ def hoyden_styrer(data, grunn):
         g = grunn[j] if j < len(grunn) else x
         if x.get('takform') == 'knekk' and x.get('tak2') and not x.get('_knekk'):
             x['tak2'] = knekktak(x['tak2'], x.get('th') or 0.82); x['_knekk'] = True
-        h0, h1 = g.get('h', 0), x.get('h', 0); th = x.get('th', 0.82); f = th / 0.82
+        h0, h1 = g.get('h', 0), x.get('h', 0); th = x.get('th') or 0.82; f = th / 0.82
         CAP = 7.5 * th / 0.82 if not x.get('tak2') else 1e9
         for felt in ('piper', 'arker'):
             if not x.get(felt):
                 continue
             ny = []
             for q in x[felt]:
+                if felt == 'piper' and not x.get('piper_fri'):
+                    q = list(til_monet(x, q[0], q[1])) + list(q[2:])
                 t = tak_t(x, q[0], q[1])
                 if t is not None:
                     z = round(h1 + min(t * th, CAP), 2)

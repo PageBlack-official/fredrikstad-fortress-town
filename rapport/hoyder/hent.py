@@ -270,7 +270,7 @@ def main():
     ut = {}
     for i, b in G:
         r = R[i]; h0 = b['h']
-        e = dict(navn=b.get('navn'), h_naa=round(h0, 2))
+        e = dict(id=b['id'], navn=b.get('navn'), h_naa=round(h0, 2))   # id: målingen følger huset, ikke plassen i lista (29.10)
         if b.get('skjul'):
             e.update(p50=r.get('p50') and round(r['p50'], 2), p90=r.get('p90') and round(r['p90'], 2), h_forslag=None, sikkerhet='ingen',
                      merknad='skjult i kartet (' + str(b.get('skjul')) + ')'); ut[i] = e; continue
