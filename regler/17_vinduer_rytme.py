@@ -5,6 +5,9 @@ generisk rutenett. Sjekkes på alle hus med fasade_kilde antatt (fasit-husene fr
 - felles vegg: ingen vinduer eller dører der et nabohus står inntil (0,6 m)
 - dør bare på gatesiden, en annen vegg mot gate, eller mot gårdsrom
 - høyden styrer: overkanten minst 0,3 m under gesims
+Husene med fasade fra Street View (fasade_kilde streetview, verktoy/streetview_fasader.py) sjekkes på samme måte, med to forskjeller
+som følger av kilden: døra kan stå på veggen bildet viser (fasade_sv), og har en etasje flere vinduer
+enn i etasjen under (Street View viser f.eks. 2 vinduer nede og 4 oppe), kan de overtallige stå uten noe under – ikke flere.
 Veggene, gatesiden og felles vegg beregnes som i verktoy/vegger.py (samme kode som lager vinduene)."""
 import sys
 from _felles import *
@@ -17,9 +20,11 @@ omg = VG.Omgivelser(b, data('veier'), data('gardsrom'))
 F = {k: [] for k in ('loddrett', 'rytme', 'felles', 'dor', 'gesims')}
 hus = n_vind = n_dor = 0
 for i, x in gamleby(b):
-    if x.get('skjul') or x.get('kirke') or x.get('fasade_kilde') != 'antatt' or x['id'] in v33 or not x.get('vind'):
+    sv = x.get('fasade_kilde') == 'streetview'
+    if x.get('skjul') or x.get('kirke') or x.get('fasade_kilde') not in ('antatt', 'streetview') or x['id'] in v33 or not x.get('vind'):
         continue
     hus += 1; V = VG.vegger(x, omg, slaa_sammen=True); gi, _ = VG.gatesiden(V)
+    svk = VG.naermeste_vegg(V, np.array(x['fasade_sv']['vegg']))[0] if sv and x.get('fasade_sv') else None
     per = {}
     for v in x['vind']:
         n_vind += v[9] == 0; n_dor += v[9] == 1
@@ -34,7 +39,7 @@ for i, x in gamleby(b):
         per.setdefault(k, []).append((t, v))
         if v[9] == 1:
             w = V[k]
-            if not (k == gi or w['gate'] is not None or w['gardsrom']):
+            if not (k == gi or k == svk or w['gate'] is not None or w['gardsrom']):
                 F['dor'].append(f"- {x['id']} (bygg {i}): dør på vegg {k + 1} som verken vender mot gate eller gårdsrom")
     for k, vs in per.items():
         lv = {}
@@ -43,9 +48,12 @@ for i, x in gamleby(b):
         z = sorted(lv)
         under_alle = {zz: [t for z0 in z if z0 < zz for t in lv[z0]] + [t for t, v in vs if v[9] == 1] for zz in z}
         for zz in z[1:]:
-            for t in lv[zz]:
-                if not under_alle[zz] or min(abs(t - s) for s in under_alle[zz]) > 0.2:
-                    F['loddrett'].append(f"- {x['id']} (bygg {i}): vindu i høyde {zz} m på vegg {k + 1} har ikke vindu/dør under")
+            uten = [t for t in lv[zz] if not under_alle[zz] or min(abs(t - s) for s in under_alle[zz]) > 0.2]
+            if sv:   # Street View: overtallige vinduer (flere enn åpningene under) kan stå uten noe under
+                n_under = max(len(lv[z0]) for z0 in z if z0 < zz)
+                uten = uten[max(0, len(lv[zz]) - n_under):]
+            for t in uten:
+                F['loddrett'].append(f"- {x['id']} (bygg {i}): vindu i høyde {zz} m på vegg {k + 1} har ikke vindu/dør under")
         for zz, ts in lv.items():
             ts = sorted(ts)
             if len(ts) < 3: continue
@@ -55,7 +63,7 @@ for i, x in gamleby(b):
 navn = dict(loddrett='vinduer uten vindu/dør rett under', rytme='vegger med ujevn vindusavstand', felles='vinduer/dører mot nabohus (felles vegg)',
             dor='dører som ikke vender mot gate eller gårdsrom', gesims='vinduer over gesims (i taket)')
 feil = sum(len(v) for v in F.values())
-linjer = [f"{hus} antatte hus, {n_vind} vinduer, {n_dor} dører; {feil} brudd"]
+linjer = [f"{hus} antatte hus og Street View-hus, {n_vind} vinduer, {n_dor} dører; {feil} brudd"]
 for k, v in F.items():
     linjer.append(f"\n## {navn[k]}: {len(v)}"); linjer += v[:30] + (['- …'] if len(v) > 30 else [])
 linjer.append('\nReglene og tallene bak dem: rapport/vinduer/regler-fra-tegningene.md. Vinduene lages av verktoy/vinduer_regler.py.')

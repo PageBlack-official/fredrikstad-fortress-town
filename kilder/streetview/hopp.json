@@ -1,0 +1,18 @@
+{
+  "_om": "Hus i avlesning.json som verktoy/streetview_fasader.py ikke legger inn, med grunn fra merknaden (lest 29.10.2026). Regel: usikkert om det er riktig hus, eller i tvil: hopp over. Fargene (verktoy/streetview_farger.py) følger ikke denne lista.",
+  "bnr-193869548": "portbygg (data/porter.json røres ikke); vaktstuen ikke sett, bare porten",
+  "bnr-193874363": "merknaden: identifikasjonen usikker (frukttrær og avstand)",
+  "bnr-6276458": "merknaden: «antatt det mørkegrå huset» – i tvil",
+  "bnr-193972152": "merknaden: usikkert om det er dette bygget eller pb-5",
+  "bnr-193868541": "merknaden: usikker identitet, målbygget trolig skjult bak gatehuset",
+  "bnr-193918247": "merknaden: fasaden ikke synlig fra gata, bare taket",
+  "bnr-193972306": "merknaden: høyden passer dårlig, målbygget kan ligge bak porten",
+  "bnr-193992765": "merknaden: en annen bygning bak til venstre kan også være målet",
+  "bnr-193874568": "merknaden: riktig hus ikke sikkert (48 m, hekk)",
+  "bnr-193868681": "merknaden: sannsynlig, men ikke sikkert at gavlen er dette bygget",
+  "bnr-193868134": "merknaden: ikke sikkert hvilket av to bygg",
+  "bnr-193971989": "merknaden: ikke sikkert at veggen hører til dette bygget",
+  "bnr-193868118": "merknaden: usikkert hvilket av to bygg",
+  "bnr-193867324": "merknaden: ikke bekreftet at det er riktig bygg (lastebil dekker)",
+  "bnr-193867928": "merknaden: grensen for bygget i den lange gårdsrekka er usikker, så tallene kan gjelde naboene også"
+}

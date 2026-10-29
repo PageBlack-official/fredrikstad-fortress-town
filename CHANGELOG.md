@@ -1,5 +1,10 @@
 # Endringslogg
 
+## Uten versjon (29.10.2026, ikke publisert) – fasadene fra Street View
+- 23 antatte hus har fått vinduer per etasje, dører, arker og piper på gatesiden slik Street View viser dem (verktoy/streetview_fasader.py, kilde kilder/streetview/avlesning.json). Andre vegger beholder reglene fra kvartaltegningene. Vegars regel: antall og rekkefølge foran centimeter.
+- 23 fasithus fra kvartaltegningene er bare sammenlignet (rapport/streetview-fasader/sammenligning.md); 31 hoppet over (ikke synlig, kirka, portbygg, usikkert om det er riktig hus, for kort vegg til tallene).
+- Regel 17 sjekker også Street View-husene. Kontrollark: rapport/streetview-fasader/ark.png.
+
 ## 34 (28.10.2026, /prove/, ikke godkjent) – sola finner byen, skyggekartet dekker bildet
 - **Sola finner byen** (Vegar: «Kjør A»): introen starter overskyet (tegningens to toner, ingen kastskygger, litt kjøligere), en solkant vandrer over byen fra solsiden mens kameraet svinger inn (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de godkjente 42° så skyggene er lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka. Avbrutt intro henter solkanten inn på 0,8 s. Alt i lyskoden (02_lys: solHer, U_SOL, kobleSol; 15_loop: solStart/solTil/solOppdater); ingen overlegg. Light leak-overlegget fra 26.10 er tatt ut. ?solintro=0 gir fast sol fra start.
 - **Skyggekartet dekket mindre enn bildet** siden v31.1 (trinnet rundet opp): skyggene ble kuttet i kanten av dekningen, kanten fulgte kameraet, og «zoom» tegnet kartet hvert bilde (Vegar: «trærnes skygge tegnes på nytt hver gang jeg flytter meg»). Nå rundes trinnet ned (R minst 1,4·r, opptil 1650 m; sola 2500 m ute, fjernplan 6000). Regel 19 måler dekning og ny tegning i ro og under dra; rød på v33, grønn nå.

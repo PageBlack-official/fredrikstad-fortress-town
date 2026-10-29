@@ -14,20 +14,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193869556",
-"navn": "Krutthuset",
-"type": "commercial",
-"h": 5.4,
-"foer": 16,
-"etter": 17,
-"vinduer": 16,
-"dorer": 1,
-"gate": "sti",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193868568",
 "navn": "Brannstasjon - uthus til Infanterikasernen",
 "type": "yes",
@@ -84,20 +70,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193868460",
-"navn": "Kjørbogårdens sidebygning",
-"type": "office",
-"h": 4.1,
-"foer": 20,
-"etter": 22,
-"vinduer": 21,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193869580",
 "navn": "Voldportravelinet",
 "type": "commercial",
@@ -126,20 +98,6 @@
 "uthus": false
 },
 {
-"id": "pb-2",
-"navn": "Sprøytehuset / Proviantboden",
-"type": "yes",
-"h": 3.7,
-"foer": 11,
-"etter": 9,
-"vinduer": 8,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-13415889",
 "navn": null,
 "type": "house",
@@ -150,20 +108,6 @@
 "dorer": 1,
 "gate": "gate",
 "etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-13416575",
-"navn": null,
-"type": "house",
-"h": 4.4,
-"foer": 20,
-"etter": 20,
-"vinduer": 19,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
 "dor": true,
 "uthus": false
 },
@@ -238,20 +182,6 @@
 "uthus": true
 },
 {
-"id": "bnr-13416362",
-"navn": null,
-"type": "house",
-"h": 4.3,
-"foer": 21,
-"etter": 17,
-"vinduer": 16,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-13418292",
 "navn": null,
 "type": "garage",
@@ -262,34 +192,6 @@
 "dorer": 0,
 "gate": "gate",
 "etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
-"id": "bnr-13416427",
-"navn": null,
-"type": "house",
-"h": 3.2,
-"foer": 19,
-"etter": 18,
-"vinduer": 17,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-193820573",
-"navn": null,
-"type": "garage",
-"h": 3.2,
-"foer": 9,
-"etter": 10,
-"vinduer": 10,
-"dorer": 0,
-"gate": "gate",
-"etasjer": 1,
 "dor": false,
 "uthus": true
 },
@@ -320,20 +222,6 @@
 "etasjer": 2,
 "dor": false,
 "uthus": true
-},
-{
-"id": "bnr-193867448",
-"navn": "Annekset",
-"type": "yes",
-"h": 5.1,
-"foer": 16,
-"etter": 17,
-"vinduer": 16,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
 },
 {
 "id": "bnr-193867464",
@@ -378,20 +266,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193867421",
-"navn": "Kabelmagasinet",
-"type": "yes",
-"h": 3.0,
-"foer": 22,
-"etter": 22,
-"vinduer": 21,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193867405",
 "navn": null,
 "type": "office",
@@ -399,20 +273,6 @@
 "foer": 18,
 "etter": 18,
 "vinduer": 17,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-6276504",
-"navn": null,
-"type": "house",
-"h": 4.5,
-"foer": 15,
-"etter": 16,
-"vinduer": 15,
 "dorer": 1,
 "gate": "gate",
 "etasjer": 1,
@@ -504,20 +364,6 @@
 "uthus": true
 },
 {
-"id": "bnr-6276482",
-"navn": null,
-"type": "house",
-"h": 7.1,
-"foer": 36,
-"etter": 36,
-"vinduer": 35,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-6276822",
 "navn": null,
 "type": "house",
@@ -602,20 +448,6 @@
 "uthus": false
 },
 {
-"id": "bnr-6276490",
-"navn": null,
-"type": "house",
-"h": 5.9,
-"foer": 36,
-"etter": 34,
-"vinduer": 33,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-6276466",
 "navn": null,
 "type": "house",
@@ -640,20 +472,6 @@
 "dorer": 1,
 "gate": "gate",
 "etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-193972373",
-"navn": null,
-"type": "warehouse",
-"h": 5.2,
-"foer": 14,
-"etter": 10,
-"vinduer": 9,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
 "dor": true,
 "uthus": false
 },
@@ -686,20 +504,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193972322",
-"navn": null,
-"type": "garage",
-"h": 4.2,
-"foer": 5,
-"etter": 5,
-"vinduer": 5,
-"dorer": 0,
-"gate": "gate",
-"etasjer": 1,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-16312916",
 "navn": null,
 "type": "apartments",
@@ -710,20 +514,6 @@
 "dorer": 1,
 "gate": "gate",
 "etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-193868126",
-"navn": null,
-"type": "house",
-"h": 4.7,
-"foer": 11,
-"etter": 10,
-"vinduer": 9,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
 "dor": true,
 "uthus": false
 },
@@ -770,48 +560,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193972276",
-"navn": null,
-"type": "university",
-"h": 6.3,
-"foer": 20,
-"etter": 16,
-"vinduer": 15,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-193974686",
-"navn": null,
-"type": "house",
-"h": 4.6,
-"foer": 13,
-"etter": 12,
-"vinduer": 11,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
-"id": "pb-6",
-"navn": null,
-"type": "apartments",
-"h": 3.9,
-"foer": 6,
-"etter": 7,
-"vinduer": 6,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193868312",
 "navn": "Rosinggården",
 "type": "garage",
@@ -833,20 +581,6 @@
 "foer": 32,
 "etter": 42,
 "vinduer": 41,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 2,
-"dor": true,
-"uthus": false
-},
-{
-"id": "bnr-193918239",
-"navn": "Bullgården",
-"type": "commercial",
-"h": 7.2,
-"foer": 15,
-"etter": 28,
-"vinduer": 27,
 "dorer": 1,
 "gate": "gate",
 "etasjer": 2,
@@ -880,20 +614,6 @@
 "etasjer": 1,
 "dor": false,
 "uthus": true
-},
-{
-"id": "bnr-24218023",
-"navn": null,
-"type": "apartments",
-"h": 6.9,
-"foer": 28,
-"etter": 34,
-"vinduer": 33,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 2,
-"dor": true,
-"uthus": false
 },
 {
 "id": "bnr-193972365",
@@ -1540,20 +1260,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193971288",
-"navn": null,
-"type": "garage",
-"h": 6.3,
-"foer": 16,
-"etter": 16,
-"vinduer": 16,
-"dorer": 0,
-"gate": "gate",
-"etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-193971261",
 "navn": null,
 "type": "garage",
@@ -1806,20 +1512,6 @@
 "uthus": true
 },
 {
-"id": "bnr-193868401",
-"navn": null,
-"type": "apartments",
-"h": 4.9,
-"foer": 17,
-"etter": 17,
-"vinduer": 16,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193867812",
 "navn": null,
 "type": "garage",
@@ -2028,20 +1720,6 @@
 "etasjer": 1,
 "dor": false,
 "uthus": true
-},
-{
-"id": "bnr-13416419",
-"navn": null,
-"type": "house",
-"h": 4.4,
-"foer": 18,
-"etter": 13,
-"vinduer": 12,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
 },
 {
 "id": "bnr-13418268",

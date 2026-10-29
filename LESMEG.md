@@ -125,6 +125,22 @@ Taket regnes fra fotavtrykket for hver husrekke med et endret hus (verktoy/tak.p
 veggen står omtrent samme sted, ellers tak.gavl_regel. Regel 20 måler resultatet (IoU >= 0,7 per kommunehus, ingen modellhus over to).
 verktoy/matrikkel.py koble jobber på grunndataene; kjør grunnmur.py etterpå, så matrikkelfeltet på de rettede husene følger omrisset.
 
+## Fasadene fra Street View (29.10)
+En agent leste fasadene av i Google Street View i Vegars Chrome: kilder/streetview/avlesning.json (77 hus, bare tall og ord; bildene
+ligger aldri i repoet). Fargene legges inn av verktoy/streetview_farger.py, fasadene av:
+
+    python3 verktoy/streetview_fasader.py          vinduer per etasje, dører, arker og piper på gatesiden (idempotent; --tørt viser bare)
+    python3 verktoy/streetview_fasader.py ark      kontrollark rapport/streetview-fasader/ark.png (endret) og ark-fasit.png (fasithus)
+
+Gatesiden er veggen som vender mot kamerapunktet (viewpoint i pano_url) innenfor heading ± 35°, uten hus i siktlinja. Vinduene står
+etter reglene i vinduer_regler.py (akser, brystning, etasje, hjørneklaring), men med antallet fra bildet; dørene der friteksten sier
+(venstre/midt/høyre, sett fra kameraet). Huset får `fasade_kilde: streetview` og `fasade_sv` (veggen som er sett), så vinduer_regler.py
+lar det være; regel 17 sjekker det med to lettelser som følger av kilden (dør på den sette veggen, overtallige vinduer i en etasje
+med flere vinduer enn etasjen under). Fasithusene fra kvartaltegningene endres ikke, bare sammenlignes
+(rapport/streetview-fasader/sammenligning.md). Hus der merknaden sier at det er usikkert om det er riktig hus, står med grunn i
+kilder/streetview/hopp.json. Har gateveggen ikke plass til tallene, hoppes huset over og listes (trolig feil vegg eller feil hus).
+Rekkefølge: grunnmur.py → vinduer_regler.py → streetview_fasader.py (kjøres på nytt når omriss eller h endres).
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
