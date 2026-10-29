@@ -16,3 +16,6 @@ rapport/brygger/*.jpg
 # tegningene som vektor og 2019-trykket: åndsverk, bare lokalt (28.10)
 kilder/ai/
 rapport/farger-tegning/*.jpg
+
+# fargeark-utsnitt (base64, avledet av 2019-trykket og data; lages på nytt ved behov, 28.10)
+rapport/farger-valg/
