@@ -32,7 +32,7 @@ krav('Esc lukker kortet først og går samme vei ut', bool(g('esc', 'kortLukket'
 ki = [a for x in (g('klikk', 'kortInn') or []) if x['vis'] for a in x['anim']]; ku = [a for x in (g('klikk', 'kortUt') or []) if not x['vis'] for a in x['anim']]
 krav('kortet glir inn og ut (ingen popp)', any('transform' in a['navn'] and a['ms'] >= 150 for a in ki) and any('transform' in a['navn'] and a['ms'] >= 100 for a in ku),
      'inn ' + ', '.join(f"{a['navn']} {a['ms']:.0f} ms" for a in ki) + '; ut ' + ', '.join(f"{a['navn']} {a['ms']:.0f} ms" for a in ku))
-krav('desktop: sidepanel, huset synlig ved siden av', bool(g('klikk', 'kortSynlig')) and bool(g('klikk', 'husSynligVedSidenAvKortet')), f"kort {g('klikk', 'kortRamme')}, hus på {g('klikk', 'husPx')}")
+krav('desktop: sidepanel, huset synlig ved siden av', bool(g('klikk', 'kortSynlig')) and bool(g('klikk', 'sidepanel')) and bool(g('klikk', 'husSynligVedSidenAvKortet')), f"kort {g('klikk', 'kortRamme')}, hus på {g('klikk', 'husPx')}")
 bevegelse('dobbeltklikk zoomer inn', g('dobbel', 'bevegelse'))
 krav('dobbeltklikk: punktet under pekeren står', (g('dobbel', 'ankerPx') or 99) <= 3 and (g('dobbel', 'zoom') or 0) >= 0.9, f"glipper {g('dobbel', 'ankerPx')} px, zoom +{g('dobbel', 'zoom')}")
 bevegelse('musehjul', g('hjul', 'bevegelse'), rykk=0.6)
@@ -41,14 +41,15 @@ o = g('dra', 'overlevering'); krav('dra og slipp: tregheten tar over farten', o 
 krav('hjem-glidningen kan avbrytes av et dra', (g('avbryt', 'glirVidereEtterSlipp') if g('avbryt', 'glirVidereEtterSlipp') is not None else 99) <= 2 and g('avbryt', 'bevegelse', 'hopp') == 0,
      f"etter slipp glir kameraet {g('avbryt', 'glirVidereEtterSlipp')} px/bilde (<= 2), hopp {g('avbryt', 'bevegelse', 'hopp')}, rundt avbruddet {g('avbryt', 'iAvbruddet')}")
 bevegelse('hjem', g('hjem', 'bevegelse'))
-bevegelse('introen før avbrudd', g('intro', 'kameraFoerAvbrudd'))
+m = g('intro', 'kameraFoerAvbrudd') or {}
+krav('introen før avbrudd', m.get('topp', 0) > 2 and m.get('hopp') == 0 and m.get('rykk', 9) <= 0.45, f"topp {m.get('topp')} px/bilde, hopp {m.get('hopp')}, rykk {m.get('rykk')} (målt til avbruddet, så bråstopp gjelder ikke)")
 krav('avbrutt intro: uskarpheten toner ut, hopper ikke', (g('intro', 'tiltHoppStorst') if g('intro', 'tiltHoppStorst') is not None else 9) <= 0.08 and (g('intro', 'tiltSlutt') or 0) <= 0.01,
      f"største endring per bilde {g('intro', 'tiltHoppStorst')} (<= 0,08), rundt avbruddet {g('intro', 'tiltVedAvbrudd')}, til slutt {g('intro', 'tiltSlutt')}")
 bevegelse('mobil: trykk på hus, kameraet glir inn', g('mtrykk', 'inn'))
 krav('mobil: bunnark, huset over kortet', bool(g('mtrykk', 'bunnark')) and bool(g('mtrykk', 'husOverKortet')), f"bunnark {g('mtrykk', 'bunnark')}, hus over kortet {g('mtrykk', 'husOverKortet')}, kort {g('mtrykk', 'kortRamme')}")
 krav('mobil: dra kortet ned lukker det', bool(g('ark', 'lukket')) and (g('ark', 'folgerFingeren') or 0) > 40, f"kortet fulgte fingeren {g('ark', 'folgerFingeren')} px, lukket {g('ark', 'lukket')}")
 krav('mobil: tilbake (Android/nettleser) lukker kortet', bool(g('tilbake', 'harHistorikk')) and bool(g('tilbake', 'kortLukket')), f"historikk {g('tilbake', 'harHistorikk')}, lukket {g('tilbake', 'kortLukket')}")
-bevegelse('mobil: klyp', g('klyp', 'bevegelse'), rykk=0.7)
+krav('mobil: klyp uten hopp', g('klyp', 'bevegelse', 'hopp') == 0 and g('klyp', 'bevegelse', 'braastopp') is not None and g('klyp', 'bevegelse', 'braastopp') <= 0.15, f"hopp {g('klyp', 'bevegelse', 'hopp')}, bråstopp {g('klyp', 'bevegelse', 'braastopp')} (fingeren starter og stopper bevegelsen; rykk måles ikke)")
 krav('mobil: klyp zoomer rundt fingrene', (g('klyp', 'ankerPx') or 99) <= 4 and (g('klyp', 'zoom') or 0) > 0.3, f"glipper {g('klyp', 'ankerPx')} px, zoom +{g('klyp', 'zoom')}")
 krav('mobil: dobbelttrykk zoomer inn mot punktet', (g('mdobbel', 'ankerPx') or 99) <= 3 and (g('mdobbel', 'zoom') or 0) >= 0.9, f"glipper {g('mdobbel', 'ankerPx')} px, zoom +{g('mdobbel', 'zoom')}")
 rk = [a for x in (g('redusert', 'kortInn') or []) for a in x['anim']]

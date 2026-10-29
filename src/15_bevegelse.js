@@ -16,7 +16,10 @@ const BEV = {
   dobbelVindu: 300,   // ms mellom to klikk/trykk som regnes som dobbelt (samme som MapLibres og de fleste systemer)
   dobbelAvstand: 30,  // px
   husZoom: 2.4,       // zoomfaktor kameraet glir inn til ved klikk på et hus (aldri ut: står du nærmere, blir du stående)
-  hentInn: 0.8,       // s: en avbrutt intro henter inn lyset og uskarpheten på denne tida (28.10)
+  hentInn: 0.8,
+  // dra og slipp: MapLibre tar med 0,3 av fingerens fart inn i tregheten, så kartet bråbremser idet du slipper (flyt-test: farten falt til
+  // 0,3 i bildet etter slipp). Målt: farten rett etter slipp følger lineæriteten (0,3 -> 0,3; 0,6 -> 0,6), så 1 tar med hele farten.
+  treghet: { linearitet: 1 },       // s: en avbrutt intro henter inn lyset og uskarpheten på denne tida (28.10)
 };
 // redusert bevegelse (systeminnstilling): kortet toner inn og ut i stedet for å gli (stil.css). Kameraet glir som før: Vegars Mac har
 // «Reduser bevegelse» på, og han valgte selv at kartet skal bevege seg (v26: MapLibres valg «respectPrefersReducedMotion» av, som i 6.x
@@ -29,6 +32,7 @@ const REDUSERT = Q0.get('bevegelse')==='redusert' || window.matchMedia('(prefers
 // (kompasset snur opptil 180°, så det får husets tid og glid)
 ['zoomIn','zoomOut'].forEach(f=>{ const o=map[f].bind(map); map[f]=(opt,ev)=>o({duration:BEV.kamera.knapp, easing:myk, ...(opt||{})}, ev); });
 ['resetNorth','resetNorthPitch'].forEach(f=>{ const o=map[f].bind(map); map[f]=(opt,ev)=>o({duration:BEV.kamera.hus, easing:glid, ...(opt||{})}, ev); });
+map.dragPan.enable({linearity: BEV.treghet.linearitet});
 // ett kameraflytt: alltid avbrytbart (MapLibre stopper en pågående easeTo så snart en gest starter; en ny easeTo starter fra der kameraet er)
 function glidKamera(mal, type){ map.easeTo({...mal, duration: BEV.kamera[type], easing: glid}); }
 window.__tilLngLat=tilLngLat; window.__BEV=BEV;

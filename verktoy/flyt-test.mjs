@@ -15,13 +15,14 @@ const BILDE = 16;   // ms virtuell tid per bilde (60/s)
 const res = { scenarier: {}, feil: [] };
 
 async function aapne({ mobil = false, skip = true, ekstra = '', redusert = false } = {}) {
-  const vp = mobil ? { width: 390, height: 700 } : { width: 900, height: 560 };
+  const vp = mobil ? { width: 390, height: 700 } : { width: 900, height: 560 }; VP = vp;
   const ctx = await browser.newContext({ viewport: vp, ...(mobil ? { isMobile: true, hasTouch: true, deviceScaleFactor: 1 } : {}), reducedMotion: redusert ? 'reduce' : 'no-preference' });
   const page = await ctx.newPage(); page.on('pageerror', e => res.feil.push(e.message));
   await page.clock.install();
+  if (!skip) await page.clock.pauseAt(Date.now() + 1e7);   // introen: klokka står fra start, bildene trinnes fram (ellers er introen ferdig før målingen)
   await page.goto(`http://127.0.0.1:${port}/index.html?pix=0.2${process.env.FLYT_TEGN ? '' : '&tegn=0'}${skip ? '&skip=1' : ''}${ekstra}`);
-  await page.waitForFunction(() => window.__kam && window.__vaareBilder > 2, null, { timeout: 600000 });
-  await page.clock.pauseAt(Date.now() + 1e7);
+  if (skip) { await page.waitForFunction(() => window.__kam && window.__vaareBilder > 2, null, { timeout: 600000 }); await page.clock.pauseAt(Date.now() + 2e7); }
+  else { for (let i = 0; i < 4000 && !(await page.evaluate(() => !!(window.__kam && window.__vaareBilder > 0)).catch(() => false)); i++) await page.clock.runFor(BILDE); }
   await page.evaluate(() => {
     // fem bakkepunkter i modellmeter (x øst, y nord): midt i byen og fire hjørner ±120 m
     const MP = [[25, 25], [-95, -95], [145, -95], [-95, 145], [145, 145]];
@@ -41,7 +42,10 @@ async function aapne({ mobil = false, skip = true, ekstra = '', redusert = false
   return { ctx, page, vp };
 }
 async function kjor(page, ms, logg) { const n = Math.round(ms / BILDE); for (let i = 0; i < n; i++) { await page.clock.runFor(BILDE); if (logg) logg.push(await page.evaluate(() => window.__prove())); } }
-const flytt = (a, b) => Math.max(...a.p.map((p, i) => Math.hypot(p[0] - b.p[i][0], p[1] - b.p[i][1])));
+// punkter langt utenfor bildet (nær horisonten) teller ikke: der blir én meter tusenvis av piksler
+let VP = { width: 900, height: 560 };
+const inne = p => p[0] > -VP.width * 0.5 && p[0] < VP.width * 1.5 && p[1] > -VP.height * 0.5 && p[1] < VP.height * 1.5;
+const flytt = (a, b) => Math.max(0, ...a.p.map((p, i) => inne(p) && inne(b.p[i]) ? Math.hypot(p[0] - b.p[i][0], p[1] - b.p[i][1]) : 0));
 // én bevegelse: forflytning per bilde, topp, hopp (enkeltbilde langt over naboene), rykk (endring i fart mellom bilder / topp), bråstopp (siste fart / topp)
 function maal(logg, fra = 0, til = logg.length) {
   const d = []; for (let i = fra + 1; i < til; i++) d.push(flytt(logg[i], logg[i - 1]));
@@ -66,11 +70,12 @@ if (['klikk', 'dobbel', 'hjul', 'dra', 'avbryt', 'hjem'].some(ok)) {
     const logg = [k0]; await page.mouse.click(kp[0], kp[1]); await kjor(page, 2400, logg);
     const inn = maal(logg); const kl1 = await kortLogg(page); const k1 = logg.at(-1);
     const husEtter = await skjerm(page, ...KIRKE);
-    const fri = k1.kort.vis ? (k1.kort.left > vp.width * 0.5 || k1.kort.w > vp.width * 0.6 ? { x0: 0, x1: vp.width, y0: 0, y1: k1.kort.top } : { x0: k1.kort.left + k1.kort.w, x1: vp.width, y0: 0, y1: vp.height }) : null;
-    const husSynlig = fri ? husEtter[0] > fri.x0 && husEtter[0] < fri.x1 && husEtter[1] > fri.y0 && husEtter[1] < fri.y1 : false;
+    const K = k1.kort; const iKort = husEtter[0] > K.left - 8 && husEtter[0] < K.left + K.w + 8 && husEtter[1] > K.top - 8 && husEtter[1] < K.bunn + 8;
+    const husSynlig = K.vis && !iKort && husEtter[0] > 0 && husEtter[0] < vp.width && husEtter[1] > 0 && husEtter[1] < vp.height;
+    const sidepanel = K.vis && K.left < 40 && K.top < 40 && K.w < vp.width * 0.5;
     const logg2 = [k1]; const lukk = await page.$('#kort .lukk'); await lukk.click(); await kjor(page, 2400, logg2);
     const ut = maal(logg2); const kl2 = await kortLogg(page); const k2 = logg2.at(-1);
-    res.scenarier.klikk = { inn, ut, kortInn: kl1, kortUt: kl2, kortSynlig: k1.kort.vis, kortRamme: k1.kort, husSynligVedSidenAvKortet: husSynlig, husPx: husEtter,
+    res.scenarier.klikk = { inn, ut, kortInn: kl1, kortUt: kl2, kortSynlig: k1.kort.vis, sidepanel, kortRamme: k1.kort, husSynligVedSidenAvKortet: husSynlig, husPx: husEtter,
       tilbakeAvvikPx: +flytt(k2, k0).toFixed(1), zoomInn: +(k1.z - k0.z).toFixed(2) };
   }
   if (ok('klikk')) {   // Esc med kortet åpent: lukker kortet først (og speiler), ikke rett hjem
@@ -124,7 +129,7 @@ if (ok('intro')) {
   const nA = logg.length; await page.mouse.move(450, 300); await page.mouse.down(); for (let i = 1; i <= 4; i++) { await page.mouse.move(450 + i * 8, 300); await kjor(page, BILDE, logg); }
   await page.mouse.up(); await kjor(page, 1500, logg);
   const tilt = logg.map(l => l.sol ? l.sol.tilt : 0); const dt = tilt.slice(1).map((v, i) => Math.abs(v - tilt[i]));
-  res.scenarier.intro = { kameraFoerAvbrudd: maal(logg, 0, nA), tiltHoppStorst: +Math.max(...dt).toFixed(3), tiltVedAvbrudd: tilt.slice(nA - 2, nA + 4).map(v => +v.toFixed(3)), tiltSlutt: +tilt.at(-1).toFixed(3) };
+  res.scenarier.intro = { kameraFoerAvbrudd: maal(logg, 0, nA - 1), tiltHoppStorst: +Math.max(...dt).toFixed(3), tiltVedAvbrudd: tilt.slice(nA - 2, nA + 4).map(v => +v.toFixed(3)), tiltSlutt: +tilt.at(-1).toFixed(3), avbruddVed: nA, tiltHoppVed: dt.indexOf(Math.max(...dt)), tilt: tilt.map(v => +v.toFixed(3)) };
   await ctx.close();
 }
 // ---------------- mobil ----------------
