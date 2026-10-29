@@ -461,13 +461,14 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
         px = im[y:y + hh, x:x + w][sel]
         hvit = float((px.min(axis=1) > 190).mean()); mork = float((px.max(axis=1) < 80).mean())
         cx, cy = clip.x0 + (x + w / 2) / R, clip.y0 + (y + hh / 2) / R
-        yb, yg = bunn(cx), gesims(cx)
+        bt = bunn_topp(cx)
+        yb, yg = (bt if bt else (bunn(cx), gesims(cx)))       # bunn og topp av flaten rett over/under elementet
         H = max(yb - yg, 1e-6)
         u = (cx - fx0) / max(fx1 - fx0, 1e-6)
         top, bot = clip.y0 + y / R, clip.y0 + (y + hh) / R
         # buet topp: bredden øverst (10 % ned) mot bredden på midten
         rad = lambda f: sel[min(hh - 1, int(hh * f))].sum()
-        buet = hh > 4 and rad(0.12) < 0.72 * max(rad(0.55), 1)
+        buet = hh > 4 and rad(0.05) < 0.5 * max(rad(0.6), 1)
         ut.append(dict(u=round(u, 4), v=round((yb - cy) / H, 3), vb=round((yb - bot) / H, 3), vt=round((yb - top) / H, 3),
                        bu=round(w / R / max(fx1 - fx0, 1e-6), 4), hv=round(hh / R / H, 3), hvit=round(hvit, 2), mork=round(mork, 2),
                        buet=bool(buet), pt=[round(cx, 2), round(cy, 2)], wpt=round(w / R, 2), hpt=round(hh / R, 2)))
@@ -667,13 +668,20 @@ def lagre_avlesning(L):
 def klassifiser(el, L):
     """Element -> (typ, b, h): 0 vindu, 1 dør, 2 port med buet topp; None = ikke et element (strek, flekk)."""
     bu_m, hv = el['bu'] * L, el['hv']
-    if el['vb'] < 0.13 and hv > 0.33 and el['hvit'] < 0.2:
+    if el['bu'] > 0.6 and el['hvit'] < 0.05:      # strek langs hele veggen (skillet mellom sokkel og vegg, bunnstreken)
+        return None
+    if el['bu'] < 0.045 and hv > 0.45:            # loddrett skillestrek mellom rekkehus
+        return None
+    if el['vb'] < 0.07 and hv > 0.25 and (el['hvit'] < 0.2 or el['hvit'] > 0.6):
         if bu_m > 1.7 or el['buet']:
             return 2, round(min(max(bu_m, 1.6), 3.2), 2), 2.6 if bu_m > 1.7 else 2.4
         return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
     if hv > 0.08 and el['bu'] > 0.01:
         return 0, round(min(max(bu_m, 0.6), 1.3), 2), None
     return None
+
+
+VH_PRESS = [None]
 
 
 def vegg_vind(vg, x, P):
@@ -692,11 +700,18 @@ def vegg_vind(vg, x, P):
     vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['v'])
     rader = []
     for e in vin:
-        if rader and e['v'] - rader[-1][-1]['v'] < 0.17:
+        if rader and e['v'] - rader[-1][-1]['v'] < 0.2:
             rader[-1].append(e)
         else:
             rader.append([e])
-    brystn = VR.rader(h)
+    brystn = VR.rader(h); VH_PRESS[0] = None
+    n_et = sum(1 for r in rader if not (np.mean([e['v'] for e in r]) < 0.22 and len(rader) > 1 and np.mean([e['hv'] for e in r]) < 0.7 * (np.median([e['hv'] for e in vin]) if vin else 0)))
+    if n_et > len(brystn) and n_et > 1:      # tegningen har flere etasjer enn standardhøyden gir plass til: etasjene presses (minst 2,2 m)
+        vh_ = VR.R['vh'] if (h - 0.3 - VR.R['vh'] - VR.R['bryst']) / (n_et - 1) >= 2.4 else 1.15
+        br0 = 0.8 if vh_ < VR.R['vh'] else VR.R['bryst']
+        et = (h - 0.3 - vh_ - br0) / (n_et - 1)
+        if et >= 1.9:
+            brystn = [br0 + et * k for k in range(n_et)]; VH_PRESS[0] = vh_
     # kjeller: nederste rad med små vinduer helt nede (høyde under 60 % av de andre radene)
     hv_med = np.median([e['hv'] for e in vin]) if vin else 0
     ut = []; notat = []
@@ -707,7 +722,7 @@ def vegg_vind(vg, x, P):
         if vm < 0.22 and hm < 0.7 * hv_med and len(rader) > 1:
             rad_z.append(('kjeller', 0.55, 0.6, 0.5)); continue
         if k < len(brystn):
-            rad_z.append(('etg', brystn[k] + VR.R['vh'] / 2, VR.R['vh'], None)); k += 1
+            vh_ = VH_PRESS[0] or VR.R['vh']; rad_z.append(('etg', brystn[k] + vh_ / 2, vh_, None)); k += 1
         else:
             notat.append(f"rad {len(rad_z) + 1} fikk ikke plass under gesims (h {h} m)"); rad_z.append(None)
     for r, rz in zip(rader, rad_z):
@@ -782,9 +797,63 @@ def legg_inn(tørt=False, bare=None):
     return logg
 
 
+# ---------------------------------------------------------------- kobling for hånd (uten kamera)
+
+def familie(P):
+    """Venstre (veggen vender mot SV i tegningen) eller høyre (mot SØ): bunnkanten heller ned mot høyre / venstre."""
+    x0, y0, x1, y1 = P.bounds
+    xs = np.linspace(x0 + (x1 - x0) * 0.15, x1 - (x1 - x0) * 0.15, 7)
+    ys = []
+    for xx in xs:
+        g = P.intersection(LineString([(xx, -1e5), (xx, 1e5)]))
+        ys.append(g.bounds[3] if not g.is_empty else np.nan)
+    ok = ~np.isnan(ys)
+    k = np.polyfit(xs[ok], np.array(ys)[ok], 1)[0] if ok.sum() >= 2 else 0
+    return 'SV' if k > 0 else 'SØ'
+
+
+def les_for_haand(navn, d=None):
+    """Kobling fra kilder/fasade-kobling.json: {tegning: {hus: {id: [flate, …]}}}. Hver flate går til husets vegg i samme
+    familie (SV: utovernormal 180–270°, SØ: 90–180°), den lengste frie; flere flater på samme vegg slås sammen (rekkehus,
+    sokkel). Ingen kameratilpasning: tegningen bestemmer hvilken side, modellen hvilken vegg."""
+    import datalag, vegger as VG
+    d = d or datalag.alle(); BY = {x['id']: x for x in d['bygg']}; omg = VG.Omgivelser(d['bygg'], d['veier'], d['gardsrom'])
+    K = json.load(open(KOBLING_FIL, encoding='utf8'))[navn]['hus']
+    F = {f['i']: f for f in flater(navn)[0]}
+    side = fitz.open(os.path.join(AI, navn + '.ai'))[0]
+    lest = []
+    for i, fl in K.items():
+        x = BY[i]; V = VG.vegger(x, omg, slaa_sammen=True)
+        grp = {}
+        for fi in fl:
+            if isinstance(fi, str) and '/' in fi:          # "flate/SV" eller "flate/SØ": siden gitt for hånd
+                fi, fam = fi.split('/'); fi = int(fi)
+            else:
+                fam = familie(F[fi]['ytre'])
+            grp.setdefault(fam, []).append(fi)
+        for fam, fis in grp.items():
+            c = 225 if fam == 'SV' else 135
+            kand = [(w['L'] * (w['felles'] < 0.5), k) for k, w in enumerate(V)
+                    if abs(((math.degrees(math.atan2(w['n'][0], w['n'][1])) - c) + 180) % 360 - 180) <= 55]
+            if not kand: continue
+            k = max(kand)[1]; w = V[k]
+            el, geo = elementer([F[f] for f in fis], side)
+            if geo is None: continue
+            # venstre i tegningen = seerens venstre utenfra
+            ltr = bool(w['u'] @ np.array([-w['n'][1], w['n'][0]]) > 0)
+            venstre = w['a'] if ltr else w['c']
+            lest.append(dict(id=i, vegg=k, side=fam, a=[float(v) for v in w['a']], b=[float(v) for v in w['c']], L=round(float(w['L']), 2),
+                             venstre=[float(v) for v in venstre], flater=fis, farger=[F[f]['farge'] for f in fis], elementer=el, geo=geo))
+    return dict(navn=navn, hus={}, vegger=lest, tak={}, G=[[0, 0, 0], [0, 0, 0]], k=0)
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
-    if a and a[0] == 'les':
+    if a and a[0] == 'les_for_haand':
+        for n in a[1:]:
+            L = les_for_haand(n); lagre_avlesning(L)
+            for v in L['vegger']: print(n, v['id'], v['side'], f"vegg {v['vegg']}", len(v['elementer']), 'elementer')
+    elif a and a[0] == 'les':
         for n in a[1:]:
             L = les(n); lagre_avlesning(L)
             os.makedirs(ARB, exist_ok=True); ark_kobling(L, os.path.join(ARB, n + '-kobling.png'))
@@ -792,3 +861,4 @@ if __name__ == '__main__':
         legg_inn('--tørt' in a, [n for n in a[1:] if not n.startswith('--')] or None)
     else:
         print(__doc__)
+

@@ -1,0 +1,12 @@
+{
+ "om": "Hvilke flater i kvartaltegningen (vektorstiene, nummer i rekkefølgen pymupdf leser dem) som er hvilket hus, satt for hånd ved å se tegningen og modellen side om side (verktoy/fasade_tegning.py les_for_haand). Siden (SV/SØ) leses av bunnkanten, eller står etter skråstrek. Dører som er egne flater, står ikke her (de leses som elementer).",
+ "Kvartal2BITMP": {"hus": {
+   "bnr-193868142": [25, 27, 70],
+   "bnr-193868150": [12],
+   "bnr-193972292": [11, 61],
+   "bnr-193868096": [22, 43, 23, 26],
+   "bnr-193868088": [24, 79],
+   "bnr-193868126": [20],
+   "bnr-193868134": [7]
+ }}
+}

@@ -1,0 +1,126 @@
+[
+ {
+  "id": "bnr-193868142",
+  "navn": "Prestegården",
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     5,
+     5
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 18
+ },
+ {
+  "id": "bnr-193868150",
+  "navn": "Salamandergården",
+  "vegger": {
+   "6": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     2,
+     5
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 16
+ },
+ {
+  "id": "bnr-193972292",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     3,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 8,
+  "regler": 5
+ },
+ {
+  "id": "bnr-193868096",
+  "navn": null,
+  "vegger": {
+   "8": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     5,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "6": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 2
+ },
+ {
+  "id": "bnr-193868088",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 8,
+  "regler": 4
+ },
+ {
+  "id": "bnr-193868126",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 1,
+  "regler": 8
+ },
+ {
+  "id": "bnr-193868134",
+  "navn": null,
+  "vegger": {
+   "8": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 19
+ }
+]
