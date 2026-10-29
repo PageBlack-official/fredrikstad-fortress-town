@@ -16,3 +16,7 @@ rapport/brygger/*.jpg
 # tegningene som vektor og 2019-trykket: åndsverk, bare lokalt (28.10)
 kilder/ai/
 rapport/farger-tegning/*.jpg
+
+# kommunekartet (PDF fra kommunens kartportal) ligger bare lokalt; kontrollarkene i rapport/grunnmur viser ortofoto (29.10)
+kilder/kommunekart/*.pdf
+rapport/grunnmur/*.png

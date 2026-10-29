@@ -48,10 +48,33 @@ def indeks(liste):
 
 
 def legg_paa_rettelser(data, rettelser):
-    """Rettelseslaget legges oppå grunndataene. Hver rettelse peker på id. Nyere linje vinner over eldre."""
+    """Rettelseslaget legges oppå grunndataene. Hver rettelse peker på id. Nyere linje vinner over eldre.
+    Operasjoner:
+      sett   felt = verdi på objektet med id
+      skjul  objektet vises ikke (grunnen står i feltet skjul); id-en finnes fortsatt
+      ny     et objekt grunndataene ikke har (verdi = hele objektet, med id). De nye legges bakerst i lista, i rekkefølgen
+             de står i rettelsene, før noen sett/skjul legges på, så en rettelse kan peke på et nytt objekt uansett hvor den
+             står. Står samme id i flere ny-linjer, vinner den nyeste. En ny-id kan ikke være en id grunndataene har.
+             Plassene til objektene i grunndataene endres aldri (regel 02 og rapport/hoyder bruker plass i lista)."""
     oppslag = {emne: indeks(v) for emne, v in data.items() if isinstance(v, list)}
+    nye = {}
+    for r in rettelser:
+        if r['op'] == 'ny':
+            v = r.get('verdi') or {}
+            if v.get('id') != r.get('id'):
+                raise SystemExit(f"ny-rettelse: id i linja ({r.get('id')}) og i objektet ({v.get('id')}) er ulike")
+            if r['id'] in oppslag.get(r['emne'], {}):
+                raise SystemExit(f"ny-rettelse: {r['emne']} {r['id']} finnes i grunndataene (bruk sett)")
+            nye.setdefault(r['emne'], {})[r['id']] = v
+    for emne, obj in nye.items():
+        liste = data.setdefault(emne, [])
+        for id_, v in obj.items():
+            oppslag.setdefault(emne, {})[id_] = len(liste)
+            liste.append(json.loads(json.dumps(v)))
     for r in rettelser:
         emne, op = r['emne'], r['op']
+        if op == 'ny':
+            continue
         i = oppslag.get(emne, {}).get(r.get('id'))
         if i is None:
             raise SystemExit(f"rettelse peker på noe som ikke finnes: {r.get('emne')} {r.get('id')}")
@@ -62,6 +85,11 @@ def legg_paa_rettelser(data, rettelser):
         else:
             raise SystemExit(f"ukjent rettelse-operasjon: {op}")
     return data
+
+
+def nye_ider(rettelser, emne='bygg'):
+    """Id-ene som rettelseslaget lager (op ny)."""
+    return {r['id'] for r in rettelser if r['op'] == 'ny' and r['emne'] == emne}
 
 
 def alle(raa=False):

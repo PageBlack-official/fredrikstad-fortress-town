@@ -1,6 +1,6 @@
 # 17_vinduer_rytme: OK
 
-141 antatte hus, 2344 vinduer, 78 dører; 0 brudd
+155 antatte hus, 2314 vinduer, 86 dører; 0 brudd
 
 ## vinduer uten vindu/dør rett under: 0
 

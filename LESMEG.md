@@ -42,7 +42,13 @@ Grunndataene i data/ er generert (OSM, trykkfila, kvartaltegningene) og kan lage
     [{"emne":"bygg","id":"bnr-193867537","op":"sett","felt":"vegg","verdi":[214,96,80],"hvem":"Vegar","dato":"2026-10-24","grunn":"trykkfila"},
      {"emne":"bygg","id":"pb-12","op":"skjul","hvem":"Claude","dato":"2026-10-23","grunn":"flyfoto: parkeringsplass"}]
 
-Operasjoner: sett (felt = verdi) og skjul. Flytting og nye objekter kommer med redigeringsmodusen. Rettelser slettes aldri, de overstyres av en nyere linje.
+Operasjoner: sett (felt = verdi), skjul og ny. Rettelser slettes aldri, de overstyres av en nyere linje (et skjult bygg vises igjen med `sett skjul null` og grunn).
+
+`ny` (29.10) legger til et objekt grunndataene ikke har: `{"emne":"bygg","id":"pb-25","op":"ny","verdi":{…hele bygget, med id…},"hvem":…,"dato":…,"grunn":…}`.
+datalag.legg_paa_rettelser lager alle nye objekter først (bakerst i lista, i rekkefølgen de står), så sett/skjul kan peke på dem uansett hvor
+linjen står; samme id i flere ny-linjer: den nyeste vinner; en ny-id kan ikke finnes i grunndataene. Plassene til grunndataene endres aldri
+(rapport/hoyder og regel 02 bruker plass i lista). Id-en registreres i kilder/id-register.txt som alle andre, og regel 14 teller nye bygg med.
+Redigeringsmodusen skal skrive nye objekter på samme måte. Flytting er `sett p`.
 
 ## Vinduer og dører på hus uten tegning (27.10)
 Fasit er husene lest fra kvartaltegningene (`fasade_kilde: kvartaltegning` og v33-rettelser). De andre (`antatt`) får vinduer og dører fra reglene målt på fasiten:
@@ -92,8 +98,35 @@ modell→trykk (fra px2019 i rapport/farger2019.json) er på 5–25 px, og husen
 gate eller tre. Forslagene i rapport/farger-tegning/forslag.json er derfor ikke lagt inn. Veien videre er den samme som for v30:
 kontrollark per hus der Vegar dømmer, eller Street View-runde som i 2015.
 
+## Grunnmuren fra kommunekartet (29.10)
+Fasit for husomrissene i Gamlebyen er kommunens oppmålte omriss (FKB), lest som vektor fra kommunekartet Vegar lastet ned fra kartportalen
+(kilder/kommunekart/kommunekart.pdf, bare lokalt; transformasjonen til modellmeter i pdf_til_modell.json). Kommunekartet brukes som mål for vår
+egen modellering, ikke vist i kartet. Alt legges inn som rettelser med grunn som begynner med «kommunekart FKB 29.10».
+
+    python3 verktoy/grunnmur.py            omriss, tak, nye bygg, matrikkelfelt, piper/arker, tegnede vinduer flyttet (idempotent)
+    python3 -I rapport/hoyder/hent.py      høydene måles på nytt på de nye omrissene (forskyvningen står fast fra tall.json)
+    python3 -I rapport/hoyder/legg_inn.py
+    python3 verktoy/grunnmur.py            andre gang: nye bygg får første høydegjetning, alt annet er likt
+    python3 verktoy/vinduer_regler.py      vinduer på antatte hus etter de nye veggene og naboene
+    python3 verktoy/grunnmur.py ark        kontrollark rapport/grunnmur/oversikt.png (ikke i git); plan og tall i rapport/grunnmur/plan.json
+
+Per hus i Gamlebyen (verktoy/kommunekart.py: i_gamlebyen; bare hus helt innenfor kartrammen):
+- én-til-én: `sett p` (og ph, r, rf, tk); id, farger og vinduer følger huset.
+- ett modellhus over flere kommunehus: delen der husets matrikkelpunkt står, beholder id-en; resten blir nye bygg (`ny`). Tegnede vinduer
+  som står på en utskilt del, følger med dit (delen får `fasade_kilde: kvartaltegning` og `fasade_fra`).
+- flere modellhus i ett kommunehus: kommunens omriss deles mellom dem (nærmeste modellhus), så alle id-er beholdes.
+- kommunehus uten modellhus: står et skjult modellhus der, vises det igjen med kommunens omriss (alle 9 skjult 23.10 etter Google-flyfotoet
+  står i kommunekartet og i ortofotoet); ellers nytt bygg med `bnr-` fra et matrikkelpunkt som hører til omrisset, eller neste `pb-`.
+  Under 6 m² hoppes over og listes. Nye hus får nøytral farge (vegg 226/222/212, tak 150/144/138) til Vegar velger.
+- modellhus uten kommunehus slettes aldri; skjules bare når Kartverkets DOM−DTM ikke har noe over 1 m og huset ikke har navn.
+- røres ikke: kirka, Kaserna, portbyggene. Flater i PDF-en som ligger inni en større flate er bygningsdeler (tas bort), med mindre
+  matrikkelen har et eget bygg i dem.
+Taket regnes fra fotavtrykket for hver husrekke med et endret hus (verktoy/tak.py, rett skjelett); gavlene arves fra det gamle taket der
+veggen står omtrent samme sted, ellers tak.gavl_regel. Regel 20 måler resultatet (IoU >= 0,7 per kommunehus, ingen modellhus over to).
+verktoy/matrikkel.py koble jobber på grunndataene; kjør grunnmur.py etterpå, så matrikkelfeltet på de rettede husene følger omrisset.
+
 ## Oppsett på en ny maskin
-Python 3 med opencv-python-headless, numpy, shapely og pyproj; Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
+Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
 ## Regler som må være grønne før publisering
 01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra. `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).

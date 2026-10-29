@@ -7,12 +7,12 @@ ikke målt vegg, og Vegar valgte Kartverket som fasit."""
 import json, os
 from _felles import *
 H = json.load(open(os.path.join(ROT, 'rapport', 'hoyder', 'hoyder.json')))
-b = data('bygg'); raa = data('bygg', raa=True)
+b = data('bygg')
 feil = []; maalt = 0; umaalt = []; navnfeil = []
 for i, x in gamleby(b):
     if x.get('skjult') or x.get('kirke'): continue
     m = H.get(str(i))
-    if m and m.get('navn') and raa[i].get('navn') and m['navn'] != raa[i]['navn']: navnfeil.append(f"- bygg {i}: hoyder.json sier «{m['navn']}», data sier «{raa[i]['navn']}» (rekkefølgen i bygg.json er endret?)")
+    if m and m.get('navn') and x.get('navn') and m['navn'] != x['navn']: navnfeil.append(f"- bygg {i}: hoyder.json sier «{m['navn']}», data sier «{x['navn']}» (rekkefølgen i bygg.json er endret?)")
     if m and m.get('sikkerhet') in ('høy', 'middels') and m.get('h_per_hus') is not None:
         maalt += 1
         if abs(x.get('h', 0) - m['h_per_hus']) > 0.05: feil.append(f"- {x['id']} ({x.get('navn') or x.get('type')}): h {x.get('h')} m, Kartverket gir {m['h_per_hus']} m")

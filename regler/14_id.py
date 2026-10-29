@@ -5,7 +5,8 @@
 - bygg med bnr-id har bygningsnummeret i matrikkelfeltet (nøkkelen og kilden sier det samme)
 Se datalag.py for hvorfor bygningsnummeret i Matrikkelen er nøkkelen."""
 from _felles import *
-b = data('bygg', raa=True); feil = []
+b = data('bygg', raa=True) + list({r['id']: r['verdi'] for r in data('rettelser') if r['op'] == 'ny' and r['emne'] == 'bygg'}.values())   # nye bygg fra rettelseslaget (op ny, 29.10)
+feil = []
 ids = [x.get('id') for x in b]
 if None in ids: feil.append(f"- {ids.count(None)} bygg uten id")
 dobbel = sorted({i for i in ids if i and ids.count(i) > 1})

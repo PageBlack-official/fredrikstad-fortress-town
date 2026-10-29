@@ -149,7 +149,10 @@ def kart_overflate(b, mx, my):
 # ---------- hovedløp ----------
 def main():
     ny = '--ny' in sys.argv
-    B = json.load(open(os.path.join(ROT, 'data', 'bygg.json'), encoding='utf8'))
+    # husene slik kartet viser dem (rettelser lagt oppå, også nye bygg og omriss fra kommunekartet, 29.10); plassene i lista
+    # er de samme som i data/bygg.json, nye bygg står bakerst
+    sys.path.insert(0, ROT); import datalag
+    B = datalag.alle()['bygg']
     G = [(i, b) for i, b in gamleby(B) if len(b['p']) >= 3]
     utm = {i: til_utm(b['p']) for i, b in G}
     allx = np.concatenate([u[:, 0] for u in utm.values()]); ally = np.concatenate([u[:, 1] for u in utm.values()])
@@ -162,6 +165,7 @@ def main():
     cx = x0 + (np.arange(W) + 0.5) * dx; cy = y1 - (np.arange(H) + 0.5) * dy
     def piksler(pg):
         """indekser (rad, kol) for piksler med senter i polygonet pg (UTM)"""
+        if pg.is_empty: return np.zeros(0, int), np.zeros(0, int)
         a, b_, c, d = pg.bounds
         c0, c1 = max(0, int((a - x0) / dx)), min(W, int((c - x0) / dx) + 2)
         r0, r1 = max(0, int((y1 - d) / dy)), min(H, int((y1 - b_) / dy) + 2)
@@ -177,24 +181,35 @@ def main():
         pg = Polygon(u, hull)
         return pg if pg.is_valid else pg.buffer(0)
 
-    # 3. forskyvning: omrissene mot «noe høyere enn 3 m»
+    # 3. forskyvning: omrissene mot «noe høyere enn 3 m». Står fast fra tall.json (målt 24.10 på OSM-omrissene; kommunekartet
+    #    er tilpasset samme ramme) så målingene ikke flytter seg for hus som ikke er endret; --ny-forskyvning søker på nytt.
     hoy = np.nan_to_num(ndh) > 3
-    best = None
-    for sx in np.arange(-5, 5.01, 0.5):
-        for sy in np.arange(-5, 5.01, 0.5):
-            tot = inn = 0
-            for i, b in G:
-                if b.get('skjul'): continue
-                rr, cc = piksler(poly(i, b, (sx, sy)).buffer(-0.5))
-                tot += len(rr); inn += hoy[rr, cc].sum()
-            sk = inn / max(tot, 1)
-            if best is None or sk > best[0]: best = (sk, sx, sy)
+    fast = os.path.join(HER, 'tall.json')
+    if os.path.exists(fast) and '--ny-forskyvning' not in sys.argv:
+        f0 = json.load(open(fast))['forskyvning']; best = (None, f0[0], f0[1])
+    else:
+        best = None
+        for sx in np.arange(-5, 5.01, 0.5):
+            for sy in np.arange(-5, 5.01, 0.5):
+                tot = inn = 0
+                for i, b in G:
+                    if b.get('skjul'): continue
+                    rr, cc = piksler(poly(i, b, (sx, sy)).buffer(-0.5))
+                    tot += len(rr); inn += hoy[rr, cc].sum()
+                sk = inn / max(tot, 1)
+                if best is None or sk > best[0]: best = (sk, sx, sy)
     andel0 = None
     tot = inn = 0
     for i, b in G:
         if b.get('skjul'): continue
         rr, cc = piksler(poly(i, b).buffer(-0.5)); tot += len(rr); inn += hoy[rr, cc].sum()
     andel0 = inn / tot
+    if best[0] is None:
+        tot = inn = 0
+        for i, b in G:
+            if b.get('skjul'): continue
+            rr, cc = piksler(poly(i, b, (best[1], best[2])).buffer(-0.5)); tot += len(rr); inn += hoy[rr, cc].sum()
+        best = (inn / tot, best[1], best[2])
     SH = (best[1], best[2])
     print(f'forskyvning øst {SH[0]:+.1f} m, nord {SH[1]:+.1f} m  (treff {andel0:.3f} -> {best[0]:.3f})')
 
