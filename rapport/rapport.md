@@ -1,6 +1,6 @@
 # Regelrapport
 
-Kilde: c641f86 versjon 34 kjørt 2026-10-29 17:35
+Kilde: 5440239 versjon 34 kjørt 2026-10-29 21:07
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 0 skjult med grunn)
 - OK   02_hoyder_maalt  (205 hus står med Kartverkets målte høyde; 0 avviker; 113 hus uten sikker måling beholder tegning/OSM)
@@ -22,5 +22,6 @@ Kilde: c641f86 versjon 34 kjørt 2026-10-29 17:35
 - OK   18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 6 bilder – ingen ny tegning)
 - OK   20_grunnmur_fkb  (269 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 5 unntak (fredet))
+- OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 288 modellhus)
 
 Detaljer per regel i samme mappe.

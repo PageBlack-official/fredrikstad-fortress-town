@@ -1,0 +1,54 @@
+{
+ "_om": "Kommunehus i Gamlebyen som ikke skal ha et modellhus, med grunn. Regel 21 er rød for alle andre kommunehus uten modellhus. «regler» gjelder alle hus som oppfyller dem; «hus» er enkelthus (nøkkel = kommune_id i kilder/register/gamlebyen.json, tyngdepunktet i modellmeter). Et unntak som ikke lenger trengs (huset har fått modellhus), meldes av regel 21. «adresser»: adresser i randsonen som ikke skal ha hus i modellen, med grunn.",
+ "regler": [
+  {
+   "areal_under": 6.0,
+   "grunn": "under 6 m² (søppelskur, trappehus, kjellernedgang): grunnmur.py hopper over dem (MINSTE), de vises ikke i kartet",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  }
+ ],
+ "hus": {},
+ "adresser": {
+  "Bings gate 19": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ferjestedsveien 13": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ove Ramms gate 11": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ridehusgata 6A": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ridehusgata 8": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ridehusgata 10": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ridehusgata 12": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  },
+  "Ridehusgata 14": {
+   "grunn": "utenfor kommunekartets ramme: ingen FKB-omriss å bygge huset fra, og modellen har ikke huset (randsonen); lages ikke før kommunekartet dekker det",
+   "hvem": "Claude",
+   "dato": "2026-10-29"
+  }
+ }
+}

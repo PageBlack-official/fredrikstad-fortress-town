@@ -21,10 +21,13 @@ rapport/farger-tegning/*.jpg
 kilder/kommunekart/*.pdf
 rapport/grunnmur/*.png
 
-# kvartaltegningene (Dropbox, åndsverk) og arbeidsfilene til kvartal-QA (masker, modellbilder): bare lokalt (28.10)
-kilder/kvartal-ai/
-rapport/kvartal-qa/_arbeid/
+# kontrollarket for registeret viser kommunekartets omriss: bare lokalt (29.10)
+rapport/register/*.png
 
 # utsnitt med ortofoto (verktoy/se_her.py) og arbeidsfiler til fasadelesingen: bare lokalt (29.10)
 rapport/bygg/se/
 rapport/bygg/_arbeid/
+
+# kvartaltegningene (Dropbox, åndsverk) og arbeidsfilene til kvartal-QA: bare lokalt (28.10)
+kilder/kvartal-ai/
+rapport/kvartal-qa/_arbeid/
