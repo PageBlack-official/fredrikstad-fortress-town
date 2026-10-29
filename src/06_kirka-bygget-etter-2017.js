@@ -96,10 +96,13 @@ function bygKirke(k, grp){
   // oval form» på den ene, «der mangler det også en dør» på den andre): sørenden stor rundbuet dør i rundbuet omramming og
   // ett buevindu, østenden ett buevindu og en mindre rundbuet dør. Plass langs veggen i andel, lest fra tegningen.
   const DORER={186:{dor:0.34, vindu:[0.72], stor:true}, 96:{dor:0.74, vindu:[0.3], stor:false}};
-  function kirkedor(f, s_, stor){
+  // andel langs veggen regnet fra venstre sett utenfra (som i tegningen)
+  const fraVenstre=(f,u)=>{ const nx=f.nor.x, ny=-f.nor.z; const ltr=((f.p1[0]-f.p0[0])*(-ny)+(f.p1[1]-f.p0[1])*nx)>0; return ltr?u:1-u; };
+  function kirkedor(f, u, stor){
+    const s_=fraVenstre(f,u);
     const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; const opp=new THREE.Vector3(0,1,0);
-    if(stor){ legg(new THREE.ShapeGeometry(bue(3.6,5.6),16), W3(p,-0.05), f.tan, opp, f.nor, 0.05, HVIT, HVIT_S);     // omramming
-              legg(new THREE.ShapeGeometry(bue(3.1,5.3),16), W3(p,0), f.tan, opp, f.nor, 0.07, [214,214,210], [150,150,148]); }
+    if(stor){ legg(new THREE.ShapeGeometry(bue(3.8,5.8),16), W3(p,-0.05), f.tan, opp, f.nor, 0.05, [150,150,146], [100,100,98]);   // omramming (rundbuet, som i tegningen)
+              legg(new THREE.ShapeGeometry(bue(3.3,5.4),16), W3(p,0), f.tan, opp, f.nor, 0.07, [226,226,222], [160,160,156]); }
     legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, [104,86,72], [72,60,52]);
   }
   // høye buevinduer i alle frie skipsvegger
@@ -107,7 +110,7 @@ function bygKirke(k, grp){
     if(nærTårn(f.mid) || f.L<3) return;
     const d=f.L>12 ? Object.entries(DORER).find(([az])=>mot(f,+az)) : null;
     if(d){ const q=d[1]; kirkedor(f, q.dor, q.stor);
-      q.vindu.forEach(s_=>{ const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); });
+      q.vindu.forEach(u=>{ const s_=fraVenstre(f,u); const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); });
       return; }
     const n=f.L>12 ? 3 : 2; const step=f.L/n;
     for(let i=0;i<n;i++){ const s_=step*(i+0.5); const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_/f.L, f.p0[1]+(f.p1[1]-f.p0[1])*s_/f.L];
