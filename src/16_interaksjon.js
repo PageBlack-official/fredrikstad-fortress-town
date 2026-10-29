@@ -54,7 +54,7 @@ function velgHus(g){
   if(valgt) valgt.userData.lift=false;
   valgt=g; g.userData.lift=true;
   if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyllKort(g.userData.b); visKort(true); }
-  else { fyllKort(g.userData.b); if(!REDUSERT) kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }   // nytt hus i åpent kort: innholdet tones over, kortet står
+  else { fyllKort(g.userData.b); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }   // nytt hus i åpent kort: innholdet tones over, kortet står
   glidTilHus(g);
 }
 function visKort(vis){
@@ -126,7 +126,10 @@ map.getCanvasContainer().addEventListener('wheel', e=>{
   let hjul = e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY);
   if(gest.t && naa-gest.t<120) hjul=gest.hjul;
   gest.t=naa; gest.hjul=hjul; dbgLogg(e,hjul);
-  if(hjul) return;                                        // musehjul = zoom, MapLibre tar den
+  if(hjul){                                               // musehjul = zoom, jevn (15_bevegelse: hjulZoom), ikke MapLibres utslag per hakk
+    e.preventDefault(); e.stopImmediatePropagation(); if(kort_.apent) kort_.egenFlytt=true;
+    const px = e.deltaMode===1 ? e.deltaY*40 : e.deltaMode===2 ? e.deltaY*800 : e.deltaY;   // linjer/sider til piksler; ett hakk ≈ 100 px
+    hjulZoom.hakk(e, -px/100*BEV.hjul.perHakk); return; }
   e.preventDefault(); e.stopImmediatePropagation(); overta();
   map.panBy([e.deltaX, e.deltaY], {animate:false});       // innholdet følger fingrene
 }, {capture:true, passive:false});

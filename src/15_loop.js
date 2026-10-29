@@ -97,8 +97,11 @@ function oppdater(){
   if(kamFlytt || anim || !introDone) sistBeveg=naa;
   const stille = naa-sistBeveg>300;
   post.settSkala(skalaStille); post.setAO(aoStille); post.setSS(ssStille);
-  if(introDone && stille){ speilInn=Math.min(1,speilInn+dt*2.8); speil.render(husBeveger || speilInn<1 || !speilFrisk); speilFrisk=true; }
-  else if(!stille){ speilFrisk=false; speilInn=Math.max(0,speilInn-dt*8); } // gammelt speil vises aldri mens kartet beveger seg
+  // speilet (29.10): toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
+  // flyttes det med kameraet (reflPV, 14/03). Før tonet det ut ved hver bevegelse og inn igjen 0,3 s etter stopp (synlig ny tegning).
+  if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
+    if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
+    else { speilFrisk=false; if(naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
   sistTegnet=naa; fullTegnet=stille && !husBeveger;
   dbgTegn(naa);
@@ -127,6 +130,7 @@ window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [
 window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
 window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
-window.__scene=()=>({scene, city});   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
+window.__scene=()=>({scene, city});
+window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0)});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };

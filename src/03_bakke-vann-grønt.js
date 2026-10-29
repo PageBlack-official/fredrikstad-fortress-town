@@ -21,9 +21,9 @@ const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
     grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
     tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
-    tRefl:{value:null}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}},
+    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}},
   vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader:`uniform float t, maks, harFelt, reflStyrke; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; varying vec3 wp;
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -40,8 +40,8 @@ const waterMat = new THREE.ShaderMaterial({
     float grunn=(1.-smoothstep(0.,24.,d))*(1.-0.75*kai);
     c=mix(c, grunt, grunn*grunn*0.62);
     // speilinger av hus og trær (rendret speilvendt i et eget lag), med rolig krusning
-    if(reflStyrke>0.){ vec2 uv=gl_FragCoord.xy/res; vec2 kr=vec2(n(wp.xz*0.18+vec2(0.,t*0.35))-0.5, n(wp.xz*0.07-vec2(t*0.2,0.))-0.5)*vec2(0.004,0.010);
-      vec4 r=texture2D(tRefl, uv+kr); float rk=reflStyrke*r.a*(0.75+0.25*b); c=mix(c, mix(c,r.rgb,0.55)*0.97, rk); }
+    if(reflStyrke>0.){ vec4 q=reflPV*vec4(wp,1.); vec2 uv=q.xy/q.w*0.5+0.5;   /* speilet slås opp der vannpunktet lå da speilet ble tegnet (14): det følger byen mens kartet beveger seg */ vec2 kr=vec2(n(wp.xz*0.18+vec2(0.,t*0.35))-0.5, n(wp.xz*0.07-vec2(t*0.2,0.))-0.5)*vec2(0.004,0.010);
+      vec4 r=texture2D(tRefl, uv+kr); float kant=smoothstep(0.,0.04,uv.x)*smoothstep(1.,0.96,uv.x)*smoothstep(0.,0.04,uv.y)*smoothstep(1.,0.96,uv.y); float rk=reflStyrke*r.a*kant*(0.75+0.25*b); c=mix(c, mix(c,r.rgb,0.55)*0.97, rk); }
     // penselstrøkene, svakere enn før og borte i skumkanten
     c=mix(c,hi,s*.42*(1.-grunn*0.7));
     // skumkant langs land: bølgete, pustende, minst ca. halvannen piksel bred så den holder i oversikten

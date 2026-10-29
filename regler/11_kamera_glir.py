@@ -17,6 +17,8 @@ else: linjer.append('- alle varigheter fra BEV i 15_bevegelse.js')
 myk = lambda t: 0 if t <= 0 else 1 if t >= 1 else (4 * t ** 3 if t < 0.5 else 1 - (-2 * t + 2) ** 3 / 2)
 if 1 - myk(0.9) > 0.03 or myk(0.1) > 0.03: ok = False
 linjer.append(f'- myk (korte flytt): siste 10 % flytter {(1-myk(0.9))*100:.1f} %, første 10 % {myk(0.1)*100:.1f} %')
+# treghet etter slipp (15_bevegelse, 29.10) starter med fingerens fart (med vilje) og dør ut eksponentielt: farten i siste bilde er e^-k av starten
+k = 5; linjer.append(f'- tregheten: starter med fingerfarten, slutter på {math.exp(-k)*100:.1f} % av den (k = {k})')
 glid = lambda t: 0 if t <= 0 else 1 if t >= 1 else (2 ** (20 * t - 10) / 2 if t < 0.5 else (2 - 2 ** (-20 * t + 10)) / 2)
 hale = 1 - glid(0.9); start = glid(0.1)
 if hale > 0.03 or start > 0.03: ok = False

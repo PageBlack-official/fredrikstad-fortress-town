@@ -38,7 +38,7 @@ async function aapne({ mobil = false, skip = true, ekstra = '', redusert = false
     window.__prove = () => { const k = document.getElementById('kort'); const r = k.getBoundingClientRect(); const cs = getComputedStyle(k);
       return { t: performance.now(), fl: window.__flyt(), p: window.__ref.map(ll => { const s = map.project(ll); return [s.x, s.y]; }), z: map.getZoom(), b: map.getBearing(), pi: map.getPitch(),
         mv: map.isMoving(), kort: { vis: k.classList.contains('vis'), top: r.top, left: r.left, bunn: r.bottom, h: r.height, w: r.width, op: +cs.opacity },
-        sol: window.__solvei ? window.__solvei() : null, intro: window.__kam().intro }; };
+        sol: window.__solvei ? window.__solvei() : null, intro: window.__kam().intro, speil: window.__speil ? window.__speil() : null }; };
     // kortets overganger: hver gang klassen endres, leses animasjonene (getAnimations tvinger stilen, så overgangen finnes alt)
     window.__kortLogg = []; new MutationObserver(() => { const k = document.getElementById('kort');
       window.__kortLogg.push({ t: performance.now(), vis: k.classList.contains('vis'), anim: k.getAnimations({ subtree: false }).map(a => ({ navn: a.transitionProperty || a.animationName || 'waapi', ms: a.effect.getComputedTiming().duration, easing: a.effect.getComputedTiming().easing || '' })) }); })
@@ -62,6 +62,10 @@ function maal(logg, fra = 0, til = logg.length) {
   return { bilder: d.length, topp: +topp.toFixed(1), hopp, hoppAt, rykk: topp > 2 ? +(rykk / topp).toFixed(2) : 0, braastopp: topp > 2 && sisteI >= 0 ? +(d[sisteI] / topp).toFixed(2) : 0,
     ms: sisteI >= 0 ? (sisteI - Math.max(0, forsteI) + 1) * BILDE : 0, start_ms: forsteI >= 0 ? forsteI * BILDE : null, d: d.map(v => +v.toFixed(1)) };
 }
+// speilet i vannet: styrken (delt på det den skal være ved zoomen) skal ikke falle mens kartet beveger seg, og speilet skal tegnes på nytt
+// jevnlig i fart (alder = ms siden det ble tegnet)
+function speilMaal(logg) { const s = logg.map(l => l.speil).filter(Boolean); if (!s.length) return null;
+  return { minsteAndel: +Math.min(...s.map(x => x.maal > 0 ? x.styrke / x.maal : 1)).toFixed(2), eldsteMs: Math.round(Math.max(...logg.filter(l => l.mv && l.speil).map(l => l.speil.alder), 0)) }; }
 const ankerFeil = async (page, ll, px) => page.evaluate(([ll, px]) => { const s = map.project(ll); return +Math.hypot(s.x - px[0], s.y - px[1]).toFixed(1); }, [ll, px]);
 const kortLogg = page => page.evaluate(() => window.__kortLogg.splice(0));
 const skjerm = (page, x, h, y) => page.evaluate(([x, h, y]) => window.__skjerm3(x, h, -y), [x, h, y]);
@@ -82,7 +86,7 @@ if (['klikk', 'dobbel', 'hjul', 'dra', 'avbryt', 'hjem'].some(ok)) {
     const sidepanel = K.vis && K.left < 40 && K.top < 40 && K.w < vp.width * 0.5;
     const logg2 = [k1]; const lukk = await page.$('#kort .lukk'); await lukk.click(); await kjor(page, 2400, logg2);
     const ut = maal(logg2); const kl2 = await kortLogg(page); const k2 = logg2.at(-1);
-    res.scenarier.klikk = { inn, ut, kortInn: kl1, kortUt: kl2, kortSynlig: k1.kort.vis, sidepanel, kortRamme: k1.kort, husSynligVedSidenAvKortet: husSynlig, husPx: husEtter,
+    res.scenarier.klikk = { inn, ut, speil: speilMaal(logg), kortInn: kl1, kortUt: kl2, kortSynlig: k1.kort.vis, sidepanel, kortRamme: k1.kort, husSynligVedSidenAvKortet: husSynlig, husPx: husEtter,
       tilbakeAvvikPx: +flyttRef(k2, k0).toFixed(1), zoomInn: +(k1.z - k0.z).toFixed(2) };
   }
   if (ok('klikk')) {   // Esc med kortet åpent: lukker kortet først (og speiler), ikke rett hjem
@@ -110,7 +114,7 @@ if (['klikk', 'dobbel', 'hjul', 'dra', 'avbryt', 'hjem'].some(ok)) {
     const n0 = logg.length; for (let i = 1; i <= 12; i++) { await page.mouse.move(450 + i * 14, 300 + i * 4); await kjor(page, BILDE, logg); }
     const n1 = logg.length; await page.mouse.up(); await kjor(page, 1600, logg);
     const m = maal(logg); const draFart = m.d.slice(n0, n1 - 1).slice(-3); const etter = m.d.slice(n1 - 1, n1 + 2);
-    res.scenarier.dra = { bevegelse: m, draFart, etterSlipp: etter, overlevering: draFart.length && etter.length ? +(Math.max(...etter) / (draFart.reduce((a, b) => a + b, 0) / draFart.length)).toFixed(2) : null };
+    res.scenarier.dra = { bevegelse: m, draFart, etterSlipp: etter, overlevering: draFart.length && etter.length ? +(etter[0] / (draFart.reduce((a, b) => a + b, 0) / draFart.length)).toFixed(2) : null, speil: speilMaal(logg) };
     await page.keyboard.press('Escape'); await kjor(page, 1800);
   }
   if (ok('avbryt')) {   // hjem-glidningen avbrytes av et dra midtveis: kameraet følger handa, glidningen slutter
@@ -118,14 +122,14 @@ if (['klikk', 'dobbel', 'hjul', 'dra', 'avbryt', 'hjem'].some(ok)) {
     const logg = [await page.evaluate(() => window.__prove())]; await page.keyboard.press('Escape'); await kjor(page, 450, logg);
     const nA = logg.length; await page.mouse.move(400, 300); await page.mouse.down(); for (let i = 1; i <= 6; i++) { await page.mouse.move(400 - i * 10, 300); await kjor(page, BILDE, logg); }
     await page.mouse.up(); const nB = logg.length; await kjor(page, 1600, logg);
-    const m = maal(logg); const etter = maal(logg, nB + 25);   // et halvt sekund etter slipp: står kameraet, eller glir det videre hjem?
+    const m = maal(logg); const etter = maal(logg, nB + 75);   // 1,2 s etter slipp (tregheten er død): står kameraet, eller glir det videre hjem?
     res.scenarier.avbryt = { bevegelse: m, iAvbruddet: m.d.slice(nA - 2, nA + 3), glirVidereEtterSlipp: etter.topp, zoomIgjen: +(logg.at(-1).z - logg[0].z).toFixed(2) };
     await page.keyboard.press('Escape'); await kjor(page, 1800);
   }
   if (ok('hjem')) {   // hjem fra et annet sted: én rolig bevegelse
     await page.evaluate(() => map.jumpTo({ zoom: map.getZoom() + 1, bearing: map.getBearing() - 60, center: map.unproject([700, 150]) })); await kjor(page, 200);
     const logg = [await page.evaluate(() => window.__prove())]; await page.keyboard.press('Escape'); await kjor(page, 2000, logg);
-    res.scenarier.hjem = { bevegelse: maal(logg) };
+    res.scenarier.hjem = { bevegelse: maal(logg), speil: speilMaal(logg) };
   }
   await ctx.close();
 }
@@ -140,7 +144,7 @@ if (ok('intro')) {
   await ctx.close();
 }
 // ---------------- mobil ----------------
-if (['mtrykk', 'klyp', 'mdobbel', 'ark'].some(ok)) {
+if (['mtrykk', 'klyp', 'vri', 'mdobbel', 'ark'].some(ok)) {
   const { ctx, page, vp } = await aapne({ mobil: true });
   const cdp = await ctx.newCDPSession(page);
   const touch = (type, pts) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: pts.map((p, i) => ({ x: p[0], y: p[1], id: i + 1 })) });
@@ -171,8 +175,19 @@ if (['mtrykk', 'klyp', 'mdobbel', 'ark'].some(ok)) {
     const logg = [await page.evaluate(() => window.__prove())];
     await touch('touchStart', [[M[0] - 70, M[1]], [M[0] + 70, M[1]]]); await kjor(page, BILDE, logg);   // fingrene 140 px fra hverandre, 6 px ut hvert bilde
     for (let i = 1; i <= 12; i++) { await touch('touchMove', [[M[0] - 70 - i * 6, M[1] - i * 1.5], [M[0] + 70 + i * 6, M[1] + i * 1.5]]); await kjor(page, BILDE, logg); }
-    await touch('touchEnd', []); await kjor(page, 1000, logg);
+    const nS = logg.length; await touch('touchEnd', []); await kjor(page, 1000, logg);
+    const mk = maal(logg); const fF = mk.d.slice(nS - 4, nS - 1); const eF = mk.d.slice(nS - 1, nS + 1);
+    res.scenarier.klypSlipp = { forSlipp: fF, etterSlipp: eF, overlevering: fF.length && eF.length ? +(eF[0] / (fF.reduce((a, b) => a + b, 0) / fF.length)).toFixed(2) : null };
     res.scenarier.klyp = { zb: logg.slice(0, 16).map(l => [+l.z.toFixed(3), +l.b.toFixed(2), +l.pi.toFixed(1)]), bevegelse: maal(logg), zoom: +(logg.at(-1).z - logg[0].z).toFixed(2), ankerPx: await ankerFeil(page, ll, M) };
+  }
+  if (ok('vri')) {   // to fingre vrir rundt et punkt og slipper: tregheten tar over farten, ingen stillestående bilde
+    const M = [vp.width * 0.5, vp.height * 0.5]; const R = 80; const pos = a => [[M[0] - R * Math.cos(a), M[1] - R * Math.sin(a)], [M[0] + R * Math.cos(a), M[1] + R * Math.sin(a)]];
+    const logg = [await page.evaluate(() => window.__prove())];
+    await touch('touchStart', pos(0)); await kjor(page, BILDE, logg);
+    for (let i = 1; i <= 14; i++) { await touch('touchMove', pos(i * 0.035)); await kjor(page, BILDE, logg); }
+    const nS = logg.length; await touch('touchEnd', []); await kjor(page, 1200, logg);
+    const m = maal(logg); const fF = m.d.slice(nS - 4, nS - 1); const eF = m.d.slice(nS - 1, nS + 1);
+    res.scenarier.vri = { bevegelse: m, dreid: +(logg.at(-1).b - logg[0].b).toFixed(1), forSlipp: fF, etterSlipp: eF, overlevering: fF.length && eF.length ? +(eF[0] / (fF.reduce((a, b) => a + b, 0) / fF.length)).toFixed(2) : null };
   }
   if (ok('mdobbel')) {   // dobbelttrykk: zoomer inn mot punktet
     await page.evaluate(() => window.__hjem && window.__hjem()); await kjor(page, 1800);
@@ -188,7 +203,9 @@ if (ok('redusert')) {
   const { ctx, page } = await aapne({ redusert: true });
   await kjor(page, 400); const kp = await skjerm(page, ...KIRKE); await page.mouse.click(kp[0], kp[1]); await kjor(page, 1200);
   const kl = await kortLogg(page); const s = await page.evaluate(() => window.__prove());
-  res.scenarier.redusert = { kortVis: s.kort.vis, kortInn: kl, kortGlir: kl.some(x => x.anim.some(a => /transform/.test(a.navn))) };
+  await page.keyboard.press('Escape'); await kjor(page, 1200); await page.keyboard.press('Escape'); await kjor(page, 1600);
+  const logg = [await page.evaluate(() => window.__prove())]; await page.mouse.dblclick(450, 330); await kjor(page, 1200, logg);
+  res.scenarier.redusert = { kortVis: s.kort.vis, kortInn: kl, kortGlir: kl.some(x => x.anim.some(a => /transform/.test(a.navn))), dobbel: maal(logg) };
   await ctx.close();
 }
 res.ferdig = new Date().toISOString();

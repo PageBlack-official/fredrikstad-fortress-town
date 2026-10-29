@@ -40,10 +40,11 @@ krav('kortet glir inn og ut (ingen popp)', any('transform' in a['navn'] and a['m
 krav('desktop: sidepanel, huset synlig ved siden av', bool(g('klikk', 'kortSynlig')) and bool(g('klikk', 'sidepanel')) and bool(g('klikk', 'husSynligVedSidenAvKortet')), f"kort {g('klikk', 'kortRamme')}, hus på {g('klikk', 'husPx')}")
 bevegelse('dobbeltklikk zoomer inn', g('dobbel', 'bevegelse'))
 krav('dobbeltklikk: punktet under pekeren står', tall(g('dobbel', 'ankerPx')) <= 3 and (g('dobbel', 'zoom') or 0) >= 0.9, f"glipper {g('dobbel', 'ankerPx')} px, zoom +{g('dobbel', 'zoom')}")
-m = g('hjul', 'bevegelse') or {}
-krav('musehjul uten bråstopp', m.get('topp', 0) > 2 and m.get('braastopp', 9) <= 0.15, f"{m.get('ms')} ms, bråstopp {m.get('braastopp')}; hvert hakk gir et utslag (MapLibres hjulzoom, rykk {m.get('rykk')} måles ikke)")
+bevegelse('musehjul: jevn zoom over tre hakk (egen fjær, ikke utslag per hakk)', g('hjul', 'bevegelse'))
 krav('musehjul: punktet under pekeren står', tall(g('hjul', 'ankerPx')) <= 3 and (g('hjul', 'zoom') or 0) > 0.3, f"glipper {g('hjul', 'ankerPx')} px, zoom +{g('hjul', 'zoom')}")
-o = g('dra', 'overlevering'); krav('dra og slipp: tregheten tar over farten', o is not None and 0.5 <= o <= 1.6 and g('dra', 'bevegelse', 'hopp') == 0, f"fart rett etter slipp / fart under dra = {o} (0,5–1,6), hopp {g('dra', 'bevegelse', 'hopp')}")
+def slipp(navn, sc):
+    o = g(sc, 'overlevering'); krav(navn, o is not None and 0.8 <= o <= 1.25, f"fart i første bilde etter slipp / fart før slipp = {o} (0,8–1,25; 0 = et bilde står stille), {g(sc, 'etterSlipp')}")
+slipp('dra og slipp: tregheten tar over farten', 'dra')
 krav('hjem-glidningen kan avbrytes av et dra', (g('avbryt', 'glirVidereEtterSlipp') if g('avbryt', 'glirVidereEtterSlipp') is not None else 99) <= 2 and g('avbryt', 'bevegelse', 'hopp') == 0,
      f"etter slipp glir kameraet {g('avbryt', 'glirVidereEtterSlipp')} px/bilde (<= 2), hopp {g('avbryt', 'bevegelse', 'hopp')}, rundt avbruddet {g('avbryt', 'iAvbruddet')}")
 bevegelse('hjem', g('hjem', 'bevegelse'))
@@ -56,10 +57,17 @@ krav('mobil: bunnark, huset over kortet', bool(g('mtrykk', 'bunnark')) and bool(
 krav('mobil: dra kortet ned lukker det', bool(g('ark', 'lukket')) and (g('ark', 'folgerFingeren') or 0) > 40, f"kortet fulgte fingeren {g('ark', 'folgerFingeren')} px, lukket {g('ark', 'lukket')}")
 krav('mobil: tilbake (Android/nettleser) lukker kortet', bool(g('tilbake', 'harHistorikk')) and bool(g('tilbake', 'kortLukket')), f"historikk {g('tilbake', 'harHistorikk')}, lukket {g('tilbake', 'kortLukket')}")
 krav('mobil: klyp uten hopp', not hopp_etter_start(g('klyp', 'bevegelse')) and g('klyp', 'bevegelse', 'braastopp') is not None and g('klyp', 'bevegelse', 'braastopp') <= 0.15, f"hopp etter første svar {hopp_etter_start(g('klyp', 'bevegelse'))}, bråstopp {g('klyp', 'bevegelse', 'braastopp')} (fingeren starter og stopper bevegelsen; rykk måles ikke)")
+slipp('mobil: klyp og slipp: tregheten tar over farten', 'klypSlipp')
+slipp('mobil: vri og slipp: tregheten tar over farten', 'vri')
 krav('mobil: klyp zoomer rundt fingrene', tall(g('klyp', 'ankerPx')) <= 4 and (g('klyp', 'zoom') or 0) > 0.3, f"glipper {g('klyp', 'ankerPx')} px, zoom +{g('klyp', 'zoom')}")
 krav('mobil: dobbelttrykk zoomer inn mot punktet', tall(g('mdobbel', 'ankerPx')) <= 3 and (g('mdobbel', 'zoom') or 0) >= 0.9, f"glipper {g('mdobbel', 'ankerPx')} px, zoom +{g('mdobbel', 'zoom')}")
-rk = [a for x in (g('redusert', 'kortInn') or []) for a in x['anim']]
-krav('redusert bevegelse: kortet toner, glir ikke', bool(g('redusert', 'kortVis')) and not g('redusert', 'kortGlir') and any('opacity' in a['navn'] for a in rk), ', '.join(f"{a['navn']} {a['ms']:.0f} ms" for a in rk) or 'ingen overgang')
+for sc, navn in (('klikk', 'glidning til hus'), ('dra', 'dra og treghet'), ('hjem', 'hjem')):
+    sp = g(sc, 'speil') or {}
+    krav(f'speilet i vannet står under {navn}', sp.get('minsteAndel', 0) >= 0.98 and sp.get('eldsteMs', 9999) <= 300,
+         f"minste styrke i fart {sp.get('minsteAndel')} av full (>= 0,98; før tonet det til 0), eldste speil i fart {sp.get('eldsteMs')} ms (<= 300)")
+rk = [a for x in (g('redusert', 'kortInn') or []) for a in x['anim']]; rd = g('redusert', 'dobbel') or {}
+krav('«Reduser bevegelse» på: kortet og kameraet glir likevel (Vegars valg, CHANGELOG v27)', bool(g('redusert', 'kortVis')) and bool(g('redusert', 'kortGlir')) and rd.get('ms', 0) >= 500,
+     ', '.join(f"kort {a['navn']} {a['ms']:.0f} ms" for a in rk) + f"; dobbeltklikk {rd.get('ms')} ms")
 krav('ingen JS-feil', not d['feil'], (d['feil'][0][:120] if d['feil'] else 'ingen'))
 linjer.append('- Ikke målt her (må ses i ekte Chrome/telefon): bildefrekvens, styreflate-treghet fra macOS, iOS Safari-gester.')
 rapport('22_flyt', ok, linjer)

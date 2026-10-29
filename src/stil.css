@@ -19,15 +19,7 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
   #kort{left:max(16px,env(safe-area-inset-left,0px));top:calc(16px + env(safe-area-inset-top,0px));right:auto;bottom:auto;width:340px;max-width:calc(100vw - 32px);max-height:calc(100% - 32px);overflow:auto;margin:0;transform:translateX(calc(-100% - 40px));touch-action:auto}
   #kort .grep{display:none}
 }
-/* redusert bevegelse: kortet toner inn og ut på stedet i stedet for å gli */
-@media (prefers-reduced-motion:reduce){
-  #kort,#kort.vis{transform:none}
-  #kort{opacity:0;transition:opacity 160ms linear,visibility 0s 160ms}
-  #kort.vis{opacity:1;transition:opacity 160ms linear,visibility 0s}
-}
-:root[data-bevegelse="redusert"] #kort,:root[data-bevegelse="redusert"] #kort.vis{transform:none}
-:root[data-bevegelse="redusert"] #kort{opacity:0;transition:opacity 160ms linear,visibility 0s 160ms}
-:root[data-bevegelse="redusert"] #kort.vis{opacity:1;transition:opacity 160ms linear,visibility 0s}
+/* «Reduser bevegelse» gjelder ikke kortet: Vegars valg (CHANGELOG v27, se 15_bevegelse.js) */
 #kort h2{margin:0 0 4px;font-size:18px;font-weight:600}
 #kort p{margin:2px 0;font-size:13px;color:var(--muted)}
 #kort .lukk{position:absolute;right:12px;top:10px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}
