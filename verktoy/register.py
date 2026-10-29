@@ -6,6 +6,7 @@
     python3 verktoy/register.py kort         legger til huskort (data/adresser.json) for adresser som mangler kort; rører aldri
                                              en rad som finnes (kjøres etter verktoy/adresser.py koble, som skriver fila på nytt)
     python3 verktoy/register.py kort --tørt  viser bare hva som ville blitt lagt til
+    python3 verktoy/register.py ark          kontrollark rapport/register/oversikt.png (ikke i git: omrissene er kommunekartet)
     python3 verktoy/register.py hent         henter alle adresser i Gamlebyen-avgrensningen fra Kartverkets adresse-API
                                              (punktsøk, alle postnumre) til kilder/register/adresser-omraade.json
 
@@ -598,6 +599,51 @@ def lag(L):
     return reg, av
 
 
+def ark(L):
+    """Kontrollark rapport/register/oversikt.png (bare lokalt: omrissene er kommunekartet): kommunehusene farget etter status,
+    modellhusene som strek, adressepunktene som prikker (svart = kort på samme hus, blå = kort lagt til av register.py kort,
+    oransje = kort på nabohuset, rød = uten hus eller kort), og hvert nytt kort med adressen skrevet ved punktet."""
+    import matplotlib; matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    reg = bygg_register(L); I = reg['_intern']; B = L['B']; K = L['K']
+    nye = {r['adresse'] for r in L['kort'] if r.get('kilde', '').startswith('verktoy/register.py')}
+    fig, ax = plt.subplots(figsize=(24, 24), dpi=110)
+    def tegn(P, **kw):
+        for g in getattr(P, 'geoms', [P]):
+            x, y = g.exterior.xy; ax.fill(x, y, **kw)
+    for j, r in zip(L['G'], reg['bygg']):
+        farge = '#bfe3bf' if r['modell_id'] else ('#dddddd' if r['areal'] < 6 else '#ff6060')
+        if r.get('ogsaa_modell') or any(x['kommune_id'] == r['kommune_id'] for x in []):
+            farge = '#ffe08a'
+        tegn(K[j], fc=farge, ec='#555555', lw=0.4)
+    plass = {b['id']: i for i, b in enumerate(B)}
+    for i in I['synlige']:
+        P = poly(B[i])
+        if L['R'].contains(P.representative_point()):
+            x, y = P.exterior.xy; ax.plot(x, y, color='#1b3a6b', lw=0.5)
+    for a in reg['adresser']:
+        if a['sone'] == 'utenfor':
+            continue
+        x, y = datalag.til_modell(*a['lonlat'])
+        if not a['modell_id'] or not a['kort_paa']:
+            c = 'red'
+        elif a['adresse'] in nye:
+            c = '#0050ff'
+        elif not a['kort']:
+            c = 'orange'
+        else:
+            c = 'black'
+        ax.plot(x, y, 'o', color=c, ms=4 if c == 'black' else 7)
+        if c != 'black':
+            ax.annotate(a['adresse'], (x, y), fontsize=6, color=c, xytext=(3, 3), textcoords='offset points')
+    x0, y0, x1, y1 = L['R'].bounds
+    ax.set_xlim(x0, x1); ax.set_ylim(y0, y1); ax.set_aspect('equal')
+    ax.set_title('Register: grønn = kommunehus med modellhus, gul = flere modellhus i ett, grå = under 6 m², rød = mangler; '
+                 'strek = modellhus; prikk svart = kort, blå = nytt kort, oransje = kort på nabohus, rød = mangler')
+    os.makedirs(os.path.join(ROT, 'rapport', 'register'), exist_ok=True)
+    sti = os.path.join(ROT, 'rapport', 'register', 'oversikt.png'); fig.savefig(sti, bbox_inches='tight'); print(sti)
+
+
 def main():
     arg = sys.argv[1:]
     if arg[:1] == ['hent']:
@@ -609,6 +655,8 @@ def main():
         hent(); return
     if arg[:1] == ['kort']:
         legg_til_kort(L, tørt='--tørt' in arg); return
+    if arg[:1] == ['ark']:
+        ark(L); return
     lag(L)
     streetview_mangler(L)
 
