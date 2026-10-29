@@ -38,36 +38,50 @@ function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: 
 
 // ---- treghet etter dra, klyp og vri (29.10) ----
 // MapLibre tar med 0,3 av farten fra klyp og vri (kan ikke stilles), og tregheten starter et bilde for sent, så det står ett bilde stille
-// idet du slipper (flyt-test). Vi måler farten selv (kameraet i de siste 70 ms av gesten) og lar den dø ut eksponentielt:
-// x(t) = v0·tau·(1 − e^(−t/tau)), regnet fra siste bevegelse i gesten, så første bilde etter slipp fortsetter med samme fart.
-// Kjøres som én vanlig easeTo (avbrytbar, riktige hendelser). Vi kjenner igjen MapLibres treghetskall på at det er easeTo med
-// noMoveStart + freezeElevation og en slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
+// idet du slipper (flyt-test). Vi måler farten selv i de siste 70 ms av gesten: flytt = fingrenes midtpunkt på skjermen (som MapLibres
+// dra), zoom/vri/vipp = kameraet. Farten dør ut eksponentielt, x(t) = v0·tau·(1 − e^(−t/tau)) regnet fra siste bevegelse, så første
+// bilde etter slipp fortsetter med samme fart. Zoom og vri skjer rundt punktet mellom fingrene (MapLibres «around»), så det står under
+// fingrene også mens tregheten virker. Vi kjenner igjen MapLibres treghetskall på at det er easeTo med noMoveStart + freezeElevation og en
+// slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
 const treghet=(()=>{
-  const spor=[]; const T=BEV.treghet;
-  const merc=ll=>maplibregl.MercatorCoordinate.fromLngLat(ll,0);
-  map.on('move', e=>{ if(!e.originalEvent || /up$|end$|cancel$/.test(e.originalEvent.type)) return;
-    spor.push({t:performance.now(), c:merc(map.getCenter()), z:map.getZoom(), b:map.getBearing(), p:map.getPitch()}); if(spor.length>12) spor.shift(); });
-  ['pointerdown','touchstart','wheel'].forEach(t=>map.getCanvasContainer().addEventListener(t,()=>{ spor.length=0; },{capture:true,passive:true}));
+  const T=BEV.treghet, kam=[], fing=[]; let rid=0, anim=null;
+  const kort=(a,tid)=>{ while(a.length>2 && tid-a[0].t>200) a.shift(); };
+  map.on('move', e=>{ if(!e.originalEvent || anim || /up$|end$|cancel$/.test(e.originalEvent.type)) return;
+    const t=performance.now(); kam.push({t, z:map.getZoom(), b:map.getBearing(), p:map.getPitch()}); kort(kam,t); });
+  const el=map.getCanvasContainer();
+  const fingre=(x,y)=>{ const t=performance.now(); fing.push({t,x,y}); kort(fing,t); };
+  el.addEventListener('touchmove', e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } if(e.touches.length) fingre(x/e.touches.length, y/e.touches.length); }, {capture:true, passive:true});
+  el.addEventListener('touchstart', e=>{ fing.length=0; if(e.touches.length===1) stopp(); }, {capture:true, passive:true});   // nytt antall fingre: midtpunktet hopper
+  el.addEventListener('pointermove', e=>{ if(e.pointerType==='mouse' && e.buttons) fingre(e.clientX, e.clientY); }, {capture:true, passive:true});
+  el.addEventListener('pointerdown', ()=>{ stopp(); kam.length=0; fing.length=0; }, {capture:true, passive:true});
+  el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
   const F=s=>1-Math.exp(-T.k*s);
+  const kl=(x,m)=>Math.max(-m,Math.min(m,x));
+  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=T.vindu); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
+  function steg(){ rid=0; if(!anim) return; const s=Math.min(1+anim.g, (performance.now()-anim.t0)/1000/(T.k*T.tau)); sett(s); if(s<1+anim.g) rid=requestAnimationFrame(steg); else anim=null; }
+  function sett(s){ const A=anim, ut=T.tau*F(s), d=ut-A.ut; A.ut=ut;
+    const o={duration:0}; if(A.vz) o.zoom=map.getZoom()+A.vz*d; if(A.vb) o.bearing=map.getBearing()+A.vb*d; if(A.vp) o.pitch=map.getPitch()+A.vp*d;
+    if(A.around && (o.zoom!==undefined || o.bearing!==undefined || o.pitch!==undefined)){ o.around=A.around; easeTo0(o, A.ev); }
+    else if(o.zoom!==undefined || o.bearing!==undefined || o.pitch!==undefined) easeTo0(o, A.ev);
+    if(A.vx || A.vy){ map.panBy([-A.vx*d, -A.vy*d], {animate:false}); if(A.around) A.around=map.unproject(map.project(A.around).add(new maplibregl.Point(A.vx*d, A.vy*d))); } }
+  function stopp(){ anim=null; if(rid){ window.cancelAnimationFrame(rid); rid=0; } }
   const easeTo0=map.easeTo.bind(map);
   map.easeTo=(opt,ev)=>{
+    if(anim && !(opt && opt.duration===0)) stopp();   // et nytt kameraflytt avbryter tregheten (våre egne trinn har duration 0)
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
     if(!slipp) return easeTo0(opt,ev);
-    const naa=performance.now(), siste=spor[spor.length-1];
-    const v=siste && spor.filter(x=>siste.t-x.t<=T.vindu); const forste=v && v[0];
-    if(!forste || siste.t-forste.t<8 || naa-siste.t>T.vindu){ spor.length=0; return easeTo0(opt,ev); }   // holdt stille før slipp: MapLibre avgjør
-    const dt=(siste.t-forste.t)/1000, mpp=1/(512*Math.pow(2,siste.z));   // mercator per skjermpunkt
-    const kl=(x,m)=>Math.max(-m,Math.min(m,x));
-    const vx=kl((siste.c.x-forste.c.x)/dt/mpp, T.maks.pan)*mpp, vy=kl((siste.c.y-forste.c.y)/dt/mpp, T.maks.pan)*mpp;
-    const vz=kl((siste.z-forste.z)/dt, T.maks.zoom), vb=kl((((siste.b-forste.b)%360+540)%360-180)/dt, T.maks.bearing), vp=kl((siste.p-forste.p)/dt, T.maks.pitch);
-    const D=T.k*T.tau, g=(naa-siste.t)/1000/D;   // g: tida siden siste bevegelse, som andel av D
-    const ved=s=>{ const ut=T.tau*F(s); return {center:new maplibregl.MercatorCoordinate(siste.c.x+vx*ut, siste.c.y+vy*ut, 0).toLngLat(), zoom:siste.z+vz*ut, bearing:siste.b+vb*ut, pitch:siste.p+vp*ut}; };
-    // MapLibre kaller dette i bildet der slippet behandles, og easeTo flytter først i neste bilde: hopp derfor til der kameraet skal være nå
-    // (dette bildet tegnes med det), og gli videre derfra med samme fart
-    spor.length=0; map.jumpTo(ved(g));
-    return easeTo0({...ved(1+g), duration:D*1000, noMoveStart:true, freezeElevation:true, easing:u=>(F(u+g)-F(g))/(F(1+g)-F(g))}, ev);
+    const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
+    if(naa-siste>T.vindu+20){ kam.length=0; fing.length=0; return easeTo0(opt,ev); }   // holdt stille før slipp: MapLibre avgjør
+    const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
+    if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
+    if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }
+    kam.length=0; fing.length=0;
+    if(!(A.vx||A.vy||A.vz||A.vb||A.vp)) return easeTo0(opt,ev);
+    stopp(); anim=A; A.g=(naa-siste)/1000/(T.k*T.tau);
+    sett(A.g);   // MapLibre kaller dette i bildet der slippet behandles: flytt med en gang, så dette bildet ikke står stille
+    rid=requestAnimationFrame(steg); return map;
   };
-  return {spor};
+  return {stopp};
 })();
 
 // ---- musehjul (29.10): jevn zoom i stedet for ett utslag per hakk ----

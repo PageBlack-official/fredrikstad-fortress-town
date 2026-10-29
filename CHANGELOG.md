@@ -6,9 +6,11 @@
 - **Klikk på hus:** velges med en gang (før 300 ms venting), kameraet glir inn mot huset (minst zoom 2,4, aldri ut) og legger det midt i den delen kortet ikke dekker.
 - **Tilbake = samme vei ut:** ×, Esc, trykk utenfor og nettleserens/Androids tilbake lukker kortet og glir kameraet tilbake dit det stod (med mindre du har flyttet kartet selv). Esc lukker kortet først, neste Esc går hjem.
 - **Dobbelttrykk på mobil zoomer igjen** (var dødt: MapLibres dobbelttrykk var slått av sammen med dobbeltklikket). Dobbeltklikk og dobbelttrykk gjenkjennes fra klikkene, likt for mus og finger, og zoomer mot punktet.
-- **Dra og slipp:** tregheten tar med hele fingerfarten (MapLibre tok med 0,3, så kartet bråbremset ved slipp).
+- **Treghet etter dra, klyp og vri er vår egen:** farten måles i de siste 70 ms av gesten (flytt fra fingrenes midtpunkt, zoom/vri fra kameraet) og dør ut eksponentielt (tau 0,26 s), fra første bilde etter slipp; zoom og vri skjer rundt punktet mellom fingrene. Før tok MapLibre med 0,3 av farten fra klyp og vri, og ett bilde stod stille idet du slapp.
+- **Musehjul:** jevn zoom; hvert hakk flytter et mål, og zoomen følger det som en kritisk dempet fjær (før ett utslag per hakk). Punktet under pekeren står. Styreflaten er skilt ut som før (to fingre flytter, klyp zoomer).
+- **Speilet i vannet står i fart:** det tonet ut ved hver bevegelse og inn igjen etter stopp. Nå tegnes det på nytt høyst hvert 110 ms i fart, og vannet slår opp i det med kameraet fra da det ble tegnet, så det følger byen imellom.
 - **Avbrutt intro:** miniatyr-uskarpheten tones ut på 0,8 s fra der den stod (før forsvant den på ett bilde), og kartet tegnes i full fart til lys og uskarphet er hentet inn (før 10 bilder/s, i trapper). Introen selv er ikke endret.
-- **Redusert bevegelse:** kortet toner i stedet for å gli. Kameraet glir som før (Vegars valg); kartvalget som skulle sørge for det, het `respectPrefersReducedMotion`, som ikke finnes i MapLibre 6 (nå `reduceMotion:false`).
+- **«Reduser bevegelse» gjelder ikke kartet** (Vegars valg, v27): kartet og kortet beveger seg som hos alle andre. Valget het `respectPrefersReducedMotion`, som ikke finnes i MapLibre 6, så det gjaldt ikke; nå `reduceMotion:false`.
 - verktoy/flyt-test.mjs måler kamerabanen bilde for bilde med falsk klokke; regel 22. Kilder: rapport/flyt/kilder.md, funn: rapport/flyt/rapport.md.
 
 ## Uten versjon (29.10.2026, ikke publisert) – fasadene fra Street View
