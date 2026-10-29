@@ -141,8 +141,26 @@ med flere vinduer enn etasjen under). Fasithusene fra kvartaltegningene endres i
 kilder/streetview/hopp.json. Har gateveggen ikke plass til tallene, hoppes huset over og listes (trolig feil vegg eller feil hus).
 Rekkefølge: grunnmur.py → vinduer_regler.py → streetview_fasader.py (kjøres på nytt når omriss eller h endres).
 
+## Bakken i Gamlebyen mot ortofoto, kommunekart og DOM (29.10)
+Overflater, gater, gjerder/murer/hekker og trær i Gamlebyen (innenfor vollene og vollene selv = landskap.fest + brosteinsflaten)
+er lest av kildene med verktoy/bakke.py. Fasit per piksel (0,25 m): ortofoto 2024 der det ser bakken; kommunekartets arealtype
+(gateareal, grøntareal, vann) der det ikke ser (trær, skygge, takutstikk), så nærmeste piksel fotoet ser. Hus = modellens omriss,
+trær og høyde = Kartverkets DOM−DTM (rapport/hoyder/kilder).
+
+    python3 verktoy/bakke.py overflater   data/flater.json (gress/bed/grus/asfalt/brostein fra fotoet; fl-1…4 og parkering står foran)
+    python3 verktoy/bakke.py gater        bredde, midte og flatetype for veibåndene (data/landskap.json)
+    python3 verktoy/bakke.py gjerder      data/gjerder.json (gjerde/mur/hekk sett i fotoet langs eiendomsgrensene og gårdsrommene)
+    python3 verktoy/bakke.py traer        trærne flyttet til kronene i DOM−DTM (antallet uendret)
+    python3 verktoy/bakke.py ark [N …]    kontrollark rapport/bakke/kvartal-NN.png (ortofoto | med kartets linjer | modellens bakke ovenfra)
+
+Innenfor brosteinsflaten er brostein grunnen og flatene er avvikene; på vollene er gresset (terrenget) grunnen. Brostein og grus
+skilles på farge og tekstur, men lys belegning i sol kan ikke alltid skilles i fotoet: en flate med annen type enn grunnen må være
+minst 15 m² og ses i sol på halve arealet. Det som er dømt for hånd, står i kilder/bakke-maalt.json (prøvepunkter, faste flater).
+Regler: 31 overflater, 32 gater, 33 gjerder, 34 trær (alle måler mot kildene, krav 95 %).
+Rekkefølge: grunnmur.py → bakke.py overflater → gater → gjerder → traer → ark.
+
 ## Oppsett på en ny maskin
-Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
+Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
 ## Regler som må være grønne før publisering
 01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra. `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).

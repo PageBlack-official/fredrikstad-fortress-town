@@ -10,8 +10,12 @@
 | bygg.navn / nr / tekst | Tegnforklaringen i kartbrosjyren 2015 (1–46), norsk | Engelsk/tysk finnes i PDF-en, ikke lagt inn |
 | bygg.tak2 / gavl2 / sk (takform) | Beregnet (rett skjelett) fra fotavtrykket | Gamlebyen fra 29.10: verktoy/tak.py på kommunens omriss, gavler arvet fra det gamle taket |
 | bygg.deler (rådhustårn) | Trykkfila | |
-| veier, vann, gront, hull | OpenStreetMap | |
-| traer | Trykkfila (kroneposisjoner) | |
+| veier, vann, gront, hull | OpenStreetMap | Plenene i Gamlebyen (3 OSM-flater) er skjult fra 29.10: plenene der tegnes fra ortofotoet (flater) |
+| landskap.veier[].w / p / flate (veibåndene) | Gamlebyen: bredde og midte målt mot kommunekartets gateareal (kjørevei) og ortofotoets belagte mark (gangvei), verktoy/bakke.py gater; «maalt» sier hva som gjelder per vei | Flate = flertallstypen under båndet; brostein tegnes med brosteinen (src/08) |
+| flater (typ gress/bed/grus/asfalt/brostein, kilde «ortofoto 2024 klassifisert …») | Ortofoto 2024 klassifisert per piksel (grønt, bar jord, belagt; belagt delt i brostein/asfalt/grus på farge og tekstur), kommunekartets arealtype der fotoet ikke ser (trær, skygge), verktoy/bakke.py overflater | Brostein er grunnen innenfor brosteinsflaten, gress på vollene; flatene er avvikene. Prøvepunkter dømt med øyet i kilder/bakke-maalt.json. Lys belegning kan ikke alltid skilles (brostein/grus) |
+| gjerder (typ gjerde/mur/hekk, h) | Ortofoto 2024 (mørk smal stripe / grønn stripe) langs kommunekartets eiendomsgrenser og gårdsrommenes kanter, DOM−DTM for mur mot gjerde og høyde, verktoy/bakke.py gjerder | id gj-<n>. Gjerdene som ikke ses i fotoet, er tatt ut (rapport/bakke/gjerder-forkastet.json) |
+| traer (posisjon, s) | Lest fra Google-flyfotoet 23.10 (forskjøvet), rettet 29.10 mot Kartverkets DOM−DTM: koblet til tretopp innen 3 m, ellers flyttet inn i nærmeste vegetasjon innen 12 m, verktoy/bakke.py traer | Antallet (2343) uendret; kronen bare gjort større der DOM-en viser større krone |
+| traer (opprinnelig) | Trykkfila (kroneposisjoner), så Google-flyfotoet (23.10) | Se raden over for rettingen 29.10 |
 | legende | Kartbrosjyren 2015 | |
 | landskap.terreng (voller) | Beregnet fra OSM-voller + brosjyren | |
 | porter | Regel: bygg med «port» i navnet + vei gjennom fotavtrykket | |

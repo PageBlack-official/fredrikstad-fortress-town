@@ -42,10 +42,11 @@ if (TER){
 }
 // veier som bånd i tegningens gategrå; bruer ligger over vannet med sider (slått sammen til tre mesher)
 {
-  const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}};
+  // flate (data/landskap.json, verktoy/bakke.py gater 29.10): kjøreveier lagt med brostein tegnes med brosteinen, ikke gategrått
+  const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}, B:{p:[],i:[]}};
   const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
-    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.k==='gang'?buf.G:buf.K;
+    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.k==='gang'?buf.G:(v.flate==='brostein'?buf.B:buf.K);
     const L=[], R=[];
     for(let k=0;k<n;k++){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
@@ -62,4 +63,6 @@ if (TER){
   [[buf.K,mat([128,124,120],false)],[buf.G,mat([146,142,134],false)],[buf.S,mat([120,112,104],false)]].forEach(([B,m])=>{
     if(!B.p.length) return; const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3)); g.setIndex(B.i);
     const mm=m.clone(); mm.side=THREE.DoubleSide; const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
+  if(buf.B.p.length){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(buf.B.p,3)); g.setIndex(buf.B.i);
+    stoneMat.side=THREE.DoubleSide; const me=new THREE.Mesh(g,stoneMat); me.receiveShadow=true; scene.add(me); }
 }

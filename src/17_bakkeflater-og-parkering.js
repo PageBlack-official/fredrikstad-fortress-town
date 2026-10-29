@@ -13,8 +13,9 @@
       #include <colorspace_fragment>
       }`
   }));
-  const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152] };
-  const MAT={}; const matFor=k=>MAT[k]||(MAT[k]=flateMat(FARGE[k]));
+  // bed (bar jord) og brostein utenfor brosteinsflaten kommer fra ortofotoet (verktoy/bakke.py overflater, 29.10)
+  const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152], bed:[132,108,86], brostein:[146,140,132] };
+  const MAT={brostein:stoneMat}; const matFor=k=>MAT[k]||(MAT[k]=flateMat(FARGE[k]));
   // flaten legges på terrenget (vollene og kaiene ligger på terrengnettet), aldri lavere enn y0
   const legg=(pts, y0, mat)=>{
     if(!pts || pts.length<3) return null;

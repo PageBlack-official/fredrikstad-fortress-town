@@ -163,6 +163,8 @@ def parkering():
     print(len(ut), 'plasser,', sum(1 for u in ut if 'p' in u), 'med målt flate')
     # andre bakkeflater målt i ortofotoet (grus, heller, asfalt): nye objekter med fast id (fl-N), aldri gjenbrukt
     fl = [{**x, 'kilde': 'målt i ortofoto 2024 (kilder/flater-maalt.json)'} for x in maalt['flater']]
+    # flatene klassifisert fra ortofotoet (verktoy/bakke.py overflater) står i samme fil og blir stående
+    fl += [x for x in datalag.les('flater') if x.get('kilde', '').startswith('ortofoto 2024 klassifisert')]
     ids = [x['id'] for x in fl]
     if len(set(ids)) != len(ids):
         raise SystemExit('flate-id brukt to ganger')
