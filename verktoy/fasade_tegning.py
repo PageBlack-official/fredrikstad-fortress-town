@@ -672,7 +672,8 @@ def klassifiser(el, L, hv_med=None):
         return None
     if el['bu'] < 0.045 and hv > 0.45:            # loddrett skillestrek mellom rekkehus
         return None
-    hoy_dor = hv_med is not None and el['vb'] < 0.2 and hv > 1.6 * hv_med and el['bu'] < 0.35
+    # høyere enn vinduene og nede ved bakken (døra/porten kan stå i et hakk i flaten, så bunnen leses litt opp): dør eller port
+    hoy_dor = hv_med is not None and el['vb'] < 0.35 and hv > 1.5 * hv_med and el['bu'] < 0.35
     if (el['vb'] < 0.07 and hv > 0.25 and (el['hvit'] < 0.2 or el['hvit'] > 0.6)) or hoy_dor:
         if bu_m > 1.7 or el['buet']:
             return 2, round(min(max(bu_m, 1.6), 3.2), 2), 2.6 if bu_m > 1.7 else 2.4

@@ -41,9 +41,9 @@
     "tegning": "Kvartal2BITMP",
     "rader": [
      3,
-     3
+     2
     ],
-    "dorer": 2,
+    "dorer": 3,
     "notat": []
    }
   },
@@ -206,39 +206,15 @@
   "regler": 13
  },
  {
-  "id": "bnr-193868045",
-  "navn": "Den gamle spisesal",
-  "vegger": {
-   "3": {
-    "tegning": "Kvartal3",
-    "rader": [
-     1
-    ],
-    "dorer": 1,
-    "notat": []
-   },
-   "2": {
-    "tegning": "Kvartal3",
-    "rader": [
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 3,
-  "regler": 19
- },
- {
   "id": "bnr-193868061",
   "navn": "Artillerigården",
   "vegger": {
    "1": {
     "tegning": "Kvartal3",
     "rader": [
-     10
+     9
     ],
-    "dorer": 1,
+    "dorer": 2,
     "notat": []
    }
   },
@@ -303,10 +279,10 @@
    "1": {
     "tegning": "Kvartal4BITMP",
     "rader": [
-     4,
+     3,
      2
     ],
-    "dorer": 0,
+    "dorer": 1,
     "notat": []
    },
    "5": {
@@ -354,5 +330,122 @@
   },
   "tegnet": 0,
   "regler": 20
+ },
+ {
+  "id": "bnr-193868223",
+  "navn": "Muldvadgården",
+  "vegger": {
+   "0": {
+    "tegning": "kvartal5",
+    "rader": [
+     7
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "kvartal5",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 8,
+  "regler": 26
+ },
+ {
+  "id": "bnr-193868207",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "kvartal5",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "4": {
+    "tegning": "kvartal5",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 11,
+  "regler": 1
+ },
+ {
+  "id": "bnr-6251218",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "kvartal5",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 8
+ },
+ {
+  "id": "bnr-6251323",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal5",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 10
+ },
+ {
+  "id": "bnr-6251331",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal5",
+    "rader": [
+     2,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 12
+ },
+ {
+  "id": "bnr-6242812",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "kvartal5",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 22
  }
 ]

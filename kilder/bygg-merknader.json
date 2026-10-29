@@ -4,7 +4,7 @@
   {
    "id": "bnr-193867324",
    "kilde": "Vegar, kvartalskontroll Kvartal3 29.10",
-   "grunn": "hovedhuset mangler port med buet topp (tegningen og Street View: stor rundbuet tofløyet port midt); tre takvinduer på tegningen",
+   "grunn": "hovedhuset mangler port med buet topp (tegningen og Street View: stor rundbuet tofløyet port midt); tre takvinduer på tegningen; tegningen viser ingen arker på huset, bare tre takvinduer",
    "vegg": [
     {
      "side": "SV",
@@ -32,7 +32,8 @@
      "b": 0.6,
      "h": 0.8
     }
-   ]
+   ],
+   "arker": "ingen"
   },
   {
    "id": "bnr-193867308",

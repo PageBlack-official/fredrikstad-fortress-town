@@ -22,13 +22,12 @@ def husliste(navn, d):
     ids = list(t['bygg'])
     # nye bygg fra kommunekartet (ikke i koblingen) som står inne blant husene i kvartalet
     alle = {x['id']: x for x in d['bygg'] if not x.get('skjul') and x.get('gml')}
+    # nye bygg fra kommunekartet (op ny, ikke i koblingen) som står inntil et av husene i tegningen
+    nye = {r['id'] for r in datalag.les('rettelser') if r['op'] == 'ny'}
     kj = [Polygon(alle[i]['p']) for i in ids if i in alle]
-    if kj:
-        from shapely.ops import unary_union
-        hull = unary_union(kj).convex_hull.buffer(2)
-        for i, x in alle.items():
-            if i not in ids and hull.contains(Polygon(x['p']).centroid):
-                ids.append(i)
+    for i, x in alle.items():
+        if i not in ids and i in nye and any(Polygon(x['p']).distance(k) < 3.0 for k in kj):
+            ids.append(i)
     return [i for i in ids if i in alle]
 
 
@@ -82,9 +81,9 @@ def ark(navn):
     except Exception:
         F = FB = ImageFont.load_default()
     sk = H / J['H']
-    ids = [b['id'] for b in J['bygg']]
+    ids = husliste(navn, d)
     for b in J['bygg']:
-        if not b.get('midt'): continue
+        if not b.get('midt') or b['id'] not in ids: continue
         p = (b['midt'][0] * sk, b['midt'][1] * sk)
         if not (0 <= p[0] < mod.width and 0 <= p[1] < H): continue
         lab = b['id'].replace('bnr-1938', '').replace('bnr-', '')
