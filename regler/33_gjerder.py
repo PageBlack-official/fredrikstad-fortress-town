@@ -25,7 +25,8 @@ ktot = kdek = 0.0
 for kilde, a, b in B._kandidater(d, R, M, f, dom):
     r = B.vurder_linje(a, b, L, gr, nd, R, M, sett=f['sett'])
     if not r: continue
-    l = LineString([a, b]); ktot += l.length
+    dx, dy = b[0] - a[0], b[1] - a[1]; ll = math.hypot(dx, dy); nx, ny = -dy / ll * r['fo'], dx / ll * r['fo']
+    l = LineString([(a[0] + nx, a[1] + ny), (b[0] + nx, b[1] + ny)]); ktot += l.length   # der fotoet viser linja
     if kart is not None: kdek += l.intersection(kart).length
 dek = kdek / max(ktot, 1e-9)
 typer = {t: (sum(1 for g in G if g['typ'] == t), sum(math.dist(*g['p'][:2]) for g in G if g['typ'] == t)) for t in ('gjerde', 'mur', 'hekk')}

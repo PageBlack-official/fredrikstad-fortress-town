@@ -485,6 +485,16 @@ def overflater(skriv=True):
                 if g.geom_type != 'Polygon' or g.area < MIN_M2[typ]: continue
                 for q in uten_hull(g):
                     if q.area >= MIN_M2[typ] * 0.5: ut.append((typ, q))
+    # en belagt flate eller et bed som er mest grønt i fotoet (regel 15: under 30 %), er gjettet der fotoet ikke ser
+    # (under trær, i skygge): den tas ikke med, grunnen (brostein/terreng) står
+    hin = [b_['p'] for b_ in d['bygg'] if b_.get('p') and not b_.get('skjul')]
+    beholdt = []; ut_gront = 0
+    for typ, q in ut:
+        if typ != 'gress':
+            pts = [[round(c[0], 2), round(c[1], 2)] for c in q.exterior.coords][:-1]   # som det skrives
+            if F.maal_flate(pts, hin)[0] >= 0.25: ut_gront += 1; continue
+        beholdt.append((typ, q))
+    ut = beholdt
     # id: arv fra forrige kjøring
     gamle = [x for x in datalag.les('flater') if x.get('kilde', '').startswith('ortofoto 2024 klassifisert')]
     gpol = [(x, Polygon(x['p']).buffer(0)) for x in gamle]
@@ -510,7 +520,7 @@ def overflater(skriv=True):
         liste.append(o)
     liste.sort(key=lambda o: int(o['id'].split('-')[1]))
     tall = {t: (sum(1 for o in liste if o['typ'] == t), round(sum(o['m2'] for o in liste if o['typ'] == t))) for t in MIN_M2}
-    print('flater fra ortofotoet:', len(liste), {k: v for k, v in tall.items() if v[0]}, len(nye_id), 'nye id-er')
+    print('flater fra ortofotoet:', len(liste), {k: v for k, v in tall.items() if v[0]}, len(nye_id), 'nye id-er;', ut_gront, 'belagte/bed tatt ut (mest grønt i fotoet)')
     if not skriv:
         return liste
     with open(os.path.join(ROT, 'data', 'flater.json'), 'w', encoding='utf8') as fh:
@@ -628,6 +638,16 @@ def maal_vei(v, kl, ok, R, mpp, steg=2.0, maks=20.0, luke=1.0, maks_b=18.0):
     return float(np.median(br)), float(np.median(fo)), len(br)
 
 
+def _forskyv(P, fo):
+    """Polylinja flyttet fo m mot venstre (normalen i hvert punkt)."""
+    Q = []
+    for i, q in enumerate(P):
+        a = P[max(0, i - 1)]; c = P[min(len(P) - 1, i + 1)]
+        dx, dy = c[0] - a[0], c[1] - a[1]; l = math.hypot(dx, dy) or 1
+        Q.append([round(q[0] - dy / l * fo, 2), round(q[1] + dx / l * fo, 2)] + list(q[2:]))
+    return Q
+
+
 def gater(skriv=True):
     """Bredden på veibåndene (data/landskap.json «veier», tegnes i src/08) og hvor de står, målt mot kildene:
       kjørevei: kommunekartets gateareal (kanten mot hus, grønt og vann), der kommunekartet dekker; utenfor: ortofotoets belagte mark
@@ -665,15 +685,10 @@ def gater(skriv=True):
         tall[v['k']][0] += 1
         endr.append((v['w'], b))
         v['w'] = max(1.0, b)
-        if abs(fo) > 0.5 and abs(fo) < b / 2 and n >= 5:
-            P = v['p']; Q = []
-            for i, q in enumerate(P):
-                a = P[max(0, i - 1)]; c = P[min(len(P) - 1, i + 1)]
-                dx, dy = c[0] - a[0], c[1] - a[1]; l = math.hypot(dx, dy) or 1
-                Q.append([round(q[0] - dy / l * fo, 2), round(q[1] + dx / l * fo, 2)] + q[2:])
-            v['p'] = Q
+        flytt = abs(fo) > 0.5 and n >= 5 and (abs(fo) < b / 2 or (v['k'] == 'gang' and abs(fo) <= 2.0))   # en sti kan stå ved siden av seg selv
+        if flytt: v['p'] = _forskyv(v['p'], fo)
         flatetype()
-        v['maalt'] = f'{kilde}: {n} målinger, bredde {b} m' + (f', flyttet {fo:+.1f} m sideveis' if abs(fo) > 0.5 and abs(fo) < b / 2 and n >= 5 else '')
+        v['maalt'] = f'{kilde}: {n} målinger, bredde {b} m' + (f', flyttet {fo:+.1f} m sideveis' if flytt else '')
     # en vei der typen skifter (brostein -> grus, asfalt …), deles der den skifter, så båndet tegnes med riktig flate hele veien
     nye, delt = [], 0
     for v in L['veier']:
@@ -683,7 +698,11 @@ def gater(skriv=True):
             delt += 1
             for w in biter:
                 r = (maal_vei(w, kkl, ok_kk, R, mpp, luke=1.2) or maal_vei(w, kl, ok_or, R, mpp, luke=0.75)) if w['k'] == 'kjore' else maal_vei(w, kl, ok_or, R, mpp, maks=8, luke=0.5, maks_b=6.0)
-                if r and r[2] >= 5: w['w'] = max(1.0, round(r[0] * 2) / 2); w['maalt'] = v['maalt'].split(':')[0] + f': {r[2]} målinger, bredde {w["w"]} m (delt der flatetypen skifter)'
+                if r and r[2] >= 5:
+                    w['w'] = max(1.0, round(r[0] * 2) / 2); fo = r[1]
+                    fl = abs(fo) > 0.5 and (abs(fo) < w['w'] / 2 or (w['k'] == 'gang' and abs(fo) <= 2.0))
+                    if fl: w['p'] = _forskyv(w['p'], fo)
+                    w['maalt'] = v['maalt'].split(':')[0] + f': {r[2]} målinger, bredde {w["w"]} m' + (f', flyttet {fo:+.1f} m sideveis' if fl else '') + ' (delt der flatetypen skifter)'
         nye += biter
     L['veier'] = nye
     print('veier i Gamlebyen målt:', {k: f'{a} av {n}' for k, (a, n) in tall.items()}, f'; {delt} delt der flatetypen skifter')
@@ -921,7 +940,7 @@ def gjerder(skriv=True):
 KRONE_F = 1.1   # kartets krone (src/12: hovedklase s*0.74 + sideklaser s*0.58 ut) når ca. 1,1 * s fra stammen
 
 
-def tretopper(R, mpp=MPP, d=None):
+def tretopper(R, mpp=MPP, d=None, med_vann=False):
     """Trærne i Kartverkets DOM−DTM: vegetasjon over 2,5 m som ikke er hus (1,5 m rundt fotavtrykkene tas bort), toppene som
     lokale maksima (minst 2,5 m mellom), kronen som vannskille-regionen rundt hver topp. Gir liste med (x, y, høyde, radius)
     og kronemasken."""
@@ -933,7 +952,8 @@ def tretopper(R, mpp=MPP, d=None):
     hus = maske(hus_polygoner(d), R, mpp)
     r = int(round(1.5 / mpp)); hus = cv2.dilate(hus, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1)))
     ns = cv2.GaussianBlur(n, (0, 0), 0.8 / mpp)
-    krone = (ns > 2.5) & (hus == 0)
+    vann = maske([w['p'] for w in d['vann'] if w.get('p')], R, mpp)
+    krone = (ns > 2.5) & (hus == 0) & ((vann == 0) | med_vann)   # stammen står på land (med_vann: også der kartet har vann)
     krone = cv2.morphologyEx(krone.astype(np.uint8), cv2.MORPH_OPEN, np.ones((5, 5), np.uint8)) > 0
     topp = peak_local_max(np.where(krone, ns, 0), min_distance=int(2.5 / mpp), threshold_abs=3.0, labels=krone.astype(int))
     mk = np.zeros(n.shape, np.int32)
@@ -944,6 +964,38 @@ def tretopper(R, mpp=MPP, d=None):
     for i, (rr, cc) in enumerate(topp, 1):
         ut.append((x0 + (cc + 0.5) * mpp, y1 - (rr + 0.5) * mpp, float(ns[rr, cc]), math.sqrt(areal[i] / math.pi)))
     return ut, krone
+
+
+class _Rutenett:
+    """Punktene (trestammene) i et rutenett, for å finne om det står et tre innen r m."""
+    def __init__(self, r):
+        self.r = r; self.c = {}
+    def _k(self, x, y): return (int(math.floor(x / self.r)), int(math.floor(y / self.r)))
+    def legg(self, x, y): self.c.setdefault(self._k(x, y), []).append((x, y))
+    def fjern(self, x, y):
+        l = self.c.get(self._k(x, y), [])
+        for i, q in enumerate(l):
+            if abs(q[0] - x) < 1e-6 and abs(q[1] - y) < 1e-6: l.pop(i); return
+    def naer(self, x, y):
+        kx, ky = self._k(x, y)
+        return any(math.hypot(q[0] - x, q[1] - y) < self.r for dx in (-1, 0, 1) for dy in (-1, 0, 1) for q in self.c.get((kx + dx, ky + dy), []))
+
+
+def _ledig_vegetasjon(veg, R, mpp, x, y, maks, opptatt):
+    """Nærmeste vegetasjonspiksel (0,5 m inn fra kanten) innen maks m fra (x, y) uten tre innen 2,5 m. None hvis ingen."""
+    x0, y0, x1, y1 = R
+    c0 = max(0, int((x - maks - x0) / mpp)); c1 = min(veg.shape[1], int((x + maks - x0) / mpp) + 1)
+    r0 = max(0, int((y1 - y - maks) / mpp)); r1 = min(veg.shape[0], int((y1 - y + maks) / mpp) + 1)
+    if c1 <= c0 or r1 <= r0: return None
+    sub = cv2.erode(veg[r0:r1, c0:c1], np.ones((5, 5), np.uint8))   # 0,5 m inn fra kanten av kronen
+    yy, xx = np.nonzero(sub)
+    if not len(yy): return None
+    X = x0 + (c0 + xx + 0.5) * mpp; Y = y1 - (r0 + yy + 0.5) * mpp
+    dd = np.hypot(X - x, Y - y); o = np.argsort(dd)
+    for k in o[::3]:
+        if dd[k] > maks: break
+        if not opptatt.naer(X[k], Y[k]): return (float(X[k]), float(Y[k]))
+    return None
 
 
 def vegetasjon(R, mpp=MPP, d=None):
@@ -974,6 +1026,8 @@ def traer(skriv=True, maks_flytt=12.0):
     d = datalag.alle(); dom = domene(); R = ramme(dom); mpp = MPP
     T = datalag.les('traer')
     topper, _ = tretopper(R, mpp, d)
+    vtopp = np.array([[a, b] for a, b, _, _ in tretopper(R, mpp, d, med_vann=True)[0]])
+    ekte = lambda t: len(vtopp) and np.hypot(vtopp[:, 0] - t[0], vtopp[:, 1] - t[1]).min() <= 1.0   # topp i DOM−DTM, også der kartet har vann
     veg = vegetasjon(R, mpp, d)
     dist, lab = cv2.distanceTransformWithLabels(1 - veg, cv2.DIST_L2, 5, labelType=cv2.DIST_LABEL_PIXEL)
     yy, xx = np.nonzero(veg); naer = np.zeros((lab.max() + 1, 2), np.int32); naer[lab[yy, xx]] = np.stack([yy, xx], 1)
@@ -993,25 +1047,36 @@ def traer(skriv=True, maks_flytt=12.0):
     ri, ci = linear_sum_assignment(C2)
     kobling = {idx[a]: b for a, b in zip(ri, ci) if C2[a, b] < 1e6}
     tall = {'topp': 0, 'til_vegetasjon': 0, 'krone': 0, 'for_langt': 0}; liste = []
+    opptatt = _Rutenett(2.5)
+    for i in idx: opptatt.legg(T[i][0], T[i][1])
     for i in idx:
         t = T[i]; rec = {'i': i, 'fra': [t[0], t[1]], 's': t[2]}
         if i in kobling:
             x, y, h, rad = topper[kobling[i]]
             rec.update(topp=[round(x, 2), round(y, 2)], hoyde=round(h, 1), radius=round(rad, 2))
-            if math.hypot(x - t[0], y - t[1]) > 0.7: t[0], t[1] = round(x, 1), round(y, 1); tall['topp'] += 1
+            if math.hypot(x - t[0], y - t[1]) > 0.7:
+                opptatt.fjern(t[0], t[1]); t[0], t[1] = round(x, 1), round(y, 1); opptatt.legg(t[0], t[1]); tall['topp'] += 1
             if t[2] and rad > 1.3 * 1.15 * t[2]: t[2] = round(min(rad / 1.15, 9.0), 2); tall['krone'] += 1
         else:
             r, c = rc(t[0], t[1]); dv = dist[r, c] * mpp; rec['avstand_veg'] = round(float(dv), 2)
-            i_vann = vann[r, c] > 0
+            i_vann = vann[r, c] > 0 and not ekte(t)
             if 1.0 < dv <= maks_flytt or (i_vann and dv <= 2 * maks_flytt):
-                nr, nc = naer[lab[r, c]]; vx, vy = xy(nr, nc)
-                ux, uy = vx - t[0], vy - t[1]; l = math.hypot(ux, uy) or 1
-                t[0], t[1] = round(vx + ux / l * 0.5, 1), round(vy + uy / l * 0.5, 1); tall['til_vegetasjon'] += 1
+                # nærmeste vegetasjon der det ikke står et tre fra før (minst 2,5 m mellom stammene), så trærne ikke stables i kanten
+                plass = _ledig_vegetasjon(veg, R, mpp, t[0], t[1], dv + 3.0, opptatt)
+                if plass is None:
+                    nr, nc = naer[lab[r, c]]; vx, vy = xy(nr, nc); ux, uy = vx - t[0], vy - t[1]; l = math.hypot(ux, uy) or 1
+                    plass = (vx + ux / l * 0.5, vy + uy / l * 0.5)
+                opptatt.fjern(t[0], t[1]); t[0], t[1] = round(plass[0], 1), round(plass[1], 1); opptatt.legg(t[0], t[1])
+                tall['til_vegetasjon'] += 1
             elif i_vann:   # i vollgraven/elva og ingen vegetasjon innen 2 x maks_flytt: ikke et tre (mørkt, kornete vann lest som krone)
                 rec['fjernet'] = True; tall['fjernet_vann'] = tall.get('fjernet_vann', 0) + 1
             elif dv > maks_flytt:
                 tall['for_langt'] += 1; rec['for_langt'] = True
         r, c = rc(t[0], t[1])
+        if 0 <= r < H and 0 <= c < W and vann[r, c] and 'topp' not in rec and not rec.get('fjernet') and not ekte(t):
+            # landet i vannkanten: inn på nærmeste land
+            nr, nc = naer_land[lab_l[r, c]]; vx, vy = xy(nr, nc); ux, uy = vx - t[0], vy - t[1]; l = math.hypot(ux, uy) or 1
+            t[0], t[1] = round(vx + ux / l * 0.5, 1), round(vy + uy / l * 0.5, 1); r, c = rc(t[0], t[1])
         if [t[0], t[1]] != rec['fra'] and 0 <= r < H and 0 <= c < W: t[3] = round(float(max(0.0, th[r, c])), 2)
         rec['til'] = [t[0], t[1]]
         liste.append(rec)
