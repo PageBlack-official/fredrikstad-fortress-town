@@ -11,7 +11,7 @@ else: linjer.append('- alle animerte flytt bruker glid/glidUt')
 if 'map.doubleClickZoom.disable()' not in src: ok = False; linjer.append('- MapLibres dobbeltklikk-zoom (300 ms, bråstopp) er ikke slått av')
 else: linjer.append('- dobbeltklikk-zoom er vår egen (800 ms, glid)')
 # 29.10 (oppdrag 15): tidene står i én modul (15_bevegelse.js, BEV); ingen kameraflytt med egne tall utenom introen (SPIN)
-tall = [l.strip()[:90] for l in src.split('\n') if re.search(r'\.(easeTo|panBy|flyTo)\(', l) and re.search(r'duration:\s*\d', l)]
+tall = [l.strip()[:90] for l in src.split('\n') if re.search(r'\.(easeTo|panBy|flyTo)\(', l) and re.search(r'duration:\s*[1-9]', l)]   # duration:0 er et hopp per bilde (hjulfjæra), ikke en animasjon
 if tall: ok = False; linjer.append(f'- {len(tall)} kameraflytt med egen varighet utenom BEV: ' + tall[0])
 else: linjer.append('- alle varigheter fra BEV i 15_bevegelse.js')
 myk = lambda t: 0 if t <= 0 else 1 if t >= 1 else (4 * t ** 3 if t < 0.5 else 1 - (-2 * t + 2) ** 3 / 2)
