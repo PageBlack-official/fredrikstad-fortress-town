@@ -1,6 +1,6 @@
 # Regelrapport
 
-Kilde: 54e5bc7+urettet versjon 34 kjørt 2026-10-29 17:34
+Kilde: c641f86 versjon 34 kjørt 2026-10-29 17:35
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 0 skjult med grunn)
 - OK   02_hoyder_maalt  (205 hus står med Kartverkets målte høyde; 0 avviker; 113 hus uten sikker måling beholder tegning/OSM)
