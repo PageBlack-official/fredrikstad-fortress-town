@@ -133,34 +133,12 @@ def gi_id():
 # ---- parkering ----
 def parkering():
     """data/parkering.json: én post per plass i kommunens lag 1 innenfor området. id = parkering-1-<OBJECTID> (kommunens nøkkel, samme
-    som rapport/poi/steder.json). Flaten (p) er målt i ortofotoet (kilder/parkering-flater.json, nøkkel = id); uten målt flate er
+    som rapport/poi/steder.json). Selve parkeringen lages av verktoy/parkering.py lag (flater fra kilder/flater-maalt.json og kilder/parkering-maalt.json); uten målt flate er
     posten et punkt (x, y) og tegnes ikke på bakken."""
-    k = json.load(open(os.path.join(ROT, 'kilder', 'parkering-kommunen.json'), encoding='utf8'))
-    maalt = json.load(open(os.path.join(ROT, 'kilder', 'flater-maalt.json'), encoding='utf8')); flater = maalt['parkering']
-    kode = lambda felt, v: None if v is None else k['koder'].get(felt, {}).get(str(v), v)
-    x0, y0, x1, y1 = OMRAADE; ut = []
-    for f in k['lag']['plasser']:
-        p = f['properties']; x, y = datalag.til_modell(*f['geometry']['coordinates'])
-        if not (x0 <= x <= x1 and y0 <= y <= y1):
-            continue
-        pid = f"parkering-1-{p['OBJECTID']}"
-        post = {'id': pid, 'navn': p.get('NAVN'), 'x': round(x, 1), 'y': round(y, 1), 'type': kode('TYPE', p.get('TYPE')),
-                'antall': p.get('ANTALL'), 'pris': kode('PRIS', p.get('PRIS')), 'elbil': kode('ELBIL', p.get('ELBIL')),
-                'automat': p.get('AUTOMATNR'), 'easypark': kode('EASYPARK', p.get('EASYPARK')), 'merknad': p.get('KOMMENTAR'),
-                'lenke': p.get('LENKE'), 'kilde': 'Fredrikstad kommune, TekniskDrift/Parkering lag 1', 'hentet': k['hentet']}
-        fl = flater.get(pid)
-        if fl:
-            post['p'] = fl['p'] if 'p' in fl else rad(fl['linje'], fl['bredde']); post['flate'] = fl.get('flate', 'asfalt'); post['maalt'] = fl.get('grunn', 'ortofoto 2024')
-        elif pid in maalt.get('uten_flate', {}):
-            post['uten_flate'] = maalt['uten_flate'][pid]
-        ut.append({a: b for a, b in post.items() if b is not None})
-    ukjente = set(flater) - {u['id'] for u in ut}
-    if ukjente:
-        raise SystemExit(f'flater målt for plasser som ikke finnes i kommunens lag: {sorted(ukjente)}')
-    ut.sort(key=lambda u: int(u['id'].split('-')[-1]))
-    with open(os.path.join(ROT, 'data', 'parkering.json'), 'w', encoding='utf8') as f:
-        f.write('[\n' + ',\n'.join(json.dumps(u, ensure_ascii=False, separators=(',', ':')) for u in ut) + '\n]\n')
-    print(len(ut), 'plasser,', sum(1 for u in ut if 'p' in u), 'med målt flate')
+    # parkeringen eies av verktoy/parkering.py (29.10: kategori, regler, antall «ukjent» med kilde, flater fra parkering-maalt.json også)
+    import parkering as _parkering
+    _parkering.lag()
+    maalt = json.load(open(os.path.join(ROT, 'kilder', 'flater-maalt.json'), encoding='utf8'))
     # andre bakkeflater målt i ortofotoet (grus, heller, asfalt): nye objekter med fast id (fl-N), aldri gjenbrukt
     fl = [{**x, 'kilde': 'målt i ortofoto 2024 (kilder/flater-maalt.json)'} for x in maalt['flater']]
     ids = [x['id'] for x in fl]

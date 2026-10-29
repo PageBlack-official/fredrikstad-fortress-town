@@ -31,3 +31,5 @@ rapport/bygg/_arbeid/
 # kvartaltegningene (Dropbox, åndsverk) og arbeidsfilene til kvartal-QA: bare lokalt (28.10)
 kilder/kvartal-ai/
 rapport/kvartal-qa/_arbeid/
+# parkering og statue: ortofotoversjonen av kontrollarket bare lokalt (29.10)
+rapport/torvet/*.jpg

@@ -1,7 +1,7 @@
 {
 "kilde": "Fredrikstad kommune ArcGIS TekniskDrift/Parkering",
 "url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer",
-"hentet": "2026-10-28",
+"hentet": "2026-10-29",
 "lisens": "Ikke oppgitt i tjenesten (data.norge.no: «ingen vilkår»); bekreft med kart@fredrikstad.kommune.no",
 "lag": {
 "automater": [

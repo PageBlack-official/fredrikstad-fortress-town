@@ -38,37 +38,3 @@
   flatGruppe(g); city.add(g);
 });
 // voller: tegnes nå som terreng (se festningsterrenget)
-// Fredrik II på Torvet, som i trykkfila: mørk sokkel i trinn, høy blokk med gesims, kongen i lys patina
-(DATA.statue||[]).forEach(st=>{
-  const g=new THREE.Group(); const [x,y]=st.xy;
-  const STEIN=[148,152,156], STEIN_S=[68,68,72], PATINA=[208,232,212], PATINA_S=[156,168,160];
-  const M=(f,sk)=>mat(f,false,sk,{ds:true});
-  const boks=(w,h,d,y0,f,sk,dx=0,dz=0)=>{ const ge=new THREE.BoxGeometry(w,h,d); const m=new THREE.Mesh(ge,M(f,sk)); m.position.set(dx,y0+h/2,dz); m.castShadow=true; g.add(m); return m; };
-  const del=(geo,px,py,pz,f=PATINA,sk=PATINA_S)=>{ const m=new THREE.Mesh(geo,M(f,sk)); m.position.set(px,py,pz); m.castShadow=true; g.add(m); return m; };
-  // sokkel
-  boks(3.6,0.45,3.6,0,STEIN,STEIN_S); boks(3.0,0.45,3.0,0.45,STEIN,STEIN_S);
-  boks(2.6,0.35,2.6,0.9,STEIN,STEIN_S);
-  boks(2.1,3.1,2.1,1.25,STEIN,STEIN_S);                       // høy blokk
-  boks(1.5,1.2,0.06,2.2,[118,122,126],[58,58,62],0,1.08);       // innfelt tavle
-  boks(2.5,0.35,2.5,4.35,STEIN,STEIN_S); boks(2.15,0.3,2.15,4.7,STEIN,STEIN_S);
-  boks(1.5,0.25,1.5,5.0,PATINA,PATINA_S);                      // bronseplate
-  // kongen, ca. like høy som sokkelen (som i tegningen)
-  const k=new THREE.Group(); g.add(k); const sy=5.25;
-  const kd=(geo,px,py,pz)=>{ const m=new THREE.Mesh(geo,M(PATINA,PATINA_S)); m.position.set(px,py,pz); m.castShadow=true; k.add(m); return m; };
-  kd(new THREE.CylinderGeometry(0.2,0.17,1.9,8), -0.24,sy+0.95,0.05);           // bein
-  kd(new THREE.CylinderGeometry(0.2,0.17,1.9,8),  0.26,sy+0.95,-0.12);
-  kd(new THREE.CylinderGeometry(0.62,0.42,1.1,10), 0,sy+2.15,0);               // skjørt/rustning
-  kd(new THREE.CylinderGeometry(0.55,0.6,1.25,10), 0,sy+3.2,0);                // overkropp
-  const kappe=kd(new THREE.CylinderGeometry(0.62,0.95,2.6,10,1,true,Math.PI*0.65,Math.PI*0.7), 0,sy+2.55,0); // kappe bak
-  kd(new THREE.CylinderGeometry(0.28,0.3,0.25,8), 0,sy+3.95,0);               // krage
-  kd(new THREE.SphereGeometry(0.36,12,10), 0,sy+4.35,0.02);                     // hode
-  kd(new THREE.CylinderGeometry(0.5,0.5,0.1,12), 0,sy+4.68,0);                  // hattebrem
-  kd(new THREE.CylinderGeometry(0.3,0.34,0.32,10), 0,sy+4.88,0);                // hatt
-  const arm1=kd(new THREE.CylinderGeometry(0.16,0.14,1.25,8), 0.7,sy+3.05,0.15); arm1.rotation.z=0.55;   // arm i siden
-  const arm2=kd(new THREE.CylinderGeometry(0.16,0.14,1.3,8), -0.66,sy+2.95,0.2); arm2.rotation.z=-0.25;
-  const sverd=kd(new THREE.BoxGeometry(0.1,2.1,0.1), -0.9,sy+1.55,0.35); sverd.rotation.z=-0.12;             // sverd mot bakken
-  kd(new THREE.BoxGeometry(0.55,0.08,0.12), -0.83,sy+2.45,0.35);
-  k.rotation.y=0.7;  // vender mot torget og betrakteren i startvinkelen
-  g.scale.setScalar(1.3);  // tegningen gjør statuen tydelig større enn virkeligheten
-  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:'Torvet'}}; flatGruppe(g); city.add(g);
-});
