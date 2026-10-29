@@ -152,10 +152,10 @@ kaller den samme koden.
     python3 verktoy/parkering.py lag        data/parkering.json
     python3 verktoy/parkering.py ark [orto] rapport/torvet/parkering.png (orto: på ortofotoet, bare lokalt)
 
-Statuen er Frederik II (Wilhelm Rasmussen, bronse, 1917). data/statue.json har plass, retning (kompassgrader), sokkelleddene og
-figurhøyden med kilder; src/20_statuen-paa-torvet.js tegner bare det dataene sier (sokkel som stabel av kvadratiske ledd, figuren i
+Statuen er Frederik II (Wilhelm Rasmussen, bronse, 1917); i Tamburparken står «Sittende pike» (Arne Durban, 1957–58). data/statue.json har
+plass, retning (kompassgrader), sokkelleddene, figurens form og høyde med kilder (poster med tegnes:false har bare kommunens punkt); src/20_statuen-paa-torvet.js tegner bare det dataene sier (sokkel som stabel av kvadratiske ledd, figuren i
 platerustning med kommandostav og hånd i siden). `visningsskala` i dataene er 1 (virkelig størrelse; før 29.10 stod den på 1,3 som i
-tegningen). Kontrollark: `python3 verktoy/statue_ark.py` (fire vinkler mot referanseprofilen). Regel 21 og 22 passer på dette.
+tegningen). Kontrollark: `python3 verktoy/statue_ark.py` (fire vinkler mot referanseprofilen, ett ark per skulptur). Regel 21 og 22 passer på dette.
 
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
