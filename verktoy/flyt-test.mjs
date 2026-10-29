@@ -3,8 +3,8 @@
 // så målingene er kontinuitet (hopp, rykk, bråstopp, ankerpunkt som glipper), ikke bildefrekvens. Bildefrekvens må måles i ekte Chrome
 // (tast d i kartet, «siste bevegelse … bilder/s»).
 // Bruk: node verktoy/flyt-test.mjs <index.html> <ut.json> [scenario ...]   (FLYT_TEGN=1: tegn byen også; standard er ?tegn=0, bare kameraet)
-// Måles på skjermen: fem faste bakkepunkter i byen projiseres med kartets egen projeksjon (map.project) hvert bilde;
-// forflytningen per bilde er den største av dem (dekker flytt, zoom og rotasjon).
+// Måles på skjermen: for ni faste skjermpunkter, hvor langt bakken under dem flyttet seg siden forrige bilde (kartets egen projeksjon);
+// den største av dem er bildets bevegelse (dekker flytt, zoom og rotasjon). Fem faste bakkepunkter brukes til «står kameraet der det stod».
 import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, utfil, ...valgte] = process.argv; const dir = path.dirname(file);
@@ -30,8 +30,13 @@ async function aapne({ mobil = false, skip = true, ekstra = '', redusert = false
     function maplibregl0() { const c = map.getCenter(); const m = window.__kam(); return { ll: (x, y) => { // lengde/bredde fra modellmeter via skjermen: bruk tilLngLat om den finnes
       if (window.__tilLngLat) return window.__tilLngLat(x, y);
       const R = 6378137, lat0 = 59.202835 * Math.PI / 180; return { lng: 10.952745 + x / (R * Math.cos(lat0)) * 180 / Math.PI, lat: 59.202835 + y / R * 180 / Math.PI }; } }; }
+    // bevegelsen slik øyet ser den: for ni faste skjermpunkter (tre rader under horisonten), hvor langt har bakken som lå under dem i
+    // forrige bilde, flyttet seg på skjermen nå? Alltid i bildet, uansett zoom, flytt eller rotasjon.
+    const W = innerWidth, H = innerHeight, S = []; for (const fy of [0.35, 0.6, 0.85]) for (const fx of [0.15, 0.5, 0.85]) S.push([W * fx, H * fy]);
+    let forrige = null;
+    window.__flyt = () => { let m = 0; if (forrige) forrige.forEach((ll, i) => { const q = map.project(ll); m = Math.max(m, Math.hypot(q.x - S[i][0], q.y - S[i][1])); }); forrige = S.map(s => map.unproject(s)); return m; };
     window.__prove = () => { const k = document.getElementById('kort'); const r = k.getBoundingClientRect(); const cs = getComputedStyle(k);
-      return { t: performance.now(), p: window.__ref.map(ll => { const s = map.project(ll); return [s.x, s.y]; }), z: map.getZoom(), b: map.getBearing(), pi: map.getPitch(),
+      return { t: performance.now(), fl: window.__flyt(), p: window.__ref.map(ll => { const s = map.project(ll); return [s.x, s.y]; }), z: map.getZoom(), b: map.getBearing(), pi: map.getPitch(),
         mv: map.isMoving(), kort: { vis: k.classList.contains('vis'), top: r.top, left: r.left, bunn: r.bottom, h: r.height, w: r.width, op: +cs.opacity },
         sol: window.__solvei ? window.__solvei() : null, intro: window.__kam().intro }; };
     // kortets overganger: hver gang klassen endres, leses animasjonene (getAnimations tvinger stilen, så overgangen finnes alt)
@@ -45,7 +50,9 @@ async function kjor(page, ms, logg) { const n = Math.round(ms / BILDE); for (let
 // punkter langt utenfor bildet (nær horisonten) teller ikke: der blir én meter tusenvis av piksler
 let VP = { width: 900, height: 560 };
 const inne = p => p[0] > -VP.width * 0.5 && p[0] < VP.width * 1.5 && p[1] > -VP.height * 0.5 && p[1] < VP.height * 1.5;
-const flytt = (a, b) => Math.max(0, ...a.p.map((p, i) => inne(p) && inne(b.p[i]) ? Math.hypot(p[0] - b.p[i][0], p[1] - b.p[i][1]) : 0));
+const flyttRef = (a, b) => Math.max(0, ...a.p.map((p, i) => inne(p) && inne(b.p[i]) ? Math.hypot(p[0] - b.p[i][0], p[1] - b.p[i][1]) : 0));
+// per bilde: skjermbevegelsen (fl, målt i siden mot forrige bilde); flyttRef måler mellom to vilkårlige prøver (tilbake-avvik)
+const flytt = (a, b) => a.fl;
 // én bevegelse: forflytning per bilde, topp, hopp (enkeltbilde langt over naboene), rykk (endring i fart mellom bilder / topp), bråstopp (siste fart / topp)
 function maal(logg, fra = 0, til = logg.length) {
   const d = []; for (let i = fra + 1; i < til; i++) d.push(flytt(logg[i], logg[i - 1]));
@@ -76,13 +83,13 @@ if (['klikk', 'dobbel', 'hjul', 'dra', 'avbryt', 'hjem'].some(ok)) {
     const logg2 = [k1]; const lukk = await page.$('#kort .lukk'); await lukk.click(); await kjor(page, 2400, logg2);
     const ut = maal(logg2); const kl2 = await kortLogg(page); const k2 = logg2.at(-1);
     res.scenarier.klikk = { inn, ut, kortInn: kl1, kortUt: kl2, kortSynlig: k1.kort.vis, sidepanel, kortRamme: k1.kort, husSynligVedSidenAvKortet: husSynlig, husPx: husEtter,
-      tilbakeAvvikPx: +flytt(k2, k0).toFixed(1), zoomInn: +(k1.z - k0.z).toFixed(2) };
+      tilbakeAvvikPx: +flyttRef(k2, k0).toFixed(1), zoomInn: +(k1.z - k0.z).toFixed(2) };
   }
   if (ok('klikk')) {   // Esc med kortet åpent: lukker kortet først (og speiler), ikke rett hjem
     const k0 = await page.evaluate(() => window.__prove()); const kp = await skjerm(page, ...KIRKE);
     await page.mouse.click(kp[0], kp[1]); await kjor(page, 2400); await kortLogg(page);
     const logg = [await page.evaluate(() => window.__prove())]; await page.keyboard.press('Escape'); await kjor(page, 2400, logg);
-    const k2 = logg.at(-1); res.scenarier.esc = { kortLukket: !k2.kort.vis, tilbakeAvvikPx: +flytt(k2, k0).toFixed(1), bevegelse: maal(logg) };
+    const k2 = logg.at(-1); res.scenarier.esc = { kortLukket: !k2.kort.vis, tilbakeAvvikPx: +flyttRef(k2, k0).toFixed(1), bevegelse: maal(logg) };
   }
   if (ok('dobbel')) {   // dobbeltklikk: zoomer inn mot punktet; bakkepunktet under pekeren skal bli under pekeren
     const P = [vp.width * 0.68, vp.height * 0.62]; const ll = await page.evaluate(P => map.unproject(P), P);
@@ -162,10 +169,10 @@ if (['mtrykk', 'klyp', 'mdobbel', 'ark'].some(ok)) {
   if (ok('klyp')) {   // klyp rundt midtpunktet mellom fingrene: bakkepunktet der står under fingrene
     const M = [vp.width * 0.4, vp.height * 0.45]; const ll = await page.evaluate(M => map.unproject(M), M);
     const logg = [await page.evaluate(() => window.__prove())];
-    await touch('touchStart', [[M[0] - 30, M[1]], [M[0] + 30, M[1]]]); await kjor(page, BILDE, logg);
-    for (let i = 1; i <= 10; i++) { await touch('touchMove', [[M[0] - 30 - i * 8, M[1] - i * 2], [M[0] + 30 + i * 8, M[1] + i * 2]]); await kjor(page, BILDE, logg); }
+    await touch('touchStart', [[M[0] - 70, M[1]], [M[0] + 70, M[1]]]); await kjor(page, BILDE, logg);   // fingrene 140 px fra hverandre, 6 px ut hvert bilde
+    for (let i = 1; i <= 12; i++) { await touch('touchMove', [[M[0] - 70 - i * 6, M[1] - i * 1.5], [M[0] + 70 + i * 6, M[1] + i * 1.5]]); await kjor(page, BILDE, logg); }
     await touch('touchEnd', []); await kjor(page, 1000, logg);
-    res.scenarier.klyp = { bevegelse: maal(logg), zoom: +(logg.at(-1).z - logg[0].z).toFixed(2), ankerPx: await ankerFeil(page, ll, M) };
+    res.scenarier.klyp = { zb: logg.slice(0, 16).map(l => [+l.z.toFixed(3), +l.b.toFixed(2), +l.pi.toFixed(1)]), bevegelse: maal(logg), zoom: +(logg.at(-1).z - logg[0].z).toFixed(2), ankerPx: await ankerFeil(page, ll, M) };
   }
   if (ok('mdobbel')) {   // dobbelttrykk: zoomer inn mot punktet
     await page.evaluate(() => window.__hjem && window.__hjem()); await kjor(page, 1800);

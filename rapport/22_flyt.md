@@ -1,0 +1,27 @@
+# 22_flyt: OK
+
+- ok   klikk på hus, kameraet glir inn: 912 ms, topp 57 px/bilde, hopp 0, rykk 0.2 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   lukk kortet, kameraet glir tilbake: 912 ms, topp 49.4 px/bilde, hopp 0, rykk 0.19 (<= 0.45), bråstopp 0.01 (<= 0,15)
+- ok   tilbake speiler inngangen (×): kameraet står 0 px fra der det stod før klikket (<= 2)
+- ok   Esc lukker kortet først og går samme vei ut: lukket True, 0 px fra start
+- ok   kortet glir inn og ut (ingen popp): inn transform 380 ms; ut transform 240 ms, visibility 0 ms
+- ok   desktop: sidepanel, huset synlig ved siden av: kort {'vis': True, 'top': 16, 'left': 16, 'bunn': 239, 'h': 223, 'w': 376, 'op': 1}, hus på [653.847662043436, 260.0608918851511]
+- ok   dobbeltklikk zoomer inn: 816 ms, topp 53 px/bilde, hopp 0, rykk 0.21 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   dobbeltklikk: punktet under pekeren står: glipper 0.2 px, zoom +1
+- ok   musehjul uten bråstopp: 336 ms, bråstopp 0; hvert hakk gir et utslag (MapLibres hjulzoom, rykk 1 måles ikke)
+- ok   musehjul: punktet under pekeren står: glipper 0 px, zoom +1.21
+- ok   dra og slipp: tregheten tar over farten: fart rett etter slipp / fart under dra = 0.97 (0,5–1,6), hopp 0
+- ok   hjem-glidningen kan avbrytes av et dra: etter slipp glir kameraet 0 px/bilde (<= 2), hopp 0, rundt avbruddet [3.8, 11.8, 11.8, 11.8, 11.8]
+- ok   hjem: 1312 ms, topp 82.8 px/bilde, hopp 0, rykk 0.17 (<= 0.45), bråstopp 0.01 (<= 0,15)
+- ok   introen før avbrudd: topp 9.7 px/bilde, hopp 0, rykk 0.06 (målt til avbruddet, så bråstopp gjelder ikke)
+- ok   avbrutt intro: uskarpheten toner ut, hopper ikke: største endring per bilde 0.058 (<= 0,08), rundt avbruddet [1, 1, 1, 1, 0.999, 0.998], til slutt 0
+- ok   mobil: trykk på hus, kameraet glir inn: 912 ms, topp 43.5 px/bilde, hopp 0, rykk 0.27 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   mobil: bunnark, huset over kortet: bunnark True, hus over kortet True, kort {'vis': True, 'top': 455, 'left': 16, 'bunn': 684, 'h': 229, 'w': 358, 'op': 1}
+- ok   mobil: dra kortet ned lukker det: kortet fulgte fingeren 126 px, lukket True
+- ok   mobil: tilbake (Android/nettleser) lukker kortet: historikk True, lukket True
+- ok   mobil: klyp uten hopp: hopp etter første svar [], bråstopp 0.01 (fingeren starter og stopper bevegelsen; rykk måles ikke)
+- ok   mobil: klyp zoomer rundt fingrene: glipper 0 px, zoom +1.09
+- ok   mobil: dobbelttrykk zoomer inn mot punktet: glipper 0.3 px, zoom +1
+- ok   redusert bevegelse: kortet toner, glir ikke: opacity 160 ms
+- ok   ingen JS-feil: ingen
+- Ikke målt her (må ses i ekte Chrome/telefon): bildefrekvens, styreflate-treghet fra macOS, iOS Safari-gester.
