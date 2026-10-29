@@ -141,6 +141,22 @@ med flere vinduer enn etasjen under). Fasithusene fra kvartaltegningene endres i
 kilder/streetview/hopp.json. Har gateveggen ikke plass til tallene, hoppes huset over og listes (trolig feil vegg eller feil hus).
 Rekkefølge: grunnmur.py → vinduer_regler.py → streetview_fasader.py (kjøres på nytt når omriss eller h endres).
 
+## Parkering og statuen på Torvet (29.10)
+Parkeringen er kommunens: verktoy/parkering.py lager data/parkering.json fra kommunens parkeringslag (kilder/parkering-kommunen.json),
+reglene og prisene fra kommunens sider (kilder/parkering-regler.json) og flatene målt i ortofotoet (kilder/flater-maalt.json og
+kilder/parkering-maalt.json). Hver plass får kategori (hc, el-lading, beboer, buss, bobil, avgift, tidsbegrenset) etter regler på
+kommunens type/navn/kommentar, regler i klartekst og kilde-URL. Antall skrives bare der kommunen oppgir det. verktoy/flater.py parkering
+kaller den samme koden.
+
+    python3 verktoy/parkering.py hent       kommunens lag på nytt, med liste over nye/borte/endrede plasser
+    python3 verktoy/parkering.py lag        data/parkering.json
+    python3 verktoy/parkering.py ark [orto] rapport/torvet/parkering.png (orto: på ortofotoet, bare lokalt)
+
+Statuen er Frederik II (Wilhelm Rasmussen, bronse, 1917). data/statue.json har plass, retning (kompassgrader), sokkelleddene og
+figurhøyden med kilder; src/20_statuen-paa-torvet.js tegner bare det dataene sier (sokkel som stabel av kvadratiske ledd, figuren i
+platerustning med kommandostav og hånd i siden). `visningsskala` i dataene er 1 (virkelig størrelse; før 29.10 stod den på 1,3 som i
+tegningen). Kontrollark: `python3 verktoy/statue_ark.py` (fire vinkler mot referanseprofilen). Regel 21 og 22 passer på dette.
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 

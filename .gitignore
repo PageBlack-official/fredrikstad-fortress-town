@@ -20,3 +20,5 @@ rapport/farger-tegning/*.jpg
 # kommunekartet (PDF fra kommunens kartportal) ligger bare lokalt; kontrollarkene i rapport/grunnmur viser ortofoto (29.10)
 kilder/kommunekart/*.pdf
 rapport/grunnmur/*.png
+# parkering og statue: ortofotoversjonen av kontrollarket bare lokalt (29.10)
+rapport/torvet/*.jpg

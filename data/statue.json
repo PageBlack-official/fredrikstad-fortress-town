@@ -1,3 +1,24 @@
 [
-{"xy":[15.3,41.9],"navn":"Fredrik II","tekst":"Statue av byens grunnlegger, Fredrik II – 1567 . Statuen er laget av professor W. Rasmussen."}
+{"id":"statue-frederik-ii",
+ "navn":"Frederik II",
+ "tekst":"Statue av byens grunnlegger, Fredrik II – 1567 . Statuen er laget av professor W. Rasmussen.",
+ "xy":[15.3,41.5],
+ "retning":291,
+ "billedhugger":"Wilhelm Rasmussen (1879–1965)",
+ "avduket":"1917-09-12",
+ "materiale":{"figur":"bronse, grønn patina","sokkel":"mørk polert stein (granitt), lavt trinn"},
+ "figur":{"h":2.15,"positur":"stående, i full platerustning med pipekrage og helskjegg, barhodet; høyre hånd holder kommandostaven nesten i skulderhøyde ut til siden, staven på skrå ned foran kroppen mot magen; venstre hånd i siden (albuen ut); sverd i balle ved venstre hofte, slira ned bak venstre bein; bandolær fra høyre skulder til venstre hofte; pung ved venstre hofte; hodet litt vendt mot hans høyre"},
+ "sokkel":[
+  {"del":"trinn","b":2.0,"h":0.15},
+  {"del":"fotblokk","b":1.33,"h":0.18},
+  {"del":"plint","b":1.13,"h":0.36},
+  {"del":"fotlist","b":1.13,"b2":0.95,"h":0.18},
+  {"del":"skaft","b":0.92,"h":1.16,"front":"kronet riksvåpen over innskriften FREDERIK II"},
+  {"del":"gesimslist","b":0.95,"b2":1.15,"h":0.12},
+  {"del":"gesims","b":1.15,"h":0.15},
+  {"del":"bronseplate","b":0.78,"h":0.15}
+ ],
+ "visningsskala":1.0,
+ "sikkerhet":"plass ±0,5 m og retning ±3° fra ortofoto 2024; mål ±10 % (forholdstall fra kommunens foto, målestokk fra personer ved sokkelen i nb.no-foto 1969, kontrollert mot skyggelengden i ortofotoet)",
+ "kilder":["https://nkl.snl.no/Wilhelm_Rasmussen","https://arcgis.fredrikstad.kommune.no/server/rest/services/Kulturetaten/Skulptur/MapServer/0 (OBJECTID 4924)","https://digitaltmuseum.no/021018128815","https://digitaltmuseum.no/021018128816","https://www.nb.no/items/URN:NBN:no-nb_digifoto_NF_W_37173","https://www.nb.no/items/URN:NBN:no-nb_digifoto_20170109_00028_NB_MIT_FNR_26062","kilder/ortofoto-2024"]}
 ]

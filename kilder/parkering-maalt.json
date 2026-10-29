@@ -1,0 +1,45 @@
+{
+ "_merknad": "Parkeringsflater målt for hånd i ortofoto 2024 (kilder/ortofoto-2024, utsnitt 30 x 30 m med 2 m rutenett, 0,0625 m/px) for plassene i kommunens lag som ikke har flate i kilder/flater-maalt.json. Samme format: «linje» = senterlinje gjennom en rad biler + «bredde» (2,5 = langsparkering, 5 = vinkelparkering), modellmeter. ±1,5 m. «uten_flate» = plasser som ikke kan måles, med grunn. «samme_rad» = punkter som står i en rad som er målt for en annen plass (kommunen har flere punkter i samme rad). Målt 29.10.2026 av Claude (torvet). Flater i kilder/flater-maalt.json går foran (den fila eies av bakkeflate-arbeidet).",
+ "parkering": {
+  "parkering-1-3601": {"linje": [[470.8, -202.0], [472.6, -192.0]], "bredde": 5, "flate": "asfalt", "grunn": "ortofoto 2024: to biler i vinkelparkering vest for den store plassen ved Kongstenhallen, 4 HC-plasser (kommunen)"},
+  "parkering-1-4614": {"linje": [[75.3, 124.8], [84.5, 141.0]], "bredde": 2.5, "flate": "gate", "grunn": "ortofoto 2024: fire biler på rad langs husveggen i Kirkegaten; raden kan fortsette nord for utsnittet"},
+  "parkering-1-4613": {"linje": [[106.5, 168.5], [114.0, 184.5]], "bredde": 2.5, "flate": "gate", "grunn": "ortofoto 2024: tre biler på rad i skyggen langs husveggen i Kirkegaten"},
+  "parkering-1-15549": {"linje": [[165.2, -13.5], [158.8, -28.0]], "bredde": 5, "flate": "grus", "grunn": "ortofoto 2024: fire biler i vinkelparkering langs grøntkanten i Voldgaten"},
+  "parkering-1-4627": {"linje": [[97.0, 9.8], [112.0, 5.8]], "bredde": 2.5, "flate": "gate", "grunn": "ortofoto 2024: tre biler på rad på sørsiden av Torvgaten"},
+  "parkering-1-4621": {"linje": [[35.5, -108.3], [52.5, -112.8]], "bredde": 2.5, "flate": "gate", "grunn": "ortofoto 2024: to biler på rad på nordsiden av Tøihusgaten"},
+  "parkering-1-4640": {"linje": [[76.5, 13.0], [68.5, -2.5]], "bredde": 2.5, "flate": "gate", "grunn": "ortofoto 2024: to biler (en varebil) på rad i Raadhusgaten; kommunen oppgir 9 plasser, så raden er trolig lengre mot sør-sørvest enn det som er målt"},
+  "parkering-1-4623": {"linje": [[-9.0, -21.5], [9.0, -28.0]], "bredde": 2.5, "flate": "gate", "grunn": "ortofoto 2024: tre biler på rad langs husveggen i Kasernegaten"}
+ },
+ "samme_rad": {
+  "parkering-1-15546": {"rad": "parkering-1-4623", "grunn": "HC-plass i samme rad i Kasernegaten (kommunens punkt 1 m fra 4623); hvilken plass i raden er ukjent"},
+  "parkering-1-15547": {"rad": "parkering-1-4640", "grunn": "beboerpunkt i samme rad i Raadhusgaten (2 m fra 4640)"}
+ },
+ "uten_flate": {
+  "parkering-1-4521": "Cicignon, ved Cicignongata: én bil langs fortauet ved punktet; radens lengde og antall plasser er ikke oppgitt",
+  "parkering-1-4522": "Cicignongata (8): ingen biler ved punktet i ortofotoet, plasseringen av raden er ukjent",
+  "parkering-1-4531": "Cicignongate HC (3): ingen biler eller oppmerking ved punktet",
+  "parkering-1-4596": "beboerparkering i Cicignon: gaten ligger i skygge, biler kan ikke telles",
+  "parkering-1-4597": "beboerparkering i Cicignon: biler i sidegata, men ikke en rad som kan knyttes til punktet",
+  "parkering-1-4603": "Kirkegaten HC (1): under trekronene ved kirka, som Kirkegaten (4601)",
+  "parkering-1-4604": "Kirkegaten/Tøihusgaten: én bil i skyggen fra huset, radens lengde ukjent",
+  "parkering-1-4605": "Kirkegaten/Tøihusgaten: gaten ligger i skygge ved punktet; én varebil 6 m nordvest",
+  "parkering-1-4609": "Torvgaten HC: ingen bil ved punktet; plassen ligger trolig vest i raden langs Torvgaten (4627)",
+  "parkering-1-4612": "Toldbodgaten beboer: grusvei under trær, ingen biler i ortofotoet",
+  "parkering-1-4615": "Toldbodgaten beboer: åpen grusflate ved båtopplaget, ingen biler",
+  "parkering-1-4616": "Kasernegaten beboer: én bil under trærne vest for Kaserna, radens lengde ukjent",
+  "parkering-1-4619": "Kasernegaten beboer: under trekronene, ingen biler synlige",
+  "parkering-1-4631": "For beboere med p-kort (Cicignon): punktet står på en gressflate; plassene kan ikke ses",
+  "parkering-1-4656": "Strandpromenaden/Tolboden (egner seg for buss): ingen biler, ingen oppmerking ved punktet i april",
+  "parkering-1-9140": "Heibergskrysset el-bil (4): punktet står i trekronene i kanten av Kongsten-plassen; ladeplassene kan ikke ses",
+  "parkering-1-10740": "Voldgaten HC: åpen plass ved punktet, ingen bil",
+  "parkering-1-11397": "Strandpromenaden HC: lys asfaltflate ved punktet, men ingen biler eller oppmerking som viser plassene",
+  "parkering-1-12022": "Heibergskrysset el-bil (4): ved enden av Kongsten-plassen, én bil, ladeplassene kan ikke skilles ut",
+  "parkering-1-12380": "Skolegata (30 min): ingen biler ved punktet",
+  "parkering-1-15543": "Carsten Ankers gate beboer: ingen biler langs veien",
+  "parkering-1-15544": "Carsten Ankers gate beboer: ingen biler langs veien",
+  "parkering-1-15545": "General Ohmes vei beboer: ingen biler langs veien",
+  "parkering-1-15942": "Laboratoriegaten: én bil på grusveien, plassene langs veien kan ikke skilles ut",
+  "parkering-1-15943": "General Ohmes vei beboer: én bil i innkjørselen, ikke på veien",
+  "parkering-1-15944": "General Ohmes vei beboer: ingen biler langs veien"
+ }
+}

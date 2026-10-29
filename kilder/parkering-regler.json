@@ -1,0 +1,22 @@
+{
+ "_merknad": "Regler og priser for parkering i og ved Gamlebyen, skrevet av fra kommunens nettsider 29.10.2026 (ordrett der det står i anførselstegn). Brukes av verktoy/parkering.py til feltet «regler» og «pris» i data/parkering.json. Kommunens lag (kilder/parkering-kommunen.json) har PRIS-koder som ikke er oppdatert til 2026-prisene (grønn 30, rød 62); sidene under går foran. Skiltene på stedet går foran alt (kommunen: «Det er alltid skiltene som opplyser om hvilke regler som gjelder der du parkerer»).",
+ "hentet": "2026-10-29",
+ "kilder": {
+  "gamlebyen": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-gamlebyen/",
+  "priser": "https://www.fredrikstad.kommune.no/tjenester/parkering/parkering-i-sentrum/",
+  "avtaleparkering": "https://www.fredrikstad.kommune.no/tjenester/parkering/avtaleparkering-soneparkering/",
+  "bobil": "https://www.fredrikstad.kommune.no/tjenester/parkering/baat-og-bobilparkering/",
+  "kart": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer"
+ },
+ "soner": {
+  "grønn": {"pris": "31 kr per time (fra 01.01.2026), søndag gratis", "avgiftstid": "mandag–fredag kl. 08–18, lørdag kl. 08–15, søndag gratis", "kilde": "priser"},
+  "rød": {"pris": "64 kr per time (fra 01.01.2026)", "avgiftstid": "kl. 08–18 (08–15) etter kommunens lag; skiltet gjelder", "kilde": "priser"}
+ },
+ "sesong": {"tekst": "Gamlebyen: grønn sone 01.09.–31.05., rød sone 01.06.–31.08. (kommunens lag, KOMMENTAR på plassene med takstsone 1240)", "kilde": "kart"},
+ "kongsten": {"tekst": "«På den store parkeringsplassen langs Gamlebyveien er det tre timer gratis parkering mot registrering av bilens registreringsnummer på P-automat, Fredrikstad P app eller EasyPark app. Deretter er det parkering mot avgift i henhold til grønn sone for gateparkering.»", "kilde": "gamlebyen"},
+ "beboer": {"tekst": "Beboere og næringsdrivende med avtaleparkering i Gamlebyen kan fra 7. juli 2023 også stå på kommunale avgiftsplasser i Gamlebyen. Avtale: 1600 kr per år (beboer), 2690 kr (næring/håndverker). Gamlebyen er «parkering forbudt»-sone: bare lov å parkere på plasser skiltet med P.", "kilde": "avtaleparkering"},
+ "betaling": {"tekst": "Automat (mynt/kort), Fredrikstad P-appen eller EasyPark. «Bruker du EasyPark-appen, må du betale 15 prosent ekstra for parkeringen.»", "kilde": "gamlebyen"},
+ "mc": {"tekst": "Egne plasser for tohjulinger på gateplan er gratis; moped/MC på biloppstillingsplass betaler.", "kilde": "gamlebyen"},
+ "bobil": {"tekst": "Kommunen har ingen bobilplass i Gamlebyen. Nærmeste: Aktivitetsbyen Gamle Fredrikstad på Kongsten (Torsnesveien 16/18, privat camping, 100 plasser for bobil/campingvogn/telt) og Seiersten grusplass (10 bobilplasser, 166 kr per døgn).", "kilde": "bobil"},
+ "easypark": {"tekst": "Områdekodene (1215, 1230, 1240, 1241) står i kommunens lag (feltet EASYPARK). EasyParks eget soneregister er ikke åpent tilgjengelig (bare i appen og kartet på easypark.no, som kommunesiden lenker til); kodene er derfor ikke kontrollert mot EasyPark selv.", "kilde": "gamlebyen"}
+}
