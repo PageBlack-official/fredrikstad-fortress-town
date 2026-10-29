@@ -23,4 +23,24 @@ for i, x in enumerate(b):
         god = p90 >= kropp + 3 and abs(d['h'] - mk) <= 4
         ok = ok and god
         linjer.append(f"- bygg {i} ({x.get('navn')}) del {k}: h {d['h']}, målt topp {mk:.1f}, p90 i delen {p90:.1f}, kropp p50 {kropp:.1f} → {'ok' if god else 'FEIL'}")
-rapport('13_deler_staar_paa_topp', ok, linjer or ['- ingen deler å sjekke'])
+linjer = linjer or ['- ingen deler å sjekke']
+
+# Piper og arker står på taket (29.10, Vegar: «pipene skal plasseres på toppen av taket»; arker sto på −2,08 m og 0,52 m):
+# fotpunktet skal ligge på takflaten (h + t·th, ±0,3 m) og inne i husets omriss. datalag.hoyden_styrer regner høyden fra taket.
+import sys as _s; _s.path.insert(0, ROT); import datalag
+from shapely.geometry import Polygon as _P, Point as _Pt
+feil = []; n = 0
+for x in b:
+    if x.get('skjul') or not x.get('gml'): continue
+    for felt in ('piper', 'arker'):
+        for q in x.get(felt) or []:
+            n += 1; t = datalag.tak_t(x, q[0], q[1])
+            th = x.get('th', 0.82); cap = 7.5 * th / 0.82 if not x.get('tak2') else 1e9
+            mal = x['h'] + min(t * th, cap) if t is not None else None
+            inne = _P(x['p']).buffer(0.3).contains(_Pt(q[0], q[1]))
+            if not inne or q[2] < x['h'] - 0.05 or (mal is not None and abs(q[2] - mal) > 0.3):
+                feil.append(f"- {x['id']} ({x.get('navn')}) {felt[:-1]} i ({q[0]}, {q[1]}): z {q[2]}, h {x['h']}, tak {mal if mal is None else round(mal, 2)}, inne {inne}")
+ok = ok and not feil
+linjer.append(f"- piper og arker: {n} sjekket, {len(feil)} står ikke på taket")
+linjer += feil[:60]
+rapport('13_deler_staar_paa_topp', ok, linjer)

@@ -102,16 +102,59 @@ def alle(raa=False):
     return hoyden_styrer(legg_paa_rettelser(data, rettelser), grunn)
 
 
+def tak_t(x, px, py):
+    """Takets høyde over gesims (før takhelningen th) i punktet, fra takflatene (tak2, ellers sk); høyeste flate over punktet.
+    None når huset ikke har takflater."""
+    flater = x.get('tak2') or x.get('sk')
+    if not flater:
+        return None
+    best = 0.0
+    for f in flater:
+        if len(f) < 3:
+            continue
+        xs, ys = [q[0] for q in f], [q[1] for q in f]
+        if not (min(xs) - 0.05 <= px <= max(xs) + 0.05 and min(ys) - 0.05 <= py <= max(ys) + 0.05):
+            continue
+        inne = False                                  # punkt i polygon (strålemetoden), med 5 cm slingring i kantene
+        for k in range(len(f)):
+            (x1, y1), (x2, y2) = f[k][:2], f[k - 1][:2]
+            if (y1 > py) != (y2 > py) and px < (x2 - x1) * (py - y1) / (y2 - y1 + 1e-12) + x1:
+                inne = not inne
+        if not inne:
+            continue
+        import numpy as np
+        A = np.array([[q[0], q[1], 1] for q in f]); z = np.array([q[2] for q in f])
+        k_ = np.linalg.lstsq(A, z, rcond=None)[0]
+        best = max(best, float(k_[0] * px + k_[1] * py + k_[2]))
+    return best
+
+
 def hoyden_styrer(data, grunn):
-    """Høyden er grunnlaget for alt som står på huset: endres h (rettelse), flyttes piper og arker like mye, og vinduer som
-    ikke lenger får plass under gesimsen (overkant over h - 0,3 m) tas ut. Ellers svever pipene og vinduene sitter i taket (24.10)."""
-    for x, g in zip(data['bygg'], grunn):
-        h0, h1 = g.get('h', 0), x.get('h', 0); f = x.get('th', 0.82) / 0.82   # takhøyden skaleres med helningen
+    """Høyden er grunnlaget for alt som står på huset (24.10).
+    Piper og arker står på taket: høyden deres regnes alltid fra takflatene og husets høyde (h + t·th, samme formel som kartet
+    tegner taket med), så de følger med når h, th eller taket endres, uansett om posisjonen kommer fra grunndata eller rettelse
+    (29.10: arker havnet på −2,08 m fordi en rettelse var regnet mot ny høyde og så flyttet en gang til). Hus uten takflater
+    flyttes som før, med høydeendringen. Vinduer som ikke lenger får plass under gesimsen (overkant over h - 0,3 m) tas ut."""
+    for j, x in enumerate(data['bygg']):
+        g = grunn[j] if j < len(grunn) else x
+        h0, h1 = g.get('h', 0), x.get('h', 0); th = x.get('th', 0.82); f = th / 0.82
+        CAP = 7.5 * th / 0.82 if not x.get('tak2') else 1e9
+        for felt in ('piper', 'arker'):
+            if not x.get(felt):
+                continue
+            ny = []
+            for q in x[felt]:
+                t = tak_t(x, q[0], q[1])
+                if t is not None:
+                    z = round(h1 + min(t * th, CAP), 2)
+                elif abs(h1 - h0) >= 0.05 or abs(f - 1) >= 0.01:
+                    z = round(h1 + (q[2] - h0) * f, 2) if q[2] > h0 else round(q[2] + h1 - h0, 2)
+                else:
+                    z = q[2]
+                ny.append([q[0], q[1], z] + list(q[3:]))
+            x[felt] = ny
         if abs(h1 - h0) < 0.05 and abs(f - 1) < 0.01:
             continue
-        flytt = lambda z: round(h1 + (z - h0) * f, 2) if z > h0 else round(z + h1 - h0, 2)   # over gesims følger taket, under veggen
-        if x.get('piper'): x['piper'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['piper']]
-        if x.get('arker'): x['arker'] = [[q[0], q[1], flytt(q[2])] + q[3:] for q in x['arker']]
         if x.get('vind') and x['vind'] is g.get('vind'):   # vinduer satt med egen rettelse er allerede lest mot målt høyde (v33)
             x['vind'] = [v for v in x['vind'] if v[2] + v[8] / 2 <= x['h'] - 0.3]
     return data

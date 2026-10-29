@@ -1,0 +1,19 @@
+{
+ "om": "Hvilket hus en bnr-id hører til, avgjort mot Matrikkelens bygningspunkt der omrisset og punktet ikke stemmer med id-en grunnmur.py ga (registeret, regel 21, 29.10). punkt = et punkt inne i huset som skal ha id-en (modellmeter). verktoy/id_flytt.py flytter huset (omriss, høyde, farger, fasade) over på id-en; huset som hadde den, får sin egen id eller skjules med grunn. Ingen id slettes.",
+ "flytt": [
+  {"id": "bnr-193867995", "punkt": [167.0, 100.0], "grunn": "Matrikkelens punkt 193867995 (forretningsbygg) står i kommunehuset fkb-167.0_100.0, som hadde id pb-15"},
+  {"id": "bnr-193972160", "punkt": [174.9, 91.0], "grunn": "kommunehuset fkb-174.9_91.0 har Matrikkelens punkt 193972160 (uthus), men hadde id bnr-193867995"},
+  {"id": "bnr-193868010", "punkt": [185.0, 113.3], "grunn": "Matrikkelens punkt 193868010 (Færgeportgaten 84) står inne i forhuset mot gata (fkb-185.0_113.3, hadde pb-6); ortofoto 2024"},
+  {"id": "bnr-193971326", "punkt": [183.5, 108.3], "grunn": "bakhuset fkb-183.5_108.3 har punktet 193971326 (uthus) i kanten; hadde id bnr-193868010"},
+  {"id": "bnr-300047842", "punkt": [143.5, 39.3], "grunn": "Matrikkelens punkt 300047842 (uthus) står 0,7 m fra uthuset fkb-143.5_39.3 (pb-14, uten nummer); nabouthuset bnr-193972616 har sitt eget punkt"}
+ ],
+ "ett_bygg": [
+  {"bygningsnummer": 193972551, "hos": "bnr-193868592", "grunn": "kommunekartet har ett omriss; ortofoto 2024 og DOM viser ett sammenhengende tak (5–6 m) med punktet i hjørnet"},
+  {"bygningsnummer": 193972586, "hos": "bnr-193972446", "grunn": "punktet står 1,5 m utenfor omrisset i åpen gårdsplass (DOM 0 m): ikke et eget bygg"}
+ ],
+ "uten_bygg": [
+  {"bygningsnummer": 193867642, "grunn": "kontorbygg med samme adresse som Ingeniørgården (17876048); punktet står på plenen vest for huset, ortofoto og DOM viser bare trær: ikke et eget bygg"},
+  {"bygningsnummer": 193867650, "grunn": "som 193867642: plen og trær 6 m fra Ingeniørgården"},
+  {"bygningsnummer": 301628349, "grunn": "kontorbygg; punktet står midt på parkeringsplassen øst for bnr-193870279 (DOM 0 m): ikke et eget bygg"}
+ ]
+}
