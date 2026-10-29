@@ -23,10 +23,10 @@
    "6": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     2,
-     5
+     4,
+     4
     ],
-    "dorer": 2,
+    "dorer": 1,
     "notat": []
    }
   },
@@ -40,10 +40,10 @@
    "2": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     3,
+     4,
      2
     ],
-    "dorer": 3,
+    "dorer": 2,
     "notat": []
    }
   },
@@ -57,7 +57,7 @@
    "8": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     5,
+     8,
      2
     ],
     "dorer": 0,
@@ -66,14 +66,14 @@
    "6": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     1,
+     2,
      2
     ],
-    "dorer": 1,
+    "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 10,
+  "tegnet": 14,
   "regler": 2
  },
  {
@@ -172,7 +172,8 @@
    "2": {
     "tegning": "Kvartal3",
     "rader": [
-     5
+     4,
+     1
     ],
     "dorer": 0,
     "notat": []
@@ -196,9 +197,9 @@
    "1": {
     "tegning": "Kvartal3",
     "rader": [
-     5
+     6
     ],
-    "dorer": 1,
+    "dorer": 0,
     "notat": []
    }
   },
@@ -212,13 +213,14 @@
    "1": {
     "tegning": "Kvartal3",
     "rader": [
-     9
+     2,
+     7
     ],
-    "dorer": 2,
+    "dorer": 3,
     "notat": []
    }
   },
-  "tegnet": 11,
+  "tegnet": 12,
   "regler": 36
  },
  {
@@ -228,10 +230,11 @@
    "9": {
     "tegning": "Kvartal3",
     "rader": [
-     2,
+     1,
+     5,
      8
     ],
-    "dorer": 1,
+    "dorer": 0,
     "notat": []
    },
    "8": {
@@ -244,8 +247,32 @@
     "notat": []
    }
   },
-  "tegnet": 14,
+  "tegnet": 18,
   "regler": 29
+ },
+ {
+  "id": "bnr-193868045",
+  "navn": "Den gamle spisesal",
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal3",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal3",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 19
  },
  {
   "id": "bnr-193868401",
@@ -279,10 +306,10 @@
    "1": {
     "tegning": "Kvartal4BITMP",
     "rader": [
-     3,
+     2,
      2
     ],
-    "dorer": 1,
+    "dorer": 2,
     "notat": []
    },
    "5": {
@@ -421,10 +448,10 @@
    "1": {
     "tegning": "kvartal5",
     "rader": [
-     2,
+     1,
      1
     ],
-    "dorer": 0,
+    "dorer": 1,
     "notat": []
    }
   },
@@ -481,7 +508,8 @@
    "2": {
     "tegning": "kvartal6",
     "rader": [
-     11,
+     7,
+     4,
      7
     ],
     "dorer": 1,
@@ -498,9 +526,10 @@
    "6": {
     "tegning": "kvartal6",
     "rader": [
-     8
+     4,
+     3
     ],
-    "dorer": 1,
+    "dorer": 2,
     "notat": []
    }
   },

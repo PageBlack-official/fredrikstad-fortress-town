@@ -427,15 +427,6 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
     d = np.min([np.abs(im - c).sum(axis=2) for c in farger], axis=0)
     annet = ((d > 60) & (inn > 0)).astype(np.uint8)
     annet = cv2.morphologyEx(annet, cv2.MORPH_CLOSE, np.ones((int(R * 0.5) | 1,) * 2, np.uint8))
-    # elementene: hullene i flatene (vinduer og dører er hull i veggflaten), og det som er tegnet oppå flaten uten å være hull
-    hullmaske = np.zeros(im.shape[:2], np.uint8)
-    for f in F_vegg:
-        for hp in f['hull']:
-            if hp.area > 0.15:
-                cv2.fillPoly(hullmaske, [tilpx(hp.exterior.coords)], 1)
-    annet = np.maximum(annet, hullmaske) * (inn > 0)
-    annet = cv2.morphologyEx(annet.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((int(R * 0.4) | 1,) * 2, np.uint8))
-    n, lab, st, cen = cv2.connectedComponentsWithStats(annet, 8)
     # flatens geometri: venstre/høyre loddkant, bunn og gesims
     fx0, fx1 = x0, x1
     def bunn_topp(xx):
@@ -445,20 +436,17 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
     venstre = bunn_topp(fx0 + min(1.0, (fx1 - fx0) * 0.05)); hoyre = bunn_topp(fx1 - min(1.0, (fx1 - fx0) * 0.05))
     if not venstre or not hoyre:
         return [], None
-    # gesims: rett linje mellom toppen av de to loddkantene (over den: gavl)
     def gesims(xx):
         t = (xx - fx0) / max(fx1 - fx0, 1e-6); return venstre[1] + (hoyre[1] - venstre[1]) * t
     def bunn(xx):
         bt = bunn_topp(xx); return bt[0] if bt else venstre[0] + (hoyre[0] - venstre[0]) * (xx - fx0) / max(fx1 - fx0, 1e-6)
     ut = []
-    for j in range(1, n):
-        x, y, w, hh, a = st[j]
-        if a < (R * 0.35) ** 2:          # flekker under 0,35 pt
-            continue
-        sel = lab[y:y + hh, x:x + w] == j
+    def legg(sel, x, y, w, hh):
+        """Ett element: sel er pikselmasken i ruta (x, y, w, hh) i utsnittet."""
         if hh > 4 * w and w < R * 1.2:      # loddrett skillestrek mellom rekkehus, ikke et element
-            continue
+            return
         px = im[y:y + hh, x:x + w][sel]
+        if len(px) == 0: return
         hvit = float((px.min(axis=1) > 190).mean()); mork = float((px.max(axis=1) < 80).mean())
         cx, cy = clip.x0 + (x + w / 2) / R, clip.y0 + (y + hh / 2) / R
         bt = bunn_topp(cx)
@@ -466,12 +454,33 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
         H = max(yb - yg, 1e-6)
         u = (cx - fx0) / max(fx1 - fx0, 1e-6)
         top, bot = clip.y0 + y / R, clip.y0 + (y + hh) / R
-        # buet topp: bredden øverst (10 % ned) mot bredden på midten
         rad = lambda f: sel[min(hh - 1, int(hh * f))].sum()
         buet = hh > 4 and rad(0.05) < 0.5 * max(rad(0.6), 1)
         ut.append(dict(u=round(u, 4), v=round((yb - cy) / H, 3), vb=round((yb - bot) / H, 3), vt=round((yb - top) / H, 3),
                        bu=round(w / R / max(fx1 - fx0, 1e-6), 4), hv=round(hh / R / H, 3), hvit=round(hvit, 2), mork=round(mork, 2),
                        buet=bool(buet), pt=[round(cx, 2), round(cy, 2)], wpt=round(w / R, 2), hpt=round(hh / R, 2)))
+    # 1) hullene i veggflatene: ett hull er ett vindu/én dør (vektor, så to vinduer som står tett, slås ikke sammen)
+    hullmaske = np.zeros(im.shape[:2], np.uint8)
+    for f in F_vegg:
+        for hp in f['hull']:
+            if hp.area < 0.15 or not U.buffer(0.5).contains(hp.representative_point()):
+                continue
+            m = np.zeros(im.shape[:2], np.uint8); cv2.fillPoly(m, [tilpx(hp.exterior.coords)], 1)
+            ys, xs = np.nonzero(m)
+            if len(xs) == 0: continue
+            x, y, w, hh = xs.min(), ys.min(), xs.max() - xs.min() + 1, ys.max() - ys.min() + 1
+            if w * hh < (R * 0.35) ** 2: continue
+            legg(m[y:y + hh, x:x + w] > 0, x, y, w, hh)
+            hullmaske |= m
+    # 2) det som er tegnet oppå flaten og ikke er et hull (dører og porter tegnet som egne flater, mørke felt)
+    rest = (annet > 0) & (cv2.dilate(hullmaske, np.ones((int(R * 0.6) | 1,) * 2, np.uint8)) == 0)
+    rest = cv2.morphologyEx(rest.astype(np.uint8), cv2.MORPH_OPEN, np.ones((int(R * 0.3) | 1,) * 2, np.uint8))
+    n, lab, st, cen = cv2.connectedComponentsWithStats(rest, 8)
+    for j in range(1, n):
+        x, y, w, hh, a_ = st[j]
+        if a_ < (R * 0.5) ** 2:
+            continue
+        legg(lab[y:y + hh, x:x + w] == j, x, y, w, hh)
     geo = dict(fx0=fx0, fx1=fx1, H_venstre=venstre[0] - venstre[1], H_hoyre=hoyre[0] - hoyre[1])
     return ut, geo
 
@@ -673,8 +682,11 @@ def klassifiser(el, L, hv_med=None):
     if el['bu'] < 0.045 and hv > 0.45:            # loddrett skillestrek mellom rekkehus
         return None
     # høyere enn vinduene og nede ved bakken (døra/porten kan stå i et hakk i flaten, så bunnen leses litt opp): dør eller port
-    hoy_dor = hv_med is not None and el['vb'] < 0.35 and hv > 1.5 * hv_med and el['bu'] < 0.35
-    if (el['vb'] < 0.07 and hv > 0.25 and (el['hvit'] < 0.2 or el['hvit'] > 0.6)) or hoy_dor:
+    # dør/port: tydelig høyere enn vinduene og nede ved bakken (bunnen kan leses litt opp når døra står i et hakk i flaten),
+    # eller et helt mørkt felt helt nede som er minst like høyt som vinduene
+    hoy = hv_med is not None and el['vb'] < 0.4 and hv > 1.3 * hv_med and el['bu'] < 0.35
+    mork = hv_med is not None and el['mork'] > 0.85 and el['hvit'] < 0.05 and el['vb'] < 0.1 and hv > 1.1 * hv_med and el['bu'] < 0.35
+    if hoy or mork:
         if bu_m > 1.7 or el['buet']:
             return 2, round(min(max(bu_m, 1.8), 3.2), 2), 2.6      # port/stor inngangsdør med buet topp
         return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
@@ -701,10 +713,11 @@ def vegg_vind(vg, x, P):
     hv_med = float(np.median(hv_alle)) if hv_alle else None
     el = [(e, klassifiser(e, L, hv_med)) for e in vg['elementer']]
     el = [(e, k) for e, k in el if k is not None]
-    vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['v'])
+    vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['vb'])
+    # etasjeradene: vinduene samles etter underkanten; ny rad når underkanten står mer enn en halv vindushøyde over radens
     rader = []
     for e in vin:
-        if rader and e['v'] - rader[-1][-1]['v'] < 0.2:
+        if rader and e['vb'] - np.mean([q['vb'] for q in rader[-1]]) < 0.5 * (float(np.percentile([q['hv'] for q in vin], 30)) if vin else 0.3):
             rader[-1].append(e)
         else:
             rader.append([e])
