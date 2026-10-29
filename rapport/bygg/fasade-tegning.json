@@ -41,9 +41,9 @@
     "tegning": "Kvartal2BITMP",
     "rader": [
      3,
-     4
+     3
     ],
-    "dorer": 1,
+    "dorer": 2,
     "notat": []
    }
   },
@@ -122,5 +122,237 @@
   },
   "tegnet": 0,
   "regler": 19
+ },
+ {
+  "id": "bnr-193867324",
+  "navn": "Artillerismien",
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal3",
+    "rader": [
+     8
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal3",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 8,
+  "regler": 14
+ },
+ {
+  "id": "bnr-193867308",
+  "navn": "Artillerismiens uthus",
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal3",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal3",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193868037",
+  "navn": "Marketenteriet",
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal3",
+    "rader": [
+     5
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal3",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 8
+ },
+ {
+  "id": "bnr-193868053",
+  "navn": "Undervisningsbrakke",
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal3",
+    "rader": [
+     5
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 13
+ },
+ {
+  "id": "bnr-193868045",
+  "navn": "Den gamle spisesal",
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal3",
+    "rader": [
+     1
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal3",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 19
+ },
+ {
+  "id": "bnr-193868061",
+  "navn": "Artillerigården",
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal3",
+    "rader": [
+     10
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 11,
+  "regler": 36
+ },
+ {
+  "id": "bnr-193869572",
+  "navn": null,
+  "vegger": {
+   "9": {
+    "tegning": "Kvartal3",
+    "rader": [
+     2,
+     8
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "8": {
+    "tegning": "Kvartal3",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 14,
+  "regler": 29
+ },
+ {
+  "id": "bnr-193868401",
+  "navn": null,
+  "vegger": {
+   "5": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [
+     5,
+     5
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "6": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 13,
+  "regler": 9
+ },
+ {
+  "id": "bnr-193868371",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [
+     4,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "5": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 8,
+  "regler": 38
+ },
+ {
+  "id": "bnr-193868398",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "4": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 34
+ },
+ {
+  "id": "bnr-193868428",
+  "navn": "Kommisjonsgården",
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal4BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 20
  }
 ]

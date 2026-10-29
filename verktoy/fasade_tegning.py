@@ -414,8 +414,8 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
     hvit (andel glass), mork (andel svart), buet (topp smalere enn midten)."""
     import cv2
     U = unary_union([f['ytre'].buffer(1.3) for f in F_vegg]).buffer(-1.3)   # flater skilt av en strek (rekkehus) blir én vegg
-    if U.geom_type != 'Polygon':
-        U = max(U.geoms, key=lambda g: g.area)
+    if U.geom_type != 'Polygon':      # flatene henger ikke sammen (sokkel under vegg med tykk strek): hylle rundt alle
+        U = unary_union([f['ytre'] for f in F_vegg]).convex_hull
     x0, y0, x1, y1 = U.bounds
     clip = fitz.Rect(x0 - 1, y0 - 1, x1 + 1, y1 + 1)
     pm = side.get_pixmap(matrix=fitz.Matrix(R, R), clip=clip)
@@ -665,14 +665,15 @@ def lagre_avlesning(L):
     json.dump(ut, open(os.path.join(AVL, L['navn'] + '.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0, default=float)
 
 
-def klassifiser(el, L):
+def klassifiser(el, L, hv_med=None):
     """Element -> (typ, b, h): 0 vindu, 1 dør, 2 port med buet topp; None = ikke et element (strek, flekk)."""
     bu_m, hv = el['bu'] * L, el['hv']
     if el['bu'] > 0.6 and el['hvit'] < 0.05:      # strek langs hele veggen (skillet mellom sokkel og vegg, bunnstreken)
         return None
     if el['bu'] < 0.045 and hv > 0.45:            # loddrett skillestrek mellom rekkehus
         return None
-    if el['vb'] < 0.07 and hv > 0.25 and (el['hvit'] < 0.2 or el['hvit'] > 0.6):
+    hoy_dor = hv_med is not None and el['vb'] < 0.2 and hv > 1.6 * hv_med and el['bu'] < 0.35
+    if (el['vb'] < 0.07 and hv > 0.25 and (el['hvit'] < 0.2 or el['hvit'] > 0.6)) or hoy_dor:
         if bu_m > 1.7 or el['buet']:
             return 2, round(min(max(bu_m, 1.6), 3.2), 2), 2.6 if bu_m > 1.7 else 2.4
         return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
@@ -695,7 +696,9 @@ def vegg_vind(vg, x, P):
     if Polygon(x['p']).contains(Point(*(v0 + u * L / 2 + n * 0.3))):
         n = -n
     h = x['h']
-    el = [(e, klassifiser(e, L)) for e in vg['elementer']]
+    hv_alle = [e['hv'] for e in vg['elementer'] if klassifiser(e, L) is not None]
+    hv_med = float(np.median(hv_alle)) if hv_alle else None
+    el = [(e, klassifiser(e, L, hv_med)) for e in vg['elementer']]
     el = [(e, k) for e, k in el if k is not None]
     vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['v'])
     rader = []
@@ -730,7 +733,7 @@ def vegg_vind(vg, x, P):
         slag, zc, hh, bb = rz
         for e in r:
             t = min(max(e['u'] * L, 0), L)
-            bw = bb or klassifiser(e, L)[1]
+            bw = bb or klassifiser(e, L, hv_med)[1]
             t = min(max(t, bw / 2 + 0.32), L - bw / 2 - 0.32) if L > bw + 0.64 else L / 2
             ut.append(VR.element(P, v0 + u * t, bw, n, zc, bw, hh, 0))
     for e, kk in el:
@@ -824,8 +827,10 @@ def les_for_haand(navn, d=None):
     lest = []
     for i, fl in K.items():
         x = BY[i]; V = VG.vegger(x, omg, slaa_sammen=True)
-        grp = {}
+        grp = {}; del_ = {}
         for fi in fl:
+            if isinstance(fi, dict):                       # {"f": [..], "side": "SV", "fra": 0, "til": 0.5}: del av en tegnet vegg
+                grp.setdefault(fi['side'], []).extend(fi['f']); del_[fi['side']] = (fi['fra'], fi['til']); continue
             if isinstance(fi, str) and '/' in fi:          # "flate/SV" eller "flate/SØ": siden gitt for hånd
                 fi, fam = fi.split('/'); fi = int(fi)
             else:
@@ -839,6 +844,9 @@ def les_for_haand(navn, d=None):
             k = max(kand)[1]; w = V[k]
             el, geo = elementer([F[f] for f in fis], side)
             if geo is None: continue
+            if fam in del_:                                 # tegningen viser flere modellhus i én vegg: bare husets del, i husets andel
+                a0, a1 = del_[fam]
+                el = [dict(e, u=round((e['u'] - a0) / (a1 - a0), 4), bu=round(e['bu'] / (a1 - a0), 4)) for e in el if a0 <= e['u'] < a1]
             # venstre i tegningen = seerens venstre utenfra
             ltr = bool(w['u'] @ np.array([-w['n'][1], w['n'][0]]) > 0)
             venstre = w['a'] if ltr else w['c']
