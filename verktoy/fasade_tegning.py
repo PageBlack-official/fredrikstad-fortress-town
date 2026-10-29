@@ -676,7 +676,7 @@ def klassifiser(el, L, hv_med=None):
     hoy_dor = hv_med is not None and el['vb'] < 0.35 and hv > 1.5 * hv_med and el['bu'] < 0.35
     if (el['vb'] < 0.07 and hv > 0.25 and (el['hvit'] < 0.2 or el['hvit'] > 0.6)) or hoy_dor:
         if bu_m > 1.7 or el['buet']:
-            return 2, round(min(max(bu_m, 1.6), 3.2), 2), 2.6 if bu_m > 1.7 else 2.4
+            return 2, round(min(max(bu_m, 1.8), 3.2), 2), 2.6      # port/stor inngangsdør med buet topp
         return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
     if hv > 0.08 and el['bu'] > 0.01:
         return 0, round(min(max(bu_m, 0.6), 1.3), 2), None

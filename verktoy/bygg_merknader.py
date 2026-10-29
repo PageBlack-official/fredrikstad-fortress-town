@@ -98,7 +98,7 @@ def main(tørt=False):
                     tv.append([round(float(q[0]), 2), round(float(q[1]), 2), t.get('b', 0.6), t.get('h', 0.8)])
             sett('takvinduer', tv)
         if m.get('arker_legg'):
-            V = VG.vegger(x, omg, slaa_sammen=True); ark = list(x.get('arker') or [])
+            V = VG.vegger(x, omg, slaa_sammen=True); ark = [] if m.get('arker_erstatt') else list(x.get('arker') or [])
             for a in m['arker_legg']:
                 wi = SV.retningsvegg(x, V, a['side'])
                 if wi is None: continue

@@ -59,7 +59,7 @@
   {
    "id": "bnr-193868037",
    "kilde": "Vegar, kvartalskontroll Kvartal3 29.10",
-   "grunn": "mangler vinduet i taket (arken mot SØ), skal ikke ha pipe; to vinduer på hver side i 1. etg og inngangsdør i midten",
+   "grunn": "mangler vinduet i taket (arken mot SØ), skal ikke ha pipe; to vinduer på hver side i 1. etg og inngangsdør i midten; arken som sto på gavlen mot SV (finnes ikke i tegningen) er tatt bort",
    "vegg": [
     {
      "side": "SØ",
@@ -83,7 +83,8 @@
      ]
     }
    ],
-   "piper": "ingen"
+   "piper": "ingen",
+   "arker_erstatt": true
   },
   {
    "id": "bnr-193868053",
