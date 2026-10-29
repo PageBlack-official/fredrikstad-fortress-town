@@ -1509,7 +1509,7 @@
   "sikkerhet": "høy",
   "n_piksler": 48,
   "rest_m": 0.25,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "167": {
   "id": "bnr-193868541",
@@ -1545,7 +1545,7 @@
   "sikkerhet": "høy",
   "n_piksler": 237,
   "rest_m": 0.47,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "169": {
   "id": "bnr-193868134",
@@ -2594,20 +2594,20 @@
  "227": {
   "id": "bnr-193868452",
   "navn": null,
-  "h_naa": 6.0,
-  "h_per_hus": 5.9,
-  "takhelning": 0.59,
+  "h_naa": 6.5,
+  "h_per_hus": 2.5,
+  "takhelning": 0.99,
   "p50": 8.67,
   "p90": 10.3,
-  "kart_p50": 9.64,
-  "kart_p90": 10.78,
-  "h_forslag": 4.8,
-  "avvik": -1.2,
-  "h_med_maalt_takhelning": 5.9,
-  "sikkerhet": "middels",
+  "kart_p50": 11.31,
+  "kart_p90": 12.81,
+  "h_forslag": 3.5,
+  "avvik": -3.0,
+  "h_med_maalt_takhelning": 5.0,
+  "sikkerhet": "høy",
   "n_piksler": 272,
-  "rest_m": 0.84,
-  "merknad": "rest 0.8 m"
+  "rest_m": 0.75,
+  "merknad": ""
  },
  "228": {
   "id": "bnr-193972039",
@@ -3746,15 +3746,15 @@
  "338": {
   "id": "bnr-193971962",
   "navn": null,
-  "h_naa": 5.0,
+  "h_naa": 4.9,
   "h_per_hus": 4.9,
   "takhelning": 0.59,
   "p50": 6.39,
   "p90": 6.91,
-  "kart_p50": 6.71,
-  "kart_p90": 7.51,
+  "kart_p50": 6.61,
+  "kart_p90": 7.41,
   "h_forslag": 4.4,
-  "avvik": -0.6,
+  "avvik": -0.5,
   "h_med_maalt_takhelning": 4.9,
   "sikkerhet": "middels",
   "n_piksler": 25,
@@ -4461,7 +4461,7 @@
   "sikkerhet": "høy",
   "n_piksler": 96,
   "rest_m": 0.2,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "384": {
   "id": "bnr-193868479",

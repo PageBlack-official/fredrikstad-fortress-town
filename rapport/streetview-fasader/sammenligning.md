@@ -2,7 +2,7 @@
 
 Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json. Kontrollark: ark.png (endrede hus), ark-fasit.png (fasithus).
 
-## Endret (82)
+## Endret (80)
 
 | id | navn | SV rader | lagt inn | dører | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|
@@ -26,9 +26,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193971288 |  | [2, 2] | [2, 2] | 0 | 0 | 1 |  |
 | bnr-13416419 |  | [4] | [4] | 0 | 1 | 0 |  |
 | bnr-193869556 | Krutthuset | [0] | [0] | 1 | 0 | 0 |  |
-| bnr-193868126 |  | [2, 3] | [2, 3] | 1 | 0 | 2 |  |
 | bnr-193972373 |  | [2] | [2] | 1 | 1 | – |  |
-| bnr-193868401 |  | [3, 4] | [3, 4] | 1 | 1 | 2 |  |
 | bnr-193868665 |  | [0, 1] | [0, 1] | 0 | 0 | 0 |  |
 | bnr-193868002 |  | [3] | [3] | 1 | 1 | 1 | veggen valgt etter retningen i avlesningen (NØ (gatefasade) sett skrått fra øst); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren |
 | bnr-193868002 |  | [5] | [5] | 1 | 2 | – |  |
@@ -36,7 +34,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193971210 |  | [0] | [0] | 0 | 0 | 0 | veggen valgt etter retningen i avlesningen (NØ/SØ (langvegg mot plassen)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren |
 | bnr-193868436 | Skolebygningen | [8, 7] | [8, 7] | 0 | – | – |  |
 | bnr-193868436 | Skolebygningen | [1, 0] | [1, 0] | 0 | 0 | 0 | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig) |
-| bnr-193868452 |  | [0, 1] | [0, 1] | 0 | 1 | 1 |  |
+| bnr-193868452 |  | [0, 1] | [0] | 0 | – | 1 | 1 rad(er) fikk ikke plass under gesims; taket stiger ikke fra gatesiden (gavl eller flatt tak), arker ikke lagt inn |
 | bnr-193974767 |  | [0] | [0] | 0 | 0 | – | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig); beholdt (ukjent i Street View) |
 | bnr-193870333 | Kruttårnet | [0] | [0] | 0 | 0 | 0 | beholdt (ukjent i Street View) |
 | bnr-193868673 |  | [1] | [1] | 0 | 0 | – | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig); beholdt (ukjent i Street View) |
@@ -89,34 +87,36 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193820409 |  | [4, 1, 1] | [4, 1] | 1 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 | bnr-13418268 |  | [0, 1] | [0] | 2 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 
-## Fasithus fra kvartaltegningene, bare sammenlignet (95)
+## Fasithus fra kvartaltegningene, bare sammenlignet (97)
 
 Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 
 | id | navn | SV rader | tegning rader | SV dører | tegning dører | SV takv. | tegning arker | SV piper | tegning piper | avvik |
 |---|---|---|---|---|---|---|---|---|---|---|
 | bnr-193867677 | Ingeniørgården | [6, 6] | [7] | 1, midt-venstre (inngang med lite overbygg ved x≈740) | 0 | 0 | 0 | usikkert, skjult av trær | 5 | ja |
-| bnr-193868045 | Den gamle spisesal | [1] | [2] | 0 synlig | 1 | 0 | 0 | 1 rød teglpipe med hvit topp (beslag) | 5 | ja |
+| bnr-193868045 | Den gamle spisesal | [1] | [3] | 0 synlig | 0 | 0 | 0 | 1 rød teglpipe med hvit topp (beslag) | 5 | ja |
 | bnr-193971954 |  | [3, 1] | [3, 1] | 0 på gavlen | 0 | 0 | 1 | 0 | 2 |  |
 | bnr-193867359 |  | [1] | [5] | 0 synlig på langsiden | 0 | 0 | 0 | 1 murt pipe (lenger bort) | 1 | ja |
 | bnr-193867707 |  | [6, 6] | [7, 8, 8] | 1 portrom/kjøreport til høyre med dobbel sandfarget fyllingsport (åpen) | 1 | None | 0 | None | 1 | ja |
 | bnr-193972403 |  | [2, 4] | [2, 3, 2] | 1 til venstre, mørk brun dobbel fyllingsdør | 0 | 0 | 0 | 0 | 1 | ja |
 | bnr-193867839 |  | [6, 8] | [1, 1] | 1 mørk grønn fyllingsdør med overlys ca. 0.38, steintrapp med 3 trinn; 1 mørk grønn tofløyet port ca. 0.62–0.72 | 2 | 0 | 0 | 2 røde teglpiper | 0 | ja |
-| bnr-193868053 | Undervisningsbrakke | [0] | [5] | ingen synlig på denne langsiden | 1 | 0 | 0 | 1 | 2 | ja |
+| bnr-193868053 | Undervisningsbrakke | [0] | [6] | ingen synlig på denne langsiden | 1 | 0 | 0 | 1 | 1 | ja |
 | bnr-194006187 |  | [2] | [] | ikke i utsnittet | 0 | 2 arker (saltak, grå) | 0 | 1 murt teglpipe | 1 | ja |
-| bnr-193868363 | Binggården | [1, 1] | [1, 2] | 0 | 0 | 0 | 0 | None | 0 | ja |
-| bnr-193868088 |  | [4, 4] | [2] | ingen synlig mot gata (hekk/stakitt foran) | 0 | 0 | 0 | 1 | 2 | ja |
-| bnr-193868371 |  | [7, 3] | [9] | ingen på denne fasaden | 1 | 0 | 0 | 1 | 2 | ja |
-| bnr-193868142 | Prestegården | [5, 5] | [5, 5, 2] | 1 brun kjellerluke/dør i sokkelen til venstre; ingen hovedinngang mot gata | 0 | 0 | 2 | 2 | 2 | ja |
+| bnr-193868363 | Binggården | [1, 1] | [1, 2] | 0 | 1 | 0 | 0 | None | 0 | ja |
+| bnr-193868088 |  | [4, 4] | [4, 4] | ingen synlig mot gata (hekk/stakitt foran) | 0 | 0 | 0 | 1 | 2 |  |
+| bnr-193868371 |  | [7, 3] | [10, 11] | ingen på denne fasaden | 1 | 0 | 0 | 1 | 2 | ja |
+| bnr-193868126 |  | [2, 3] | [4] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 | ja |
+| bnr-193868142 | Prestegården | [5, 5] | [5, 5] | 1 brun kjellerluke/dør i sokkelen til venstre; ingen hovedinngang mot gata | 0 | 0 | 2 | 2 | 2 |  |
 | bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 1 | 0 | 0 | ja |
 | bnr-193868339 |  | [1, 1] | [2] | 1 rundbuet portrom med svart/grå port, skilt 'Kong Fredrik' | 0 | 0 | 0 | None | 1 | ja |
-| bnr-193868150 | Salamandergården | [4, 5] | [3, 5, 1] | 1 midt-høyre, grønn dobbel fyllingsdør med rombe-overlys | 0 | 1 liten ark | 1 | 2 | 1 | ja |
-| bnr-193868061 | Artillerigården | [11, 12] | [11, 11] | 2 synlige: oliven dobbeldør til venstre og til høyre (rundbuet overlys) | 0 | ca 10 små takvinduer | 0 | 2 | 5 | ja |
-| bnr-193868428 | Kommisjonsgården | [5] | [5] | ingen på denne fasaden | 1 | 0 | 0 | 2 | 1 |  |
+| bnr-193868150 | Salamandergården | [4, 5] | [2, 5] | 1 midt-høyre, grønn dobbel fyllingsdør med rombe-overlys | 2 | 1 liten ark | 1 | 2 | 1 | ja |
+| bnr-193868061 | Artillerigården | [11, 12] | [10] | 2 synlige: oliven dobbeldør til venstre og til høyre (rundbuet overlys) | 1 | ca 10 små takvinduer | 0 | 2 | 5 | ja |
+| bnr-193868428 | Kommisjonsgården | [5] | [6] | ingen på denne fasaden | 1 | 0 | 0 | 2 | 1 | ja |
+| bnr-193868401 |  | [3, 4] | [5, 5] | inngang med lite buet overbygg midt-høyre (delvis bak espalier) | 1 | 1 | 1 | 2 små pipehatter | 1 | ja |
 | bnr-193868398 |  | [5] | [4, 5] | 1 midt-høyre, rundbuet kjellernedgang med mørk dør | 1 | 0 | 0 | 2 | 1 | ja |
-| bnr-193972292 |  | [4, 5] | [3, 3] | 2: grå/grønn fiskebeinsdør med trekantfronton midt, lav plankedør til venstre | 0 | 0 | 0 | 1 | 0 | ja |
+| bnr-193972292 |  | [4, 5] | [3, 3] | 2: grå/grønn fiskebeinsdør med trekantfronton midt, lav plankedør til venstre | 2 | 0 | 0 | 1 | 0 | ja |
 | bnr-193868525 |  | [1, 1] | [] | 1 grå tofløyet fyllingsdør med steintrapp og rekkverk | 0 | 0 | 0 | None | 2 | ja |
-| bnr-193868096 |  | [3, 3] | [1] | kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10) | 0 | 0 | 0 | ikke synlig | 1 | ja |
+| bnr-193868096 |  | [3, 3] | [2] | kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10) | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193971946 |  | [3] | [5] | 1 brun plankedør til venstre (ca. 0.12) med lykt og skilt | 1 | 1 lite takvindu | 0 | ikke synlig | 1 | ja |
 | bnr-193868029 |  | [1, 1] | [] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 0 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
 | bnr-6242812 |  | [5, 5, 4] | [5, 6] | 0 på denne fasaden | 1 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
@@ -189,7 +189,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868347 |  | [5, 5] | [1, 2] | 2 butikkdører: grønn glassdør (ca. 0.12) og åpen dør med steintrapp (ca. 0.48) | 0 | 0 | 2 | 2 murte piper | 1 | ja |
 | bnr-193867545 | Arnesgården | [5, 5] | [1, 4, 3, 2] | 1 mørk grønn tofløyet fyllingsdør, ca. 0.40, med steintrinn | 0 | 0 | 2 | 1 murt teglpipe | 1 | ja |
 | bnr-193867510 | Ekserserhuset | [3] | [4] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 0 | 0 | 0 | ikke synlig | 1 | ja |
-| bnr-193869572 |  | [8, 9] | [10, 10] | 1 inngang med dør ca. 0.80 av synlig fasade | 0 | 6+ små takvinduer | 0 | 1 murt pipe | 0 | ja |
+| bnr-193869572 |  | [8, 9] | [2, 7] | 1 inngang med dør ca. 0.80 av synlig fasade | 1 | 6+ små takvinduer | 0 | 1 murt pipe | 0 | ja |
 
 ## Hoppet over (139)
 
