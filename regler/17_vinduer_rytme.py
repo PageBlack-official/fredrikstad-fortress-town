@@ -24,7 +24,7 @@ for i, x in gamleby(b):
     if x.get('skjul') or x.get('kirke') or x.get('fasade_kilde') not in ('antatt', 'streetview') or x['id'] in v33 or not x.get('vind'):
         continue
     hus += 1; V = VG.vegger(x, omg, slaa_sammen=True); gi, _ = VG.gatesiden(V)
-    svk = VG.naermeste_vegg(V, np.array(x['fasade_sv']['vegg']))[0] if sv and x.get('fasade_sv') else None
+    svk = {VG.naermeste_vegg(V, np.array(q['vegg']))[0] for q in (x['fasade_sv'].get('sider') or [x['fasade_sv']])} if sv and x.get('fasade_sv') else set()
     per = {}
     for v in x['vind']:
         n_vind += v[9] == 0; n_dor += v[9] == 1
@@ -39,7 +39,7 @@ for i, x in gamleby(b):
         per.setdefault(k, []).append((t, v))
         if v[9] == 1:
             w = V[k]
-            if not (k == gi or k == svk or w['gate'] is not None or w['gardsrom']):
+            if not (k == gi or k in svk or w['gate'] is not None or w['gardsrom']):
                 F['dor'].append(f"- {x['id']} (bygg {i}): dør på vegg {k + 1} som verken vender mot gate eller gårdsrom")
     for k, vs in per.items():
         lv = {}
@@ -49,7 +49,7 @@ for i, x in gamleby(b):
         under_alle = {zz: [t for z0 in z if z0 < zz for t in lv[z0]] + [t for t, v in vs if v[9] == 1] for zz in z}
         for zz in z[1:]:
             uten = [t for t in lv[zz] if not under_alle[zz] or min(abs(t - s) for s in under_alle[zz]) > 0.2]
-            if sv:   # Street View: overtallige vinduer (flere enn åpningene under) kan stå uten noe under
+            if sv and k in svk:   # Street View: overtallige vinduer (flere enn åpningene under) kan stå uten noe under
                 n_under = max(len(lv[z0]) for z0 in z if z0 < zz)
                 uten = uten[max(0, len(lv[zz]) - n_under):]
             for t in uten:

@@ -225,12 +225,47 @@ def les_piper(t):
 
 
 def kamera(a):
-    m = re.search(r'viewpoint=([-\d.]+),([-\d.]+)', a.get('pano_url') or '')
-    h = re.search(r'heading=([-\d.]+)', a.get('pano_url') or '')
+    u = a.get('pano_url') or ''
+    m = re.search(r'viewpoint=([-\d.]+),([-\d.]+)', u) or re.match(r'\s*([-\d.]+),\s*([-\d.]+)', u)
+    h = re.search(r'heading=([-\d.]+)', u) or re.search(r'\bh\s*([-\d.]+)', u)
     if not m or not h:
         return None, None
     lat, lon = float(m.group(1)), float(m.group(2))
     return np.array(datalag.til_modell(lon, lat)), float(h.group(1))
+
+
+KOMPASS = {'N': 0, 'NNØ': 22.5, 'NØ': 45, 'ØNØ': 67.5, 'Ø': 90, 'ØSØ': 112.5, 'SØ': 135, 'SSØ': 157.5, 'S': 180, 'SSV': 202.5,
+           'SV': 225, 'VSV': 247.5, 'V': 270, 'VNV': 292.5, 'NV': 315, 'NNV': 337.5}
+
+
+def retningsvegg(x, V, retning):
+    """Når siktlinja ikke finner veggen (kamerapunktet er omtrentlig): veggen som vender den veien avlesningen sier
+    («NV (gavl mot …)» = veggen med utovernormal mot nordvest), fri (ikke felles med nabo), innen 35°."""
+    m = re.match(r'\s*([NSØV]{1,3})\b', retning or '')
+    if not m or m.group(1) not in KOMPASS:
+        return None
+    a = math.radians(KOMPASS[m.group(1)]); f = np.array([math.sin(a), math.cos(a)])
+    kand = [(float(w['n'] @ f) * min(w['L'], 12), i) for i, w in enumerate(V) if w['felles'] < 0.5 and w['L'] >= 2.0 and w['n'] @ f >= math.cos(math.radians(35))]
+    return max(kand)[1] if kand else None
+
+
+def sider(a):
+    """Avlesningens sider (29.10 kveld: «sider», én per fasade som er sett) som egne avlesninger med husets felles felt
+    (navn, merknad, sikkerhet). Gammelt format (én fasade på toppnivå) gir én side. Sider som ikke er sett, tas ut."""
+    S = a.get('sider')
+    if not S:
+        return [a]
+    ut = []
+    for sd in S:
+        tekst = ' '.join(str(sd.get(k) or '') for k in ('retning', 'etasjer')).lower()
+        if 'ikke synlig' in tekst:
+            continue
+        b = {k: a.get(k) for k in ('id', 'navn', 'merknad', 'sikkerhet', 'adresse')}
+        b.update(sd)
+        b['takvinduer'] = sd.get('takvinduer_arker', sd.get('takvinduer'))
+        b['merknad'] = ' '.join(str(x) for x in (sd.get('retning'), a.get('merknad')) if x)
+        ut.append(b)
+    return ut
 
 
 # ---------------------------------------------------------------- geometri
@@ -574,84 +609,97 @@ def kjor(tørt=False):
             hoppet('portbygg (data/porter.json røres ikke)'); continue
         if id_ in hopp:
             hoppet(hopp[id_]); continue
-        rader = les_etasjer(a); dorer = les_dorer(a.get('dorer'))
-        arker = les_arker(a.get('takvinduer')); piper = les_piper(a.get('piper'))
-        if rader is None:
-            hoppet('ingen vindustall i avlesningen'); continue
-        C, heading = kamera(a)
-        if C is None:
-            hoppet('pano_url mangler viewpoint/heading'); continue
         V = VG.vegger(x, omg, slaa_sammen=True)
-        gavl = bool(re.search(r'gavl(en|siden)? mot|på gavlen|gavlen mot', ' '.join(str(a.get(k) or '') for k in ('etasjer', 'merknad', 'dorer')).lower()))
-        wi, notat = gatevegg(x, V, omg, C, heading, gavl)
-        if wi is None:
-            hoppet(notat); continue
-        w = V[wi]
-        f = np.array([math.sin(math.radians(heading)), math.cos(math.radians(heading))])
-        hoyre = np.array([-w['n'][1], w['n'][0]])          # seerens høyre når en ser mot veggen (mot -n)
-        w['venstre_til_hoyre'] = bool(w['u'] @ hoyre > 0)
         P = np.array(x['p'], float)
-        mid = (w['a'] + w['c']) / 2
-        rad.update(vegg=wi, vegg_L=round(w['L'], 1), avstand=round(float(np.linalg.norm(mid - C)), 1),
-                   vinkel=round(math.degrees(math.acos(max(-1, min(1, (mid - C) @ f / np.linalg.norm(mid - C))))), 0),
-                   sv=dict(rader=[list(r) for r in rader], dorer=a.get('dorer'), takvinduer=a.get('takvinduer'), piper=a.get('piper')),
-                   notat=notat)
         er_fasit = x.get('fasade_kilde') == 'kvartaltegning' or id_ in fasit_ret
-        if er_fasit:
-            mr, md = rader_paa_veggen(x.get('vind') or [], V, wi)
-            sv_rader = [k for s, k in rader]
-            rad.update(status='fasit, bare sammenlignet', modell=dict(rader=mr, dorer=md, arker=len(paa_siden(x.get('arker'), w)),
-                       piper=len(x.get('piper') or [])), avvik=not like_rader(mr, sv_rader), dorer_avvik=dorer is not None and md != len(dorer))
-            logg.append(rad); continue
         # andre vegger beholder det de har (antatte hus i Gamlebyen: det vinduer_regler gir dem)
         if x.get('fasade_kilde') == 'antatt' and x.get('gml') and not x.get('deler'):
             base = VR.lag_vind(x, omg)[0]
+        elif x.get('fasade_kilde') == 'streetview' and x.get('gml') and not x.get('deler') and not er_fasit:
+            base = VR.lag_vind(x, omg)[0]       # forrige kjøring er tatt ut av tilstanden; reglene er grunnlaget
         else:
             base = x.get('vind') or []
-        resten, gamle_dorer = [], []
-        for v in base:
-            k, t = VG.naermeste_vegg(V, np.array(v[:2]))
-            if k == wi:
-                if v[9] in (1, 2):
-                    s = t / w['L'] if w['venstre_til_hoyre'] else 1 - t / w['L']
-                    gamle_dorer.append((s, v[7], v[8], v[9]))
-            else:
-                resten.append(v)
-        if dorer is None:
-            dorer = gamle_dorer; rad['dorer_fra'] = 'beholdt (ukjent i Street View)'
-        stor = bool(re.search(r'store vinduer', (a.get('merknad') or '').lower()))
-        gate, info = lag_fasade(x, w, P, rader, dorer, stor)
-        if info.get('akser', 0) < info.get('akser_onsket', 0) or info.get('merk'):
-            hoppet(f"gateveggen (vegg {wi}, {w['L']:.1f} m) har plass til {info.get('akser', 0)} akser, Street View trenger "
-                   f"{info.get('akser_onsket')}{' – ' + info['merk'] if info.get('merk') else ''}: trolig feil vegg eller feil hus i modellen"
-                   f"{'; ' + notat if notat else ''}")
+        sett_vegger, gate_alle, sett_info, ark_ny, ark_sider, pip_ny = {}, [], [], [], [], None
+        for sd in sider(a):
+            r_ = dict(rad)
+            rader = les_etasjer(sd); dorer = les_dorer(sd.get('dorer'))
+            arker = les_arker(sd.get('takvinduer')); piper = les_piper(sd.get('piper'))
+            if rader is None:
+                hoppet(f"ingen vindustall ({sd.get('retning') or 'gatesiden'})"); continue
+            C, heading = kamera(sd)
+            if C is None:
+                hoppet('pano_url mangler kamerapunkt/retning'); continue
+            gavl = bool(re.search(r'gavl(en|siden)? mot|på gavlen|gavlen mot|-gavl', ' '.join(str(sd.get(k) or '') for k in ('etasjer', 'merknad', 'dorer', 'retning')).lower()))
+            wi, notat = gatevegg(x, V, omg, C, heading, gavl)
+            if wi is None:
+                wi = retningsvegg(x, V, sd.get('retning'))
+                if wi is None:
+                    hoppet(f"{notat} ({sd.get('retning') or ''})"); continue
+                notat = f"veggen valgt etter retningen i avlesningen ({sd.get('retning')}); {notat}"
+            if wi in sett_vegger:
+                logg.append(dict(r_, status='hoppet over', grunn=f"samme vegg ({wi}) som en annen side: {sd.get('retning')}")); continue
+            w = V[wi]
+            f = np.array([math.sin(math.radians(heading)), math.cos(math.radians(heading))])
+            hoyre = np.array([-w['n'][1], w['n'][0]])          # seerens høyre når en ser mot veggen (mot -n)
+            w['venstre_til_hoyre'] = bool(w['u'] @ hoyre > 0)
+            mid = (w['a'] + w['c']) / 2
+            r_.update(side=sd.get('retning'), vegg=wi, vegg_L=round(w['L'], 1), avstand=round(float(np.linalg.norm(mid - C)), 1),
+                      vinkel=round(math.degrees(math.acos(max(-1, min(1, (mid - C) @ f / np.linalg.norm(mid - C))))), 0),
+                      sv=dict(rader=[list(q) for q in rader], dorer=sd.get('dorer'), takvinduer=sd.get('takvinduer'), piper=sd.get('piper')),
+                      notat=notat)
+            if er_fasit:
+                mr, md = rader_paa_veggen(x.get('vind') or [], V, wi)
+                sv_rader = [k for _, k in rader]
+                r_.update(status='fasit, bare sammenlignet', modell=dict(rader=mr, dorer=md, arker=len(paa_siden(x.get('arker'), w)),
+                          piper=len(x.get('piper') or [])), avvik=not like_rader(mr, sv_rader), dorer_avvik=dorer is not None and md != len(dorer))
+                logg.append(r_); sett_vegger[wi] = True; continue
+            gamle_dorer = []
+            for v in base:
+                k, t = VG.naermeste_vegg(V, np.array(v[:2]))
+                if k == wi and v[9] in (1, 2):
+                    s_ = t / w['L'] if w['venstre_til_hoyre'] else 1 - t / w['L']
+                    gamle_dorer.append((s_, v[7], v[8], v[9]))
+            if dorer is None:
+                dorer = gamle_dorer; r_['dorer_fra'] = 'beholdt (ukjent i Street View)'
+            stor = bool(re.search(r'store vinduer', (sd.get('merknad') or '').lower()))
+            gate, info = lag_fasade(x, w, P, rader, dorer, stor)
+            if info.get('akser', 0) < info.get('akser_onsket', 0) or info.get('merk'):
+                logg.append(dict(r_, status='hoppet over', grunn=f"veggen (vegg {wi}, {w['L']:.1f} m) har plass til {info.get('akser', 0)} akser, Street View trenger "
+                       f"{info.get('akser_onsket')}{' – ' + info['merk'] if info.get('merk') else ''}: trolig feil vegg eller feil hus i modellen"
+                       f"{'; ' + notat if notat else ''}"))
+                continue
+            sett_vegger[wi] = True; gate_alle += gate
+            sett_info.append(dict(kilde=f"Street View {sd.get('bilde_dato') or ''}".strip(), sikkerhet=a.get('sikkerhet'), side=sd.get('retning'),
+                                  vegg=[round(float(mid[0]), 2), round(float(mid[1]), 2)],
+                                  n=[round(float(w['n'][0]), 4), round(float(w['n'][1]), 4)],
+                                  kamera=[round(float(C[0]), 1), round(float(C[1]), 1)], heading=heading,
+                                  rader=info.get('rader', []), dorer=info.get('dorer', 0)))
+            if arker is not None:
+                ny_ark, an = lag_arker(x, grunn.get(id_), w, P, arker, info.get('akser_t'), info.get('topp_akser') or [])
+                if an: r_['arker_notat'] = an
+                if ny_ark or not arker:
+                    ark_ny += ny_ark; ark_sider.append(w); r_['arker'] = len(ny_ark)
+            if piper is not None and pip_ny is None:
+                pip, pn = lag_piper(x, grunn.get(id_), w, P, piper)
+                if pip is not None:
+                    pip_ny = pip; r_['piper'] = len(pip)
+                    if len(pip) < len(piper): r_['piper_notat'] = f'{len(piper) - len(pip)} piper fant ikke plass på taket'
+                else:
+                    r_['piper_notat'] = pn
+            r_.update(status='endret', info=info)
+            logg.append(r_)
+        if er_fasit or not sett_info:
             continue
-        vind = resten + gate
-        rad.update(status='endret', info=info, foer=len(base), etter=len(vind))
-        linjer = [('vind', vind), ('fasade_kilde', 'streetview'),
-                  ('fasade_sv', dict(kilde=f"Street View {a.get('bilde_dato') or ''}".strip(), sikkerhet=a.get('sikkerhet'),
-                                     vegg=[round(float(mid[0]), 2), round(float(mid[1]), 2)],
-                                     n=[round(float(w['n'][0]), 4), round(float(w['n'][1]), 4)],
-                                     kamera=[round(float(C[0]), 1), round(float(C[1]), 1)], heading=heading,
-                                     rader=info.get('rader', []), dorer=info.get('dorer', 0)))]
-        if arker is not None:
-            ny_ark, an = lag_arker(x, grunn.get(id_), w, P, arker, info.get('akser_t'), info.get('topp_akser') or [])
-            if an:
-                rad['arker_notat'] = an
-            if ny_ark or not arker:      # fikk Street View-arkene ikke plass, beholdes det huset hadde
-                behold = [q for q in (x.get('arker') or []) if q not in paa_siden(x.get('arker'), w)]
-                linjer.append(('arker', behold + ny_ark)); rad['arker'] = len(ny_ark)
-        if piper is not None:
-            pip, pn = lag_piper(x, grunn.get(id_), w, P, piper)
-            if pip is not None:
-                linjer.append(('piper', pip)); rad['piper'] = len(pip)
-                if len(pip) < len(piper):
-                    rad['piper_notat'] = f'{len(piper) - len(pip)} piper fant ikke plass på taket'
-            else:
-                rad['piper_notat'] = pn
+        resten = [v for v in base if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in sett_vegger]
+        vind = resten + gate_alle
+        linjer = [('vind', vind), ('fasade_kilde', 'streetview'), ('fasade_sv', sett_info[0] if len(sett_info) == 1 else dict(sett_info[0], sider=sett_info))]
+        if ark_sider:
+            behold = [q for q in (x.get('arker') or []) if not any(q in paa_siden(x.get('arker'), w) for w in ark_sider)]
+            linjer.append(('arker', behold + ark_ny))
+        if pip_ny is not None:
+            linjer.append(('piper', pip_ny))
         for felt, verdi in linjer:
             nye.append({"emne": "bygg", "id": id_, "op": "sett", "felt": felt, "verdi": verdi, "hvem": "Claude", "dato": DATO, "grunn": GRUNN})
-        logg.append(rad)
     os.makedirs(UT, exist_ok=True)
     json.dump(logg, open(os.path.join(UT, 'kjoring.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     skriv_rapport(logg)

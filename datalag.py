@@ -129,6 +129,46 @@ def tak_t(x, px, py):
     return best
 
 
+KNEKK = dict(t_brudd=0.9, nedre_grader=70.0, ovre_grader=25.0)   # knekktak (mansard): bratt nedre del 0,9 m inn, slakt over
+
+
+def _klipp(f, a, b, c):
+    """Polygonet f (punkter [x, y, z]) klippet til halvplanet a*x + b*y <= c (Sutherland–Hodgman)."""
+    ut = []
+    for k in range(len(f)):
+        p, q = f[k - 1], f[k]
+        fp, fq = a * p[0] + b * p[1] - c, a * q[0] + b * q[1] - c
+        if fq <= 1e-9:
+            if fp > 1e-9:
+                t = fp / (fp - fq); ut.append([p[i] + (q[i] - p[i]) * t for i in range(3)])
+            ut.append(list(q))
+        elif fp <= 1e-9:
+            t = fp / (fp - fq); ut.append([p[i] + (q[i] - p[i]) * t for i in range(3)])
+    return ut
+
+
+def knekktak(tak2, th):
+    """Knekktak (mansard) av et vanlig tak: hver takflate (z = t, avstand inn fra takfoten, lineær over flaten) deles langs
+    t = t_brudd; høyden blir bratt (nedre_grader) opp til bruddet og slak (ovre_grader) over. Høydene lagres slik kartet
+    tegner dem (z·th), så alle verktøy og src/07 tegner knekktaket uten egen kode."""
+    import math
+    tb, k1, k2 = KNEKK['t_brudd'], math.tan(math.radians(KNEKK['nedre_grader'])), math.tan(math.radians(KNEKK['ovre_grader']))
+    def z(t): return (k1 * t if t <= tb else k1 * tb + k2 * (t - tb)) / th
+    ut = []
+    for f in tak2:
+        if len(f) < 3:
+            continue
+        import numpy as np
+        A = np.array([[q[0], q[1], 1.0] for q in f]); kz = np.linalg.lstsq(A, np.array([q[2] for q in f]), rcond=None)[0]
+        a, b, c0 = float(kz[0]), float(kz[1]), float(kz[2])
+        if abs(a) + abs(b) < 1e-9:
+            ut.append([[q[0], q[1], z(q[2])] for q in f]); continue
+        for del_ in (_klipp(f, a, b, tb - c0), _klipp(f, -a, -b, -(tb - c0))):
+            if len(del_) >= 3:
+                ut.append([[round(q[0], 3), round(q[1], 3), round(z(a * q[0] + b * q[1] + c0), 3)] for q in del_])
+    return ut
+
+
 def hoyden_styrer(data, grunn):
     """Høyden er grunnlaget for alt som står på huset (24.10).
     Piper og arker står på taket: høyden deres regnes alltid fra takflatene og husets høyde (h + t·th, samme formel som kartet
@@ -137,6 +177,8 @@ def hoyden_styrer(data, grunn):
     flyttes som før, med høydeendringen. Vinduer som ikke lenger får plass under gesimsen (overkant over h - 0,3 m) tas ut."""
     for j, x in enumerate(data['bygg']):
         g = grunn[j] if j < len(grunn) else x
+        if x.get('takform') == 'knekk' and x.get('tak2') and not x.get('_knekk'):
+            x['tak2'] = knekktak(x['tak2'], x.get('th') or 0.82); x['_knekk'] = True
         h0, h1 = g.get('h', 0), x.get('h', 0); th = x.get('th', 0.82); f = th / 0.82
         CAP = 7.5 * th / 0.82 if not x.get('tak2') else 1e9
         for felt in ('piper', 'arker'):
