@@ -318,6 +318,34 @@
      ]
     }
    ]
+  },
+  {
+   "id": "bnr-193868258",
+   "kilde": "Street View (hovedagenten 29.10)",
+   "grunn": "Voldportgaten 71: siden mot Voldportgaten er beige i bildet fra mai 2024, siden mot Raadhusgaten hvit i bildet fra aug. 2010; huset er trolig malt om, og det nyeste bildet gjelder for hele huset",
+   "sett": {
+    "vegg": [
+     214,
+     206,
+     190
+    ],
+    "veggs": null,
+    "farge_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)"
+   }
+  },
+  {
+   "id": "bnr-13394024",
+   "kilde": "Street View (hovedagenten 29.10)",
+   "grunn": "Torvgaten 58: bare et brukerpanorama med upålitelig retning; den røde teglgården i bildet er bnr-193868711 (gateskilt Toldbodgaten 36, sett i egen avlesning med Torvgaten-siden i rød tegl). Fargen fra Street View gjelder ikke dette huset: 2015-fargen (trykkfila) står til huset er sett",
+   "sett": {
+    "vegg": [
+     254,
+     230,
+     158
+    ],
+    "veggs": null,
+    "farge_kilde": "trykkfila 2015 (Street View-bildet viste nabohuset)"
+   }
   }
  ]
 }

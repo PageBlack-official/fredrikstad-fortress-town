@@ -159,6 +159,37 @@ Soner: «gamlebyen» = huset står i et kommunehus i avgrensningen; «randsone»
 Regel 21 regner registeret på nytt og er rød når en adresse i Gamlebyen mangler hus eller kort, et kort står i et annet hus enn
 adressepunktet, eller et kommunehus (eller en adresse i randsonen) mangler hus uten unntak med grunn i kilder/register/unntak.json.
 
+## Byggene: kjeden, merknadene og det som står på taket (29.10, natt/bygg)
+Rettelseslaget lar nyeste linje vinne, og hvert verktøy flytter sine linjer bakerst når det kjøres. Derfor er rekkefølgen fast:
+
+    python3 verktoy/grunnmur.py              omriss og tak fra kommunekartet (planlegger uten id_flytt sine linjer)
+    python3 verktoy/id_flytt.py              hus over på riktig bnr-id etter Matrikkelen (kilder/id-etter-matrikkel.json)
+    python3 -I rapport/hoyder/hent.py        høydene måles (hoyder.json har id per hus; plassen i lista brukes ikke lenger)
+    python3 -I rapport/hoyder/legg_inn.py    høyde og takhelning på id
+    python3 verktoy/vinduer_regler.py        vinduer etter reglene på antatte hus
+    python3 verktoy/streetview_fasader.py    Street View, alle sider («sider» i avlesningen); veggen etter retningen når kamerapunktet bommer
+    python3 verktoy/streetview_farger.py     fargene
+    python3 verktoy/fasade_tegning.py legg_inn   vinduer fra kvartaltegningene som vektor (kilder/fasade-tegning/, se under)
+    python3 verktoy/bygg_merknader.py        merknadene på enkelthus (kilder/bygg-merknader.json): Vegars kvartalskontroll og avgjørelser mot kildene
+
+Høydene følger id-en (29.10): hoyder.json var nøklet på plassen i bygg-lista. Når et nytt bygg kom inn foran de andre nye byggene
+(rettelser med op ny), flyttet alle plassene seg ett hakk, og målt høyde havnet på nabohuset. Nå har hver måling id, legg_inn.py og
+regel 02 slår opp på id.
+
+Piper og arker står på taket: datalag.hoyden_styrer regner høyden fra takflatene (h + t·th) hver gang, og pipene flyttes opp til
+mønet (datalag.til_monet; `piper_fri: true` på huset slår det av). Før ble høyden lagret og flyttet med høydeendringen, og en rettelse
+regnet mot ny høyde ble flyttet en gang til (arker på −2,08 m). Regel 13 sjekker at piper og arker står på takflaten.
+
+Nye felt på bygg (tegnes i src/07): `takform: "knekk"` (knekktak/mansard, takflatene deles ved bruddet i datalaget, datalag.KNEKK),
+`sokkel: {h, farge, skygge}` (natursteinsetasje i egen farge), `takvinduer: [[x, y, bredde, høyde]]` (flate vinduer i takflaten),
+`veggfelt: [[x1, y1, x2, y2, r, g, b]]` (del av en vegg i egen farge: to fasader under ett omriss i kommunekartet).
+
+Kvartaltegningene som vektor (verktoy/fasade_tegning.py, under arbeid): flatene i .ai-fila er egne stier, vinduer og dører er hull i
+veggflatene. Verktøyet legger modellen inn i tegningen (globalt kamera, så per blokk og per hus, kantmatching mot strekene), kobler
+flatene til modellvegger og leser elementene i andel av veggen. Koblingen er ikke sikker nok alene der tegningen er satt sammen av
+biter eller frihånd avviker mye (Kvartal3, Kvartal4BITMP); kilder/fasade-kobling.json tar flate -> «id/vegg» for hånd.
+Kontrollark per kvartal: verktoy/bygg_ark.py (rapport/bygg/kvartal-<tegning>.png). Utsnitt med ortofoto og DOM: verktoy/se_her.py.
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
