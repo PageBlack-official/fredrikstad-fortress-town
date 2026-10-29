@@ -149,14 +149,15 @@ kilder/register/avstemming.json. Boligareal/bruksareal finnes ikke i åpne data 
 
     python3 verktoy/register.py hent      adresser i hele avgrensningen, alle postnumre (kilder/register/adresser-omraade.json)
     python3 verktoy/register.py           registeret, avstemmingen og Street View-gålista (kilder/register/streetview-mangler.json)
-    python3 verktoy/register.py kort      huskort for adresser uten kort (legges bakerst i data/adresser.json, eksisterende røres ikke)
+    python3 verktoy/register.py kort      huskort: nye for adresser uten kort (bakerst i data/adresser.json); kort som står i et annet hus
+                                          enn adressepunktet, flyttes dit (bare bygg_id; kortet følger adressepunktet etter grunnmuren)
     python3 verktoy/register.py ark       kontrollark rapport/register/oversikt.png (bare lokalt)
 
 Rekkefølge: adresser.py koble skriver data/adresser.json på nytt fra grunndataene, så register.py kort kjøres etter den.
 Soner: «gamlebyen» = huset står i et kommunehus i avgrensningen; «randsone» = huset er i modellen, men utenfor kommunekartets ramme
 (Heibergs gate, Cicignongata, Bings gate …); «utenfor» = utenfor avgrensningen (Nabbetorpveien, Prestelandet, Gudeberg allé …).
-Regel 21 regner registeret på nytt og er rød når en adresse i Gamlebyen mangler hus eller kort, eller et kommunehus mangler
-modellhus uten unntak med grunn i kilder/register/unntak.json.
+Regel 21 regner registeret på nytt og er rød når en adresse i Gamlebyen mangler hus eller kort, et kort står i et annet hus enn
+adressepunktet, eller et kommunehus (eller en adresse i randsonen) mangler hus uten unntak med grunn i kilder/register/unntak.json.
 
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.

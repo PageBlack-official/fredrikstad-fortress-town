@@ -499,7 +499,7 @@
    "fasadekilde": "streetview",
    "fargekilde": "Street View (aug. 2010, sikkerhet høy)",
    "streetview": "lest",
-   "kort": false,
+   "kort": true,
    "adresser": [
     "Toldbodgaten 39C"
    ],
@@ -2865,7 +2865,7 @@
    "fasadekilde": "kvartaltegning",
    "fargekilde": "Street View (mai 2024, sikkerhet høy)",
    "streetview": "lest",
-   "kort": true,
+   "kort": false,
    "adresser": [],
    "naermeste_gate": "Smedjegaten"
   },
@@ -3940,7 +3940,7 @@
    "fasadekilde": "kvartaltegning",
    "fargekilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
    "streetview": "mangler",
-   "kort": false,
+   "kort": true,
    "adresser": [
     "Smedjegaten 88"
    ],
@@ -7447,9 +7447,9 @@
    "innenfor_kartrammen": true,
    "modell_id": "bnr-24218023",
    "avstand_m": 0.0,
-   "kort": false,
+   "kort": true,
    "kort_paa": [
-    "bnr-16312916"
+    "bnr-24218023"
    ]
   },
   {
@@ -8311,9 +8311,9 @@
    "innenfor_kartrammen": true,
    "modell_id": "bnr-193869572",
    "avstand_m": 0.0,
-   "kort": false,
+   "kort": true,
    "kort_paa": [
-    "bnr-193868061"
+    "bnr-193869572"
    ]
   },
   {

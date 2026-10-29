@@ -3,9 +3,10 @@ Fasiten for hva som skal finnes i Gamlebyen er kommunekartet (FKB-omriss), Matri
 adresser. Regelen regner registeret på nytt fra kildene (leser ikke en lagret fil), og er rød når
 - en adresse i Gamlebyen ikke hører til et modellhus
 - et kommunehus i Gamlebyen ikke har modellhus, uten unntak med grunn i kilder/register/unntak.json
-- en adresse i Gamlebyen ikke har huskort (data/adresser.json; lag dem med verktoy/register.py kort)
+- en adresse i Gamlebyen ikke har huskort, eller kortet står i et annet hus enn adressepunktet (verktoy/register.py kort)
+- en adresse i randsonen ikke har hus og ikke står i unntak.json med grunn
 - avgrensningen i register.py har glidd fra kommunekart.i_gamlebyen
-Til kontroll (ikke rødt): bygningsnumre som ikke er id på huset sitt, kort som står på nabohuset, randsonen utenfor kartrammen."""
+Til kontroll (ikke rødt): bygningsnumre som ikke er id på huset sitt, flere bygningsnumre i ett omriss."""
 from _felles import *
 import sys
 sys.path.insert(0, os.path.join(ROT, 'verktoy'))
@@ -34,7 +35,13 @@ for k in U['hus']:
     elif next(r for r in reg['bygg'] if r['kommune_id'] == k)['modell_id']: info.append(f"- unntak {k} trengs ikke lenger (har modellhus)")
 for x in H.get('adresse_uten_bygg', []):
     feil.append(f"- adresse uten modellhus: {x['adresse']} ({x['grunn']})")
-for x in H.get('adresse_uten_kort', []):
+UA = U.get('adresser', {})
+for x in H.get('randsone_adresse_uten_bygg', []):
+    if x['adresse'] not in UA: feil.append(f"- adresse i randsonen uten hus og uten unntak: {x['adresse']} ({x['grunn']})")
+uten_hus = {x['adresse'] for x in H.get('randsone_adresse_uten_bygg', [])}
+for t in UA:
+    if t not in uten_hus: info.append(f"- unntak for adressen {t} trengs ikke lenger (har hus, eller finnes ikke)")
+for x in H.get('adresse_uten_kort', []) + H.get('randsone_adresse_uten_kort', []):
     feil.append(f"- adresse uten huskort: {x['adresse']} (hus {x['modell_id']}; kjør verktoy/register.py kort)")
 # avgrensningen: register.omraade må gi de samme kommunehusene som kommunekart.i_gamlebyen
 K, G = L['K'], set(L['G'])
@@ -43,16 +50,16 @@ if G != G2: feil.append(f"- avgrensningen i register.omraade har glidd fra kommu
 
 for x in H.get('id_ikke_bnr', []):
     info.append(f"- id {x['modell_id']} i {x['kommune_id']}, men Matrikkelen har {x['bygningsnumre']} der ({x['grunn']})")
-for x in H.get('kort_paa_annet_bygg', []):
-    info.append(f"- kortet for {x['adresse']} står på {', '.join(x['kortet_paa'])}, adressepunktet er i {x['adressepunktet_i']}")
+for x in H.get('kort_paa_annet_bygg', []) + H.get('randsone_kort_paa_annet_bygg', []):
+    feil.append(f"- kortet for {x['adresse']} står på {', '.join(x['kortet_paa'])}, adressepunktet er i {x['adressepunktet_i']}")
 for x in H.get('kort_paa_flere_bygg', []):
     info.append(f"- {x['adresse']} har kort på flere hus: {', '.join(x['bygg'])}")
 for x in H.get('flere_bygningsnumre_i_ett_kommunehus', []):
     info.append(f"- {x['kommune_id']}: Matrikkelen har {x['bygningsnumre']} i ett omriss (hus {x['modell_id']})")
 info.append(f"- unntatt: {len(uten) - len(mangler)} kommunehus uten modellhus ({U['regler'][0]['grunn'][:40]} …)")
 info.append(f"- randsonen (utenfor kommunekartets ramme): {T['adresser_i_randsonen_utenfor_kartrammen']} adresser, "
-            f"{T['randsone_adresser_med_bygg']} med hus, {T['randsone_adresser_med_kort']} med kort; uten hus: "
-            + ', '.join(x['adresse'] for x in H.get('randsone_adresse_uten_bygg', [])))
+            f"{T['randsone_adresser_med_bygg']} med hus, {T['randsone_adresser_med_kort']} med kort; "
+            f"{len(uten_hus)} uten hus, unntatt i unntak.json")
 info.append(f"- Street View: {T['streetview_lest']} lest, {T['streetview_usikker']} usikre, {T['streetview_mangler_med_modellhus']} ikke lest (gå-lista: kilder/register/streetview-mangler.json)")
 hode = (f"{T['kommunehus_i_gamlebyen']} kommunehus i Gamlebyen ({T['kommunehus_med_modellhus']} med modellhus), "
         f"{T['bygningsnumre_i_kommunehusene']} bygningsnumre, {T['adresser_i_gamlebyen']} adresser ({T['adresser_med_bygg']} med hus, "

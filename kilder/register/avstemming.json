@@ -10,8 +10,8 @@
   "adresser_i_randsonen_utenfor_kartrammen": 42,
   "adresser_utenfor_avgrensningen": 157,
   "adresser_med_bygg": 135,
-  "adresser_med_kort_paa_samme_bygg": 133,
-  "adresser_med_kort_paa_annet_bygg": 2,
+  "adresser_med_kort_paa_samme_bygg": 135,
+  "adresser_med_kort_paa_annet_bygg": 0,
   "randsone_adresser_med_bygg": 34,
   "randsone_adresser_med_kort": 34,
   "modellhus_i_gamlebyen": 288,
@@ -626,24 +626,6 @@
     "status": "IG",
     "modell_id": null,
     "grunn": "punktet står ikke i et FKB-omriss (lite bygg kommunekartet ikke tegner, eller punktet er satt på tomta)"
-   }
-  ],
-  "kort_paa_annet_bygg": [
-   {
-    "adresse": "Toldbodgaten 39C",
-    "adressepunktet_i": "bnr-24218023",
-    "kortet_paa": [
-     "bnr-16312916"
-    ],
-    "grunn": "kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); kortet røres ikke"
-   },
-   {
-    "adresse": "Smedjegaten 88",
-    "adressepunktet_i": "bnr-193869572",
-    "kortet_paa": [
-     "bnr-193868061"
-    ],
-    "grunn": "kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); kortet røres ikke"
    }
   ],
   "randsone_adresse_uten_bygg": [

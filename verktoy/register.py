@@ -3,8 +3,8 @@
 
     python3 verktoy/register.py              bygger kilder/register/gamlebyen.json, avstemming.json og streetview-mangler.json
     python3 verktoy/register.py streetview   bare streetview-mangler.json (gå-lista for Street View-runden)
-    python3 verktoy/register.py kort         legger til huskort (data/adresser.json) for adresser som mangler kort; rører aldri
-                                             en rad som finnes (kjøres etter verktoy/adresser.py koble, som skriver fila på nytt)
+    python3 verktoy/register.py kort         huskort (data/adresser.json): nye for adresser uten kort, og kort som står på et annet
+                                             hus enn adressepunktet flyttes dit (bare bygg_id); kjøres etter verktoy/adresser.py koble
     python3 verktoy/register.py kort --tørt  viser bare hva som ville blitt lagt til
     python3 verktoy/register.py ark          kontrollark rapport/register/oversikt.png (ikke i git: omrissene er kommunekartet)
     python3 verktoy/register.py hent         henter alle adresser i Gamlebyen-avgrensningen fra Kartverkets adresse-API
@@ -516,7 +516,7 @@ def avstem(L, reg):
             hull[pre + 'adresse_uten_kort'].append({'adresse': a['adresse'], 'modell_id': a['modell_id']})
         elif not a['kort']:
             hull[pre + 'kort_paa_annet_bygg'].append({'adresse': a['adresse'], 'adressepunktet_i': a['modell_id'], 'kortet_paa': a['kort_paa'],
-                                                      'grunn': 'kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); kortet røres ikke'})
+                                                      'grunn': 'kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); verktoy/register.py kort flytter det'})
     for t, n in Counter(r['adresse'] for r in L['kort']).items():
         if n > 1:
             hull['kort_paa_flere_bygg'].append({'adresse': t, 'bygg': sorted(r['bygg_id'] for r in L['kort'] if r['adresse'] == t)})
@@ -558,8 +558,18 @@ def legg_til_kort(L, tørt=False):
     """Huskort for adresser (Gamlebyen og randsonen) som har et modellhus, men ingen rad i data/adresser.json. Raden får samme
     form som verktoy/adresser.py lager (bygg_id, adresse, gnr, bnr) + kilde. Kortet viser da adressen, og fra huset selv navnet
     (tegnforklaringen), bygningsnummeret og kulturminne (matrikkelfeltet). Byggeår finnes ikke i Matrikkelens bygningspunkt.
-    Rader som finnes, røres aldri; adressen legges ikke til et nytt hus når den alt står på et annet (listes i avstemmingen)."""
+    Rader som finnes, beholder innholdet; bare bygg_id følger adressepunktet (kortet står i huset punktet står i)."""
     reg = bygg_register(L)
+    # Kortet følger adressepunktet: står en adresse sitt kort på et annet hus enn det punktet står i (koblet før grunnmur.py
+    # delte eller la til hus), flyttes raden dit. Bare bygg_id endres; resten av raden (og rekkefølgen) står.
+    hus = {a['adresse']: a['modell_id'] for a in reg['adresser'] if a['sone'] != 'utenfor' and a['modell_id']}
+    flyttet = []
+    for r in L['kort']:
+        ny_id = hus.get(r['adresse'])
+        if ny_id and r['bygg_id'] != ny_id:
+            flyttet.append((r['adresse'], r['bygg_id'], ny_id)); r['bygg_id'] = ny_id
+    for t, a, b in flyttet:
+        print(f'  ~ {t}: {a} -> {b} (adressepunktet står i {b})')
     finnes = {r['adresse'] for r in L['kort']}
     nye = []
     for a in reg['adresser']:
@@ -570,8 +580,8 @@ def legg_til_kort(L, tørt=False):
         finnes.add(a['adresse'])
     for r in nye:
         print(f"  + {r['adresse']} -> {r['bygg_id']}")
-    print(f'{len(nye)} nye kort' + (' (tørt, ikke skrevet)' if tørt else ''))
-    if tørt or not nye:
+    print(f'{len(nye)} nye kort, {len(flyttet)} flyttet' + (' (tørt, ikke skrevet)' if tørt else ''))
+    if tørt or not (nye or flyttet):
         return nye
     rader = L['kort'] + nye
     with open(os.path.join(ROT, 'data', 'adresser.json'), 'w', encoding='utf8') as f:
