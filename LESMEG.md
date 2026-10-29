@@ -156,8 +156,17 @@ trær og høyde = Kartverkets DOM−DTM (rapport/hoyder/kilder).
 Innenfor brosteinsflaten er brostein grunnen og flatene er avvikene; på vollene er gresset (terrenget) grunnen. Brostein og grus
 skilles på farge og tekstur, men lys belegning i sol kan ikke alltid skilles i fotoet: en flate med annen type enn grunnen må være
 minst 15 m² og ses i sol på halve arealet. Det som er dømt for hånd, står i kilder/bakke-maalt.json (prøvepunkter, faste flater).
+Gjerder, murer og hekker: fotoet (mørk/grønn smal stripe langs eiendomsgrensene), Street View-avlesningen (utsagnene «stakitt
+til venstre», «hekk foran» … plassert i åpningen til nabohuset eller ved gatekanten; `SV_AVLESNING=<sti>` peker på avlesningen) og
+det som er målt for hånd (kilder/bakke-maalt.json «gjerder»). Tegningen (2017/2019-trykket) er prøvd som kilde for murene i
+åpningene langs gata, men registreringen modell -> trykk (2–8 m) er for grov; slås på med TEGNING_GJERDER=1 når tegningene er
+registrert per kvartal.
+Trær: ett tre per tretopp i DOM−DTM; trær uten topp i et tett felt minst 5 m fra hverandre; dubletter og trær uten vegetasjon
+(dømt med øyet i fotoet) tas ut med grunn (kilder/bakke-maalt.json «traer_fjernet», «traer_dommer», «traer_nye»).
+Gater: gatene dømt i Street View-bildene (kilder/bakke-maalt.json «gater») går foran fotoets brostein/grus; gangveier som er gress
+i fotoet nesten hele veien, tas ut (rapport/bakke/veier-fjernet.json). Innkjørsler og plasser: `bakke.py innkjorsler`.
 Regler: 31 overflater, 32 gater, 33 gjerder, 34 trær (alle måler mot kildene, krav 95 %).
-Rekkefølge: grunnmur.py → bakke.py overflater → gater → gjerder → traer → ark.
+Rekkefølge: grunnmur.py → bakke.py gater (fra grunndataene) → overflater → innkjorsler → gjerder → traer → ark.
 
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.

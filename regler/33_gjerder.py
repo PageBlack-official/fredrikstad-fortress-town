@@ -13,8 +13,10 @@ from shapely.ops import unary_union
 d = datalag.alle(); dom = B.domene(); R = B.ramme(dom); M = B.MPP
 f = B.fasit(R, M, d); L = f['trekk']['L']; gr = B.F.gront_maske(f['orto']).astype(np.float32); nd = f['ndsm']
 G = [g for g in d.get('gjerder', []) if isinstance(g, dict) and not g.get('skjul')]
+Gf = [g for g in G if 'ortofoto' in g.get('kilde', '')]   # funnet i fotoet: måles mot fotoet
+Ga = [g for g in G if g not in Gf]                         # Street View og målt for hånd: kontrolleres mot husene
 tot = sett = 0.0; ikke = []
-for g in G:
+for g in Gf:
     l = math.dist(*g['p'][:2]); tot += l
     r = B.vurder_linje(g['p'][0], g['p'][-1], L, gr, nd, R, M, sok=0.5, sett=f['sett'])
     if r and (r['typ'] == g['typ'] or {r['typ'], g['typ']} <= {'gjerde', 'mur'}): sett += l
@@ -29,8 +31,16 @@ for kilde, a, b in B._kandidater(d, R, M, f, dom):
     l = LineString([(a[0] + nx, a[1] + ny), (b[0] + nx, b[1] + ny)]); ktot += l.length   # der fotoet viser linja
     if kart is not None: kdek += l.intersection(kart).length
 dek = kdek / max(ktot, 1e-9)
-typer = {t: (sum(1 for g in G if g['typ'] == t), sum(math.dist(*g['p'][:2]) for g in G if g['typ'] == t)) for t in ('gjerde', 'mur', 'hekk')}
-lin = [f"presisjon {pres:.1%} av {tot:.0f} m (krav 95 %), dekning {dek:.1%} av {ktot:.0f} m sett langs kandidatlinjene (krav 95 %)",
-       'i kartet: ' + ', '.join(f"{t} {n} stk / {l:.0f} m" for t, (n, l) in typer.items())]
+from shapely.geometry import Polygon
+husu = unary_union([P.buffer(-0.3) for P in B.hus_polygoner(d)])
+gjennom = [g for g in Ga if LineString(g['p']).intersection(husu).length > 0.5]
+kilder = {}
+for g in Ga: k = g.get('kilde', '?').split(' (')[0]; kilder[k] = kilder.get(k, 0) + LineString(g['p']).length
+typer = {t: (sum(1 for g in G if g['typ'] == t), sum(LineString(g['p']).length for g in G if g['typ'] == t)) for t in ('gjerde', 'mur', 'hekk')}
+lin = [f"presisjon {pres:.1%} av {tot:.0f} m funnet i fotoet (krav 95 %), dekning {dek:.1%} av {ktot:.0f} m sett langs kandidatlinjene (krav 95 %); "
+       f"{len(gjennom)} av {len(Ga)} stykker fra Street View/hånd går gjennom et hus (krav 0)",
+       'i kartet: ' + ', '.join(f"{t} {n} stk / {l:.0f} m" for t, (n, l) in typer.items()),
+       'etter kilde (utenom fotoet): ' + ', '.join(f"{k} {v:.0f} m" for k, v in kilder.items())]
+if gjennom: lin += ['', 'Går gjennom hus:'] + [f"- {g['id']} {g['typ']} ({g['p'][0][0]:.0f}, {g['p'][0][1]:.0f})" for g in gjennom]
 if ikke: lin += ['', 'Stykker som ikke ses i fotoet der de står:'] + ikke[:40]
-rapport('33_gjerder', pres >= 0.95 and dek >= 0.95, lin)
+rapport('33_gjerder', pres >= 0.95 and dek >= 0.95 and not gjennom, lin)

@@ -14,5 +14,7 @@ const _iMur=(q)=>(DATA.teglmurer||[]).some(m=>{ const [a,c]=m.p, dx=c[0]-a[0], d
 // gjerder, murer og hekker sett i ortofoto 2024 (data/gjerder.json, verktoy/bakke.py gjerder 29.10): {typ, p, h}; gammel form (bare punkter) = gjerde
 (DATA.gjerder||[]).forEach(g=>{ const p=Array.isArray(g)?g:g.p, typ=Array.isArray(g)?'gjerde':g.typ, h=Array.isArray(g)?1.5:(g.h||1.2);
   if(!Array.isArray(g)&&g.skjul) return; if(p.every(_iMur)) return;
-  if(typ==='hekk') wallAlong(p, h, 0.9, [104,146,96]); else if(typ==='mur') wallAlong(p, h, 0.45, [206,198,184]); else wallAlong(p, h, 0.14, [196,184,166]); });
+  const art=Array.isArray(g)?'':(g.art||'');   // art fra Street View: stakitt hvitt, plankegjerde/-port grått tre, smijern mørkt og tynt
+  const FG={stakitt:[236,234,226], plankegjerde:[150,136,120], plankeport:[150,136,120], smijern:[52,54,56], kjetting:[70,70,70], netting:[150,154,150], rekkverk:[200,200,196]};
+  if(typ==='hekk') wallAlong(p, h, 0.9, [104,146,96]); else if(typ==='mur') wallAlong(p, h, 0.45, [206,198,184]); else wallAlong(p, h, art==='smijern'||art==='kjetting'?0.06:0.14, FG[art]||[196,184,166]); });
 flatGruppe(murer);   // ett nett per murfarge
