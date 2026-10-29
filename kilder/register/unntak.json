@@ -1,0 +1,7 @@
+{
+ "_om": "Kommunehus i Gamlebyen som ikke skal ha et modellhus, med grunn. Regel 21 er rød for alle andre kommunehus uten modellhus. «regler» gjelder alle hus som oppfyller dem; «hus» er enkelthus (nøkkel = kommune_id i kilder/register/gamlebyen.json, tyngdepunktet i modellmeter). Et unntak som ikke lenger trengs (huset har fått modellhus), meldes av regel 21.",
+ "regler": [
+  {"areal_under": 6.0, "grunn": "under 6 m² (søppelskur, trappehus, kjellernedgang): grunnmur.py hopper over dem (MINSTE), de vises ikke i kartet", "hvem": "Claude", "dato": "2026-10-29"}
+ ],
+ "hus": {}
+}

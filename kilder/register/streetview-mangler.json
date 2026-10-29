@@ -1,9 +1,10 @@
 {
- "_om": "Hus og adresser i Gamlebyen som ikke er lest av i Street View (kilder/streetview/avlesning.json), gatevis i gå-rekkefølge (grådig: nærmeste gate etter forrige, husene langs gata). pano_url: punktet på gatas midtlinje nærmest huset, heading mot huset. «usikker»: lest, men hopp.json sier det er tvil om det var riktig hus. Laget av verktoy/register.py; Google-bildene skal aldri inn i repoet, bare tall og ord i avlesning.json.",
+ "_om": "Hus og adresser i Gamlebyen som ikke er lest av i Street View (kilder/streetview/avlesning.json), gatevis i gå-rekkefølge (grådig: nærmeste gate etter forrige, husene langs gata). pano_url: punktet på gatas midtlinje nærmest huset, heading mot huset. «usikker»: lest, men hopp.json sier det er tvil om det var riktig hus. Med: hus med adresse eller bygningsnummer (pb-hus uten adresse er murer/skur og står ikke her). Sone: festningsbyen (innenfor vollene) først, så resten av Gamlebyen-avgrensningen, randsonen (husene utenfor kommunekartets ramme) til slutt. Laget av verktoy/register.py; Google-bildene skal aldri inn i repoet, bare tall og ord i avlesning.json.",
  "antall": 230,
  "gater": [
   {
    "gate": "Færgeportgaten",
+   "sone": "festningsbyen",
    "antall": 12,
    "hus": [
     {
@@ -218,6 +219,7 @@
   },
   {
    "gate": "Toldbodgaten",
+   "sone": "festningsbyen",
    "antall": 18,
    "hus": [
     {
@@ -538,7 +540,8 @@
   },
   {
    "gate": "Laboratoriegaten",
-   "antall": 2,
+   "sone": "festningsbyen",
+   "antall": 1,
    "hus": [
     {
      "modell_id": "bnr-193870287",
@@ -557,29 +560,169 @@
      ],
      "status": "ikke lest",
      "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2013178,10.9510586&heading=10&pitch=8&fov=70"
-    },
+    }
+   ]
+  },
+  {
+   "gate": "Tøihusgaten",
+   "sone": "festningsbyen",
+   "antall": 9,
+   "hus": [
     {
-     "modell_id": "bnr-193870198",
+     "modell_id": "bnr-193870279",
      "adresser": [
-      "Laboratoriegaten 100"
+      "Tøihusgaten 41"
      ],
-     "navn": "Labratoriet",
+     "navn": "Tøihuset",
      "bygningsnummer": [
-      193870198
+      193870279
      ],
-     "bygningstype": null,
+     "bygningstype": "kontor- og administrasjonsbygning",
      "kulturminne": true,
      "bygg_lonlat": [
-      10.95284,
-      59.200938
+      10.95246,
+      59.201687
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012000,10.9525643&heading=152&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2019817,10.9526060&heading=194&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868576",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193868576
+     ],
+     "bygningstype": "annen lagerbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.952685,
+      59.202059
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2019768,10.9526440&heading=14&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972012",
+     "adresser": [
+      "Tøihusgaten 42"
+     ],
+     "navn": "Det nye rådhus",
+     "bygningsnummer": [
+      193972012
+     ],
+     "bygningstype": "999",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953207,
+      59.202096
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2019130,10.9531053&heading=16&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193870252",
+     "adresser": [
+      "Tøihusgaten 45"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193870252
+     ],
+     "bygningstype": "andre småhus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953778,
+      59.201677
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018045,10.9538485&heading=196&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972047",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972047
+     ],
+     "bygningstype": "999",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953607,
+      59.20209
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018586,10.9534779&heading=16&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972098",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972098
+     ],
+     "bygningstype": "mediebygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953952,
+      59.202007
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018058,10.9538401&heading=16&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972063",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972063
+     ],
+     "bygningstype": "mediebygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954075,
+      59.20186
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2017781,10.9540299&heading=16&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972071",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972071
+     ],
+     "bygningstype": "mediebygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953946,
+      59.202063
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018108,10.9538054&heading=16&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972055",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972055
+     ],
+     "bygningstype": "mediebygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954044,
+      59.201997
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2017926,10.9539304&heading=16&pitch=8&fov=70"
     }
    ]
   },
   {
    "gate": "Voldgaten",
+   "sone": "festningsbyen",
    "antall": 19,
    "hus": [
     {
@@ -915,6 +1058,7 @@
   },
   {
    "gate": "Raadhusgaten",
+   "sone": "festningsbyen",
    "antall": 21,
    "hus": [
     {
@@ -1282,811 +1426,302 @@
    ]
   },
   {
-   "gate": "Tøihusgaten",
-   "antall": 9,
+   "gate": "Kasernegaten",
+   "sone": "festningsbyen",
+   "antall": 17,
    "hus": [
     {
-     "modell_id": "bnr-193972055",
+     "modell_id": "bnr-193867634",
      "adresser": [],
-     "navn": null,
+     "navn": "Vollmesterboligen",
      "bygningsnummer": [
-      193972055
-     ],
-     "bygningstype": "mediebygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954044,
-      59.201997
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2017926,10.9539304&heading=16&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972071",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972071
-     ],
-     "bygningstype": "mediebygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953946,
-      59.202063
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018108,10.9538054&heading=16&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972063",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972063
-     ],
-     "bygningstype": "mediebygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954075,
-      59.20186
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2017781,10.9540299&heading=16&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972098",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972098
-     ],
-     "bygningstype": "mediebygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953952,
-      59.202007
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018058,10.9538401&heading=16&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972047",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972047
-     ],
-     "bygningstype": "999",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953607,
-      59.20209
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018586,10.9534779&heading=16&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193870252",
-     "adresser": [
-      "Tøihusgaten 45"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193870252
-     ],
-     "bygningstype": "andre småhus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953778,
-      59.201677
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2018045,10.9538485&heading=196&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972012",
-     "adresser": [
-      "Tøihusgaten 42"
-     ],
-     "navn": "Det nye rådhus",
-     "bygningsnummer": [
-      193972012
-     ],
-     "bygningstype": "999",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953207,
-      59.202096
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2019130,10.9531053&heading=16&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868576",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193868576
-     ],
-     "bygningstype": "annen lagerbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952685,
-      59.202059
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2019768,10.9526440&heading=14&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193870279",
-     "adresser": [
-      "Tøihusgaten 41"
-     ],
-     "navn": "Tøihuset",
-     "bygningsnummer": [
-      193870279
+      193867634
      ],
      "bygningstype": "kontor- og administrasjonsbygning",
      "kulturminne": true,
      "bygg_lonlat": [
-      10.95246,
-      59.201687
+      10.95516,
+      59.202067
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2019817,10.9526060&heading=194&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Kirkegaten",
-   "antall": 16,
-   "hus": [
-    {
-     "modell_id": "bnr-193867510",
-     "adresser": [
-      "Kirkegaten 24"
-     ],
-     "navn": "Ekserserhuset",
-     "bygningsnummer": [
-      193867510
-     ],
-     "bygningstype": "annen idrettsbygning",
-     "kulturminne": true,
-     "bygg_lonlat": [
-      10.951622,
-      59.202321
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2022725,10.9517744&heading=302&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2021622,10.9549838&heading=136&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193867553",
-     "adresser": [],
+     "modell_id": "bnr-193867715",
+     "adresser": [
+      "Kasernegaten 55"
+     ],
      "navn": null,
      "bygningsnummer": [
-      193867553
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952117,
-      59.203042
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2028908,10.9525476&heading=304&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867545",
-     "adresser": [
-      "Kirkegaten 26"
-     ],
-     "navn": "Arnesgården",
-     "bygningsnummer": [
-      193867545
-     ],
-     "bygningstype": "andre småhus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952432,
-      59.202945
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2029004,10.9525604&heading=304&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-300002508",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      300002508
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952301,
-      59.203006
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2029106,10.9525742&heading=304&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868495",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193868495
-     ],
-     "bygningstype": "kontor- og administrasjonsbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952368,
-      59.203041
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2029504,10.9526273&heading=304&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868355",
-     "adresser": [
-      "Kirkegaten 27"
-     ],
-     "navn": "Det gamle raadhus",
-     "bygningsnummer": [
-      193868355
+      193867715
      ],
      "bygningstype": "store boligbygg",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.953073,
-      59.203483
+      10.954892,
+      59.202286
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034100,10.9532829&heading=304&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2021939,10.9548228&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193868312",
-     "adresser": [],
-     "navn": "Rosinggården",
+     "modell_id": "bnr-16308102",
+     "adresser": [
+      "Kasernegaten 53",
+      "Kasernegaten 54"
+     ],
+     "navn": null,
      "bygningsnummer": [
-      193868312
+      16308102
+     ],
+     "bygningstype": "999",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954169,
+      59.202183
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023049,10.9542604&heading=201&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972462",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972462
+     ],
+     "bygningstype": "bedehus/menighetshus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954364,
+      59.202396
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2022990,10.9542904&heading=21&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6246753",
+     "adresser": [
+      "Kasernegaten 52"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6246753
+     ],
+     "bygningstype": "bedehus/menighetshus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954381,
+      59.202447
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023026,10.9542719&heading=21&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972454",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972454
+     ],
+     "bygningstype": "bedehus/menighetshus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954453,
+      59.20255
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023034,10.9542679&heading=21&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193971229",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193971229
+     ],
+     "bygningstype": "mediebygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953826,
+      59.202113
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023547,10.9540081&heading=201&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867847",
+     "adresser": [
+      "Kasernegaten 51"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193867847
+     ],
+     "bygningstype": "store boligbygg",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953955,
+      59.202228
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023474,10.9540450&heading=201&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972004",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972004
      ],
      "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.953705,
-      59.20335
+      10.953834,
+      59.202161
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034688,10.9533605&heading=124&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023594,10.9539839&heading=201&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6275109",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6275109
-     ],
-     "bygningstype": "annen lagerbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952952,
-      59.203615
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034721,10.9533648&heading=304&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868290",
+     "modell_id": "bnr-193867804",
      "adresser": [
-      "Kirkegaten 29B"
+      "Kasernegaten 50"
      ],
      "navn": null,
      "bygningsnummer": [
-      193868290
+      193867804
      ],
      "bygningstype": "tomannsbolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.953501,
-      59.203439
+      10.95411,
+      59.202415
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034818,10.9533776&heading=124&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023450,10.9540569&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193868347",
-     "adresser": [
-      "Kirkegaten 28B"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193868347
-     ],
-     "bygningstype": "butikkbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953227,
-      59.20356
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034996,10.9534011&heading=304&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972136",
+     "modell_id": "bnr-193972438",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193972136
+      193972438
      ],
      "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.953915,
-      59.203378
+      10.95416,
+      59.202496
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035378,10.9534516&heading=124&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023467,10.9540484&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193868282",
-     "adresser": [
-      "Kirkegaten 29A"
-     ],
+     "modell_id": "bnr-193867812",
+     "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193868282
+      193867812
      ],
-     "bygningstype": "enebolig",
+     "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.953921,
-      59.203619
+      10.953987,
+      59.2025
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2037050,10.9536721&heading=124&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023771,10.9538942&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193868223",
-     "adresser": [
-      "Kirkegaten 30"
-     ],
-     "navn": "Muldvadgården",
+     "modell_id": "bnr-193972772",
+     "adresser": [],
+     "navn": null,
      "bygningsnummer": [
-      193868223
+      193972772
      ],
-     "bygningstype": "restaurantbygning/kafé",
+     "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.954126,
-      59.203794
+      10.953886,
+      59.20249
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2038738,10.9538922&heading=124&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023930,10.9538135&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193972225",
-     "adresser": [
-      "Kirkegaten 30A"
-     ],
-     "navn": null,
+     "modell_id": "bnr-193868568",
+     "adresser": [],
+     "navn": "Brannstasjon - uthus til Infanterikasernen",
      "bygningsnummer": [
-      193972225
-     ],
-     "bygningstype": "annen kontorbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954534,
-      59.203827
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2039926,10.9540461&heading=124&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868134",
-     "adresser": [
-      "Kirkegaten 32A"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193868134
-     ],
-     "bygningstype": "andre småhus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954943,
-      59.204505
-     ],
-     "status": "usikker (hopp.json): merknaden: ikke sikkert hvilket av to bygg",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2045599,10.9547808&heading=124&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868444",
-     "adresser": [
-      "Kirkegaten 33"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193868444
+      193868568
      ],
      "bygningstype": "annen hotellbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954686,
-      59.204633
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2045882,10.9548174&heading=304&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Smedjegaten",
-   "antall": 6,
-   "hus": [
-    {
-     "modell_id": "bnr-193867308",
-     "adresser": [],
-     "navn": "Artillerismiens uthus",
-     "bygningsnummer": [
-      193867308
-     ],
-     "bygningstype": "annen lagerbygning",
      "kulturminne": true,
      "bygg_lonlat": [
-      10.955514,
-      59.205191
+      10.953258,
+      59.202558
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2048490,10.9550812&heading=33&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2025091,10.9532215&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193867324",
+     "modell_id": "bnr-193867537",
      "adresser": [
-      "Smedjegaten 87"
+      "Kasernegaten 47"
      ],
-     "navn": "Artillerismien",
+     "navn": "Infanterikasernen",
      "bygningsnummer": [
-      193867324
+      193867537
      ],
-     "bygningstype": "verkstedbygning",
+     "bygningstype": "annen bygning for bofellesskap",
      "kulturminne": true,
      "bygg_lonlat": [
-      10.955305,
-      59.205064
+      10.953088,
+      59.202874
      ],
-     "status": "usikker (hopp.json): merknaden: ikke bekreftet at det er riktig bygg (lastebil dekker)",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2048602,10.9550474&heading=33&pitch=8&fov=70"
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2025779,10.9528683&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193972306",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972306
-     ],
-     "bygningstype": "museum/kunstgalleri",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955453,
-      59.204508
-     ],
-     "status": "usikker (hopp.json): merknaden: høyden passer dårlig, målbygget kan ligge bak porten",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2045649,10.9555817&heading=229&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868118",
+     "modell_id": "bnr-193987370",
      "adresser": [
-      "Smedjegaten 91"
+      "Kasernegaten 46"
      ],
      "navn": null,
      "bygningsnummer": [
-      193868118
+      193987370
      ],
-     "bygningstype": "enebolig",
+     "bygningstype": "annet kulturhus",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.955494,
-      59.204356
+      10.952008,
+      59.202851
      ],
-     "status": "usikker (hopp.json): merknaden: usikkert hvilket av to bygg",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2044673,10.9557457&heading=229&pitch=8&fov=70"
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2027609,10.9519392&heading=21&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193868681",
+     "modell_id": "bnr-193971911",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193868681
+      193971911
      ],
      "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.955644,
-      59.204363
-     ],
-     "status": "usikker (hopp.json): merknaden: sannsynlig, men ikke sikkert at gavlen er dette bygget",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2044332,10.9558030&heading=229&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193869572",
-     "adresser": [
-      "Smedjegaten 88"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193869572
-     ],
-     "bygningstype": "hospits/pensjonat",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.956354,
-      59.204315
+      10.951775,
+      59.203095
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2042831,10.9560084&heading=80&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Voldportgaten",
-   "antall": 15,
-   "hus": [
-    {
-     "modell_id": "bnr-193867928",
-     "adresser": [
-      "Voldportgaten 75"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193867928
-     ],
-     "bygningstype": "butikkbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955738,
-      59.203207
-     ],
-     "status": "usikker (hopp.json): merknaden: grensen for bygget i den lange gårdsrekka er usikker, så tallene kan gjelde naboene også",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2033271,10.9558391&heading=203&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867979",
-     "adresser": [
-      "Voldportgaten 74"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193867979
-     ],
-     "bygningstype": "andre småhus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955609,
-      59.203441
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2033877,10.9555640&heading=23&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868630",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193868630
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955654,
-      59.203589
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034023,10.9554974&heading=23&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972616",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972616
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955254,
-      59.203147
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034078,10.9554725&heading=203&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972519",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972519
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955324,
-      59.203267
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034134,10.9554470&heading=203&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868622",
-     "adresser": [
-      "Voldportgaten 73"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193868622
-     ],
-     "bygningstype": "restaurantbygning/kafé",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.955179,
-      59.203277
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034421,10.9553168&heading=203&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868207",
-     "adresser": [
-      "Voldportgaten 72"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193868207
-     ],
-     "bygningstype": "butikkbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954862,
-      59.203638
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035536,10.9547973&heading=22&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868258",
-     "adresser": [
-      "Voldportgaten 71"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193868258
-     ],
-     "bygningstype": "butikkbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954635,
-      59.203438
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035663,10.9547345&heading=202&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972195",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972195
-     ],
-     "bygningstype": "kontor- og administrasjonsbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954698,
-      59.20371
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035922,10.9546071&heading=22&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-16290424",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      16290424
-     ],
-     "bygningstype": "annen lagerbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954513,
-      59.203687
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036216,10.9544621&heading=22&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972152",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972152
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954285,
-      59.203458
-     ],
-     "status": "usikker (hopp.json): merknaden: usikkert om det er dette bygget eller pb-5",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036304,10.9544185&heading=202&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972187",
-     "adresser": [
-      "Voldportgaten 72A"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193972187
-     ],
-     "bygningstype": "butikkbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954418,
-      59.203721
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036430,10.9543569&heading=22&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868533",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193868533
-     ],
-     "bygningstype": "annen lagerbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954274,
-      59.203538
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036433,10.9543553&heading=202&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193971989",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193971989
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953432,
-      59.204074
-     ],
-     "status": "usikker (hopp.json): merknaden: ikke sikkert at veggen hører til dette bygget",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2038601,10.9532716&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193971202",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193971202
-     ],
-     "bygningstype": "annen undervisningsbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952974,
-      59.203727
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2038939,10.9530992&heading=201&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2028340,10.9515751&heading=21&pitch=8&fov=70"
     }
    ]
   },
   {
    "gate": "Torvgaten",
+   "sone": "festningsbyen",
    "antall": 34,
    "hus": [
     {
@@ -2663,710 +2298,659 @@
    ]
   },
   {
-   "gate": "Kasernegaten",
-   "antall": 17,
+   "gate": "Voldportgaten",
+   "sone": "festningsbyen",
+   "antall": 15,
    "hus": [
     {
-     "modell_id": "bnr-193867634",
-     "adresser": [],
-     "navn": "Vollmesterboligen",
+     "modell_id": "bnr-193867928",
+     "adresser": [
+      "Voldportgaten 75"
+     ],
+     "navn": null,
      "bygningsnummer": [
-      193867634
+      193867928
+     ],
+     "bygningstype": "butikkbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955738,
+      59.203207
+     ],
+     "status": "usikker (hopp.json): merknaden: grensen for bygget i den lange gårdsrekka er usikker, så tallene kan gjelde naboene også",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2033271,10.9558391&heading=203&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867979",
+     "adresser": [
+      "Voldportgaten 74"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193867979
+     ],
+     "bygningstype": "andre småhus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955609,
+      59.203441
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2033877,10.9555640&heading=23&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868630",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193868630
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955654,
+      59.203589
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034023,10.9554974&heading=23&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972616",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972616
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955254,
+      59.203147
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034078,10.9554725&heading=203&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972519",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972519
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955324,
+      59.203267
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034134,10.9554470&heading=203&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868622",
+     "adresser": [
+      "Voldportgaten 73"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193868622
+     ],
+     "bygningstype": "restaurantbygning/kafé",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955179,
+      59.203277
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034421,10.9553168&heading=203&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868207",
+     "adresser": [
+      "Voldportgaten 72"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193868207
+     ],
+     "bygningstype": "butikkbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954862,
+      59.203638
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035536,10.9547973&heading=22&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868258",
+     "adresser": [
+      "Voldportgaten 71"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193868258
+     ],
+     "bygningstype": "butikkbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954635,
+      59.203438
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035663,10.9547345&heading=202&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972195",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193972195
      ],
      "bygningstype": "kontor- og administrasjonsbygning",
-     "kulturminne": true,
-     "bygg_lonlat": [
-      10.95516,
-      59.202067
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2021622,10.9549838&heading=136&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867715",
-     "adresser": [
-      "Kasernegaten 55"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193867715
-     ],
-     "bygningstype": "store boligbygg",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.954892,
-      59.202286
+      10.954698,
+      59.20371
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2021939,10.9548228&heading=21&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035922,10.9546071&heading=22&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-16308102",
-     "adresser": [
-      "Kasernegaten 53",
-      "Kasernegaten 54"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      16308102
-     ],
-     "bygningstype": "999",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954169,
-      59.202183
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023049,10.9542604&heading=201&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972462",
+     "modell_id": "bnr-16290424",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193972462
-     ],
-     "bygningstype": "bedehus/menighetshus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954364,
-      59.202396
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2022990,10.9542904&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6246753",
-     "adresser": [
-      "Kasernegaten 52"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      6246753
-     ],
-     "bygningstype": "bedehus/menighetshus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954381,
-      59.202447
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023026,10.9542719&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972454",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972454
-     ],
-     "bygningstype": "bedehus/menighetshus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.954453,
-      59.20255
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023034,10.9542679&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193971229",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193971229
-     ],
-     "bygningstype": "mediebygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953826,
-      59.202113
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023547,10.9540081&heading=201&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867847",
-     "adresser": [
-      "Kasernegaten 51"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193867847
-     ],
-     "bygningstype": "store boligbygg",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953955,
-      59.202228
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023474,10.9540450&heading=201&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972004",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972004
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953834,
-      59.202161
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023594,10.9539839&heading=201&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867804",
-     "adresser": [
-      "Kasernegaten 50"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193867804
-     ],
-     "bygningstype": "tomannsbolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.95411,
-      59.202415
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023450,10.9540569&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972438",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972438
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.95416,
-      59.202496
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023467,10.9540484&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867812",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193867812
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953987,
-      59.2025
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023771,10.9538942&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193972772",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193972772
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.953886,
-      59.20249
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2023930,10.9538135&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193868568",
-     "adresser": [],
-     "navn": "Brannstasjon - uthus til Infanterikasernen",
-     "bygningsnummer": [
-      193868568
-     ],
-     "bygningstype": "annen hotellbygning",
-     "kulturminne": true,
-     "bygg_lonlat": [
-      10.953258,
-      59.202558
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2025091,10.9532215&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867537",
-     "adresser": [
-      "Kasernegaten 47"
-     ],
-     "navn": "Infanterikasernen",
-     "bygningsnummer": [
-      193867537
-     ],
-     "bygningstype": "annen bygning for bofellesskap",
-     "kulturminne": true,
-     "bygg_lonlat": [
-      10.953088,
-      59.202874
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2025779,10.9528683&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193987370",
-     "adresser": [
-      "Kasernegaten 46"
-     ],
-     "navn": null,
-     "bygningsnummer": [
-      193987370
-     ],
-     "bygningstype": "annet kulturhus",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.952008,
-      59.202851
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2027609,10.9519392&heading=21&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193971911",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193971911
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.951775,
-      59.203095
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2028340,10.9515751&heading=21&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Mindre-Alvs vei",
-   "antall": 4,
-   "hus": [
-    {
-     "modell_id": "bnr-193867464",
-     "adresser": [],
-     "navn": "Isegranhuset",
-     "bygningsnummer": [
-      193867464
-     ],
-     "bygningstype": "annen undervisningsbygning",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.947166,
-      59.203733
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036318,10.9472077&heading=348&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867480",
-     "adresser": [],
-     "navn": "Widdingstua",
-     "bygningsnummer": [
-      193867480
-     ],
-     "bygningstype": "annen bygning for overnatting",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.947326,
-      59.20356
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036021,10.9471761&heading=119&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193867472",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193867472
+      16290424
      ],
      "bygningstype": "annen lagerbygning",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.947107,
-      59.203443
+      10.954513,
+      59.203687
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034644,10.9470291&heading=119&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036216,10.9544621&heading=22&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193867405",
+     "modell_id": "bnr-193972152",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193867405
+      193972152
      ],
-     "bygningstype": null,
+     "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945054,
-      59.203078
+      10.954285,
+      59.203458
+     ],
+     "status": "usikker (hopp.json): merknaden: usikkert om det er dette bygget eller pb-5",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036304,10.9544185&heading=202&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972187",
+     "adresser": [
+      "Voldportgaten 72A"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193972187
+     ],
+     "bygningstype": "butikkbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954418,
+      59.203721
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2031706,10.9450794&heading=188&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036430,10.9543569&heading=22&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868533",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193868533
+     ],
+     "bygningstype": "annen lagerbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954274,
+      59.203538
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036433,10.9543553&heading=202&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193971989",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193971989
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953432,
+      59.204074
+     ],
+     "status": "usikker (hopp.json): merknaden: ikke sikkert at veggen hører til dette bygget",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2038601,10.9532716&heading=21&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193971202",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193971202
+     ],
+     "bygningstype": "annen undervisningsbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.952974,
+      59.203727
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2038939,10.9530992&heading=201&pitch=8&fov=70"
     }
    ]
   },
   {
-   "gate": "Bjarne Aas gate",
-   "antall": 2,
+   "gate": "Kirkegaten",
+   "sone": "festningsbyen",
+   "antall": 16,
    "hus": [
     {
-     "modell_id": "bnr-193820387",
-     "adresser": [],
+     "modell_id": "bnr-193868444",
+     "adresser": [
+      "Kirkegaten 33"
+     ],
      "navn": null,
      "bygningsnummer": [
-      193820387
+      193868444
      ],
-     "bygningstype": null,
+     "bygningstype": "annen hotellbygning",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945102,
-      59.205107
+      10.954686,
+      59.204633
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2052402,10.9451422&heading=189&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2045882,10.9548174&heading=304&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13416435",
-     "adresser": [],
+     "modell_id": "bnr-193868134",
+     "adresser": [
+      "Kirkegaten 32A"
+     ],
      "navn": null,
      "bygningsnummer": [
-      13416435
+      193868134
      ],
-     "bygningstype": null,
+     "bygningstype": "andre småhus",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.94495,
-      59.205139
+      10.954943,
+      59.204505
      ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2052526,10.9449839&heading=189&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Ove Ramms gate",
-   "antall": 3,
-   "hus": [
-    {
-     "modell_id": "bnr-193820417",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193820417
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.94501,
-      59.205736
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2059321,10.9450765&heading=190&pitch=8&fov=70"
+     "status": "usikker (hopp.json): merknaden: ikke sikkert hvilket av to bygg",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2045599,10.9547808&heading=124&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193820409",
-     "adresser": [],
+     "modell_id": "bnr-193972225",
+     "adresser": [
+      "Kirkegaten 30A"
+     ],
      "navn": null,
      "bygningsnummer": [
-      193820409
+      193972225
      ],
-     "bygningstype": null,
+     "bygningstype": "annen kontorbygning",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945183,
-      59.205798
+      10.954534,
+      59.203827
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2059190,10.9452237&heading=190&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2039926,10.9540461&heading=124&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13416559",
-     "adresser": [],
+     "modell_id": "bnr-193868223",
+     "adresser": [
+      "Kirkegaten 30"
+     ],
+     "navn": "Muldvadgården",
+     "bygningsnummer": [
+      193868223
+     ],
+     "bygningstype": "restaurantbygning/kafé",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.954126,
+      59.203794
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2038738,10.9538922&heading=124&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868282",
+     "adresser": [
+      "Kirkegaten 29A"
+     ],
      "navn": null,
      "bygningsnummer": [
-      13416559
+      193868282
      ],
      "bygningstype": "enebolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945856,
-      59.206017
+      10.953921,
+      59.203619
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2058696,10.9458105&heading=9&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Cicignongata",
-   "antall": 9,
-   "hus": [
-    {
-     "modell_id": "bnr-13415889",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      13415889
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.945307,
-      59.206071
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2060539,10.9455452&heading=278&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2037050,10.9536721&heading=124&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-16300365",
+     "modell_id": "bnr-193972136",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      16300365
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.945418,
-      59.206205
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2061931,10.9455841&heading=278&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193820557",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193820557
+      193972136
      ],
      "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945927,
-      59.206191
+      10.953915,
+      59.203378
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2062158,10.9455905&heading=98&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2035378,10.9534516&heading=124&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193820565",
+     "modell_id": "bnr-193868347",
+     "adresser": [
+      "Kirkegaten 28B"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193868347
+     ],
+     "bygningstype": "butikkbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953227,
+      59.20356
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034996,10.9534011&heading=304&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868290",
+     "adresser": [
+      "Kirkegaten 29B"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193868290
+     ],
+     "bygningstype": "tomannsbolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953501,
+      59.203439
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034818,10.9533776&heading=124&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6275109",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193820565
+      6275109
+     ],
+     "bygningstype": "annen lagerbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.952952,
+      59.203615
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034721,10.9533648&heading=304&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868312",
+     "adresser": [],
+     "navn": "Rosinggården",
+     "bygningsnummer": [
+      193868312
      ],
      "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.946002,
-      59.206191
+      10.953705,
+      59.20335
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2062206,10.9455918&heading=98&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034688,10.9533605&heading=124&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193820824",
+     "modell_id": "bnr-193868355",
+     "adresser": [
+      "Kirkegaten 27"
+     ],
+     "navn": "Det gamle raadhus",
+     "bygningsnummer": [
+      193868355
+     ],
+     "bygningstype": "store boligbygg",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.953073,
+      59.203483
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034100,10.9532829&heading=304&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193868495",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193820824
+      193868495
      ],
-     "bygningstype": null,
+     "bygningstype": "kontor- og administrasjonsbygning",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945219,
-      59.206334
+      10.952368,
+      59.203041
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2063053,10.9456155&heading=278&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2029504,10.9526273&heading=304&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193820832",
+     "modell_id": "bnr-300002508",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193820832
+      300002508
      ],
-     "bygningstype": null,
+     "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945304,
-      59.206335
+      10.952301,
+      59.203006
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2063123,10.9456175&heading=278&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2029106,10.9525742&heading=304&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13415897",
+     "modell_id": "bnr-193867545",
+     "adresser": [
+      "Kirkegaten 26"
+     ],
+     "navn": "Arnesgården",
+     "bygningsnummer": [
+      193867545
+     ],
+     "bygningstype": "andre småhus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.952432,
+      59.202945
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2029004,10.9525604&heading=304&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867553",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      13415897
+      193867553
      ],
-     "bygningstype": null,
+     "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945456,
-      59.20642
+      10.952117,
+      59.203042
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2064057,10.9456436&heading=278&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2028908,10.9525476&heading=304&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13416060",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      13416060
+     "modell_id": "bnr-193867510",
+     "adresser": [
+      "Kirkegaten 24"
      ],
-     "bygningstype": null,
-     "kulturminne": false,
+     "navn": "Ekserserhuset",
+     "bygningsnummer": [
+      193867510
+     ],
+     "bygningstype": "annen idrettsbygning",
+     "kulturminne": true,
      "bygg_lonlat": [
-      10.945513,
-      59.20665
+      10.951622,
+      59.202321
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2066318,10.9457138&heading=280&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-16324507",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      16324507
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.945558,
-      59.20679
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2067716,10.9457609&heading=280&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2022725,10.9517744&heading=302&pitch=8&fov=70"
     }
    ]
   },
   {
-   "gate": "Bings gate",
-   "antall": 3,
+   "gate": "Smedjegaten",
+   "sone": "festningsbyen",
+   "antall": 6,
    "hus": [
     {
-     "modell_id": "bnr-193971539",
-     "adresser": [],
+     "modell_id": "bnr-193869572",
+     "adresser": [
+      "Smedjegaten 88"
+     ],
      "navn": null,
      "bygningsnummer": [
-      193971539
+      193869572
      ],
-     "bygningstype": null,
+     "bygningstype": "hospits/pensjonat",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.945248,
-      59.206756
+      10.956354,
+      59.204315
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065629,10.9452030&heading=7&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2042831,10.9560084&heading=80&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13418292",
+     "modell_id": "bnr-193868681",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      13418292
+      193868681
      ],
-     "bygningstype": null,
+     "bygningstype": "garasje/uthus til bolig",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.944849,
-      59.206684
+      10.955644,
+      59.204363
      ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065857,10.9448266&heading=7&pitch=8&fov=70"
+     "status": "usikker (hopp.json): merknaden: sannsynlig, men ikke sikkert at gavlen er dette bygget",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2044332,10.9558030&heading=229&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13416370",
+     "modell_id": "bnr-193868118",
+     "adresser": [
+      "Smedjegaten 91"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193868118
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.955494,
+      59.204356
+     ],
+     "status": "usikker (hopp.json): merknaden: usikkert hvilket av to bygg",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2044673,10.9557457&heading=229&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193972306",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      13416370
+      193972306
      ],
-     "bygningstype": null,
+     "bygningstype": "museum/kunstgalleri",
      "kulturminne": false,
      "bygg_lonlat": [
-      10.944858,
-      59.206501
+      10.955453,
+      59.204508
+     ],
+     "status": "usikker (hopp.json): merknaden: høyden passer dårlig, målbygget kan ligge bak porten",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2045649,10.9555817&heading=229&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867324",
+     "adresser": [
+      "Smedjegaten 87"
+     ],
+     "navn": "Artillerismien",
+     "bygningsnummer": [
+      193867324
+     ],
+     "bygningstype": "verkstedbygning",
+     "kulturminne": true,
+     "bygg_lonlat": [
+      10.955305,
+      59.205064
+     ],
+     "status": "usikker (hopp.json): merknaden: ikke bekreftet at det er riktig bygg (lastebil dekker)",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2048602,10.9550474&heading=33&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867308",
+     "adresser": [],
+     "navn": "Artillerismiens uthus",
+     "bygningsnummer": [
+      193867308
+     ],
+     "bygningstype": "annen lagerbygning",
+     "kulturminne": true,
+     "bygg_lonlat": [
+      10.955514,
+      59.205191
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065827,10.9448765&heading=187&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Ferjestedsveien",
-   "antall": 1,
-   "hus": [
-    {
-     "modell_id": "bnr-13418268",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      13418268
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.945105,
-      59.206826
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2070316,10.9451621&heading=188&pitch=8&fov=70"
-    }
-   ]
-  },
-  {
-   "gate": "Glommastien",
-   "antall": 1,
-   "hus": [
-    {
-     "modell_id": "bnr-193992765",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193992765
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.951841,
-      59.206297
-     ],
-     "status": "usikker (hopp.json): merknaden: en annen bygning bak til venstre kan også være målet",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2062569,10.9519136&heading=317&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2048490,10.9550812&heading=33&pitch=8&fov=70"
     }
    ]
   },
   {
    "gate": "Nordre sortiport",
+   "sone": "festningsbyen",
    "antall": 1,
    "hus": [
     {
@@ -3389,6 +2973,7 @@
   },
   {
    "gate": "Torsnesveien",
+   "sone": "festningsbyen",
    "antall": 1,
    "hus": [
     {
@@ -3413,56 +2998,9 @@
   },
   {
    "gate": "Huitfeldts gate",
-   "antall": 6,
+   "sone": "festningsbyen",
+   "antall": 2,
    "hus": [
-    {
-     "modell_id": "bnr-6246729",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6246729
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958732,
-      59.201382
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012129,10.9584248&heading=43&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6276539",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6276539
-     ],
-     "bygningstype": "enebolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958827,
-      59.201223
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011147,10.9586305&heading=43&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193874401",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193874401
-     ],
-     "bygningstype": "garasje/uthus til bolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958335,
-      59.201125
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011949,10.9584624&heading=223&pitch=8&fov=70"
-    },
     {
      "modell_id": "bnr-193874428",
      "adresser": [],
@@ -3478,22 +3016,6 @@
      ],
      "status": "ikke lest",
      "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012524,10.9583420&heading=223&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6276520",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6276520
-     ],
-     "bygningstype": "enebolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958395,
-      59.201002
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011225,10.9586141&heading=223&pitch=8&fov=70"
     },
     {
      "modell_id": "bnr-193874398",
@@ -3514,9 +3036,330 @@
    ]
   },
   {
-   "gate": "Heibergs gate",
-   "antall": 16,
+   "gate": "General Ohmes vei",
+   "sone": "festningsbyen",
+   "antall": 4,
    "hus": [
+    {
+     "modell_id": "bnr-6276016",
+     "adresser": [
+      "General Ohmes vei 30"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276016
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.95806,
+      59.201147
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2013438,10.9581507&heading=193&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6276008",
+     "adresser": [
+      "General Ohmes vei 28"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276008
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.9577,
+      59.20112
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2013438,10.9581507&heading=226&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-13384401",
+     "adresser": [
+      "General Ohmes vei 26"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13384401
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.957367,
+      59.201057
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2013438,10.9581507&heading=234&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6275990",
+     "adresser": [
+      "General Ohmes vei 24"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6275990
+     ],
+     "bygningstype": "andre småhus",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.957053,
+      59.20094
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2013438,10.9581507&heading=234&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Carsten Ankers gate",
+   "sone": "festningsbyen",
+   "antall": 1,
+   "hus": [
+    {
+     "modell_id": "bnr-23730278",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      23730278
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.957472,
+      59.201118
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012181,10.9574165&heading=164&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Cicignongata",
+   "sone": "gamlebyen",
+   "antall": 2,
+   "hus": [
+    {
+     "modell_id": "bnr-193820565",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193820565
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.946002,
+      59.206191
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2062206,10.9455918&heading=98&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193820557",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193820557
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945927,
+      59.206191
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2062158,10.9455905&heading=98&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Ove Ramms gate",
+   "sone": "gamlebyen",
+   "antall": 1,
+   "hus": [
+    {
+     "modell_id": "bnr-13416559",
+     "adresser": [
+      "Ove Ramms gate 10"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13416559
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945856,
+      59.206017
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2058696,10.9458105&heading=9&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Mindre-Alvs vei",
+   "sone": "gamlebyen",
+   "antall": 3,
+   "hus": [
+    {
+     "modell_id": "bnr-193867464",
+     "adresser": [
+      "Mindre-Alvs vei 10"
+     ],
+     "navn": "Isegranhuset",
+     "bygningsnummer": [
+      193867464
+     ],
+     "bygningstype": "annen undervisningsbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.947166,
+      59.203733
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036318,10.9472077&heading=348&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867480",
+     "adresser": [
+      "Mindre-Alvs vei 15"
+     ],
+     "navn": "Widdingstua",
+     "bygningsnummer": [
+      193867480
+     ],
+     "bygningstype": "annen bygning for overnatting",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.947326,
+      59.20356
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2036021,10.9471761&heading=119&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193867472",
+     "adresser": [
+      "Mindre-Alvs vei 13"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193867472
+     ],
+     "bygningstype": "annen lagerbygning",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.947107,
+      59.203443
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2034644,10.9470291&heading=119&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Huitfeldts gate",
+   "sone": "gamlebyen",
+   "antall": 2,
+   "hus": [
+    {
+     "modell_id": "bnr-193874401",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193874401
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958335,
+      59.201125
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011949,10.9584624&heading=223&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6246729",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      6246729
+     ],
+     "bygningstype": "garasje/uthus til bolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958732,
+      59.201382
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012129,10.9584248&heading=43&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Heibergs gate",
+   "sone": "gamlebyen",
+   "antall": 4,
+   "hus": [
+    {
+     "modell_id": "bnr-6276520",
+     "adresser": [
+      "Heibergs gate 41"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276520
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958395,
+      59.201002
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2008596,10.9587008&heading=312&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6276539",
+     "adresser": [
+      "Heibergs gate 43"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276539
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958827,
+      59.201223
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2010901,10.9591113&heading=312&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6276474",
+     "adresser": [
+      "Heibergs gate 30"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276474
+     ],
+     "bygningstype": "enebolig",
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.959549,
+      59.200979
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011412,10.9592023&heading=132&pitch=8&fov=70"
+    },
     {
      "modell_id": "bnr-193874568",
      "adresser": [],
@@ -3532,198 +3375,67 @@
      ],
      "status": "usikker (hopp.json): merknaden: riktig hus ikke sikkert (48 m, hekk)",
      "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011766,10.9592653&heading=132&pitch=8&fov=70"
-    },
+    }
+   ]
+  },
+  {
+   "gate": "Heibergs gate",
+   "sone": "randsone",
+   "antall": 15,
+   "hus": [
     {
-     "modell_id": "bnr-6276474",
-     "adresser": [],
+     "modell_id": "bnr-6276431",
+     "adresser": [
+      "Heibergs gate 27"
+     ],
      "navn": null,
      "bygningsnummer": [
-      6276474
-     ],
-     "bygningstype": "enebolig",
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.959549,
-      59.200979
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2011412,10.9592023&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-300017669",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      300017669
+      6276431
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.959514,
-      59.20081
+      10.955644,
+      59.199433
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2010400,10.9590219&heading=132&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.1993042,10.9559173&heading=313&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6276458",
-     "adresser": [],
+     "modell_id": "bnr-6276466",
+     "adresser": [
+      "Heibergs gate 29"
+     ],
      "navn": null,
      "bygningsnummer": [
-      6276458
+      6276466
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.959294,
-      59.200845
+      10.955855,
+      59.199556
      ],
-     "status": "usikker (hopp.json): merknaden: «antatt det mørkegrå huset» – i tvil",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2010028,10.9589558&heading=132&pitch=8&fov=70"
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.1994248,10.9561339&heading=313&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-193874533",
-     "adresser": [],
+     "modell_id": "bnr-13384452",
+     "adresser": [
+      "Heibergs gate 33"
+     ],
      "navn": null,
      "bygningsnummer": [
-      193874533
+      13384452
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.959304,
-      59.200686
+      10.957491,
+      59.2005
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2009185,10.9588058&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-13384444",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      13384444
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.959055,
-      59.200713
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2008700,10.9587194&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-193874525",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      193874525
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.959057,
-      59.200535
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2007730,10.9585467&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6276415",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6276415
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958831,
-      59.200592
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2007463,10.9584992&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6254179",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6254179
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958821,
-      59.200422
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006510,10.9583295&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-13384460",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      13384460
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.958144,
-      59.200868
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2007224,10.9584566&heading=312&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6276393",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6276393
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.95859,
-      59.200452
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006083,10.9582537&heading=132&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-300506942",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      300506942
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.957838,
-      59.200875
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006482,10.9583247&heading=312&pitch=8&fov=70"
-    },
-    {
-     "modell_id": "bnr-6276512",
-     "adresser": [],
-     "navn": null,
-     "bygningsnummer": [
-      6276512
-     ],
-     "bygningstype": null,
-     "kulturminne": false,
-     "bygg_lonlat": [
-      10.957937,
-      59.200747
-     ],
-     "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006035,10.9582450&heading=312&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2003548,10.9578025&heading=312&pitch=8&fov=70"
     },
     {
      "modell_id": "bnr-193874371",
@@ -3742,41 +3454,239 @@
      "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2005245,10.9581045&heading=312&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6276466",
-     "adresser": [],
+     "modell_id": "bnr-6276512",
+     "adresser": [
+      "Heibergs gate 37"
+     ],
      "navn": null,
      "bygningsnummer": [
-      6276466
+      6276512
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.955855,
-      59.199556
+      10.957937,
+      59.200747
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.1994248,10.9561339&heading=313&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006035,10.9582450&heading=312&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6276431",
+     "modell_id": "bnr-300506942",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      6276431
+      300506942
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.955644,
-      59.199433
+      10.957838,
+      59.200875
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.1993042,10.9559173&heading=313&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006482,10.9583247&heading=312&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6276393",
+     "adresser": [
+      "Heibergs gate 22"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276393
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.95859,
+      59.200452
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006083,10.9582537&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-13384460",
+     "adresser": [
+      "Heibergs gate 39"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13384460
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958144,
+      59.200868
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2007224,10.9584566&heading=312&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6254179",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      6254179
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958821,
+      59.200422
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006510,10.9583295&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6276415",
+     "adresser": [
+      "Heibergs gate 24"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276415
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.958831,
+      59.200592
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2007463,10.9584992&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193874525",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193874525
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.959057,
+      59.200535
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2007730,10.9585467&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-13384444",
+     "adresser": [
+      "Heibergs gate 26"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13384444
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.959055,
+      59.200713
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2008700,10.9587194&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-193874533",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193874533
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.959304,
+      59.200686
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2009185,10.9588058&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6276458",
+     "adresser": [
+      "Heibergs gate 28"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6276458
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.959294,
+      59.200845
+     ],
+     "status": "usikker (hopp.json): merknaden: «antatt det mørkegrå huset» – i tvil",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2010028,10.9589558&heading=132&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-300017669",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      300017669
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.959514,
+      59.20081
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2010400,10.9590219&heading=132&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Carsten Ankers gate",
+   "sone": "randsone",
+   "antall": 2,
+   "hus": [
+    {
+     "modell_id": "bnr-193874363",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193874363
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.957412,
+      59.200622
+     ],
+     "status": "usikker (hopp.json): merknaden: identifikasjonen usikker (frukttrær og avstand)",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2004938,10.9571065&heading=51&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-6275338",
+     "adresser": [
+      "Carsten Ankers gate 1"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      6275338
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.957152,
+      59.200708
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006576,10.9569006&heading=69&pitch=8&fov=70"
     }
    ]
   },
   {
    "gate": "Lammers gate",
+   "sone": "randsone",
    "antall": 6,
    "hus": [
     {
@@ -3797,7 +3707,9 @@
     },
     {
      "modell_id": "bnr-6276830",
-     "adresser": [],
+     "adresser": [
+      "Lammers gate 4"
+     ],
      "navn": null,
      "bygningsnummer": [
       6276830
@@ -3829,7 +3741,9 @@
     },
     {
      "modell_id": "bnr-6276822",
-     "adresser": [],
+     "adresser": [
+      "Lammers gate 2"
+     ],
      "navn": null,
      "bygningsnummer": [
       6276822
@@ -3878,138 +3792,373 @@
    ]
   },
   {
-   "gate": "Carsten Ankers gate",
-   "antall": 8,
+   "gate": "Laboratoriegaten",
+   "sone": "randsone",
+   "antall": 1,
    "hus": [
     {
-     "modell_id": "bnr-13384452",
-     "adresser": [],
+     "modell_id": "bnr-193870198",
+     "adresser": [
+      "Laboratoriegaten 100"
+     ],
+     "navn": "Labratoriet",
+     "bygningsnummer": [
+      193870198
+     ],
+     "bygningstype": null,
+     "kulturminne": true,
+     "bygg_lonlat": [
+      10.95284,
+      59.200938
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012000,10.9525643&heading=152&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Mindre-Alvs vei",
+   "sone": "randsone",
+   "antall": 1,
+   "hus": [
+    {
+     "modell_id": "bnr-193867405",
+     "adresser": [
+      "Mindre-Alvs vei 5"
+     ],
      "navn": null,
      "bygningsnummer": [
-      13384452
+      193867405
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.957491,
-      59.2005
+      10.945054,
+      59.203078
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2003962,10.9573009&heading=43&pitch=8&fov=70"
-    },
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2031706,10.9450794&heading=188&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Bjarne Aas gate",
+   "sone": "randsone",
+   "antall": 2,
+   "hus": [
     {
-     "modell_id": "bnr-193874363",
+     "modell_id": "bnr-193820387",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      193874363
+      193820387
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.957412,
-      59.200622
+      10.945102,
+      59.205107
      ],
-     "status": "usikker (hopp.json): merknaden: identifikasjonen usikker (frukttrær og avstand)",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2004938,10.9571065&heading=51&pitch=8&fov=70"
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2052402,10.9451422&heading=189&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6275338",
-     "adresser": [],
+     "modell_id": "bnr-13416435",
+     "adresser": [
+      "Bjarne Aas gate 1"
+     ],
      "navn": null,
      "bygningsnummer": [
-      6275338
+      13416435
      ],
      "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.957152,
-      59.200708
+      10.94495,
+      59.205139
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2006576,10.9569006&heading=69&pitch=8&fov=70"
-    },
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2052526,10.9449839&heading=189&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Ove Ramms gate",
+   "sone": "randsone",
+   "antall": 2,
+   "hus": [
     {
-     "modell_id": "bnr-6275990",
+     "modell_id": "bnr-193820417",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      6275990
+      193820417
      ],
-     "bygningstype": "andre småhus",
+     "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.957053,
-      59.20094
+      10.94501,
+      59.205736
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2009218,10.9567825&heading=83&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2059321,10.9450765&heading=190&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-13384401",
+     "modell_id": "bnr-193820409",
+     "adresser": [
+      "Ove Ramms gate 9"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      193820409
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945183,
+      59.205798
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2059190,10.9452237&heading=190&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Cicignongata",
+   "sone": "randsone",
+   "antall": 7,
+   "hus": [
+    {
+     "modell_id": "bnr-13415889",
+     "adresser": [
+      "Cicignongata 5"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13415889
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945307,
+      59.206071
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2060539,10.9455452&heading=278&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-16300365",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      13384401
+      16300365
      ],
-     "bygningstype": "enebolig",
+     "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.957367,
-      59.201057
+      10.945418,
+      59.206205
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012015,10.9572931&heading=165&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2061931,10.9455841&heading=278&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-23730278",
+     "modell_id": "bnr-193820824",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      23730278
+      193820824
      ],
-     "bygningstype": "garasje/uthus til bolig",
+     "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.957472,
-      59.201118
+      10.945219,
+      59.206334
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012181,10.9574165&heading=164&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2063053,10.9456155&heading=278&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6276008",
+     "modell_id": "bnr-193820832",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      6276008
+      193820832
      ],
-     "bygningstype": "enebolig",
+     "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.9577,
-      59.20112
+      10.945304,
+      59.206335
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012489,10.9576282&heading=164&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2063123,10.9456175&heading=278&pitch=8&fov=70"
     },
     {
-     "modell_id": "bnr-6276016",
+     "modell_id": "bnr-13415897",
+     "adresser": [
+      "Cicignongata 7"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13415897
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945456,
+      59.20642
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2064057,10.9456436&heading=278&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-13416060",
+     "adresser": [
+      "Cicignongata 9A"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13416060
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945513,
+      59.20665
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2066318,10.9457138&heading=280&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-16324507",
+     "adresser": [
+      "Cicignongata 11",
+      "Cicignongata 9B"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      16324507
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945558,
+      59.20679
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2067716,10.9457609&heading=280&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Bings gate",
+   "sone": "randsone",
+   "antall": 3,
+   "hus": [
+    {
+     "modell_id": "bnr-193971539",
      "adresser": [],
      "navn": null,
      "bygningsnummer": [
-      6276016
+      193971539
      ],
-     "bygningstype": "enebolig",
+     "bygningstype": null,
      "kulturminne": false,
      "bygg_lonlat": [
-      10.95806,
-      59.201147
+      10.945248,
+      59.206756
      ],
      "status": "ikke lest",
-     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2012947,10.9579416&heading=158&pitch=8&fov=70"
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065629,10.9452030&heading=7&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-13418292",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      13418292
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.944849,
+      59.206684
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065857,10.9448266&heading=7&pitch=8&fov=70"
+    },
+    {
+     "modell_id": "bnr-13416370",
+     "adresser": [
+      "Bings gate 17"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13416370
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.944858,
+      59.206501
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065827,10.9448765&heading=187&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Ferjestedsveien",
+   "sone": "randsone",
+   "antall": 1,
+   "hus": [
+    {
+     "modell_id": "bnr-13418268",
+     "adresser": [
+      "Ferjestedsveien 15A",
+      "Ferjestedsveien 15B"
+     ],
+     "navn": null,
+     "bygningsnummer": [
+      13418268
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.945105,
+      59.206826
+     ],
+     "status": "ikke lest",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2070316,10.9451621&heading=188&pitch=8&fov=70"
+    }
+   ]
+  },
+  {
+   "gate": "Glommastien",
+   "sone": "randsone",
+   "antall": 1,
+   "hus": [
+    {
+     "modell_id": "bnr-193992765",
+     "adresser": [],
+     "navn": null,
+     "bygningsnummer": [
+      193992765
+     ],
+     "bygningstype": null,
+     "kulturminne": false,
+     "bygg_lonlat": [
+      10.951841,
+      59.206297
+     ],
+     "status": "usikker (hopp.json): merknaden: en annen bygning bak til venstre kan også være målet",
+     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2062569,10.9519136&heading=317&pitch=8&fov=70"
     }
    ]
   }
- ]
+ ],
+ "antall_festningsbyen": 177,
+ "antall_gamlebyen": 12,
+ "antall_randsone": 41
 }

@@ -1,0 +1,786 @@
+{
+ "tall": {
+  "kommunehus_i_gamlebyen": 296,
+  "kommunehus_med_modellhus": 281,
+  "bygningsnumre_i_kommunehusene": 245,
+  "kommunehus_med_bygningsnummer": 241,
+  "bygningspunkt_i_gamlebyen_uten_kommunehus": 57,
+  "adresser_i_kildene": 334,
+  "adresser_i_gamlebyen": 135,
+  "adresser_i_randsonen_utenfor_kartrammen": 42,
+  "adresser_utenfor_avgrensningen": 157,
+  "adresser_med_bygg": 135,
+  "adresser_med_kort_paa_samme_bygg": 133,
+  "adresser_med_kort_paa_annet_bygg": 2,
+  "randsone_adresser_med_bygg": 34,
+  "randsone_adresser_med_kort": 34,
+  "modellhus_i_gamlebyen": 288,
+  "modellhus_i_randsonen": 51,
+  "modellhus_uten_kommunehus_innenfor_rammen": [
+   "pb-10 (Kongeporten)",
+   "pb-22 (Kruttmagasinet)"
+  ],
+  "modellhus_med_flere_adresser": 6,
+  "streetview_lest": 60,
+  "streetview_usikker": 15,
+  "streetview_mangler_med_modellhus": 259,
+  "streetview_mangler_i_randsonen": 41
+ },
+ "hull": {
+  "flere_bygningsnumre_i_ett_kommunehus": [
+   {
+    "kommune_id": "fkb-143.0_34.7",
+    "modell_id": "bnr-193972616",
+    "bygningsnumre": [
+     193972616,
+     300047842
+    ],
+    "grunn": "Matrikkelen har flere bygg der kommunekartet tegner ett omriss (sammenbygde hus/tilbygg); id er det laveste nummeret i modellens matrikkelfelt"
+   },
+   {
+    "kommune_id": "fkb-183.5_108.3",
+    "modell_id": "bnr-193868010",
+    "bygningsnumre": [
+     193868010,
+     193971326
+    ],
+    "grunn": "Matrikkelen har flere bygg der kommunekartet tegner ett omriss (sammenbygde hus/tilbygg); id er det laveste nummeret i modellens matrikkelfelt"
+   },
+   {
+    "kommune_id": "fkb-109.8_-20.4",
+    "modell_id": "bnr-193868592",
+    "bygningsnumre": [
+     193868592,
+     193972551
+    ],
+    "grunn": "Matrikkelen har flere bygg der kommunekartet tegner ett omriss (sammenbygde hus/tilbygg); id er det laveste nummeret i modellens matrikkelfelt"
+   },
+   {
+    "kommune_id": "fkb-108.5_-28.9",
+    "modell_id": "bnr-193972446",
+    "bygningsnumre": [
+     193972446,
+     193972586
+    ],
+    "grunn": "Matrikkelen har flere bygg der kommunekartet tegner ett omriss (sammenbygde hus/tilbygg); id er det laveste nummeret i modellens matrikkelfelt"
+   }
+  ],
+  "id_ikke_bnr": [
+   {
+    "kommune_id": "fkb-174.9_91.0",
+    "modell_id": "bnr-193867995",
+    "bygningsnumre": [
+     193972160
+    ],
+    "modellens_matrikkel": [
+     193867995,
+     193972160
+    ],
+    "nummeret_brukt_av": [],
+    "grunn": "bnr-id er et annet bygningsnummer enn det som står i omrisset"
+   },
+   {
+    "kommune_id": "fkb-167.0_100.0",
+    "modell_id": "pb-15",
+    "bygningsnumre": [
+     193867995
+    ],
+    "modellens_matrikkel": [],
+    "nummeret_brukt_av": [
+     "bnr-193867995"
+    ],
+    "grunn": "pb-id, men kommunehuset har bygningsnummer; nummeret er id på et annet modellhus (byttet om?)"
+   }
+  ],
+  "flere_modellhus_i_ett_kommunehus": [
+   {
+    "kommune_id": "fkb-82.4_75.2",
+    "modell": [
+     "bnr-193868533",
+     "pb-5",
+     "pb-13"
+    ],
+    "grunn": "grunnmur.py deler omrisset mellom modellhusene (bevisst, id-ene beholdes)"
+   },
+   {
+    "kommune_id": "fkb-33.5_-86.0",
+    "modell": [
+     "bnr-193972012",
+     "pb-8"
+    ],
+    "grunn": "grunnmur.py deler omrisset mellom modellhusene (bevisst, id-ene beholdes)"
+   },
+   {
+    "kommune_id": "fkb--190.0_-118.7",
+    "modell": [
+     "bnr-193870317",
+     "pb-1",
+     "pb-2"
+    ],
+    "grunn": "grunnmur.py deler omrisset mellom modellhusene (bevisst, id-ene beholdes)"
+   }
+  ],
+  "kommunehus_uten_modellhus": [
+   {
+    "kommune_id": "fkb-62.1_55.6",
+    "areal": 5.2,
+    "bygningsnumre": [],
+    "naermeste_gate": "Torvgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-112.0_149.8",
+    "areal": 4.3,
+    "bygningsnumre": [],
+    "naermeste_gate": "Færgeportgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-12.9_155.2",
+    "areal": 3.7,
+    "bygningsnumre": [],
+    "naermeste_gate": "Tollbodgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-146.2_32.4",
+    "areal": 5.7,
+    "bygningsnumre": [],
+    "naermeste_gate": "Voldgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-257.7_135.4",
+    "areal": 5.3,
+    "bygningsnumre": [],
+    "naermeste_gate": "Færgeportgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb--29.1_33.8",
+    "areal": 4.4,
+    "bygningsnumre": [],
+    "naermeste_gate": "Torvgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb--30.8_82.6",
+    "areal": 5.1,
+    "bygningsnumre": [],
+    "naermeste_gate": "Toldbodgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb--7.1_77.5",
+    "areal": 5.2,
+    "bygningsnumre": [],
+    "naermeste_gate": "Torvgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-27.7_-3.6",
+    "areal": 4.3,
+    "bygningsnumre": [],
+    "naermeste_gate": "Kasernegaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-91.0_223.5",
+    "areal": 4.5,
+    "bygningsnumre": [],
+    "naermeste_gate": "Tollbodgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb--328.8_82.4",
+    "areal": 4.5,
+    "bygningsnumre": [],
+    "naermeste_gate": "Mindre-Alvs vei",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb--85.0_-104.3",
+    "areal": 5.6,
+    "bygningsnumre": [],
+    "naermeste_gate": "Tøihusgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-38.0_-116.4",
+    "areal": 4.3,
+    "bygningsnumre": [],
+    "naermeste_gate": "Tøihusgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-37.9_-131.6",
+    "areal": 4.5,
+    "bygningsnumre": [],
+    "naermeste_gate": "Voldgaten",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   },
+   {
+    "kommune_id": "fkb-393.8_-181.9",
+    "areal": 5.5,
+    "bygningsnumre": [],
+    "naermeste_gate": "Heibergs gate",
+    "grunn": "under 6 m² (grunnmur.py MINSTE)"
+   }
+  ],
+  "bygningspunkt_uten_kommunehus": [
+   {
+    "bygningsnummer": 6254179,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-6254179",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6275338,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6275338",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276393,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": "bnr-6276393",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276415,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": "bnr-6276415",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276423,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6276423",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276431,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6276431",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276466,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6276466",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276482,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": "bnr-6276482",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276504,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6276504",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276512,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6276512",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276822,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": "bnr-6276822",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 6276830,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-6276830",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13384444,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": "bnr-13384444",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13384452,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13384452",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13414750,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13414769,
+    "bygningstype": "butikkbygning",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13415889,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13415889",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13415897,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13415897",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416060,
+    "bygningstype": "andre småhus",
+    "status": "TB",
+    "modell_id": "bnr-13416060",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416095,
+    "bygningstype": "butikkbygning",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416117,
+    "bygningstype": "butikkbygning",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416362,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13416362",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416370,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13416370",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416419,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13416419",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416427,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13416427",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416435,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-13416435",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13416575,
+    "bygningstype": "tomannsbolig",
+    "status": "TB",
+    "modell_id": "bnr-13416575",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13418268,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-13418268",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13418292,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-13418292",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 13418640,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 16295299,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 16300365,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-16300365",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 16324507,
+    "bygningstype": "enebolig",
+    "status": "FA",
+    "modell_id": "bnr-16324507",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 23730006,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820387,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193820387",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820409,
+    "bygningstype": "enebolig",
+    "status": "TB",
+    "modell_id": "bnr-193820409",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820417,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193820417",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820425,
+    "bygningstype": 999,
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820824,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193820824",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820832,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193820832",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193820883,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193820883",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193867405,
+    "bygningstype": "kontor- og administrasjonsbygning",
+    "status": "TB",
+    "modell_id": "bnr-193867405",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193867642,
+    "bygningstype": "kontor- og administrasjonsbygning",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "punktet står ikke i et FKB-omriss (lite bygg kommunekartet ikke tegner, eller punktet er satt på tomta)"
+   },
+   {
+    "bygningsnummer": 193867650,
+    "bygningstype": "kontor- og administrasjonsbygning",
+    "status": "TB",
+    "modell_id": null,
+    "grunn": "punktet står ikke i et FKB-omriss (lite bygg kommunekartet ikke tegner, eller punktet er satt på tomta)"
+   },
+   {
+    "bygningsnummer": 193870139,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193870139",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193870147,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193870147",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193870163,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193870163",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193874363,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193874363",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193874371,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193874371",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193874525,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193874525",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193874533,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193874533",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 193971539,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "TB",
+    "modell_id": "bnr-193971539",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 300216650,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "FA",
+    "modell_id": "bnr-300216650",
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 300854907,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "FS",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 301199764,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "IG",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 301551574,
+    "bygningstype": "garasje/uthus til bolig",
+    "status": "IG",
+    "modell_id": null,
+    "grunn": "utenfor kartrammen (kommunekartet dekker ikke punktet)"
+   },
+   {
+    "bygningsnummer": 301628349,
+    "bygningstype": "annen kontorbygning",
+    "status": "IG",
+    "modell_id": null,
+    "grunn": "punktet står ikke i et FKB-omriss (lite bygg kommunekartet ikke tegner, eller punktet er satt på tomta)"
+   }
+  ],
+  "kort_paa_annet_bygg": [
+   {
+    "adresse": "Toldbodgaten 39C",
+    "adressepunktet_i": "bnr-24218023",
+    "kortet_paa": [
+     "bnr-16312916"
+    ],
+    "grunn": "kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); kortet røres ikke"
+   },
+   {
+    "adresse": "Smedjegaten 88",
+    "adressepunktet_i": "bnr-193869572",
+    "kortet_paa": [
+     "bnr-193868061"
+    ],
+    "grunn": "kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); kortet røres ikke"
+   }
+  ],
+  "randsone_adresse_uten_bygg": [
+   {
+    "adresse": "Bings gate 19",
+    "avstand_m": 10.8,
+    "grunn": "nærmeste modellhus 10.8 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ferjestedsveien 13",
+    "avstand_m": 8.1,
+    "grunn": "nærmeste modellhus 8.1 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ove Ramms gate 11",
+    "avstand_m": 16.7,
+    "grunn": "nærmeste modellhus 16.7 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ridehusgata 6A",
+    "avstand_m": 13.8,
+    "grunn": "nærmeste modellhus 13.8 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ridehusgata 8",
+    "avstand_m": 19.7,
+    "grunn": "nærmeste modellhus 19.7 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ridehusgata 10",
+    "avstand_m": 14.2,
+    "grunn": "nærmeste modellhus 14.2 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ridehusgata 12",
+    "avstand_m": 12.6,
+    "grunn": "nærmeste modellhus 12.6 m unna (grense 8.0 m)"
+   },
+   {
+    "adresse": "Ridehusgata 14",
+    "avstand_m": 10.8,
+    "grunn": "nærmeste modellhus 10.8 m unna (grense 8.0 m)"
+   }
+  ]
+ },
+ "modellhus_med_flere_adresser": [
+  {
+   "modell_id": "bnr-193867618",
+   "adresser": [
+    "Torvgaten 57",
+    "Torvgaten 57A"
+   ]
+  },
+  {
+   "modell_id": "bnr-193868525",
+   "adresser": [
+    "Voldportgaten 69A",
+    "Voldportgaten 69B"
+   ]
+  },
+  {
+   "modell_id": "bnr-193867952",
+   "adresser": [
+    "Voldgaten 10",
+    "Voldgaten 11"
+   ]
+  },
+  {
+   "modell_id": "bnr-16308102",
+   "adresser": [
+    "Kasernegaten 53",
+    "Kasernegaten 54"
+   ]
+  },
+  {
+   "modell_id": "bnr-16324507",
+   "adresser": [
+    "Cicignongata 11",
+    "Cicignongata 9B"
+   ]
+  },
+  {
+   "modell_id": "bnr-13418268",
+   "adresser": [
+    "Ferjestedsveien 15A",
+    "Ferjestedsveien 15B"
+   ]
+  }
+ ],
+ "utenfor_avgrensningen": [
+  [
+   "Gamlebyveien",
+   1
+  ],
+  [
+   "Gudeberg allé",
+   31
+  ],
+  [
+   "Gudevoldveien",
+   7
+  ],
+  [
+   "Herlof Steens gate",
+   9
+  ],
+  [
+   "Johan Korens gate",
+   6
+  ],
+  [
+   "Meltzers gate",
+   1
+  ],
+  [
+   "Mossins gate",
+   9
+  ],
+  [
+   "Nabbetorpveien",
+   37
+  ],
+  [
+   "Parkeirngsplass og garasje, Spinneriveien",
+   1
+  ],
+  [
+   "Prestelandet",
+   35
+  ],
+  [
+   "Spinnerikroken",
+   11
+  ],
+  [
+   "Spinneriveien",
+   9
+  ]
+ ]
+}

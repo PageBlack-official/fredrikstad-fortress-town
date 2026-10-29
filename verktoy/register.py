@@ -6,12 +6,15 @@
     python3 verktoy/register.py kort         legger til huskort (data/adresser.json) for adresser som mangler kort; rører aldri
                                              en rad som finnes (kjøres etter verktoy/adresser.py koble, som skriver fila på nytt)
     python3 verktoy/register.py kort --tørt  viser bare hva som ville blitt lagt til
+    python3 verktoy/register.py hent         henter alle adresser i Gamlebyen-avgrensningen fra Kartverkets adresse-API
+                                             (punktsøk, alle postnumre) til kilder/register/adresser-omraade.json
 
 Kilder (alle åpne, ingenting gjettes):
   kommunehus     kilder/kommunekart (FKB-omriss, verktoy/kommunekart.py), avgrenset til Gamlebyen slik grunnmur.py gjør
                  (kommunekart.i_gamlebyen: festningsbyen + 12 m rundt gml-husene, bare hus helt innenfor kartrammen)
   bygningsnummer kilder/matrikkel-bygningspunkt.json (Kartverket, Matrikkelen; status RA/GR/BR/BF regnes ikke, som kommunekart.py)
-  adresser       kilder/adresser.json (Kartverkets adresse-API, postnummer 1632)
+  adresser       kilder/adresser.json (Kartverkets adresse-API, postnummer 1632) + kilder/register/adresser-omraade.json
+                 (samme API, punktsøk over avgrensningen: husene ytterst i avgrensningen har postnummer 1630, 1606 og 1672)
   modellen       data/bygg.json + data/rettelser.json (datalag.alle)
   kort           data/adresser.json (huskortet i src/16_interaksjon.js slår opp adressene på byggets id)
   Street View    kilder/streetview/avlesning.json (hus som er lest av) og hopp.json (lest, men usikkert hus)
@@ -76,6 +79,13 @@ def til_lonlat(x, y):
     return math.degrees(mx / R), math.degrees(2 * math.atan(math.exp(my / R)) - math.pi / 2)
 
 
+def kid(k):
+    """Kommunehusets nøkkel i registeret: tyngdepunktet i modellmeter (0,1 m). Plassen i PDF-en er ikke fast (nytt uttak av
+    kommunekartet gir ny rekkefølge); tyngdepunktet er det så lenge kommunen ikke måler huset på nytt."""
+    c = k.centroid
+    return f'fkb-{c.x:.1f}_{c.y:.1f}'
+
+
 def poly(x):
     P = Polygon(x['p'], [r for r in (x.get('ph') or []) if len(r) > 2])
     return P if P.is_valid else P.buffer(0)
@@ -92,7 +102,44 @@ def omraade(dek):
     return unary_union(indre).convex_hull.buffer(30).union(unary_union(ps).buffer(12)), dek.buffer(-0.3)
 
 
+def festningsbyen():
+    """Festningsbyen innenfor vollene (+30 m), den indre delen av omraade(): gå-lista tar den først."""
+    ps = [Polygon(x['p']).buffer(0) for x in datalag.alle(raa=True)['bygg'] if x.get('gml') and len(x['p']) >= 3]
+    return unary_union([P for P in ps if -260 < P.centroid.x < 290 and -270 < P.centroid.y < 320]).convex_hull.buffer(30)
+
+
 # ---------------------------------------------------------------- lasting
+def adr_nokkel(a):
+    return (a['kommunenummer'], a['adressekode'], a['nummer'], a['bokstav'] or '')
+
+
+def hent():
+    """Alle adresser i Gamlebyen-avgrensningen (+ NAER_ADR m), uansett postnummer, fra Kartverkets adresse-API (punktsøk)."""
+    import urllib.request, urllib.parse, datetime
+    R, RAMME = omraade(kommunekart.dekning())
+    O = R.buffer(NAER_ADR)
+    c = O.centroid; lon, lat = til_lonlat(c.x, c.y)
+    rad = int(max(Point(c).distance(Point(q)) for q in O.exterior.coords) + 50) if O.geom_type == 'Polygon' else 2000
+    ut, side = [], 0
+    while True:
+        url = 'https://ws.geonorge.no/adresser/v1/punktsok?' + urllib.parse.urlencode(
+            {'lat': f'{lat:.6f}', 'lon': f'{lon:.6f}', 'radius': rad, 'treffPerSide': 1000, 'side': side, 'utkoordsys': 4258})
+        d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'pageblack-smartoldtown'}), timeout=120))
+        for a in d['adresser']:
+            q = Point(datalag.til_modell(a['representasjonspunkt']['lon'], a['representasjonspunkt']['lat']))
+            if O.contains(q):
+                a.pop('meterDistanseTilPunkt', None); ut.append(a)
+        if d['metadata']['viserTil'] >= d['metadata']['totaltAntallTreff']:
+            break
+        side += 1
+    ut.sort(key=lambda a: (a['adressenavn'] or '', a['nummer'] or 0, a['bokstav'] or ''))
+    os.makedirs(UT, exist_ok=True)
+    skriv(os.path.join(UT, 'adresser-omraade.json'), {'kilde': 'ws.geonorge.no/adresser/v1/punktsok', 'lisens': 'CC BY 4.0, Kartverket',
+          'hentet': datetime.date.today().isoformat(), 'omraade': f'Gamlebyen-avgrensningen + {NAER_ADR} m (verktoy/register.py omraade)',
+          'adresser': ut})
+    print(f'{len(ut)} adresser i avgrensningen; postnumre: {dict(Counter(a["postnummer"] for a in ut))}')
+
+
 def last():
     D = datalag.alle()
     B = D['bygg']
@@ -102,7 +149,13 @@ def last():
     M = json.load(open(os.path.join(ROT, 'kilder', 'matrikkel-bygningspunkt.json'), encoding='utf8'))
     pkt = [dict(p, P=Point(datalag.til_modell(*p['lonlat']))) for p in M['punkter'] if p['status'] not in IKKE_STAAENDE]
     A = json.load(open(os.path.join(ROT, 'kilder', 'adresser.json'), encoding='utf8'))
-    adr = [dict(a, P=Point(datalag.til_modell(a['representasjonspunkt']['lon'], a['representasjonspunkt']['lat']))) for a in A['adresser']]
+    alle_a = list(A['adresser']); sett = {adr_nokkel(a) for a in alle_a}
+    sti_o = os.path.join(UT, 'adresser-omraade.json')
+    if os.path.exists(sti_o):
+        for a in json.load(open(sti_o, encoding='utf8'))['adresser']:
+            if adr_nokkel(a) not in sett:
+                alle_a.append(a); sett.add(adr_nokkel(a))
+    adr = [dict(a, P=Point(datalag.til_modell(a['representasjonspunkt']['lon'], a['representasjonspunkt']['lat']))) for a in alle_a]
     SV = json.load(open(os.path.join(ROT, 'kilder', 'streetview', 'avlesning.json'), encoding='utf8'))
     hopp = json.load(open(os.path.join(ROT, 'kilder', 'streetview', 'hopp.json'), encoding='utf8'))
     kort = datalag.les('adresser')
@@ -174,7 +227,7 @@ def streetview_mangler(L, reg=None):
     """Alle adresser i Gamlebyen og alle bygg med bygningsnummer i Gamlebyen som ikke er lest av i Street View
     (ikke i avlesning.json; de i hopp.json er lest, men usikre, og står med egen merknad). Gatevis, i gå-rekkefølge."""
     reg = reg or bygg_register(L)
-    D = L['D']; gater = _gatelinjer(D)
+    D = L['D']; gater = _gatelinjer(D); FEST = festningsbyen()
     plass = {b['id']: i for i, b in enumerate(L['B'])}
     rader = []
     for r in reg['bygg'] + reg['modell_uten_kommunehus']:
@@ -201,20 +254,33 @@ def streetview_mangler(L, reg=None):
         else:
             rad['pano_url'] = None
         rad['_gate'] = gate or '(uten gate)'
+        rad['sone'] = ('randsone' if r.get('innenfor_kartrammen') is False else
+                       'festningsbyen' if FEST.contains(Point(rad['_xy'])) else 'gamlebyen')
         rader.append(rad)
-    grupper = defaultdict(list)
-    for r in rader:
-        grupper[r['_gate']].append(r)
-    ordnet = gaa_rekkefolge(grupper, start='Færgeportgaten')
+    ordnet = []
+    her = 'Færgeportgaten'                                  # fergeleiet: der de fleste kommer inn i byen
+    for sone in ('festningsbyen', 'gamlebyen', 'randsone'):  # innenfor vollene først, så resten av avgrensningen, randsonen sist
+        grupper = defaultdict(list)
+        for r in rader:
+            if r['sone'] == sone:
+                grupper[r['_gate']].append(r)
+        if grupper:
+            ordnet += [(n, rr, sone) for n, rr in gaa_rekkefolge(grupper, start=her)]
+            her = ordnet[-1][0]
     ut = {'_om': ('Hus og adresser i Gamlebyen som ikke er lest av i Street View (kilder/streetview/avlesning.json), gatevis i '
                   'gå-rekkefølge (grådig: nærmeste gate etter forrige, husene langs gata). pano_url: punktet på gatas midtlinje '
                   'nærmest huset, heading mot huset. «usikker»: lest, men hopp.json sier det er tvil om det var riktig hus. '
+                  'Med: hus med adresse eller bygningsnummer (pb-hus uten adresse er murer/skur og står ikke her). '
+                  'Sone: festningsbyen (innenfor vollene) først, så resten av Gamlebyen-avgrensningen, randsonen (husene utenfor '
+                  'kommunekartets ramme) til slutt. '
                   'Laget av verktoy/register.py; Google-bildene skal aldri inn i repoet, bare tall og ord i avlesning.json.'),
           'antall': len(rader), 'gater': []}
-    for navn, rr in ordnet:
+    for navn, rr, sone in ordnet:
         for r in rr:
-            r.pop('_xy'); r.pop('_gate')
-        ut['gater'].append({'gate': navn, 'antall': len(rr), 'hus': rr})
+            r.pop('_xy'); r.pop('_gate'); r.pop('sone')
+        ut['gater'].append({'gate': navn, 'sone': sone, 'antall': len(rr), 'hus': rr})
+    for sone in ('festningsbyen', 'gamlebyen', 'randsone'):
+        ut['antall_' + sone] = sum(g['antall'] for g in ut['gater'] if g['sone'] == sone)
     os.makedirs(UT, exist_ok=True)
     skriv(os.path.join(UT, 'streetview-mangler.json'), ut)
     print(f"streetview-mangler: {len(rader)} hus i {len(ordnet)} gater")
@@ -303,7 +369,7 @@ def bygg_register(L):
         if bid:
             b_adr[bid].append(k)
 
-    kort_ids = defaultdict(list)
+    kort_ids = defaultdict(list); kort_alle = [(r['bygg_id'], r['adresse']) for r in L['kort']]
     for r in L['kort']:
         kort_ids[r['bygg_id']].append(r['adresse'])
 
@@ -326,7 +392,7 @@ def bygg_register(L):
     for j in G:
         mods = k_mod.get(j, []); ns = sorted(k_pkt.get(j, []), key=lambda n: pkt[n]['bygningsnummer'])
         c = K[j].representative_point()
-        rad = {'kommune_id': f'k-{j}', 'areal': round(K[j].area, 1), 'bygningsnumre': [pkt[n]['bygningsnummer'] for n in ns],
+        rad = {'kommune_id': kid(K[j]), 'areal': round(K[j].area, 1), 'bygningsnumre': [pkt[n]['bygningsnummer'] for n in ns],
                'bygningstype': ', '.join(sorted({BYGNINGSTYPE.get(pkt[n]['type'], str(pkt[n]['type'])) for n in ns})) or None,
                'kulturminne': any(pkt[n]['kulturminne'] for n in ns), 'sefrak': any(pkt[n]['sefrak'] for n in ns)}
         if len(mods) == 1:
@@ -352,7 +418,7 @@ def bygg_register(L):
             continue
         r = {'kommune_id': None, 'areal': round(P[i].area, 1), 'bygningsnumre': [m['bygningsnummer'] for m in (b.get('matrikkel') or [])],
              'bygningstype': None, 'kulturminne': any(m.get('kulturminne') for m in (b.get('matrikkel') or [])),
-             'innenfor_kartrammen': RAMME.contains(P[i]), 'kommunehus': [f'k-{j}' for j in mod_k.get(i, [])]}
+             'innenfor_kartrammen': RAMME.contains(P[i]), 'kommunehus': [kid(K[j]) for j in mod_k.get(i, [])]}
         r.update(modellfelt(i))
         r['adresser'] = sorted({adr[k]['adressetekst'] for k in b_adr.get(b['id'], [])})
         r['naermeste_gate'] = gate_naer(P[i].representative_point())
@@ -360,20 +426,192 @@ def bygg_register(L):
 
     # adressene: alle i kilden, med kobling og om de hører til Gamlebyen
     reg_ids = {r['modell_id'] for r in rader + uten_k if r['modell_id']} | {x for r in rader for x in r.get('ogsaa_modell', [])}
+    k_ids = {r['modell_id'] for r in rader if r['modell_id']} | {x for r in rader for x in r.get('ogsaa_modell', [])}
+    fredet_inni = {r['modell_id'] for r in uten_k if r['innenfor_kartrammen']}
     adr_rader = []
     for k, a in enumerate(adr):
         bid, d = a_b[k]
-        i_omr = R.contains(a['P'])
-        adr_rader.append({'adresse': a['adressetekst'], 'gnr': a['gardsnummer'], 'bnr': a['bruksnummer'],
+        # sone: «gamlebyen» = i avgrensningen og innenfor kommunekartets ramme (fasiten); «randsone» = i avgrensningen, men
+        # utenfor rammen (huset står i modellen, kommunekartet dekker det ikke); «utenfor» = utenfor avgrensningen
+        # Sonen følger huset adressen hører til (et hus rammen kutter, er ikke målt av kommunen, selv om adressepunktet er innenfor)
+        ramme = L['DEK'].contains(a['P'])
+        if bid in k_ids or bid in fredet_inni:
+            sone = 'gamlebyen'
+        elif bid in reg_ids:
+            sone = 'randsone'
+        elif R.buffer(NAER_ADR).contains(a['P']):
+            sone = 'gamlebyen' if L['RAMME'].contains(a['P']) else 'randsone'
+        else:
+            sone = 'utenfor'
+        adr_rader.append({'adresse': a['adressetekst'], 'postnummer': a['postnummer'], 'gnr': a['gardsnummer'], 'bnr': a['bruksnummer'],
                           'lonlat': [round(a['representasjonspunkt']['lon'], 6), round(a['representasjonspunkt']['lat'], 6)],
-                          'i_gamlebyen': bool(i_omr or (bid in reg_ids)), 'innenfor_kartrammen': L['DEK'].contains(a['P']),
-                          'modell_id': bid, 'avstand_m': d, 'kort': a['adressetekst'] in kort_ids.get(bid, [])})
+                          'sone': sone, 'innenfor_kartrammen': ramme,
+                          'modell_id': bid, 'avstand_m': d, 'kort': a['adressetekst'] in kort_ids.get(bid, []),
+                          'kort_paa': sorted(b_ for b_, t in kort_alle if t == a['adressetekst'])})
     return {'bygg': rader, 'modell_uten_kommunehus': uten_k, 'adresser': adr_rader,
             '_intern': dict(k_pkt=k_pkt, pkt=pkt, k_mod=k_mod, b_adr=b_adr, a_b=a_b, kort_ids=kort_ids, synlige=synlige)}
 
 
-if __name__ == '__main__':
+
+
+# ---------------------------------------------------------------- avstemming
+def avstem(L, reg):
+    """Telling og hull. Hvert hull har en grunn regnet ut fra kildene; ingenting rettes her."""
+    I = reg['_intern']; B = L['B']; pkt = I['pkt']
+    plass = {b['id']: i for i, b in enumerate(B)}
+    rader, uten_k, adr = reg['bygg'], reg['modell_uten_kommunehus'], reg['adresser']
+    gml_adr = [a for a in adr if a['sone'] == 'gamlebyen']
+    rand_adr = [a for a in adr if a['sone'] == 'randsone']
+    bnr_i = sorted({n for r in rader for n in r['bygningsnumre']})
+    modell_i = {r['modell_id'] for r in rader + uten_k if r['modell_id']} | {x for r in rader for x in r.get('ogsaa_modell', [])}
+    hull = defaultdict(list)
+    for r in rader:
+        if r['modell_id'] is None:
+            hull['kommunehus_uten_modellhus'].append({'kommune_id': r['kommune_id'], 'areal': r['areal'], 'bygningsnumre': r['bygningsnumre'],
+                                                      'naermeste_gate': r['naermeste_gate'],
+                                                      'grunn': 'under 6 m² (grunnmur.py MINSTE)' if r['areal'] < 6 else 'ikke lagt inn av grunnmur.py'})
+        if r.get('ogsaa_modell'):
+            hull['flere_modellhus_i_ett_kommunehus'].append({'kommune_id': r['kommune_id'], 'modell': [r['modell_id']] + r['ogsaa_modell'],
+                                                             'grunn': 'grunnmur.py deler omrisset mellom modellhusene (bevisst, id-ene beholdes)'})
+        if len(r['bygningsnumre']) > 1:
+            hull['flere_bygningsnumre_i_ett_kommunehus'].append({'kommune_id': r['kommune_id'], 'modell_id': r['modell_id'], 'bygningsnumre': r['bygningsnumre'],
+                                                                 'grunn': 'Matrikkelen har flere bygg der kommunekartet tegner ett omriss (sammenbygde hus/tilbygg); id er det laveste nummeret i modellens matrikkelfelt'})
+        if r['modell_id'] and r['bygningsnumre']:
+            b = B[plass[r['modell_id']]]
+            mine = {m['bygningsnummer'] for m in (b.get('matrikkel') or [])}
+            ok_id = r['modell_id'].startswith('bnr-') and int(r['modell_id'][4:]) in set(r['bygningsnumre'])
+            if not ok_id:
+                andre = [f'bnr-{n}' for n in r['bygningsnumre'] if f'bnr-{n}' in plass]
+                hull['id_ikke_bnr'].append({'kommune_id': r['kommune_id'], 'modell_id': r['modell_id'], 'bygningsnumre': r['bygningsnumre'],
+                                            'modellens_matrikkel': sorted(mine), 'nummeret_brukt_av': andre,
+                                            'grunn': ('pb-id, men kommunehuset har bygningsnummer' if r['modell_id'].startswith('pb-')
+                                                      else 'bnr-id er et annet bygningsnummer enn det som står i omrisset')
+                                                     + ('; nummeret er id på et annet modellhus (byttet om?)' if andre else '')})
+    # bygningsnumre: samme nummer brukt som id på flere, og numre i Gamlebyen uten bygg
+    k_av_bnr = defaultdict(list)
+    for r in rader:
+        for n in r['bygningsnumre']:
+            k_av_bnr[n].append(r['kommune_id'])
+    for n, ks in k_av_bnr.items():
+        if len(ks) > 1:
+            hull['bygningsnummer_i_flere_kommunehus'].append({'bygningsnummer': n, 'kommune_id': ks})
+    # punkter i Gamlebyen-området som ikke står i noe kommunehus
+    k_pkt_alle = {n for v in I['k_pkt'].values() for n in v}
+    for n, p in enumerate(pkt):
+        if n in k_pkt_alle or not L['R'].contains(p['P']):
+            continue
+        bid = f"bnr-{p['bygningsnummer']}"
+        hull['bygningspunkt_uten_kommunehus'].append({'bygningsnummer': p['bygningsnummer'], 'bygningstype': BYGNINGSTYPE.get(p['type'], p['type']),
+                                                      'status': p['status'], 'modell_id': bid if bid in plass else None,
+                                                      'grunn': ('utenfor kartrammen (kommunekartet dekker ikke punktet)' if not L['DEK'].contains(p['P'])
+                                                                else 'punktet står ikke i et FKB-omriss (lite bygg kommunekartet ikke tegner, eller punktet er satt på tomta)')})
+    # adressene
+    for a in gml_adr + rand_adr:
+        pre = '' if a['sone'] == 'gamlebyen' else 'randsone_'
+        if a['modell_id'] is None:
+            hull[pre + 'adresse_uten_bygg'].append({'adresse': a['adresse'], 'avstand_m': a['avstand_m'],
+                                                    'grunn': f"nærmeste modellhus {a['avstand_m']} m unna (grense {NAER_ADR} m)"})
+        elif not a['kort_paa']:
+            hull[pre + 'adresse_uten_kort'].append({'adresse': a['adresse'], 'modell_id': a['modell_id']})
+        elif not a['kort']:
+            hull[pre + 'kort_paa_annet_bygg'].append({'adresse': a['adresse'], 'adressepunktet_i': a['modell_id'], 'kortet_paa': a['kort_paa'],
+                                                      'grunn': 'kortet ble koblet før grunnmur.py delte/la til hus (adresser.py koble bruker grunndataene); kortet røres ikke'})
+    for t, n in Counter(r['adresse'] for r in L['kort']).items():
+        if n > 1:
+            hull['kort_paa_flere_bygg'].append({'adresse': t, 'bygg': sorted(r['bygg_id'] for r in L['kort'] if r['adresse'] == t)})
+    per_adr = Counter(a['adresse'] for a in gml_adr)
+    for t, n in per_adr.items():
+        if n > 1:
+            hull['adresse_to_ganger_i_kilden'].append({'adresse': t, 'antall': n})
+    # modellhus med flere adresser er normalt (gårdsrekker); listes til kontroll
+    fler = [(r['modell_id'], r['adresser']) for r in rader + uten_k if len(r['adresser']) > 1]
+    tall = {
+        'kommunehus_i_gamlebyen': len(rader),
+        'kommunehus_med_modellhus': sum(1 for r in rader if r['modell_id']),
+        'bygningsnumre_i_kommunehusene': len(bnr_i),
+        'kommunehus_med_bygningsnummer': sum(1 for r in rader if r['bygningsnumre']),
+        'bygningspunkt_i_gamlebyen_uten_kommunehus': len(hull['bygningspunkt_uten_kommunehus']),
+        'adresser_i_kildene': len(adr),
+        'adresser_i_gamlebyen': len(gml_adr),
+        'adresser_i_randsonen_utenfor_kartrammen': len(rand_adr),
+        'adresser_utenfor_avgrensningen': len(adr) - len(gml_adr) - len(rand_adr),
+        'adresser_med_bygg': sum(1 for a in gml_adr if a['modell_id']),
+        'adresser_med_kort_paa_samme_bygg': sum(1 for a in gml_adr if a['kort']),
+        'adresser_med_kort_paa_annet_bygg': sum(1 for a in gml_adr if a['kort_paa'] and not a['kort']),
+        'randsone_adresser_med_bygg': sum(1 for a in rand_adr if a['modell_id']),
+        'randsone_adresser_med_kort': sum(1 for a in rand_adr if a['kort_paa']),
+        'modellhus_i_gamlebyen': len(modell_i) - sum(1 for r in uten_k if not r['innenfor_kartrammen']),
+        'modellhus_i_randsonen': sum(1 for r in uten_k if not r['innenfor_kartrammen']),
+        'modellhus_uten_kommunehus_innenfor_rammen': [r['modell_id'] + (f" ({r['navn']})" if r['navn'] else '') for r in uten_k if r['innenfor_kartrammen']],
+        'modellhus_med_flere_adresser': len(fler),
+        'streetview_lest': sum(1 for r in rader + uten_k if r['streetview'] == 'lest'),
+        'streetview_usikker': sum(1 for r in rader + uten_k if r['streetview'] == 'usikker'),
+        'streetview_mangler_med_modellhus': sum(1 for r in rader + uten_k if r['streetview'] == 'mangler' and r['modell_id']),
+        'streetview_mangler_i_randsonen': sum(1 for r in uten_k if r['streetview'] == 'mangler' and not r['innenfor_kartrammen']),
+    }
+    return {'tall': tall, 'hull': {k: v for k, v in hull.items()}, 'modellhus_med_flere_adresser': [{'modell_id': m, 'adresser': a} for m, a in fler],
+            'utenfor_avgrensningen': sorted(Counter(a['adresse'].rsplit(' ', 1)[0] for a in adr if a['sone'] == 'utenfor').items())}
+
+
+def legg_til_kort(L, tørt=False):
+    """Huskort for adresser (Gamlebyen og randsonen) som har et modellhus, men ingen rad i data/adresser.json. Raden får samme
+    form som verktoy/adresser.py lager (bygg_id, adresse, gnr, bnr) + kilde. Kortet viser da adressen, og fra huset selv navnet
+    (tegnforklaringen), bygningsnummeret og kulturminne (matrikkelfeltet). Byggeår finnes ikke i Matrikkelens bygningspunkt.
+    Rader som finnes, røres aldri; adressen legges ikke til et nytt hus når den alt står på et annet (listes i avstemmingen)."""
+    reg = bygg_register(L)
+    finnes = {r['adresse'] for r in L['kort']}
+    nye = []
+    for a in reg['adresser']:
+        if a['sone'] == 'utenfor' or not a['modell_id'] or a['adresse'] in finnes:
+            continue
+        nye.append({'bygg_id': a['modell_id'], 'adresse': a['adresse'], 'gnr': a['gnr'], 'bnr': a['bnr'],
+                    'kilde': 'verktoy/register.py kort (Kartverkets adresse-API, adressepunktet i huset)'})
+        finnes.add(a['adresse'])
+    for r in nye:
+        print(f"  + {r['adresse']} -> {r['bygg_id']}")
+    print(f'{len(nye)} nye kort' + (' (tørt, ikke skrevet)' if tørt else ''))
+    if tørt or not nye:
+        return nye
+    rader = L['kort'] + nye
+    with open(os.path.join(ROT, 'data', 'adresser.json'), 'w', encoding='utf8') as f:
+        f.write('[\n' + ',\n'.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) for r in rader) + '\n]\n')
+    return nye
+
+
+def lag(L):
+    reg = bygg_register(L)
+    av = avstem(L, reg)
+    os.makedirs(UT, exist_ok=True)
+    meta = {'_om': ('Fasiten for hva som skal finnes i Gamlebyen (verktoy/register.py). Ett element per kommunehus (FKB-omriss i '
+                    'kommunekartet innenfor Gamlebyen-avgrensningen til grunnmur.py), koblet til Matrikkelens bygningspunkt, '
+                    'Kartverkets adresser og modellens id. Boligareal/bruksareal finnes ikke i åpne data (krever innlogging); '
+                    'areal er fotavtrykket.'),
+            'kilder': {'kommunekart': 'kilder/kommunekart/kommunekart.pdf (lokalt)', 'matrikkel': f"kilder/matrikkel-bygningspunkt.json (hentet {L['M_hentet']})",
+                       'adresser': f"kilder/adresser.json (hentet {L['A_hentet']})", 'streetview': 'kilder/streetview/avlesning.json'}}
+    reg.pop('_intern')
+    skriv(os.path.join(UT, 'gamlebyen.json'), dict(meta, **reg))
+    skriv(os.path.join(UT, 'avstemming.json'), av)
+    for k, v in av['tall'].items():
+        print(f'  {k}: {v}')
+    for k, v in av['hull'].items():
+        print(f'  hull {k}: {len(v)}')
+    return reg, av
+
+
+def main():
     arg = sys.argv[1:]
+    if arg[:1] == ['hent']:
+        hent(); return
     L = last()
     if arg[:1] == ['streetview']:
-        streetview_mangler(L)
+        streetview_mangler(L); return
+    if arg[:1] == ['hent']:
+        hent(); return
+    if arg[:1] == ['kort']:
+        legg_til_kort(L, tørt='--tørt' in arg); return
+    lag(L)
+    streetview_mangler(L)
+
+
+if __name__ == '__main__':
+    main()
