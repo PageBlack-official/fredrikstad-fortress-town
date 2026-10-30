@@ -215,11 +215,14 @@ def sv_farger(x, w, omg, sv, logg):
         if not aar or aar < NYERE_ENN: continue
         C, heading = SVF.kamera(sd)
         if C is None: continue
-        wi, _ = SVF.gatevegg(x, V, omg, C, heading, False)
-        if wi is None: wi = SVF.retningsvegg(x, V, sd.get('retning'))
-        if wi is None: continue
-        v = V[wi]
-        if abs(float(v['u'] @ w['u'])) < math.cos(math.radians(12)) or abs(float((v['a'] - w['a']) @ w['n'])) > 1.0: continue
+        # veggen kameraet ser (siktlinja) og veggen avlesningen navngir (retning) – begge kan være denne veggen
+        wi_g, _ = SVF.gatevegg(x, V, omg, C, heading, False)
+        wi_r = SVF.retningsvegg(x, V, sd.get('retning'))
+        def er_w(wi):
+            if wi is None: return False
+            v = V[wi]
+            return abs(float(v['u'] @ w['u'])) >= math.cos(math.radians(12)) and abs(float((v['a'] - w['a']) @ w['n'])) <= 1.0
+        if not (er_w(wi_g) or er_w(wi_r)): continue
         kilde = f"Street View {aar}"
         fas = sd.get('fasader')
         if isinstance(fas, list) and fas:
@@ -232,7 +235,11 @@ def sv_farger(x, w, omg, sv, logg):
         if abs(den) < 1e-6: continue
         t = float((w['a'] - C) @ w['n']) / den        # strålen C + t f treffer veggens linje
         q = C + t * f; s = float((q - w['a']) @ w['u'])
-        ut.append((min(max(s, 0.0), w['L']), list(rgb), f"{kilde} ({sd.get('vegg_farge')})", aar))
+        if er_w(wi_g) and -0.5 <= s <= w['L'] + 0.5:
+            ut.append((min(max(s, 0.0), w['L']), list(rgb), f"{kilde} ({sd.get('vegg_farge')})", aar))
+        else:
+            # siktlinja treffer et annet sted (f.eks. et avskåret hjørne), men avlesningen navngir hele denne siden med én farge
+            ut.append(('alle', list(rgb), f"{kilde} ({sd.get('vegg_farge')}, hele siden)", aar))
     return ut
 
 
@@ -272,6 +279,11 @@ def legg_inn(tørt=False, logg=print):
                     if len(rgbs) == len(seg):
                         for s, c in zip(seg if True else seg, rgbs):
                             if c: s['vegg'] = list(c); s['kilde'] = sv[2] + ' (flere fasader)'; s['aar'] = sv[3]
+                    continue
+                if sv[0] == 'alle':
+                    for s in seg:
+                        if T.samme_kulor(s['vegg'], sv[1]): s['kilde'] = f"{sv[2]} = tegningen: tegningens farge"; s['aar'] = sv[3]
+                        else: s['vegg'] = list(sv[1]); s['kilde'] = f"{sv[2]}; tegningen har {T.familie(s['tegning_rgb'])}"; s['aar'] = sv[3]
                     continue
                 s_, rgb, kilde, aar = sv
                 s = next((s for s in seg if s['_s0'] <= s_ <= s['_s1']), None)

@@ -26,6 +26,7 @@ VEGG = [
     (r'hvitkalket|kalket|hvitmalt', (242, 240, 232)),
     (r'laks|rosa(?!hvit)|gråfiolett|fiolett', (226, 170, 160)),
     (r'vinrød', (150, 62, 66)),
+    (r'^brun\b', (146, 104, 80)),          # brunt panel ("brun", "brun/rødbrun", "brun/treverk"): brunt, ikke rustrødt (867715 i Street View 2024)
     (r'oksiderød|rødbrun|dyp rød|mørk rød|\brød\b', (176, 74, 62)),
     (r'fersken|aprikos', (250, 200, 160)),
     (r'oransjebrun|okerbrun|gyllen brun', (214, 150, 84)),

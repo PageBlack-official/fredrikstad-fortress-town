@@ -42,7 +42,7 @@ RAADHUS_FASADE = dict(linje=[[14.2, -93.92], [26.64, -97.6], [35.16, -100.43]], 
                           [(20.2, 1.6, 1.7, 3.2, 2, 0), (19.7, 6.0, 0.6, 1.8, 0, 1), (20.7, 6.0, 0.6, 1.8, 0, 1)],
                       arkade=dict(u0=3.1, u1=18.4, z0=0.5, h=3.6, topp=4.0, n=5, bredde=1.9, dybde=0.45, mork=[44, 48, 56]))
 
-ARKADE_13394024 = dict(a=[-44.58, 47.49], b=[-31.55, 43.06], z0=0.0, h=2.9, topp=3.5, n=5, bredde=2.1, dybde=0.5, mork=[54, 52, 52],
+ARKADE_13394024 = dict(a=[-44.58, 47.49], b=[-31.55, 43.06], z0=0.0, h=2.9, topp=3.5, n=5, bredde=2.1, dybde=0.5, mork=[34, 33, 33],
                        kilde='Kvartal10.ai: gårdsfasaden mot sør har en åpen arkade med fem rundbuer nede og gesimsbånd over')
 
 VOLDPORTEN = 'bnr-193869548'
