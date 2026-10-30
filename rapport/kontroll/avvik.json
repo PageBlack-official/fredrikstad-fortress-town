@@ -22,9 +22,9 @@
    "feil": 28
   },
   "takfarge": {
-   "ok": 127,
+   "ok": 128,
    "avvik med grunn": 27,
-   "feil": 15,
+   "feil": 14,
    "avvik": 3
   },
   "arker": {
@@ -24782,10 +24782,10 @@
    "navn": "Tøihuset",
    "h": 4.4,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (rød tegl; V-gavlen hvit puss); tegningen har oransje (kvartaltegningen Toihuset (lest for hånd)); tak: kvartaltegningen Toihuset (lest for hånd) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
+   "farge_kilde": "vegg: Street View 2024 (rød tegl; V-gavlen hvit puss); tegningen har oransje (kvartaltegningen Toihuset (lest for hånd)); tak: ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
    "vegg_kilde": "Street View 2024 (rød tegl; V-gavlen hvit puss); tegningen har oransje (kvartaltegningen Toihuset (lest for hånd))",
    "vegg_aar": 2024,
-   "tak_kilde": "kvartaltegningen Toihuset (lest for hånd) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
+   "tak_kilde": "ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
    "tak_aar": 2015,
    "synlig_px": 882279,
    "flater": [
@@ -24967,11 +24967,11 @@
      85
     ],
     "modell": [
-     124,
-     80,
-     68
+     100,
+     84,
+     73
     ],
-    "dE": 23.5,
+    "dE": 11.3,
     "kulor_tegning": "grå/svart",
     "kulor_modell": "rød"
    },
@@ -25077,8 +25077,8 @@
      "hva": "tegning (218, 165, 125) (oransje/brun), modell (184, 98, 78) (rød), ΔE 27.5; modellens farge: Street View 2024 (rød tegl; V-gavlen hvit puss); tegningen har oransje (kvartaltegningen Toihuset (lest for hånd))"
     },
     "takfarge": {
-     "alvor": "feil",
-     "hva": "tegning (82, 83, 85) (grå/svart), modell (124, 80, 68) (rød), ΔE 23.5; modellens farge: kvartaltegningen Toihuset (lest for hånd) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)"
+     "alvor": "ok",
+     "hva": "tegning (82, 83, 85) (grå/svart), modell (100, 84, 73) (rød), ΔE 11.3; modellens farge: ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)"
     },
     "vinduer": {
      "alvor": "feil",

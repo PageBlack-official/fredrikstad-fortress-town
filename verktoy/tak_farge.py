@@ -42,7 +42,11 @@ TEGNINGSAAR = 2015
 MELLOM = 'tegning'
 # tegningens farge lest for hånd der kontrolløren leser feil flate (piksel i tegningen rendret med pymupdf, 30.10)
 HAANDLEST = {
-    'bnr-193870279': {'tak': ([173, 100, 86], 'kvartaltegningen Toihuset (lest for hånd)'),     # rødbrunt tak, oker vegger
+    # Tøihuset: tegningen har oker vegger og rødbrunt tak (173, 100, 86). Street View mai 2024 (høy sikkerhet) viser umalt rød tegl
+    # med hvite rundbuevinduer og hvit pusset vestgavl, og et brunt, mosegrodd teglstak; ortofotoet ser taket brungrått. Veggen tar
+    # Street View (nyere enn tegningen, streetview_farger.py); taket er brunt tegl, mørkere og brunere enn tegningens, så tak og vegg
+    # ikke flyter sammen (avlest for hånd i fotoet og Street View 30.10).
+    'bnr-193870279': {'tak': ([140, 106, 92], 'ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd'),
                       'vegg': ([217, 165, 125], 'kvartaltegningen Toihuset (lest for hånd)')},
 }
 

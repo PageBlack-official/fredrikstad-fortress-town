@@ -124,11 +124,11 @@
   "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
   "tegning": [
    [
-    173,
-    100,
-    86
+    140,
+    106,
+    92
    ],
-   "kvartaltegningen Toihuset (lest for hånd)"
+   "ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd"
   ],
   "for_": [
    246,
@@ -136,11 +136,11 @@
    106
   ],
   "farge": [
-   173,
-   100,
-   86
+   140,
+   106,
+   92
   ],
-  "kilde": "kvartaltegningen Toihuset (lest for hånd) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
+  "kilde": "ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
   "aar": 2015
  },
  {

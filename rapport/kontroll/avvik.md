@@ -147,7 +147,7 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 | omriss | 69 | 73 | 0 | 42 |
 | mone | 40 | 41 | 0 | 102 |
 | takform | 28 | 0 | 0 | 156 |
-| takfarge | 15 | 3 | 27 | 127 |
+| takfarge | 14 | 3 | 27 | 128 |
 | arker | 0 | 40 | 0 | 144 |
 | piper | 0 | 30 | 0 | 154 |
 | gesims | 47 | 17 | 0 | 68 |
@@ -511,7 +511,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 870279 |  | **F** |  |  |  | **F** | G | **F** | **F** | A | A | A | slaatt_sammen: tegningen har 5 fasader på én modellvegg (vegg 2, 1, 6; ulike farger: 3); takform: tegning sal, modell valm; takfarge: tegning (82, 83, 85) (grå/svart), modell (124, 80, 68) (rød), ΔE 23.5; modellens farge: kvartaltegningen Toihuset (lest for hånd) (ortofoto 2024: falmet/mosegrodd: fo |
+| 870279 |  | **F** |  |  |  | **F** | G |  | **F** | A | A | A | slaatt_sammen: tegningen har 5 fasader på én modellvegg (vegg 2, 1, 6; ulike farger: 3); takform: tegning sal, modell valm; vinduer: vegg 6 (123.2 m): tegning 95 vinduer i rader [93, 2], modell 19 i rader [19] |
 
 Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare frihåndsforskyvning): ved 870279 (235 pt², ~1 hus); ved 870279 (6413 pt², ~1 hus); ved 870279 (209 pt², ~1 hus); ved 870279 (311 pt², ~1 hus); ved 870279 (253 pt², ~2 hus)
 

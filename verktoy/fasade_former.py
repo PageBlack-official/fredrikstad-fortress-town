@@ -20,7 +20,7 @@ FORMER = {
     # Tøihuset: tegningen (kilder/kvartal-ai/Toihuset.ai) har rundbuevinduer med sprosser, grønne porter med buet topp i hvite
     # portaler, og to takhatter side om side på nordfløyen ~17 % fra vestenden pluss én pipe på sørfløyen ~59 % fra vestenden
     # (modellen hadde 19 piper langs mønene). Fargene: tak_farge.HAANDLEST.
-    'bnr-193870279': dict(kilde='kvartaltegningen Toihuset', vindu_bue=True, port_gronn=True, portal_hvit=(244, 241, 232), portal_kant=0.7,
+    'bnr-193870279': dict(kilde='kvartaltegningen Toihuset', vindu_bue=True, port_gronn=True, portal_hvit=(244, 241, 232), portal_kant=0.45,
                           piper=[[-112.5, -82.2], [-117.1, -81.1], [-48.7, -157.8]]),
 }
 
