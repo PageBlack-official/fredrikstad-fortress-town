@@ -283,9 +283,13 @@
   "vegger": {
    "2": {
     "tegning": "Kvartal10",
-    "rader": [],
+    "rader": [
+     1
+    ],
     "dorer": 0,
-    "notat": []
+    "notat": [
+     "rad 1 fikk ikke plass under gesims (h 2.3 m)"
+    ]
    }
   },
   "tegnet": 0,
@@ -402,7 +406,10 @@
    },
    "3": {
     "tegning": "Kvartal12",
-    "rader": [],
+    "rader": [
+     1,
+     1
+    ],
     "dorer": 0,
     "notat": []
    },
@@ -416,7 +423,7 @@
     "notat": []
    }
   },
-  "tegnet": 17,
+  "tegnet": 19,
   "regler": 6,
   "streetview": 0
  },
@@ -888,12 +895,14 @@
    },
    "3": {
     "tegning": "Kvartal13",
-    "rader": [],
+    "rader": [
+     1
+    ],
     "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 4,
+  "tegnet": 5,
   "regler": 0,
   "streetview": 0
  },
@@ -1187,7 +1196,10 @@
   "vegger": {
    "1": {
     "tegning": "Kvartal2BITMP",
-    "rader": [],
+    "rader": [
+     1,
+     1
+    ],
     "dorer": 0,
     "notat": []
    },
@@ -1201,7 +1213,7 @@
     "notat": []
    }
   },
-  "tegnet": 3,
+  "tegnet": 5,
   "regler": 0,
   "streetview": 0
  },
@@ -1875,7 +1887,9 @@
   "vegger": {
    "10": {
     "tegning": "Kvartal9",
-    "rader": [],
+    "rader": [
+     1
+    ],
     "dorer": 0,
     "notat": []
    },
@@ -1891,7 +1905,7 @@
     ]
    }
   },
-  "tegnet": 0,
+  "tegnet": 1,
   "regler": 14,
   "streetview": 10
  },
@@ -2022,19 +2036,46 @@
   "streetview": 0
  },
  {
-  "id": "pb-66",
+  "id": "bnr-193867928",
   "navn": null,
   "vegger": {
-   "2": {
+   "4": {
     "tegning": "Kvartal9",
     "rader": [
-     8
+     2,
+     2
     ],
     "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 8,
+  "tegnet": 4,
+  "regler": 60,
+  "streetview": 0
+ },
+ {
+  "id": "pb-66",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "Kvartal9",
+    "rader": [
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal9",
+    "rader": [
+     4,
+     5
+    ],
+    "dorer": 5,
+    "notat": []
+   }
+  },
+  "tegnet": 18,
   "regler": 2,
   "streetview": 0
  },
@@ -2218,14 +2259,62 @@
   "streetview": 0
  },
  {
-  "id": "pb-61",
+  "id": "bnr-6242812",
   "navn": null,
   "vegger": {
-   "2": {
+   "1": {
     "tegning": "kvartal5",
     "rader": [
      2,
-     2
+     1
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Street View",
+    "rader": [
+     5,
+     5,
+     4
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View aug. 2010"
+    ]
+   }
+  },
+  "tegnet": 4,
+  "regler": 8,
+  "streetview": 14
+ },
+ {
+  "id": "pb-61",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "kvartal5",
+    "rader": [
+     1
+    ],
+    "dorer": 1,
+    "notat": [
+     "1 vindu(er) over gesims i tegningen (gavl/ark)"
+    ]
+   }
+  },
+  "tegnet": 2,
+  "regler": 9,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193987397",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal5",
+    "rader": [
+     5
     ],
     "dorer": 2,
     "notat": [
@@ -2233,8 +2322,8 @@
     ]
    }
   },
-  "tegnet": 6,
-  "regler": 0,
+  "tegnet": 7,
+  "regler": 2,
   "streetview": 0
  },
  {
@@ -2468,23 +2557,6 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193971369",
-  "navn": null,
-  "vegger": {
-   "1": {
-    "tegning": "kvartal7",
-    "rader": [
-     3
-    ],
-    "dorer": 1,
-    "notat": []
-   }
-  },
-  "tegnet": 4,
-  "regler": 5,
-  "streetview": 0
- },
- {
   "id": "pb-65",
   "navn": null,
   "vegger": {
@@ -2499,6 +2571,23 @@
   },
   "tegnet": 1,
   "regler": 4,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193971369",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal7",
+    "rader": [
+     3
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 5,
+  "regler": 5,
   "streetview": 0
  },
  {

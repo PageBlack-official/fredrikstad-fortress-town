@@ -1,0 +1,526 @@
+{
+ "bnr-193867510": [
+  {
+   "a": [
+    -47.93,
+    -43.18
+   ],
+   "b": [
+    -67.29,
+    -74.97
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 19.91,
+     "vegg": [
+      243,
+      149,
+      74
+     ],
+     "kilde": "kvartaltegningen Kvartal13",
+     "aar": 2015
+    },
+    {
+     "fra_m": 19.91,
+     "til_m": 37.22,
+     "vegg": [
+      243,
+      149,
+      74
+     ],
+     "kilde": "kvartaltegningen Kvartal13",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193867693": [
+  {
+   "a": [
+    109.03,
+    -85.34
+   ],
+   "b": [
+    97.48,
+    -97.55
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 10.75,
+     "vegg": [
+      198,
+      198,
+      197
+     ],
+     "kilde": "kvartaltegningen Kvartal14",
+     "aar": 2015
+    },
+    {
+     "fra_m": 10.75,
+     "til_m": 16.81,
+     "vegg": [
+      150,
+      172,
+      140
+     ],
+     "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå",
+     "aar": 2024
+    }
+   ]
+  }
+ ],
+ "bnr-193867715": [
+  {
+   "a": [
+    121.42,
+    -69.21
+   ],
+   "b": [
+    107.05,
+    -64.13
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 3.96,
+     "vegg": [
+      249,
+      194,
+      147
+     ],
+     "kilde": "kvartaltegningen Kvartal12",
+     "aar": 2015
+    },
+    {
+     "fra_m": 3.96,
+     "til_m": 15.24,
+     "vegg": [
+      221,
+      174,
+      132
+     ],
+     "kilde": "kvartaltegningen Kvartal12",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193867804": [
+  {
+   "a": [
+    80.92,
+    -53.41
+   ],
+   "b": [
+    70.46,
+    -49.17
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 3.85,
+     "vegg": [
+      232,
+      213,
+      198
+     ],
+     "kilde": "kvartaltegningen Kvartal12",
+     "aar": 2015
+    },
+    {
+     "fra_m": 3.85,
+     "til_m": 11.29,
+     "vegg": [
+      243,
+      149,
+      74
+     ],
+     "kilde": "kvartaltegningen Kvartal12",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193867839": [
+  {
+   "a": [
+    70.46,
+    -49.17
+   ],
+   "b": [
+    50.75,
+    -41.96
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 8.55,
+     "vegg": [
+      243,
+      149,
+      74
+     ],
+     "kilde": "kvartaltegningen Kvartal12",
+     "aar": 2015
+    },
+    {
+     "fra_m": 8.55,
+     "til_m": 20.99,
+     "vegg": [
+      218,
+      218,
+      218
+     ],
+     "kilde": "Street View 2024 (lys grå/gråhvit) = tegningen: tegningens farge",
+     "aar": 2024
+    }
+   ]
+  }
+ ],
+ "bnr-193867944": [
+  {
+   "a": [
+    131.75,
+    58.9
+   ],
+   "b": [
+    117.91,
+    39.49
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 5.18,
+     "vegg": [
+      188,
+      190,
+      192
+     ],
+     "kilde": "kvartaltegningen Kvartal9",
+     "aar": 2015
+    },
+    {
+     "fra_m": 5.18,
+     "til_m": 23.84,
+     "vegg": [
+      239,
+      240,
+      240
+     ],
+     "kilde": "kvartaltegningen Kvartal9",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193868045": [
+  {
+   "a": [
+    212.04,
+    113.53
+   ],
+   "b": [
+    171.65,
+    133.14
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 6.24,
+     "vegg": [
+      218,
+      165,
+      125
+     ],
+     "kilde": "kvartaltegningen Kvartal3",
+     "aar": 2015
+    },
+    {
+     "fra_m": 6.24,
+     "til_m": 44.9,
+     "vegg": [
+      217,
+      110,
+      94
+     ],
+     "kilde": "kvartaltegningen Kvartal3",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193868223": [
+  {
+   "a": [
+    87.21,
+    96.58
+   ],
+   "b": [
+    64.95,
+    105.22
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 5.69,
+     "vegg": [
+      222,
+      206,
+      155
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    },
+    {
+     "fra_m": 5.69,
+     "til_m": 13.34,
+     "vegg": [
+      222,
+      206,
+      155
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    },
+    {
+     "fra_m": 13.34,
+     "til_m": 18.44,
+     "vegg": [
+      222,
+      206,
+      155
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    },
+    {
+     "fra_m": 18.44,
+     "til_m": 23.88,
+     "vegg": [
+      222,
+      206,
+      155
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193868282": [
+  {
+   "a": [
+    75.31,
+    76.39
+   ],
+   "b": [
+    64.86,
+    80.62
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 4.58,
+     "vegg": [
+      188,
+      190,
+      192
+     ],
+     "kilde": "kvartaltegningen Kvartal8BITMAP",
+     "aar": 2015
+    },
+    {
+     "fra_m": 4.58,
+     "til_m": 11.27,
+     "vegg": [
+      188,
+      190,
+      192
+     ],
+     "kilde": "kvartaltegningen Kvartal8BITMAP",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193870201": [
+  {
+   "a": [
+    32.74,
+    -163.21
+   ],
+   "b": [
+    20.46,
+    -175.52
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 3.96,
+     "vegg": [
+      222,
+      242,
+      246
+     ],
+     "kilde": "kvartaltegningen sistekvartal",
+     "aar": 2015
+    },
+    {
+     "fra_m": 3.96,
+     "til_m": 17.39,
+     "vegg": [
+      222,
+      242,
+      246
+     ],
+     "kilde": "kvartaltegningen sistekvartal",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193987397": [
+  {
+   "a": [
+    123.09,
+    125.32
+   ],
+   "b": [
+    106.48,
+    99.35
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 10.42,
+     "vegg": [
+      239,
+      240,
+      240
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    },
+    {
+     "fra_m": 10.42,
+     "til_m": 20.78,
+     "vegg": [
+      239,
+      240,
+      240
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    },
+    {
+     "fra_m": 20.78,
+     "til_m": 30.83,
+     "vegg": [
+      239,
+      240,
+      240
+     ],
+     "kilde": "kvartaltegningen kvartal5",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "pb-66": [
+  {
+   "a": [
+    171.22,
+    28.61
+   ],
+   "b": [
+    179.75,
+    46.94
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 6.06,
+     "vegg": [
+      250,
+      171,
+      114
+     ],
+     "kilde": "kvartaltegningen Kvartal9",
+     "aar": 2015
+    },
+    {
+     "fra_m": 6.06,
+     "til_m": 20.22,
+     "vegg": [
+      249,
+      224,
+      204
+     ],
+     "kilde": "kvartaltegningen Kvartal9",
+     "aar": 2015
+    }
+   ]
+  }
+ ],
+ "bnr-193867499": [
+  {
+   "a": [
+    -92.48,
+    -31.2
+   ],
+   "b": [
+    -101.75,
+    -54.17
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 17.35,
+     "vegg": [
+      243,
+      243,
+      243
+     ],
+     "kilde": "kvartaltegningen Kvartal13",
+     "aar": 2015
+    },
+    {
+     "fra_m": 17.35,
+     "til_m": 24.77,
+     "vegg": [
+      243,
+      243,
+      243
+     ],
+     "kilde": "kvartaltegningen Kvartal13",
+     "aar": 2015
+    }
+   ]
+  },
+  {
+   "a": [
+    -101.86,
+    -58.11
+   ],
+   "b": [
+    -111.7,
+    -53.89
+   ],
+   "segmenter": [
+    {
+     "fra_m": 0.0,
+     "til_m": 10.71,
+     "vegg": [
+      198,
+      198,
+      197
+     ],
+     "kilde": "kvartaltegningen Kvartal13",
+     "aar": 2015
+    }
+   ]
+  }
+ ]
+}
