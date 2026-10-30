@@ -41,9 +41,9 @@ const FIGUR={
     kule(0.115,V(0,0.18,0.0),0.92,1.12,1,hode);                                  // hode
     kule(0.08,V(0,0.11,0.05),1.0,0.95,0.7,hode); kule(0.042,V(0,0.05,0.085),0.9,1.45,0.8,hode);   // kortklipt helskjegg med spiss hake (Street View 2024)
     kule(0.03,V(0,0.135,0.105),2.2,0.55,0.7,hode);                                                    // barten
-    const hS=V(-0.30,1.60,0), hA=V(-0.40,1.30,0.10), hH=V(-0.50,1.58,0.25);     // høyre arm: albuen ned langs siden, hånda i skulderhøyde foran
+    const hS=V(-0.30,1.60,0), hA=V(-0.38,1.30,0.18), hH=V(-0.48,1.56,0.45);     // høyre arm: albuen ned langs siden, underarmen fram, hånda i skulderhøyde
     lem(hS,hA,0.072,0.062); lem(hA,hH,0.06,0.05); kule(0.055,hH);
-    lem(V(-0.58,1.70,0.36),V(-0.17,1.17,0.26),0.026,0.024);                     // staven: fra magen opp gjennom hånda, tuppen fram og ut
+    lem(V(-0.57,1.69,0.56),V(-0.17,1.17,0.27),0.026,0.024);                     // staven: fra magen opp gjennom hånda, tuppen fram og ut (sett fra siden 2010: ca. 0,3 foran brystet)
     const vS=V(0.30,1.60,0), vA=V(0.52,1.30,-0.12), vH=V(0.33,1.16,0.03);       // venstre hånd i siden, albuen ut og litt bak
     lem(vS,vA,0.072,0.062); lem(vA,vH,0.06,0.05); kule(0.055,vH);
     lem(V(0.26,1.10,0.0),V(0.28,1.22,0.16),0.016,0.016);                        // hjalt: fram og opp under venstre hånd
