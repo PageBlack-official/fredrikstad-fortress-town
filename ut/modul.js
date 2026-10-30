@@ -1038,6 +1038,49 @@ function bygArkade(A, pts, wall, dim, veggs){
   const bg=new THREE.PlaneGeometry(L,top); bg.translate(L/2,top/2,0.012); bg.applyMatrix4(M);
   // bakveggen i buegangen ligger i dyp skygge: mørk og nøytral både i sol og skygge (ikke brunlig av sollyset)
   const mk=A.mork||[34,33,33], bak=new THREE.Mesh(bg,mat(mk,false,mk.map(c=>Math.round(c*0.8)))); bak.receiveShadow=true; grp.add(bak);
+  // felt over arkaden (A.felt {z0, z1, bredde, dybde}, natt/atrium 30.10): etasjen over har høye innfelte felt med samme deling som buene,
+  // lisener mellom; en plate i veggfargen fra rammens overkant til z1 med hull, og innfeltene en tone mørkere (Kvartal10: 13394024)
+  if(A.felt){ const F=A.felt, z1=F.z1, sf=new THREE.Shape(); sf.moveTo(0,top); sf.lineTo(L,top); sf.lineTo(L,z1+0.2); sf.lineTo(0,z1+0.2); sf.closePath();
+    for(let k=0;k<n;k++){ const u=(k+0.5)*L/n, hp=new THREE.Path(); hp.moveTo(u-F.bredde/2,F.z0); hp.lineTo(u+F.bredde/2,F.z0); hp.lineTo(u+F.bredde/2,z1); hp.lineTo(u-F.bredde/2,z1); hp.lineTo(u-F.bredde/2,F.z0); sf.holes.push(hp); }
+    const gf=new THREE.ExtrudeGeometry(sf,{depth:F.dybde||0.15,bevelEnabled:false}); gf.applyMatrix4(M);
+    const fm=new THREE.Mesh(gf,mat(wall,dim,veggs,{ds:true})); fm.castShadow=fm.receiveShadow=true; grp.add(fm);
+    const inn=wall.map(c=>Math.round(c*0.84)), bf=new THREE.PlaneGeometry(L,z1-F.z0); bf.translate(L/2,(F.z0+z1)/2,0.012); bf.applyMatrix4(M);
+    const bm=new THREE.Mesh(bf,mat(inn,dim,inn.map(c=>Math.round(c*0.8)))); bm.receiveShadow=true; grp.add(bm); }
+  return grp;
+}
+// ATRIUM (bygg.atrium, 30.10): innglasset gårdsrom i en ring av tak (ringtaket står i tak2/gavl2, regnet av verktoy/landemerker.py).
+// Her tegnes karmen og glasset: {gaard (gårdsrommets omriss, glass med karm), kant (karmens bredde), z (karmens fot = takfoten),
+// topp (glassets topp), glass, ramme}. Firkantet gårdsrom: glassvalm med mønet langs den lange siden, kvadrat = pyramide.
+// Gratene og mønet får sprosser i karmfargen, flatene tre sprosser hver vei. Første bruk: 16308102 (Kvartal14, ortofoto 2024).
+function strimmel(p, q, r, m){ const a=new THREE.Vector3(...p), c=new THREE.Vector3(...q), L=a.distanceTo(c); if(L<0.05) return null;
+  const g=new THREE.CylinderGeometry(r,r,L,4,1,true); g.translate(0,L/2,0);
+  const s=new THREE.Mesh(g,m); s.position.copy(a); s.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), c.clone().sub(a).normalize()); return s; }
+function bygAtrium(A){
+  const grp=new THREE.Group(), G=A.gaard, n=G.length; if(n<3) return null;
+  const k=A.kant||0.4, zk=A.z+0.25, mr=mat(A.ramme||[226,226,220],false), mg=mat(A.glass||[104,122,146],false);
+  // karmen: gårdsrommet minus glasset, flat i karmhøyden
+  const inn=utvidPoly(G,-k), sh=polyShape(G); sh.holes.push(new THREE.Path(inn.map(q=>new THREE.Vector2(q[0],q[1]))));
+  const kg=new THREE.ExtrudeGeometry(sh,{depth:zk-A.z+0.05,bevelEnabled:false}); kg.rotateX(-Math.PI/2); kg.translate(0,A.z-0.05,0);
+  const km=new THREE.Mesh(kg,[mr,mr]); km.castShadow=km.receiveShadow=true; grp.add(km);
+  // glasset: firkant -> valm (mønet langs den lange siden), ellers pyramide mot tyngdepunktet
+  let fl=[], mone=null;
+  if(inn.length===4){ let P=inn.map(q=>[q[0],q[1]]); const L=(a,b)=>Math.hypot(b[0]-a[0],b[1]-a[1]);
+    if(L(P[1],P[2])>L(P[0],P[1])) P=[P[1],P[2],P[3],P[0]];
+    const l=L(P[0],P[1]), w=L(P[1],P[2])/2, u=[(P[1][0]-P[0][0])/l,(P[1][1]-P[0][1])/l], e=Math.min(w,l/2);
+    const m0=[(P[0][0]+P[3][0])/2+u[0]*e,(P[0][1]+P[3][1])/2+u[1]*e], m1=[(P[1][0]+P[2][0])/2-u[0]*e,(P[1][1]+P[2][1])/2-u[1]*e];
+    mone=[m0,m1]; fl=[[P[0],P[1],m1,m0],[P[1],P[2],m1],[P[2],P[3],m0,m1],[P[3],P[0],m0]]; }
+  else { const c=inn.reduce((s,q)=>[s[0]+q[0]/inn.length,s[1]+q[1]/inn.length],[0,0]); mone=[c,c]; fl=inn.map((q,j)=>[q,inn[(j+1)%inn.length],c]); }
+  const Z=q=>(q===mone[0]||q===mone[1])?A.topp:zk, P3=q=>[q[0],Z(q),-q[1]];
+  const pos=[]; fl.forEach(f=>{ for(let j=1;j<f.length-1;j++) [f[0],f[j],f[j+1]].forEach(q=>pos.push(...P3(q))); });
+  const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); gg.computeVertexNormals();
+  const gm=new THREE.Mesh(gg,mat(A.glass||[104,122,146],false,null,{ds:true})); gm.castShadow=gm.receiveShadow=true; grp.add(gm);
+  // sprosser: grater og møne, og tre sprosser fra karmen mot gratene på hver flate (som i fotoet: lyse linjer i glasset)
+  const rib=(p,q,r)=>{ const s=strimmel(p,q,r,mr); if(s){ s.castShadow=true; grp.add(s); } };
+  fl.forEach(f=>{ const a=f[0], b=f[1], top=f.length===4?[f[3],f[2]]:[f[2],f[2]];
+    rib(P3(b),P3(f[2]),0.07);
+    for(let s=1;s<=3;s++){ const t=s/4, q0=[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t], q1=[top[0][0]+(top[1][0]-top[0][0])*t,top[0][1]+(top[1][1]-top[0][1])*t];
+      const p=P3(q0), q=[q1[0],A.topp,-q1[1]]; p[1]+=0.02; q[1]+=0.02; rib(p,q,0.035); } });
+  if(mone[0]!==mone[1]) rib(P3(mone[0]),P3(mone[1]),0.07);
   return grp;
 }
 DATA.bygg.forEach((b,i)=>{
@@ -1190,6 +1233,7 @@ DATA.bygg.forEach((b,i)=>{
     });
   }
   if(b.arkader && !dim) b.arkader.forEach(A=>{ const g=bygArkade(A, pts, wall, dim, b.veggs); if(g) legg(g); });
+  if(b.atrium && !dim){ const g=bygAtrium(b.atrium); if(g) legg(g); }
   // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
   if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
     b.takvinduer.forEach(([x,y,bw,bh])=>{
@@ -1231,9 +1275,21 @@ let hAt = ()=>0;
 if (TER){
   const b64=s=>{ const b=atob(s); const a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
   const MB=b64(TER.m), nx=TER.nx, ny=TER.ny, G=TER.g;
-  const inn=i=>(MB[i>>3]>>(7-(i&7)))&1;
+  const inn0=i=>(MB[i>>3]>>(7-(i&7)))&1;
   // høydene ligger bare for punktene i masken (rad for rad); utenfor er bakken null
-  const H=new Uint8Array(nx*ny); H.fill(Math.round((TER.off||0)*20)); { const hk=b64(TER.h); let c=0; for(let i=0;i<nx*ny;i++) if(inn(i)) H[i]=hk[c++]; }
+  const H=new Uint8Array(nx*ny); H.fill(Math.round((TER.off||0)*20)); { const hk=b64(TER.h); let c=0; for(let i=0;i<nx*ny;i++) if(inn0(i)) H[i]=hk[c++]; }
+  const MK=new Uint8Array(nx*ny); for(let i=0;i<nx*ny;i++) MK[i]=inn0(i); const inn=i=>MK[i];
+  // TERRENGFLIKER (30.10, data/terrengflikker.json): Kartverkets DTM lagt over det beregnede terrenget der det beregnede er feil
+  // (verktoy/landemerker.py; første bruk: Voldporten, der vollen i terrenget stod 12 m for langt øst og porten stod på flat mark).
+  // {x0, y0, g, nx, ny, h (cm, rad for rad fra sør), kant (m: myk overgang til terrenget rundt)}
+  (DATA.terrengflikker||[]).forEach(F=>{ const fh=(i,j)=>F.h[Math.min(F.ny-1,Math.max(0,j))*F.nx+Math.min(F.nx-1,Math.max(0,i))]/100;
+    const X1=F.x0+(F.nx-1)*F.g, Y1=F.y0+(F.ny-1)*F.g, off=TER.off||0;
+    for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const X=TER.x0+i*G, Y=TER.y0+j*G; if(X<F.x0||X>X1||Y<F.y0||Y>Y1) continue;
+      const fx=(X-F.x0)/F.g, fy=(Y-F.y0)/F.g, a=Math.floor(fx), b=Math.floor(fy), tx=fx-a, ty=fy-b;
+      const p=(fh(a,b)*(1-tx)+fh(a+1,b)*tx)*(1-ty)+(fh(a,b+1)*(1-tx)+fh(a+1,b+1)*tx)*ty;
+      const d=Math.min(X-F.x0,X1-X,Y-F.y0,Y1-Y), w=Math.min(1,Math.max(0,d/(F.kant||1))), w2=w*w*(3-2*w);
+      const k=j*nx+i, gml=MK[k]?H[k]/20-off:0, ny_=w2*p+(1-w2)*gml;
+      H[k]=Math.max(0,Math.min(255,Math.round((ny_+off)*20))); MK[k]=(ny_>0.02||MK[k]&&w2<1)?1:0; } });
   const hv=(i,j)=>H[j*nx+i]/20-(TER.off||0);
   hAt=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
     const tx=fx-i, ty=fy-j; return (hv(i,j)*(1-tx)+hv(i+1,j)*tx)*(1-ty)+(hv(i,j+1)*(1-tx)+hv(i+1,j+1)*tx)*ty; };
@@ -1330,8 +1386,19 @@ flatGruppe(murer);   // ett nett per murfarge
   const wall=b.vegg||[230,220,200];
   const m=new THREE.Mesh(eg,[mat(wall,false,b.veggs,{ds:true}),mat(wall,false,b.veggs,{ds:true})]); m.castShadow=m.receiveShadow=true;
   const ang=Math.atan2(pt.ret[1],pt.ret[0]);
-  m.position.set(cx, hAt(cx,cy), -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
+  const y0=(pt.bunn!=null)?pt.bunn:hAt(cx,cy);                      // veien i porten (data), ellers terrenget midt under huset
+  m.position.set(cx, y0, -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
   grp.add(m);
+  // VINGEMURER (30.10): skrå murer som holder vollen ved porten. [x0, y0, x1, y1, h0, h1, tykk]: innerflaten fra porthjørnet ut til
+  // foten, toppen fra h0 (ved porten) til h1 (ved foten) over veien i porten; tykkelsen legges bort fra huset. Mål: verktoy/landemerker.py
+  (pt.vingemurer||[]).forEach(([ax,ay,bx,by,h0,h1,t])=>{
+    const L=Math.hypot(bx-ax,by-ay); if(L<0.3) return; const ux=(bx-ax)/L, uy=(by-ay)/L; let nx=-uy, ny=ux;
+    if(((ax+bx)/2-cx)*nx+((ay+by)/2-cy)*ny<0){ nx=-nx; ny=-ny; }
+    const s2=new THREE.Shape(); s2.moveTo(0,-1); s2.lineTo(L,-1); s2.lineTo(L,h1); s2.lineTo(0,h0); s2.closePath();
+    const g=new THREE.ExtrudeGeometry(s2,{depth:t,bevelEnabled:false});
+    g.applyMatrix4(new THREE.Matrix4().makeBasis(new THREE.Vector3(ux,0,-uy),new THREE.Vector3(0,1,0),new THREE.Vector3(nx,0,-ny)));
+    const vm=new THREE.Mesh(g,mat(wall,false,b.veggs,{ds:true})); vm.position.set(ax,y0,-ay); vm.castShadow=vm.receiveShadow=true; grp.add(vm);
+  });
 });
 
 // ---- broer: tredekke, gitterrekkverk, pilarer; vindebro får heiseverk (to stolper, tverrbjelke, vippebommer) som i brosjyretegningen ----
@@ -2209,9 +2276,12 @@ const pipekrage=(r,h,k)=>{ const g=new THREE.CylinderGeometry(r,r*0.94,h,k*4,1);
 const FIGUR={
   // Frederik II: platerustning, kommandostav i høyre hånd, venstre hånd i siden. Målene er lest av kommunens frontfoto (kunstregisteret,
   // OBJECTID 4924) som andeler av høyden føtter–isse (kne 0,25, hoseskant 0,44, belte 0,59, skulder 0,81, hake 0,88),
-  // kontrollert mot Wilse 1931 og nb.no 1969.
+  // kontrollert mot Wilse 1931 og nb.no 1969. Posituren rettet 30.10 etter Street View mai 2024 (rett forfra, fra vest-nordvest) og
+  // aug. 2010 (figurens venstre side, fra sør-sørvest), sett i Vegars Chrome; andeler av høyden lest i bildene (isse 1,97 i modellen):
+  // høyre hånd 1,58 foran skulderen, staven fra magen (1,17) opp gjennom hånda og 0,15 forbi, venstre albue ut og litt bak,
+  // venstre fot ut til siden, slira fra venstre hofte ned bak beina med spissen nesten midt bak (0,18 over sokkelen), smal pipekrage.
   rustning_stav({k,del,lem,kule}){
-    [[-0.14,0.03],[0.18,-0.04]].forEach(([fx,fz])=>{
+    [[-0.13,0.03],[0.24,0.0]].forEach(([fx,fz])=>{
       kule(0.075,V(fx,0.045,fz+0.06),0.85,0.6,2.0);                              // jernsko (sabaton): avrundet, ikke kasse (30.10)
       lem(V(fx,0.08,fz),V(fx*0.97,0.48,fz*0.6),0.06,0.075);                     // legg
       kule(0.082,V(fx*0.95,0.51,fz*0.5+0.02));                                   // kne
@@ -2223,20 +2293,21 @@ const FIGUR={
     del(dreid([[0.215,0],[0.235,0.08],[0.258,0.2],[0.262,0.3],[0.245,0.37],[0.17,0.41]],20),0,1.23,0.01).scale.set(1,1,0.82); // brystharnisk: rundet bryst, smalt mot beltet (30.10)
     kule(0.105,V(-0.28,1.61,0),1,0.8,1); kule(0.105,V(0.28,1.61,0),1,0.8,1);     // skulderplater
     lem(V(-0.19,1.62,0.16),V(0.03,1.40,0.225),0.042,0.042); lem(V(0.03,1.40,0.225),V(0.23,1.18,0.15),0.042,0.042);   // bandolær
-    const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.26; k.add(hode);             // litt mot hans høyre
+    const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.17; k.add(hode);             // litt mot hans høyre (ca. 10°)
     del(new THREE.CylinderGeometry(0.06,0.07,0.12,8),0,0.0,0,hode);              // hals
-    del(pipekrage(0.155,0.075,18),0,0.03,0.01,hode);                           // pipekrage: rillet kant (30.10)
+    del(pipekrage(0.12,0.07,16),0,0.03,0.01,hode);                             // pipekrage: smal, rillet (bredde som hodet, Street View 2024)
     kule(0.115,V(0,0.18,0.0),0.92,1.12,1,hode);                                  // hode
-    kule(0.085,V(0,0.10,0.045),1.0,1.05,0.75,hode); kule(0.05,V(0,0.055,0.085),0.95,1.25,0.8,hode);   // helskjegg: fyldig rundt kinn og hake, avrundet spiss (30.10)
-    const hS=V(-0.30,1.60,0), hA=V(-0.40,1.28,0.08), hH=V(-0.55,1.52,0.2);      // høyre arm, hånda nesten i skulderhøyde
+    kule(0.08,V(0,0.11,0.05),1.0,0.95,0.7,hode); kule(0.042,V(0,0.05,0.085),0.9,1.45,0.8,hode);   // kortklipt helskjegg med spiss hake (Street View 2024)
+    kule(0.03,V(0,0.135,0.105),2.2,0.55,0.7,hode);                                                    // barten
+    const hS=V(-0.30,1.60,0), hA=V(-0.38,1.30,0.18), hH=V(-0.48,1.56,0.45);     // høyre arm: albuen ned langs siden, underarmen fram, hånda i skulderhøyde
     lem(hS,hA,0.072,0.062); lem(hA,hH,0.06,0.05); kule(0.055,hH);
-    lem(V(-0.64,1.64,0.2),V(-0.16,1.19,0.27),0.026,0.024);                      // staven: litt over hånda, ned mot magen
-    const vS=V(0.30,1.60,0), vA=V(0.56,1.31,-0.06), vH=V(0.32,1.19,0.04);       // venstre arm i siden
+    lem(V(-0.57,1.69,0.56),V(-0.17,1.17,0.27),0.026,0.024);                     // staven: fra magen opp gjennom hånda, tuppen fram og ut (sett fra siden 2010: ca. 0,3 foran brystet)
+    const vS=V(0.30,1.60,0), vA=V(0.52,1.30,-0.12), vH=V(0.33,1.16,0.03);       // venstre hånd i siden, albuen ut og litt bak
     lem(vS,vA,0.072,0.062); lem(vA,vH,0.06,0.05); kule(0.055,vH);
-    lem(V(0.27,1.10,0.02),V(0.29,1.28,0.1),0.016,0.016);                        // hjalt
-    lem(V(0.22,1.11,0.05),V(0.34,1.11,-0.03),0.012,0.012);                      // parerstang
-    lem(V(0.28,1.10,-0.01),V(0.30,0.06,-0.42),0.024,0.018);                     // slire bak venstre bein
-    del(new THREE.BoxGeometry(0.1,0.18,0.06),0.31,1.0,0.09);                    // pung
+    lem(V(0.26,1.10,0.0),V(0.28,1.22,0.16),0.016,0.016);                        // hjalt: fram og opp under venstre hånd
+    lem(V(0.21,1.12,0.04),V(0.33,1.10,-0.03),0.012,0.012);                      // parerstang
+    lem(V(0.27,1.08,-0.02),V(0.04,0.17,-0.46),0.024,0.018);                     // slire: fra venstre hofte ned bak beina, spissen nesten midt bak
+    del(new THREE.BoxGeometry(0.1,0.28,0.06),0.33,0.95,0.05);                   // pung ved venstre hofte (0,8–1,1 i Street View 2024)
     return 1.97;
   },
   // «Sittende pike»: naken jente som sitter på hælene, armene strake ned med hendene på knærne, overkroppen litt fram, hodet løftet

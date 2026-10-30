@@ -8056,6 +8056,25 @@
   "byttet": false
  },
  {
+  "id": "pb-51",
+  "navn": null,
+  "adr": null,
+  "for_": [
+   196,
+   128,
+   114
+  ],
+  "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
+  "vegg": [
+   246,
+   150,
+   130
+  ],
+  "kilde": "nabohuset bnr-193868568 (Brannstasjon - uthus til Infanterikasernen, 1.4 m unna)",
+  "aar": null,
+  "byttet": false
+ },
+ {
   "id": "pb-52",
   "navn": null,
   "adr": null,
@@ -8216,7 +8235,7 @@
    243,
    243
   ],
-  "for_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+  "for_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
   "vegg": [
    243,
    243,

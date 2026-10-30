@@ -1,6 +1,6 @@
 # 17_vinduer_rytme: OK
 
-129 antatte hus og Street View-hus, 1647 vinduer, 84 dører; 0 brudd
+127 antatte hus og Street View-hus, 1633 vinduer, 82 dører; 0 brudd
 
 ## vinduer uten vindu/dør rett under: 0
 

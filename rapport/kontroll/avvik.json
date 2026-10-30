@@ -22062,11 +22062,11 @@
    "navn": null,
    "h": 2.4,
    "fasade_kilde": "antatt",
-   "farge_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
-   "vegg_kilde": null,
+   "farge_kilde": "vegg: nabohuset bnr-193868568 (Brannstasjon - uthus til Infanterikasernen, 1.4 m unna); tak: ortofoto 2024 (mørk grå)",
+   "vegg_kilde": "nabohuset bnr-193868568 (Brannstasjon - uthus til Infanterikasernen, 1.4 m unna)",
    "vegg_aar": null,
-   "tak_kilde": null,
-   "tak_aar": null,
+   "tak_kilde": "ortofoto 2024 (mørk grå)",
+   "tak_aar": 2024,
    "synlig_px": 0,
    "flater": [],
    "finnes": "skjult i modellbildet",
@@ -26161,10 +26161,10 @@
    "navn": null,
    "h": 4.3,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+   "farge_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
    "vegg_kilde": "Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+   "tak_kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 16194,
    "flater": [
@@ -26223,13 +26223,13 @@
      134
     ],
     "modell": [
-     122,
-     86,
-     73
+     66,
+     66,
+     65
     ],
-    "dE": 24.6,
+    "dE": 28.0,
     "kulor_tegning": "grå/svart",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [
     {
@@ -26309,7 +26309,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (134, 134, 134) (grå/svart), modell (122, 86, 73) (rød), ΔE 24.6; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))"
+     "hva": "tegning (134, 134, 134) (grå/svart), modell (66, 66, 65) (grå/svart), ΔE 28.0; modellens farge: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge"
     },
     "vinduer": {
      "alvor": "feil",

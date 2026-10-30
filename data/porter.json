@@ -2,5 +2,6 @@
 {"typ":"hus","ret":[-0.9058,0.4236],"h":4.4,"pw":3.8,"ph":3.5,"tvers":7.95,"dyp":14.78,"bygg_id":"bnr-193869548","kilde":"høyde og bue: Street View aug. 2010 (SØ) og DOM: takfot 7,5 m over veien = portmur 4,4 + vaktstue 3,1 (verktoy/landemerker.py)","bunn":0.0,"vingemurer":[[217.84,41.12,225.1,37.0,4.4,0.4,0.8],[214.4,33.99,221.1,30.1,4.4,0.4,0.8],[204.74,47.43,204.43,51.4,1.3,1.3,0.6],[201.31,40.3,198.0,38.03,1.3,1.3,0.6]],"vingemurer_kilde":"SØ: Street View aug. 2010 og brukerfoto aug. 2019 (form), ortofoto 2024 (kappene ovenfra: lengde og retning), DTM (foten); NV: Street View aug. 2010 (lave murer, lengde og vinkel lest av bildet, usikker) – verktoy/landemerker.py"},
 {"typ":"hus","ret":[0.8811,-0.473],"h":5.0,"pw":4.0,"ph":4.2,"tvers":7.18,"dyp":10.79,"bygg_id":"pb-9"},
 {"typ":"mur","ret":[-0.7359,0.6771],"h":6.0,"pw":3.28,"ph":4.2,"tvers":4.88,"dyp":3.39,"bygg_id":"pb-10"},
-{"typ":"mur","ret":[-0.8779,0.4789],"h":6.0,"pw":4.0,"ph":4.2,"tvers":6.12,"dyp":2.6,"bygg_id":"pb-11"}
+{"typ":"mur","ret":[-0.8779,0.4789],"h":6.0,"pw":4.0,"ph":4.2,"tvers":6.12,"dyp":2.6,"bygg_id":"pb-11"},
+{"typ":"mur","ret":[0.415,0.91],"h":4.4,"pw":3.0,"ph":3.6,"tvers":5.07,"dyp":2.05,"bygg_id":"pb-51","kilde":"Kvartal11 (tegningen 2015): rundbueport i gårdsmuren mot kirka, høyere enn muren; plass og mål: FKB-omrisset (kommunehus 238, 5,1 × 2,1 m)"}
 ]

@@ -5855,11 +5855,19 @@
   "id": "pb-51",
   "navn": null,
   "h_naa": 2.4,
+  "h_per_hus": 3.1,
+  "takhelning": 0.5,
   "p50": 3.39,
   "p90": 3.91,
-  "h_forslag": null,
-  "sikkerhet": "ingen",
-  "merknad": "skjult i kartet (Claude 2026-10-30: Kvartal11 (tegningen 2015): porten i gårdsmuren mot kirka; FKB-omrisset pb-51 er portbygget (vises som mu-2.port, src/19))"
+  "kart_p50": 2.78,
+  "kart_p90": 3.04,
+  "h_forslag": 2.8,
+  "avvik": 0.4,
+  "h_med_maalt_takhelning": 3.1,
+  "sikkerhet": "lav",
+  "n_piksler": 8,
+  "rest_m": 1.05,
+  "merknad": "bare 8 piksler; krympet bare 0 m; rest 1.0 m"
  },
  "480": {
   "id": "pb-52",

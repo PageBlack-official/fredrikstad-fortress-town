@@ -1470,6 +1470,20 @@
 "uthus": false
 },
 {
+"id": "pb-51",
+"navn": null,
+"type": "yes",
+"h": 2.4,
+"foer": 0,
+"etter": 0,
+"vinduer": 0,
+"dorer": 0,
+"gate": "gate",
+"etasjer": 0,
+"dor": false,
+"uthus": false
+},
+{
 "id": "pb-52",
 "navn": null,
 "type": "yes",

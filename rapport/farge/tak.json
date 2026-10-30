@@ -9346,6 +9346,35 @@
   "aar": 2024
  },
  {
+  "id": "pb-51",
+  "navn": null,
+  "flytt": [
+   0.0,
+   0.75
+  ],
+  "foto": [
+   121.0,
+   117.0,
+   113.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true,
+  "grunn": "",
+  "tegning": null,
+  "for_": [
+   150,
+   144,
+   138
+  ],
+  "farge": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "ortofoto 2024 (mørk grå)",
+  "aar": 2024
+ },
+ {
   "id": "pb-52",
   "navn": null,
   "flytt": [
@@ -9601,9 +9630,9 @@
    "kvartaltegningen Kvartal13 (IoU 0.41)"
   ],
   "for_": [
-   170,
-   108,
-   92
+   66,
+   66,
+   65
   ],
   "farge": [
    198,

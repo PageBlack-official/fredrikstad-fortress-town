@@ -23123,6 +23123,24 @@
    "hvem": "Claude",
    "dato": "2026-10-29",
    "grunn": "ortofoto 2024 (10 cm-utsnitt): lav hekk mellom parkeringen og Kaserna-hagen"
+  },
+  {
+   "typ": "gjerde",
+   "art": "plankegjerde",
+   "h": 1.5,
+   "p": [
+    [
+     -109.43,
+     -64.53
+    ],
+    [
+     -80.4,
+     -71.3
+    ]
+   ],
+   "hvem": "Claude",
+   "dato": "2026-10-30",
+   "grunn": "Kvartal13 (tegningen 2015): plankegjerde langs eiendomsgrensen mot gata fra Kommandantgården til Ekserserhuset; skyggelinje i ortofoto 2019, DOM−DTM under 1 m (lavt, tynt)"
   }
  ]
 }
