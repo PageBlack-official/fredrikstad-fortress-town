@@ -150,10 +150,10 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 | takfarge | 1 | 0 | 112 | 74 |
 | arker | 0 | 40 | 0 | 154 |
 | piper | 0 | 32 | 0 | 162 |
-| gesims | 47 | 24 | 0 | 69 |
-| veggfarge | 9 | 1 | 18 | 73 |
-| vinduer | 66 | 17 | 0 | 21 |
-| dorer | 0 | 56 | 0 | 48 |
+| gesims | 46 | 25 | 0 | 69 |
+| veggfarge | 7 | 1 | 17 | 77 |
+| vinduer | 67 | 16 | 0 | 22 |
+| dorer | 0 | 56 | 0 | 49 |
 | slaatt_sammen | 13 | 6 | 9 | 0 |
 | tegnet_hus_uten_modell | 73 | 0 | 0 | 0 |
 
@@ -173,10 +173,10 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 | Kvartal11 | 3 | -15.5° | 45.5° | 5.07 | 4.08 (tegnede vegger) | 1.65 pt = 4.9 px | 67 % | 2 av 3 | - |
 | Kvartal12 | 28 | -11.6° | 45.5° | 4.43 | 5.08 (tegnede vegger) | 2.22 pt = 6.7 px | 79 % | 0 av 1 | - |
 | Kvartal13 | 6 | -14.5° | 45.5° | 4.86 | 3.11 (tegnede vegger) | 2.08 pt = 6.3 px | 100 % | 2 av 4 | - |
-| Kvartal14 | 22 | -12.7° | 45.5° | 5.19 | 4.28 (tegnede vegger) | 3.46 pt = 10.4 px | 41 % | 3 av 5 | 972403, 867847, 972071 |
+| Kvartal14 | 22 | -12.7° | 45.5° | 5.17 | 4.28 (tegnede vegger) | 3.37 pt = 10.1 px | 41 % | 4 av 5 | 972403, 867847, 972071 |
 | sistekvartal | 7 | -15.3° | 45.5° | 5.26 | 5.81 (tegnede vegger) | 2.78 pt = 8.3 px | 56 % | 0 av 1 | 870198 |
 | tell | 3 | -12.3° | 45.5° | 5.13 | 4.71 (tegnede vegger) | 3.15 pt = 9.4 px | 33 % | 1 av 3 | - |
-| Glasshytta | 2 | -10.5° | 45.5° | 5.09 | 4.27 (tegnede vegger) | 1.39 pt = 4.2 px | 100 % | 1 av 2 | - |
+| Glasshytta | 2 | -10.6° | 45.5° | 5.07 | 5.36 (tegnede vegger) | 0.95 pt = 2.8 px | 100 % | 1 av 2 | - |
 | kirke | 1 | -13.8° | 45.5° | 5.54 | 3.47 (median av de andre tegningene) | 4.37 pt = 13.1 px | 0 % | 1 av 1 | - |
 | Toihuset | 1 | -14.7° | 45.5° | 5.05 | 5.25 (tegnede vegger) | 2.64 pt = 7.9 px | 100 % | 0 av 1 | - |
 
@@ -284,7 +284,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 | 971296 |  |  | **F** |  |  |  |  | G |  |  |  |  |  |
 | 868665 |  |  | **F** |  | **F** |  |  | G |  |  |  |  |  |
 | 868657 |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| 867987 |  |  |  |  |  |  | **F** |  | **F** | A |  |  | veggfarge: tegning (173, 100, 86) (rød), modell (214, 215, 217) (hvit), ΔE 50.2; modellens farge: kvartaltegningen kvartal6 (lys side, IoU 0.56); vinduer: vegg 7 (14.9 m): tegning 10 vinduer i rader [10], modell 4 i rader [4] |
+| 867987 |  |  |  |  |  |  |  |  | **F** | A |  |  | vinduer: vegg 7 (14.9 m): tegning 10 vinduer i rader [10], modell 4 i rader [4] |
 | 972160 |  |  | A |  | A |  |  |  |  |  |  |  |  |
 | 868649 |  |  | A |  | **F** |  |  |  |  |  |  |  |  |
 | pb-59 |  |  |  | A |  |  | G | G | **F** | A |  |  | vinduer: vegg 3 (2.6 m): tegning 4 vinduer i rader [2, 2], modell 0 i rader [] |
@@ -378,7 +378,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 971938 |  |  | A |  | A |  |  |  |  |  |  |  |  |
 | 972411 |  |  |  |  |  |  | G |  | A |  |  |  |  |
-| 13394024 |  | A | A | **F** |  |  | **F** | G | A |  |  | A | gesims: tegnet/modell 0.35 (tegningen lavere); veggfarge: tegning (198, 198, 197) (grå/svart), modell (254, 230, 158) (gul/beige), ΔE 39.4; modellens farge: merknad: trykkfila 2015 (Street View-bildet viste nabohuset) |
+| 13394024 |  | A | A | **F** |  |  | **F** | G |  |  |  | A | gesims: tegnet/modell 0.35 (tegningen lavere); veggfarge: tegning (198, 198, 197) (grå/svart), modell (254, 230, 158) (gul/beige), ΔE 39.4; modellens farge: merknad: trykkfila 2015 (Street View-bildet viste nabohuset) |
 | 867588 |  |  |  | **F** |  |  |  | G | **F** | A |  |  | gesims: tegnet/modell 0.55 (tegningen lavere); vinduer: vegg 2 (21.6 m): tegning 2 vinduer i rader [2], modell 2 i rader [1, 1] |
 | 987370 |  |  |  | **F** |  |  | G |  |  |  | A |  | gesims: tegnet/modell 1.51 (tegningen høyere) |
 | 867596 |  |  | A | A |  |  |  |  | **F** | A |  |  | vinduer: vegg 3 (8.4 m): tegning 2 vinduer i rader [2], modell 4 i rader [2, 2] |
@@ -387,7 +387,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 | 971911 |  |  |  |  |  |  |  | G | A |  |  |  |  |
 | 971903 |  |  | **F** | **F** | **F** |  | **F** | G | A |  |  |  | gesims: tegnet/modell 0.50 (tegningen lavere); veggfarge: tegning (255, 232, 161) (gul/beige), modell (244, 244, 244) (hvit), ΔE 37.7; modellens farge: 2019-trykket (dømt) |
 | 971873 | **F** |  |  |  |  |  |  |  |  |  |  |  |  |
-| 868479 |  | **F** |  |  |  |  | **F** | G | **F** | A |  |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 0; ulike farger: 2); veggfarge: tegning (242, 149, 130) (rød), modell (255, 232, 161) (gul/beige), ΔE 42.9; modellens farge: kvartaltegningen Kvartal10 (skygge side, IoU 0.64); vinduer: vegg 0 (12.7 m): tegning 0 vinduer i rader [], model |
+| 868479 |  | **F** |  |  |  |  |  | G | **F** | A |  |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 0; ulike farger: 2); vinduer: vegg 0 (12.7 m): tegning 0 vinduer i rader [], modell 4 i rader [1, 3] |
 | 868495 |  |  | A | **F** | **F** |  |  |  | A |  |  |  | gesims: tegnet/modell 0.22 (tegningen lavere) |
 | 867553 |  |  |  | **F** |  |  |  | G |  |  |  |  | gesims: tegnet/modell 1.37 (tegningen høyere) |
 | 300002508 |  |  | A |  | **F** |  |  |  |  |  |  |  |  |
@@ -458,7 +458,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 972039 |  |  | **F** |  | A |  |  | G |  |  |  |  |  |
-| 972012 |  |  | A | **F** |  |  |  | G |  |  | A | A | gesims: tegnet/modell 1.83 (tegningen høyere) |
+| 972012 |  |  | A | A |  |  |  | G | **F** |  | A | A | vinduer: vegg 11 (9.6 m): tegning 0 vinduer i rader [], modell 12 i rader [4, 4, 4] |
 | 870260 |  |  | A |  |  |  |  | G |  |  |  |  |  |
 | 870236 |  |  |  | **F** |  | **F** |  |  | **F** |  |  |  | gesims: tegnet/modell 1.63 (tegningen høyere); takform: tegning valm, modell sal; vinduer: vegg 1 (15.5 m): tegning 0 vinduer i rader [], modell 10 i rader [5, 5] |
 | pb-7 |  |  | **F** | A |  |  |  |  |  |  |  |  |  |
@@ -487,7 +487,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 870236 |  |  | A | **F** |  |  |  | G | **F** |  |  | A | gesims: tegnet/modell 0.63 (tegningen lavere); vinduer: vegg 1 (15.5 m): tegning 10 vinduer i rader [5, 1, 4], modell 10 i rader [5, 5] |
-| 972403 |  |  | A |  |  |  | G | G | **F** |  |  |  | vinduer: vegg 1 (14.4 m): tegning 0 vinduer i rader [], modell 6 i rader [6] |
+| 972403 |  |  | A |  |  |  |  | G | **F** |  |  |  | vinduer: vegg 1 (14.4 m): tegning 0 vinduer i rader [], modell 6 i rader [6] |
 | 870252 |  | **F** |  | **F** |  |  |  | G | **F** | A |  | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 3; ulike farger: 2); gesims: tegnet/modell 0.60 (tegningen lavere); vinduer: vegg 3 (25.3 m): tegning 13 vinduer i rader [4, 9], modell 7 i rader [4, 3] |
 | 972381 | A |  |  |  |  |  |  |  |  |  |  |  |  |
 | 870244 |  |  | **F** |  |  |  |  | G |  |  |  |  |  |
