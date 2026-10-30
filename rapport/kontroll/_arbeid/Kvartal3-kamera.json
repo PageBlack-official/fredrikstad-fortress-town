@@ -3,41 +3,41 @@
  "par": {
   "az": -9.96,
   "el": 45.46,
-  "s": 5.1926,
+  "s": 5.1928,
   "K": 3.3708,
   "kz": 0.926,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   5.060680005500638,
-   0.8883873507455787,
+   5.060884775113163,
+   0.8882806891049633,
    0.0,
-   -926.4456279848742
+   -926.4667407163636
   ],
   [
-   1.159561754423757,
-   -3.594140837423646,
+   1.1594086616590245,
+   -3.5942887020865735,
    -3.370810856212831,
-   687.0368291619935
+   687.0431160125947
   ]
  ],
  "forskyvning": {
   "bnr-193868061": [
-   6.01,
-   -2.49
+   6.32,
+   -1.5
   ],
   "bnr-193869556": [
    -49.1,
-   -21.18
+   -21.1
   ],
   "bnr-193868053": [
-   -43.6,
-   -10.22
+   -43.62,
+   -10.21
   ],
   "bnr-193867308": [
    2.3,
-   122.44
+   122.46
   ],
   "bnr-193868045": [
    -25.5,
@@ -45,10 +45,10 @@
   ],
   "bnr-193868037": [
    31.8,
-   71.8
+   71.81
   ],
   "bnr-193867324": [
-   49.15,
+   49.19,
    108.5
   ]
  },
@@ -58,11 +58,11 @@
     "bnr-193868061"
    ],
    "d": [
-    6.01,
-    -2.49
+    6.32,
+    -1.5
    ],
    "kant_for": 4.88,
-   "kant_etter": 4.76
+   "kant_etter": 4.75
   },
   {
    "ids": [
@@ -70,9 +70,9 @@
    ],
    "d": [
     -4.5,
-    7.52
+    7.6
    ],
-   "kant_for": 3.89,
+   "kant_for": 3.9,
    "kant_etter": 2.85
   },
   {
@@ -80,10 +80,10 @@
     "bnr-193868053"
    ],
    "d": [
-    -6.5,
-    -10.72
+    -6.52,
+    -10.71
    ],
-   "kant_for": 4.75,
+   "kant_for": 4.76,
    "kant_etter": 2.72
   },
   {
@@ -92,9 +92,9 @@
    ],
    "d": [
     -7.5,
-    8.14
+    8.16
    ],
-   "kant_for": 5.13,
+   "kant_for": 5.14,
    "kant_etter": 4.91
   },
   {
@@ -114,17 +114,17 @@
    ],
    "d": [
     -1.5,
-    -3.5
+    -3.49
    ],
-   "kant_for": 3.7,
-   "kant_etter": 3.49
+   "kant_for": 3.69,
+   "kant_etter": 3.48
   },
   {
    "ids": [
     "bnr-193867324"
    ],
    "d": [
-    1.25,
+    1.29,
     -2.5
    ],
    "kant_for": 5.06,
@@ -134,10 +134,10 @@
  "maal": {
   "bunn": 6.0,
   "topp": 24.0,
-  "iou": 0.45768790251412905,
+  "iou": 0.4577996469218345,
   "bare": 92,
-  "kant": 3.9572478532791138,
-  "omriss": 46.44288731712956
+  "kant": 3.9562323093414307,
+  "omriss": 46.440652428975454
  },
  "bygg": [
   "bnr-193868061",
@@ -154,78 +154,78 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193868061": {
-   "median_pt": 2.64,
-   "median_px": 7.9,
+   "median_pt": 2.68,
+   "median_px": 8.1,
    "andel_innen_2pt": 0.43,
    "beste_forskyvning_pt": [
-    0.5,
+    1.0,
     -0.5
    ],
-   "median_etter_pt": 2.56
+   "median_etter_pt": 2.63
   },
   "bnr-193869556": {
-   "median_pt": 1.87,
-   "median_px": 5.6,
-   "andel_innen_2pt": 0.52,
-   "beste_forskyvning_pt": [
-    0.0,
-    0.0
-   ],
-   "median_etter_pt": 1.87
-  },
-  "bnr-193868053": {
-   "median_pt": 1.32,
-   "median_px": 4.0,
-   "andel_innen_2pt": 0.58,
-   "beste_forskyvning_pt": [
-    0.0,
-    0.0
-   ],
-   "median_etter_pt": 1.32
-  },
-  "bnr-193867308": {
-   "median_pt": 2.95,
-   "median_px": 8.8,
-   "andel_innen_2pt": 0.4,
-   "beste_forskyvning_pt": [
-    -1.5,
-    0.5
-   ],
-   "median_etter_pt": 2.82
-  },
-  "bnr-193868045": {
-   "median_pt": 1.87,
-   "median_px": 5.6,
-   "andel_innen_2pt": 0.52,
-   "beste_forskyvning_pt": [
-    -2.5,
-    -2.0
-   ],
-   "median_etter_pt": 1.84
-  },
-  "bnr-193868037": {
-   "median_pt": 1.89,
+   "median_pt": 1.88,
    "median_px": 5.7,
    "andel_innen_2pt": 0.51,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 1.89
+   "median_etter_pt": 1.88
+  },
+  "bnr-193868053": {
+   "median_pt": 1.31,
+   "median_px": 3.9,
+   "andel_innen_2pt": 0.58,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 1.31
+  },
+  "bnr-193867308": {
+   "median_pt": 2.95,
+   "median_px": 8.8,
+   "andel_innen_2pt": 0.39,
+   "beste_forskyvning_pt": [
+    -1.5,
+    0.5
+   ],
+   "median_etter_pt": 2.81
+  },
+  "bnr-193868045": {
+   "median_pt": 1.84,
+   "median_px": 5.5,
+   "andel_innen_2pt": 0.52,
+   "beste_forskyvning_pt": [
+    -2.5,
+    -2.0
+   ],
+   "median_etter_pt": 1.86
+  },
+  "bnr-193868037": {
+   "median_pt": 1.91,
+   "median_px": 5.7,
+   "andel_innen_2pt": 0.51,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 1.91
   },
   "bnr-193867324": {
-   "median_pt": 3.83,
-   "median_px": 11.5,
+   "median_pt": 3.81,
+   "median_px": 11.4,
    "andel_innen_2pt": 0.35,
    "beste_forskyvning_pt": [
     -0.5,
     -4.0
    ],
-   "median_etter_pt": 3.63
+   "median_etter_pt": 3.64
   }
  },
  "registrering": {
-  "median_pt": 1.89,
+  "median_pt": 1.91,
   "median_px": 5.7,
   "andel_under_3pt": 0.86,
   "R": 3.0
