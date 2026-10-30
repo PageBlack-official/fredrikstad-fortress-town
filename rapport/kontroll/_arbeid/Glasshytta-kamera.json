@@ -1,35 +1,35 @@
 {
  "tegning": "Glasshytta",
  "par": {
-  "az": -10.55,
+  "az": -10.56,
   "el": 45.46,
-  "s": 5.0685,
+  "s": 5.0668,
   "K": 5.3586,
-  "kz": 1.507,
+  "kz": 1.508,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.923081414983563,
-   0.9170060181594627,
+   4.921197646607061,
+   0.9173421404347196,
    0.0,
-   -1110.9190372884937
+   -1110.3364564811886
   ],
   [
-   1.202050062135014,
-   -3.4955158155419213,
+   1.20255365298267,
+   -3.494166558515864,
    -5.3586450626910445,
-   -181.61564940925422
+   -181.77553340040123
   ]
  ],
  "forskyvning": {
   "bnr-193869548": [
-   94.5,
-   125.79
+   94.0,
+   125.63
   ],
   "bnr-193869580": [
-   -0.6,
-   3.2
+   -0.65,
+   3.21
   ]
  },
  "blokker": [
@@ -38,19 +38,19 @@
     "bnr-193869548"
    ],
    "d": [
-    0.0,
-    0.79
+    -0.5,
+    0.63
    ],
-   "kant_for": 2.69,
-   "kant_etter": 2.67
+   "kant_for": 2.7,
+   "kant_etter": 2.6
   },
   {
    "ids": [
     "bnr-193869580"
    ],
    "d": [
-    -0.6,
-    3.2
+    -0.65,
+    3.21
    ],
    "kant_for": 2.19,
    "kant_etter": 1.94
@@ -61,7 +61,7 @@
   "topp": 2.0,
   "iou": 0.5488081725312145,
   "bare": 16,
-  "kant": 3.145079016685486,
+  "kant": 3.144413471221924,
   "omriss": 18.28708158248829
  },
  "bygg": [
@@ -72,29 +72,29 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193869548": {
-   "median_pt": 0.88,
-   "median_px": 2.6,
+   "median_pt": 0.8,
+   "median_px": 2.4,
    "andel_innen_2pt": 0.64,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 0.88
+   "median_etter_pt": 0.8
   },
   "bnr-193869580": {
-   "median_pt": 1.06,
-   "median_px": 3.2,
-   "andel_innen_2pt": 0.64,
+   "median_pt": 1.04,
+   "median_px": 3.1,
+   "andel_innen_2pt": 0.65,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 1.06
+   "median_etter_pt": 1.04
   }
  },
  "registrering": {
-  "median_pt": 0.97,
-  "median_px": 2.9,
+  "median_pt": 0.92,
+  "median_px": 2.8,
   "andel_under_3pt": 1.0,
   "R": 3.0
  }
