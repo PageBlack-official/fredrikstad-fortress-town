@@ -93,7 +93,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868363 | Binggården | [1, 1] | [1, 2] | 0 | 1 | 0 | 0 | None | 0 | ja |
 | bnr-193868088 |  | [4, 4] | [4, 4] | ingen synlig mot gata (hekk/stakitt foran) | 0 | 0 | 0 | 1 | 2 |  |
 | bnr-193868371 |  | [7, 3] | [7, 3] | ingen på denne fasaden | 0 | 0 | 0 | 1 | 2 |  |
-| bnr-193869556 | Krutthuset | [0] | [] | 1 midt, liten mørk rundbuedør med lykt over | 1 | 0 | 0 | 0 | 2 |  |
+| bnr-193869556 | Krutthuset | [0] | [4] | 1 midt, liten mørk rundbuedør med lykt over | 0 | 0 | 0 | 0 | 2 | ja |
 | bnr-193868126 |  | [2, 3] | [2] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 | ja |
 | bnr-193868142 | Prestegården | [5, 5] | [5, 5] | 1 brun kjellerluke/dør i sokkelen til venstre; ingen hovedinngang mot gata | 0 | 0 | 2 | 2 | 2 |  |
 | bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 0 | 0 | 0 | ja |
@@ -107,10 +107,10 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868525 |  | [1, 1] | [] | 1 grå tofløyet fyllingsdør med steintrapp og rekkverk | 0 | 0 | 0 | None | 2 | ja |
 | bnr-193971946 |  | [3] | [3] | 1 brun plankedør til venstre (ca. 0.12) med lykt og skilt | 1 | 1 lite takvindu | 0 | ikke synlig | 1 |  |
 | bnr-193868029 |  | [1, 1] | [1] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 1 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
-| bnr-193868002 |  | [3] | [3] | 1 brun dobbel fyllingsdør ca. midt (0.45–0.55) | 1 | 1 lite takvindu (skylight) | 1 | 1 murt pipe (tegl, mørk) | 1 |  |
-| bnr-193868002 |  | [5] | [5] | 1 brun fyllingsdør med overlys, ca. 0.10 av fasaden | 1 | 2 små takvinduer | 2 | 2 murte teglpiper | 1 |  |
+| bnr-193868002 |  | [3] | [5] | 1 brun dobbel fyllingsdør ca. midt (0.45–0.55) | 0 | 1 lite takvindu (skylight) | 1 | 1 murt pipe (tegl, mørk) | 1 | ja |
+| bnr-193868002 |  | [5] | [6] | 1 brun fyllingsdør med overlys, ca. 0.10 av fasaden | 1 | 2 små takvinduer | 2 | 2 murte teglpiper | 1 | ja |
 | bnr-6242812 |  | [5, 5, 4] | [5, 5, 4] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 |  |
-| bnr-193868215 | Vinmonopolet | [1] | [1] | 1 brun dør helt til venstre med steintrapp og rekkverk (ca. 0.12) | 1 | 1 lite takvindu | 1 | ikke synlig | 3 |  |
+| bnr-193868215 | Vinmonopolet | [1] | [8] | 1 brun dør helt til venstre med steintrapp og rekkverk (ca. 0.12) | 1 | 1 lite takvindu | 1 | ikke synlig | 3 | ja |
 | bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 0 | ja |
 | bnr-193868320 |  | [11, 11] | [11, 11] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193868711 |  | [3, 3] | [3, 3] | 0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen | 0 | ikke synlig | 0 | ikke synlig | 1 |  |
@@ -155,7 +155,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867782 |  | [6, 6] | [6, 6] | 1 grå tofløyet port med diagonale fyllinger helt til høyre (ca. 0.87–1.0) | 1 | ikke synlig | 0 | ikke synlig | 2 |  |
 | bnr-193867537 | Infanterikasernen | [2, 2] | [4, 4, 4] | 0 synlig | 1 | 0 | 5 | 1 | 12 | ja |
 | bnr-193867537 | Infanterikasernen | [6, 5] | [6, 5] | 0 på denne fasaden | 0 | ikke synlig | 7 | ikke synlig | 12 |  |
-| bnr-193867634 | Vollmesterboligen | [7] | [7] | 0 synlig på langfasaden | 0 | 0 | 0 | 3 (2 murte tegl, 1 hvit) | 3 |  |
+| bnr-193867634 | Vollmesterboligen | [7] | [8] | 0 synlig på langfasaden | 1 | 0 | 0 | 3 (2 murte tegl, 1 hvit) | 3 | ja |
 | bnr-193867715 |  | [2, 2] | [1, 1] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-16308102 |  | [5, 6] | [] | 1 mørk grønn tofløyet port/dør med overlys, ca. 0.25–0.33 av fasaden | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |
 | bnr-193972462 | bedehus/menighetshus | [5] | [9] | 1 brun rundbuet tofløyet plankeport ca. 0.05–0.15, nummer '50' ved porten | 0 | 0 | 1 | ikke synlig | 1 | ja |

@@ -2,5 +2,42 @@
  "tegning": "Kvartal14",
  "laget": "2026-10-30",
  "verktoy": "verktoy/fasade_tegning.py les_fra_kontroll",
- "vegger": []
+ "vegger": [
+  {
+   "id": "bnr-193972047",
+   "vegg": 4,
+   "side": "kontroll",
+   "a": [
+    55.02,
+    -77.14
+   ],
+   "b": [
+    47.95,
+    -92.19
+   ],
+   "L": 16.63,
+   "venstre": [
+    47.95,
+    -92.19
+   ],
+   "flater": [
+    89
+   ],
+   "farger": [
+    [
+     0.949,
+     0.584,
+     0.51
+    ]
+   ],
+   "elementer": [],
+   "geo": {
+    "fx0": 207.42112146025846,
+    "fx1": 212.95778401246667,
+    "H_venstre": 4.961943980029275,
+    "H_hoyre": 8.61738344888954
+   },
+   "kilde": "kontrollkobling"
+  }
+ ]
 }
