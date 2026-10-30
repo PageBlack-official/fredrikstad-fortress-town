@@ -305,7 +305,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 918239 |  |  | A |  | A |  |  |  |  |  | A | A |  |
 | 868525 |  |  | **F** | **F** | **F** |  |  |  |  |  |  |  | gesims: tegnet/modell 0.48 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 6251765 | A |  |  |  |  |  |  |  |  |  |  |  |  |
-| 971946 |  |  | A |  |  |  |  |  |  |  |  |  |  |
+| 971946 |  |  | A |  |  |  |  | G |  |  |  |  |  |
 | 6275109 |  |  | A |  | A |  |  | G |  |  |  |  |  |
 | 991718 |  |  | A | A | A |  |  |  |  |  |  |  |  |
 | 971202 |  |  | **F** |  | **F** |  |  | G |  |  |  |  |  |
@@ -445,8 +445,8 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 867502 |  |  |  | G |  |  |  | G |  |  |  | A |  |
-| 868460 |  |  | A |  |  |  |  | G |  |  |  |  |  |
+| 867502 |  |  |  | G |  |  |  |  |  |  |  | A |  |
+| 868460 |  |  | A |  |  |  |  |  |  |  |  |  |  |
 | 867499 |  |  |  |  |  |  |  |  | A |  | A | A |  |
 | 867510 |  | G |  |  |  |  |  | G |  |  |  |  |  |
 | pb-63 |  |  | **F** | **F** | **F** |  |  | G | **F** |  |  |  | gesims: tegnet/modell 0.18 (tegningen lavere) (veggflatene i tegningen); vinduer: vegg 3 (11.0 m, fasadeavlesningen (kontrollkobling)): tegning 0 vinduer i rader [], modell 4 i rader [3, 1] |
@@ -504,7 +504,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 867677 |  |  |  |  |  |  |  | G |  |  |  | A |  |
 | 867634 |  |  | A |  | A |  |  | G |  |  |  |  |  |
-| 867685 |  | **F** | A |  |  |  |  |  |  |  |  |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 2; ulike farger: 2) |
+| 867685 |  | **F** | A |  |  |  |  | G |  |  |  |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 2; ulike farger: 2) |
 
 ### Glasshytta
 

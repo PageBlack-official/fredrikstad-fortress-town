@@ -4898,10 +4898,10 @@
    "navn": null,
    "h": 4.8,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
+   "farge_kilde": "vegg: Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
    "vegg_kilde": "Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
    "tak_aar": 2024,
    "synlig_px": 27042,
    "flater": [
@@ -4934,13 +4934,13 @@
      129
     ],
     "modell": [
-     170,
-     108,
-     92
+     132,
+     122,
+     112
     ],
-    "dE": 23.7,
+    "dE": 42.8,
     "kulor_tegning": "rød",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [],
    "arker": {
@@ -4971,7 +4971,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (246, 147, 129) (rød), modell (170, 108, 92) (rød), ΔE 23.7; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))"
+     "hva": "tegning (246, 147, 129) (rød), modell (132, 122, 112) (grå/svart), ΔE 42.8; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))"
     },
     "arker": {
      "alvor": "ok",
@@ -13114,10 +13114,10 @@
    "navn": null,
    "h": 4.8,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
+   "farge_kilde": "vegg: Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
    "vegg_kilde": "Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
    "tak_aar": 2024,
    "synlig_px": 21880,
    "flater": [
@@ -13149,13 +13149,13 @@
      86
     ],
     "modell": [
-     170,
-     108,
-     92
+     132,
+     122,
+     112
     ],
-    "dE": 5.5,
+    "dE": 29.4,
     "kulor_tegning": "rød",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [],
    "arker": {
@@ -13189,8 +13189,8 @@
      "hva": "modell sal; tegningen viser ikke gavl/endeflate"
     },
     "takfarge": {
-     "alvor": "ok",
-     "hva": "tegning (173, 100, 86) (rød), modell (170, 108, 92) (rød), ΔE 5.5; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))"
+     "alvor": "avvik med grunn",
+     "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))"
     },
     "arker": {
      "alvor": "ok",
@@ -25292,10 +25292,10 @@
    "navn": "Kiørboegården",
    "h": 6.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+   "farge_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
    "vegg_kilde": "Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+   "tak_kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 61237,
    "flater": [
@@ -25354,13 +25354,13 @@
      65
     ],
     "modell": [
-     122,
-     86,
-     73
+     66,
+     66,
+     65
     ],
-    "dE": 22.1,
+    "dE": 0.0,
     "kulor_tegning": "grå/svart",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [
     {
@@ -25442,8 +25442,8 @@
      "hva": "tegning (243, 243, 243) (hvit), modell (243, 243, 243) (hvit), ΔE 0.0; modellens farge: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge"
     },
     "takfarge": {
-     "alvor": "avvik med grunn",
-     "hva": "tegning (66, 66, 65) (grå/svart), modell (122, 86, 73) (rød), ΔE 22.1; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))"
+     "alvor": "ok",
+     "hva": "tegning (66, 66, 65) (grå/svart), modell (66, 66, 65) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge"
     },
     "vinduer": {
      "alvor": "ok",
@@ -25469,10 +25469,10 @@
    "navn": "Kjørbogårdens sidebygning",
    "h": 3.9,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvitkalket tegl (malt murstein, lett varm hvit)); tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.56))",
+   "farge_kilde": "vegg: Street View 2024 (hvitkalket tegl (malt murstein, lett varm hvit)); tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.55): tegningens farge",
    "vegg_kilde": "Street View 2024 (hvitkalket tegl (malt murstein, lett varm hvit))",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.56))",
+   "tak_kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.55): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 40247,
    "flater": [
@@ -25505,13 +25505,13 @@
      197
     ],
     "modell": [
-     170,
-     108,
-     92
+     198,
+     198,
+     197
     ],
-    "dE": 40.8,
+    "dE": 0.0,
     "kulor_tegning": "grå/svart",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [],
    "arker": {
@@ -25545,8 +25545,8 @@
      "hva": "modell sal; tegningen viser ikke gavl/endeflate"
     },
     "takfarge": {
-     "alvor": "avvik med grunn",
-     "hva": "tegning (198, 198, 197) (grå/svart), modell (170, 108, 92) (rød), ΔE 40.8; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.56))"
+     "alvor": "ok",
+     "hva": "tegning (198, 198, 197) (grå/svart), modell (198, 198, 197) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.55): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -25564,10 +25564,10 @@
    "navn": "Kommandantgården",
    "h": 5.42,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal13 (lys side, IoU 0.73); tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.73))",
-   "vegg_kilde": "kvartaltegningen Kvartal13 (lys side, IoU 0.73)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal13 (lys side, IoU 0.74); tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.74))",
+   "vegg_kilde": "kvartaltegningen Kvartal13 (lys side, IoU 0.74)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.73))",
+   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.74))",
    "tak_aar": 2024,
    "synlig_px": 217381,
    "flater": [
@@ -25890,7 +25890,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (184, 111, 93) (rød), modell (170, 108, 92) (rød), ΔE 5.7; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.73))"
+     "hva": "tegning (184, 111, 93) (rød), modell (170, 108, 92) (rød), ΔE 5.7; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.74))"
     },
     "vinduer": {
      "alvor": "avvik",
@@ -30641,10 +30641,10 @@
    "navn": "Ingeniørgården",
    "h": 6.4,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen tell (lys side, IoU 0.84): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rødbrun tegl (delvis bak trær))); tegningen har rød (kvartaltegningen tell (IoU 0.84))",
+   "farge_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen tell (lys side, IoU 0.84): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.84))",
    "vegg_kilde": "Street View 2024 (hvit) = kvartaltegningen tell (lys side, IoU 0.84): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rødbrun tegl (delvis bak trær))); tegningen har rød (kvartaltegningen tell (IoU 0.84))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.84))",
    "tak_aar": 2024,
    "synlig_px": 87701,
    "flater": [
@@ -30735,13 +30735,13 @@
      106
     ],
     "modell": [
-     170,
-     108,
-     92
+     132,
+     122,
+     112
     ],
-    "dE": 28.3,
+    "dE": 50.9,
     "kulor_tegning": "rød",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [
     {
@@ -30892,7 +30892,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rødbrun tegl (delvis bak trær))); tegningen har rød (kvartaltegningen tell (IoU 0.84))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.84))"
     },
     "vinduer": {
      "alvor": "ok",
@@ -30918,10 +30918,10 @@
    "navn": "Vollmesterboligen",
    "h": 3.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit (kalket tegl)) = kvartaltegningen tell (skygge side, IoU 0.57): tegningens farge; tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
+   "farge_kilde": "vegg: Street View 2024 (hvit (kalket tegl)) = kvartaltegningen tell (skygge side, IoU 0.57): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
    "vegg_kilde": "Street View 2024 (hvit (kalket tegl)) = kvartaltegningen tell (skygge side, IoU 0.57): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
    "tak_aar": 2024,
    "synlig_px": 37476,
    "flater": [
@@ -30986,13 +30986,13 @@
      106
     ],
     "modell": [
-     170,
-     108,
-     92
+     132,
+     122,
+     112
     ],
-    "dE": 28.3,
+    "dE": 50.9,
     "kulor_tegning": "rød",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [
     {
@@ -31073,7 +31073,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har rød (kvartaltegningen tell (IoU 0.57))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.57))"
     },
     "vinduer": {
      "alvor": "ok",
@@ -31099,10 +31099,10 @@
    "navn": null,
    "h": 2.38,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen tell (lys side, IoU 0.61); tak: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (mørk rødbrun tegl, mosegrodd)); tegningen har rød (kvartaltegningen tell (IoU 0.61))",
+   "farge_kilde": "vegg: kvartaltegningen tell (lys side, IoU 0.61); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.61))",
    "vegg_kilde": "kvartaltegningen tell (lys side, IoU 0.61)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (mørk rødbrun tegl, mosegrodd)); tegningen har rød (kvartaltegningen tell (IoU 0.61))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.61))",
    "tak_aar": 2024,
    "synlig_px": 13622,
    "flater": [
@@ -31177,13 +31177,13 @@
      86
     ],
     "modell": [
-     170,
-     108,
-     92
+     132,
+     122,
+     112
     ],
-    "dE": 5.5,
+    "dE": 29.4,
     "kulor_tegning": "rød",
-    "kulor_modell": "rød"
+    "kulor_modell": "grå/svart"
    },
    "vinduer": [
     {
@@ -31264,8 +31264,8 @@
      "hva": "tegning (218, 165, 125) (oransje/brun), modell (218, 165, 125) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen tell (lys side, IoU 0.61)"
     },
     "takfarge": {
-     "alvor": "ok",
-     "hva": "tegning (173, 100, 86) (rød), modell (170, 108, 92) (rød), ΔE 5.5; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (mørk rødbrun tegl, mosegrodd)); tegningen har rød (kvartaltegningen tell (IoU 0.61))"
+     "alvor": "avvik med grunn",
+     "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.61))"
     },
     "vinduer": {
      "alvor": "ok",

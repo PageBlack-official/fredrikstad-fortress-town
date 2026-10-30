@@ -375,7 +375,7 @@
    212,
    212
   ],
-  "kilde": "kvartaltegningen Kvartal13 (lys side, IoU 0.73)",
+  "kilde": "kvartaltegningen Kvartal13 (lys side, IoU 0.74)",
   "aar": 2015,
   "byttet": false
  },
@@ -3729,7 +3729,7 @@
   "adr": null,
   "for_": [
    221,
-   174,
+   173,
    132
   ],
   "for_kilde": "2019-trykket (visuelt)",

@@ -119,9 +119,9 @@
    197.0,
    178.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2024 (brun/rødbrun tegl)",
+  "grunn": "",
   "tegning": [
    [
     140,
@@ -299,9 +299,9 @@
    161.0,
    146.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2024 (rød tegl)",
+  "grunn": "",
   "tegning": [
    [
     66,
@@ -316,11 +316,11 @@
    132
   ],
   "farge": [
-   170,
-   108,
-   92
+   66,
+   66,
+   65
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
   "aar": 2024
  },
  {
@@ -335,9 +335,9 @@
    184.0,
    165.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2024 (rødbrun tegl (delvis bak trær))",
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -352,11 +352,11 @@
    106
   ],
   "farge": [
-   170,
-   108,
-   92
+   132,
+   122,
+   112
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rødbrun tegl (delvis bak trær))); tegningen har rød (kvartaltegningen tell (IoU 0.84))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.84))",
   "aar": 2024
  },
  {
@@ -515,9 +515,9 @@
    164.0,
    149.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2024 (rød/brun tegl)",
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -532,11 +532,11 @@
    104
   ],
   "farge": [
-   170,
-   108,
-   92
+   132,
+   122,
+   112
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
   "aar": 2024
  },
  {
@@ -623,16 +623,16 @@
    160.0,
    148.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2024 (rød/brun tegl)",
+  "grunn": "",
   "tegning": [
    [
     198,
     198,
     197
    ],
-   "kvartaltegningen Kvartal13 (IoU 0.56)"
+   "kvartaltegningen Kvartal13 (IoU 0.55)"
   ],
   "for_": [
    190,
@@ -640,11 +640,11 @@
    194
   ],
   "farge": [
-   170,
-   108,
-   92
+   198,
+   198,
+   197
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.56))",
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.55): tegningens farge",
   "aar": 2024
  },
  {
@@ -668,7 +668,7 @@
     111,
     93
    ],
-   "kvartaltegningen Kvartal13 (IoU 0.73)"
+   "kvartaltegningen Kvartal13 (IoU 0.74)"
   ],
   "for_": [
    246,
@@ -680,7 +680,7 @@
    108,
    92
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.73))",
+  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.74))",
   "aar": 2024
  },
  {
@@ -695,9 +695,9 @@
    192.0,
    176.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (rød tegl)",
+  "grunn": "",
   "tegning": [
    [
     198,
@@ -712,11 +712,11 @@
    198
   ],
   "farge": [
-   170,
-   108,
-   92
+   198,
+   198,
+   198
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød tegl)); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024
  },
  {
@@ -3631,9 +3631,9 @@
    162.0,
    146.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2024 (brun/rød tegl)",
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -3648,11 +3648,11 @@
    192
   ],
   "farge": [
-   170,
-   108,
-   92
+   132,
+   122,
+   112
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (brun/rød tegl)); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.61))",
   "aar": 2024
  },
  {
@@ -7750,9 +7750,9 @@
    187.0,
    166.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (rød tegl)",
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -7767,11 +7767,11 @@
    135
   ],
   "farge": [
-   170,
-   108,
-   92
+   135,
+   135,
+   135
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød tegl)); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024
  },
  {
@@ -7930,9 +7930,9 @@
    190.0,
    169.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (mørk rødbrun tegl, mosegrodd)",
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -7947,11 +7947,11 @@
    104
   ],
   "farge": [
-   170,
-   108,
-   92
+   132,
+   122,
+   112
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (mørk rødbrun tegl, mosegrodd)); tegningen har rød (kvartaltegningen tell (IoU 0.61))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.61))",
   "aar": 2024
  },
  {
@@ -8153,9 +8153,9 @@
    167.0,
    151.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (rød tegl)",
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -8170,11 +8170,11 @@
    135
   ],
   "farge": [
-   170,
-   108,
-   92
+   135,
+   135,
+   135
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød tegl)); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024
  },
  {

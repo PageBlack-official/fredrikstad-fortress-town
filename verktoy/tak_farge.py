@@ -412,6 +412,11 @@ def sv_tak_klasse(a):
     if not t or t.startswith(('ikke', 'skjult', 'mørk (', 'mørkt')):
         return None
     f = re.split(r'[,(;–]', t)[0]
+    # tallet fra avlesningen må ikke si imot ordet: «rød tegl» med RGB (143, 132, 119) er brungrått (867502, 30.10)
+    rgb = (a.get('tak') or {}).get('rgb') if isinstance(a.get('tak'), dict) else None
+    a_ = _lab([int(c) for c in rgb])[1] if rgb else None
+    if a_ is not None and re.search(r'rød', f) and a_ < 6:
+        return None
     gra = re.search(r'grå|sort|svart|blikk|skifer|papp|antrasitt', f)
     if re.search(r'rød', f) and not gra:
         return 'falmet tegl'

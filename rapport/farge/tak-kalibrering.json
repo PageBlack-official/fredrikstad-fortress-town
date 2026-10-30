@@ -25,7 +25,7 @@
    197.0,
    178.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -117,7 +117,7 @@
    161.0,
    146.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -134,7 +134,7 @@
    161.0,
    146.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -146,7 +146,7 @@
    184.0,
    165.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -163,7 +163,7 @@
    184.0,
    165.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -221,7 +221,7 @@
    164.0,
    149.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -238,7 +238,7 @@
    164.0,
    149.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -308,12 +308,12 @@
    160.0,
    148.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
   "id": "bnr-193868460",
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.56)",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.55)",
   "tegning": [
    198,
    198,
@@ -325,12 +325,12 @@
    160.0,
    148.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
   "id": "bnr-193867499",
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.73)",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.74)",
   "tegning": [
    184,
    111,
@@ -1310,7 +1310,7 @@
    162.0,
    146.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -1327,7 +1327,7 @@
    162.0,
    146.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -2372,7 +2372,7 @@
    190.0,
    169.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
