@@ -888,7 +888,7 @@
     5
    ],
    "dorer": 1,
-   "arker": 1,
+   "arker": 0,
    "piper": 1
   },
   "avvik": false,
@@ -1342,7 +1342,7 @@
    ],
    "dorer": 1,
    "arker": 0,
-   "piper": 1
+   "piper": 2
   },
   "avvik": true,
   "dorer_avvik": true
@@ -1821,10 +1821,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
-    5
+    7,
+    8
    ],
-   "dorer": 3,
+   "dorer": 1,
    "arker": 0,
    "piper": 5
   },
@@ -1910,7 +1910,7 @@
     5
    ],
    "dorer": 1,
-   "arker": 1,
+   "arker": 0,
    "piper": 1
   },
   "avvik": true,
@@ -2721,18 +2721,26 @@
    "piper": "1 murt pipe"
   },
   "notat": "",
-  "arker_notat": "taket stiger ikke fra gatesiden (gavl eller flatt tak), arker ikke lagt inn",
+  "arker": 1,
   "piper": 1,
   "status": "endret",
   "info": {
-   "droppet_rader": 1,
-   "akser_onsket": 0,
-   "akser": 0,
+   "droppet_rader": 0,
+   "akser_onsket": 1,
+   "akser": 1,
+   "cc": 11.01,
+   "akser_t": [
+    5.51
+   ],
    "rader": [
-    0
+    0,
+    1
    ],
    "dorer": 0,
-   "rytme_ok": true
+   "rytme_ok": true,
+   "topp_akser": [
+    0
+   ]
   }
  },
  {
@@ -3754,7 +3762,7 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    7,
+    8,
     7
    ],
    "dorer": 1,
@@ -4332,7 +4340,7 @@
     3
    ],
    "dorer": 2,
-   "arker": 1,
+   "arker": 0,
    "piper": 2
   },
   "avvik": false,
@@ -5481,15 +5489,8 @@
    "piper": null
   },
   "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 0
-  },
-  "avvik": false,
-  "dorer_avvik": true
+  "status": "hoppet over",
+  "grunn": "veggen (vegg 3, 2.3 m) har plass til 0 akser, Street View trenger 1 – ingen gyldig akse på veggen: trolig feil vegg eller feil hus i modellen"
  },
  {
   "id": "bnr-193971385",
@@ -6254,15 +6255,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    5,
-    3
+    6,
+    8
    ],
-   "dorer": 0,
+   "dorer": 1,
    "arker": 0,
    "piper": 0
   },
   "avvik": true,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193868495",
@@ -6334,10 +6335,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "NØ/NV (mot General Ohmes vei)",
-  "vegg": 3,
-  "vegg_L": 8.8,
-  "avstand": 17.0,
-  "vinkel": 35.0,
+  "vegg": 5,
+  "vegg_L": 9.0,
+  "avstand": 16.8,
+  "vinkel": 38.0,
   "sv": {
    "rader": [
     [
@@ -6361,12 +6362,12 @@
    "droppet_rader": 0,
    "akser_onsket": 4,
    "akser": 4,
-   "cc": 2.38,
+   "cc": 2.42,
    "akser_t": [
     0.85,
-    3.23,
-    5.61,
-    7.99
+    3.27,
+    5.7,
+    8.12
    ],
    "rader": [
     2,
@@ -6387,17 +6388,17 @@
   "navn": null,
   "sikkerhet": "høy",
   "status": "hoppet over",
-  "grunn": "samme vegg (3) som en annen side: NØ/SØ (fra Huitfeldts gate)"
+  "grunn": "samme vegg (5) som en annen side: NØ/SØ (fra Huitfeldts gate)"
  },
  {
   "id": "bnr-6276008",
   "navn": null,
   "sikkerhet": "høy",
   "side": "NØ (~30 m langs veien)",
-  "vegg": 4,
-  "vegg_L": 6.8,
-  "avstand": 32.0,
-  "vinkel": 1.0,
+  "vegg": 3,
+  "vegg_L": 4.6,
+  "avstand": 31.6,
+  "vinkel": 0.0,
   "sv": {
    "rader": [
     [
@@ -6420,11 +6421,11 @@
    "droppet_rader": 0,
    "akser_onsket": 3,
    "akser": 3,
-   "cc": 2.57,
+   "cc": 1.45,
    "akser_t": [
     0.85,
-    3.42,
-    6.0
+    2.3,
+    3.75
    ],
    "rader": [
     2,
@@ -6443,10 +6444,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "NV (mot General Ohmes vei)",
-  "vegg": 11,
-  "vegg_L": 9.8,
-  "avstand": 12.3,
-  "vinkel": 32.0,
+  "vegg": 0,
+  "vegg_L": 11.1,
+  "avstand": 13.3,
+  "vinkel": 37.0,
   "sv": {
    "rader": [
     [
@@ -6471,11 +6472,11 @@
    "droppet_rader": 0,
    "akser_onsket": 3,
    "akser": 3,
-   "cc": 4.06,
+   "cc": 4.71,
    "akser_t": [
     0.85,
-    4.91,
-    8.98
+    5.56,
+    10.28
    ],
    "rader": [
     2,
@@ -6503,9 +6504,9 @@
   "sikkerhet": "høy",
   "side": "NØ (gatefasade, ~15 m)",
   "vegg": 1,
-  "vegg_L": 11.4,
-  "avstand": 14.6,
-  "vinkel": 27.0,
+  "vegg_L": 11.3,
+  "avstand": 14.1,
+  "vinkel": 23.0,
   "sv": {
    "rader": [
     [
@@ -6529,11 +6530,11 @@
    "droppet_rader": 0,
    "akser_onsket": 3,
    "akser": 3,
-   "cc": 4.84,
+   "cc": 4.82,
    "akser_t": [
     0.85,
-    5.69,
-    10.53
+    5.67,
+    10.48
    ],
    "rader": [
     2,
@@ -6553,10 +6554,10 @@
   "navn": null,
   "sikkerhet": "middels",
   "side": "NØ (mot General Ohmes vei, ~26 m)",
-  "vegg": 2,
-  "vegg_L": 18.4,
-  "avstand": 26.4,
-  "vinkel": 32.0,
+  "vegg": 8,
+  "vegg_L": 9.4,
+  "avstand": 24.1,
+  "vinkel": 24.0,
   "sv": {
    "rader": [
     [
@@ -6580,12 +6581,12 @@
    "droppet_rader": 0,
    "akser_onsket": 4,
    "akser": 4,
-   "cc": 5.57,
+   "cc": 2.56,
    "akser_t": [
     0.85,
-    6.42,
-    11.98,
-    17.55
+    3.41,
+    5.97,
+    8.54
    ],
    "rader": [
     3,
@@ -6606,10 +6607,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "N (garasjeport mot innkjørselen)",
-  "vegg": 1,
+  "vegg": 0,
   "vegg_L": 4.2,
-  "avstand": 8.8,
-  "vinkel": 20.0,
+  "avstand": 9.0,
+  "vinkel": 16.0,
   "sv": {
    "rader": [
     [
@@ -6646,10 +6647,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "NØ (garasjeporter mot Huitfeldts gate)",
-  "vegg": 2,
-  "vegg_L": 8.3,
-  "avstand": 8.1,
-  "vinkel": 27.0,
+  "vegg": 1,
+  "vegg_L": 8.4,
+  "avstand": 8.2,
+  "vinkel": 31.0,
   "sv": {
    "rader": [
     [
@@ -6669,10 +6670,10 @@
    "droppet_rader": 0,
    "akser_onsket": 2,
    "akser": 2,
-   "cc": 5.24,
+   "cc": 5.29,
    "akser_t": [
     1.55,
-    6.79
+    6.84
    ],
    "rader": [
     0
@@ -6687,10 +6688,10 @@
   "navn": null,
   "sikkerhet": "middels",
   "side": "SV (inne i hagen, ~19 m)",
-  "vegg": 5,
-  "vegg_L": 4.2,
-  "avstand": 18.6,
-  "vinkel": 3.0,
+  "vegg": 3,
+  "vegg_L": 3.9,
+  "avstand": 22.7,
+  "vinkel": 7.0,
   "sv": {
    "rader": [
     [
@@ -6702,7 +6703,7 @@
    "takvinduer": "0",
    "piper": null
   },
-  "notat": "siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)",
+  "notat": "",
   "dorer_fra": "beholdt (ukjent i Street View)",
   "arker": 0,
   "status": "endret",
@@ -6710,9 +6711,9 @@
    "droppet_rader": 0,
    "akser_onsket": 1,
    "akser": 1,
-   "cc": 4.23,
+   "cc": 3.86,
    "akser_t": [
-    2.11
+    1.93
    ],
    "rader": [
     1
@@ -7750,10 +7751,10 @@
   "navn": null,
   "sikkerhet": "middels",
   "side": "N/V (~18 m bak bjørka)",
-  "vegg": 2,
-  "vegg_L": 14.9,
-  "avstand": 20.1,
-  "vinkel": 27.0,
+  "vegg": 0,
+  "vegg_L": 15.4,
+  "avstand": 19.3,
+  "vinkel": 30.0,
   "sv": {
    "rader": [
     [
@@ -7778,11 +7779,11 @@
    "droppet_rader": 0,
    "akser_onsket": 3,
    "akser": 3,
-   "cc": 6.62,
+   "cc": 6.84,
    "akser_t": [
     0.85,
-    7.47,
-    14.1
+    7.69,
+    14.53
    ],
    "rader": [
     3,
@@ -7965,10 +7966,10 @@
   "navn": "Widdingstua",
   "sikkerhet": "høy",
   "side": "NV (langside) + SV (gavl), sett skrått på ~8 m",
-  "vegg": 1,
-  "vegg_L": 11.4,
-  "avstand": 9.7,
-  "vinkel": 49.0,
+  "vegg": 0,
+  "vegg_L": 11.2,
+  "avstand": 8.2,
+  "vinkel": 48.0,
   "sv": {
    "rader": [
     [
@@ -7992,12 +7993,12 @@
    "droppet_rader": 1,
    "akser_onsket": 4,
    "akser": 4,
-   "cc": 3.22,
+   "cc": 3.17,
    "akser_t": [
     0.85,
-    4.07,
-    7.29,
-    10.52
+    4.02,
+    7.19,
+    10.36
    ],
    "rader": [
     3

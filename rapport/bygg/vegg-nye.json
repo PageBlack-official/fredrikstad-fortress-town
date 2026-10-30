@@ -162,7 +162,7 @@
    198,
    196
   ],
-  "kilde": "nabohuset bnr-13416559 (house, 21.7 m unna)"
+  "kilde": "nabohuset bnr-13416559 (house, 22.8 m unna)"
  },
  {
   "id": "bnr-13416346",
@@ -470,7 +470,7 @@
    198,
    196
   ],
-  "kilde": "nabohuset bnr-13416559 (house, 41.2 m unna)"
+  "kilde": "nabohuset bnr-13416559 (house, 42.3 m unna)"
  },
  {
   "id": "bnr-193820670",
@@ -492,7 +492,7 @@
    198,
    196
   ],
-  "kilde": "nabohuset bnr-13416559 (house, 131.9 m unna)"
+  "kilde": "nabohuset bnr-13416559 (house, 132.9 m unna)"
  },
  {
   "id": "bnr-13416087",
@@ -521,11 +521,11 @@
   "navn": null,
   "type": "house",
   "vegg": [
-   196,
-   198,
-   196
+   242,
+   240,
+   232
   ],
-  "kilde": "nabohuset bnr-13416559 (house, 66.8 m unna)"
+  "kilde": "nabohuset bnr-193820557 (garage, 67.7 m unna)"
  },
  {
   "id": "bnr-13416311",
@@ -602,7 +602,7 @@
    176,
    172
   ],
-  "kilde": "nabohuset bnr-13384460 (house, 3.6 m unna)"
+  "kilde": "nabohuset bnr-13384460 (house, 2.9 m unna)"
  },
  {
   "id": "bnr-6276814",
@@ -822,7 +822,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 54.9 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 55.1 m unna)"
  },
  {
   "id": "bnr-6276024",
@@ -833,7 +833,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 6.7 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 7.3 m unna)"
  },
  {
   "id": "bnr-6276547",
@@ -844,7 +844,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 7.6 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 6.9 m unna)"
  },
  {
   "id": "bnr-13389616",
@@ -855,7 +855,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 37.0 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 36.3 m unna)"
  },
  {
   "id": "bnr-13393540",
@@ -877,7 +877,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 26.5 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 27.0 m unna)"
  },
  {
   "id": "bnr-13393532",
@@ -888,7 +888,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 39.0 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 38.9 m unna)"
  },
  {
   "id": "bnr-13384479",
@@ -899,7 +899,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 27.6 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 27.0 m unna)"
  },
  {
   "id": "bnr-6277071",
@@ -1174,7 +1174,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 16.4 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 15.7 m unna)"
  },
  {
   "id": "bnr-250003021",
@@ -1339,7 +1339,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 46.2 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 46.5 m unna)"
  },
  {
   "id": "bnr-193874444",
@@ -1350,7 +1350,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 37.2 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 36.6 m unna)"
  },
  {
   "id": "bnr-193874428",
@@ -1372,7 +1372,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 17.6 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 17.0 m unna)"
  },
  {
   "id": "bnr-23057948",
@@ -1383,7 +1383,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 49.2 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 49.5 m unna)"
  },
  {
   "id": "bnr-23056119",
@@ -1394,7 +1394,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 46.1 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 46.2 m unna)"
  },
  {
   "id": "bnr-6277845",
@@ -1427,7 +1427,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 26.2 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 25.8 m unna)"
  },
  {
   "id": "bnr-300498849",
@@ -1438,7 +1438,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 5.1 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 5.9 m unna)"
  },
  {
   "id": "bnr-193987699",
@@ -1449,18 +1449,18 @@
    198,
    196
   ],
-  "kilde": "nabohuset bnr-13416559 (house, 11.8 m unna)"
+  "kilde": "nabohuset bnr-13416559 (house, 12.9 m unna)"
  },
  {
   "id": "bnr-193987680",
   "navn": null,
   "type": "semidetached_house",
   "vegg": [
-   196,
-   198,
-   196
+   242,
+   240,
+   232
   ],
-  "kilde": "nabohuset bnr-13416559 (house, 87.4 m unna)"
+  "kilde": "nabohuset bnr-193820557 (garage, 87.9 m unna)"
  },
  {
   "id": "bnr-193867456",
@@ -1812,7 +1812,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6246729 (garage, 2.3 m unna)"
+  "kilde": "nabohuset bnr-6246729 (garage, 2.9 m unna)"
  },
  {
   "id": "pb-34",
@@ -1845,7 +1845,7 @@
    74,
    62
   ],
-  "kilde": "nabohuset bnr-6275990 (apartments, 3.1 m unna)"
+  "kilde": "nabohuset bnr-6275990 (apartments, 2.6 m unna)"
  },
  {
   "id": "pb-37",
@@ -1867,7 +1867,7 @@
    240,
    232
   ],
-  "kilde": "nabohuset bnr-193874401 (garage, 0.0 m unna)"
+  "kilde": "nabohuset bnr-193874401 (garage, 0.2 m unna)"
  },
  {
   "id": "pb-39",
@@ -1878,7 +1878,7 @@
    240,
    232
   ],
-  "kilde": "nabohuset bnr-13384401 (house, 2.6 m unna)"
+  "kilde": "nabohuset bnr-13384401 (house, 1.9 m unna)"
  },
  {
   "id": "bnr-193820565",

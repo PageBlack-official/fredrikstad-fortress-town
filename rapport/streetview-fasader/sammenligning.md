@@ -31,7 +31,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193971210 |  | [0] | [0] | 0 | 0 | 0 | veggen valgt etter retningen i avlesningen (NØ/SØ (langvegg mot plassen)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren |
 | bnr-193868436 | Skolebygningen | [8, 7] | [8, 7] | 0 | – | – |  |
 | bnr-193868436 | Skolebygningen | [1, 0] | [1, 0] | 0 | 0 | 0 | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig) |
-| bnr-193868452 |  | [0, 1] | [0] | 0 | – | 1 | 1 rad(er) fikk ikke plass under gesims; taket stiger ikke fra gatesiden (gavl eller flatt tak), arker ikke lagt inn |
+| bnr-193868452 |  | [0, 1] | [0, 1] | 0 | 1 | 1 |  |
 | bnr-193974767 |  | [0] | [0] | 0 | 0 | – | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig); beholdt (ukjent i Street View) |
 | bnr-193870333 | Kruttårnet | [0] | [0] | 0 | 0 | 0 | beholdt (ukjent i Street View) |
 | bnr-193868673 |  | [1] | [1] | 0 | 0 | – | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig); beholdt (ukjent i Street View) |
@@ -47,7 +47,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-6275990 |  | [3, 4] | [3, 4] | 1 | 0 | 1 |  |
 | bnr-23730278 |  | [0] | [0] | 1 | 0 | 0 |  |
 | bnr-193874401 |  | [0] | [0] | 2 | 0 | 0 |  |
-| bnr-6246729 |  | [1] | [1] | 0 | 0 | – | siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig); beholdt (ukjent i Street View) |
+| bnr-6246729 |  | [1] | [1] | 0 | 0 | – | beholdt (ukjent i Street View) |
 | bnr-6276539 |  | [2] | [2] | 0 | 1 | 1 | beholdt (ukjent i Street View) |
 | bnr-6276474 |  | [2, 2] | [2, 2] | 1 | 0 | 1 | beholdt (ukjent i Street View) |
 | bnr-6276520 |  | [3] | [3] | 0 | 1 | 1 | beholdt (ukjent i Street View) |
@@ -76,7 +76,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193820409 |  | [4, 1, 1] | [4, 1] | 1 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 | bnr-13418268 |  | [0, 1] | [0] | 2 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 
-## Fasithus fra kvartaltegningene, bare sammenlignet (108)
+## Fasithus fra kvartaltegningene, bare sammenlignet (107)
 
 Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 
@@ -86,13 +86,13 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868045 | Den gamle spisesal | [1] | [1] | 0 synlig | 0 | 0 | 0 | 1 rød teglpipe med hvit topp (beslag) | 5 |  |
 | bnr-193868460 | Kjørbogårdens sidebygning | [2] | [2] | 0 synlig | 0 | 0 | 0 | 2 røde teglpiper | 1 |  |
 | bnr-193971954 |  | [3, 1] | [3, 1] | 0 på gavlen | 0 | 0 | 1 | 0 | 2 |  |
-| bnr-193918239 | Bullgården | [7, 5] | [7, 5] | 1 til høyre, brun/oliven dobbeldør med overlys | 1 | 1 midtark (gavl) med tre vinduer og rundt vindu | 1 | 1 | 1 |  |
+| bnr-193918239 | Bullgården | [7, 5] | [7, 5] | 1 til høyre, brun/oliven dobbeldør med overlys | 1 | 1 midtark (gavl) med tre vinduer og rundt vindu | 0 | 1 | 1 |  |
 | bnr-193867359 |  | [1] | [5] | 0 synlig på langsiden | 0 | 0 | 0 | 1 murt pipe (lenger bort) | 1 | ja |
 | bnr-193867707 |  | [6, 6] | [6, 6] | 1 portrom/kjøreport til høyre med dobbel sandfarget fyllingsport (åpen) | 1 | None | 0 | None | 1 |  |
 | bnr-193972403 |  | [2, 4] | [2, 3, 2] | 1 til venstre, mørk brun dobbel fyllingsdør | 0 | 0 | 0 | 0 | 1 | ja |
 | bnr-193867839 |  | [6, 8] | [4, 4] | 1 mørk grønn fyllingsdør med overlys ca. 0.38, steintrapp med 3 trinn; 1 mørk grønn tofløyet port ca. 0.62–0.72 | 2 | 0 | 0 | 2 røde teglpiper | 0 | ja |
 | bnr-193971288 |  | [2, 2] | [2, 2] | 0 på fasaden | 0 | 0 | 0 | 1 murt teglpipe | 1 |  |
-| bnr-193868053 | Undervisningsbrakke | [0] | [6] | ingen synlig på denne langsiden | 1 | 0 | 0 | 1 | 1 | ja |
+| bnr-193868053 | Undervisningsbrakke | [0] | [6] | ingen synlig på denne langsiden | 1 | 0 | 0 | 1 | 2 | ja |
 | bnr-194006187 |  | [2] | [] | ikke i utsnittet | 0 | 2 arker (saltak, grå) | 0 | 1 murt teglpipe | 1 | ja |
 | bnr-193868363 | Binggården | [1, 1] | [1, 2] | 0 | 1 | 0 | 0 | None | 0 | ja |
 | bnr-193868088 |  | [4, 4] | [4, 4] | ingen synlig mot gata (hekk/stakitt foran) | 0 | 0 | 0 | 1 | 2 |  |
@@ -102,9 +102,9 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 0 | 0 | 0 | ja |
 | bnr-193868339 |  | [1, 1] | [1, 1] | 1 rundbuet portrom med svart/grå port, skilt 'Kong Fredrik' | 1 | 0 | 0 | None | 1 |  |
 | bnr-193868150 | Salamandergården | [4, 5] | [4, 4] | 1 midt-høyre, grønn dobbel fyllingsdør med rombe-overlys | 1 | 1 liten ark | 1 | 2 | 1 | ja |
-| bnr-193868061 | Artillerigården | [11, 12] | [2, 5] | 2 synlige: oliven dobbeldør til venstre og til høyre (rundbuet overlys) | 3 | ca 10 små takvinduer | 0 | 2 | 5 | ja |
+| bnr-193868061 | Artillerigården | [11, 12] | [7, 8] | 2 synlige: oliven dobbeldør til venstre og til høyre (rundbuet overlys) | 1 | ca 10 små takvinduer | 0 | 2 | 5 | ja |
 | bnr-193868428 | Kommisjonsgården | [5] | [5] | ingen på denne fasaden | 0 | 0 | 0 | 2 | 1 |  |
-| bnr-193868401 |  | [3, 4] | [4, 5] | inngang med lite buet overbygg midt-høyre (delvis bak espalier) | 1 | 1 | 1 | 2 små pipehatter | 1 | ja |
+| bnr-193868401 |  | [3, 4] | [4, 5] | inngang med lite buet overbygg midt-høyre (delvis bak espalier) | 1 | 1 | 0 | 2 små pipehatter | 1 | ja |
 | bnr-193868398 |  | [5] | [5] | 1 midt-høyre, rundbuet kjellernedgang med mørk dør | 1 | 0 | 0 | 2 | 1 |  |
 | bnr-193972292 |  | [4, 5] | [3, 2] | 2: grå/grønn fiskebeinsdør med trekantfronton midt, lav plankedør til venstre | 3 | 0 | 0 | 1 | 0 | ja |
 | bnr-193868525 |  | [1, 1] | [] | 1 grå tofløyet fyllingsdør med steintrapp og rekkverk | 0 | 0 | 0 | None | 2 | ja |
@@ -139,7 +139,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867758 |  | [4, 4] | [4, 4] | 1 brun/oker tofløyet fyllingsport med overlys og lykt (ca. 0.25) | 1 | 0 | 0 | 1 murt pipe | 1 |  |
 | bnr-193867898 | Gamlebyen modelljernbanesenter | [6, 5] | [5, 5] | 1 rødbrun tofløyet fyllingsdør, ca. 0.33–0.40 av fasaden, med skilt og lykt | 1 | 0 | 0 | 1 murt teglpipe (bak mønet) | 4 | ja |
 | bnr-193867901 |  | [5, 3] | [3, 3] | 1 blågrå tofløyet port/dør helt til venstre (ca. 0.03–0.25) | 1 | 0 | 1 | 2 murte teglpiper | 1 | ja |
-| bnr-193867952 |  | [10, 9] | [7, 7] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 1 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
+| bnr-193867952 |  | [10, 9] | [8, 7] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 1 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
 | bnr-193867952 |  | [7, 7] | [7, 7] | 1 dør på hjørnet mot Voldgaten (høyre ende) | 0 | 4 arker (mørk grå sink) med takterrasse-rekkverk | 4 | ikke synlig | 1 |  |
 | bnr-6247822 |  | [5, 4] | [4, 3] | 1 brun fyllingsdør med glass, ca. 0.42, i en nisje, med 5 steintrinn | 2 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-6251331 |  | [3, 3] | [1, 1] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 1 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
@@ -151,7 +151,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868258 |  | [5] | [6, 2] | 0 synlig (busker foran) | 1 | 1 ark midt med 2-rams vindu; 2 små takvinduer | 0 | 2 murte teglpiper | 1 | ja |
 | bnr-193868258 |  | [2] | [2] | ikke i utsnittet | 1 | 2 små takvinduer | 0 | ikke synlig | 1 |  |
 | bnr-193867944 | restaurantbygning/kafé | [5] | [5] | 1 brun dør midt (ca. 0.55) med steintrinn; butikkvinduer på hver side | 1 | 0 | 0 | 3 murte teglpiper | 4 |  |
-| bnr-193867936 |  | [6, 3] | [6, 3] | teglgården: 2 butikkdører (grønn ca. 0.20, brun/glass ca. 0.45) med steintrapper og store butikkvinduer; gul gård: 1 inngang med glassdør nede (ca. 0.85) | 2 | 1 ark/takoppbygg på teglgården | 1 | 1 på den gule gården | 2 |  |
+| bnr-193867936 |  | [6, 3] | [6, 3] | teglgården: 2 butikkdører (grønn ca. 0.20, brun/glass ca. 0.45) med steintrapper og store butikkvinduer; gul gård: 1 inngang med glassdør nede (ca. 0.85) | 2 | 1 ark/takoppbygg på teglgården | 0 | 1 på den gule gården | 2 |  |
 | bnr-193867936 |  | [1, 1] | [2, 2, 1] | 0 | 0 | 0 | 0 | 1 murt pipe | 2 | ja |
 | bnr-193868274 |  | [4] | [7] | 1 mørk grå/grønn fyllingsdør med ovalt overlys og husnummer, ca. 0.85 | 0 | 3 små takvinduer | 1 | 2 (murte, en ved hver ende) | 2 | ja |
 | bnr-193868274 |  | [2, 2] | [4] | ikke i utsnittet | 1 | 0 | 2 | ikke synlig | 2 | ja |
@@ -172,7 +172,6 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867774 |  | [4, 5] | [4, 5] | 1 brun tofløyet fyllingsport med overlys, venstre ende (ca. 0.05–0.20), nr. '65' | 1 | 0 | 0 | 2 murte teglpiper | 1 |  |
 | bnr-193972101 |  | [3, 3] | [3, 3] | 1 butikkdør med steintrapp og rekkverk (ca. 0.35 av synlig del), butikkskilt | 1 | 0 | 0 | None | 1 |  |
 | bnr-193972489 | annen forretningsbygning | [1] | [] | ikke synlig | 0 | 0 | 0 | None | 1 | ja |
-| pb-45 |  | [0] | [] | 1 grønn tofløyet port midt (ca. 0.35–0.55) | 0 | 0 | 0 | None | 0 |  |
 | bnr-193867855 |  | [2] | [3] | 1 mørk grønn fyllingsdør med utskåret dekor, høyre (ca. 0.85) | 0 | 1 ark med hvite vinduer og blomsterkasser | 0 | 2 murte teglpiper | 1 | ja |
 | bnr-193867766 |  | [4, 4] | [4, 4] | 1 brun tofløyet dør med diagonalt rutemønster i glassfeltene, ca. 0.65 av synlig del | 1 | 0 | 0 | ikke synlig | 2 |  |
 | bnr-193868622 |  | [5, 4] | [5, 4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 1 | 0 | 0 | ikke synlig | 1 |  |
@@ -188,10 +187,10 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868347 |  | [5, 5] | [2] | 2 butikkdører: grønn glassdør (ca. 0.12) og åpen dør med steintrapp (ca. 0.48) | 0 | 0 | 2 | 2 murte piper | 1 | ja |
 | bnr-193867545 | Arnesgården | [5, 5] | [5, 5] | 1 mørk grønn tofløyet fyllingsdør, ca. 0.40, med steintrinn | 2 | 0 | 2 | 1 murt teglpipe | 1 |  |
 | bnr-193867510 | Ekserserhuset | [3] | [6] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 1 | 0 | 0 | ikke synlig | 1 | ja |
-| bnr-193869572 |  | [8, 9] | [5, 3] | 1 inngang med dør ca. 0.80 av synlig fasade | 0 | 6+ små takvinduer | 0 | 1 murt pipe | 0 | ja |
+| bnr-193869572 |  | [8, 9] | [6, 8] | 1 inngang med dør ca. 0.80 av synlig fasade | 1 | 6+ små takvinduer | 0 | 1 murt pipe | 0 | ja |
 | bnr-193869580 | Voldportravelinet | [2, 2] | [2] | 1 dør på NV-siden (ca. 0.55), benk foran | 0 | 0 | 0 | 1 murt teglpipe på mønet | 2 | ja |
 
-## Hoppet over (139)
+## Hoppet over (140)
 
 - bnr-193869548 Voldporten med vaktstuen: portbygg (data/porter.json røres ikke)
 - bnr-193820883 : ikke synlig fra gata
@@ -274,6 +273,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193867618 : pano_url mangler kamerapunkt/retning
 - bnr-13394024 : ingen vindustall (N (mot Torvgaten) – identitet usikker)
 - bnr-193867790 : veggen (vegg 4, 3.4 m) har plass til 2 akser, Street View trenger 7: trolig feil vegg eller feil hus i modellen
+- pb-45 : veggen (vegg 3, 2.3 m) har plass til 0 akser, Street View trenger 1 – ingen gyldig akse på veggen: trolig feil vegg eller feil hus i modellen
 - bnr-193971385 : ingen vindustall (S (bak den brune portveggen))
 - bnr-193971369 restaurantbygning/kafé: ingen vindustall (SØ (venstre kant av bildet, ~11 m))
 - bnr-193972497 : ingen vindustall (ukjent)
@@ -306,7 +306,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-300002508 : ikke synlig fra gata
 - bnr-193867553 : ikke synlig fra gata
 - bnr-193867308 Artillerismiens uthus: ikke synlig fra gata
-- bnr-6276016 : samme vegg (3) som en annen side: NØ/SØ (fra Huitfeldts gate)
+- bnr-6276016 : samme vegg (5) som en annen side: NØ/SØ (fra Huitfeldts gate)
 - bnr-13384401 : ingen vindustall (NØ (~50 m))
 - bnr-193874428 : ikke synlig fra gata
 - bnr-193874398 : ikke synlig fra gata

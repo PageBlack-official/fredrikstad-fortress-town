@@ -474,6 +474,224 @@
      ]
     }
    ]
+  },
+  {
+   "id": "bnr-13416559",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-193867316",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-193867480",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-6276008",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-6275990",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-13384401",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-23730278",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-6276016",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-193874398",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-6246729",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-193874401",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-193874428",
+   "kilde": "registeret (kilder/register/gamlebyen.json): kommunehus i Gamlebyen",
+   "grunn": "stod med gml 0 (utenfor Gamlebyen i grunndataene) og ble tegnet bleket nesten hvitt uten vinduer; kommunekartet og registeret har huset i Gamlebyen",
+   "sett": {
+    "gml": 1
+   }
+  },
+  {
+   "id": "bnr-193868061",
+   "kilde": "tegningen Kvartal3, talt for hånd i nærbildet 30.10 (flate 9 over sokkelflatene 12 og 16)",
+   "grunn": "vektorlesingen slo vinduene sammen (vinduene er tegnet som svarte felt oppå veggen, ikke som hull): langveggen mot SV har 7 vinduer i natursteinsetasjen med én dør, og 8 vinduer i etasjen over, på denne halvdelen av bygningen",
+   "vegg": [
+    {
+     "side": "SV",
+     "rader": [
+      7,
+      8
+     ],
+     "dorer": [
+      {
+       "u": 0.18,
+       "typ": 1,
+       "b": 1.2,
+       "h": 2.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193869572",
+   "kilde": "tegningen Kvartal3, talt for hånd i nærbildet 30.10 (flate 9 over sokkelflatene 12 og 16)",
+   "grunn": "som 68061: 6 vinduer og én dør i natursteinsetasjen, 8 vinduer i etasjen over, på denne halvdelen av langveggen mot SV",
+   "vegg": [
+    {
+     "side": "SV",
+     "rader": [
+      6,
+      8
+     ],
+     "dorer": [
+      {
+       "u": 0.46,
+       "typ": 1,
+       "b": 1.2,
+       "h": 2.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193869556",
+   "kilde": "tegningen Kvartal3 (kuben nederst til høyre), nærbilde 30.10",
+   "grunn": "Krutthuset er kvadratisk (11 × 11 m i kommunekartet) med pyramidetak i tegningen; modellen hadde saltak med gavler",
+   "sett": {
+    "tak2": [
+     [
+      [
+       259.64,
+       134.67,
+       0.0
+      ],
+      [
+       258.72,
+       124.11,
+       0.0
+      ],
+      [
+       254.07,
+       130.12,
+       5.324
+      ]
+     ],
+     [
+      [
+       258.72,
+       124.11,
+       0.0
+      ],
+      [
+       248.18,
+       125.65,
+       0.0
+      ],
+      [
+       254.07,
+       130.12,
+       5.324
+      ]
+     ],
+     [
+      [
+       248.18,
+       125.65,
+       0.0
+      ],
+      [
+       249.84,
+       136.3,
+       0.0
+      ],
+      [
+       254.07,
+       130.12,
+       5.324
+      ]
+     ],
+     [
+      [
+       249.84,
+       136.3,
+       0.0
+      ],
+      [
+       259.64,
+       134.67,
+       0.0
+      ],
+      [
+       254.07,
+       130.12,
+       5.324
+      ]
+     ]
+    ],
+    "gavl2": []
+   }
   }
  ]
 }

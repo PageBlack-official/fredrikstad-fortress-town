@@ -1,6 +1,10 @@
-# 20_grunnmur_fkb: OK
+# 20_grunnmur_fkb: FEIL
 
-269 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 5 unntak (fredet)
+281 kommunehus i Gamlebyen over 6 m²: 2 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 5 unntak (fredet)
+
+## Kommunehus uten modellhus som dekker dem (IoU < 0,7)
+- kommunehus 281 (30 m², ved 270, -191): IoU 0.67 med bnr-23730278
+- kommunehus 361 (24 m², ved 310, -187): IoU 0.64 med bnr-193874428
 
 ## Unntak
 - kommunehus 28 (1680 m²) under fredet bygg bnr-193867537: IoU 0.98

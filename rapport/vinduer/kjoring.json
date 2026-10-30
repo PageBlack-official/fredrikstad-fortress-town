@@ -14,6 +14,20 @@
 "uthus": false
 },
 {
+"id": "bnr-193867316",
+"navn": "Tennishuset",
+"type": "warehouse",
+"h": 3.2,
+"foer": 10,
+"etter": 10,
+"vinduer": 9,
+"dorer": 1,
+"gate": "sti",
+"etasjer": 1,
+"dor": true,
+"uthus": false
+},
+{
 "id": "bnr-193820417",
 "navn": null,
 "type": "garage",
@@ -71,6 +85,20 @@
 },
 {
 "id": "bnr-193874363",
+"navn": null,
+"type": "garage",
+"h": 3.2,
+"foer": 8,
+"etter": 8,
+"vinduer": 8,
+"dorer": 0,
+"gate": "gate",
+"etasjer": 1,
+"dor": false,
+"uthus": true
+},
+{
+"id": "bnr-193874398",
 "navn": null,
 "type": "garage",
 "h": 3.2,
@@ -269,7 +297,7 @@
 "id": "bnr-193971970",
 "navn": null,
 "type": "garages",
-"h": 3.6,
+"h": 3.5,
 "foer": 2,
 "etter": 8,
 "vinduer": 8,
@@ -784,6 +812,20 @@
 "uthus": true
 },
 {
+"id": "bnr-193874428",
+"navn": null,
+"type": "garage",
+"h": 3.2,
+"foer": 5,
+"etter": 5,
+"vinduer": 5,
+"dorer": 0,
+"gate": "gate",
+"etasjer": 1,
+"dor": false,
+"uthus": true
+},
+{
 "id": "bnr-193868703",
 "navn": null,
 "type": "garage",
@@ -1048,6 +1090,20 @@
 "etasjer": 1,
 "dor": false,
 "uthus": true
+},
+{
+"id": "bnr-193972047",
+"navn": null,
+"type": "yes",
+"h": 4.6,
+"foer": 0,
+"etter": 11,
+"vinduer": 10,
+"dorer": 1,
+"gate": "gate",
+"etasjer": 1,
+"dor": true,
+"uthus": false
 },
 {
 "id": "bnr-193868649",
@@ -1401,6 +1457,20 @@
 },
 {
 "id": "pb-44",
+"navn": null,
+"type": "yes",
+"h": 2.2,
+"foer": 0,
+"etter": 0,
+"vinduer": 0,
+"dorer": 0,
+"gate": "gate",
+"etasjer": 0,
+"dor": false,
+"uthus": false
+},
+{
+"id": "pb-45",
 "navn": null,
 "type": "yes",
 "h": 2.2,

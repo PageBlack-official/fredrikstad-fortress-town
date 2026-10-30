@@ -6,12 +6,12 @@ Nærbilder per husrekke (modellen ved største zoom, pikseltetthet 2, ved siden 
 Verktøyene står i LESMEG («Byggene: kjeden, merknadene og det som står på taket»).
 
 ## Tall
-- Alle 17 tegninger er lest som vektor (Kvartal2–14, kvartal5–7, sistekvartal, tell, Glasshytta, kirka, Tøihuset): __TEGNHUS__ hus har
-  vinduer og dører fra tegningen (__TEGNEL__ elementer), koblet flate for flate i `kilder/fasade-kobling.json`.
-- Vegger tegningen ikke viser: Street View der kameraet så veggen (__SVVEGG__ vegger), ellers reglene.
-- Veggfarge: alle __VEGGNYE__ hus som stod med standardveggen har farge (2017-tegningen som vektor der huset er tegnet, ellers nabohuset;
+- Alle 17 tegninger er lest som vektor (Kvartal2–14, kvartal5–7, sistekvartal, tell, Glasshytta, kirka, Tøihuset): 113 hus har
+  vinduer og dører fra tegningen (889 elementer), koblet flate for flate i `kilder/fasade-kobling.json`.
+- Vegger tegningen ikke viser: Street View der kameraet så veggen (35 vegger), ellers reglene.
+- Veggfarge: alle 188 hus som stod med standardveggen har farge (2017-tegningen som vektor der huset er tegnet, ellers nabohuset;
   Street View står foran der det finnes). Tabell: `rapport/bygg/vegg-nye.json`.
-- De __AVVIK__ tegningshusene som avviker fra Street View er avgjort hus for hus i `rapport/bygg/sv-avvik.md`: __AVVIKTALL__.
+- Tegningshusene som avviker fra Street View (100 med vegger kameraet så som tegningen ikke viser) er avgjort hus for hus i `rapport/bygg/sv-avvik.md`: feil vegg (Street View lagt på) 35, feil vindu 23, feil vegg 21, endret siden 2015 19, feil vindu (rettet) 2.
 - Regler 01 02 04 06 13 14 17 20 21 grønne (se under).
 
 ## Rettet i systemet
