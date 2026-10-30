@@ -1,5 +1,5 @@
 """Regel: trærne i og rundt Gamlebyen (rammen rundt vollene, der DOM-en dekker) står der Kartverkets DOM−DTM har vegetasjon (over 1,5 m, ikke hus).
-  - antallet er 2343 (Vegar: trærne er talt opp), medregnet trærne tatt ut med grunn (kilder/bakke-maalt.json «traer_fjernet»)
+  - regnskapet går opp: 2343 trær fra 23.10 − tatt ut + nye fra DOM-toppene = trærne i kartet (kilder/bakke-maalt.json «traer_fjernet», «traer_nye»)
   - >= 95 % av trærne står på vegetasjon (innen 1 m)
   - ingen tre står i vannet (data/vann.json) eller inne i et hus; et tre som står under en krone i DOM−DTM (over 2,5 m) der kartet har vann,
     listes (feilen er da vannflaten)
@@ -30,9 +30,9 @@ for t in T:
         else: iv += 1
     ih += int(hus[r, c] > 0)
 a = paa / max(1, n)
-fjernet = len(B.maalt().get('traer_fjernet', []))
-ok = len(T) + fjernet == 2343 and a >= 0.95 and iv == 0 and ih == 0
-lin = [f"{paa} av {n} trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM ({a:.1%}, krav 95 %); {iv} i vann, {ih} i hus; {len(T)} trær i alt + {fjernet} tatt ut med grunn (krav 2343)", '',
+fjernet = len(B.maalt().get('traer_fjernet', [])); nye = len(B.maalt().get('traer_nye', []))
+ok = len(T) + fjernet - nye == 2343 and a >= 0.95 and iv == 0 and ih == 0
+lin = [f"{paa} av {n} trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM ({a:.1%}, krav 95 %); {iv} i vann, {ih} i hus; {len(T)} trær i alt = 2343 fra 23.10 − {fjernet} tatt ut + {nye} nye fra DOM-toppene, alle med grunn (regnskapet skal gå opp)", '',
        f"{len(langt)} trær står mer enn 1 m fra vegetasjon (største avstand først, de 30 første):"]
 lin += [f"- ({t[0]:.1f}, {t[1]:.1f}) {dv:.1f} m" for dv, t in sorted(langt, key=lambda q: -q[0])[:30]]
 if vt: lin += ['', f"{len(vt)} ekte trær (krone i DOM−DTM) står der data/vann.json har vann (vannflaten bør sjekkes, regel 16):"] + [f"- ({t[0]:.1f}, {t[1]:.1f})" for t in vt]

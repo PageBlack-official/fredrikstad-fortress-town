@@ -21573,31 +21573,6 @@
   {
    "linje": [
     [
-     115.5,
-     235.7
-    ],
-    [
-     94.4,
-     249.3
-    ],
-    [
-     90.2,
-     252.0
-    ]
-   ],
-   "bredde": 5.5,
-   "typ": "asfalt",
-   "var": "grus",
-   "bilde": [
-    "bnr-193974686.jpg"
-   ],
-   "hvem": "Claude",
-   "dato": "2026-10-29",
-   "grunn": "Street View (bare referanse, ikke i repoet): jevn, mørk grå asfaltvei til høyre i bildet"
-  },
-  {
-   "linje": [
-    [
      -30.0,
      111.3
     ],

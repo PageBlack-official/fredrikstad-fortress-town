@@ -862,6 +862,8 @@ def innkjorsler(skriv=True):
     for P in _til_polygoner(rest, R, mpp, 6.0, 0.25):
         for q in uten_hull(P):
             if q.area < 6.0: continue
+            pts = [[round(a_, 2), round(b_, 2)] for a_, b_ in list(q.exterior.coords)[:-1]]
+            if F.maal_flate(pts, [b_['p'] for b_ in d['bygg'] if b_.get('p') and not b_.get('skjul')])[0] >= 0.25: continue   # mest grønt i fotoet
             mm = maske([q], R, mpp) > 0
             t = kl[mm & np.isin(kl, BELAGT)]
             typ = NAVN[int(np.bincount(t).argmax())] if t.size else 'brostein'

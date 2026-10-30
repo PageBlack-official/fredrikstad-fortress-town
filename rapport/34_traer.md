@@ -1,39 +1,10 @@
 # 34_traer: OK
 
-2015 av 2089 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (96.5%, krav 95 %); 0 i vann, 0 i hus; 2223 trær i alt + 120 tatt ut med grunn (krav 2343)
+1457 av 1459 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.9%, krav 95 %); 0 i vann, 0 i hus; 1593 trær i alt = 2343 fra 23.10 − 1311 tatt ut + 561 nye fra DOM-toppene, alle med grunn (regnskapet skal gå opp)
 
-74 trær står mer enn 1 m fra vegetasjon (største avstand først, de 30 første):
-- (288.6, 315.1) 32.7 m
-- (337.4, 257.8) 24.9 m
-- (363.9, 315.9) 23.0 m
-- (438.4, 270.3) 22.1 m
-- (324.1, -26.1) 21.8 m
-- (337.0, 252.3) 21.3 m
-- (348.3, 266.4) 20.6 m
-- (24.0, -316.1) 20.5 m
-- (301.9, 315.9) 20.4 m
-- (299.5, -145.9) 20.2 m
-- (264.4, -175.9) 19.8 m
-- (-244.9, -223.9) 19.7 m
-- (-238.7, -226.6) 19.3 m
-- (225.4, -179.8) 19.1 m
-- (361.6, 308.5) 18.6 m
-- (427.1, -126.4) 18.5 m
-- (426.3, -129.5) 18.4 m
-- (-241.8, -216.5) 18.3 m
-- (12.1, -251.2) 18.3 m
-- (22.4, -313.8) 17.7 m
-- (431.8, -120.1) 17.6 m
-- (356.9, 257.0) 17.4 m
-- (-232.4, -257.8) 17.4 m
-- (359.6, 294.4) 16.8 m
-- (220.0, -185.7) 16.7 m
-- (-239.4, -220.4) 16.6 m
-- (-232.0, -251.2) 16.5 m
-- (341.3, 269.1) 16.4 m
-- (5.9, -240.2) 16.4 m
-- (273.4, -225.4) 16.3 m
+2 trær står mer enn 1 m fra vegetasjon (største avstand først, de 30 første):
+- (-127.1, -166.9) 13.7 m
+- (-145.5, -164.2) 12.5 m
 
-2 ekte trær (krone i DOM−DTM) står der data/vann.json har vann (vannflaten bør sjekkes, regel 16):
+1 ekte trær (krone i DOM−DTM) står der data/vann.json har vann (vannflaten bør sjekkes, regel 16):
 - (250.8, -11.7)
-- (256.6, -14.4)
