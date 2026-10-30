@@ -128,6 +128,19 @@
    ],
    "bnr-6242812": [
     28
+   ],
+   "bnr-193987397": [
+    {
+     "f": [
+      15,
+      29,
+      31
+     ],
+     "side": "SØ@1",
+     "grunn": "fasadesegmenter: tegningen viser flere fasader på veggen (verktoy/fasadesegmenter.py kobling)",
+     "fra": 0,
+     "til": 1
+    }
    ]
   }
  },
@@ -301,6 +314,18 @@
    ],
    "bnr-193972535": [
     "297/SV"
+   ],
+   "pb-66": [
+    {
+     "f": [
+      36,
+      55
+     ],
+     "side": "SØ@2",
+     "grunn": "fasadesegmenter: tegningen viser flere fasader på veggen (verktoy/fasadesegmenter.py kobling)",
+     "fra": 0,
+     "til": 1
+    }
    ]
   }
  },

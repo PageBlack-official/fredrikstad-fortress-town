@@ -1,6 +1,50 @@
 {
  "om": "Data: kilder/fasadesegmenter.json, per hus og vegg: {a, b (veggens ender i modellmeter, som da tegningen ble lest), side,\nsegmenter: [{fra_m, til_m, tegning_rgb, flater (stiene i .ai-fila)}]}. «for_haand»: true på et hus = funnet eller rettet for hånd;\nfinn rører det ikke. Rettelsen på bygget heter «fasadesegmenter»: [{a, b, segmenter: [{fra_m, til_m, vegg, kilde, aar}]}];\nveggen slås opp på nytt i dagens omriss hver gang (nærmeste vegg med samme retning), så den tåler ny grunnmur og husdeling.",
  "hus": {
+  "bnr-13394024": {
+   "tegning": "Kvartal10",
+   "vegger": [
+    {
+     "a": [
+      -27.96,
+      52.3
+     ],
+     "b": [
+      -31.55,
+      43.06
+     ],
+     "side": "Ø",
+     "tegning": "Kvartal10",
+     "dekning": 0.82,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 4.83,
+       "tegning_rgb": [
+        198,
+        198,
+        197
+       ],
+       "flater": [
+        73
+       ]
+      },
+      {
+       "fra_m": 4.83,
+       "til_m": 9.91,
+       "tegning_rgb": [
+        198,
+        198,
+        197
+       ],
+       "flater": [
+        70
+       ]
+      }
+     ]
+    }
+   ]
+  },
   "bnr-193867510": {
    "tegning": "Kvartal13",
    "vegger": [
@@ -15,11 +59,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal13",
-     "dekning": 0.98,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 20.0,
+       "til_m": 19.91,
        "tegning_rgb": [
         243,
         149,
@@ -30,7 +74,7 @@
        ]
       },
       {
-       "fra_m": 20.0,
+       "fra_m": 19.91,
        "til_m": 37.22,
        "tegning_rgb": [
         243,
@@ -59,11 +103,11 @@
      ],
      "side": "S",
      "tegning": "kvartal7",
-     "dekning": 0.89,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 8.26,
+       "til_m": 9.18,
        "tegning_rgb": [
         218,
         165,
@@ -74,7 +118,7 @@
        ]
       },
       {
-       "fra_m": 8.26,
+       "fra_m": 9.18,
        "til_m": 11.08,
        "tegning_rgb": [
         222,
@@ -282,11 +326,11 @@
      ],
      "side": "S",
      "tegning": "Kvartal12",
-     "dekning": 0.98,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 3.31,
+       "til_m": 3.85,
        "tegning_rgb": [
         232,
         213,
@@ -297,7 +341,7 @@
        ]
       },
       {
-       "fra_m": 3.31,
+       "fra_m": 3.85,
        "til_m": 11.29,
        "tegning_rgb": [
         243,
@@ -305,8 +349,7 @@
         74
        ],
        "flater": [
-        90,
-        53
+        90
        ]
       }
      ]
@@ -372,11 +415,11 @@
      ],
      "side": "SV",
      "tegning": "Kvartal9",
-     "dekning": 0.84,
+     "dekning": 0.87,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 4.07,
+       "til_m": 4.21,
        "tegning_rgb": [
         220,
         137,
@@ -387,7 +430,7 @@
        ]
       },
       {
-       "fra_m": 4.07,
+       "fra_m": 4.21,
        "til_m": 7.91,
        "tegning_rgb": [
         220,
@@ -416,11 +459,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal9",
-     "dekning": 0.86,
+     "dekning": 0.95,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 12.3,
+       "til_m": 13.63,
        "tegning_rgb": [
         251,
         202,
@@ -431,7 +474,7 @@
        ]
       },
       {
-       "fra_m": 12.3,
+       "fra_m": 13.63,
        "til_m": 21.48,
        "tegning_rgb": [
         250,
@@ -460,11 +503,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal9",
-     "dekning": 0.75,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 5.68,
+       "til_m": 5.18,
        "tegning_rgb": [
         188,
         190,
@@ -475,7 +518,7 @@
        ]
       },
       {
-       "fra_m": 5.68,
+       "fra_m": 5.18,
        "til_m": 23.84,
        "tegning_rgb": [
         239,
@@ -504,11 +547,11 @@
      ],
      "side": "SV",
      "tegning": "Kvartal3",
-     "dekning": 0.8,
+     "dekning": 1.0,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 14.07,
+       "til_m": 6.24,
        "tegning_rgb": [
         218,
         165,
@@ -519,7 +562,7 @@
        ]
       },
       {
-       "fra_m": 14.07,
+       "fra_m": 6.24,
        "til_m": 44.9,
        "tegning_rgb": [
         217,
@@ -548,11 +591,11 @@
      ],
      "side": "S",
      "tegning": "kvartal5",
-     "dekning": 0.96,
+     "dekning": 0.98,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 6.21,
+       "til_m": 5.69,
        "tegning_rgb": [
         222,
         206,
@@ -563,8 +606,8 @@
        ]
       },
       {
-       "fra_m": 6.21,
-       "til_m": 13.64,
+       "fra_m": 5.69,
+       "til_m": 13.34,
        "tegning_rgb": [
         222,
         206,
@@ -575,8 +618,8 @@
        ]
       },
       {
-       "fra_m": 13.64,
-       "til_m": 18.59,
+       "fra_m": 13.34,
+       "til_m": 18.44,
        "tegning_rgb": [
         222,
         206,
@@ -587,7 +630,7 @@
        ]
       },
       {
-       "fra_m": 18.59,
+       "fra_m": 18.44,
        "til_m": 23.88,
        "tegning_rgb": [
         222,
@@ -704,11 +747,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal10",
-     "dekning": 0.87,
+     "dekning": 1.04,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 3.43,
+       "til_m": 3.37,
        "tegning_rgb": [
         255,
         232,
@@ -719,7 +762,7 @@
        ]
       },
       {
-       "fra_m": 3.43,
+       "fra_m": 3.37,
        "til_m": 12.7,
        "tegning_rgb": [
         242,
@@ -748,11 +791,11 @@
      ],
      "side": "SV",
      "tegning": "Kvartal4BITMP",
-     "dekning": 0.95,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 4.04,
+       "til_m": 3.92,
        "tegning_rgb": [
         244,
         123,
@@ -763,7 +806,7 @@
        ]
       },
       {
-       "fra_m": 4.04,
+       "fra_m": 3.92,
        "til_m": 15.4,
        "tegning_rgb": [
         244,
@@ -882,11 +925,11 @@
      ],
      "side": "SØ",
      "tegning": "sistekvartal",
-     "dekning": 0.86,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 19.55,
+       "til_m": 22.54,
        "tegning_rgb": [
         190,
         192,
@@ -897,7 +940,7 @@
        ]
       },
       {
-       "fra_m": 19.55,
+       "fra_m": 22.54,
        "til_m": 25.32,
        "tegning_rgb": [
         233,
@@ -926,11 +969,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal4BITMP",
-     "dekning": 1.01,
+     "dekning": 1.02,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 7.69,
+       "til_m": 7.71,
        "tegning_rgb": [
         244,
         123,
@@ -941,7 +984,7 @@
        ]
       },
       {
-       "fra_m": 7.69,
+       "fra_m": 7.71,
        "til_m": 12.8,
        "tegning_rgb": [
         222,
@@ -1014,11 +1057,11 @@
      ],
      "side": "SØ",
      "tegning": "kvartal6",
-     "dekning": 0.82,
+     "dekning": 1.02,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 9.1,
+       "til_m": 11.24,
        "tegning_rgb": [
         188,
         190,
@@ -1029,7 +1072,7 @@
        ]
       },
       {
-       "fra_m": 9.1,
+       "fra_m": 11.24,
        "til_m": 15.67,
        "tegning_rgb": [
         246,
@@ -1038,6 +1081,50 @@
        ],
        "flater": [
         43
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193972314": {
+   "tegning": "Kvartal2BITMP",
+   "vegger": [
+    {
+     "a": [
+      147.23,
+      203.34
+     ],
+     "b": [
+      140.37,
+      195.66
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal2BITMP",
+     "dekning": 0.97,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 8.96,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        50
+       ]
+      },
+      {
+       "fra_m": 8.96,
+       "til_m": 10.3,
+       "tegning_rgb": [
+        188,
+        190,
+        192
+       ],
+       "flater": [
+        78
        ]
       }
      ]
@@ -1058,11 +1145,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal2BITMP",
-     "dekning": 0.95,
+     "dekning": 0.97,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 5.61,
+       "til_m": 5.78,
        "tegning_rgb": [
         244,
         123,
@@ -1073,7 +1160,7 @@
        ]
       },
       {
-       "fra_m": 5.61,
+       "fra_m": 5.78,
        "til_m": 8.97,
        "tegning_rgb": [
         244,
@@ -1102,11 +1189,11 @@
      ],
      "side": "SV",
      "tegning": "Kvartal10",
-     "dekning": 0.71,
+     "dekning": 0.99,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 9.49,
+       "til_m": 13.32,
        "tegning_rgb": [
         228,
         213,
@@ -1117,7 +1204,7 @@
        ]
       },
       {
-       "fra_m": 9.49,
+       "fra_m": 13.32,
        "til_m": 15.66,
        "tegning_rgb": [
         255,
@@ -1134,6 +1221,8 @@
   },
   "bnr-193987397": {
    "tegning": "kvartal5",
+   "for_haand": true,
+   "grunn": "«tre røde hus» (Raadhusgaten 20B): tre fasader under ett møne; finn fant to (den venstre flaten 31 er ikke en ren vegg). Grensene lest i andel av den tegnede fasaden (x 179–317 pt): 224 og 270,5 pt",
    "vegger": [
     {
      "a": [
@@ -1146,11 +1235,11 @@
      ],
      "side": "SØ",
      "tegning": "kvartal5",
-     "dekning": 0.8,
+     "dekning": 1.0,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 12.52,
+       "til_m": 10.42,
        "tegning_rgb": [
         239,
         240,
@@ -1161,8 +1250,8 @@
        ]
       },
       {
-       "fra_m": 12.52,
-       "til_m": 30.83,
+       "fra_m": 10.42,
+       "til_m": 20.78,
        "tegning_rgb": [
         239,
         240,
@@ -1170,6 +1259,18 @@
        ],
        "flater": [
         29
+       ]
+      },
+      {
+       "fra_m": 20.78,
+       "til_m": 30.83,
+       "tegning_rgb": [
+        239,
+        240,
+        240
+       ],
+       "flater": [
+        31
        ]
       }
      ]
@@ -1190,11 +1291,11 @@
      ],
      "side": "SV",
      "tegning": "kvartal5",
-     "dekning": 0.75,
+     "dekning": 0.96,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 7.58,
+       "til_m": 9.75,
        "tegning_rgb": [
         244,
         123,
@@ -1206,7 +1307,7 @@
        ]
       },
       {
-       "fra_m": 7.58,
+       "fra_m": 9.75,
        "til_m": 15.09,
        "tegning_rgb": [
         246,
@@ -1235,11 +1336,11 @@
      ],
      "side": "SØ",
      "tegning": "kvartal5",
-     "dekning": 0.86,
+     "dekning": 0.96,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 2.68,
+       "til_m": 1.84,
        "tegning_rgb": [
         226,
         204,
@@ -1250,8 +1351,8 @@
        ]
       },
       {
-       "fra_m": 2.68,
-       "til_m": 7.63,
+       "fra_m": 1.84,
+       "til_m": 7.39,
        "tegning_rgb": [
         249,
         224,
@@ -1262,7 +1363,7 @@
        ]
       },
       {
-       "fra_m": 7.63,
+       "fra_m": 7.39,
        "til_m": 9.59,
        "tegning_rgb": [
         226,
@@ -1335,11 +1436,11 @@
      ],
      "side": "SØ",
      "tegning": "Kvartal14",
-     "dekning": 0.89,
+     "dekning": 0.91,
      "segmenter": [
       {
        "fra_m": 0.0,
-       "til_m": 6.74,
+       "til_m": 6.7,
        "tegning_rgb": [
         245,
         176,
@@ -1352,7 +1453,7 @@
        ]
       },
       {
-       "fra_m": 6.74,
+       "fra_m": 6.7,
        "til_m": 8.97,
        "tegning_rgb": [
         242,
@@ -1410,8 +1511,211 @@
      ]
     }
    ]
+  },
+  "bnr-193867499": {
+   "tegning": "Kvartal13",
+   "for_haand": true,
+   "grunn": "U-huset: mot sørøst to fasader (det store hvite huset, flate 6, og langsiden av det lille gavlhuset, flate 27; grense 204,4 pt); gavlhuset mot sørvest er grått (flate 19). DOM/Matrikkelen: ett hus",
+   "vegger": [
+    {
+     "a": [
+      -92.48,
+      -31.2
+     ],
+     "b": [
+      -101.75,
+      -54.17
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal13",
+     "dekning": 1.0,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 17.35,
+       "tegning_rgb": [
+        243,
+        243,
+        243
+       ],
+       "flater": [
+        6
+       ]
+      },
+      {
+       "fra_m": 17.35,
+       "til_m": 24.8,
+       "tegning_rgb": [
+        243,
+        243,
+        243
+       ],
+       "flater": [
+        27
+       ]
+      }
+     ]
+    },
+    {
+     "a": [
+      -101.86,
+      -58.11
+     ],
+     "b": [
+      -111.7,
+      -53.89
+     ],
+     "side": "SV",
+     "tegning": "Kvartal13",
+     "dekning": 1.0,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 10.7,
+       "tegning_rgb": [
+        198,
+        198,
+        197
+       ],
+       "flater": [
+        19
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "laget": "2026-10-30",
- "verktoy": "verktoy/fasadesegmenter.py finn"
+ "verktoy": "verktoy/fasadesegmenter.py finn",
+ "dom": {
+  "bnr-193867510": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): to oransje fasader, brudd ved døra"
+  },
+  "bnr-193867693": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): lav grå fløy + hovedhuset"
+  },
+  "bnr-193867715": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): gatefasaden + det avskårne hjørnet (lysere fersken)"
+  },
+  "bnr-193867804": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): oransje gård + smal rosa fasade med rundbueport"
+  },
+  "bnr-193867839": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): lyseblå/hvit fasade + oransje fasade"
+  },
+  "bnr-193867944": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): hvit fasade + grått tilbaketrukket parti med dør"
+  },
+  "bnr-193868045": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): langt rødt hus + oker endeparti"
+  },
+  "bnr-193868223": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): fire gule fasader med brannmurlinjer"
+  },
+  "bnr-193868282": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): grå fasade delt ved inngangspartiet"
+  },
+  "bnr-193870201": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): to lyseblå fasader (brannmur)"
+  },
+  "pb-66": {
+   "godkjent": true,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): fersken langfasade + smal oransje fasade"
+  },
+  "bnr-193867626": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): flatene er en gavl og en vegg på nabohuset"
+  },
+  "bnr-193867685": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): gavlen er en annen vegg"
+  },
+  "bnr-193867758": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): flatene er takkant/gavltrekant"
+  },
+  "bnr-193867928": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): takflater"
+  },
+  "bnr-193867936": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): den lille flaten er gavlsiden av et annet hus"
+  },
+  "bnr-193868363": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): den ene flaten er en gavltrekant med tak"
+  },
+  "bnr-193868479": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): vindusramme"
+  },
+  "bnr-193868525": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): smal veranda på nabohuset"
+  },
+  "bnr-193868630": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): takflater"
+  },
+  "bnr-193870252": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): bare sokkelstripa ble lest; usikkert hvilket hus den hvite fasaden til venstre er"
+  },
+  "bnr-193971954": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): takkant"
+  },
+  "bnr-193972101": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): gavl på annen vegg"
+  },
+  "bnr-193972160": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): tak og grå vegg på annen side"
+  },
+  "bnr-193972373": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): røde takender"
+  },
+  "bnr-193972411": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): smal stripe av nabohusets gavl"
+  },
+  "bnr-6251218": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): takflater"
+  },
+  "pb-60": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): smale strimler"
+  },
+  "pb-7": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): dørramme og portmur"
+  },
+  "pb-8": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): den smale biten er tårnet/trappehuset ved rådhuset (natt/landemerker)"
+  },
+  "bnr-13394024": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): arkadene er én grå fasade (åpningene er fasadeelementer, ikke egne fasader)"
+  },
+  "bnr-193972314": {
+   "godkjent": false,
+   "grunn": "sett på kontaktarket 30.10 (tegningens flater per segment): smal grå bit i enden (ikke sett nærmere)"
+  }
+ }
 }

@@ -702,7 +702,9 @@ def klassifiser(el, L, hv_med=None):
         if bu_m > 1.7 or el['buet']:
             return 2, round(min(max(bu_m, 1.8), 3.2), 2), 2.6      # port/stor inngangsdør med buet topp
         return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
-    if (bu_m > 2.6 and el['bu'] > 0.06) or el['bu'] > 0.3:              # bredt felt som ikke er en dør: gesimsbånd, skilt eller sokkellist (30.10)
+    # bredt felt som ikke er en dør: gesimsbånd, skilt eller sokkellist (30.10); andelen alene gjelder ikke på korte vegger
+    # (en bit av en delt vegg ved den nye brannmuren, 2–3 m: ett vindu er over 30 % av den)
+    if (bu_m > 2.6 and el['bu'] > 0.06) or (el['bu'] > 0.3 and bu_m > 1.6):
         return None
     if hv > 0.08 and el['bu'] > 0.01:
         return 0, round(min(max(bu_m, 0.6), 1.3), 2), None
@@ -840,7 +842,7 @@ def legg_inn(tørt=False, bare=None):
                 seg = LineString([v0 - (v1 - v0) * 0.05, v1 + (v1 - v0) * 0.05]).intersection(Pk.buffer(0.6))
                 if seg.is_empty or seg.length < 1.0: continue
                 c = np.array(seg.interpolate(0.5, normalized=True).coords[0])
-                vg_i = dict(vg, id=i_, elementer=grp.get(i_, []), a=list(c - (v1 - v0) * 0.01), b=list(c + (v1 - v0) * 0.01), venstre=list(c - (v1 - v0) * 0.01), _mid=c.tolist())
+                vg_i = dict(vg, id=i_, elementer=grp.get(i_, []), a=list(c - (v1 - v0) * 0.01), b=list(c + (v1 - v0) * 0.01), venstre=list(c - (v1 - v0) * 0.01), _mid=c.tolist(), _L0=float(np.linalg.norm(v1 - v0)))
                 per_hus.setdefault(i_, []).append((A['tegning'], vg_i))
     nye, logg = [], []
     for i, lst in per_hus.items():
@@ -868,7 +870,10 @@ def legg_inn(tørt=False, bare=None):
                 if (wc - wa) @ d_ < 0: wa, wc = wc, wa
                 Lw = float(np.linalg.norm(wc - wa)) or 1.0
                 vg2['venstre'] = list(wa)
-                vg2['elementer'] = [dict(e, u=float(((np.array(e['_g']) - wa) @ (wc - wa)) / Lw ** 2)) for e in vg['elementer']]
+                # bredden står i andel av veggen avlesningen ble gjort på: regnes om til andel av husets vegg, ellers blir
+                # vinduer ved den nye brannmuren for smale for klassifiser og forsvinner (885 mot 889 elementer 30.10)
+                L0 = vg.get('_L0') or Lw
+                vg2['elementer'] = [dict(e, u=float(((np.array(e['_g']) - wa) @ (wc - wa)) / Lw ** 2), bu=e['bu'] * L0 / Lw) for e in vg['elementer']]
             el, inf = vegg_vind(vg2, x, P)
             tegnet += el; info[kk] = dict(tegning=tg, **inf)
         # vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py, fasithusene), ellers reglene (30.10)

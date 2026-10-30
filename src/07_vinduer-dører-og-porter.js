@@ -245,6 +245,24 @@ DATA.bygg.forEach((b,i)=>{
       gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat([r,g,bb],dim,null,{ds:true})));
     });
   }
+  // fasadesegmenter (30.10): én kropp etter DOM/Matrikkelen, men tegningen viser flere fasader på veggen. Hvert segment er en
+  // veggflate i egen farge (fra_m–til_m langs veggen a→b); brannmurlinjen mellom to segmenter er en tynn mørk loddrett kant
+  if(b.fasadesegmenter && !dim){
+    const flate=(A,B,o,c)=>{ const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
+      gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat(c,dim,null,{ds:true}))); };
+    b.fasadesegmenter.forEach(v=>{
+      const [ax,ay]=v.a, [bx,by]=v.b, L=Math.hypot(bx-ax,by-ay); if(L<0.5) return;
+      const ux=(bx-ax)/L, uy=(by-ay)/L; let nx=uy, ny=-ux;
+      if(iPoly([ax+ux*L/2+nx*0.2, ay+uy*L/2+ny*0.2],pts)){ nx=-nx; ny=-ny; }
+      const P=(s,o)=>[ax+ux*s+nx*o, ay+uy*s+ny*o];
+      v.segmenter.forEach((s,k)=>{
+        flate(P(s.fra_m,0.025),P(s.til_m,0.025),0.025,s.vegg);
+        if(k>0){ const c=v.segmenter[k-1].vegg, m=s.fra_m, f=0.42;   // brannmurlinjen: 14 cm, mørk tone av de to fasadene
+          const mork=[0,1,2].map(j=>Math.round(Math.min(c[j],s.vegg[j])*f));
+          flate(P(m-0.07,0.035),P(m+0.07,0.035),0.035,mork); }
+      });
+    });
+  }
   // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
   if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
     b.takvinduer.forEach(([x,y,bw,bh])=>{

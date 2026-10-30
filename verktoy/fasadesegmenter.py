@@ -5,7 +5,9 @@ Avgjørelsen (hovedagenten 30.10): kroppen og taket forblir ett hus (Kartverket/
 langs fasaden, med farge per segment etter fargeregelen og vinduer etter tegningen; brannmurlinjen mellom to segmenter tegnes
 som en tynn loddrett kant (src/07).
 
-Data: kilder/fasadesegmenter.json, per hus og vegg: {a, b (veggens ender i modellmeter, som da tegningen ble lest), side,
+Data: kilder/fasadesegmenter.json, «dom»: {id: {godkjent, grunn}} = forslagene fra finn sett på kontaktarket (tegningens flater
+per segment omrisset); bare godkjente hus og hus satt for hånd legges inn (finn gir mange falske: takflater, smale biter,
+gavlvegger fra nabohuset når frihånden avviker). «hus»: per hus og vegg: {a, b (veggens ender i modellmeter, som da tegningen ble lest), side,
 segmenter: [{fra_m, til_m, tegning_rgb, flater (stiene i .ai-fila)}]}. «for_haand»: true på et hus = funnet eller rettet for hånd;
 finn rører det ikke. Rettelsen på bygget heter «fasadesegmenter»: [{a, b, segmenter: [{fra_m, til_m, vegg, kilde, aar}]}];
 veggen slås opp på nytt i dagens omriss hver gang (nærmeste vegg med samme retning), så den tåler ny grunnmur og husdeling.
@@ -25,8 +27,8 @@ Segmentet finnes slik: tegningens flater som ligger på modellveggen i tegningen
 veggen, og enten minst 60 % av flaten inne i veggflaten eller en vegg med loddrette sidekanter (fasade_tegning.er_vegg) med
 bunnen innen 12 pt fra veggens bunnlinje; papir, strek, vinduer og flater under 4 % av veggen telles ikke; hver flate til én
 vegg i hele tegningen: den beste), x-utstrekningen målt i meter langs veggen. Flater oppå hverandre (sokkel + vegg) er ett segment med
-fargen til den største. Er den tegnede fasaden lengre enn modellveggen (frihånd), måles grensene i andel av
-den tegnede fasaden. Segmentene må dekke minst 60 % av veggen (ellers er registreringen for usikker) og være minst 1,2 m.
+fargen til den største. Grensene måles i andel av den tegnede fasaden (frihånd: den er lengre eller kortere enn
+modellveggen). Segmentene må dekke minst 60 % av veggen (ellers er registreringen for usikker) og være minst 1,2 m.
 """
 import json, math, os, sys, datetime
 import numpy as np
@@ -121,8 +123,9 @@ def finn_tegning(navn, logg=print, fin=True):
             sa, sb = sorted([s_(x0), s_(x1)])
             T.append([sa, sb, [int(round(c * 255)) for c in fl['farge']], [fl['i']], fl['ytre'].area])
         if not T: continue
-        # frihånd: tegningens fasade kan være lengre enn modellveggen; da måles grensene i andel av den tegnede fasaden
-        lo, hi = min(0.0, min(t[0] for t in T)), max(w['L'], max(t[1] for t in T))
+        # frihånd: tegningens fasade er lengre eller kortere enn modellveggen; grensene måles i andel av den tegnede fasaden
+        lo, hi = min(t[0] for t in T), max(t[1] for t in T)
+        if hi - lo < 1.0: continue
         for t in T:
             t[0] = (t[0] - lo) / (hi - lo) * w['L']; t[1] = (t[1] - lo) / (hi - lo) * w['L']
         T = [t for t in T if t[1] - t[0] >= 0.3]
@@ -242,9 +245,11 @@ def legg_inn(tørt=False, logg=print):
     BY = {x['id']: x for x in D['bygg']}; omg = VG.Omgivelser(D['bygg'], D['veier'], D['gardsrom'])
     avl = json.load(open(os.path.join(ROT, 'kilder', 'streetview', 'avlesning.json'), encoding='utf8'))
     dato = datetime.date.today().isoformat(); nye = []; rapport = {}
+    dom = d.get('dom', {})
     for i, h in d['hus'].items():
         x = BY.get(i)
         if not x or x.get('skjul') or i in IKKE: continue
+        if not h.get('for_haand') and not (dom.get(i) or {}).get('godkjent'): continue
         ut_v = []
         for vg in h['vegger']:
             w = _vegg_naa(x, omg, vg['a'], vg['b'])
@@ -297,9 +302,10 @@ def kobling(navner, logg=print):
     import datalag, vegger as VG
     d = les_kilde(); D = datalag.alle(); BY = {x['id']: x for x in D['bygg']}; omg = VG.Omgivelser(D['bygg'], D['veier'], D['gardsrom'])
     kf = os.path.join(ROT, 'kilder', 'fasade-kobling.json'); KB = json.load(open(kf, encoding='utf8'))
-    endret = set()
+    endret = set(); dom = d.get('dom', {})
     for i, h in d['hus'].items():
         n = h['tegning']
+        if not h.get('for_haand') and not (dom.get(i) or {}).get('godkjent'): continue
         if navner and n not in navner: continue
         x = BY.get(i)
         if not x or n not in KB: continue
@@ -316,7 +322,7 @@ def kobling(navner, logg=print):
             fl = sorted(set(f for s in vg['segmenter'] for f in s['flater']))
             fam = 'SV' if 180 <= (math.degrees(math.atan2(w['n'][0], w['n'][1])) + 360) % 360 < 270 else 'SØ'
             hus = KB[n].setdefault('hus', {}).setdefault(i, [])
-            ny = {"f": fl, "side": f"{fam}@{k}", "grunn": "fasadesegmenter: tegningen viser flere fasader på veggen (verktoy/fasadesegmenter.py kobling)"}
+            ny = {"f": fl, "side": f"{fam}@{k}", "fra": 0, "til": 1, "grunn": "fasadesegmenter: tegningen viser flere fasader på veggen (verktoy/fasadesegmenter.py kobling)"}
             if not any(isinstance(e, dict) and e.get('side') == ny['side'] for e in hus):
                 hus.append(ny); endret.add(n); logg(f"  {n} {i}: vegg {fam}@{k} ({vg['side']}) flater {fl}")
     if endret:
