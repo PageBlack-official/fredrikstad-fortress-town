@@ -1368,17 +1368,26 @@ def skriv_kobling(alle, navner, logg=print):
     gml = json.load(open(KOBLING_KONTROLL, encoding='utf8')) if os.path.exists(KOBLING_KONTROLL) else {}
     ut = {k: v for k, v in gml.items() if k not in navner and not k.startswith('_')}
     for n in navner:
-        brukt = set()
+        brukt = {}
         f = os.path.join(ROT, 'kilder', 'fasade-tegning', n + '.json')
         if os.path.exists(f):
-            for v in json.load(open(f))['vegger']: brukt.update(v.get('flater') or [])
+            for v in json.load(open(f))['vegger']:
+                for fi in v.get('flater') or []: brukt.setdefault(fi, set()).add(v['id'])
         L = []
         for r in alle:
             if r.get('tegning') != n: continue
             for w in r.get('vinduer') or []:
                 k_ = w.get('kobling')
-                if not k_ or k_['for_haand'] or not k_['flater'] or brukt & set(k_['flater']): continue
-                L.append(dict(id=r['id'], vegg=w['vegg'], a=k_['a'], b=k_['b'], venstre=k_['venstre'], flater=k_['flater']))
+                if not k_ or k_['for_haand'] or not k_['flater']: continue
+                eiere = set().union(*[brukt.get(fi, set()) for fi in k_['flater']])
+                if eiere - {r['id']}: continue          # flaten er håndkoblet til et annet hus: uklart, håndkoblingen står
+                e = dict(id=r['id'], vegg=w['vegg'], a=k_['a'], b=k_['b'], venstre=k_['venstre'], flater=k_['flater'])
+                if eiere:
+                    # flaten er håndkoblet til samme hus, men avlesningen ligger ikke på denne veggen: avlesningen ble gjort
+                    # mot omrisset før grunnmuren/husdelingen og står nå på en annen vegg (868134, Kvartal2: 10 m bak).
+                    # Kontrollens registrering er dagens; legg_inn tar håndavlesningen av de samme flatene ut (30.10)
+                    e['erstatter_haand'] = True
+                L.append(e)
         ut[n] = L
     ut = dict(sorted(ut.items()))
     ut['_om'] = 'Laget av verktoy/kontroll.py avvik (skriv_kobling); leses av verktoy/fasade_tegning.py les_fra_kontroll. Ikke rett for hånd: rett kilder/fasade-kobling.json (håndkoblingen går foran).'

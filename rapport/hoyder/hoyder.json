@@ -2229,7 +2229,7 @@
   "sikkerhet": "lav",
   "n_piksler": 7,
   "rest_m": 0.41,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler"
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler; kalibreringshus"
  },
  "198": {
   "id": "bnr-24218023",
@@ -2337,7 +2337,7 @@
   "sikkerhet": "høy",
   "n_piksler": 139,
   "rest_m": 0.3,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "204": {
   "id": "bnr-193868142",
@@ -2751,7 +2751,7 @@
   "sikkerhet": "middels",
   "n_piksler": 272,
   "rest_m": 1.13,
-  "merknad": "rest 1.1 m"
+  "merknad": "rest 1.1 m; kalibreringshus"
  },
  "227": {
   "id": "bnr-193868452",
@@ -3957,7 +3957,7 @@
   "sikkerhet": "lav",
   "n_piksler": 24,
   "rest_m": 2.72,
-  "merknad": "24 piksler; stor rest etter tilpasning (2.7 m): takform, trær eller nabobygg i omrisset"
+  "merknad": "24 piksler; stor rest etter tilpasning (2.7 m): takform, trær eller nabobygg i omrisset; kalibreringshus"
  },
  "341": {
   "id": "bnr-193972055",
@@ -4083,7 +4083,7 @@
   "sikkerhet": "middels",
   "n_piksler": 71,
   "rest_m": 1.16,
-  "merknad": "rest 1.2 m"
+  "merknad": "rest 1.2 m; kalibreringshus"
  },
  "348": {
   "id": "bnr-193971288",

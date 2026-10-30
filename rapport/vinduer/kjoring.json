@@ -224,20 +224,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193972314",
-"navn": "Feiergården",
-"type": "garage",
-"h": 2.51,
-"foer": 1,
-"etter": 0,
-"vinduer": 0,
-"dorer": 0,
-"gate": "gate",
-"etasjer": 0,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-193972365",
 "navn": null,
 "type": "office",
@@ -555,20 +541,6 @@
 "vinduer": 8,
 "dorer": 0,
 "gate": "mest åpne vegg",
-"etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
-"id": "bnr-193971989",
-"navn": null,
-"type": "garage",
-"h": 6.0,
-"foer": 6,
-"etter": 6,
-"vinduer": 6,
-"dorer": 0,
-"gate": "gate",
 "etasjer": 2,
 "dor": false,
 "uthus": true

@@ -885,7 +885,8 @@ def les_fra_kontroll(navn=None):
             if geo is None: continue
             a, b = np.array(w['a'], float), np.array(w['b'], float)
             ut.append(dict(id=w['id'], vegg=w['vegg'], side='kontroll', a=w['a'], b=w['b'], L=round(float(np.linalg.norm(b - a)), 2),
-                           venstre=w['venstre'], flater=fis, farger=[F[fi]['farge'] for fi in fis], elementer=el, geo=geo, kilde='kontrollkobling'))
+                           venstre=w['venstre'], flater=fis, farger=[F[fi]['farge'] for fi in fis], elementer=el, geo=geo, kilde='kontrollkobling',
+                           **({'erstatter_haand': True} if w.get('erstatter_haand') else {})))
         json.dump(dict(tegning=n, laget=__import__('datetime').date.today().isoformat(), verktoy='verktoy/fasade_tegning.py les_fra_kontroll',
                        vegger=ut), open(os.path.join(AVL, 'kontroll', n + '.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
         print(f'{n}: {len(ut)} vegger lest fra kontrollkoblingen ({sum(len(v["elementer"]) for v in ut)} elementer)')
@@ -918,8 +919,18 @@ def legg_inn(tørt=False, bare=None):
             for j_ in list(slekt[i_]):
                 slekt[i_] |= slekt.get(j_, set())
     # håndkoblingen først, så kontrollkoblingen (kilder/fasade-tegning/kontroll/): på samme modellvegg går håndavlesningen foran
+    # håndavlesninger av flater som kontrollkoblingen har lagt på en annen vegg i samme hus (avlesningen gjort mot et eldre omriss)
+    erstattet = set()
+    for f in sorted(_g.glob(os.path.join(AVL, 'kontroll', '*.json'))):
+        A = json.load(open(f, encoding='utf8'))
+        for vg in A['vegger']:
+            if vg.get('erstatter_haand'):
+                erstattet.update((A['tegning'], vg['id'], fi) for fi in vg['flater'])
     for f in sorted(_g.glob(os.path.join(AVL, '*.json'))) + sorted(_g.glob(os.path.join(AVL, 'kontroll', '*.json'))):
         A = json.load(open(f, encoding='utf8'))
+        if erstattet:
+            A['vegger'] = [vg for vg in A['vegger'] if vg.get('kilde') == 'kontrollkobling'
+                           or not any((A['tegning'], vg['id'], fi) in erstattet for fi in vg.get('flater') or [])]
         if bare and A['tegning'] not in bare: continue
         for vg in A['vegger']:
             v0 = np.array(vg['venstre'], float); v1 = np.array(vg['b'] if np.allclose(vg['venstre'], vg['a']) else vg['a'], float)
