@@ -1173,24 +1173,6 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193868096",
-  "navn": null,
-  "vegger": {
-   "1": {
-    "tegning": "Kvartal2BITMP",
-    "rader": [
-     6,
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 7,
-  "regler": 2,
-  "streetview": 0
- },
- {
   "id": "pb-62",
   "navn": null,
   "vegger": {
@@ -1215,6 +1197,24 @@
   },
   "tegnet": 5,
   "regler": 0,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193868096",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     6,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 7,
+  "regler": 2,
   "streetview": 0
  },
  {
@@ -2258,35 +2258,16 @@
   "streetview": 0
  },
  {
-  "id": "pb-61",
-  "navn": null,
-  "vegger": {
-   "0": {
-    "tegning": "kvartal5",
-    "rader": [
-     1,
-     2
-    ],
-    "dorer": 2,
-    "notat": [
-     "1 vindu(er) over gesims i tegningen (gavl/ark)"
-    ]
-   }
-  },
-  "tegnet": 5,
-  "regler": 9,
-  "streetview": 0
- },
- {
   "id": "bnr-6242812",
   "navn": null,
   "vegger": {
    "1": {
     "tegning": "kvartal5",
     "rader": [
+     2,
      1
     ],
-    "dorer": 0,
+    "dorer": 1,
     "notat": []
    },
    "2": {
@@ -2302,9 +2283,28 @@
     ]
    }
   },
-  "tegnet": 1,
+  "tegnet": 4,
   "regler": 8,
   "streetview": 14
+ },
+ {
+  "id": "pb-61",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "kvartal5",
+    "rader": [
+     1
+    ],
+    "dorer": 1,
+    "notat": [
+     "1 vindu(er) over gesims i tegningen (gavl/ark)"
+    ]
+   }
+  },
+  "tegnet": 2,
+  "regler": 9,
+  "streetview": 0
  },
  {
   "id": "bnr-193987397",

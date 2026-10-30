@@ -1,39 +1,39 @@
 {
  "tegning": "Kvartal11",
  "par": {
-  "az": -15.51,
+  "az": -15.55,
   "el": 45.46,
-  "s": 5.0721,
+  "s": 5.0656,
   "K": 4.0814,
-  "kz": 1.147,
+  "kz": 1.149,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.753027420823378,
-   1.3186540669107845,
+   4.745177483215281,
+   1.3204317195679973,
    0.0,
-   107.81352325656539
+   107.74696074114493
   ],
   [
-   1.7682761805849567,
-   -3.367372876352921,
+   1.770903444452635,
+   -3.3617438875113645,
    -4.081397991269261,
-   106.20511630312899
+   106.3116567800925
   ]
  ],
  "forskyvning": {
   "bnr-193867537": [
-   1.92,
-   8.5
+   2.2,
+   8.51
   ],
   "bnr-193868568": [
-   0.0,
+   0.5,
    0.0
   ],
   "pb-51": [
-   -0.95,
-   -3.15
+   -0.93,
+   -3.32
   ]
  },
  "blokker": [
@@ -42,42 +42,42 @@
     "bnr-193867537"
    ],
    "d": [
-    1.92,
-    8.5
+    2.2,
+    8.51
    ],
-   "kant_for": 3.05,
-   "kant_etter": 2.58
+   "kant_for": 3.01,
+   "kant_etter": 2.57
   },
   {
    "ids": [
     "bnr-193868568"
    ],
    "d": [
-    0.0,
+    0.5,
     0.0
    ],
-   "kant_for": 3.72,
-   "kant_etter": 3.72
+   "kant_for": 3.74,
+   "kant_etter": 3.73
   },
   {
    "ids": [
     "pb-51"
    ],
    "d": [
-    -0.95,
-    -3.15
+    -0.93,
+    -3.32
    ],
-   "kant_for": 2.24,
+   "kant_for": 2.26,
    "kant_etter": 1.84
   }
  ],
  "maal": {
   "bunn": 13.0,
   "topp": 11.0,
-  "iou": 0.44995976394849785,
+  "iou": 0.4504055651052858,
   "bare": 9,
-  "kant": 3.622650146484375,
-  "omriss": 41.43791490814023
+  "kant": 3.616032838821411,
+  "omriss": 41.391576847582435
  },
  "bygg": [
   "bnr-193867537",
@@ -88,14 +88,14 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193867537": {
-   "median_pt": 1.65,
-   "median_px": 5.0,
+   "median_pt": 1.63,
+   "median_px": 4.9,
    "andel_innen_2pt": 0.56,
    "beste_forskyvning_pt": [
-    -1.0,
+    -0.5,
     2.5
    ],
-   "median_etter_pt": 1.72
+   "median_etter_pt": 1.71
   },
   "bnr-193868568": {
    "median_pt": 3.72,
@@ -108,18 +108,18 @@
    "median_etter_pt": 3.72
   },
   "pb-51": {
-   "median_pt": 1.16,
-   "median_px": 3.5,
-   "andel_innen_2pt": 0.68,
+   "median_pt": 1.19,
+   "median_px": 3.6,
+   "andel_innen_2pt": 0.69,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 1.16
+   "median_etter_pt": 1.19
   }
  },
  "registrering": {
-  "median_pt": 1.65,
+  "median_pt": 1.63,
   "median_px": 4.9,
   "andel_under_3pt": 0.67,
   "R": 3.0

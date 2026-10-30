@@ -1,25 +1,25 @@
 {
  "tegning": "Toihuset",
  "par": {
-  "az": -14.66,
+  "az": -14.67,
   "el": 45.46,
-  "s": 5.0466,
+  "s": 5.0459,
   "K": 5.2531,
   "kz": 1.484,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.762817336538167,
-   1.2459900772649763,
+   4.761890974850854,
+   1.2463572785090162,
    0.0,
-   730.4670792542037
+   730.4064446873936
   ],
   [
-   1.6661958290223025,
-   -3.375596049047307,
+   1.666726658608626,
+   -3.3749290904294824,
    -5.253144290789383,
-   15.421236461224307
+   15.788949762007988
   ]
  ],
  "forskyvning": {
@@ -37,17 +37,17 @@
     0.0,
     0.0
    ],
-   "kant_for": 3.19,
-   "kant_etter": 3.19
+   "kant_for": 3.18,
+   "kant_etter": 3.18
   }
  ],
  "maal": {
   "bunn": 2.0,
   "topp": 6.0,
-  "iou": 0.6675319876206753,
+  "iou": 0.6680329764889847,
   "bare": 9,
-  "kant": 3.3575079441070557,
-  "omriss": 15.50232634928141
+  "kant": 3.3432326316833496,
+  "omriss": 15.432137080389797
  },
  "bygg": [
   "bnr-193870279"
@@ -56,19 +56,19 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193870279": {
-   "median_pt": 2.64,
-   "median_px": 7.9,
-   "andel_innen_2pt": 0.41,
+   "median_pt": 2.61,
+   "median_px": 7.8,
+   "andel_innen_2pt": 0.42,
    "beste_forskyvning_pt": [
-    0.0,
-    0.0
+    -0.5,
+    0.5
    ],
-   "median_etter_pt": 2.64
+   "median_etter_pt": 2.58
   }
  },
  "registrering": {
-  "median_pt": 2.64,
-  "median_px": 7.9,
+  "median_pt": 2.61,
+  "median_px": 7.8,
   "andel_under_3pt": 1.0,
   "R": 3.0
  }

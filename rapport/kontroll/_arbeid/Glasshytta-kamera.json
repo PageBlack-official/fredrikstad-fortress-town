@@ -3,32 +3,32 @@
  "par": {
   "az": -10.55,
   "el": 45.46,
-  "s": 5.0695,
+  "s": 5.0685,
   "K": 5.3586,
   "kz": 1.507,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.924222298008125,
-   0.916921451579974,
+   4.923081414983563,
+   0.9170060181594627,
    0.0,
-   -1110.9433570063572
+   -1110.9190372884937
   ],
   [
-   1.2019119715823878,
-   -3.4963309455232188,
+   1.202050062135014,
+   -3.4955158155419213,
    -5.3586450626910445,
-   -181.57092768924994
+   -181.61564940925422
   ]
  ],
  "forskyvning": {
   "bnr-193869548": [
-   94.0,
-   125.68
+   94.5,
+   125.79
   ],
   "bnr-193869580": [
-   -0.89,
+   -0.6,
    3.2
   ]
  },
@@ -38,31 +38,31 @@
     "bnr-193869548"
    ],
    "d": [
-    -0.5,
-    0.68
+    0.0,
+    0.79
    ],
-   "kant_for": 2.71,
-   "kant_etter": 2.61
+   "kant_for": 2.69,
+   "kant_etter": 2.67
   },
   {
    "ids": [
     "bnr-193869580"
    ],
    "d": [
-    -0.89,
+    -0.6,
     3.2
    ],
-   "kant_for": 2.21,
+   "kant_for": 2.19,
    "kant_etter": 1.94
   }
  ],
  "maal": {
   "bunn": 3.0,
   "topp": 2.0,
-  "iou": 0.5464473124379521,
-  "bare": 17,
-  "kant": 3.1587705612182617,
-  "omriss": 18.50105375124096
+  "iou": 0.5488081725312145,
+  "bare": 16,
+  "kant": 3.145079016685486,
+  "omriss": 18.28708158248829
  },
  "bygg": [
   "bnr-193869548",
@@ -72,19 +72,19 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193869548": {
-   "median_pt": 0.84,
-   "median_px": 2.5,
+   "median_pt": 0.88,
+   "median_px": 2.6,
    "andel_innen_2pt": 0.64,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 0.84
+   "median_etter_pt": 0.88
   },
   "bnr-193869580": {
    "median_pt": 1.06,
    "median_px": 3.2,
-   "andel_innen_2pt": 0.65,
+   "andel_innen_2pt": 0.64,
    "beste_forskyvning_pt": [
     0.0,
     0.0
@@ -93,8 +93,8 @@
   }
  },
  "registrering": {
-  "median_pt": 0.95,
-  "median_px": 2.8,
+  "median_pt": 0.97,
+  "median_px": 2.9,
   "andel_under_3pt": 1.0,
   "R": 3.0
  }
