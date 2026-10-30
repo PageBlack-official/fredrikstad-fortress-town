@@ -147,11 +147,11 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 | omriss | 64 | 83 | 0 | 47 |
 | mone | 43 | 51 | 0 | 98 |
 | takform | 7 | 0 | 0 | 187 |
-| takfarge | 2 | 0 | 104 | 79 |
+| takfarge | 1 | 0 | 105 | 79 |
 | arker | 0 | 39 | 0 | 155 |
 | piper | 0 | 31 | 0 | 163 |
 | gesims | 20 | 13 | 36 | 69 |
-| veggfarge | 8 | 0 | 16 | 76 |
+| veggfarge | 7 | 0 | 12 | 81 |
 | vinduer | 10 | 14 | 4 | 76 |
 | dorer | 0 | 8 | 0 | 96 |
 | slaatt_sammen | 11 | 7 | 9 | 0 |
@@ -215,12 +215,12 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 868061 |  | **F** | A |  | A |  | G |  | **F** | A | A | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 1; ulike farger: 2); vinduer: vegg 17 (30.9 m, merknad: tegningen Kvartal3, talt for hånd i nærbildet 30.10 (flate 9 over sokkelflatene ): tegning 15 vinduer i rader [7, 8], modell 7 i rader [3, 4] |
+| 868061 |  | **F** | A |  | A |  |  |  | **F** | A | A | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 1; ulike farger: 2); vinduer: vegg 17 (30.9 m, merknad: tegningen Kvartal3, talt for hånd i nærbildet 30.10 (flate 9 over sokkelflatene ): tegning 15 vinduer i rader [7, 8], modell 7 i rader [3, 4] |
 | 869556 |  |  |  | G |  |  |  |  |  |  |  |  |  |
 | 868053 |  |  | A | **F** | A |  |  | G |  |  |  |  | gesims: tegnet/modell 1.40 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)) |
 | 867308 |  |  | **F** | A | **F** |  |  |  |  |  |  |  |  |
 | 868045 |  | G |  |  |  |  |  |  |  |  |  | A |  |
-| 868037 |  |  | A |  |  |  | G | G | A |  |  |  |  |
+| 868037 |  |  | A |  |  |  |  | G | A |  |  |  |  |
 | 867324 |  |  | A | A | **F** |  |  |  |  |  |  |  |  |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 868061 (229 pt², ~1 hus, avvik med grunn: takdel); ved 868037 (678 pt², ~1 hus, avvik med grunn: mur)
@@ -261,7 +261,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 971342 | **F** |  |  |  |  |  |  |  |  |  |  |  |  |
 | 972217 |  |  | **F** |  | **F** |  |  | G |  |  |  |  |  |
 | pb-60 |  |  |  |  | A |  |  | G |  |  | A |  |  |
-| pb-61 |  |  | A |  |  |  |  | G |  | A |  |  |  |
+| pb-61 |  |  | A |  |  |  |  |  |  | A |  |  |  |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 868223 (172 pt², ~1 hus, avvik med grunn: frihånd); ved 16290424 (301 pt², ~1 hus, avvik med grunn: port/gjerde)
 
@@ -297,7 +297,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 868355 |  |  |  |  |  |  |  | G |  |  | A |  |  |
 | 868339 |  | **F** |  | G | A |  | G | G | A |  | A |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 2; ulike farger: 2) |
-| 867626 |  | A | A |  |  | **F** |  |  |  |  | A | A | takform: tegning valm, modell sal |
+| 867626 |  | A | A |  |  | **F** | **F** |  |  |  | A | A | takform: tegning valm, modell sal; veggfarge: tegning (222, 206, 155) (gul/beige), modell (206, 112, 82) (rød), ΔE 44.8; modellens farge: Street View 2010 (laksrød/terrakotta); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger) |
 | 868347 |  | **F** | **F** |  | A |  | **F** | G |  |  |  |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 6; ulike farger: 2); veggfarge: tegning (239, 240, 240) (hvit), modell (254, 234, 174) (oransje/brun), ΔE 31.9; modellens farge: 2019-trykket (dømt) |
 | 971369 |  |  | A | G |  |  |  |  |  |  | A |  |  |
 | 868320 |  | **F** |  |  |  |  |  | G |  |  | A | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 1; ulike farger: 2) |
@@ -313,7 +313,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | pb-28 | A |  |  |  |  |  |  |  |  |  |  |  |  |
 | pb-33 |  |  | **F** | **F** | **F** |  |  |  |  |  |  |  | gesims: tegnet/modell 1.69 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | pb-47 | A |  |  |  |  |  |  |  |  |  |  |  |  |
-| pb-65 |  |  | **F** |  | **F** |  | **F** | G |  |  |  |  | veggfarge: tegning (184, 208, 195) (grønn), modell (173, 100, 86) (rød), ΔE 52.3; modellens farge: kvartaltegningen kvartal7 (lys side, IoU 0.63) |
+| pb-65 |  |  | **F** |  | **F** |  |  | G |  |  |  |  |  |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved pb-47 (530 pt², ~1 hus, avvik med grunn: frihånd); ved 867626 (1362 pt², ~1 hus, avvik med grunn: frihånd)
 
@@ -323,7 +323,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 972152 |  |  | A | **F** | A |  |  | G |  |  |  |  | gesims: tegnet/modell 2.11 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 868258 |  |  |  | **F** |  |  |  | G | **F** |  | A | A | gesims: tegnet/modell 0.64 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM; vinduer: vegg 7 (6.9 m, fasadeavlesningen (kontrollkobling)): tegning 2 vinduer i rader [2], modell 0 i rader [] |
-| pb-5 |  |  | **F** | G | A |  |  |  |  |  |  |  |  |
+| pb-5 |  |  | **F** | G | A |  |  | G |  |  |  |  |  |
 | 868541 |  |  | **F** | **F** | A |  |  |  | A |  |  |  | gesims: tegnet/modell 1.49 (tegningen høyere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 868266 |  |  |  | G |  |  |  | G |  |  | A | A |  |
 | 868274 |  | A | A | **F** | A |  |  | G |  |  |  |  | gesims: tegnet/modell 1.57 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)) |
@@ -332,9 +332,9 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 13414904 |  |  | A |  | A |  |  | G |  |  |  | A |  |
 | 972136 |  |  | A |  |  |  |  | G |  |  |  |  |  |
 | 300279164 |  |  | A |  | A |  |  | G |  |  |  |  |  |
-| 868290 |  | A |  | G |  |  | **F** |  | A |  |  |  | veggfarge: tegning (250, 224, 171) (oransje/brun), modell (236, 237, 238) (hvit), ΔE 30.1; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.76) |
+| 868290 |  | A |  | G |  |  |  |  | A |  |  |  |  |
 | 868533 |  |  | A | G |  |  |  | G |  |  |  |  |  |
-| pb-13 |  |  | **F** |  | A |  |  | **F** |  |  |  |  | takfarge: tegning (126, 128, 131) (grå/svart), modell (172, 100, 84) (rød), ΔE 36.3; modellens farge: 2019-trykket (visuelt) |
+| pb-13 |  |  | **F** |  | A |  |  |  |  |  |  |  |  |
 | 972144 |  |  | A |  | A |  |  |  |  |  |  |  |  |
 | 971288 |  |  | **F** |  | A |  |  |  |  |  |  |  |  |
 | 971261 |  |  | **F** | **F** | **F** |  |  |  | A |  |  |  | gesims: tegnet/modell 0.52 (tegningen lavere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
@@ -369,7 +369,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 972497 |  |  | **F** | **F** |  |  |  |  |  |  |  |  | gesims: tegnet/modell 1.82 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | pb-23 | A |  |  |  |  |  |  |  |  |  |  |  |  |
 | pb-45 |  |  | **F** |  | **F** |  |  |  |  |  |  |  |  |
-| pb-66 |  |  | A | A | A |  | G |  |  |  |  |  |  |
+| pb-66 |  |  | A | A | A |  | G | G |  |  |  |  |  |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 867944 (592 pt², ~1 hus, avvik med grunn: takdel); ved 868592 (174 pt², ~1 hus, avvik med grunn: detalj); ved 971385 (386 pt², ~1 hus, avvik med grunn: frihånd)
 
@@ -380,10 +380,10 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 971938 |  |  | A |  | A |  |  |  |  |  |  |  |  |
 | 972411 |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | 13394024 |  | A | A | G |  |  | **F** | G | **F** |  |  | A | veggfarge: tegning (198, 198, 197) (grå/svart), modell (254, 230, 158) (gul/beige), ΔE 39.4; modellens farge: merknad: trykkfila 2015 (Street View-bildet viste nabohuset); vinduer: vegg 3 (13.8 m, fasadeavlesningen (kontrollkobling)): tegning 3 vinduer i rader [1, 2], modell 5 i rader [5] |
-| 867588 |  | A |  | G |  |  | **F** | G | **F** |  |  |  | veggfarge: tegning (198, 198, 197) (grå/svart), modell (232, 184, 92) (oransje/brun), ΔE 52.5; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningen har ikke huset; vinduer: vegg 2 (21.6 m, fasadeavlesningen): tegning 2 vinduer i rader [1, 1], modell 1 i rader [1 |
+| 867588 |  | A |  | G |  |  | **F** | G | **F** |  |  |  | veggfarge: tegning (198, 198, 197) (grå/svart), modell (232, 184, 92) (oransje/brun), ΔE 52.5; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger); vinduer: vegg 2 (21.6 m, f |
 | 987370 |  |  |  | **F** |  |  |  |  |  |  | A |  | gesims: tegnet/modell 1.51 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 867596 |  |  | **F** | A | A |  |  | G |  |  |  |  |  |
-| 868711 |  |  |  |  |  |  | G | G |  |  |  |  |  |
+| 868711 |  |  |  |  |  |  |  | G |  |  |  |  |  |
 | 867545 |  |  | A | G |  |  |  | G |  |  |  |  |  |
 | 971911 |  |  | A |  |  |  |  | G |  |  |  |  |  |
 | 971903 | A |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -450,7 +450,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 867499 |  |  |  |  |  |  |  |  | A |  | A | A |  |
 | 867510 |  | G |  |  |  |  |  | G |  |  |  |  |  |
 | pb-63 |  |  | **F** | **F** | **F** |  |  | G | **F** |  |  |  | gesims: tegnet/modell 0.18 (tegningen lavere) (veggflatene i tegningen); vinduer: vegg 3 (11.0 m, fasadeavlesningen (kontrollkobling)): tegning 0 vinduer i rader [], modell 4 i rader [3, 1] |
-| pb-64 |  |  | **F** | **F** |  |  |  | G | **F** | A |  |  | gesims: tegnet/modell 1.40 (tegningen høyere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM; vinduer: vegg 2 (8.5 m, hullene i veggflaten): tegning 3 vinduer i rader [3], modell 3 i rader [1, 2] |
+| pb-64 |  |  | **F** | **F** |  |  |  |  | **F** | A |  |  | gesims: tegnet/modell 1.40 (tegningen høyere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM; vinduer: vegg 2 (8.5 m, hullene i veggflaten): tegning 3 vinduer i rader [3], modell 3 i rader [1, 2] |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 868460 (172 pt², ~1 hus, avvik med grunn: takdel); ved 867499 (1485 pt², ~2 hus, avvik med grunn: gjerde); ved 868460 (134 pt², ~1 hus, avvik med grunn: detalj); ved 867502 (1158 pt², ~2 hus, avvik med grunn: mur); ved pb-63 (2812 pt², ~2 hus, avvik med grunn: mur); ved 867510 (160 pt², ~1 hus, avvik med grunn: detalj); ved 867510 (160 pt², ~1 hus, avvik med grunn: detalj)
 
@@ -487,13 +487,13 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 870198 |  |  |  | G |  |  | **F** |  |  |  |  | A | veggfarge: tegning (246, 147, 129) (rød), modell (218, 166, 126) (oransje/brun), ΔE 21.5 |
+| 870198 |  |  |  | G |  |  |  | G |  |  |  | A |  |
 | 870236 |  |  | A | G |  |  |  | G |  |  |  |  |  |
 | 972403 |  |  | **F** |  | A |  |  | G |  |  |  |  |  |
 | 870252 |  | **F** | A | G |  |  |  | G |  |  |  | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 3; ulike farger: 2) |
 | 972381 | A |  |  |  |  |  |  |  |  |  |  |  |  |
 | 870244 |  |  | A |  |  |  |  | G |  |  |  |  |  |
-| 870228 |  |  | A |  |  |  |  | G |  |  |  |  |  |
+| 870228 |  |  | A |  |  |  | **F** | G |  |  |  |  | veggfarge: tegning (190, 208, 158) (grønn), modell (167, 147, 73) (gul/beige), ΔE 29.9; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger) |
 | 870201 |  |  |  |  |  |  |  | G | A |  |  |  |  |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 870244 (4546 pt², ~1 hus, avvik med grunn: frihånd); ved 870201 (232 pt², ~1 hus, avvik med grunn: frihånd); ved 870198 (262 pt², ~1 hus, avvik med grunn: frihånd)
@@ -525,7 +525,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 870279 |  | **F** |  |  |  | **F** | G |  | A |  | A | A | slaatt_sammen: tegningen har 5 fasader på én modellvegg (vegg 2, 1, 6; ulike farger: 3); takform: tegning sal, modell sammensatt |
+| 870279 |  | **F** |  |  |  | **F** |  |  | A |  | A | A | slaatt_sammen: tegningen har 5 fasader på én modellvegg (vegg 2, 1, 6; ulike farger: 3); takform: tegning sal, modell sammensatt |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 870279 (235 pt², ~1 hus, avvik med grunn: detalj); ved 870279 (6413 pt², ~1 hus, avvik med grunn: frihånd); ved 870279 (209 pt², ~1 hus, avvik med grunn: detalj); ved 870279 (311 pt², ~1 hus, avvik med grunn: detalj); ved 870279 (253 pt², ~2 hus, avvik med grunn: detalj)
 
