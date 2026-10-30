@@ -845,7 +845,7 @@ def legg_inn(tørt=False, bare=None):
     nye, logg = [], []
     for i, lst in per_hus.items():
         x = BY.get(i)
-        if not x or x.get('skjul') or x.get('kirke') or x.get('deler'):
+        if not x or x.get('skjul') or x.get('kirke') or any(d_.get('kilde') != 'tak-tegning' for d_ in (x.get('deler') or [])):
             continue
         P = np.array(x['p'], float); V = VG.vegger(x, omg, slaa_sammen=False)
         # samme vegg i to tegninger: den med flest elementer

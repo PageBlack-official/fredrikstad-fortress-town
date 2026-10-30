@@ -606,7 +606,7 @@ def kjor(tørt=False):
             hoppet('finnes ikke i bygg.json'); continue
         if a.get('sikkerhet') == 'ikke synlig':
             hoppet('ikke synlig fra gata'); continue
-        if x.get('kirke') or x.get('deler'):
+        if x.get('kirke') or any(d_.get('kilde') != 'tak-tegning' for d_ in (x.get('deler') or [])):
             hoppet('egen modell (kirka / bygg med deler)'); continue
         if x.get('skjul'):
             hoppet('skjult i kartet'); continue

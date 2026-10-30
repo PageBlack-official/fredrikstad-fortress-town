@@ -493,7 +493,7 @@ def main(tørt=False):
             else:                        # tilpasningen er ikke til å stole på (naboer eller trær i pikslene): bare vegghøyden
                 nye.append(r('h', round(max(2.3, p50 - 1.0), 2)))
         if T.get(x['id'], {}).get('deler'):          # tårn o.l. tegningen viser og DOM bekrefter (kilder/tak-tegning.json)
-            nye.append(r('deler', [dict(dict(vegg=x.get('vegg'), tak=x.get('tak')), **d) for d in T[x['id']]['deler']]))   # husets farger
+            nye.append(r('deler', [dict(dict(vegg=x.get('vegg'), tak=x.get('tak'), kilde='tak-tegning'), **d) for d in T[x['id']]['deler']]))   # husets farger
         logg[x['id']] = dict(takform=form, kilde=spek['kilde'], kropper=[dict(form=k['form'], langs=k['langs'], ender=k['ender'],
                              mål=[round(k['u1'] - k['u0'], 1), round(k['v1'] - k['v0'], 1)], dom=k.get('dom')) for k in spek['kropper']])
     if not tørt:
