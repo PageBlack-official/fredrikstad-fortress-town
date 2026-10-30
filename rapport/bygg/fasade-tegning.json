@@ -213,7 +213,7 @@
    }
   },
   "tegnet": 17,
-  "regler": 54,
+  "regler": 27,
   "streetview": 0
  },
  {
@@ -257,8 +257,8 @@
     ],
     "dorer": 0,
     "notat": [
-     "rad 3 fikk ikke plass under gesims (h 6.9 m)",
-     "rad 4 fikk ikke plass under gesims (h 6.9 m)"
+     "rad 3 fikk ikke plass under gesims (h 7.0 m)",
+     "rad 4 fikk ikke plass under gesims (h 7.0 m)"
     ]
    },
    "0": {
@@ -289,7 +289,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 10,
+  "regler": 0,
   "streetview": 0
  },
  {
@@ -384,7 +384,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 19,
+  "regler": 0,
   "streetview": 0
  },
  {
@@ -434,7 +434,7 @@
    }
   },
   "tegnet": 9,
-  "regler": 24,
+  "regler": 12,
   "streetview": 0
  },
  {
@@ -528,10 +528,25 @@
   "streetview": 0
  },
  {
+  "id": "pb-57",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 16,
+  "streetview": 0
+ },
+ {
   "id": "bnr-193867758",
   "navn": null,
   "vegger": {
-   "3": {
+   "8": {
     "tegning": "Kvartal12",
     "rader": [
      6,
@@ -539,22 +554,11 @@
     ],
     "dorer": 0,
     "notat": []
-   },
-   "1": {
-    "tegning": "Street View",
-    "rader": [
-     4,
-     4
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View aug. 2010"
-    ]
    }
   },
   "tegnet": 12,
-  "regler": 20,
-  "streetview": 9
+  "regler": 16,
+  "streetview": 0
  },
  {
   "id": "bnr-193867782",
@@ -750,8 +754,7 @@
    "1": {
     "tegning": "Kvartal13",
     "rader": [
-     2,
-     2
+     4
     ],
     "dorer": 0,
     "notat": []
@@ -939,7 +942,7 @@
    }
   },
   "tegnet": 9,
-  "regler": 12,
+  "regler": 18,
   "streetview": 0
  },
  {
@@ -1106,7 +1109,7 @@
    }
   },
   "tegnet": 9,
-  "regler": 16,
+  "regler": 8,
   "streetview": 0
  },
  {
@@ -1185,8 +1188,7 @@
    "0": {
     "tegning": "Street View",
     "rader": [
-     2,
-     3
+     2
     ],
     "dorer": 1,
     "notat": [
@@ -1196,7 +1198,7 @@
   },
   "tegnet": 0,
   "regler": 3,
-  "streetview": 6
+  "streetview": 3
  },
  {
   "id": "bnr-193868134",
@@ -1303,7 +1305,7 @@
   "id": "bnr-193868061",
   "navn": "Artillerigården",
   "vegger": {
-   "1": {
+   "17": {
     "tegning": "Kvartal3",
     "rader": [
      3,
@@ -1311,17 +1313,8 @@
     ],
     "dorer": 3,
     "notat": []
-   }
-  },
-  "tegnet": 11,
-  "regler": 36,
-  "streetview": 0
- },
- {
-  "id": "bnr-193869572",
-  "navn": null,
-  "vegger": {
-   "9": {
+   },
+   "0": {
     "tegning": "Kvartal3",
     "rader": [
      6,
@@ -1330,7 +1323,7 @@
     "dorer": 0,
     "notat": []
    },
-   "8": {
+   "1": {
     "tegning": "Kvartal3",
     "rader": [
      2,
@@ -1340,8 +1333,8 @@
     "notat": []
    }
   },
-  "tegnet": 13,
-  "regler": 29,
+  "tegnet": 24,
+  "regler": 96,
   "streetview": 0
  },
  {
@@ -1439,7 +1432,7 @@
    }
   },
   "tegnet": 8,
-  "regler": 16,
+  "regler": 8,
   "streetview": 10
  },
  {
@@ -1495,7 +1488,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 13,
+  "regler": 26,
   "streetview": 5
  },
  {
@@ -1598,7 +1591,7 @@
    }
   },
   "tegnet": 11,
-  "regler": 30,
+  "regler": 20,
   "streetview": 0
  },
  {
@@ -1613,7 +1606,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 2,
+  "regler": 6,
   "streetview": 0
  },
  {
@@ -1670,7 +1663,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 6,
+  "regler": 3,
   "streetview": 0
  },
  {
@@ -1977,7 +1970,7 @@
    }
   },
   "tegnet": 7,
-  "regler": 4,
+  "regler": 8,
   "streetview": 0
  },
  {
@@ -1994,7 +1987,7 @@
    }
   },
   "tegnet": 8,
-  "regler": 44,
+  "regler": 66,
   "streetview": 0
  },
  {
@@ -2024,7 +2017,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 4,
+  "regler": 2,
   "streetview": 0
  },
  {
@@ -2093,7 +2086,7 @@
    }
   },
   "tegnet": 9,
-  "regler": 16,
+  "regler": 8,
   "streetview": 8
  },
  {
@@ -2103,8 +2096,7 @@
    "6": {
     "tegning": "kvartal5",
     "rader": [
-     4,
-     4
+     8
     ],
     "dorer": 1,
     "notat": []
@@ -2297,7 +2289,7 @@
    }
   },
   "tegnet": 4,
-  "regler": 2,
+  "regler": 1,
   "streetview": 5
  },
  {
@@ -2526,7 +2518,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 8,
+  "regler": 16,
   "streetview": 0
  },
  {
@@ -2677,7 +2669,7 @@
    }
   },
   "tegnet": 12,
-  "regler": 10,
+  "regler": 15,
   "streetview": 0
  },
  {

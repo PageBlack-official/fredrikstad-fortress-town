@@ -2,6 +2,9 @@
 - hvert kommunehus i Gamlebyen på minst 6 m² har modellhus over seg: husene som ligger i det (minst halve arealet inni)
   dekker det med IoU >= 0,7 (flere modellhus i samme kommunehus er lov: rekkehus med egne bygningsnummer)
 - ingen modellhus dekker to eller flere kommunehus (overlapp over 1 m² og 10 % av kommunehuset)
+Husdelingen etter tegningen (kilder/husdeling.json, verktoy/husdeling.py, 30.10): hus som er slått sammen fordi tegningen
+viser ett hus der kommunekartet har to, kan dekke flere kommunehus; de står som unntak med grunnen, og kommunehusene de dekker,
+måles mot det sammenslåtte huset.
 Unntak som står i rapporten: kirka (06_kirka), Kaserna (verktoy/kaserna.py) og portbyggene (data/porter.json) bygges for seg
 og røres ikke av verktoy/grunnmur.py. Hus utenfor kartrammen har ingen kommunedata og sjekkes ikke.
 Uten kommunekartet (kilder/kommunekart/kommunekart.pdf ligger bare lokalt) kan regelen ikke kjøres og er rød."""
@@ -24,6 +27,12 @@ vis = [x for x in b if len(x['p']) >= 3 and not x.get('skjul')]
 P = {x['id']: poly(x) for x in vis}
 gml = {x['id'] for x in vis if x.get('gml')}
 ids = list(P); tre = shapely.STRtree([P[i] for i in ids])
+import json as _json
+_hd = os.path.join(ROT, 'kilder', 'husdeling.json')
+SAMMEN = {}
+if os.path.exists(_hd):
+    for S_ in _json.load(open(_hd, encoding='utf8')).get('sammen', []):
+        SAMMEN[S_['ids'][0]] = S_.get('grunn', '')
 feil_dekning, feil_flere, unntak = [], [], []
 dekker = {}; n = 0
 for j in Kin:
@@ -34,12 +43,13 @@ for j in Kin:
     if any(i not in gml and P[i].intersection(k).area > 0.5 * k.area for i in treff):
         continue      # huset hører til et bygg utenfor Gamlebyen (gml 0), samme utvalg som verktoy/grunnmur.py
     n += 1
-    inni = [i for i in treff if P[i].intersection(k).area >= 0.5 * P[i].area]
+    inni = [i for i in treff if P[i].intersection(k).area >= 0.5 * P[i].area or (i in SAMMEN and P[i].intersection(k).area >= 0.5 * k.area)]
     for i in treff:
         a = P[i].intersection(k).area
         if a > 1.0 and a > 0.1 * k.area:
             dekker.setdefault(i, []).append(j)
-    U = unary_union([P[i] for i in inni]) if inni else Polygon()
+    # et hus slått sammen etter tegningen måles bare på sin del i dette kommunehuset
+    U = unary_union([P[i].intersection(k.buffer(1.0)) if i in SAMMEN else P[i] for i in inni]) if inni else Polygon()
     iou = U.intersection(k).area / U.union(k).area if inni else 0.0
     if any(i in fredet for i in treff if P[i].intersection(k).area > 0.5 * k.area):
         unntak.append(f"- kommunehus {j} ({k.area:.0f} m²) under fredet bygg {', '.join(i for i in treff if i in fredet)}: IoU {iou:.2f}")
@@ -51,6 +61,8 @@ for i, js in dekker.items():
     if len(js) >= 2 and i in gml:
         if i in fredet:
             unntak.append(f"- {i} (fredet) dekker kommunehus {', '.join(map(str, js))}")
+        elif i in SAMMEN:
+            unntak.append(f"- {i} dekker kommunehus {', '.join(map(str, js))}: slått sammen etter tegningen ({SAMMEN[i]})")
         else:
             feil_flere.append(f"- {i} dekker {len(js)} kommunehus: {', '.join(map(str, js))}")
 ok = not feil_dekning and not feil_flere

@@ -37,3 +37,6 @@ rapport/torvet/*.jpg
 rapport/bakke/*.png
 rapport/31_overflater.jpg
 kilder/kommunekart/*.png
+
+# delingsarkene viser tegningen (åndsverk) ved siden av DOM: bare lokalt (30.10)
+rapport/tak/deling-*.png

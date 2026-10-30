@@ -296,6 +296,18 @@ def tilpass_kamera(navn, logg=print):
             inne = 0 <= c[0] < W and 0 <= c[1] < H and Mbig[int(c[1]), int(c[0])]
             if x['id'] in lov or inne:
                 alle.append(x)
+    # biter (kvartal-kobling.json «biter», 30.10): hus Vegar tegnet som en egen bit et annet sted på arket enn der det felles
+    # kameraet legger dem; forskyvningen (pt) er satt for hånd fra arket og finjusteres med blokksøket under
+    BIT = {}
+    for b_ in (kobling(navn) or {}).get('biter', []):
+        for i_ in b_['ids']:
+            BIT[i_] = np.array(b_['d'], float)
+            if not any(x['id'] == i_ for x in alle):
+                alle += [x for x in D['bygg'] if x['id'] == i_ and not x.get('skjul') and len(x['p']) >= 3]
+    def Px(P, x):
+        if x['id'] in BIT:
+            P = P.copy(); P[:, 3] = P[:, 3] + BIT[x['id']]
+        return P
     st = dict(B=list(alle))
 
     def fast_P(w):
@@ -308,11 +320,12 @@ def tilpass_kamera(navn, logg=print):
     def sil(P, B):
         M = np.zeros((H, W), np.uint8)
         for x in B:
-            silhuett_px(P, x, 1.0, (H, W), 1, M)
+            silhuett_px(Px(P, x), x, 1.0, (H, W), 1, M)
         return M
 
     def kant(P, B):
-        L = [l for x in B for l in synlige_kanter(P, x, 1, None)]
+        L = [l for x in B if x['id'] not in BIT for l in synlige_kanter(P, x, 1, None)]
+        if not L: L = [l for x in B for l in synlige_kanter(P, x, 1, None)]
         Q = kantpunkter(P, L, 1.0, 1.5)
         a = float(np.mean(np.minimum(map_coordinates(dtf, [Q[:, 1], Q[:, 0]], order=1, mode='constant', cval=20), 6)))
         T = np.ones((H, W), np.uint8)
@@ -370,7 +383,7 @@ def tilpass_kamera(navn, logg=print):
     for runde in (2, 3):
         P = fast_P(beste[1]); inn = []; ut_ = []
         for x in alle:
-            Ms = silhuett_px(P, x, 1.0, (H, W)); n = Ms.sum()
+            Ms = silhuett_px(Px(P, x), x, 1.0, (H, W)); n = Ms.sum()
             (inn if n and (Ms & Mtd).sum() / n >= 0.5 else ut_).append(x)
         if set(x['id'] for x in inn) == set(x['id'] for x in st['B']) or not inn:
             break
@@ -385,7 +398,8 @@ def tilpass_kamera(navn, logg=print):
     forsk = {}; blokker = []
     for ids in bl:
         X = [BY[i] for i in ids]
-        Q = np.vstack([kantpunkter(P, synlige_kanter(P, x, 1, None), 1.0, 1.5) for x in X])
+        Pb = Px(P, X[0])
+        Q = np.vstack([kantpunkter(Pb, synlige_kanter(Pb, x, 1, None), 1.0, 1.5) for x in X])
         Ms = sil(P, X); ys, xs = np.nonzero(Ms)
         def sc(d):
             k = float(np.mean(np.minimum(map_coordinates(dtf, [Q[:, 1] + d[1], Q[:, 0] + d[0]], order=1, mode='constant', cval=20), 6)))
@@ -402,7 +416,8 @@ def tilpass_kamera(navn, logg=print):
         dx, dy = (float(r.x[0]), float(r.x[1])) if r.fun < best[0] else (dx, dy)
         k0, k1 = sc((0, 0)), sc((dx, dy))
         for i in ids:
-            forsk[i] = [round(dx, 2), round(dy, 2)]
+            b0 = BIT.get(i, np.zeros(2))
+            forsk[i] = [round(dx + float(b0[0]), 2), round(dy + float(b0[1]), 2)]
         blokker.append(dict(ids=ids, d=[round(dx, 2), round(dy, 2)], kant_for=round(k0, 2), kant_etter=round(k1, 2)))
         logg(f"    blokk {len(ids):2d} hus ({ids[0][-6:]}…): forskyvning {dx:+.1f}, {dy:+.1f} pt, mål {k0:.2f} -> {k1:.2f}")
     U, S, Vt = np.linalg.svd(P[:, :2])

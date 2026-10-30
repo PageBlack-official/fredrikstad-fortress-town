@@ -803,11 +803,45 @@ def legg_inn(tørt=False, bare=None):
     svf = os.path.join(ROT, 'rapport', 'streetview-fasader', 'fasit-sv-vegger.json')
     FASIT_SV = json.load(open(svf, encoding='utf8')) if os.path.exists(svf) else {}
     per_hus = {}
+    # husdelingen (verktoy/husdeling.py, 30.10): en vegg lest på et hus som siden er delt eller slått sammen, fordeles på
+    # husene etter hvor hvert element står langs veggen (punktet på bakken), ikke etter id-en avlesningen ble gjort med
+    hd_f = os.path.join(ROT, 'kilder', 'husdeling.json')
+    slekt = {}
+    if os.path.exists(hd_f):
+        HD = json.load(open(hd_f, encoding='utf8'))
+        for D_ in HD.get('deling', []):
+            slekt.setdefault(D_['id'], set()).update([D_['id']] + list(D_.get('nye_id') or []))
+        for S_ in HD.get('sammen', []):
+            for i_ in S_['ids']:
+                slekt.setdefault(i_, set()).update(S_['ids'])
+        for i_ in list(slekt):
+            for j_ in list(slekt[i_]):
+                slekt[i_] |= slekt.get(j_, set())
     for f in sorted(_g.glob(os.path.join(AVL, '*.json'))):
         A = json.load(open(f, encoding='utf8'))
         if bare and A['tegning'] not in bare: continue
         for vg in A['vegger']:
-            per_hus.setdefault(vg['id'], []).append((A['tegning'], vg))
+            v0 = np.array(vg['venstre'], float); v1 = np.array(vg['b'] if np.allclose(vg['venstre'], vg['a']) else vg['a'], float)
+            els = []
+            for e in vg['elementer']:
+                e = dict(e); e['_g'] = (v0 + e['u'] * (v1 - v0)).tolist(); els.append(e)
+            kand = [i_ for i_ in (slekt.get(vg['id']) or {vg['id']}) if i_ in BY and not BY[i_].get('skjul')]
+            if len(kand) <= 1 and vg['id'] in BY and not BY[vg['id']].get('skjul'):
+                per_hus.setdefault(vg['id'], []).append((A['tegning'], dict(vg, elementer=els))); continue
+            if not kand: continue
+            grp = {}
+            for e in els:
+                q = Point(*e['_g'])
+                best = min(kand, key=lambda i_: Polygon(BY[i_]['p']).exterior.distance(q) + (0 if Polygon(BY[i_]['p']).buffer(0.5).contains(q) else 5))
+                grp.setdefault(best, []).append(e)
+            mid = 0.5 * (v0 + v1)
+            for i_ in kand:
+                Pk = Polygon(BY[i_]['p'])
+                seg = LineString([v0 - (v1 - v0) * 0.05, v1 + (v1 - v0) * 0.05]).intersection(Pk.buffer(0.6))
+                if seg.is_empty or seg.length < 1.0: continue
+                c = np.array(seg.interpolate(0.5, normalized=True).coords[0])
+                vg_i = dict(vg, id=i_, elementer=grp.get(i_, []), a=list(c - (v1 - v0) * 0.01), b=list(c + (v1 - v0) * 0.01), venstre=list(c - (v1 - v0) * 0.01), _mid=c.tolist())
+                per_hus.setdefault(i_, []).append((A['tegning'], vg_i))
     nye, logg = [], []
     for i, lst in per_hus.items():
         x = BY.get(i)
@@ -817,7 +851,7 @@ def legg_inn(tørt=False, bare=None):
         # samme vegg i to tegninger: den med flest elementer
         beste = {}
         for tg, vg in lst:
-            mid = (np.array(vg['a']) + np.array(vg['b'])) / 2
+            mid = np.array(vg['_mid']) if vg.get('_mid') else (np.array(vg['a']) + np.array(vg['b'])) / 2
             kk, _ = VG.naermeste_vegg(V, mid)
             if kk is None: continue
             if kk not in beste or len(vg['elementer']) > len(beste[kk][1]['elementer']):
@@ -827,6 +861,14 @@ def legg_inn(tørt=False, bare=None):
             w = V[kk]
             vg2 = dict(vg, a=list(w['a']), b=list(w['c']),
                        venstre=list(w['a']) if np.linalg.norm(np.array(vg['venstre']) - w['a']) <= np.linalg.norm(np.array(vg['venstre']) - w['c']) else list(w['c']))
+            if vg.get('_mid'):
+                # delt/sammenslått: elementets plass langs modellveggen fra punktet på bakken (venstre ende som i avlesningen)
+                ov0 = np.array(vg['venstre']); d_ = np.array(vg['b']) - np.array(vg['a'])
+                wa, wc = np.array(w['a'], float), np.array(w['c'], float)
+                if (wc - wa) @ d_ < 0: wa, wc = wc, wa
+                Lw = float(np.linalg.norm(wc - wa)) or 1.0
+                vg2['venstre'] = list(wa)
+                vg2['elementer'] = [dict(e, u=float(((np.array(e['_g']) - wa) @ (wc - wa)) / Lw ** 2)) for e in vg['elementer']]
             el, inf = vegg_vind(vg2, x, P)
             tegnet += el; info[kk] = dict(tegning=tg, **inf)
         # vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py, fasithusene), ellers reglene (30.10)

@@ -1,0 +1,13 @@
+{
+ "laget": "2026-10-30",
+ "verktoy": "verktoy/tak_enkel.py",
+ "forklaring": "Takform og mønretning lest av tegningen per hus. form: sal/valm/halvvalm/pult/flatt; mone: lang/kort/kompassgrader; maks_kropper: høyst så mange kropper; kropper: per kropp {form, langs}. Går foran DOM.",
+ "hus": {
+  "bnr-193869580": {
+   "form": "valm",
+   "maks_kropper": 1,
+   "tegning": "Glasshytta",
+   "grunn": "tegningen viser ett enkelt valmtak (kontrolløren: modellen hadde et ekstra tverrtak)"
+  }
+ }
+}

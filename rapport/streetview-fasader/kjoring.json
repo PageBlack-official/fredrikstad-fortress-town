@@ -1266,8 +1266,17 @@
    "piper": 3
   },
   "notat": "siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)",
-  "status": "hoppet over",
-  "grunn": "veggen (vegg 3, 3.9 m) har plass til 2 akser, Street View trenger 7: trolig feil vegg eller feil hus i modellen; siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)"
+  "arker": 0,
+  "piper": 3,
+  "status": "endret",
+  "info": {
+   "droppet_rader": 1,
+   "akser_onsket": 0,
+   "akser": 0,
+   "rader": [],
+   "dorer": 0,
+   "rytme_ok": true
+  }
  },
  {
   "id": "bnr-193972314",
@@ -1342,7 +1351,7 @@
    ],
    "dorer": 1,
    "arker": 0,
-   "piper": 2
+   "piper": 1
   },
   "avvik": true,
   "dorer_avvik": true
@@ -1574,14 +1583,13 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
-    3
+    2
    ],
    "dorer": 1,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {
@@ -1798,10 +1806,10 @@
   "navn": "Artillerigården",
   "sikkerhet": "høy",
   "side": "SV (fasaden som vender mot panoramaet; kamera så mot 53°)",
-  "vegg": 1,
-  "vegg_L": 30.9,
-  "avstand": 17.4,
-  "vinkel": 60.0,
+  "vegg": 0,
+  "vegg_L": 61.4,
+  "avstand": 9.6,
+  "vinkel": 1.0,
   "sv": {
    "rader": [
     [
@@ -1821,15 +1829,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    7,
-    8
+    13,
+    16
    ],
-   "dorer": 1,
+   "dorer": 2,
    "arker": 0,
    "piper": 5
   },
   "avvik": true,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193971989",
@@ -2187,22 +2195,14 @@
   "piper": 0,
   "status": "endret",
   "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 1,
-   "akser": 1,
-   "cc": 2.39,
-   "akser_t": [
-    1.2
-   ],
+   "droppet_rader": 1,
+   "akser_onsket": 0,
+   "akser": 0,
    "rader": [
-    0,
-    1
+    0
    ],
    "dorer": 0,
-   "rytme_ok": true,
-   "topp_akser": [
-    0
-   ]
+   "rytme_ok": true
   }
  },
  {
@@ -2721,7 +2721,7 @@
    "piper": "1 murt pipe"
   },
   "notat": "",
-  "arker": 1,
+  "arker_notat": "taket stiger ikke fra gatesiden (gavl eller flatt tak), arker ikke lagt inn",
   "piper": 1,
   "status": "endret",
   "info": {
@@ -3580,10 +3580,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "SØ (fasade mot Voldgaten)",
-  "vegg": 3,
-  "vegg_L": 17.9,
+  "vegg": 8,
+  "vegg_L": 17.5,
   "avstand": 8.5,
-  "vinkel": 3.0,
+  "vinkel": 2.0,
   "sv": {
    "rader": [
     [
@@ -3618,10 +3618,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "N (gatefasade mot Torvgaten)",
-  "vegg": 1,
-  "vegg_L": 15.2,
-  "avstand": 6.2,
-  "vinkel": 45.0,
+  "vegg": 4,
+  "vegg_L": 5.9,
+  "avstand": 18.6,
+  "vinkel": 4.0,
   "sv": {
    "rader": [
     [
@@ -3637,19 +3637,19 @@
    "takvinduer": "0",
    "piper": "1 murt pipe"
   },
-  "notat": "",
+  "notat": "siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)",
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    4,
-    4
+    3,
+    3
    ],
-   "dorer": 1,
+   "dorer": 0,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
-  "dorer_avvik": false
+  "avvik": true,
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193868584",
@@ -4939,12 +4939,12 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [],
-   "dorer": 0,
+   "dorer": 1,
    "arker": 0,
    "piper": 1
   },
   "avvik": false,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193972772",
@@ -6231,39 +6231,8 @@
   "id": "bnr-193869572",
   "navn": null,
   "sikkerhet": "høy",
-  "side": "SV (langfasade bak stakittgjerdet)",
-  "vegg": 9,
-  "vegg_L": 30.5,
-  "avstand": 16.4,
-  "vinkel": 27.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     8
-    ],
-    [
-     "etg",
-     9
-    ]
-   ],
-   "dorer": "1 inngang med dør ca. 0.80 av synlig fasade",
-   "takvinduer": "6+ små takvinduer",
-   "piper": "1 murt pipe"
-  },
-  "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    6,
-    8
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 0
-  },
-  "avvik": true,
-  "dorer_avvik": false
+  "status": "hoppet over",
+  "grunn": "skjult i kartet"
  },
  {
   "id": "bnr-193868495",
@@ -6627,16 +6596,14 @@
   "piper": 0,
   "status": "endret",
   "info": {
-   "droppet_rader": 0,
+   "droppet_rader": 1,
    "akser_onsket": 1,
    "akser": 1,
    "cc": 4.16,
    "akser_t": [
     2.08
    ],
-   "rader": [
-    0
-   ],
+   "rader": [],
    "dorer": 1,
    "rytme_ok": true,
    "topp_akser": []
@@ -6667,7 +6634,7 @@
   "piper": 0,
   "status": "endret",
   "info": {
-   "droppet_rader": 0,
+   "droppet_rader": 1,
    "akser_onsket": 2,
    "akser": 2,
    "cc": 5.29,
@@ -6675,9 +6642,7 @@
     1.55,
     6.84
    ],
-   "rader": [
-    0
-   ],
+   "rader": [],
    "dorer": 2,
    "rytme_ok": true,
    "topp_akser": []
