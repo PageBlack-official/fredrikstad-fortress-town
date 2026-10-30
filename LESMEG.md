@@ -222,8 +222,14 @@ kaller den samme koden.
 
 Statuen er Frederik II (Wilhelm Rasmussen, bronse, 1917); i Tamburparken står «Sittende pike» (Arne Durban, 1957–58). data/statue.json har
 plass, retning (kompassgrader), sokkelleddene, figurens form og høyde med kilder (poster med tegnes:false har bare kommunens punkt); src/20_statuen-paa-torvet.js tegner bare det dataene sier (sokkel som stabel av kvadratiske ledd, figuren i
-platerustning med kommandostav og hånd i siden). `visningsskala` i dataene er 1 (virkelig størrelse; før 29.10 stod den på 1,3 som i
-tegningen). Kontrollark: `python3 verktoy/statue_ark.py` (fire vinkler mot referanseprofilen, ett ark per skulptur). Regel 21 og 22 passer på dette.
+platerustning med kommandostav og hånd i siden). `visningsskala` i dataene er 2,0 (se Landemerker under; 29.10 stod den på 1, før det 1,3 som i tegningen). Sokkel og figur er
+virkelige mål; skalaen gjelder bare visningen. Kontrollark: `python3 verktoy/statue_ark.py` (fire vinkler mot referanseprofilen, ett ark per skulptur). Regel 21 og 22 passer på dette.
+## Landemerker: dramatisk, ikke korrekt (Vegar 30.10)
+«For at det skal funke i et slikt kart må tårnet fungere mer dramatisk – ikke korrekt. Og det samme må statuen. Dette er landemerker
+man bruker for å orientere seg.» Regelen: dataene har de målte tallene (DOM, foto, ortofoto), og en egen visningsskala forstørrer
+landemerket i kartet. Kontrollene og reglene leser de målte tallene. I dag: kirketårnet (bygg.kirke.visning {skala 1,6, detalj 1,3},
+verktoy/fasade_former.py KIRKE_VISNING, src/06), statuen på Torvet (data/statue.json visningsskala 2,0, src/20) og rådhustårnet
+(deler[].visningsskala 1,35, verktoy/landemerker.py RAADHUS_TAARN, src/07 bygTaarn). Nye landemerker får samme felt.
 ## Bakken i Gamlebyen mot ortofoto, kommunekart og DOM (29.10)
 Overflater, gater, gjerder/murer/hekker og trær i Gamlebyen (innenfor vollene og vollene selv = landskap.fest + brosteinsflaten)
 er lest av kildene med verktoy/bakke.py. Fasit per piksel (0,25 m): ortofoto 2024 der det ser bakken; kommunekartets arealtype

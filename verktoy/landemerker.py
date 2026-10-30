@@ -34,9 +34,10 @@ RAADHUS = 'bnr-193972012'
 # har altså tårnet på samme sted, bare forstørret som landemerke.
 RAADHUS_TAARN = dict(form='taarn', c=[28.5, -87.8], r=1.75, sider=8, rot=0, skaft=18.2, krage=0.7, h=20.0, ut=0.4, tinde_h=0.7,
                      tinder=16, vegg=[223, 184, 146], veggs=[206, 143, 81], topp=[200, 198, 192],
-                     vinduer=dict(z=16.05, b=0.75, h=2.3), stang=3.0, flagg=[186, 12, 47], p=[[26.6, -89.7], [30.4, -89.7], [30.4, -85.9], [26.6, -85.9]],
+                     vinduer=dict(z=16.05, b=0.75, h=2.3), stang=3.0, flagg=[186, 12, 47], visningsskala=1.35, p=[[26.6, -89.7], [30.4, -89.7], [30.4, -85.9], [26.6, -85.9]],
                      kilde='form: Kvartal14.ai; plass og høyde: DOM−DTM (platå 19,8–20,0 m); diameter: ortofoto 2024 (4,3 m) og DOM; '
-                           'farger: tegningens lyse og skyggeside (sandstein), toppen lys grå som i ortofotoet')
+                           'farger: tegningens lyse og skyggeside (sandstein), toppen lys grå som i ortofotoet; '
+                           'visningsskala 1,35: landemerke, dramatisk og ikke korrekt (Vegar 30.10; tegningen har tårnet 45 % høyere)')
 # gatefasaden (polylinje vest -> øst, veggene 0 og 18 i omrisset), elementene i meter fra vestenden
 RAADHUS_FASADE = dict(linje=[[14.2, -93.92], [26.64, -97.6], [35.16, -100.43]], felt=[0.0, 3.1, 18.4, 21.95],
                       vinduer=[  # (u, z midt, b, h, typ, bue): typ 0 bue 1 = rundbuevindu, typ 2 = port med buet topp

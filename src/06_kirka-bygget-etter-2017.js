@@ -136,6 +136,10 @@ function bygKirke(k, grp){
   // hele tårnet 910 pt: 18,5 m og 37,6 m). Før stod tårnet på 34 m mur og 60 m spir, nesten dobbelt så høyt som målt.
   // Tallene står i data (bygg.kirke.hoyder, verktoy/fasade_former.py, med kildene); her bare reserven.
   const HK=Object.assign({SH:18.5, SK1:22.8, OV1:26.9, LA0:28.0, LA1:30.5, KU1:32.0, SP1:36.7, TS:0.7}, k.hoyder||{});
+  // Landemerke (Vegar 30.10): tårnet skal fungere dramatisk, ikke korrekt, fordi det brukes til å orientere seg. bygg.kirke.visning
+  // {skala, detalj} forstørrer de målte høydene fra bakken og detaljene over muren; de målte tallene i hoyder røres ikke.
+  const VIS=Object.assign({skala:1, detalj:1}, k.visning||{});
+  ['SH','SK1','OV1','LA0','LA1','KU1','SP1'].forEach(n=>{ HK[n]*=VIS.skala; }); HK.TS*=VIS.detalj; HK.SPR=(HK.SPR||0.5)*VIS.detalj;
   const {SH, SK1, OV1, LA0, LA1, KU1, SP1, TS}=HK;   // TS: skala for detaljene over muren
   const te=new THREE.ExtrudeGeometry(polyShape(t),{depth:SH,bevelEnabled:false}); te.rotateX(-Math.PI/2); add(te,HVIT,HVIT_S);
   loftK(t, skaler(t,1.06), SH, SH+0.5, HVIT, HVIT_S);                     // gesims
@@ -151,7 +155,8 @@ function bygKirke(k, grp){
   const R0=side*0.25, prof=[[R0,0],[R0*0.98,0.35],[R0*0.8,0.95],[R0*0.52,1.5],[R0*0.3,1.85],[R0*0.18,2.15],[R0*0.2,2.4],[R0*0.12,2.6],[0.001,2.75]];
   const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y*0.55)),8); lat.rotateY(-rot+Math.PI/8);
   const kup=new THREE.Mesh(lat,M(LANT,LANT_S)); kup.position.set(tc[0],LA1+0.35,-tc[1]); kup.castShadow=true; grp.add(kup);
-  const sp=oktagon(tc, 0.3, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir
+  // spiret: foten er ~1/4 av lanternens bredde (foto Commons «Oestre fredrikstad kirke 01», 2008); 0,3 m ble en nål som forsvant på kartzoom (Vegar 30.10: «for kort»)
+  const sp=oktagon(tc, HK.SPR||0.5, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir
   const kule=new THREE.Mesh(new THREE.SphereGeometry(0.28,10,8), M(MORK,MORK_S)); kule.position.set(tc[0],SP1-1.1,-tc[1]); grp.add(kule);
   const fløy=new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.55), M(MORK,MORK_S)); fløy.position.set(tc[0]+0.45,SP1-0.5,-tc[1]); fløy.rotation.y=-rot; grp.add(fløy);
   // vinduer, urskiver og takarker på alle fire sider

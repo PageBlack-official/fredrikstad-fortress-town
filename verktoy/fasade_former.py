@@ -33,6 +33,11 @@ KIRKE = 'bnr-193867529'
 KIRKE_HOYDER = dict(WH=8.8, RISE=5.6, SH=18.5, SK1=22.8, OV1=26.9, LA0=28.0, LA1=30.5, KU1=32.0, SP1=36.7, TS=0.7,
                     kilde='DOM−DTM (Kartverket) for skip, murkrone og lanterne; kirke.ai for spiret')
 
+# Landemerke (Vegar 30.10: «for at det skal funke i et slikt kart må tårnet fungere mer dramatisk – ikke korrekt ... landemerker man
+# bruker for å orientere seg»). Tårnet vises 1,6 ganger de målte høydene (omtrent som trykkfila: mur 34 m, spir 60 m), detaljene over
+# muren 1,3 ganger. KIRKE_HOYDER er fortsatt de målte tallene; kontrollen og silhuetten bruker dem.
+KIRKE_VISNING = dict(skala=1.6, detalj=1.3, grunn='landemerke: dramatisk, ikke korrekt (Vegar 30.10)')
+
 
 def kirke_silhuett(k, H):
     """Takflater (tak2-format, z over h = WH, th = 1) som gir kirkas silhuett: korsarmene med valm, tårnet som loddrette flater
@@ -108,7 +113,7 @@ def main(tørt=False):
               f"{len(f.get('piper') or [])} piper (før {len(x.get('piper') or [])})")
     x = B.get(KIRKE)
     if x and x.get('kirke'):
-        k = dict(x['kirke']); k['hoyder'] = KIRKE_HOYDER
+        k = dict(x['kirke']); k['hoyder'] = KIRKE_HOYDER; k['visning'] = KIRKE_VISNING
         g = f"{GRUNN}: kirka (DOM−DTM + kirke.ai)"
         # fargene i data er de src/06 tegner (hvit puss, skifer: tegningen og ortofotoet viser mørkt skifertak), så kontrolløren
         # sammenligner riktig farge; kirka står utenfor fargeregelens verktøy (egen modell)

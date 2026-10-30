@@ -134,6 +134,10 @@ function ring(c, r, n, rot){ return Array.from({length:n},(_,k)=>{ const a=rot+k
 // ut (utkraging), tinde_h, tinder (antall), vegg, veggs, topp (takfarge), vinduer {z (midt), b, h}, stang (over taket), flagg [r,g,b]}.
 // Første bruk: tårnet på rådhuset (bnr-193972012): form fra Kvartal14.ai, plass og høyde fra Kartverkets DOM.
 function bygTaarn(t, grp){
+  // landemerke (Vegar 30.10): visningsskala forstørrer tårnet fra bakken; de målte tallene i dataene står
+  const f=t.visningsskala||1;
+  if(f!==1) t=Object.assign({}, t, {skaft:t.skaft*f, h:t.h*f, r:t.r*Math.sqrt(f), tinde_h:(t.tinde_h||0.7)*Math.sqrt(f), stang:t.stang&&t.stang*f,
+    vinduer:t.vinduer&&Object.assign({}, t.vinduer, {z:t.vinduer.z*f, b:t.vinduer.b*Math.sqrt(f), h:t.vinduer.h*Math.sqrt(f)})});
   const n=t.sider||8, rot=THREE.MathUtils.degToRad(t.rot||0)+Math.PI/n, r=t.r, ut=t.ut||0.4, th=t.tinde_h||0.7;
   const mv=mat(t.vegg||[236,214,180],false,t.veggs), mt=mat(t.topp||[120,160,138],false);
   const kv=t.skaft, kr=t.krage||0.7;                               // konsollbåndet: to trinn ut til brystningen
