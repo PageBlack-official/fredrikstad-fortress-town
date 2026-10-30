@@ -873,6 +873,42 @@ def analyser(navn, logg=print):
                 if best is None or ov > best[0]: best = (ov, v)
             if best and best[0] > 0.3:
                 vk.setdefault(best[1]['k'], []).append(j)
+        # fasadesegmenter (verktoy/fasadesegmenter.py, 30.10): fargen dømmes per segment. Modellveggene (kantene) som ligger på
+        # segmentveggen, flatene tegningen har på dem, x-utstrekningen i andel av den tegnede fasaden (frihånd), og for hvert
+        # segment flaten som dekker mest av det, mot segmentets farge
+        seg_k = {}; seg_dom = []
+        for sv_ in (x.get('fasadesegmenter') or []):
+            sa_, sb_ = np.array(sv_['a'], float), np.array(sv_['b'], float); Ls = float(np.linalg.norm(sb_ - sa_)); us = (sb_ - sa_) / max(Ls, 1e-9)
+            ns_ = np.array([-us[1], us[0]])
+            ks = [v['k'] for v in vegger_m if abs(float((np.array(v['b']) - np.array(v['a'])) @ us)) > 0.97 * v['L']
+                  and abs(float(((np.array(v['a']) + np.array(v['b'])) / 2 - sa_) @ ns_)) < 1.0]
+            for kk in ks: seg_k[kk] = sv_
+            jl = [j for kk in ks for j in vk.get(kk, [])]
+            if not jl: continue
+            den = Pm[0, 0] * us[0] + Pm[0, 1] * us[1]
+            if abs(den) < 1e-6: continue
+            sx = lambda xx: (xx - (Pm[0, 0] * sa_[0] + Pm[0, 1] * sa_[1] + Pm[0, 3])) / den
+            T_ = [(sorted([sx(F[j]['ytre'].bounds[0]), sx(F[j]['ytre'].bounds[2])]), j) for j in jl]
+            lo_, hi_ = min(t[0][0] for t in T_), max(t[0][1] for t in T_)
+            if hi_ - lo_ < 1: continue
+            for sg in sv_['segmenter']:
+                best = None
+                for (t0, t1), j in T_:
+                    t0_, t1_ = (t0 - lo_) / (hi_ - lo_) * Ls, (t1 - lo_) / (hi_ - lo_) * Ls
+                    ov = min(t1_, sg['til_m']) - max(t0_, sg['fra_m'])
+                    fa = tuple(int(round(c * 255)) for c in F[j]['farge'])
+                    if max(fa) < 90 and max(fa) - min(fa) < 18: continue
+                    sc_ = ov * F[j]['ytre'].area ** 0.5
+                    if ov > 0.3 and (best is None or sc_ > best[0]): best = (sc_, fa)
+                if best:
+                    mv_ = sg['vegg']; mvs_ = [int(mv_[0] * 0.72), int(mv_[1] * 0.8), int(mv_[2] * 0.8)]
+                    d1, d2 = dE(best[1], mv_), dE(best[1], mvs_)
+                    seg_dom.append(dict(fra_m=sg['fra_m'], til_m=sg['til_m'], tegning=best[1], modell=list(mv_ if d1 <= d2 else mvs_), dE=round(min(d1, d2), 1),
+                                        kulor_tegning=kulor(best[1]), kulor_modell=kulor(mv_), kilde=sg.get('kilde'), aar=sg.get('aar')))
+        if seg_dom:
+            r['veggfarge_segmenter'] = seg_dom
+        if seg_k:
+            r['segmentvegger'] = sorted(seg_k)
         # sammenslått? flere tegnede fasader (ikke-overlappende veggflater med ulik farge) på én modellvegg
         sammen = []
         for kk, jl in vk.items():
@@ -888,7 +924,7 @@ def analyser(navn, logg=print):
                 hoyder = []
                 for j in jl:
                     P_ = F[j]['ytre']; x0, y0, x1, y1 = P_.bounds; hoyder.append(y1 - y0)
-                sammen.append(dict(vegg=kk, fasader=len(seg), ulike_farger=ulike))
+                sammen.append(dict(vegg=kk, fasader=len(seg), ulike_farger=ulike, segmenter=len(seg_k[kk]['segmenter']) if kk in seg_k else 0))
         r['tegnede_fasader_per_vegg'] = {str(kk): len(jl) for kk, jl in vk.items()}
         if sammen:
             r['slaatt_sammen'] = sammen
@@ -957,8 +993,9 @@ def analyser(navn, logg=print):
                 ar = F[j]['ytre'].area
                 if best is None or ar > best[1]: best = (fa, ar)
             return best[0] if best else None
-        lys_vegger = [j for kk, jl in vk.items() for j in jl if any(v['k'] == kk and v['lys'] for v in vegger_m)]
-        sk_vegger = [j for kk, jl in vk.items() for j in jl if any(v['k'] == kk and not v['lys'] for v in vegger_m)]
+        vk_hus = {kk: jl for kk, jl in vk.items() if kk not in seg_k} or vk      # segmentveggene dømmes per segment over
+        lys_vegger = [j for kk, jl in vk_hus.items() for j in jl if any(v['k'] == kk and v['lys'] for v in vegger_m)]
+        sk_vegger = [j for kk, jl in vk_hus.items() for j in jl if any(v['k'] == kk and not v['lys'] for v in vegger_m)]
         tv = farge_av(lys_vegger, True); ts = farge_av(sk_vegger, False)
         mv = x.get('vegg'); mvs = x.get('veggs') or ([int(mv[0] * 0.72), int(mv[1] * 0.8), int(mv[2] * 0.8)] if mv else None)
         if tv and mv:
@@ -1039,7 +1076,11 @@ def vurder(r, navn):
         sett('finnes', 'avvik', f)
     elif f == 'ja':
         sett('finnes', 'ok', 'ja')
-    if 'slaatt_sammen' in r:
+    if 'slaatt_sammen' in r and all(x.get('segmenter', 0) >= 2 for x in r['slaatt_sammen']):
+        s_ = r['slaatt_sammen']
+        sett('slaatt_sammen', 'avvik med grunn', f"tegningen har {max(x['fasader'] for x in s_)} fasader på én modellvegg; løst med fasadesegmenter "
+             f"({', '.join(str(x['segmenter']) for x in s_)} segmenter): kroppen er ett hus etter DOM/Matrikkelen (avgjørelse 30.10)")
+    elif 'slaatt_sammen' in r:
         s_ = r['slaatt_sammen']; n = max(x['fasader'] for x in s_)
         sett('slaatt_sammen', 'feil' if any(x['ulike_farger'] >= 2 for x in s_) else 'avvik',
              f"tegningen har {n} fasader på én modellvegg (vegg {', '.join(str(x['vegg']) for x in s_)}; ulike farger: {max(x['ulike_farger'] for x in s_)})")
@@ -1072,6 +1113,16 @@ def vurder(r, navn):
         else:
             a = 'ok'
         sett(navn_, a, f"tegning {tuple(c['tegning'])} ({c['kulor_tegning']}), modell {tuple(c['modell'])} ({c['kulor_modell']}), ΔE {c['dE']}" + (f"; modellens farge: {r.get('vegg_kilde' if k == 'veggfarge' else 'tak_kilde') or r.get('farge_kilde')}" if (r.get('farge_kilde') or r.get('vegg_kilde')) else ''))
+    if r.get('veggfarge_segmenter'):
+        verst = None
+        for c in r['veggfarge_segmenter']:
+            sv = (c.get('aar') or 0) >= 2016
+            a = ('avvik med grunn' if sv else 'feil') if (c['kulor_tegning'] != c['kulor_modell'] and c['dE'] > 18) else ('avvik med grunn' if sv else 'avvik') if c['dE'] > 22 else 'ok'
+            if verst is None or ALV[a] > ALV[verst[0]]: verst = (a, c)
+        a, c = verst
+        hva = f"{len(r['veggfarge_segmenter'])} segmenter; verst {c['fra_m']:.1f}–{c['til_m']:.1f} m: tegning {tuple(c['tegning'])} ({c['kulor_tegning']}), modell {tuple(c['modell'])} ({c['kulor_modell']}), ΔE {c['dE']}; {c.get('kilde')}"
+        if 'veggfarge' not in v or ALV[a] >= ALV[v['veggfarge']['alvor']]:
+            sett('veggfarge', a, hva)
     vv = r.get('vinduer') or []
     if vv:
         verst = None

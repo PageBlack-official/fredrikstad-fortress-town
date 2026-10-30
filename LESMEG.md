@@ -324,3 +324,28 @@ tegningene og 2019-trykket er fasit for den tiden. Regelen (koden: verktoy/tak_f
   den fargen er nyere enn tegningen (2016+). verktoy/tak_fra_ortofoto.py er erstattet av tak_farge.py (linjene er tatt ut).
 - Kontrollark: `python3 verktoy/tak_farge.py ark` -> rapport/farge/tak.png og tak-<kvartal>.png (ortofoto | modellens tak ovenfra; bare
   lokalt, viser ortofotoet). Byttene: rapport/farge/bytter.md (før -> etter, kilde, dato), rapport/farge/tak.json og vegg.json.
+
+## Fasadesegmenter: flere fasader på ett hus (30.10, natt/fasade2)
+Når Kartverkets DOM har sammenhengende møne og Matrikkelen ett bygningsnummer, men tegningen viser flere fasader på samme vegg
+(egen farge, egen vindusrytme), forblir kroppen og taket ett hus (Kartverket/DOM vinner for geometri). Veggen deles i segmenter:
+
+    python3 verktoy/fasadesegmenter.py finn [tegning ...]    forslag fra tegningene (kontrollørens kamera) i kilder/fasadesegmenter.json
+    python3 verktoy/fasadesegmenter.py kobling               segmentvegger uten fasadeavlesning inn i kilder/fasade-kobling.json
+    python3 verktoy/fasade_tegning.py les_for_haand <tegning>  vinduene på dem (så legg_inn i kjeden)
+    python3 verktoy/fasadesegmenter.py                       rettelsen «fasadesegmenter» (i kjeden etter vegg_nye.py)
+
+kilder/fasadesegmenter.json: «hus» per hus og vegg {a, b, segmenter: [{fra_m, til_m, tegning_rgb, flater}]}, «dom» (forslagene
+sett på kontaktarket: godkjent/ikke med grunn) og «for_haand» (satt for hånd, finn rører det ikke). Bare godkjente og håndsatte hus
+legges inn: finn gir mange falske (takflater, smale biter, gavler fra nabohuset). Veggen slås opp på nytt i dagens omriss (samme
+retning, nærmeste), så den tåler ny grunnmur. Grensene står i andel av den tegnede fasaden (frihånd: lengre eller kortere enn modellen).
+Fargen per segment: Street View 2016+ der siktlinja treffer segmentet (eller sidens «fasader» fra venstre) > tegningen > Street View før 2015.
+src/07 tegner hvert segment som en veggflate i egen farge og brannmurlinjen som en 14 cm mørk loddrett kant. kontroll.py dømmer
+fargen per segment (veggfarge_segmenter i avvik.json); «slått sammen» blir «avvik med grunn» når veggen har segmenter.
+
+Vinduer ved ny brannmur (30.10): bredden på et tegnet element står i andel av veggen avlesningen ble gjort på; når huset er delt,
+regnes den om til husets vegg (fasade_tegning.legg_inn), og korte vegger (2–3 m) godtar ett vindu (klassifiser). De delte husene har
+igjen alle elementene fra før delingen (889).
+
+Registrering blokkvis (kontroll.py, 30.10): hver «bit» i kilder/kvartal-kobling.json er sin egen blokk med egen forskyvning (søk ±«sok»
+pt, standard 8). «kamera_fast» {w: [målestokk, dreiing, tx, ty], grunn} setter det felles kameraet for hånd når fri tilpasning har to
+minima (kvartal6); resten tas av bitene, ikke av én global skala.
