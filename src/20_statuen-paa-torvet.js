@@ -18,9 +18,12 @@ const pipekrage=(r,h,k)=>{ const g=new THREE.CylinderGeometry(r,r*0.94,h,k*4,1);
 const FIGUR={
   // Frederik II: platerustning, kommandostav i høyre hånd, venstre hånd i siden. Målene er lest av kommunens frontfoto (kunstregisteret,
   // OBJECTID 4924) som andeler av høyden føtter–isse (kne 0,25, hoseskant 0,44, belte 0,59, skulder 0,81, hake 0,88),
-  // kontrollert mot Wilse 1931 og nb.no 1969.
+  // kontrollert mot Wilse 1931 og nb.no 1969. Posituren rettet 30.10 etter Street View mai 2024 (rett forfra, fra vest-nordvest) og
+  // aug. 2010 (figurens venstre side, fra sør-sørvest), sett i Vegars Chrome; andeler av høyden lest i bildene (isse 1,97 i modellen):
+  // høyre hånd 1,58 foran skulderen, staven fra magen (1,17) opp gjennom hånda og 0,15 forbi, venstre albue ut og litt bak,
+  // venstre fot ut til siden, slira fra venstre hofte ned bak beina med spissen nesten midt bak (0,18 over sokkelen), smal pipekrage.
   rustning_stav({k,del,lem,kule}){
-    [[-0.14,0.03],[0.18,-0.04]].forEach(([fx,fz])=>{
+    [[-0.13,0.03],[0.24,0.0]].forEach(([fx,fz])=>{
       kule(0.075,V(fx,0.045,fz+0.06),0.85,0.6,2.0);                              // jernsko (sabaton): avrundet, ikke kasse (30.10)
       lem(V(fx,0.08,fz),V(fx*0.97,0.48,fz*0.6),0.06,0.075);                     // legg
       kule(0.082,V(fx*0.95,0.51,fz*0.5+0.02));                                   // kne
@@ -32,20 +35,21 @@ const FIGUR={
     del(dreid([[0.215,0],[0.235,0.08],[0.258,0.2],[0.262,0.3],[0.245,0.37],[0.17,0.41]],20),0,1.23,0.01).scale.set(1,1,0.82); // brystharnisk: rundet bryst, smalt mot beltet (30.10)
     kule(0.105,V(-0.28,1.61,0),1,0.8,1); kule(0.105,V(0.28,1.61,0),1,0.8,1);     // skulderplater
     lem(V(-0.19,1.62,0.16),V(0.03,1.40,0.225),0.042,0.042); lem(V(0.03,1.40,0.225),V(0.23,1.18,0.15),0.042,0.042);   // bandolær
-    const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.26; k.add(hode);             // litt mot hans høyre
+    const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.17; k.add(hode);             // litt mot hans høyre (ca. 10°)
     del(new THREE.CylinderGeometry(0.06,0.07,0.12,8),0,0.0,0,hode);              // hals
-    del(pipekrage(0.155,0.075,18),0,0.03,0.01,hode);                           // pipekrage: rillet kant (30.10)
+    del(pipekrage(0.12,0.07,16),0,0.03,0.01,hode);                             // pipekrage: smal, rillet (bredde som hodet, Street View 2024)
     kule(0.115,V(0,0.18,0.0),0.92,1.12,1,hode);                                  // hode
-    kule(0.085,V(0,0.10,0.045),1.0,1.05,0.75,hode); kule(0.05,V(0,0.055,0.085),0.95,1.25,0.8,hode);   // helskjegg: fyldig rundt kinn og hake, avrundet spiss (30.10)
-    const hS=V(-0.30,1.60,0), hA=V(-0.40,1.28,0.08), hH=V(-0.55,1.52,0.2);      // høyre arm, hånda nesten i skulderhøyde
+    kule(0.08,V(0,0.11,0.05),1.0,0.95,0.7,hode); kule(0.042,V(0,0.05,0.085),0.9,1.45,0.8,hode);   // kortklipt helskjegg med spiss hake (Street View 2024)
+    kule(0.03,V(0,0.135,0.105),2.2,0.55,0.7,hode);                                                    // barten
+    const hS=V(-0.30,1.60,0), hA=V(-0.40,1.30,0.10), hH=V(-0.50,1.58,0.25);     // høyre arm: albuen ned langs siden, hånda i skulderhøyde foran
     lem(hS,hA,0.072,0.062); lem(hA,hH,0.06,0.05); kule(0.055,hH);
-    lem(V(-0.64,1.64,0.2),V(-0.16,1.19,0.27),0.026,0.024);                      // staven: litt over hånda, ned mot magen
-    const vS=V(0.30,1.60,0), vA=V(0.56,1.31,-0.06), vH=V(0.32,1.19,0.04);       // venstre arm i siden
+    lem(V(-0.58,1.70,0.36),V(-0.17,1.17,0.26),0.026,0.024);                     // staven: fra magen opp gjennom hånda, tuppen fram og ut
+    const vS=V(0.30,1.60,0), vA=V(0.52,1.30,-0.12), vH=V(0.33,1.16,0.03);       // venstre hånd i siden, albuen ut og litt bak
     lem(vS,vA,0.072,0.062); lem(vA,vH,0.06,0.05); kule(0.055,vH);
-    lem(V(0.27,1.10,0.02),V(0.29,1.28,0.1),0.016,0.016);                        // hjalt
-    lem(V(0.22,1.11,0.05),V(0.34,1.11,-0.03),0.012,0.012);                      // parerstang
-    lem(V(0.28,1.10,-0.01),V(0.30,0.06,-0.42),0.024,0.018);                     // slire bak venstre bein
-    del(new THREE.BoxGeometry(0.1,0.18,0.06),0.31,1.0,0.09);                    // pung
+    lem(V(0.26,1.10,0.0),V(0.28,1.22,0.16),0.016,0.016);                        // hjalt: fram og opp under venstre hånd
+    lem(V(0.21,1.12,0.04),V(0.33,1.10,-0.03),0.012,0.012);                      // parerstang
+    lem(V(0.27,1.08,-0.02),V(0.04,0.17,-0.46),0.024,0.018);                     // slire: fra venstre hofte ned bak beina, spissen nesten midt bak
+    del(new THREE.BoxGeometry(0.1,0.28,0.06),0.33,0.95,0.05);                   // pung ved venstre hofte (0,8–1,1 i Street View 2024)
     return 1.97;
   },
   // «Sittende pike»: naken jente som sitter på hælene, armene strake ned med hendene på knærne, overkroppen litt fram, hodet løftet

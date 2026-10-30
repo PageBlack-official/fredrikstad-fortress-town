@@ -169,6 +169,14 @@ function bygArkade(A, pts, wall, dim, veggs){
   const bg=new THREE.PlaneGeometry(L,top); bg.translate(L/2,top/2,0.012); bg.applyMatrix4(M);
   // bakveggen i buegangen ligger i dyp skygge: mørk og nøytral både i sol og skygge (ikke brunlig av sollyset)
   const mk=A.mork||[34,33,33], bak=new THREE.Mesh(bg,mat(mk,false,mk.map(c=>Math.round(c*0.8)))); bak.receiveShadow=true; grp.add(bak);
+  // felt over arkaden (A.felt {z0, z1, bredde, dybde}, natt/atrium 30.10): etasjen over har høye innfelte felt med samme deling som buene,
+  // lisener mellom; en plate i veggfargen fra rammens overkant til z1 med hull, og innfeltene en tone mørkere (Kvartal10: 13394024)
+  if(A.felt){ const F=A.felt, z1=F.z1, sf=new THREE.Shape(); sf.moveTo(0,top); sf.lineTo(L,top); sf.lineTo(L,z1+0.2); sf.lineTo(0,z1+0.2); sf.closePath();
+    for(let k=0;k<n;k++){ const u=(k+0.5)*L/n, hp=new THREE.Path(); hp.moveTo(u-F.bredde/2,F.z0); hp.lineTo(u+F.bredde/2,F.z0); hp.lineTo(u+F.bredde/2,z1); hp.lineTo(u-F.bredde/2,z1); hp.lineTo(u-F.bredde/2,F.z0); sf.holes.push(hp); }
+    const gf=new THREE.ExtrudeGeometry(sf,{depth:F.dybde||0.15,bevelEnabled:false}); gf.applyMatrix4(M);
+    const fm=new THREE.Mesh(gf,mat(wall,dim,veggs,{ds:true})); fm.castShadow=fm.receiveShadow=true; grp.add(fm);
+    const inn=wall.map(c=>Math.round(c*0.84)), bf=new THREE.PlaneGeometry(L,z1-F.z0); bf.translate(L/2,(F.z0+z1)/2,0.012); bf.applyMatrix4(M);
+    const bm=new THREE.Mesh(bf,mat(inn,dim,inn.map(c=>Math.round(c*0.8)))); bm.receiveShadow=true; grp.add(bm); }
   return grp;
 }
 // ATRIUM (bygg.atrium, 30.10): innglasset gårdsrom i en ring av tak (ringtaket står i tak2/gavl2, regnet av verktoy/landemerker.py).

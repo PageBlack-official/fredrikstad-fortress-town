@@ -7,7 +7,8 @@ ingen annen rettelse overstyrer den. Hver post under LANDEMERKER sier hva som se
 
 Elementene er generelle (et nytt tårn eller en ny arkade = en ny post her, ingen ny kode):
   taarn    bygg.deler[] {form: 'taarn', c, r, sider, rot, skaft, krage, h, ut, tinde_h, tinder, vegg, veggs, topp, vinduer, stang, flagg}
-  arkader  bygg.arkader[] {a, b, z0, h, topp, n, bredde, dybde, mork}   rundbuer med dybde langs veggen a→b
+  arkader  bygg.arkader[] {a, b, z0, h, topp, n, bredde, dybde, mork, felt?}   rundbuer med dybde langs veggen a→b; felt {z0, z1,
+           bredde, dybde}: høye innfelte felt over hver bue i etasjen over (lisener mellom)
   fasade   vinduer erstattet på én fasade (polylinje i modellmeter): elementer i u (meter fra første punkt)
   atrium   bygg.atrium {gaard, kant, z, topp, glass, ramme} + ringtak (tak2/gavl2) fra kilder/atrier.json: gårdsrom med
            glasspyramide (kvadrat) eller glassvalm (rektangel) og ring av tak rundt (bygAtrium i src/07)
@@ -45,7 +46,10 @@ RAADHUS_FASADE = dict(linje=[[14.2, -93.92], [26.64, -97.6], [35.16, -100.43]], 
                       arkade=dict(u0=3.1, u1=18.4, z0=0.5, h=3.6, topp=4.0, n=5, bredde=1.9, dybde=0.45, mork=[44, 48, 56]))
 
 ARKADE_13394024 = dict(a=[-44.58, 47.49], b=[-31.55, 43.06], z0=0.0, h=2.9, topp=3.5, n=5, bredde=2.1, dybde=0.5, mork=[34, 33, 33],
-                       kilde='Kvartal10.ai: gårdsfasaden mot sør har en åpen arkade med fem rundbuer nede og gesimsbånd over')
+                       felt=dict(z0=3.8, z1=6.0, bredde=2.0, dybde=0.15),
+                       kilde='Kvartal10.ai: gårdsfasaden mot sør har en åpen arkade med fem rundbuer nede og gesimsbånd over; etasjen over har '
+                             'høye, smale felt mellom lisener med samme deling som buene (ett felt over hver bue, felt 0,77 av delingen), fra like over '
+                             'gesimsen til like under takfoten (natt/atrium 30.10)')
 
 VOLDPORTEN = 'bnr-193869548'
 # Voldporten (1695). DTM under huset er vollkrona (9,4–10,4 moh), så DOM−DTM (4–8 m) måler fra vollen, ikke fra veien. Veien i
@@ -327,7 +331,8 @@ def uten_vinduer_bak(x, A):
     ut = []
     for v in x.get('vind') or []:
         s = (v[0] - a[0]) * t[0] + (v[1] - a[1]) * t[1]; d = abs((v[0] - a[0]) * n[0] + (v[1] - a[1]) * n[1])
-        if -0.3 <= s <= Lab + 0.3 and d < 0.8 and v[5] * n[0] + v[6] * n[1] > 0.9 and v[2] - v[8] / 2 < A['topp']:
+        topp = (A.get('felt') or {}).get('z1', A['topp'])                 # feltene over arkaden er fasaden der også
+        if -0.3 <= s <= Lab + 0.3 and d < 0.8 and v[5] * n[0] + v[6] * n[1] > 0.9 and v[2] - v[8] / 2 < topp:
             continue
         ut.append(list(v))
     return ut
