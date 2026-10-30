@@ -1,0 +1,1503 @@
+[
+ {
+  "id": "bnr-193867677",
+  "navn": "Ingeniørgården",
+  "side": "V",
+  "sv": [
+   6,
+   6
+  ],
+  "modell": [
+   6,
+   6
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så V-siden (19 m), som tegningen ikke viser: veggen har nå Street View [6, 6] i stedet for reglene",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868045",
+  "navn": "Den gamle spisesal",
+  "side": "NV",
+  "sv": [
+   1
+  ],
+  "modell": [
+   1
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (7 m), som tegningen ikke viser: veggen har nå Street View [1] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868460",
+  "navn": "Kjørbogårdens sidebygning",
+  "side": "NV",
+  "sv": [
+   2
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (6 m), som tegningen ikke viser: veggen har nå Street View [2] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193971954",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   3
+  ],
+  "modell": [
+   3,
+   1
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så S-siden (8 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193918239",
+  "navn": "Bullgården",
+  "side": "NV",
+  "sv": [
+   7,
+   5
+  ],
+  "modell": [
+   7,
+   5
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (20 m), som tegningen ikke viser: veggen har nå Street View [7, 5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867359",
+  "navn": null,
+  "side": "NØ",
+  "sv": [
+   1
+  ],
+  "modell": [
+   5
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så NØ-siden (12 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867707",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   6,
+   6
+  ],
+  "modell": [
+   6,
+   6
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (24 m), som tegningen ikke viser: veggen har nå Street View [6, 6] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193972403",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   2,
+   4
+  ],
+  "modell": [
+   2,
+   3,
+   2
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så N-siden (17 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867839",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   6,
+   8
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [4, 4], Street View [6, 8] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193971288",
+  "navn": null,
+  "side": "NØ",
+  "sv": [
+   2,
+   2
+  ],
+  "modell": [
+   2,
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NØ-siden (6 m), som tegningen ikke viser: veggen har nå Street View [2, 2] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868053",
+  "navn": "Undervisningsbrakke",
+  "side": "NV",
+  "sv": [
+   0
+  ],
+  "modell": [
+   6
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så NV-siden (19 m), som tegningen ikke viser; tegningen viser [6]",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-194006187",
+  "navn": null,
+  "side": "V/S",
+  "sv": [
+   2
+  ],
+  "modell": [],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så V/S-siden (10 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868363",
+  "navn": "Binggården",
+  "side": "SØ/S",
+  "sv": [
+   1,
+   1
+  ],
+  "modell": [
+   1,
+   2
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så SØ/S-siden (12 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868371",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   7,
+   3
+  ],
+  "modell": [
+   7,
+   3
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (27 m), som tegningen ikke viser: veggen har nå Street View [7, 3] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868126",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   2,
+   3
+  ],
+  "modell": [
+   2,
+   3
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (11 m), som tegningen ikke viser: veggen har nå Street View [2, 3] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868037",
+  "navn": "Marketenteriet",
+  "side": "SV",
+  "sv": [
+   1
+  ],
+  "modell": [
+   1
+  ],
+  "vurdering": "feil vindu (rettet)",
+  "grunn": "vektoravlesningen gir [1], som Street View; den gamle avlesningen hadde [1]",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868339",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   1,
+   1
+  ],
+  "modell": [
+   1,
+   1
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (7 m), som tegningen ikke viser: veggen har nå Street View [1, 1] i stedet for reglene",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868150",
+  "navn": "Salamandergården",
+  "side": "SV",
+  "sv": [
+   4,
+   5
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4, 4], Street View [4, 5]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868061",
+  "navn": "Artillerigården",
+  "side": "SV",
+  "sv": [
+   11,
+   12
+  ],
+  "modell": [
+   2,
+   5
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [3, 5], Street View [11, 12] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868428",
+  "navn": "Kommisjonsgården",
+  "side": "NV",
+  "sv": [
+   5
+  ],
+  "modell": [
+   5
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (18 m), som tegningen ikke viser: veggen har nå Street View [5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868401",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   3,
+   4
+  ],
+  "modell": [
+   4,
+   5
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [5, 5], Street View [3, 4]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868398",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   5
+  ],
+  "modell": [
+   5
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (14 m), som tegningen ikke viser: veggen har nå Street View [5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193972292",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   4,
+   5
+  ],
+  "modell": [
+   3,
+   2
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [4, 2], Street View [4, 5] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868525",
+  "navn": null,
+  "side": "SØ/N",
+  "sv": [
+   1,
+   1
+  ],
+  "modell": [],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så SØ/N-siden (3 m), som tegningen ikke viser; tegningen viser []",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868096",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   1,
+   2
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [1, 2], Street View [3, 3] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193971946",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   3
+  ],
+  "modell": [
+   3
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (15 m), som tegningen ikke viser: veggen har nå Street View [3] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868029",
+  "navn": null,
+  "side": "NØ",
+  "sv": [
+   1,
+   1
+  ],
+  "modell": [
+   1
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NØ-siden (4 m), som tegningen ikke viser: veggen har nå Street View [1, 1] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-6242812",
+  "navn": null,
+  "side": "NØ",
+  "sv": [
+   5,
+   5
+  ],
+  "modell": [
+   5,
+   5,
+   4
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NØ-siden (18 m), som tegningen ikke viser: veggen har nå Street View [5, 5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-6242812",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   4,
+   4
+  ],
+  "modell": [
+   2,
+   2
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [2, 2], Street View [4, 4] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868231",
+  "navn": "Balaklava",
+  "side": "NØ",
+  "sv": [
+   4
+  ],
+  "modell": [
+   4
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så NØ-siden (12 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "lav"
+ },
+ {
+  "id": "bnr-193868231",
+  "navn": "Balaklava",
+  "side": "SV",
+  "sv": [
+   1
+  ],
+  "modell": [
+   3
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så SV-siden (11 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "lav"
+ },
+ {
+  "id": "bnr-193868320",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   11,
+   11
+  ],
+  "modell": [
+   11,
+   11
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så SØ-siden (25 m), som tegningen ikke viser: veggen har nå Street View [11, 11] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868711",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   3,
+   3
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (19 m), som tegningen ikke viser: veggen har nå Street View [3, 3] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193972411",
+  "navn": "Sindinggården",
+  "side": "NV",
+  "sv": [
+   0
+  ],
+  "modell": [],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (11 m), som tegningen ikke viser: veggen har nå Street View [0] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867502",
+  "navn": "Kiørboegården",
+  "side": "V/SV",
+  "sv": [
+   1,
+   2
+  ],
+  "modell": [
+   1,
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så V/SV-siden (16 m), som tegningen ikke viser: veggen har nå Street View [1, 2] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867499",
+  "navn": "Kommandantgården",
+  "side": "NV",
+  "sv": [
+   9
+  ],
+  "modell": [
+   9
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (34 m), som tegningen ikke viser: veggen har nå Street View [9] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870295",
+  "navn": "Bakeriet",
+  "side": "V",
+  "sv": [
+   10
+  ],
+  "modell": [
+   13
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så V-siden (37 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870325",
+  "navn": "Hovedvakten – det gamle slaveri",
+  "side": "N",
+  "sv": [
+   1
+  ],
+  "modell": [
+   4
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så N-siden (13 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870317",
+  "navn": "Det grundmurede provianthus",
+  "side": "SØ/Ø",
+  "sv": [
+   0
+  ],
+  "modell": [
+   6
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så SØ/Ø-siden (71 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193870309",
+  "navn": "Offisersvakten",
+  "side": "Ø",
+  "sv": [
+   2
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så Ø-siden (7 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870279",
+  "navn": "Tøihuset",
+  "side": "S",
+  "sv": [
+   5
+  ],
+  "modell": [
+   19
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [19], Street View [5]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870201",
+  "navn": null,
+  "side": "to hjørnefasader: kortside mot SV/plenen",
+  "sv": [
+   4,
+   4
+  ],
+  "modell": [
+   3,
+   3
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [3, 3], Street View [4, 4]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870228",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   6,
+   6
+  ],
+  "modell": [
+   5,
+   5,
+   1
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [5, 5, 1], Street View [6, 6] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870236",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   2,
+   2
+  ],
+  "modell": [
+   5,
+   5
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [5, 5], Street View [2, 2]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193972063",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   2,
+   2
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [2, 2], Street View [3, 3]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870260",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   6,
+   6
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [4, 4], Street View [6, 6] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193870252",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   2
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (9 m), som tegningen ikke viser: veggen har nå Street View [2] i stedet for reglene",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "pb-7",
+  "navn": null,
+  "side": "NØ",
+  "sv": [
+   0
+  ],
+  "modell": [],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NØ-siden (9 m), som tegningen ikke viser: veggen har nå Street View [0] i stedet for reglene",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193867723",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   6,
+   7
+  ],
+  "modell": [
+   4,
+   6
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [4, 6], Street View [6, 7] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867731",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4, 4], Street View [3, 3]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867758",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   4,
+   4
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (15 m), som tegningen ikke viser: veggen har nå Street View [4, 4] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867898",
+  "navn": "Gamlebyen modelljernbanesenter",
+  "side": "SØ",
+  "sv": [
+   6,
+   5
+  ],
+  "modell": [
+   5,
+   5
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [5, 5], Street View [6, 5]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867901",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   5,
+   3
+  ],
+  "modell": [
+   3,
+   3
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [3, 3], Street View [5, 3]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867952",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   10,
+   9
+  ],
+  "modell": [
+   7,
+   7
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [8, 7], Street View [10, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-6247822",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   5,
+   4
+  ],
+  "modell": [
+   4,
+   3
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4, 3], Street View [5, 4]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-6251331",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   1,
+   1
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [1, 1], Street View [3, 3] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193971334",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   3
+  ],
+  "modell": [
+   3
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så NV-siden (12 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-6251218",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   4,
+   6
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4, 4], Street View [4, 6]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867987",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   2,
+   2
+  ],
+  "modell": [
+   2,
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (10 m), som tegningen ikke viser: veggen har nå Street View [2, 2] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867987",
+  "navn": null,
+  "side": "S/SØ",
+  "sv": [
+   2
+  ],
+  "modell": [
+   4
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4], Street View [2]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868266",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   4,
+   5
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4, 5], Street View [3, 3]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868258",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   5
+  ],
+  "modell": [
+   6,
+   2
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [6, 2], Street View [5]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868258",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   2
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (6 m), som tegningen ikke viser: veggen har nå Street View [2] i stedet for reglene",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193867944",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   5
+  ],
+  "modell": [
+   5
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (29 m), som tegningen ikke viser: veggen har nå Street View [5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867936",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   6,
+   3
+  ],
+  "modell": [
+   6,
+   3
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (29 m), som tegningen ikke viser: veggen har nå Street View [6, 3] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867936",
+  "navn": null,
+  "side": "SV",
+  "sv": [
+   1,
+   1
+  ],
+  "modell": [
+   2,
+   2,
+   1
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [2, 2, 1], Street View [1, 1]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868274",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   4
+  ],
+  "modell": [
+   7
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View [4] er radene på en annen tegnet vegg; på veggen sammenligningen valgte, viser tegningen [7]",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868274",
+  "navn": null,
+  "side": "SV-gavl + S-langside mot Torvgaten",
+  "sv": [
+   2
+  ],
+  "modell": [
+   4
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4], Street View [2]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867782",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   6,
+   6
+  ],
+  "modell": [
+   6,
+   6
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (14 m), som tegningen ikke viser: veggen har nå Street View [6, 6] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867537",
+  "navn": "Infanterikasernen",
+  "side": "SØ/Ø",
+  "sv": [
+   2,
+   2
+  ],
+  "modell": [
+   4,
+   4,
+   4
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [4, 4, 4], Street View [2, 2]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867537",
+  "navn": "Infanterikasernen",
+  "side": "N",
+  "sv": [
+   6,
+   5
+  ],
+  "modell": [
+   6,
+   5
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (44 m), som tegningen ikke viser: veggen har nå Street View [6, 5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867715",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   2,
+   2
+  ],
+  "modell": [],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [], Street View [2, 2] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-16308102",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   5,
+   6
+  ],
+  "modell": [],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så N-siden (15 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193972462",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   5
+  ],
+  "modell": [
+   9
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [9], Street View [5]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868568",
+  "navn": "Brannstasjon - uthus til Infanterikasernen",
+  "side": "S",
+  "sv": [
+   0
+  ],
+  "modell": [],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [], Street View [0] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193987370",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   7
+  ],
+  "modell": [
+   13
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [13], Street View [7]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "pb-33",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   0
+  ],
+  "modell": [],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [], Street View [0] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867626",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   2,
+   2
+  ],
+  "modell": [
+   2,
+   1,
+   1
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [2, 1, 1], Street View [2, 2] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867588",
+  "navn": "Dunkejongården",
+  "side": "N",
+  "sv": [
+   5,
+   4
+  ],
+  "modell": [
+   5,
+   4
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (22 m), som tegningen ikke viser: veggen har nå Street View [5, 4] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-13414904",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   3,
+   4
+  ],
+  "modell": [
+   4
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [4], Street View [3, 4] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867863",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   4,
+   4
+  ],
+  "modell": [
+   9,
+   10
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [9, 10], Street View [4, 4]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867774",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   4,
+   5
+  ],
+  "modell": [
+   4,
+   5
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (10 m), som tegningen ikke viser: veggen har nå Street View [4, 5] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193972101",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   3,
+   3
+  ],
+  "modell": [
+   3,
+   3
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (17 m), som tegningen ikke viser: veggen har nå Street View [3, 3] i stedet for reglene",
+  "sikkerhet": "lav"
+ },
+ {
+  "id": "bnr-193972489",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   1
+  ],
+  "modell": [],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [], Street View [1] (middels sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "pb-45",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   0
+  ],
+  "modell": [],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så S-siden (2 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867855",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   2
+  ],
+  "modell": [
+   3
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [3], Street View [2]: samme etasjer, høyst to vinduer i avvik (avlesning); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867766",
+  "navn": null,
+  "side": "N",
+  "sv": [
+   4,
+   4
+  ],
+  "modell": [
+   4,
+   4
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så N-siden (15 m), som tegningen ikke viser: veggen har nå Street View [4, 4] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868622",
+  "navn": null,
+  "side": "NØ",
+  "sv": [
+   5,
+   4
+  ],
+  "modell": [
+   5,
+   4
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NØ-siden (12 m), som tegningen ikke viser: veggen har nå Street View [5, 4] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867979",
+  "navn": null,
+  "side": "SV",
+  "sv": [
+   5,
+   6
+  ],
+  "modell": [
+   7,
+   4,
+   7
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [7, 4, 7], Street View [5, 6]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-16290424",
+  "navn": null,
+  "side": "SV",
+  "sv": [
+   2,
+   3
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så SV-siden (9 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193972195",
+  "navn": null,
+  "side": "S",
+  "sv": [
+   2
+  ],
+  "modell": [
+   1,
+   1,
+   1
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så S-siden (4 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "lav"
+ },
+ {
+  "id": "bnr-193868533",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   1
+  ],
+  "modell": [],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [], Street View [1] (middels sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "middels"
+ },
+ {
+  "id": "bnr-193868444",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   8
+  ],
+  "modell": [
+   5
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så SØ-siden (25 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868223",
+  "navn": "Muldvadgården",
+  "side": "NV",
+  "sv": [
+   4,
+   2
+  ],
+  "modell": [
+   4,
+   2
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (14 m), som tegningen ikke viser: veggen har nå Street View [4, 2] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868282",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   4
+  ],
+  "modell": [
+   4
+  ],
+  "vurdering": "feil vegg (Street View lagt på)",
+  "grunn": "Street View så NV-siden (13 m), som tegningen ikke viser: veggen har nå Street View [4] i stedet for reglene",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868290",
+  "navn": null,
+  "side": "NV",
+  "sv": [
+   4,
+   4
+  ],
+  "modell": [
+   5,
+   6,
+   6
+  ],
+  "vurdering": "feil vegg",
+  "grunn": "Street View så NV-siden (17 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193868347",
+  "navn": null,
+  "side": "SØ",
+  "sv": [
+   5,
+   5
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [2], Street View [5, 5] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193867510",
+  "navn": "Ekserserhuset",
+  "side": "SØ",
+  "sv": [
+   3
+  ],
+  "modell": [
+   6
+  ],
+  "vurdering": "feil vindu",
+  "grunn": "tegningen [6], Street View [3]: bildet viser færre vinduer enn tegningen (trær, vinkel eller bare en del av veggen); tegningen står",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193869572",
+  "navn": null,
+  "side": "SV",
+  "sv": [
+   8,
+   9
+  ],
+  "modell": [
+   5,
+   3
+  ],
+  "vurdering": "endret siden 2015",
+  "grunn": "tegningen [6, 3], Street View [8, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
+  "sikkerhet": "høy"
+ },
+ {
+  "id": "bnr-193869580",
+  "navn": "Voldportravelinet",
+  "side": "NV og SV",
+  "sv": [
+   2
+  ],
+  "modell": [
+   2
+  ],
+  "vurdering": "feil vindu (rettet)",
+  "grunn": "vektoravlesningen gir [2], som Street View; den gamle avlesningen hadde [2]",
+  "sikkerhet": "høy"
+ }
+]

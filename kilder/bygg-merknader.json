@@ -453,6 +453,27 @@
     "h": 6.0,
     "th": 0.32
    }
+  },
+  {
+   "id": "bnr-193867308",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10; tegningen Kvartal3 flate 168",
+   "grunn": "døra på langveggen mot SV: flate 168 i tegningen, 16 % fra venstre ende, tegnet utenpå veggflaten (ikke et hull), så vektorlesingen fanget den ikke; veggen har ingen vinduer i tegningen",
+   "vegg": [
+    {
+     "side": "SV",
+     "rader": [
+      0
+     ],
+     "dorer": [
+      {
+       "u": 0.16,
+       "typ": 1,
+       "b": 1.0,
+       "h": 2.1
+      }
+     ]
+    }
+   ]
   }
  ]
 }

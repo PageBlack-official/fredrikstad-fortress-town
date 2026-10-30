@@ -464,7 +464,7 @@ def elementer(F_vegg, side, R=8.0, flatefarger=(), andre=()):
     # dører, porter og butikkvinduer tegnet som egne flater oppå veggen (samme farge som veggen, bare streken skiller dem)
     # telles som hull: flaten ligger helt inne i veggen og er liten (30.10)
     egne = [g['ytre'] for g in andre if all(g is not f for f in F_vegg) and g['ytre'].area < 0.25 * U.area
-            and g['ytre'].intersection(U.buffer(2.5).buffer(-2.1)).area > 0.85 * g['ytre'].area]   # dør i et hakk i bunnkanten
+            and g['ytre'].intersection(U.buffer(3.5).buffer(-3.1)).area > 0.85 * g['ytre'].area]   # dør i et hakk i bunnkanten
     hull_alle = [h for f in F_vegg for h in f['hull']]
     egne = [e for e in egne if not any(h.buffer(0.3).contains(e.representative_point()) for h in hull_alle)]
     for hp in [h for f in F_vegg for h in f['hull']] + egne:

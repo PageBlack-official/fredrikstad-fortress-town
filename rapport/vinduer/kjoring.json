@@ -14,20 +14,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193869548",
-"navn": "Voldporten med vaktstuen",
-"type": "office",
-"h": 4.5,
-"foer": 18,
-"etter": 18,
-"vinduer": 17,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193820417",
 "navn": null,
 "type": "garage",
@@ -154,20 +140,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193972152",
-"navn": null,
-"type": "garage",
-"h": 6.6,
-"foer": 12,
-"etter": 10,
-"vinduer": 10,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-16312916",
 "navn": null,
 "type": "apartments",
@@ -222,20 +194,6 @@
 "etasjer": 1,
 "dor": true,
 "uthus": false
-},
-{
-"id": "bnr-193868312",
-"navn": "Rosinggården",
-"type": "garage",
-"h": 5.4,
-"foer": 4,
-"etter": 4,
-"vinduer": 4,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 1,
-"dor": false,
-"uthus": true
 },
 {
 "id": "bnr-193987397",
@@ -306,20 +264,6 @@
 "etasjer": 1,
 "dor": true,
 "uthus": false
-},
-{
-"id": "bnr-300279164",
-"navn": null,
-"type": "garage",
-"h": 4.9,
-"foer": 1,
-"etter": 2,
-"vinduer": 2,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 1,
-"dor": false,
-"uthus": true
 },
 {
 "id": "bnr-193971970",
@@ -504,20 +448,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193972071",
-"navn": null,
-"type": "office",
-"h": 3.5,
-"foer": 2,
-"etter": 2,
-"vinduer": 2,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 1,
-"dor": false,
-"uthus": false
-},
-{
 "id": "bnr-193972144",
 "navn": null,
 "type": "garage",
@@ -574,20 +504,6 @@
 "uthus": true
 },
 {
-"id": "bnr-193971911",
-"navn": null,
-"type": "garage",
-"h": 3.3,
-"foer": 4,
-"etter": 2,
-"vinduer": 2,
-"dorer": 0,
-"gate": "gate",
-"etasjer": 1,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-193971873",
 "navn": null,
 "type": "shed",
@@ -633,13 +549,13 @@
 "id": "bnr-193971989",
 "navn": null,
 "type": "garage",
-"h": 8.7,
-"foer": 3,
-"etter": 9,
-"vinduer": 9,
+"h": 6.0,
+"foer": 6,
+"etter": 6,
+"vinduer": 6,
 "dorer": 0,
 "gate": "gate",
-"etasjer": 3,
+"etasjer": 2,
 "dor": false,
 "uthus": true
 },
@@ -756,20 +672,6 @@
 "uthus": true
 },
 {
-"id": "bnr-193972535",
-"navn": null,
-"type": "garage",
-"h": 7.8,
-"foer": 6,
-"etter": 4,
-"vinduer": 4,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-193972616",
 "navn": null,
 "type": "garage",
@@ -821,20 +723,6 @@
 "vinduer": 6,
 "dorer": 0,
 "gate": "mest åpne vegg",
-"etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
-"id": "bnr-193972497",
-"navn": null,
-"type": "shed",
-"h": 8.4,
-"foer": 4,
-"etter": 2,
-"vinduer": 2,
-"dorer": 0,
-"gate": "gate",
 "etasjer": 2,
 "dor": false,
 "uthus": true
@@ -924,20 +812,6 @@
 "uthus": true
 },
 {
-"id": "bnr-193868517",
-"navn": null,
-"type": "house",
-"h": 5.4,
-"foer": 10,
-"etter": 11,
-"vinduer": 10,
-"dorer": 1,
-"gate": "mest åpne vegg",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193868614",
 "navn": null,
 "type": "garage",
@@ -994,20 +868,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193867553",
-"navn": null,
-"type": "garage",
-"h": 5.7,
-"foer": 6,
-"etter": 10,
-"vinduer": 10,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 2,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-193867332",
 "navn": null,
 "type": "garage",
@@ -1015,20 +875,6 @@
 "foer": 13,
 "etter": 12,
 "vinduer": 12,
-"dorer": 0,
-"gate": "gate",
-"etasjer": 1,
-"dor": false,
-"uthus": true
-},
-{
-"id": "bnr-16313173",
-"navn": null,
-"type": "garage",
-"h": 4.4,
-"foer": 7,
-"etter": 5,
-"vinduer": 5,
 "dorer": 0,
 "gate": "gate",
 "etasjer": 1,

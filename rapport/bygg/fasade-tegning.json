@@ -19,7 +19,8 @@
    }
   },
   "tegnet": 1,
-  "regler": 9
+  "regler": 9,
+  "streetview": 0
  },
  {
   "id": "bnr-193869580",
@@ -43,7 +44,8 @@
    }
   },
   "tegnet": 3,
-  "regler": 6
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193868711",
@@ -75,10 +77,22 @@
     ],
     "dorer": 1,
     "notat": []
+   },
+   "5": {
+    "tegning": "Street View",
+    "rader": [
+     3,
+     3
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 9,
-  "regler": 30
+  "regler": 16,
+  "streetview": 6
  },
  {
   "id": "bnr-193972411",
@@ -89,10 +103,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "10": {
+    "tegning": "Street View",
+    "rader": [
+     0
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 14
+  "regler": 10,
+  "streetview": 1
  },
  {
   "id": "bnr-193971911",
@@ -106,7 +131,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 1
+  "regler": 1,
+  "streetview": 0
  },
  {
   "id": "bnr-193971938",
@@ -120,7 +146,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 6
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193867596",
@@ -146,7 +173,8 @@
    }
   },
   "tegnet": 13,
-  "regler": 14
+  "regler": 14,
+  "streetview": 0
  },
  {
   "id": "bnr-193971903",
@@ -160,7 +188,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-193987370",
@@ -184,7 +213,8 @@
    }
   },
   "tegnet": 17,
-  "regler": 54
+  "regler": 54,
+  "streetview": 0
  },
  {
   "id": "bnr-193867545",
@@ -201,7 +231,8 @@
    }
   },
   "tegnet": 12,
-  "regler": 3
+  "regler": 3,
+  "streetview": 0
  },
  {
   "id": "bnr-193867588",
@@ -229,10 +260,22 @@
      "rad 3 fikk ikke plass under gesims (h 6.9 m)",
      "rad 4 fikk ikke plass under gesims (h 6.9 m)"
     ]
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     5,
+     4
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 6,
-  "regler": 18
+  "regler": 0,
+  "streetview": 10
  },
  {
   "id": "bnr-193867553",
@@ -246,7 +289,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-193867537",
@@ -311,10 +355,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "17": {
+    "tegning": "Street View",
+    "rader": [
+     6,
+     5
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 87,
-  "regler": 144
+  "regler": 93,
+  "streetview": 11
  },
  {
   "id": "bnr-193868568",
@@ -328,7 +384,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 19
+  "regler": 19,
+  "streetview": 0
  },
  {
   "id": "bnr-193867715",
@@ -360,7 +417,8 @@
    }
   },
   "tegnet": 17,
-  "regler": 6
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193972462",
@@ -376,7 +434,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 24
+  "regler": 24,
+  "streetview": 0
  },
  {
   "id": "bnr-193867804",
@@ -393,7 +452,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 8
+  "regler": 8,
+  "streetview": 0
  },
  {
   "id": "bnr-193867839",
@@ -410,7 +470,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 12
+  "regler": 12,
+  "streetview": 0
  },
  {
   "id": "bnr-193972772",
@@ -427,7 +488,8 @@
    }
   },
   "tegnet": 3,
-  "regler": 0
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193867723",
@@ -444,7 +506,8 @@
    }
   },
   "tegnet": 11,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-193867731",
@@ -461,7 +524,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 18
+  "regler": 18,
+  "streetview": 0
  },
  {
   "id": "bnr-193867758",
@@ -475,10 +539,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 12,
-  "regler": 34
+  "regler": 20,
+  "streetview": 9
  },
  {
   "id": "bnr-193867782",
@@ -509,10 +585,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "9": {
+    "tegning": "Street View",
+    "rader": [
+     6,
+     6
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 9,
-  "regler": 10
+  "regler": 0,
+  "streetview": 13
  },
  {
   "id": "bnr-193972101",
@@ -523,10 +611,22 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     3,
+     3
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 22
+  "regler": 10,
+  "streetview": 7
  },
  {
   "id": "bnr-193868592",
@@ -542,7 +642,8 @@
    }
   },
   "tegnet": 2,
-  "regler": 5
+  "regler": 5,
+  "streetview": 0
  },
  {
   "id": "bnr-193972454",
@@ -562,7 +663,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 3
+  "regler": 3,
+  "streetview": 0
  },
  {
   "id": "bnr-193868606",
@@ -582,7 +684,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 8
+  "regler": 8,
+  "streetview": 0
  },
  {
   "id": "bnr-193867766",
@@ -595,10 +698,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 2,
-  "regler": 20
+  "regler": 6,
+  "streetview": 9
  },
  {
   "id": "bnr-193867774",
@@ -611,10 +726,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     4,
+     5
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 2,
-  "regler": 9
+  "regler": 0,
+  "streetview": 10
  },
  {
   "id": "bnr-193867510",
@@ -639,7 +766,8 @@
    }
   },
   "tegnet": 11,
-  "regler": 19
+  "regler": 19,
+  "streetview": 0
  },
  {
   "id": "bnr-193867499",
@@ -688,10 +816,21 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "13": {
+    "tegning": "Street View",
+    "rader": [
+     9
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 14,
-  "regler": 96
+  "regler": 70,
+  "streetview": 10
  },
  {
   "id": "bnr-193867502",
@@ -723,10 +862,22 @@
     ],
     "dorer": 1,
     "notat": []
+   },
+   "4": {
+    "tegning": "Street View",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 23,
-  "regler": 40
+  "regler": 28,
+  "streetview": 3
  },
  {
   "id": "bnr-193868460",
@@ -739,10 +890,21 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 2,
-  "regler": 15
+  "regler": 12,
+  "streetview": 2
  },
  {
   "id": "pb-8",
@@ -759,7 +921,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 21
+  "regler": 21,
+  "streetview": 0
  },
  {
   "id": "bnr-193870260",
@@ -776,7 +939,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 12
+  "regler": 12,
+  "streetview": 0
  },
  {
   "id": "bnr-193972063",
@@ -802,7 +966,8 @@
    }
   },
   "tegnet": 13,
-  "regler": 18
+  "regler": 18,
+  "streetview": 0
  },
  {
   "id": "pb-7",
@@ -819,10 +984,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "5": {
+    "tegning": "Street View",
+    "rader": [
+     0
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 9
+  "regler": 5,
+  "streetview": 1
  },
  {
   "id": "bnr-193867693",
@@ -847,7 +1023,8 @@
    }
   },
   "tegnet": 13,
-  "regler": 12
+  "regler": 12,
+  "streetview": 0
  },
  {
   "id": "bnr-193867707",
@@ -862,10 +1039,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     6,
+     6
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 5,
-  "regler": 30
+  "regler": 3,
+  "streetview": 13
  },
  {
   "id": "bnr-193972071",
@@ -881,7 +1070,8 @@
    }
   },
   "tegnet": 2,
-  "regler": 0
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193868142",
@@ -898,7 +1088,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 18
+  "regler": 18,
+  "streetview": 0
  },
  {
   "id": "bnr-193868150",
@@ -915,7 +1106,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 16
+  "regler": 16,
+  "streetview": 0
  },
  {
   "id": "bnr-193972292",
@@ -932,7 +1124,8 @@
    }
   },
   "tegnet": 8,
-  "regler": 5
+  "regler": 5,
+  "streetview": 0
  },
  {
   "id": "bnr-193868096",
@@ -958,7 +1151,8 @@
    }
   },
   "tegnet": 12,
-  "regler": 2
+  "regler": 2,
+  "streetview": 0
  },
  {
   "id": "bnr-193868088",
@@ -975,7 +1169,8 @@
    }
   },
   "tegnet": 8,
-  "regler": 4
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-193868126",
@@ -986,10 +1181,22 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     2,
+     3
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 8
+  "regler": 3,
+  "streetview": 6
  },
  {
   "id": "bnr-193868134",
@@ -1003,7 +1210,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 19
+  "regler": 19,
+  "streetview": 0
  },
  {
   "id": "bnr-193867324",
@@ -1025,7 +1233,8 @@
    }
   },
   "tegnet": 8,
-  "regler": 14
+  "regler": 14,
+  "streetview": 0
  },
  {
   "id": "bnr-193867308",
@@ -1045,7 +1254,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-193868037",
@@ -1069,7 +1279,8 @@
    }
   },
   "tegnet": 5,
-  "regler": 8
+  "regler": 8,
+  "streetview": 0
  },
  {
   "id": "bnr-193868053",
@@ -1085,7 +1296,8 @@
    }
   },
   "tegnet": 6,
-  "regler": 13
+  "regler": 13,
+  "streetview": 0
  },
  {
   "id": "bnr-193868061",
@@ -1094,15 +1306,16 @@
    "1": {
     "tegning": "Kvartal3",
     "rader": [
-     2,
+     3,
      5
     ],
     "dorer": 3,
     "notat": []
    }
   },
-  "tegnet": 10,
-  "regler": 36
+  "tegnet": 11,
+  "regler": 36,
+  "streetview": 0
  },
  {
   "id": "bnr-193869572",
@@ -1111,7 +1324,7 @@
    "9": {
     "tegning": "Kvartal3",
     "rader": [
-     5,
+     6,
      3
     ],
     "dorer": 0,
@@ -1127,8 +1340,9 @@
     "notat": []
    }
   },
-  "tegnet": 12,
-  "regler": 29
+  "tegnet": 13,
+  "regler": 29,
+  "streetview": 0
  },
  {
   "id": "bnr-193868045",
@@ -1149,10 +1363,21 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 8,
-  "regler": 19
+  "regler": 16,
+  "streetview": 1
  },
  {
   "id": "bnr-193868401",
@@ -1177,7 +1402,8 @@
    }
   },
   "tegnet": 12,
-  "regler": 9
+  "regler": 9,
+  "streetview": 0
  },
  {
   "id": "bnr-193868371",
@@ -1199,10 +1425,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "6": {
+    "tegning": "Street View",
+    "rader": [
+     7,
+     3
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 8,
-  "regler": 38
+  "regler": 16,
+  "streetview": 10
  },
  {
   "id": "bnr-193868398",
@@ -1219,10 +1457,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "5": {
+    "tegning": "Street View",
+    "rader": [
+     5
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 34
+  "regler": 24,
+  "streetview": 6
  },
  {
   "id": "bnr-193868428",
@@ -1233,10 +1482,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "3": {
+    "tegning": "Street View",
+    "rader": [
+     5
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 20
+  "regler": 13,
+  "streetview": 5
  },
  {
   "id": "bnr-193868274",
@@ -1260,7 +1520,8 @@
    }
   },
   "tegnet": 12,
-  "regler": 9
+  "regler": 9,
+  "streetview": 0
  },
  {
   "id": "bnr-193868266",
@@ -1283,7 +1544,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 6
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193868258",
@@ -1297,10 +1559,21 @@
     ],
     "dorer": 1,
     "notat": []
+   },
+   "6": {
+    "tegning": "Street View",
+    "rader": [
+     2
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 9,
-  "regler": 26
+  "regler": 20,
+  "streetview": 3
  },
  {
   "id": "bnr-13414904",
@@ -1325,7 +1598,8 @@
    }
   },
   "tegnet": 11,
-  "regler": 30
+  "regler": 30,
+  "streetview": 0
  },
  {
   "id": "bnr-193868312",
@@ -1339,7 +1613,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 2
+  "regler": 2,
+  "streetview": 0
  },
  {
   "id": "bnr-16313173",
@@ -1353,7 +1628,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 4
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-300279164",
@@ -1373,7 +1649,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 0
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193972152",
@@ -1393,7 +1670,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 6
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193868282",
@@ -1412,10 +1690,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "7": {
+    "tegning": "Street View",
+    "rader": [
+     4
+    ],
+    "dorer": 2,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 6,
-  "regler": 40
+  "regler": 30,
+  "streetview": 6
  },
  {
   "id": "pb-5",
@@ -1429,7 +1718,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 5
+  "regler": 5,
+  "streetview": 0
  },
  {
   "id": "bnr-193868533",
@@ -1443,7 +1733,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 5
+  "regler": 5,
+  "streetview": 0
  },
  {
   "id": "bnr-193971288",
@@ -1454,10 +1745,22 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "3": {
+    "tegning": "Street View",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 12
+  "regler": 6,
+  "streetview": 4
  },
  {
   "id": "bnr-193867936",
@@ -1481,10 +1784,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "6": {
+    "tegning": "Street View",
+    "rader": [
+     6,
+     3
+    ],
+    "dorer": 2,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 14,
-  "regler": 22
+  "regler": 0,
+  "streetview": 11
  },
  {
   "id": "bnr-193867944",
@@ -1497,10 +1812,21 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "5": {
+    "tegning": "Street View",
+    "rader": [
+     5
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 4,
-  "regler": 15
+  "regler": 4,
+  "streetview": 6
  },
  {
   "id": "bnr-193868622",
@@ -1511,10 +1837,22 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "2": {
+    "tegning": "Street View",
+    "rader": [
+     5,
+     4
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 24
+  "regler": 14,
+  "streetview": 10
  },
  {
   "id": "bnr-193867863",
@@ -1531,7 +1869,8 @@
    }
   },
   "tegnet": 21,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-193972489",
@@ -1553,7 +1892,8 @@
    }
   },
   "tegnet": 2,
-  "regler": 0
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193972497",
@@ -1567,7 +1907,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 0
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193867855",
@@ -1592,7 +1933,8 @@
    }
   },
   "tegnet": 6,
-  "regler": 7
+  "regler": 7,
+  "streetview": 0
  },
  {
   "id": "bnr-193867898",
@@ -1617,7 +1959,8 @@
    }
   },
   "tegnet": 12,
-  "regler": 6
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193867901",
@@ -1634,7 +1977,8 @@
    }
   },
   "tegnet": 7,
-  "regler": 4
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-193867928",
@@ -1650,7 +1994,8 @@
    }
   },
   "tegnet": 8,
-  "regler": 44
+  "regler": 44,
+  "streetview": 0
  },
  {
   "id": "bnr-193972543",
@@ -1664,7 +2009,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 3
+  "regler": 3,
+  "streetview": 0
  },
  {
   "id": "bnr-193972535",
@@ -1678,7 +2024,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 4
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-193870279",
@@ -1710,7 +2057,8 @@
    }
   },
   "tegnet": 60,
-  "regler": 97
+  "regler": 97,
+  "streetview": 0
  },
  {
   "id": "bnr-193868223",
@@ -1731,10 +2079,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     4,
+     2
+    ],
+    "dorer": 2,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 9,
-  "regler": 26
+  "regler": 16,
+  "streetview": 8
  },
  {
   "id": "bnr-193868207",
@@ -1759,7 +2119,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 1
+  "regler": 1,
+  "streetview": 0
  },
  {
   "id": "bnr-6251218",
@@ -1776,7 +2137,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 8
+  "regler": 8,
+  "streetview": 0
  },
  {
   "id": "bnr-6251323",
@@ -1793,7 +2155,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-6251331",
@@ -1810,7 +2173,8 @@
    }
   },
   "tegnet": 3,
-  "regler": 12
+  "regler": 12,
+  "streetview": 0
  },
  {
   "id": "bnr-6242812",
@@ -1823,11 +2187,26 @@
      2
     ],
     "dorer": 2,
-    "notat": []
+    "notat": [
+     "1 vindu(er) over gesims i tegningen (gavl/ark)"
+    ]
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     5,
+     5,
+     4
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 6,
-  "regler": 22
+  "regler": 8,
+  "streetview": 14
  },
  {
   "id": "bnr-193867952",
@@ -1845,15 +2224,16 @@
    "1": {
     "tegning": "kvartal6",
     "rader": [
-     7,
+     8,
      7
     ],
     "dorer": 1,
     "notat": []
    }
   },
-  "tegnet": 29,
-  "regler": 24
+  "tegnet": 30,
+  "regler": 24,
+  "streetview": 0
  },
  {
   "id": "bnr-193867979",
@@ -1871,7 +2251,8 @@
    }
   },
   "tegnet": 19,
-  "regler": 24
+  "regler": 24,
+  "streetview": 0
  },
  {
   "id": "bnr-6247822",
@@ -1888,7 +2269,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 4
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-193867987",
@@ -1901,10 +2283,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "8": {
+    "tegning": "Street View",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 4,
-  "regler": 10
+  "regler": 2,
+  "streetview": 5
  },
  {
   "id": "bnr-193868029",
@@ -1916,11 +2310,24 @@
      2
     ],
     "dorer": 1,
-    "notat": []
+    "notat": [
+     "1 vindu(er) over gesims i tegningen (gavl/ark)"
+    ]
+   },
+   "4": {
+    "tegning": "Street View",
+    "rader": [
+     1
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 3,
-  "regler": 7
+  "regler": 6,
+  "streetview": 2
  },
  {
   "id": "bnr-193867618",
@@ -1946,7 +2353,8 @@
    }
   },
   "tegnet": 9,
-  "regler": 27
+  "regler": 27,
+  "streetview": 0
  },
  {
   "id": "bnr-193868320",
@@ -1961,10 +2369,22 @@
     ],
     "dorer": 2,
     "notat": []
+   },
+   "3": {
+    "tegning": "Street View",
+    "rader": [
+     11,
+     11
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View nov. 2020"
+    ]
    }
   },
   "tegnet": 9,
-  "regler": 27
+  "regler": 0,
+  "streetview": 23
  },
  {
   "id": "bnr-193918239",
@@ -1977,10 +2397,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "10": {
+    "tegning": "Street View",
+    "rader": [
+     7,
+     5
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 3,
-  "regler": 24
+  "regler": 10,
+  "streetview": 13
  },
  {
   "id": "bnr-193868525",
@@ -1994,7 +2426,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 42
+  "regler": 42,
+  "streetview": 0
  },
  {
   "id": "bnr-193971369",
@@ -2010,7 +2443,8 @@
    }
   },
   "tegnet": 6,
-  "regler": 7
+  "regler": 7,
+  "streetview": 0
  },
  {
   "id": "bnr-193991718",
@@ -2032,7 +2466,8 @@
    }
   },
   "tegnet": 3,
-  "regler": 2
+  "regler": 2,
+  "streetview": 0
  },
  {
   "id": "pb-33",
@@ -2046,7 +2481,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 0
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193867626",
@@ -2075,7 +2511,8 @@
    }
   },
   "tegnet": 16,
-  "regler": 16
+  "regler": 16,
+  "streetview": 0
  },
  {
   "id": "bnr-193868517",
@@ -2089,7 +2526,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 8
+  "regler": 8,
+  "streetview": 0
  },
  {
   "id": "bnr-193868355",
@@ -2114,7 +2552,8 @@
    }
   },
   "tegnet": 11,
-  "regler": 18
+  "regler": 18,
+  "streetview": 0
  },
  {
   "id": "bnr-193868347",
@@ -2130,7 +2569,8 @@
    }
   },
   "tegnet": 2,
-  "regler": 4
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-193868339",
@@ -2152,10 +2592,22 @@
     ],
     "dorer": 0,
     "notat": []
+   },
+   "4": {
+    "tegning": "Street View",
+    "rader": [
+     1,
+     1
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 9,
-  "regler": 12
+  "regler": 9,
+  "streetview": 3
  },
  {
   "id": "bnr-193971946",
@@ -2166,10 +2618,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "0": {
+    "tegning": "Street View",
+    "rader": [
+     3
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 6
+  "regler": 1,
+  "streetview": 4
  },
  {
   "id": "bnr-193870201",
@@ -2195,7 +2658,8 @@
    }
   },
   "tegnet": 17,
-  "regler": 14
+  "regler": 14,
+  "streetview": 0
  },
  {
   "id": "bnr-193870228",
@@ -2213,7 +2677,8 @@
    }
   },
   "tegnet": 12,
-  "regler": 10
+  "regler": 10,
+  "streetview": 0
  },
  {
   "id": "bnr-193870236",
@@ -2230,7 +2695,8 @@
    }
   },
   "tegnet": 10,
-  "regler": 12
+  "regler": 12,
+  "streetview": 0
  },
  {
   "id": "bnr-193870252",
@@ -2244,10 +2710,21 @@
     ],
     "dorer": 6,
     "notat": []
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     2
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 13,
-  "regler": 10
+  "regler": 6,
+  "streetview": 3
  },
  {
   "id": "bnr-193870198",
@@ -2263,7 +2740,8 @@
    }
   },
   "tegnet": 6,
-  "regler": 19
+  "regler": 19,
+  "streetview": 0
  },
  {
   "id": "bnr-193867677",
@@ -2295,9 +2773,21 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "6": {
+    "tegning": "Street View",
+    "rader": [
+     6,
+     6
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View mai 2024"
+    ]
    }
   },
   "tegnet": 6,
-  "regler": 38
+  "regler": 24,
+  "streetview": 13
  }
 ]

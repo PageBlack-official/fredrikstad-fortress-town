@@ -87,7 +87,7 @@
   "sikkerhet": "høy",
   "n_piksler": 3701,
   "rest_m": 0.69,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "6": {
   "id": "bnr-193870198",
@@ -231,7 +231,7 @@
   "sikkerhet": "høy",
   "n_piksler": 85,
   "rest_m": 0.36,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "14": {
   "id": "bnr-193870295",
@@ -321,7 +321,7 @@
   "sikkerhet": "høy",
   "n_piksler": 73,
   "rest_m": 0.68,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "19": {
   "id": "bnr-193868045",
@@ -357,7 +357,7 @@
   "sikkerhet": "høy",
   "n_piksler": 130,
   "rest_m": 0.27,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "21": {
   "id": "bnr-193867499",
@@ -447,7 +447,7 @@
   "sikkerhet": "høy",
   "n_piksler": 75,
   "rest_m": 0.4,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "27": {
   "id": "bnr-193868037",
@@ -506,19 +506,19 @@
  "30": {
   "id": "bnr-193867324",
   "navn": "Artillerismien",
-  "h_naa": 4.2,
-  "h_per_hus": 4.2,
-  "takhelning": 0.59,
+  "h_naa": 2.9,
+  "h_per_hus": 2.9,
+  "takhelning": 1.07,
   "p50": 6.23,
   "p90": 8.32,
-  "kart_p50": 6.78,
-  "kart_p90": 8.2,
+  "kart_p50": 5.35,
+  "kart_p90": 6.86,
   "h_forslag": 3.5,
-  "avvik": -0.7,
-  "h_med_maalt_takhelning": 4.2,
+  "avvik": 0.6,
+  "h_med_maalt_takhelning": 4.3,
   "sikkerhet": "høy",
   "n_piksler": 216,
-  "rest_m": 0.33,
+  "rest_m": 0.36,
   "merknad": "kalibreringshus"
  },
  "42": {
@@ -1275,7 +1275,7 @@
   "sikkerhet": "lav",
   "n_piksler": 16,
   "rest_m": 0.39,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.6 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; kalibreringshus"
  },
  "154": {
   "id": "bnr-193972489",
@@ -1707,7 +1707,7 @@
   "sikkerhet": "høy",
   "n_piksler": 228,
   "rest_m": 0.41,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "178": {
   "id": "bnr-193972292",
@@ -1833,7 +1833,7 @@
   "sikkerhet": "middels",
   "n_piksler": 62,
   "rest_m": 0.97,
-  "merknad": "rest 1.0 m"
+  "merknad": "rest 1.0 m; kalibreringshus"
  },
  "185": {
   "id": "bnr-193867936",
@@ -1851,7 +1851,7 @@
   "sikkerhet": "høy",
   "n_piksler": 198,
   "rest_m": 0.38,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "186": {
   "id": "bnr-193868029",
@@ -1941,7 +1941,7 @@
   "sikkerhet": "høy",
   "n_piksler": 218,
   "rest_m": 0.56,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "191": {
   "id": "bnr-193868282",
@@ -1959,7 +1959,7 @@
   "sikkerhet": "høy",
   "n_piksler": 291,
   "rest_m": 0.6,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "192": {
   "id": "bnr-6251323",
@@ -1995,7 +1995,7 @@
   "sikkerhet": "middels",
   "n_piksler": 169,
   "rest_m": 0.81,
-  "merknad": "rest 0.8 m"
+  "merknad": "rest 0.8 m; kalibreringshus"
  },
  "194": {
   "id": "bnr-13414904",
@@ -2283,7 +2283,7 @@
   "sikkerhet": "høy",
   "n_piksler": 234,
   "rest_m": 0.29,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "210": {
   "id": "bnr-193972136",
@@ -2373,7 +2373,7 @@
   "sikkerhet": "middels",
   "n_piksler": 16,
   "rest_m": 0.42,
-  "merknad": "16 piksler"
+  "merknad": "16 piksler; kalibreringshus"
  },
  "215": {
   "id": "bnr-193971318",
@@ -2697,7 +2697,7 @@
   "sikkerhet": "middels",
   "n_piksler": 163,
   "rest_m": 1.14,
-  "merknad": "rest 1.1 m"
+  "merknad": "rest 1.1 m; kalibreringshus"
  },
  "233": {
   "id": "bnr-193868592",
@@ -2751,7 +2751,7 @@
   "sikkerhet": "middels",
   "n_piksler": 32,
   "rest_m": 0.98,
-  "merknad": "32 piksler; rest 1.0 m"
+  "merknad": "32 piksler; rest 1.0 m; kalibreringshus"
  },
  "236": {
   "id": "bnr-193867820",
@@ -2823,7 +2823,7 @@
   "sikkerhet": "høy",
   "n_piksler": 123,
   "rest_m": 0.28,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "240": {
   "id": "bnr-193867588",
@@ -2841,7 +2841,7 @@
   "sikkerhet": "høy",
   "n_piksler": 176,
   "rest_m": 0.6,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "241": {
   "id": "bnr-193987370",
@@ -2931,7 +2931,7 @@
   "sikkerhet": "høy",
   "n_piksler": 118,
   "rest_m": 0.48,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "246": {
   "id": "bnr-193867804",
@@ -2949,7 +2949,7 @@
   "sikkerhet": "høy",
   "n_piksler": 83,
   "rest_m": 0.48,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "247": {
   "id": "pb-8",
@@ -3507,7 +3507,7 @@
   "sikkerhet": "høy",
   "n_piksler": 51,
   "rest_m": 0.18,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "325": {
   "id": "bnr-193972306",
@@ -3561,7 +3561,7 @@
   "sikkerhet": "lav",
   "n_piksler": 11,
   "rest_m": 0.31,
-  "merknad": "bare 11 piksler"
+  "merknad": "bare 11 piksler; kalibreringshus"
  },
  "328": {
   "id": "bnr-193972144",
@@ -3705,7 +3705,7 @@
   "sikkerhet": "lav",
   "n_piksler": 7,
   "rest_m": 0.2,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler"
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.7 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 7 piksler; kalibreringshus"
  },
  "336": {
   "id": "bnr-193971903",
@@ -3782,15 +3782,15 @@
  "340": {
   "id": "bnr-193971989",
   "navn": null,
-  "h_naa": 8.7,
+  "h_naa": 6.0,
   "h_per_hus": 4.3,
   "takhelning": 0.59,
   "p50": 5.76,
   "p90": 8.04,
-  "kart_p50": 10.35,
-  "kart_p90": 11.09,
+  "kart_p50": 7.65,
+  "kart_p90": 8.39,
   "h_forslag": 3.7,
-  "avvik": -5.0,
+  "avvik": -2.3,
   "h_med_maalt_takhelning": 4.3,
   "sikkerhet": "lav",
   "n_piksler": 24,
@@ -3939,7 +3939,7 @@
   "sikkerhet": "middels",
   "n_piksler": 21,
   "rest_m": 0.56,
-  "merknad": "21 piksler"
+  "merknad": "21 piksler; kalibreringshus"
  },
  "349": {
   "id": "bnr-193971261",
@@ -4083,7 +4083,7 @@
   "sikkerhet": "lav",
   "n_piksler": 25,
   "rest_m": 0.79,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning"
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 0.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; kalibreringshus"
  },
  "357": {
   "id": "bnr-193972616",
@@ -4227,7 +4227,7 @@
   "sikkerhet": "lav",
   "n_piksler": 6,
   "rest_m": 0.32,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler; krympet bare 0.5 m"
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.8 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 6 piksler; krympet bare 0.5 m; kalibreringshus"
  },
  "365": {
   "id": "bnr-193967132",
@@ -4389,7 +4389,7 @@
   "sikkerhet": "middels",
   "n_piksler": 40,
   "rest_m": 0.97,
-  "merknad": "rest 1.0 m"
+  "merknad": "rest 1.0 m; kalibreringshus"
  },
  "380": {
   "id": "bnr-193868657",
@@ -4425,7 +4425,7 @@
   "sikkerhet": "høy",
   "n_piksler": 77,
   "rest_m": 0.65,
-  "merknad": ""
+  "merknad": "kalibreringshus"
  },
  "382": {
   "id": "bnr-193868614",
@@ -4633,7 +4633,7 @@
   "sikkerhet": "lav",
   "n_piksler": 4,
   "rest_m": 0.11,
-  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler"
+  "merknad": "målt overflate ligger under kartets tak alene (vegg ville blitt 1.4 m): taket i kartet er for høyt/bratt for dette huset, eller omrisset dekker et lavere tilbygg — sjekk h_med_maalt_takhelning; bare 4 piksler; kalibreringshus"
  },
  "394": {
   "id": "bnr-193867332",
@@ -4669,7 +4669,7 @@
   "sikkerhet": "middels",
   "n_piksler": 51,
   "rest_m": 1.13,
-  "merknad": "rest 1.1 m"
+  "merknad": "rest 1.1 m; kalibreringshus"
  },
  "401": {
   "id": "bnr-6254179",
