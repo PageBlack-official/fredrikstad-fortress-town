@@ -1,51 +1,51 @@
 {
  "tegning": "Kvartal13",
  "par": {
-  "az": -14.4,
+  "az": -14.48,
   "el": 45.46,
-  "s": 4.8786,
+  "s": 4.8591,
   "K": 3.1097,
-  "kz": 0.909,
+  "kz": 0.912,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.614140816724072,
-   1.1843449522188767,
+   4.592561233717432,
+   1.18603072572608,
    0.0,
-   729.1703621980403
+   729.0694678491143
   ],
   [
-   1.582275972988027,
-   -3.2706116711326265,
+   1.5850088451277906,
+   -3.255192171972726,
    -3.1097052263945537,
-   220.52792258403295
+   221.11349207191404
   ]
  ],
  "forskyvning": {
   "bnr-193867502": [
-   -3.89,
-   -1.39
+   -5.5,
+   -1.46
   ],
   "pb-63": [
-   -3.89,
-   -1.39
+   -5.5,
+   -1.46
   ],
   "pb-64": [
-   -3.89,
-   -1.39
+   -5.5,
+   -1.46
   ],
   "bnr-193868460": [
-   8.67,
-   1.51
+   6.5,
+   1.52
   ],
   "bnr-193867499": [
-   1.29,
-   -1.99
+   -0.5,
+   -0.9
   ],
   "bnr-193867510": [
    -0.0,
-   -1.16
+   -1.19
   ]
  },
  "blokker": [
@@ -56,33 +56,33 @@
     "pb-64"
    ],
    "d": [
-    -3.89,
-    -1.39
+    -5.5,
+    -1.46
    ],
-   "kant_for": 2.93,
-   "kant_etter": 2.78
+   "kant_for": 3.06,
+   "kant_etter": 2.83
   },
   {
    "ids": [
     "bnr-193868460"
    ],
    "d": [
-    8.67,
-    1.51
+    6.5,
+    1.52
    ],
-   "kant_for": 3.77,
-   "kant_etter": 3.21
+   "kant_for": 3.56,
+   "kant_etter": 3.15
   },
   {
    "ids": [
     "bnr-193867499"
    ],
    "d": [
-    1.29,
-    -1.99
+    -0.5,
+    -0.9
    ],
-   "kant_for": 3.74,
-   "kant_etter": 3.64
+   "kant_for": 3.6,
+   "kant_etter": 3.59
   },
   {
    "ids": [
@@ -90,19 +90,19 @@
    ],
    "d": [
     -0.0,
-    -1.16
+    -1.19
    ],
-   "kant_for": 2.37,
-   "kant_etter": 2.3
+   "kant_for": 2.42,
+   "kant_etter": 2.33
   }
  ],
  "maal": {
-  "bunn": 4.0,
+  "bunn": 2.0,
   "topp": 6.0,
-  "iou": 0.5256194581712403,
-  "bare": 1,
-  "kant": 3.370961308479309,
-  "omriss": 23.960267086575193
+  "iou": 0.5189432403095346,
+  "bare": 2,
+  "kant": 3.3326843976974487,
+  "omriss": 21.966772777701927
  },
  "bygg": [
   "bnr-193867502",
@@ -116,64 +116,64 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193867502": {
-   "median_pt": 2.3,
-   "median_px": 6.9,
-   "andel_innen_2pt": 0.45,
+   "median_pt": 2.33,
+   "median_px": 7.0,
+   "andel_innen_2pt": 0.46,
    "beste_forskyvning_pt": [
     -4.0,
-    -2.0
+    -2.5
    ],
-   "median_etter_pt": 2.03
+   "median_etter_pt": 1.99
   },
   "bnr-193868460": {
    "median_pt": 1.84,
    "median_px": 5.5,
    "andel_innen_2pt": 0.52,
    "beste_forskyvning_pt": [
-    0.5,
+    0.0,
     0.0
    ],
-   "median_etter_pt": 1.78
+   "median_etter_pt": 1.84
   },
   "bnr-193867499": {
-   "median_pt": 2.29,
-   "median_px": 6.9,
-   "andel_innen_2pt": 0.46,
+   "median_pt": 2.38,
+   "median_px": 7.1,
+   "andel_innen_2pt": 0.45,
    "beste_forskyvning_pt": [
-    4.0,
+    3.5,
     2.0
    ],
-   "median_etter_pt": 2.37
+   "median_etter_pt": 2.34
   },
   "bnr-193867510": {
-   "median_pt": 1.6,
-   "median_px": 4.8,
-   "andel_innen_2pt": 0.59,
+   "median_pt": 1.56,
+   "median_px": 4.7,
+   "andel_innen_2pt": 0.57,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 1.6
+   "median_etter_pt": 1.56
   },
   "pb-63": {
-   "median_pt": 1.93,
+   "median_pt": 1.92,
    "median_px": 5.8,
    "andel_innen_2pt": 0.52,
    "beste_forskyvning_pt": [
     -10.0,
     -10.0
    ],
-   "median_etter_pt": 1.69
+   "median_etter_pt": 1.66
   },
   "pb-64": {
-   "median_pt": 2.22,
+   "median_pt": 2.24,
    "median_px": 6.7,
-   "andel_innen_2pt": 0.47,
+   "andel_innen_2pt": 0.45,
    "beste_forskyvning_pt": [
     -10.0,
     -2.0
    ],
-   "median_etter_pt": 1.43
+   "median_etter_pt": 1.47
   }
  },
  "registrering": {

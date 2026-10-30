@@ -775,7 +775,7 @@
     "notat": []
    }
   },
-  "tegnet": 11,
+  "tegnet": 10,
   "regler": 19,
   "streetview": 0
  },
@@ -1572,7 +1572,7 @@
     "notat": []
    }
   },
-  "tegnet": 12,
+  "tegnet": 10,
   "regler": 9,
   "streetview": 0
  },
@@ -2036,31 +2036,13 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193867928",
-  "navn": null,
-  "vegger": {
-   "4": {
-    "tegning": "Kvartal9",
-    "rader": [
-     2,
-     2
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 4,
-  "regler": 60,
-  "streetview": 0
- },
- {
   "id": "pb-66",
   "navn": null,
   "vegger": {
    "0": {
     "tegning": "Kvartal9",
     "rader": [
-     4
+     6
     ],
     "dorer": 0,
     "notat": []
@@ -2075,8 +2057,25 @@
     "notat": []
    }
   },
-  "tegnet": 18,
+  "tegnet": 20,
   "regler": 2,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193867928",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal9",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 60,
   "streetview": 0
  },
  {
@@ -2322,7 +2321,7 @@
     ]
    }
   },
-  "tegnet": 7,
+  "tegnet": 5,
   "regler": 2,
   "streetview": 0
  },
@@ -2557,23 +2556,6 @@
   "streetview": 0
  },
  {
-  "id": "pb-65",
-  "navn": null,
-  "vegger": {
-   "0": {
-    "tegning": "kvartal7",
-    "rader": [
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 1,
-  "regler": 4,
-  "streetview": 0
- },
- {
   "id": "bnr-193971369",
   "navn": null,
   "vegger": {
@@ -2588,6 +2570,23 @@
   },
   "tegnet": 5,
   "regler": 5,
+  "streetview": 0
+ },
+ {
+  "id": "pb-65",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "kvartal7",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 1,
+  "regler": 4,
   "streetview": 0
  },
  {
@@ -2801,7 +2800,7 @@
     "notat": []
    }
   },
-  "tegnet": 17,
+  "tegnet": 16,
   "regler": 14,
   "streetview": 0
  },

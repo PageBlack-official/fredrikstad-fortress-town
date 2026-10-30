@@ -712,6 +712,7 @@ def klassifiser(el, L, hv_med=None):
 
 
 VH_PRESS = [None]
+LANDEMERKER = {'bnr-193870279', 'bnr-193972012', 'bnr-193869548', 'bnr-193867529'}   # egne agenter/egen kode (Tøihuset, rådhuset, Voldporten, kirka)
 
 
 def vegg_vind(vg, x, P):
@@ -785,6 +786,13 @@ def vegg_vind(vg, x, P):
     # dør tar plassen til vinduet i 1. etasje der de står oppå hverandre
     dorer = [q for q in ut if q[9] in (1, 2)]
     ut = [q for q in ut if not (q[9] == 0 and q[2] < 3 and any(math.dist(q[:2], d[:2]) < (q[7] + d[7]) / 2 for d in dorer))]
+    # to tegnede rader presset til én etasje (lavt hus): vinduer som da står oppå hverandre, blir ett (det bredeste) (30.10)
+    beh = []
+    for q in sorted(ut, key=lambda q: -q[7]):
+        if x['id'] not in LANDEMERKER and q[9] == 0 and any(d[9] == 0 and abs(d[2] - q[2]) < 0.3 and math.dist(q[:2], d[:2]) < (q[7] + d[7]) / 2 for d in beh):
+            continue
+        beh.append(q)
+    ut = [q for q in ut if any(q is d for d in beh)]
     gavl = [e for e, k in el if k[0] == 0 and e['v'] > 1.05]
     if gavl:
         notat.append(f"{len(gavl)} vindu(er) over gesims i tegningen (gavl/ark)")

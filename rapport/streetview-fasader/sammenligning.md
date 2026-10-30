@@ -111,7 +111,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868525 |  | [1, 1] | [] | 1 grå tofløyet fyllingsdør med steintrapp og rekkverk | 0 | 0 | 0 | None | 2 | ja |
 | bnr-193971946 |  | [3] | [3] | 1 brun plankedør til venstre (ca. 0.12) med lykt og skilt | 1 | 1 lite takvindu | 0 | ikke synlig | 1 |  |
 | bnr-193868029 |  | [1, 1] | [1] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 1 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
-| bnr-6242812 |  | [5, 5, 4] | [4, 4, 3] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
+| bnr-6242812 |  | [5, 5, 4] | [5, 5, 4] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 |  |
 | bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 0 | ja |
 | bnr-193868320 |  | [11, 11] | [11, 11] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193868711 |  | [3, 3] | [3, 3] | 0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen | 0 | ikke synlig | 0 | ikke synlig | 1 |  |
@@ -122,7 +122,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193870325 | Hovedvakten – det gamle slaveri | [1] | [4] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 4 | ja |
 | bnr-193870317 | Det grundmurede provianthus | [0] | [6] | 2 rundbuede dører (ca. 0.10 og 0.40 av synlig vegg), mørke | 3 | 0 | 0 | 0 | 9 | ja |
 | bnr-193870309 | Offisersvakten | [2] | [2] | 1 olivengrønn tofløyet fyllingsdør på gavlen med overlys og steintrapp | 1 | 0 | 0 | 1 rød teglpipe | 1 |  |
-| bnr-193870279 | Tøihuset | [5] | [19] | 1 dør på gavlen (V) med skilt | 6 | 1 lite takvindu på gavlhalvdelen | 0 | 0 synlig | 3 | ja |
+| bnr-193870279 | Tøihuset | [5] | [18] | 1 dør på gavlen (V) med skilt | 6 | 1 lite takvindu på gavlhalvdelen | 0 | 0 synlig | 3 | ja |
 | bnr-193870201 |  | [4, 4] | [3, 3] | 1 på kortsiden nede til venstre (ca. 0.15), mørk skilt-tavle ved døra | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193870228 |  | [6, 6] | [5, 5, 1] | 1 grågrønn fyllingsdør med overlys og lykt, ca. 0.48 av fasaden; 1 tofløyet grågrønn port helt til venstre (ca. 0.03–0.17) | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-193870236 |  | [2, 2] | [5, 5] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |
@@ -151,11 +151,11 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867936 |  | [6, 3] | [6, 3] | teglgården: 2 butikkdører (grønn ca. 0.20, brun/glass ca. 0.45) med steintrapper og store butikkvinduer; gul gård: 1 inngang med glassdør nede (ca. 0.85) | 2 | 1 ark/takoppbygg på teglgården | 0 | 1 på den gule gården | 2 |  |
 | bnr-193867936 |  | [1, 1] | [2, 2, 1] | 0 | 0 | 0 | 0 | 1 murt pipe | 2 | ja |
 | bnr-193868274 |  | [4] | [7] | 1 mørk grå/grønn fyllingsdør med ovalt overlys og husnummer, ca. 0.85 | 0 | 3 små takvinduer | 1 | 2 (murte, en ved hver ende) | 2 | ja |
-| bnr-193868274 |  | [2, 2] | [4] | ikke i utsnittet | 1 | 0 | 2 | ikke synlig | 2 | ja |
+| bnr-193868274 |  | [2, 2] | [2] | ikke i utsnittet | 1 | 0 | 2 | ikke synlig | 2 | ja |
 | bnr-193867782 |  | [6, 6] | [6, 6] | 1 grå tofløyet port med diagonale fyllinger helt til høyre (ca. 0.87–1.0) | 1 | ikke synlig | 0 | ikke synlig | 2 |  |
 | bnr-193867537 | Infanterikasernen | [2, 2] | [4, 4, 4] | 0 synlig | 1 | 0 | 5 | 1 | 12 | ja |
 | bnr-193867537 | Infanterikasernen | [6, 5] | [6, 5] | 0 på denne fasaden | 0 | ikke synlig | 7 | ikke synlig | 12 |  |
-| bnr-193867715 |  | [2, 2] | [] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 2 | ja |
+| bnr-193867715 |  | [2, 2] | [1, 1] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-16308102 |  | [5, 6] | [] | 1 mørk grønn tofløyet port/dør med overlys, ca. 0.25–0.33 av fasaden | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |
 | bnr-193972462 | bedehus/menighetshus | [5] | [9] | 1 brun rundbuet tofløyet plankeport ca. 0.05–0.15, nummer '50' ved porten | 0 | 0 | 1 | ikke synlig | 1 | ja |
 | bnr-193868568 | Brannstasjon – uthus til Infanterikasernen | [0] | [] | 1 lys grå ståldør ca. 0.42 | 1 | 0 | 0 | 1 murt pipe med blikkhatt | 1 |  |

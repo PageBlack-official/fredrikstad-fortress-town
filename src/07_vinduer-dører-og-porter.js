@@ -248,18 +248,27 @@ DATA.bygg.forEach((b,i)=>{
   // fasadesegmenter (30.10): én kropp etter DOM/Matrikkelen, men tegningen viser flere fasader på veggen. Hvert segment er en
   // veggflate i egen farge (fra_m–til_m langs veggen a→b); brannmurlinjen mellom to segmenter er en tynn mørk loddrett kant
   if(b.fasadesegmenter && !dim){
-    const flate=(A,B,o,c)=>{ const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
+    const flate=(A,B,c)=>{ const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
       gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat(c,dim,null,{ds:true}))); };
     b.fasadesegmenter.forEach(v=>{
       const [ax,ay]=v.a, [bx,by]=v.b, L=Math.hypot(bx-ax,by-ay); if(L<0.5) return;
-      const ux=(bx-ax)/L, uy=(by-ay)/L; let nx=uy, ny=-ux;
-      if(iPoly([ax+ux*L/2+nx*0.2, ay+uy*L/2+ny*0.2],pts)){ nx=-nx; ny=-ny; }
-      const P=(s,o)=>[ax+ux*s+nx*o, ay+uy*s+ny*o];
-      v.segmenter.forEach((s,k)=>{
-        flate(P(s.fra_m,0.025),P(s.til_m,0.025),0.025,s.vegg);
-        if(k>0){ const c=v.segmenter[k-1].vegg, m=s.fra_m, f=0.42;   // brannmurlinjen: 14 cm, mørk tone av de to fasadene
-          const mork=[0,1,2].map(j=>Math.round(Math.min(c[j],s.vegg[j])*f));
-          flate(P(m-0.07,0.035),P(m+0.07,0.035),0.035,mork); }
+      const ux=(bx-ax)/L, uy=(by-ay)/L;
+      // omrissets kanter som ligger på segmentveggen (veggen a–b er rettet ut; omrisset kan ha små knekker langs den)
+      const kanter=[];
+      for(let k=0;k<pts.length;k++){ const p=pts[k], q=pts[(k+1)%pts.length], l=Math.hypot(q[0]-p[0],q[1]-p[1]); if(l<0.05) continue;
+        if(Math.abs(((q[0]-p[0])*ux+(q[1]-p[1])*uy)/l)<0.97) continue;
+        const d=pp=>Math.abs((pp[0]-ax)*uy-(pp[1]-ay)*ux); if(d(p)>0.6||d(q)>0.6) continue;
+        let nx=(q[1]-p[1])/l, ny=-(q[0]-p[0])/l; if(iPoly([(p[0]+q[0])/2+nx*0.1,(p[1]+q[1])/2+ny*0.1],pts)){ nx=-nx; ny=-ny; }
+        const s0=(p[0]-ax)*ux+(p[1]-ay)*uy, s1=(q[0]-ax)*ux+(q[1]-ay)*uy;
+        kanter.push({p,q,s0,s1,nx,ny}); }
+      const punkt=(K,s,o)=>{ const t=(s-K.s0)/(K.s1-K.s0); return [K.p[0]+(K.q[0]-K.p[0])*t+K.nx*o, K.p[1]+(K.q[1]-K.p[1])*t+K.ny*o]; };
+      v.segmenter.forEach((sg,k)=>{
+        kanter.forEach(K=>{ const lo=Math.max(sg.fra_m,Math.min(K.s0,K.s1)), hi=Math.min(sg.til_m,Math.max(K.s0,K.s1)); if(hi-lo<0.02) return;
+          flate(punkt(K,lo,0.025),punkt(K,hi,0.025),sg.vegg); });
+        if(k>0){ const c=v.segmenter[k-1].vegg, m=sg.fra_m;       // brannmurlinjen: 14 cm, mørk tone av de to fasadene
+          const mork=[0,1,2].map(j=>Math.round(Math.min(c[j],sg.vegg[j])*0.42));
+          const K=kanter.find(K=>m>=Math.min(K.s0,K.s1)-0.01 && m<=Math.max(K.s0,K.s1)+0.01);
+          if(K){ const sn=Math.sign(K.s1-K.s0)||1; flate(punkt(K,m-0.07*sn,0.035),punkt(K,m+0.07*sn,0.035),mork); } }
       });
     });
   }
