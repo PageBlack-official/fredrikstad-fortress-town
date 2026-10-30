@@ -52,6 +52,13 @@ VOLDPORTEN = 'bnr-193869548'
 # 0,8 av murhøyden), hvitkalket vaktstue oppå, valmet teglstak med kort møne og én pipe midt på mønet. Tegningen (Glasshytta.ai,
 # egen bit) viser det samme: huset på portmuren, valm mot enden.
 VOLDPORT_PORT = dict(h=4.4, pw=3.8, ph=3.5)
+# vaktstuens vinduer (høyde over portmuren): SSV-langsida som Glasshytta.ai (dør ved vestenden, to vinduer; andeler 0,25, 0,53, 0,81
+# av fasaden målt i tegningen), NV-enden som Street View aug. 2010 (to vinduer med 2 x 3 ruter ved 0,30 og 0,65 av bredden).
+# SØ-enden (yttersiden) har ingen vinduer, bare relieffet og to blindfelt (Street View 2010); tegningens tomme ramme der er blindfeltet.
+VOLDPORT_FASADER = [dict(linje=[[201.31, 40.3], [214.4, 33.99]], andeler=True,
+                         vinduer=[(0.25, 1.05, 0.9, 2.0, 1, 0), (0.53, 1.75, 0.8, 1.1, 0, 0), (0.81, 1.75, 0.8, 1.1, 0, 0)]),
+                    dict(linje=[[201.31, 40.3], [204.74, 47.43]], andeler=True,
+                         vinduer=[(0.30, 1.75, 0.8, 1.2, 0, 0), (0.65, 1.75, 0.8, 1.2, 0, 0)])]
 
 
 def valm_rektangel(p):
@@ -107,7 +114,9 @@ def fasade_vinduer(x, F):
         return False
     beholdt = [v for v in vind if not paa(v)]
     nye = []
+    Ltot = sum(math.hypot(b_[0] - a_[0], b_[1] - a_[1]) for a_, b_ in zip(L, L[1:]))
     for u, z, b, h, typ, bue in F['vinduer']:
+        if F.get('andeler'): u = u * Ltot
         p, t = punkt_paa(L, u); n = utover(x, p, t)
         nye.append([round(p[0], 2), round(p[1], 2), z, round(n[1], 4), round(-n[0], 4), round(n[0], 4), round(n[1], 4), b, h, typ, bue, 1])
     return beholdt + nye, len(vind) - len(beholdt)
@@ -191,6 +200,11 @@ def main(tørt=False):
         topp = max((q for f in tak for q in f), key=lambda q: q[2]); top = [q for f in tak for q in f if abs(q[2] - topp[2]) < 0.05]
         mx = sum(q[0] for q in top) / len(top); my = sum(q[1] for q in top) / len(top)
         sett(VOLDPORTEN, 'piper', [[round(mx, 2), round(my, 2), 0, (x.get('piper') or [[0, 0, 0, 0]])[0][3]]], 'én pipe midt på mønet (Street View 2010, Glasshytta.ai)')
+    xv = dict(x, vind=[])
+    vv = []
+    for F in VOLDPORT_FASADER:
+        v_, _ = fasade_vinduer(xv, F); vv += v_
+    sett(VOLDPORTEN, 'vind', vv, 'vaktstuen: SSV-langsida fra Glasshytta.ai, NV-enden fra Street View aug. 2010, SØ-enden uten vinduer')
     porter_voldporten(tørt)
     print(VOLDPORTEN, f'portmur {VOLDPORT_PORT["h"]} m, vaktstue h {x.get("h")} (kilder/hoyde-unntak.json)')
     if not tørt:
