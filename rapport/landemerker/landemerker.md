@@ -46,3 +46,16 @@ Glattet innenfor det dataene allerede sier (positur i data/statue.json, lest av 
 pluderhoser og rundet brystharnisk som omdreiningsflater, rillet pipekrage, fyldig helskjegg i stedet for en kjegle, flere segmenter
 på lemmene. Jeg har ikke selv sett fotoene (kommunens foto, DigitaltMuseum, nb.no): de ligger som lenker, ikke filer, og jeg lastet dem
 ikke ned. Ingen ny detalj er lagt til ut over posituren som står i dataene.
+
+## Det jeg har sett (kontrollark og nærbilder)
+- Kvartal14: tårnet er åttekantet med tinder, lys grå topp, rødt flagg og rundbuevinduer, og står bak gatefløyen der tegningen har
+  det. Det er lavere enn i tegningen, og det er riktig etter DOM. Fasaden har fem dype rundbuer nede, fem vinduer oppe, hjørnefelt og
+  dørfelt. Nærbildene (az −20 og 200) viser det samme i ekte rendering.
+- Kvartal10: arkaden har fem buer med dybde under gesimsen, og den femte delvis bak 867588. I ekte rendering leser buene på
+  zoom 6, men bakveggen ser brunlig ut, ikke svart.
+- Glasshytta: Voldportens kropp er med (før: bare vinduene), med portmur og bue i enden og valmtak. Modellen er lengre enn tegningen
+  (14,8 m etter omrisset og DOM, tegningen er forkortet) og står delvis over arkets ramme. I ekte rendering (az 110) ses ikke buen i
+  SØ-enden fra den vinkelen.
+- Statuen (rapport/torvet/statue.png): avrundet harnisk, buklede pluderhoser, rillet krage og runde jernsko er synlige fra fire
+  vinkler. På kartzoom er figuren ca. 20 px høy, og detaljene ses ikke der.
+- Regler (rapport/rapport.md, 30.10 09.37): alle grønne unntatt 03, 09 og 12.
