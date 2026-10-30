@@ -593,7 +593,7 @@
  },
  {
   "id": "bnr-193972152",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.47)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.46)",
   "tegning": [
    246,
    147,
@@ -610,7 +610,7 @@
  },
  {
   "id": "bnr-193868258",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.67)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.72)",
   "tegning": [
    244,
    123,
@@ -850,7 +850,7 @@
  },
  {
   "id": "bnr-193868266",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.74)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.78)",
   "tegning": [
    244,
    123,
@@ -867,7 +867,7 @@
  },
  {
   "id": "bnr-193868274",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.70)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.63)",
   "tegning": [
    244,
    123,
@@ -1017,7 +1017,7 @@
  },
  {
   "id": "bnr-193868282",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.73)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.85)",
   "tegning": [
    173,
    100,
@@ -1332,11 +1332,11 @@
  },
  {
   "id": "bnr-300279164",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.46)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.51)",
   "tegning": [
-   246,
-   147,
-   129
+   173,
+   100,
+   86
   ],
   "tegning_familie": "rød",
   "foto": [
@@ -1441,7 +1441,7 @@
  },
  {
   "id": "bnr-193868290",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.63)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.76)",
   "tegning": [
    126,
    128,
@@ -1521,7 +1521,7 @@
  },
  {
   "id": "bnr-193972411",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.73)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.74)",
   "tegning": [
    180,
    102,
@@ -1640,7 +1640,7 @@
  },
  {
   "id": "bnr-193867588",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.65)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.67)",
   "tegning": [
    180,
    102,
@@ -1736,6 +1736,23 @@
   "sikker": true
  },
  {
+  "id": "bnr-193867596",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.54)",
+  "tegning": [
+   151,
+   150,
+   149
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   175.0,
+   173.0,
+   161.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193867723",
   "kilde": "kvartaltegningen Kvartal12 (IoU 0.51)",
   "tegning": [
@@ -1771,7 +1788,7 @@
  },
  {
   "id": "bnr-193868711",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.67)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.66)",
   "tegning": [
    180,
    102,
@@ -1960,7 +1977,7 @@
  },
  {
   "id": "bnr-193867545",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.48)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.47)",
   "tegning": [
    237,
    119,
@@ -2006,7 +2023,7 @@
  },
  {
   "id": "bnr-193868533",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.52)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.51)",
   "tegning": [
    244,
    123,
@@ -2069,7 +2086,7 @@
  },
  {
   "id": "bnr-193972144",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.48)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.45)",
   "tegning": [
    152,
    154,
@@ -2132,7 +2149,7 @@
  },
  {
   "id": "bnr-193971288",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.53)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.38)",
   "tegning": [
    173,
    100,
@@ -2149,13 +2166,13 @@
  },
  {
   "id": "bnr-193971261",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.57)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.37)",
   "tegning": [
-   152,
-   154,
-   157
+   244,
+   123,
+   106
   ],
-  "tegning_familie": "grå",
+  "tegning_familie": "rød",
   "foto": [
    236.0,
    206.0,
@@ -2309,7 +2326,7 @@
  },
  {
   "id": "bnr-193867553",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.61)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.67)",
   "tegning": [
    180,
    102,
@@ -2338,7 +2355,7 @@
  },
  {
   "id": "bnr-16313173",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.57)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.56)",
   "tegning": [
    244,
    123,

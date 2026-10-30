@@ -4,60 +4,6 @@
  "verktoy": "verktoy/fasade_tegning.py les_fra_kontroll",
  "vegger": [
   {
-   "id": "bnr-193972411",
-   "vegg": 5,
-   "side": "kontroll",
-   "a": [
-    -62.99,
-    27.48
-   ],
-   "b": [
-    -67.6,
-    29.58
-   ],
-   "L": 5.07,
-   "venstre": [
-    -67.6,
-    29.58
-   ],
-   "flater": [
-    87
-   ],
-   "farger": [
-    [
-     0.776,
-     0.776,
-     0.773
-    ]
-   ],
-   "elementer": [
-    {
-     "u": 0.4949,
-     "v": -1.299,
-     "vb": -1.676,
-     "vt": -0.922,
-     "bu": 0.0639,
-     "hv": 0.754,
-     "hvit": 0.44,
-     "mork": 0.4,
-     "buet": false,
-     "pt": [
-      190.05,
-      178.97
-     ],
-     "wpt": 0.5,
-     "hpt": 1.5
-    }
-   ],
-   "geo": {
-    "fx0": 186.17335705244756,
-    "fx1": 194.00286723812278,
-    "H_venstre": 5.365064581167815,
-    "H_hoyre": 6.192763104235155
-   },
-   "kilde": "kontrollkobling"
-  },
-  {
    "id": "bnr-13394024",
    "vegg": 3,
    "side": "kontroll",
@@ -289,6 +235,43 @@
     "H_hoyre": 14.383523068696235
    },
    "kilde": "kontrollkobling"
+  },
+  {
+   "id": "bnr-193971903",
+   "vegg": 4,
+   "side": "kontroll",
+   "a": [
+    -72.33,
+    27.75
+   ],
+   "b": [
+    -74.87,
+    29.18
+   ],
+   "L": 2.91,
+   "venstre": [
+    -74.87,
+    29.18
+   ],
+   "flater": [
+    60
+   ],
+   "farger": [
+    [
+     1.0,
+     0.91,
+     0.631
+    ]
+   ],
+   "elementer": [],
+   "geo": {
+    "fx0": 125.72623074977996,
+    "fx1": 132.25180846681175,
+    "H_venstre": 12.502481945120337,
+    "H_hoyre": 10.369291671630094
+   },
+   "kilde": "kontrollkobling",
+   "erstatter_haand": true
   }
  ]
 }

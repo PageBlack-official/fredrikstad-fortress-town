@@ -104,13 +104,6 @@
     "dorer": 0,
     "notat": []
    },
-   "5": {
-    "tegning": "Kvartal10",
-    "rader": [],
-    "dorer": 0,
-    "notat": [],
-    "kobling": "kontroll"
-   },
    "10": {
     "tegning": "Street View",
     "rader": [
@@ -123,7 +116,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 8,
+  "regler": 10,
   "streetview": 1
  },
  {
@@ -189,21 +182,6 @@
   },
   "tegnet": 13,
   "regler": 14,
-  "streetview": 0
- },
- {
-  "id": "bnr-193971903",
-  "navn": null,
-  "vegger": {
-   "3": {
-    "tegning": "Kvartal10",
-    "rader": [],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 0,
-  "regler": 10,
   "streetview": 0
  },
  {
@@ -1623,7 +1601,7 @@
    "7": {
     "tegning": "Kvartal8BITMAP",
     "rader": [
-     1
+     2
     ],
     "dorer": 1,
     "notat": [],
@@ -1640,7 +1618,7 @@
     ]
    }
   },
-  "tegnet": 11,
+  "tegnet": 10,
   "regler": 14,
   "streetview": 3
  },
@@ -1664,10 +1642,17 @@
     ],
     "dorer": 1,
     "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": [],
+    "kobling": "kontroll"
    }
   },
   "tegnet": 11,
-  "regler": 20,
+  "regler": 14,
   "streetview": 0
  },
  {
@@ -1749,8 +1734,15 @@
    "2": {
     "tegning": "Kvartal8BITMAP",
     "rader": [
-     2
+     4
     ],
+    "dorer": 0,
+    "notat": [],
+    "kobling": "kontroll"
+   },
+   "4": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
     "dorer": 0,
     "notat": [],
     "kobling": "kontroll"
@@ -1766,8 +1758,8 @@
     ]
    }
   },
-  "tegnet": 2,
-  "regler": 32,
+  "tegnet": 4,
+  "regler": 30,
   "streetview": 6
  },
  {
@@ -3000,6 +2992,22 @@
   "streetview": 0
  },
  {
+  "id": "bnr-193971903",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal10",
+    "rader": [],
+    "dorer": 0,
+    "notat": [],
+    "kobling": "kontroll"
+   }
+  },
+  "tegnet": 0,
+  "regler": 10,
+  "streetview": 0
+ },
+ {
   "id": "bnr-193867766",
   "navn": null,
   "vegger": {
@@ -3209,29 +3217,25 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193972136",
-  "navn": null,
-  "vegger": {
-   "5": {
-    "tegning": "Kvartal8BITMAP",
-    "rader": [],
-    "dorer": 0,
-    "notat": [],
-    "kobling": "kontroll"
-   }
-  },
-  "tegnet": 0,
-  "regler": 8,
-  "streetview": 0
- },
- {
   "id": "bnr-193868290",
   "navn": null,
   "vegger": {
    "1": {
     "tegning": "Kvartal8BITMAP",
     "rader": [
+     6,
+     5,
+     4,
      2
+    ],
+    "dorer": 0,
+    "notat": [],
+    "kobling": "kontroll"
+   },
+   "5": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     1
     ],
     "dorer": 0,
     "notat": [],
@@ -3249,15 +3253,15 @@
     ]
    }
   },
-  "tegnet": 2,
-  "regler": 21,
+  "tegnet": 18,
+  "regler": 15,
   "streetview": 8
  },
  {
   "id": "bnr-193971261",
   "navn": null,
   "vegger": {
-   "2": {
+   "1": {
     "tegning": "Kvartal8BITMAP",
     "rader": [],
     "dorer": 0,
@@ -3266,7 +3270,7 @@
    }
   },
   "tegnet": 0,
-  "regler": 2,
+  "regler": 4,
   "streetview": 0
  },
  {
