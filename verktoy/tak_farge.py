@@ -38,8 +38,8 @@ REGEL_GRUNNER = ('Street View (Vegars Chrome 29.10.2026)', 'takfarge fra ortofot
 UGYLDIGE_TEGNINGER = {'Kvartal11'}     # kontrolløren: koblingen peker på feil hus (rapport/kontroll/avvik.md)
 TEGNINGSAAR = 2015
 # Mellombåndet (falmet/mosegrodd tegl og brungrå tak gir samme tall i fotoet): 'tegning' = tegningens farge (30.10), 'foto' = brungrå
-# fra fotoet. Ett ord å bytte hvis Vegar dømmer kontrollarkene (rapport/farge/tak-*.png) annerledes.
-MELLOM = 'tegning'
+# fra fotoet. 30.10: 'foto' (hovedagentens kryssjekk av kvartal 12: klart grå tak ble røde med 'tegning'; taket følger fotoet 2024).
+MELLOM = 'foto'
 # tegningens farge lest for hånd der kontrolløren leser feil flate (piksel i tegningen rendret med pymupdf, 30.10)
 HAANDLEST = {
     # Tøihuset: tegningen har oker vegger og rødbrunt tak (173, 100, 86). Street View mai 2024 (høy sikkerhet) viser umalt rød tegl
@@ -51,9 +51,9 @@ HAANDLEST = {
 }
 
 # kartfarger (flate, i samme lyshet som trykket) for klassene fotoet kan skille
-PALETT = {'rød tegl': (196, 92, 72), 'mørk brun': (110, 88, 78), 'brungrå': (132, 122, 112), 'svart/antrasitt': (70, 70, 72), 'mørk grå': (104, 104, 102),
+PALETT = {'rød tegl': (196, 92, 72), 'falmet tegl': (170, 108, 92), 'mørk brun': (110, 88, 78), 'brungrå': (132, 122, 112), 'svart/antrasitt': (70, 70, 72), 'mørk grå': (104, 104, 102),
           'grå': (150, 150, 148), 'lys grå': (176, 176, 172), 'grønn (kobber)': (112, 168, 146)}
-FAMILIE_AV_KLASSE = {'rød tegl': 'rød', 'mørk brun': 'brun', 'brungrå': 'grå', 'svart/antrasitt': 'grå', 'mørk grå': 'grå', 'grå': 'grå',
+FAMILIE_AV_KLASSE = {'rød tegl': 'rød', 'falmet tegl': 'rød', 'mørk brun': 'brun', 'brungrå': 'grå', 'svart/antrasitt': 'grå', 'mørk grå': 'grå', 'grå': 'grå',
                      'lys grå': 'grå', 'grønn (kobber)': 'grønn'}
 
 
@@ -312,7 +312,14 @@ def mal_tak(x, foto_cache={}):
             continue
         exg = 2 * v[:, 1] - v[:, 0] - v[:, 2]
         veg = float(((exg > 18) & (v[:, 1] > v[:, 0])).mean())
-        res.append(dict(n=int(len(v)), med=np.median(v, axis=0).round(1).tolist(), V=float(np.median(v.max(axis=1))) / 255, veg=round(veg, 3)))
+        # pikselvis rødhet (30.10): falmet tegl er laksefarget i sol (a* 4–6 på de røde pikslene), grå tak har a* 0–3 overalt
+        lab = cv2.cvtColor(v.reshape(-1, 1, 3)[:, :, ::-1].astype(np.uint8), cv2.COLOR_BGR2LAB).reshape(-1, 3).astype(float)
+        L_, a_ = lab[:, 0] * 100 / 255, lab[:, 1] - 128
+        ok = (L_ > 35) & ~((exg > 18) & (v[:, 1] > v[:, 0]))
+        a75 = float(np.percentile(a_[ok], 75)) if ok.sum() >= 20 else None
+        rf = float(((a_ > 8) & ok).sum() / max(1, ok.sum()))
+        res.append(dict(n=int(len(v)), med=np.median(v, axis=0).round(1).tolist(), V=float(np.median(v.max(axis=1))) / 255, veg=round(veg, 3),
+                        a75=a75, rf=round(rf, 3)))
     return res
 
 
@@ -332,7 +339,21 @@ def foto_dom(flater_):
     lys = [f for f in flater_ if f['V'] >= 0.4 and f['n'] >= 0.08 * n]
     amax = max((_lab([int(c) for c in f['med']])[1] for f in lys if _lab([int(c) for c in f['med']])[0] >= 40), default=None)
     k, sikker = klasse(med, amax)
+    # rødt bare fra én flate i halvlys mens sola ser nøytralt grått og nesten ingen piksler er røde: nabotakets kant eller refleks
+    # (16308102 i kvartal 14: blågrått pyramidetak ble rødt, 30.10) -> mellombåndet avgjør
+    fl_rf = [f for f in flater_ if f.get('rf') is not None]
+    rf_alle = sum(f['rf'] * f['n'] for f in fl_rf) / max(1, sum(f['n'] for f in fl_rf))
+    if k == 'rød tegl' and _lab([int(c) for c in med])[1] < 2 and rf_alle < 0.03:
+        k, sikker = 'brungrå', False
     if not sikker and MELLOM == 'foto' and k in ('brungrå', 'mørk brun') and mx >= 0.3:
+        # mellombåndet avgjøres pikselvis (kalibrert med øyet på kvartal 12 og 13, 30.10): rødhet på flatene i lys -> falmet tegl,
+        # ellers grått. Grå tak i kvartal 12 har a*75 0–3 og ingen røde piksler; 7510 (laksefarget tegl i sol) har a*75 5.
+        fl_ = [f for f in lys if f.get('a75') is not None] or [f for f in flater_ if f.get('a75') is not None]
+        if fl_:
+            w = sum(f['n'] for f in fl_)
+            a75 = sum(f['a75'] * f['n'] for f in fl_) / w
+            rf = sum(f['rf'] * f['n'] for f in fl_) / w
+            k = 'falmet tegl' if (a75 >= 4 or rf >= 0.03) else k
         sikker = True
     return med.round().tolist(), k, sikker, ('' if sikker else 'falmet/mosegrodd: fotoet skiller ikke tegl fra grått')
 
@@ -361,9 +382,12 @@ def main(tørt=False):
             svak = None
         tfam = familie(tegn[0]) if tegn else None
         kfam = FAMILIE_AV_KLASSE.get(k)
-        if k and sikker:
+        if tegn and 'lest for hånd' in tegn[1] and 'Street View' in tegn[1]:
+            # håndlest mot fotoet og Street View 2016+ (HAANDLEST): øyet har sett begge, går foran maskinklassen
+            farge, kilde, aar = tegn[0], tegn[1], 2024
+        elif k and sikker:
             # samme kulør og omtrent samme lyshet: tegningens farge (en skyggetone fra tegningen, som svart på et lysegrått tak, nei)
-            if tegn and (tfam == kfam or {tfam, kfam} <= {'rød', 'brun', 'oransje'} or (kfam == 'grå' and tfam == 'blå')) \
+            if tegn and k != 'falmet tegl' and (tfam == kfam or {tfam, kfam} <= {'rød', 'brun', 'oransje'} or (kfam == 'grå' and tfam == 'blå')) \
                     and _dE(tegn[0], PALETT[k]) < 40:
                 farge, kilde, aar = tegn[0], f"ortofoto 2024 ({k}) = {tegn[1]}: tegningens farge", 2024
             else:

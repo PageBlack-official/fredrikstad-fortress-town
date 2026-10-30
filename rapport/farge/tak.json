@@ -120,8 +120,8 @@
    177.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     140,
@@ -140,8 +140,8 @@
    106,
    92
   ],
-  "kilde": "ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd",
+  "aar": 2024
  },
  {
   "id": "bnr-193868363",
@@ -156,8 +156,8 @@
    173.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     240,
@@ -172,12 +172,12 @@
    103
   ],
   "farge": [
-   240,
-   120,
-   103
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868061",
@@ -228,8 +228,8 @@
    170.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -241,7 +241,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -257,8 +257,8 @@
    143.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     66,
@@ -277,8 +277,8 @@
    66,
    65
   ],
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.72) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.72): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193867677",
@@ -293,8 +293,8 @@
    164.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -309,12 +309,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen tell (IoU 0.83) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.83))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868568",
@@ -365,8 +365,8 @@
    158.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -381,12 +381,12 @@
    106
   ],
   "farge": [
-   246,
+   132,
    122,
-   106
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868053",
@@ -401,8 +401,8 @@
    171.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -417,12 +417,12 @@
    106
   ],
   "farge": [
-   246,
+   132,
    122,
-   106
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867308",
@@ -437,8 +437,8 @@
    159.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     245,
@@ -453,12 +453,12 @@
    105
   ],
   "farge": [
-   245,
+   132,
    122,
-   105
+   112
   ],
-  "kilde": "kvartaltegningen (merknad) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen (merknad))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867634",
@@ -473,8 +473,8 @@
    149.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -489,12 +489,12 @@
    104
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen tell (IoU 0.57) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen tell (IoU 0.57))",
+  "aar": 2024
  },
  {
   "id": "bnr-193869548",
@@ -574,8 +574,8 @@
    148.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     134,
@@ -594,8 +594,8 @@
    134,
    134
   ],
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.50) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.50): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193867499",
@@ -610,8 +610,8 @@
    161.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     184,
@@ -626,12 +626,12 @@
    106
   ],
   "farge": [
-   184,
-   111,
-   93
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.68) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.68))",
+  "aar": 2024
  },
  {
   "id": "bnr-193870309",
@@ -682,8 +682,8 @@
    145.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": null,
   "farge": [
@@ -691,7 +691,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -706,9 +706,9 @@
    170.0,
    154.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -723,12 +723,12 @@
    106
   ],
   "farge": [
-   237,
-   119,
-   102
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.83) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.83))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868428",
@@ -743,8 +743,8 @@
    165.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     240,
@@ -759,12 +759,12 @@
    103
   ],
   "farge": [
-   240,
-   120,
-   103
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193869580",
@@ -851,8 +851,8 @@
    113.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -864,7 +864,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -880,8 +880,8 @@
    169.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -896,12 +896,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-13416559",
@@ -969,9 +969,9 @@
    200.0,
    175.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -979,11 +979,11 @@
    104
   ],
   "farge": [
-   132,
-   122,
-   112
+   170,
+   108,
+   92
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (falmet tegl)",
   "aar": 2024
  },
  {
@@ -1140,8 +1140,8 @@
    180.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -1156,12 +1156,12 @@
    106
   ],
   "farge": [
-   173,
-   100,
-   86
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.68) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.68))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868339",
@@ -1176,8 +1176,8 @@
    175.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -1192,12 +1192,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.74) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.74))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867626",
@@ -1211,9 +1211,9 @@
    131.0,
    117.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -1228,12 +1228,12 @@
    198
   ],
   "farge": [
-   244,
-   123,
-   106
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.66) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.66))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868347",
@@ -1248,8 +1248,8 @@
    176.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -1264,12 +1264,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193874401",
@@ -1492,8 +1492,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -1505,7 +1505,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -1593,8 +1593,8 @@
    153.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     188,
@@ -1613,8 +1613,8 @@
    188,
    192
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193868258",
@@ -1665,8 +1665,8 @@
    164.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -1681,12 +1681,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.55) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.55))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971954",
@@ -1773,8 +1773,8 @@
    168.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     178,
@@ -1789,12 +1789,12 @@
    103
   ],
   "farge": [
-   178,
-   110,
-   95
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.49) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal6 (IoU 0.49))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972322",
@@ -1809,8 +1809,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    246,
@@ -1822,7 +1822,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -1838,8 +1838,8 @@
    176.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     115,
@@ -1858,8 +1858,8 @@
    117,
    119
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.67) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen kvartal7 (IoU 0.67): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-16312916",
@@ -1874,8 +1874,8 @@
    160.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    190,
@@ -1883,12 +1883,12 @@
    194
   ],
   "farge": [
-   190,
-   190,
-   194
+   132,
+   122,
+   112
   ],
-  "kilde": "2015-trykkfila (ikke dømt); samme kulør som ortofoto 2024 eller fotoet ser ikke (falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå)",
+  "aar": 2024
  },
  {
   "id": "bnr-193868223",
@@ -1975,8 +1975,8 @@
    168.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     211,
@@ -1991,12 +1991,12 @@
    94
   ],
   "farge": [
-   211,
-   107,
-   92
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.46) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.46))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868541",
@@ -2011,8 +2011,8 @@
    157.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -2024,7 +2024,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -2112,8 +2112,8 @@
    177.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -2128,12 +2128,12 @@
    106
   ],
   "farge": [
-   246,
+   132,
    122,
-   106
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971199",
@@ -2147,9 +2147,9 @@
    134.0,
    119.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -2157,11 +2157,11 @@
    104
   ],
   "farge": [
-   132,
-   122,
-   112
+   170,
+   108,
+   92
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (falmet tegl)",
   "aar": 2024
  },
  {
@@ -2213,8 +2213,8 @@
    172.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2229,12 +2229,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868088",
@@ -2249,8 +2249,8 @@
    176.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2265,12 +2265,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.66) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.66))",
+  "aar": 2024
  },
  {
   "id": "bnr-193918247",
@@ -2342,9 +2342,9 @@
    204.0,
    182.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2359,12 +2359,12 @@
    198
   ],
   "farge": [
-   244,
-   123,
-   106
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.70) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.70))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972292",
@@ -2415,8 +2415,8 @@
    159.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2431,12 +2431,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.67) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.67))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868274",
@@ -2451,8 +2451,8 @@
    164.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2467,12 +2467,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.66) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.66))",
+  "aar": 2024
  },
  {
   "id": "bnr-193974686",
@@ -2516,8 +2516,8 @@
    168.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2532,12 +2532,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.69) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal5 (IoU 0.69))",
+  "aar": 2024
  },
  {
   "id": "pb-6",
@@ -2581,8 +2581,8 @@
    153.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2597,12 +2597,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867936",
@@ -2617,8 +2617,8 @@
    224.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2633,12 +2633,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.74) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.74))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868029",
@@ -2652,9 +2652,9 @@
    163.0,
    146.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     240,
@@ -2669,12 +2669,12 @@
    103
   ],
   "farge": [
-   240,
-   120,
-   103
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971334",
@@ -2725,8 +2725,8 @@
    89.0
   ],
   "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     217,
@@ -2741,12 +2741,12 @@
    103
   ],
   "farge": [
-   217,
    110,
-   94
+   88,
+   78
   ],
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.63) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (mørk brun); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.63))",
+  "aar": 2024
  },
  {
   "id": "bnr-16290424",
@@ -2760,9 +2760,9 @@
    186.0,
    165.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -2777,12 +2777,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867618",
@@ -2796,9 +2796,9 @@
    202.0,
    181.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     219,
@@ -2813,12 +2813,12 @@
    103
   ],
   "farge": [
-   219,
-   111,
-   95
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.73) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.73))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868282",
@@ -2833,8 +2833,8 @@
    183.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -2849,12 +2849,12 @@
    104
   ],
   "farge": [
-   173,
-   100,
-   86
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.81) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.81))",
+  "aar": 2024
  },
  {
   "id": "bnr-6251323",
@@ -2905,8 +2905,8 @@
    179.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     132,
@@ -2925,8 +2925,8 @@
    134,
    136
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.41) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen kvartal7 (IoU 0.41): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-13414904",
@@ -3013,8 +3013,8 @@
    178.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     240,
@@ -3029,12 +3029,12 @@
    103
   ],
   "farge": [
-   240,
-   120,
-   103
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972314",
@@ -3085,8 +3085,8 @@
    171.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    246,
@@ -3098,7 +3098,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -3186,8 +3186,8 @@
    170.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -3202,12 +3202,12 @@
    106
   ],
   "farge": [
-   173,
-   100,
-   86
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.49) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.49))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867359",
@@ -3222,8 +3222,8 @@
    169.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    188,
@@ -3231,12 +3231,12 @@
    192
   ],
   "farge": [
-   188,
-   188,
-   192
+   132,
+   122,
+   112
   ],
-  "kilde": "2015-trykkfila (ikke dømt); samme kulør som ortofoto 2024 eller fotoet ser ikke (falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå)",
+  "aar": 2024
  },
  {
   "id": "bnr-193868002",
@@ -3251,8 +3251,8 @@
    167.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -3267,12 +3267,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868142",
@@ -3286,9 +3286,9 @@
    197.0,
    172.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -3303,12 +3303,12 @@
    106
   ],
   "farge": [
-   173,
-   100,
-   86
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.68) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.68))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867901",
@@ -3539,8 +3539,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -3555,12 +3555,12 @@
    192
   ],
   "farge": [
-   173,
-   100,
-   86
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.63) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.63))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972519",
@@ -3682,9 +3682,9 @@
    180.0,
    158.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -3699,12 +3699,12 @@
    104
   ],
   "farge": [
-   244,
-   123,
-   106
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.54) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen kvartal6 (IoU 0.54))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971970",
@@ -3719,8 +3719,8 @@
    183.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -3735,12 +3735,12 @@
    106
   ],
   "farge": [
-   246,
+   132,
    122,
-   106
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972624",
@@ -4079,8 +4079,8 @@
    178.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     115,
@@ -4099,8 +4099,8 @@
    117,
    119
   ],
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.67) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen kvartal5 (IoU 0.67): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193868452",
@@ -4115,8 +4115,8 @@
    157.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     142,
@@ -4135,8 +4135,8 @@
    142,
    146
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193972039",
@@ -4151,8 +4151,8 @@
    170.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -4167,12 +4167,12 @@
    106
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.47) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.47))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971938",
@@ -4223,8 +4223,8 @@
    253.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -4239,12 +4239,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972411",
@@ -4295,8 +4295,8 @@
    177.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -4311,12 +4311,12 @@
    106
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.62) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.62))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868592",
@@ -4331,8 +4331,8 @@
    135.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -4347,12 +4347,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.58) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.58))",
+  "aar": 2024
  },
  {
   "id": "bnr-193870236",
@@ -4367,8 +4367,8 @@
    162.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     66,
@@ -4387,8 +4387,8 @@
    66,
    65
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.68) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal14 (IoU 0.68): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "pb-7",
@@ -4403,8 +4403,8 @@
    152.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -4419,12 +4419,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867820",
@@ -4511,8 +4511,8 @@
    171.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -4527,12 +4527,12 @@
    106
   ],
   "farge": [
-   246,
+   132,
    122,
-   106
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867782",
@@ -4547,8 +4547,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -4563,12 +4563,12 @@
    106
   ],
   "farge": [
-   237,
-   119,
-   102
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.69) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.69))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867588",
@@ -4583,8 +4583,8 @@
    162.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -4599,12 +4599,12 @@
    106
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.56) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.56))",
+  "aar": 2024
  },
  {
   "id": "bnr-193987370",
@@ -4655,8 +4655,8 @@
    177.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -4668,7 +4668,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -4720,8 +4720,8 @@
    167.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -4736,12 +4736,12 @@
    106
   ],
   "farge": [
-   246,
+   132,
    122,
-   106
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972101",
@@ -4756,8 +4756,8 @@
    159.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -4772,12 +4772,12 @@
    104
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.56) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.56))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867804",
@@ -4864,8 +4864,8 @@
    161.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -4880,12 +4880,12 @@
    103
   ],
   "farge": [
-   237,
-   119,
-   102
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.52) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.52))",
+  "aar": 2024
  },
  {
   "id": "bnr-16308102",
@@ -4899,7 +4899,7 @@
    182.0,
    182.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "brungrå",
   "sikker": true,
   "grunn": "",
   "tegning": [
@@ -4916,11 +4916,11 @@
    117
   ],
   "farge": [
-   196,
-   92,
-   72
+   119,
+   119,
+   117
   ],
-  "kilde": "ortofoto 2024 (rød tegl); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024
  },
  {
@@ -4936,8 +4936,8 @@
    174.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    188,
@@ -4945,12 +4945,12 @@
    192
   ],
   "farge": [
-   188,
-   188,
-   192
+   132,
+   122,
+   112
   ],
-  "kilde": "2015-trykkfila (ikke dømt); samme kulør som ortofoto 2024 eller fotoet ser ikke (falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå)",
+  "aar": 2024
  },
  {
   "id": "bnr-193868711",
@@ -4965,8 +4965,8 @@
    175.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -4981,12 +4981,12 @@
    104
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.72) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.72))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972446",
@@ -5109,8 +5109,8 @@
    175.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     119,
@@ -5129,8 +5129,8 @@
    119,
    118
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.56) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal12 (IoU 0.56): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193867766",
@@ -5145,8 +5145,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     66,
@@ -5165,8 +5165,8 @@
    66,
    65
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.57) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal12 (IoU 0.57): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193972462",
@@ -5253,8 +5253,8 @@
    169.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -5269,12 +5269,12 @@
    106
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.71) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.71))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867847",
@@ -5289,8 +5289,8 @@
    176.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -5309,8 +5309,8 @@
    135,
    135
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193867545",
@@ -5325,8 +5325,8 @@
    93.0
   ],
   "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -5341,12 +5341,12 @@
    106
   ],
   "farge": [
-   237,
-   119,
-   102
+   110,
+   88,
+   78
   ],
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.51) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (mørk brun); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.51))",
+  "aar": 2024
  },
  {
   "id": "bnr-193867715",
@@ -5361,8 +5361,8 @@
    170.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     242,
@@ -5377,12 +5377,12 @@
    135
   ],
   "farge": [
-   242,
-   149,
-   130
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.54) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
+  "aar": 2024
  },
  {
   "id": "pb-9",
@@ -5397,8 +5397,8 @@
    171.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -5410,7 +5410,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -5426,8 +5426,8 @@
    162.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    246,
@@ -5439,7 +5439,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -5484,8 +5484,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -5500,12 +5500,12 @@
    106
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.51) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.51))",
+  "aar": 2024
  },
  {
   "id": "bnr-193974767",
@@ -5591,9 +5591,9 @@
    179.0,
    163.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -5608,12 +5608,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193991718",
@@ -5628,8 +5628,8 @@
    170.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     188,
@@ -5648,8 +5648,8 @@
    190,
    192
   ],
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.57) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen kvartal7 (IoU 0.57): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193972306",
@@ -5663,9 +5663,9 @@
    130.0,
    119.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -5680,12 +5680,12 @@
    104
   ],
   "farge": [
-   244,
-   123,
-   106
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.50) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.50))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972098",
@@ -5843,9 +5843,9 @@
    190.0,
    171.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -5860,12 +5860,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972187",
@@ -6060,8 +6060,8 @@
    157.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -6080,8 +6080,8 @@
    135,
    135
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193971873",
@@ -6203,9 +6203,9 @@
    191.0,
    173.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -6220,12 +6220,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972055",
@@ -6240,8 +6240,8 @@
    157.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -6256,12 +6256,12 @@
    106
   ],
   "farge": [
-   237,
-   119,
-   102
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.50) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.50))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971377",
@@ -6348,8 +6348,8 @@
    127.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -6364,12 +6364,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971385",
@@ -6384,8 +6384,8 @@
    149.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     188,
@@ -6404,8 +6404,8 @@
    188,
    192
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193971229",
@@ -6456,8 +6456,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -6472,12 +6472,12 @@
    104
   ],
   "farge": [
-   246,
-   147,
-   129
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.62) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal4BITMP (IoU 0.62))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971288",
@@ -6491,9 +6491,9 @@
    201.0,
    183.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     173,
@@ -6508,12 +6508,12 @@
    104
   ],
   "farge": [
-   173,
-   100,
-   86
+   170,
+   108,
+   92
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.38) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.38))",
+  "aar": 2024
  },
  {
   "id": "bnr-193971261",
@@ -6564,8 +6564,8 @@
    102.0
   ],
   "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -6580,12 +6580,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   110,
+   88,
+   78
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (mørk brun); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868010",
@@ -6600,8 +6600,8 @@
    168.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     188,
@@ -6620,8 +6620,8 @@
    188,
    192
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193971296",
@@ -6635,9 +6635,9 @@
    122.0,
    115.0
   ],
-  "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -6652,12 +6652,12 @@
    135
   ],
   "farge": [
-   135,
-   135,
-   135
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har grå (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972772",
@@ -6671,9 +6671,9 @@
    72.0,
    65.0
   ],
-  "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     128,
@@ -6688,12 +6688,12 @@
    132
   ],
   "farge": [
-   128,
-   128,
-   132
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har grå (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972578",
@@ -6888,8 +6888,8 @@
    149.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     217,
@@ -6904,12 +6904,12 @@
    192
   ],
   "farge": [
-   217,
-   110,
-   94
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.47) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.47))",
+  "aar": 2024
  },
  {
   "id": "bnr-193972349",
@@ -7180,8 +7180,8 @@
    156.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -7196,12 +7196,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868681",
@@ -7216,8 +7216,8 @@
    161.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -7232,12 +7232,12 @@
    135
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.46) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.46))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868703",
@@ -7252,8 +7252,8 @@
    157.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -7268,12 +7268,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868584",
@@ -7288,8 +7288,8 @@
    159.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -7304,12 +7304,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868517",
@@ -7396,8 +7396,8 @@
    153.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -7412,12 +7412,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868614",
@@ -7467,9 +7467,9 @@
    185.0,
    163.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     246,
@@ -7484,12 +7484,12 @@
    106
   ],
   "farge": [
-   246,
-   122,
-   106
+   170,
+   108,
+   92
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868479",
@@ -7504,8 +7504,8 @@
    162.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -7520,12 +7520,12 @@
    106
   ],
   "farge": [
-   237,
-   119,
-   102
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.62) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.62))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868495",
@@ -7572,8 +7572,8 @@
    166.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -7592,8 +7592,8 @@
    135,
    135
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193867987",
@@ -7680,8 +7680,8 @@
    169.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     180,
@@ -7696,12 +7696,12 @@
    106
   ],
   "farge": [
-   180,
-   102,
-   84
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.59) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.59))",
+  "aar": 2024
  },
  {
   "id": "bnr-193870244",
@@ -7716,8 +7716,8 @@
    150.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     198,
@@ -7736,8 +7736,8 @@
    198,
    197
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.54) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal14 (IoU 0.54): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-193867685",
@@ -7752,8 +7752,8 @@
    94.0
   ],
   "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -7761,12 +7761,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   110,
+   88,
+   78
   ],
-  "kilde": "2015-trykkfila (ikke dømt); samme kulør som ortofoto 2024 eller fotoet ser ikke (falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (mørk brun)",
+  "aar": 2024
  },
  {
   "id": "bnr-193867553",
@@ -7817,8 +7817,8 @@
    131.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    244,
@@ -7830,7 +7830,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -7968,8 +7968,8 @@
    151.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     135,
@@ -7988,8 +7988,8 @@
    135,
    135
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "aar": 2024
  },
  {
   "id": "bnr-300399132",
@@ -8004,8 +8004,8 @@
    129.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     163,
@@ -8020,12 +8020,12 @@
    104
   ],
   "farge": [
-   163,
-   71,
-   68
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.55) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.55))",
+  "aar": 2024
  },
  {
   "id": "bnr-193820557",
@@ -8069,8 +8069,8 @@
    186.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -8085,12 +8085,12 @@
    104
   ],
   "farge": [
-   244,
-   120,
-   104
+   132,
+   122,
+   112
   ],
-  "kilde": "2019-trykket (dømt) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+  "aar": 2024
  },
  {
   "id": "bnr-193870201",
@@ -8105,8 +8105,8 @@
    165.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     244,
@@ -8121,12 +8121,12 @@
    104
   ],
   "farge": [
-   244,
-   123,
-   106
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen sistekvartal (IoU 0.79) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.79))",
+  "aar": 2024
  },
  {
   "id": "bnr-193869572",
@@ -8177,8 +8177,8 @@
    156.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": [
    [
     237,
@@ -8193,12 +8193,12 @@
    138
   ],
   "farge": [
-   237,
-   119,
-   102
+   132,
+   122,
+   112
   ],
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.52) (ortofoto 2024: falmet/mosegrodd: fotoet skiller ikke tegl fra grått)",
-  "aar": 2015
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.52))",
+  "aar": 2024
  },
  {
   "id": "bnr-193868673",
@@ -8213,8 +8213,8 @@
    170.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -8226,7 +8226,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -8241,9 +8241,9 @@
    185.0,
    167.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -8251,11 +8251,11 @@
    138
   ],
   "farge": [
-   132,
-   122,
-   112
+   170,
+   108,
+   92
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (falmet tegl)",
   "aar": 2024
  },
  {
@@ -8329,8 +8329,8 @@
    181.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -8342,7 +8342,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -8590,8 +8590,8 @@
    137.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -8603,7 +8603,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -8706,8 +8706,8 @@
    168.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -8719,7 +8719,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -8892,8 +8892,8 @@
    165.0
   ],
   "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -8905,7 +8905,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (brungrå)",
   "aar": 2024
  },
  {
@@ -9061,8 +9061,8 @@
    102.0
   ],
   "klasse": "mørk brun",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -9074,7 +9074,7 @@
    88,
    78
   ],
-  "kilde": "ortofoto 2024 (mørk brun, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (mørk brun)",
   "aar": 2024
  },
  {
@@ -9205,9 +9205,9 @@
    195.0,
    184.0
   ],
-  "klasse": "brungrå",
-  "sikker": false,
-  "grunn": "falmet/mosegrodd: fotoet skiller ikke tegl fra grått",
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "",
   "tegning": null,
   "for_": [
    150,
@@ -9215,11 +9215,11 @@
    138
   ],
   "farge": [
-   132,
-   122,
-   112
+   170,
+   108,
+   92
   ],
-  "kilde": "ortofoto 2024 (brungrå, usikker: falmet/mosegrodd: fotoet skiller ikke tegl fra grått; ingen tegning)",
+  "kilde": "ortofoto 2024 (falmet tegl)",
   "aar": 2024
  },
  {

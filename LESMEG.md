@@ -170,7 +170,7 @@ Rettelseslaget lar nyeste linje vinne, og hvert verktøy flytter sine linjer bak
     python3 verktoy/streetview_fasader.py    Street View, alle sider («sider» i avlesningen); veggen etter retningen når kamerapunktet bommer
     python3 verktoy/fasade_tegning.py legg_inn   vinduer fra kvartaltegningene som vektor (kilder/fasade-tegning/, se under)
     python3 verktoy/streetview_farger.py     veggfarger fra Street View 2016+ (fargeregelen, se «Fargene» under)
-    python3 verktoy/tak_farge.py             takfarger: ortofoto 2024, tegningen der fotoet ikke ser/skiller
+    python3 verktoy/tak_farge.py             takfarger: ortofoto 2024 (mellombåndet pikselvis: falmet tegl eller grått), tegningen bare der fotoet ikke ser
     python3 verktoy/vegg_nye.py              veggfarger: tegningen > Street View før 2015 > nabohuset; farge_kilde
     python3 verktoy/bygg_merknader.py        merknadene på enkelthus (kilder/bygg-merknader.json): Vegars kvartalskontroll og avgjørelser mot kildene
     python3 verktoy/fasade_former.py         former fra tegningen (rundbuevinduer, portaler, piper; kirkas høyder og silhuett)
