@@ -692,6 +692,55 @@
     ],
     "gavl2": []
    }
+  },
+  {
+   "id": "bnr-193868320",
+   "kilde": "tegningen kvartal7 (flate 9), talt for hånd i nærbildet 30.10",
+   "grunn": "vektorlesingen fant bare 4 av 7 vinduer i øverste etasje (flere vinduer ligger i samme hull som streken rundt): gårdsveggen mot SØ har 2 vinduer, dør og rundbuet port nede og 7 vinduer oppe",
+   "vegg": [
+    {
+     "side": "SØ",
+     "rader": [
+      2,
+      7
+     ],
+     "dorer": [
+      {
+       "u": 0.41,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.2
+      },
+      {
+       "u": 0.89,
+       "typ": 2,
+       "b": 2.4,
+       "h": 2.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868568",
+   "kilde": "tegningen Kvartal11 (flate 8 med døra 58), nærbilde 30.10",
+   "grunn": "langveggen mot SV er blank med én dør (flate 58, tegnet utenpå veggflaten, så vektorlesingen fanget den ikke)",
+   "vegg": [
+    {
+     "side": "SV",
+     "rader": [
+      0
+     ],
+     "dorer": [
+      {
+       "u": 0.62,
+       "typ": 1,
+       "b": 1.0,
+       "h": 2.1
+      }
+     ]
+    }
+   ]
   }
  ]
 }

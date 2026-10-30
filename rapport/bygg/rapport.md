@@ -57,6 +57,15 @@ Kvartal2BITMP
 kirke
 - [x] dør i rundbuet omramming, dør helt til høyre, ingen vinduer på tårnfoten mot øst; nytt nærbilde `naer/kirke-1.jpg`
 
+## Funnet i nærbildene og rettet (30.10)
+Alle 41 nærbilder er sett (`rapport/bygg/naer/`). Rettet etter dem:
+- 12 kommunehus i Gamlebyen stod med gml 0 (Tennishuset, Widdingstua m.fl.) og ble tegnet bleket nesten hvitt uten vinduer: gml 1,
+  farge og vinduer; grunnmuren kjørt på nytt, regel 20 grønn (281 kommunehus).
+- Krutthuset 69556: pyramidetak som tegningen (var saltak).
+- Artillerigården 68061/69572: vinduene er tegnet som svarte felt oppå veggen, ikke hull; talt for hånd: 7 + dør / 8 og 6 + dør / 8 mot SV.
+- 68320 (kvartal7): 2 vinduer, dør og rundbuet port nede, 7 vinduer oppe mot gården (lesingen fant 4 av 7).
+- Brannstasjonen 68568 og 67308: døra tegnet utenpå veggflaten, lagt inn som merknad.
+
 ## Kjent og ikke løst
 - Det nye rådhus (bnr-193972012) er bygd med deler (tårn) og tar ikke imot vinduer fra lesingen; tegningen er lest (47 elementer).
 - 16308102 (Kvartal14, gul med glasstak) og 68290 (Kvartal8): modellen har veggen som tegningen viser inntil et nabohus (felles vegg),

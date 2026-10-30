@@ -85,7 +85,7 @@ def ark(n):
     rader = []
     for i in ids:
         x = BY[i]
-        rader.append([i.replace('bnr-', ''), (x.get('navn') or '')[:22], f"{x['h']:.1f}", '; '.join(bygg_ark.fasade(x, omg)) or '–',
+        rader.append([i.replace('bnr-', ''), (x.get('navn') or '')[:22], f"{x['h']:.1f}", ('; '.join(bygg_ark.fasade(x, omg)) or '–')[:110],
                       str(len(x.get('arker') or [])), str(len(x.get('takvinduer') or [])), str(len(x.get('piper') or [])),
                       (x.get('fasade_kilde') or '')[:13], (x.get('farge_kilde') or '')[:30]])
     tab_h = 40 + 21 * (len(rader) + 1)
@@ -99,7 +99,7 @@ def ark(n):
         y += 21
         for c, t in zip(kol, r): dd.text((10 + c, y), t, fill=(30, 30, 30), font=F)
     os.makedirs(UT, exist_ok=True)
-    f = os.path.join(UT, f'{n}.jpg'); out.save(f, quality=88)
+    f = os.path.join(UT, f'{n}.jpg'); out.save(f, quality=80, optimize=True)
     return f
 
 
