@@ -15,6 +15,11 @@
    "h": 9.46,
    "th": 0.55,
    "grunn": "atrium (kilder/atrier.json): tilpasningen i rapport/hoyder la ett flatt/saltak over hele omrisset med gårdsrommet (glasspyramiden) inni og ga 10,6 m med helning 0,51. Ringtaket (takfot mot gata, pult mot brannmurene) tilpasset DOM−DTM av verktoy/landemerker.py gir takfot 9,46 m og helning 0,55 mot gata (rms 0,48 m på 1057 punkter; møne i nordfløyen 12,3 m mot DOM 12, vestfløyen 11 m ved brannmuren som DOM). landemerker.py sier fra hvis tilpasningen flytter seg (atrium 30.10)"
+  },
+  "pb-67": {
+   "h": 3.0,
+   "th": 0.0,
+   "grunn": "rådhusets lave nordfløy (skilt ut av 972012 i husdeling 30.10): DOM−DTM 1–4 m både i 2015 og i dag (p50 1,9, p90 3,1 m over 46 piksler, mange piksler treffer gårdsrommet langs kanten); flatt tak med takoppbygg i ortofoto 2019/2024, takfoten lest til 3,0 m"
   }
  }
 }

@@ -746,6 +746,650 @@
    "id": "bnr-193867634",
    "kilde": "Claude, landemerker 30.10 (tell.ai mot DOM−DTM og ortofoto 2024)",
    "grunn": "tegningen tell.ai har et lite gavlhus her; det er ikke en egen del av huset. Kartverkets DOM−DTM har mønet på 6,9 ± 0,2 m hele veien fra 4 til 22 m langs huset (1 m ruter, profil langs mønet), takfoten like jevn, ingen sprang i høyde eller bredde og ingen vegg på tvers; kommunekartet har ett omriss, Matrikkelen ett bygningsnummer og ortofoto 2024 ett sammenhengende tak. Gavlhuset er Vollmesterboligen tegnet kortere (frihånd), så huset står som ett langt hus. Ingen endring."
+  },
+  {
+   "id": "pb-67",
+   "kilde": "ortofoto 2019/2024 + DOM−DTM 2015 og i dag (30.10, natt/manglende)",
+   "grunn": "rådhusets lave nordfløy har flatt tak med takoppbygg (lysåpning) i ortofotoet og 1–4 m i DOM; ikke saltak",
+   "sett": {
+    "h": 3.0,
+    "th": 0.0,
+    "flatt": true,
+    "tak2": null,
+    "gavl2": null,
+    "sk": null,
+    "takform": "flatt"
+   }
+  }
+ ],
+ "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",
+ "tegnet_uten_modell": [
+  {
+   "tegning": "Kvartal2BITMP",
+   "senter_pt": [
+    386.0,
+    30.2
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "nabobit",
+   "grunn": "bit av nabokvartalet i arkets øvre høyre hjørne (avskåret hus, tegnet i sin egen kvartaltegning); Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag (bare trær)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal2BITMP",
+   "senter_pt": [
+    201.6,
+    124.5
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; gårdsromshusene i Kvartal2 er tegnet forskjøvet og større; modellhusene 972306/972373/971350 står der kommunekartet og DOM har dem",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal2BITMP",
+   "senter_pt": [
+    356.9,
+    203.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur/frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; murene rundt gården og det lave røde huset i høyre ende er tegnet utenfor 868673; ortofotoet viser gate og hage",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal3",
+   "senter_pt": [
+    239.1,
+    211.6
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "takdel",
+   "grunn": "ark/gavl på taket til langhuset (taket er modellert; arkene er en egen kategori i kontrollen)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal3",
+   "senter_pt": [
+    120.4,
+    254.1
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "smal mur/gangsti fra huset ned mot brakka (under 1 m bred); Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal4BITMP",
+   "senter_pt": [
+    233.4,
+    82.5
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; bakre takflate tegnet dypere enn huset i kommunekartet; under ligger hage",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal4BITMP",
+   "senter_pt": [
+    161.3,
+    125.3
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; Kvartal4 er tegnet fritt (blokkene flyttet opptil 25 pt); under gruppen ligger hagen i gårdsrommet",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal4BITMP",
+   "senter_pt": [
+    168.8,
+    240.1
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; tak over det lille gårdsrommet; ortofotoet 2019/2024 viser åpent gårdsrom med uteservering, DOM 0 m",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal5",
+   "senter_pt": [
+    141.2,
+    212.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; takstripe mellom to hus (frihånd); under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal5",
+   "senter_pt": [
+    188.1,
+    277.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "port/gjerde",
+   "grunn": "portvegg/plank mellom to hus (smal), ikke hus; Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal6",
+   "senter_pt": [
+    94.3,
+    113.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; takbit foran det grønne huset; under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal6",
+   "senter_pt": [
+    44.6,
+    125.2
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "takdel",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; valmende tegnet som egen flate; under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal6",
+   "senter_pt": [
+    32.6,
+    175.0
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "vindusramme på veggen (tegningen har huset høyere), ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal6",
+   "senter_pt": [
+    169.8,
+    58.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; bakre takstripe på husrekka mot nordvest: tegningen er presset sammen bakover (kamera_fast/biter for kvartal6); under ligger gata. Høydene på rekka stemmer med DOM",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal6",
+   "senter_pt": [
+    125.7,
+    92.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "vinduer på det grønne huset 971334 (tegnet høyere), ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal7",
+   "senter_pt": [
+    154.3,
+    158.3
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; bakre takflate tegnet dypere; under ligger gårdsrommet",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kvartal7",
+   "senter_pt": [
+    297.5,
+    249.0
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; fasaden til 867626 er tegnet lenger ut mot Torvet; ortofotoet viser åpen plass",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal8BITMAP",
+   "senter_pt": [
+    34.1,
+    131.1
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; nederste etasje på det gule huset tegnet lavere/høyere; under ligger Torvet",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal8BITMAP",
+   "senter_pt": [
+    104.7,
+    205.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "gjerde/frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; stakittet langs gata og gavlen på det blå huset er tegnet forskjøvet; gjerdene hører til bakken (bakke.py gjerder). Kommunekartets eneste flate her er et skur på 5 m² (under grensen på 6 m²)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal8BITMAP",
+   "senter_pt": [
+    160.7,
+    89.3
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "lite inngangsparti/lysgrav i gårdsrommet (under 6 m², ingen høyde i DOM)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal8BITMAP",
+   "senter_pt": [
+    381.9,
+    147.6
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "takdel",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; gavltrekant (tegnet gavl der modellen har valm/kortere tak); under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal9",
+   "senter_pt": [
+    177.8,
+    25.6
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "takdel",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; mønestripe på et høyere tegnet tak; under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal9",
+   "senter_pt": [
+    5.6,
+    232.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "takluke/lysåpning på taket, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal9",
+   "senter_pt": [
+    268.7,
+    238.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; takbit i det lille gårdsrommet; DOM 0 m",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal10",
+   "senter_pt": [
+    38.9,
+    123.1
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; valmenden på 867596 (tegnet lenger vest, se biter i kvartal-kobling); høyden i DOM under gruppen er trekronene (ortofotoet)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal10",
+   "senter_pt": [
+    100.4,
+    213.1
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "lav mur/portvegg ved innkjørselen, ikke hus; Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal10",
+   "senter_pt": [
+    477.9,
+    208.3
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; gavlen på det gule hjørnehuset 867588 tegnet ut på plassen; høyden i DOM er trær",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal10",
+   "senter_pt": [
+    321.3,
+    233.0
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; bakre takflate på 987370 tegnet dypere inn i bakgården; DOM 0 m i 2015 og i dag",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal11",
+   "senter_pt": [
+    106.4,
+    45.1
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; piper og takkant på 867537 (tegnet høyere enn modellen); under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal11",
+   "senter_pt": [
+    260.6,
+    239.6
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur/frihånd",
+   "grunn": "murene rundt plassen foran Infanterikasernen (ortofoto: smal mur langs gata, DOM 1–3 m) og 868568 tegnet lengre; ingen bygning i FKB eller DOM 2015. Matrikkelpunktet 301569312 har status RA (rammetillatelse), ikke bygd: ortofoto 2024 viser parkeringsplass. Murene hører til bakken (gjerder)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal11",
+   "senter_pt": [
+    441.5,
+    111.3
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "pipe på 867537 (tegnet høyere), ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal12",
+   "senter_pt": [
+    71.8,
+    80.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; bakre takflate på 867820 tegnet dypere; under ligger gata/gårdsplassen",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal12",
+   "senter_pt": [
+    105.0,
+    110.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; den rosa gavlen bak den grå rekka er 867820 tegnet større: kommunekartet og DOM har huset på 109 m² med møne ~8,5 m (modellen 6,1 m + tak), og gårdsplassen bak er åpen med parkerte biler i 2019 og 2024 og 0–1 m i DOM 2015",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal12",
+   "senter_pt": [
+    170.7,
+    117.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "oransje murstykker i gårdsrommet ved 867782 (smale), ikke hus; DOM 0–1 m",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    142.6,
+    86.2
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "takdel",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; gavltrekant; under ligger gata",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    210.2,
+    288.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "gjerde",
+   "grunn": "plankegjerde langs gata, ikke hus; høyden i DOM er trær",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    248.8,
+    85.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten (frihånd), ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    381.2,
+    123.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "lave murer rundt gården, ikke hus; høyden i DOM er trær",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    337.9,
+    180.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "lave murer rundt gården, ikke hus; høyden i DOM 2015/i dag er trekronene (ortofotoet)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    428.4,
+    303.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal13",
+   "senter_pt": [
+    297.6,
+    344.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe/gjerde ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal14",
+   "senter_pt": [
+    80.0,
+    38.0
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "landemerke",
+   "grunn": "toppen av rådhustårnet (brystning med tinder) tegnet større; tårnet står i modellen (landemerker.py)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal14",
+   "senter_pt": [
+    31.0,
+    274.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "nabobit",
+   "grunn": "bit av nabokvartalet (glasspyramiden 16308102) i arkets nedre venstre hjørne; Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag (bare et skur på 4,5 m²)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Kvartal14",
+   "senter_pt": [
+    341.1,
+    320.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "sistekvartal",
+   "senter_pt": [
+    83.2,
+    369.5
+   ],
+   "utfall": "lagt inn",
+   "kategori": "lagt inn",
+   "grunn": "Laboratoriet (bnr-193870198) er tegnet som egen bit nede til venstre på arket; koblet med «biter» i kilder/kvartal-kobling.json (huset står i modellen)",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "sistekvartal",
+   "senter_pt": [
+    133.1,
+    194.6
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; nederste etasje på 870201 tegnet lavere; høyden i DOM er trær",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "sistekvartal",
+   "senter_pt": [
+    287.9,
+    57.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; husene bak rekka er 870244/972381 tegnet større, og den gule U-en er hagemuren; Matrikkelpunktet 301628349 har status IG (igangsettingstillatelse) på parkeringsplassen, ikke bygd (ortofoto 2024). Skurene på 4–5 m² er under grensen",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Glasshytta",
+   "senter_pt": [
+    49.8,
+    72.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "pilar/vange under Glasshytta, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kirke",
+   "senter_pt": [
+    69.3,
+    123.6
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "landemerke",
+   "grunn": "øvre del av kirketårnet tegnet større (kirka røres ikke av husverktøyene); høyden i DOM er trær",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kirke",
+   "senter_pt": [
+    256.5,
+    368.5
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "portal ved kirkedøra, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "kirke",
+   "senter_pt": [
+    199.5,
+    383.0
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Toihuset",
+   "senter_pt": [
+    202.7,
+    206.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus; skuret på 5,6 m² er under grensen",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Toihuset",
+   "senter_pt": [
+    322.1,
+    394.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015 (laserskanningen fra tegningsåret) og i dag; den indre takflaten på Tøihuset tegnet dypere inn i gården; gården er åpen parkering i 2019 og 2024, DOM 0 m",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Toihuset",
+   "senter_pt": [
+    352.8,
+    293.9
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Toihuset",
+   "senter_pt": [
+    442.4,
+    347.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "Toihuset",
+   "senter_pt": [
+    570.3,
+    399.3
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "sokkelstripe ved husfoten, ikke hus",
+   "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "sistekvartal",
+   "senter_pt": [
+    11.3,
+    372.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "gavlenden på Laboratoriet (bnr-193870198, koblet som egen bit 30.10) er tegnet lenger ut enn kommunekartets omriss; resten av huset treffer (IoU 0,74). Ingen bygning ved gavlen i FKB, ortofoto eller DOM 2015/i dag",
+   "kilde": "Claude 30.10, kontrollarket for sistekvartal etter koblingen"
   }
  ]
 }

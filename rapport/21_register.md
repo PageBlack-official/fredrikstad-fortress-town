@@ -1,6 +1,6 @@
 # 21_register: OK
 
-296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 297 modellhus
+296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 298 modellhus
 
 Til kontroll:
 - id bnr-193868061 i fkb-207.3_163.5, men Matrikkelen har [193869572] der (bnr-id er et annet bygningsnummer enn det som står i omrisset; nummeret er id på et annet modellhus (byttet om?))

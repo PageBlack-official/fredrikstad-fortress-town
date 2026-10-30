@@ -1162,7 +1162,8 @@ VEKT = dict(finnes=10, slaatt_sammen=9, omriss=6, takform=6, gesims=5, mone=4, v
 
 
 def avvik(navner, logg=print):
-    alle = []; tegnet_uten = []; per = {}
+    import manglende as MG
+    alle = []; tegnet_uten = []; per = {}; DOMMER = MG.dommer()
     for n in navner:
         if not os.path.exists(os.path.join(ARB, f'{n}-id.png')):
             logg(f"  {n}: ikke rendret, hoppes over"); continue
@@ -1171,13 +1172,22 @@ def avvik(navner, logg=print):
         for r in A['hus']:
             r['tegning'] = n; r['vurdering'] = vurder(r, n); alle.append(r)
         for g in A['tegnet_uten_modell']:
-            g['tegning'] = n; tegnet_uten.append(g)
+            g['tegning'] = n
+            # dommen per gruppe (kilder/bygg-merknader.json «tegnet_uten_modell», verktoy/manglende.py): finnes huset ikke i dag
+            # eller er det tegnet fritt, blir gruppen «avvik med grunn»; uten dom er den «feil»
+            dm = MG.dom_for(g, DOMMER)
+            g['alvor'] = 'avvik med grunn' if dm else 'feil'
+            if dm:
+                g['dom'] = dm['utfall']; g['kategori'] = dm.get('kategori'); g['grunn'] = dm['grunn']
+            tegnet_uten.append(g)
         logg(f"  {n}: {len(A['hus'])} hus, {len(A['tegnet_uten_modell'])} tegnede grupper uten modellhus")
     tot = {}
     for r in alle:
         for k, v in r['vurdering'].items():
             tot.setdefault(k, {}).setdefault(v['alvor'], 0); tot[k][v['alvor']] += 1
-    tot['tegnet_hus_uten_modell'] = dict(feil=sum(g['hus_anslag'] for g in tegnet_uten))
+    tot['tegnet_hus_uten_modell'] = {}
+    for g in tegnet_uten:
+        tot['tegnet_hus_uten_modell'][g['alvor']] = tot['tegnet_hus_uten_modell'].get(g['alvor'], 0) + g['hus_anslag']
     json.dump(dict(laget=__import__('datetime').date.today().isoformat(), verktoy='verktoy/kontroll.py avvik', totalt=tot,
                    hus=alle, tegnet_uten_modell=tegnet_uten, per_tegning={n: dict(koblet_men_utenfor=A['koblet_men_utenfor'], hus_utenfor_tegningens_sett=A['hus_utenfor_tegningens_sett'])
                                                                          for n, A in per.items()}),
@@ -1215,8 +1225,9 @@ def md(logg=print):
         tu = [g for g in d['tegnet_uten_modell'] if g['tegning'] == n]
         if tu:
             L.append('')
-            L.append('Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare frihåndsforskyvning): ' +
-                     '; '.join(f"ved {kort_id(g['naermeste_modellhus'] or '?')} ({g['areal_pt2']} pt², ~{g['hus_anslag']} hus)" for g in tu))
+            L.append('Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ' +
+                     '; '.join(f"ved {kort_id(g['naermeste_modellhus'] or '?')} ({g['areal_pt2']} pt², ~{g['hus_anslag']} hus"
+                               + (f", {g.get('alvor')}: {g.get('kategori')}" if g.get('dom') else ', **F** uten dom') + ")" for g in tu))
         L.append('')
     open(os.path.join(UT, 'avvik.md'), 'w', encoding='utf8').write('\n'.join(L) + '\n')
     logg('  avvik.md')

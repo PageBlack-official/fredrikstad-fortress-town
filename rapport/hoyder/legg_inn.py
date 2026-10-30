@@ -25,7 +25,9 @@ UNNTAK = json.load(open(os.path.join(ROT, 'kilder/hoyde-unntak.json')))['hus']
 for k, x in sorted(H.items(), key=lambda t: int(t[0])):
     i = PLASS.get(x['id']) if x.get('id') else int(k)
     if i is None: continue
-    if x.get('sikkerhet') not in ('høy', 'middels') or x.get('h_per_hus') is None or B[i].get('kirke'): continue
+    if B[i].get('kirke'): continue
+    # unntakene er lest av DOM for hånd og gjelder uansett sikkerhet på tilpasningen (30.10: lave tilbygg skilt ut av større omriss)
+    if (x.get('sikkerhet') not in ('høy', 'middels') or x.get('h_per_hus') is None) and B[i]['id'] not in UNNTAK: continue
     g = f"Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet {x['sikkerhet']}, før {raa[i]['h'] if i < len(raa) else NY_H.get(B[i]['id'])} m"
     u = UNNTAK.get(B[i]['id'])
     if u:

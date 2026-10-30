@@ -2557,23 +2557,6 @@
   "streetview": 0
  },
  {
-  "id": "pb-65",
-  "navn": null,
-  "vegger": {
-   "0": {
-    "tegning": "kvartal7",
-    "rader": [
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 1,
-  "regler": 4,
-  "streetview": 0
- },
- {
   "id": "bnr-193971369",
   "navn": null,
   "vegger": {
@@ -2588,6 +2571,23 @@
   },
   "tegnet": 5,
   "regler": 5,
+  "streetview": 0
+ },
+ {
+  "id": "pb-65",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "kvartal7",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 1,
+  "regler": 4,
   "streetview": 0
  },
  {

@@ -379,3 +379,19 @@ Tre nye gjenbrukbare elementer, alle styrt av data og lagt inn av `verktoy/lande
 - `arkader[].felt {z0, z1, bredde, dybde}` (bygArkade): høye innfelte felt over hver bue i etasjen over (13394024, Kvartal10).
 Statuen (src/20, data/statue.json): posituren rettet etter Google Street View mai 2024 (rett forfra) og aug. 2010 (figurens venstre
 side), sett i Vegars Chrome (bare som arbeidsreferanse, ikke i repoet; URL-ene står i kildene).
+
+## Tegnede hus uten modellhus (30.10, natt/manglende)
+Kontrollen finner flategrupper i 2015-tegningene uten modellhus under («tegnet_uten_modell»). `verktoy/manglende.py` legger hver gruppe
+ned på bakken (tegningens kamera baklengs: bunnkanten på z = 0, hele gruppen på z = 0 og 7 m) og lager kontaktark med kildene som avgjør
+om huset finnes: tegning | modell | ortofoto 2024 og 2019 | kommunekartet | DOM−DTM i dag (Kartverket) og 2015 (kommunens laserskanning
+fra tegningsåret, skiller «revet etter 2015» fra «tegnet fritt»).
+
+    python3 verktoy/manglende.py liste       gruppene fra rapport/kontroll/avvik.json med plass på bakken (rapport/manglende/grupper.json)
+    python3 verktoy/manglende.py signaler    kommunehus uten modellhus, skjulte hus, matrikkelpunkter og høyde > 2,5 m utenfor modellhusene
+    python3 verktoy/manglende.py ark [T …]   kontaktark rapport/manglende/<tegning>-<nr>.jpg (bare lokalt)
+    python3 verktoy/manglende.py se x y [r]  de samme kildepanelene for et punkt
+
+Dommen per gruppe står i kilder/bygg-merknader.json «tegnet_uten_modell» (tegning, senter_pt, utfall, kategori, grunn) og leses av
+kontroll.py avvik: med dom blir gruppen «avvik med grunn» (eller «lagt inn»), uten dom «feil». Et hus som finnes og mangler, legges inn
+med kilder/husdeling.json («nye»/«deling») eller rettelseslaget; et hus Vegar tegnet som egen bit, kobles med «biter» i kvartal-kobling.json.
+Kommunens DOM/DTM 2015 hentes av `hent_2015()` til rapport/hoyder/kilder/*2015_25832.tif (bare lokalt, lisens ikke avklart).

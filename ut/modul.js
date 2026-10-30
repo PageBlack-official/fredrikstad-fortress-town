@@ -1036,7 +1036,8 @@ function bygArkade(A, pts, wall, dim, veggs){
   g.applyMatrix4(M);
   const grp=new THREE.Group(); const ram=new THREE.Mesh(g,mat(wall,dim,veggs,{ds:true})); ram.castShadow=ram.receiveShadow=true; grp.add(ram);
   const bg=new THREE.PlaneGeometry(L,top); bg.translate(L/2,top/2,0.012); bg.applyMatrix4(M);
-  const bak=new THREE.Mesh(bg,mat(A.mork||[54,52,52],false)); bak.receiveShadow=true; grp.add(bak);
+  // bakveggen i buegangen ligger i dyp skygge: mørk og nøytral både i sol og skygge (ikke brunlig av sollyset)
+  const mk=A.mork||[34,33,33], bak=new THREE.Mesh(bg,mat(mk,false,mk.map(c=>Math.round(c*0.8)))); bak.receiveShadow=true; grp.add(bak);
   return grp;
 }
 DATA.bygg.forEach((b,i)=>{
