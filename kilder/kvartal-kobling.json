@@ -836,7 +836,32 @@
    "fasade_ingen": 0,
    "bygg_naer": [],
    "bygg_manuelt": [],
-   "kant": []
+   "kant": [],
+   "biter": [
+    {
+     "ids": [
+      "bnr-193867596",
+      "bnr-193971903"
+     ],
+     "d": [
+      -30,
+      8
+     ],
+     "sok": 12,
+     "grunn": "det grå huset til venstre er tegnet ~30 pt lenger vest enn der blokken legger det (frihånd; kontrollarket 30.10)"
+    },
+    {
+     "ids": [
+      "bnr-193987370"
+     ],
+     "d": [
+      0,
+      0
+     ],
+     "sok": 15,
+     "grunn": "det store oransje huset mot gata er tegnet som eget stykke, forskjøvet mot naboene (egen forskyvning)"
+    }
+   ]
   },
   {
    "navn": "Kvartal11",
