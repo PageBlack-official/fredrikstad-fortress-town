@@ -1,0 +1,13 @@
+Kvartal11
+  høydeskala fra tegnede vegger: 4.081 pt/m (7 vegger)
+  felles: omriss 57.8, kant 4.47 pt, nedre kant 9.0 pt, øvre 38.0 pt, IoU 0.248
+  felles: omriss 57.5, kant 4.57 pt, nedre kant 8.0 pt, øvre 39.0 pt, IoU 0.242
+  felles: omriss 60.1, kant 4.49 pt, nedre kant 10.0 pt, øvre 39.5 pt, IoU 0.245
+  runde 2: 5 hus på det tegnede, 1 utenfor
+  felles, runde 2: omriss 112.6, kant 4.60 pt, nedre kant 7.0 pt, øvre 142.0 pt, IoU 0.158
+    blokk  1 hus (868568…): forskyvning -17.8, -10.2 pt, mål 3.32 -> 3.14
+    blokk  2 hus (867820…): forskyvning -7.5, +7.8 pt, mål 5.85 -> 4.63
+    blokk  1 hus (867782…): forskyvning -1.0, -2.5 pt, mål 2.99 -> 2.93
+    blokk  1 hus (pb-51…): forskyvning +7.8, -9.9 pt, mål 2.43 -> 1.20
+  kamera: dreiing -14.9°, helning 45.5°, 5.273 pt/m, høyde 4.081 pt/m = 1.10 × ortografisk
+  registrering: median 2.2 pt (6.6 px ved 3 px/pt), 60% av husene innen 3 pt

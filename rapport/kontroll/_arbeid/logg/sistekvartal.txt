@@ -1,0 +1,12 @@
+sistekvartal
+  høydeskala fra tegnede vegger: 6.585 pt/m (6 vegger)
+  felles: omriss 62.1, kant 4.14 pt, nedre kant 10.0 pt, øvre 37.0 pt, IoU 0.239
+  felles: omriss 57.0, kant 4.00 pt, nedre kant 9.0 pt, øvre 34.0 pt, IoU 0.271
+  felles: omriss 53.6, kant 3.92 pt, nedre kant 10.0 pt, øvre 29.0 pt, IoU 0.310
+  runde 2: 6 hus på det tegnede, 2 utenfor
+  felles, runde 2: omriss 53.4, kant 3.88 pt, nedre kant 8.0 pt, øvre 27.0 pt, IoU 0.333
+  runde 3: 7 hus på det tegnede, 1 utenfor
+  felles, runde 3: omriss 45.8, kant 3.84 pt, nedre kant 6.0 pt, øvre 19.0 pt, IoU 0.323
+    blokk  7 hus (870201…): forskyvning +5.5, -4.6 pt, mål 3.63 -> 3.36
+  kamera: dreiing -12.7°, helning 45.5°, 5.072 pt/m, høyde 6.585 pt/m = 1.85 × ortografisk
+  registrering: median 2.12 pt (6.4 px ved 3 px/pt), 71% av husene innen 3 pt

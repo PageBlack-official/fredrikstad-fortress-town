@@ -1,0 +1,101 @@
+{
+ "tegning": "tell",
+ "par": {
+  "az": -11.96,
+  "el": 45.46,
+  "s": 5.0203,
+  "K": 5.0227,
+  "kz": 1.426,
+  "K_kilde": "tegnede vegger"
+ },
+ "A": [
+  [
+   4.833800986615253,
+   1.0235630760232197,
+   0.0,
+   -561.741454427593
+  ],
+  [
+   1.3530238534746544,
+   -3.430020634898517,
+   -5.022714737833411,
+   -390.27315518849787
+  ]
+ ],
+ "forskyvning": {
+  "bnr-193867677": [
+   4.34,
+   -2.5
+  ],
+  "bnr-193867634": [
+   0.5,
+   1.5
+  ]
+ },
+ "blokker": [
+  {
+   "ids": [
+    "bnr-193867677"
+   ],
+   "d": [
+    4.34,
+    -2.5
+   ],
+   "kant_for": 3.27,
+   "kant_etter": 3.06
+  },
+  {
+   "ids": [
+    "bnr-193867634"
+   ],
+   "d": [
+    0.5,
+    1.5
+   ],
+   "kant_for": 4.6,
+   "kant_etter": 4.54
+  }
+ ],
+ "maal": {
+  "bunn": 4.0,
+  "topp": 4.0,
+  "iou": 0.45536472278456214,
+  "bare": 57,
+  "kant": 3.4066351652145386,
+  "omriss": 27.616606643209856
+ },
+ "bygg": [
+  "bnr-193867677",
+  "bnr-193867634"
+ ],
+ "utenfor_tegningen": [],
+ "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
+ "hus_forskyvning": {
+  "bnr-193867677": {
+   "median_pt": 2.29,
+   "median_px": 6.9,
+   "andel_innen_2pt": 0.46,
+   "beste_forskyvning_pt": [
+    0.5,
+    0.0
+   ],
+   "median_etter_pt": 2.23
+  },
+  "bnr-193867634": {
+   "median_pt": 5.37,
+   "median_px": 16.1,
+   "andel_innen_2pt": 0.34,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.5
+   ],
+   "median_etter_pt": 5.62
+  }
+ },
+ "registrering": {
+  "median_pt": 3.83,
+  "median_px": 11.5,
+  "andel_under_3pt": 0.5,
+  "R": 3.0
+ }
+}
