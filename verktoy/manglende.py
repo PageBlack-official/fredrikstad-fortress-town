@@ -288,8 +288,53 @@ def se(x, y, rad=22.0, navn=None):
     print(f)
 
 
+def signaler():
+    """Per gruppe: hva kildene har på bakken der gruppen kan stå (mellom z = 0 og z = 7 m): kommunehus uten synlig modellhus,
+    skjulte modellhus, Matrikkelens bygningspunkter utenfor modellhusene, og bygningshøyde (DOM−DTM > 2,5 m) utenfor modellhusene
+    i dag og i 2015. Skrives inn i rapport/manglende/grupper.json («signaler») og vises som tabell."""
+    import datalag, kommunekart as KK
+    from shapely.geometry import Polygon, Point, MultiPoint
+    from shapely.ops import unary_union
+    hent_2015()
+    G = json.load(open(os.path.join(UT, 'grupper.json'), encoding='utf8'))
+    d = datalag.alle(); synlig = [(b['id'], Polygon(b['p']).buffer(0)) for b in d['bygg'] if not b.get('skjul') and len(b['p']) >= 3]
+    skjult = [(b['id'], Polygon(b['p']).buffer(0)) for b in d['bygg'] if b.get('skjul') and len(b['p']) >= 3]
+    M = unary_union([p for _, p in synlig]).buffer(0.8)
+    K = KK.omriss(); dek = KK.dekning()
+    pk = [(p['bygningsnummer'], p.get('status'), Point(datalag.til_modell(*p['lonlat'])))
+          for p in json.load(open(os.path.join(ROT, 'kilder', 'matrikkel-bygningspunkt.json')))['punkter']]
+    for r in G:
+        p = r['plass']
+        if 'z0' not in p: continue
+        Z = MultiPoint(p['z0'] + p['z7'] + p['bunnkant']).convex_hull.buffer(1.0)
+        x0, y0, x1, y1 = Z.bounds; mpp = 0.5
+        a = ndh(x0, y0, x1, y1, mpp); b = ndh(x0, y0, x1, y1, mpp, 'dom2015', 'dtm2015')
+        xs, ys = np.meshgrid(x0 + (np.arange(a.shape[1]) + 0.5) * mpp, y1 - (np.arange(a.shape[0]) + 0.5) * mpp)
+        import shapely
+        inn = shapely.contains_xy(Z, xs, ys) & ~shapely.contains_xy(M, xs, ys)
+        hoy_i_dag = float(np.nansum((a > 2.5) & inn) * mpp * mpp); hoy_2015 = float(np.nansum((b > 2.5) & inn) * mpp * mpp)
+        bare_2015 = float(np.nansum((b > 2.5) & (np.nan_to_num(a) < 1.5) & inn) * mpp * mpp)
+        fkb = []
+        for k in K:
+            if not k.intersects(Z): continue
+            dekket = max((k.intersection(q).area / k.area for _, q in synlig if q.intersects(k)), default=0)
+            if dekket < 0.5: fkb.append(dict(senter=[round(k.centroid.x, 1), round(k.centroid.y, 1)], areal=round(k.area, 1), dekket=round(dekket, 2)))
+        r['signaler'] = dict(
+            i_kommunekartet=bool(dek.contains(Point(p['midt']))),
+            fkb_uten_modell=fkb,
+            skjulte=[i for i, q in skjult if q.intersects(Z)],
+            matrikkel_utenfor=[f"{n} {st}" for n, st, q in pk if Z.contains(q) and not M.contains(q)],
+            hoyde_utenfor_m2=dict(i_dag=round(hoy_i_dag), aar2015=round(hoy_2015), bare_2015=round(bare_2015)),
+            region_m2=round(Z.area))
+        sg = r['signaler']
+        print(f"{r['nr']:3d} {r['tegning']:14s} {r['areal_pt2']:5d} ramme={'j' if sg['i_kommunekartet'] else 'N'} fkb={len(fkb)} "
+              f"skjult={sg['skjulte']} matr={sg['matrikkel_utenfor']} hoy(dag/2015/bare15)={hoy_i_dag:.0f}/{hoy_2015:.0f}/{bare_2015:.0f} av {Z.area:.0f}")
+    json.dump(G, open(os.path.join(UT, 'grupper.json'), 'w'), indent=1, ensure_ascii=False)
+
+
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'liste'
     if cmd == 'liste': liste()
     elif cmd == 'ark': ark(sys.argv[2:] or None)
+    elif cmd == 'signaler': signaler()
     elif cmd == 'se': se(float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]) if len(sys.argv) > 4 else 22.0, sys.argv[5] if len(sys.argv) > 5 else None)

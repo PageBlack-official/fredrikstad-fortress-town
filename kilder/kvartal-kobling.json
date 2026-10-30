@@ -1220,7 +1220,20 @@
    "fasade_ingen": 0,
    "bygg_naer": [],
    "bygg_manuelt": [],
-   "kant": []
+   "kant": [],
+   "biter": [
+    {
+     "ids": [
+      "bnr-193870198"
+     ],
+     "d": [
+      30,
+      55
+     ],
+     "sok": 15,
+     "grunn": "Laboratoriet er det lange røde huset nede til venstre på arket (egen bit, 30.10 natt/manglende)"
+    }
+   ]
   },
   {
    "navn": "tell",
