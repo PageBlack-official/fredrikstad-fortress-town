@@ -24,8 +24,10 @@ VEGG = [
     (r'rå.*tegl|tegl.*umalt|umalt.*tegl|^rød tegl|umalt murstein', (184, 98, 78)),
     (r'naturstein|bruddstein|granitt|gråstein', (168, 164, 156)),
     (r'hvitkalket|kalket|hvitmalt', (242, 240, 232)),
-    (r'laksoransje|rødoransje|terrakottarød|\boransje\b', (232, 140, 84)),   # oransje er hovedordet i «laksoransje» (987370, Street View 2024; tegningen oransje)
-    (r'laks|rosa(?!hvit)|gråfiolett|fiolett', (226, 170, 160)),
+    (r'laksoransje|rødoransje|\boransje\b', (232, 140, 84)),   # oransje er hovedordet i «laksoransje» (987370, Street View 2024; tegningen oransje)
+    (r'terrakotta', (206, 112, 82)),        # terrakotta er oransjerød, ikke oksiderød («rødbrun/terrakotta» 867952, «laksrød/terrakotta»)
+    (r'gråfiolett|rosa-grå|rosagrå', (204, 192, 198)),   # grå med et rosa/fiolett skjær, ikke laks (867928, Street View 2019)
+    (r'laks|rosa(?!hvit)|fiolett', (226, 170, 160)),
     (r'vinrød', (150, 62, 66)),
     (r'^(mørk )?brun\b', (146, 104, 80)),          # brunt panel ("brun", "brun/rødbrun", "brun/treverk"): brunt, ikke rustrødt (867715 i Street View 2024)
     (r'oksiderød|rødbrun|dyp rød|mørk rød|\brød\b', (176, 74, 62)),
@@ -100,7 +102,13 @@ def main():
         if not vegg:
             rapport.append((id_, f"vegg {v.get('farge')!r}: ingen farge lest")); continue
         tegn = (TF.get(id_) or {}).get('vegg')
-        if tegn and T.samme_kulor(tegn[0], vegg):
+        umalt_tegl = re.search(r'tegl|murstein', str(v.get('farge')).lower()) and not re.search(r'kalket|malt(?! ?\))|hvit|puss', re.split(r'[,(;]', str(v.get('farge')).lower())[0]) \
+            and not re.search(r'\bmalt\b', str(v.get('farge')).lower())
+        if tegn and umalt_tegl and T.familie(tegn[0]) in ('oransje', 'rød', 'brun'):
+            # umalt tegl males ikke om: tegningen (2015) så den samme mursteinen, og Vegars farge for den (lys tegl/fersken på
+            # Kongens magasin og Tøihuset, rødlig på kasernen) gjelder. Ellers blir tegl-vegg og teglstak samme rødfarge.
+            farge, kilde = list(tegn[0]), f"Street View {aar} ({v.get('farge')}): umalt tegl = {tegn[1]}: tegningens farge"
+        elif tegn and T.samme_kulor(tegn[0], vegg):
             farge, kilde = list(tegn[0]), f"Street View {aar} ({v.get('farge')}) = {tegn[1]}: tegningens farge"
         else:
             farge, kilde = vegg, f"Street View {aar} ({v.get('farge')})" + (f"; tegningen har {T.familie(tegn[0])} ({tegn[1]})" if tegn else '')

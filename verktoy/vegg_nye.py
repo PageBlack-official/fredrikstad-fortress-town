@@ -103,7 +103,9 @@ def main(tørt=False):
             if i in t17:
                 farge, kilde, aar = t17[i][0], f"2017-tegningen som vektor (dekning {t17[i][1]})", 2017
             elif f:
-                farge, kilde, aar = f, f"Street View {sva or 'uten dato'} ({v.get('farge')}); eldre enn tegningen, men tegningen har ikke huset", sva
+                grunn_ = ('tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger)' if svak and 'kvartaltegningen' in svak[1]
+                          else 'tegningen har ikke huset')
+                farge, kilde, aar = f, f"Street View {sva or 'uten dato'} ({v.get('farge')}); eldre enn tegningen, men {grunn_}", sva
             elif svak:
                 farge, kilde, aar = svak[0], svak[1], T.TEGNINGSAAR
             else:

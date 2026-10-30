@@ -1106,6 +1106,15 @@ def analyser(navn, logg=print):
             if max(fa) < 90 and max(fa) - min(fa) < 18: continue
             _alle[fa] = _alle.get(fa, 0) + F[j]['ytre'].area
         r['veggfarger_tegning'] = [[list(fa), round(ar)] for fa, ar in sorted(_alle.items(), key=lambda t: -t[1])[:6]]
+        if _alle:
+            # den lyse siden er bare valgt fordi tegningen skygger; er flaten der liten mot husets største tegnede fasade, er det en
+            # sidevegg eller nabofasade (868290: hvit flekk 50 pt², gul fasade 493 pt²) -> den største fasaden. Under 30 pt² til
+            # sammen har tegningen ikke sett huset (frihånd forskjøvet): ingen tegningsfarge (13414904: 7 pt²)
+            stor_fa, stor_ar = max(_alle.items(), key=lambda t: t[1])
+            if stor_ar < 30:
+                tv = ts = None
+            elif tv and _alle.get(tv, 0) < 0.25 * stor_ar:
+                tv = stor_fa
         mv = x.get('vegg'); mvs = x.get('veggs') or ([int(mv[0] * 0.72), int(mv[1] * 0.8), int(mv[2] * 0.8)] if mv else None)
         if tv and mv:
             r['veggfarge'] = dict(tegning=tv, modell=mv, side='lys', dE=round(dE(tv, mv), 1), kulor_tegning=kulor(tv), kulor_modell=kulor(mv))

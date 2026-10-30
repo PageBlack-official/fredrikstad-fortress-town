@@ -148,6 +148,11 @@ def gamlebyen_ider():
         for i in (m if isinstance(m, list) else [m]):
             if i:
                 ut.add(i)
+    # og husene kontrolløren har registrert i en 2015-tegning (IoU >= 0,30): de står i Gamlebyen selv om registeret ikke har koblet
+    # dem til et kommunehus (Laboratoriet 870198 i sistekvartal fikk ingen farge etter regelen, 30.10)
+    p = os.path.join(ROT, 'rapport', 'kontroll', 'avvik.json')
+    if os.path.exists(p):
+        ut |= {h['id'] for h in json.load(open(p, encoding='utf8')).get('hus', []) if (h.get('iou') or 0) >= 0.30}
     return ut
 
 
@@ -193,7 +198,7 @@ def sv_ord_farge(id_):
     if _SV is None:
         _SV = les_sv()
     a = _SV.get(id_) or {}
-    if a.get('sikkerhet') == 'ikke synlig':
+    if a.get('sikkerhet') in ('ikke synlig', 'lav'):          # «kun glimt gjennom porten» (972152) avgjør ikke mot tegningen
         return None
     import streetview_farger as SVF
     return SVF.fra_ord((a.get('vegg') or {}).get('farge'), SVF.VEGG)
@@ -246,9 +251,9 @@ def tegning_farger(bygg_uten=None, rettelser=None):
                     else:
                         # liten tegnet flate (under en tredel av medianen, ~900 pt²) med annen kulør enn Street View: tegningen har ikke
                         # sett huset godt (frihånd forskjøvet, gårdsveggen eller nabofasaden over); da er den svak og Street View før 2015
-                        # går foran. Bare for nøytral grå/hvit: en tydelig kulør i tegningen (grønt på 870228) er Vegars valg i 2015 og
-                        # kan være nyere enn Street View 2010
-                        if stor < 300 and familie(vf['tegning']).startswith('grå'):
+                        # går foran. Gjelder alle kulører: på 870228 er den grønne flekken (220 pt²) en port i den gule fasaden, på 867626
+                        # er den gule (326 pt²) nabohuset (sett på kontrollarkene 30.10). 870252 (381 pt², grå) er husets egen fasade
+                        if stor < 350:
                             d['vegg_svak'] = d.pop('vegg')
             tf = h.get('takfarge') or {}
             t = tf.get('tegning')

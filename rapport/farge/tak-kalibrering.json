@@ -29,6 +29,23 @@
   "sikker": true
  },
  {
+  "id": "bnr-193870198",
+  "kilde": "kvartaltegningen sistekvartal (IoU 0.74)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   226.0,
+   214.0,
+   190.0
+  ],
+  "klasse": "falmet tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193868363",
   "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.60)",
   "tegning": [
@@ -640,6 +657,23 @@
    164.0
   ],
   "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "pb-5",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.36)",
+  "tegning": [
+   135,
+   81,
+   70
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   134.0,
+   127.0,
+   121.0
+  ],
+  "klasse": "mørk grå",
   "sikker": true
  },
  {
@@ -1736,6 +1770,23 @@
   "sikker": true
  },
  {
+  "id": "pb-8",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.68)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   204.0,
+   182.0,
+   163.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193867723",
   "kilde": "kvartaltegningen Kvartal12 (IoU 0.51)",
   "tegning": [
@@ -2448,6 +2499,91 @@
    160.0
   ],
   "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "pb-59",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.69)",
+  "tegning": [
+   65,
+   65,
+   66
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   254.0,
+   220.0,
+   181.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "pb-60",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.71)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   195.0,
+   186.0,
+   171.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "pb-61",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.64)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   216.0,
+   193.0,
+   172.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "pb-65",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.44)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   197.0,
+   203.0,
+   203.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "pb-66",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.59)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   199.0,
+   187.0,
+   165.0
+  ],
+  "klasse": "brungrå",
   "sikker": true
  }
 ]

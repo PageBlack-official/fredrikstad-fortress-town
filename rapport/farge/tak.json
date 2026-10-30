@@ -144,6 +144,42 @@
   "aar": 2024
  },
  {
+  "id": "bnr-193870198",
+  "navn": "Labratoriet",
+  "flytt": [
+   0.98,
+   -1.02
+  ],
+  "foto": [
+   226.0,
+   214.0,
+   190.0
+  ],
+  "klasse": "falmet tegl",
+  "sikker": true,
+  "grunn": "mellombånd: Street View 2010 (rød tegl)",
+  "tegning": [
+   [
+    244,
+    123,
+    106
+   ],
+   "kvartaltegningen sistekvartal (IoU 0.74)"
+  ],
+  "for_": [
+   246,
+   122,
+   106
+  ],
+  "farge": [
+   170,
+   108,
+   92
+  ],
+  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød tegl)); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.74))",
+  "aar": 2024
+ },
+ {
   "id": "bnr-193868363",
   "navn": "Binggården",
   "flytt": [
@@ -1700,6 +1736,42 @@
    112
   ],
   "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal2BITMP (IoU 0.57))",
+  "aar": 2024
+ },
+ {
+  "id": "pb-5",
+  "navn": null,
+  "flytt": [
+   -1.62,
+   -0.1200000000000001
+  ],
+  "foto": [
+   134.0,
+   127.0,
+   121.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    135,
+    81,
+    70
+   ],
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.36)"
+  ],
+  "for_": [
+   246,
+   122,
+   106
+  ],
+  "farge": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.36))",
   "aar": 2024
  },
  {
@@ -4844,6 +4916,42 @@
   "aar": 2024
  },
  {
+  "id": "pb-8",
+  "navn": null,
+  "flytt": [
+   -2.47,
+   -0.7200000000000002
+  ],
+  "foto": [
+   204.0,
+   182.0,
+   163.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    180,
+    102,
+    84
+   ],
+   "kvartaltegningen Kvartal14 (IoU 0.68)"
+  ],
+  "for_": [
+   246,
+   122,
+   106
+  ],
+  "farge": [
+   180,
+   102,
+   84
+  ],
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.68): tegningens farge",
+  "aar": 2024
+ },
+ {
   "id": "bnr-193867596",
   "navn": "Vennehaabet",
   "flytt": [
@@ -5540,6 +5648,42 @@
    112
   ],
   "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.51))",
+  "aar": 2024
+ },
+ {
+  "id": "pb-13",
+  "navn": null,
+  "flytt": [
+   -1.0299999999999998,
+   -0.2799999999999998
+  ],
+  "foto": [
+   133.0,
+   127.0,
+   123.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    244,
+    120,
+    104
+   ],
+   "2019-trykket (dømt)"
+  ],
+  "for_": [
+   244,
+   120,
+   104
+  ],
+  "farge": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "ortofoto 2024 (mørk grå); tegningen har rød (2019-trykket (dømt))",
   "aar": 2024
  },
  {
@@ -8171,6 +8315,38 @@
   "aar": 2024
  },
  {
+  "id": "bnr-193972160",
+  "navn": null,
+  "flytt": [
+   -0.9299999999999999,
+   -0.6799999999999999
+  ],
+  "foto": null,
+  "klasse": null,
+  "sikker": false,
+  "grunn": "for lite tak å måle",
+  "tegning": [
+   [
+    197,
+    99,
+    86
+   ],
+   "kvartaltegningen kvartal6 (IoU 0.51)"
+  ],
+  "for_": [
+   196,
+   92,
+   72
+  ],
+  "farge": [
+   197,
+   99,
+   86
+  ],
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.51) (ortofoto 2024: for lite tak å måle)",
+  "aar": 2015
+ },
+ {
   "id": "bnr-193972047",
   "navn": null,
   "flytt": [
@@ -9296,5 +9472,217 @@
   "grunn": "taket ligger i slagskygge",
   "farge": null,
   "kilde": "ingen kilde: står som før"
+ },
+ {
+  "id": "pb-59",
+  "navn": null,
+  "flytt": [
+   0.051000000000000156,
+   2.051
+  ],
+  "foto": [
+   254.0,
+   220.0,
+   181.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    65,
+    65,
+    66
+   ],
+   "kvartaltegningen kvartal6 (IoU 0.69)"
+  ],
+  "for_": [
+   173,
+   100,
+   86
+  ],
+  "farge": [
+   196,
+   92,
+   72
+  ],
+  "kilde": "ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen kvartal6 (IoU 0.69))",
+  "aar": 2024
+ },
+ {
+  "id": "pb-60",
+  "navn": null,
+  "flytt": [
+   -0.44999999999999996,
+   -0.44999999999999996
+  ],
+  "foto": [
+   195.0,
+   186.0,
+   171.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    244,
+    123,
+    106
+   ],
+   "kvartaltegningen kvartal5 (IoU 0.71)"
+  ],
+  "for_": [
+   132,
+   122,
+   112
+  ],
+  "farge": [
+   132,
+   122,
+   112
+  ],
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal5 (IoU 0.71))",
+  "aar": 2024
+ },
+ {
+  "id": "pb-61",
+  "navn": null,
+  "flytt": [
+   -0.5459999999999998,
+   -0.2959999999999998
+  ],
+  "foto": [
+   216.0,
+   193.0,
+   172.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    244,
+    123,
+    106
+   ],
+   "kvartaltegningen kvartal5 (IoU 0.64)"
+  ],
+  "for_": [
+   170,
+   108,
+   92
+  ],
+  "farge": [
+   244,
+   123,
+   106
+  ],
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen kvartal5 (IoU 0.64): tegningens farge",
+  "aar": 2024
+ },
+ {
+  "id": "pb-64",
+  "navn": null,
+  "flytt": [
+   -1.0099999999999998,
+   -1.7599999999999998
+  ],
+  "foto": null,
+  "klasse": null,
+  "sikker": false,
+  "grunn": "trær over taket (53% grønt)",
+  "tegning": [
+   [
+    198,
+    198,
+    197
+   ],
+   "kvartaltegningen Kvartal13 (IoU 0.41)"
+  ],
+  "for_": [
+   170,
+   108,
+   92
+  ],
+  "farge": [
+   198,
+   198,
+   197
+  ],
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.41) (ortofoto 2024: trær over taket (53% grønt))",
+  "aar": 2015
+ },
+ {
+  "id": "pb-65",
+  "navn": null,
+  "flytt": [
+   1.7970000000000002,
+   0.29700000000000015
+  ],
+  "foto": [
+   197.0,
+   203.0,
+   203.0
+  ],
+  "klasse": "grå",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    173,
+    100,
+    86
+   ],
+   "kvartaltegningen kvartal7 (IoU 0.44)"
+  ],
+  "for_": [
+   115,
+   117,
+   119
+  ],
+  "farge": [
+   150,
+   150,
+   148
+  ],
+  "kilde": "ortofoto 2024 (grå); tegningen har rød (kvartaltegningen kvartal7 (IoU 0.44))",
+  "aar": 2024
+ },
+ {
+  "id": "pb-66",
+  "navn": null,
+  "flytt": [
+   -0.9599999999999995,
+   -0.4599999999999995
+  ],
+  "foto": [
+   199.0,
+   187.0,
+   165.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true,
+  "grunn": "",
+  "tegning": [
+   [
+    244,
+    123,
+    106
+   ],
+   "kvartaltegningen Kvartal9 (IoU 0.59)"
+  ],
+  "for_": [
+   196,
+   92,
+   72
+  ],
+  "farge": [
+   132,
+   122,
+   112
+  ],
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.59))",
+  "aar": 2024
  }
 ]
