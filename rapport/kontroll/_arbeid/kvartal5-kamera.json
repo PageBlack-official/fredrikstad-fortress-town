@@ -1,31 +1,31 @@
 {
  "tegning": "kvartal5",
  "par": {
-  "az": -12.27,
+  "az": -12.28,
   "el": 45.46,
-  "s": 4.861,
+  "s": 4.8524,
   "K": 3.5981,
-  "kz": 1.055,
+  "kz": 1.057,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.670545028283147,
-   1.0155728290925714,
+   4.662016345389933,
+   1.01449501469064,
    0.0,
-   -395.8130615998722
+   -395.0831298610423
   ],
   [
-   1.3446053628986832,
-   -3.3137217955402583,
+   1.3432393503323636,
+   -3.307657485701156,
    -3.5981184338785965,
-   441.35795269600055
+   440.87737437162167
   ]
  ],
  "forskyvning": {
   "bnr-193868223": [
-   1.02,
-   -3.38
+   1.03,
+   -3.42
   ],
   "bnr-16290424": [
    0.0,
@@ -88,12 +88,12 @@
    0.0
   ],
   "bnr-193868231": [
-   -1.51,
-   1.05
+   -1.5,
+   0.79
   ],
   "pb-60": [
-   -1.51,
-   1.05
+   -1.5,
+   0.79
   ]
  },
  "blokker": [
@@ -102,10 +102,10 @@
     "bnr-193868223"
    ],
    "d": [
-    1.02,
-    -3.38
+    1.03,
+    -3.42
    ],
-   "kant_for": 1.66,
+   "kant_for": 1.67,
    "kant_etter": 1.38
   },
   {
@@ -139,20 +139,20 @@
     "pb-60"
    ],
    "d": [
-    -1.51,
-    1.05
+    -1.5,
+    0.79
    ],
-   "kant_for": 3.19,
-   "kant_etter": 3.12
+   "kant_for": 3.15,
+   "kant_etter": 3.1
   }
  ],
  "maal": {
   "bunn": 1.0,
-  "topp": 3.0,
-  "iou": 0.6448431764835615,
+  "topp": 4.0,
+  "iou": 0.6461275950327046,
   "bare": 11,
-  "kant": 2.5836046934127808,
-  "omriss": 13.092049995827661
+  "kant": 2.585814118385315,
+  "omriss": 13.547514618192915
  },
  "bygg": [
   "bnr-193868223",
@@ -178,189 +178,189 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193868223": {
-   "median_pt": 0.78,
-   "median_px": 2.3,
+   "median_pt": 0.79,
+   "median_px": 2.4,
    "andel_innen_2pt": 0.73,
    "beste_forskyvning_pt": [
     -0.5,
     -0.5
    ],
-   "median_etter_pt": 0.72
+   "median_etter_pt": 0.74
   },
   "bnr-6242812": {
-   "median_pt": 2.5,
-   "median_px": 7.5,
-   "andel_innen_2pt": 0.45,
+   "median_pt": 2.53,
+   "median_px": 7.6,
+   "andel_innen_2pt": 0.42,
    "beste_forskyvning_pt": [
-    6.0,
-    0.5
+    6.5,
+    0.0
    ],
-   "median_etter_pt": 2.12
+   "median_etter_pt": 2.01
   },
   "bnr-193868231": {
-   "median_pt": 2.65,
+   "median_pt": 2.67,
    "median_px": 8.0,
    "andel_innen_2pt": 0.45,
    "beste_forskyvning_pt": [
     -1.5,
     1.0
    ],
-   "median_etter_pt": 2.59
+   "median_etter_pt": 2.57
   },
   "bnr-16290424": {
-   "median_pt": 1.54,
-   "median_px": 4.6,
-   "andel_innen_2pt": 0.59,
+   "median_pt": 1.64,
+   "median_px": 4.9,
+   "andel_innen_2pt": 0.55,
    "beste_forskyvning_pt": [
-    -0.5,
+    0.0,
     5.0
    ],
-   "median_etter_pt": 1.75
+   "median_etter_pt": 1.68
   },
   "bnr-6251323": {
-   "median_pt": 1.83,
-   "median_px": 5.5,
-   "andel_innen_2pt": 0.52,
+   "median_pt": 1.92,
+   "median_px": 5.8,
+   "andel_innen_2pt": 0.51,
    "beste_forskyvning_pt": [
-    -0.5,
+    0.0,
     -6.5
    ],
-   "median_etter_pt": 1.55
+   "median_etter_pt": 1.54
   },
   "bnr-193987397": {
-   "median_pt": 2.45,
-   "median_px": 7.3,
-   "andel_innen_2pt": 0.46,
+   "median_pt": 2.36,
+   "median_px": 7.1,
+   "andel_innen_2pt": 0.47,
    "beste_forskyvning_pt": [
-    -4.0,
+    -3.5,
     4.0
    ],
-   "median_etter_pt": 2.03
+   "median_etter_pt": 1.94
   },
   "bnr-193868207": {
-   "median_pt": 1.1,
-   "median_px": 3.3,
-   "andel_innen_2pt": 0.69,
+   "median_pt": 1.08,
+   "median_px": 3.2,
+   "andel_innen_2pt": 0.68,
    "beste_forskyvning_pt": [
-    1.5,
+    2.0,
     -1.5
    ],
-   "median_etter_pt": 1.04
+   "median_etter_pt": 1.02
   },
   "bnr-6251331": {
-   "median_pt": 2.68,
-   "median_px": 8.0,
+   "median_pt": 2.81,
+   "median_px": 8.4,
    "andel_innen_2pt": 0.42,
    "beste_forskyvning_pt": [
     10.0,
     -7.5
    ],
-   "median_etter_pt": 1.82
+   "median_etter_pt": 1.84
   },
   "bnr-6251218": {
-   "median_pt": 2.21,
-   "median_px": 6.6,
+   "median_pt": 2.14,
+   "median_px": 6.4,
    "andel_innen_2pt": 0.47,
    "beste_forskyvning_pt": [
-    6.5,
+    7.0,
     -8.5
    ],
-   "median_etter_pt": 1.07
+   "median_etter_pt": 1.09
   },
   "bnr-193868215": {
-   "median_pt": 2.59,
-   "median_px": 7.8,
+   "median_pt": 2.63,
+   "median_px": 7.9,
    "andel_innen_2pt": 0.43,
    "beste_forskyvning_pt": [
     0.0,
     0.0
    ],
-   "median_etter_pt": 2.59
+   "median_etter_pt": 2.63
   },
   "bnr-193972195": {
-   "median_pt": 1.45,
-   "median_px": 4.3,
+   "median_pt": 1.52,
+   "median_px": 4.6,
    "andel_innen_2pt": 0.61,
    "beste_forskyvning_pt": [
-    -8.0,
+    -7.5,
     3.0
    ],
-   "median_etter_pt": 1.03
+   "median_etter_pt": 1.08
   },
   "bnr-193972187": {
-   "median_pt": 2.03,
-   "median_px": 6.1,
+   "median_pt": 2.0,
+   "median_px": 6.0,
    "andel_innen_2pt": 0.5,
    "beste_forskyvning_pt": [
-    -10.0,
+    -9.5,
     -2.0
    ],
-   "median_etter_pt": 1.04
+   "median_etter_pt": 0.95
   },
   "bnr-193972225": {
-   "median_pt": 7.12,
-   "median_px": 21.4,
+   "median_pt": 7.03,
+   "median_px": 21.1,
    "andel_innen_2pt": 0.24,
    "beste_forskyvning_pt": [
     -10.0,
     10.0
    ],
-   "median_etter_pt": 3.09
+   "median_etter_pt": 3.0
   },
   "bnr-193972209": {
-   "median_pt": 3.07,
-   "median_px": 9.2,
+   "median_pt": 3.13,
+   "median_px": 9.4,
    "andel_innen_2pt": 0.39,
    "beste_forskyvning_pt": [
-    -8.5,
+    -8.0,
     10.0
    ],
-   "median_etter_pt": 1.37
+   "median_etter_pt": 1.42
   },
   "bnr-193971342": {
-   "median_pt": 2.38,
-   "median_px": 7.1,
-   "andel_innen_2pt": 0.44,
+   "median_pt": 2.39,
+   "median_px": 7.2,
+   "andel_innen_2pt": 0.45,
    "beste_forskyvning_pt": [
     -10.0,
-    -6.0
+    -6.5
    ],
-   "median_etter_pt": 1.72
+   "median_etter_pt": 1.65
   },
   "bnr-193972217": {
    "median_pt": 1.6,
    "median_px": 4.8,
-   "andel_innen_2pt": 0.56,
+   "andel_innen_2pt": 0.55,
    "beste_forskyvning_pt": [
     9.5,
     4.5
    ],
-   "median_etter_pt": 0.48
+   "median_etter_pt": 0.45
   },
   "pb-60": {
-   "median_pt": 1.84,
-   "median_px": 5.5,
-   "andel_innen_2pt": 0.52,
+   "median_pt": 1.85,
+   "median_px": 5.6,
+   "andel_innen_2pt": 0.53,
    "beste_forskyvning_pt": [
-    -10.0,
-    -10.0
-   ],
-   "median_etter_pt": 1.17
-  },
-  "pb-61": {
-   "median_pt": 1.0,
-   "median_px": 3.0,
-   "andel_innen_2pt": 0.62,
-   "beste_forskyvning_pt": [
-    3.0,
+    -1.5,
     -2.0
    ],
-   "median_etter_pt": 0.71
+   "median_etter_pt": 1.49
+  },
+  "pb-61": {
+   "median_pt": 1.25,
+   "median_px": 3.7,
+   "andel_innen_2pt": 0.63,
+   "beste_forskyvning_pt": [
+    1.5,
+    -1.0
+   ],
+   "median_etter_pt": 0.98
   }
  },
  "registrering": {
-  "median_pt": 2.12,
-  "median_px": 6.4,
+  "median_pt": 2.07,
+  "median_px": 6.2,
   "andel_under_3pt": 0.89,
   "R": 3.0
  }
