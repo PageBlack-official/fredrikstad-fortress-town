@@ -348,6 +348,111 @@
     "veggs": null,
     "farge_kilde": "trykkfila 2015 (Street View-bildet viste nabohuset)"
    }
+  },
+  {
+   "id": "bnr-193867324",
+   "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 (tilbygg på høyre ende); ortofoto 2024 (rapport/bygg/se/artillerismien-se.jpg)",
+   "grunn": "høyre ende (SØ) er valmet i tegningen 2015 og i ortofotoet 2024: takflaten går ned mot enden, ingen gavl; DOM−DTM viser ingen lavere bygning utenfor enden (0 m), så valmen er tilbygget Vegar ser",
+   "sett": {
+    "tak2": [
+     [
+      [
+       138.94,
+       261.26,
+       0.004
+      ],
+      [
+       135.49,
+       257.05,
+       5.44
+      ],
+      [
+       152.02,
+       243.04,
+       5.25
+      ],
+      [
+       159.58,
+       243.45,
+       0.006
+      ]
+     ],
+     [
+      [
+       152.71,
+       235.65,
+       0.008
+      ],
+      [
+       152.02,
+       243.04,
+       5.25
+      ],
+      [
+       135.49,
+       257.05,
+       5.44
+      ],
+      [
+       132.05,
+       252.85,
+       0.009
+      ]
+     ],
+     [
+      [
+       159.58,
+       243.45,
+       0.006
+      ],
+      [
+       152.02,
+       243.04,
+       5.25
+      ],
+      [
+       152.71,
+       235.65,
+       0.008
+      ]
+     ]
+    ],
+    "gavl2": [
+     [
+      [
+       138.94,
+       261.26,
+       0.004
+      ],
+      [
+       135.49,
+       257.05,
+       5.44
+      ]
+     ],
+     [
+      [
+       135.49,
+       257.05,
+       5.44
+      ],
+      [
+       132.05,
+       252.85,
+       0.009
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "id": "bnr-193971989",
+   "kilde": "Vegar, kvartalskontroll Kvartal4BITMP 29.10; Kartverket DOM−DTM; ortofoto 2024 (rapport/bygg/se/71989-68363.jpg)",
+   "grunn": "boks som 06187: DOM−DTM i omrisset p50 5,8 m og p90 8,0 m (06187: 6,9 og 7,8), modellen stod med gesims 8,7 m; samme høyde og lave tak som 06187. Tunet mellom 71989 og 68363/06187 er åpent i dag (DOM 0 m, bil i ortofotoet), så husene står hver for seg som i kommunekartet",
+   "sett": {
+    "h": 6.0,
+    "th": 0.32
+   }
   }
  ]
 }

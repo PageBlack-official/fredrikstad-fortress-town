@@ -800,6 +800,8 @@ def legg_inn(tørt=False, bare=None):
     raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
     d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, ret), grunn)
     BY = {x['id']: x for x in d['bygg']}; omg = VG.Omgivelser(d['bygg'], d['veier'], d['gardsrom'])
+    svf = os.path.join(ROT, 'rapport', 'streetview-fasader', 'fasit-sv-vegger.json')
+    FASIT_SV = json.load(open(svf, encoding='utf8')) if os.path.exists(svf) else {}
     per_hus = {}
     for f in sorted(_g.glob(os.path.join(AVL, '*.json'))):
         A = json.load(open(f, encoding='utf8'))
@@ -827,12 +829,20 @@ def legg_inn(tørt=False, bare=None):
                        venstre=list(w['a']) if np.linalg.norm(np.array(vg['venstre']) - w['a']) <= np.linalg.norm(np.array(vg['venstre']) - w['c']) else list(w['c']))
             el, inf = vegg_vind(vg2, x, P)
             tegnet += el; info[kk] = dict(tegning=tg, **inf)
-        regler = [v for v in VR.lag_vind(x, omg)[0] if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in beste]
-        vind = regler + tegnet
+        # vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py, fasithusene), ellers reglene (30.10)
+        sv_vegger = {}
+        for sv in FASIT_SV.get(i, []):
+            kk, _ = VG.naermeste_vegg(V, np.array(sv['mid']))
+            if kk is not None and kk not in beste:
+                sv_vegger[kk] = sv
+                info[kk] = dict(tegning='Street View', rader=sv['rader'], dorer=sum(1 for q in sv['vind'] if q[9] in (1, 2)), notat=[sv['kilde']])
+        sv_vind = [v for sv in sv_vegger.values() for v in sv['vind']]
+        regler = [v for v in VR.lag_vind(x, omg)[0] if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in beste and VG.naermeste_vegg(V, np.array(v[:2]))[0] not in sv_vegger]
+        vind = regler + sv_vind + tegnet
         nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "vind", "verdi": vind, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
         nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_kilde", "verdi": "kvartaltegning", "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
         nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_tegning", "verdi": {str(k): v for k, v in info.items()}, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
-        logg.append(dict(id=i, navn=x.get('navn'), vegger=info, tegnet=len(tegnet), regler=len(regler)))
+        logg.append(dict(id=i, navn=x.get('navn'), vegger=info, tegnet=len(tegnet), regler=len(regler), streetview=len(sv_vind)))
     if not tørt:
         datalag.skriv_rettelser(ret + nye)
     json.dump(logg, open(os.path.join(ROT, 'rapport', 'bygg', 'fasade-tegning.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)

@@ -583,7 +583,12 @@ def tilstand():
     return ret, d, {g['id']: g for g in grunn}
 
 
+FASIT_SV = {}
+FASIT_SV_FIL = os.path.join(ROT, 'rapport', 'streetview-fasader', 'fasit-sv-vegger.json')
+
+
 def kjor(tørt=False):
+    FASIT_SV.clear()
     avl = json.load(open(KILDE, encoding='utf8'))
     hopp = {k: v for k, v in json.load(open(HOPP, encoding='utf8')).items() if not k.startswith('_')}
     ret, d, grunn = tilstand()
@@ -652,7 +657,15 @@ def kjor(tørt=False):
                 sv_rader = [k for _, k in rader]
                 r_.update(status='fasit, bare sammenlignet', modell=dict(rader=mr, dorer=md, arker=len(paa_siden(x.get('arker'), w)),
                           piper=len(x.get('piper') or [])), avvik=not like_rader(mr, sv_rader), dorer_avvik=dorer is not None and md != len(dorer))
-                logg.append(r_); sett_vegger[wi] = True; continue
+                logg.append(r_); sett_vegger[wi] = True
+                # fasaden Street View gir på denne veggen: fasade_tegning.py legger den inn der tegningen ikke viser veggen (30.10)
+                stor_ = bool(re.search(r'store vinduer', (sd.get('merknad') or '').lower()))
+                g_, inf_ = lag_fasade(x, w, P, rader, dorer if dorer is not None else [], stor_)
+                if g_ and not (inf_.get('akser', 0) < inf_.get('akser_onsket', 0) or inf_.get('merk')):
+                    FASIT_SV.setdefault(id_, []).append(dict(mid=[round(float(mid[0]), 2), round(float(mid[1]), 2)],
+                                                            n=[round(float(w['n'][0]), 4), round(float(w['n'][1]), 4)], vind=g_,
+                                                            kilde=f"Street View {sd.get('bilde_dato') or ''}".strip(), rader=inf_.get('rader', [])))
+                continue
             gamle_dorer = []
             for v in base:
                 k, t = VG.naermeste_vegg(V, np.array(v[:2]))
@@ -702,6 +715,7 @@ def kjor(tørt=False):
             nye.append({"emne": "bygg", "id": id_, "op": "sett", "felt": felt, "verdi": verdi, "hvem": "Claude", "dato": DATO, "grunn": GRUNN})
     os.makedirs(UT, exist_ok=True)
     json.dump(logg, open(os.path.join(UT, 'kjoring.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    json.dump(FASIT_SV, open(FASIT_SV_FIL, 'w', encoding='utf8'), ensure_ascii=False)
     skriv_rapport(logg)
     if not tørt:
         datalag.skriv_rettelser(ret + nye)

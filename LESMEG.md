@@ -189,6 +189,21 @@ veggflatene. Verktøyet legger modellen inn i tegningen (globalt kamera, så per
 flatene til modellvegger og leser elementene i andel av veggen. Koblingen er ikke sikker nok alene der tegningen er satt sammen av
 biter eller frihånd avviker mye (Kvartal3, Kvartal4BITMP); kilder/fasade-kobling.json tar flate -> «id/vegg» for hånd.
 Kontrollark per kvartal: verktoy/bygg_ark.py (rapport/bygg/kvartal-<tegning>.png). Utsnitt med ortofoto og DOM: verktoy/se_her.py.
+
+Koblingen for hånd (30.10) har disse formene per hus i kilder/fasade-kobling.json: `17` (flaten, siden etter bunnkanten),
+`"11/SØ"` (siden gitt), `"19/SV@4"` (veggen gitt, indeks i vegger.vegger slått sammen), `{"f": [27, 46], "side": "SV@6", "fra": 0,
+"til": 0.755}` (tegningen viser flere modellhus i én vegg: husets del) og `{"f": [19], "side": "SØ@1", "plass": [0.58, 1]}` (flaten er
+bare en del av modellveggen). Hull i flaten er vinduer og dører; dører tegnet som egne flater oppå veggen, også i et hakk i
+bunnkanten, telles med; biter av samme dør slås sammen; et hus med én etasje får én rad. Alle 17 tegninger er lest (Tøihuset fra
+Dropbox, scanninger). Vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py skriver
+rapport/streetview-fasader/fasit-sv-vegger.json for fasithusene), ellers reglene.
+
+    python3 verktoy/vegg_nye.py          veggfarge på hus som står med standardveggen: Street View > 2017-tegningen som vektor > nabohuset
+    python3 verktoy/sv_avvik.py          tegningshus som avviker fra Street View: feil vegg / feil vindu / endret siden 2015 (rapport/bygg/sv-avvik.md)
+    python3 verktoy/bygg_naer.py visninger | ark    nærbilder ved største zoom og pikseltetthet 2 ved siden av tegningen (rapport/bygg/naer/)
+
+Sprosser (src/07): post og losholt holdes minst ~1 px brede og tones ut over 0,2–0,32 m per piksel; sprossen i nedre ramme (seks ruter)
+vises først under 0,075–0,13 m per piksel (største zoom på mobil). Største zoom i kartet er zoom 6 (src/00, maxZoom).
 ## Parkering og statuen på Torvet (29.10)
 Parkeringen er kommunens: verktoy/parkering.py lager data/parkering.json fra kommunens parkeringslag (kilder/parkering-kommunen.json),
 reglene og prisene fra kommunens sider (kilder/parkering-regler.json) og flatene målt i ortofotoet (kilder/flater-maalt.json og

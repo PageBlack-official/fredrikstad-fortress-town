@@ -39,7 +39,9 @@ def klasse(rgb):
 def main(tørt=False):
     ret = [r for r in datalag.les('rettelser') if r.get('grunn') != GRUNN]
     raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
-    d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, ret), grunn)
+    # tilstanden uten vegg_nye.py sine linjer (de kommer etter i kjeden og skriver om farge_kilde)
+    uten = [r for r in ret if not r.get('grunn', '').startswith('veggfarge til nye hus')]
+    d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, uten), grunn)
     nye, logg = [], []
     for x in d['bygg']:
         if x.get('skjul') or not (x.get('farge_kilde') or '').startswith('standard'):
