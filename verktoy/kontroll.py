@@ -791,6 +791,26 @@ def lest_vegg(lest, a, b):
     return dict(w, elementer=[e for e in w['elementer'] if ua - 0.3 / Lw <= e['u'] <= ub + 0.3 / Lw])
 
 
+_MK = {}
+def merknad_vegg(i, navn, n):
+    """Veggen i kilder/bygg-merknader.json («vegg»: side, rader, dorer) som vender samme vei som utovernormalen n (innen 30°),
+    når merknadens kilde nevner tegningen."""
+    if not _MK:
+        f = os.path.join(ROT, 'kilder', 'bygg-merknader.json')
+        L = json.load(open(f, encoding='utf8')) if os.path.exists(f) else []
+        for m in (L if isinstance(L, list) else L.get('hus', [])):
+            if isinstance(m, dict) and m.get('vegg'): _MK.setdefault(m['id'], []).append(m)
+        _MK.setdefault('_', [])
+    import streetview_fasader as SV
+    vn = math.degrees(math.atan2(n[0], n[1])) % 360
+    for m in _MK.get(i, []):
+        if navn.lower() not in str(m.get('kilde', '')).lower(): continue
+        for w in m['vegg']:
+            if w.get('side') in SV.KOMPASS and abs((vn - SV.KOMPASS[w['side']] + 180) % 360 - 180) <= 30:
+                return dict(w, _kilde=m.get('kilde'))
+    return None
+
+
 def etasjer_plass(h, n_tegnet):
     """Etasjene Kartverkets høyde gir plass til når tegningen viser n_tegnet (fasade_tegning.etasjer)."""
     import fasade_tegning as FT
@@ -926,7 +946,7 @@ def analyser(navn, logg=print):
             if (P2 @ nrm_)[1] <= 1e-6: continue
             q = Pg([proj(Pm, a[0], a[1], 0), proj(Pm, b[0], b[1], 0), proj(Pm, b[0], b[1], x['h']), proj(Pm, a[0], a[1], x['h'])]).buffer(0)
             if q.area < 2: continue
-            vegger_m.append(dict(k=kk, a=a, b=b, L=L, q=q, lys=bool((P2 @ nrm_)[0] < 0)))
+            vegger_m.append(dict(k=kk, a=a, b=b, L=L, q=q, lys=bool((P2 @ nrm_)[0] < 0), n=[float(nrm_[0]), float(nrm_[1])]))
         veggflater = [j for j in js if FT.er_vegg(F[j]['ytre'])]
         takflater = [j for j in js if j not in veggflater]
         vk = {}
@@ -1141,6 +1161,13 @@ def analyser(navn, logg=print):
                 if y0_ >= y1_ or x0_ >= x1_: return False
                 return bool(((idx[y0_:y1_, x0_:x1_] == k_) & (typ[y0_:y1_, x0_:x1_] == 3)).any())
             n_m, rader_m, dor_m, gavl_m = vinduer_modell(x, v['a'], v['b'], synlig if k_ else None)
+            # Vegars kvartalskontroll (kilder/bygg-merknader.json, «vegg»): veggen er talt for hånd i nærbildet av denne tegningen
+            # og går foran vektorlesingen (bygg_merknader.py legger den inn sist i kjeden)
+            mk = merknad_vegg(i, navn, v['n'])
+            if mk:
+                rad_mk = [int(str(q).lstrip('kl')) for q in mk['rader']]
+                vs = [0.0] * sum(rad_mk); rader_t = rad_mk; dor_t = len(mk.get('dorer') or []); gavl_t = 0
+                kilde_v = 'merknad: ' + str(mk.get('_kilde'))[:80]
             import vinduer_regler as VR
             # til kontrollkoblingen: flatene på veggen, veggens ender og hvilken ende som står til venstre i tegningen
             pa_, pb_ = proj(Pm, v['a'][0], v['a'][1], 0), proj(Pm, v['b'][0], v['b'][1], 0)

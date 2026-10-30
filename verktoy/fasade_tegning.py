@@ -1002,15 +1002,6 @@ def legg_inn(tørt=False, bare=None):
                 vg2['_Lk'] = L0
             el, inf = vegg_vind(vg2, x, P)
             tegnet += el; info[kk] = dict(tegning=tg, **inf, **({'kobling': 'kontroll'} if vg.get('kilde') == 'kontrollkobling' else {}))
-        # hus som bare har vegger fra kontrollkoblingen: de andre veggene beholder det huset hadde (reglene eller Street View fra
-        # streetview_fasader.py, som bare skriver fasit-sv-vegger for hus som alt var fasithus)
-        bare_kontroll = beste and all(vg.get('kilde') == 'kontrollkobling' for _, vg in beste.values())
-        if bare_kontroll:
-            gml_vind = [list(v) for v in (x.get('vind') or []) if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in beste]
-            nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "vind", "verdi": gml_vind + tegnet, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
-            nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_tegning", "verdi": {str(k): v for k, v in info.items()}, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
-            logg.append(dict(id=i, navn=x.get('navn'), vegger=info, tegnet=len(tegnet), regler=0, streetview=0, beholdt=len(gml_vind)))
-            continue
         # vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py, fasithusene), ellers reglene (30.10)
         sv_vegger = {}
         for sv in FASIT_SV.get(i, []):
