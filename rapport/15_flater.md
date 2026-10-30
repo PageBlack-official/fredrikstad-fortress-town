@@ -1,12 +1,10 @@
 # 15_flater: OK
 
-0 avvik, 7 advarsler; 22 plener innenfor ortofotoet målt
+0 avvik, 5 advarsler; 19 plener innenfor ortofotoet målt
 parkering: 56 plasser fra kommunens lag i området, 17 med målt flate (335 av 453 oppgitte plasser), 3 uten flate med grunn
 
 
 Advarsler (bekreftede plener, og grønt som tegnes som brostein; sjekk i kontrollarkene rapport/flater/):
-- plen gr-17: 33% grønt, bekreftet med grunn i rettelsene
-- plen gr-26: 29% grønt, bekreftet med grunn i rettelsene
 - plen gr-27: 0% grønt, bekreftet med grunn i rettelsene
 - plen gr-28: 35% grønt, bekreftet med grunn i rettelsene
 - plen gr-29: 0% grønt, bekreftet med grunn i rettelsene

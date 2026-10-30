@@ -33,3 +33,7 @@ kilder/kvartal-ai/
 rapport/kvartal-qa/_arbeid/
 # parkering og statue: ortofotoversjonen av kontrollarket bare lokalt (29.10)
 rapport/torvet/*.jpg
+# bakken mot ortofoto 2024 og kommunekartet (29.10): kontrollarkene og regel 31-beviset viser ortofotoet; kommunekartet rendret som bilde
+rapport/bakke/*.png
+rapport/31_overflater.jpg
+kilder/kommunekart/*.png

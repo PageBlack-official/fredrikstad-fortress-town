@@ -219,9 +219,39 @@ Statuen er Frederik II (Wilhelm Rasmussen, bronse, 1917); i Tamburparken står �
 plass, retning (kompassgrader), sokkelleddene, figurens form og høyde med kilder (poster med tegnes:false har bare kommunens punkt); src/20_statuen-paa-torvet.js tegner bare det dataene sier (sokkel som stabel av kvadratiske ledd, figuren i
 platerustning med kommandostav og hånd i siden). `visningsskala` i dataene er 1 (virkelig størrelse; før 29.10 stod den på 1,3 som i
 tegningen). Kontrollark: `python3 verktoy/statue_ark.py` (fire vinkler mot referanseprofilen, ett ark per skulptur). Regel 21 og 22 passer på dette.
+## Bakken i Gamlebyen mot ortofoto, kommunekart og DOM (29.10)
+Overflater, gater, gjerder/murer/hekker og trær i Gamlebyen (innenfor vollene og vollene selv = landskap.fest + brosteinsflaten)
+er lest av kildene med verktoy/bakke.py. Fasit per piksel (0,25 m): ortofoto 2024 der det ser bakken; kommunekartets arealtype
+(gateareal, grøntareal, vann) der det ikke ser (trær, skygge, takutstikk), så nærmeste piksel fotoet ser. Hus = modellens omriss,
+trær og høyde = Kartverkets DOM−DTM (rapport/hoyder/kilder).
+
+    python3 verktoy/bakke.py overflater   data/flater.json (gress/bed/grus/asfalt/brostein fra fotoet; fl-1…4 og parkering står foran)
+    python3 verktoy/bakke.py gater        bredde, midte og flatetype for veibåndene (data/landskap.json)
+    python3 verktoy/bakke.py gjerder      data/gjerder.json (gjerde/mur/hekk sett i fotoet langs eiendomsgrensene og gårdsrommene)
+    python3 verktoy/bakke.py traer        trærne flyttet til kronene i DOM−DTM (antallet uendret)
+    python3 verktoy/bakke.py ark [N …]    kontrollark rapport/bakke/kvartal-NN.png (ortofoto | med kartets linjer | modellens bakke ovenfra)
+
+Innenfor brosteinsflaten er brostein grunnen og flatene er avvikene; på vollene er gresset (terrenget) grunnen. Brostein og grus
+skilles på farge og tekstur, men lys belegning i sol kan ikke alltid skilles i fotoet: en flate med annen type enn grunnen må være
+minst 15 m² og ses i sol på halve arealet. Det som er dømt for hånd, står i kilder/bakke-maalt.json (prøvepunkter, faste flater).
+Gjerder, murer og hekker: fotoet (mørk/grønn smal stripe langs eiendomsgrensene), Street View-avlesningen (utsagnene «stakitt
+til venstre», «hekk foran» … plassert i åpningen til nabohuset eller ved gatekanten; `SV_AVLESNING=<sti>` peker på avlesningen) og
+det som er målt for hånd (kilder/bakke-maalt.json «gjerder»). Tegningen (2017/2019-trykket) er prøvd som kilde for murene i
+åpningene langs gata, men registreringen modell -> trykk (2–8 m) er for grov; slås på med TEGNING_GJERDER=1 når tegningene er
+registrert per kvartal.
+Trær: ett tre per tretopp i DOM−DTM; trær uten topp i et tett felt minst 5 m fra hverandre; dubletter og trær uten vegetasjon
+(dømt med øyet i fotoet) tas ut med grunn (kilder/bakke-maalt.json «traer_fjernet», «traer_dommer», «traer_nye»).
+Gater: gatene dømt i Street View-bildene (kilder/bakke-maalt.json «gater») går foran fotoets brostein/grus; gangveier som er gress
+i fotoet nesten hele veien, tas ut (rapport/bakke/veier-fjernet.json). Innkjørsler og plasser: `bakke.py innkjorsler`.
+Gata (`bakke.gatemaske`): kommunekartets gateareal + veibåndene; kommunekartet tegner mange gater i Gamlebyen hvite, så gatearealet
+alene mangler dem. Ingen gjerde, mur eller hekk får stå i gata eller i et hus (regel 33 feiler ellers). Gatene måles også utenfor
+vollene der kommunekartet dekker (`bakke.gate_omraade`). Oppmerkede parkeringsfelt: `bakke.py parkeringsfelt` (kommunens lag +
+radene målt i ortofotoet, også kilder/parkering-maalt.json fra torvet-arbeidet), tegnes som hvite streker i src/17.
+Regler: 31 overflater, 32 gater, 33 gjerder, 34 trær (alle måler mot kildene, krav 95 %).
+Rekkefølge: grunnmur.py → bakke.py gater (fra grunndataene) → overflater → innkjorsler → parkeringsfelt → gjerder → traer → ark.
 
 ## Oppsett på en ny maskin
-Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile og pymupdf (kommunekartet); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
+Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
 ## Regler som må være grønne før publisering
 01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra. `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
