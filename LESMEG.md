@@ -250,11 +250,22 @@ radene målt i ortofotoet, også kilder/parkering-maalt.json fra torvet-arbeidet
 Regler: 31 overflater, 32 gater, 33 gjerder, 34 trær (alle måler mot kildene, krav 95 %).
 Rekkefølge: grunnmur.py → bakke.py gater (fra grunndataene) → overflater → innkjorsler → parkeringsfelt → gjerder → traer → ark.
 
+## Overganger og flyt (29.10)
+Alt som beveger seg, tar tid og kurve fra src/15_bevegelse.js (BEV); stil.css får dem som CSS-variabler (--t-kort-inn, --k-inn …). Nye
+animasjoner legges der, ikke som tall i koden (regel 11 sier fra). Kameraflytt går gjennom `glidKamera(mål, type)` (easeTo, alltid avbrytbart
+av en ny gest). Huskortet: bunnark under 720 px bredde, sidepanel over; tilbake speiler inngangen.
+
+    node verktoy/flyt-test.mjs ut/enkel/index.html rapport/flyt/maaling.json [klikk dobbel hjul dra avbryt hjem intro mtrykk ark klyp mdobbel redusert]
+    PYTHONPATH=regler python3 regler/22_flyt.py
+
+Testen kjører med Playwrights falske klokke (16 ms per bilde) og ?tegn=0 (kameraet og tilstanden oppdateres, byen tegnes ikke), så den måler
+hopp, rykk, bråstopp og ankerpunkt, ikke bildefrekvens. Bildefrekvens og følelsen i fingrene ses i ekte Chrome og på telefon (tast d, ?d=1).
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
 ## Regler som må være grønne før publisering
-01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra. `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
+01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra, 22 overganger uten hopp, rykk og bråstopp (flyt-test). `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
 
 ## Agenter: brief og mottakskontroll (23.10)
 Vegar: «jeg liker ikke at du ikke merker noe agenter glipper.» Derfor:

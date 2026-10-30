@@ -1,5 +1,18 @@
 # Endringslogg
 
+## Uten versjon (29.10.2026, grenen natt/flyt, ikke publisert) – overganger og flyt
+- **Én bevegelsesmodul** (src/15_bevegelse.js, BEV): alle varigheter og kurver på ett sted; stil.css leser dem som CSS-variabler. Kameraet glir fortsatt med glid (v32); knappene +/− får en kort kubisk kurve, kompasset glid.
+- **Huskortet:** bunnark fra bunnen på smal skjerm (dra-håndtak: kortet følger fingeren og lukkes med farten den slipper med), sidepanel fra venstre på bred skjerm. Inn 380 ms som bremser, ut 240 ms som akselererer (Material). Bytte av hus i åpent kort toner innholdet i stedet for å bytte tekst på ett bilde.
+- **Klikk på hus:** velges med en gang (før 300 ms venting), kameraet glir inn mot huset (minst zoom 2,4, aldri ut) og legger det midt i den delen kortet ikke dekker.
+- **Tilbake = samme vei ut:** ×, Esc, trykk utenfor og nettleserens/Androids tilbake lukker kortet og glir kameraet tilbake dit det stod (med mindre du har flyttet kartet selv). Esc lukker kortet først, neste Esc går hjem.
+- **Dobbelttrykk på mobil zoomer igjen** (var dødt: MapLibres dobbelttrykk var slått av sammen med dobbeltklikket). Dobbeltklikk og dobbelttrykk gjenkjennes fra klikkene, likt for mus og finger, og zoomer mot punktet.
+- **Treghet etter dra, klyp og vri er vår egen:** farten måles i de siste 70 ms av gesten (flytt fra fingrenes midtpunkt, zoom/vri fra kameraet) og dør ut eksponentielt (tau 0,26 s), fra første bilde etter slipp; zoom og vri skjer rundt punktet mellom fingrene. Før tok MapLibre med 0,3 av farten fra klyp og vri, og ett bilde stod stille idet du slapp.
+- **Musehjul:** jevn zoom; hvert hakk flytter et mål, og zoomen følger det som en kritisk dempet fjær (før ett utslag per hakk). Punktet under pekeren står. Styreflaten er skilt ut som før (to fingre flytter, klyp zoomer).
+- **Speilet i vannet står i fart:** det tonet ut ved hver bevegelse og inn igjen etter stopp. Nå tegnes det på nytt høyst hvert 110 ms i fart, og vannet slår opp i det med kameraet fra da det ble tegnet, så det følger byen imellom.
+- **Avbrutt intro:** miniatyr-uskarpheten tones ut på 0,8 s fra der den stod (før forsvant den på ett bilde), og kartet tegnes i full fart til lys og uskarphet er hentet inn (før 10 bilder/s, i trapper). Introen selv er ikke endret.
+- **«Reduser bevegelse» gjelder ikke kartet** (Vegars valg, v27): kartet og kortet beveger seg som hos alle andre. Valget het `respectPrefersReducedMotion`, som ikke finnes i MapLibre 6, så det gjaldt ikke; nå `reduceMotion:false`.
+- verktoy/flyt-test.mjs måler kamerabanen bilde for bilde med falsk klokke; regel 22. Kilder: rapport/flyt/kilder.md, funn: rapport/flyt/rapport.md.
+
 ## Uten versjon (29.10.2026, ikke publisert) – fasadene fra Street View
 - 23 antatte hus har fått vinduer per etasje, dører, arker og piper på gatesiden slik Street View viser dem (verktoy/streetview_fasader.py, kilde kilder/streetview/avlesning.json). Andre vegger beholder reglene fra kvartaltegningene. Vegars regel: antall og rekkefølge foran centimeter.
 - 23 fasithus fra kvartaltegningene er bare sammenlignet (rapport/streetview-fasader/sammenligning.md); 31 hoppet over (ikke synlig, kirka, portbygg, usikkert om det er riktig hus, for kort vegg til tallene).

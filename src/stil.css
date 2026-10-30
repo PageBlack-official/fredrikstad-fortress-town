@@ -7,11 +7,19 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .maplibregl-ctrl-attrib{display:none}
 :root{color-scheme:light}
 #hint{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(246,243,234,.82);padding:8px 14px;border-radius:20px;opacity:0;transition:opacity 1.2s;pointer-events:none;white-space:normal;max-width:min(88vw,560px);text-align:center;line-height:1.45}
-#hjem{z-index:5;position:fixed;right:max(16px,env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;align-items:center;gap:6px;border:0;border-radius:22px;padding:10px 14px;background:rgba(246,243,234,.92);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;box-shadow:0 4px 16px rgba(40,30,20,.14);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .4s,transform .4s}
-#hjem.vis{opacity:1;pointer-events:auto;transform:none}
+#hjem{z-index:4;position:fixed;right:max(16px,env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;align-items:center;gap:6px;border:0;border-radius:22px;padding:10px 14px;background:rgba(246,243,234,.92);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;box-shadow:0 4px 16px rgba(40,30,20,.14);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity var(--t-kort-ut,240ms) var(--k-flytt,ease),transform var(--t-kort-ut,240ms) var(--k-flytt,ease)}
+#hjem.vis{opacity:1;pointer-events:auto;transform:none;transition-duration:var(--t-kort-inn,380ms)}
 #hjem:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-#kort{z-index:5;position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:380px;margin:0 auto;background:var(--paper);border-radius:14px;padding:16px 18px;box-shadow:0 10px 30px rgba(40,30,20,.18);transform:translateY(140%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-#kort.vis{transform:none}
+/* huskortet (29.10): bunnark på smal skjerm, sidepanel fra venstre på bred. Tider og kurver fra 15_bevegelse.js (--t-…, --k-…):
+   inn bremser (Material emphasized decelerate), ut akselererer og er kortere. Bare transform og opacity animeres (ingen ny layout per bilde). */
+#kort{z-index:5;position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:380px;margin:0 auto;background:var(--paper);border-radius:14px;padding:16px 18px;box-shadow:0 10px 30px rgba(40,30,20,.18);transform:translateY(calc(100% + 40px));visibility:hidden;transition:transform var(--t-kort-ut,240ms) var(--k-ut,cubic-bezier(.3,0,.8,.15)),visibility 0s var(--t-kort-ut,240ms);touch-action:none;will-change:transform}
+#kort.vis{transform:none;visibility:visible;transition:transform var(--t-kort-inn,380ms) var(--k-inn,cubic-bezier(.05,.7,.1,1)),visibility 0s}
+#kort .grep{width:36px;height:4px;border-radius:2px;background:rgba(43,36,32,.18);margin:-8px auto 10px}
+@media (min-width:720px){
+  #kort{left:max(16px,env(safe-area-inset-left,0px));top:calc(16px + env(safe-area-inset-top,0px));right:auto;bottom:auto;width:340px;max-width:calc(100vw - 32px);max-height:calc(100% - 32px);overflow:auto;margin:0;transform:translateX(calc(-100% - 40px));touch-action:auto}
+  #kort .grep{display:none}
+}
+/* «Reduser bevegelse» gjelder ikke kortet: Vegars valg (CHANGELOG v27, se 15_bevegelse.js) */
 #kort h2{margin:0 0 4px;font-size:18px;font-weight:600}
 #kort p{margin:2px 0;font-size:13px;color:var(--muted)}
 #kort .lukk{position:absolute;right:12px;top:10px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}

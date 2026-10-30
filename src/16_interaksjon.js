@@ -1,5 +1,5 @@
-// ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
-const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
+// ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp og hjul er MapLibres egne; dobbeltklikk er vårt. ----
+const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, hover=null;
 const kort=document.getElementById('kort');
 // adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
 const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
@@ -17,12 +17,14 @@ function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.set
 // bygget som boks (til kamera og kort): egne grupper måles, sammenslåtte bygg regnes ut fra grunnrisset og høyden
 function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE.Box3().setFromObject(g);
   const bb=new THREE.Box3(); g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,0,-y)); bb.expandByPoint(new THREE.Vector3(x,g.userData.h+g.position.y,-y)); }); return bb; }
-function velg(x,y){
-  const h=treffHus(x,y);
-  if(valgt){valgt.userData.lift=false; valgt=null;}
-  if(!h){kort.classList.remove('vis'); return;}
-  const g=h.g; valgt=g; g.userData.lift=true;
-  const b=g.userData.b;
+// ---- huskortet (oppdrag 15, 29.10): klikk -> huset løfter seg og kameraet glir inn, kortet glir inn (mobil: bunnark fra bunnen, som
+// Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
+// kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.
+const kortInnhold=kort.querySelector('.innhold');
+const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false};
+const SIDEPANEL=window.matchMedia('(min-width: 720px)');
+const kameraNaa=()=>({center:map.getCenter(), zoom:map.getZoom(), bearing:map.getBearing(), pitch:map.getPitch()});
+function fyllKort(b){
   const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
   kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
   kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
@@ -32,23 +34,83 @@ function velg(x,y){
   kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
-  kort.classList.add('vis');
-  // står huset under kortet eller utenfor bildet, glir kartet rolig så huset blir synlig over kortet
-  const s=new THREE.Vector3(h.p.x,0,h.p.z).project(cam);
-  const kortTopp = 1-2*Math.max(0.2, (kort.offsetTop||innerHeight*0.72)/innerHeight);   // kortets plass uten innglidningen
-  if(s.y < kortTopp+0.12 || Math.abs(s.x)>0.85 || s.y>0.88){
-    const px=(s.x+1)/2*innerWidth, py=(1-s.y)/2*innerHeight;
-    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:GLID?900:700, easing:glid});
-  }
 }
-function hjemNaa(){ map.easeTo({...hjemVisning(), duration:GLID?1300:900, easing:glid}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
+// den delen av skjermen kortet ikke dekker (layoutmål uten transform, så det gjelder også mens kortet glir inn)
+function friFlate(){
+  if(!kort_.apent) return {x0:0, y0:0, x1:innerWidth, y1:innerHeight};
+  if(SIDEPANEL.matches) return {x0:kort.offsetLeft+kort.offsetWidth+16, y0:0, x1:innerWidth, y1:innerHeight};
+  return {x0:0, y0:0, x1:innerWidth, y1:Math.max(innerHeight*0.35, kort.offsetTop-12)};
+}
+// kameraet glir inn mot huset: midt i den frie flaten, minst husZoom nær (aldri ut). Står huset alt der, står kameraet stille.
+function glidTilHus(g){
+  const c=husBoks(g).getCenter(new THREE.Vector3()); const ll=tilLngLat(c.x,-c.z);
+  const fri=friFlate(), mx=(fri.x0+fri.x1)/2, my=(fri.y0+fri.y1)/2;
+  const zoom=Math.max(map.getZoom(), zoomFor(BEV.husZoom)); const s=map.project(ll);
+  if(Math.hypot(s.x-mx, s.y-my) < 0.12*Math.min(fri.x1-fri.x0, fri.y1-fri.y0) && zoom-map.getZoom()<0.05) return;
+  glidKamera({center:ll, zoom, offset:[mx-innerWidth/2, my-innerHeight/2]}, 'hus');
+}
+function velgHus(g){
+  if(valgt===g) return;
+  if(valgt) valgt.userData.lift=false;
+  valgt=g; g.userData.lift=true;
+  if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyllKort(g.userData.b); visKort(true); }
+  else { fyllKort(g.userData.b); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }   // nytt hus i åpent kort: innholdet tones over, kortet står
+  glidTilHus(g);
+}
+function visKort(vis){
+  kort_.apent=vis; kort.style.transform='';
+  kort.classList.toggle('vis', vis); kort.setAttribute('aria-hidden', vis?'false':'true');
+  if(vis && !kort_.historikk){ try{ window.history.pushState({...(window.history.state||{}), kort:1}, ''); kort_.historikk=true; }catch(e){ /* innebygd uten historikk */ } }
+}
+// lukk: tilbake=true glir kameraet tilbake dit det stod før kortet (om du ikke har flyttet kartet selv); fraHistorikk: nettleserens tilbake
+function lukkKort({tilbake=true, fraHistorikk=false}={}){
+  if(valgt){ valgt.userData.lift=false; valgt=null; }
+  if(!kort_.apent) return;
+  visKort(false);
+  if(tilbake && kort_.forKamera && !kort_.egenFlytt) glidKamera(kort_.forKamera, 'tilbake');
+  kort_.forKamera=null;
+  if(kort_.historikk){ kort_.historikk=false; if(!fraHistorikk){ try{ window.history.back(); }catch(e){ /* innebygd */ } } }
+}
+kort.addEventListener('transitionend', ()=>{ kort.style.transitionDuration=''; });   // farten fra et fingerkast gjelder bare den ene overgangen
+addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkKort({fraHistorikk:true}); } });
+// flytter du kartet selv mens kortet er åpent, blir kameraet der du la det når kortet lukkes (som Apple og Google Maps)
+map.on('movestart', e=>{ if(e.originalEvent && kort_.apent) kort_.egenFlytt=true; });
+function hjemNaa(){ lukkKort({tilbake:false}); glidKamera({...hjemVisning(), offset:[0,0]}, 'hjem'); }
 hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
-addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
-// ett klikk velger et hus (ventes 300 ms så et dobbeltklikk kan zoome i stedet)
-map.on('click', e=>{ if(!introDone) return; clearTimeout(klikkTimer); const p=e.point; klikkTimer=setTimeout(()=>velg(p.x,p.y),300); });
-map.on('dblclick', ()=>clearTimeout(klikkTimer));
-// dobbeltklikk: MapLibres egen zoom er 300 ms med bråstopp; vår glir inn mot punktet på 800 ms med samme kurve som resten (shift = ut)
-if(GLID){ map.doubleClickZoom.disable(); map.on('dblclick', e=>{ overta(); map.easeTo({center:e.lngLat, zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), duration:800, easing:glid, around:e.lngLat}); }); }
+// Esc: lukker kortet først (samme vei ut), neste Esc går hjem
+addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); if(kort_.apent) lukkKort(); else hjemNaa(); } });
+kort.querySelector('.lukk').onclick=()=>lukkKort();
+// ---- klikk og trykk: ett klikk på et hus velger det med en gang; to klikk/trykk innen 300 ms zoomer inn mot punktet (shift = ut).
+// Vi gjenkjenner dobbeltklikk selv fra klikkene, så det virker likt med mus og finger (MapLibres dobbeltklikk-zoom er av, se under).
+// Klikk utenfor et hus lukker kortet, men først når det ikke kom et klikk til (ellers ville et dobbeltklikk lukke og zoome samtidig).
+const klikk={t:-1e9, x:0, y:0}; let lukkTimer=null;
+map.on('click', e=>{ if(!introDone) return;
+  const naa=performance.now(), p=e.point;
+  const dobbel = naa-klikk.t < BEV.dobbelVindu && Math.hypot(p.x-klikk.x, p.y-klikk.y) < BEV.dobbelAvstand;
+  if(dobbel){ klikk.t=-1e9; clearTimeout(lukkTimer); overta(); glidKamera({zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), around:e.lngLat}, 'dobbel'); return; }
+  klikk.t=naa; klikk.x=p.x; klikk.y=p.y;
+  const h=treffHus(p.x,p.y);
+  if(h) velgHus(h.g); else if(kort_.apent){ clearTimeout(lukkTimer); lukkTimer=setTimeout(()=>lukkKort(), BEV.dobbelVindu); }
+});
+// MapLibres dobbeltklikk/dobbelttrykk (300 ms, bråstopp) er av; vår glir på 800 ms med glid (regel 11)
+map.doubleClickZoom.disable();
+// ---- bunnarket på mobil: dra kortet ned for å lukke. Kortet følger fingeren; slippes det, regnes hvor det ville endt med farten
+// (Apple, «Designing Fluid Interfaces»: prosjiser endepunktet), og det glir videre ned eller tilbake med farten det hadde.
+const ark={id:null, y0:0, dy:0, spor:[]};
+kort.addEventListener('pointerdown', e=>{ if(SIDEPANEL.matches || !kort_.apent || e.target.closest('button,a') || e.button>0) return;
+  ark.id=e.pointerId; ark.y0=e.clientY; ark.dy=0; ark.spor=[[performance.now(), e.clientY]]; kort.setPointerCapture(e.pointerId); kort.style.transition='none'; });
+kort.addEventListener('pointermove', e=>{ if(e.pointerId!==ark.id) return;
+  const dy=e.clientY-ark.y0; ark.dy = dy>0 ? dy : dy*0.15;   // opp gir motstand (gummistrikk), ned følger fingeren
+  kort.style.transform=`translateY(${ark.dy}px)`; ark.spor.push([performance.now(), e.clientY]); if(ark.spor.length>6) ark.spor.shift(); });
+function arkSlipp(e){ if(e.pointerId!==ark.id) return; ark.id=null; kort.style.transition='';
+  const [t0,y0]=ark.spor[0], [t1,y1]=ark.spor[ark.spor.length-1]; const v = t1>t0 ? (y1-y0)/(t1-t0) : 0;   // px/ms
+  const ende = ark.dy + v*250;   // prosjisert endepunkt
+  if(ende > kort.offsetHeight*0.4){ const igjen=kort.offsetHeight+24-ark.dy;
+    kort.style.transitionDuration = Math.round(THREE.MathUtils.clamp(v>0 ? igjen/v : BEV.kort.ut, 120, BEV.kort.ut))+'ms';   // farten fra fingeren tas med
+    kort.style.transform=''; lukkKort(); }
+  else kort.style.transform='';   // tilbake på plass (kortets egen overgang, fra der fingeren slapp)
+}
+kort.addEventListener('pointerup', arkSlipp); kort.addEventListener('pointercancel', arkSlipp);
 // peker over et hus (bare mus): huset løfter seg litt
 let sisteHover=0;
 map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }
@@ -64,13 +126,15 @@ map.getCanvasContainer().addEventListener('wheel', e=>{
   let hjul = e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY);
   if(gest.t && naa-gest.t<120) hjul=gest.hjul;
   gest.t=naa; gest.hjul=hjul; dbgLogg(e,hjul);
-  if(hjul) return;                                        // musehjul = zoom, MapLibre tar den
+  if(hjul){                                               // musehjul = zoom, jevn (15_bevegelse: hjulZoom), ikke MapLibres utslag per hakk
+    e.preventDefault(); e.stopImmediatePropagation(); if(kort_.apent) kort_.egenFlytt=true;
+    const px = e.deltaMode===1 ? e.deltaY*40 : e.deltaMode===2 ? e.deltaY*800 : e.deltaY;   // linjer/sider til piksler; ett hakk ≈ 100 px
+    hjulZoom.hakk(e, -px/100*BEV.hjul.perHakk); return; }
   e.preventDefault(); e.stopImmediatePropagation(); overta();
   map.panBy([e.deltaX, e.deltaY], {animate:false});       // innholdet følger fingrene
 }, {capture:true, passive:false});
 function visHjem(){ const c=tilModell(map.getCenter()); const borte = Math.abs(map.getZoom()-Z_HJEM)>0.07 || Math.hypot(c[0]-START[0], c[1]-START[1])>8 || Math.abs(((map.getBearing()+AZ0_GRADER+540)%360)-180)>4; hjem.classList.toggle('vis', introDone && borte); }
 map.on('move', visHjem); map.on('moveend', visHjem);
-kort.querySelector('.lukk').onclick=()=>{kort.classList.remove('vis'); if(valgt){valgt.userData.lift=false; valgt=null;}};
 // feilsøkingsrute (tast d): bildefrekvens, tegnetilstand og styreflatehendelser som tall. Taster s/a/x/p prøver stillbildekvalitet.
 const dbg={paa:false, rader:[], el:null, fps:[], pek:{ned:0,flytt:0,opp:0,sist:'',knapper:0,type:''}};
 // pekerhendelser som når kartet (for å se om dra virker der kartet vises)

@@ -1,4 +1,6 @@
 // ---- speilinger i vannet: hus, trær og terreng tegnes speilvendt om vannflaten i et eget, halvt så stort lag ----
+// 29.10: speilet toner ikke lenger ut når kartet beveger seg. Det tegnes på nytt høyst hvert BEV.speilMs ms i fart (og hvert bilde i ro
+// når noe endrer seg), og mellom gangene slår vannet opp i det med kameraet fra da det ble tegnet, så det står fast i byen.
 const speil=(()=>{
   const Y=0.15, LAG=1;
   const rt=new THREE.WebGLRenderTarget(2,2,{type:THREE.HalfFloatType});
@@ -23,6 +25,8 @@ const speil=(()=>{
       cam.layers.set(0); renderer.setRenderTarget(null); renderer.setClearColor(cc,ca); renderer.shadowMap.autoUpdate=au; scene.background=bg;
       deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
       waterMat.uniforms.tRefl.value=rt.texture;
+      // kameraets projeksjon da speilet ble tegnet: vannet slår opp i speilet med den (03), så speilet følger byen til neste tegning
+      waterMat.uniforms.reflPV.value.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse); this.sist=performance.now();
       // speilingen tones ned i oversikten og kommer fram når man går nærmere, så den aldri popper
       waterMat.uniforms.reflStyrke.value=speilStyrke();
     }
