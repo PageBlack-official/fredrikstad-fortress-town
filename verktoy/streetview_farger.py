@@ -1,9 +1,14 @@
-"""Street View-farger inn i rettelseslaget.
+"""Street View-farger inn i rettelseslaget, etter fargeregelen (30.10, Vegar; se verktoy/tak_farge.py):
+
+  VEGG: nyeste kilde vinner. Street View fra 2016 eller senere går foran tegningen (2015) og 2019-trykket; Street View før 2015
+        (de fleste bildene i Gamlebyen er fra august 2010) er ELDRE enn tegningen og brukes bare der tegningen ikke har huset
+        (det gjør verktoy/vegg_nye.py). Året leses av tak_farge.sv_vegg_aar (veggteksten, sidene, bildedatoen).
+  TAK:  aldri herfra: ortofoto 2024 og tegningen (verktoy/tak_farge.py).
 
 Kilde: kilder/streetview/avlesning.json (lest av i Vegars Chrome 29.10.2026; bare tekst, ingen Google-bilder).
-Vegars regel 29.10: «Det trenger ikke å være perfekt» – et grønt hus skal være grønt, ikke gult.
-Derfor går ordet foran RGB-tallet: tallene er pikselmedianer fra skjermbilder og blir mørke i skygge og motlys.
-Fargene er flate kartfarger i samme lyshet som 2019-trykket, ikke målte farger.
+Ordet går foran RGB-tallet: tallene er pikselmedianer fra skjermbilder og blir mørke i skygge og motlys.
+Fargene er flate kartfarger i samme lyshet som trykket. Har tegningen samme kulør som ordet, får huset tegningens farge
+(Vegars palett; «tilnærmet riktig er nok, feil kulør er ikke lov»).
 
 Kjør:  python3 verktoy/streetview_farger.py        (skriver linjene, erstatter forrige kjøring)
        python3 verktoy/streetview_farger.py --tørt (viser bare)
@@ -67,38 +72,46 @@ def fra_tall(rgb, lys):
         v = min(0.92, v + 0.25)
     return [round(x * 255) for x in colorsys.hsv_to_rgb(h, s, v)]
 
+NYERE_ENN = 2016      # Street View fra dette året og senere er nyere enn tegningen (2015) og går foran den
+
+
 def main():
     tørt = '--tørt' in sys.argv
     avl = json.loads(KILDE.read_text())
-    rett = json.loads(RETT.read_text())
-    sys.path.insert(0, str(ROT)); import datalag
-    egen = {b['id'] for b in datalag.alle()['bygg'] if b.get('kirke')}  # kirka har egen modell med egne farger
+    sys.path.insert(0, str(ROT)); sys.path.insert(0, str(ROT / 'verktoy')); import datalag, tak_farge as T
+    rett = [r for r in datalag.les('rettelser') if r.get('grunn') != GRUNN]
+    B = T.tilstand_uten_regelen(rett)
+    TF = T.tegning_farger(B, rett)
+    egen = {b['id'] for b in B if b.get('kirke')}  # kirka har egen modell med egne farger (src/06)
     dato = datetime.date.today().isoformat()
     nye, rapport = [], []
     for id_, a in avl.items():
         if id_ in egen:
-            rapport.append((id_, 'egen modell (kirka) – fargene står i src/06'))
-            continue
+            rapport.append((id_, 'egen modell (kirka) – fargene står i src/06')); continue
         if a.get('sikkerhet') == 'ikke synlig':
-            rapport.append((id_, 'ikke synlig – tegningen gjelder'))
-            continue
-        v, t = a.get('vegg') or {}, a.get('tak') or {}
+            rapport.append((id_, 'ikke synlig – tegningen gjelder')); continue
+        v = a.get('vegg') or {}
+        aar = T.sv_vegg_aar(a)
+        if not aar or aar < NYERE_ENN:
+            rapport.append((id_, f"Street View {aar or 'uten dato'}: eldre enn tegningen – vegg_nye.py avgjør")); continue
         vegg = fra_ord(v.get('farge'), VEGG) or fra_tall(v.get('rgb'), v.get('lys'))
-        tak = fra_ord(t.get('farge'), TAK)
-        for felt, verdi in (('vegg', vegg), ('tak', tak)):
-            if verdi:
-                nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': felt, 'verdi': verdi, 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
-                nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': felt + 's', 'verdi': None, 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
-        if vegg or tak:
-            nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': 'farge_kilde', 'verdi': f"Street View ({a.get('bilde_dato') or 'ukjent dato'}, sikkerhet {a.get('sikkerhet')})", 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
-        rapport.append((id_, f"vegg {v.get('farge')!r} → {vegg} | tak {t.get('farge')!r} → {tak}"))
+        if not vegg:
+            rapport.append((id_, f"vegg {v.get('farge')!r}: ingen farge lest")); continue
+        tegn = (TF.get(id_) or {}).get('vegg')
+        if tegn and T.samme_kulor(tegn[0], vegg):
+            farge, kilde = list(tegn[0]), f"Street View {aar} ({v.get('farge')}) = {tegn[1]}: tegningens farge"
+        else:
+            farge, kilde = vegg, f"Street View {aar} ({v.get('farge')})" + (f"; tegningen har {T.familie(tegn[0])} ({tegn[1]})" if tegn else '')
+        for felt, verdi in (('vegg', farge), ('veggs', None), ('vegg_kilde', kilde), ('vegg_aar', aar)):
+            nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': felt, 'verdi': verdi, 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
+        rapport.append((id_, f"vegg {v.get('farge')!r} ({aar}) → {farge} [{kilde[:70]}]"))
     for id_, linje in rapport:
         print(id_.ljust(16), linje)
+    print(f"{len(nye) // 4} vegger fra Street View {NYERE_ENN} eller senere")
     if tørt:
         return
-    rett = [r for r in rett if r.get('grunn') != GRUNN] + nye
-    RETT.write_text(json.dumps(rett, ensure_ascii=False, separators=(',', ':')).replace('},{', '},\n{'))
-    print(f'{len(nye)} linjer skrevet')
+    datalag.skriv_rettelser(rett + nye)
+
 
 if __name__ == '__main__':
     main()

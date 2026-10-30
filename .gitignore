@@ -40,3 +40,5 @@ kilder/kommunekart/*.png
 
 # delingsarkene viser tegningen (åndsverk) ved siden av DOM: bare lokalt (30.10)
 rapport/tak/deling-*.png
+# fargeregelen (30.10): kontrollarkene for takene viser ortofotoet: bare lokalt
+rapport/farge/*.png
