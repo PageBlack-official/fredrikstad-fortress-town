@@ -711,7 +711,7 @@ def klassifiser(el, L, hv_med=None):
     return None
 
 
-def tegnede_elementer(vg, L):
+def tegnede_elementer(vg, L, Lpos=None):
     """Det tegningen viser på én avlest vegg, slik legg_inn og kontrollen (verktoy/kontroll.py) begge leser det: én definisjon
     av hva som er vindu, dør/port og strek (30.10). Gir (el, vin, rader, gavl): el = [(element, klassifisering)] etter at
     biter av samme dør/vindu er slått sammen, vin = vinduene under gesims (v <= 1,05) sortert etter underkant, rader = vinduene
@@ -724,7 +724,7 @@ def tegnede_elementer(vg, L):
     el.sort(key=lambda t: -(t[0]['bu'] * t[0]['hv']))
     beholdt = []
     for e, k in el:
-        if any(abs(e['u'] - q['u']) * L < (k[1] + kq[1]) / 2 * 0.9 and min(e['vt'], q['vt']) > max(e['vb'], q['vb']) for q, kq in beholdt):
+        if any(abs(e['u'] - q['u']) * (Lpos or L) < (k[1] + kq[1]) / 2 * 0.9 and min(e['vt'], q['vt']) > max(e['vb'], q['vb']) for q, kq in beholdt):
             continue
         beholdt.append((e, k))
     el = beholdt
@@ -771,7 +771,11 @@ def vegg_vind(vg, x, P):
     if Polygon(x['p']).contains(Point(*(v0 + u * L / 2 + n * 0.3))):
         n = -n
     h = x['h']
-    el, vin, rader, _ = tegnede_elementer(vg, L)
+    # andelene (u, bu) står mot veggen avlesningen ble gjort på; er den delt på flere modellvegger (husdeling, knekk), er u regnet
+    # om til denne veggen, men bredden klassifiseres mot den leste veggens lengde (_L0): et vindu er like bredt uansett hvor
+    # mye av fasaden modellveggen har (30.10; før falt vinduer på korte biter ut som «bredt felt»)
+    Lk = float(vg.get('_Lk') or L)
+    el, vin, rader, _ = tegnede_elementer(vg, Lk, L)
     n_et = sum(1 for r in rader if not (np.mean([e['v'] for e in r]) < 0.22 and len(rader) > 1 and np.mean([e['hv'] for e in r]) < 0.7 * (np.median([e['hv'] for e in vin]) if vin else 0)))
     brystn, VH_PRESS[0] = etasjer(h, n_et)
     spenn = (max(e['vb'] for e in vin) - min(e['vb'] for e in vin)) * h if vin else 0
@@ -795,7 +799,7 @@ def vegg_vind(vg, x, P):
         slag, zc, hh, bb = rz
         for e in r:
             t = min(max(e['u'] * L, 0), L)
-            bw = bb or klassifiser(e, L, hv_med)[1]
+            bw = bb or klassifiser(e, Lk, hv_med)[1]
             t = min(max(t, bw / 2 + 0.32), L - bw / 2 - 0.32) if L > bw + 0.64 else L / 2
             ut.append(VR.element(P, v0 + u * t, bw, n, zc, bw, hh, 0))
     for e, kk in el:
@@ -818,6 +822,42 @@ def vegg_vind(vg, x, P):
     for q in ut:
         q[11] = 0          # fra tegning, ikke antatt
     return ut, dict(rader=[len(r) for r in rader], dorer=sum(1 for q in ut if q[9] in (1, 2)), notat=notat)
+
+
+def brannmur_skjult(w, x, omg, BY):
+    """Er veggen w skjult av nabohuset inntil i hele høyden? Nabohusene 0,6 m utenfor veggen (vegger.FELLES) må nå minst
+    til husets gesims minus 1 m; et lavere nabohus lar øvre etasje stå fri, og den kan være tegnet med vinduer (30.10)."""
+    from shapely.geometry import Point as Pt
+    a, c = np.array(w['a'], float), np.array(w['c'], float); n = np.array(w['n'], float)
+    hs = []
+    for t in np.linspace(0.15, 0.85, 5):
+        q = Pt(*(a + (c - a) * t + n * 0.6))
+        best = None
+        for j in omg.tre.query(q):
+            i_ = omg.ids[j]
+            if i_ != x['id'] and omg.poly[i_].contains(q):
+                h_ = (BY.get(i_) or {}).get('h') or 0
+                best = h_ if best is None else max(best, h_)
+        hs.append(best or 0)
+    return min(hs) >= (x.get('h') or 0) - 1.0
+
+
+def vegger_paa_linja(V, vg, maks_d=1.5):
+    """Modellveggene (vegger.vegger, ikke slått sammen) som ligger på den tegnede veggen vg: parallelle (|cos| > 0,97),
+    midten under maks_d m fra linja og minst 0,8 m (eller 40 % av veggen) innenfor den. Gir {indeks: (t0, t1)}, meter langs
+    vg fra «venstre»-enden, avgrenset til vg."""
+    v0 = np.array(vg['venstre'], float); v1 = np.array(vg['b'] if np.allclose(vg['venstre'], vg['a']) else vg['a'], float)
+    Lv = float(np.linalg.norm(v1 - v0)) or 1.0; uv = (v1 - v0) / Lv; nv = np.array([-uv[1], uv[0]])
+    ut = {}
+    for k, w in enumerate(V):
+        wa, wc = np.array(w['a'], float), np.array(w['c'], float); Lw = float(np.linalg.norm(wc - wa))
+        if Lw < 0.5 or abs(float((wc - wa) @ uv)) < 0.97 * Lw: continue
+        if abs(float(((wa + wc) / 2 - v0) @ nv)) > maks_d: continue
+        t0, t1 = sorted([float((wa - v0) @ uv), float((wc - v0) @ uv)])
+        t0, t1 = max(t0, 0.0), min(t1, Lv)
+        if t1 - t0 >= min(0.8, 0.4 * Lw):
+            ut[k] = (t0, t1)
+    return ut
 
 
 def legg_inn(tørt=False, bare=None):
@@ -854,7 +894,7 @@ def legg_inn(tørt=False, bare=None):
             els = []
             for e in vg['elementer']:
                 e = dict(e); e['_g'] = (v0 + e['u'] * (v1 - v0)).tolist(); els.append(e)
-            kand = [i_ for i_ in (slekt.get(vg['id']) or {vg['id']}) if i_ in BY and not BY[i_].get('skjul')]
+            kand = [i_ for i_ in sorted(slekt.get(vg['id']) or {vg['id']}) if i_ in BY and not BY[i_].get('skjul')]   # sortert: settet gav ulik rekkefølge fra kjøring til kjøring
             if len(kand) <= 1 and vg['id'] in BY and not BY[vg['id']].get('skjul'):
                 per_hus.setdefault(vg['id'], []).append((A['tegning'], dict(vg, elementer=els))); continue
             if not kand: continue
@@ -879,10 +919,35 @@ def legg_inn(tørt=False, bare=None):
         P = np.array(x['p'], float); V = VG.vegger(x, omg, slaa_sammen=False)
         # samme vegg i to tegninger: den med flest elementer
         beste = {}
+        # en tegnet vegg kan spenne over flere modellvegger på samme linje (knekk i kommunekartets omriss, 30.10): elementene
+        # fordeles etter hvor de står på bakken, som ved husdelingen. Før gikk alle til veggen nærmest midten og ble presset
+        # sammen der, mens resten av fasaden fikk reglenes vinduer (pb-8, Kvartal14: 10 tegnede vinduer på 10,1 av 15,2 m)
+        lst2 = []
+        for tg, vg in lst:
+            if vg.get('_mid'):
+                lst2.append((tg, vg)); continue
+            deler = vegger_paa_linja(V, vg)
+            if len(deler) < 2:
+                lst2.append((tg, vg)); continue
+            v0 = np.array(vg['venstre'], float); v1 = np.array(vg['b'] if np.allclose(vg['venstre'], vg['a']) else vg['a'], float)
+            Lv = float(np.linalg.norm(v1 - v0)); uv = (v1 - v0) / Lv
+            grp = {}
+            for e in vg['elementer']:
+                g_ = np.array(e['_g'] if '_g' in e else (v0 + e['u'] * (v1 - v0)).tolist())
+                t_ = float((g_ - v0) @ uv)
+                kk = min(deler, key=lambda k_: max(0.0, deler[k_][0] - t_, t_ - deler[k_][1]))
+                grp.setdefault(kk, []).append(dict(e, _g=g_.tolist()))
+            for kk, (t0, t1) in deler.items():
+                c = (np.array(V[kk]['a'], float) + np.array(V[kk]['c'], float)) / 2
+                lst2.append((tg, dict(vg, elementer=grp.get(kk, []), _mid=c.tolist(), _L0=Lv)))
+        lst = lst2
         for tg, vg in lst:
             mid = np.array(vg['_mid']) if vg.get('_mid') else (np.array(vg['a']) + np.array(vg['b'])) / 2
             kk, _ = VG.naermeste_vegg(V, mid)
             if kk is None: continue
+            # en vegg som står inntil nabohuset hele veien, kan ikke være den tegnede fasaden: avlesningen er gjort før huset
+            # ble delt, og ytterveggen den gang er brannmur nå (pb-66/867928, Kvartal9: vinduene ble lagt på brannmuren) (30.10)
+            if V[kk].get('felles', 0) >= 0.8 and brannmur_skjult(V[kk], x, omg, BY): continue
             if kk not in beste or len(vg['elementer']) > len(beste[kk][1]['elementer']):
                 beste[kk] = (tg, vg)
         tegnet, info = [], {}
@@ -897,10 +962,11 @@ def legg_inn(tørt=False, bare=None):
                 if (wc - wa) @ d_ < 0: wa, wc = wc, wa
                 Lw = float(np.linalg.norm(wc - wa)) or 1.0
                 vg2['venstre'] = list(wa)
-                # bredden står i andel av veggen avlesningen ble gjort på: regnes om til andel av husets vegg, ellers blir
-                # vinduer ved den nye brannmuren for smale for klassifiser og forsvinner (885 mot 889 elementer 30.10)
+                # bredden står i andel av veggen avlesningen ble gjort på og klassifiseres mot den lengden (_Lk i vegg_vind):
+                # regnet om til husets kortere vegg ble vinduer ved en ny brannmur eller knekk «bredt felt» og falt ut (30.10)
                 L0 = vg.get('_L0') or Lw
-                vg2['elementer'] = [dict(e, u=float(((np.array(e['_g']) - wa) @ (wc - wa)) / Lw ** 2), bu=e['bu'] * L0 / Lw) for e in vg['elementer']]
+                vg2['elementer'] = [dict(e, u=float(((np.array(e['_g']) - wa) @ (wc - wa)) / Lw ** 2)) for e in vg['elementer']]
+                vg2['_Lk'] = L0
             el, inf = vegg_vind(vg2, x, P)
             tegnet += el; info[kk] = dict(tegning=tg, **inf)
         # vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py, fasithusene), ellers reglene (30.10)

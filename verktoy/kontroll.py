@@ -749,6 +749,14 @@ def vinduer_modell(x, a, b):
         if typ in (1, 2): dorer += 1
         elif vz > (x.get('h') or 99): gavl += 1
         else: zs.append(vz)
+    # arkadene (landemerker.py: bygg.arkader) er åpninger i fasaden som tegningen viser som hull: hver bue telles som et vindu
+    for A in (x.get('arkader') or []):
+        aa, ab = np.array(A['a'], float), np.array(A['b'], float)
+        for k in range(int(A.get('n') or 0)):
+            q = aa + (ab - aa) * (k + 0.5) / A['n']
+            t = (q[0] - a[0]) * tx + (q[1] - a[1]) * ty; dist = abs(-(q[0] - a[0]) * ty + (q[1] - a[1]) * tx)
+            if -0.3 <= t <= L + 0.3 and dist < 1.0:
+                zs.append(float(A.get('z0', 0)) + 0.5 * float(A.get('h', 3)))
     return len(zs), _rader(zs, gap=1.0), dorer, gavl
 
 
@@ -767,7 +775,17 @@ def lest_vegg(lest, a, b):
         ov = min(t1, L) - max(t0, 0.0)
         if ov < 0.3 * min(L, Lw): continue
         if best is None or ov > best[0]: best = (ov, w)
-    return best[1] if best else None
+    if not best:
+        return None
+    # avlesningen kan spenne over flere modellvegger (fasade med knekk i omrisset, rekkehus delt etter avlesningen): bare
+    # elementene som står på denne modellveggen (u er andel fra «venstre»-enden av den leste veggen)
+    w = best[1]; wa, wb = np.array(w['a'], float), np.array(w['b'], float)
+    v0 = np.array(w.get('venstre') or w['a'], float); v1 = wb if np.allclose(v0, wa) else wa
+    Lw = float(np.linalg.norm(v1 - v0)) or 1.0; uw = (v1 - v0) / Lw
+    ua, ub = sorted([float((a - v0) @ uw) / Lw, float((b - v0) @ uw) / Lw])
+    if ua <= 0.02 and ub >= 0.98:
+        return w
+    return dict(w, elementer=[e for e in w['elementer'] if ua - 0.3 / Lw <= e['u'] <= ub + 0.3 / Lw])
 
 
 def etasjer_plass(h, n_tegnet):
@@ -801,6 +819,15 @@ def analyser(navn, logg=print):
     if os.path.exists(ftf):
         for v_ in json.load(open(ftf))['vegger']:
             FTJ.setdefault(v_['id'], []).append(v_)
+    # de andre tegningenes avlesninger: en vegg som bare er en bit i kanten her, men lest for hånd i sin egen tegning
+    import glob as _g
+    FTJ_ANDRE = {}
+    for f_ in sorted(_g.glob(os.path.join(ROT, 'kilder', 'fasade-tegning', '*.json'))):
+        A_ = json.load(open(f_))
+        if A_['tegning'] == navn: continue
+        for v_ in A_['vegger']:
+            FTJ_ANDRE.setdefault(v_['id'], []).append(dict(v_, _tegning=A_['tegning']))
+    _, rect_ = tegning_bilde(navn, 0.1); KANT = 6.0      # pt: flater nærmere arkkanten enn dette er kuttet av arket
     # flatene rastret i tegneordenen (senere stier ligger oppå)
     Lf = np.full((H, W), -1, np.int32)
     for j, fl in enumerate(F):
@@ -983,6 +1010,8 @@ def analyser(navn, logg=print):
                 U = unary_union([F[j]['ytre'].buffer(2.0) for j in jl]).buffer(-2.0)
                 if U.is_empty: continue
                 x0, y0, x1, y1 = U.bounds; dd = min(1.0, (x1 - x0) * 0.06); hh_ = []
+                if x0 < KANT or y0 < KANT or x1 > rect_.width - KANT or y1 > rect_.height - KANT:
+                    continue      # veggen er kuttet av arkkanten: høyden kan ikke måles (870236 fikk 1,63 i Kvartal14, 0,63 i sistekvartal)
                 for xx in (x0 + dd, x1 - dd):
                     g = U.intersection(LineString_([(xx, -1e4), (xx, 1e4)]))
                     if g.is_empty: continue
@@ -1059,11 +1088,19 @@ def analyser(navn, logg=print):
             if not jl: continue
             U = unary_union([F[j]['ytre'] for j in jl])
             lest = lest_vegg(FTJ.get(i, []), v['a'], v['b'])
+            kilde_ekstra = ''
+            if not lest:
+                lest = lest_vegg(FTJ_ANDRE.get(i, []), v['a'], v['b'])
+                if lest: kilde_ekstra = f" ({lest['_tegning']})"
+            if not lest:
+                ub = U.bounds
+                if ub[0] < KANT or ub[1] < KANT or ub[2] > rect_.width - KANT or ub[3] > rect_.height - KANT:
+                    continue      # veggen er kuttet av arkkanten (nabokvartalet i hjørnet): hullene kan ikke telles
             vs = []; dor_t = 0; rader_t = None; gavl_t = 0
             if lest:      # fasadeavlesningen: ett element per vindu/dør (sprossene er slått sammen der)
                 # samme lesing som legg_inn (fasade_tegning.tegnede_elementer): streker, skillelinjer og biter av samme dør
                 # telles ikke; vinduer over gesims (gavl) for seg; rader tegnet skjevt under 1,4 m fra hverandre er én rad
-                kilde_v = 'fasadeavlesningen'
+                kilde_v = 'fasadeavlesningen' + kilde_ekstra
                 Lw = float(lest.get('L') or v['L'])
                 el_, vin_, rad_, gav_ = FT.tegnede_elementer(lest, Lw)
                 dor_t = sum(1 for e_, k_ in el_ if k_[0] in (1, 2)); gavl_t = len(gav_)
@@ -1112,6 +1149,22 @@ def LineString_(c):
     return LineString(c)
 
 
+_HM = {}
+def hoyde_maaling(i):
+    """Kartverket-målingen for huset (rapport/hoyder/hoyder.json, per id)."""
+    if not _HM:
+        f = os.path.join(ROT, 'rapport', 'hoyder', 'hoyder.json')
+        if os.path.exists(f):
+            for x in json.load(open(f, encoding='utf8')).values():
+                if x.get('id'): _HM[x['id']] = x
+        _HM.setdefault('_', {})
+    return _HM.get(i)
+
+
+# landemerker der fasaden er satt for hånd etter tegningen i verktoy/landemerker.py: radlesingen (vinduer samlet etter
+# underkant) blander store rundbuer, arkadeåpninger og små vinduer i ulike høyder og gir rader som ikke finnes; dømt visuelt på arket
+LANDEMERKER_FASADE = {'bnr-193972012': 'rådhuset: gatefasaden satt for hånd etter Kvartal14.ai i landemerker.py (fem arkadebuer, fem rundbuevinduer over, '
+                                       'smale vinduspar i endefeltene, rundbuet dør), sammenlignet visuelt på kontrollarket 30.10'}
 ALV = {'feil': 3, 'avvik med grunn': 1, 'avvik': 2, 'ok': 0}
 
 
@@ -1138,7 +1191,27 @@ def vurder(r, navn):
         i = r['iou']; sett('omriss', 'feil' if i < 0.45 else 'avvik' if i < 0.65 else 'ok', f"IoU {i:.2f} (modell dekket {r['andel_av_modell_dekket']:.0%}, tegning dekket {r['andel_av_tegning_dekket']:.0%})")
     if 'gesims_forhold' in r:
         g = r['gesims_forhold']; d = abs(g - 1)
-        sett('gesims', 'feil' if d > 0.35 else 'avvik' if d > 0.18 else 'ok', f"tegnet/modell {g:.2f}" + (" (tegningen høyere)" if g > 1 else " (tegningen lavere)" if g < 1 else ""))
+        a = 'feil' if d > 0.35 else 'avvik' if d > 0.18 else 'ok'
+        hva = f"tegnet/modell {g:.2f}" + (" (tegningen høyere)" if g > 1 else " (tegningen lavere)" if g < 1 else "") + f" ({r.get('gesims_kilde')})"
+        # Kartverket er fasit for høyde (Vegar 28.10): når gesimsen er målt i DOM−DTM med høy eller middels sikkerhet og modellen
+        # har den målte høyden, er avviket tegningens. Mønet (silhuetten) sier om tegningen bare fordeler høyden annerledes
+        # mellom vegg og tak (frihånd) eller overdriver hele huset (30.10)
+        m = hoyde_maaling(r['id'])
+        if a != 'ok' and m and m.get('sikkerhet') in ('høy', 'middels') and m.get('h_per_hus') is not None and r.get('h') is not None \
+                and abs(m['h_per_hus'] - r['h']) <= 0.3:
+            sf = r.get('silhuett_forhold')
+            if sf is not None and abs(sf - 1) <= 0.18:
+                hvorfor = f"mønet stemmer (silhuett {sf:.2f}): tegningen fordeler høyden annerledes mellom vegg og tak"
+            elif sf is not None and (sf - 1) * (g - 1) > 0:
+                hvorfor = f"silhuetten avviker samme vei ({sf:.2f}): tegningen {'overdriver' if g > 1 else 'underdriver'} hele huset"
+            else:
+                hvorfor = None
+            if hvorfor:
+                a = 'avvik med grunn'
+                hva += f"; gesims {r['h']} m er målt i Kartverkets DOM−DTM (sikkerhet {m['sikkerhet']}, rest {m.get('rest_m')} m) og går foran: {hvorfor}"
+        elif a != 'ok' and m and m.get('sikkerhet') not in ('høy', 'middels'):
+            hva += f"; høyden har {m.get('sikkerhet')} sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM"
+        sett('gesims', a, hva)
     if 'silhuett_forhold' in r:
         g = r['silhuett_forhold']; d = abs(g - 1)
         sett('mone', 'feil' if d > 0.35 else 'avvik' if d > 0.18 else 'ok', f"silhuetthøyde tegnet/modell {g:.2f}")
@@ -1191,6 +1264,8 @@ def vurder(r, navn):
                 and w['modell']['vinduer'] >= sum(w['tegning']['rader'][:max(nm, 1)]) - 1:
             a = 'avvik med grunn'
             hva += f"; tegningen viser {nt} rader, men gesims {r.get('h')} m (Kartverket) gir plass til {pl} etasje(r): tegningen overdriver høyden"
+        if a != 'ok' and r['id'] in LANDEMERKER_FASADE:
+            a = 'avvik med grunn'; hva += f"; {LANDEMERKER_FASADE[r['id']]}"
         sett('vinduer', a, hva)
         dd = [(w['tegning']['dorer'], w['modell']['dorer'], w['vegg']) for w in vv if w['tegning']['dorer'] != w['modell']['dorer']]
         sett('dorer', 'avvik' if dd else 'ok', '; '.join(f"vegg {g}: tegning {a_}, modell {b_}" for a_, b_, g in dd) if dd else 'like')
