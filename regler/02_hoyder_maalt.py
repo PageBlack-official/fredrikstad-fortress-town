@@ -9,7 +9,10 @@ from _felles import *
 H = json.load(open(os.path.join(ROT, 'rapport', 'hoyder', 'hoyder.json')))
 b = data('bygg')
 feil = []; maalt = 0; umaalt = []; navnfeil = []
-HID = {e['id']: e for e in H.values() if e.get('id')}     # målingen følger id-en (29.10), plassen bare for gamle målinger
+HID = {e['id']: e for e in H.values() if e.get('id')}
+# unntak med grunn (kilder/hoyde-unntak.json, 30.10): DOM lest for hånd der tilpasningen per hus måler feil
+for k_, u_ in json.load(open(os.path.join(ROT, 'kilder', 'hoyde-unntak.json')))['hus'].items():
+    if k_ in HID: HID[k_] = dict(HID[k_], h_per_hus=u_['h'], takhelning=u_['th'], sikkerhet='høy')     # målingen følger id-en (29.10), plassen bare for gamle målinger
 for i, x in gamleby(b):
     if x.get('skjult') or x.get('kirke'): continue
     m = HID.get(x['id']) if HID else H.get(str(i))

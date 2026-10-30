@@ -8,6 +8,12 @@
 const STEINFARGE={ 'mørk':[[66,68,72],[40,41,44]], lys:[[178,176,170],[124,122,118]], trinn:[[104,106,110],[66,67,70]], bronse:[[120,160,138],[70,98,86]] };
 const PATINA=[120,160,138], PATINA_S=[70,98,86], RELIEFF=[96,128,112], GULL=[214,206,170];
 const V=(a,b,c)=>new THREE.Vector3(a,b,c);
+// dreid: omdreiningsflate fra profil [[radius, høyde]] (glatt rustning i stedet for sylindre), lukket topp og bunn
+const dreid=(prof,n)=>{ const P=[new THREE.Vector2(0,prof[0][1]), ...prof.map(([r,y])=>new THREE.Vector2(r,y)), new THREE.Vector2(0,prof[prof.length-1][1])]; return new THREE.LatheGeometry(P,n); };
+// pipekrage: skive med rillet kant (k riller), radius r, høyde h
+const pipekrage=(r,h,k)=>{ const g=new THREE.CylinderGeometry(r,r*0.94,h,k*4,1); const p=g.getAttribute('position');
+  for(let j=0;j<p.count;j++){ const x=p.getX(j), z=p.getZ(j), rr=Math.hypot(x,z); if(rr<1e-4) continue; const a=Math.atan2(z,x), f=1+0.09*Math.cos(a*k); p.setX(j,x*f); p.setZ(j,z*f); }
+  g.computeVertexNormals(); return g; };
 // figurene: får verktøyene (del, lem, kule) og returnerer modellhøyden (isse over sokkelen) som figur.h skalerer til
 const FIGUR={
   // Frederik II: platerustning, kommandostav i høyre hånd, venstre hånd i siden. Målene er lest av kommunens frontfoto (kunstregisteret,
@@ -15,22 +21,22 @@ const FIGUR={
   // kontrollert mot Wilse 1931 og nb.no 1969.
   rustning_stav({k,del,lem,kule}){
     [[-0.14,0.03],[0.18,-0.04]].forEach(([fx,fz])=>{
-      del(new THREE.BoxGeometry(0.12,0.08,0.30),fx,0.04,fz+0.06);                // jernsko
+      kule(0.075,V(fx,0.045,fz+0.06),0.85,0.6,2.0);                              // jernsko (sabaton): avrundet, ikke kasse (30.10)
       lem(V(fx,0.08,fz),V(fx*0.97,0.48,fz*0.6),0.06,0.075);                     // legg
       kule(0.082,V(fx*0.95,0.51,fz*0.5+0.02));                                   // kne
       lem(V(fx*0.95,0.52,fz*0.5),V(fx*0.8,0.92,0),0.085,0.10);                  // lår
     });
-    del(new THREE.CylinderGeometry(0.235,0.275,0.32,12),0,1.04,0).scale.set(1,1,0.78);   // pluderhoser/lårplater
+    del(dreid([[0.20,0],[0.27,0.06],[0.285,0.16],[0.26,0.27],[0.225,0.32]],18),0,0.88,0).scale.set(1,1,0.78);   // pluderhoser/lårplater: buklet profil (30.10)
     del(new THREE.BoxGeometry(0.08,0.12,0.08),0,0.96,0.21);                      // skamkapsel
-    del(new THREE.CylinderGeometry(0.225,0.23,0.05,12),0,1.205,0).scale.set(1,1,0.8);    // belte
-    del(new THREE.CylinderGeometry(0.255,0.215,0.40,12),0,1.43,0.01).scale.set(1,1,0.82); // brystharnisk
+    del(new THREE.CylinderGeometry(0.225,0.23,0.05,24),0,1.205,0).scale.set(1,1,0.8);    // belte
+    del(dreid([[0.215,0],[0.235,0.08],[0.258,0.2],[0.262,0.3],[0.245,0.37],[0.17,0.41]],20),0,1.23,0.01).scale.set(1,1,0.82); // brystharnisk: rundet bryst, smalt mot beltet (30.10)
     kule(0.105,V(-0.28,1.61,0),1,0.8,1); kule(0.105,V(0.28,1.61,0),1,0.8,1);     // skulderplater
     lem(V(-0.19,1.62,0.16),V(0.03,1.40,0.225),0.042,0.042); lem(V(0.03,1.40,0.225),V(0.23,1.18,0.15),0.042,0.042);   // bandolær
     const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.26; k.add(hode);             // litt mot hans høyre
     del(new THREE.CylinderGeometry(0.06,0.07,0.12,8),0,0.0,0,hode);              // hals
-    del(new THREE.CylinderGeometry(0.15,0.14,0.07,16),0,0.03,0.01,hode);         // pipekrage
+    del(pipekrage(0.155,0.075,18),0,0.03,0.01,hode);                           // pipekrage: rillet kant (30.10)
     kule(0.115,V(0,0.18,0.0),0.92,1.12,1,hode);                                  // hode
-    const skjegg=del(new THREE.ConeGeometry(0.07,0.13,8),0,0.07,0.08,hode); skjegg.rotation.x=Math.PI+0.35;
+    kule(0.085,V(0,0.10,0.045),1.0,1.05,0.75,hode); kule(0.05,V(0,0.055,0.085),0.95,1.25,0.8,hode);   // helskjegg: fyldig rundt kinn og hake, avrundet spiss (30.10)
     const hS=V(-0.30,1.60,0), hA=V(-0.40,1.28,0.08), hH=V(-0.55,1.52,0.2);      // høyre arm, hånda nesten i skulderhøyde
     lem(hS,hA,0.072,0.062); lem(hA,hH,0.06,0.05); kule(0.055,hH);
     lem(V(-0.64,1.64,0.2),V(-0.16,1.19,0.27),0.026,0.024);                      // staven: litt over hånda, ned mot magen
@@ -84,9 +90,9 @@ const FIGUR={
   }
   const k=new THREE.Group(); k.position.y=y0; g.add(k);
   const del=(geo,px,py,pz,forelder=k)=>legg(geo,PATINA,PATINA_S,px,py,pz,forelder);
-  const lem=(a,b,r1,r2,forelder=k)=>{ const d=b.clone().sub(a), L=d.length(); const m=del(new THREE.CylinderGeometry(r2,r1,L,10),(a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2,forelder);
+  const lem=(a,b,r1,r2,forelder=k)=>{ const d=b.clone().sub(a), L=d.length(); const m=del(new THREE.CylinderGeometry(r2,r1,L,16),(a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2,forelder);
     m.quaternion.setFromUnitVectors(V(0,1,0), d.normalize()); return m; };
-  const kule=(r,p,sx=1,sy=1,sz=1,forelder=k)=>{ const m=del(new THREE.SphereGeometry(r,12,9),p.x,p.y,p.z,forelder); m.scale.set(sx,sy,sz); return m; };
+  const kule=(r,p,sx=1,sy=1,sz=1,forelder=k)=>{ const m=del(new THREE.SphereGeometry(r,20,14),p.x,p.y,p.z,forelder); m.scale.set(sx,sy,sz); return m; };
   const hoyde=FIGUR[st.figur.form]({k,del,lem,kule});
   k.scale.setScalar(st.figur.h/hoyde);
   // retning: kompassgrader -> rotasjon om y (lokal +z = fram); verden: x = øst, -z = nord

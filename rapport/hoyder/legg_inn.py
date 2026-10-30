@@ -20,11 +20,16 @@ n = 0
 # målingen hører til huset med samme id (29.10: plassen i lista flyttet seg når et nytt bygg kom inn foran de andre nye,
 # så høydene havnet på nabohuset); gamle målinger uten id faller tilbake til plassen
 PLASS = {b['id']: j for j, b in enumerate(B)}
+# unntak (30.10): hus der tilpasningen per hus måler feil (tårn i omrisset, DTM på vollen), lest av DOM for hånd med grunn
+UNNTAK = json.load(open(os.path.join(ROT, 'kilder/hoyde-unntak.json')))['hus']
 for k, x in sorted(H.items(), key=lambda t: int(t[0])):
     i = PLASS.get(x['id']) if x.get('id') else int(k)
     if i is None: continue
     if x.get('sikkerhet') not in ('høy', 'middels') or x.get('h_per_hus') is None or B[i].get('kirke'): continue
     g = f"Kartverket DOM−DTM 1 m, vegg og takhelning tilpasset per hus (rapport/hoyder), sikkerhet {x['sikkerhet']}, før {raa[i]['h'] if i < len(raa) else NY_H.get(B[i]['id'])} m"
+    u = UNNTAK.get(B[i]['id'])
+    if u:
+        x = dict(x, h_per_hus=u['h'], takhelning=u['th']); g = f"Kartverket DOM−DTM lest for hånd (kilder/hoyde-unntak.json): {u['grunn']}"
     R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "h", "verdi": x['h_per_hus'], "hvem": "Claude", "dato": dato(B[i]['id'], 'h', x['h_per_hus']), "grunn": g})
     R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "th", "verdi": x['takhelning'], "hvem": "Claude", "dato": dato(B[i]['id'], 'th', x['takhelning']), "grunn": g})
     n += 1
