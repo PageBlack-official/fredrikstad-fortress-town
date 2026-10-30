@@ -54,6 +54,47 @@ VOLDPORTEN = 'bnr-193869548'
 # 0,8 av murhøyden), hvitkalket vaktstue oppå, valmet teglstak med kort møne og én pipe midt på mønet. Tegningen (Glasshytta.ai,
 # egen bit) viser det samme: huset på portmuren, valm mot enden.
 VOLDPORT_PORT = dict(h=4.4, pw=3.8, ph=3.5)
+# Vingemurene (30.10, natt/atrium): grå naturstein som holder vollen på hver side av porten.
+#  SØ (yttersiden): Street View aug. 2010 viser to skrå murer fra hjørnene av portmuren, toppen fra portmurens gesims (4,4 m) ned
+#  til gresset ved foten; brukerfotoet aug. 2019 viser den nordre fra siden (rett mur, skrå kappe). Ortofoto 2024 ser kappene ovenfra
+#  som lyse striper fra hjørnene til foten: nordre fot (225,1, 37,0), søndre fot (221,1, 30,1). Foten ligger på bakken og står der
+#  fotoet viser den (ingen relieffforskyvning); toppen ved porten er forskjøvet 0,5–1 m i fotoet, så muren går fra portmurens hjørne
+#  (kommunekartet) til foten: 8,4 og 7,7 m, begge ca. 4° med klokka fra portaksen (svakt utoverspriket i Street View er perspektiv).
+#  Foten stemmer med DTM: vollskråningen når veinivå (6,2–6,7 moh) ved x ≈ 225 (nord) og 221 (sør).
+#  NV (innsiden): Street View aug. 2010 viser lave natursteinsmurer (ca. 1,3 m, en person ved porten til målestokk) fra portens
+#  hjørner ut mot vollen på begge sider, foten nærmere kameraet enn porten (svakt utover); ortofotoet ser ikke dit (trær og skygge).
+#  Lengden 4 m og vinkelen 30° ut fra fasadelinjen er lest av bildet (usikkert ±1 m, ±15°).
+# Felt per mur: (ende 'SØ'/'NV', hjørne 'nord'/'sør', fot [x, y] eller None, sprik i grader ut fra fasadelinjen (når foten ikke er målt),
+# lengde, høyde ved porten, høyde ved foten, tykkelse)
+VOLDPORT_VINGER = [('SØ', 'nord', [225.1, 37.0], None, None, 4.4, 0.4, 0.8), ('SØ', 'sør', [221.1, 30.1], None, None, 4.4, 0.4, 0.8),
+                   ('NV', 'nord', None, 30.0, 4.0, 1.3, 1.3, 0.6), ('NV', 'sør', None, 30.0, 4.0, 1.3, 1.3, 0.6)]
+
+
+def vingemurer(p, ret):
+    """Vingemurene som [x0, y0, x1, y1, h0, h1, tykk] (innerflatens linje fra porten ut, høyde over veien i porten), fra
+    portbyggets omriss og veiretningen (ret peker inn mot byen, mot NV)."""
+    import numpy as np
+    P = [np.array(q[:2], float) for q in p[:4]]
+    inn = np.array(ret, float) / np.hypot(*ret); c = sum(P) / 4
+    # endene: kantene som står mest på tvers av veien
+    kanter = sorted([(abs(((P[(k + 1) % 4] - P[k]) / np.hypot(*(P[(k + 1) % 4] - P[k]))) @ inn), k) for k in range(4)])[:2]
+    ut = []
+    for ende, side, fot, sprik, L, h0, h1, t in VOLDPORT_VINGER:
+        for _, k in kanter:
+            a, b = P[k], P[(k + 1) % 4]; m = (a + b) / 2
+            if (ende == 'NV') != ((m - c) @ inn > 0):
+                continue
+            nord = a if a[1] > b[1] else b
+            sor = b if nord is a else a
+            q = nord if side == 'nord' else sor
+            ax = -inn if ende == 'SØ' else inn                 # utover fra porten langs veien
+            tv = (q - m) / np.hypot(*(q - m))                    # ut fra aksen, på tvers
+            if fot is not None:
+                e = np.array(fot, float)
+            else:                                                # langs fasadelinjen ut fra hjørnet, sprik utover langs veien
+                v = np.radians(sprik); e = q + (tv * np.cos(v) + ax * np.sin(v)) * L
+            ut.append([round(float(q[0]), 2), round(float(q[1]), 2), round(float(e[0]), 2), round(float(e[1]), 2), h0, h1, t])
+    return ut
 # vaktstuens vinduer (høyde over portmuren): SSV-langsida som Glasshytta.ai (dør ved vestenden, to vinduer; andeler 0,25, 0,53, 0,81
 # av fasaden målt i tegningen), NV-enden som Street View aug. 2010 (to vinduer med 2 x 3 ruter ved 0,30 og 0,65 av bredden).
 # SØ-enden (yttersiden) har ingen vinduer, bare relieffet og to blindfelt (Street View 2010); tegningens tomme ramme der er blindfeltet.
@@ -292,11 +333,51 @@ def uten_vinduer_bak(x, A):
     return ut
 
 
+# Terrenget rundt Voldporten fra Kartverkets DTM (30.10): det beregnede terrenget (data/landskap.json, OSM-voller + brosjyren) har
+# vollen 12 m for langt øst og 3 m for høy der (6,6 m mot DTM 3,7 m over gata ved (230, 52)), og flat mark under porten, så buen og
+# vingemurene stod i en eng foran vollen. Flikken er DTM − 7,0 m (veien innenfor porten, 7,0–7,1 moh, er kartets bakkenivå 0), kappet
+# ved 0 (bakken utenfor vollen, 5,3–6,2 moh, ligger under kartets bakkeplan). Under porthuset er DTM interpolert over vollkrona
+# (9,4–10,4 moh), så husets omriss og passasjen settes til veinivå.
+FLIKER = [dict(id='voldporten', bygg=VOLDPORTEN, x0=186.0, y0=12.0, x1=242.0, y1=66.0, g=1.0, ref=7.0, kant=8.0)]
+
+
+def terrengflikker(tørt):
+    import numpy as np, importlib.util
+    from shapely.geometry import Polygon
+    import shapely
+    H = os.path.join(ROT, 'rapport', 'hoyder')
+    spec = importlib.util.spec_from_file_location('hent', os.path.join(H, 'hent.py')); hent = importlib.util.module_from_spec(spec); spec.loader.exec_module(hent)
+    dtm, gt = hent.les(os.path.join(H, 'kilder', 'dtm1_25832.tif'))
+    SH = tuple(json.load(open(os.path.join(H, 'tall.json')))['forskyvning'])
+    ex0, ny0, dx, dy = gt
+    B = {x['id']: x for x in datalag.alle()['bygg']}
+    ut = []
+    for F in FLIKER:
+        nx = int(round((F['x1'] - F['x0']) / F['g'])) + 1; ny = int(round((F['y1'] - F['y0']) / F['g'])) + 1
+        xs, ys = np.meshgrid(F['x0'] + np.arange(nx) * F['g'], F['y0'] + np.arange(ny) * F['g'])
+        U = hent.til_utm(np.c_[xs.ravel(), ys.ravel()]) + np.array(SH)
+        c = ((U[:, 0] - ex0) / dx).astype(int); r = ((ny0 - U[:, 1]) / dy).astype(int)
+        h = np.clip(dtm[r, c] - F['ref'], 0, None)
+        hus = Polygon(B[F['bygg']]['p']).buffer(0.6, join_style='mitre')
+        h[shapely.contains_xy(hus, xs.ravel(), ys.ravel())] = 0.0
+        ut.append(dict(id=F['id'], x0=F['x0'], y0=F['y0'], g=F['g'], nx=nx, ny=ny, kant=F['kant'], h=[int(round(v * 100)) for v in h],
+                       kilde=f"Kartverket DTM 1 m − {F['ref']} m (veien innenfor porten = kartets bakkenivå), kappet ved 0; porthuset og passasjen på "
+                             "veinivå (DTM er interpolert over vollkrona der); verktoy/landemerker.py 30.10"))
+        print(F['id'], f"terrengflikk {nx} × {ny} punkter, høyeste {h.max():.1f} m")
+    if not tørt:
+        with open(os.path.join(ROT, 'data', 'terrengflikker.json'), 'w', encoding='utf8') as fh:
+            fh.write('[\n' + ',\n'.join(json.dumps(p, ensure_ascii=False, separators=(',', ':')) for p in ut) + '\n]\n')
+
+
 def porter_voldporten(tørt):
     f = os.path.join(ROT, 'data', 'porter.json'); P = json.load(open(f, encoding='utf8'))
     for p in P:
         if p.get('bygg_id') == VOLDPORTEN:
-            p.update(VOLDPORT_PORT)
+            p.update(VOLDPORT_PORT); p['bunn'] = 0.0   # veien i porten = kartets bakkenivå (terrengflikken setter terrenget dit)
+            b = next(x for x in datalag.alle()['bygg'] if x['id'] == VOLDPORTEN)
+            p['vingemurer'] = vingemurer(b['p'], p['ret'])
+            p['vingemurer_kilde'] = ('SØ: Street View aug. 2010 og brukerfoto aug. 2019 (form), ortofoto 2024 (kappene ovenfra: lengde og retning), '
+                                     'DTM (foten); NV: Street View aug. 2010 (lave murer, lengde og vinkel lest av bildet, usikker) – verktoy/landemerker.py')
             p['kilde'] = ('høyde og bue: Street View aug. 2010 (SØ) og DOM: takfot 7,5 m over veien = portmur 4,4 + vaktstue 3,1 '
                           '(verktoy/landemerker.py)')
     if not tørt:
@@ -354,6 +435,7 @@ def main(tørt=False):
         v_, _ = fasade_vinduer(xv, F); vv += v_
     sett(VOLDPORTEN, 'vind', vv, 'vaktstuen: SSV-langsida fra Glasshytta.ai, NV-enden fra Street View aug. 2010, SØ-enden uten vinduer')
     porter_voldporten(tørt)
+    terrengflikker(tørt)
     print(VOLDPORTEN, f'portmur {VOLDPORT_PORT["h"]} m, vaktstue h {x.get("h")} (kilder/hoyde-unntak.json)')
 
     # atriene (kilder/atrier.json): ringtak + glass

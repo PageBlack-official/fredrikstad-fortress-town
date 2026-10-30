@@ -4,9 +4,21 @@ let hAt = ()=>0;
 if (TER){
   const b64=s=>{ const b=atob(s); const a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
   const MB=b64(TER.m), nx=TER.nx, ny=TER.ny, G=TER.g;
-  const inn=i=>(MB[i>>3]>>(7-(i&7)))&1;
+  const inn0=i=>(MB[i>>3]>>(7-(i&7)))&1;
   // høydene ligger bare for punktene i masken (rad for rad); utenfor er bakken null
-  const H=new Uint8Array(nx*ny); H.fill(Math.round((TER.off||0)*20)); { const hk=b64(TER.h); let c=0; for(let i=0;i<nx*ny;i++) if(inn(i)) H[i]=hk[c++]; }
+  const H=new Uint8Array(nx*ny); H.fill(Math.round((TER.off||0)*20)); { const hk=b64(TER.h); let c=0; for(let i=0;i<nx*ny;i++) if(inn0(i)) H[i]=hk[c++]; }
+  const MK=new Uint8Array(nx*ny); for(let i=0;i<nx*ny;i++) MK[i]=inn0(i); const inn=i=>MK[i];
+  // TERRENGFLIKER (30.10, data/terrengflikker.json): Kartverkets DTM lagt over det beregnede terrenget der det beregnede er feil
+  // (verktoy/landemerker.py; første bruk: Voldporten, der vollen i terrenget stod 12 m for langt øst og porten stod på flat mark).
+  // {x0, y0, g, nx, ny, h (cm, rad for rad fra sør), kant (m: myk overgang til terrenget rundt)}
+  (DATA.terrengflikker||[]).forEach(F=>{ const fh=(i,j)=>F.h[Math.min(F.ny-1,Math.max(0,j))*F.nx+Math.min(F.nx-1,Math.max(0,i))]/100;
+    const X1=F.x0+(F.nx-1)*F.g, Y1=F.y0+(F.ny-1)*F.g, off=TER.off||0;
+    for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const X=TER.x0+i*G, Y=TER.y0+j*G; if(X<F.x0||X>X1||Y<F.y0||Y>Y1) continue;
+      const fx=(X-F.x0)/F.g, fy=(Y-F.y0)/F.g, a=Math.floor(fx), b=Math.floor(fy), tx=fx-a, ty=fy-b;
+      const p=(fh(a,b)*(1-tx)+fh(a+1,b)*tx)*(1-ty)+(fh(a,b+1)*(1-tx)+fh(a+1,b+1)*tx)*ty;
+      const d=Math.min(X-F.x0,X1-X,Y-F.y0,Y1-Y), w=Math.min(1,Math.max(0,d/(F.kant||1))), w2=w*w*(3-2*w);
+      const k=j*nx+i, gml=MK[k]?H[k]/20-off:0, ny_=w2*p+(1-w2)*gml;
+      H[k]=Math.max(0,Math.min(255,Math.round((ny_+off)*20))); MK[k]=(ny_>0.02||MK[k]&&w2<1)?1:0; } });
   const hv=(i,j)=>H[j*nx+i]/20-(TER.off||0);
   hAt=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
     const tx=fx-i, ty=fy-j; return (hv(i,j)*(1-tx)+hv(i+1,j)*tx)*(1-ty)+(hv(i,j+1)*(1-tx)+hv(i+1,j+1)*tx)*ty; };

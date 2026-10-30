@@ -14544,6 +14544,17 @@
    "grunn": "dublett: under 5 m fra et annet tre i et tett felt uten egne topper i DOM−DTM (oppdelingen 23.10 la kronene for tett)",
    "hvem": "Claude",
    "dato": "2026-10-29"
+  },
+  {
+   "p": [
+    216.5,
+    34.7,
+    3.69,
+    0.7
+   ],
+   "grunn": "dømt med øyet (traer_dommer 30.10): takskjegget på Voldporten, ikke et tre",
+   "hvem": "Claude",
+   "dato": "2026-10-30"
   }
  ],
  "traer_dommer": [
@@ -15286,6 +15297,16 @@
    "hvem": "Claude",
    "dato": "2026-10-29",
    "grunn": "ortofoto 2024 (16 x 16 m utsnitt sett 29.10): åpen plen, sti, vei eller vannkant, ikke tre; DOM−DTM har ingen vegetasjon over 1,5 m innen 12 m"
+  },
+  {
+   "p": [
+    216.5,
+    34.7
+   ],
+   "dom": "fjern",
+   "hvem": "Claude",
+   "dato": "2026-10-30",
+   "grunn": "Voldporten (natt/atrium 30.10): treet står i passasjen 0,8 m foran portens SØ-fasade, mellom vingemurene. Street View aug. 2010 (SØ) og brukerfotoet aug. 2019 viser åpen brosteinsvei og gress der, ingen tre; ortofoto 2024 viser vingemurens kappe og skyggen av den. DOM−DTM 5–6 m her er takskjegget på porthuset, ikke en krone. Treet skjulte buen fra øst (az 110)"
   }
  ],
  "traer_nye": [
