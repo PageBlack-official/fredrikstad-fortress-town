@@ -1583,13 +1583,14 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2
+    2,
+    3
    ],
    "dorer": 1,
    "arker": 0,
    "piper": 1
   },
-  "avvik": true,
+  "avvik": false,
   "dorer_avvik": false
  },
  {
@@ -2732,8 +2733,46 @@
   "id": "bnr-193868711",
   "navn": null,
   "sikkerhet": "høy",
+  "side": "NV (gatefasade mot Toldbodgaten)",
+  "vegg": 5,
+  "vegg_L": 18.6,
+  "avstand": 6.3,
+  "vinkel": 73.0,
+  "sv": {
+   "rader": [
+    [
+     "etg",
+     3
+    ],
+    [
+     "etg",
+     3
+    ]
+   ],
+   "dorer": "0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen",
+   "takvinduer": "ikke synlig",
+   "piper": "ikke synlig"
+  },
+  "notat": "",
+  "status": "fasit, bare sammenlignet",
+  "modell": {
+   "rader": [
+    3,
+    3
+   ],
+   "dorer": 0,
+   "arker": 0,
+   "piper": 1
+  },
+  "avvik": false,
+  "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193868711",
+  "navn": null,
+  "sikkerhet": "høy",
   "status": "hoppet over",
-  "grunn": "egen modell (kirka / bygg med deler)"
+  "grunn": "pano_url mangler kamerapunkt/retning"
  },
  {
   "id": "bnr-193971199",
@@ -3053,7 +3092,7 @@
    ],
    "dorer": 6,
    "arker": 0,
-   "piper": 19
+   "piper": 3
   },
   "avvik": true,
   "dorer_avvik": true

@@ -77,7 +77,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193820409 |  | [4, 1, 1] | [4, 1] | 1 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 | bnr-13418268 |  | [0, 1] | [0] | 2 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 
-## Fasithus fra kvartaltegningene, bare sammenlignet (101)
+## Fasithus fra kvartaltegningene, bare sammenlignet (102)
 
 Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 
@@ -98,7 +98,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868363 | Binggården | [1, 1] | [1, 2] | 0 | 1 | 0 | 0 | None | 0 | ja |
 | bnr-193868088 |  | [4, 4] | [4, 4] | ingen synlig mot gata (hekk/stakitt foran) | 0 | 0 | 0 | 1 | 2 |  |
 | bnr-193868371 |  | [7, 3] | [7, 3] | ingen på denne fasaden | 0 | 0 | 0 | 1 | 2 |  |
-| bnr-193868126 |  | [2, 3] | [2] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 | ja |
+| bnr-193868126 |  | [2, 3] | [2, 3] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 |  |
 | bnr-193868142 | Prestegården | [5, 5] | [5, 5] | 1 brun kjellerluke/dør i sokkelen til venstre; ingen hovedinngang mot gata | 0 | 0 | 2 | 2 | 2 |  |
 | bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 0 | 0 | 0 | ja |
 | bnr-193868339 |  | [1, 1] | [1, 1] | 1 rundbuet portrom med svart/grå port, skilt 'Kong Fredrik' | 1 | 0 | 0 | None | 1 |  |
@@ -114,6 +114,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-6242812 |  | [5, 5, 4] | [4, 4, 3] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
 | bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 0 | ja |
 | bnr-193868320 |  | [11, 11] | [11, 11] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 |  |
+| bnr-193868711 |  | [3, 3] | [3, 3] | 0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen | 0 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193972411 | Sindinggården | [0] | [] | 1 stor tofløyet låveport (ca. 0.15–0.45 av veggen) med jernbeslag, og 1 smal dør til høyre (ca. 0.88–0.98) | 1 | 0 | 0 | 0 | 1 |  |
 | bnr-193867502 | Kiørboegården | [1, 2] | [1] | 0 på denne fasaden; port i muren | 0 | 0 | 0 | 1 rød teglpipe | 4 | ja |
 | bnr-193867499 | Kommandantgården | [9] | [9] | 1 mørk brun dør i sokkelen (ca. 0.60), kjellerluker med rundbue (4 stk) | 1 | 2 arker med saltak (ca. 0.55 og 0.70) med hvite vinduer | 0 | ikke synlig fra denne vinkelen | 6 |  |
@@ -121,7 +122,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193870325 | Hovedvakten – det gamle slaveri | [1] | [4] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 4 | ja |
 | bnr-193870317 | Det grundmurede provianthus | [0] | [6] | 2 rundbuede dører (ca. 0.10 og 0.40 av synlig vegg), mørke | 3 | 0 | 0 | 0 | 9 | ja |
 | bnr-193870309 | Offisersvakten | [2] | [2] | 1 olivengrønn tofløyet fyllingsdør på gavlen med overlys og steintrapp | 1 | 0 | 0 | 1 rød teglpipe | 1 |  |
-| bnr-193870279 | Tøihuset | [5] | [19] | 1 dør på gavlen (V) med skilt | 6 | 1 lite takvindu på gavlhalvdelen | 0 | 0 synlig | 19 | ja |
+| bnr-193870279 | Tøihuset | [5] | [19] | 1 dør på gavlen (V) med skilt | 6 | 1 lite takvindu på gavlhalvdelen | 0 | 0 synlig | 3 | ja |
 | bnr-193870201 |  | [4, 4] | [3, 3] | 1 på kortsiden nede til venstre (ca. 0.15), mørk skilt-tavle ved døra | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193870228 |  | [6, 6] | [5, 5, 1] | 1 grågrønn fyllingsdør med overlys og lykt, ca. 0.48 av fasaden; 1 tofløyet grågrønn port helt til venstre (ca. 0.03–0.17) | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-193870236 |  | [2, 2] | [5, 5] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |
@@ -227,7 +228,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193972179 : ikke synlig fra gata
 - bnr-193972217 : ikke synlig fra gata
 - bnr-193868452 : veggen (vegg 6, 11.0 m) har plass til 8 akser, Street View trenger 10: trolig feil vegg eller feil hus i modellen; veggen valgt etter retningen i avlesningen (SØ (langfasade mot plassen ved Færgeportgaten) + SV-gavl); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren
-- bnr-193868711 : egen modell (kirka / bygg med deler)
+- bnr-193868711 : pano_url mangler kamerapunkt/retning
 - bnr-193971199 offentlig toalett: ingen vindustall (SØ (sett ovenfra fra vollen, bare taket))
 - bnr-193867596 Vennehaabet: siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (N/NV (gatefasade))
 - bnr-193870287 : ingen vindustall (S (sett på ~40 m langs veien))

@@ -6,7 +6,7 @@
   "foto": [
    201.0,
    197.0,
-   177.0
+   178.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -16,9 +16,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl med mange takvinduer",
   "foto": [
-   216.0,
-   193.0,
-   171.0
+   210.0,
+   191.0,
+   170.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -28,9 +28,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
   "foto": [
-   163.0,
-   157.0,
-   143.0
+   164.0,
+   161.0,
+   146.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -45,9 +45,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   163.0,
-   157.0,
-   143.0
+   164.0,
+   161.0,
+   146.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -57,9 +57,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rødbrun tegl (delvis bak trær)",
   "foto": [
-   189.0,
-   183.0,
-   164.0
+   190.0,
+   184.0,
+   165.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -74,9 +74,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   189.0,
-   183.0,
-   164.0
+   190.0,
+   184.0,
+   165.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -103,9 +103,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   186.0,
-   177.0,
-   159.0
+   185.0,
+   176.0,
+   158.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -115,8 +115,8 @@
   "kilde": "Street View mai 2024",
   "ord": "rød/brun tegl",
   "foto": [
-   175.0,
-   165.0,
+   174.0,
+   164.0,
    149.0
   ],
   "klasse": "brungrå",
@@ -132,8 +132,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   175.0,
-   165.0,
+   174.0,
+   164.0,
    149.0
   ],
   "klasse": "brungrå",
@@ -186,7 +186,7 @@
   "ord": "rød/brun tegl",
   "foto": [
    168.0,
-   159.0,
+   160.0,
    148.0
   ],
   "klasse": "brungrå",
@@ -203,7 +203,7 @@
   "tegning_familie": "grå",
   "foto": [
    168.0,
-   159.0,
+   160.0,
    148.0
   ],
   "klasse": "brungrå",
@@ -219,9 +219,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   185.0,
-   177.0,
-   161.0
+   150.0,
+   143.0,
+   132.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -237,7 +237,7 @@
   "tegning_familie": "rød",
   "foto": [
    182.0,
-   170.0,
+   171.0,
    154.0
   ],
   "klasse": "falmet tegl",
@@ -248,9 +248,9 @@
   "kilde": "Street View mai 2024",
   "ord": "mørk grå/sort (blikk eller tegl), takfot hvit",
   "foto": [
-   197.0,
-   185.0,
-   165.0
+   189.0,
+   179.0,
+   160.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -265,9 +265,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   208.0,
-   198.0,
-   181.0
+   212.0,
+   201.0,
+   183.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -301,9 +301,9 @@
   "kilde": "Street View mai 2024",
   "ord": "flatt (mosegrodd kant)",
   "foto": [
-   161.0,
-   164.0,
-   157.0
+   156.0,
+   162.0,
+   156.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -318,7 +318,7 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   222.0,
+   221.0,
    204.0,
    180.0
   ],
@@ -335,7 +335,7 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   207.0,
+   206.0,
    196.0,
    175.0
   ],
@@ -352,11 +352,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   145.0,
-   131.0,
-   117.0
+   253.0,
+   209.0,
+   174.0
   ],
-  "klasse": "falmet tegl",
+  "klasse": "rød tegl",
   "sikker": true
  },
  {
@@ -364,21 +364,21 @@
   "kilde": "Street View mai 2024",
   "ord": "svart/mørk grå tegl",
   "foto": [
-   69.0,
    73.0,
-   86.0
+   78.0,
+   91.0
   ],
   "klasse": "svart/antrasitt",
-  "sikker": false
+  "sikker": true
  },
  {
   "id": "bnr-6275990",
   "kilde": "Street View nov. 2024",
   "ord": "mørk grå/svart",
   "foto": [
-   173.0,
    169.0,
-   160.0
+   165.0,
+   156.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -388,9 +388,9 @@
   "kilde": "Street View nov. 2024",
   "ord": "mørk (svart/grå)",
   "foto": [
-   112.0,
    113.0,
-   113.0
+   114.0,
+   114.0
   ],
   "klasse": "mørk grå",
   "sikker": true
@@ -400,9 +400,9 @@
   "kilde": "Street View nov. 2024",
   "ord": "grå",
   "foto": [
-   219.0,
-   194.0,
-   171.0
+   215.0,
+   190.0,
+   166.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -412,9 +412,9 @@
   "kilde": "Street View nov. 2024",
   "ord": "mørk grå/svart",
   "foto": [
-   176.0,
-   177.0,
-   177.0
+   208.0,
+   210.0,
+   210.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -424,9 +424,9 @@
   "kilde": "Street View nov. 2024",
   "ord": "grå",
   "foto": [
-   134.0,
-   135.0,
-   133.0
+   124.0,
+   126.0,
+   124.0
   ],
   "klasse": "mørk grå",
   "sikker": true
@@ -436,9 +436,9 @@
   "kilde": "Street View nov. 2024",
   "ord": "mørk grå",
   "foto": [
+   136.0,
    138.0,
-   140.0,
-   139.0
+   137.0
   ],
   "klasse": "mørk grå",
   "sikker": true
@@ -448,9 +448,9 @@
   "kilde": "Street View apr. 2024",
   "ord": "mørk",
   "foto": [
-   186.0,
-   184.0,
-   166.0
+   185.0,
+   182.0,
+   165.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -465,11 +465,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   154.0,
    152.0,
-   142.0
+   149.0,
+   140.0
   ],
-  "klasse": "grå",
+  "klasse": "mørk grå",
   "sikker": true
  },
  {
@@ -482,11 +482,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   216.0,
-   193.0,
-   173.0
+   204.0,
+   186.0,
+   167.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -499,8 +499,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   193.0,
-   183.0,
+   192.0,
+   182.0,
    164.0
   ],
   "klasse": "brungrå",
@@ -516,9 +516,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   156.0,
-   137.0,
-   128.0
+   154.0,
+   136.0,
+   127.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -533,9 +533,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   200.0,
-   187.0,
-   168.0
+   199.0,
+   186.0,
+   167.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -545,9 +545,9 @@
   "kilde": "Street View mai 2024",
   "ord": "lys grå (bølgeblikk/papp?), saltak lav vinkel",
   "foto": [
-   186.0,
+   188.0,
    183.0,
-   166.0
+   167.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -562,9 +562,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   192.0,
-   190.0,
-   176.0
+   193.0,
+   188.0,
+   169.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -579,8 +579,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   228.0,
-   202.0,
+   229.0,
+   203.0,
    177.0
   ],
   "klasse": "rød tegl",
@@ -596,11 +596,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   221.0,
-   196.0,
-   173.0
+   139.0,
+   128.0,
+   119.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -630,11 +630,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   173.0,
-   176.0,
-   180.0
+   142.0,
+   147.0,
+   153.0
   ],
-  "klasse": "grå",
+  "klasse": "mørk grå",
   "sikker": true
  },
  {
@@ -647,11 +647,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   213.0,
-   192.0,
-   171.0
+   207.0,
+   189.0,
+   169.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -664,9 +664,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   219.0,
-   197.0,
-   172.0
+   223.0,
+   199.0,
+   174.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -678,7 +678,7 @@
   "foto": [
    201.0,
    195.0,
-   176.0
+   177.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -695,7 +695,7 @@
   "foto": [
    201.0,
    195.0,
-   176.0
+   177.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -711,7 +711,7 @@
   "tegning_familie": "rød",
   "foto": [
    221.0,
-   204.0,
+   205.0,
    182.0
   ],
   "klasse": "falmet tegl",
@@ -739,9 +739,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   193.0,
-   183.0,
-   159.0
+   187.0,
+   178.0,
+   157.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -756,9 +756,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   191.0,
-   184.0,
-   164.0
+   192.0,
+   185.0,
+   165.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -773,9 +773,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   198.0,
-   184.0,
-   168.0
+   200.0,
+   183.0,
+   164.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -785,9 +785,9 @@
   "kilde": "Street View mai 2024",
   "ord": "mørk brunrød tegl, mosegrodd",
   "foto": [
+   96.0,
    94.0,
-   93.0,
-   93.0
+   94.0
   ],
   "klasse": "svart/antrasitt",
   "sikker": true
@@ -802,9 +802,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   226.0,
    227.0,
-   224.0
+   228.0,
+   225.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -814,9 +814,9 @@
   "kilde": "Street View mai 2024",
   "ord": "brun/grå tegl, mosegrodd",
   "foto": [
-   177.0,
-   163.0,
-   146.0
+   179.0,
+   169.0,
+   151.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -826,11 +826,11 @@
   "kilde": "Street View mai 2024",
   "ord": "brun/grå tegl, mosegrodd",
   "foto": [
-   206.0,
-   183.0,
-   166.0
+   199.0,
+   180.0,
+   164.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -843,11 +843,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   206.0,
-   183.0,
-   166.0
+   199.0,
+   180.0,
+   164.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -860,12 +860,12 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   95.0,
-   89.0,
-   89.0
+   70.0,
+   63.0,
+   69.0
   ],
-  "klasse": "mørk brun",
-  "sikker": true
+  "klasse": null,
+  "sikker": false
  },
  {
   "id": "bnr-193867618",
@@ -877,8 +877,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   221.0,
-   202.0,
+   220.0,
+   201.0,
    181.0
   ],
   "klasse": "falmet tegl",
@@ -889,9 +889,9 @@
   "kilde": "Street View mai 2024",
   "ord": "grå (blikk/papp)",
   "foto": [
-   223.0,
-   207.0,
-   183.0
+   219.0,
+   202.0,
+   178.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -906,9 +906,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   223.0,
-   207.0,
-   183.0
+   219.0,
+   202.0,
+   178.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -923,9 +923,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   242.0,
-   206.0,
-   171.0
+   247.0,
+   208.0,
+   172.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -940,9 +940,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   217.0,
-   200.0,
-   179.0
+   216.0,
+   199.0,
+   176.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -957,11 +957,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   248.0,
-   208.0,
+   223.0,
+   206.0,
    170.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -974,9 +974,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   191.0,
+   192.0,
    186.0,
-   170.0
+   169.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -986,9 +986,9 @@
   "kilde": "Street View mai 2024",
   "ord": "mørk grå/svart tegl",
   "foto": [
-   188.0,
-   186.0,
-   169.0
+   176.0,
+   173.0,
+   158.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -998,9 +998,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
   "foto": [
-   218.0,
-   197.0,
-   172.0
+   217.0,
+   195.0,
+   170.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -1015,9 +1015,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   218.0,
-   197.0,
-   172.0
+   217.0,
+   195.0,
+   170.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -1027,9 +1027,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød/brun tegl, mosegrodd",
   "foto": [
-   254.0,
-   208.0,
-   166.0
+   235.0,
+   184.0,
+   153.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1039,11 +1039,11 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
   "foto": [
-   236.0,
-   202.0,
-   168.0
+   204.0,
+   188.0,
+   163.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -1056,11 +1056,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   236.0,
-   202.0,
-   168.0
+   204.0,
+   188.0,
+   163.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -1073,9 +1073,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   253.0,
+   252.0,
    207.0,
-   173.0
+   172.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1102,9 +1102,9 @@
   "kilde": "Street View mai 2024",
   "ord": "brun/rød tegl",
   "foto": [
-   193.0,
-   183.0,
-   166.0
+   163.0,
+   162.0,
+   146.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1119,9 +1119,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   193.0,
-   183.0,
-   166.0
+   163.0,
+   162.0,
+   146.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1136,9 +1136,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   192.0,
-   200.0,
-   205.0
+   193.0,
+   201.0,
+   206.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -1153,11 +1153,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   237.0,
-   204.0,
-   179.0
+   190.0,
+   180.0,
+   162.0
   ],
-  "klasse": "rød tegl",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -1170,9 +1170,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   200.0,
-   180.0,
-   158.0
+   186.0,
+   171.0,
+   150.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -1189,7 +1189,7 @@
   "foto": [
    245.0,
    209.0,
-   173.0
+   172.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1205,8 +1205,8 @@
   "tegning_familie": "grå",
   "foto": [
    253.0,
-   215.0,
-   178.0
+   217.0,
+   185.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1216,9 +1216,9 @@
   "kilde": "Street View mai 2024",
   "ord": "mørk grå (sink/skifer) på arkene",
   "foto": [
-   240.0,
-   216.0,
-   187.0
+   239.0,
+   214.0,
+   182.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1233,9 +1233,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   240.0,
-   216.0,
-   187.0
+   239.0,
+   214.0,
+   182.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1245,9 +1245,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød/brun tegl",
   "foto": [
-   221.0,
-   188.0,
-   161.0
+   217.0,
+   178.0,
+   152.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1262,9 +1262,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   221.0,
-   188.0,
-   161.0
+   217.0,
+   178.0,
+   152.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1279,9 +1279,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   249.0,
+   247.0,
    207.0,
-   171.0
+   170.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1296,9 +1296,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   232.0,
-   242.0,
-   245.0
+   213.0,
+   221.0,
+   224.0
   ],
   "klasse": "lys grå",
   "sikker": true
@@ -1308,9 +1308,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød/brun tegl (kant)",
   "foto": [
-   189.0,
-   196.0,
-   199.0
+   190.0,
+   198.0,
+   201.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -1325,9 +1325,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   189.0,
-   196.0,
-   199.0
+   190.0,
+   198.0,
+   201.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -1342,11 +1342,11 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   205.0,
-   189.0,
-   178.0
+   166.0,
+   162.0,
+   157.0
   ],
-  "klasse": "brungrå",
+  "klasse": "grå",
   "sikker": true
  },
  {
@@ -1359,8 +1359,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   200.0,
-   190.0,
+   201.0,
+   191.0,
    170.0
   ],
   "klasse": "brungrå",
@@ -1376,8 +1376,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   220.0,
-   196.0,
+   218.0,
+   197.0,
    172.0
   ],
   "klasse": "rød tegl",
@@ -1393,8 +1393,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   241.0,
-   198.0,
+   245.0,
+   199.0,
    165.0
   ],
   "klasse": "rød tegl",
@@ -1410,9 +1410,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   210.0,
-   196.0,
-   177.0
+   214.0,
+   199.0,
+   180.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1427,9 +1427,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   149.0,
+   151.0,
    146.0,
-   135.0
+   134.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1444,9 +1444,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   193.0,
+   192.0,
    182.0,
-   162.0
+   161.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1461,9 +1461,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   254.0,
-   212.0,
-   175.0
+   255.0,
+   216.0,
+   179.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1495,11 +1495,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   200.0,
-   188.0,
-   162.0
+   93.0,
+   91.0,
+   84.0
   ],
-  "klasse": "brungrå",
+  "klasse": "svart/antrasitt",
   "sikker": true
  },
  {
@@ -1507,9 +1507,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
   "foto": [
-   215.0,
-   180.0,
-   154.0
+   206.0,
+   171.0,
+   147.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1524,9 +1524,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   215.0,
-   180.0,
-   154.0
+   206.0,
+   171.0,
+   147.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1541,9 +1541,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   191.0,
+   190.0,
    198.0,
-   202.0
+   201.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -1558,9 +1558,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   188.0,
-   178.0,
-   159.0
+   187.0,
+   177.0,
+   158.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1575,9 +1575,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   186.0,
-   154.0,
-   134.0
+   153.0,
+   127.0,
+   113.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1592,9 +1592,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   181.0,
-   180.0,
-   161.0
+   183.0,
+   182.0,
+   163.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1609,9 +1609,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   211.0,
+   212.0,
    196.0,
-   175.0
+   173.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1626,7 +1626,7 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   223.0,
+   222.0,
    187.0,
    158.0
   ],
@@ -1638,9 +1638,9 @@
   "kilde": "Street View mai 2024",
   "ord": "grå (blikk/skifer?) på arkene",
   "foto": [
-   213.0,
-   214.0,
-   217.0
+   187.0,
+   185.0,
+   176.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -1655,9 +1655,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   213.0,
-   214.0,
-   217.0
+   187.0,
+   185.0,
+   176.0
   ],
   "klasse": "grå",
   "sikker": true
@@ -1667,9 +1667,9 @@
   "kilde": "Street View mai 2024",
   "ord": "grå/lys grå (blikk eller skifer)",
   "foto": [
-   195.0,
    193.0,
-   175.0
+   191.0,
+   173.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1684,9 +1684,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   195.0,
    193.0,
-   175.0
+   191.0,
+   173.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1701,9 +1701,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   194.0,
-   185.0,
-   166.0
+   196.0,
+   187.0,
+   168.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1718,9 +1718,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   190.0,
-   177.0,
-   157.0
+   187.0,
+   169.0,
+   148.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1736,7 +1736,7 @@
   "tegning_familie": "rød",
   "foto": [
    197.0,
-   187.0,
+   188.0,
    169.0
   ],
   "klasse": "brungrå",
@@ -1747,9 +1747,9 @@
   "kilde": "Street View mai 2024",
   "ord": "brun/rødbrun tegl",
   "foto": [
-   112.0,
-   103.0,
-   93.0
+   73.0,
+   67.0,
+   69.0
   ],
   "klasse": "mørk brun",
   "sikker": true
@@ -1764,9 +1764,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   112.0,
-   103.0,
-   93.0
+   73.0,
+   67.0,
+   69.0
   ],
   "klasse": "mørk brun",
   "sikker": true
@@ -1781,9 +1781,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   197.0,
-   190.0,
-   170.0
+   198.0,
+   191.0,
+   171.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1793,9 +1793,9 @@
   "kilde": "Street View nov. 2024",
   "ord": "mørk grå/svart",
   "foto": [
-   127.0,
-   131.0,
-   135.0
+   118.0,
+   121.0,
+   123.0
   ],
   "klasse": "mørk grå",
   "sikker": true
@@ -1810,9 +1810,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   200.0,
-   187.0,
-   166.0
+   196.0,
+   184.0,
+   164.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1822,9 +1822,9 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
   "foto": [
-   197.0,
-   179.0,
-   163.0
+   207.0,
+   191.0,
+   173.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -1839,9 +1839,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   201.0,
-   190.0,
-   170.0
+   199.0,
+   189.0,
+   169.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1856,9 +1856,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   146.0,
+   145.0,
    130.0,
-   119.0
+   118.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -1885,7 +1885,7 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   182.0,
+   181.0,
    174.0,
    157.0
   ],
@@ -1920,8 +1920,8 @@
   "tegning_familie": "rød",
   "foto": [
    195.0,
-   183.0,
-   166.0
+   185.0,
+   168.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1937,8 +1937,8 @@
   "tegning_familie": "rød",
   "foto": [
    222.0,
-   201.0,
-   183.0
+   202.0,
+   181.0
   ],
   "klasse": "falmet tegl",
   "sikker": true
@@ -1955,7 +1955,7 @@
   "foto": [
    236.0,
    206.0,
-   177.0
+   178.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -1988,7 +1988,7 @@
   "tegning_familie": "rød",
   "foto": [
    242.0,
-   200.0,
+   199.0,
    167.0
   ],
   "klasse": "rød tegl",
@@ -1999,7 +1999,7 @@
   "kilde": "Street View mai 2024",
   "ord": "skjult (gavl mot gata)",
   "foto": [
-   185.0,
+   186.0,
    174.0,
    156.0
   ],
@@ -2018,7 +2018,7 @@
   "foto": [
    178.0,
    176.0,
-   161.0
+   160.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -2033,9 +2033,9 @@
   ],
   "tegning_familie": "grå",
   "foto": [
-   223.0,
+   220.0,
    193.0,
-   172.0
+   173.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -2050,7 +2050,7 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   187.0,
+   186.0,
    180.0,
    162.0
   ],
@@ -2067,8 +2067,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   229.0,
-   197.0,
+   227.0,
+   196.0,
    173.0
   ],
   "klasse": "rød tegl",
@@ -2080,7 +2080,7 @@
   "ord": "grå/brun tegl",
   "foto": [
    205.0,
-   190.0,
+   191.0,
    169.0
   ],
   "klasse": "brungrå",
@@ -2097,7 +2097,7 @@
   "tegning_familie": "rød",
   "foto": [
    205.0,
-   190.0,
+   191.0,
    169.0
   ],
   "klasse": "brungrå",
@@ -2114,8 +2114,8 @@
   "tegning_familie": "grå",
   "foto": [
    174.0,
-   166.0,
-   150.0
+   167.0,
+   151.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -2130,8 +2130,8 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   108.0,
-   110.0,
+   109.0,
+   111.0,
    111.0
   ],
   "klasse": "mørk grå",
@@ -2144,7 +2144,7 @@
   "foto": [
    122.0,
    124.0,
-   123.0
+   122.0
   ],
   "klasse": "mørk grå",
   "sikker": true
@@ -2159,9 +2159,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   217.0,
-   177.0,
-   149.0
+   219.0,
+   171.0,
+   138.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -2171,11 +2171,11 @@
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
   "foto": [
-   160.0,
-   160.0,
-   154.0
+   149.0,
+   150.0,
+   144.0
   ],
-  "klasse": "grå",
+  "klasse": "mørk grå",
   "sikker": true
  },
  {
@@ -2205,28 +2205,11 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   185.0,
+   184.0,
    181.0,
-   165.0
+   166.0
   ],
   "klasse": "brungrå",
-  "sikker": true
- },
- {
-  "id": "bnr-193869572",
-  "kilde": "kvartaltegningen Kvartal3 (IoU 0.53)",
-  "tegning": [
-   173,
-   100,
-   86
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   244.0,
-   209.0,
-   178.0
-  ],
-  "klasse": "rød tegl",
   "sikker": true
  },
  {
@@ -2239,9 +2222,9 @@
   ],
   "tegning_familie": "rød",
   "foto": [
-   184.0,
-   174.0,
-   156.0
+   183.0,
+   173.0,
+   154.0
   ],
   "klasse": "brungrå",
   "sikker": true

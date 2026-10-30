@@ -3928,7 +3928,7 @@
    157,
    158
   ],
-  "kilde": "2017-tegningen som vektor (dekning 0.9)",
+  "kilde": "2017-tegningen som vektor (dekning 0.91)",
   "aar": 2017,
   "byttet": false
  },
@@ -6071,13 +6071,13 @@
   ],
   "for_kilde": null,
   "vegg": [
-   244,
-   123,
-   106
+   232,
+   233,
+   234
   ],
   "kilde": "2017-tegningen som vektor (dekning 1.0)",
   "aar": 2017,
-  "byttet": false
+  "byttet": true
  },
  {
   "id": "bnr-193972454",
@@ -7296,25 +7296,6 @@
   "byttet": false
  },
  {
-  "id": "bnr-193869572",
-  "navn": null,
-  "adr": null,
-  "for_": [
-   251,
-   190,
-   143
-  ],
-  "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
-  "vegg": [
-   251,
-   190,
-   143
-  ],
-  "kilde": "kvartaltegningen Kvartal3 (skygge side, IoU 0.53)",
-  "aar": 2015,
-  "byttet": false
- },
- {
   "id": "bnr-193972047",
   "navn": null,
   "adr": null,
@@ -7595,7 +7576,7 @@
    102,
    88
   ],
-  "kilde": "2017-tegningen som vektor (dekning 0.97)",
+  "kilde": "2017-tegningen som vektor (dekning 0.96)",
   "aar": 2017,
   "byttet": false
  },
@@ -8028,12 +8009,12 @@
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   232,
-   184,
-   92
+   215,
+   167,
+   129
   ],
-  "kilde": "nabohuset bnr-193972411 (Sindinggården, 0.0 m unna)",
-  "aar": null,
+  "kilde": "2017-tegningen som vektor (dekning 1.0)",
+  "aar": 2017,
   "byttet": false
  },
  {
