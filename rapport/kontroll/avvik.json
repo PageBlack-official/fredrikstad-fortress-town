@@ -3,50 +3,50 @@
  "verktoy": "verktoy/kontroll.py avvik",
  "totalt": {
   "finnes": {
-   "ok": 195,
+   "ok": 193,
    "feil": 4,
-   "avvik": 18
+   "avvik": 20
   },
   "omriss": {
    "avvik": 79,
-   "ok": 49,
+   "ok": 47,
    "feil": 67
   },
   "mone": {
-   "avvik": 42,
-   "ok": 102,
+   "avvik": 44,
+   "ok": 98,
    "feil": 49
   },
   "takform": {
-   "ok": 188,
+   "ok": 186,
    "feil": 7
   },
   "takfarge": {
-   "ok": 76,
-   "avvik med grunn": 110,
+   "ok": 75,
+   "avvik med grunn": 109,
    "feil": 1
   },
   "arker": {
-   "ok": 155,
-   "avvik": 40
+   "ok": 154,
+   "avvik": 39
   },
   "piper": {
-   "ok": 163,
+   "ok": 161,
    "avvik": 32
   },
   "gesims": {
    "ok": 70,
-   "feil": 45,
+   "feil": 44,
    "avvik": 25
   },
   "veggfarge": {
-   "ok": 80,
-   "avvik med grunn": 16,
+   "ok": 78,
+   "avvik med grunn": 18,
    "feil": 6
   },
   "vinduer": {
-   "avvik": 16,
-   "feil": 65,
+   "avvik": 15,
+   "feil": 66,
    "ok": 24
   },
   "dorer": {
@@ -54,9 +54,9 @@
    "avvik": 57
   },
   "slaatt_sammen": {
-   "feil": 12,
+   "feil": 11,
    "avvik med grunn": 9,
-   "avvik": 6
+   "avvik": 7
   },
   "tegnet_hus_uten_modell": {
    "feil": 71
@@ -11734,7 +11734,7 @@
    "farge_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
    "vegg_kilde": "merknad: Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.64))",
+   "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.62))",
    "tak_aar": 2024,
    "synlig_px": 52426,
    "flater": [
@@ -11907,7 +11907,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.64))"
+     "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.62))"
     },
     "vinduer": {
      "alvor": "feil",
@@ -12024,10 +12024,10 @@
    "navn": null,
    "h": 5.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.65); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))",
-   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.65)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.67); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.67))",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.67)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.67))",
    "tak_aar": 2024,
    "synlig_px": 32739,
    "flater": [
@@ -12157,11 +12157,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (251, 190, 143) (oransje/brun), modell (251, 190, 143) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.65)"
+     "hva": "tegning (251, 190, 143) (oransje/brun), modell (251, 190, 143) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.67)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.67))"
     },
     "vinduer": {
      "alvor": "feil",
@@ -12187,10 +12187,10 @@
    "navn": null,
    "h": 3.4,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.66))",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.66))",
    "tak_aar": 2024,
    "synlig_px": 52987,
    "flater": [
@@ -12320,7 +12320,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.66))"
     },
     "vinduer": {
      "alvor": "avvik",
@@ -12670,8 +12670,8 @@
    "navn": null,
    "h": 8.4,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.62); tak: ortofoto 2024 (rød tegl) = 2019-trykket (dømt): tegningens farge",
-   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.62)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63); tak: ortofoto 2024 (rød tegl) = 2019-trykket (dømt): tegningens farge",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63)",
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (rød tegl) = 2019-trykket (dømt): tegningens farge",
    "tak_aar": 2024,
@@ -12850,7 +12850,7 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (236, 237, 238) (hvit), modell (236, 237, 238) (hvit), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.62)"
+     "hva": "tegning (236, 237, 238) (hvit), modell (236, 237, 238) (hvit), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
@@ -12880,10 +12880,10 @@
    "navn": null,
    "h": 4.5,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.58); tak: ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.58))",
-   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.58)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.59); tak: ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.59))",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.59)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.58))",
+   "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.59))",
    "tak_aar": 2024,
    "synlig_px": 18323,
    "flater": [
@@ -12991,11 +12991,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (193, 121, 107) (rød), modell (193, 121, 107) (rød), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.58)"
+     "hva": "tegning (193, 121, 107) (rød), modell (193, 121, 107) (rød), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.59)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (246, 147, 129) (rød), modell (104, 104, 102) (grå/svart), ΔE 51.1; modellens farge: ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.58))"
+     "hva": "tegning (246, 147, 129) (rød), modell (104, 104, 102) (grå/svart), ΔE 51.1; modellens farge: ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.59))"
     },
     "vinduer": {
      "alvor": "ok",
@@ -13118,10 +13118,10 @@
    "navn": null,
    "h": 9.0,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.68); tak: ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.68): tegningens farge",
-   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.68)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.69); tak: ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.69): tegningens farge",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.69)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.68): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.69): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 41832,
    "flater": [
@@ -13268,11 +13268,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (250, 224, 171) (oransje/brun), modell (250, 224, 171) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.68)"
+     "hva": "tegning (250, 224, 171) (oransje/brun), modell (250, 224, 171) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.69)"
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (126, 128, 131) (grå/svart), modell (126, 128, 131) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.68): tegningens farge"
+     "hva": "tegning (126, 128, 131) (grå/svart), modell (126, 128, 131) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.69): tegningens farge"
     },
     "vinduer": {
      "alvor": "feil",
@@ -13298,10 +13298,10 @@
    "navn": null,
    "h": 3.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit (portmur/vegg), rødt trebygg innenfor) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.46))",
+   "farge_kilde": "vegg: Street View 2024 (hvit (portmur/vegg), rødt trebygg innenfor) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.48))",
    "vegg_kilde": "Street View 2024 (hvit (portmur/vegg), rødt trebygg innenfor) = 2019-trykket (dømt): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.46))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.48))",
    "tak_aar": 2024,
    "synlig_px": 20944,
    "flater": [
@@ -13371,7 +13371,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.46))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.48))"
     },
     "arker": {
      "alvor": "ok",
@@ -13476,10 +13476,10 @@
    "navn": null,
    "h": 5.9,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.47): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.46): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.47): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.46): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 8238,
    "flater": [
@@ -13545,7 +13545,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (152, 154, 157) (grå/svart), modell (152, 154, 157) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.47): tegningens farge"
+     "hva": "tegning (152, 154, 157) (grå/svart), modell (152, 154, 157) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.46): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -13563,10 +13563,10 @@
    "navn": null,
    "h": 6.3,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (hvit kalket/pusset mur); tak: ortofoto 2024 (falmet tegl)",
-   "vegg_kilde": "Street View 2024 (hvit kalket/pusset mur)",
+   "farge_kilde": "vegg: Street View 2024 (hvit kalket/pusset mur) = kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.38): tegningens farge; tak: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.38))",
+   "vegg_kilde": "Street View 2024 (hvit kalket/pusset mur) = kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.38): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (falmet tegl)",
+   "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.38))",
    "tak_aar": 2024,
    "synlig_px": 9637,
    "flater": [
@@ -13602,12 +13602,12 @@
      157
     ],
     "modell": [
-     174,
-     192,
-     185
+     152,
+     154,
+     157
     ],
     "side": "skygge",
-    "dE": 15.0,
+    "dE": 0.0,
     "kulor_tegning": "grå/svart",
     "kulor_modell": "grå/svart"
    },
@@ -13675,11 +13675,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (152, 154, 157) (grå/svart), modell (174, 192, 185) (grå/svart), ΔE 15.0; modellens farge: Street View 2024 (hvit kalket/pusset mur)"
+     "hva": "tegning (152, 154, 157) (grå/svart), modell (152, 154, 157) (grå/svart), ΔE 0.0; modellens farge: Street View 2024 (hvit kalket/pusset mur) = kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.38): tegningens farge"
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (173, 100, 86) (rød), modell (170, 108, 92) (rød), ΔE 5.5; modellens farge: ortofoto 2024 (falmet tegl)"
+     "hva": "tegning (173, 100, 86) (rød), modell (170, 108, 92) (rød), ΔE 5.5; modellens farge: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.38))"
     },
     "vinduer": {
      "alvor": "ok",
@@ -13705,10 +13705,10 @@
    "navn": null,
    "h": 4.91,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.41); tak: ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen Kvartal8BITMAP (IoU 0.41))",
-   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.41)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.35); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.35): tegningens farge",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.35)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen Kvartal8BITMAP (IoU 0.41))",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.35): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 9913,
    "flater": [
@@ -13762,11 +13762,11 @@
      106
     ],
     "modell": [
-     196,
-     92,
-     72
+     244,
+     123,
+     106
     ],
-    "dE": 14.5,
+    "dE": 0.0,
     "kulor_tegning": "rød",
     "kulor_modell": "rød"
    },
@@ -13821,11 +13821,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (239, 240, 240) (hvit), modell (239, 240, 240) (hvit), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.41)"
+     "hva": "tegning (239, 240, 240) (hvit), modell (239, 240, 240) (hvit), ΔE 0.0; modellens farge: kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.35)"
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (244, 123, 106) (rød), modell (196, 92, 72) (rød), ΔE 14.5; modellens farge: ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen Kvartal8BITMAP (IoU 0.41))"
+     "hva": "tegning (244, 123, 106) (rød), modell (244, 123, 106) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.35): tegningens farge"
     },
     "vinduer": {
      "alvor": "avvik",
@@ -13851,10 +13851,10 @@
    "navn": null,
    "h": 4.2,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.49): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.52): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.49): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.52): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 20326,
    "flater": [
@@ -13929,7 +13929,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (244, 123, 106) (rød), modell (244, 123, 106) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.49): tegningens farge"
+     "hva": "tegning (244, 123, 106) (rød), modell (244, 123, 106) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.52): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -14136,10 +14136,10 @@
    "navn": null,
    "h": 7.2,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: merknad: Street View (hovedagenten 29.10) + ortofoto 2024; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.58))",
+   "farge_kilde": "vegg: merknad: Street View (hovedagenten 29.10) + ortofoto 2024; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.59))",
    "vegg_kilde": "merknad: Street View (hovedagenten 29.10) + ortofoto 2024",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.58))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.59))",
    "tak_aar": 2024,
    "synlig_px": 71339,
    "flater": [
@@ -14287,7 +14287,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.58))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.59))"
     },
     "vinduer": {
      "alvor": "avvik",
@@ -14386,10 +14386,10 @@
    "navn": null,
    "h": 6.2,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (okergul/oransjeoker); tegningen har grå (2019-trykket (dømt)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.49): tegningens farge",
+   "farge_kilde": "vegg: Street View 2024 (okergul/oransjeoker); tegningen har grå (2019-trykket (dømt)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.47): tegningens farge",
    "vegg_kilde": "Street View 2024 (okergul/oransjeoker); tegningen har grå (2019-trykket (dømt))",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.49): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.47): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 30171,
    "flater": [
@@ -14468,7 +14468,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (246, 147, 129) (rød), modell (246, 147, 129) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.49): tegningens farge"
+     "hva": "tegning (246, 147, 129) (rød), modell (246, 147, 129) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.47): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -14486,10 +14486,10 @@
    "navn": null,
    "h": 4.3,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal9 (skygge side, IoU 0.61); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.61): tegningens farge",
-   "vegg_kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.61)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal9 (skygge side, IoU 0.62); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.62): tegningens farge",
+   "vegg_kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.62)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.61): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.62): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 65629,
    "flater": [
@@ -14670,7 +14670,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (246, 147, 129) (rød), modell (246, 147, 129) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.61): tegningens farge"
+     "hva": "tegning (246, 147, 129) (rød), modell (246, 147, 129) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.62): tegningens farge"
     },
     "vinduer": {
      "alvor": "ok",
@@ -14696,10 +14696,10 @@
    "navn": null,
    "h": 4.8,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.51): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.51): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 23731,
    "flater": [
@@ -14768,7 +14768,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (145, 147, 150) (grå/svart), modell (145, 147, 150) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.51): tegningens farge"
+     "hva": "tegning (145, 147, 150) (grå/svart), modell (145, 147, 150) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -14786,10 +14786,10 @@
    "navn": null,
    "h": 5.0,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.54): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.54): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 26928,
    "flater": [
@@ -14858,7 +14858,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (246, 147, 129) (rød), modell (246, 147, 129) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge"
+     "hva": "tegning (246, 147, 129) (rød), modell (246, 147, 129) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.54): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -15177,10 +15177,10 @@
    "navn": null,
    "h": 4.3,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.60))",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.61))",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.60))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.61))",
    "tak_aar": 2024,
    "synlig_px": 19665,
    "flater": [
@@ -15248,7 +15248,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.60))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.61))"
     },
     "arker": {
      "alvor": "ok",
@@ -15332,10 +15332,10 @@
    "navn": null,
    "h": 5.6,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (svart/antrasitt); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.48))",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (svart/antrasitt); tegningen har rød (2019-trykket (dømt))",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (svart/antrasitt); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.48))",
+   "tak_kilde": "ortofoto 2024 (svart/antrasitt); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
    "synlig_px": 8048,
    "flater": [
@@ -15399,7 +15399,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (217, 110, 94) (rød), modell (70, 70, 72) (grå/svart), ΔE 57.5; modellens farge: ortofoto 2024 (svart/antrasitt); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.48))"
+     "hva": "tegning (217, 110, 94) (rød), modell (70, 70, 72) (grå/svart), ΔE 57.5; modellens farge: ortofoto 2024 (svart/antrasitt); tegningen har rød (2019-trykket (dømt))"
     },
     "arker": {
      "alvor": "ok",
@@ -15417,10 +15417,10 @@
    "navn": null,
    "h": 4.1,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal9 (IoU 0.46): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal9 (IoU 0.46): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 14504,
    "flater": [
@@ -15450,11 +15450,11 @@
      110
     ],
     "modell": [
-     135,
-     150,
-     153
+     105,
+     109,
+     110
     ],
-    "dE": 15.8,
+    "dE": 0.0,
     "kulor_tegning": "grå/svart",
     "kulor_modell": "grå/svart"
    },
@@ -15487,7 +15487,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (105, 109, 110) (grå/svart), modell (135, 150, 153) (grå/svart), ΔE 15.8; modellens farge: ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge"
+     "hva": "tegning (105, 109, 110) (grå/svart), modell (105, 109, 110) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal9 (IoU 0.46): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -16298,7 +16298,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.59): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 42954,
+   "synlig_px": 42858,
    "flater": [
     6,
     40,
@@ -16309,13 +16309,13 @@
     314
    ],
    "finnes": "ja",
-   "iou": 0.592,
-   "andel_av_modell_dekket": 0.62,
-   "andel_av_tegning_dekket": 0.85,
+   "iou": 0.563,
+   "andel_av_modell_dekket": 0.6,
+   "andel_av_tegning_dekket": 0.82,
    "tegnede_fasader_per_vegg": {},
    "gesims_forhold": 1.0,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.71,
+   "silhuett_forhold": 0.68,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -16356,7 +16356,7 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.59 (modell dekket 62%, tegning dekket 85%)"
+     "hva": "IoU 0.56 (modell dekket 60%, tegning dekket 82%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -16364,7 +16364,7 @@
     },
     "mone": {
      "alvor": "avvik",
-     "hva": "silhuetthøyde tegnet/modell 0.71"
+     "hva": "silhuetthøyde tegnet/modell 0.68"
     },
     "takform": {
      "alvor": "ok",
@@ -16390,12 +16390,12 @@
    "navn": "Sindinggården",
    "h": 4.5,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (sandgul/lys oker); tegningen har grå (kvartaltegningen Kvartal10 (lys side, IoU 0.76)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge",
-   "vegg_kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
+   "farge_kilde": "vegg: Street View 2024 (sandgul/lys oker); tegningen har grå (2019-trykket (dømt)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.75): tegningens farge",
+   "vegg_kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (2019-trykket (dømt))",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.75): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 59638,
+   "synlig_px": 61640,
    "flater": [
     11,
     12,
@@ -16403,27 +16403,47 @@
     34,
     46,
     52,
+    81,
+    87,
     100,
     102,
     103,
     123
    ],
    "finnes": "ja",
-   "iou": 0.754,
-   "andel_av_modell_dekket": 0.78,
-   "andel_av_tegning_dekket": 0.91,
-   "tegnede_fasader_per_vegg": {},
+   "iou": 0.735,
+   "andel_av_modell_dekket": 0.76,
+   "andel_av_tegning_dekket": 0.9,
+   "tegnede_fasader_per_vegg": {
+    "5": 1
+   },
    "gesims_forhold": 0.84,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.91,
+   "silhuett_forhold": 0.85,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 10,
+    "takflater": 11,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarge": {
+    "tegning": [
+     198,
+     198,
+     197
+    ],
+    "modell": [
+     232,
+     184,
+     92
+    ],
+    "side": "lys",
+    "dE": 52.5,
+    "kulor_tegning": "grå/svart",
+    "kulor_modell": "oransje/brun"
+   },
    "takfarge": {
     "tegning": [
      180,
@@ -16439,7 +16459,25 @@
     "kulor_tegning": "rød",
     "kulor_modell": "rød"
    },
-   "vinduer": [],
+   "vinduer": [
+    {
+     "vegg": 5,
+     "lengde_m": 5.1,
+     "kilde": "hullene i veggflaten",
+     "tegning": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
+     },
+     "modell": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
+     }
+    }
+   ],
    "arker": {
     "tegning_anslag": 1,
     "modell": 0
@@ -16456,7 +16494,7 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.75 (modell dekket 78%, tegning dekket 91%)"
+     "hva": "IoU 0.73 (modell dekket 76%, tegning dekket 90%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -16464,15 +16502,27 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.91"
+     "hva": "silhuetthøyde tegnet/modell 0.85"
     },
     "takform": {
      "alvor": "ok",
      "hva": "modell sal; tegningen viser ikke gavl/endeflate"
     },
+    "veggfarge": {
+     "alvor": "avvik med grunn",
+     "hva": "tegning (198, 198, 197) (grå/svart), modell (232, 184, 92) (oransje/brun), ΔE 52.5; modellens farge: Street View 2024 (sandgul/lys oker); tegningen har grå (2019-trykket (dømt))"
+    },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (180, 102, 84) (rød), modell (180, 102, 84) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge"
+     "hva": "tegning (180, 102, 84) (rød), modell (180, 102, 84) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.75): tegningens farge"
+    },
+    "vinduer": {
+     "alvor": "avvik",
+     "hva": "vegg 5 (5.1 m): tegning 0 vinduer i rader [], modell 2 i rader [2]"
+    },
+    "dorer": {
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -16495,7 +16545,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.52))",
    "tak_aar": 2024,
-   "synlig_px": 39811,
+   "synlig_px": 39607,
    "flater": [
     7,
     49,
@@ -16503,8 +16553,6 @@
     67,
     68,
     69,
-    70,
-    71,
     72,
     83,
     85,
@@ -16521,21 +16569,21 @@
     329
    ],
    "finnes": "ja",
-   "iou": 0.523,
-   "andel_av_modell_dekket": 0.58,
-   "andel_av_tegning_dekket": 0.72,
+   "iou": 0.49,
+   "andel_av_modell_dekket": 0.55,
+   "andel_av_tegning_dekket": 0.7,
    "tegnede_fasader_per_vegg": {
-    "3": 7
+    "3": 5
    },
    "slaatt_sammen": [
     {
      "vegg": 3,
-     "fasader": 4,
+     "fasader": 3,
      "ulike_farger": 1,
      "segmenter": 0
     }
    ],
-   "gesims_forhold": 0.35,
+   "gesims_forhold": 0.33,
    "gesims_kilde": "veggflatene i tegningen",
    "silhuett_forhold": 1.03,
    "takform_modell": "sal",
@@ -16595,7 +16643,7 @@
     }
    ],
    "arker": {
-    "tegning_anslag": 3,
+    "tegning_anslag": 1,
     "modell": 0
    },
    "piper": {
@@ -16610,15 +16658,15 @@
     },
     "slaatt_sammen": {
      "alvor": "avvik",
-     "hva": "tegningen har 4 fasader på én modellvegg (vegg 3; ulike farger: 1)"
+     "hva": "tegningen har 3 fasader på én modellvegg (vegg 3; ulike farger: 1)"
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.52 (modell dekket 58%, tegning dekket 72%)"
+     "hva": "IoU 0.49 (modell dekket 55%, tegning dekket 70%)"
     },
     "gesims": {
      "alvor": "feil",
-     "hva": "tegnet/modell 0.35 (tegningen lavere)"
+     "hva": "tegnet/modell 0.33 (tegningen lavere)"
     },
     "mone": {
      "alvor": "ok",
@@ -16645,8 +16693,8 @@
      "hva": "like"
     },
     "arker": {
-     "alvor": "avvik",
-     "hva": "tegning ~3 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "alvor": "ok",
+     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 0"
     },
     "piper": {
      "alvor": "avvik",
@@ -16665,28 +16713,38 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (svart/antrasitt); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.65))",
    "tak_aar": 2024,
-   "synlig_px": 62641,
+   "synlig_px": 61291,
    "flater": [
     3,
     14,
+    70,
+    71,
     73,
     92,
+    96,
     98,
     107,
-    117,
     340,
     341
    ],
    "finnes": "ja",
-   "iou": 0.654,
-   "andel_av_modell_dekket": 0.71,
-   "andel_av_tegning_dekket": 0.86,
+   "iou": 0.653,
+   "andel_av_modell_dekket": 0.73,
+   "andel_av_tegning_dekket": 0.83,
    "tegnede_fasader_per_vegg": {
-    "2": 1
+    "2": 3
    },
+   "slaatt_sammen": [
+    {
+     "vegg": 2,
+     "fasader": 2,
+     "ulike_farger": 1,
+     "segmenter": 0
+    }
+   ],
    "gesims_forhold": 0.55,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.97,
+   "silhuett_forhold": 1.01,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -16762,9 +16820,13 @@
      "alvor": "ok",
      "hva": "ja"
     },
+    "slaatt_sammen": {
+     "alvor": "avvik",
+     "hva": "tegningen har 2 fasader på én modellvegg (vegg 2; ulike farger: 1)"
+    },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.65 (modell dekket 71%, tegning dekket 86%)"
+     "hva": "IoU 0.65 (modell dekket 73%, tegning dekket 83%)"
     },
     "gesims": {
      "alvor": "feil",
@@ -16772,7 +16834,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.97"
+     "hva": "silhuetthøyde tegnet/modell 1.01"
     },
     "takform": {
      "alvor": "ok",
@@ -16810,12 +16872,12 @@
    "navn": null,
    "h": 5.15,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge",
-   "vegg_kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
+   "farge_kilde": "vegg: Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.77)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.77): tegningens farge",
+   "vegg_kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.77))",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.77): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 143061,
+   "synlig_px": 142864,
    "flater": [
     2,
     4,
@@ -16831,7 +16893,7 @@
     86
    ],
    "finnes": "ja",
-   "iou": 0.766,
+   "iou": 0.761,
    "andel_av_modell_dekket": 0.82,
    "andel_av_tegning_dekket": 0.86,
    "tegnede_fasader_per_vegg": {
@@ -16840,7 +16902,7 @@
    },
    "gesims_forhold": 1.51,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.98,
+   "silhuett_forhold": 0.97,
    "takform_modell": "sal/sammensatt",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -16936,7 +16998,7 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.77 (modell dekket 82%, tegning dekket 86%)"
+     "hva": "IoU 0.76 (modell dekket 82%, tegning dekket 86%)"
     },
     "gesims": {
      "alvor": "feil",
@@ -16944,7 +17006,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.98"
+     "hva": "silhuetthøyde tegnet/modell 0.97"
     },
     "takform": {
      "alvor": "ok",
@@ -16952,11 +17014,11 @@
     },
     "veggfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (206, 129, 63) (oransje/brun), modell (226, 170, 160) (rød), ΔE 36.8; modellens farge: Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76))"
+     "hva": "tegning (206, 129, 63) (oransje/brun), modell (226, 170, 160) (rød), ΔE 36.8; modellens farge: Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.77))"
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (180, 102, 84) (rød), modell (180, 102, 84) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge"
+     "hva": "tegning (180, 102, 84) (rød), modell (180, 102, 84) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.77): tegningens farge"
     },
     "vinduer": {
      "alvor": "ok",
@@ -16982,14 +17044,13 @@
    "navn": "Vennehaabet",
    "h": 7.8,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.54): tegningens farge; tak: ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.54): tegningens farge",
-   "vegg_kilde": "Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.54): tegningens farge",
+   "farge_kilde": "vegg: Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.53): tegningens farge; tak: ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.53): tegningens farge",
+   "vegg_kilde": "Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.53): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.54): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.53): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 56227,
+   "synlig_px": 56095,
    "flater": [
-    8,
     20,
     22,
     25,
@@ -16998,21 +17059,20 @@
     79
    ],
    "finnes": "ja",
-   "iou": 0.526,
-   "andel_av_modell_dekket": 0.68,
-   "andel_av_tegning_dekket": 0.64,
+   "iou": 0.423,
+   "andel_av_modell_dekket": 0.47,
+   "andel_av_tegning_dekket": 0.7,
    "tegnede_fasader_per_vegg": {
-    "3": 1,
     "2": 1
    },
    "gesims_forhold": 1.31,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 1.15,
+   "silhuett_forhold": 0.71,
    "takform_modell": "valm",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 3,
+    "takflater": 2,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -17027,24 +17087,24 @@
      198,
      197
     ],
-    "side": "lys",
+    "side": "skygge",
     "dE": 0.0,
     "kulor_tegning": "grå/svart",
     "kulor_modell": "grå/svart"
    },
    "takfarge": {
     "tegning": [
-     151,
-     150,
-     149
+     243,
+     243,
+     243
     ],
     "modell": [
      151,
      150,
      149
     ],
-    "dE": 0.0,
-    "kulor_tegning": "grå/svart",
+    "dE": 33.7,
+    "kulor_tegning": "hvit",
     "kulor_modell": "grå/svart"
    },
    "vinduer": [
@@ -17068,26 +17128,6 @@
       ],
       "dorer": 1
      }
-    },
-    {
-     "vegg": 3,
-     "lengde_m": 8.4,
-     "kilde": "hullene i veggflaten",
-     "tegning": {
-      "vinduer": 2,
-      "rader": [
-       2
-      ],
-      "dorer": 0
-     },
-     "modell": {
-      "vinduer": 4,
-      "rader": [
-       2,
-       2
-      ],
-      "dorer": 0
-     }
     }
    ],
    "arker": {
@@ -17105,16 +17145,16 @@
      "hva": "ja"
     },
     "omriss": {
-     "alvor": "avvik",
-     "hva": "IoU 0.53 (modell dekket 68%, tegning dekket 64%)"
+     "alvor": "feil",
+     "hva": "IoU 0.42 (modell dekket 47%, tegning dekket 70%)"
     },
     "gesims": {
      "alvor": "avvik",
      "hva": "tegnet/modell 1.31 (tegningen høyere)"
     },
     "mone": {
-     "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.15"
+     "alvor": "avvik",
+     "hva": "silhuetthøyde tegnet/modell 0.71"
     },
     "takform": {
      "alvor": "ok",
@@ -17122,15 +17162,15 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (198, 198, 197) (grå/svart), modell (198, 198, 197) (grå/svart), ΔE 0.0; modellens farge: Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.54): tegningens farge"
+     "hva": "tegning (198, 198, 197) (grå/svart), modell (198, 198, 197) (grå/svart), ΔE 0.0; modellens farge: Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.53): tegningens farge"
     },
     "takfarge": {
-     "alvor": "ok",
-     "hva": "tegning (151, 150, 149) (grå/svart), modell (151, 150, 149) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.54): tegningens farge"
+     "alvor": "avvik med grunn",
+     "hva": "tegning (243, 243, 243) (hvit), modell (151, 150, 149) (grå/svart), ΔE 33.7; modellens farge: ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.53): tegningens farge"
     },
     "vinduer": {
      "alvor": "feil",
-     "hva": "vegg 3 (8.4 m): tegning 2 vinduer i rader [2], modell 4 i rader [2, 2]"
+     "hva": "vegg 2 (19.5 m): tegning 5 vinduer i rader [3, 2], modell 8 i rader [4, 4]"
     },
     "dorer": {
      "alvor": "avvik",
@@ -17157,7 +17197,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.67))",
    "tak_aar": 2024,
-   "synlig_px": 75749,
+   "synlig_px": 75459,
    "flater": [
     5,
     13,
@@ -17169,7 +17209,7 @@
     82
    ],
    "finnes": "ja",
-   "iou": 0.667,
+   "iou": 0.668,
    "andel_av_modell_dekket": 0.81,
    "andel_av_tegning_dekket": 0.76,
    "tegnede_fasader_per_vegg": {
@@ -17178,7 +17218,7 @@
    },
    "gesims_forhold": 0.98,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 1.05,
+   "silhuett_forhold": 1.04,
    "takform_modell": "sal/sammensatt",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -17285,7 +17325,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.05"
+     "hva": "silhuetthøyde tegnet/modell 1.04"
     },
     "takform": {
      "alvor": "ok",
@@ -17328,22 +17368,23 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (mørk brun); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.48))",
    "tak_aar": 2024,
-   "synlig_px": 36721,
+   "synlig_px": 37723,
    "flater": [
     10,
     16,
-    47
+    47,
+    64
    ],
    "finnes": "ja",
-   "iou": 0.485,
-   "andel_av_modell_dekket": 0.63,
-   "andel_av_tegning_dekket": 0.62,
+   "iou": 0.478,
+   "andel_av_modell_dekket": 0.62,
+   "andel_av_tegning_dekket": 0.61,
    "tegnede_fasader_per_vegg": {
     "2": 1
    },
    "gesims_forhold": 1.21,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.92,
+   "silhuett_forhold": 0.96,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -17408,7 +17449,7 @@
     }
    ],
    "arker": {
-    "tegning_anslag": 0,
+    "tegning_anslag": 1,
     "modell": 2
    },
    "piper": {
@@ -17423,7 +17464,7 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.48 (modell dekket 63%, tegning dekket 62%)"
+     "hva": "IoU 0.48 (modell dekket 62%, tegning dekket 61%)"
     },
     "gesims": {
      "alvor": "avvik",
@@ -17431,7 +17472,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.92"
+     "hva": "silhuetthøyde tegnet/modell 0.96"
     },
     "takform": {
      "alvor": "ok",
@@ -17455,7 +17496,7 @@
     },
     "arker": {
      "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 2"
+     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 2"
     },
     "piper": {
      "alvor": "ok",
@@ -17469,26 +17510,26 @@
    "navn": null,
    "h": 2.82,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal10 (skygge side, IoU 0.73); tak: ortofoto 2024 (grå); tegningen har rød (2019-trykket (dømt))",
-   "vegg_kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.73)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal10 (skygge side, IoU 0.72); tak: ortofoto 2024 (grå); tegningen har rød (2019-trykket (dømt))",
+   "vegg_kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.72)",
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (grå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 6370,
+   "synlig_px": 6356,
    "flater": [
     33,
     44
    ],
    "finnes": "ja",
-   "iou": 0.724,
-   "andel_av_modell_dekket": 0.81,
-   "andel_av_tegning_dekket": 0.84,
+   "iou": 0.639,
+   "andel_av_modell_dekket": 0.75,
+   "andel_av_tegning_dekket": 0.78,
    "tegnede_fasader_per_vegg": {
     "1": 1
    },
    "gesims_forhold": 0.84,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.93,
+   "silhuett_forhold": 1.01,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -17562,8 +17603,8 @@
      "hva": "ja"
     },
     "omriss": {
-     "alvor": "ok",
-     "hva": "IoU 0.72 (modell dekket 81%, tegning dekket 84%)"
+     "alvor": "avvik",
+     "hva": "IoU 0.64 (modell dekket 75%, tegning dekket 78%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -17571,7 +17612,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.93"
+     "hva": "silhuetthøyde tegnet/modell 1.01"
     },
     "takform": {
      "alvor": "ok",
@@ -17579,7 +17620,7 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (243, 243, 243) (hvit), modell (243, 243, 243) (hvit), ΔE 0.0; modellens farge: kvartaltegningen Kvartal10 (skygge side, IoU 0.73)"
+     "hva": "tegning (243, 243, 243) (hvit), modell (243, 243, 243) (hvit), ΔE 0.0; modellens farge: kvartaltegningen Kvartal10 (skygge side, IoU 0.72)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
@@ -17614,133 +17655,14 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 12301,
-   "flater": [
-    30,
-    60,
-    81
-   ],
-   "finnes": "ja",
-   "iou": 0.226,
-   "andel_av_modell_dekket": 0.26,
-   "andel_av_tegning_dekket": 0.49,
-   "tegnede_fasader_per_vegg": {
-    "5": 1
-   },
-   "gesims_forhold": 0.5,
-   "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.5,
-   "takform_modell": "sal",
-   "takform_tegning_tegn": {
-    "gavler": 0,
-    "trekantede_takflater": 0,
-    "takflater": 1,
-    "gavl_vegger": []
-   },
-   "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
-   "veggfarge": {
-    "tegning": [
-     255,
-     232,
-     161
-    ],
-    "modell": [
-     244,
-     244,
-     244
-    ],
-    "side": "lys",
-    "dE": 37.7,
-    "kulor_tegning": "gul/beige",
-    "kulor_modell": "hvit"
-   },
-   "takfarge": {
-    "tegning": [
-     180,
-     102,
-     84
-    ],
-    "modell": [
-     135,
-     135,
-     135
-    ],
-    "dE": 38.2,
-    "kulor_tegning": "rød",
-    "kulor_modell": "grå/svart"
-   },
-   "vinduer": [
-    {
-     "vegg": 5,
-     "lengde_m": 6.3,
-     "kilde": "hullene i veggflaten",
-     "tegning": {
-      "vinduer": 0,
-      "rader": [],
-      "dorer": 0
-     },
-     "modell": {
-      "vinduer": 2,
-      "rader": [
-       2
-      ],
-      "dorer": 0
-     }
-    }
-   ],
-   "arker": {
-    "tegning_anslag": 0,
-    "modell": 0
-   },
-   "piper": {
-    "tegning_anslag": 0,
-    "modell": 2
-   },
+   "synlig_px": 12415,
+   "flater": [],
+   "finnes": "uklart (tegnet flate under, men ingen flate tildelt)",
    "tegning": "Kvartal10",
    "vurdering": {
     "finnes": {
-     "alvor": "ok",
-     "hva": "ja"
-    },
-    "omriss": {
-     "alvor": "feil",
-     "hva": "IoU 0.23 (modell dekket 26%, tegning dekket 49%)"
-    },
-    "gesims": {
-     "alvor": "feil",
-     "hva": "tegnet/modell 0.50 (tegningen lavere)"
-    },
-    "mone": {
-     "alvor": "feil",
-     "hva": "silhuetthøyde tegnet/modell 0.50"
-    },
-    "takform": {
-     "alvor": "ok",
-     "hva": "modell sal; tegningen viser ikke gavl/endeflate"
-    },
-    "veggfarge": {
-     "alvor": "feil",
-     "hva": "tegning (255, 232, 161) (gul/beige), modell (244, 244, 244) (hvit), ΔE 37.7; modellens farge: 2019-trykket (dømt)"
-    },
-    "takfarge": {
-     "alvor": "avvik med grunn",
-     "hva": "tegning (180, 102, 84) (rød), modell (135, 135, 135) (grå/svart), ΔE 38.2; modellens farge: ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge"
-    },
-    "vinduer": {
      "alvor": "avvik",
-     "hva": "vegg 5 (6.3 m): tegning 0 vinduer i rader [], modell 2 i rader [2]"
-    },
-    "dorer": {
-     "alvor": "ok",
-     "hva": "like"
-    },
-    "arker": {
-     "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 0"
-    },
-    "piper": {
-     "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 2"
+     "hva": "uklart (tegnet flate under, men ingen flate tildelt)"
     }
    }
   },
@@ -17755,7 +17677,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 5440,
+   "synlig_px": 5433,
    "flater": [],
    "finnes": "nei (modellen har huset, tegningen viser ikke noe her)",
    "tegning": "Kvartal10",
@@ -17777,41 +17699,31 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.68))",
    "tak_aar": 2024,
-   "synlig_px": 13207,
+   "synlig_px": 13295,
    "flater": [
     31,
     48,
     50,
     62,
     63,
-    80,
     84,
-    89,
-    96
+    89
    ],
    "finnes": "ja",
-   "iou": 0.681,
-   "andel_av_modell_dekket": 0.7,
-   "andel_av_tegning_dekket": 0.84,
+   "iou": 0.691,
+   "andel_av_modell_dekket": 0.69,
+   "andel_av_tegning_dekket": 0.88,
    "tegnede_fasader_per_vegg": {
-    "0": 2
+    "0": 1
    },
-   "slaatt_sammen": [
-    {
-     "vegg": 0,
-     "fasader": 2,
-     "ulike_farger": 2,
-     "segmenter": 0
-    }
-   ],
    "gesims_forhold": 0.89,
    "gesims_kilde": "veggflatene i tegningen",
-   "silhuett_forhold": 0.94,
+   "silhuett_forhold": 0.8,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 6,
+    "takflater": 5,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -17852,9 +17764,11 @@
      "lengde_m": 12.7,
      "kilde": "hullene i veggflaten",
      "tegning": {
-      "vinduer": 0,
-      "rader": [],
-      "dorer": 1
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "modell": {
       "vinduer": 4,
@@ -17880,21 +17794,17 @@
      "alvor": "ok",
      "hva": "ja"
     },
-    "slaatt_sammen": {
-     "alvor": "feil",
-     "hva": "tegningen har 2 fasader på én modellvegg (vegg 0; ulike farger: 2)"
-    },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.68 (modell dekket 70%, tegning dekket 84%)"
+     "hva": "IoU 0.69 (modell dekket 69%, tegning dekket 88%)"
     },
     "gesims": {
      "alvor": "ok",
      "hva": "tegnet/modell 0.89 (tegningen lavere)"
     },
     "mone": {
-     "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.94"
+     "alvor": "avvik",
+     "hva": "silhuetthøyde tegnet/modell 0.80"
     },
     "takform": {
      "alvor": "ok",
@@ -17910,11 +17820,11 @@
     },
     "vinduer": {
      "alvor": "feil",
-     "hva": "vegg 0 (12.7 m): tegning 0 vinduer i rader [], modell 4 i rader [1, 3]"
+     "hva": "vegg 0 (12.7 m): tegning 1 vinduer i rader [1], modell 4 i rader [1, 3]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 0: tegning 1, modell 0"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -17937,47 +17847,28 @@
    "vegg_aar": 2015,
    "tak_kilde": "kvartaltegningen Kvartal10 (IoU 0.45) (ortofoto 2024: trær over taket (85% grønt))",
    "tak_aar": 2015,
-   "synlig_px": 21772,
+   "synlig_px": 21713,
    "flater": [
     29,
     39,
     51,
-    64
+    80,
+    117
    ],
    "finnes": "ja",
-   "iou": 0.453,
-   "andel_av_modell_dekket": 0.45,
-   "andel_av_tegning_dekket": 0.86,
-   "tegnede_fasader_per_vegg": {
-    "1": 1
-   },
-   "gesims_forhold": 0.22,
-   "gesims_kilde": "veggflatene i tegningen",
+   "iou": 0.408,
+   "andel_av_modell_dekket": 0.42,
+   "andel_av_tegning_dekket": 0.81,
+   "tegnede_fasader_per_vegg": {},
    "silhuett_forhold": 0.54,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 3,
+    "takflater": 4,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
-   "veggfarge": {
-    "tegning": [
-     242,
-     149,
-     130
-    ],
-    "modell": [
-     242,
-     149,
-     130
-    ],
-    "side": "lys",
-    "dE": 0.0,
-    "kulor_tegning": "rød",
-    "kulor_modell": "rød"
-   },
    "takfarge": {
     "tegning": [
      156,
@@ -17993,32 +17884,13 @@
     "kulor_tegning": "rød",
     "kulor_modell": "rød"
    },
-   "vinduer": [
-    {
-     "vegg": 1,
-     "lengde_m": 8.4,
-     "kilde": "hullene i veggflaten",
-     "tegning": {
-      "vinduer": 0,
-      "rader": [],
-      "dorer": 0
-     },
-     "modell": {
-      "vinduer": 2,
-      "rader": [
-       1,
-       1
-      ],
-      "dorer": 0
-     }
-    }
-   ],
+   "vinduer": [],
    "arker": {
-    "tegning_anslag": 0,
+    "tegning_anslag": 1,
     "modell": 1
    },
    "piper": {
-    "tegning_anslag": 0,
+    "tegning_anslag": 1,
     "modell": 0
    },
    "tegning": "Kvartal10",
@@ -18028,12 +17900,8 @@
      "hva": "ja"
     },
     "omriss": {
-     "alvor": "avvik",
-     "hva": "IoU 0.45 (modell dekket 45%, tegning dekket 86%)"
-    },
-    "gesims": {
      "alvor": "feil",
-     "hva": "tegnet/modell 0.22 (tegningen lavere)"
+     "hva": "IoU 0.41 (modell dekket 42%, tegning dekket 81%)"
     },
     "mone": {
      "alvor": "feil",
@@ -18043,29 +17911,17 @@
      "alvor": "ok",
      "hva": "modell sal; tegningen viser ikke gavl/endeflate"
     },
-    "veggfarge": {
-     "alvor": "ok",
-     "hva": "tegning (242, 149, 130) (rød), modell (242, 149, 130) (rød), ΔE 0.0; modellens farge: kvartaltegningen Kvartal10 (lys side, IoU 0.45)"
-    },
     "takfarge": {
      "alvor": "ok",
      "hva": "tegning (156, 77, 62) (rød), modell (156, 77, 62) (rød), ΔE 0.0; modellens farge: kvartaltegningen Kvartal10 (IoU 0.45) (ortofoto 2024: trær over taket (85% grønt))"
     },
-    "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 1 (8.4 m): tegning 0 vinduer i rader [], modell 2 i rader [1, 1]"
-    },
-    "dorer": {
-     "alvor": "ok",
-     "hva": "like"
-    },
     "arker": {
      "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 1"
+     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 1"
     },
     "piper": {
      "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 0"
     }
    }
   },
@@ -18080,25 +17936,25 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.67))",
    "tak_aar": 2024,
-   "synlig_px": 6034,
+   "synlig_px": 6016,
    "flater": [
     38,
-    42,
+    59,
     76
    ],
    "finnes": "ja",
-   "iou": 0.669,
-   "andel_av_modell_dekket": 0.78,
-   "andel_av_tegning_dekket": 0.76,
+   "iou": 0.611,
+   "andel_av_modell_dekket": 0.65,
+   "andel_av_tegning_dekket": 0.82,
    "tegnede_fasader_per_vegg": {},
    "gesims_forhold": 1.37,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.87,
+   "silhuett_forhold": 0.86,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 2,
+    "takflater": 3,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -18133,8 +17989,8 @@
      "hva": "ja"
     },
     "omriss": {
-     "alvor": "ok",
-     "hva": "IoU 0.67 (modell dekket 78%, tegning dekket 76%)"
+     "alvor": "avvik",
+     "hva": "IoU 0.61 (modell dekket 65%, tegning dekket 82%)"
     },
     "gesims": {
      "alvor": "feil",
@@ -18142,7 +17998,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.87"
+     "hva": "silhuetthøyde tegnet/modell 0.86"
     },
     "takform": {
      "alvor": "ok",
@@ -18173,14 +18029,14 @@
    "vegg_aar": null,
    "tak_kilde": "ortofoto 2024 (brungrå)",
    "tak_aar": 2024,
-   "synlig_px": 4543,
+   "synlig_px": 4514,
    "flater": [
     43
    ],
    "finnes": "ja",
-   "iou": 0.545,
-   "andel_av_modell_dekket": 0.54,
-   "andel_av_tegning_dekket": 0.97,
+   "iou": 0.521,
+   "andel_av_modell_dekket": 0.52,
+   "andel_av_tegning_dekket": 0.93,
    "tegnede_fasader_per_vegg": {},
    "silhuett_forhold": 0.55,
    "takform_modell": "sal",
@@ -18208,7 +18064,7 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.55 (modell dekket 54%, tegning dekket 97%)"
+     "hva": "IoU 0.52 (modell dekket 52%, tegning dekket 93%)"
     },
     "mone": {
      "alvor": "feil",
@@ -18615,10 +18471,10 @@
    "navn": null,
    "h": 4.3,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.60))",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.61))",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.60))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.61))",
    "tak_aar": 2024,
    "synlig_px": 4859,
    "flater": [],
@@ -19189,10 +19045,10 @@
    "navn": null,
    "h": 7.0,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge",
    "tak_aar": 2024,
    "synlig_px": 30835,
    "flater": [
@@ -19368,7 +19224,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (216, 109, 93) (rød), modell (237, 119, 102) (rød), ΔE 6.6; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge"
+     "hva": "tegning (216, 109, 93) (rød), modell (237, 119, 102) (rød), ΔE 6.6; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge"
     },
     "vinduer": {
      "alvor": "feil",
@@ -20486,8 +20342,8 @@
    "navn": null,
    "h": 7.9,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (brun/rødbrun) = kvartaltegningen Kvartal12 (skygge side, IoU 0.54): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
-   "vegg_kilde": "Street View 2024 (brun/rødbrun) = kvartaltegningen Kvartal12 (skygge side, IoU 0.54): tegningens farge",
+   "farge_kilde": "vegg: Street View 2024 (brun/rødbrun); tegningen har oransje (kvartaltegningen Kvartal12 (skygge side, IoU 0.54)); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
+   "vegg_kilde": "Street View 2024 (brun/rødbrun); tegningen har oransje (kvartaltegningen Kvartal12 (skygge side, IoU 0.54))",
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
    "tak_aar": 2024,
@@ -20515,14 +20371,14 @@
       147
      ],
      "modell": [
-      249,
-      194,
-      147
+      146,
+      104,
+      80
      ],
-     "dE": 0.0,
+     "dE": 36.3,
      "kulor_tegning": "oransje/brun",
      "kulor_modell": "oransje/brun",
-     "kilde": "Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge",
+     "kilde": "Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje",
      "aar": 2024
     },
     {
@@ -20534,14 +20390,14 @@
       132
      ],
      "modell": [
-      221,
-      174,
-      132
+      146,
+      104,
+      80
      ],
-     "dE": 0.0,
+     "dE": 27.9,
      "kulor_tegning": "oransje/brun",
      "kulor_modell": "oransje/brun",
-     "kilde": "Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge",
+     "kilde": "Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje",
      "aar": 2024
     }
    ],
@@ -20578,12 +20434,12 @@
      171
     ],
     "modell": [
-     251,
-     208,
-     171
+     146,
+     104,
+     80
     ],
     "side": "skygge",
-    "dE": 0.0,
+    "dE": 38.9,
     "kulor_tegning": "oransje/brun",
     "kulor_modell": "oransje/brun"
    },
@@ -20682,8 +20538,8 @@
      "hva": "modell sammensatt; tegningen viser ikke gavl/endeflate"
     },
     "veggfarge": {
-     "alvor": "ok",
-     "hva": "2 segmenter; verst 0.0–4.0 m: tegning (249, 194, 147) (oransje/brun), modell (249, 194, 147) (oransje/brun), ΔE 0.0; Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge"
+     "alvor": "avvik med grunn",
+     "hva": "2 segmenter; verst 0.0–4.0 m: tegning (249, 194, 147) (oransje/brun), modell (146, 104, 80) (oransje/brun), ΔE 36.3; Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
@@ -22430,14 +22286,14 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 23257,
+   "synlig_px": 22444,
    "flater": [
     43
    ],
    "finnes": "ja",
-   "iou": 0.158,
-   "andel_av_modell_dekket": 0.15,
-   "andel_av_tegning_dekket": 0.68,
+   "iou": 0.171,
+   "andel_av_modell_dekket": 0.16,
+   "andel_av_tegning_dekket": 0.72,
    "tegnede_fasader_per_vegg": {},
    "silhuett_forhold": 0.17,
    "takform_modell": "sal",
@@ -22480,7 +22336,7 @@
     },
     "omriss": {
      "alvor": "feil",
-     "hva": "IoU 0.16 (modell dekket 15%, tegning dekket 68%)"
+     "hva": "IoU 0.17 (modell dekket 16%, tegning dekket 72%)"
     },
     "mone": {
      "alvor": "feil",
@@ -22510,12 +22366,12 @@
    "navn": "Det nye rådhus",
    "h": 9.79,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal14 (skygge side, IoU 0.60); tak: ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal14 (skygge side, IoU 0.65); tak: ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "vegg_kilde": "kvartaltegningen Kvartal14 = Street View aug. 2010 (gul tegl)",
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 154452,
+   "synlig_px": 149483,
    "flater": [
     2,
     4,
@@ -22547,15 +22403,15 @@
     417
    ],
    "finnes": "ja",
-   "iou": 0.647,
-   "andel_av_modell_dekket": 0.69,
+   "iou": 0.655,
+   "andel_av_modell_dekket": 0.71,
    "andel_av_tegning_dekket": 0.81,
    "tegnede_fasader_per_vegg": {
-    "16": 1
+    "18": 1
    },
    "gesims_forhold": 1.22,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.98,
+   "silhuett_forhold": 1.02,
    "takform_modell": "sal/sammensatt",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -22575,7 +22431,7 @@
      173,
      132
     ],
-    "side": "skygge",
+    "side": "lys",
     "dE": 0.7,
     "kulor_tegning": "oransje/brun",
     "kulor_modell": "oransje/brun"
@@ -22597,8 +22453,8 @@
    },
    "vinduer": [
     {
-     "vegg": 16,
-     "lengde_m": 9.6,
+     "vegg": 18,
+     "lengde_m": 9.0,
      "kilde": "hullene i veggflaten",
      "tegning": {
       "vinduer": 7,
@@ -22609,18 +22465,20 @@
       "dorer": 0
      },
      "modell": {
-      "vinduer": 0,
-      "rader": [],
-      "dorer": 0
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 1
      }
     }
    ],
    "arker": {
-    "tegning_anslag": 11,
+    "tegning_anslag": 9,
     "modell": 0
    },
    "piper": {
-    "tegning_anslag": 3,
+    "tegning_anslag": 2,
     "modell": 1
    },
    "tegning": "Kvartal14",
@@ -22630,8 +22488,8 @@
      "hva": "ja"
     },
     "omriss": {
-     "alvor": "avvik",
-     "hva": "IoU 0.65 (modell dekket 69%, tegning dekket 81%)"
+     "alvor": "ok",
+     "hva": "IoU 0.66 (modell dekket 71%, tegning dekket 81%)"
     },
     "gesims": {
      "alvor": "avvik",
@@ -22639,7 +22497,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.98"
+     "hva": "silhuetthøyde tegnet/modell 1.02"
     },
     "takform": {
      "alvor": "ok",
@@ -22655,19 +22513,19 @@
     },
     "vinduer": {
      "alvor": "feil",
-     "hva": "vegg 16 (9.6 m): tegning 7 vinduer i rader [2, 5], modell 0 i rader []"
+     "hva": "vegg 18 (9.0 m): tegning 7 vinduer i rader [2, 5], modell 4 i rader [4]"
     },
     "dorer": {
-     "alvor": "ok",
-     "hva": "like"
+     "alvor": "avvik",
+     "hva": "vegg 18: tegning 0, modell 1"
     },
     "arker": {
      "alvor": "avvik",
-     "hva": "tegning ~11 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "hva": "tegning ~9 (grovt anslag fra små takflater, også takvinduer), modell 0"
     },
     "piper": {
      "alvor": "ok",
-     "hva": "tegning ~3 (grovt anslag fra små takflater, også takvinduer), modell 1"
+     "hva": "tegning ~2 (grovt anslag fra små takflater, også takvinduer), modell 1"
     }
    }
   },
@@ -22677,12 +22535,12 @@
    "navn": null,
    "h": 9.43,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal14 (lys side, IoU 0.58); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.58))",
-   "vegg_kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.58)",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal14 (lys side, IoU 0.60); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.60))",
+   "vegg_kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.60)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.58))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.60))",
    "tak_aar": 2024,
-   "synlig_px": 64580,
+   "synlig_px": 62520,
    "flater": [
     11,
     13,
@@ -22690,19 +22548,18 @@
     67,
     79,
     87,
-    89,
     128
    ],
    "finnes": "ja",
    "iou": 0.601,
    "andel_av_modell_dekket": 0.62,
-   "andel_av_tegning_dekket": 0.86,
+   "andel_av_tegning_dekket": 0.85,
    "tegnede_fasader_per_vegg": {
     "8": 1
    },
    "gesims_forhold": 1.0,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.87,
+   "silhuett_forhold": 0.86,
    "takform_modell": "valm",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -22781,7 +22638,7 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.60 (modell dekket 62%, tegning dekket 86%)"
+     "hva": "IoU 0.60 (modell dekket 62%, tegning dekket 85%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -22789,7 +22646,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.87"
+     "hva": "silhuetthøyde tegnet/modell 0.86"
     },
     "takform": {
      "alvor": "ok",
@@ -22797,11 +22654,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (242, 149, 130) (rød), modell (242, 149, 130) (rød), ΔE 0.0; modellens farge: kvartaltegningen Kvartal14 (lys side, IoU 0.58)"
+     "hva": "tegning (242, 149, 130) (rød), modell (242, 149, 130) (rød), ΔE 0.0; modellens farge: kvartaltegningen Kvartal14 (lys side, IoU 0.60)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (180, 102, 84) (rød), modell (132, 122, 112) (grå/svart), ΔE 32.3; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.58))"
+     "hva": "tegning (180, 102, 84) (rød), modell (132, 122, 112) (grå/svart), ΔE 32.3; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.60))"
     },
     "vinduer": {
      "alvor": "ok",
@@ -22832,7 +22689,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal14 (IoU 0.73): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 19880,
+   "synlig_px": 20506,
    "flater": [
     755,
     766,
@@ -22840,8 +22697,8 @@
     768
    ],
    "finnes": "ja",
-   "iou": 0.729,
-   "andel_av_modell_dekket": 0.9,
+   "iou": 0.705,
+   "andel_av_modell_dekket": 0.87,
    "andel_av_tegning_dekket": 0.79,
    "tegnede_fasader_per_vegg": {
     "1": 1
@@ -22924,7 +22781,7 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.73 (modell dekket 90%, tegning dekket 79%)"
+     "hva": "IoU 0.70 (modell dekket 87%, tegning dekket 79%)"
     },
     "gesims": {
      "alvor": "feil",
@@ -22975,7 +22832,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 19269,
+   "synlig_px": 18986,
    "flater": [
     52,
     62,
@@ -22985,15 +22842,15 @@
     133
    ],
    "finnes": "ja",
-   "iou": 0.399,
-   "andel_av_modell_dekket": 0.37,
-   "andel_av_tegning_dekket": 0.94,
+   "iou": 0.368,
+   "andel_av_modell_dekket": 0.35,
+   "andel_av_tegning_dekket": 0.87,
    "tegnede_fasader_per_vegg": {
     "0": 3
    },
    "gesims_forhold": 0.81,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.86,
+   "silhuett_forhold": 0.91,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -23066,7 +22923,7 @@
     },
     "omriss": {
      "alvor": "feil",
-     "hva": "IoU 0.40 (modell dekket 37%, tegning dekket 94%)"
+     "hva": "IoU 0.37 (modell dekket 35%, tegning dekket 87%)"
     },
     "gesims": {
      "alvor": "avvik",
@@ -23074,7 +22931,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.86"
+     "hva": "silhuetthøyde tegnet/modell 0.91"
     },
     "takform": {
      "alvor": "ok",
@@ -23112,12 +22969,12 @@
    "navn": null,
    "h": 8.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.54)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.54): tegningens farge",
-   "vegg_kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.54))",
+   "farge_kilde": "vegg: Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.53)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.53): tegningens farge",
+   "vegg_kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.53))",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.54): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.53): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 64812,
+   "synlig_px": 62663,
    "flater": [
     28,
     34,
@@ -23134,8 +22991,8 @@
     111
    ],
    "finnes": "ja",
-   "iou": 0.533,
-   "andel_av_modell_dekket": 0.55,
+   "iou": 0.547,
+   "andel_av_modell_dekket": 0.57,
    "andel_av_tegning_dekket": 0.8,
    "veggfarge_segmenter": [
     {
@@ -23181,8 +23038,7 @@
     2
    ],
    "tegnede_fasader_per_vegg": {
-    "2": 6,
-    "3": 1
+    "2": 7
    },
    "slaatt_sammen": [
     {
@@ -23194,7 +23050,7 @@
    ],
    "gesims_forhold": 0.94,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.71,
+   "silhuett_forhold": 0.72,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -23214,7 +23070,7 @@
      172,
      140
     ],
-    "side": "lys",
+    "side": "skygge",
     "dE": 22.5,
     "kulor_tegning": "grå/svart",
     "kulor_modell": "grønn"
@@ -23255,25 +23111,6 @@
       ],
       "dorer": 0
      }
-    },
-    {
-     "vegg": 3,
-     "lengde_m": 10.3,
-     "kilde": "fasadeavlesningen",
-     "tegning": {
-      "vinduer": 8,
-      "rader": [
-       8
-      ],
-      "dorer": 0
-     },
-     "modell": {
-      "vinduer": 1,
-      "rader": [
-       1
-      ],
-      "dorer": 0
-     }
     }
    ],
    "arker": {
@@ -23296,7 +23133,7 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.53 (modell dekket 55%, tegning dekket 80%)"
+     "hva": "IoU 0.55 (modell dekket 57%, tegning dekket 80%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -23304,7 +23141,7 @@
     },
     "mone": {
      "alvor": "avvik",
-     "hva": "silhuetthøyde tegnet/modell 0.71"
+     "hva": "silhuetthøyde tegnet/modell 0.72"
     },
     "takform": {
      "alvor": "ok",
@@ -23316,11 +23153,11 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (180, 102, 84) (rød), modell (180, 102, 84) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.54): tegningens farge"
+     "hva": "tegning (180, 102, 84) (rød), modell (180, 102, 84) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.53): tegningens farge"
     },
     "vinduer": {
      "alvor": "feil",
-     "hva": "vegg 3 (10.3 m): tegning 8 vinduer i rader [8], modell 1 i rader [1]"
+     "hva": "vegg 2 (16.8 m): tegning 16 vinduer i rader [10, 6], modell 12 i rader [6, 6]"
     },
     "dorer": {
      "alvor": "avvik",
@@ -23347,28 +23184,27 @@
    "vegg_aar": 2010,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.33))",
    "tak_aar": 2024,
-   "synlig_px": 62745,
+   "synlig_px": 60872,
    "flater": [
     10,
     36,
     60,
     76,
-    96,
     98
    ],
    "finnes": "ja",
-   "iou": 0.33,
-   "andel_av_modell_dekket": 0.36,
-   "andel_av_tegning_dekket": 0.7,
+   "iou": 0.312,
+   "andel_av_modell_dekket": 0.35,
+   "andel_av_tegning_dekket": 0.67,
    "tegnede_fasader_per_vegg": {},
    "gesims_forhold": 1.01,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 1.23,
+   "silhuett_forhold": 1.22,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 6,
+    "takflater": 5,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -23389,7 +23225,7 @@
    },
    "vinduer": [],
    "arker": {
-    "tegning_anslag": 0,
+    "tegning_anslag": 1,
     "modell": 0
    },
    "piper": {
@@ -23404,7 +23240,7 @@
     },
     "omriss": {
      "alvor": "feil",
-     "hva": "IoU 0.33 (modell dekket 36%, tegning dekket 70%)"
+     "hva": "IoU 0.31 (modell dekket 35%, tegning dekket 67%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -23412,7 +23248,7 @@
     },
     "mone": {
      "alvor": "avvik",
-     "hva": "silhuetthøyde tegnet/modell 1.23"
+     "hva": "silhuetthøyde tegnet/modell 1.22"
     },
     "takform": {
      "alvor": "ok",
@@ -23424,7 +23260,7 @@
     },
     "arker": {
      "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 0"
     },
     "piper": {
      "alvor": "ok",
@@ -23438,12 +23274,12 @@
    "navn": null,
    "h": 7.0,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 36072,
+   "synlig_px": 39068,
    "flater": [
     15,
     26,
@@ -23451,22 +23287,24 @@
     31,
     58,
     61,
-    738
+    737,
+    738,
+    739
    ],
    "finnes": "ja",
-   "iou": 0.555,
-   "andel_av_modell_dekket": 0.79,
-   "andel_av_tegning_dekket": 0.6,
+   "iou": 0.594,
+   "andel_av_modell_dekket": 0.82,
+   "andel_av_tegning_dekket": 0.64,
    "segmentvegger": [
     4
    ],
    "tegnede_fasader_per_vegg": {},
-   "silhuett_forhold": 1.04,
+   "silhuett_forhold": 1.05,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 7,
+    "takflater": 9,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -23502,11 +23340,11 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.56 (modell dekket 79%, tegning dekket 60%)"
+     "hva": "IoU 0.59 (modell dekket 82%, tegning dekket 64%)"
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.04"
+     "hva": "silhuetthøyde tegnet/modell 1.05"
     },
     "takform": {
      "alvor": "ok",
@@ -23514,7 +23352,7 @@
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (237, 119, 102) (rød), modell (237, 119, 102) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge"
+     "hva": "tegning (237, 119, 102) (rød), modell (237, 119, 102) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge"
     },
     "arker": {
      "alvor": "ok",
@@ -23537,7 +23375,7 @@
    "vegg_aar": null,
    "tak_kilde": null,
    "tak_aar": null,
-   "synlig_px": 68985,
+   "synlig_px": 66827,
    "flater": [
     8,
     9,
@@ -23546,15 +23384,15 @@
     82
    ],
    "finnes": "ja",
-   "iou": 0.669,
-   "andel_av_modell_dekket": 0.74,
-   "andel_av_tegning_dekket": 0.81,
+   "iou": 0.677,
+   "andel_av_modell_dekket": 0.76,
+   "andel_av_tegning_dekket": 0.8,
    "tegnede_fasader_per_vegg": {
     "19": 1
    },
    "gesims_forhold": 1.09,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.99,
+   "silhuett_forhold": 1.01,
    "takform_modell": "flatt",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -23633,7 +23471,7 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.67 (modell dekket 74%, tegning dekket 81%)"
+     "hva": "IoU 0.68 (modell dekket 76%, tegning dekket 80%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -23641,7 +23479,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.99"
+     "hva": "silhuetthøyde tegnet/modell 1.01"
     },
     "takform": {
      "alvor": "ok",
@@ -23677,57 +23515,58 @@
    "id": "bnr-16308102",
    "adr": null,
    "navn": null,
-   "h": 10.6,
+   "h": 9.46,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (grå) = 2019-trykket (dømt): tegningens farge",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (falmet tegl); tegningen har grå (2019-trykket (dømt))",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (grå) = 2019-trykket (dømt): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har grå (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 91331,
+   "synlig_px": 86500,
    "flater": [
+    3,
     7,
     20,
     27,
     30,
+    45,
     50,
     54,
     55,
     56,
+    90,
     108,
     135,
-    736,
-    737,
-    739
+    736
    ],
    "finnes": "ja",
-   "iou": 0.514,
-   "andel_av_modell_dekket": 0.58,
-   "andel_av_tegning_dekket": 0.76,
+   "iou": 0.561,
+   "andel_av_modell_dekket": 0.76,
+   "andel_av_tegning_dekket": 0.65,
    "tegnede_fasader_per_vegg": {},
-   "silhuett_forhold": 0.68,
-   "takform_modell": "flatt",
+   "silhuett_forhold": 1.63,
+   "takform_modell": "halvvalm",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 12,
+    "takflater": 13,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
    "takfarge": {
     "tegning": [
-     255,
-     245,
-     213
+     237,
+     119,
+     102
     ],
     "modell": [
-     119,
-     119,
-     117
+     170,
+     108,
+     92
     ],
-    "dE": 49.1,
-    "kulor_tegning": "hvit",
-    "kulor_modell": "grå/svart"
+    "dE": 26.6,
+    "kulor_tegning": "rød",
+    "kulor_modell": "rød"
    },
    "vinduer": [],
    "arker": {
@@ -23746,19 +23585,19 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.51 (modell dekket 58%, tegning dekket 76%)"
+     "hva": "IoU 0.56 (modell dekket 76%, tegning dekket 65%)"
     },
     "mone": {
-     "alvor": "avvik",
-     "hva": "silhuetthøyde tegnet/modell 0.68"
+     "alvor": "feil",
+     "hva": "silhuetthøyde tegnet/modell 1.63"
     },
     "takform": {
      "alvor": "ok",
-     "hva": "modell flatt; tegningen viser ikke gavl/endeflate"
+     "hva": "modell halvvalm; tegningen viser ikke gavl/endeflate"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (255, 245, 213) (hvit), modell (119, 119, 117) (grå/svart), ΔE 49.1; modellens farge: ortofoto 2024 (grå) = 2019-trykket (dømt): tegningens farge"
+     "hva": "tegning (237, 119, 102) (rød), modell (170, 108, 92) (rød), ΔE 26.6; modellens farge: ortofoto 2024 (falmet tegl); tegningen har grå (2019-trykket (dømt))"
     },
     "arker": {
      "alvor": "avvik",
@@ -23781,7 +23620,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.65))",
    "tak_aar": 2024,
-   "synlig_px": 76896,
+   "synlig_px": 74897,
    "flater": [
     5,
     12,
@@ -23790,13 +23629,12 @@
     64,
     70,
     73,
-    90,
     129
    ],
    "finnes": "ja",
-   "iou": 0.65,
+   "iou": 0.629,
    "andel_av_modell_dekket": 0.73,
-   "andel_av_tegning_dekket": 0.79,
+   "andel_av_tegning_dekket": 0.77,
    "tegnede_fasader_per_vegg": {
     "5": 3,
     "4": 1
@@ -23816,7 +23654,7 @@
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 5,
+    "takflater": 4,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -23897,7 +23735,7 @@
     }
    ],
    "arker": {
-    "tegning_anslag": 2,
+    "tegning_anslag": 1,
     "modell": 3
    },
    "piper": {
@@ -23915,8 +23753,8 @@
      "hva": "tegningen har 2 fasader på én modellvegg (vegg 5; ulike farger: 2)"
     },
     "omriss": {
-     "alvor": "ok",
-     "hva": "IoU 0.65 (modell dekket 73%, tegning dekket 79%)"
+     "alvor": "avvik",
+     "hva": "IoU 0.63 (modell dekket 73%, tegning dekket 77%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -23948,7 +23786,7 @@
     },
     "arker": {
      "alvor": "ok",
-     "hva": "tegning ~2 (grovt anslag fra små takflater, også takvinduer), modell 3"
+     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 3"
     },
     "piper": {
      "alvor": "ok",
@@ -23962,14 +23800,15 @@
    "navn": null,
    "h": 7.9,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (brun/rødbrun) = kvartaltegningen Kvartal12 (skygge side, IoU 0.54): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
-   "vegg_kilde": "Street View 2024 (brun/rødbrun) = kvartaltegningen Kvartal12 (skygge side, IoU 0.54): tegningens farge",
+   "farge_kilde": "vegg: Street View 2024 (brun/rødbrun); tegningen har oransje (kvartaltegningen Kvartal12 (skygge side, IoU 0.54)); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
+   "vegg_kilde": "Street View 2024 (brun/rødbrun); tegningen har oransje (kvartaltegningen Kvartal12 (skygge side, IoU 0.54))",
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal12 (IoU 0.54))",
    "tak_aar": 2024,
-   "synlig_px": 40443,
+   "synlig_px": 42472,
    "flater": [
     17,
+    32,
     33,
     40,
     68,
@@ -23977,9 +23816,9 @@
     77
    ],
    "finnes": "ja",
-   "iou": 0.521,
-   "andel_av_modell_dekket": 0.6,
-   "andel_av_tegning_dekket": 0.75,
+   "iou": 0.543,
+   "andel_av_modell_dekket": 0.66,
+   "andel_av_tegning_dekket": 0.7,
    "veggfarge_segmenter": [
     {
      "fra_m": 0.0,
@@ -23990,14 +23829,14 @@
       243
      ],
      "modell": [
-      249,
-      194,
-      147
+      146,
+      104,
+      80
      ],
-     "dE": 36.7,
+     "dE": 53.9,
      "kulor_tegning": "hvit",
      "kulor_modell": "oransje/brun",
-     "kilde": "Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge",
+     "kilde": "Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje",
      "aar": 2024
     },
     {
@@ -24009,14 +23848,14 @@
       243
      ],
      "modell": [
-      221,
-      174,
-      132
+      146,
+      104,
+      80
      ],
-     "dE": 37.2,
+     "dE": 53.9,
      "kulor_tegning": "hvit",
      "kulor_modell": "oransje/brun",
-     "kilde": "Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge",
+     "kilde": "Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje",
      "aar": 2024
     }
    ],
@@ -24028,12 +23867,12 @@
    },
    "gesims_forhold": 1.22,
    "gesims_kilde": "veggflatene i tegningen",
-   "silhuett_forhold": 1.01,
+   "silhuett_forhold": 1.19,
    "takform_modell": "sammensatt",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 3,
+    "takflater": 4,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -24044,12 +23883,12 @@
      243
     ],
     "modell": [
-     251,
-     208,
-     171
+     146,
+     104,
+     80
     ],
     "side": "lys",
-    "dE": 27.7,
+    "dE": 53.9,
     "kulor_tegning": "hvit",
     "kulor_modell": "oransje/brun"
    },
@@ -24106,15 +23945,15 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.52 (modell dekket 60%, tegning dekket 75%)"
+     "hva": "IoU 0.54 (modell dekket 66%, tegning dekket 70%)"
     },
     "gesims": {
      "alvor": "avvik",
      "hva": "tegnet/modell 1.22 (tegningen høyere)"
     },
     "mone": {
-     "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.01"
+     "alvor": "avvik",
+     "hva": "silhuetthøyde tegnet/modell 1.19"
     },
     "takform": {
      "alvor": "ok",
@@ -24122,7 +23961,7 @@
     },
     "veggfarge": {
      "alvor": "avvik med grunn",
-     "hva": "2 segmenter; verst 0.0–4.0 m: tegning (243, 243, 243) (hvit), modell (249, 194, 147) (oransje/brun), ΔE 36.7; Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge"
+     "hva": "2 segmenter; verst 0.0–4.0 m: tegning (243, 243, 243) (hvit), modell (146, 104, 80) (oransje/brun), ΔE 53.9; Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje"
     },
     "takfarge": {
      "alvor": "ok",
@@ -24157,7 +23996,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 779,
+   "synlig_px": 687,
    "flater": [],
    "finnes": "nei (modellen har huset, tegningen viser ikke noe her)",
    "tegning": "Kvartal14",
@@ -24179,7 +24018,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 7845,
+   "synlig_px": 7365,
    "flater": [],
    "finnes": "uklart (tegnet flate under, men ingen flate tildelt)",
    "tegning": "Kvartal14",
@@ -24201,78 +24040,14 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 26600,
-   "flater": [
-    3,
-    45
-   ],
-   "finnes": "ja",
-   "iou": 0.419,
-   "andel_av_modell_dekket": 0.64,
-   "andel_av_tegning_dekket": 0.53,
-   "tegnede_fasader_per_vegg": {},
-   "silhuett_forhold": 0.98,
-   "takform_modell": "pult",
-   "takform_tegning_tegn": {
-    "gavler": 0,
-    "trekantede_takflater": 0,
-    "takflater": 2,
-    "gavl_vegger": []
-   },
-   "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
-   "takfarge": {
-    "tegning": [
-     237,
-     119,
-     102
-    ],
-    "modell": [
-     132,
-     122,
-     112
-    ],
-    "dE": 49.6,
-    "kulor_tegning": "rød",
-    "kulor_modell": "grå/svart"
-   },
-   "vinduer": [],
-   "arker": {
-    "tegning_anslag": 0,
-    "modell": 0
-   },
-   "piper": {
-    "tegning_anslag": 0,
-    "modell": 1
-   },
+   "synlig_px": 25644,
+   "flater": [],
+   "finnes": "uklart (tegnet flate under, men ingen flate tildelt)",
    "tegning": "Kvartal14",
    "vurdering": {
     "finnes": {
-     "alvor": "ok",
-     "hva": "ja"
-    },
-    "omriss": {
-     "alvor": "feil",
-     "hva": "IoU 0.42 (modell dekket 64%, tegning dekket 53%)"
-    },
-    "mone": {
-     "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.98"
-    },
-    "takform": {
-     "alvor": "ok",
-     "hva": "modell pult; tegningen viser ikke gavl/endeflate"
-    },
-    "takfarge": {
-     "alvor": "avvik med grunn",
-     "hva": "tegning (237, 119, 102) (rød), modell (132, 122, 112) (grå/svart), ΔE 49.6; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))"
-    },
-    "arker": {
-     "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 0"
-    },
-    "piper": {
-     "alvor": "ok",
-     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 1"
+     "alvor": "avvik",
+     "hva": "uklart (tegnet flate under, men ingen flate tildelt)"
     }
    }
   },
@@ -24287,15 +24062,15 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (grå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 22864,
+   "synlig_px": 22042,
    "flater": [
     22,
     69
    ],
    "finnes": "ja",
-   "iou": 0.276,
-   "andel_av_modell_dekket": 0.33,
-   "andel_av_tegning_dekket": 0.56,
+   "iou": 0.299,
+   "andel_av_modell_dekket": 0.36,
+   "andel_av_tegning_dekket": 0.58,
    "tegnede_fasader_per_vegg": {},
    "silhuett_forhold": 0.71,
    "takform_modell": "sal",
@@ -24338,7 +24113,7 @@
     },
     "omriss": {
      "alvor": "feil",
-     "hva": "IoU 0.28 (modell dekket 33%, tegning dekket 56%)"
+     "hva": "IoU 0.30 (modell dekket 36%, tegning dekket 58%)"
     },
     "mone": {
      "alvor": "avvik",
@@ -24373,7 +24148,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (svart/antrasitt)",
    "tak_aar": 2024,
-   "synlig_px": 2576,
+   "synlig_px": 2424,
    "flater": [],
    "finnes": "uklart (tegnet flate under, men ingen flate tildelt)",
    "tegning": "Kvartal14",
@@ -24390,21 +24165,21 @@
    "navn": null,
    "h": 4.92,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.50))",
+   "farge_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.49))",
    "vegg_kilde": "2019-trykket (dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.50))",
+   "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.49))",
    "tak_aar": 2024,
-   "synlig_px": 11902,
+   "synlig_px": 11537,
    "flater": [
     21
    ],
    "finnes": "ja",
-   "iou": 0.489,
-   "andel_av_modell_dekket": 0.67,
-   "andel_av_tegning_dekket": 0.64,
+   "iou": 0.531,
+   "andel_av_modell_dekket": 0.72,
+   "andel_av_tegning_dekket": 0.67,
    "tegnede_fasader_per_vegg": {},
-   "silhuett_forhold": 0.95,
+   "silhuett_forhold": 0.9,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -24445,11 +24220,11 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.49 (modell dekket 67%, tegning dekket 64%)"
+     "hva": "IoU 0.53 (modell dekket 72%, tegning dekket 67%)"
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.95"
+     "hva": "silhuetthøyde tegnet/modell 0.90"
     },
     "takform": {
      "alvor": "ok",
@@ -24457,7 +24232,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (245, 176, 163) (rød), modell (170, 108, 92) (rød), ΔE 26.2; modellens farge: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.50))"
+     "hva": "tegning (245, 176, 163) (rød), modell (170, 108, 92) (rød), ΔE 26.2; modellens farge: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.49))"
     },
     "arker": {
      "alvor": "ok",
@@ -24475,12 +24250,12 @@
    "navn": null,
    "h": 3.8,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2015-trykkfila (ikke dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))",
+   "farge_kilde": "vegg: 2015-trykkfila (ikke dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))",
    "vegg_kilde": "2015-trykkfila (ikke dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))",
    "tak_aar": 2024,
-   "synlig_px": 13470,
+   "synlig_px": 12856,
    "flater": [
     758,
     759,
@@ -24488,11 +24263,11 @@
     761
    ],
    "finnes": "ja",
-   "iou": 0.606,
+   "iou": 0.583,
    "andel_av_modell_dekket": 0.79,
-   "andel_av_tegning_dekket": 0.7,
+   "andel_av_tegning_dekket": 0.67,
    "tegnede_fasader_per_vegg": {},
-   "silhuett_forhold": 1.03,
+   "silhuett_forhold": 1.13,
    "takform_modell": "valm",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -24533,11 +24308,11 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.61 (modell dekket 79%, tegning dekket 70%)"
+     "hva": "IoU 0.58 (modell dekket 79%, tegning dekket 67%)"
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.03"
+     "hva": "silhuetthøyde tegnet/modell 1.13"
     },
     "takform": {
      "alvor": "ok",
@@ -24545,7 +24320,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (180, 102, 84) (rød), modell (132, 122, 112) (grå/svart), ΔE 32.3; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))"
+     "hva": "tegning (180, 102, 84) (rød), modell (132, 122, 112) (grå/svart), ΔE 32.3; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))"
     },
     "arker": {
      "alvor": "ok",
@@ -24563,12 +24338,12 @@
    "navn": null,
    "h": 6.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen sistekvartal (skygge side, IoU 0.70); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))",
-   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.70)",
+   "farge_kilde": "vegg: kvartaltegningen sistekvartal (skygge side, IoU 0.68); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))",
+   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.68)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))",
    "tak_aar": 2024,
-   "synlig_px": 16523,
+   "synlig_px": 16788,
    "flater": [
     756,
     757,
@@ -24577,8 +24352,8 @@
     764
    ],
    "finnes": "ja",
-   "iou": 0.536,
-   "andel_av_modell_dekket": 0.94,
+   "iou": 0.53,
+   "andel_av_modell_dekket": 0.93,
    "andel_av_tegning_dekket": 0.55,
    "tegnede_fasader_per_vegg": {},
    "silhuett_forhold": 1.68,
@@ -24622,7 +24397,7 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.54 (modell dekket 94%, tegning dekket 55%)"
+     "hva": "IoU 0.53 (modell dekket 93%, tegning dekket 55%)"
     },
     "mone": {
      "alvor": "feil",
@@ -24634,7 +24409,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (237, 119, 102) (rød), modell (132, 122, 112) (grå/svart), ΔE 49.6; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))"
+     "hva": "tegning (237, 119, 102) (rød), modell (132, 122, 112) (grå/svart), ΔE 49.6; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))"
     },
     "arker": {
      "alvor": "ok",
@@ -24652,31 +24427,51 @@
    "navn": null,
    "h": 4.8,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: nabohuset bnr-193972039 (yes, 0.0 m unna); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.46))",
+   "farge_kilde": "vegg: nabohuset bnr-193972039 (yes, 0.0 m unna); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.47))",
    "vegg_kilde": "nabohuset bnr-193972039 (yes, 0.0 m unna)",
    "vegg_aar": null,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.46))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.47))",
    "tak_aar": 2024,
-   "synlig_px": 17383,
+   "synlig_px": 16655,
    "flater": [
     24,
     37,
-    47
+    89
    ],
    "finnes": "ja",
-   "iou": 0.474,
-   "andel_av_modell_dekket": 0.7,
-   "andel_av_tegning_dekket": 0.57,
-   "tegnede_fasader_per_vegg": {},
-   "silhuett_forhold": 1.16,
+   "iou": 0.455,
+   "andel_av_modell_dekket": 0.63,
+   "andel_av_tegning_dekket": 0.59,
+   "tegnede_fasader_per_vegg": {
+    "4": 1
+   },
+   "gesims_forhold": 0.43,
+   "gesims_kilde": "veggflatene i tegningen",
+   "silhuett_forhold": 0.93,
    "takform_modell": "sal/sammensatt",
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 3,
+    "takflater": 2,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarge": {
+    "tegning": [
+     242,
+     149,
+     130
+    ],
+    "modell": [
+     252,
+     188,
+     144
+    ],
+    "side": "skygge",
+    "dE": 19.4,
+    "kulor_tegning": "rød",
+    "kulor_modell": "oransje/brun"
+   },
    "takfarge": {
     "tegning": [
      237,
@@ -24692,7 +24487,25 @@
     "kulor_tegning": "rød",
     "kulor_modell": "grå/svart"
    },
-   "vinduer": [],
+   "vinduer": [
+    {
+     "vegg": 4,
+     "lengde_m": 16.6,
+     "kilde": "hullene i veggflaten",
+     "tegning": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
+     },
+     "modell": {
+      "vinduer": 6,
+      "rader": [
+       6
+      ],
+      "dorer": 0
+     }
+    }
+   ],
    "arker": {
     "tegning_anslag": 0,
     "modell": 0
@@ -24709,19 +24522,35 @@
     },
     "omriss": {
      "alvor": "avvik",
-     "hva": "IoU 0.47 (modell dekket 70%, tegning dekket 57%)"
+     "hva": "IoU 0.46 (modell dekket 63%, tegning dekket 59%)"
+    },
+    "gesims": {
+     "alvor": "feil",
+     "hva": "tegnet/modell 0.43 (tegningen lavere)"
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.16"
+     "hva": "silhuetthøyde tegnet/modell 0.93"
     },
     "takform": {
      "alvor": "ok",
      "hva": "modell sal/sammensatt; tegningen viser ikke gavl/endeflate"
     },
+    "veggfarge": {
+     "alvor": "feil",
+     "hva": "tegning (242, 149, 130) (rød), modell (252, 188, 144) (oransje/brun), ΔE 19.4; modellens farge: nabohuset bnr-193972039 (yes, 0.0 m unna)"
+    },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (237, 119, 102) (rød), modell (132, 122, 112) (grå/svart), ΔE 49.6; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.46))"
+     "hva": "tegning (237, 119, 102) (rød), modell (132, 122, 112) (grå/svart), ΔE 49.6; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.47))"
+    },
+    "vinduer": {
+     "alvor": "feil",
+     "hva": "vegg 4 (16.6 m): tegning 0 vinduer i rader [], modell 6 i rader [6]"
+    },
+    "dorer": {
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -24744,7 +24573,7 @@
    "vegg_aar": null,
    "tak_kilde": "ortofoto 2024 (falmet tegl)",
    "tak_aar": 2024,
-   "synlig_px": 1736,
+   "synlig_px": 1624,
    "flater": [],
    "finnes": "uklart (tegnet flate under, men ingen flate tildelt)",
    "tegning": "Kvartal14",
@@ -24954,10 +24783,10 @@
    "navn": null,
    "h": 4.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.47): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.47))",
-   "vegg_kilde": "Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.47): tegningens farge",
+   "farge_kilde": "vegg: Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.43): tegningens farge; tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.43))",
+   "vegg_kilde": "Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.43): tegningens farge",
    "vegg_aar": 2024,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.47))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.43))",
    "tak_aar": 2024,
    "synlig_px": 37580,
    "flater": [
@@ -25074,11 +24903,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (215, 193, 119) (gul/beige), modell (215, 193, 119) (gul/beige), ΔE 0.0; modellens farge: Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.47): tegningens farge"
+     "hva": "tegning (215, 193, 119) (gul/beige), modell (215, 193, 119) (gul/beige), ΔE 0.0; modellens farge: Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.43): tegningens farge"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.47))"
+     "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.43))"
     },
     "vinduer": {
      "alvor": "feil",
@@ -25104,10 +24933,10 @@
    "navn": null,
    "h": 5.4,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen sistekvartal (skygge side, IoU 0.68); tak: ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.68))",
-   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.68)",
+   "farge_kilde": "vegg: kvartaltegningen sistekvartal (skygge side, IoU 0.65); tak: ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.65))",
+   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.65)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.68))",
+   "tak_kilde": "ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.65))",
    "tak_aar": 2024,
    "synlig_px": 87888,
    "flater": [
@@ -25308,11 +25137,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (190, 192, 194) (grå/svart), modell (190, 192, 194) (grå/svart), ΔE 0.0; modellens farge: kvartaltegningen sistekvartal (skygge side, IoU 0.68)"
+     "hva": "tegning (190, 192, 194) (grå/svart), modell (190, 192, 194) (grå/svart), ΔE 0.0; modellens farge: kvartaltegningen sistekvartal (skygge side, IoU 0.65)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (213, 215, 216) (hvit), modell (104, 104, 102) (grå/svart), ΔE 42.0; modellens farge: ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.68))"
+     "hva": "tegning (213, 215, 216) (hvit), modell (104, 104, 102) (grå/svart), ΔE 42.0; modellens farge: ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.65))"
     },
     "vinduer": {
      "alvor": "feil",
@@ -25360,10 +25189,10 @@
    "navn": null,
    "h": 3.8,
    "fasade_kilde": "antatt",
-   "farge_kilde": "vegg: 2015-trykkfila (ikke dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))",
+   "farge_kilde": "vegg: 2015-trykkfila (ikke dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))",
    "vegg_kilde": "2015-trykkfila (ikke dømt)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))",
    "tak_aar": 2024,
    "synlig_px": 12015,
    "flater": [
@@ -25428,7 +25257,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))"
+     "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))"
     },
     "arker": {
      "alvor": "ok",
@@ -25446,10 +25275,10 @@
    "navn": null,
    "h": 6.7,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen sistekvartal (skygge side, IoU 0.70); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))",
-   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.70)",
+   "farge_kilde": "vegg: kvartaltegningen sistekvartal (skygge side, IoU 0.68); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))",
+   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.68)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))",
    "tak_aar": 2024,
    "synlig_px": 61775,
    "flater": [
@@ -25595,11 +25424,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (190, 208, 158) (grønn), modell (190, 208, 158) (grønn), ΔE 0.0; modellens farge: kvartaltegningen sistekvartal (skygge side, IoU 0.70)"
+     "hva": "tegning (190, 208, 158) (grønn), modell (190, 208, 158) (grønn), ΔE 0.0; modellens farge: kvartaltegningen sistekvartal (skygge side, IoU 0.68)"
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))"
     },
     "vinduer": {
      "alvor": "feil",
@@ -25625,10 +25454,10 @@
    "navn": null,
    "h": 7.1,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen sistekvartal (lys side, IoU 0.87); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.87))",
-   "vegg_kilde": "kvartaltegningen sistekvartal (lys side, IoU 0.87)",
+   "farge_kilde": "vegg: kvartaltegningen sistekvartal (lys side, IoU 0.88); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.88))",
+   "vegg_kilde": "kvartaltegningen sistekvartal (lys side, IoU 0.88)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.87))",
+   "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.88))",
    "tak_aar": 2024,
    "synlig_px": 101685,
    "flater": [
@@ -25869,7 +25698,7 @@
     },
     "takfarge": {
      "alvor": "avvik med grunn",
-     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.87))"
+     "hva": "tegning (244, 123, 106) (rød), modell (132, 122, 112) (grå/svart), ΔE 50.9; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.88))"
     },
     "vinduer": {
      "alvor": "feil",
@@ -26388,18 +26217,19 @@
    "navn": "Voldporten med vaktstuen",
    "h": 3.1,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: Street View 2010 (lys grå naturstein/kvaderstein, kalket øvre del); eldre enn tegningen, men tegningen har ikke huset; tak: ortofoto 2024 (rød tegl)",
-   "vegg_kilde": "Street View 2010 (lys grå naturstein/kvaderstein, kalket øvre del); eldre enn tegningen, men tegningen har ikke huset",
-   "vegg_aar": 2010,
-   "tak_kilde": "ortofoto 2024 (rød tegl)",
+   "farge_kilde": "vegg: kvartaltegningen Glasshytta (lys side, IoU 0.45); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.45): tegningens farge",
+   "vegg_kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.45)",
+   "vegg_aar": 2015,
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.45): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 45543,
+   "synlig_px": 59244,
    "flater": [
     3,
     4,
     5,
     6,
     7,
+    8,
     9,
     10,
     11,
@@ -26408,17 +26238,18 @@
     14,
     15,
     17,
+    18,
     19,
     20,
     22,
     54
    ],
    "finnes": "ja",
-   "iou": 0.449,
-   "andel_av_modell_dekket": 0.4,
-   "andel_av_tegning_dekket": 0.99,
+   "iou": 0.347,
+   "andel_av_modell_dekket": 0.31,
+   "andel_av_tegning_dekket": 0.96,
    "tegnede_fasader_per_vegg": {
-    "2": 1
+    "2": 2
    },
    "gesims_forhold": 1.08,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
@@ -26427,7 +26258,7 @@
    "takform_tegning_tegn": {
     "gavler": 0,
     "trekantede_takflater": 0,
-    "takflater": 12,
+    "takflater": 13,
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
@@ -26438,12 +26269,12 @@
      202
     ],
     "modell": [
-     168,
-     164,
-     156
+     199,
+     200,
+     202
     ],
     "side": "lys",
-    "dE": 14.3,
+    "dE": 0.0,
     "kulor_tegning": "grå/svart",
     "kulor_modell": "grå/svart"
    },
@@ -26454,11 +26285,11 @@
      86
     ],
     "modell": [
-     141,
-     73,
-     57
+     173,
+     100,
+     86
     ],
-    "dE": 11.4,
+    "dE": 0.0,
     "kulor_tegning": "rød",
     "kulor_modell": "rød"
    },
@@ -26484,7 +26315,7 @@
     }
    ],
    "arker": {
-    "tegning_anslag": 1,
+    "tegning_anslag": 2,
     "modell": 0
    },
    "piper": {
@@ -26499,7 +26330,7 @@
     },
     "omriss": {
      "alvor": "feil",
-     "hva": "IoU 0.45 (modell dekket 40%, tegning dekket 99%)"
+     "hva": "IoU 0.35 (modell dekket 31%, tegning dekket 96%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -26515,11 +26346,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (199, 200, 202) (grå/svart), modell (168, 164, 156) (grå/svart), ΔE 14.3; modellens farge: Street View 2010 (lys grå naturstein/kvaderstein, kalket øvre del); eldre enn tegningen, men tegningen har ikke huset"
+     "hva": "tegning (199, 200, 202) (grå/svart), modell (199, 200, 202) (grå/svart), ΔE 0.0; modellens farge: kvartaltegningen Glasshytta (lys side, IoU 0.45)"
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (173, 100, 86) (rød), modell (141, 73, 57) (rød), ΔE 11.4; modellens farge: ortofoto 2024 (rød tegl)"
+     "hva": "tegning (173, 100, 86) (rød), modell (173, 100, 86) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.45): tegningens farge"
     },
     "vinduer": {
      "alvor": "ok",
@@ -26531,7 +26362,7 @@
     },
     "arker": {
      "alvor": "ok",
-     "hva": "tegning ~1 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "hva": "tegning ~2 (grovt anslag fra små takflater, også takvinduer), modell 0"
     },
     "piper": {
      "alvor": "ok",
@@ -26545,12 +26376,12 @@
    "navn": "Voldportravelinet",
    "h": 2.76,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Glasshytta (lys side, IoU 0.80); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.80): tegningens farge",
-   "vegg_kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.80)",
+   "farge_kilde": "vegg: kvartaltegningen Glasshytta (lys side, IoU 0.75); tak: ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.75): tegningens farge",
+   "vegg_kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.75)",
    "vegg_aar": 2015,
-   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.80): tegningens farge",
+   "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.75): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 31005,
+   "synlig_px": 30945,
    "flater": [
     34,
     35,
@@ -26560,8 +26391,8 @@
     39
    ],
    "finnes": "ja",
-   "iou": 0.754,
-   "andel_av_modell_dekket": 0.72,
+   "iou": 0.756,
+   "andel_av_modell_dekket": 0.73,
    "andel_av_tegning_dekket": 0.96,
    "tegnede_fasader_per_vegg": {
     "10": 1,
@@ -26569,7 +26400,7 @@
    },
    "gesims_forhold": 0.89,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 0.83,
+   "silhuett_forhold": 0.84,
    "takform_modell": "valm",
    "takform_tegning_tegn": {
     "gavler": 0,
@@ -26663,7 +26494,7 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.75 (modell dekket 72%, tegning dekket 96%)"
+     "hva": "IoU 0.76 (modell dekket 73%, tegning dekket 96%)"
     },
     "gesims": {
      "alvor": "ok",
@@ -26671,7 +26502,7 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 0.83"
+     "hva": "silhuetthøyde tegnet/modell 0.84"
     },
     "takform": {
      "alvor": "ok",
@@ -26679,11 +26510,11 @@
     },
     "veggfarge": {
      "alvor": "ok",
-     "hva": "tegning (218, 165, 125) (oransje/brun), modell (218, 165, 125) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen Glasshytta (lys side, IoU 0.80)"
+     "hva": "tegning (218, 165, 125) (oransje/brun), modell (218, 165, 125) (oransje/brun), ΔE 0.0; modellens farge: kvartaltegningen Glasshytta (lys side, IoU 0.75)"
     },
     "takfarge": {
      "alvor": "ok",
-     "hva": "tegning (173, 100, 86) (rød), modell (173, 100, 86) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.80): tegningens farge"
+     "hva": "tegning (173, 100, 86) (rød), modell (173, 100, 86) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.75): tegningens farge"
     },
     "vinduer": {
      "alvor": "avvik",
@@ -27769,16 +27600,18 @@
   },
   {
    "senter_pt": [
-    38.9,
-    123.1
+    68.4,
+    116.4
    ],
-   "areal_pt2": 1085,
+   "areal_pt2": 3750,
    "flater": [
-    24
+    8,
+    24,
+    88
    ],
    "vegger": 0,
    "hus_anslag": 1,
-   "naermeste_modellhus": "bnr-193867596",
+   "naermeste_modellhus": "bnr-193971903",
    "tegning": "Kvartal10"
   },
   {
@@ -27799,6 +27632,20 @@
   },
   {
    "senter_pt": [
+    129.0,
+    145.5
+   ],
+   "areal_pt2": 135,
+   "flater": [
+    60
+   ],
+   "vegger": 1,
+   "hus_anslag": 1,
+   "naermeste_modellhus": "bnr-193971903",
+   "tegning": "Kvartal10"
+  },
+  {
+   "senter_pt": [
     477.9,
     208.3
    ],
@@ -27813,13 +27660,12 @@
   },
   {
    "senter_pt": [
-    321.3,
-    233.0
+    319.2,
+    233.8
    ],
-   "areal_pt2": 1263,
+   "areal_pt2": 1067,
    "flater": [
-    26,
-    59
+    26
    ],
    "vegger": 0,
    "hus_anslag": 1,
@@ -28269,23 +28115,6 @@
   },
   {
    "senter_pt": [
-    49.8,
-    72.9
-   ],
-   "areal_pt2": 176,
-   "flater": [
-    8,
-    16,
-    18,
-    21
-   ],
-   "vegger": 2,
-   "hus_anslag": 1,
-   "naermeste_modellhus": "bnr-193869548",
-   "tegning": "Glasshytta"
-  },
-  {
-   "senter_pt": [
     69.3,
     123.6
    ],
@@ -28522,7 +28351,8 @@
   "Kvartal10": {
    "koblet_men_utenfor": [],
    "hus_utenfor_tegningens_sett": [
-    "bnr-193971938",
+    "bnr-193972411",
+    "bnr-193867553",
     "pb-11",
     "bnr-193867499",
     "pb-64"
@@ -28561,7 +28391,9 @@
    ],
    "hus_utenfor_tegningens_sett": [
     "bnr-193972462",
-    "bnr-193867847"
+    "bnr-193867847",
+    "bnr-193972047",
+    "bnr-193867707"
    ]
   },
   "sistekvartal": {
