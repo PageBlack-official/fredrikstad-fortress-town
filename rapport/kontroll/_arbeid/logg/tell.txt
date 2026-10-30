@@ -1,0 +1,9 @@
+tell
+  høydeskala fra tegnede vegger: 5.023 pt/m (4 vegger)
+  felles: omriss 42.4, kant 3.76 pt, nedre kant 4.0 pt, øvre 13.5 pt, IoU 0.339
+  felles: omriss 29.5, kant 3.54 pt, nedre kant 4.0 pt, øvre 4.0 pt, IoU 0.447
+  felles: omriss 27.6, kant 3.41 pt, nedre kant 4.0 pt, øvre 4.0 pt, IoU 0.455
+    blokk  1 hus (867677…): forskyvning +4.3, -2.5 pt, mål 3.27 -> 3.06
+    blokk  1 hus (867634…): forskyvning +0.5, +1.5 pt, mål 4.60 -> 4.54
+  kamera: dreiing -12.0°, helning 45.5°, 5.020 pt/m, høyde 5.023 pt/m = 1.43 × ortografisk
+  registrering: median 3.83 pt (11.5 px ved 3 px/pt), 50% av husene innen 3 pt

@@ -1,0 +1,8 @@
+kvartal7
+  høydeskala fra tegnede vegger: 3.103 pt/m (18 vegger)
+  grovsøk: beste 63.0 dreiing 0 målestokk 0.85 høyde 0.9355397468009978
+  fra 63.0: 59.57  nedre kant 33.0 pt, øvre 2.0 pt, IoU 0.462  v [0.917, 0.844, 0.004, 0.042, -11.94, 50.816, 0.936]
+  fra 67.1: 46.67  nedre kant 13.0 pt, øvre 7.0 pt, IoU 0.355  v [6.522, 0.69, -0.029, 0.044, -17.629, 35.746, 0.936]
+  kantfinjustering: kantavstand 8.05 -> 7.99; nedre kant 13.0 pt, øvre 6.0, IoU 0.357
+  kamera: dreiing -21.4°, helning 43.4°, 3.479 pt/m, høydeskala 1.23 × ortografisk
+  registrering: median 3.54 pt (10.6 px ved 3 px/pt), 39% av husene innen 3 pt

@@ -1,0 +1,250 @@
+{
+ "tegning": "Kvartal4BITMP",
+ "par": {
+  "az": -15.52,
+  "el": 45.46,
+  "s": 4.8803,
+  "K": 3.4939,
+  "kz": 1.021,
+  "K_kilde": "tegnede vegger"
+ },
+ "A": [
+  [
+   4.572693520138986,
+   1.2700191670198522,
+   0.0,
+   -36.63615637432545
+  ],
+  [
+   1.703144144741711,
+   -3.2395880472012886,
+   -3.4938626046211905,
+   553.0211517841253
+  ]
+ ],
+ "forskyvning": {
+  "bnr-193868339": [
+   -8.5,
+   -6.52
+  ],
+  "bnr-193868525": [
+   -8.5,
+   -6.52
+  ],
+  "bnr-193971202": [
+   -8.5,
+   -6.52
+  ],
+  "bnr-193971946": [
+   -8.5,
+   -6.52
+  ],
+  "bnr-193971954": [
+   -16.5,
+   -4.19
+  ],
+  "bnr-193971989": [
+   -16.5,
+   -4.19
+  ],
+  "bnr-193868371": [
+   14.51,
+   24.09
+  ],
+  "bnr-194006187": [
+   -11.52,
+   20.0
+  ],
+  "pb-48": [
+   4.78,
+   4.73
+  ]
+ },
+ "blokker": [
+  {
+   "ids": [
+    "bnr-193868339",
+    "bnr-193868525",
+    "bnr-193971202",
+    "bnr-193971946"
+   ],
+   "d": [
+    -8.5,
+    -6.52
+   ],
+   "kant_for": 3.58,
+   "kant_etter": 3.55
+  },
+  {
+   "ids": [
+    "bnr-193971954",
+    "bnr-193971989"
+   ],
+   "d": [
+    -16.5,
+    -4.19
+   ],
+   "kant_for": 3.53,
+   "kant_etter": 2.77
+  },
+  {
+   "ids": [
+    "bnr-193868371"
+   ],
+   "d": [
+    14.51,
+    24.09
+   ],
+   "kant_for": 6.67,
+   "kant_etter": 3.83
+  },
+  {
+   "ids": [
+    "bnr-194006187"
+   ],
+   "d": [
+    -11.52,
+    20.0
+   ],
+   "kant_for": 2.96,
+   "kant_etter": 2.64
+  },
+  {
+   "ids": [
+    "pb-48"
+   ],
+   "d": [
+    4.78,
+    4.73
+   ],
+   "kant_for": 1.33,
+   "kant_etter": 0.96
+  }
+ ],
+ "maal": {
+  "bunn": 12.0,
+  "topp": 22.0,
+  "iou": 0.3742605107475947,
+  "bare": 49,
+  "kant": 3.0957329273223877,
+  "omriss": 50.897517057775374
+ },
+ "bygg": [
+  "bnr-193868339",
+  "bnr-193971954",
+  "bnr-193868371",
+  "bnr-193868525",
+  "bnr-193971946",
+  "bnr-194006187",
+  "bnr-193971989",
+  "bnr-193971202",
+  "pb-48"
+ ],
+ "utenfor_tegningen": [
+  "bnr-193868363",
+  "bnr-193868428",
+  "bnr-193971970",
+  "bnr-193868398",
+  "bnr-193971962",
+  "bnr-193868401"
+ ],
+ "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
+ "hus_forskyvning": {
+  "bnr-193868339": {
+   "median_pt": 2.84,
+   "median_px": 8.5,
+   "andel_innen_2pt": 0.42,
+   "beste_forskyvning_pt": [
+    -6.0,
+    -10.0
+   ],
+   "median_etter_pt": 1.84
+  },
+  "bnr-193971954": {
+   "median_pt": 1.32,
+   "median_px": 4.0,
+   "andel_innen_2pt": 0.62,
+   "beste_forskyvning_pt": [
+    2.0,
+    1.5
+   ],
+   "median_etter_pt": 1.21
+  },
+  "bnr-193868371": {
+   "median_pt": 2.28,
+   "median_px": 6.8,
+   "andel_innen_2pt": 0.47,
+   "beste_forskyvning_pt": [
+    10.0,
+    7.5
+   ],
+   "median_etter_pt": 1.63
+  },
+  "bnr-193868525": {
+   "median_pt": 1.75,
+   "median_px": 5.3,
+   "andel_innen_2pt": 0.54,
+   "beste_forskyvning_pt": [
+    -3.0,
+    0.5
+   ],
+   "median_etter_pt": 1.58
+  },
+  "bnr-193971946": {
+   "median_pt": 1.54,
+   "median_px": 4.6,
+   "andel_innen_2pt": 0.62,
+   "beste_forskyvning_pt": [
+    -1.0,
+    -0.5
+   ],
+   "median_etter_pt": 1.25
+  },
+  "bnr-194006187": {
+   "median_pt": 1.33,
+   "median_px": 4.0,
+   "andel_innen_2pt": 0.65,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 1.33
+  },
+  "bnr-193971989": {
+   "median_pt": 1.58,
+   "median_px": 4.7,
+   "andel_innen_2pt": 0.57,
+   "beste_forskyvning_pt": [
+    -5.5,
+    -1.5
+   ],
+   "median_etter_pt": 1.38
+  },
+  "bnr-193971202": {
+   "median_pt": 1.02,
+   "median_px": 3.0,
+   "andel_innen_2pt": 0.64,
+   "beste_forskyvning_pt": [
+    9.0,
+    -8.0
+   ],
+   "median_etter_pt": 1.09
+  },
+  "pb-48": {
+   "median_pt": 0.41,
+   "median_px": 1.2,
+   "andel_innen_2pt": 0.82,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.5
+   ],
+   "median_etter_pt": 0.43
+  }
+ },
+ "registrering": {
+  "median_pt": 1.54,
+  "median_px": 4.6,
+  "andel_under_3pt": 1.0,
+  "R": 3.0
+ }
+}
