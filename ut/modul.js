@@ -37,7 +37,7 @@ function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(400
 const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||1.3));
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
   center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
-  attributionControl:false, antialias:true, respectPrefersReducedMotion:false, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
+  attributionControl:false, antialias:true, reduceMotion:false /* «Reduser bevegelse» av: Vegars valg, CHANGELOG v27 (15_bevegelse) */, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
 window.map=map;
 map.scrollZoom.setWheelZoomRate(1/150); map.touchZoomRotate.enable(); map.dragRotate.enable(); map.keyboard.enable();
 // pluss/minus og kompass (snu byen, nordvend): synlig vei til zoom og rotasjon for mus uten klyp
@@ -400,9 +400,9 @@ const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
     grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
     tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
-    tRefl:{value:null}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}},
+    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}},
   vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader:`uniform float t, maks, harFelt, reflStyrke; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; varying vec3 wp;
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -419,8 +419,8 @@ const waterMat = new THREE.ShaderMaterial({
     float grunn=(1.-smoothstep(0.,24.,d))*(1.-0.75*kai);
     c=mix(c, grunt, grunn*grunn*0.62);
     // speilinger av hus og trær (rendret speilvendt i et eget lag), med rolig krusning
-    if(reflStyrke>0.){ vec2 uv=gl_FragCoord.xy/res; vec2 kr=vec2(n(wp.xz*0.18+vec2(0.,t*0.35))-0.5, n(wp.xz*0.07-vec2(t*0.2,0.))-0.5)*vec2(0.004,0.010);
-      vec4 r=texture2D(tRefl, uv+kr); float rk=reflStyrke*r.a*(0.75+0.25*b); c=mix(c, mix(c,r.rgb,0.55)*0.97, rk); }
+    if(reflStyrke>0.){ vec4 q=reflPV*vec4(wp,1.); vec2 uv=q.xy/q.w*0.5+0.5;   /* speilet slås opp der vannpunktet lå da speilet ble tegnet (14): det følger byen mens kartet beveger seg */ vec2 kr=vec2(n(wp.xz*0.18+vec2(0.,t*0.35))-0.5, n(wp.xz*0.07-vec2(t*0.2,0.))-0.5)*vec2(0.004,0.010);
+      vec4 r=texture2D(tRefl, uv+kr); float kant=smoothstep(0.,0.04,uv.x)*smoothstep(1.,0.96,uv.x)*smoothstep(0.,0.04,uv.y)*smoothstep(1.,0.96,uv.y); float rk=reflStyrke*r.a*kant*(0.75+0.25*b); c=mix(c, mix(c,r.rgb,0.55)*0.97, rk); }
     // penselstrøkene, svakere enn før og borte i skumkanten
     c=mix(c,hi,s*.42*(1.-grunn*0.7));
     // skumkant langs land: bølgete, pustende, minst ca. halvannen piksel bred så den holder i oversikten
@@ -770,9 +770,29 @@ function bygKirke(k, grp){
     [[0,-1],[L,1]].forEach(([s_,sg])=>{ const mid=[m1[0]+u[0]*s_, m1[1]+u[1]*s_]; if(nærTårn(mid)) return;
       const nor=new THREE.Vector3(u[0]*sg,0,-u[1]*sg), tan=new THREE.Vector3(n[0],0,-n[1]); rundvindu(P(s_,0,WH+RISE*0.38), tan, new THREE.Vector3(0,1,0), nor, 1.05); });
   });
+  // kompassretningen en flate vender mot (grader, 0 = nord, 90 = øst), fra utovernormalen
+  const kompass=f=>((Math.atan2(f.nor.x,-f.nor.z)*180/Math.PI)+360)%360;
+  const mot=(f,az)=>Math.abs(((kompass(f)-az)%360+540)%360-180)<30;
+  // korsarmenes endevegger mot sør og øst har dør, som i kvartaltegningen (Vegar 29.10: «det mangler en dør plassert inni en
+  // oval form» på den ene, «der mangler det også en dør» på den andre): sørenden stor rundbuet dør i rundbuet omramming og
+  // ett buevindu, østenden ett buevindu og en mindre rundbuet dør. Plass langs veggen i andel, lest fra tegningen.
+  const DORER={186:{dor:0.34, vindu:[0.72], stor:true}, 96:{dor:0.74, vindu:[0.3], stor:false}};
+  // andel langs veggen regnet fra venstre sett utenfra (som i tegningen)
+  const fraVenstre=(f,u)=>{ const nx=f.nor.x, ny=-f.nor.z; const ltr=((f.p1[0]-f.p0[0])*(-ny)+(f.p1[1]-f.p0[1])*nx)>0; return ltr?u:1-u; };
+  function kirkedor(f, u, stor){
+    const s_=fraVenstre(f,u);
+    const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; const opp=new THREE.Vector3(0,1,0);
+    if(stor){ legg(new THREE.ShapeGeometry(bue(3.8,5.8),16), W3(p,-0.05), f.tan, opp, f.nor, 0.05, [150,150,146], [100,100,98]);   // omramming (rundbuet, som i tegningen)
+              legg(new THREE.ShapeGeometry(bue(3.3,5.4),16), W3(p,0), f.tan, opp, f.nor, 0.07, [226,226,222], [160,160,156]); }
+    legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, [104,86,72], [72,60,52]);
+  }
   // høye buevinduer i alle frie skipsvegger
   flater(sk).forEach(f=>{
     if(nærTårn(f.mid) || f.L<3) return;
+    const d=f.L>12 ? Object.entries(DORER).find(([az])=>mot(f,+az)) : null;
+    if(d){ const q=d[1]; kirkedor(f, q.dor, q.stor);
+      q.vindu.forEach(u=>{ const s_=fraVenstre(f,u); const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); });
+      return; }
     const n=f.L>12 ? 3 : 2; const step=f.L/n;
     for(let i=0;i<n;i++){ const s_=step*(i+0.5); const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_/f.L, f.p0[1]+(f.p1[1]-f.p0[1])*s_/f.L];
       buevindu(W3(p,2.6), f.tan, new THREE.Vector3(0,1,0), f.nor, 1.55, 5.0); }
@@ -801,9 +821,11 @@ function bygKirke(k, grp){
   const opp=new THREE.Vector3(0,1,0);
   flater(t).forEach(f=>{
     const c2=f.mid;
-    buevindu(W3(c2,SH*0.6), f.tan, opp, f.nor, 1.8, 4.4);
-    rundvindu(W3(c2,SH*0.42), f.tan, opp, f.nor, 0.95);
-    rundvindu(W3(c2,SH*0.27), f.tan, opp, f.nor, 0.95);
+    if(!mot(f,96)){   // tårnfoten mot øst har ingen vinduer i tegningen (Vegar 29.10: «på tårnet skal det ikke være vindu vendt mot sør øst»)
+      buevindu(W3(c2,SH*0.6), f.tan, opp, f.nor, 1.8, 4.4);
+      rundvindu(W3(c2,SH*0.42), f.tan, opp, f.nor, 0.95);
+      rundvindu(W3(c2,SH*0.27), f.tan, opp, f.nor, 0.95);
+    }
     // øvre etasje: buevindu og urskive
     const ov2=[tc[0]+(c2[0]-tc[0])*0.52, tc[1]+(c2[1]-tc[1])*0.52];
     buevindu(W3(ov2,SK1+1.3), f.tan, opp, f.nor, 1.35, 3.9);        // høyt buevindu i øvre etasje, som i tegningen
@@ -855,9 +877,19 @@ const vindMat=new THREE.ShaderMaterial({
       vec3 c;
       if(typ<0.5 || typ>2.5){
         float ramme=0.08;
-        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*(typ>2.5?0.5:0.62));
-        float spr=max(1.-smoothstep(0.03,0.03+fw,pv),1.-smoothstep(0.03,0.03+fw,ph));
-        float inn=smoothstep(ramme,ramme+fw,kant);
+        // sprosser etter zoom (30.10): post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
+        // på nært hold og tones ut når én piksel blir for stor til å bære dem (fw = meter per piksel), så de ikke griser på avstand
+        float lo=vSz.y*(typ>2.5?0.5:0.62);
+        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-lo);
+        float qs=(typ<0.5 && vSz.y>1.0)?abs(m.y-lo*0.5):1e3;               // sprossen midt i nedre ramme: seks ruter
+        // nærmeste zoom i kartet gir ~0,12–0,17 m per piksel på skjerm med pikseltetthet 1 (0,06–0,08 på mobil): korset (post og
+        // losholt) står til 0,2 m/px og er borte ved 0,32; sprossen i nedre ramme bare der det er minst ~8 px per meter
+        float bH=max(0.035,0.5*fw), bS=max(0.02,0.45*fw);                    // halv bredde: minst ~1 px
+        float aH=1.-smoothstep(0.20,0.32,fw), aS=1.-smoothstep(0.075,0.13,fw);
+        float spr=max(1.-smoothstep(bH-0.5*fw,bH+0.5*fw,pv),1.-smoothstep(bH-0.5*fw,bH+0.5*fw,ph))*aH;   // kanten midt på streken
+        spr=max(spr,(1.-smoothstep(bS-0.5*fw,bS+0.5*fw,qs))*aS);
+        float inn=smoothstep(ramme-0.5*fw,ramme+0.5*fw,kant);
+        glas*=mix(1.,0.8,aS);                                                 // mørkere glass på nært hold: sprossene står ut
         c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn);
         c=mix(c, glas*1.4, smoothstep(0.25,-0.3,(m.x/vSz.x-0.5)+(m.y/vSz.y-0.5))*0.3*inn*(1.-spr));
       } else {
@@ -872,7 +904,7 @@ const vindMat=new THREE.ShaderMaterial({
           float ol=vSz.y-0.78; if(m.y>ol){ c=mix(glas, hvit, 1.-smoothstep(0.05,0.05+fw,min(kant,abs(m.y-ol)))); }
         }
       }
-      c=mix(c, mix(glas,hvit,0.35), smoothstep(0.08,0.2,fw)*0.6);
+      c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
       gl_FragColor=vec4(c,1.);
       #include <colorspace_fragment>
     }`
@@ -934,6 +966,15 @@ function samleObjekt(obj, forelder, i, topp){   // mesh eller gruppe med barn; s
   if(obj.isMesh) samleMesh(obj, m, i, topp);
   obj.children.forEach(c=>samleObjekt(c, m, i, topp));
 }
+// polygon utvidet d meter utover (sokkel oppå veggen uten å flimre)
+function utvidPoly(P,d){ let A=0; for(let k=0;k<P.length;k++){ const a=P[k],c=P[(k+1)%P.length]; A+=a[0]*c[1]-c[0]*a[1]; } const sg=A>0?1:-1;
+  return P.map((q,k)=>{ const a=P[(k-1+P.length)%P.length], c=P[(k+1)%P.length];
+    const n1=[(q[1]-a[1]),-(q[0]-a[0])], n2=[(c[1]-q[1]),-(c[0]-q[0])]; const l1=Math.hypot(...n1)||1, l2=Math.hypot(...n2)||1;
+    const m=[(n1[0]/l1+n2[0]/l2)/2*sg,(n1[1]/l1+n2[1]/l2)/2*sg]; const lm=Math.hypot(...m)||1; const f=d/Math.max(lm,0.3);
+    return [q[0]+m[0]/lm*f*lm, q[1]+m[1]/lm*f*lm]; }); }
+function iPoly(p,f){ let inne=false; for(let k=0,j=f.length-1;k<f.length;j=k++){ const a=f[k],c=f[j]; if((a[1]>p[1])!==(c[1]>p[1]) && p[0]<(c[0]-a[0])*(p[1]-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
+function planZ(f,x,y){ const [a,b2,c]=f; const ux=b2[0]-a[0],uy=b2[1]-a[1],uz=b2[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2];
+  const nx=uy*vz-uz*vy, ny=uz*vx-ux*vz, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return a[2]; return a[2]-(nx*(x-a[0])+ny*(y-a[1]))/nz; }
 DATA.bygg.forEach((b,i)=>{
   const pts=b.p; if(pts.length<3 || b.skjul) return;
   const spesiell = !!(b.kirke || (b.deler && b.deler.length) || PORT_BYGG.has(i));
@@ -951,6 +992,11 @@ DATA.bygg.forEach((b,i)=>{
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
+  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»)
+  if(b.sokkel && b.sokkel.h>0.2 && !dim){
+    const sg=new THREE.ExtrudeGeometry(polyShape(utvidPoly(pts,0.03)),{depth:Math.min(b.sokkel.h,h-0.05),bevelEnabled:false}); sg.rotateX(-Math.PI/2);
+    const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge)]); sm.receiveShadow=true; legg(sm);
+  }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
@@ -1040,6 +1086,30 @@ DATA.bygg.forEach((b,i)=>{
     g.add(new THREE.Mesh(gv, mat(wall,dim,b.veggs,{ds:true})));
     legg(g);
   });
+  // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård; 29.10)
+  if(b.veggfelt && !dim){
+    b.veggfelt.forEach(([x1,y1,x2,y2,r,g,bb])=>{
+      const L=Math.hypot(x2-x1,y2-y1); if(L<0.3) return; let nx=(y2-y1)/L, ny=-(x2-x1)/L;
+      if(iPoly([(x1+x2)/2+nx*0.2,(y1+y2)/2+ny*0.2],pts)){ nx=-nx; ny=-ny; }
+      const o=0.025, A=[x1+nx*o,y1+ny*o], B=[x2+nx*o,y2+ny*o];
+      const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
+      gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat([r,g,bb],dim,null,{ds:true})));
+    });
+  }
+  // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
+  if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
+    b.takvinduer.forEach(([x,y,bw,bh])=>{
+      const f=b.tak2.find(f=>iPoly([x,y],f)); if(!f) return;
+      const W=f.slice(0,3).map(q=>new THREE.Vector3(q[0], h+q[2]*S, -q[1]));
+      let nr=new THREE.Vector3().subVectors(W[1],W[0]).cross(new THREE.Vector3().subVectors(W[2],W[0])).normalize(); if(nr.y<0) nr.negate();
+      if(nr.y>0.995) return;                                  // flatt tak: ingen takvindu
+      const z=h+planZ(f,x,y)*S, P=new THREE.Vector3(x,z,-y);
+      const oppF=new THREE.Vector3(0,1,0).sub(nr.clone().multiplyScalar(nr.y)).normalize(), tan=new THREE.Vector3().crossVectors(oppF,nr).normalize();
+      [[bw+0.16,bh+0.16,0.03,[244,242,236]],[bw,bh,0.05,[52,58,68]]].forEach(([w2,h2,off,c])=>{
+        const g=new THREE.PlaneGeometry(w2,h2); g.applyMatrix4(new THREE.Matrix4().makeBasis(tan,oppF,nr)); g.translate(P.x+nr.x*off,P.y+nr.y*off,P.z+nr.z*off);
+        legg(new THREE.Mesh(g,mat(c,false))); });
+    });
+  }
   if(b.vind && b.vind.length && !dim){ const vd=vindusData(b.vind, spesiell?-1:i); if(spesiell) grp.add(lagVinduer([vd])); else vinduSamling.push(vd); }
   grp.userData={i, b, h, spesiell};
   if(spesiell){ flatGruppe(grp); city.add(grp); }
@@ -1105,10 +1175,12 @@ if (TER){
 }
 // veier som bånd i tegningens gategrå; bruer ligger over vannet med sider (slått sammen til tre mesher)
 {
-  const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}};
+  // flate (data/landskap.json, verktoy/bakke.py gater 29.10): kjøreveier lagt med brostein tegnes med brosteinen, ikke gategrått
+  // heller og grus (kaia, plassene, stiene på vollene) får flatens farge, som flatene i 17 (30.10)
+  const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}, B:{p:[],i:[]}, H:{p:[],i:[]}, U:{p:[],i:[]}};
   const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
-    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.k==='gang'?buf.G:buf.K;
+    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.flate==='brostein'?buf.B:v.flate==='heller'?buf.H:v.flate==='grus'?buf.U:(v.k==='gang'?buf.G:buf.K);
     const L=[], R=[];
     for(let k=0;k<n;k++){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
@@ -1122,9 +1194,11 @@ if (TER){
       }
     }
   });
-  [[buf.K,mat([128,124,120],false)],[buf.G,mat([146,142,134],false)],[buf.S,mat([120,112,104],false)]].forEach(([B,m])=>{
+  [[buf.K,mat([128,124,120],false)],[buf.G,mat([146,142,134],false)],[buf.S,mat([120,112,104],false)],[buf.H,mat([190,184,174],false)],[buf.U,mat([214,204,182],false)]].forEach(([B,m])=>{
     if(!B.p.length) return; const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3)); g.setIndex(B.i);
     const mm=m.clone(); mm.side=THREE.DoubleSide; const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
+  if(buf.B.p.length){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(buf.B.p,3)); g.setIndex(buf.B.i);
+    stoneMat.side=THREE.DoubleSide; const me=new THREE.Mesh(g,stoneMat); me.receiveShadow=true; scene.add(me); }
 }
 
 // ---- murer, plankegjerder og voller ----
@@ -1140,7 +1214,12 @@ function wallAlong(pts, hgt, thick, color, y0=0){
 (DATA.murer||[]).forEach(w=>{ if(w.t==='ruin') wallAlong(w.p, 3.6, 2.2, [196,188,174]); else wallAlong(w.p, w.t==='fence'?1.8:2.4, 0.6, w.t==='fence'?[206,192,170]:[214,206,192]); });
 // gjerdelinjer som ligger i sporet til en teglmur (data/teglmurer.json), tegnes ikke: teglmuren erstatter dem (27.10, Kaserna)
 const _iMur=(q)=>(DATA.teglmurer||[]).some(m=>{ const [a,c]=m.p, dx=c[0]-a[0], dy=c[1]-a[1], L2=dx*dx+dy*dy; const t=Math.max(0,Math.min(1,((q[0]-a[0])*dx+(q[1]-a[1])*dy)/L2)); return Math.hypot(q[0]-a[0]-t*dx,q[1]-a[1]-t*dy)<3; });
-(DATA.gjerder||[]).forEach(p=>{ if(p.every(_iMur)) return; wallAlong(p, 1.5, 0.35, [196,184,166]); });
+// gjerder, murer og hekker sett i ortofoto 2024 (data/gjerder.json, verktoy/bakke.py gjerder 29.10): {typ, p, h}; gammel form (bare punkter) = gjerde
+(DATA.gjerder||[]).forEach(g=>{ const p=Array.isArray(g)?g:g.p, typ=Array.isArray(g)?'gjerde':g.typ, h=Array.isArray(g)?1.5:(g.h||1.2);
+  if(!Array.isArray(g)&&g.skjul) return; if(p.every(_iMur)) return;
+  const art=Array.isArray(g)?'':(g.art||'');   // art fra Street View: stakitt hvitt, plankegjerde/-port grått tre, smijern mørkt og tynt
+  const FG={stakitt:[236,234,226], plankegjerde:[150,136,120], plankeport:[150,136,120], smijern:[52,54,56], kjetting:[70,70,70], netting:[150,154,150], rekkverk:[200,200,196]};
+  if(typ==='hekk') wallAlong(p, h, 0.9, [104,146,96]); else if(typ==='mur') wallAlong(p, h, 0.45, [206,198,184]); else wallAlong(p, h, art==='smijern'||art==='kjetting'?0.06:0.14, FG[art]||[196,184,166]); });
 flatGruppe(murer);   // ett nett per murfarge
 
 // ---- porter: huset står oppå en portblokk med buet passasje (retning = veien gjennom bygget) ----
@@ -1201,40 +1280,6 @@ flatGruppe(murer);   // ett nett per murfarge
   flatGruppe(g); city.add(g);
 });
 // voller: tegnes nå som terreng (se festningsterrenget)
-// Fredrik II på Torvet, som i trykkfila: mørk sokkel i trinn, høy blokk med gesims, kongen i lys patina
-(DATA.statue||[]).forEach(st=>{
-  const g=new THREE.Group(); const [x,y]=st.xy;
-  const STEIN=[148,152,156], STEIN_S=[68,68,72], PATINA=[208,232,212], PATINA_S=[156,168,160];
-  const M=(f,sk)=>mat(f,false,sk,{ds:true});
-  const boks=(w,h,d,y0,f,sk,dx=0,dz=0)=>{ const ge=new THREE.BoxGeometry(w,h,d); const m=new THREE.Mesh(ge,M(f,sk)); m.position.set(dx,y0+h/2,dz); m.castShadow=true; g.add(m); return m; };
-  const del=(geo,px,py,pz,f=PATINA,sk=PATINA_S)=>{ const m=new THREE.Mesh(geo,M(f,sk)); m.position.set(px,py,pz); m.castShadow=true; g.add(m); return m; };
-  // sokkel
-  boks(3.6,0.45,3.6,0,STEIN,STEIN_S); boks(3.0,0.45,3.0,0.45,STEIN,STEIN_S);
-  boks(2.6,0.35,2.6,0.9,STEIN,STEIN_S);
-  boks(2.1,3.1,2.1,1.25,STEIN,STEIN_S);                       // høy blokk
-  boks(1.5,1.2,0.06,2.2,[118,122,126],[58,58,62],0,1.08);       // innfelt tavle
-  boks(2.5,0.35,2.5,4.35,STEIN,STEIN_S); boks(2.15,0.3,2.15,4.7,STEIN,STEIN_S);
-  boks(1.5,0.25,1.5,5.0,PATINA,PATINA_S);                      // bronseplate
-  // kongen, ca. like høy som sokkelen (som i tegningen)
-  const k=new THREE.Group(); g.add(k); const sy=5.25;
-  const kd=(geo,px,py,pz)=>{ const m=new THREE.Mesh(geo,M(PATINA,PATINA_S)); m.position.set(px,py,pz); m.castShadow=true; k.add(m); return m; };
-  kd(new THREE.CylinderGeometry(0.2,0.17,1.9,8), -0.24,sy+0.95,0.05);           // bein
-  kd(new THREE.CylinderGeometry(0.2,0.17,1.9,8),  0.26,sy+0.95,-0.12);
-  kd(new THREE.CylinderGeometry(0.62,0.42,1.1,10), 0,sy+2.15,0);               // skjørt/rustning
-  kd(new THREE.CylinderGeometry(0.55,0.6,1.25,10), 0,sy+3.2,0);                // overkropp
-  const kappe=kd(new THREE.CylinderGeometry(0.62,0.95,2.6,10,1,true,Math.PI*0.65,Math.PI*0.7), 0,sy+2.55,0); // kappe bak
-  kd(new THREE.CylinderGeometry(0.28,0.3,0.25,8), 0,sy+3.95,0);               // krage
-  kd(new THREE.SphereGeometry(0.36,12,10), 0,sy+4.35,0.02);                     // hode
-  kd(new THREE.CylinderGeometry(0.5,0.5,0.1,12), 0,sy+4.68,0);                  // hattebrem
-  kd(new THREE.CylinderGeometry(0.3,0.34,0.32,10), 0,sy+4.88,0);                // hatt
-  const arm1=kd(new THREE.CylinderGeometry(0.16,0.14,1.25,8), 0.7,sy+3.05,0.15); arm1.rotation.z=0.55;   // arm i siden
-  const arm2=kd(new THREE.CylinderGeometry(0.16,0.14,1.3,8), -0.66,sy+2.95,0.2); arm2.rotation.z=-0.25;
-  const sverd=kd(new THREE.BoxGeometry(0.1,2.1,0.1), -0.9,sy+1.55,0.35); sverd.rotation.z=-0.12;             // sverd mot bakken
-  kd(new THREE.BoxGeometry(0.55,0.08,0.12), -0.83,sy+2.45,0.35);
-  k.rotation.y=0.7;  // vender mot torget og betrakteren i startvinkelen
-  g.scale.setScalar(1.3);  // tegningen gjør statuen tydelig større enn virkeligheten
-  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:'Torvet'}}; flatGruppe(g); city.add(g);
-});
 
 // ---- trær: posisjoner fra trykkfila; tegnet som i Messenger: stamme og greiner, krone av løvklaser med takket kant og 3 toner ----
 let seed=11; const rnd=()=>{seed=(seed*16807)%2147483647; return seed/2147483647;};
@@ -1399,6 +1444,8 @@ const GRENSE=560;
 map.setMaxBounds([tilLngLat(-GRENSE-300,-GRENSE-300), tilLngLat(GRENSE+300,GRENSE+300)]);
 
 // ---- speilinger i vannet: hus, trær og terreng tegnes speilvendt om vannflaten i et eget, halvt så stort lag ----
+// 29.10: speilet toner ikke lenger ut når kartet beveger seg. Det tegnes på nytt høyst hvert BEV.speilMs ms i fart (og hvert bilde i ro
+// når noe endrer seg), og mellom gangene slår vannet opp i det med kameraet fra da det ble tegnet, så det står fast i byen.
 const speil=(()=>{
   const Y=0.15, LAG=1;
   const rt=new THREE.WebGLRenderTarget(2,2,{type:THREE.HalfFloatType});
@@ -1423,6 +1470,8 @@ const speil=(()=>{
       cam.layers.set(0); renderer.setRenderTarget(null); renderer.setClearColor(cc,ca); renderer.shadowMap.autoUpdate=au; scene.background=bg;
       deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
       waterMat.uniforms.tRefl.value=rt.texture;
+      // kameraets projeksjon da speilet ble tegnet: vannet slår opp i speilet med den (03), så speilet følger byen til neste tegning
+      waterMat.uniforms.reflPV.value.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse); this.sist=performance.now();
       // speilingen tones ned i oversikten og kommer fram når man går nærmere, så den aldri popper
       waterMat.uniforms.reflStyrke.value=speilStyrke();
     }
@@ -1456,6 +1505,118 @@ function settNivaa(n){ perfNivaa=n;
   beregnSkala(); }
 if(Q.get('nivaa')) settNivaa(+Q.get('nivaa'));
 
+// ---- bevegelse: én modul for varighet og kurver i hele kartet (oppdrag 15, 29.10; kilder: rapport/flyt/kilder.md) ----
+// Kameraet glir med glid (eksponentiell inn og ut, v32, godkjent av Vegar): farten bygges opp like lenge som den dør ut, og avstanden
+// til målet halveres jevnt mot slutten i stedet for å stoppe på et punkt. Korte flytt (knappene) bruker myk (kubisk inn og ut): glid
+// på under et halvt sekund dobler farten for hvert bilde og ser ut som et hopp. Kortet og knappene på skjermen bruker Material-kurvene:
+// inn = bremser (kommer inn i bildet), ut = akselererer (forlater bildet), og ut er kortere enn inn.
+// Alle tider står her; stil.css leser dem som CSS-variabler (--t-…, --k-…), så JS og CSS aldri kan gli fra hverandre.
+// ?glid=0 gir de gamle kurvene til sammenligning.
+const GLID = Q0.get('glid')!=='0';
+const glid = t => !GLID ? (t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : t<=0 ? 0 : t>=1 ? 1 : t<0.5 ? Math.pow(2,20*t-10)/2 : (2-Math.pow(2,-20*t+10))/2;
+const glidUt = t => !GLID ? 1-Math.pow(1-t,3) : t>=1 ? 1 : 1-Math.pow(2,-10*t);   // bare utglidning (når bevegelsen alt er i gang)
+const myk = t => t<=0 ? 0 : t>=1 ? 1 : t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;     // korte flytt: kubisk inn og ut
+const BEV = {
+  kamera: { hus: 900, tilbake: 900, hjem: 1300, dobbel: 800, knapp: 420 },   // ms; glid under ~600 ms rykker (flyt-test: rykk)
+  kort:   { inn: 380, ut: 240, innhold: 180 },                               // Material: lange inn, korte ut; innhold = kryssfade ved bytte av hus
+  kurve:  { inn: 'cubic-bezier(.05,.7,.1,1)', ut: 'cubic-bezier(.3,0,.8,.15)', flytt: 'cubic-bezier(.2,0,0,1)' },   // M3 emphasized decelerate / accelerate / standard
+  dobbelVindu: 300,   // ms mellom to klikk/trykk som regnes som dobbelt (samme som MapLibres og de fleste systemer)
+  dobbelAvstand: 30,  // px
+  husZoom: 2.4,       // zoomfaktor kameraet glir inn til ved klikk på et hus (aldri ut: står du nærmere, blir du stående)
+  hentInn: 0.8,       // s: en avbrutt intro henter inn lyset og uskarpheten på denne tida (28.10)
+  // treghet etter dra, klyp og vri (egen, se under): farten fra hånda dør ut eksponentielt med tidskonstant tau
+  treghet: { tau: 0.26, k: 5, vindu: 70, maks: { pan: 1600, zoom: 4, bearing: 360, pitch: 90 } },   // s, -, ms, per sekund (pan i px)
+  // musehjul (egen, se under): hvert hakk flytter målet; zoomen følger målet som en kritisk dempet fjær (ingen utslag per hakk)
+  hjul: { perHakk: 0.4, omega: 15 },   // zoomnivå per hakk (deltaY 100 px), fjærstivhet (1/s): ~95 % framme på 0,3 s
+  // speilet i vannet tegnes på nytt mens kartet beveger seg, høyst så ofte (ms); mellom gangene flyttes det forrige med kameraet (14)
+  speilMs: 110,
+};
+// «Reduser bevegelse» (systeminnstilling) gjelder ikke kartet: Vegars Mac har den på, og han valgte selv at kartet og kortet skal bevege seg
+// (CHANGELOG v27, 23.10: «respectPrefersReducedMotion av ("Reduser bevegelse" i macOS slo av alle animasjoner)»; bekreftet av hovedagenten
+// 29.10). Valget het feil i MapLibre 6 og ble ignorert; riktig navn er reduceMotion:false i kartvalgene (00_oppsett).
+(()=>{ const s=document.documentElement.style; s.setProperty('--t-kort-inn', BEV.kort.inn+'ms'); s.setProperty('--t-kort-ut', BEV.kort.ut+'ms');
+  s.setProperty('--k-inn', BEV.kurve.inn); s.setProperty('--k-ut', BEV.kurve.ut); s.setProperty('--k-flytt', BEV.kurve.flytt); })();
+// MapLibres egne knapper (+/−, kompass) og tastatur bruker 300–500 ms med en annen kurve; knappene får vår korte kurve og tid
+// (kompasset snur opptil 180°, så det får husets tid og glid)
+['zoomIn','zoomOut'].forEach(f=>{ const o=map[f].bind(map); map[f]=(opt,ev)=>o({duration:BEV.kamera.knapp, easing:myk, ...(opt||{})}, ev); });
+['resetNorth','resetNorthPitch'].forEach(f=>{ const o=map[f].bind(map); map[f]=(opt,ev)=>o({duration:BEV.kamera.hus, easing:glid, ...(opt||{})}, ev); });
+// ett kameraflytt: alltid avbrytbart (MapLibre stopper en pågående easeTo så snart en gest starter; en ny easeTo starter fra der kameraet er)
+function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: BEV.kamera[type], easing: glid}); }
+
+// ---- treghet etter dra, klyp og vri (29.10) ----
+// MapLibre tar med 0,3 av farten fra klyp og vri (kan ikke stilles), og tregheten starter et bilde for sent, så det står ett bilde stille
+// idet du slipper (flyt-test). Vi måler farten selv i de siste 70 ms av gesten: flytt = fingrenes midtpunkt på skjermen (som MapLibres
+// dra), zoom/vri/vipp = kameraet. Farten dør ut eksponentielt, x(t) = v0·tau·(1 − e^(−t/tau)) regnet fra siste bevegelse, så første
+// bilde etter slipp fortsetter med samme fart. Zoom og vri skjer rundt punktet mellom fingrene (MapLibres «around»), så det står under
+// fingrene også mens tregheten virker. Vi kjenner igjen MapLibres treghetskall på at det er easeTo med noMoveStart + freezeElevation og en
+// slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
+const treghet=(()=>{
+  const T=BEV.treghet, kam=[], fing=[]; let rid=0, anim=null;
+  const kort=(a,tid)=>{ while(a.length>2 && tid-a[0].t>200) a.shift(); };
+  map.on('move', e=>{ if(!e.originalEvent || anim || /up$|end$|cancel$/.test(e.originalEvent.type)) return;
+    const t=performance.now(); kam.push({t, z:map.getZoom(), b:map.getBearing(), p:map.getPitch()}); kort(kam,t); });
+  const el=map.getCanvasContainer();
+  const fingre=(x,y)=>{ const t=performance.now(); fing.push({t,x,y}); kort(fing,t); };
+  el.addEventListener('touchmove', e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } if(e.touches.length) fingre(x/e.touches.length, y/e.touches.length); }, {capture:true, passive:true});
+  el.addEventListener('touchstart', e=>{ fing.length=0; if(e.touches.length===1) stopp(); }, {capture:true, passive:true});   // nytt antall fingre: midtpunktet hopper
+  el.addEventListener('pointermove', e=>{ if(e.pointerType==='mouse' && e.buttons) fingre(e.clientX, e.clientY); }, {capture:true, passive:true});
+  el.addEventListener('pointerdown', ()=>{ stopp(); kam.length=0; fing.length=0; }, {capture:true, passive:true});
+  el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
+  const F=s=>1-Math.exp(-T.k*s);
+  const kl=(x,m)=>Math.max(-m,Math.min(m,x));
+  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=T.vindu); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
+  function steg(){ rid=0; if(!anim) return; const s=Math.min(1+anim.g, (performance.now()-anim.t0)/1000/(T.k*T.tau)); sett(s); if(s<1+anim.g) rid=requestAnimationFrame(steg); else anim=null; }
+  function sett(s){ const A=anim, ut=T.tau*F(s), d=ut-A.ut; A.ut=ut;
+    const o={duration:0}; if(A.vz) o.zoom=map.getZoom()+A.vz*d; if(A.vb) o.bearing=map.getBearing()+A.vb*d; if(A.vp) o.pitch=map.getPitch()+A.vp*d;
+    if(A.around && (o.zoom!==undefined || o.bearing!==undefined || o.pitch!==undefined)){ o.around=A.around; easeTo0(o, A.ev); }
+    else if(o.zoom!==undefined || o.bearing!==undefined || o.pitch!==undefined) easeTo0(o, A.ev);
+    if(A.vx || A.vy){ map.panBy([-A.vx*d, -A.vy*d], {animate:false}); if(A.around) A.around=map.unproject(map.project(A.around).add(new maplibregl.Point(A.vx*d, A.vy*d))); } }
+  function stopp(){ anim=null; if(rid){ window.cancelAnimationFrame(rid); rid=0; } }
+  const easeTo0=map.easeTo.bind(map);
+  map.easeTo=(opt,ev)=>{
+    if(anim && !(opt && opt.duration===0)) stopp();   // et nytt kameraflytt avbryter tregheten (våre egne trinn har duration 0)
+    const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
+    if(!slipp) return easeTo0(opt,ev);
+    const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
+    if(naa-siste>T.vindu+20){ kam.length=0; fing.length=0; return easeTo0(opt,ev); }   // holdt stille før slipp: MapLibre avgjør
+    const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
+    if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
+    if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }
+    kam.length=0; fing.length=0;
+    if(!(A.vx||A.vy||A.vz||A.vb||A.vp)) return easeTo0(opt,ev);
+    stopp(); anim=A; A.g=(naa-siste)/1000/(T.k*T.tau);
+    sett(A.g);   // MapLibre kaller dette i bildet der slippet behandles: flytt med en gang, så dette bildet ikke står stille
+    rid=requestAnimationFrame(steg); return map;
+  };
+  return {stopp};
+})();
+
+// ---- musehjul (29.10): jevn zoom i stedet for ett utslag per hakk ----
+// Hvert hakk flytter et mål; zoomen følger målet som en kritisk dempet fjær (Apple: fjær uten oversving), så farten er sammenhengende
+// også når hakkene kommer tett. Punktet under pekeren står. Styreflate (to fingre = flytt, klyp = ctrl+hjul) går ikke hit (16_interaksjon).
+const hjulZoom=(()=>{
+  let mal=null, z=0, v=0, anker=null, px=null, sist=0, rid=0;
+  function steg(){ rid=0; if(mal===null) return;
+    const naa=performance.now(), dt=Math.min(0.05,(naa-sist)/1000); sist=naa; const w=BEV.hjul.omega;
+    v+=(w*w*(mal-z)-2*w*v)*dt; z+=v*dt;
+    const ferdig=Math.abs(mal-z)<0.001 && Math.abs(v)<0.01; if(ferdig) z=mal;
+    map.easeTo({zoom:z, around:anker, duration:0});   // around: punktet under pekeren står
+    if(ferdig){ mal=null; return; } rid=requestAnimationFrame(steg); }
+  return {
+    hakk(e, delta){   // delta i zoomnivå (+ = inn)
+      overta(); const r=map.getCanvas().getBoundingClientRect(); px=[e.clientX-r.left, e.clientY-r.top]; anker=map.unproject(px);
+      if(mal===null){ z=map.getZoom(); v=0; mal=z; sist=performance.now(); }
+      mal=Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), mal+delta));
+      if(!rid) rid=requestAnimationFrame(steg);
+    },
+    stopp(){ mal=null; if(rid){ window.cancelAnimationFrame(rid); rid=0; } },
+    aktiv:()=>mal!==null,
+  };
+})();
+window.__tilLngLat=tilLngLat; window.__BEV=BEV;
+// en ny gest stopper hjulzoomen (dra, klyp)
+map.getCanvasContainer().addEventListener('pointerdown', ()=>hjulZoom.stopp(), {capture:true, passive:true});
+
 // ---- tegneløkka: MapLibre kaller lagets render() hvert bilde det tegner; vi ber om nye bilder når noe beveger seg ----
 lysFraVenstre();
 // byen tegner seg opp: høyden vokser kvartal for kvartal (sortert sørvest -> nordøst)
@@ -1469,19 +1630,14 @@ function vokse(t){
   if(ferdig) vokst=true;
 }
 const SPIN=3.4, VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
-// kamerabevegelser uten bråstopp (lys-og-bevegelse pkt. 2, teknikk 18 og 20): alle animerte flytt bruker samme kurve, eksponentiell inn og ut:
-// farten bygges opp like lenge som den dør ut, og avstanden til målet halveres jevnt mot slutten i stedet for å stoppe på et punkt.
-// ?glid=0 gir de gamle kurvene til sammenligning.
-const GLID = Q0.get('glid')!=='0';
-const glid = t => !GLID ? (t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : t<=0 ? 0 : t>=1 ? 1 : t<0.5 ? Math.pow(2,20*t-10)/2 : (2-Math.pow(2,-20*t+10))/2;
-const glidUt = t => !GLID ? 1-Math.pow(1-t,3) : t>=1 ? 1 : 1-Math.pow(2,-10*t);   // bare utglidning (når bevegelsen alt er i gang)
+// kurvene (glid, glidUt) og alle varigheter står i 15_bevegelse.js
 let anim=false, husBeveger=false, sisteTid=performance.now();
 const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0});
 const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
-  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true;
+  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true;
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
@@ -1523,7 +1679,13 @@ function solOppdater(dt){
 let tiltU=0;
 // tiltU låses til maks først etter at introen har satt startvinkelen (introStartet): før det står kartet i hjemmevisningen og introU() er 1
 let introStartet=false;
-function introTilt(){ if(!introStartet) return 1; if(introDone && solVei.ferdig) return 0; tiltU=Math.max(tiltU, introDone ? 1 : introU()); return 1-glid(THREE.MathUtils.clamp((tiltU-0.35)/0.55,0,1)); }
+// avbrutt intro (29.10, oppdrag 15): før ble tiltU satt til 1 i bildet etter avbruddet, så uskarpheten forsvant på ett bilde (målt i
+// flyt-test: hopp 0,78 i ett bilde). Nå tones den ut fra der den stod, på samme tid som lyset hentes inn (BEV.hentInn), med myk kurve.
+const tiltAv={b0:null, s:0}; let introKjort=false;   // introKjort: introen har faktisk startet (ikke ?skip eller testkrokene)
+function introTiltKurve(){ return 1-glid(THREE.MathUtils.clamp((tiltU-0.35)/0.55,0,1)); }
+function tiltOppdater(dt){ if(!introStartet) return; if(!introDone){ tiltU=Math.max(tiltU, introU()); return; }
+  if(tiltAv.b0===null) tiltAv.b0 = (tiltU>=1 || !introKjort) ? 0 : introTiltKurve(); tiltAv.s=Math.min(1, tiltAv.s+dt/BEV.hentInn); }
+function introTilt(){ if(!introStartet) return 1; if(!introDone) return introTiltKurve(); return tiltAv.b0===null ? (introKjort ? introTiltKurve() : 0) : tiltAv.b0*(1-myk(tiltAv.s)); }
 window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig, tilt:introTilt()});
 window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, START[0], START[1]); window.__solTil(u); };   // kamera + lys ved u langs introveien
 window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
@@ -1546,7 +1708,7 @@ function oppdater(){
   // skyggekartet tegnes på nytt bare mens et hus flytter seg merkbart (over 2 cm per bilde); halen av glidningen synes ikke i skyggen
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
-  solOppdater(dt);
+  solOppdater(dt); tiltOppdater(dt);
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
@@ -1554,18 +1716,25 @@ function oppdater(){
   if(kamFlytt || anim || !introDone) sistBeveg=naa;
   const stille = naa-sistBeveg>300;
   post.settSkala(skalaStille); post.setAO(aoStille); post.setSS(ssStille);
-  if(introDone && stille){ speilInn=Math.min(1,speilInn+dt*2.8); speil.render(husBeveger || speilInn<1 || !speilFrisk); speilFrisk=true; }
-  else if(!stille){ speilFrisk=false; speilInn=Math.max(0,speilInn-dt*8); } // gammelt speil vises aldri mens kartet beveger seg
+  // speilet (29.10): toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
+  // flyttes det med kameraet (reflPV, 14/03). Før tonet det ut ved hver bevegelse og inn igjen 0,3 s etter stopp (synlig ny tegning).
+  if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
+    if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
+    else { speilFrisk=false; if(naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
   sistTegnet=naa; fullTegnet=stille && !husBeveger;
   dbgTegn(naa);
 }
-// laget: kartet tegner byen gjennom dette
+// laget: kartet tegner byen gjennom dette. ?tegn=0 (bare flyt-test): kameraet og tilstanden oppdateres hvert bilde, men byen tegnes ikke,
+// så kamerabanen kan måles bilde for bilde uten å vente på programvare-GPU-en
+const TEGN = Q0.get('tegn')!=='0';
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
-  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
 // ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet (vannet lever)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
+// (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
+// tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
@@ -1580,12 +1749,13 @@ window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [
 window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
 window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
-window.__scene=()=>({scene, city});   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
+window.__scene=()=>({scene, city});
+window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0)});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 
-// ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp, hjul og dobbeltklikk er MapLibres egne. ----
-const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, klikkTimer=null, hover=null;
+// ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp og hjul er MapLibres egne; dobbeltklikk er vårt. ----
+const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, hover=null;
 const kort=document.getElementById('kort');
 // adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
 const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
@@ -1603,12 +1773,14 @@ function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.set
 // bygget som boks (til kamera og kort): egne grupper måles, sammenslåtte bygg regnes ut fra grunnrisset og høyden
 function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE.Box3().setFromObject(g);
   const bb=new THREE.Box3(); g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,0,-y)); bb.expandByPoint(new THREE.Vector3(x,g.userData.h+g.position.y,-y)); }); return bb; }
-function velg(x,y){
-  const h=treffHus(x,y);
-  if(valgt){valgt.userData.lift=false; valgt=null;}
-  if(!h){kort.classList.remove('vis'); return;}
-  const g=h.g; valgt=g; g.userData.lift=true;
-  const b=g.userData.b;
+// ---- huskortet (oppdrag 15, 29.10): klikk -> huset løfter seg og kameraet glir inn, kortet glir inn (mobil: bunnark fra bunnen, som
+// Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
+// kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.
+const kortInnhold=kort.querySelector('.innhold');
+const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false};
+const SIDEPANEL=window.matchMedia('(min-width: 720px)');
+const kameraNaa=()=>({center:map.getCenter(), zoom:map.getZoom(), bearing:map.getBearing(), pitch:map.getPitch()});
+function fyllKort(b){
   const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
   kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
   kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
@@ -1618,23 +1790,83 @@ function velg(x,y){
   kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
-  kort.classList.add('vis');
-  // står huset under kortet eller utenfor bildet, glir kartet rolig så huset blir synlig over kortet
-  const s=new THREE.Vector3(h.p.x,0,h.p.z).project(cam);
-  const kortTopp = 1-2*Math.max(0.2, (kort.offsetTop||innerHeight*0.72)/innerHeight);   // kortets plass uten innglidningen
-  if(s.y < kortTopp+0.12 || Math.abs(s.x)>0.85 || s.y>0.88){
-    const px=(s.x+1)/2*innerWidth, py=(1-s.y)/2*innerHeight;
-    map.panBy([px-innerWidth/2, py-innerHeight*0.4], {duration:GLID?900:700, easing:glid});
-  }
 }
-function hjemNaa(){ map.easeTo({...hjemVisning(), duration:GLID?1300:900, easing:glid}); if(valgt){valgt.userData.lift=false; valgt=null;} kort.classList.remove('vis'); }
+// den delen av skjermen kortet ikke dekker (layoutmål uten transform, så det gjelder også mens kortet glir inn)
+function friFlate(){
+  if(!kort_.apent) return {x0:0, y0:0, x1:innerWidth, y1:innerHeight};
+  if(SIDEPANEL.matches) return {x0:kort.offsetLeft+kort.offsetWidth+16, y0:0, x1:innerWidth, y1:innerHeight};
+  return {x0:0, y0:0, x1:innerWidth, y1:Math.max(innerHeight*0.35, kort.offsetTop-12)};
+}
+// kameraet glir inn mot huset: midt i den frie flaten, minst husZoom nær (aldri ut). Står huset alt der, står kameraet stille.
+function glidTilHus(g){
+  const c=husBoks(g).getCenter(new THREE.Vector3()); const ll=tilLngLat(c.x,-c.z);
+  const fri=friFlate(), mx=(fri.x0+fri.x1)/2, my=(fri.y0+fri.y1)/2;
+  const zoom=Math.max(map.getZoom(), zoomFor(BEV.husZoom)); const s=map.project(ll);
+  if(Math.hypot(s.x-mx, s.y-my) < 0.12*Math.min(fri.x1-fri.x0, fri.y1-fri.y0) && zoom-map.getZoom()<0.05) return;
+  glidKamera({center:ll, zoom, offset:[mx-innerWidth/2, my-innerHeight/2]}, 'hus');
+}
+function velgHus(g){
+  if(valgt===g) return;
+  if(valgt) valgt.userData.lift=false;
+  valgt=g; g.userData.lift=true;
+  if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyllKort(g.userData.b); visKort(true); }
+  else { fyllKort(g.userData.b); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }   // nytt hus i åpent kort: innholdet tones over, kortet står
+  glidTilHus(g);
+}
+function visKort(vis){
+  kort_.apent=vis; kort.style.transform='';
+  kort.classList.toggle('vis', vis); kort.setAttribute('aria-hidden', vis?'false':'true');
+  if(vis && !kort_.historikk){ try{ window.history.pushState({...(window.history.state||{}), kort:1}, ''); kort_.historikk=true; }catch(e){ /* innebygd uten historikk */ } }
+}
+// lukk: tilbake=true glir kameraet tilbake dit det stod før kortet (om du ikke har flyttet kartet selv); fraHistorikk: nettleserens tilbake
+function lukkKort({tilbake=true, fraHistorikk=false}={}){
+  if(valgt){ valgt.userData.lift=false; valgt=null; }
+  if(!kort_.apent) return;
+  visKort(false);
+  if(tilbake && kort_.forKamera && !kort_.egenFlytt) glidKamera(kort_.forKamera, 'tilbake');
+  kort_.forKamera=null;
+  if(kort_.historikk){ kort_.historikk=false; if(!fraHistorikk){ try{ window.history.back(); }catch(e){ /* innebygd */ } } }
+}
+kort.addEventListener('transitionend', ()=>{ kort.style.transitionDuration=''; });   // farten fra et fingerkast gjelder bare den ene overgangen
+addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkKort({fraHistorikk:true}); } });
+// flytter du kartet selv mens kortet er åpent, blir kameraet der du la det når kortet lukkes (som Apple og Google Maps)
+map.on('movestart', e=>{ if(e.originalEvent && kort_.apent) kort_.egenFlytt=true; });
+function hjemNaa(){ lukkKort({tilbake:false}); glidKamera({...hjemVisning(), offset:[0,0]}, 'hjem'); }
 hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
-addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); hjemNaa(); } });
-// ett klikk velger et hus (ventes 300 ms så et dobbeltklikk kan zoome i stedet)
-map.on('click', e=>{ if(!introDone) return; clearTimeout(klikkTimer); const p=e.point; klikkTimer=setTimeout(()=>velg(p.x,p.y),300); });
-map.on('dblclick', ()=>clearTimeout(klikkTimer));
-// dobbeltklikk: MapLibres egen zoom er 300 ms med bråstopp; vår glir inn mot punktet på 800 ms med samme kurve som resten (shift = ut)
-if(GLID){ map.doubleClickZoom.disable(); map.on('dblclick', e=>{ overta(); map.easeTo({center:e.lngLat, zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), duration:800, easing:glid, around:e.lngLat}); }); }
+// Esc: lukker kortet først (samme vei ut), neste Esc går hjem
+addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); if(kort_.apent) lukkKort(); else hjemNaa(); } });
+kort.querySelector('.lukk').onclick=()=>lukkKort();
+// ---- klikk og trykk: ett klikk på et hus velger det med en gang; to klikk/trykk innen 300 ms zoomer inn mot punktet (shift = ut).
+// Vi gjenkjenner dobbeltklikk selv fra klikkene, så det virker likt med mus og finger (MapLibres dobbeltklikk-zoom er av, se under).
+// Klikk utenfor et hus lukker kortet, men først når det ikke kom et klikk til (ellers ville et dobbeltklikk lukke og zoome samtidig).
+const klikk={t:-1e9, x:0, y:0}; let lukkTimer=null;
+map.on('click', e=>{ if(!introDone) return;
+  const naa=performance.now(), p=e.point;
+  const dobbel = naa-klikk.t < BEV.dobbelVindu && Math.hypot(p.x-klikk.x, p.y-klikk.y) < BEV.dobbelAvstand;
+  if(dobbel){ klikk.t=-1e9; clearTimeout(lukkTimer); overta(); glidKamera({zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), around:e.lngLat}, 'dobbel'); return; }
+  klikk.t=naa; klikk.x=p.x; klikk.y=p.y;
+  const h=treffHus(p.x,p.y);
+  if(h) velgHus(h.g); else if(kort_.apent){ clearTimeout(lukkTimer); lukkTimer=setTimeout(()=>lukkKort(), BEV.dobbelVindu); }
+});
+// MapLibres dobbeltklikk/dobbelttrykk (300 ms, bråstopp) er av; vår glir på 800 ms med glid (regel 11)
+map.doubleClickZoom.disable();
+// ---- bunnarket på mobil: dra kortet ned for å lukke. Kortet følger fingeren; slippes det, regnes hvor det ville endt med farten
+// (Apple, «Designing Fluid Interfaces»: prosjiser endepunktet), og det glir videre ned eller tilbake med farten det hadde.
+const ark={id:null, y0:0, dy:0, spor:[]};
+kort.addEventListener('pointerdown', e=>{ if(SIDEPANEL.matches || !kort_.apent || e.target.closest('button,a') || e.button>0) return;
+  ark.id=e.pointerId; ark.y0=e.clientY; ark.dy=0; ark.spor=[[performance.now(), e.clientY]]; kort.setPointerCapture(e.pointerId); kort.style.transition='none'; });
+kort.addEventListener('pointermove', e=>{ if(e.pointerId!==ark.id) return;
+  const dy=e.clientY-ark.y0; ark.dy = dy>0 ? dy : dy*0.15;   // opp gir motstand (gummistrikk), ned følger fingeren
+  kort.style.transform=`translateY(${ark.dy}px)`; ark.spor.push([performance.now(), e.clientY]); if(ark.spor.length>6) ark.spor.shift(); });
+function arkSlipp(e){ if(e.pointerId!==ark.id) return; ark.id=null; kort.style.transition='';
+  const [t0,y0]=ark.spor[0], [t1,y1]=ark.spor[ark.spor.length-1]; const v = t1>t0 ? (y1-y0)/(t1-t0) : 0;   // px/ms
+  const ende = ark.dy + v*250;   // prosjisert endepunkt
+  if(ende > kort.offsetHeight*0.4){ const igjen=kort.offsetHeight+24-ark.dy;
+    kort.style.transitionDuration = Math.round(THREE.MathUtils.clamp(v>0 ? igjen/v : BEV.kort.ut, 120, BEV.kort.ut))+'ms';   // farten fra fingeren tas med
+    kort.style.transform=''; lukkKort(); }
+  else kort.style.transform='';   // tilbake på plass (kortets egen overgang, fra der fingeren slapp)
+}
+kort.addEventListener('pointerup', arkSlipp); kort.addEventListener('pointercancel', arkSlipp);
 // peker over et hus (bare mus): huset løfter seg litt
 let sisteHover=0;
 map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }
@@ -1650,13 +1882,15 @@ map.getCanvasContainer().addEventListener('wheel', e=>{
   let hjul = e.deltaMode!==0 || (e.deltaX===0 && e.wheelDeltaY && e.wheelDeltaY%120===0 && e.wheelDeltaY!==-3*e.deltaY);
   if(gest.t && naa-gest.t<120) hjul=gest.hjul;
   gest.t=naa; gest.hjul=hjul; dbgLogg(e,hjul);
-  if(hjul) return;                                        // musehjul = zoom, MapLibre tar den
+  if(hjul){                                               // musehjul = zoom, jevn (15_bevegelse: hjulZoom), ikke MapLibres utslag per hakk
+    e.preventDefault(); e.stopImmediatePropagation(); if(kort_.apent) kort_.egenFlytt=true;
+    const px = e.deltaMode===1 ? e.deltaY*40 : e.deltaMode===2 ? e.deltaY*800 : e.deltaY;   // linjer/sider til piksler; ett hakk ≈ 100 px
+    hjulZoom.hakk(e, -px/100*BEV.hjul.perHakk); return; }
   e.preventDefault(); e.stopImmediatePropagation(); overta();
   map.panBy([e.deltaX, e.deltaY], {animate:false});       // innholdet følger fingrene
 }, {capture:true, passive:false});
 function visHjem(){ const c=tilModell(map.getCenter()); const borte = Math.abs(map.getZoom()-Z_HJEM)>0.07 || Math.hypot(c[0]-START[0], c[1]-START[1])>8 || Math.abs(((map.getBearing()+AZ0_GRADER+540)%360)-180)>4; hjem.classList.toggle('vis', introDone && borte); }
 map.on('move', visHjem); map.on('moveend', visHjem);
-kort.querySelector('.lukk').onclick=()=>{kort.classList.remove('vis'); if(valgt){valgt.userData.lift=false; valgt=null;}};
 // feilsøkingsrute (tast d): bildefrekvens, tegnetilstand og styreflatehendelser som tall. Taster s/a/x/p prøver stillbildekvalitet.
 const dbg={paa:false, rader:[], el:null, fps:[], pek:{ned:0,flytt:0,opp:0,sist:'',knapper:0,type:''}};
 // pekerhendelser som når kartet (for å se om dra virker der kartet vises)
@@ -1693,8 +1927,9 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
       #include <colorspace_fragment>
       }`
   }));
-  const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152] };
-  const MAT={}; const matFor=k=>MAT[k]||(MAT[k]=flateMat(FARGE[k]));
+  // bed (bar jord) og brostein utenfor brosteinsflaten kommer fra ortofotoet (verktoy/bakke.py overflater, 29.10)
+  const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152], bed:[132,108,86], brostein:[146,140,132] };
+  const MAT={brostein:stoneMat}; const matFor=k=>MAT[k]||(MAT[k]=flateMat(FARGE[k]));
   // flaten legges på terrenget (vollene og kaiene ligger på terrengnettet), aldri lavere enn y0
   const legg=(pts, y0, mat)=>{
     if(!pts || pts.length<3) return null;
@@ -1710,6 +1945,14 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
     if(g.gress) g.gress.forEach(p=>flat(p,0.3,plenMat)); else if(g.typ==='gress') flat(g.p,0.3,plenMat); });
   // flater målt i ortofotoet
   (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ]) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  // oppmerkede parkeringsfelt (kommunens lag, verktoy/bakke.py parkeringsfelt): hvite streker på tvers av raden, oppmerket+1 stk
+  { const strek=new THREE.MeshBasicMaterial({color:0xf4f2ec}); const G=new THREE.Group(); scene.add(G);
+    (DATA.flater||[]).forEach(f=>{ if(f.skjul || !f.linje || !f.oppmerket) return;
+      const [a,c]=f.linje, dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx);
+      for(let i=0;i<=f.oppmerket;i++){ const t=i/f.oppmerket, x=a[0]+dx*t, y=a[1]+dy*t;
+        const m=new THREE.Mesh(new THREE.PlaneGeometry(0.12, f.bredde*0.9), strek); m.rotation.x=-Math.PI/2; m.rotation.z=ang;
+        m.position.set(x, hAt(x,y)+0.14, -y); G.add(m); } });
+    flatGruppe(G); }
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
   (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
 }
@@ -1851,4 +2094,102 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
   });
   flatGruppe(anlegg);
 }
+
+// ---- Statuer og skulpturer: Frederik II på Torvet (Wilhelm Rasmussen 1917), «Sittende pike» i Tamburparken (Arne Durban 1957/58) ----
+// Alle mål, retning og plass står i data/statue.json med kilder (KILDER.md). Koden tegner bare det dataene sier:
+// sokkelen er en stabel av ledd (b = bredde, d = dybde om leddet ikke er kvadratisk, b2 = bredde i toppen for skrå lister,
+// stein: mørk | lys | bronse), figuren står på toppen i sin egen ramme (+z = fram, -x = figurens høyre side, y = 0 på sokkelen)
+// og skaleres til figur.h. figur.form velger figuren i FIGUR (en ny form = en ny funksjon her; en ny statue med kjent form = bare data).
+// Retning: kompassgrader (0 = nord, med klokka) for veien figuren ser. Poster med tegnes:false (plass ikke sikker) tegnes ikke.
+(()=>{
+const STEINFARGE={ 'mørk':[[66,68,72],[40,41,44]], lys:[[178,176,170],[124,122,118]], trinn:[[104,106,110],[66,67,70]], bronse:[[120,160,138],[70,98,86]] };
+const PATINA=[120,160,138], PATINA_S=[70,98,86], RELIEFF=[96,128,112], GULL=[214,206,170];
+const V=(a,b,c)=>new THREE.Vector3(a,b,c);
+// figurene: får verktøyene (del, lem, kule) og returnerer modellhøyden (isse over sokkelen) som figur.h skalerer til
+const FIGUR={
+  // Frederik II: platerustning, kommandostav i høyre hånd, venstre hånd i siden. Målene er lest av kommunens frontfoto (kunstregisteret,
+  // OBJECTID 4924) som andeler av høyden føtter–isse (kne 0,25, hoseskant 0,44, belte 0,59, skulder 0,81, hake 0,88),
+  // kontrollert mot Wilse 1931 og nb.no 1969.
+  rustning_stav({k,del,lem,kule}){
+    [[-0.14,0.03],[0.18,-0.04]].forEach(([fx,fz])=>{
+      del(new THREE.BoxGeometry(0.12,0.08,0.30),fx,0.04,fz+0.06);                // jernsko
+      lem(V(fx,0.08,fz),V(fx*0.97,0.48,fz*0.6),0.06,0.075);                     // legg
+      kule(0.082,V(fx*0.95,0.51,fz*0.5+0.02));                                   // kne
+      lem(V(fx*0.95,0.52,fz*0.5),V(fx*0.8,0.92,0),0.085,0.10);                  // lår
+    });
+    del(new THREE.CylinderGeometry(0.235,0.275,0.32,12),0,1.04,0).scale.set(1,1,0.78);   // pluderhoser/lårplater
+    del(new THREE.BoxGeometry(0.08,0.12,0.08),0,0.96,0.21);                      // skamkapsel
+    del(new THREE.CylinderGeometry(0.225,0.23,0.05,12),0,1.205,0).scale.set(1,1,0.8);    // belte
+    del(new THREE.CylinderGeometry(0.255,0.215,0.40,12),0,1.43,0.01).scale.set(1,1,0.82); // brystharnisk
+    kule(0.105,V(-0.28,1.61,0),1,0.8,1); kule(0.105,V(0.28,1.61,0),1,0.8,1);     // skulderplater
+    lem(V(-0.19,1.62,0.16),V(0.03,1.40,0.225),0.042,0.042); lem(V(0.03,1.40,0.225),V(0.23,1.18,0.15),0.042,0.042);   // bandolær
+    const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.26; k.add(hode);             // litt mot hans høyre
+    del(new THREE.CylinderGeometry(0.06,0.07,0.12,8),0,0.0,0,hode);              // hals
+    del(new THREE.CylinderGeometry(0.15,0.14,0.07,16),0,0.03,0.01,hode);         // pipekrage
+    kule(0.115,V(0,0.18,0.0),0.92,1.12,1,hode);                                  // hode
+    const skjegg=del(new THREE.ConeGeometry(0.07,0.13,8),0,0.07,0.08,hode); skjegg.rotation.x=Math.PI+0.35;
+    const hS=V(-0.30,1.60,0), hA=V(-0.40,1.28,0.08), hH=V(-0.55,1.52,0.2);      // høyre arm, hånda nesten i skulderhøyde
+    lem(hS,hA,0.072,0.062); lem(hA,hH,0.06,0.05); kule(0.055,hH);
+    lem(V(-0.64,1.64,0.2),V(-0.16,1.19,0.27),0.026,0.024);                      // staven: litt over hånda, ned mot magen
+    const vS=V(0.30,1.60,0), vA=V(0.56,1.31,-0.06), vH=V(0.32,1.19,0.04);       // venstre arm i siden
+    lem(vS,vA,0.072,0.062); lem(vA,vH,0.06,0.05); kule(0.055,vH);
+    lem(V(0.27,1.10,0.02),V(0.29,1.28,0.1),0.016,0.016);                        // hjalt
+    lem(V(0.22,1.11,0.05),V(0.34,1.11,-0.03),0.012,0.012);                      // parerstang
+    lem(V(0.28,1.10,-0.01),V(0.30,0.06,-0.42),0.024,0.018);                     // slire bak venstre bein
+    del(new THREE.BoxGeometry(0.1,0.18,0.06),0.31,1.0,0.09);                    // pung
+    return 1.97;
+  },
+  // «Sittende pike»: naken jente som sitter på hælene, armene strake ned med hendene på knærne, overkroppen litt fram, hodet løftet
+  // (Fredrikstad Museum-foto 1958 og kommunens foto). Modellen er 0,88 til isse.
+  knelende_pike({k,del,lem,kule}){
+    [-0.1,0.1].forEach(sx=>{
+      lem(V(sx,0.06,0.30),V(sx*0.9,0.05,-0.12),0.055,0.045);                    // legg på sokkelen, kne fram
+      kule(0.06,V(sx,0.07,0.31));                                                // kne
+      lem(V(sx,0.08,0.30),V(sx*0.8,0.2,-0.06),0.065,0.085);                     // lår ned mot hælene
+    });
+    kule(0.15,V(0,0.2,-0.08),1.05,0.8,0.9);                                      // hofte/sete på hælene
+    lem(V(0,0.22,-0.07),V(0,0.62,0.03),0.12,0.105).scale.set(1,1,0.75);          // overkropp, litt fram
+    const skS=[V(-0.12,0.6,0.04),V(0.12,0.6,0.04)], hand=[V(-0.1,0.13,0.34),V(0.1,0.13,0.34)];
+    [0,1].forEach(i=>{ lem(skS[i],hand[i],0.035,0.028); kule(0.032,hand[i],1,0.7,1.3); });   // strake armer, hender på knærne
+    lem(V(0,0.62,0.04),V(0,0.7,0.06),0.035,0.035);                               // hals
+    const hode=new THREE.Group(); hode.position.set(0,0.78,0.08); hode.rotation.set(-0.2,-0.15,0); k.add(hode);   // løftet, litt til siden
+    kule(0.075,V(0,0,0),0.9,1.08,1,hode); kule(0.08,V(0,0.03,-0.015),1,0.9,1,hode);          // ansikt og hår (kort, fyldig)
+    return 0.88;
+  },
+};
+(DATA.statue||[]).filter(st=>st.tegnes!==false && st.figur && FIGUR[st.figur.form]).forEach(st=>{
+  const g=new THREE.Group(); const [x,y]=st.xy;
+  const M=(f,sk)=>mat(f,false,sk,{ds:true});
+  const legg=(geo,f,sk,px,py,pz,forelder=g)=>{ const m=new THREE.Mesh(geo,M(f,sk)); m.position.set(px,py,pz); m.castShadow=true; m.receiveShadow=true; forelder.add(m); return m; };
+  // ledd: rett blokk (b x d), eller avkortet pyramide (4 sider, dreid 45°, så sidene står rett) når b2 er gitt (bare kvadratisk)
+  const ledd=(l,y0,f,sk)=> l.b2==null
+    ? legg(new THREE.BoxGeometry(l.b,l.h,l.d||l.b),f,sk,0,y0+l.h/2,0)
+    : (m=>{ m.rotation.y=Math.PI/4; return m; })(legg(new THREE.CylinderGeometry(l.b2/Math.SQRT2,l.b/Math.SQRT2,l.h,4,1),f,sk,0,y0+l.h/2,0));
+  let y0=0, front=null;
+  (st.sokkel||[]).forEach(l=>{
+    const stein=l.stein || (l.del==='trinn' ? 'trinn' : l.del==='bronseplate' ? 'bronse' : 'mørk');
+    const [f,sk]=STEINFARGE[stein]||STEINFARGE['mørk'];
+    ledd(l,y0,f,sk);
+    if(l.front) front={y0, h:l.h, d:l.d||l.b};
+    y0+=l.h;
+  });
+  // fronten (leddet med «front» i dataene): kronet riksvåpen (relieff) over innskriften, som på Frederik II
+  if(front){ const zf=front.d/2+0.012;
+    const skjold=legg(new THREE.CylinderGeometry(0.15,0.15,0.03,20),RELIEFF,PATINA_S,0,front.y0+front.h*0.58,zf); skjold.rotation.x=Math.PI/2; skjold.scale.set(1,1,1.42);
+    legg(new THREE.BoxGeometry(0.2,0.07,0.03),RELIEFF,PATINA_S,0,front.y0+front.h*0.58+0.25,zf);            // krona
+    legg(new THREE.BoxGeometry(0.46,0.05,0.01),GULL,[150,144,116],0,front.y0+front.h*0.22,zf-0.008);          // innskriften
+  }
+  const k=new THREE.Group(); k.position.y=y0; g.add(k);
+  const del=(geo,px,py,pz,forelder=k)=>legg(geo,PATINA,PATINA_S,px,py,pz,forelder);
+  const lem=(a,b,r1,r2,forelder=k)=>{ const d=b.clone().sub(a), L=d.length(); const m=del(new THREE.CylinderGeometry(r2,r1,L,10),(a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2,forelder);
+    m.quaternion.setFromUnitVectors(V(0,1,0), d.normalize()); return m; };
+  const kule=(r,p,sx=1,sy=1,sz=1,forelder=k)=>{ const m=del(new THREE.SphereGeometry(r,12,9),p.x,p.y,p.z,forelder); m.scale.set(sx,sy,sz); return m; };
+  const hoyde=FIGUR[st.figur.form]({k,del,lem,kule});
+  k.scale.setScalar(st.figur.h/hoyde);
+  // retning: kompassgrader -> rotasjon om y (lokal +z = fram); verden: x = øst, -z = nord
+  const b=(st.retning||0)*Math.PI/180; g.rotation.y=Math.atan2(Math.sin(b),-Math.cos(b));
+  g.scale.setScalar(st.visningsskala||1);
+  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:st.sted||'',tekst:st.tekst}}; flatGruppe(g); city.add(g);
+});
+})();
 
