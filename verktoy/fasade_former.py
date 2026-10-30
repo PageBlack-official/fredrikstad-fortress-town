@@ -110,7 +110,12 @@ def main(tørt=False):
     if x and x.get('kirke'):
         k = dict(x['kirke']); k['hoyder'] = KIRKE_HOYDER
         g = f"{GRUNN}: kirka (DOM−DTM + kirke.ai)"
-        for felt, verdi in (('kirke', k), ('h', KIRKE_HOYDER['WH']), ('th', 1.0), ('tak2', kirke_silhuett(k, KIRKE_HOYDER))):
+        # fargene i data er de src/06 tegner (hvit puss, skifer: tegningen og ortofotoet viser mørkt skifertak), så kontrolløren
+        # sammenligner riktig farge; kirka står utenfor fargeregelens verktøy (egen modell)
+        for felt, verdi in (('kirke', k), ('h', KIRKE_HOYDER['WH']), ('th', 1.0), ('tak2', kirke_silhuett(k, KIRKE_HOYDER)),
+                            ('tak', [128, 128, 132]), ('taks', [68, 68, 72]), ('vegg', [252, 252, 252]), ('veggs', [192, 196, 196]),
+                            ('tak_kilde', 'src/06: skifer som kirke.ai og ortofoto 2024'), ('tak_aar', 2024),
+                            ('vegg_kilde', 'src/06: hvit puss som kirke.ai og Street View 2024'), ('vegg_aar', 2024)):
             nye.append(dict(emne='bygg', id=KIRKE, op='sett', felt=felt, verdi=verdi, hvem='Claude', dato='2026-10-30', grunn=g))
         print(KIRKE, f"kirka: h {KIRKE_HOYDER['WH']} m (skipets takfot), tårnmur {KIRKE_HOYDER['SH']} m, spir {KIRKE_HOYDER['SP1']} m, silhuett i tak2")
     if not tørt:

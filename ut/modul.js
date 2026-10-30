@@ -680,6 +680,10 @@ function mat(rgb, dim, sk, opt={}){
 }
 
 // ---- kirka, bygget etter 2017-tegningen: hvitt tårn, grønt kobber, korsformet skip med valmede skifertak ----
+// Korsarmene (30.10, natt/farge): valm i endene, som kvartaltegningen kirke.ai (trekantet takflate over hver endevegg, ingen gavlvegg)
+// og ortofoto 2024 (gratene deler seg ~en halv armbredde fra hver ende) viser. Kontrollørens «saltak med gavler» stemmer ikke med
+// noen av kildene. ENDE = 'gavl' gir saltak med gavlvegg og rundvindu i gavlen (slik det stod 29.10).
+const KIRKE_ENDE='valm';
 function sentr(p){ return p.reduce((a,q)=>[a[0]+q[0]/p.length,a[1]+q[1]/p.length],[0,0]); }
 function skaler(p,f){ const c=sentr(p); return p.map(q=>[c[0]+(q[0]-c[0])*f, c[1]+(q[1]-c[1])*f]); }
 function oktagon(c,r,rot){ const o=[]; for(let i=0;i<8;i++){ const a=rot+i*Math.PI/4+Math.PI/8; o.push([c[0]+Math.cos(a)*r, c[1]+Math.sin(a)*r]); } return o; }
@@ -746,7 +750,7 @@ function bygKirke(k, grp){
   const nærTårn=(p)=>Math.hypot(p[0]-tc[0],p[1]-tc[1])<side*0.75;
 
   // ---- skipet ----
-  const WH=8.8, RISE=5.6, OH=0.35;   // målt i Kartverkets DOM−DTM 25.10: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
+  const WH=(k.hoyder&&k.hoyder.WH)||8.8, RISE=(k.hoyder&&k.hoyder.RISE)||5.6, OH=0.35;   // målt i Kartverkets DOM−DTM 25.10: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
   const sk=k.skip;
   const eg=new THREE.ExtrudeGeometry(polyShape(sk),{depth:WH,bevelEnabled:false}); eg.rotateX(-Math.PI/2);
   add(eg,HVIT,HVIT_S);
@@ -762,7 +766,16 @@ function bygKirke(k, grp){
     const P=(s_,t_,y)=>new THREE.Vector3(m1[0]+u[0]*s_+n[0]*t_, y, -(m1[1]+u[1]*s_+n[1]*t_));
     const s0=-0.3, s1=L+0.3, we=w+OH, yE=WH-OH*RISE/w, yR=WH+RISE;
     const q=(A,B,C,D,arr)=>arr.push(...[A,B,C,A,C,D].flatMap(v=>[v.x,v.y,v.z]));
-    const tak=[]; q(P(s0,-we,yE),P(s1,-we,yE),P(s1,0,yR),P(s0,0,yR),tak); q(P(s0,we,yE),P(s0,0,yR),P(s1,0,yR),P(s1,we,yE),tak);
+    const tak=[];
+    if(KIRKE_ENDE==='valm'){
+      // valm: mønet slutter en halv armbredde (pluss takutstikket) fra hver ende, så gratene får samme fall som takflatene
+      const r0=s0+we, r1=s1-we;
+      q(P(s0,-we,yE),P(s1,-we,yE),P(r1,0,yR),P(r0,0,yR),tak); q(P(s0,we,yE),P(r0,0,yR),P(r1,0,yR),P(s1,we,yE),tak);
+      [[P(s0,we,yE),P(s0,-we,yE),P(r0,0,yR)],[P(s1,-we,yE),P(s1,we,yE),P(r1,0,yR)]].forEach(([A,B,C])=>tak.push(...[A,B,C].flatMap(v=>[v.x,v.y,v.z])));
+      const tg=new THREE.BufferGeometry(); tg.setAttribute('position',new THREE.Float32BufferAttribute(tak,3)); add(tg,SKIFER,SKIFER_S);
+      return;
+    }
+    q(P(s0,-we,yE),P(s1,-we,yE),P(s1,0,yR),P(s0,0,yR),tak); q(P(s0,we,yE),P(s0,0,yR),P(s1,0,yR),P(s1,we,yE),tak);
     const tg=new THREE.BufferGeometry(); tg.setAttribute('position',new THREE.Float32BufferAttribute(tak,3)); add(tg,SKIFER,SKIFER_S);
     const gv=[]; [[0,1],[L,-1]].forEach(([s_])=>{ const A=P(s_,-w,WH),B=P(s_,w,WH),C=P(s_,0,yR-0.25); gv.push(A.x,A.y,A.z,B.x,B.y,B.z,C.x,C.y,C.z); });
     const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(gv,3)); add(gg,HVIT,HVIT_S);
@@ -799,7 +812,12 @@ function bygKirke(k, grp){
   });
 
   // ---- tårnet ----
-  const SH=34, SK1=40.1, OV1=46.0, LA0=47.6, LA1=51.2, KU1=53.3, SP1=60.0;   // høyder etter forholdene i trykkfila
+  // høydene (30.10): Kartverkets DOM−DTM ved tårnet har murkronen på 18–19 m (kanten av tårnet) og toppen 32 m midt over
+  // lanternen/kuppelen (spiret er for tynt for 1 m-rutene); kvartaltegningen kirke.ai gir resten i samme forhold (tårnmur 447 pt,
+  // hele tårnet 910 pt: 18,5 m og 37,6 m). Før stod tårnet på 34 m mur og 60 m spir, nesten dobbelt så høyt som målt.
+  // Tallene står i data (bygg.kirke.hoyder, verktoy/fasade_former.py, med kildene); her bare reserven.
+  const HK=Object.assign({SH:18.5, SK1:22.8, OV1:26.9, LA0:28.0, LA1:30.5, KU1:32.0, SP1:36.7, TS:0.7}, k.hoyder||{});
+  const {SH, SK1, OV1, LA0, LA1, KU1, SP1, TS}=HK;   // TS: skala for detaljene over muren
   const te=new THREE.ExtrudeGeometry(polyShape(t),{depth:SH,bevelEnabled:false}); te.rotateX(-Math.PI/2); add(te,HVIT,HVIT_S);
   loftK(t, skaler(t,1.06), SH, SH+0.5, HVIT, HVIT_S);                     // gesims
   const ov=skaler(t,0.52);
@@ -812,35 +830,35 @@ function bygKirke(k, grp){
   loftK(o3, oktagon(tc, side*0.265, rot), LA1, LA1+0.35, LANT, LANT_S);    // gesims
   // klokkeformet kuppel over lanternen (åttekantet dreiing)
   const R0=side*0.25, prof=[[R0,0],[R0*0.98,0.35],[R0*0.8,0.95],[R0*0.52,1.5],[R0*0.3,1.85],[R0*0.18,2.15],[R0*0.2,2.4],[R0*0.12,2.6],[0.001,2.75]];
-  const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y)),8); lat.rotateY(-rot+Math.PI/8);
+  const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y*0.55)),8); lat.rotateY(-rot+Math.PI/8);
   const kup=new THREE.Mesh(lat,M(LANT,LANT_S)); kup.position.set(tc[0],LA1+0.35,-tc[1]); kup.castShadow=true; grp.add(kup);
-  const sp=oktagon(tc, 0.3, rot); loftK(sp, sp.map(()=>tc), KU1+0.6, SP1, MORK, MORK_S, false);   // spir
-  const kule=new THREE.Mesh(new THREE.SphereGeometry(0.28,10,8), M(MORK,MORK_S)); kule.position.set(tc[0],SP1-1.6,-tc[1]); grp.add(kule);
-  const fløy=new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.55), M(MORK,MORK_S)); fløy.position.set(tc[0]+0.45,SP1-0.7,-tc[1]); fløy.rotation.y=-rot; grp.add(fløy);
+  const sp=oktagon(tc, 0.3, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir
+  const kule=new THREE.Mesh(new THREE.SphereGeometry(0.28,10,8), M(MORK,MORK_S)); kule.position.set(tc[0],SP1-1.1,-tc[1]); grp.add(kule);
+  const fløy=new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.55), M(MORK,MORK_S)); fløy.position.set(tc[0]+0.45,SP1-0.5,-tc[1]); fløy.rotation.y=-rot; grp.add(fløy);
   // vinduer, urskiver og takarker på alle fire sider
   const opp=new THREE.Vector3(0,1,0);
   flater(t).forEach(f=>{
     const c2=f.mid;
     if(!mot(f,96)){   // tårnfoten mot øst har ingen vinduer i tegningen (Vegar 29.10: «på tårnet skal det ikke være vindu vendt mot sør øst»)
-      buevindu(W3(c2,SH*0.6), f.tan, opp, f.nor, 1.8, 4.4);
-      rundvindu(W3(c2,SH*0.42), f.tan, opp, f.nor, 0.95);
-      rundvindu(W3(c2,SH*0.27), f.tan, opp, f.nor, 0.95);
+      buevindu(W3(c2,SH*0.55), f.tan, opp, f.nor, 1.6, 3.6);     // som i tegningen: buevindu ~2/3 opp, ovalene på ~1/3 og ~1/6
+      rundvindu(W3(c2,SH*0.35), f.tan, opp, f.nor, 0.85);
+      rundvindu(W3(c2,SH*0.15), f.tan, opp, f.nor, 0.85);
     }
     // øvre etasje: buevindu og urskive
     const ov2=[tc[0]+(c2[0]-tc[0])*0.52, tc[1]+(c2[1]-tc[1])*0.52];
-    buevindu(W3(ov2,SK1+1.3), f.tan, opp, f.nor, 1.35, 3.9);        // høyt buevindu i øvre etasje, som i tegningen
+    buevindu(W3(ov2,SK1+0.7), f.tan, opp, f.nor, 1.35*TS, 3.9*TS);  // høyt buevindu i øvre etasje, som i tegningen
     // liten takark med lydluke midt på skjørtet
     const fr=0.5, ys=SH+0.5+(SK1-SH-0.5)*fr; const k1=1.06+(0.52-1.06)*fr;
     const ap=[tc[0]+(c2[0]-tc[0])*k1, tc[1]+(c2[1]-tc[1])*k1];
-    const box=new THREE.BoxGeometry(1.5,1.9,1.4); const bm=new THREE.Mesh(box,M(SALVIE,SALVIE_S));
-    bm.position.copy(W3(ap,ys+0.55)).addScaledVector(f.nor,0.25); bm.lookAt(bm.position.clone().add(f.nor)); bm.castShadow=true; grp.add(bm);
-    const hatt=new THREE.Mesh(new THREE.ConeGeometry(1.12,0.9,4,1), M(LANT,LANT_S)); hatt.position.copy(bm.position).add(new THREE.Vector3(0,1.4,0)); hatt.rotation.y=-rot+Math.PI/4; grp.add(hatt);
-    const luke=W3(ap,ys+0.05).addScaledVector(f.nor,0.95);
-    legg(new THREE.ShapeGeometry(bue(0.9,1.3),8), luke, f.tan, opp, f.nor, 0.0, MORK, MORK_S);
-    for(let r=0;r<3;r++) legg(new THREE.PlaneGeometry(0.9,0.07).translate(0,0.3+r*0.3,0), luke, f.tan, opp, f.nor, 0.03, LANT, LANT_S);
+    const box=new THREE.BoxGeometry(1.5*TS,1.9*TS,1.4*TS); const bm=new THREE.Mesh(box,M(SALVIE,SALVIE_S));
+    bm.position.copy(W3(ap,ys+0.55*TS)).addScaledVector(f.nor,0.25); bm.lookAt(bm.position.clone().add(f.nor)); bm.castShadow=true; grp.add(bm);
+    const hatt=new THREE.Mesh(new THREE.ConeGeometry(1.12*TS,0.9*TS,4,1), M(LANT,LANT_S)); hatt.position.copy(bm.position).add(new THREE.Vector3(0,1.4*TS,0)); hatt.rotation.y=-rot+Math.PI/4; grp.add(hatt);
+    const luke=W3(ap,ys+0.05*TS).addScaledVector(f.nor,0.95*TS);
+    legg(new THREE.ShapeGeometry(bue(0.9*TS,1.3*TS),8), luke, f.tan, opp, f.nor, 0.0, MORK, MORK_S);
+    for(let r=0;r<3;r++) legg(new THREE.PlaneGeometry(0.9*TS,0.07).translate(0,(0.3+r*0.3)*TS,0), luke, f.tan, opp, f.nor, 0.03, LANT, LANT_S);
   });
   // lanternens smale vinduer
-  flater(o3).forEach(f=>{ buevindu(W3(f.mid,LA0+1.0), f.tan, opp, f.nor, 0.5, 2.4, false); });
+  flater(o3).forEach(f=>{ buevindu(W3(f.mid,LA0+0.45), f.tan, opp, f.nor, 0.45, 1.6, false); });
   // inngangsdør i tårnfoten mot vest (siden lengst fra skipet)
   const fot=flater(t).reduce((a,f)=>{ const d=Math.hypot(f.mid[0]-sentr(sk)[0],f.mid[1]-sentr(sk)[1]); return (!a||d>a.d)?{f,d}:a; },null).f;
   legg(new THREE.ShapeGeometry(bue(2.6,4.8),12), W3(fot.mid,0).addScaledVector(opp,-0.05), fot.tan, opp, fot.nor, 0.06, HVIT, HVIT_S);
@@ -867,11 +885,11 @@ const vindMat=new THREE.ShaderMaterial({
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
       vec3 sf=mix(vec3(1.),solFarge(),0.6*solHer(vWq));
       if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
-      else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }
+      else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }   // buet topp: port (typ 2) og rundbuevindu (typ 0, bue 1; Tøihuset 30.10)
       float fw=max(fwidth(m.x),fwidth(m.y));
       float kant=min(min(m.x,vSz.x-m.x),min(m.y,vSz.y-m.y));
       if(typ>2.5) kant=vSz.x*0.5-length(m-vSz*0.5);
-      else if(typ>1.5){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
+      else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
       vec3 c;
@@ -986,7 +1004,7 @@ DATA.bygg.forEach((b,i)=>{
   const legg = spesiell ? (o=>grp.add(o)) : (o=>samleObjekt(o, new THREE.Matrix4(), i, toppVindu));
   const shape = polyShape(pts);
   (b.ph||[]).forEach(r=>{ if(r.length>2) shape.holes.push(new THREE.Path(r.map(V))); });
-  const h = b.h;
+  const h = b.kirke ? 0.01 : b.h;   // kirka: formen tegnes av bygKirke (src/06); h og tak2 i data er silhuetten kontrolløren registrerer mot
   const eg = new THREE.ExtrudeGeometry(shape,{depth:h,bevelEnabled:false});
   eg.rotateX(-Math.PI/2);
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
@@ -998,7 +1016,7 @@ DATA.bygg.forEach((b,i)=>{
     const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge)]); sm.receiveShadow=true; legg(sm);
   }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
-  if (b.tak2){
+  if (b.tak2 && !b.kirke){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
     const SLOPE=b.th||0.82; const pos=[];   // takhelning per hus (th) fra Kartverkets høydemodell der den er målt (24.10)
     b.tak2.forEach(f0=>{
@@ -1017,7 +1035,7 @@ DATA.bygg.forEach((b,i)=>{
       const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(gp,3)); gg.computeVertexNormals();
       const gm=new THREE.Mesh(gg,mat(wall,dim,b.veggs,{ds:true})); gm.castShadow=gm.receiveShadow=true; legg(gm);
     }
-  } else if (b.sk && !b.flatt){
+  } else if (b.sk && !b.flatt && !b.kirke){
     const SLOPE=b.th||0.82, CAP=7.5*(b.th||0.82)/0.82; const pos=[];
     b.sk.forEach(f=>{
       const v2=f.map(q=>new THREE.Vector2(q[0],q[1])); let tri=THREE.ShapeUtils.triangulateShape(v2,[]); if(tri.length<f.length-2){ tri=[]; for(let j=1;j<f.length-1;j++) tri.push([0,j,j+1]); }
@@ -1026,7 +1044,7 @@ DATA.bygg.forEach((b,i)=>{
     const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.computeVertexNormals();
     const rm=new THREE.Mesh(g,mat(roof,dim,b.taks,{ds:true})); rm.castShadow=rm.receiveShadow=true; legg(rm);
   }
-  let rects = (b.sk||b.tak2||b.flatt) ? [] : (b.tk && b.tk.length) ? b.tk.filter((r,k)=>k===0 || Math.min(r[2],r[3])>=4.5).slice(0,3) : (b.rf>0.78 ? [[b.r[0],b.r[1],b.r[2],b.r[3],b.r[4]]] : []);
+  let rects = (b.sk||b.tak2||b.flatt||b.kirke) ? [] : (b.tk && b.tk.length) ? b.tk.filter((r,k)=>k===0 || Math.min(r[2],r[3])>=4.5).slice(0,3) : (b.rf>0.78 ? [[b.r[0],b.r[1],b.r[2],b.r[3],b.r[4]]] : []);
   rects.forEach(([rx,ry,rw,rh,ang])=>{
     const long=Math.max(rw,rh), short=Math.min(rw,rh);
     if (short<2.5 || short>24) return;
