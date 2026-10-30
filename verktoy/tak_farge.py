@@ -35,7 +35,7 @@ STANDARD_TAK = [150, 144, 138]
 # grunner til linjer som er fargeregelens egne (de tas bort før tegningens farge leses, og erstattes ved hver kjøring)
 REGEL_GRUNNER = ('Street View (Vegars Chrome 29.10.2026)', 'takfarge fra ortofoto 2024', 'veggfarge til nye hus',
                  'veggfarge etter fargeregelen', GRUNN)
-UGYLDIGE_TEGNINGER = {'Kvartal11'}     # kontrolløren: koblingen peker på feil hus (rapport/kontroll/avvik.md)
+UGYLDIGE_TEGNINGER = set()     # tegninger kontrolløren ikke kan stole på (Kvartal11 tatt ut 30.10: koblingen er Infanterikasernen nå)
 TEGNINGSAAR = 2015
 # Mellombåndet (falmet/mosegrodd tegl og brungrå tak gir samme tall i fotoet): 'tegning' = tegningens farge (30.10), 'foto' = brungrå
 # fra fotoet. 30.10: 'foto' (hovedagentens kryssjekk av kvartal 12: klart grå tak ble røde med 'tegning'; taket følger fotoet 2024).
