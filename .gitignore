@@ -48,3 +48,6 @@ rapport/kontroll/_arbeid/*-kamera-forrige.json
 # kommunens DOM/DTM 2015 (verktoy/manglende.py hent_2015) og kontaktarkene for manglende hus (tegning, ortofoto, kommunekart): bare lokalt (30.10)
 rapport/hoyder/kilder/*2015_25832.tif*
 rapport/manglende/*.jpg
+
+# Google-bilder er arbeidsreferanse, aldri i repoet (Vegar 29.10)
+kilder/flyfoto-google-*.jpg

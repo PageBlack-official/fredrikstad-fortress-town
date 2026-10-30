@@ -1098,6 +1098,14 @@ def analyser(navn, logg=print):
         lys_vegger = [j for kk, jl in vk_hus.items() for j in jl if any(v['k'] == kk and v['lys'] for v in vegger_m)]
         sk_vegger = [j for kk, jl in vk_hus.items() for j in jl if any(v['k'] == kk and not v['lys'] for v in vegger_m)]
         tv = farge_av(lys_vegger, True); ts = farge_av(sk_vegger, False)
+        # alle fasadefargene tegningen har på husets vegger (største først): tak_farge.tegning_farger velger den som har Street Views
+        # kulør når den største flaten ikke har det (867588: gårdsveggen grå, gatefasaden okergul som i Street View)
+        _alle = {}
+        for j in lys_vegger + sk_vegger:
+            fa = tuple(int(round(c * 255)) for c in F[j]['farge'])
+            if max(fa) < 90 and max(fa) - min(fa) < 18: continue
+            _alle[fa] = _alle.get(fa, 0) + F[j]['ytre'].area
+        r['veggfarger_tegning'] = [[list(fa), round(ar)] for fa, ar in sorted(_alle.items(), key=lambda t: -t[1])[:6]]
         mv = x.get('vegg'); mvs = x.get('veggs') or ([int(mv[0] * 0.72), int(mv[1] * 0.8), int(mv[2] * 0.8)] if mv else None)
         if tv and mv:
             r['veggfarge'] = dict(tegning=tv, modell=mv, side='lys', dE=round(dE(tv, mv), 1), kulor_tegning=kulor(tv), kulor_modell=kulor(mv))

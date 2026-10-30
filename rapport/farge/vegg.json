@@ -147,7 +147,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen Kvartal3 (lys side, IoU 0.83)",
+  "kilde": "kvartaltegningen Kvartal3 (lys side, IoU 0.84)",
   "aar": 2015,
   "byttet": false
  },
@@ -2246,9 +2246,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   176,
-   74,
-   62
+   251,
+   190,
+   143
   ],
   "for_kilde": null,
   "vegg": [
@@ -2258,7 +2258,7 @@
   ],
   "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.46)",
   "aar": 2015,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193972489",
@@ -3044,17 +3044,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   213,
-   214,
-   216
+   249,
+   236,
+   225
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   213,
-   214,
-   216
+   249,
+   236,
+   225
   ],
-  "kilde": "kvartaltegningen kvartal5 (lys side, IoU 0.73)",
+  "kilde": "kvartaltegningen kvartal5 (fasaden med Street Views kulør, IoU 0.73)",
   "aar": 2015,
   "byttet": false
  },
@@ -3310,9 +3310,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   193,
-   121,
-   107
+   244,
+   244,
+   244
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
@@ -3322,7 +3322,7 @@
   ],
   "kilde": "2019-trykket (dømt)",
   "aar": 2015,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193971946",
@@ -3519,17 +3519,17 @@
   "navn": "Gamlebyen modelljernbanesenter",
   "adr": null,
   "for_": [
-   236,
-   240,
-   240
+   178,
+   196,
+   206
   ],
   "for_kilde": null,
   "vegg": [
-   236,
-   240,
-   240
+   178,
+   196,
+   206
   ],
-  "kilde": "Street View 2024 (lys duebla/gråblå) = 2019-trykket (dømt): tegningens farge",
+  "kilde": "Street View 2024 (lys duebla/gråblå); tegningen har grå (2019-trykket (dømt))",
   "aar": 2024,
   "byttet": false
  },
@@ -3576,9 +3576,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   250,
-   224,
-   171
+   236,
+   237,
+   238
   ],
   "for_kilde": null,
   "vegg": [
@@ -3588,7 +3588,7 @@
   ],
   "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.76)",
   "aar": 2015,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193868622",
@@ -3719,7 +3719,7 @@
    184,
    92
   ],
-  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (kvartaltegningen Kvartal10 (lys side, IoU 0.73))",
+  "kilde": "Street View 2024 (sandgul/lys oker)",
   "aar": 2024,
   "byttet": false
  },
@@ -3880,18 +3880,18 @@
   "navn": "Dunkejongården",
   "adr": null,
   "for_": [
-   198,
-   198,
-   197
+   232,
+   184,
+   92
   ],
   "for_kilde": "Vegar 24.10: gult (Torvgata)",
   "vegg": [
-   198,
-   198,
-   197
+   232,
+   184,
+   92
   ],
-  "kilde": "kvartaltegningen Kvartal10 (lys side, IoU 0.65)",
-  "aar": 2015,
+  "kilde": "Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningen har ikke huset",
+  "aar": 2010,
   "byttet": false
  },
  {
@@ -3899,17 +3899,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   226,
-   170,
-   160
+   206,
+   129,
+   63
   ],
   "for_kilde": null,
   "vegg": [
-   226,
-   170,
-   160
+   206,
+   129,
+   63
   ],
-  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
+  "kilde": "Street View 2024 (laksoransje/rødoransje) = kvartaltegningen Kvartal10 (lys side, IoU 0.76): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -4127,17 +4127,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   243,
-   243,
-   243
+   250,
+   229,
+   212
   ],
   "for_kilde": null,
   "vegg": [
-   243,
-   243,
-   243
+   250,
+   229,
+   212
   ],
-  "kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.58)",
+  "kilde": "kvartaltegningen Kvartal12 (fasaden med Street Views kulør, IoU 0.58)",
   "aar": 2015,
   "byttet": false
  },
@@ -6569,7 +6569,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen tell (lys side, IoU 0.62)",
+  "kilde": "kvartaltegningen tell (lys side, IoU 0.61)",
   "aar": 2015,
   "byttet": false
  },
@@ -7623,9 +7623,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   215,
-   193,
-   119
+   214,
+   150,
+   84
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7957,25 +7957,6 @@
    196
   ],
   "kilde": "nabohuset bnr-193972322 (garage, 0.5 m unna)",
-  "aar": null,
-  "byttet": false
- },
- {
-  "id": "pb-51",
-  "navn": null,
-  "adr": null,
-  "for_": [
-   246,
-   150,
-   130
-  ],
-  "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
-  "vegg": [
-   246,
-   150,
-   130
-  ],
-  "kilde": "nabohuset bnr-193868568 (Brannstasjon - uthus til Infanterikasernen, 1.4 m unna)",
   "aar": null,
   "byttet": false
  },

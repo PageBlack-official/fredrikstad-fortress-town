@@ -523,27 +523,9 @@
   ]
  },
  "bnr-193867499": {
-  "takform": "vinkel:flatt+sal+sal",
-  "kilde": "DOM flatt langs rms 1.37; DOM sal langs rms 1.72; DOM sal tvers rms 1.92",
+  "takform": "vinkel:sal+sal+sal+sal",
+  "kilde": "DOM sal langs rms 1.07; DOM sal tvers rms 0.76; DOM sal tvers rms 1.64; DOM sal langs rms 2.74",
   "kropper": [
-   {
-    "form": "flatt",
-    "langs": true,
-    "ender": [
-     "fri",
-     "fri"
-    ],
-    "mål": [
-     37.6,
-     26.7
-    ],
-    "dom": {
-     "rms": 1.37,
-     "h": 6.68,
-     "th": 0.0,
-     "n": 2191
-    }
-   },
    {
     "form": "sal",
     "langs": true,
@@ -552,14 +534,32 @@
      "fri"
     ],
     "mål": [
-     29.8,
-     11.4
+     31.8,
+     15.3
     ],
     "dom": {
-     "rms": 1.72,
-     "h": 6.5,
-     "th": 0.12,
-     "n": 1004
+     "rms": 1.07,
+     "h": 5.06,
+     "th": 0.48,
+     "n": 1440
+    }
+   },
+   {
+    "form": "sal",
+    "langs": false,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     13.8,
+     34.6
+    ],
+    "dom": {
+     "rms": 0.76,
+     "h": 5.98,
+     "th": 0.17,
+     "n": 935
     }
    },
    {
@@ -570,14 +570,32 @@
      "inne"
     ],
     "mål": [
-     13.7,
-     11.1
+     15.4,
+     18.1
     ],
     "dom": {
-     "rms": 1.92,
-     "h": 1.26,
-     "th": 1.43,
-     "n": 325
+     "rms": 1.64,
+     "h": 1.85,
+     "th": 0.83,
+     "n": 626
+    }
+   },
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "inne"
+    ],
+    "mål": [
+     15.5,
+     12.3
+    ],
+    "dom": {
+     "rms": 2.74,
+     "h": 9.76,
+     "th": 0.21,
+     "n": 500
     }
    }
   ]
@@ -7604,30 +7622,6 @@
      "h": 2.08,
      "th": 0.27,
      "n": 17
-    }
-   }
-  ]
- },
- "pb-51": {
-  "takform": "sal",
-  "kilde": "DOM sal tvers rms 0.72",
-  "kropper": [
-   {
-    "form": "sal",
-    "langs": false,
-    "ender": [
-     "fri",
-     "fri"
-    ],
-    "mål": [
-     2.1,
-     5.1
-    ],
-    "dom": {
-     "rms": 0.72,
-     "h": 3.66,
-     "th": 0.12,
-     "n": 18
     }
    }
   ]

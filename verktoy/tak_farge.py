@@ -186,6 +186,19 @@ def trykk_bekreftet(rettelser=None):
     return ok
 
 
+_SV = None
+def sv_ord_farge(id_):
+    """Veggfargen Street View-ordet gir for huset (alle år), eller None."""
+    global _SV
+    if _SV is None:
+        _SV = les_sv()
+    a = _SV.get(id_) or {}
+    if a.get('sikkerhet') == 'ikke synlig':
+        return None
+    import streetview_farger as SVF
+    return SVF.fra_ord((a.get('vegg') or {}).get('farge'), SVF.VEGG)
+
+
 def tegning_farger(bygg_uten=None, rettelser=None):
     """id -> {'vegg': (rgb, kilde), 'tak': (rgb, kilde), 'vegg_svak': …, 'tak_svak': …}. Rekkefølgen for tegningens farge:
     kvartaltegningen der kontrolløren har registrert huset godt (IoU >= 0,45) > trykkets farge dømt mot 2019-trykket >
@@ -220,6 +233,23 @@ def tegning_farger(bygg_uten=None, rettelser=None):
             vf = h.get('veggfarge') or {}
             if vf.get('tegning') and not strek(vf['tegning']) and (god or 'vegg' not in d):
                 d['vegg'] = (list(vf['tegning']), f"kvartaltegningen {h['tegning']} ({vf.get('side')} side, IoU {h['iou']:.2f})")
+                # Har tegningen en annen fasade på huset med kuløren Street View så (uansett år), er det den: den største flaten kan
+                # være gårdsveggen eller nabofasaden (867588 Dunkejongården: grå gårdsvegg, okergul gatefasade som Street View 2010)
+                sv = sv_ord_farge(i)
+                alle = h.get('veggfarger_tegning') or []
+                if sv and alle and not samme_kulor(vf['tegning'], sv):
+                    stor = alle[0][1]
+                    for c, ar in alle:
+                        if ar >= 0.2 * stor and not strek(c) and samme_kulor(c, sv):
+                            d['vegg'] = (list(c), f"kvartaltegningen {h['tegning']} (fasaden med Street Views kulør, IoU {h['iou']:.2f})")
+                            break
+                    else:
+                        # liten tegnet flate (under en tredel av medianen, ~900 pt²) med annen kulør enn Street View: tegningen har ikke
+                        # sett huset godt (frihånd forskjøvet, gårdsveggen eller nabofasaden over); da er den svak og Street View før 2015
+                        # går foran. Bare for nøytral grå/hvit: en tydelig kulør i tegningen (grønt på 870228) er Vegars valg i 2015 og
+                        # kan være nyere enn Street View 2010
+                        if stor < 300 and familie(vf['tegning']).startswith('grå'):
+                            d['vegg_svak'] = d.pop('vegg')
             tf = h.get('takfarge') or {}
             t = tf.get('tegning')
             # mørkegrå tak finnes i tegningene (66, 66, 65); bare helt svart er strek
@@ -363,7 +393,28 @@ def foto_dom(flater_):
             rf = sum(f['rf'] * f['n'] for f in fl_) / w
             k = 'falmet tegl' if (a75 >= 4 or rf >= 0.03) else k
         sikker = True
+        return med.round().tolist(), k, sikker, 'mellombånd'
     return med.round().tolist(), k, sikker, ('' if sikker else 'falmet/mosegrodd: fotoet skiller ikke tegl fra grått')
+
+
+def sv_tak_klasse(a):
+    """Takets kulør i Street View-ordet (første del, før komma/parentes): 'falmet tegl' (rødt/rødbrunt), 'mørk brun' (brunt),
+    'brungrå' (grått, sort, blikk, skifer) eller None. Street View ser taket på skrå og skiller det fotoet ovenfra ikke skiller
+    (rapport/farge/tak-kalibrering.json 30.10: av 15 brungrå i mellombåndet med Street View 2016+ var 6 rød/rødbrun tegl)."""
+    if not a or a.get('sikkerhet') == 'ikke synlig':
+        return None
+    t = str((a.get('tak') or {}).get('farge') if isinstance(a.get('tak'), dict) else a.get('tak') or '').lower()
+    if not t or t.startswith(('ikke', 'skjult', 'mørk (', 'mørkt')):
+        return None
+    f = re.split(r'[,(;–]', t)[0]
+    gra = re.search(r'grå|sort|svart|blikk|skifer|papp|antrasitt', f)
+    if re.search(r'rød', f) and not gra:
+        return 'falmet tegl'
+    if gra and not re.search(r'rød|brun', f):          # «brun/grå tegl» sier ikke kuløren: fotoet står
+        return 'brungrå'
+    if re.search(r'\bbrun', f) and not gra:          # brun tegl (867855): mørk brun
+        return 'mørk brun'
+    return None
 
 
 # ------------------------------------------------------------------ regelen
@@ -382,6 +433,14 @@ def main(tørt=False):
             continue
         fl = mal_tak(x)
         med, k, sikker, hvorfor = foto_dom(fl)
+        if hvorfor == 'mellombånd':
+            # fotoet ser falmet tegl og brungrått likt; Street View-ordet for taket avgjør der det har en kulør
+            svk = sv_tak_klasse(sv.get(x['id']))
+            if svk and svk != k:
+                hvorfor = f"mellombånd: Street View {sv_aar((sv.get(x['id']) or {}).get('bilde_dato')) or ''} ({(sv[x['id']].get('tak') or {}).get('farge')})"
+                k = svk
+            else:
+                hvorfor = ''
         tegn = (TF.get(x['id']) or {}).get('tak')
         if tegn and not mulig_tak(tegn[0]):
             tegn = None
@@ -399,7 +458,7 @@ def main(tørt=False):
                     and _dE(tegn[0], PALETT[k]) < 40:
                 farge, kilde, aar = tegn[0], f"ortofoto 2024 ({k}) = {tegn[1]}: tegningens farge", 2024
             else:
-                farge, kilde, aar = list(PALETT[k]), f"ortofoto 2024 ({k})" + (f"; tegningen har {tfam} ({tegn[1]})" if tegn else ''), 2024
+                farge, kilde, aar = list(PALETT[k]), f"ortofoto 2024 ({k}{'; ' + hvorfor if hvorfor else ''})" + (f"; tegningen har {tfam} ({tegn[1]})" if tegn else ''), 2024
         elif tegn:
             farge, kilde, aar = tegn[0], f"{tegn[1]} (ortofoto 2024: {hvorfor})", TEGNINGSAAR
         elif svak and (not k or {familie(svak[0]), FAMILIE_AV_KLASSE.get(k)} <= {'rød', 'brun', 'oransje'} or familie(svak[0]) == FAMILIE_AV_KLASSE.get(k)):

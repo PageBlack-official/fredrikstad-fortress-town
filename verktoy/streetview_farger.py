@@ -24,9 +24,10 @@ VEGG = [
     (r'rå.*tegl|tegl.*umalt|umalt.*tegl|^rød tegl|umalt murstein', (184, 98, 78)),
     (r'naturstein|bruddstein|granitt|gråstein', (168, 164, 156)),
     (r'hvitkalket|kalket|hvitmalt', (242, 240, 232)),
+    (r'laksoransje|rødoransje|terrakottarød|\boransje\b', (232, 140, 84)),   # oransje er hovedordet i «laksoransje» (987370, Street View 2024; tegningen oransje)
     (r'laks|rosa(?!hvit)|gråfiolett|fiolett', (226, 170, 160)),
     (r'vinrød', (150, 62, 66)),
-    (r'^brun\b', (146, 104, 80)),          # brunt panel ("brun", "brun/rødbrun", "brun/treverk"): brunt, ikke rustrødt (867715 i Street View 2024)
+    (r'^(mørk )?brun\b', (146, 104, 80)),          # brunt panel ("brun", "brun/rødbrun", "brun/treverk"): brunt, ikke rustrødt (867715 i Street View 2024)
     (r'oksiderød|rødbrun|dyp rød|mørk rød|\brød\b', (176, 74, 62)),
     (r'fersken|aprikos', (250, 200, 160)),
     (r'oransjebrun|okerbrun|gyllen brun', (214, 150, 84)),
@@ -35,7 +36,7 @@ VEGG = [
     (r'lys grå|varm grå|kald grå', (196, 198, 196)),
     (r'kremgul|sandgul|gul|elfenben|sand', (246, 222, 160)),
     (r'grågrønn|grønn', (150, 172, 140)),
-    (r'blågrå|\bblå\b', (178, 196, 206)),
+    (r'blågrå|blå\b|duebla', (178, 196, 206)),
     (r'antrasitt|mørk grå|gråbrun', (104, 104, 102)),
     (r'middels grå|ubehandlet|gråbeis|betong|grå', (176, 176, 172)),
     (r'krem|off-white|offwhite|rosahvit|hvit', (242, 240, 232)),

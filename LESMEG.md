@@ -168,6 +168,9 @@ Rettelseslaget lar nyeste linje vinne, og hvert verktøy flytter sine linjer bak
     python3 -I rapport/hoyder/legg_inn.py    høyde og takhelning på id
     python3 verktoy/vinduer_regler.py        vinduer etter reglene på antatte hus
     python3 verktoy/streetview_fasader.py    Street View, alle sider («sider» i avlesningen); veggen etter retningen når kamerapunktet bommer
+    python3 verktoy/fasade_tegning.py les_fra_kontroll   koblingen tegning↔hus fra forrige kontroll (kilder/fasade-kobling-kontroll.json,
+                                             skrevet av `kontroll.py avvik`); håndkoblingen i fasade-kobling.json går foran. To runder
+                                             kjede→bygg→kontroll gir samme kobling (sjekket 30.10, «stabil»)
     python3 verktoy/fasade_tegning.py legg_inn   vinduer fra kvartaltegningene som vektor (kilder/fasade-tegning/, se under)
     python3 verktoy/streetview_farger.py     veggfarger fra Street View 2016+ (fargeregelen, se «Fargene» under)
     python3 verktoy/tak_farge.py             takfarger: ortofoto 2024 (mellombåndet pikselvis: falmet tegl eller grått), tegningen bare der fotoet ikke ser

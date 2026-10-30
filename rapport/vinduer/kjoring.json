@@ -1022,20 +1022,6 @@
 "uthus": true
 },
 {
-"id": "bnr-193972047",
-"navn": null,
-"type": "yes",
-"h": 4.8,
-"foer": 0,
-"etter": 11,
-"vinduer": 10,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193868649",
 "navn": null,
 "type": "yes",
@@ -1481,20 +1467,6 @@
 "gate": "gate",
 "etasjer": 0,
 "dor": false,
-"uthus": false
-},
-{
-"id": "pb-51",
-"navn": null,
-"type": "yes",
-"h": 3.66,
-"foer": 0,
-"etter": 5,
-"vinduer": 4,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
 "uthus": false
 },
 {

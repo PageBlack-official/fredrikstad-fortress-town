@@ -101,6 +101,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -195,6 +196,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      244,
+      123,
+      106
+     ],
+     607
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      244,
@@ -353,6 +364,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      211,
@@ -467,6 +479,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     1792
+    ],
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     383
+    ],
+    [
+     [
+      237,
+      213,
+      196
+     ],
+     182
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -696,6 +734,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     1368
+    ],
+    [
+     [
+      222,
+      206,
+      155
+     ],
+     40
+    ],
+    [
+     [
+      236,
+      236,
+      237
+     ],
+     6
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -921,6 +985,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     702
+    ],
+    [
+     [
+      236,
+      236,
+      237
+     ],
+     11
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -1106,6 +1188,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      183,
+      153,
+      88
+     ],
+     147
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      183,
@@ -1273,6 +1365,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     49
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      188,
@@ -1429,6 +1531,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      188,
@@ -1542,6 +1645,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -1676,6 +1780,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     1898
+    ],
+    [
+     [
+      236,
+      236,
+      237
+     ],
+     10
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      251,
@@ -1849,6 +1971,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -1957,6 +2080,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      247,
@@ -2045,6 +2169,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      99,
@@ -2131,6 +2256,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      247,
@@ -2218,6 +2344,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      239,
@@ -2322,6 +2449,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      52,
@@ -2495,6 +2623,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -2661,6 +2790,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     970
+    ],
+    [
+     [
+      204,
+      175,
+      160
+     ],
+     378
+    ],
+    [
+     [
+      185,
+      148,
+      130
+     ],
+     328
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      185,
@@ -2880,6 +3035,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     845
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -3039,6 +3204,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -3133,6 +3299,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -3282,6 +3449,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      217,
+      110,
+      94
+     ],
+     1774
+    ],
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     315
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      217,
@@ -3457,6 +3642,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     812
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      251,
@@ -3623,6 +3818,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     1110
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -3807,6 +4012,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     1514
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -4054,6 +4269,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     2122
+    ],
+    [
+     [
+      237,
+      237,
+      238
+     ],
+     4
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      188,
@@ -4282,6 +4515,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      244,
+      123,
+      106
+     ],
+     84
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      244,
@@ -4497,6 +4740,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      244,
+      123,
+      106
+     ],
+     998
+    ],
+    [
+     [
+      237,
+      237,
+      238
+     ],
+     18
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      244,
@@ -4666,6 +4927,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -4757,6 +5019,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      164,
@@ -4852,6 +5115,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     244
+    ],
+    [
+     [
+      135,
+      81,
+      70
+     ],
+     49
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -5062,6 +5343,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      246,
+      147,
+      129
+     ],
+     67
+    ],
+    [
+     [
+      237,
+      237,
+      238
+     ],
+     57
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      246,
@@ -5398,6 +5697,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -5605,6 +5905,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      217,
@@ -5703,6 +6004,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -5813,6 +6115,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     1344
+    ],
+    [
+     [
+      213,
+      214,
+      216
+     ],
+     14
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      188,
@@ -5997,6 +6317,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      217,
+      110,
+      94
+     ],
+     1010
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      217,
@@ -6246,6 +6576,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     1004
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -6503,6 +6843,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      236,
+      225
+     ],
+     535
+    ],
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     89
+    ],
+    [
+     [
+      213,
+      214,
+      216
+     ],
+     27
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      213,
@@ -6783,6 +7149,24 @@
     ]
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     519
+    ],
+    [
+     [
+      213,
+      214,
+      216
+     ],
+     5
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -6974,6 +7358,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     1204
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -7207,6 +7601,16 @@
     ]
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     624
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -7365,6 +7769,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -7461,6 +7866,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     559
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      188,
@@ -7643,6 +8058,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      239,
@@ -7751,6 +8167,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      226,
@@ -7862,6 +8279,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     651
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -8113,6 +8540,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     793
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -8311,6 +8748,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      244,
+      123,
+      106
+     ],
+     1715
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      244,
@@ -8546,6 +8993,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      226,
+      204,
+      187
+     ],
+     4080
+    ],
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     490
+    ],
+    [
+     [
+      214,
+      215,
+      217
+     ],
+     17
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      226,
@@ -8763,6 +9236,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      99,
@@ -8858,6 +9332,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      246,
+      163,
+      106
+     ],
+     433
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      246,
@@ -9025,6 +9509,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      73,
@@ -9116,6 +9601,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -9212,6 +9698,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      247,
+      150,
+      82
+     ],
+     448
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      247,
@@ -9367,6 +9863,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      251,
@@ -9544,6 +10041,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      244,
+      182,
+      137
+     ],
+     2242
+    ],
+    [
+     [
+      246,
+      163,
+      106
+     ],
+     380
+    ],
+    [
+     [
+      214,
+      215,
+      217
+     ],
+     36
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      244,
@@ -9728,6 +10251,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      65,
@@ -9813,6 +10337,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 0,
@@ -9879,6 +10404,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      236,
@@ -9965,6 +10491,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      236,
@@ -10083,6 +10610,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      173,
+      100,
+      86
+     ],
+     955
+    ],
+    [
+     [
+      214,
+      215,
+      217
+     ],
+     5
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      173,
@@ -10250,6 +10795,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      197,
@@ -10336,6 +10882,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -10463,6 +11010,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      247,
+      150,
+      82
+     ],
+     2410
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      247,
@@ -10722,6 +11279,40 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      253,
+      235,
+      174
+     ],
+     1165
+    ],
+    [
+     [
+      222,
+      206,
+      155
+     ],
+     1059
+    ],
+    [
+     [
+      126,
+      164,
+      142
+     ],
+     10
+    ],
+    [
+     [
+      218,
+      219,
+      220
+     ],
+     7
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      222,
@@ -10972,6 +11563,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     273
+    ],
+    [
+     [
+      218,
+      219,
+      220
+     ],
+     4
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -11228,6 +11837,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      222,
+      206,
+      155
+     ],
+     326
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      222,
@@ -11468,6 +12087,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     569
+    ],
+    [
+     [
+      218,
+      219,
+      220
+     ],
+     7
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -11661,6 +12298,24 @@
     ]
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      173,
+      100,
+      86
+     ],
+     1052
+    ],
+    [
+     [
+      218,
+      219,
+      220
+     ],
+     8
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      173,
@@ -11867,6 +12522,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     2486
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -12069,6 +12734,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      211,
+      161,
+      122
+     ],
+     1382
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      211,
@@ -12253,6 +12928,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      132,
@@ -12350,6 +13026,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -12465,6 +13142,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -12554,6 +13232,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -12649,6 +13328,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      188,
@@ -12738,6 +13418,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      241,
@@ -12828,6 +13509,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      138,
@@ -12941,6 +13623,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      218,
@@ -13062,6 +13745,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      184,
+      208,
+      195
+     ],
+     756
+    ],
+    [
+     [
+      173,
+      100,
+      86
+     ],
+     68
+    ],
+    [
+     [
+      218,
+      219,
+      220
+     ],
+     13
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      184,
@@ -13231,6 +13940,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     234
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      251,
@@ -13436,6 +14155,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     633
+    ],
+    [
+     [
+      135,
+      81,
+      70
+     ],
+     79
+    ],
+    [
+     [
+      126,
+      128,
+      131
+     ],
+     28
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      135,
@@ -13644,6 +14389,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      135,
@@ -13738,6 +14484,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     121
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      188,
@@ -13905,6 +14661,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     853
+    ],
+    [
+     [
+      236,
+      237,
+      238
+     ],
+     9
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      251,
@@ -14110,6 +14884,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -14266,6 +15041,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -14456,6 +15232,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     41
+    ],
+    [
+     [
+      236,
+      237,
+      238
+     ],
+     4
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      188,
@@ -14743,6 +15537,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      236,
+      237,
+      238
+     ],
+     7
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      236,
@@ -14986,6 +15790,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -15080,6 +15885,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -15215,6 +16021,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      250,
+      224,
+      171
+     ],
+     493
+    ],
+    [
+     [
+      253,
+      239,
+      208
+     ],
+     119
+    ],
+    [
+     [
+      236,
+      237,
+      238
+     ],
+     50
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      236,
@@ -15476,6 +16308,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -15566,6 +16399,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      126,
@@ -15654,6 +16488,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      152,
@@ -15745,6 +16580,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -15846,6 +16682,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     124
+    ],
+    [
+     [
+      236,
+      237,
+      238
+     ],
+     3
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -16047,6 +16901,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -16140,6 +16995,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      239,
@@ -16236,6 +17092,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      217,
@@ -16340,6 +17197,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      202,
+      163
+     ],
+     1972
+    ],
+    [
+     [
+      247,
+      150,
+      82
+     ],
+     406
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      247,
@@ -16550,6 +17425,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 1,
@@ -16631,6 +17507,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -16789,6 +17666,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      239,
+      240,
+      240
+     ],
+     936
+    ],
+    [
+     [
+      188,
+      190,
+      192
+     ],
+     181
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      239,
@@ -16959,6 +17854,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      145,
@@ -17049,6 +17945,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      246,
@@ -17151,6 +18048,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      105,
@@ -17250,6 +18148,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      149,
@@ -17346,6 +18245,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      105,
@@ -17439,6 +18339,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      244,
@@ -17524,6 +18425,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 0,
@@ -17590,6 +18492,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      217,
@@ -17678,6 +18581,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      105,
@@ -17767,6 +18671,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      135,
@@ -17857,6 +18762,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      59,
@@ -17943,6 +18849,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      59,
@@ -18029,6 +18936,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 0,
@@ -18096,6 +19004,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      217,
@@ -18182,6 +19091,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      59,
@@ -18289,6 +19199,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 0,
@@ -18412,6 +19323,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      224,
+      204
+     ],
+     1553
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -18587,6 +19508,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -18691,6 +19613,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     28
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -18877,6 +19809,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     288
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -19067,6 +20009,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     174
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -19249,6 +20201,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      206,
+      129,
+      63
+     ],
+     4691
+    ],
+    [
+     [
+      243,
+      149,
+      74
+     ],
+     1808
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      206,
@@ -19458,6 +20428,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     166
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -19633,6 +20613,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      221,
+      174,
+      132
+     ],
+     1214
+    ],
+    [
+     [
+      249,
+      194,
+      147
+     ],
+     1122
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      221,
@@ -19844,6 +20842,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      253,
+      240,
+      214
+     ],
+     1840
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      253,
@@ -20010,6 +21018,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     259
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -20219,6 +21237,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      242,
+      149,
+      130
+     ],
+     267
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      242,
@@ -20382,6 +21410,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      156,
@@ -20471,6 +21500,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      180,
@@ -20560,6 +21590,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 0,
@@ -20705,6 +21736,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      196,
+      128,
+      114
+     ],
+     7914
+    ],
+    [
+     [
+      242,
+      149,
+      130
+     ],
+     5076
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      196,
@@ -21006,6 +22055,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 1,
@@ -21124,6 +22174,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -21216,6 +22267,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      249,
+      194,
+      147
+     ],
+     1971
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      249,
@@ -21378,6 +22439,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      66,
@@ -21464,6 +22526,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      242,
@@ -21557,6 +22620,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      232,
+      213,
+      198
+     ],
+     711
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      232,
@@ -21777,6 +22850,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      149,
+      74
+     ],
+     610
+    ],
+    [
+     [
+      232,
+      213,
+      198
+     ],
+     316
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -21951,6 +23042,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      255,
+      237,
+      180
+     ],
+     1833
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      255,
@@ -22114,6 +23215,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      180,
@@ -22212,6 +23314,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      250,
+      229,
+      212
+     ],
+     1026
+    ],
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     45
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -22436,6 +23556,24 @@
     ]
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     907
+    ],
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     266
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -22697,6 +23835,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      218,
+      218,
+      218
+     ],
+     1846
+    ],
+    [
+     [
+      243,
+      149,
+      74
+     ],
+     713
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -22872,6 +24028,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      232,
+      213,
+      198
+     ],
+     900
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      232,
@@ -23050,6 +24216,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      232,
+      213,
+      198
+     ],
+     3076
+    ],
+    [
+     [
+      221,
+      174,
+      132
+     ],
+     39
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      232,
@@ -23274,6 +24458,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      208,
+      171
+     ],
+     2079
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      251,
@@ -23569,6 +24763,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      155,
@@ -23655,6 +24850,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      250,
@@ -23743,6 +24939,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent",
+   "veggfarger_tegning": [],
    "vinduer": [],
    "arker": {
     "tegning_anslag": 0,
@@ -23822,6 +25019,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      149,
+      74
+     ],
+     75
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -24003,6 +25210,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      180,
@@ -24159,6 +25367,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     1995
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -24325,6 +25543,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      198,
@@ -24515,6 +25734,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      213,
+      212,
+      212
+     ],
+     1805
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      213,
@@ -24817,6 +26046,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      149,
+      74
+     ],
+     1538
+    ],
+    [
+     [
+      206,
+      129,
+      63
+     ],
+     61
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -24989,6 +26236,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     44
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -25153,6 +26410,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     784
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -25314,6 +26581,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      180,
@@ -25429,6 +26697,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      221,
+      174,
+      132
+     ],
+     538
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      221,
@@ -25602,6 +26880,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [
+    [
+     [
+      242,
+      149,
+      130
+     ],
+     2993
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      242,
@@ -25768,6 +27056,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     2703
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -25882,6 +27180,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      245,
+      176,
+      163
+     ],
+     332
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      245,
@@ -26106,6 +27414,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      198,
+      198,
+      197
+     ],
+     1623
+    ],
+    [
+     [
+      167,
+      166,
+      166
+     ],
+     466
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      198,
@@ -26283,6 +27609,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -26383,6 +27710,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -26476,6 +27804,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      242,
+      149,
+      130
+     ],
+     3294
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      242,
@@ -26650,6 +27988,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -26755,6 +28094,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      242,
+      149,
+      130
+     ],
+     3494
+    ],
+    [
+     [
+      245,
+      176,
+      163
+     ],
+     2035
+    ],
+    [
+     [
+      126,
+      79,
+      68
+     ],
+     147
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      242,
@@ -27018,6 +28383,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      243,
+      243,
+      243
+     ],
+     1907
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      243,
@@ -27248,6 +28623,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -27355,6 +28731,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      245,
@@ -27443,6 +28820,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      180,
@@ -27532,6 +28910,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "valm",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      237,
@@ -27623,6 +29002,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      242,
+      149,
+      130
+     ],
+     64
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      242,
@@ -27829,6 +29218,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      246,
+      147,
+      129
+     ],
+     4009
+    ],
+    [
+     [
+      241,
+      242,
+      242
+     ],
+     68
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      246,
@@ -28047,6 +29454,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      241,
+      242,
+      242
+     ],
+     44
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      241,
@@ -28221,6 +29638,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -28404,6 +29822,32 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      190,
+      192,
+      194
+     ],
+     381
+    ],
+    [
+     [
+      186,
+      211,
+      206
+     ],
+     116
+    ],
+    [
+     [
+      241,
+      242,
+      242
+     ],
+     19
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      190,
@@ -28595,6 +30039,7 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
    "takfarge": {
     "tegning": [
      173,
@@ -28722,6 +30167,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      190,
+      208,
+      158
+     ],
+     220
+    ],
+    [
+     [
+      241,
+      242,
+      242
+     ],
+     78
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      190,
@@ -29008,6 +30471,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      183,
+      201,
+      205
+     ],
+     1847
+    ],
+    [
+     [
+      241,
+      242,
+      242
+     ],
+     22
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      183,
@@ -29259,6 +30740,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      230,
+      231,
+      232
+     ],
+     2277
+    ],
+    [
+     [
+      199,
+      200,
+      202
+     ],
+     884
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      199,
@@ -29500,6 +30999,16 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      230,
+      231,
+      232
+     ],
+     652
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      230,
@@ -29673,6 +31182,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     563
+    ],
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     134
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -29855,6 +31382,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      199,
+      200,
+      202
+     ],
+     596
+    ],
+    [
+     [
+      230,
+      231,
+      232
+     ],
+     8
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      199,
@@ -30023,6 +31568,24 @@
     "gavl_vegger": []
    },
    "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     559
+    ],
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     534
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,
@@ -30306,6 +31869,24 @@
     ]
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      194,
+      196,
+      198
+     ],
+     4809
+    ],
+    [
+     [
+      163,
+      165,
+      168
+     ],
+     103
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      194,
@@ -30715,6 +32296,40 @@
     ]
    },
    "takform_tegning": "sal",
+   "veggfarger_tegning": [
+    [
+     [
+      218,
+      165,
+      125
+     ],
+     6634
+    ],
+    [
+     [
+      251,
+      190,
+      143
+     ],
+     3981
+    ],
+    [
+     [
+      190,
+      146,
+      111
+     ],
+     304
+    ],
+    [
+     [
+      100,
+      121,
+      105
+     ],
+     302
+    ]
+   ],
    "veggfarge": {
     "tegning": [
      218,

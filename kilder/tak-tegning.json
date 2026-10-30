@@ -154,6 +154,12 @@
    "kilde": "kontroll",
    "tegning": "kirke",
    "grunn": "tegningen kirke: 2 gavl(er), 0 trekantede takflater"
+  },
+  "bnr-193867499": {
+   "maks_kropper": 4,
+   "retning": 63,
+   "tegning": "Kvartal13",
+   "grunn": "Kommandantgården: tegningen viser saltak på fløyene. Med husets hovedretning (71°) og tre kropper ble vestfløya flat (th 0,2); DOM−DTM har møne ~10 m og takfot ~6 m der. Vestfløya går 63° (DOM-ryggen, sjekket 30.10): fire kropper i den retningen gir saltak, th 0,48 på vestfløya (rms 1,07 mot 1,57)"
   }
  }
 }
