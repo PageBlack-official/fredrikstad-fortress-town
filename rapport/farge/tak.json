@@ -518,18 +518,25 @@
   "klasse": "rød tegl",
   "sikker": true,
   "grunn": "",
-  "tegning": null,
+  "tegning": [
+   [
+    173,
+    100,
+    86
+   ],
+   "kvartaltegningen Glasshytta (IoU 0.45)"
+  ],
   "for_": [
    246,
    122,
    106
   ],
   "farge": [
-   196,
-   92,
-   72
+   173,
+   100,
+   86
   ],
-  "kilde": "ortofoto 2024 (rød tegl)",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.45): tegningens farge",
   "aar": 2024
  },
  {
@@ -794,7 +801,7 @@
     100,
     86
    ],
-   "kvartaltegningen Glasshytta (IoU 0.80)"
+   "kvartaltegningen Glasshytta (IoU 0.75)"
   ],
   "for_": [
    244,
@@ -806,7 +813,7 @@
    100,
    86
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.80): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Glasshytta (IoU 0.75): tegningens farge",
   "aar": 2024
  },
  {
@@ -1637,7 +1644,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.64)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.62)"
   ],
   "for_": [
    246,
@@ -1649,7 +1656,7 @@
    108,
    92
   ],
-  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.64))",
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.62))",
   "aar": 2024
  },
  {
@@ -1865,8 +1872,8 @@
   "id": "bnr-16312916",
   "navn": null,
   "flytt": [
-   -0.029999999999999805,
-   -1.0299999999999998
+   -0.06000000000000005,
+   -1.06
   ],
   "foto": [
    201.0,
@@ -2423,7 +2430,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.65)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.67)"
   ],
   "for_": [
    246,
@@ -2435,7 +2442,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.67))",
   "aar": 2024
  },
  {
@@ -2459,7 +2466,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.65)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.66)"
   ],
   "for_": [
    246,
@@ -2471,7 +2478,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.65))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.66))",
   "aar": 2024
  },
  {
@@ -2632,7 +2639,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.58)"
+   "kvartaltegningen Kvartal9 (IoU 0.59)"
   ],
   "for_": [
    246,
@@ -2644,7 +2651,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.58))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.59))",
   "aar": 2024
  },
  {
@@ -3338,7 +3345,7 @@
     147,
     129
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.49)"
+   "kvartaltegningen Kvartal9 (IoU 0.47)"
   ],
   "for_": [
    244,
@@ -3350,7 +3357,7 @@
    147,
    129
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.49): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.47): tegningens farge",
   "aar": 2024
  },
  {
@@ -3482,7 +3489,7 @@
     147,
     129
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.61)"
+   "kvartaltegningen Kvartal9 (IoU 0.62)"
   ],
   "for_": [
    246,
@@ -3494,7 +3501,7 @@
    147,
    129
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.61): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.62): tegningens farge",
   "aar": 2024
  },
  {
@@ -3518,7 +3525,7 @@
     147,
     129
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.58)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.59)"
   ],
   "for_": [
    240,
@@ -3530,7 +3537,7 @@
    104,
    102
   ],
-  "kilde": "ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.58))",
+  "kilde": "ortofoto 2024 (mørk grå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.59))",
   "aar": 2024
  },
  {
@@ -3590,7 +3597,7 @@
     147,
     150
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.51)"
+   "kvartaltegningen Kvartal9 (IoU 0.52)"
   ],
   "for_": [
    128,
@@ -3602,7 +3609,7 @@
    147,
    150
   ],
-  "kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.51): tegningens farge",
+  "kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge",
   "aar": 2024
  },
  {
@@ -3770,7 +3777,7 @@
     147,
     129
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.52)"
+   "kvartaltegningen Kvartal9 (IoU 0.54)"
   ],
   "for_": [
    240,
@@ -3782,7 +3789,7 @@
    147,
    129
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.52): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal9 (IoU 0.54): tegningens farge",
   "aar": 2024
  },
  {
@@ -4022,7 +4029,7 @@
     128,
     131
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.68)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.69)"
   ],
   "for_": [
    190,
@@ -4034,7 +4041,7 @@
    128,
    131
   ],
-  "kilde": "ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.68): tegningens farge",
+  "kilde": "ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.69): tegningens farge",
   "aar": 2024
  },
  {
@@ -4221,13 +4228,13 @@
   "id": "bnr-193972012",
   "navn": "Det nye rådhus",
   "flytt": [
-   -1.4369999999999998,
-   -1.1869999999999998
+   -1.9369999999999998,
+   -0.9369999999999998
   ],
   "foto": [
-   187.0,
-   176.0,
-   159.0
+   195.0,
+   182.0,
+   163.0
   ],
   "klasse": "brungrå",
   "sikker": true,
@@ -4274,7 +4281,7 @@
     102,
     84
    ],
-   "kvartaltegningen Kvartal10 (IoU 0.76)"
+   "kvartaltegningen Kvartal10 (IoU 0.75)"
   ],
   "for_": [
    244,
@@ -4286,7 +4293,7 @@
    102,
    84
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.75): tegningens farge",
   "aar": 2024
  },
  {
@@ -4310,7 +4317,7 @@
     102,
     84
    ],
-   "kvartaltegningen Kvartal14 (IoU 0.58)"
+   "kvartaltegningen Kvartal14 (IoU 0.60)"
   ],
   "for_": [
    246,
@@ -4322,7 +4329,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.58))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.60))",
   "aar": 2024
  },
  {
@@ -4346,7 +4353,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.60)"
+   "kvartaltegningen Kvartal9 (IoU 0.61)"
   ],
   "for_": [
    246,
@@ -4358,7 +4365,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.60))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.61))",
   "aar": 2024
  },
  {
@@ -4490,7 +4497,7 @@
     102,
     84
    ],
-   "kvartaltegningen Kvartal14 (IoU 0.54)"
+   "kvartaltegningen Kvartal14 (IoU 0.53)"
   ],
   "for_": [
    198,
@@ -4502,7 +4509,7 @@
    102,
    84
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.54): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.53): tegningens farge",
   "aar": 2024
  },
  {
@@ -4634,7 +4641,7 @@
     102,
     84
    ],
-   "kvartaltegningen Kvartal10 (IoU 0.76)"
+   "kvartaltegningen Kvartal10 (IoU 0.77)"
   ],
   "for_": [
    244,
@@ -4646,7 +4653,7 @@
    102,
    84
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.76): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal10 (IoU 0.77): tegningens farge",
   "aar": 2024
  },
  {
@@ -4814,7 +4821,7 @@
     119,
     102
    ],
-   "kvartaltegningen Kvartal14 (IoU 0.55)"
+   "kvartaltegningen Kvartal14 (IoU 0.56)"
   ],
   "for_": [
    244,
@@ -4826,7 +4833,7 @@
    119,
    102
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.55): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal14 (IoU 0.56): tegningens farge",
   "aar": 2024
  },
  {
@@ -4850,7 +4857,7 @@
     150,
     149
    ],
-   "kvartaltegningen Kvartal10 (IoU 0.54)"
+   "kvartaltegningen Kvartal10 (IoU 0.53)"
   ],
   "for_": [
    135,
@@ -4862,7 +4869,7 @@
    150,
    149
   ],
-  "kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.54): tegningens farge",
+  "kilde": "ortofoto 2024 (grå) = kvartaltegningen Kvartal10 (IoU 0.53): tegningens farge",
   "aar": 2024
  },
  {
@@ -4958,7 +4965,7 @@
     100,
     86
    ],
-   "kvartaltegningen sistekvartal (IoU 0.47)"
+   "kvartaltegningen sistekvartal (IoU 0.43)"
   ],
   "for_": [
    188,
@@ -4970,7 +4977,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.47))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.43))",
   "aar": 2024
  },
  {
@@ -5246,7 +5253,7 @@
     215,
     216
    ],
-   "kvartaltegningen sistekvartal (IoU 0.68)"
+   "kvartaltegningen sistekvartal (IoU 0.65)"
   ],
   "for_": [
    188,
@@ -5258,7 +5265,7 @@
    104,
    102
   ],
-  "kilde": "ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.68))",
+  "kilde": "ortofoto 2024 (mørk grå); tegningen har grå (kvartaltegningen sistekvartal (IoU 0.65))",
   "aar": 2024
  },
  {
@@ -5513,7 +5520,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.46)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.48)"
   ],
   "for_": [
    246,
@@ -5525,7 +5532,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.46))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.48))",
   "aar": 2024
  },
  {
@@ -5801,7 +5808,7 @@
     154,
     157
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.47)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.46)"
   ],
   "for_": [
    244,
@@ -5813,7 +5820,7 @@
    154,
    157
   ],
-  "kilde": "ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.47): tegningens farge",
+  "kilde": "ortofoto 2024 (mørk grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.46): tegningens farge",
   "aar": 2024
  },
  {
@@ -6301,11 +6308,11 @@
   "grunn": "",
   "tegning": [
    [
-    217,
-    110,
-    94
+    240,
+    120,
+    103
    ],
-   "kvartaltegningen Kvartal9 (IoU 0.48)"
+   "2019-trykket (dømt)"
   ],
   "for_": [
    240,
@@ -6317,7 +6324,7 @@
    70,
    72
   ],
-  "kilde": "ortofoto 2024 (svart/antrasitt); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.48))",
+  "kilde": "ortofoto 2024 (svart/antrasitt); tegningen har rød (2019-trykket (dømt))",
   "aar": 2024
  },
  {
@@ -6409,11 +6416,11 @@
   "grunn": "",
   "tegning": [
    [
-    188,
-    188,
-    192
+    105,
+    109,
+    110
    ],
-   "2019-trykket (dømt)"
+   "kvartaltegningen Kvartal9 (IoU 0.46)"
   ],
   "for_": [
    188,
@@ -6421,11 +6428,11 @@
    192
   ],
   "farge": [
-   188,
-   188,
-   192
+   105,
+   109,
+   110
   ],
-  "kilde": "ortofoto 2024 (brungrå) = 2019-trykket (dømt): tegningens farge",
+  "kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal9 (IoU 0.46): tegningens farge",
   "aar": 2024
  },
  {
@@ -6515,7 +6522,14 @@
   "klasse": "falmet tegl",
   "sikker": true,
   "grunn": "",
-  "tegning": null,
+  "tegning": [
+   [
+    173,
+    100,
+    86
+   ],
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.38)"
+  ],
   "for_": [
    244,
    120,
@@ -6526,7 +6540,7 @@
    108,
    92
   ],
-  "kilde": "ortofoto 2024 (falmet tegl)",
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.38))",
   "aar": 2024
  },
  {
@@ -6546,11 +6560,11 @@
   "grunn": "",
   "tegning": [
    [
-    152,
-    154,
-    157
+    244,
+    123,
+    106
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.41)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.35)"
   ],
   "for_": [
    244,
@@ -6558,11 +6572,11 @@
    104
   ],
   "farge": [
-   196,
-   92,
-   72
+   244,
+   123,
+   106
   ],
-  "kilde": "ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen Kvartal8BITMAP (IoU 0.41))",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.35): tegningens farge",
   "aar": 2024
  },
  {
@@ -6893,8 +6907,8 @@
   "id": "bnr-193972632",
   "navn": null,
   "flytt": [
-   -1.17,
-   -0.9199999999999999
+   -1.2,
+   -0.95
   ],
   "foto": [
    168.0,
@@ -7310,7 +7324,7 @@
     176,
     163
    ],
-   "kvartaltegningen Kvartal14 (IoU 0.50)"
+   "kvartaltegningen Kvartal14 (IoU 0.49)"
   ],
   "for_": [
    244,
@@ -7322,7 +7336,7 @@
    108,
    92
   ],
-  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.50))",
+  "kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.49))",
   "aar": 2024
  },
  {
@@ -7738,7 +7752,7 @@
     102,
     84
    ],
-   "kvartaltegningen Kvartal14 (IoU 0.56)"
+   "kvartaltegningen Kvartal14 (IoU 0.61)"
   ],
   "for_": [
    244,
@@ -7750,7 +7764,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.56))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.61))",
   "aar": 2024
  },
  {
@@ -7900,7 +7914,7 @@
     123,
     106
    ],
-   "kvartaltegningen Kvartal8BITMAP (IoU 0.49)"
+   "kvartaltegningen Kvartal8BITMAP (IoU 0.52)"
   ],
   "for_": [
    198,
@@ -7912,7 +7926,7 @@
    123,
    106
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.49): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal8BITMAP (IoU 0.52): tegningens farge",
   "aar": 2024
  },
  {
@@ -8098,7 +8112,7 @@
     123,
     106
    ],
-   "kvartaltegningen sistekvartal (IoU 0.70)"
+   "kvartaltegningen sistekvartal (IoU 0.68)"
   ],
   "for_": [
    244,
@@ -8110,7 +8124,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.70))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.68))",
   "aar": 2024
  },
  {
@@ -8134,7 +8148,7 @@
     123,
     106
    ],
-   "kvartaltegningen sistekvartal (IoU 0.87)"
+   "kvartaltegningen sistekvartal (IoU 0.88)"
   ],
   "for_": [
    244,
@@ -8146,7 +8160,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.87))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen sistekvartal (IoU 0.88))",
   "aar": 2024
  },
  {
@@ -8170,7 +8184,7 @@
     119,
     102
    ],
-   "kvartaltegningen Kvartal14 (IoU 0.46)"
+   "kvartaltegningen Kvartal14 (IoU 0.47)"
   ],
   "for_": [
    150,
@@ -8182,7 +8196,7 @@
    122,
    112
   ],
-  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.46))",
+  "kilde": "ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal14 (IoU 0.47))",
   "aar": 2024
  },
  {

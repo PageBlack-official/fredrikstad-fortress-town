@@ -746,6 +746,20 @@
    "id": "bnr-193867634",
    "kilde": "Claude, landemerker 30.10 (tell.ai mot DOM−DTM og ortofoto 2024)",
    "grunn": "tegningen tell.ai har et lite gavlhus her; det er ikke en egen del av huset. Kartverkets DOM−DTM har mønet på 6,9 ± 0,2 m hele veien fra 4 til 22 m langs huset (1 m ruter, profil langs mønet), takfoten like jevn, ingen sprang i høyde eller bredde og ingen vegg på tvers; kommunekartet har ett omriss, Matrikkelen ett bygningsnummer og ortofoto 2024 ett sammenhengende tak. Gavlhuset er Vollmesterboligen tegnet kortere (frihånd), så huset står som ett langt hus. Ingen endring."
+  },
+  {
+   "id": "pb-67",
+   "kilde": "ortofoto 2019/2024 + DOM−DTM 2015 og i dag (30.10, natt/manglende)",
+   "grunn": "rådhusets lave nordfløy har flatt tak med takoppbygg (lysåpning) i ortofotoet og 1–4 m i DOM; ikke saltak",
+   "sett": {
+    "h": 3.0,
+    "th": 0.0,
+    "flatt": true,
+    "tak2": null,
+    "gavl2": null,
+    "sk": null,
+    "takform": "flatt"
+   }
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

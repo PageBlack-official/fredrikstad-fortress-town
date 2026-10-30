@@ -86,22 +86,22 @@
      "fra_m": 0.0,
      "til_m": 3.96,
      "vegg": [
-      249,
-      194,
-      147
+      146,
+      104,
+      80
      ],
-     "kilde": "Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge",
+     "kilde": "Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje",
      "aar": 2024
     },
     {
      "fra_m": 3.96,
      "til_m": 15.24,
      "vegg": [
-      221,
-      174,
-      132
+      146,
+      104,
+      80
      ],
-     "kilde": "Street View 2024 (brun/rødbrun, hele siden) = tegningen: tegningens farge",
+     "kilde": "Street View 2024 (brun/rødbrun, hele siden); tegningen har oransje",
      "aar": 2024
     }
    ]

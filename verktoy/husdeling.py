@@ -97,6 +97,15 @@ def _i(P, q, buf=0.35, biter=None, kutt=None):
     return P.buffer(buf).contains(pt)
 
 
+def _bit_for(q, biter):
+    """Biten et tårn (deler: senter c eller omriss p) eller en arkade (a, b) står i: nærmeste bit til punktet."""
+    if q.get('c') is not None: pt = Point(*q['c'][:2])
+    elif q.get('p'): pt = Polygon([t[:2] for t in q['p']]).centroid
+    elif q.get('a') is not None: pt = Point(0.5 * (q['a'][0] + q['b'][0]), 0.5 * (q['a'][1] + q['b'][1]))
+    else: return 0
+    return min(range(len(biter)), key=lambda k: biter[k].distance(pt))
+
+
 def main(tørt=False):
     import grunnmur as GM
     H = les()
@@ -150,10 +159,20 @@ def main(tørt=False):
             if x.get(felt):
                 v = x[felt] if not isinstance(x[felt], str) else json.loads(x[felt])
                 r(x['id'], felt, [q for q in v if _i(g0, q, biter=biter, kutt=D['kutt'] if felt == 'vind' else None)], gr)
+        # tårn (deler) og arkader følger biten de står i (30.10, natt/manglende: rådhusets nordfløy fikk en kopi av tårnet)
+        for felt in ('deler', 'arkader'):
+            if x.get(felt):
+                v = x[felt] if not isinstance(x[felt], str) else json.loads(x[felt])
+                r(x['id'], felt, [q for q in v if _bit_for(q, biter) == k0] or None, gr)
         barn_av[x['id']] = []
         for n_, k in enumerate(orden[1:]):
             g = biter[k]; ny = ider[n_]
-            obj = {kk: vv for kk, vv in x.items() if kk not in ('tak2', 'gavl2', 'sk', 'vind', 'piper', 'arker', 'skjul', 'navn', 'adr', 'matrikkel', 'tegnet_vegger', 'fasade_tegning', '_knekk')}
+            obj = {kk: vv for kk, vv in x.items() if kk not in ('tak2', 'gavl2', 'sk', 'vind', 'piper', 'arker', 'skjul', 'navn', 'adr', 'matrikkel', 'tegnet_vegger', 'fasade_tegning', '_knekk', 'deler', 'arkader', 'nr', 'tekst')}
+            for felt in ('deler', 'arkader'):
+                if x.get(felt):
+                    v = x[felt] if not isinstance(x[felt], str) else json.loads(x[felt])
+                    v = [q for q in v if _bit_for(q, biter) == k]
+                    if v: obj[felt] = v
             obj.update(id=ny, p=_rund(g), ph=[], navn=None, adr=None)
             rr, rf = GM.rekt(g); obj.update(r=rr, rf=rf, tk=[rr])
             ms = [GM.mfelt(m) for m in MP if f"bnr-{m['bygningsnummer']}" == ny]

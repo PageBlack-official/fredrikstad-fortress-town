@@ -289,18 +289,18 @@
   "navn": "Voldporten med vaktstuen",
   "adr": null,
   "for_": [
-   168,
-   164,
-   156
+   199,
+   200,
+   202
   ],
   "for_kilde": null,
   "vegg": [
-   168,
-   164,
-   156
+   199,
+   200,
+   202
   ],
-  "kilde": "Street View 2010 (lys grå naturstein/kvaderstein, kalket øvre del); eldre enn tegningen, men tegningen har ikke huset",
-  "aar": 2010,
+  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.45)",
+  "aar": 2015,
   "byttet": false
  },
  {
@@ -451,7 +451,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.80)",
+  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.75)",
   "aar": 2015,
   "byttet": false
  },
@@ -1866,9 +1866,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -1878,7 +1878,7 @@
   ],
   "kilde": "nabohuset bnr-193870147 (garage, 7.9 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6241050",
@@ -1942,9 +1942,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -1954,16 +1954,16 @@
   ],
   "kilde": "nabohuset bnr-193870147 (garage, 20.5 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276806",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -1973,16 +1973,16 @@
   ],
   "kilde": "nabohuset bnr-6276792 (house, 5.6 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276784",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -1992,7 +1992,7 @@
   ],
   "kilde": "nabohuset bnr-6276792 (house, 5.5 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276474",
@@ -2018,9 +2018,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2030,16 +2030,16 @@
   ],
   "kilde": "nabohuset bnr-6276784 (house, 25.3 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276776",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2049,7 +2049,7 @@
   ],
   "kilde": "nabohuset bnr-6276784 (house, 6.5 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276490",
@@ -2075,9 +2075,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2087,16 +2087,16 @@
   ],
   "kilde": "nabohuset bnr-6276768 (house, 5.8 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276369",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2106,7 +2106,7 @@
   ],
   "kilde": "nabohuset bnr-6276741 (house, 23.8 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193981240",
@@ -2151,9 +2151,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2163,16 +2163,16 @@
   ],
   "kilde": "nabohuset bnr-6276369 (house, 23.2 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276385",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2182,16 +2182,16 @@
   ],
   "kilde": "nabohuset bnr-6276407 (house, 6.2 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276423",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -2201,7 +2201,7 @@
   ],
   "kilde": "nabohuset bnr-6276407 (house, 6.3 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276377",
@@ -2417,9 +2417,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
-   240,
-   240
+   252,
+   228,
+   156
   ],
   "for_kilde": null,
   "vegg": [
@@ -2429,7 +2429,7 @@
   ],
   "kilde": "2015-trykkfila (ikke dømt)",
   "aar": 2015,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193868223",
@@ -2731,7 +2731,7 @@
    190,
    143
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.65)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.67)",
   "aar": 2015,
   "byttet": false
  },
@@ -3016,7 +3016,7 @@
    237,
    238
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.62)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63)",
   "aar": 2015,
   "byttet": false
  },
@@ -3082,9 +3082,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
-   240,
-   240
+   214,
+   206,
+   190
   ],
   "for_kilde": null,
   "vegg": [
@@ -3094,7 +3094,7 @@
   ],
   "kilde": "Street View 2010 (lys grå/gråbeige stående panel); eldre enn tegningen, men tegningen har ikke huset",
   "aar": 2010,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193868630",
@@ -3301,7 +3301,7 @@
    240,
    240
   ],
-  "kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.61)",
+  "kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.62)",
   "aar": 2015,
   "byttet": false
  },
@@ -3320,7 +3320,7 @@
    121,
    107
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.58)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.59)",
   "aar": 2015,
   "byttet": false
  },
@@ -3586,7 +3586,7 @@
    224,
    171
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.68)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.69)",
   "aar": 2015,
   "byttet": false
  },
@@ -3696,11 +3696,11 @@
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   235,
-   207,
-   181
+   221,
+   174,
+   132
   ],
-  "kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.60)",
+  "kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.65)",
   "aar": 2015,
   "byttet": false
  },
@@ -3719,7 +3719,7 @@
    184,
    92
   ],
-  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
+  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (2019-trykket (dømt))",
   "aar": 2024,
   "byttet": false
  },
@@ -3738,7 +3738,7 @@
    149,
    130
   ],
-  "kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.58)",
+  "kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.60)",
   "aar": 2015,
   "byttet": false
  },
@@ -3833,7 +3833,7 @@
    172,
    140
   ],
-  "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.54))",
+  "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.53))",
   "aar": 2024,
   "byttet": false
  },
@@ -3909,7 +3909,7 @@
    170,
    160
   ],
-  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
+  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.77))",
   "aar": 2024,
   "byttet": false
  },
@@ -3918,9 +3918,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   156,
-   157,
-   158
+   232,
+   184,
+   92
   ],
   "for_kilde": null,
   "vegg": [
@@ -3930,7 +3930,7 @@
   ],
   "kilde": "Street View 2010 (sandgul/lys oker stående panel); eldre enn tegningen, men tegningen har ikke huset",
   "aar": 2010,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193972594",
@@ -4023,7 +4023,7 @@
    198,
    197
   ],
-  "kilde": "Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.54): tegningens farge",
+  "kilde": "Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.53): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -4080,7 +4080,7 @@
    193,
    119
   ],
-  "kilde": "Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.47): tegningens farge",
+  "kilde": "Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.43): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -4232,7 +4232,7 @@
    192,
    194
   ],
-  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.68)",
+  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.65)",
   "aar": 2015,
   "byttet": false
  },
@@ -4298,17 +4298,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   251,
-   208,
-   171
+   146,
+   104,
+   80
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   251,
-   208,
-   171
+   146,
+   104,
+   80
   ],
-  "kilde": "Street View 2024 (brun/rødbrun) = kvartaltegningen Kvartal12 (skygge side, IoU 0.54): tegningens farge",
+  "kilde": "Street View 2024 (brun/rødbrun); tegningen har oransje (kvartaltegningen Kvartal12 (skygge side, IoU 0.54))",
   "aar": 2024,
   "byttet": false
  },
@@ -4564,9 +4564,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4576,16 +4576,16 @@
   ],
   "kilde": "nabohuset bnr-6276741 (house, 99.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6277063",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4595,16 +4595,16 @@
   ],
   "kilde": "nabohuset bnr-6277071 (house, 5.1 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6277055",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4614,16 +4614,16 @@
   ],
   "kilde": "nabohuset bnr-6277063 (house, 9.3 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193871119",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4633,16 +4633,16 @@
   ],
   "kilde": "nabohuset bnr-6277055 (house, 12.6 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-300165413",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4652,16 +4652,16 @@
   ],
   "kilde": "nabohuset bnr-193871119 (garage, 0.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6277047",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4671,16 +4671,16 @@
   ],
   "kilde": "nabohuset bnr-300165413 (garage, 5.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-12",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4690,16 +4690,16 @@
   ],
   "kilde": "nabohuset bnr-193871119 (garage, 0.2 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276040",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4709,16 +4709,16 @@
   ],
   "kilde": "nabohuset pb-12 (yes, 5.3 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-300053567",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4728,16 +4728,16 @@
   ],
   "kilde": "nabohuset bnr-6276040 (house, 0.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-24215326",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4747,16 +4747,16 @@
   ],
   "kilde": "nabohuset bnr-6276040 (house, 6.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-24221342",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4766,16 +4766,16 @@
   ],
   "kilde": "nabohuset bnr-6276741 (house, 4.2 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870090",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4785,16 +4785,16 @@
   ],
   "kilde": "nabohuset bnr-6276768 (house, 9.8 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-300006318",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4804,16 +4804,16 @@
   ],
   "kilde": "nabohuset bnr-6276776 (house, 6.9 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870112",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4823,16 +4823,16 @@
   ],
   "kilde": "nabohuset bnr-6276784 (house, 7.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870120",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4842,16 +4842,16 @@
   ],
   "kilde": "nabohuset bnr-193870147 (garage, 0.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870139",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4861,16 +4861,16 @@
   ],
   "kilde": "nabohuset bnr-193870147 (garage, 0.5 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870171",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4880,16 +4880,16 @@
   ],
   "kilde": "nabohuset bnr-6276423 (house, 7.5 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276709",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4899,16 +4899,16 @@
   ],
   "kilde": "nabohuset bnr-6277071 (house, 24.2 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276725",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4918,16 +4918,16 @@
   ],
   "kilde": "nabohuset bnr-6276709 (house, 7.7 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6276733",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4937,16 +4937,16 @@
   ],
   "kilde": "nabohuset bnr-6276725 (house, 11.3 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193871232",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4956,16 +4956,16 @@
   ],
   "kilde": "nabohuset bnr-6276733 (house, 1.6 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-6275982",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -4975,7 +4975,7 @@
   ],
   "kilde": "nabohuset bnr-193871232 (garage, 7.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193868533",
@@ -5543,7 +5543,7 @@
    243,
    243
   ],
-  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.73)",
+  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.72)",
   "aar": 2015,
   "byttet": false
  },
@@ -5780,17 +5780,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   242,
-   240,
-   232
+   152,
+   154,
+   157
   ],
   "for_kilde": null,
   "vegg": [
-   242,
-   240,
-   232
+   152,
+   154,
+   157
   ],
-  "kilde": "Street View 2024 (hvit kalket/pusset mur)",
+  "kilde": "Street View 2024 (hvit kalket/pusset mur) = kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.38): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -5809,7 +5809,7 @@
    240,
    240
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.41)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.35)",
   "aar": 2015,
   "byttet": false
  },
@@ -6046,9 +6046,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   232,
-   233,
-   234
+   236,
+   240,
+   240
   ],
   "for_kilde": null,
   "vegg": [
@@ -6540,9 +6540,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   232,
-   233,
-   234
+   252,
+   228,
+   156
   ],
   "for_kilde": null,
   "vegg": [
@@ -6552,7 +6552,7 @@
   ],
   "kilde": "2015-trykkfila (ikke dømt)",
   "aar": 2015,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193867685",
@@ -7186,9 +7186,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -7198,16 +7198,16 @@
   ],
   "kilde": "nabohuset bnr-193870171 (garage, 1.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-301395526",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -7217,16 +7217,16 @@
   ],
   "kilde": "nabohuset bnr-193870171 (garage, 9.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193871291",
   "navn": null,
   "adr": null,
   "for_": [
-   150,
-   62,
-   66
+   146,
+   104,
+   80
   ],
   "for_kilde": null,
   "vegg": [
@@ -7236,7 +7236,7 @@
   ],
   "kilde": "nabohuset bnr-6276407 (house, 0.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870228",
@@ -7253,7 +7253,7 @@
    208,
    158
   ],
-  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.70)",
+  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.68)",
   "aar": 2015,
   "byttet": false
  },
@@ -7272,7 +7272,7 @@
    201,
    205
   ],
-  "kilde": "kvartaltegningen sistekvartal (lys side, IoU 0.87)",
+  "kilde": "kvartaltegningen sistekvartal (lys side, IoU 0.88)",
   "aar": 2015,
   "byttet": false
  },
@@ -7281,9 +7281,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   247,
-   171,
-   157
+   252,
+   188,
+   144
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7338,9 +7338,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   249,
-   224,
-   204
+   244,
+   244,
+   244
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7350,16 +7350,16 @@
   ],
   "kilde": "nabohuset bnr-193971296 (garage, 0.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-23",
   "navn": null,
   "adr": null,
   "for_": [
-   188,
-   190,
-   192
+   184,
+   98,
+   78
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7369,7 +7369,7 @@
   ],
   "kilde": "nabohuset bnr-193867936 (residential, 0.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193870287",
@@ -7395,7 +7395,7 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
+   236,
    240,
    240
   ],
@@ -7433,9 +7433,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
-   240,
-   240
+   214,
+   206,
+   190
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7445,16 +7445,16 @@
   ],
   "kilde": "nabohuset bnr-24218023 (apartments, 25.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-26",
   "navn": null,
   "adr": null,
   "for_": [
-   251,
-   202,
-   163
+   236,
+   240,
+   240
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7464,16 +7464,16 @@
   ],
   "kilde": "nabohuset bnr-193868622 (retail, 0.0 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-27",
   "navn": null,
   "adr": null,
   "for_": [
-   239,
-   240,
-   240
+   214,
+   206,
+   190
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7483,7 +7483,7 @@
   ],
   "kilde": "nabohuset pb-25 (yes, 2.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-28",
@@ -7547,9 +7547,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   173,
-   102,
-   88
+   242,
+   149,
+   130
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7680,9 +7680,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
-   240,
-   240
+   214,
+   206,
+   190
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7692,7 +7692,7 @@
   ],
   "kilde": "nabohuset pb-27 (yes, 2.4 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-38",
@@ -7794,9 +7794,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   244,
-   123,
-   106
+   176,
+   74,
+   62
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7851,9 +7851,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   246,
-   148,
-   129
+   146,
+   104,
+   80
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7863,7 +7863,7 @@
   ],
   "kilde": "Street View 2010 (brun/oker treverk); eldre enn tegningen, men tegningen har ikke huset",
   "aar": 2010,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-46",
@@ -7927,9 +7927,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   237,
-   238,
-   238
+   198,
+   198,
+   197
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7984,9 +7984,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   215,
-   167,
-   129
+   232,
+   184,
+   92
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -8022,9 +8022,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   173,
-   100,
-   86
+   236,
+   240,
+   240
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -8034,7 +8034,7 @@
   ],
   "kilde": "nabohuset bnr-193971350 (warehouse, 0.1 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "pb-55",
@@ -8060,9 +8060,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   201,
-   107,
-   94
+   253,
+   240,
+   214
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -8072,6 +8072,6 @@
   ],
   "kilde": "nabohuset bnr-193867545 (Arnesgården, 0.1 m unna)",
   "aar": null,
-  "byttet": true
+  "byttet": false
  }
 ]
