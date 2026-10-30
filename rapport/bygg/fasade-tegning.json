@@ -1173,24 +1173,6 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193868096",
-  "navn": null,
-  "vegger": {
-   "1": {
-    "tegning": "Kvartal2BITMP",
-    "rader": [
-     6,
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 7,
-  "regler": 2,
-  "streetview": 0
- },
- {
   "id": "pb-62",
   "navn": null,
   "vegger": {
@@ -1215,6 +1197,24 @@
   },
   "tegnet": 5,
   "regler": 0,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193868096",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     6,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 7,
+  "regler": 2,
   "streetview": 0
  },
  {
@@ -2036,31 +2036,13 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193867928",
-  "navn": null,
-  "vegger": {
-   "4": {
-    "tegning": "Kvartal9",
-    "rader": [
-     2,
-     2
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 4,
-  "regler": 60,
-  "streetview": 0
- },
- {
   "id": "pb-66",
   "navn": null,
   "vegger": {
    "0": {
     "tegning": "Kvartal9",
     "rader": [
-     4
+     6
     ],
     "dorer": 0,
     "notat": []
@@ -2075,8 +2057,25 @@
     "notat": []
    }
   },
-  "tegnet": 18,
+  "tegnet": 20,
   "regler": 2,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193867928",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal9",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 60,
   "streetview": 0
  },
  {

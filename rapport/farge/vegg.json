@@ -299,7 +299,7 @@
    200,
    202
   ],
-  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.45)",
+  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.35)",
   "aar": 2015,
   "byttet": false
  },
@@ -451,7 +451,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.75)",
+  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.76)",
   "aar": 2015,
   "byttet": false
  },
@@ -3700,7 +3700,7 @@
    174,
    132
   ],
-  "kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.65)",
+  "kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.66)",
   "aar": 2015,
   "byttet": false
  },
@@ -3719,7 +3719,7 @@
    184,
    92
   ],
-  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (kvartaltegningen Kvartal10 (lys side, IoU 0.73))",
   "aar": 2024,
   "byttet": false
  },
@@ -3776,7 +3776,7 @@
    198,
    197
   ],
-  "kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.73)",
+  "kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.70)",
   "aar": 2015,
   "byttet": false
  },
@@ -3833,7 +3833,7 @@
    172,
    140
   ],
-  "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.53))",
+  "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (skygge side, IoU 0.55))",
   "aar": 2024,
   "byttet": false
  },
@@ -3909,7 +3909,7 @@
    170,
    160
   ],
-  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.77))",
+  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
   "aar": 2024,
   "byttet": false
  },
@@ -4013,17 +4013,17 @@
   "navn": "Vennehaabet",
   "adr": null,
   "for_": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
-  "kilde": "Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.53): tegningens farge",
+  "kilde": "Street View 2024 (lys grå/gråhvit) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -4251,7 +4251,7 @@
    149,
    130
   ],
-  "kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.65)",
+  "kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.63)",
   "aar": 2015,
   "byttet": false
  },
@@ -4308,7 +4308,7 @@
    104,
    80
   ],
-  "kilde": "Street View 2024 (brun/rødbrun); tegningen har oransje (kvartaltegningen Kvartal12 (skygge side, IoU 0.54))",
+  "kilde": "Street View 2024 (brun/rødbrun); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.54))",
   "aar": 2024,
   "byttet": false
  },
@@ -5543,7 +5543,7 @@
    243,
    243
   ],
-  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.72)",
+  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.64)",
   "aar": 2015,
   "byttet": false
  },
@@ -6436,7 +6436,7 @@
    149,
    130
   ],
-  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.68)",
+  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.69)",
   "aar": 2015,
   "byttet": false
  },
@@ -6451,11 +6451,11 @@
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   242,
-   149,
-   130
+   243,
+   150,
+   132
   ],
-  "kilde": "kvartaltegningen Kvartal10 (lys side, IoU 0.45)",
+  "kilde": "2019-trykket (dømt)",
   "aar": 2015,
   "byttet": false
  },
@@ -7287,12 +7287,12 @@
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   252,
-   188,
-   144
+   242,
+   149,
+   130
   ],
-  "kilde": "nabohuset bnr-193972039 (yes, 0.0 m unna)",
-  "aar": null,
+  "kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.46)",
+  "aar": 2015,
   "byttet": false
  },
  {
@@ -7553,9 +7553,9 @@
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   242,
-   149,
-   130
+   243,
+   150,
+   132
   ],
   "kilde": "nabohuset bnr-193868495 (office, 0.2 m unna)",
   "aar": null,
@@ -7933,9 +7933,9 @@
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
   "kilde": "nabohuset bnr-193867596 (Vennehaabet, 1.5 m unna)",
   "aar": null,
