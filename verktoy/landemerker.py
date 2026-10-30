@@ -117,6 +117,11 @@ def fasade_vinduer(x, F):
     Ltot = sum(math.hypot(b_[0] - a_[0], b_[1] - a_[1]) for a_, b_ in zip(L, L[1:]))
     for u, z, b, h, typ, bue in F['vinduer']:
         if F.get('andeler'): u = u * Ltot
+        # knekk i kommunekartets omriss teller som hjørne (regel 04): vinduet flyttes til halv bredde + 0,35 m fra knekken
+        uk = 0.0
+        for a_, b_ in zip(L[:-2], L[1:-1]):
+            uk += math.hypot(b_[0] - a_[0], b_[1] - a_[1]); m = b / 2 + 0.35
+            if abs(u - uk) < m: u = uk + m if u >= uk else uk - m
         p, t = punkt_paa(L, u); n = utover(x, p, t)
         nye.append([round(p[0], 2), round(p[1], 2), z, round(n[1], 4), round(-n[0], 4), round(n[0], 4), round(n[1], 4), b, h, typ, bue, 1])
     return beholdt + nye, len(vind) - len(beholdt)
