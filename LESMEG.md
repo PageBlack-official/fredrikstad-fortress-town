@@ -362,3 +362,19 @@ Høyder som tilpasningen per hus måler feil (tårn i omrisset, DTM på vollkron
 kilder/hoyde-unntak.json; rapport/hoyder/legg_inn.py legger dem inn og regel 02 måler mot dem. Voldportens portmur står i data/porter.json
 (med kilde). verktoy/kontroll_iso.mjs slår av frustumtesten under kontrollrenderen (portbygg og bygg med deler ble kastet før).
 Rapport: rapport/landemerker/landemerker.md.
+
+## Tegnede hus uten modellhus (30.10, natt/manglende)
+Kontrollen finner flategrupper i 2015-tegningene uten modellhus under («tegnet_uten_modell»). `verktoy/manglende.py` legger hver gruppe
+ned på bakken (tegningens kamera baklengs: bunnkanten på z = 0, hele gruppen på z = 0 og 7 m) og lager kontaktark med kildene som avgjør
+om huset finnes: tegning | modell | ortofoto 2024 og 2019 | kommunekartet | DOM−DTM i dag (Kartverket) og 2015 (kommunens laserskanning
+fra tegningsåret, skiller «revet etter 2015» fra «tegnet fritt»).
+
+    python3 verktoy/manglende.py liste       gruppene fra rapport/kontroll/avvik.json med plass på bakken (rapport/manglende/grupper.json)
+    python3 verktoy/manglende.py signaler    kommunehus uten modellhus, skjulte hus, matrikkelpunkter og høyde > 2,5 m utenfor modellhusene
+    python3 verktoy/manglende.py ark [T …]   kontaktark rapport/manglende/<tegning>-<nr>.jpg (bare lokalt)
+    python3 verktoy/manglende.py se x y [r]  de samme kildepanelene for et punkt
+
+Dommen per gruppe står i kilder/bygg-merknader.json «tegnet_uten_modell» (tegning, senter_pt, utfall, kategori, grunn) og leses av
+kontroll.py avvik: med dom blir gruppen «avvik med grunn» (eller «lagt inn»), uten dom «feil». Et hus som finnes og mangler, legges inn
+med kilder/husdeling.json («nye»/«deling») eller rettelseslaget; et hus Vegar tegnet som egen bit, kobles med «biter» i kvartal-kobling.json.
+Kommunens DOM/DTM 2015 hentes av `hent_2015()` til rapport/hoyder/kilder/*2015_25832.tif (bare lokalt, lisens ikke avklart).
