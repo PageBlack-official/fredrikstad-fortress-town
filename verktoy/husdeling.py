@@ -86,8 +86,15 @@ def del_omriss(P, kutt):
     return sorted(biter, key=lambda g: -g.area)
 
 
-def _i(P, q, buf=0.35):
-    return P.buffer(buf).contains(Point(q[0], q[1]))
+def _i(P, q, buf=0.35, biter=None, kutt=None):
+    """Elementet q (vindu, pipe, ark) står på biten P: nærmeste bit (ett element havner på én bit), og ikke i en ny brannmur
+    (innen 0,6 m fra et kutt)."""
+    pt = Point(q[0], q[1])
+    if kutt is not None and any(LineString(k).distance(pt) < 0.6 for k in kutt):
+        return False
+    if biter:
+        return min(biter, key=lambda g: g.distance(pt)) is P and P.buffer(buf).contains(pt)
+    return P.buffer(buf).contains(pt)
 
 
 def main(tørt=False):
@@ -142,7 +149,7 @@ def main(tørt=False):
         for felt in ('vind', 'piper', 'arker'):
             if x.get(felt):
                 v = x[felt] if not isinstance(x[felt], str) else json.loads(x[felt])
-                r(x['id'], felt, [q for q in v if _i(g0, q)], gr)
+                r(x['id'], felt, [q for q in v if _i(g0, q, biter=biter, kutt=D['kutt'] if felt == 'vind' else None)], gr)
         barn_av[x['id']] = []
         for n_, k in enumerate(orden[1:]):
             g = biter[k]; ny = ider[n_]
@@ -154,7 +161,7 @@ def main(tørt=False):
             for felt in ('vind', 'piper', 'arker'):
                 if x.get(felt):
                     v = x[felt] if not isinstance(x[felt], str) else json.loads(x[felt])
-                    obj[felt] = [q for q in v if _i(g, q)]
+                    obj[felt] = [q for q in v if _i(g, q, biter=biter, kutt=D['kutt'] if felt == 'vind' else None)]
             if obj.get('fasade_kilde') == 'kvartaltegning':
                 obj['fasade_fra'] = x['id']
             nye_rett.append({"emne": "bygg", "id": ny, "op": "ny", "verdi": obj, "hvem": HVEM, "dato": DATO, "grunn": f"{GRUNN}: {gr} (del av {x['id']})"})

@@ -228,8 +228,8 @@
       "bnr-193867324"
      ],
      "d": [
-      38.8,
-      118.9
+      47.9,
+      111.0
      ],
      "grunn": "langhuset med portrom øverst til venstre (egen bit)"
     },
@@ -238,8 +238,8 @@
       "bnr-193867308"
      ],
      "d": [
-      -0.4,
-      120.1
+      9.8,
+      114.3
      ],
      "grunn": "Artillerismiens uthus, det smale langhuset øverst (egen bit)"
     },
@@ -387,7 +387,9 @@
     "bnr-193972187",
     "bnr-193972225",
     "bnr-193972209",
-    "bnr-193971342"
+    "bnr-193971342",
+    "pb-60",
+    "pb-61"
    ],
    "antall": 15,
    "fasade_kvartaltegning": 10,
@@ -459,7 +461,8 @@
     "bnr-193868665",
     "bnr-193868657",
     "bnr-193867987",
-    "pb-15"
+    "pb-15",
+    "pb-59"
    ],
    "antall": 18,
    "fasade_kvartaltegning": 8,
@@ -837,7 +840,9 @@
     "bnr-193868568",
     "bnr-193867820",
     "bnr-193867839"
-   ]
+   ],
+   "bare_koblede": true,
+   "bare_koblede_grunn": "trykk-koblingen for Kvartal11 traff Kvartal12 i 2019-trykket; husene som tilfeldigvis havner på arket med det kameraet, skal ikke være med"
   },
   {
    "navn": "Kvartal12",

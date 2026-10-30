@@ -41,6 +41,66 @@
    "nye_id": [
     "pb-58"
    ]
+  },
+  {
+   "id": "bnr-193867952",
+   "tegning": "kvartal6",
+   "kutt": [
+    [
+     [
+      185.23,
+      57.02
+     ],
+     [
+      173.06,
+      63.28
+     ]
+    ]
+   ],
+   "grunn": "hjørnet Kvartal6: tegningen har hjørnehuset med takarker mot den ene gata og et eget hus med lysere tak mot den andre; Kartverkets DOM har sprang på 2,8 m i mønet der fløyene møtes",
+   "nye_id": [
+    "pb-59"
+   ]
+  },
+  {
+   "id": "bnr-193868231",
+   "tegning": "kvartal5",
+   "kutt": [
+    [
+     [
+      98.73,
+      131.7
+     ],
+     [
+      86.23,
+      139.97
+     ]
+    ]
+   ],
+   "grunn": "kvartal5 bak: tegningen har to hus (et lavere med takark til venstre, et høyere til høyre) der kommunekartet har ett omriss; Kartverkets DOM har sprang på 2,0 m i mønet 6 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-60"
+   ]
+  },
+  {
+   "id": "bnr-6242812",
+   "tegning": "kvartal5",
+   "kutt": [
+    [
+     [
+      148.12,
+      119.56
+     ],
+     [
+      154.63,
+      130.44
+     ]
+    ]
+   ],
+   "grunn": "kvartal5 høyre ende: tegningen har to hus; Kartverkets DOM har sprang på 2,4 m i mønet 4 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-61"
+   ]
   }
  ],
  "sammen": [

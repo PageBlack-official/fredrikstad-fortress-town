@@ -2314,10 +2314,10 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "NØ (gatefasade mot Færgeportgaten)",
-  "vegg": 1,
-  "vegg_L": 18.2,
-  "avstand": 8.3,
-  "vinkel": 39.0,
+  "vegg": 2,
+  "vegg_L": 15.7,
+  "avstand": 9.1,
+  "vinkel": 45.0,
   "sv": {
    "rader": [
     [
@@ -2341,54 +2341,23 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    5,
-    5,
-    4
+    4,
+    4,
+    3
    ],
    "dorer": 0,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {
   "id": "bnr-6242812",
   "navn": null,
   "sikkerhet": "høy",
-  "side": "SØ (fasade mot Raadhusgaten)",
-  "vegg": 2,
-  "vegg_L": 10.4,
-  "avstand": 8.9,
-  "vinkel": 46.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     4
-    ],
-    [
-     "etg",
-     4
-    ]
-   ],
-   "dorer": "1 mørk grønn tofløyet fyllingsdør med overlys, ca. 0.40",
-   "takvinduer": "0",
-   "piper": "ikke synlig"
-  },
-  "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    2,
-    2
-   ],
-   "dorer": 2,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": true,
-  "dorer_avvik": true
+  "status": "hoppet over",
+  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (fasade mot Raadhusgaten))"
  },
  {
   "id": "bnr-193868215",
@@ -2444,7 +2413,7 @@
   "navn": "Balaklava",
   "sikkerhet": "lav",
   "side": "NØ (gavl mot Færgeportgaten/plassen)",
-  "vegg": 0,
+  "vegg": 7,
   "vegg_L": 12.1,
   "avstand": 5.7,
   "vinkel": 9.0,
@@ -2475,7 +2444,7 @@
    ],
    "dorer": 1,
    "arker": 0,
-   "piper": 2
+   "piper": 0
   },
   "avvik": true,
   "dorer_avvik": true
@@ -2484,34 +2453,8 @@
   "id": "bnr-193868231",
   "navn": "Balaklava",
   "sikkerhet": "lav",
-  "side": "SV (mot smuget/Kirkegaten) – identitet usikker",
-  "vegg": 10,
-  "vegg_L": 10.6,
-  "avstand": 11.3,
-  "vinkel": 35.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     1
-    ]
-   ],
-   "dorer": "2 mørke dører (ca. 0.05 og 0.25), P-skilt",
-   "takvinduer": "0",
-   "piper": null
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SV (mot smuget/Kirkegaten) – identitet usikker); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 2
-  },
-  "avvik": true,
-  "dorer_avvik": true
+  "status": "hoppet over",
+  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SV (mot smuget/Kirkegaten) – identitet usikker)"
  },
  {
   "id": "bnr-193971210",
@@ -2820,46 +2763,8 @@
   "id": "bnr-193868711",
   "navn": null,
   "sikkerhet": "høy",
-  "side": "NV (gatefasade mot Toldbodgaten)",
-  "vegg": 5,
-  "vegg_L": 18.6,
-  "avstand": 6.3,
-  "vinkel": 73.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen",
-   "takvinduer": "ikke synlig",
-   "piper": "ikke synlig"
-  },
-  "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3,
-    3
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193868711",
-  "navn": null,
-  "sikkerhet": "høy",
   "status": "hoppet over",
-  "grunn": "pano_url mangler kamerapunkt/retning"
+  "grunn": "egen modell (kirka / bygg med deler)"
  },
  {
   "id": "bnr-193971199",
@@ -3739,7 +3644,7 @@
   "navn": null,
   "sikkerhet": "høy",
   "side": "SØ (gatefasade)",
-  "vegg": 1,
+  "vegg": 6,
   "vegg_L": 28.4,
   "avstand": 5.2,
   "vinkel": 23.0,
@@ -3776,39 +3681,8 @@
   "id": "bnr-193867952",
   "navn": null,
   "sikkerhet": "høy",
-  "side": "SV (langfasade mot Voldportgaten)",
-  "vegg": 3,
-  "vegg_L": 15.8,
-  "avstand": 6.8,
-  "vinkel": 33.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     7
-    ],
-    [
-     "etg",
-     7
-    ]
-   ],
-   "dorer": "1 dør på hjørnet mot Voldgaten (høyre ende)",
-   "takvinduer": "4 arker (mørk grå sink) med takterrasse-rekkverk",
-   "piper": "ikke synlig"
-  },
-  "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    7,
-    7
-   ],
-   "dorer": 0,
-   "arker": 4,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": true
+  "status": "hoppet over",
+  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SV (langfasade mot Voldportgaten))"
  },
  {
   "id": "bnr-6247822",

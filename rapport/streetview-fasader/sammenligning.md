@@ -77,7 +77,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193820409 |  | [4, 1, 1] | [4, 1] | 1 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 | bnr-13418268 |  | [0, 1] | [0] | 2 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 
-## Fasithus fra kvartaltegningene, bare sammenlignet (106)
+## Fasithus fra kvartaltegningene, bare sammenlignet (102)
 
 Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 
@@ -112,12 +112,9 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868096 |  | [3, 3] | [1, 2] | kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10) | 0 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193971946 |  | [3] | [3] | 1 brun plankedør til venstre (ca. 0.12) med lykt og skilt | 1 | 1 lite takvindu | 0 | ikke synlig | 1 |  |
 | bnr-193868029 |  | [1, 1] | [1] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 1 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
-| bnr-6242812 |  | [5, 5, 4] | [5, 5, 4] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 |  |
-| bnr-6242812 |  | [4, 4] | [2, 2] | 1 mørk grønn tofløyet fyllingsdør med overlys, ca. 0.40 | 2 | 0 | 0 | ikke synlig | 1 | ja |
-| bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 2 | ja |
-| bnr-193868231 | Balaklava | [1] | [3] | 2 mørke dører (ca. 0.05 og 0.25), P-skilt | 0 | 0 | 0 | None | 2 | ja |
+| bnr-6242812 |  | [5, 5, 4] | [4, 4, 3] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
+| bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 0 | ja |
 | bnr-193868320 |  | [11, 11] | [11, 11] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 |  |
-| bnr-193868711 |  | [3, 3] | [3, 3] | 0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen | 0 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193972411 | Sindinggården | [0] | [] | 1 stor tofløyet låveport (ca. 0.15–0.45 av veggen) med jernbeslag, og 1 smal dør til høyre (ca. 0.88–0.98) | 1 | 0 | 0 | 0 | 1 |  |
 | bnr-193867502 | Kiørboegården | [1, 2] | [1, 2] | 0 på denne fasaden; port i muren | 0 | 0 | 0 | 1 rød teglpipe | 5 |  |
 | bnr-193867499 | Kommandantgården | [9] | [9] | 1 mørk brun dør i sokkelen (ca. 0.60), kjellerluker med rundbue (4 stk) | 1 | 2 arker med saltak (ca. 0.55 og 0.70) med hvite vinduer | 0 | ikke synlig fra denne vinkelen | 6 |  |
@@ -141,7 +138,6 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867898 | Gamlebyen modelljernbanesenter | [6, 5] | [5, 5] | 1 rødbrun tofløyet fyllingsdør, ca. 0.33–0.40 av fasaden, med skilt og lykt | 1 | 0 | 0 | 1 murt teglpipe (bak mønet) | 4 | ja |
 | bnr-193867901 |  | [5, 3] | [3, 3] | 1 blågrå tofløyet port/dør helt til venstre (ca. 0.03–0.25) | 1 | 0 | 1 | 2 murte teglpiper | 1 | ja |
 | bnr-193867952 |  | [10, 9] | [8, 7] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 1 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
-| bnr-193867952 |  | [7, 7] | [7, 7] | 1 dør på hjørnet mot Voldgaten (høyre ende) | 0 | 4 arker (mørk grå sink) med takterrasse-rekkverk | 4 | ikke synlig | 1 |  |
 | bnr-6247822 |  | [5, 4] | [4, 3] | 1 brun fyllingsdør med glass, ca. 0.42, i en nisje, med 5 steintrinn | 2 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-6251331 |  | [3, 3] | [1, 1] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 1 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
 | bnr-193971334 |  | [3] | [3] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 1 |  |
@@ -190,7 +186,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867510 | Ekserserhuset | [3] | [6] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193869580 | Voldportravelinet | [2, 2] | [2] | 1 dør på NV-siden (ca. 0.55), benk foran | 0 | 0 | 0 | 1 murt teglpipe på mønet | 2 | ja |
 
-## Hoppet over (140)
+## Hoppet over (143)
 
 - bnr-193869548 Voldporten med vaktstuen: portbygg (data/porter.json røres ikke)
 - bnr-193820883 : ikke synlig fra gata
@@ -224,12 +220,14 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193971962 : ikke synlig fra gata
 - bnr-193867324 Artillerismien: merknaden: ikke bekreftet at det er riktig bygg (lastebil dekker)
 - bnr-193868002 : samme vegg (7) som en annen side: NØ (gatefasade, venstre del) sett skrått
+- bnr-6242812 : siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (fasade mot Raadhusgaten))
 - bnr-193972209 : ikke synlig fra gata
+- bnr-193868231 Balaklava: siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SV (mot smuget/Kirkegaten) – identitet usikker)
 - bnr-193868010 : ikke synlig fra gata
 - bnr-193972179 : ikke synlig fra gata
 - bnr-193972217 : ikke synlig fra gata
 - bnr-193868452 : veggen (vegg 6, 11.0 m) har plass til 8 akser, Street View trenger 10: trolig feil vegg eller feil hus i modellen; veggen valgt etter retningen i avlesningen (SØ (langfasade mot plassen ved Færgeportgaten) + SV-gavl); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren
-- bnr-193868711 : pano_url mangler kamerapunkt/retning
+- bnr-193868711 : egen modell (kirka / bygg med deler)
 - bnr-193971199 offentlig toalett: ingen vindustall (SØ (sett ovenfra fra vollen, bare taket))
 - bnr-193867596 Vennehaabet: siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (N/NV (gatefasade))
 - bnr-193870287 : ingen vindustall (S (sett på ~40 m langs veien))
@@ -237,6 +235,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193870244 : ikke synlig fra gata
 - bnr-193870260 : ingen vindustall (S/SØ (~23–35 m, lengre ned i gata))
 - bnr-193868584 : ikke synlig fra gata
+- bnr-193867952 : siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SV (langfasade mot Voldportgaten))
 - bnr-193972624 : ikke synlig fra gata
 - bnr-193971377 : ikke synlig fra gata
 - bnr-193867995 : ikke synlig fra gata

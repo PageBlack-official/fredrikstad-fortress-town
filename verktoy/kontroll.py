@@ -199,7 +199,11 @@ def kamera_fra_trykket(navn):
     G = (np.diag([72 / 150, 72 / 150, 1]) @ Ti @ Mg)[:2]
     s = np.linalg.svd(G[:, :2], compute_uv=False)
     k = s[0] * math.sqrt(max(0.0, 1 - (s[1] / s[0]) ** 2))
-    return np.array([[G[0, 0], G[0, 1], 0.0, G[0, 2]], [G[1, 0], G[1, 1], -k, G[1, 2]]])
+    P = np.array([[G[0, 0], G[0, 1], 0.0, G[0, 2]], [G[1, 0], G[1, 1], -k, G[1, 2]]])
+    # koblingen mot trykket kan ha truffet feil kvartal (Kvartal11 lå på Kvartal12 i trykket): startforskyvning satt for hånd (pt)
+    if kob.get('startforskyvning'):
+        P[:, 3] += np.array(kob['startforskyvning']['d'], float)
+    return P
 
 
 def _endre(P0, v, c0):
@@ -294,7 +298,7 @@ def tilpass_kamera(navn, logg=print):
             if x.get('skjul') or len(x['p']) < 3 or x.get('kirke'): continue
             c = proj(P0, *np.mean(x['p'], 0), x['h'] * 0.5)
             inne = 0 <= c[0] < W and 0 <= c[1] < H and Mbig[int(c[1]), int(c[0])]
-            if x['id'] in lov or inne:
+            if x['id'] in lov or (inne and not (kobling(navn) or {}).get('bare_koblede')):
                 alle.append(x)
     # biter (kvartal-kobling.json «biter», 30.10): hus Vegar tegnet som en egen bit et annet sted på arket enn der det felles
     # kameraet legger dem; forskyvningen (pt) er satt for hånd fra arket og finjusteres med blokksøket under
@@ -407,8 +411,9 @@ def tilpass_kamera(navn, logg=print):
             pres = float(Mtd[yy, xx].mean()) if len(xs) else 0
             return k + 6 * (1 - pres) + 0.03 * math.hypot(*d)
         best = (sc((0, 0)), 0.0, 0.0)
-        for dx in np.arange(-25, 25.1, 1.0):
-            for dy in np.arange(-25, 25.1, 1.0):
+        rad = 8 if X[0]['id'] in BIT else 25          # biter: forskyvningen er satt for hånd, søket bare finjusterer
+        for dx in np.arange(-rad, rad + 0.1, 1.0):
+            for dy in np.arange(-rad, rad + 0.1, 1.0):
                 v = sc((dx, dy))
                 if v < best[0]: best = (v, dx, dy)
         _, dx, dy = best
@@ -657,6 +662,14 @@ def takform_modell(x):
     """Takform fra modellens takflater (tak2/sk, gavl2): sal, valm, halvvalm, pult, flatt, knekk, sammensatt."""
     if x.get('takform') == 'knekk':
         return 'knekk'
+    # takformen verktoy/tak_enkel.py bygde taket med (30.10): flatene er laget av nettopp denne formen, så den leses direkte
+    # (geometriregelen under tok brannmurer mot naboen for halvvalm og tvers-møne for valm)
+    tf = x.get('takform') or ''
+    if tf in ('sal', 'valm', 'halvvalm', 'pult', 'flatt'):
+        return tf
+    if tf.startswith('vinkel:'):
+        fs = [f.rstrip('-') for f in tf[7:].split('+')]
+        return f"{fs[0]}/sammensatt" if len(set(fs)) == 1 else 'sammensatt'
     F = x.get('tak2') or x.get('sk') or []
     if not F:
         return 'flatt'
@@ -877,7 +890,8 @@ def analyser(navn, logg=print):
                 r['silhuett_forhold'] = round(float(np.median(ed[ok] / em[ok])), 2)
         # takform
         r['takform_modell'] = takform_modell(x)
-        gavl = 0
+        gavl = 0; gavl_vegger = []
+        vegg_av = {j: kk for kk, jl in vk.items() for j in jl}
         for j in veggflater:
             P_ = Pg(F[j]['ytre'].exterior).simplify(0.8)
             c = np.array(P_.exterior.coords)[:-1]
@@ -890,13 +904,16 @@ def analyser(navn, logg=print):
             hh = max(y1 - y0, 1)
             if len(midt) and midt[:, 1].min() < min(tl, tr) - 0.18 * hh:
                 gavl += 1
+                if j in vegg_av:
+                    w_ = next(v for v in vegger_m if v['k'] == vegg_av[j])
+                    gavl_vegger.append([list(map(float, w_['a'])), list(map(float, w_['b']))])
         tri = 0
         for j in takflater:
             P_ = Pg(F[j]['ytre'].exterior).simplify(1.2)
             if P_.area < 20: continue
             n_ = len(P_.exterior.coords) - 1
             if n_ == 3: tri += 1
-        r['takform_tegning_tegn'] = dict(gavler=gavl, trekantede_takflater=tri, takflater=len(takflater))
+        r['takform_tegning_tegn'] = dict(gavler=gavl, trekantede_takflater=tri, takflater=len(takflater), gavl_vegger=gavl_vegger)
         r['takform_tegning'] = ('halvvalm' if gavl and tri else 'sal' if gavl else 'valm' if tri else ('ukjent (ingen gavl/endeflate synlig)' if takflater else 'ukjent'))
         # farger: tegningens flatefarger (lys side) mot modellen
         def farge_av(jl, lys):

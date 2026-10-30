@@ -48,53 +48,6 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193868711",
-  "navn": null,
-  "vegger": {
-   "4": {
-    "tegning": "Kvartal10",
-    "rader": [
-     1,
-     1,
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   },
-   "3": {
-    "tegning": "Kvartal10",
-    "rader": [
-     2
-    ],
-    "dorer": 0,
-    "notat": []
-   },
-   "2": {
-    "tegning": "Kvartal10",
-    "rader": [
-     1,
-     3
-    ],
-    "dorer": 1,
-    "notat": []
-   },
-   "5": {
-    "tegning": "Street View",
-    "rader": [
-     3,
-     3
-    ],
-    "dorer": 0,
-    "notat": [
-     "Street View mai 2024"
-    ]
-   }
-  },
-  "tegnet": 9,
-  "regler": 16,
-  "streetview": 6
- },
- {
   "id": "bnr-193972411",
   "navn": "Sindinggården",
   "vegger": {
@@ -1537,7 +1490,7 @@
    }
   },
   "tegnet": 9,
-  "regler": 6,
+  "regler": 12,
   "streetview": 0
  },
  {
@@ -2096,7 +2049,8 @@
    "6": {
     "tegning": "kvartal5",
     "rader": [
-     8
+     4,
+     4
     ],
     "dorer": 1,
     "notat": []
@@ -2169,7 +2123,7 @@
   "streetview": 0
  },
  {
-  "id": "bnr-6242812",
+  "id": "pb-61",
   "navn": null,
   "vegger": {
    "2": {
@@ -2182,29 +2136,17 @@
     "notat": [
      "1 vindu(er) over gesims i tegningen (gavl/ark)"
     ]
-   },
-   "1": {
-    "tegning": "Street View",
-    "rader": [
-     5,
-     5,
-     4
-    ],
-    "dorer": 0,
-    "notat": [
-     "Street View aug. 2010"
-    ]
    }
   },
   "tegnet": 6,
-  "regler": 8,
-  "streetview": 14
+  "regler": 0,
+  "streetview": 0
  },
  {
-  "id": "bnr-193867952",
+  "id": "pb-59",
   "navn": null,
   "vegger": {
-   "3": {
+   "2": {
     "tegning": "kvartal6",
     "rader": [
      7,
@@ -2212,8 +2154,17 @@
     ],
     "dorer": 0,
     "notat": []
-   },
-   "1": {
+   }
+  },
+  "tegnet": 14,
+  "regler": 0,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193867952",
+  "navn": null,
+  "vegger": {
+   "6": {
     "tegning": "kvartal6",
     "rader": [
      8,
@@ -2223,8 +2174,8 @@
     "notat": []
    }
   },
-  "tegnet": 30,
-  "regler": 24,
+  "tegnet": 16,
+  "regler": 22,
   "streetview": 0
  },
  {
@@ -2669,7 +2620,7 @@
    }
   },
   "tegnet": 12,
-  "regler": 15,
+  "regler": 10,
   "streetview": 0
  },
  {

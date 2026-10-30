@@ -26,8 +26,12 @@ Modellen per hus (kilder/tak-tegning.json kan overstyre alt, se under):
 
     python3 verktoy/tak_enkel.py [--tørt]          rettelser for alle hus i Gamlebyen med tak fra kommunekartet
     python3 verktoy/tak_enkel.py ark [x y r navn]   plan med DOM−DTM og mønene (rapport/tak/, bildene ikke i git)
+    python3 verktoy/tak_enkel.py fra_kontroll       takform og mønretning lest av tegningene (rapport/kontroll/avvik.json: gavler og
+                                                    trekantede takflater på huset) inn i kilder/tak-tegning.json; linjer satt for
+                                                    hånd (uten «kilde: kontroll») røres ikke
 
-Kirka, Kaserna, portbyggene og hus med deler (rådhustårnet) røres ikke. tak.py brukes ikke lenger i Gamlebyen.
+Kirka, Kaserna og portbyggene røres ikke. Hus med deler (tårn) får rent tak på kroppen; delene står oppå (kilder/tak-tegning.json kan legge
+til deler: tårn som tegningen viser og DOM har høyden til). tak.py brukes ikke lenger i Gamlebyen.
 """
 import json, math, os, sys
 import numpy as np
@@ -399,7 +403,7 @@ def spek_for(x, T=None, logg=None):
         tv = (t.get('kropper') or [{}] * len(K))[kk] if kk < len(t.get('kropper') or []) else {}
         tv = dict(tv)
         if t.get('form') and not tv.get('form'): tv['form'] = t['form']
-        if t.get('mone') and tv.get('langs') is None:
+        if t.get('mone') is not None and tv.get('langs') is None and len(K) == 1:
             tv['langs'] = mone_langs(k, t['mone'], th)
         if 'langs' in tv and isinstance(tv['langs'], str):
             tv['langs'] = mone_langs(k, tv['langs'], th)
@@ -449,7 +453,7 @@ def kandidater(d, ret):
     porter = {p.get('bygg_id') for p in d.get('porter', [])}
     ut = []
     for x in d['bygg']:
-        if x['id'] not in fra_grunnmur or x.get('skjul') or x.get('kirke') or x.get('deler') or len(x['p']) < 3: continue
+        if x['id'] not in fra_grunnmur or x.get('skjul') or x.get('kirke') or len(x['p']) < 3: continue   # deler (tårn) står oppå taket
         if x['id'] in porter or x['id'] == 'bnr-193867537': continue
         ut.append(x)
     return ut
@@ -488,6 +492,8 @@ def main(tørt=False):
                 nye += [r('h', h_)] + ([r('th', th_)] if form != 'flatt' else [])
             else:                        # tilpasningen er ikke til å stole på (naboer eller trær i pikslene): bare vegghøyden
                 nye.append(r('h', round(max(2.3, p50 - 1.0), 2)))
+        if T.get(x['id'], {}).get('deler'):          # tårn o.l. tegningen viser og DOM bekrefter (kilder/tak-tegning.json)
+            nye.append(r('deler', [dict(dict(vegg=x.get('vegg'), tak=x.get('tak')), **d) for d in T[x['id']]['deler']]))   # husets farger
         logg[x['id']] = dict(takform=form, kilde=spek['kilde'], kropper=[dict(form=k['form'], langs=k['langs'], ender=k['ender'],
                              mål=[round(k['u1'] - k['u0'], 1), round(k['v1'] - k['v0'], 1)], dom=k.get('dom')) for k in spek['kropper']])
     if not tørt:
@@ -537,9 +543,34 @@ def ark(x, y, rad=40, navn=None):
     print(f)
 
 
+def fra_kontroll():
+    A = json.load(open(os.path.join(ROT, 'rapport', 'kontroll', 'avvik.json'), encoding='utf8'))
+    T = json.load(open(TEGNING_FIL, encoding='utf8')) if os.path.exists(TEGNING_FIL) else dict(hus={})
+    hus = T.setdefault('hus', {})
+    for k in [k for k, v in hus.items() if v.get('kilde') == 'kontroll']:
+        del hus[k]
+    n = 0
+    for r in A['hus']:
+        if r.get('finnes') != 'ja' or r['id'] in hus or r.get('iou', 0) < 0.4 or r.get('slaatt_sammen'):
+            continue
+        t = r.get('takform_tegning', '')
+        if t not in ('sal', 'valm', 'halvvalm'):
+            continue
+        e = dict(form=t, kilde='kontroll', tegning=r['tegning'], grunn=f"tegningen {r['tegning']}: {r['takform_tegning_tegn']['gavler']} gavl(er), {r['takform_tegning_tegn']['trekantede_takflater']} trekantede takflater")
+        gv = r['takform_tegning_tegn'].get('gavl_vegger') or []
+        if gv:
+            a, b = np.array(gv[0][0]), np.array(gv[0][1]); u = b - a
+            e['mone'] = round(math.degrees(math.atan2(u[0], -u[1])) % 180, 1)     # mønet står vinkelrett på gavlveggen
+        hus[r['id']] = e; n += 1
+    json.dump(T, open(TEGNING_FIL, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    print(f"{n} hus fikk takform fra tegningene (kilder/tak-tegning.json)")
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
-    if a and a[0] == 'ark':
+    if a and a[0] == 'fra_kontroll':
+        fra_kontroll()
+    elif a and a[0] == 'ark':
         ark(float(a[1]), float(a[2]), float(a[3]) if len(a) > 3 else 40, a[4] if len(a) > 4 else None)
     else:
         main(tørt='--tørt' in a)

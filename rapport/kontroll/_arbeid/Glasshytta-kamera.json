@@ -1,76 +1,100 @@
 {
  "tegning": "Glasshytta",
  "par": {
-  "az": -10.79,
+  "az": -10.53,
   "el": 45.46,
-  "s": 5.4801,
-  "K": 3.6106,
-  "kz": 0.939,
+  "s": 5.0931,
+  "K": 4.2701,
+  "kz": 1.195,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   5.315471087125241,
-   1.0126942873798914,
+   4.94750690477004,
+   0.9200004517420759,
    0.0,
-   -1226.8939466334334
+   -1121.0165660186904
   ],
   [
-   1.3295542578912065,
-   -3.7737367435507085,
-   -3.6106094346338633,
-   -207.276686751447
+   1.205832702247171,
+   -3.5128851080580663,
+   -4.270144974706376,
+   -181.11887228312662
   ]
  ],
  "forskyvning": {
+  "bnr-193869548": [
+   99.94,
+   127.94
+  ],
   "bnr-193869580": [
-   -1.0,
+   0.0,
    0.0
   ]
  },
  "blokker": [
   {
    "ids": [
+    "bnr-193869548"
+   ],
+   "d": [
+    5.44,
+    2.94
+   ],
+   "kant_for": 3.91,
+   "kant_etter": 3.55
+  },
+  {
+   "ids": [
     "bnr-193869580"
    ],
    "d": [
-    -1.0,
+    0.0,
     0.0
    ],
-   "kant_for": 3.15,
-   "kant_etter": 3.14
+   "kant_for": 1.48,
+   "kant_etter": 1.48
   }
  ],
  "maal": {
-  "bunn": 3.5,
-  "topp": 2.0,
-  "iou": 0.39116428900138056,
-  "bare": 85,
-  "kant": 3.6003750562667847,
-  "omriss": 37.42991934817751
+  "bunn": 5.0,
+  "topp": 1.0,
+  "iou": 0.6079777907656342,
+  "bare": 13,
+  "kant": 2.7570735812187195,
+  "omriss": 18.554496472269015
  },
  "bygg": [
+  "bnr-193869548",
   "bnr-193869580"
  ],
- "utenfor_tegningen": [
-  "bnr-193869548"
- ],
+ "utenfor_tegningen": [],
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
-  "bnr-193869580": {
-   "median_pt": 2.04,
-   "median_px": 6.1,
-   "andel_innen_2pt": 0.49,
+  "bnr-193869548": {
+   "median_pt": 1.91,
+   "median_px": 5.7,
+   "andel_innen_2pt": 0.51,
    "beste_forskyvning_pt": [
-    -2.0,
-    -3.0
+    0.0,
+    0.0
    ],
-   "median_etter_pt": 2.0
+   "median_etter_pt": 1.91
+  },
+  "bnr-193869580": {
+   "median_pt": 0.88,
+   "median_px": 2.6,
+   "andel_innen_2pt": 0.75,
+   "beste_forskyvning_pt": [
+    0.5,
+    -0.5
+   ],
+   "median_etter_pt": 0.86
   }
  },
  "registrering": {
-  "median_pt": 2.04,
-  "median_px": 6.1,
+  "median_pt": 1.4,
+  "median_px": 4.2,
   "andel_under_3pt": 1.0,
   "R": 3.0
  }
