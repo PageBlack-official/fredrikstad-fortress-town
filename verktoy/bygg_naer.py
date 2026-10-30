@@ -90,7 +90,7 @@ def ark(n):
                       (x.get('fasade_kilde') or '')[:13], (x.get('farge_kilde') or '')[:30]])
     tab_h = 40 + 21 * (len(rader) + 1)
     out = Image.new('RGB', (teg.width + mod.width + 30, H + 70 + tab_h), 'white'); dd = ImageDraw.Draw(out)
-    dd.text((10, 12), f"{n}: tegning 2015 (venstre), modellen så nær kartet zoomer (zoom 6, pikseltetthet 2), az 20 (høyre)", fill=(0, 0, 0), font=FB)
+    dd.text((10, 12), f"{n}: tegning 2015 (venstre), modellen så nær kartet zoomer (zoom 6), az 20 (høyre)", fill=(0, 0, 0), font=FB)
     out.paste(teg, (10, 55)); out.paste(mod, (teg.width + 20, 55))
     y = H + 70; kol = [0, 120, 320, 380, 1180, 1225, 1270, 1315, 1450]
     for c, t in zip(kol, ['id (bnr-)', 'navn', 'h m', 'vegger: retning lengde: vinduer per etasje (nederst først), D dører, P porter', 'ark', 'tv', 'pip', 'fasade', 'farge']):

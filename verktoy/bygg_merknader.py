@@ -65,7 +65,8 @@ def main(tørt=False):
             x[felt] = verdi
         for felt, verdi in (m.get('sett') or {}).items():
             sett(felt, verdi)
-        if 'h' in (m.get('sett') or {}) and x.get('fasade_kilde') == 'antatt' and x.get('gml') and not m.get('vegg'):
+        if ('h' in (m.get('sett') or {}) or 'gml' in (m.get('sett') or {})) and x.get('fasade_kilde') in ('antatt', None) and x.get('gml') and not m.get('vegg'):
+            if not x.get('fasade_kilde'): sett('fasade_kilde', 'antatt')
             sett('vind', VR.lag_vind(x, omg)[0])       # ny høyde: reglene legger vinduene på nytt (regel 17: ikke over gesims)
         if m.get('vegg'):
             V = VG.vegger(x, omg, slaa_sammen=True); P = np.array(x['p'], float)
