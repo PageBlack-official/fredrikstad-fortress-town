@@ -171,6 +171,41 @@ function bygArkade(A, pts, wall, dim, veggs){
   const mk=A.mork||[34,33,33], bak=new THREE.Mesh(bg,mat(mk,false,mk.map(c=>Math.round(c*0.8)))); bak.receiveShadow=true; grp.add(bak);
   return grp;
 }
+// ATRIUM (bygg.atrium, 30.10): innglasset gårdsrom i en ring av tak (ringtaket står i tak2/gavl2, regnet av verktoy/landemerker.py).
+// Her tegnes karmen og glasset: {gaard (gårdsrommets omriss, glass med karm), kant (karmens bredde), z (karmens fot = takfoten),
+// topp (glassets topp), glass, ramme}. Firkantet gårdsrom: glassvalm med mønet langs den lange siden, kvadrat = pyramide.
+// Gratene og mønet får sprosser i karmfargen, flatene tre sprosser hver vei. Første bruk: 16308102 (Kvartal14, ortofoto 2024).
+function strimmel(p, q, r, m){ const a=new THREE.Vector3(...p), c=new THREE.Vector3(...q), L=a.distanceTo(c); if(L<0.05) return null;
+  const g=new THREE.CylinderGeometry(r,r,L,4,1,true); g.translate(0,L/2,0);
+  const s=new THREE.Mesh(g,m); s.position.copy(a); s.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), c.clone().sub(a).normalize()); return s; }
+function bygAtrium(A){
+  const grp=new THREE.Group(), G=A.gaard, n=G.length; if(n<3) return null;
+  const k=A.kant||0.4, zk=A.z+0.25, mr=mat(A.ramme||[226,226,220],false), mg=mat(A.glass||[104,122,146],false);
+  // karmen: gårdsrommet minus glasset, flat i karmhøyden
+  const inn=utvidPoly(G,-k), sh=polyShape(G); sh.holes.push(new THREE.Path(inn.map(q=>new THREE.Vector2(q[0],q[1]))));
+  const kg=new THREE.ExtrudeGeometry(sh,{depth:zk-A.z+0.05,bevelEnabled:false}); kg.rotateX(-Math.PI/2); kg.translate(0,A.z-0.05,0);
+  const km=new THREE.Mesh(kg,[mr,mr]); km.castShadow=km.receiveShadow=true; grp.add(km);
+  // glasset: firkant -> valm (mønet langs den lange siden), ellers pyramide mot tyngdepunktet
+  let fl=[], mone=null;
+  if(inn.length===4){ let P=inn.map(q=>[q[0],q[1]]); const L=(a,b)=>Math.hypot(b[0]-a[0],b[1]-a[1]);
+    if(L(P[1],P[2])>L(P[0],P[1])) P=[P[1],P[2],P[3],P[0]];
+    const l=L(P[0],P[1]), w=L(P[1],P[2])/2, u=[(P[1][0]-P[0][0])/l,(P[1][1]-P[0][1])/l], e=Math.min(w,l/2);
+    const m0=[(P[0][0]+P[3][0])/2+u[0]*e,(P[0][1]+P[3][1])/2+u[1]*e], m1=[(P[1][0]+P[2][0])/2-u[0]*e,(P[1][1]+P[2][1])/2-u[1]*e];
+    mone=[m0,m1]; fl=[[P[0],P[1],m1,m0],[P[1],P[2],m1],[P[2],P[3],m0,m1],[P[3],P[0],m0]]; }
+  else { const c=inn.reduce((s,q)=>[s[0]+q[0]/inn.length,s[1]+q[1]/inn.length],[0,0]); mone=[c,c]; fl=inn.map((q,j)=>[q,inn[(j+1)%inn.length],c]); }
+  const Z=q=>(q===mone[0]||q===mone[1])?A.topp:zk, P3=q=>[q[0],Z(q),-q[1]];
+  const pos=[]; fl.forEach(f=>{ for(let j=1;j<f.length-1;j++) [f[0],f[j],f[j+1]].forEach(q=>pos.push(...P3(q))); });
+  const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); gg.computeVertexNormals();
+  const gm=new THREE.Mesh(gg,mat(A.glass||[104,122,146],false,null,{ds:true})); gm.castShadow=gm.receiveShadow=true; grp.add(gm);
+  // sprosser: grater og møne, og tre sprosser fra karmen mot gratene på hver flate (som i fotoet: lyse linjer i glasset)
+  const rib=(p,q,r)=>{ const s=strimmel(p,q,r,mr); if(s){ s.castShadow=true; grp.add(s); } };
+  fl.forEach(f=>{ const a=f[0], b=f[1], top=f.length===4?[f[3],f[2]]:[f[2],f[2]];
+    rib(P3(b),P3(f[2]),0.07);
+    for(let s=1;s<=3;s++){ const t=s/4, q0=[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t], q1=[top[0][0]+(top[1][0]-top[0][0])*t,top[0][1]+(top[1][1]-top[0][1])*t];
+      const p=P3(q0), q=[q1[0],A.topp,-q1[1]]; p[1]+=0.02; q[1]+=0.02; rib(p,q,0.035); } });
+  if(mone[0]!==mone[1]) rib(P3(mone[0]),P3(mone[1]),0.07);
+  return grp;
+}
 DATA.bygg.forEach((b,i)=>{
   const pts=b.p; if(pts.length<3 || b.skjul) return;
   const spesiell = !!(b.kirke || (b.deler && b.deler.length) || PORT_BYGG.has(i));
@@ -321,6 +356,7 @@ DATA.bygg.forEach((b,i)=>{
     });
   }
   if(b.arkader && !dim) b.arkader.forEach(A=>{ const g=bygArkade(A, pts, wall, dim, b.veggs); if(g) legg(g); });
+  if(b.atrium && !dim){ const g=bygAtrium(b.atrium); if(g) legg(g); }
   // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
   if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
     b.takvinduer.forEach(([x,y,bw,bh])=>{

@@ -31,6 +31,7 @@ from shapely.geometry import Polygon
 GRUNN = 'takfarge etter fargeregelen (verktoy/tak_farge.py, 30.10)'
 UT = os.path.join(ROT, 'rapport', 'farge')
 STANDARD_VEGG = [226, 222, 212]
+ATRIER = json.load(open(os.path.join(ROT, 'kilder', 'atrier.json'), encoding='utf8'))['hus']
 STANDARD_TAK = [150, 144, 138]
 # grunner til linjer som er fargeregelens egne (de tas bort før tegningens farge leses, og erstattes ved hver kjøring)
 REGEL_GRUNNER = ('Street View (Vegars Chrome 29.10.2026)', 'takfarge fra ortofoto 2024', 'veggfarge til nye hus',
@@ -299,6 +300,11 @@ def mal_tak(x, foto_cache={}):
     I = P.buffer(-0.5)
     if I.is_empty or I.area < 3:                     # skur og små uthus: hele taket, 0,3 m inn
         I, polys = P.buffer(-0.3), [P]
+    # innglasset gårdsrom (kilder/atrier.json): glasset og karmen er ikke taket, de tas ut med 0,5 m margin (30.10: blågrå
+    # glasspyramide i 16308102 trakk medianen mot grått)
+    A = ATRIER.get(x.get('id'))
+    if A:
+        I = I.difference(affinity.translate(Polygon(A['gaard']), dx, dy).buffer(0.5))
     x['_foto_flytt'] = (dx, dy)
     res = []
     for F in polys:

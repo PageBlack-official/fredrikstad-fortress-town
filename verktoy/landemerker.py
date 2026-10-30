@@ -9,10 +9,12 @@ Elementene er generelle (et nytt tårn eller en ny arkade = en ny post her, inge
   taarn    bygg.deler[] {form: 'taarn', c, r, sider, rot, skaft, krage, h, ut, tinde_h, tinder, vegg, veggs, topp, vinduer, stang, flagg}
   arkader  bygg.arkader[] {a, b, z0, h, topp, n, bredde, dybde, mork}   rundbuer med dybde langs veggen a→b
   fasade   vinduer erstattet på én fasade (polylinje i modellmeter): elementer i u (meter fra første punkt)
+  atrium   bygg.atrium {gaard, kant, z, topp, glass, ramme} + ringtak (tak2/gavl2) fra kilder/atrier.json: gårdsrom med
+           glasspyramide (kvadrat) eller glassvalm (rektangel) og ring av tak rundt (bygAtrium i src/07)
 """
 import json, math, os, sys
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, ROT)
+sys.path.insert(0, ROT); sys.path.insert(0, os.path.join(ROT, "verktoy"))
 import datalag
 
 GRUNN = 'landemerker (verktoy/landemerker.py, 30.10)'
@@ -59,6 +61,147 @@ VOLDPORT_FASADER = [dict(linje=[[201.31, 40.3], [214.4, 33.99]], andeler=True,
                          vinduer=[(0.25, 1.05, 0.9, 2.0, 1, 0), (0.53, 1.75, 0.8, 1.1, 0, 0), (0.81, 1.75, 0.8, 1.1, 0, 0)]),
                     dict(linje=[[201.31, 40.3], [204.74, 47.43]], andeler=True,
                          vinduer=[(0.30, 1.75, 0.8, 1.2, 0, 0), (0.65, 1.75, 0.8, 1.2, 0, 0)])]
+
+
+ATRIER = json.load(open(os.path.join(ROT, 'kilder', 'atrier.json'), encoding='utf8'))['hus']
+KAPP = 7.5 / 0.82            # som tak.py: over t = KAPP er taket flatt
+
+
+def _halvplan(a, b, c, bounds):
+    """{p: a*x + b*y + c <= 0} innenfor bounds (utvidet)."""
+    from shapely.geometry import Polygon, box
+    x0, y0, x1, y1 = bounds; B = box(x0 - 60, y0 - 60, x1 + 60, y1 + 60)
+    n = math.hypot(a, b)
+    if n < 1e-12:
+        return B if c <= 0 else Polygon()
+    a, b, c = a / n, b / n, c / n
+    p0 = (-a * c, -b * c); u = (-b, a); R = 1e4
+    return Polygon([(p0[0] + u[0] * R, p0[1] + u[1] * R), (p0[0] - u[0] * R, p0[1] - u[1] * R),
+                    (p0[0] - u[0] * R - a * R, p0[1] - u[1] * R - b * R), (p0[0] + u[0] * R - a * R, p0[1] + u[1] * R - b * R)]).intersection(B)
+
+
+def atrium_plan(x, A, wg=None, kapp=KAPP):
+    """Ringtaket rundt et (konvekst) gårdsrom som rett skjelett der bare noen yttervegger har takfot (A['takfot']: punkter på
+    dem); de andre er brannmurer, og taket stiger fra gårdsrommet opp mot dem. Med konvekst gårdsrom og takfot på rette
+    yttervegger er skjelettet eksakt: t(p) = min( min_s d_s(p), max_k g_k(p) ), d_s = avstanden inn fra takfotveggen s,
+    g_k = avstanden ut fra gårdsromskanten k (det skarpe offsetet av et konvekst polygon er maks av kantavstandene).
+    Fløyene kan ha ulik helning (Kartverkets DOM: nordfløyen er brattere mot gata enn mot gården, vestfløyen er et slakt
+    pulttak): flaten mot gårdsromskant k får helning wg[k] ganger takfotsidens. Det er et vektet rett skjelett, og formelen
+    holder fortsatt (offsetet av et konvekst polygon med vektede kanter er maks av de vektede kantavstandene).
+    Gir (U, S, K, t_fun): ringen, takfotplanene og gårdsromsplanene [(navn, a, b, c)] med t = a*x + b*y + c, og t (vektorisert)."""
+    import numpy as np
+    from shapely.geometry import Polygon, Point, LineString
+    from shapely.geometry.polygon import orient
+    P = orient(Polygon(x['p']).buffer(0), 1.0); G = orient(Polygon(A['gaard']), 1.0)
+    U = P.difference(G)
+    plan = []
+    R = list(P.exterior.coords)[:-1]
+    for k in range(len(R)):
+        a, b = np.array(R[k]), np.array(R[(k + 1) % len(R)]); L = np.hypot(*(b - a))
+        if L < 0.3 or not any(LineString([a, b]).distance(Point(q)) < 0.6 for q in A['takfot']):
+            continue
+        n = np.array([-(b - a)[1], (b - a)[0]]) / L                  # innover (ytre ring mot klokka)
+        plan.append(('takfot', float(n[0]), float(n[1]), float(-n @ a)))
+    if not plan:
+        raise SystemExit(f"{x['id']}: ingen takfotvegg ved punktene {A['takfot']}")
+    Rg = list(G.exterior.coords)[:-1]
+    for k in range(len(Rg)):
+        a, b = np.array(Rg[k]), np.array(Rg[(k + 1) % len(Rg)]); L = np.hypot(*(b - a))
+        n = np.array([(b - a)[1], -(b - a)[0]]) / L                  # utover fra gårdsrommet
+        w = 1.0 if wg is None else wg[k]                              # wg[k]: helningen mot gårdsromskant k / takfotsidens
+        plan.append(('gaard', float(n[0]) * w, float(n[1]) * w, float(-n @ a) * w))
+    S = [q for q in plan if q[0] == 'takfot']; K = [q for q in plan if q[0] == 'gaard']
+    def t_fun(X, Y):
+        ds = np.min([a * X + b * Y + c for _, a, b, c in S], axis=0); gk = np.max([a * X + b * Y + c for _, a, b, c in K], axis=0)
+        return np.clip(np.minimum(ds, gk), 0, kapp)
+    return U, S, K, t_fun
+
+
+def atrium_tak(x, A, wg=None, kapp=KAPP):
+    """tak2 og gavl2 for ringtaket (formatet til tak.py: [x, y, t] per hjørne)."""
+    import numpy as np
+    from shapely.geometry import LineString, Polygon
+    from shapely.geometry.polygon import orient
+    from shapely.ops import unary_union
+    import tak
+    U, S, K, t_fun = atrium_plan(x, A, wg, kapp)
+    KAPP = kapp
+    bd = U.bounds; flater = []
+    hp = lambda a, b, c: _halvplan(a, b, c, bd)
+    # gårdsromsflatene: g_k er størst (maks) og ikke over noen takfotflate
+    gfl = []
+    for k, (_, a, b, c) in enumerate(K):
+        F = U
+        for m, (_, a2, b2, c2) in enumerate(K):
+            if m != k: F = F.intersection(hp(a2 - a, b2 - b, c2 - c))
+        for _, a2, b2, c2 in S:
+            F = F.intersection(hp(a - a2, b - b2, c - c2))
+        gfl.append(F); flater.append((F, (a, b, c)))
+    # takfotflatene: d_s er minst blant takfotveggene; resten av ringen (det gårdsromsflatene ikke tar)
+    rest = U.difference(unary_union([F.buffer(1e-7) for F in gfl]))
+    for s, (_, a, b, c) in enumerate(S):
+        F = rest
+        for m, (_, a2, b2, c2) in enumerate(S):
+            if m != s: F = F.intersection(hp(a - a2, b - b2, c - c2))
+        flater.append((F, (a, b, c)))
+    # flatt over KAPP
+    ut = []
+    for F, pl in flater:
+        F1 = F.intersection(hp(pl[0], pl[1], pl[2] - KAPP)); ut.append((F1, pl))
+        F2 = F.difference(F1)
+        if F2.area > 0.05: ut.append((F2, (0.0, 0.0, KAPP)))
+    tak2 = []
+    for F, pl in ut:
+        for g in getattr(F, 'geoms', [F]):
+            if g.geom_type != 'Polygon' or g.area < 0.02: continue
+            for e in tak._enkle(orient(g, 1.0)):
+                cs = np.array(e.exterior.coords)[:-1]
+                tak2.append([[round(float(px), 2), round(float(py), 2), round(float(min(max(pl[0] * px + pl[1] * py + pl[2], 0), KAPP)), 3)] for px, py in cs])
+    # gavl2: ytterveggene uten takfot (brannmurene), fra veggtoppen opp til taket, delt der flaten under skifter
+    P = orient(Polygon(x['p']).buffer(0), 1.0); R = list(P.exterior.coords)[:-1]; gavl2 = []
+    for k in range(len(R)):
+        seg = LineString([R[k], R[(k + 1) % len(R)]])
+        for F, pl in ut:
+            Sg = seg.intersection(F.buffer(1e-4))
+            for s in getattr(Sg, 'geoms', [Sg]):
+                if s.geom_type != 'LineString' or s.length < 0.05: continue
+                (xa, ya), (xb, yb) = s.coords[0], s.coords[-1]
+                ta = min(max(pl[0] * xa + pl[1] * ya + pl[2], 0), KAPP); tb = min(max(pl[0] * xb + pl[1] * yb + pl[2], 0), KAPP)
+                if ta < 0.02 and tb < 0.02: continue
+                gavl2.append([[round(xa, 2), round(ya, 2), round(float(ta), 3)], [round(xb, 2), round(yb, 2), round(float(tb), 3)]])
+    return tak2, gavl2
+
+
+def atrium_hoyde(x, A):
+    """Ringtaket tilpasset Kartverkets DOM−DTM: h (takfot), th (helning mot gata) og wg[k] (helningen mot hver gårdsromskant
+    i forhold til th), robust minste kvadrater (avvik over 3 m teller som 3 m), h som median av restene (som tak_enkel.py).
+    Glassets topp: pyramide/valm fra karmen (h) til toppen, tilpasset DOM−DTM i gårdsrommet. Gir dict(h, th, wg, topp, rms, n)."""
+    import numpy as np
+    import tak_enkel as TE
+    from scipy.optimize import minimize
+    from shapely.geometry import Polygon
+    U, S, K, _ = atrium_plan(x, A)
+    pts, z = TE.dom_punkter(U, 0.5)
+    ds = np.min([a * pts[:, 0] + b * pts[:, 1] + c for _, a, b, c in S], axis=0)
+    G = np.array([a * pts[:, 0] + b * pts[:, 1] + c for _, a, b, c in K])
+    def modell(v):
+        th, sl = v[0], np.asarray(v[1:])
+        m = np.clip(np.minimum(th * ds, np.max(sl[:, None] * G, axis=0)), 0, th * KAPP); return m, float(np.median(z - m))
+    def feil(v):
+        if v[0] < 0.1 or v[0] > 1.6 or min(v[1:]) < 0.05 or max(v[1:]) > 1.6: return 99.0
+        m, h = modell(v); return float(np.sqrt(np.mean(np.minimum(np.abs(z - h - m), 3) ** 2)))
+    best = None
+    for th0 in (0.4, 0.6, 0.8):
+        for s0 in (0.2, 0.45, 0.7):
+            r = minimize(feil, [th0] + [s0] * len(K), method='Nelder-Mead', options=dict(xatol=1e-3, fatol=1e-4, maxiter=4000))
+            if best is None or r.fun < best.fun: best = r
+    v = best.x; m, h = modell(v); th = float(v[0])
+    G2 = Polygon(A['gaard']); pg, zg = TE.dom_punkter(G2, 0.5)
+    g = np.max([a * pg[:, 0] + b * pg[:, 1] + c for _, a, b, c in K], axis=0)          # <= 0 inne i gårdsrommet
+    r = 1 - np.clip(-g / max(1e-6, float(-g.min())), 0, 1)                            # 0 i toppen, 1 ved karmen
+    stig = float(np.linalg.lstsq((1 - r)[:, None], zg - h, rcond=None)[0][0])
+    return dict(h=round(h, 2), th=round(th, 2), wg=[round(float(q) / th, 3) for q in v[1:]], topp=round(h + max(stig, 0.5), 2),
+                rms=round(float(best.fun), 2), n=int(len(z)))
 
 
 def valm_rektangel(p):
@@ -212,6 +355,26 @@ def main(tørt=False):
     sett(VOLDPORTEN, 'vind', vv, 'vaktstuen: SSV-langsida fra Glasshytta.ai, NV-enden fra Street View aug. 2010, SØ-enden uten vinduer')
     porter_voldporten(tørt)
     print(VOLDPORTEN, f'portmur {VOLDPORT_PORT["h"]} m, vaktstue h {x.get("h")} (kilder/hoyde-unntak.json)')
+
+    # atriene (kilder/atrier.json): ringtak + glass
+    U_ = json.load(open(os.path.join(ROT, 'kilder', 'hoyde-unntak.json'), encoding='utf8'))['hus']
+    for i, A in ATRIER.items():
+        x = B[i]
+        f = atrium_hoyde(x, A)
+        u = U_.get(i) or {}
+        if abs(u.get('h', -9) - f['h']) > 0.1 or abs(u.get('th', -9) - f['th']) > 0.03:
+            print(f"ADVARSEL {i}: DOM-tilpasningen gir h {f['h']} th {f['th']}, kilder/hoyde-unntak.json har {u.get('h')} {u.get('th')}: oppdater unntaket")
+        h, th = u.get('h', f['h']), u.get('th', f['th'])
+        tak2, gavl2 = atrium_tak(x, A, f['wg'])
+        sett(i, 'tak2', tak2, f"ringtak rundt gårdsrommet (rett skjelett, takfot bare mot gata, helning mot gårdsromskantene {f['wg']} × th), "
+                              f"tilpasset DOM−DTM: rms {f['rms']} m på {f['n']} punkter")
+        sett(i, 'gavl2', gavl2, 'brannmurene: ytterveggene uten takfot opp til ringtaket')
+        sett(i, 'takform', 'atrium', 'ring av tak rundt et innglasset gårdsrom (kilder/atrier.json)')
+        sett(i, 'atrium', dict(gaard=A['gaard'], kant=A['kant'], z=h, topp=A.get('glass_topp') or f['topp'], glass=A['glass'], ramme=A['ramme']),
+             A['kilde'] + f" Glassets topp: DOM−DTM i gårdsrommet ({f['topp']} m).")
+        if A.get('takvinduer'):
+            sett(i, 'takvinduer', A['takvinduer'], 'takvinduer: ' + A.get('takvinduer_kilde', 'kilder/atrier.json'))
+        print(i, f"atrium: h {h} th {th}, glass til {f['topp']} m, {len(tak2)} takflater, {len(gavl2)} brannmurstykker, rms {f['rms']} m")
     if not tørt:
         datalag.skriv_rettelser(ret + nye)
 
