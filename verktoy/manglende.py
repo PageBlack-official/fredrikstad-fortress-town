@@ -98,7 +98,7 @@ def liste():
         except Exception as e:
             p = dict(feil=str(e))
         d = dom_for(g, D)
-        ut.append(dict(nr=k, **g, plass=p, dom=d and d['utfall'], grunn=d and d['grunn']))
+        ut.append(dict(nr=k, **{kk: vv for kk, vv in g.items() if kk not in ('dom', 'grunn', 'kategori', 'alvor')}, plass=p, dom=d and d['utfall'], grunn=d and d['grunn']))   # kontrollen har lagt dommen på gruppen alt (30.10)
     os.makedirs(UT, exist_ok=True)
     json.dump(ut, open(os.path.join(UT, 'grupper.json'), 'w'), indent=1, ensure_ascii=False)
     for r in ut:

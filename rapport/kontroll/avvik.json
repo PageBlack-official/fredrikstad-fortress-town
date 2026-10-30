@@ -42,8 +42,8 @@
   },
   "veggfarge": {
    "ok": 81,
-   "avvik med grunn": 12,
-   "feil": 7
+   "avvik med grunn": 16,
+   "feil": 3
   },
   "vinduer": {
    "ok": 76,
@@ -61,8 +61,7 @@
    "avvik": 7
   },
   "tegnet_hus_uten_modell": {
-   "avvik med grunn": 64,
-   "feil": 3
+   "avvik med grunn": 67
   }
  },
  "hus": [
@@ -12004,7 +12003,7 @@
      "hva": "tegning valm, modell sal"
     },
     "veggfarge": {
-     "alvor": "feil",
+     "alvor": "avvik med grunn",
      "hva": "tegning (222, 206, 155) (gul/beige), modell (206, 112, 82) (rød), ΔE 44.8; modellens farge: Street View 2010 (laksrød/terrakotta); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger)"
     },
     "takfarge": {
@@ -19893,7 +19892,7 @@
      "hva": "modell sal; tegningen viser ikke gavl/endeflate"
     },
     "veggfarge": {
-     "alvor": "feil",
+     "alvor": "avvik med grunn",
      "hva": "tegning (198, 198, 197) (grå/svart), modell (254, 230, 158) (gul/beige), ΔE 39.4; modellens farge: merknad: trykkfila 2015 (Street View-bildet viste nabohuset)"
     },
     "takfarge": {
@@ -20091,7 +20090,7 @@
      "hva": "modell sal; tegningen viser ikke gavl/endeflate"
     },
     "veggfarge": {
-     "alvor": "feil",
+     "alvor": "avvik med grunn",
      "hva": "tegning (198, 198, 197) (grå/svart), modell (232, 184, 92) (oransje/brun), ΔE 52.5; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger)"
     },
     "takfarge": {
@@ -30257,7 +30256,7 @@
      "hva": "modell valm; tegningen viser ikke gavl/endeflate"
     },
     "veggfarge": {
-     "alvor": "feil",
+     "alvor": "avvik med grunn",
      "hva": "tegning (190, 208, 158) (grønn), modell (167, 147, 73) (gul/beige), ΔE 29.9; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger)"
     },
     "takfarge": {
@@ -32904,7 +32903,10 @@
    "hus_anslag": 1,
    "naermeste_modellhus": "bnr-193868290",
    "tegning": "Kvartal8BITMAP",
-   "alvor": "feil"
+   "alvor": "avvik med grunn",
+   "dom": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "lav mur/portvegg langs gata mellom 868290 og 868282 (innkjørselen), ikke hus; DOM−DTM 0 m, ingen bygning i FKB"
   },
   {
    "senter_pt": [
@@ -33031,7 +33033,10 @@
    "hus_anslag": 1,
    "naermeste_modellhus": "bnr-193971903",
    "tegning": "Kvartal10",
-   "alvor": "feil"
+   "alvor": "avvik med grunn",
+   "dom": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: taket på 867596 er tegnet høyere og større enn huset; Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015/i dag (rapport/manglende, sett 30.10 kveld)"
   },
   {
    "senter_pt": [
@@ -33066,7 +33071,10 @@
    "hus_anslag": 1,
    "naermeste_modellhus": "bnr-193971903",
    "tegning": "Kvartal10",
-   "alvor": "feil"
+   "alvor": "avvik med grunn",
+   "dom": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "liten gul portåpning mellom 867596 og 972411 (135 pt²), ikke hus; står på kanten av 971903 i FKB"
   },
   {
    "senter_pt": [

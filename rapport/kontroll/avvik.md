@@ -151,11 +151,11 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 | arker | 0 | 39 | 0 | 155 |
 | piper | 0 | 31 | 0 | 163 |
 | gesims | 20 | 13 | 36 | 69 |
-| veggfarge | 7 | 0 | 12 | 81 |
+| veggfarge | 3 | 0 | 16 | 81 |
 | vinduer | 10 | 14 | 4 | 76 |
 | dorer | 0 | 8 | 0 | 96 |
 | slaatt_sammen | 11 | 7 | 9 | 0 |
-| tegnet_hus_uten_modell | 3 | 0 | 64 | 0 |
+| tegnet_hus_uten_modell | 0 | 0 | 67 | 0 |
 
 ## Registrering per tegning
 
@@ -297,7 +297,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 868355 |  |  |  |  |  |  |  | G |  |  | A |  |  |
 | 868339 |  | **F** |  | G | A |  | G | G | A |  | A |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 2; ulike farger: 2) |
-| 867626 |  | A | A |  |  | **F** | **F** |  |  |  | A | A | takform: tegning valm, modell sal; veggfarge: tegning (222, 206, 155) (gul/beige), modell (206, 112, 82) (rød), ΔE 44.8; modellens farge: Street View 2010 (laksrød/terrakotta); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger) |
+| 867626 |  | A | A |  |  | **F** | G |  |  |  | A | A | takform: tegning valm, modell sal |
 | 868347 |  | **F** | **F** |  | A |  | **F** | G |  |  |  |  | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 6; ulike farger: 2); veggfarge: tegning (239, 240, 240) (hvit), modell (254, 234, 174) (oransje/brun), ΔE 31.9; modellens farge: 2019-trykket (dømt) |
 | 971369 |  |  | A | G |  |  |  |  |  |  | A |  |  |
 | 868320 |  | **F** |  |  |  |  |  | G |  |  | A | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 1; ulike farger: 2) |
@@ -340,7 +340,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 971261 |  |  | **F** | **F** | **F** |  |  |  | A |  |  |  | gesims: tegnet/modell 0.52 (tegningen lavere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 16313173 |  |  | A |  |  |  |  |  |  |  |  |  |  |
 
-Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 868290 (265 pt², ~1 hus, **F** uten dom); ved 13414904 (2526 pt², ~2 hus, avvik med grunn: gjerde/frihånd)
+Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 868290 (265 pt², ~1 hus, avvik med grunn: mur); ved 13414904 (2526 pt², ~2 hus, avvik med grunn: gjerde/frihånd)
 
 ### Kvartal9
 
@@ -379,8 +379,8 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 971938 |  |  | A |  | A |  |  |  |  |  |  |  |  |
 | 972411 |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| 13394024 |  | A | A | G |  |  | **F** | G | **F** |  |  | A | veggfarge: tegning (198, 198, 197) (grå/svart), modell (254, 230, 158) (gul/beige), ΔE 39.4; modellens farge: merknad: trykkfila 2015 (Street View-bildet viste nabohuset); vinduer: vegg 3 (13.8 m, fasadeavlesningen (kontrollkobling)): tegning 3 vinduer i rader [1, 2], modell 5 i rader [5] |
-| 867588 |  | A |  | G |  |  | **F** | G | **F** |  |  |  | veggfarge: tegning (198, 198, 197) (grå/svart), modell (232, 184, 92) (oransje/brun), ΔE 52.5; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger); vinduer: vegg 2 (21.6 m, f |
+| 13394024 |  | A | A | G |  |  | G | G | **F** |  |  | A | vinduer: vegg 3 (13.8 m, fasadeavlesningen (kontrollkobling)): tegning 3 vinduer i rader [1, 2], modell 5 i rader [5] |
+| 867588 |  | A |  | G |  |  | G | G | **F** |  |  |  | vinduer: vegg 2 (21.6 m, fasadeavlesningen): tegning 2 vinduer i rader [1, 1], modell 1 i rader [1] |
 | 987370 |  |  |  | **F** |  |  |  |  |  |  | A |  | gesims: tegnet/modell 1.51 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 867596 |  |  | **F** | A | A |  |  | G |  |  |  |  |  |
 | 868711 |  |  |  |  |  |  |  | G |  |  |  |  |  |
@@ -394,7 +394,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 300002508 |  |  | A |  | **F** |  |  |  |  |  |  |  |  |
 | pb-56 |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
-Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 971903 (3750 pt², ~1 hus, **F** uten dom); ved 867596 (680 pt², ~3 hus, avvik med grunn: mur); ved 971903 (135 pt², ~1 hus, **F** uten dom); ved 867588 (1790 pt², ~1 hus, avvik med grunn: frihånd); ved 867553 (1067 pt², ~1 hus, avvik med grunn: frihånd)
+Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 971903 (3750 pt², ~1 hus, avvik med grunn: frihånd); ved 867596 (680 pt², ~3 hus, avvik med grunn: mur); ved 971903 (135 pt², ~1 hus, avvik med grunn: detalj); ved 867588 (1790 pt², ~1 hus, avvik med grunn: frihånd); ved 867553 (1067 pt², ~1 hus, avvik med grunn: frihånd)
 
 ### Kvartal11
 
@@ -493,7 +493,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 870252 |  | **F** | A | G |  |  |  | G |  |  |  | A | slaatt_sammen: tegningen har 2 fasader på én modellvegg (vegg 3; ulike farger: 2) |
 | 972381 | A |  |  |  |  |  |  |  |  |  |  |  |  |
 | 870244 |  |  | A |  |  |  |  | G |  |  |  |  |  |
-| 870228 |  |  | A |  |  |  | **F** | G |  |  |  |  | veggfarge: tegning (190, 208, 158) (grønn), modell (167, 147, 73) (gul/beige), ΔE 29.9; modellens farge: Street View 2010 (okergul/gyllen gul); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger) |
+| 870228 |  |  | A |  |  |  | G | G |  |  |  |  |  |
 | 870201 |  |  |  |  |  |  |  | G | A |  |  |  |  |
 
 Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 870244 (4546 pt², ~1 hus, avvik med grunn: frihånd); ved 870201 (232 pt², ~1 hus, avvik med grunn: frihånd); ved 870198 (262 pt², ~1 hus, avvik med grunn: frihånd)

@@ -1311,6 +1311,11 @@ def vurder(r, navn):
         # Street View 2016+ for vegg, ortofoto 2024 for tak; verktoy/tak_farge.py). Uten år: den gamle regelen (Street View).
         aar = r.get('vegg_aar' if k == 'veggfarge' else 'tak_aar')
         sv = (aar or 0) >= 2016 if (r.get('vegg_kilde') or r.get('tak_kilde')) else 'Street View' in (r.get('farge_kilde') or '')
+        kk = str(r.get('vegg_kilde' if k == 'veggfarge' else 'tak_kilde') or '')
+        # tegningens flate var for liten og hadde feil fasade (tak_farge.tegning_farger), eller fargen er avgjort for hånd (merknad):
+        # avviket mot tegningen har grunn (867588, 870228, 867626, 13394024; sett på arkene 30.10)
+        if 'flate på huset er liten' in kk or kk.startswith('merknad') or 'lest for hånd' in kk:
+            sv = True
         if c['kulor_tegning'] != c['kulor_modell'] and c['dE'] > 18:
             a = 'avvik med grunn' if sv else 'feil'
         elif c['dE'] > 22:

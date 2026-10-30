@@ -1390,6 +1390,36 @@
    "kategori": "frihånd",
    "grunn": "gavlenden på Laboratoriet (bnr-193870198, koblet som egen bit 30.10) er tegnet lenger ut enn kommunekartets omriss; resten av huset treffer (IoU 0,74). Ingen bygning ved gavlen i FKB, ortofoto eller DOM 2015/i dag",
    "kilde": "Claude 30.10, kontrollarket for sistekvartal etter koblingen"
+  },
+  {
+   "tegning": "Kvartal10",
+   "senter_pt": [
+    68.4,
+    116.4
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "tegnet fritt: taket på 867596 er tegnet høyere og større enn huset; Ingen bygning der gruppen står på bakken i kommunekartet (FKB), Matrikkelen, ortofoto 2019/2024 eller DOM−DTM 2015/i dag (rapport/manglende, sett 30.10 kveld)"
+  },
+  {
+   "tegning": "Kvartal10",
+   "senter_pt": [
+    129.0,
+    145.5
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "detalj",
+   "grunn": "liten gul portåpning mellom 867596 og 972411 (135 pt²), ikke hus; står på kanten av 971903 i FKB"
+  },
+  {
+   "tegning": "Kvartal8BITMAP",
+   "senter_pt": [
+    90.6,
+    58.8
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "lav mur/portvegg langs gata mellom 868290 og 868282 (innkjørselen), ikke hus; DOM−DTM 0 m, ingen bygning i FKB"
   }
  ]
 }
