@@ -1122,13 +1122,13 @@ def analyser(navn, logg=print):
             if not lest:
                 lest = lest_vegg(FTK.get(i, []), v['a'], v['b'])
                 if lest: kilde_ekstra = ' (kontrollkobling)'
+            ub = U.bounds
+            kuttet = ub[0] < KANT or ub[1] < KANT or ub[2] > rect_.width - KANT or ub[3] > rect_.height - KANT
+            if not lest and kuttet:
+                continue      # veggen er kuttet av arkkanten (nabokvartalet i hjørnet): verken hull eller modellvinduer kan telles
             if not lest:
                 lest = lest_vegg(FTJ_ANDRE.get(i, []), v['a'], v['b'])
                 if lest: kilde_ekstra = f" ({lest['_tegning']})"; for_haand = True
-            if not lest:
-                ub = U.bounds
-                if ub[0] < KANT or ub[1] < KANT or ub[2] > rect_.width - KANT or ub[3] > rect_.height - KANT:
-                    continue      # veggen er kuttet av arkkanten (nabokvartalet i hjørnet): hullene kan ikke telles
             vs = []; dor_t = 0; rader_t = None; gavl_t = 0
             if lest:      # fasadeavlesningen: ett element per vindu/dør (sprossene er slått sammen der)
                 # samme lesing som legg_inn (fasade_tegning.tegnede_elementer): streker, skillelinjer og biter av samme dør

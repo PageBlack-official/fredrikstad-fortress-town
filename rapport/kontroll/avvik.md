@@ -151,9 +151,9 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 | arker | 0 | 42 | 0 | 155 |
 | piper | 0 | 31 | 0 | 166 |
 | gesims | 20 | 13 | 36 | 69 |
-| veggfarge | 7 | 0 | 17 | 77 |
-| vinduer | 12 | 14 | 4 | 74 |
-| dorer | 0 | 9 | 0 | 95 |
+| veggfarge | 6 | 0 | 17 | 78 |
+| vinduer | 10 | 15 | 4 | 74 |
+| dorer | 0 | 9 | 0 | 94 |
 | slaatt_sammen | 11 | 7 | 9 | 0 |
 | tegnet_hus_uten_modell | 68 | 0 | 0 | 0 |
 
@@ -322,17 +322,17 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 972152 |  |  | A | **F** | A |  |  | G |  |  |  |  | gesims: tegnet/modell 2.11 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
-| 868258 |  |  |  | **F** |  |  | G | G |  |  | A | A | gesims: tegnet/modell 0.64 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
+| 868258 |  |  |  | **F** |  |  | G | G | **F** |  | A | A | gesims: tegnet/modell 0.64 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM; vinduer: vegg 7 (6.9 m, fasadeavlesningen (kontrollkobling)): tegning 2 vinduer i rader [2], modell 0 i rader [] |
 | pb-5 |  |  | **F** | G | A |  |  |  |  |  |  |  |  |
 | 868541 |  |  | **F** | **F** | A |  |  |  | A |  |  |  | gesims: tegnet/modell 1.49 (tegningen høyere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 868266 |  |  |  | G |  |  |  | G |  |  | A | A |  |
 | 868274 |  | A | A | **F** | A |  |  | G |  |  |  |  | gesims: tegnet/modell 1.57 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)) |
 | 868312 |  |  | **F** | A | A |  |  | G |  |  |  |  |  |
 | 868282 |  | G |  |  |  |  |  | G | **F** |  |  |  | vinduer: vegg 6 (11.6 m, fasadeavlesningen): tegning 6 vinduer i rader [6], modell 9 i rader [4, 5] |
-| 13414904 |  |  | A |  | A |  |  | G | **F** |  |  | A | vinduer: vegg 3 (6.6 m, hullene i veggflaten): tegning 0 vinduer i rader [], modell 6 i rader [3, 3] |
+| 13414904 |  |  | A |  | A |  |  | G |  |  |  | A |  |
 | 972136 |  |  | A |  |  |  |  | G |  |  |  |  |  |
 | 300279164 |  |  | A |  | A |  |  | G |  |  |  |  |  |
-| 868290 |  | A |  | G |  |  | **F** |  | **F** |  |  |  | veggfarge: tegning (236, 237, 238) (hvit), modell (250, 224, 171) (oransje/brun), ΔE 30.1; modellens farge: kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63); vinduer: vegg 5 (5.4 m, hullene i veggflaten): tegning 0 vinduer i rader [], modell 4 i rader [1, 1, 2] |
+| 868290 |  | A |  | G |  |  |  |  | A |  |  |  |  |
 | 868533 |  |  | A | G |  |  |  | G |  |  |  |  |  |
 | pb-13 |  |  | **F** |  | A |  |  | **F** |  |  |  |  | takfarge: tegning (126, 128, 131) (grå/svart), modell (172, 100, 84) (rød), ΔE 36.3; modellens farge: 2019-trykket (visuelt) |
 | 972144 |  |  | A |  | A |  |  |  |  |  |  |  |  |
@@ -461,7 +461,7 @@ Tegnet uten modellhus under (flategrupper, maskinelt; små grupper er ofte bare 
 | 972039 |  |  | **F** |  | **F** |  |  | G |  |  |  |  |  |
 | 972012 |  |  |  | A |  |  |  | G | G | A | A |  |  |
 | 870260 |  |  | A |  |  |  |  | G |  |  | A |  |  |
-| 870236 |  |  |  |  |  |  |  |  | **F** |  |  |  | vinduer: vegg 1 (15.5 m, fasadeavlesningen (sistekvartal)): tegning 10 vinduer i rader [5, 5], modell 0 i rader [] |
+| 870236 |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | pb-7 |  |  | **F** | A | A |  |  |  |  |  |  |  |  |
 | 867693 |  | G | A |  | A |  | G |  |  |  |  |  |  |
 | 867707 |  |  | **F** |  | A |  |  | G |  |  |  |  |  |
