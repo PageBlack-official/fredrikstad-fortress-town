@@ -110,7 +110,8 @@
     "bnr-193972349",
     "bnr-193868681",
     "bnr-193868703",
-    "bnr-300399132"
+    "bnr-300399132",
+    "pb-62"
    ],
    "antall": 16,
    "fasade_kvartaltegning": 9,
@@ -170,7 +171,10 @@
     "bnr-193867324",
     "bnr-193868088",
     "bnr-193869556",
-    "bnr-193868061"
+    "bnr-193868061",
+    "bnr-193869572",
+    "bnr-193867308",
+    "bnr-193868045"
    ],
    "antall": 6,
    "fasade_kvartaltegning": 5,
@@ -190,6 +194,66 @@
    "bygg_manuelt": [],
    "kant": [
     "bnr-193867308"
+   ],
+   "bygg_for_30okt": [
+    "bnr-193868053",
+    "bnr-193868037",
+    "bnr-193867324",
+    "bnr-193868088",
+    "bnr-193869556",
+    "bnr-193868061"
+   ],
+   "biter": [
+    {
+     "ids": [
+      "bnr-193868053"
+     ],
+     "d": [
+      -37.1,
+      0.5
+     ],
+     "grunn": "Undervisningsbrakka er det røde langhuset med dører midt på arket (egen bit)"
+    },
+    {
+     "ids": [
+      "bnr-193868037"
+     ],
+     "d": [
+      33.3,
+      75.3
+     ],
+     "grunn": "det lille huset med takark og sti ned til brakka (egen bit, nordvest for Artillerigården)"
+    },
+    {
+     "ids": [
+      "bnr-193867324"
+     ],
+     "d": [
+      47.9,
+      111.0
+     ],
+     "grunn": "langhuset med portrom øverst til venstre (egen bit)"
+    },
+    {
+     "ids": [
+      "bnr-193867308"
+     ],
+     "d": [
+      9.8,
+      114.3
+     ],
+     "grunn": "Artillerismiens uthus, det smale langhuset øverst (egen bit)"
+    },
+    {
+     "ids": [
+      "bnr-193869556"
+     ],
+     "d": [
+      -44.6,
+      -28.7
+     ],
+     "grunn": "kuben nederst til høyre (egen bit)"
+    }
    ]
   },
   {
@@ -324,7 +388,9 @@
     "bnr-193972187",
     "bnr-193972225",
     "bnr-193972209",
-    "bnr-193971342"
+    "bnr-193971342",
+    "pb-60",
+    "pb-61"
    ],
    "antall": 15,
    "fasade_kvartaltegning": 10,
@@ -396,7 +462,8 @@
     "bnr-193868665",
     "bnr-193868657",
     "bnr-193867987",
-    "pb-15"
+    "pb-15",
+    "pb-59"
    ],
    "antall": 18,
    "fasade_kvartaltegning": 8,
@@ -468,7 +535,8 @@
     "bnr-193867588",
     "bnr-193991718",
     "bnr-193971202",
-    "bnr-193868517"
+    "bnr-193868517",
+    "pb-65"
    ],
    "antall": 18,
    "fasade_kvartaltegning": 10,
@@ -612,7 +680,8 @@
     "bnr-193972616",
     "bnr-193972632",
     "bnr-193972497",
-    "bnr-193868614"
+    "bnr-193868614",
+    "pb-66"
    ],
    "antall": 20,
    "fasade_kvartaltegning": 8,
@@ -747,16 +816,36 @@
    "bygg": [
     "bnr-193867537",
     "bnr-193868568",
-    "bnr-193867820",
-    "bnr-193867839"
+    "pb-51"
    ],
    "antall": 4,
    "fasade_kvartaltegning": 2,
    "fasade_antatt": 2,
    "fasade_ingen": 0,
    "bygg_naer": [],
-   "bygg_manuelt": [],
-   "kant": []
+   "bygg_manuelt": [
+    {
+     "id": "bnr-193867537",
+     "grunn": "tegningen er Infanterikasernen (U-bygget med ti piper, Torvet); koblingen pekte på hus i Kvartal12 (kontrolløren 30.10)"
+    },
+    {
+     "id": "bnr-193868568",
+     "grunn": "Brannstasjon - uthus til Infanterikasernen, det lave langhuset langs gata i tegningen"
+    },
+    {
+     "id": "pb-51",
+     "grunn": "lite bygg i gårdsrommet ved brannstasjonen"
+    }
+   ],
+   "kant": [],
+   "bygg_for_30okt": [
+    "bnr-193867537",
+    "bnr-193868568",
+    "bnr-193867820",
+    "bnr-193867839"
+   ],
+   "bare_koblede": true,
+   "bare_koblede_grunn": "trykk-koblingen for Kvartal11 traff Kvartal12 i 2019-trykket; husene som tilfeldigvis havner på arket med det kameraet, skal ikke være med"
   },
   {
    "navn": "Kvartal12",
@@ -827,7 +916,9 @@
     "bnr-193868606",
     "bnr-193867812",
     "bnr-193867774",
-    "bnr-6246753"
+    "bnr-6246753",
+    "pb-57",
+    "pb-58"
    ],
    "antall": 25,
    "fasade_kvartaltegning": 13,
@@ -888,7 +979,9 @@
     "bnr-193867502",
     "bnr-193868460",
     "bnr-193867499",
-    "bnr-193867510"
+    "bnr-193867510",
+    "pb-63",
+    "pb-64"
    ],
    "antall": 4,
    "fasade_kvartaltegning": 3,
@@ -1081,7 +1174,8 @@
    ],
    "bygg": [
     "bnr-193867677",
-    "bnr-193867634"
+    "bnr-193867634",
+    "bnr-193867685"
    ],
    "antall": 2,
    "fasade_kvartaltegning": 1,
@@ -1093,8 +1187,17 @@
      "avstand_px": 48.1
     }
    ],
-   "bygg_manuelt": [],
-   "kant": []
+   "bygg_manuelt": [
+    {
+     "id": "bnr-193867685",
+     "grunn": "det oransje skuret i tegningen (43 m², ved 867677)"
+    }
+   ],
+   "kant": [],
+   "bygg_for_30okt": [
+    "bnr-193867677",
+    "bnr-193867634"
+   ]
   },
   {
    "navn": "Glasshytta",
@@ -1202,7 +1305,19 @@
      "grunn": "legendenummer 27 (Ravelinporten) står ved huset i trykket; px2019 for Voldportravelinet ligger ~150 px unna"
     }
    ],
-   "kant": []
+   "kant": [],
+   "biter": [
+    {
+     "ids": [
+      "bnr-193869548"
+     ],
+     "d": [
+      94.5,
+      125.0
+     ],
+     "grunn": "Voldporten med vaktstuen: huset på hvelvet øverst til venstre er en egen bit"
+    }
+   ]
   },
   {
    "navn": "kirke",

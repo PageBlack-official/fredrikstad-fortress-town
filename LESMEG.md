@@ -263,6 +263,33 @@ av en ny gest). Huskortet: bunnark under 720 px bredde, sidepanel over; tilbake 
 Testen kjører med Playwrights falske klokke (16 ms per bilde) og ?tegn=0 (kameraet og tilstanden oppdateres, byen tegnes ikke), så den måler
 hopp, rykk, bråstopp og ankerpunkt, ikke bildefrekvens. Bildefrekvens og følelsen i fingrene ses i ekte Chrome og på telefon (tast d, ?d=1).
 
+## Rene tak og husdeling etter tegningen (30.10, natt/tak)
+Kontrollen (verktoy/kontroll.py) viste at husene ikke lignet tegningene: taket var regnet som rett skjelett over hele husrekka
+(verktoy/tak.py), så hvert sprang i kommunekartets omriss ble en takflate og rekka fikk ett sammensatt valmtak. Vegar tegnet rene hus:
+én kropp med saltak, gavler og møne, vinkelhus som to kropper. Nå:
+
+    python3 verktoy/husdeling.py                ett modellhus per tegnet hus: delinger, sammenslåinger, skjul, nye (kilder/husdeling.json)
+    python3 verktoy/husdeling.py linjer <tegn>  fasadelinjene: modellens husgrenser og tegningens veggflater i meter langs gata
+    python3 verktoy/husdeling.py sprang <tegn>  sprang i mønet i Kartverkets DOM (husgrenser i taket) og nærmeste fasadegrense i tegningen
+    python3 verktoy/husdeling.py forslag <tegn> fasadegrensene i tegningen lagt ned på modellveggene (rapport/tak/deling-*.png, bare lokalt)
+    python3 verktoy/tak_enkel.py                rent tak per hus (tak2/gavl2/takform; h og th fra DOM der rapport/hoyder ikke har sikker måling)
+    python3 verktoy/tak_enkel.py fra_kontroll   takform og mønretning lest av tegningene (avvik.json) inn i kilder/tak-tegning.json
+    python3 verktoy/tak_enkel.py ark x y r navn plan: DOM−DTM ved siden av modellens takflater (rapport/tak/)
+
+Taket (tak_enkel.py): omrisset deles i høyst tre nesten-rektangulære kropper (snitt gjennom de innoverbøyde hjørnene, korte snitt
+foretrekkes); hver kropp får det nederste av noen plan (sal, valm, halvvalm, pult bare på smale bygg, flatt), ender som støter mot en
+annen kropp forlenges inn i den (kilrenne), og huset får det øverste av kroppenes tak. Takform og mønretning: kilder/tak-tegning.json
+(tegningen) går foran; ellers tilpasses alle former og begge mønretninger til DOM−DTM (h og th fritt), og den enkleste som passer
+velges (saltak foretrekkes). tak.py brukes ikke lenger i Gamlebyen.
+Husdelingen (husdeling.py): kuttlinjene står i modellmeter med grunn; biten med husets matrikkelpunkt beholder id-en, nye biter får
+bnr- fra et matrikkelpunkt eller neste pb- (skrives tilbake i fila, så de er faste). Sammenslått: det første huset får hele omrisset,
+de andre skjules (regel 20 har dem som unntak med grunn). fasade_tegning.py legg_inn fordeler vinduene fra tegningen etter hvor de står
+langs veggen, så de følger med når hus deles eller slås sammen. Nye biter legges i tegningens liste i kilder/kvartal-kobling.json.
+Kjeden (bygg_kjede.py): grunnmur → id_flytt → husdeling → tak_enkel → hoyder → … → bygg_merknader → register.py kort (kortene følger
+adressepunktet når husene deles).
+Kontrollen: kvartal-kobling.json kan ha «biter» ({ids, d: [dx, dy] pt, grunn}) for hus Vegar tegnet som en egen bit et annet sted på
+arket; forskyvningen settes for hånd og finjusteres av blokksøket. Hvert kontrollark kjøres for seg (render kan krasje på én tegning).
+
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 

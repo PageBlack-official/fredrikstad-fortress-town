@@ -1,152 +1,184 @@
 {
  "tegning": "Kvartal13",
  "par": {
-  "az": -12.76,
+  "az": -14.4,
   "el": 45.46,
-  "s": 4.9708,
-  "K": 2.888,
-  "kz": 0.828,
+  "s": 4.8786,
+  "K": 3.1097,
+  "kz": 0.909,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.7597621569022115,
-   1.0777434958378813,
+   4.614140816724072,
+   1.1843449522188767,
    0.0,
-   747.2884015093407
+   729.1703621980403
   ],
   [
-   1.4302777365696084,
-   -3.3762903435121867,
-   -2.888004887785965,
-   197.35178513713757
+   1.582275972988027,
+   -3.2706116711326265,
+   -3.1097052263945537,
+   220.52792258403295
   ]
  ],
  "forskyvning": {
   "bnr-193867502": [
-   -8.5,
-   0.5
+   -3.89,
+   -1.39
+  ],
+  "pb-63": [
+   -3.89,
+   -1.39
+  ],
+  "pb-64": [
+   -3.89,
+   -1.39
   ],
   "bnr-193868460": [
-   6.67,
-   4.5
+   8.67,
+   1.51
   ],
   "bnr-193867499": [
-   1.5,
-   -6.13
+   1.29,
+   -1.99
   ],
   "bnr-193867510": [
-   -2.75,
-   0.57
+   -0.0,
+   -1.16
   ]
  },
  "blokker": [
   {
    "ids": [
-    "bnr-193867502"
+    "bnr-193867502",
+    "pb-63",
+    "pb-64"
    ],
    "d": [
-    -8.5,
-    0.5
+    -3.89,
+    -1.39
    ],
-   "kant_for": 4.04,
-   "kant_etter": 2.82
+   "kant_for": 2.93,
+   "kant_etter": 2.78
   },
   {
    "ids": [
     "bnr-193868460"
    ],
    "d": [
-    6.67,
-    4.5
+    8.67,
+    1.51
    ],
-   "kant_for": 4.07,
-   "kant_etter": 3.36
+   "kant_for": 3.77,
+   "kant_etter": 3.21
   },
   {
    "ids": [
     "bnr-193867499"
    ],
    "d": [
-    1.5,
-    -6.13
+    1.29,
+    -1.99
    ],
-   "kant_for": 4.05,
-   "kant_etter": 3.94
+   "kant_for": 3.74,
+   "kant_etter": 3.64
   },
   {
    "ids": [
     "bnr-193867510"
    ],
    "d": [
-    -2.75,
-    0.57
+    -0.0,
+    -1.16
    ],
-   "kant_for": 3.45,
-   "kant_etter": 3.29
+   "kant_for": 2.37,
+   "kant_etter": 2.3
   }
  ],
  "maal": {
-  "bunn": 5.0,
-  "topp": 10.0,
-  "iou": 0.49922085038615,
-  "bare": 9,
-  "kant": 3.666673183441162,
-  "omriss": 29.65235429272543
+  "bunn": 4.0,
+  "topp": 6.0,
+  "iou": 0.5256194581712403,
+  "bare": 1,
+  "kant": 3.370961308479309,
+  "omriss": 23.960267086575193
  },
  "bygg": [
   "bnr-193867502",
   "bnr-193868460",
   "bnr-193867499",
-  "bnr-193867510"
+  "bnr-193867510",
+  "pb-63",
+  "pb-64"
  ],
  "utenfor_tegningen": [],
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193867502": {
-   "median_pt": 1.9,
-   "median_px": 5.7,
-   "andel_innen_2pt": 0.52,
+   "median_pt": 2.3,
+   "median_px": 6.9,
+   "andel_innen_2pt": 0.45,
    "beste_forskyvning_pt": [
-    -1.5,
-    0.0
+    -4.0,
+    -2.0
    ],
-   "median_etter_pt": 2.06
+   "median_etter_pt": 2.03
   },
   "bnr-193868460": {
-   "median_pt": 1.96,
-   "median_px": 5.9,
+   "median_pt": 1.84,
+   "median_px": 5.5,
    "andel_innen_2pt": 0.52,
    "beste_forskyvning_pt": [
-    10.0,
-    -7.5
+    0.5,
+    0.0
    ],
-   "median_etter_pt": 1.63
+   "median_etter_pt": 1.78
   },
   "bnr-193867499": {
-   "median_pt": 2.63,
-   "median_px": 7.9,
-   "andel_innen_2pt": 0.42,
-   "beste_forskyvning_pt": [
-    2.5,
-    0.5
-   ],
-   "median_etter_pt": 2.48
-  },
-  "bnr-193867510": {
    "median_pt": 2.29,
    "median_px": 6.9,
    "andel_innen_2pt": 0.46,
    "beste_forskyvning_pt": [
-    -1.0,
+    4.0,
+    2.0
+   ],
+   "median_etter_pt": 2.37
+  },
+  "bnr-193867510": {
+   "median_pt": 1.6,
+   "median_px": 4.8,
+   "andel_innen_2pt": 0.59,
+   "beste_forskyvning_pt": [
+    0.0,
     0.0
    ],
-   "median_etter_pt": 2.36
+   "median_etter_pt": 1.6
+  },
+  "pb-63": {
+   "median_pt": 1.93,
+   "median_px": 5.8,
+   "andel_innen_2pt": 0.52,
+   "beste_forskyvning_pt": [
+    -10.0,
+    -10.0
+   ],
+   "median_etter_pt": 1.69
+  },
+  "pb-64": {
+   "median_pt": 2.22,
+   "median_px": 6.7,
+   "andel_innen_2pt": 0.47,
+   "beste_forskyvning_pt": [
+    -10.0,
+    -2.0
+   ],
+   "median_etter_pt": 1.43
   }
  },
  "registrering": {
-  "median_pt": 2.12,
-  "median_px": 6.4,
+  "median_pt": 2.08,
+  "median_px": 6.2,
   "andel_under_3pt": 1.0,
   "R": 3.0
  }

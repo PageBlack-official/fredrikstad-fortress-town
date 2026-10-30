@@ -144,7 +144,7 @@ def main(tørt=False):
     b = d['bygg']; omg = VG.Omgivelser(b, d['veier'], d['gardsrom'])
     nye, logg = [], []
     for x in b:
-        if not x.get('gml') or x.get('skjul') or x.get('kirke') or x.get('deler') or er_fasit(x, v33) or x.get('fasade_kilde') != 'antatt':
+        if not x.get('gml') or x.get('skjul') or x.get('kirke') or any(d_.get('kilde') != 'tak-tegning' for d_ in (x.get('deler') or [])) or er_fasit(x, v33) or x.get('fasade_kilde') != 'antatt':
             continue
         vind, notat = lag_vind(x, omg)
         nye.append({"emne": "bygg", "id": x['id'], "op": "sett", "felt": "vind", "verdi": vind, "hvem": "Claude", "dato": DATO, "grunn": GRUNN})

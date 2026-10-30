@@ -199,7 +199,11 @@ def kamera_fra_trykket(navn):
     G = (np.diag([72 / 150, 72 / 150, 1]) @ Ti @ Mg)[:2]
     s = np.linalg.svd(G[:, :2], compute_uv=False)
     k = s[0] * math.sqrt(max(0.0, 1 - (s[1] / s[0]) ** 2))
-    return np.array([[G[0, 0], G[0, 1], 0.0, G[0, 2]], [G[1, 0], G[1, 1], -k, G[1, 2]]])
+    P = np.array([[G[0, 0], G[0, 1], 0.0, G[0, 2]], [G[1, 0], G[1, 1], -k, G[1, 2]]])
+    # koblingen mot trykket kan ha truffet feil kvartal (Kvartal11 lå på Kvartal12 i trykket): startforskyvning satt for hånd (pt)
+    if kob.get('startforskyvning'):
+        P[:, 3] += np.array(kob['startforskyvning']['d'], float)
+    return P
 
 
 def _endre(P0, v, c0):
@@ -294,8 +298,20 @@ def tilpass_kamera(navn, logg=print):
             if x.get('skjul') or len(x['p']) < 3 or x.get('kirke'): continue
             c = proj(P0, *np.mean(x['p'], 0), x['h'] * 0.5)
             inne = 0 <= c[0] < W and 0 <= c[1] < H and Mbig[int(c[1]), int(c[0])]
-            if x['id'] in lov or inne:
+            if x['id'] in lov or (inne and not (kobling(navn) or {}).get('bare_koblede')):
                 alle.append(x)
+    # biter (kvartal-kobling.json «biter», 30.10): hus Vegar tegnet som en egen bit et annet sted på arket enn der det felles
+    # kameraet legger dem; forskyvningen (pt) er satt for hånd fra arket og finjusteres med blokksøket under
+    BIT = {}
+    for b_ in (kobling(navn) or {}).get('biter', []):
+        for i_ in b_['ids']:
+            BIT[i_] = np.array(b_['d'], float)
+            if not any(x['id'] == i_ for x in alle):
+                alle += [x for x in D['bygg'] if x['id'] == i_ and not x.get('skjul') and len(x['p']) >= 3]
+    def Px(P, x):
+        if x['id'] in BIT:
+            P = P.copy(); P[:, 3] = P[:, 3] + BIT[x['id']]
+        return P
     st = dict(B=list(alle))
 
     def fast_P(w):
@@ -308,11 +324,12 @@ def tilpass_kamera(navn, logg=print):
     def sil(P, B):
         M = np.zeros((H, W), np.uint8)
         for x in B:
-            silhuett_px(P, x, 1.0, (H, W), 1, M)
+            silhuett_px(Px(P, x), x, 1.0, (H, W), 1, M)
         return M
 
     def kant(P, B):
-        L = [l for x in B for l in synlige_kanter(P, x, 1, None)]
+        L = [l for x in B if x['id'] not in BIT for l in synlige_kanter(P, x, 1, None)]
+        if not L: L = [l for x in B for l in synlige_kanter(P, x, 1, None)]
         Q = kantpunkter(P, L, 1.0, 1.5)
         a = float(np.mean(np.minimum(map_coordinates(dtf, [Q[:, 1], Q[:, 0]], order=1, mode='constant', cval=20), 6)))
         T = np.ones((H, W), np.uint8)
@@ -365,12 +382,25 @@ def tilpass_kamera(navn, logg=print):
                 beste = (f, list(map(float, r.x)), info)
         return beste
 
-    beste = tilpass(start(), 'felles')
+    # forrige kamera (rapport/kontroll/_arbeid) er også en start: tilpasningen er ikke konveks, og en liten endring i modellen
+    # kan ellers sende den til et annet lokalt minimum (kvartal6 30.10: 5,88 -> 5,35 pt/m etter én husdeling). Beste mål vinner.
+    starter = start()
+    fk = os.path.join(ARB, navn + '-kamera.json')
+    for f_ in [fk] + sorted(__import__('glob').glob(os.path.join(ARB, navn + '-kamera-*.json'))):
+        if not os.path.exists(f_): continue
+        try:
+            Ap = np.array(json.load(open(f_))['A'], float)
+            Mr = Ap[:, :2] @ np.linalg.inv(FORM_REF)
+            w0 = float(math.sqrt(abs(np.linalg.det(Mr)))); w1 = math.degrees(math.atan2(Mr[1, 0], Mr[0, 0]))
+            starter.append([w0, w1, float(Ap[0, 3]), float(Ap[1, 3])] + ([] if K else [float(-Ap[1, 2])]))
+        except Exception:
+            pass
+    beste = tilpass(starter, 'felles')
     utenfor = []
     for runde in (2, 3):
         P = fast_P(beste[1]); inn = []; ut_ = []
         for x in alle:
-            Ms = silhuett_px(P, x, 1.0, (H, W)); n = Ms.sum()
+            Ms = silhuett_px(Px(P, x), x, 1.0, (H, W)); n = Ms.sum()
             (inn if n and (Ms & Mtd).sum() / n >= 0.5 else ut_).append(x)
         if set(x['id'] for x in inn) == set(x['id'] for x in st['B']) or not inn:
             break
@@ -385,7 +415,8 @@ def tilpass_kamera(navn, logg=print):
     forsk = {}; blokker = []
     for ids in bl:
         X = [BY[i] for i in ids]
-        Q = np.vstack([kantpunkter(P, synlige_kanter(P, x, 1, None), 1.0, 1.5) for x in X])
+        Pb = Px(P, X[0])
+        Q = np.vstack([kantpunkter(Pb, synlige_kanter(Pb, x, 1, None), 1.0, 1.5) for x in X])
         Ms = sil(P, X); ys, xs = np.nonzero(Ms)
         def sc(d):
             k = float(np.mean(np.minimum(map_coordinates(dtf, [Q[:, 1] + d[1], Q[:, 0] + d[0]], order=1, mode='constant', cval=20), 6)))
@@ -393,8 +424,9 @@ def tilpass_kamera(navn, logg=print):
             pres = float(Mtd[yy, xx].mean()) if len(xs) else 0
             return k + 6 * (1 - pres) + 0.03 * math.hypot(*d)
         best = (sc((0, 0)), 0.0, 0.0)
-        for dx in np.arange(-25, 25.1, 1.0):
-            for dy in np.arange(-25, 25.1, 1.0):
+        rad = 8 if X[0]['id'] in BIT else 25          # biter: forskyvningen er satt for hånd, søket bare finjusterer
+        for dx in np.arange(-rad, rad + 0.1, 1.0):
+            for dy in np.arange(-rad, rad + 0.1, 1.0):
                 v = sc((dx, dy))
                 if v < best[0]: best = (v, dx, dy)
         _, dx, dy = best
@@ -402,7 +434,8 @@ def tilpass_kamera(navn, logg=print):
         dx, dy = (float(r.x[0]), float(r.x[1])) if r.fun < best[0] else (dx, dy)
         k0, k1 = sc((0, 0)), sc((dx, dy))
         for i in ids:
-            forsk[i] = [round(dx, 2), round(dy, 2)]
+            b0 = BIT.get(i, np.zeros(2))
+            forsk[i] = [round(dx + float(b0[0]), 2), round(dy + float(b0[1]), 2)]
         blokker.append(dict(ids=ids, d=[round(dx, 2), round(dy, 2)], kant_for=round(k0, 2), kant_etter=round(k1, 2)))
         logg(f"    blokk {len(ids):2d} hus ({ids[0][-6:]}…): forskyvning {dx:+.1f}, {dy:+.1f} pt, mål {k0:.2f} -> {k1:.2f}")
     U, S, Vt = np.linalg.svd(P[:, :2])
@@ -642,6 +675,14 @@ def takform_modell(x):
     """Takform fra modellens takflater (tak2/sk, gavl2): sal, valm, halvvalm, pult, flatt, knekk, sammensatt."""
     if x.get('takform') == 'knekk':
         return 'knekk'
+    # takformen verktoy/tak_enkel.py bygde taket med (30.10): flatene er laget av nettopp denne formen, så den leses direkte
+    # (geometriregelen under tok brannmurer mot naboen for halvvalm og tvers-møne for valm)
+    tf = x.get('takform') or ''
+    if tf in ('sal', 'valm', 'halvvalm', 'pult', 'flatt'):
+        return tf
+    if tf.startswith('vinkel:'):
+        fs = [f.rstrip('-') for f in tf[7:].split('+')]
+        return f"{fs[0]}/sammensatt" if len(set(fs)) == 1 else 'sammensatt'
     F = x.get('tak2') or x.get('sk') or []
     if not F:
         return 'flatt'
@@ -863,7 +904,8 @@ def analyser(navn, logg=print):
                 r['silhuett_forhold'] = round(float(np.median(ed[ok] / em[ok])), 2)
         # takform
         r['takform_modell'] = takform_modell(x)
-        gavl = 0
+        gavl = 0; gavl_vegger = []
+        vegg_av = {j: kk for kk, jl in vk.items() for j in jl}
         for j in veggflater:
             P_ = Pg(F[j]['ytre'].exterior).simplify(0.8)
             c = np.array(P_.exterior.coords)[:-1]
@@ -876,13 +918,16 @@ def analyser(navn, logg=print):
             hh = max(y1 - y0, 1)
             if len(midt) and midt[:, 1].min() < min(tl, tr) - 0.18 * hh:
                 gavl += 1
+                if j in vegg_av:
+                    w_ = next(v for v in vegger_m if v['k'] == vegg_av[j])
+                    gavl_vegger.append([list(map(float, w_['a'])), list(map(float, w_['b']))])
         tri = 0
         for j in takflater:
             P_ = Pg(F[j]['ytre'].exterior).simplify(1.2)
             if P_.area < 20: continue
             n_ = len(P_.exterior.coords) - 1
             if n_ == 3: tri += 1
-        r['takform_tegning_tegn'] = dict(gavler=gavl, trekantede_takflater=tri, takflater=len(takflater))
+        r['takform_tegning_tegn'] = dict(gavler=gavl, trekantede_takflater=tri, takflater=len(takflater), gavl_vegger=gavl_vegger)
         r['takform_tegning'] = ('halvvalm' if gavl and tri else 'sal' if gavl else 'valm' if tri else ('ukjent (ingen gavl/endeflate synlig)' if takflater else 'ukjent'))
         # farger: tegningens flatefarger (lys side) mot modellen
         def farge_av(jl, lys):

@@ -38,5 +38,9 @@ rapport/bakke/*.png
 rapport/31_overflater.jpg
 kilder/kommunekart/*.png
 
+# delingsarkene viser tegningen (åndsverk) ved siden av DOM: bare lokalt (30.10)
+rapport/tak/deling-*.png
 # fargeregelen (30.10): kontrollarkene for takene viser ortofotoet: bare lokalt
 rapport/farge/*.png
+# startkameraene fra forrige kjøring (verktoy/kontroll.py tar dem som ekstra start): bare lokalt
+rapport/kontroll/_arbeid/*-kamera-forrige.json

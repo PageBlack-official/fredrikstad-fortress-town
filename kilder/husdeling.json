@@ -1,0 +1,209 @@
+{
+ "laget": "2026-10-30",
+ "verktoy": "verktoy/husdeling.py",
+ "deling": [
+  {
+   "id": "bnr-193867758",
+   "tegning": "Kvartal12",
+   "kutt": [
+    [
+     [
+      152.93,
+      -14.5
+     ],
+     [
+      140.71,
+      -8.77
+     ]
+    ]
+   ],
+   "grunn": "tegningen viser to hus der kommunekartet har ett omriss (høyre ende av Kvartal12, kontrolløren 30.10); Kartverkets DOM har sprang på 1,4 m i mønet her",
+   "nye_id": [
+    "pb-57"
+   ]
+  },
+  {
+   "id": "bnr-193972446",
+   "tegning": "Kvartal12",
+   "kutt": [
+    [
+     [
+      115.06,
+      -37.64
+     ],
+     [
+      119.27,
+      -29.5
+     ]
+    ]
+   ],
+   "grunn": "gårdsrommet: tegningen har en fasadegrense 1,3 m fra sprang på 1,05 m i mønet (DOM); to bygg under ett omriss",
+   "nye_id": [
+    "pb-58"
+   ]
+  },
+  {
+   "id": "bnr-193867952",
+   "tegning": "kvartal6",
+   "kutt": [
+    [
+     [
+      185.23,
+      57.02
+     ],
+     [
+      173.06,
+      63.28
+     ]
+    ]
+   ],
+   "grunn": "hjørnet Kvartal6: tegningen har hjørnehuset med takarker mot den ene gata og et eget hus med lysere tak mot den andre; Kartverkets DOM har sprang på 2,8 m i mønet der fløyene møtes",
+   "nye_id": [
+    "pb-59"
+   ]
+  },
+  {
+   "id": "bnr-193868231",
+   "tegning": "kvartal5",
+   "kutt": [
+    [
+     [
+      98.73,
+      131.7
+     ],
+     [
+      86.23,
+      139.97
+     ]
+    ]
+   ],
+   "grunn": "kvartal5 bak: tegningen har to hus (et lavere med takark til venstre, et høyere til høyre) der kommunekartet har ett omriss; Kartverkets DOM har sprang på 2,0 m i mønet 6 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-60"
+   ]
+  },
+  {
+   "id": "bnr-6242812",
+   "tegning": "kvartal5",
+   "kutt": [
+    [
+     [
+      148.12,
+      119.56
+     ],
+     [
+      154.63,
+      130.44
+     ]
+    ]
+   ],
+   "grunn": "kvartal5 høyre ende: tegningen har to hus; Kartverkets DOM har sprang på 2,4 m i mønet 4 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-61"
+   ]
+  },
+  {
+   "id": "bnr-193868096",
+   "tegning": "Kvartal2BITMP",
+   "kutt": [
+    [
+     [
+      160.14,
+      136.16
+     ],
+     [
+      167.24,
+      148.0
+     ]
+    ]
+   ],
+   "grunn": "kontrollen fant to tegnede fasader i ulike farger på én modellvegg, og Kartverkets DOM har sprang i mønet: 1,1 m, 2,9 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-62"
+   ]
+  },
+  {
+   "id": "bnr-193867502",
+   "tegning": "Kvartal13",
+   "kutt": [
+    [
+     [
+      -87.11,
+      -22.86
+     ],
+     [
+      -97.26,
+      -18.83
+     ]
+    ],
+    [
+     [
+      -83.05,
+      -12.64
+     ],
+     [
+      -93.2,
+      -8.61
+     ]
+    ]
+   ],
+   "grunn": "Kvartal13: tegningen har tre grå hus der modellen hadde ett; Kartverkets DOM har sprang i mønet på 3,3 m og 1,6 m, 4–5 m fra fasadegrensene i tegningen",
+   "nye_id": [
+    "pb-63",
+    "pb-64"
+   ]
+  },
+  {
+   "id": "bnr-193971369",
+   "tegning": "kvartal7",
+   "kutt": [
+    [
+     [
+      -40.81,
+      63.93
+     ],
+     [
+      -38.57,
+      69.73
+     ]
+    ]
+   ],
+   "grunn": "kvartal7: tegningen har to fasader med hvert sitt saltak; Kartverkets DOM har sprang på 1,8 m i mønet 2 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-65"
+   ]
+  },
+  {
+   "id": "bnr-193867928",
+   "tegning": "Kvartal9",
+   "kutt": [
+    [
+     [
+      166.97,
+      29.42
+     ],
+     [
+      176.05,
+      49.69
+     ]
+    ]
+   ],
+   "grunn": "kontrollen fant to tegnede fasader i ulike farger på én modellvegg, og Kartverkets DOM har sprang i mønet: 1,6 m, 2,6 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-66"
+   ]
+  }
+ ],
+ "sammen": [
+  {
+   "ids": [
+    "bnr-193868061",
+    "bnr-193869572"
+   ],
+   "tegning": "Kvartal3",
+   "grunn": "Artillerigården: tegningen viser ett langhus med jevnt tak og valm i enden; Kartverkets DOM har sammenhengende møne (12,5–13 m) over begge omrissene i kommunekartet"
+  }
+ ],
+ "skjul": [],
+ "nye": []
+}

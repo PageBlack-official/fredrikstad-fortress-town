@@ -1,0 +1,159 @@
+{
+ "laget": "2026-10-30",
+ "verktoy": "verktoy/tak_enkel.py",
+ "forklaring": "Takform og mønretning lest av tegningen per hus. form: sal/valm/halvvalm/pult/flatt; mone: lang/kort/kompassgrader; maks_kropper: høyst så mange kropper; kropper: per kropp {form, langs}. Går foran DOM.",
+ "hus": {
+  "bnr-193869580": {
+   "form": "valm",
+   "maks_kropper": 1,
+   "tegning": "Glasshytta",
+   "grunn": "tegningen viser ett enkelt valmtak (kontrolløren: modellen hadde et ekstra tverrtak)"
+  },
+  "bnr-193868711": {
+   "tegning": "Kvartal10",
+   "deler": [
+    {
+     "p": [
+      [
+       -72.26,
+       53.36
+      ],
+      [
+       -70.36,
+       55.94
+      ],
+      [
+       -72.94,
+       57.84
+      ],
+      [
+       -74.84,
+       55.26
+      ]
+     ],
+     "h": 16.3,
+     "mh": 0,
+     "roof": "pyramidal"
+    }
+   ],
+   "grunn": "Kvartal10: tegningen har et lite tårn på vestenden; Kartverkets DOM har 15,5–16,3 m over 3×3 m ved (−72,6, 55,6), mønet ellers ca. 12 m"
+  },
+  "bnr-193868134": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal2BITMP",
+   "grunn": "tegningen Kvartal2BITMP: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193868053": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "Kvartal3",
+   "grunn": "tegningen Kvartal3: 1 gavl(er), 0 trekantede takflater"
+  },
+  "bnr-193867324": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal3",
+   "grunn": "tegningen Kvartal3: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-16290424": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "kvartal5",
+   "grunn": "tegningen kvartal5: 1 gavl(er), 0 trekantede takflater"
+  },
+  "bnr-193868207": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "kvartal5",
+   "grunn": "tegningen kvartal5: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-6251331": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "kvartal5",
+   "grunn": "tegningen kvartal5: 1 gavl(er), 0 trekantede takflater",
+   "mone": 146.4
+  },
+  "bnr-193868215": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "kvartal5",
+   "grunn": "tegningen kvartal5: 1 gavl(er), 0 trekantede takflater",
+   "mone": 151.8
+  },
+  "bnr-193868630": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "kvartal6",
+   "grunn": "tegningen kvartal6: 0 gavl(er), 2 trekantede takflater"
+  },
+  "bnr-193868266": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal8BITMAP",
+   "grunn": "tegningen Kvartal8BITMAP: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193868312": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "Kvartal8BITMAP",
+   "grunn": "tegningen Kvartal8BITMAP: 1 gavl(er), 0 trekantede takflater"
+  },
+  "pb-13": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal8BITMAP",
+   "grunn": "tegningen Kvartal8BITMAP: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193971261": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal8BITMAP",
+   "grunn": "tegningen Kvartal8BITMAP: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193972519": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal9",
+   "grunn": "tegningen Kvartal9: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193867898": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal9",
+   "grunn": "tegningen Kvartal9: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193867731": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "Kvartal12",
+   "grunn": "tegningen Kvartal12: 1 gavl(er), 0 trekantede takflater",
+   "mone": 69.9
+  },
+  "bnr-193870260": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal14",
+   "grunn": "tegningen Kvartal14: 0 gavl(er), 1 trekantede takflater"
+  },
+  "bnr-193870244": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal14",
+   "grunn": "tegningen Kvartal14: 0 gavl(er), 3 trekantede takflater"
+  },
+  "bnr-193870228": {
+   "form": "valm",
+   "kilde": "kontroll",
+   "tegning": "Kvartal14",
+   "grunn": "tegningen Kvartal14: 0 gavl(er), 2 trekantede takflater"
+  },
+  "bnr-193867529": {
+   "form": "sal",
+   "kilde": "kontroll",
+   "tegning": "kirke",
+   "grunn": "tegningen kirke: 2 gavl(er), 0 trekantede takflater"
+  }
+ }
+}
