@@ -302,10 +302,10 @@ def tilpass_kamera(navn, logg=print):
                 alle.append(x)
     # biter (kvartal-kobling.json «biter», 30.10): hus Vegar tegnet som en egen bit et annet sted på arket enn der det felles
     # kameraet legger dem; forskyvningen (pt) er satt for hånd fra arket og finjusteres med blokksøket under
-    BIT = {}
-    for b_ in (kobling(navn) or {}).get('biter', []):
+    BIT = {}; BIT_GRP = {}; BIT_SOK = {}
+    for nb_, b_ in enumerate((kobling(navn) or {}).get('biter', [])):
         for i_ in b_['ids']:
-            BIT[i_] = np.array(b_['d'], float)
+            BIT[i_] = np.array(b_['d'], float); BIT_GRP[i_] = nb_; BIT_SOK[i_] = float(b_.get('sok', 8))
             if not any(x['id'] == i_ for x in alle):
                 alle += [x for x in D['bygg'] if x['id'] == i_ and not x.get('skjul') and len(x['p']) >= 3]
     def Px(P, x):
@@ -395,7 +395,15 @@ def tilpass_kamera(navn, logg=print):
             starter.append([w0, w1, float(Ap[0, 3]), float(Ap[1, 3])] + ([] if K else [float(-Ap[1, 2])]))
         except Exception:
             pass
-    beste = tilpass(starter, 'felles')
+    fast = (kobling(navn) or {}).get('kamera_fast')
+    if fast:
+        # felles kamera satt for hånd (kvartal-kobling.json «kamera_fast»: målestokk, dreiing og forskyvning som legger et
+        # ankerhus på tegningen); tegningen er frihånd, så resten tas av blokkene/bitene under, ikke av én global tilpasning
+        w_ = [float(v) for v in fast['w']]
+        beste = (mål(w_)[0], w_, mål(w_)[1])
+        logg(f"  felles kamera satt for hånd: {fast.get('grunn', '')}")
+    else:
+        beste = tilpass(starter, 'felles')
     utenfor = []
     for runde in (2, 3):
         P = fast_P(beste[1]); inn = []; ut_ = []
@@ -406,10 +414,19 @@ def tilpass_kamera(navn, logg=print):
             break
         st['B'] = inn; utenfor = [x['id'] for x in ut_]
         logg(f"  runde {runde}: {len(inn)} hus på det tegnede, {len(ut_)} utenfor")
-        beste = tilpass([beste[1]], f'felles, runde {runde}')
+        if not fast:
+            beste = tilpass([beste[1]], f'felles, runde {runde}')
     P = fast_P(beste[1])
     # blokkene: egen forskyvning
-    B = st['B']; bl = FT.blokker(B); BY = {x['id']: x for x in B}
+    B = st['B']; BY = {x['id']: x for x in B}
+    # hver bit er sin egen blokk (30.10, natt/fasade2): hus som står inntil hverandre i modellen, men er tegnet som egne biter
+    # (frihånd, kvartal6: baksiden presset sammen), får egen forskyvning; ellers drar én blokk hele kvartalet med seg
+    bl = []
+    for ids_ in FT.blokker(B):
+        grp_ = {}
+        for i_ in ids_:
+            grp_.setdefault(BIT_GRP.get(i_, -1), []).append(i_)
+        bl += list(grp_.values())
     kob_ids = set((kobling(navn) or {}).get('bygg', []))
     utenfor = [i for i in utenfor if i in kob_ids]          # bare koblede hus som havnet utenfor er verdt å nevne
     forsk = {}; blokker = []
@@ -424,7 +441,7 @@ def tilpass_kamera(navn, logg=print):
             pres = float(Mtd[yy, xx].mean()) if len(xs) else 0
             return k + 6 * (1 - pres) + 0.03 * math.hypot(*d)
         best = (sc((0, 0)), 0.0, 0.0)
-        rad = 8 if X[0]['id'] in BIT else 25          # biter: forskyvningen er satt for hånd, søket bare finjusterer
+        rad = BIT_SOK[X[0]['id']] if X[0]['id'] in BIT else 25      # biter: forskyvningen er satt for hånd, søket finjusterer (± «sok» pt, standard 8)
         for dx in np.arange(-rad, rad + 0.1, 1.0):
             for dy in np.arange(-rad, rad + 0.1, 1.0):
                 v = sc((dx, dy))

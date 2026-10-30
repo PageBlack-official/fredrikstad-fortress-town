@@ -471,7 +471,76 @@
    "fasade_ingen": 1,
    "bygg_naer": [],
    "bygg_manuelt": [],
-   "kant": []
+   "kant": [],
+   "biter": [
+    {
+     "ids": [
+      "bnr-193868002",
+      "bnr-193971334",
+      "bnr-193868657",
+      "bnr-193867995",
+      "bnr-193972179",
+      "pb-6",
+      "bnr-193868010",
+      "bnr-193868665",
+      "bnr-193971318"
+     ],
+     "d": [
+      -22,
+      22
+     ],
+     "sok": 20,
+     "grunn": "baksiden (husrekka mot nordøst og nordvest) er tegnet presset sammen: med målestokken som treffer gatefasadene ligger den ~30 pt for høyt (frihånd)"
+    },
+    {
+     "ids": [
+      "bnr-193972160",
+      "bnr-193868630",
+      "bnr-193868649",
+      "bnr-193971296"
+     ],
+     "d": [
+      0,
+      15
+     ],
+     "sok": 20,
+     "grunn": "gårdsromshusene: halvveis mellom gatefasadene og baksiden (frihånd)"
+    },
+    {
+     "ids": [
+      "bnr-193867987",
+      "bnr-193867979",
+      "pb-59"
+     ],
+     "d": [
+      0,
+      0
+     ],
+     "sok": 20,
+     "grunn": "gatefasaden mot sørvest er tegnet lengre enn modellen (~6 %), egen forskyvning"
+    },
+    {
+     "ids": [
+      "bnr-6247822",
+      "bnr-193868029"
+     ],
+     "d": [
+      0,
+      10
+     ],
+     "sok": 20,
+     "grunn": "gatefasaden mot sørøst er tegnet ~24 % kortere enn modellen (frihånd): husene innerst mot nord står nærmere hjørnet i tegningen"
+    }
+   ],
+   "kamera_fast": {
+    "w": [
+     5.8959,
+     -0.031,
+     -820.41,
+     290.81
+    ],
+    "grunn": "målestokken som legger hjørnehuset 867952 og gatefasaden mot sørvest på tegningen (to minima i fri tilpasning, 5,34 og 5,88 pt/m: tegningen er presset sammen bakover og mot sørøst); resten tas av bitene"
+   }
   },
   {
    "navn": "kvartal7",
