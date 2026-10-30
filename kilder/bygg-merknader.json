@@ -1379,6 +1379,17 @@
    "kategori": "detalj",
    "grunn": "sokkelstripe ved husfoten, ikke hus",
    "kilde": "Claude 30.10, kontaktark mot kommunekart, Matrikkelen, ortofoto 2019/2024, DOM 2015/i dag"
+  },
+  {
+   "tegning": "sistekvartal",
+   "senter_pt": [
+    11.3,
+    372.7
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "frihånd",
+   "grunn": "gavlenden på Laboratoriet (bnr-193870198, koblet som egen bit 30.10) er tegnet lenger ut enn kommunekartets omriss; resten av huset treffer (IoU 0,74). Ingen bygning ved gavlen i FKB, ortofoto eller DOM 2015/i dag",
+   "kilde": "Claude 30.10, kontrollarket for sistekvartal etter koblingen"
   }
  ]
 }
