@@ -711,6 +711,51 @@ def klassifiser(el, L, hv_med=None):
     return None
 
 
+def tegnede_elementer(vg, L):
+    """Det tegningen viser på én avlest vegg, slik legg_inn og kontrollen (verktoy/kontroll.py) begge leser det: én definisjon
+    av hva som er vindu, dør/port og strek (30.10). Gir (el, vin, rader, gavl): el = [(element, klassifisering)] etter at
+    biter av samme dør/vindu er slått sammen, vin = vinduene under gesims (v <= 1,05) sortert etter underkant, rader = vinduene
+    samlet i tegnede rader (ny rad når underkanten står mer enn en halv vindushøyde over forrige), gavl = vinduer over gesims."""
+    hv_alle = [e['hv'] for e in vg['elementer'] if klassifiser(e, L) is not None]
+    hv_med = float(np.median(hv_alle)) if hv_alle else None
+    el = [(e, klassifiser(e, L, hv_med)) for e in vg['elementer']]
+    el = [(e, k) for e, k in el if k is not None and not (k[0] == 0 and e['vb'] < -0.05)]   # trapp og fortau under bunnkanten
+    # to biter av samme dør/port/vindu (fløyer, glass i døra, trapp): den største står igjen (30.10)
+    el.sort(key=lambda t: -(t[0]['bu'] * t[0]['hv']))
+    beholdt = []
+    for e, k in el:
+        if any(abs(e['u'] - q['u']) * L < (k[1] + kq[1]) / 2 * 0.9 and min(e['vt'], q['vt']) > max(e['vb'], q['vb']) for q, kq in beholdt):
+            continue
+        beholdt.append((e, k))
+    el = beholdt
+    vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['vb'])
+    rader = []
+    for e in vin:
+        # enkel kobling (30.10): avstanden til forrige vindu i rekkefølgen, så en håndtegnet rad som siger, ikke deles
+        if rader and e['vb'] - rader[-1][-1]['vb'] < 0.5 * (float(np.percentile([q['hv'] for q in vin], 30)) if vin else 0.3):
+            rader[-1].append(e)
+        else:
+            rader.append([e])
+    gavl = [e for e, k in el if k[0] == 0 and e['v'] > 1.05]
+    return el, vin, rader, gavl
+
+
+def etasjer(h, n_et):
+    """Brystningshøydene for etasjene et hus med gesims h (Kartverket) har plass til når tegningen viser n_et etasjer:
+    standard (brystning 0,9, etasje 3,0, vinduer_regler.rader); viser tegningen flere, presses etasjene ned til 1,9 m
+    (lavere vinduer under 2,4 m). Flere tegnede etasjer enn det: tegningen overdriver høyden, Kartverket går foran
+    (Vegar 28.10). Gir (brystninger, presset vindushøyde eller None). Brukes av legg_inn og kontrollen (30.10)."""
+    import vinduer_regler as VR
+    brystn = VR.rader(h)
+    if n_et > len(brystn) and n_et > 1:
+        vh_ = VR.R['vh'] if (h - 0.3 - VR.R['vh'] - VR.R['bryst']) / (n_et - 1) >= 2.4 else 1.15
+        br0 = 0.8 if vh_ < VR.R['vh'] else VR.R['bryst']
+        et = (h - 0.3 - vh_ - br0) / (n_et - 1)
+        if et >= 1.9:
+            return [br0 + et * k for k in range(n_et)], vh_
+    return brystn, None
+
+
 VH_PRESS = [None]
 LANDEMERKER = {'bnr-193870279', 'bnr-193972012', 'bnr-193869548', 'bnr-193867529'}   # egne agenter/egen kode (Tøihuset, rådhuset, Voldporten, kirka)
 
@@ -726,35 +771,9 @@ def vegg_vind(vg, x, P):
     if Polygon(x['p']).contains(Point(*(v0 + u * L / 2 + n * 0.3))):
         n = -n
     h = x['h']
-    hv_alle = [e['hv'] for e in vg['elementer'] if klassifiser(e, L) is not None]
-    hv_med = float(np.median(hv_alle)) if hv_alle else None
-    el = [(e, klassifiser(e, L, hv_med)) for e in vg['elementer']]
-    el = [(e, k) for e, k in el if k is not None and not (k[0] == 0 and e['vb'] < -0.05)]   # trapp og fortau under bunnkanten
-    # to biter av samme dør/port/vindu (fløyer, glass i døra, trapp): den største står igjen (30.10)
-    el.sort(key=lambda t: -(t[0]['bu'] * t[0]['hv']))
-    beholdt = []
-    for e, k in el:
-        if any(abs(e['u'] - q['u']) * L < (k[1] + kq[1]) / 2 * 0.9 and min(e['vt'], q['vt']) > max(e['vb'], q['vb']) for q, kq in beholdt):
-            continue
-        beholdt.append((e, k))
-    el = beholdt
-    vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['vb'])
-    # etasjeradene: vinduene samles etter underkanten; ny rad når underkanten står mer enn en halv vindushøyde over radens
-    rader = []
-    for e in vin:
-        # enkel kobling (30.10): avstanden til forrige vindu i rekkefølgen, så en håndtegnet rad som siger, ikke deles
-        if rader and e['vb'] - rader[-1][-1]['vb'] < 0.5 * (float(np.percentile([q['hv'] for q in vin], 30)) if vin else 0.3):
-            rader[-1].append(e)
-        else:
-            rader.append([e])
-    brystn = VR.rader(h); VH_PRESS[0] = None
+    el, vin, rader, _ = tegnede_elementer(vg, L)
     n_et = sum(1 for r in rader if not (np.mean([e['v'] for e in r]) < 0.22 and len(rader) > 1 and np.mean([e['hv'] for e in r]) < 0.7 * (np.median([e['hv'] for e in vin]) if vin else 0)))
-    if n_et > len(brystn) and n_et > 1:      # tegningen har flere etasjer enn standardhøyden gir plass til: etasjene presses (minst 2,2 m)
-        vh_ = VR.R['vh'] if (h - 0.3 - VR.R['vh'] - VR.R['bryst']) / (n_et - 1) >= 2.4 else 1.15
-        br0 = 0.8 if vh_ < VR.R['vh'] else VR.R['bryst']
-        et = (h - 0.3 - vh_ - br0) / (n_et - 1)
-        if et >= 1.9:
-            brystn = [br0 + et * k for k in range(n_et)]; VH_PRESS[0] = vh_
+    brystn, VH_PRESS[0] = etasjer(h, n_et)
     spenn = (max(e['vb'] for e in vin) - min(e['vb'] for e in vin)) * h if vin else 0
     if len(rader) > 1 and ((len(brystn) == 1 and VH_PRESS[0] is None) or spenn < 1.4):
         rader = [[e for r in rader for e in r]]   # én etasje: radene i tegningen er samme rad tegnet skjevt (30.10)

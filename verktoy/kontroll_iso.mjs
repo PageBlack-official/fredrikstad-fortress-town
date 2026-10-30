@@ -71,7 +71,13 @@ for (const j of jobb) {
     for (const [id, d] of Object.entries(j.forsk || {})) { const k = idx[id]; if (k) { off[k * 4] = d[0] * R; off[k * 4 + 1] = d[1] * R; } }
     const tOff = new THREE.DataTexture(off, 1024, 1, THREE.RGBAFormat, THREE.FloatType); tOff.needsUpdate = true;
     const VS = `attribute float aBygg; uniform float uId; uniform sampler2D tVis, tOff; uniform vec2 uWH; varying vec3 vw; varying float vId;
+      #ifdef VIND
+      attribute vec4 aInfo; varying vec4 vInfo; varying vec2 vM, vSz;
+      #endif
       void main(){ vec4 p=vec4(position,1.);
+      #ifdef VIND
+      vInfo=aInfo; vSz=vec2(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz)); vM=uv*vSz;
+      #endif
       #ifdef USE_INSTANCING
       p=instanceMatrix*p;
       #endif
@@ -80,17 +86,26 @@ for (const j of jobb) {
       vec2 o=texture2D(tOff, tc).xy;
       if(texture2D(tVis, tc).r < 0.5) vId = 0.;
       gl_Position=projectionMatrix*viewMatrix*w; gl_Position.x += 2.*o.x/uWH.x; gl_Position.y -= 2.*o.y/uWH.y; }`;
-    const FS_FARGE = `uniform vec3 farge, skygge; uniform vec3 rU; uniform float typ; varying vec3 vw; varying float vId;
-      void main(){ if(vId<0.5) discard; vec3 nn=normalize(cross(dFdx(vw),dFdy(vw)));
+    // vinduets form i alle passene, samme utsnitt som src/07 (30.10): rundbuevindu (typ 0, bue 1), port med buet topp (typ 2)
+    // og oksøye (typ 3); før ble alle vinduer tegnet som rektangler i kontrollbildet, så rådhusets rundbuer så rette ut
+    const FORM = `#ifdef VIND
+      varying vec4 vInfo; varying vec2 vM, vSz;
+      #define FORM() { float t_=vInfo.x, b_=vInfo.y; if(t_>2.5){ if(length(vM-vSz*0.5)>vSz.x*0.5) discard; } else if(t_>1.5 || (t_<0.5 && b_>0.5 && b_<1.5)){ float r_=vSz.x*0.5; float c_=vSz.y-r_; if(vM.y>c_ && length(vec2(vM.x-r_,vM.y-c_))>r_) discard; } }
+      #else
+      #define FORM()
+      #endif
+      `;
+    const FS_FARGE = `${FORM}uniform vec3 farge, skygge; uniform vec3 rU; uniform float typ; varying vec3 vw; varying float vId;
+      void main(){ if(vId<0.5) discard; FORM(); vec3 nn=normalize(cross(dFdx(vw),dFdy(vw)));
         vec3 c = farge;
         if(typ<1.5 && abs(nn.y)<0.3){ c = dot(rU,nn) < 0. ? farge : skygge; }
         if(typ>1.5 && typ<2.5 && nn.y<0.3){ c = dot(rU,nn) < 0. ? farge : skygge; }
         gl_FragColor=vec4(c,1.); }`;
-    const FS_ID = `uniform float typ; varying vec3 vw; varying float vId;
-      void main(){ if(vId<0.5) discard; float i=floor(vId+0.5); vec3 nn=normalize(cross(dFdx(vw),dFdy(vw)));
+    const FS_ID = `${FORM}uniform float typ; varying vec3 vw; varying float vId;
+      void main(){ if(vId<0.5) discard; FORM(); float i=floor(vId+0.5); vec3 nn=normalize(cross(dFdx(vw),dFdy(vw)));
         float t = typ>2.5 ? typ : (abs(nn.y)<0.3 ? 1. : 2.);
         gl_FragColor=vec4(floor(i/256.)/255., mod(i,256.)/255., t/255., 1.); }`;
-    const FS_N = `varying vec3 vw; varying float vId; void main(){ if(vId<0.5) discard; vec3 nn=normalize(cross(dFdx(vw),dFdy(vw))); gl_FragColor=vec4(0.5+0.5*nn,1.); }`;
+    const FS_N = `${FORM}varying vec3 vw; varying float vId; void main(){ if(vId<0.5) discard; FORM(); vec3 nn=normalize(cross(dFdx(vw),dFdy(vw))); gl_FragColor=vec4(0.5+0.5*nn,1.); }`;
     const rU = new THREE.Vector3(U[0], U[1], U[2]);
     const lager = new Map();
     function matFor(o, i, pass) {
@@ -102,7 +117,8 @@ for (const j of jobb) {
       if (!skygge) { skygge = farge.clone(); skygge.r *= 0.72; skygge.g *= 0.8; skygge.b *= 0.8; }
       farge = farge.clone().convertLinearToSRGB(); skygge = skygge.clone().convertLinearToSRGB();   // materialene har lineære farger
       const fs = pass === 'farge' ? FS_FARGE : pass.startsWith('id') ? FS_ID : FS_N;
-      return new THREE.ShaderMaterial({ vertexShader: VS, fragmentShader: fs, side: THREE.DoubleSide,
+      const vind = o.isInstancedMesh && o.geometry.getAttribute('aInfo') ? { VIND: '' } : {};
+      return new THREE.ShaderMaterial({ vertexShader: VS, fragmentShader: fs, side: THREE.DoubleSide, defines: vind,
         uniforms: { farge: { value: farge }, skygge: { value: skygge }, rU: { value: rU }, typ: { value: typ }, uId: { value: i >= 0 ? i + 1 : 0 }, tVis: { value: pass === 'idalle' ? tAlle : tVis }, tOff: { value: tOff }, uWH: { value: new THREE.Vector2(W, H) } } });
     }
     const gamle = nett.map(([o]) => [o, o.material, o.visible, o.renderOrder, o.frustumCulled]);

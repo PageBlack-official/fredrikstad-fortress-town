@@ -731,11 +731,14 @@ def takform_modell(x):
 
 
 def vinduer_modell(x, a, b):
-    """Modellens vinduer og dører på veggen a->b (utovernormal), i etasjerader (3 m)."""
+    """Modellens vinduer og dører på veggen a->b (utovernormal). Radene er vinduene samlet etter høyden (ny rad når midten
+    står mer enn 1 m over forrige vindu), ikke faste 3 m-bånd: presset etasjehøyde (lave hus med to etasjer, fasade_tegning
+    VH_PRESS) og kjellervinduer havnet før i samme bånd som 1. etasje (30.10). Vinduer over gesims (gavl) telles for seg.
+    Gir (vinduer under gesims, rader, dører, gavlvinduer)."""
     V = x.get('vind') or []
     ux, uy = b[0] - a[0], b[1] - a[1]; L = math.hypot(ux, uy) or 1
     tx, ty = ux / L, uy / L
-    rader = {}; dorer = 0; n = 0
+    zs = []; dorer = 0; gavl = 0
     for v in V:
         vx, vy, vz, vtx, vty, nx, ny = v[:7]
         typ = v[9] if len(v) > 9 else 0
@@ -744,9 +747,33 @@ def vinduer_modell(x, a, b):
         if not (-0.3 <= t <= L + 0.3 and dist < 0.8 and abs(nx * (-ty) + ny * tx) > 0.8 or (-0.3 <= t <= L + 0.3 and dist < 0.8 and abs(nx * ty - ny * tx) > 0.8)):
             continue
         if typ in (1, 2): dorer += 1
-        else:
-            r = int(vz // 3.0); rader[r] = rader.get(r, 0) + 1; n += 1
-    return n, [rader[k] for k in sorted(rader)], dorer
+        elif vz > (x.get('h') or 99): gavl += 1
+        else: zs.append(vz)
+    return len(zs), _rader(zs, gap=1.0), dorer, gavl
+
+
+def lest_vegg(lest, a, b):
+    """Den håndleste veggen (kilder/fasade-tegning) som ligger på modellveggen a->b: parallell (|cos| > 0,95), midten
+    under 1,5 m fra linja og mest overlapp langs veggen. Før ble den slått opp på veggnummeret, men avlesningen nummererer
+    veggene i omrisset slik det var da den ble gjort (grunnmur og husdeling har endret omrissene siden), så 33 vegger ble
+    talt fra hullene i flaten i stedet og noen ble sammenlignet med en annen vegg (30.10)."""
+    a = np.array(a, float); b = np.array(b, float); L = float(np.linalg.norm(b - a)) or 1.0; u = (b - a) / L
+    n = np.array([-u[1], u[0]]); best = None
+    for w in lest:
+        wa, wb = np.array(w['a'], float), np.array(w['b'], float); Lw = float(np.linalg.norm(wb - wa)) or 1.0; uw = (wb - wa) / Lw
+        if abs(float(u @ uw)) < 0.95: continue
+        if abs(float(((wa + wb) / 2 - a) @ n)) > 1.5: continue
+        t0, t1 = sorted([float((wa - a) @ u), float((wb - a) @ u)])
+        ov = min(t1, L) - max(t0, 0.0)
+        if ov < 0.3 * min(L, Lw): continue
+        if best is None or ov > best[0]: best = (ov, w)
+    return best[1] if best else None
+
+
+def etasjer_plass(h, n_tegnet):
+    """Etasjene Kartverkets høyde gir plass til når tegningen viser n_tegnet (fasade_tegning.etasjer)."""
+    import fasade_tegning as FT
+    return len(FT.etasjer(h, n_tegnet)[0])
 
 
 def _rader(vs, gap=0.12):
@@ -1031,13 +1058,18 @@ def analyser(navn, logg=print):
             jl = vk.get(v['k'], [])
             if not jl: continue
             U = unary_union([F[j]['ytre'] for j in jl])
-            lest = next((w_ for w_ in FTJ.get(i, []) if w_['vegg'] == v['k']), None)
-            vs = []; dor_t = 0
+            lest = lest_vegg(FTJ.get(i, []), v['a'], v['b'])
+            vs = []; dor_t = 0; rader_t = None; gavl_t = 0
             if lest:      # fasadeavlesningen: ett element per vindu/dør (sprossene er slått sammen der)
+                # samme lesing som legg_inn (fasade_tegning.tegnede_elementer): streker, skillelinjer og biter av samme dør
+                # telles ikke; vinduer over gesims (gavl) for seg; rader tegnet skjevt under 1,4 m fra hverandre er én rad
                 kilde_v = 'fasadeavlesningen'
-                for e_ in lest['elementer']:
-                    if e_['vb'] < 0.12 and e_['hv'] > 0.3: dor_t += 1
-                    else: vs.append(e_['v'])
+                Lw = float(lest.get('L') or v['L'])
+                el_, vin_, rad_, gav_ = FT.tegnede_elementer(lest, Lw)
+                dor_t = sum(1 for e_, k_ in el_ if k_[0] in (1, 2)); gavl_t = len(gav_)
+                vs = [e_['v'] for e_ in vin_]
+                spenn = (max(e_['vb'] for e_ in vin_) - min(e_['vb'] for e_ in vin_)) * (x.get('h') or 0) if vin_ else 0
+                rader_t = [len(r_) for r_ in rad_] if spenn >= 1.4 else ([len(vin_)] if vin_ else [])
             else:         # hullene i veggflaten; glass med sprosser er flere hull: hull tettere enn 0,9 pt er ett vindu
                 kilde_v = 'hullene i veggflaten'
                 hull = [h_ for j in jl for h_ in F[j]['hull'] if 0.3 < h_.area < 0.4 * F[j]['ytre'].area]
@@ -1051,9 +1083,12 @@ def analyser(navn, logg=print):
                     vb = (gb[3] - hb[3]) / Hh; ht = (hb[3] - hb[1]) / Hh
                     if vb < 0.1 and ht > 0.22: dor_t += 1
                     else: vs.append((gb[3] - 0.5 * (hb[1] + hb[3])) / Hh)
-            n_m, rader_m, dor_m = vinduer_modell(x, v['a'], v['b'])
-            vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v, tegning=dict(vinduer=len(vs), rader=_rader(vs), dorer=dor_t),
-                             modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m)))
+            n_m, rader_m, dor_m, gavl_m = vinduer_modell(x, v['a'], v['b'])
+            import vinduer_regler as VR
+            vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v,
+                             tegning=dict(vinduer=len(vs), rader=rader_t if rader_t is not None else _rader(vs), dorer=dor_t, gavl=gavl_t),
+                             modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m, gavl=gavl_m),
+                             plass_etasjer=etasjer_plass(x.get('h') or 0, len(rader_t) if rader_t else 0)))
         r['vinduer'] = vind
         # arker og piper (anslått): små flater på taket
         sma = [j for j in js if F[j]['ytre'].area < 0.05 * max(Md.sum() / R / R, 1)]
@@ -1148,7 +1183,15 @@ def vurder(r, navn):
             if verst is None or sc > verst[0]: verst = (sc, w, dt, rad)
         sc, w, dt, rad = verst
         a = 'feil' if dt >= 3 or (rad and w['tegning']['vinduer'] >= 2) else 'avvik' if dt >= 1 else 'ok'
-        sett('vinduer', a, f"vegg {w['vegg']} ({w['lengde_m']} m): tegning {w['tegning']['vinduer']} vinduer i rader {w['tegning']['rader']}, modell {w['modell']['vinduer']} i rader {w['modell']['rader']}")
+        hva = f"vegg {w['vegg']} ({w['lengde_m']} m, {w['kilde']}): tegning {w['tegning']['vinduer']} vinduer i rader {w['tegning']['rader']}, modell {w['modell']['vinduer']} i rader {w['modell']['rader']}"
+        # tegningen viser flere etasjer enn Kartverkets høyde har plass til (også med pressede etasjer, fasade_tegning.etasjer):
+        # Kartverket går foran (Vegar 28.10), modellen har de etasjene høyden gir og radene nedenfra
+        nt, nm, pl = len(w['tegning']['rader']), len(w['modell']['rader']), w.get('plass_etasjer')
+        if a != 'ok' and pl is not None and nt > pl and nm <= pl and w['modell']['vinduer'] <= w['tegning']['vinduer'] \
+                and w['modell']['vinduer'] >= sum(w['tegning']['rader'][:max(nm, 1)]) - 1:
+            a = 'avvik med grunn'
+            hva += f"; tegningen viser {nt} rader, men gesims {r.get('h')} m (Kartverket) gir plass til {pl} etasje(r): tegningen overdriver høyden"
+        sett('vinduer', a, hva)
         dd = [(w['tegning']['dorer'], w['modell']['dorer'], w['vegg']) for w in vv if w['tegning']['dorer'] != w['modell']['dorer']]
         sett('dorer', 'avvik' if dd else 'ok', '; '.join(f"vegg {g}: tegning {a_}, modell {b_}" for a_, b_, g in dd) if dd else 'like')
     for k in ('arker', 'piper'):
