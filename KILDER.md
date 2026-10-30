@@ -19,6 +19,9 @@
 | gjerder (typ gjerde/mur/hekk, art, h) | Ortofoto 2024 (mørk smal stripe / grønn stripe) langs kommunekartets eiendomsgrenser og gårdsrommenes kanter, DOM−DTM for mur mot gjerde og høyde; Street View-avlesningen (art: stakitt, plankegjerde, plankeport, smijern …) og målt for hånd (kilder/bakke-maalt.json), verktoy/bakke.py gjerder | id gj-<n>. Gjerdene som ikke ses i fotoet, er tatt ut (rapport/bakke/gjerder-forkastet.json) |
 | traer (posisjon, s, antall) | Kartverkets DOM−DTM (29.10, verktoy/bakke.py traer): ett tre per tretopp (koblet innen 6 m til treet fra Google-flyfotoet 23.10), trær uten topp i vegetasjonen minst 5 m fra hverandre; trær i vann og trær uten vegetasjon (dømt i ortofotoet) tatt ut | Alt som er tatt ut eller lagt til, står med grunn i kilder/bakke-maalt.json |
 | traer (opprinnelig) | Trykkfila (kroneposisjoner), så Google-flyfotoet (23.10) | Se raden over for rettingen 29.10 |
+| bygg.atrium (16308102) | Ortofoto 2024 (gårdsrommet, karm, glass; flyttet med takets relieffforskyvning 2,25 m), Kvartal14.ai (form), Kartverkets DOM−DTM (ringtakets h/th og helning per fløy, glassets topp), kilder/atrier.json | verktoy/landemerker.py |
+| porter.vingemurer, porter.bunn (Voldporten) | Street View aug. 2010 (SØ og NV) og brukerfoto aug. 2019 (form), ortofoto 2024 (SØ-murenes fot), DTM | NV-murene: lengde og vinkel lest av bildet (±1 m, ±15°) |
+| terrengflikker | Kartverkets DTM 1 m − 7,0 m (veien innenfor Voldporten = kartets bakkenivå), kappet ved 0 | verktoy/landemerker.py; porthuset på veinivå |
 | legende | Kartbrosjyren 2015 | |
 | landskap.terreng (voller) | Beregnet fra OSM-voller + brosjyren | |
 | porter | Regel: bygg med «port» i navnet + vei gjennom fotavtrykket | |

@@ -362,3 +362,20 @@ Høyder som tilpasningen per hus måler feil (tårn i omrisset, DTM på vollkron
 kilder/hoyde-unntak.json; rapport/hoyder/legg_inn.py legger dem inn og regel 02 måler mot dem. Voldportens portmur står i data/porter.json
 (med kilde). verktoy/kontroll_iso.mjs slår av frustumtesten under kontrollrenderen (portbygg og bygg med deler ble kastet før).
 Rapport: rapport/landemerker/landemerker.md.
+
+## Atrium, vingemurer, terrengflikker og statuen mot fotoene (30.10, natt/atrium)
+Tre nye gjenbrukbare elementer, alle styrt av data og lagt inn av `verktoy/landemerker.py` (sist i kjeden):
+- `bygg.atrium {gaard, kant, z, topp, glass, ramme}` (bygAtrium, src/07): innglasset gårdsrom med karm og glasspyramide (kvadrat) eller
+  glassvalm (rektangel), sprosser i karmfargen. Ringtaket rundt står i tak2/gavl2 og regnes av `atrium_tak()`: rett skjelett med
+  gårdsrommet som hull der bare veggene i `takfot` har takfot (resten er brannmurer); med konvekst gårdsrom er det eksakt,
+  t = min(min_s d_s, max_k w_k·g_k), og helningen per gårdsromskant (w_k) og h/th tilpasses Kartverkets DOM−DTM (`atrium_hoyde()`).
+  Postene står i `kilder/atrier.json` (et nytt atrium = en ny post); `tak_farge.py` tar gårdsrommet ut når takfargen måles.
+  Første bruk: 16308102 (Kvartal14). h/th står i kilder/hoyde-unntak.json; landemerker.py sier fra hvis DOM-tilpasningen flytter seg.
+- `porter[].vingemurer [[x0,y0,x1,y1,h0,h1,tykk]]` og `porter[].bunn` (src/10): skrå murer ved porten, toppen fra h0 ved porten til h1
+  ved foten, over veien i porten. Voldporten: SØ fra Street View 2010/2019 og ortofoto 2024 (foten), NV fra Street View 2010.
+- `data/terrengflikker.json` (src/08): Kartverkets DTM lagt over det beregnede festningsterrenget der det er feil, med myk kant.
+  Voldporten: vollen i terrenget stod 12 m for langt øst og 3 m for høy, så buen og murene stod i en eng. Hele festningsterrenget
+  bør på sikt lages fra DTM på samme måte (det beregnede terrenget er OSM-voller + brosjyren).
+- `arkader[].felt {z0, z1, bredde, dybde}` (bygArkade): høye innfelte felt over hver bue i etasjen over (13394024, Kvartal10).
+Statuen (src/20, data/statue.json): posituren rettet etter Google Street View mai 2024 (rett forfra) og aug. 2010 (figurens venstre
+side), sett i Vegars Chrome (bare som arbeidsreferanse, ikke i repoet; URL-ene står i kildene).
