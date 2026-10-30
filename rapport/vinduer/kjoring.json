@@ -616,20 +616,6 @@
 "uthus": false
 },
 {
-"id": "bnr-193971261",
-"navn": null,
-"type": "garage",
-"h": 4.91,
-"foer": 2,
-"etter": 5,
-"vinduer": 5,
-"dorer": 0,
-"gate": "mest åpne vegg",
-"etasjer": 1,
-"dor": false,
-"uthus": true
-},
-{
 "id": "bnr-193868010",
 "navn": null,
 "type": "garage",

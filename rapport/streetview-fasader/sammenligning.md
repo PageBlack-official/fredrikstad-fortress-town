@@ -174,7 +174,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867766 |  | [4, 4] | [4, 4] | 1 brun tofløyet dør med diagonalt rutemønster i glassfeltene, ca. 0.65 av synlig del | 1 | 0 | 0 | ikke synlig | 2 |  |
 | bnr-193868622 |  | [5, 4] | [5, 4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 1 | 0 | 0 | ikke synlig | 1 |  |
 | bnr-193867979 |  | [5, 6] | [7, 4, 7] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
-| bnr-16290424 | annen lagerbygning | [2, 3] | [] | 0 på gavlen | 2 | 0 | 0 | 0 | 0 | ja |
+| bnr-16290424 | annen lagerbygning | [2, 3] | [2, 3] | 0 på gavlen | 0 | 0 | 0 | 0 | 0 |  |
 | bnr-193972195 | kontor- og administrasjonsbygning | [2] | [1, 1, 1] | skjult bak gjerdet | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193868533 | annen lagerbygning | [1] | [] | 1 rundbuet åpning med grå tofløyet plankeport (ca. 0.10–0.35 av synlig del) | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193868444 |  | [8] | [5] | 0 i utsnittet | 1 | 7 arker med flate/pult-tak i grå sink og hvite vinduer | 0 | ikke synlig | 3 | ja |

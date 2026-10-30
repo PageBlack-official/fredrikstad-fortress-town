@@ -1161,6 +1161,15 @@ def analyser(navn, logg=print):
                 if y0_ >= y1_ or x0_ >= x1_: return False
                 return bool(((idx[y0_:y1_, x0_:x1_] == k_) & (typ[y0_:y1_, x0_:x1_] == 3)).any())
             n_m, rader_m, dor_m, gavl_m = vinduer_modell(x, v['a'], v['b'], synlig if k_ else None)
+            # veggen står inntil et nabohus som er minst like høyt i kommunekartet (FKB går foran for omriss): modellen kan ikke
+            # vise vinduer der, selv om tegningen tegner veggen fri (868339/868347, Kvartal4BITMP)
+            brannmur = None
+            import vegger as VG
+            if '_omg' not in D: D['_omg'] = VG.Omgivelser(D['bygg'], D['veier'], D['gardsrom'])
+            wv = next((w_ for w_ in VG.vegger(x, D['_omg'], slaa_sammen=False) if np.allclose(w_['a'], v['a'], atol=0.05) and np.allclose(w_['c'], v['b'], atol=0.05)), None)
+            if wv and wv['felles'] >= 0.8 and FT.brannmur_skjult(wv, x, D['_omg'], BY):
+                q_ = np.array(wv['a']) + (np.array(wv['c']) - np.array(wv['a'])) * 0.5 + np.array(wv['n']) * 0.6
+                brannmur = next((i2 for i2 in D['_omg'].ids if i2 != i and D['_omg'].poly[i2].contains(Point_(q_))), 'nabohus')
             # Vegars kvartalskontroll (kilder/bygg-merknader.json, «vegg»): veggen er talt for hånd i nærbildet av denne tegningen
             # og går foran vektorlesingen (bygg_merknader.py legger den inn sist i kjeden)
             mk = merknad_vegg(i, navn, v['n'])
@@ -1176,7 +1185,7 @@ def analyser(navn, logg=print):
             vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v, kobling=kobling_,
                              tegning=dict(vinduer=len(vs), rader=rader_t if rader_t is not None else _rader(vs), dorer=dor_t, gavl=gavl_t),
                              modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m, gavl=gavl_m),
-                             plass_etasjer=etasjer_plass(x.get('h') or 0, len(rader_t) if rader_t else 0)))
+                             brannmur=brannmur, plass_etasjer=etasjer_plass(x.get('h') or 0, len(rader_t) if rader_t else 0)))
         r['vinduer'] = vind
         # arker og piper (anslått): små flater på taket
         sma = [j for j in js if F[j]['ytre'].area < 0.05 * max(Md.sum() / R / R, 1)]
@@ -1193,6 +1202,11 @@ def analyser(navn, logg=print):
         ut.append(r)
     modell_uten = []
     return dict(tegning=navn, hus=ut, tegnet_uten_modell=grupper, hus_utenfor_tegningens_sett=list(utenfor_sett), koblet_men_utenfor=K.get('utenfor_tegningen', []))
+
+
+def Point_(c):
+    from shapely.geometry import Point
+    return Point(*c)
 
 
 def LineString_(c):
@@ -1300,6 +1314,8 @@ def vurder(r, navn):
     vv = r.get('vinduer') or []
     if vv:
         verst = None
+        bm = [w for w in vv if w.get('brannmur') and w['tegning']['vinduer'] != w['modell']['vinduer']]
+        vv = [w for w in vv if not w.get('brannmur')] or vv
         for w in vv:
             dt = abs(w['tegning']['vinduer'] - w['modell']['vinduer'])
             rad = w['tegning']['rader'] != w['modell']['rader'] and len(w['tegning']['rader']) != len(w['modell']['rader'])
@@ -1315,6 +1331,10 @@ def vurder(r, navn):
                 and w['modell']['vinduer'] >= sum(w['tegning']['rader'][:max(nm, 1)]) - 1:
             a = 'avvik med grunn'
             hva += f"; tegningen viser {nt} rader, men gesims {r.get('h')} m (Kartverket) gir plass til {pl} etasje(r): tegningen overdriver høyden"
+        if w.get('brannmur') and a != 'ok':
+            a = 'avvik med grunn'; hva += f"; veggen står inntil {w['brannmur']} i kommunekartet (FKB går foran for omriss): tegningen tegner den fri"
+        elif bm:
+            hva += '; ' + ', '.join(f"vegg {w_['vegg']} står inntil {w_['brannmur']} i kommunekartet (tegningen: {w_['tegning']['vinduer']} vinduer, ikke dømt)" for w_ in bm)
         if a != 'ok' and r['id'] in LANDEMERKER_FASADE:
             a = 'avvik med grunn'; hva += f"; {LANDEMERKER_FASADE[r['id']]}"
         sett('vinduer', a, hva)

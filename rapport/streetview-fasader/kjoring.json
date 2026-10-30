@@ -5616,13 +5616,16 @@
   "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
-   "rader": [],
-   "dorer": 2,
+   "rader": [
+    2,
+    3
+   ],
+   "dorer": 0,
    "arker": 0,
    "piper": 0
   },
-  "avvik": true,
-  "dorer_avvik": true
+  "avvik": false,
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193972195",

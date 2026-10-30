@@ -147,7 +147,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen Kvartal3 (lys side, IoU 0.83)",
+  "kilde": "kvartaltegningen Kvartal3 (lys side, IoU 0.84)",
   "aar": 2015,
   "byttet": false
  },
@@ -451,7 +451,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.75)",
+  "kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.76)",
   "aar": 2015,
   "byttet": false
  },
@@ -2246,18 +2246,18 @@
   "navn": null,
   "adr": null,
   "for_": [
-   176,
-   74,
-   62
+   251,
+   190,
+   143
   ],
   "for_kilde": null,
   "vegg": [
-   176,
-   74,
-   62
+   251,
+   190,
+   143
   ],
-  "kilde": "Street View 2010 (rød (oksiderød) panel – kun glimt gjennom porten); eldre enn tegningen, men tegningen har ikke huset",
-  "aar": 2010,
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.47)",
+  "aar": 2015,
   "byttet": false
  },
  {
@@ -2731,7 +2731,7 @@
    190,
    143
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.67)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.74)",
   "aar": 2015,
   "byttet": false
  },
@@ -2959,7 +2959,7 @@
    190,
    192
   ],
-  "kilde": "Street View 2024 (hvit) = kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.81): tegningens farge",
+  "kilde": "Street View 2024 (hvit) = kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.73): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -3016,7 +3016,7 @@
    237,
    238
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.67)",
   "aar": 2015,
   "byttet": false
  },
@@ -3320,7 +3320,7 @@
    121,
    107
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.59)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.61)",
   "aar": 2015,
   "byttet": false
  },
@@ -3586,7 +3586,7 @@
    224,
    171
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.69)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.63)",
   "aar": 2015,
   "byttet": false
  },
@@ -3719,7 +3719,7 @@
    184,
    92
   ],
-  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "Street View 2024 (sandgul/lys oker); tegningen har grå (kvartaltegningen Kvartal10 (lys side, IoU 0.73))",
   "aar": 2024,
   "byttet": false
  },
@@ -3833,7 +3833,7 @@
    172,
    140
   ],
-  "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.52))",
+  "kilde": "Street View 2024 (grågrønn/olivengrå); tegningen har grå (kvartaltegningen Kvartal14 (lys side, IoU 0.53))",
   "aar": 2024,
   "byttet": false
  },
@@ -3909,7 +3909,7 @@
    170,
    160
   ],
-  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.77))",
+  "kilde": "Street View 2024 (laksoransje/rødoransje); tegningen har oransje (kvartaltegningen Kvartal10 (lys side, IoU 0.76))",
   "aar": 2024,
   "byttet": false
  },
@@ -4013,17 +4013,17 @@
   "navn": "Vennehaabet",
   "adr": null,
   "for_": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
-  "kilde": "Street View 2024 (lys grå/gråhvit) = kvartaltegningen Kvartal10 (lys side, IoU 0.53): tegningens farge",
+  "kilde": "Street View 2024 (lys grå/gråhvit) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -4080,7 +4080,7 @@
    193,
    119
   ],
-  "kilde": "Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.43): tegningens farge",
+  "kilde": "Street View 2024 (okerbrun/gyllen brun stående panel) = kvartaltegningen sistekvartal (lys side, IoU 0.48): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -4232,7 +4232,7 @@
    192,
    194
   ],
-  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.65)",
+  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.69)",
   "aar": 2015,
   "byttet": false
  },
@@ -5543,7 +5543,7 @@
    243,
    243
   ],
-  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.72)",
+  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.64)",
   "aar": 2015,
   "byttet": false
  },
@@ -5790,7 +5790,7 @@
    154,
    157
   ],
-  "kilde": "Street View 2024 (hvit kalket/pusset mur) = kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.38): tegningens farge",
+  "kilde": "Street View 2024 (hvit kalket/pusset mur) = kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.53): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -5799,17 +5799,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
-   240,
-   240
+   236,
+   237,
+   238
   ],
   "for_kilde": null,
   "vegg": [
-   239,
-   240,
-   240
+   236,
+   237,
+   238
   ],
-  "kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.35)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.57)",
   "aar": 2015,
   "byttet": false
  },
@@ -6436,7 +6436,7 @@
    149,
    130
   ],
-  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.68)",
+  "kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.69)",
   "aar": 2015,
   "byttet": false
  },
@@ -6445,17 +6445,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   242,
-   149,
-   130
+   243,
+   150,
+   132
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   242,
-   149,
-   130
+   243,
+   150,
+   132
   ],
-  "kilde": "kvartaltegningen Kvartal10 (lys side, IoU 0.45)",
+  "kilde": "2019-trykket (dømt)",
   "aar": 2015,
   "byttet": false
  },
@@ -6569,7 +6569,7 @@
    165,
    125
   ],
-  "kilde": "kvartaltegningen tell (lys side, IoU 0.62)",
+  "kilde": "kvartaltegningen tell (lys side, IoU 0.61)",
   "aar": 2015,
   "byttet": false
  },
@@ -7253,7 +7253,7 @@
    208,
    158
   ],
-  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.68)",
+  "kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.69)",
   "aar": 2015,
   "byttet": false
  },
@@ -7272,7 +7272,7 @@
    201,
    205
   ],
-  "kilde": "kvartaltegningen sistekvartal (lys side, IoU 0.88)",
+  "kilde": "kvartaltegningen sistekvartal (lys side, IoU 0.89)",
   "aar": 2015,
   "byttet": false
  },
@@ -7547,15 +7547,15 @@
   "navn": null,
   "adr": null,
   "for_": [
-   242,
-   149,
-   130
+   243,
+   150,
+   132
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   242,
-   149,
-   130
+   243,
+   150,
+   132
   ],
   "kilde": "nabohuset bnr-193868495 (office, 0.2 m unna)",
   "aar": null,
@@ -7927,15 +7927,15 @@
   "navn": null,
   "adr": null,
   "for_": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   198,
-   198,
-   197
+   244,
+   244,
+   244
   ],
   "kilde": "nabohuset bnr-193867596 (Vennehaabet, 1.5 m unna)",
   "aar": null,

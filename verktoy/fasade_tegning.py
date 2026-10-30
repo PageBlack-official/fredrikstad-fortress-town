@@ -716,7 +716,12 @@ def tegnede_elementer(vg, L, Lpos=None):
     av hva som er vindu, dør/port og strek (30.10). Gir (el, vin, rader, gavl): el = [(element, klassifisering)] etter at
     biter av samme dør/vindu er slått sammen, vin = vinduene under gesims (v <= 1,05) sortert etter underkant, rader = vinduene
     samlet i tegnede rader (ny rad når underkanten står mer enn en halv vindushøyde over forrige), gavl = vinduer over gesims."""
-    hv_alle = [e['hv'] for e in vg['elementer'] if klassifiser(e, L) is not None]
+    # vindushøyden dørene måles mot: bare elementer som ikke ligger inni et større (ruter tegnet som egne hull inni vinduet
+    # trakk medianen ned, så vinduene ble lest som dører og porter; 16290424, kvartal5, 30.10)
+    def inni(e, q):
+        return q is not e and q['bu'] * q['hv'] > e['bu'] * e['hv'] and abs(e['u'] - q['u']) < q['bu'] / 2 \
+            and e['vb'] >= q['vb'] - 0.02 and e['vt'] <= q['vt'] + 0.02
+    hv_alle = [e['hv'] for e in vg['elementer'] if klassifiser(e, L) is not None and not any(inni(e, q) for q in vg['elementer'])]
     hv_med = float(np.median(hv_alle)) if hv_alle else None
     el = [(e, klassifiser(e, L, hv_med)) for e in vg['elementer']]
     el = [(e, k) for e, k in el if k is not None and not (k[0] == 0 and e['vb'] < -0.05)]   # trapp og fortau under bunnkanten
@@ -794,6 +799,16 @@ def vegg_vind(vg, x, P):
             vh_ = VH_PRESS[0] or VR.R['vh']; rad_z.append(('etg', brystn[k] + vh_ / 2, vh_, None)); k += 1
         else:
             notat.append(f"rad {len(rad_z) + 1} fikk ikke plass under gesims (h {h} m)"); rad_z.append(None)
+    # en vindusrad som i tegningen står helt over dørene/portene (underkanten over dørtoppen), er etasjen over dem, også når
+    # huset bare har plass til én standardetasje: den løftes over dørene når den får plass under gesims; ellers ville
+    # dørene ta plassen til vinduene (16290424, kvartal5: port og dør nede, tre vinduer over, h 4,7 m) (30.10)
+    dor_el = [(e, kk) for e, kk in el if kk[0] in (1, 2)]
+    if dor_el and rad_z and rad_z[0] and rad_z[0][0] == 'etg':
+        r0 = rader[0]; dt_ = max(e['vt'] for e, _ in dor_el); dh_ = max(kk[2] for _, kk in dor_el)
+        if min(e['vb'] for e in r0) >= dt_ - 0.02:
+            vh_ = rad_z[0][2]; zc_ = dh_ + 0.3 + vh_ / 2
+            if zc_ > rad_z[0][1] and zc_ + vh_ / 2 <= h - 0.3 and (len(rad_z) < 2 or rad_z[1] is None or rad_z[1][1] - zc_ >= 1.9):
+                rad_z[0] = ('etg', zc_, vh_, None)
     for r, rz in zip(rader, rad_z):
         if rz is None: continue
         slag, zc, hh, bb = rz
