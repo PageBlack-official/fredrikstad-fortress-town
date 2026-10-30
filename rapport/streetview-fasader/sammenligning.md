@@ -98,7 +98,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868363 | Binggården | [1, 1] | [1, 2] | 0 | 1 | 0 | 0 | None | 0 | ja |
 | bnr-193868088 |  | [4, 4] | [4, 4] | ingen synlig mot gata (hekk/stakitt foran) | 0 | 0 | 0 | 1 | 2 |  |
 | bnr-193868371 |  | [7, 3] | [7, 3] | ingen på denne fasaden | 0 | 0 | 0 | 1 | 2 |  |
-| bnr-193868126 |  | [2, 3] | [2, 3] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 |  |
+| bnr-193868126 |  | [2, 3] | [2] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 | ja |
 | bnr-193868142 | Prestegården | [5, 5] | [5, 5] | 1 brun kjellerluke/dør i sokkelen til venstre; ingen hovedinngang mot gata | 0 | 0 | 2 | 2 | 2 |  |
 | bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 0 | 0 | 0 | ja |
 | bnr-193868339 |  | [1, 1] | [1, 1] | 1 rundbuet portrom med svart/grå port, skilt 'Kong Fredrik' | 1 | 0 | 0 | None | 1 |  |
@@ -116,7 +116,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868320 |  | [11, 11] | [11, 11] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193868711 |  | [3, 3] | [3, 3] | 0 i utsnittet; kjellerluker/dører: 2 rundbuede grå jerndører i sokkelen | 0 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193972411 | Sindinggården | [0] | [] | 1 stor tofløyet låveport (ca. 0.15–0.45 av veggen) med jernbeslag, og 1 smal dør til høyre (ca. 0.88–0.98) | 1 | 0 | 0 | 0 | 1 |  |
-| bnr-193867502 | Kiørboegården | [1, 2] | [1] | 0 på denne fasaden; port i muren | 0 | 0 | 0 | 1 rød teglpipe | 4 | ja |
+| bnr-193867502 | Kiørboegården | [1, 2] | [1, 2] | 0 på denne fasaden; port i muren | 0 | 0 | 0 | 1 rød teglpipe | 4 |  |
 | bnr-193867499 | Kommandantgården | [9] | [9] | 1 mørk brun dør i sokkelen (ca. 0.60), kjellerluker med rundbue (4 stk) | 1 | 2 arker med saltak (ca. 0.55 og 0.70) med hvite vinduer | 0 | ikke synlig fra denne vinkelen | 6 |  |
 | bnr-193870295 | Bakeriet | [10] | [13] | 2 grå plankedører (ca. 0.27 og 0.72) med små steintrapper | 1 | 5 små takvinduer (skylights) | 0 | 3 (2 murte tegl, 1 blikk) | 4 | ja |
 | bnr-193870325 | Hovedvakten – det gamle slaveri | [1] | [4] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 4 | ja |

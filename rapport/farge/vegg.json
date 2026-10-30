@@ -6065,9 +6065,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   244,
-   123,
-   106
+   232,
+   233,
+   234
   ],
   "for_kilde": null,
   "vegg": [
@@ -6077,7 +6077,7 @@
   ],
   "kilde": "2017-tegningen som vektor (dekning 1.0)",
   "aar": 2017,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193972454",
@@ -8003,9 +8003,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   232,
-   184,
-   92
+   215,
+   167,
+   129
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
