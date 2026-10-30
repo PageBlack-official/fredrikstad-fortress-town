@@ -407,7 +407,7 @@ def koble_flater(F, hus, BY, G, k):
 
 # ---------------------------------------------------------------- elementer på en tegnet vegg
 
-def elementer(F_vegg, side, R=8.0, flatefarger=()):
+def elementer(F_vegg, side, R=8.0, flatefarger=(), andre=()):
     """Vinduer, dører og porter på en tegnet vegg (én eller flere flater, f.eks. sokkel + vegg). Rastrerer bare utsnittet:
     alt inne i flaten som ikke har flatens farge (strek, glass, dør), minus kantstreken. Gir (elementer, geometri), der hvert
     element har u (0-1 langs veggen fra venstre i tegningen), v (0-1 opp fra bunnen til gesims), bredde/høyde i andel,
@@ -461,10 +461,18 @@ def elementer(F_vegg, side, R=8.0, flatefarger=()):
                        buet=bool(buet), pt=[round(cx, 2), round(cy, 2)], wpt=round(w / R, 2), hpt=round(hh / R, 2)))
     # 1) hullene i veggflatene: ett hull er ett vindu/én dør (vektor, så to vinduer som står tett, slås ikke sammen)
     hullmaske = np.zeros(im.shape[:2], np.uint8)
-    for f in F_vegg:
-        for hp in f['hull']:
-            if hp.area < 0.15 or not U.buffer(0.5).contains(hp.representative_point()):
+    # dører, porter og butikkvinduer tegnet som egne flater oppå veggen (samme farge som veggen, bare streken skiller dem)
+    # telles som hull: flaten ligger helt inne i veggen og er liten (30.10)
+    egne = [g['ytre'] for g in andre if all(g is not f for f in F_vegg) and g['ytre'].area < 0.25 * U.area
+            and g['ytre'].intersection(U.buffer(2.5).buffer(-2.1)).area > 0.85 * g['ytre'].area]   # dør i et hakk i bunnkanten
+    hull_alle = [h for f in F_vegg for h in f['hull']]
+    egne = [e for e in egne if not any(h.buffer(0.3).contains(e.representative_point()) for h in hull_alle)]
+    for hp in [h for f in F_vegg for h in f['hull']] + egne:
+        if True:
+            if hp.area < 0.15 or not U.buffer(2.5).buffer(-2.0).contains(hp.representative_point()):
                 continue
+            if any(hp is not e and e.contains(hp.representative_point()) and e.area > hp.area for e in egne):
+                continue                                  # hull i en dørflate (glass i døra): døra teller
             m = np.zeros(im.shape[:2], np.uint8); cv2.fillPoly(m, [tilpx(hp.exterior.coords)], 1)
             ys, xs = np.nonzero(m)
             if len(xs) == 0: continue
@@ -679,7 +687,11 @@ def klassifiser(el, L, hv_med=None):
     bu_m, hv = el['bu'] * L, el['hv']
     if el['bu'] > 0.6 and el['hvit'] < 0.05:      # strek langs hele veggen (skillet mellom sokkel og vegg, bunnstreken)
         return None
-    if el['bu'] < 0.045 and hv > 0.45:            # loddrett skillestrek mellom rekkehus
+    if bu_m < 0.3 and hv > 0.45:                  # loddrett skillestrek mellom rekkehus (i meter, ikke andel: lange vegger)
+        return None
+    if hv > 0.93:                                 # mørk spalte i hele vegghøyden: skillet mellom to tegnede hus (30.10)
+        return None
+    if bu_m < 0.35:                               # flekk eller sprosse, ikke et vindu
         return None
     # høyere enn vinduene og nede ved bakken (døra/porten kan stå i et hakk i flaten, så bunnen leses litt opp): dør eller port
     # dør/port: tydelig høyere enn vinduene og nede ved bakken (bunnen kan leses litt opp når døra står i et hakk i flaten),
@@ -690,6 +702,8 @@ def klassifiser(el, L, hv_med=None):
         if bu_m > 1.7 or el['buet']:
             return 2, round(min(max(bu_m, 1.8), 3.2), 2), 2.6      # port/stor inngangsdør med buet topp
         return 1, round(min(max(bu_m, 0.95), 1.6), 2), 2.2
+    if (bu_m > 2.6 and el['bu'] > 0.06) or el['bu'] > 0.3:              # bredt felt som ikke er en dør: gesimsbånd, skilt eller sokkellist (30.10)
+        return None
     if hv > 0.08 and el['bu'] > 0.01:
         return 0, round(min(max(bu_m, 0.6), 1.3), 2), None
     return None
@@ -712,12 +726,21 @@ def vegg_vind(vg, x, P):
     hv_alle = [e['hv'] for e in vg['elementer'] if klassifiser(e, L) is not None]
     hv_med = float(np.median(hv_alle)) if hv_alle else None
     el = [(e, klassifiser(e, L, hv_med)) for e in vg['elementer']]
-    el = [(e, k) for e, k in el if k is not None]
+    el = [(e, k) for e, k in el if k is not None and not (k[0] == 0 and e['vb'] < -0.05)]   # trapp og fortau under bunnkanten
+    # to biter av samme dør/port/vindu (fløyer, glass i døra, trapp): den største står igjen (30.10)
+    el.sort(key=lambda t: -(t[0]['bu'] * t[0]['hv']))
+    beholdt = []
+    for e, k in el:
+        if any(abs(e['u'] - q['u']) * L < (k[1] + kq[1]) / 2 * 0.9 and min(e['vt'], q['vt']) > max(e['vb'], q['vb']) for q, kq in beholdt):
+            continue
+        beholdt.append((e, k))
+    el = beholdt
     vin = sorted([e for e, k in el if k[0] == 0 and e['v'] <= 1.05], key=lambda e: e['vb'])
     # etasjeradene: vinduene samles etter underkanten; ny rad når underkanten står mer enn en halv vindushøyde over radens
     rader = []
     for e in vin:
-        if rader and e['vb'] - np.mean([q['vb'] for q in rader[-1]]) < 0.5 * (float(np.percentile([q['hv'] for q in vin], 30)) if vin else 0.3):
+        # enkel kobling (30.10): avstanden til forrige vindu i rekkefølgen, så en håndtegnet rad som siger, ikke deles
+        if rader and e['vb'] - rader[-1][-1]['vb'] < 0.5 * (float(np.percentile([q['hv'] for q in vin], 30)) if vin else 0.3):
             rader[-1].append(e)
         else:
             rader.append([e])
@@ -729,6 +752,9 @@ def vegg_vind(vg, x, P):
         et = (h - 0.3 - vh_ - br0) / (n_et - 1)
         if et >= 1.9:
             brystn = [br0 + et * k for k in range(n_et)]; VH_PRESS[0] = vh_
+    spenn = (max(e['vb'] for e in vin) - min(e['vb'] for e in vin)) * h if vin else 0
+    if len(rader) > 1 and ((len(brystn) == 1 and VH_PRESS[0] is None) or spenn < 1.4):
+        rader = [[e for r in rader for e in r]]   # én etasje: radene i tegningen er samme rad tegnet skjevt (30.10)
     # kjeller: nederste rad med små vinduer helt nede (høyde under 60 % av de andre radene)
     hv_med = np.median([e['hv'] for e in vin]) if vin else 0
     ut = []; notat = []
@@ -841,8 +867,10 @@ def les_for_haand(navn, d=None):
     lest = []
     for i, fl in K.items():
         x = BY[i]; V = VG.vegger(x, omg, slaa_sammen=True)
-        grp = {}; del_ = {}
-        for fi in fl:
+        grp = {}; del_ = {}; plass_ = {}
+        for nr, fi in enumerate(fl):
+            if isinstance(fi, dict) and 'plass' in fi:     # {"f": [..], "side": "SØ@1", "plass": [0.6, 1]}: flaten er bare en del av veggen
+                kl = f"{fi['side']}#{nr}"; grp[kl] = list(fi['f']); plass_[kl] = tuple(fi['plass']); continue
             if isinstance(fi, dict):                       # {"f": [..], "side": "SV", "fra": 0, "til": 0.5}: del av en tegnet vegg
                 grp.setdefault(fi['side'], []).extend(fi['f']); del_[fi['side']] = (fi['fra'], fi['til']); continue
             if isinstance(fi, str) and '/' in fi:          # "flate/SV" eller "flate/SØ": siden gitt for hånd
@@ -850,23 +878,35 @@ def les_for_haand(navn, d=None):
             else:
                 fam = familie(F[fi]['ytre'])
             grp.setdefault(fam, []).append(fi)
-        for fam, fis in grp.items():
+        for nkl, fis in grp.items():
+            fam, _, tvang = nkl.split('#')[0].partition('@')   # "flate/SV@2": veggen gitt for hånd (vegger.vegger, slått sammen)
             c = 225 if fam == 'SV' else 135
             kand = [(w['L'] * (w['felles'] < 0.5), k) for k, w in enumerate(V)
                     if abs(((math.degrees(math.atan2(w['n'][0], w['n'][1])) - c) + 180) % 360 - 180) <= 55]
+            if tvang: kand = [(1, int(tvang))]
             if not kand: continue
             k = max(kand)[1]; w = V[k]
-            el, geo = elementer([F[f] for f in fis], side)
+            el, geo = elementer([F[f] for f in fis], side, andre=list(F.values()))
             if geo is None: continue
-            if fam in del_:                                 # tegningen viser flere modellhus i én vegg: bare husets del, i husets andel
-                a0, a1 = del_[fam]
+            if nkl in del_:                                 # tegningen viser flere modellhus i én vegg: bare husets del, i husets andel
+                a0, a1 = del_[nkl]
                 el = [dict(e, u=round((e['u'] - a0) / (a1 - a0), 4), bu=round(e['bu'] / (a1 - a0), 4)) for e in el if a0 <= e['u'] < a1]
+            if nkl in plass_:
+                p0, p1 = plass_[nkl]
+                el = [dict(e, u=round(p0 + e['u'] * (p1 - p0), 4), bu=round(e['bu'] * (p1 - p0), 4)) for e in el]
             # venstre i tegningen = seerens venstre utenfra
             ltr = bool(w['u'] @ np.array([-w['n'][1], w['n'][0]]) > 0)
             venstre = w['a'] if ltr else w['c']
             lest.append(dict(id=i, vegg=k, side=fam, a=[float(v) for v in w['a']], b=[float(v) for v in w['c']], L=round(float(w['L']), 2),
                              venstre=[float(v) for v in venstre], flater=fis, farger=[F[f]['farge'] for f in fis], elementer=el, geo=geo))
-    return dict(navn=navn, hus={}, vegger=lest, tak={}, G=[[0, 0, 0], [0, 0, 0]], k=0)
+    samlet = {}
+    for v in lest:                                         # flere flater lest hver for seg på samme vegg: én vegg
+        kk = (v['id'], v['vegg'])
+        if kk in samlet:
+            samlet[kk]['elementer'] += v['elementer']; samlet[kk]['flater'] += v['flater']; samlet[kk]['farger'] += v['farger']
+        else:
+            samlet[kk] = v
+    return dict(navn=navn, hus={}, vegger=list(samlet.values()), tak={}, G=[[0, 0, 0], [0, 0, 0]], k=0)
 
 
 if __name__ == '__main__':
