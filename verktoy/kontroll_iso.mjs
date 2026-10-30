@@ -105,7 +105,10 @@ for (const j of jobb) {
       return new THREE.ShaderMaterial({ vertexShader: VS, fragmentShader: fs, side: THREE.DoubleSide,
         uniforms: { farge: { value: farge }, skygge: { value: skygge }, rU: { value: rU }, typ: { value: typ }, uId: { value: i >= 0 ? i + 1 : 0 }, tVis: { value: pass === 'idalle' ? tAlle : tVis }, tOff: { value: tOff }, uWH: { value: new THREE.Vector2(W, H) } } });
     }
-    const gamle = nett.map(([o]) => [o, o.material, o.visible, o.renderOrder]);
+    const gamle = nett.map(([o]) => [o, o.material, o.visible, o.renderOrder, o.frustumCulled]);
+    // projeksjonsmatrisen er satt for hånd, så frustumtesten til three.js gjelder ikke: uten dette ble grupper med egne nett
+    // (portbyggene, bygg med deler) kastet, og bare vinduene (frustumCulled false) kom med (30.10, natt/landemerker)
+    nett.forEach(([o]) => { o.frustumCulled = false; });
     const ut = {};
     // tak over vegger når de deler piksler (takutstikk): bygg-id er det viktige, dybdetesten tar resten
     for (const pass of ['farge', 'id', 'normal', 'idalle']) {
@@ -118,7 +121,7 @@ for (const j of jobb) {
       ut[pass] = cv.toDataURL('image/png');
       nett.forEach(([o]) => { if (o.material && o.material.dispose && o.visible) o.material.dispose(); });
     }
-    gamle.forEach(([o, m, v, r]) => { o.material = m; o.visible = v; o.renderOrder = r; });
+    gamle.forEach(([o, m, v, r, fc]) => { o.material = m; o.visible = v; o.renderOrder = r; o.frustumCulled = fc; });
     ren.dispose();
     const ids = {}; DATA.bygg.forEach((b, i) => { ids[i + 1] = b.id; });
     return { ut, ids, n: nett.length };

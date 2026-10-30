@@ -2310,15 +2310,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    5,
-    5,
-    4
+    4,
+    4,
+    3
    ],
    "dorer": 0,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {
@@ -3088,7 +3088,7 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    18
+    19
    ],
    "dorer": 6,
    "arker": 0,
@@ -4327,7 +4327,7 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2
+    4
    ],
    "dorer": 1,
    "arker": 2,
@@ -4660,10 +4660,7 @@
   "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
-   "rader": [
-    1,
-    1
-   ],
+   "rader": [],
    "dorer": 0,
    "arker": 0,
    "piper": 2

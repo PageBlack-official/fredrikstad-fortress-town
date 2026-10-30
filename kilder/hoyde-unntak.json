@@ -1,0 +1,7 @@
+{
+ "om": "Hus der tilpasningen per hus i rapport/hoyder (en vegghøyde og en takhelning over hele omrisset) måler feil mot Kartverkets DOM−DTM, og høyden er lest av DOM for hånd. legg_inn.py legger inn disse tallene i stedet for tilpasningen, og regel 02 måler mot dem. Hver post har grunn.",
+ "hus": {
+  "bnr-193972012": {"h": 9.79, "th": 0.35, "grunn": "rådhuset: tårnet (20 m) og fire fløyer i ett omriss trekker tilpasningen ned til 6,5 m med takhelning 0,73; DOM−DTM har takfoten mot gata på 9–10 m og mønet på 12,1 m, som 9,79 m og 0,35 gir (12,3 m); vinduene i to etasjer fra Kvartal14.ai står over 6,5 m (landemerker 30.10)"},
+  "bnr-193869548": {"h": 3.1, "th": 0.83, "grunn": "Voldporten: DTM under huset er vollkrona (9,4–10,4 moh), så DOM−DTM måler fra vollen; fra veien i porten (7,0 moh) er takfoten 7,5 m og mønet 10,8 m (DOM 17,8 moh). Huset står på portmuren (data/porter.json h 4,4), så vaktstuen er 3,1 m med takhelning 0,83 (landemerker 30.10)"}
+ }
+}

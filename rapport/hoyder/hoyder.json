@@ -308,19 +308,19 @@
  "18": {
   "id": "bnr-193869548",
   "navn": "Voldporten med vaktstuen",
-  "h_naa": 4.5,
-  "h_per_hus": 4.5,
-  "takhelning": 0.71,
+  "h_naa": 3.1,
+  "h_per_hus": 4.8,
+  "takhelning": 0.63,
   "p50": 6.24,
   "p90": 7.61,
-  "kart_p50": 6.55,
-  "kart_p90": 7.46,
-  "h_forslag": 4.0,
-  "avvik": -0.5,
-  "h_med_maalt_takhelning": 4.9,
+  "kart_p50": 4.91,
+  "kart_p90": 5.9,
+  "h_forslag": 4.2,
+  "avvik": 1.1,
+  "h_med_maalt_takhelning": 5.0,
   "sikkerhet": "høy",
   "n_piksler": 73,
-  "rest_m": 0.68,
+  "rest_m": 0.7,
   "merknad": "kalibreringshus"
  },
  "19": {
@@ -2193,7 +2193,7 @@
   "sikkerhet": "høy",
   "n_piksler": 123,
   "rest_m": 0.63,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "196": {
   "id": "bnr-193868207",
@@ -2815,14 +2815,14 @@
   "takhelning": 0.73,
   "p50": 10.68,
   "p90": 11.83,
-  "kart_p50": 14.18,
-  "kart_p90": 15.71,
+  "kart_p50": 14.16,
+  "kart_p90": 15.67,
   "h_forslag": 6.2,
   "avvik": -3.6,
   "h_med_maalt_takhelning": 8.0,
   "sikkerhet": "middels",
   "n_piksler": 408,
-  "rest_m": 1.39,
+  "rest_m": 1.4,
   "merknad": "rest 1.4 m; har deler (tårn); h gjelder hovedkroppen; kalibreringshus"
  },
  "231": {

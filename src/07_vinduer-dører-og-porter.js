@@ -124,6 +124,52 @@ function utvidPoly(P,d){ let A=0; for(let k=0;k<P.length;k++){ const a=P[k],c=P[
 function iPoly(p,f){ let inne=false; for(let k=0,j=f.length-1;k<f.length;j=k++){ const a=f[k],c=f[j]; if((a[1]>p[1])!==(c[1]>p[1]) && p[0]<(c[0]-a[0])*(p[1]-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
 function planZ(f,x,y){ const [a,b2,c]=f; const ux=b2[0]-a[0],uy=b2[1]-a[1],uz=b2[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2];
   const nx=uy*vz-uz*vy, ny=uz*vx-ux*vz, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return a[2]; return a[2]-(nx*(x-a[0])+ny*(y-a[1]))/nz; }
+// ---- landemerker (30.10, natt/landemerker): gjenbrukbare elementer som styres av data, ikke engangsfikser ----
+// prisme: polygon (modellmeter) løftet fra z0 til z1; [topp, sider] som husene
+function prisme(P, z0, z1, mTopp, mSide){ const g=new THREE.ExtrudeGeometry(polyShape(P),{depth:Math.max(0.01,z1-z0),bevelEnabled:false}); g.rotateX(-Math.PI/2); g.translate(0,z0,0);
+  const m=new THREE.Mesh(g,[mTopp,mSide]); m.castShadow=m.receiveShadow=true; return m; }
+function ring(c, r, n, rot){ return Array.from({length:n},(_,k)=>{ const a=rot+k*2*Math.PI/n; return [c[0]+r*Math.cos(a), c[1]+r*Math.sin(a)]; }); }
+// TÅRN (bygg.deler[] med form 'taarn'): mangekantet skaft, utkraget brystning på konsoller med tinder, flatt tak innenfor, flaggstang,
+// ett rundbuevindu per side. Alle mål i data: {c, r (omskrevet radius), sider, rot (grader), skaft (skaftets topp), h (tindenes topp),
+// ut (utkraging), tinde_h, tinder (antall), vegg, veggs, topp (takfarge), vinduer {z (midt), b, h}, stang (over taket), flagg [r,g,b]}.
+// Første bruk: tårnet på rådhuset (bnr-193972012): form fra Kvartal14.ai, plass og høyde fra Kartverkets DOM.
+function bygTaarn(t, grp){
+  const n=t.sider||8, rot=THREE.MathUtils.degToRad(t.rot||0)+Math.PI/n, r=t.r, ut=t.ut||0.4, th=t.tinde_h||0.7;
+  const mv=mat(t.vegg||[236,214,180],false,t.veggs), mt=mat(t.topp||[120,160,138],false);
+  const kv=t.skaft, kr=t.krage||0.7;                               // konsollbåndet: to trinn ut til brystningen
+  grp.add(prisme(ring(t.c,r,n,rot),0,kv,mt,mv));
+  grp.add(prisme(ring(t.c,r+ut*0.45,n,rot),kv,kv+kr*0.45,mv,mv));
+  grp.add(prisme(ring(t.c,r+ut,n,rot),kv+kr*0.45,t.h-th,mt,mv));     // brystning; toppen er taket innenfor (flatt, takfargen)
+  const R=r+ut, nt=t.tinder||2*n, bt=2*R*Math.sin(Math.PI/n)*n/nt*0.55;
+  for(let k=0;k<nt;k++){ const a=rot+Math.PI/n+k*2*Math.PI/nt, cx=t.c[0]+(R-0.18)*Math.cos(a), cy=t.c[1]+(R-0.18)*Math.sin(a);
+    const ta=[-Math.sin(a),Math.cos(a)], na=[Math.cos(a),Math.sin(a)], q=(u,v)=>[cx+ta[0]*u+na[0]*v, cy+ta[1]*u+na[1]*v];
+    grp.add(prisme([q(-bt/2,-0.18),q(bt/2,-0.18),q(bt/2,0.18),q(-bt/2,0.18)],t.h-th,t.h,mv,mv)); }
+  if(t.stang){ const g=new THREE.CylinderGeometry(0.05,0.07,t.stang,6); const s=new THREE.Mesh(g,mat([240,240,236],false)); s.position.set(t.c[0],t.h-th+t.stang/2,-t.c[1]); s.castShadow=true; grp.add(s);
+    if(t.flagg){ const f=new THREE.Mesh(new THREE.BoxGeometry(1.6,1.1,0.03),mat(t.flagg,false)); f.position.set(t.c[0]+0.85,t.h-th+t.stang-0.6,-t.c[1]); f.castShadow=true; grp.add(f); } }
+  if(t.vinduer){ const ap=r*Math.cos(Math.PI/n), V=[];
+    for(let k=0;k<n;k++){ const a=rot+Math.PI/n+k*2*Math.PI/n, nx=Math.cos(a), ny=Math.sin(a);
+      V.push([t.c[0]+nx*ap, t.c[1]+ny*ap, t.vinduer.z, ny, -nx, nx, ny, t.vinduer.b, t.vinduer.h, 0, 1, 1]); }
+    grp.add(lagVinduer([vindusData(V,-1)])); }
+}
+// ARKADE (bygg.arkader[]): rekke av rundbuer med dybde langs en vegg, som geometri (leses på kartzoom): en ramme i veggfargen stikker
+// dybde ut fra veggen, åpningene er buede hull med mørk bakvegg. {a, b (veggens ender), z0 (åpningenes bunn), h (buens topp), topp
+// (rammens overkant), n, bredde (åpningens), dybde, mork [r,g,b] (bakveggen: åpen hall eller glass i skygge)}. Første bruk: arkaden på
+// 13394024 (Kvartal10) og de store rundbuene i rådhusfasaden (Kvartal14).
+function bygArkade(A, pts, wall, dim, veggs){
+  let [a,b]=[A.a,A.b]; let L=Math.hypot(b[0]-a[0],b[1]-a[1]); if(L<0.5) return null;
+  let tx=(b[0]-a[0])/L, ty=(b[1]-a[1])/L, nx=-ty, ny=tx;          // høyrehendt: (langs, opp, normal)
+  if(iPoly([(a[0]+b[0])/2+nx*0.3,(a[1]+b[1])/2+ny*0.3],pts)){ [a,b]=[b,a]; tx=-tx; ty=-ty; nx=-nx; ny=-ny; }
+  const n=A.n, w=A.bredde, d=A.dybde||0.4, top=A.topp, z0=A.z0||0, rr=w/2, yb=Math.max(z0+0.1,A.h-rr);
+  const sh=new THREE.Shape(); sh.moveTo(0,0); sh.lineTo(L,0); sh.lineTo(L,top); sh.lineTo(0,top); sh.closePath();
+  for(let k=0;k<n;k++){ const u=(k+0.5)*L/n, hp=new THREE.Path(); hp.moveTo(u-rr,z0); hp.lineTo(u+rr,z0); hp.lineTo(u+rr,yb); hp.absarc(u,yb,rr,0,Math.PI,false); hp.lineTo(u-rr,z0); sh.holes.push(hp); }
+  const g=new THREE.ExtrudeGeometry(sh,{depth:d,curveSegments:10,bevelEnabled:false});
+  const M=new THREE.Matrix4().makeBasis(new THREE.Vector3(tx,0,-ty), new THREE.Vector3(0,1,0), new THREE.Vector3(nx,0,-ny)); M.setPosition(a[0]+nx*0.02, 0, -(a[1]+ny*0.02));
+  g.applyMatrix4(M);
+  const grp=new THREE.Group(); const ram=new THREE.Mesh(g,mat(wall,dim,veggs,{ds:true})); ram.castShadow=ram.receiveShadow=true; grp.add(ram);
+  const bg=new THREE.PlaneGeometry(L,top); bg.translate(L/2,top/2,0.012); bg.applyMatrix4(M);
+  const bak=new THREE.Mesh(bg,mat(A.mork||[54,52,52],false)); bak.receiveShadow=true; grp.add(bak);
+  return grp;
+}
 DATA.bygg.forEach((b,i)=>{
   const pts=b.p; if(pts.length<3 || b.skjul) return;
   const spesiell = !!(b.kirke || (b.deler && b.deler.length) || PORT_BYGG.has(i));
@@ -191,6 +237,7 @@ DATA.bygg.forEach((b,i)=>{
   if (b.kirke) bygKirke(b.kirke, grp);
   // bygningsdeler (eldre vei)
   (b.kirke?[]:(b.deler||[])).forEach(dp=>{
+    if(dp.form==='taarn'){ bygTaarn(dp, grp); return; }
     const sh=polyShape(dp.p); const mh=dp.mh||0; let top=dp.h, rh=0;
     if (dp.roof==='pyramidal'){ rh = (top-mh)<=6 ? (top-mh) : Math.min(5,(top-mh)*0.3); } else if (dp.roof==='gabled'){ rh=5; }
     const wallTop=top-rh;
@@ -272,6 +319,7 @@ DATA.bygg.forEach((b,i)=>{
       });
     });
   }
+  if(b.arkader && !dim) b.arkader.forEach(A=>{ const g=bygArkade(A, pts, wall, dim, b.veggs); if(g) legg(g); });
   // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
   if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
     b.takvinduer.forEach(([x,y,bw,bh])=>{

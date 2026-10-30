@@ -224,6 +224,20 @@
 "uthus": false
 },
 {
+"id": "bnr-193987397",
+"navn": null,
+"type": "garages",
+"h": 4.4,
+"foer": 3,
+"etter": 12,
+"vinduer": 12,
+"dorer": 0,
+"gate": "mest åpne vegg",
+"etasjer": 1,
+"dor": false,
+"uthus": true
+},
+{
 "id": "bnr-193972314",
 "navn": "Feiergården",
 "type": "garage",

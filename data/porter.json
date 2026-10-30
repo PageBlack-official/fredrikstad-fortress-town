@@ -1,5 +1,5 @@
 [
-{"typ":"hus","ret":[-0.9058,0.4236],"h":5.0,"pw":4.0,"ph":4.2,"tvers":7.95,"dyp":14.78,"bygg_id":"bnr-193869548"},
+{"typ":"hus","ret":[-0.9058,0.4236],"h":4.4,"pw":3.8,"ph":3.5,"tvers":7.95,"dyp":14.78,"bygg_id":"bnr-193869548","kilde":"høyde og bue: Street View aug. 2010 (SØ) og DOM: takfot 7,5 m over veien = portmur 4,4 + vaktstue 3,1 (verktoy/landemerker.py)"},
 {"typ":"hus","ret":[0.8811,-0.473],"h":5.0,"pw":4.0,"ph":4.2,"tvers":7.18,"dyp":10.79,"bygg_id":"pb-9"},
 {"typ":"mur","ret":[-0.7359,0.6771],"h":6.0,"pw":3.28,"ph":4.2,"tvers":4.88,"dyp":3.39,"bygg_id":"pb-10"},
 {"typ":"mur","ret":[-0.8779,0.4789],"h":6.0,"pw":4.0,"ph":4.2,"tvers":6.12,"dyp":2.6,"bygg_id":"pb-11"}

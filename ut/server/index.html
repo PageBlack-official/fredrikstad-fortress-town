@@ -1051,6 +1051,52 @@ function utvidPoly(P,d){ let A=0; for(let k=0;k<P.length;k++){ const a=P[k],c=P[
 function iPoly(p,f){ let inne=false; for(let k=0,j=f.length-1;k<f.length;j=k++){ const a=f[k],c=f[j]; if((a[1]>p[1])!==(c[1]>p[1]) && p[0]<(c[0]-a[0])*(p[1]-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
 function planZ(f,x,y){ const [a,b2,c]=f; const ux=b2[0]-a[0],uy=b2[1]-a[1],uz=b2[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2];
   const nx=uy*vz-uz*vy, ny=uz*vx-ux*vz, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return a[2]; return a[2]-(nx*(x-a[0])+ny*(y-a[1]))/nz; }
+// ---- landemerker (30.10, natt/landemerker): gjenbrukbare elementer som styres av data, ikke engangsfikser ----
+// prisme: polygon (modellmeter) løftet fra z0 til z1; [topp, sider] som husene
+function prisme(P, z0, z1, mTopp, mSide){ const g=new THREE.ExtrudeGeometry(polyShape(P),{depth:Math.max(0.01,z1-z0),bevelEnabled:false}); g.rotateX(-Math.PI/2); g.translate(0,z0,0);
+  const m=new THREE.Mesh(g,[mTopp,mSide]); m.castShadow=m.receiveShadow=true; return m; }
+function ring(c, r, n, rot){ return Array.from({length:n},(_,k)=>{ const a=rot+k*2*Math.PI/n; return [c[0]+r*Math.cos(a), c[1]+r*Math.sin(a)]; }); }
+// TÅRN (bygg.deler[] med form 'taarn'): mangekantet skaft, utkraget brystning på konsoller med tinder, flatt tak innenfor, flaggstang,
+// ett rundbuevindu per side. Alle mål i data: {c, r (omskrevet radius), sider, rot (grader), skaft (skaftets topp), h (tindenes topp),
+// ut (utkraging), tinde_h, tinder (antall), vegg, veggs, topp (takfarge), vinduer {z (midt), b, h}, stang (over taket), flagg [r,g,b]}.
+// Første bruk: tårnet på rådhuset (bnr-193972012): form fra Kvartal14.ai, plass og høyde fra Kartverkets DOM.
+function bygTaarn(t, grp){
+  const n=t.sider||8, rot=THREE.MathUtils.degToRad(t.rot||0)+Math.PI/n, r=t.r, ut=t.ut||0.4, th=t.tinde_h||0.7;
+  const mv=mat(t.vegg||[236,214,180],false,t.veggs), mt=mat(t.topp||[120,160,138],false);
+  const kv=t.skaft, kr=t.krage||0.7;                               // konsollbåndet: to trinn ut til brystningen
+  grp.add(prisme(ring(t.c,r,n,rot),0,kv,mt,mv));
+  grp.add(prisme(ring(t.c,r+ut*0.45,n,rot),kv,kv+kr*0.45,mv,mv));
+  grp.add(prisme(ring(t.c,r+ut,n,rot),kv+kr*0.45,t.h-th,mt,mv));     // brystning; toppen er taket innenfor (flatt, takfargen)
+  const R=r+ut, nt=t.tinder||2*n, bt=2*R*Math.sin(Math.PI/n)*n/nt*0.55;
+  for(let k=0;k<nt;k++){ const a=rot+Math.PI/n+k*2*Math.PI/nt, cx=t.c[0]+(R-0.18)*Math.cos(a), cy=t.c[1]+(R-0.18)*Math.sin(a);
+    const ta=[-Math.sin(a),Math.cos(a)], na=[Math.cos(a),Math.sin(a)], q=(u,v)=>[cx+ta[0]*u+na[0]*v, cy+ta[1]*u+na[1]*v];
+    grp.add(prisme([q(-bt/2,-0.18),q(bt/2,-0.18),q(bt/2,0.18),q(-bt/2,0.18)],t.h-th,t.h,mv,mv)); }
+  if(t.stang){ const g=new THREE.CylinderGeometry(0.05,0.07,t.stang,6); const s=new THREE.Mesh(g,mat([240,240,236],false)); s.position.set(t.c[0],t.h-th+t.stang/2,-t.c[1]); s.castShadow=true; grp.add(s);
+    if(t.flagg){ const f=new THREE.Mesh(new THREE.BoxGeometry(1.6,1.1,0.03),mat(t.flagg,false)); f.position.set(t.c[0]+0.85,t.h-th+t.stang-0.6,-t.c[1]); f.castShadow=true; grp.add(f); } }
+  if(t.vinduer){ const ap=r*Math.cos(Math.PI/n), V=[];
+    for(let k=0;k<n;k++){ const a=rot+Math.PI/n+k*2*Math.PI/n, nx=Math.cos(a), ny=Math.sin(a);
+      V.push([t.c[0]+nx*ap, t.c[1]+ny*ap, t.vinduer.z, ny, -nx, nx, ny, t.vinduer.b, t.vinduer.h, 0, 1, 1]); }
+    grp.add(lagVinduer([vindusData(V,-1)])); }
+}
+// ARKADE (bygg.arkader[]): rekke av rundbuer med dybde langs en vegg, som geometri (leses på kartzoom): en ramme i veggfargen stikker
+// dybde ut fra veggen, åpningene er buede hull med mørk bakvegg. {a, b (veggens ender), z0 (åpningenes bunn), h (buens topp), topp
+// (rammens overkant), n, bredde (åpningens), dybde, mork [r,g,b] (bakveggen: åpen hall eller glass i skygge)}. Første bruk: arkaden på
+// 13394024 (Kvartal10) og de store rundbuene i rådhusfasaden (Kvartal14).
+function bygArkade(A, pts, wall, dim, veggs){
+  let [a,b]=[A.a,A.b]; let L=Math.hypot(b[0]-a[0],b[1]-a[1]); if(L<0.5) return null;
+  let tx=(b[0]-a[0])/L, ty=(b[1]-a[1])/L, nx=-ty, ny=tx;          // høyrehendt: (langs, opp, normal)
+  if(iPoly([(a[0]+b[0])/2+nx*0.3,(a[1]+b[1])/2+ny*0.3],pts)){ [a,b]=[b,a]; tx=-tx; ty=-ty; nx=-nx; ny=-ny; }
+  const n=A.n, w=A.bredde, d=A.dybde||0.4, top=A.topp, z0=A.z0||0, rr=w/2, yb=Math.max(z0+0.1,A.h-rr);
+  const sh=new THREE.Shape(); sh.moveTo(0,0); sh.lineTo(L,0); sh.lineTo(L,top); sh.lineTo(0,top); sh.closePath();
+  for(let k=0;k<n;k++){ const u=(k+0.5)*L/n, hp=new THREE.Path(); hp.moveTo(u-rr,z0); hp.lineTo(u+rr,z0); hp.lineTo(u+rr,yb); hp.absarc(u,yb,rr,0,Math.PI,false); hp.lineTo(u-rr,z0); sh.holes.push(hp); }
+  const g=new THREE.ExtrudeGeometry(sh,{depth:d,curveSegments:10,bevelEnabled:false});
+  const M=new THREE.Matrix4().makeBasis(new THREE.Vector3(tx,0,-ty), new THREE.Vector3(0,1,0), new THREE.Vector3(nx,0,-ny)); M.setPosition(a[0]+nx*0.02, 0, -(a[1]+ny*0.02));
+  g.applyMatrix4(M);
+  const grp=new THREE.Group(); const ram=new THREE.Mesh(g,mat(wall,dim,veggs,{ds:true})); ram.castShadow=ram.receiveShadow=true; grp.add(ram);
+  const bg=new THREE.PlaneGeometry(L,top); bg.translate(L/2,top/2,0.012); bg.applyMatrix4(M);
+  const bak=new THREE.Mesh(bg,mat(A.mork||[54,52,52],false)); bak.receiveShadow=true; grp.add(bak);
+  return grp;
+}
 DATA.bygg.forEach((b,i)=>{
   const pts=b.p; if(pts.length<3 || b.skjul) return;
   const spesiell = !!(b.kirke || (b.deler && b.deler.length) || PORT_BYGG.has(i));
@@ -1118,6 +1164,7 @@ DATA.bygg.forEach((b,i)=>{
   if (b.kirke) bygKirke(b.kirke, grp);
   // bygningsdeler (eldre vei)
   (b.kirke?[]:(b.deler||[])).forEach(dp=>{
+    if(dp.form==='taarn'){ bygTaarn(dp, grp); return; }
     const sh=polyShape(dp.p); const mh=dp.mh||0; let top=dp.h, rh=0;
     if (dp.roof==='pyramidal'){ rh = (top-mh)<=6 ? (top-mh) : Math.min(5,(top-mh)*0.3); } else if (dp.roof==='gabled'){ rh=5; }
     const wallTop=top-rh;
@@ -1172,33 +1219,7 @@ DATA.bygg.forEach((b,i)=>{
       gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat([r,g,bb],dim,null,{ds:true})));
     });
   }
-  // fasadesegmenter (30.10): én kropp etter DOM/Matrikkelen, men tegningen viser flere fasader på veggen. Hvert segment er en
-  // veggflate i egen farge (fra_m–til_m langs veggen a→b); brannmurlinjen mellom to segmenter er en tynn mørk loddrett kant
-  if(b.fasadesegmenter && !dim){
-    const flate=(A,B,c)=>{ const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
-      gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat(c,dim,null,{ds:true}))); };
-    b.fasadesegmenter.forEach(v=>{
-      const [ax,ay]=v.a, [bx,by]=v.b, L=Math.hypot(bx-ax,by-ay); if(L<0.5) return;
-      const ux=(bx-ax)/L, uy=(by-ay)/L;
-      // omrissets kanter som ligger på segmentveggen (veggen a–b er rettet ut; omrisset kan ha små knekker langs den)
-      const kanter=[];
-      for(let k=0;k<pts.length;k++){ const p=pts[k], q=pts[(k+1)%pts.length], l=Math.hypot(q[0]-p[0],q[1]-p[1]); if(l<0.05) continue;
-        if(Math.abs(((q[0]-p[0])*ux+(q[1]-p[1])*uy)/l)<0.97) continue;
-        const d=pp=>Math.abs((pp[0]-ax)*uy-(pp[1]-ay)*ux); if(d(p)>0.6||d(q)>0.6) continue;
-        let nx=(q[1]-p[1])/l, ny=-(q[0]-p[0])/l; if(iPoly([(p[0]+q[0])/2+nx*0.1,(p[1]+q[1])/2+ny*0.1],pts)){ nx=-nx; ny=-ny; }
-        const s0=(p[0]-ax)*ux+(p[1]-ay)*uy, s1=(q[0]-ax)*ux+(q[1]-ay)*uy;
-        kanter.push({p,q,s0,s1,nx,ny}); }
-      const punkt=(K,s,o)=>{ const t=(s-K.s0)/(K.s1-K.s0); return [K.p[0]+(K.q[0]-K.p[0])*t+K.nx*o, K.p[1]+(K.q[1]-K.p[1])*t+K.ny*o]; };
-      v.segmenter.forEach((sg,k)=>{
-        kanter.forEach(K=>{ const lo=Math.max(sg.fra_m,Math.min(K.s0,K.s1)), hi=Math.min(sg.til_m,Math.max(K.s0,K.s1)); if(hi-lo<0.02) return;
-          flate(punkt(K,lo,0.025),punkt(K,hi,0.025),sg.vegg); });
-        if(k>0){ const c=v.segmenter[k-1].vegg, m=sg.fra_m;       // brannmurlinjen: 14 cm, mørk tone av de to fasadene
-          const mork=[0,1,2].map(j=>Math.round(Math.min(c[j],sg.vegg[j])*0.42));
-          const K=kanter.find(K=>m>=Math.min(K.s0,K.s1)-0.01 && m<=Math.max(K.s0,K.s1)+0.01);
-          if(K){ const sn=Math.sign(K.s1-K.s0)||1; flate(punkt(K,m-0.07*sn,0.035),punkt(K,m+0.07*sn,0.035),mork); } }
-      });
-    });
-  }
+  if(b.arkader && !dim) b.arkader.forEach(A=>{ const g=bygArkade(A, pts, wall, dim, b.veggs); if(g) legg(g); });
   // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
   if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
     b.takvinduer.forEach(([x,y,bw,bh])=>{
@@ -2208,6 +2229,12 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
 const STEINFARGE={ 'mørk':[[66,68,72],[40,41,44]], lys:[[178,176,170],[124,122,118]], trinn:[[104,106,110],[66,67,70]], bronse:[[120,160,138],[70,98,86]] };
 const PATINA=[120,160,138], PATINA_S=[70,98,86], RELIEFF=[96,128,112], GULL=[214,206,170];
 const V=(a,b,c)=>new THREE.Vector3(a,b,c);
+// dreid: omdreiningsflate fra profil [[radius, høyde]] (glatt rustning i stedet for sylindre), lukket topp og bunn
+const dreid=(prof,n)=>{ const P=[new THREE.Vector2(0,prof[0][1]), ...prof.map(([r,y])=>new THREE.Vector2(r,y)), new THREE.Vector2(0,prof[prof.length-1][1])]; return new THREE.LatheGeometry(P,n); };
+// pipekrage: skive med rillet kant (k riller), radius r, høyde h
+const pipekrage=(r,h,k)=>{ const g=new THREE.CylinderGeometry(r,r*0.94,h,k*4,1); const p=g.getAttribute('position');
+  for(let j=0;j<p.count;j++){ const x=p.getX(j), z=p.getZ(j), rr=Math.hypot(x,z); if(rr<1e-4) continue; const a=Math.atan2(z,x), f=1+0.09*Math.cos(a*k); p.setX(j,x*f); p.setZ(j,z*f); }
+  g.computeVertexNormals(); return g; };
 // figurene: får verktøyene (del, lem, kule) og returnerer modellhøyden (isse over sokkelen) som figur.h skalerer til
 const FIGUR={
   // Frederik II: platerustning, kommandostav i høyre hånd, venstre hånd i siden. Målene er lest av kommunens frontfoto (kunstregisteret,
@@ -2215,22 +2242,22 @@ const FIGUR={
   // kontrollert mot Wilse 1931 og nb.no 1969.
   rustning_stav({k,del,lem,kule}){
     [[-0.14,0.03],[0.18,-0.04]].forEach(([fx,fz])=>{
-      del(new THREE.BoxGeometry(0.12,0.08,0.30),fx,0.04,fz+0.06);                // jernsko
+      kule(0.075,V(fx,0.045,fz+0.06),0.85,0.6,2.0);                              // jernsko (sabaton): avrundet, ikke kasse (30.10)
       lem(V(fx,0.08,fz),V(fx*0.97,0.48,fz*0.6),0.06,0.075);                     // legg
       kule(0.082,V(fx*0.95,0.51,fz*0.5+0.02));                                   // kne
       lem(V(fx*0.95,0.52,fz*0.5),V(fx*0.8,0.92,0),0.085,0.10);                  // lår
     });
-    del(new THREE.CylinderGeometry(0.235,0.275,0.32,12),0,1.04,0).scale.set(1,1,0.78);   // pluderhoser/lårplater
+    del(dreid([[0.20,0],[0.27,0.06],[0.285,0.16],[0.26,0.27],[0.225,0.32]],18),0,0.88,0).scale.set(1,1,0.78);   // pluderhoser/lårplater: buklet profil (30.10)
     del(new THREE.BoxGeometry(0.08,0.12,0.08),0,0.96,0.21);                      // skamkapsel
-    del(new THREE.CylinderGeometry(0.225,0.23,0.05,12),0,1.205,0).scale.set(1,1,0.8);    // belte
-    del(new THREE.CylinderGeometry(0.255,0.215,0.40,12),0,1.43,0.01).scale.set(1,1,0.82); // brystharnisk
+    del(new THREE.CylinderGeometry(0.225,0.23,0.05,24),0,1.205,0).scale.set(1,1,0.8);    // belte
+    del(dreid([[0.215,0],[0.235,0.08],[0.258,0.2],[0.262,0.3],[0.245,0.37],[0.17,0.41]],20),0,1.23,0.01).scale.set(1,1,0.82); // brystharnisk: rundet bryst, smalt mot beltet (30.10)
     kule(0.105,V(-0.28,1.61,0),1,0.8,1); kule(0.105,V(0.28,1.61,0),1,0.8,1);     // skulderplater
     lem(V(-0.19,1.62,0.16),V(0.03,1.40,0.225),0.042,0.042); lem(V(0.03,1.40,0.225),V(0.23,1.18,0.15),0.042,0.042);   // bandolær
     const hode=new THREE.Group(); hode.position.set(0,1.66,0.0); hode.rotation.y=-0.26; k.add(hode);             // litt mot hans høyre
     del(new THREE.CylinderGeometry(0.06,0.07,0.12,8),0,0.0,0,hode);              // hals
-    del(new THREE.CylinderGeometry(0.15,0.14,0.07,16),0,0.03,0.01,hode);         // pipekrage
+    del(pipekrage(0.155,0.075,18),0,0.03,0.01,hode);                           // pipekrage: rillet kant (30.10)
     kule(0.115,V(0,0.18,0.0),0.92,1.12,1,hode);                                  // hode
-    const skjegg=del(new THREE.ConeGeometry(0.07,0.13,8),0,0.07,0.08,hode); skjegg.rotation.x=Math.PI+0.35;
+    kule(0.085,V(0,0.10,0.045),1.0,1.05,0.75,hode); kule(0.05,V(0,0.055,0.085),0.95,1.25,0.8,hode);   // helskjegg: fyldig rundt kinn og hake, avrundet spiss (30.10)
     const hS=V(-0.30,1.60,0), hA=V(-0.40,1.28,0.08), hH=V(-0.55,1.52,0.2);      // høyre arm, hånda nesten i skulderhøyde
     lem(hS,hA,0.072,0.062); lem(hA,hH,0.06,0.05); kule(0.055,hH);
     lem(V(-0.64,1.64,0.2),V(-0.16,1.19,0.27),0.026,0.024);                      // staven: litt over hånda, ned mot magen
@@ -2284,9 +2311,9 @@ const FIGUR={
   }
   const k=new THREE.Group(); k.position.y=y0; g.add(k);
   const del=(geo,px,py,pz,forelder=k)=>legg(geo,PATINA,PATINA_S,px,py,pz,forelder);
-  const lem=(a,b,r1,r2,forelder=k)=>{ const d=b.clone().sub(a), L=d.length(); const m=del(new THREE.CylinderGeometry(r2,r1,L,10),(a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2,forelder);
+  const lem=(a,b,r1,r2,forelder=k)=>{ const d=b.clone().sub(a), L=d.length(); const m=del(new THREE.CylinderGeometry(r2,r1,L,16),(a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2,forelder);
     m.quaternion.setFromUnitVectors(V(0,1,0), d.normalize()); return m; };
-  const kule=(r,p,sx=1,sy=1,sz=1,forelder=k)=>{ const m=del(new THREE.SphereGeometry(r,12,9),p.x,p.y,p.z,forelder); m.scale.set(sx,sy,sz); return m; };
+  const kule=(r,p,sx=1,sy=1,sz=1,forelder=k)=>{ const m=del(new THREE.SphereGeometry(r,20,14),p.x,p.y,p.z,forelder); m.scale.set(sx,sy,sz); return m; };
   const hoyde=FIGUR[st.figur.form]({k,del,lem,kule});
   k.scale.setScalar(st.figur.h/hoyde);
   // retning: kompassgrader -> rotasjon om y (lokal +z = fram); verden: x = øst, -z = nord
