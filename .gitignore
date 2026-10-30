@@ -37,3 +37,6 @@ rapport/torvet/*.jpg
 rapport/bakke/*.png
 rapport/31_overflater.jpg
 kilder/kommunekart/*.png
+
+# fargeregelen (30.10): kontrollarkene for takene viser ortofotoet: bare lokalt
+rapport/farge/*.png

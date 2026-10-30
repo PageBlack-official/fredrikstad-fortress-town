@@ -168,9 +168,12 @@ Rettelseslaget lar nyeste linje vinne, og hvert verktøy flytter sine linjer bak
     python3 -I rapport/hoyder/legg_inn.py    høyde og takhelning på id
     python3 verktoy/vinduer_regler.py        vinduer etter reglene på antatte hus
     python3 verktoy/streetview_fasader.py    Street View, alle sider («sider» i avlesningen); veggen etter retningen når kamerapunktet bommer
-    python3 verktoy/streetview_farger.py     fargene
     python3 verktoy/fasade_tegning.py legg_inn   vinduer fra kvartaltegningene som vektor (kilder/fasade-tegning/, se under)
+    python3 verktoy/streetview_farger.py     veggfarger fra Street View 2016+ (fargeregelen, se «Fargene» under)
+    python3 verktoy/tak_farge.py             takfarger: ortofoto 2024, tegningen der fotoet ikke ser/skiller
+    python3 verktoy/vegg_nye.py              veggfarger: tegningen > Street View før 2015 > nabohuset; farge_kilde
     python3 verktoy/bygg_merknader.py        merknadene på enkelthus (kilder/bygg-merknader.json): Vegars kvartalskontroll og avgjørelser mot kildene
+    python3 verktoy/fasade_former.py         former fra tegningen (rundbuevinduer, portaler, piper; kirkas høyder og silhuett)
 
 Høydene følger id-en (29.10): hoyder.json var nøklet på plassen i bygg-lista. Når et nytt bygg kom inn foran de andre nye byggene
 (rettelser med op ny), flyttet alle plassene seg ett hakk, og målt høyde havnet på nabohuset. Nå har hver måling id, legg_inn.py og
@@ -198,7 +201,6 @@ bunnkanten, telles med; biter av samme dør slås sammen; et hus med én etasje 
 Dropbox, scanninger). Vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py skriver
 rapport/streetview-fasader/fasit-sv-vegger.json for fasithusene), ellers reglene.
 
-    python3 verktoy/vegg_nye.py          veggfarge på hus som står med standardveggen: Street View > 2017-tegningen som vektor > nabohuset
     python3 verktoy/sv_avvik.py          tegningshus som avviker fra Street View: feil vegg / feil vindu / endret siden 2015 (rapport/bygg/sv-avvik.md)
     python3 verktoy/bygg_naer.py visninger | ark    nærbilder ved største zoom og pikseltetthet 2 ved siden av tegningen (rapport/bygg/naer/)
 
@@ -279,3 +281,19 @@ Vegar: «jeg liker ikke at du ikke merker noe agenter glipper.» Derfor:
 
 ## GitHub
 Repo: github.com/PageBlack-official/fredrikstad-fortress-town. main = kilden, gh-pages = server-bygget (publiser.sh). Pages: pageblack-official.github.io/fredrikstad-fortress-town
+
+## Fargene: regelen fra 30.10 (Vegar)
+Mange husfarger kom fra Street View-bilder fra august 2010, ELDRE enn tegningene. Vegar samlet selv husfargene med Street View i 2015;
+tegningene og 2019-trykket er fasit for den tiden. Regelen (koden: verktoy/tak_farge.py, streetview_farger.py, vegg_nye.py):
+- TAKFARGE: ortofoto 2024 (kilder/ortofoto-2024) er nyeste kilde og ser rett ned på taket: det avgjør kuløren for alle tak. Hver
+  takflate måles for seg (omrisset flyttet dit taket står i fotoet: høye tak heller 1–3 m), flatene i blå skygge tas ut; teglrødt leses
+  på rødt (a* i Lab) på flatene i lys, grått på medianen i sol, kobber som blågrønt. Falmet/mosegrodd tegl og brungrå betongstein gir
+  samme tall i fotoet: der, og der trær eller slagskygge dekker taket, avgjør tegningen. Samme kulør i foto og tegning: tegningens farge.
+- VEGGFARGE: nyeste kilde vinner: Street View 2016 eller senere (bilde_dato i kilder/streetview/avlesning.json) > tegningen
+  (kvartaltegningen lest av kontrolløren, ellers trykkfargen dømt mot 2019-trykket, ellers 2017-tegningen som vektor) > Street View
+  før 2015 > udømt trykkfarge > nabohuset. Merknadene (kilder/bygg-merknader.json) vinner over alt.
+- Tilnærmet riktig er nok, feil kulør er ikke lov (tak_farge.familie / samme_kulor).
+- Hvert hus har `vegg_kilde`/`vegg_aar` og `tak_kilde`/`tak_aar`; verktoy/kontroll.py gir «avvik med grunn» bare når kilden for akkurat
+  den fargen er nyere enn tegningen (2016+). verktoy/tak_fra_ortofoto.py er erstattet av tak_farge.py (linjene er tatt ut).
+- Kontrollark: `python3 verktoy/tak_farge.py ark` -> rapport/farge/tak.png og tak-<kvartal>.png (ortofoto | modellens tak ovenfra; bare
+  lokalt, viser ortofotoet). Byttene: rapport/farge/bytter.md (før -> etter, kilde, dato), rapport/farge/tak.json og vegg.json.

@@ -778,6 +778,7 @@ def analyser(navn, logg=print):
         js = tildelt.get(i, [])
         Md = np.isin(Lf, js) if js else np.zeros((H, W), bool)
         r = dict(id=i, adr=x.get('adr'), navn=x.get('navn'), h=x.get('h'), fasade_kilde=x.get('fasade_kilde'), farge_kilde=x.get('farge_kilde'),
+                 vegg_kilde=x.get('vegg_kilde'), vegg_aar=x.get('vegg_aar'), tak_kilde=x.get('tak_kilde'), tak_aar=x.get('tak_aar'),
                  synlig_px=int(Mm.sum()), flater=js)
         if Mm.sum() < 30:
             r['finnes'] = 'skjult i modellbildet'; ut.append(r); continue
@@ -888,6 +889,8 @@ def analyser(navn, logg=print):
             best = None
             for j in jl:
                 fa = tuple(int(round(c * 255)) for c in F[j]['farge'])
+                if max(fa) < 90 and max(fa) - min(fa) < 18:      # strek/vindusgitter (svart), ikke en veggfarge (30.10, natt/farge)
+                    continue
                 # hvilken side: modellveggen flaten ligger på
                 ar = F[j]['ytre'].area
                 if best is None or ar > best[1]: best = (fa, ar)
@@ -899,7 +902,9 @@ def analyser(navn, logg=print):
         if tv and mv:
             r['veggfarge'] = dict(tegning=tv, modell=mv, side='lys', dE=round(dE(tv, mv), 1), kulor_tegning=kulor(tv), kulor_modell=kulor(mv))
         elif ts and mv:
-            r['veggfarge'] = dict(tegning=ts, modell=mvs, side='skygge', dE=round(dE(ts, mvs), 1), kulor_tegning=kulor(ts), kulor_modell=kulor(mvs))
+            # tegningen skygger ikke alltid veggene: sammenlign med modellens skyggetone og lyse tone, den nærmeste (som taket)
+            d1, d2 = dE(ts, mvs), dE(ts, mv); mm_ = mvs if d1 <= d2 else mv
+            r['veggfarge'] = dict(tegning=ts, modell=list(mm_), side='skygge', dE=round(min(d1, d2), 1), kulor_tegning=kulor(ts), kulor_modell=kulor(mm_))
         if takflater and x.get('tak'):
             tt_ = max(takflater, key=lambda j: F[j]['ytre'].area)
             fa = tuple(int(round(c * 255)) for c in F[tt_]['farge'])
@@ -994,14 +999,17 @@ def vurder(r, navn):
     for k, navn_ in (('veggfarge', 'veggfarge'), ('takfarge', 'takfarge')):
         c = r.get(k)
         if not c: continue
-        sv = 'Street View' in (r.get('farge_kilde') or '')
+        # «avvik med grunn» bare når modellens kilde for akkurat denne fargen er nyere enn tegningen (fargeregelen 30.10:
+        # Street View 2016+ for vegg, ortofoto 2024 for tak; verktoy/tak_farge.py). Uten år: den gamle regelen (Street View).
+        aar = r.get('vegg_aar' if k == 'veggfarge' else 'tak_aar')
+        sv = (aar or 0) >= 2016 if (r.get('vegg_kilde') or r.get('tak_kilde')) else 'Street View' in (r.get('farge_kilde') or '')
         if c['kulor_tegning'] != c['kulor_modell'] and c['dE'] > 18:
             a = 'avvik med grunn' if sv else 'feil'
         elif c['dE'] > 22:
             a = 'avvik med grunn' if sv else 'avvik'
         else:
             a = 'ok'
-        sett(navn_, a, f"tegning {tuple(c['tegning'])} ({c['kulor_tegning']}), modell {tuple(c['modell'])} ({c['kulor_modell']}), ΔE {c['dE']}" + (f"; modellens farge: {r.get('farge_kilde')}" if r.get('farge_kilde') else ''))
+        sett(navn_, a, f"tegning {tuple(c['tegning'])} ({c['kulor_tegning']}), modell {tuple(c['modell'])} ({c['kulor_modell']}), ΔE {c['dE']}" + (f"; modellens farge: {r.get('vegg_kilde' if k == 'veggfarge' else 'tak_kilde') or r.get('farge_kilde')}" if (r.get('farge_kilde') or r.get('vegg_kilde')) else ''))
     vv = r.get('vinduer') or []
     if vv:
         verst = None
@@ -1065,7 +1073,7 @@ def md(logg=print):
         K = json.load(open(f)); p_ = K['par']; rg = K.get('registrering', {})
         fl = sum(1 for b in K.get('blokker', []) if math.hypot(*b['d']) > 3)
         L.append(f"| {n} | {len(K['bygg'])} | {p_['az']:.1f}° | {p_['el']:.1f}° | {p_['s']:.2f} | {p_['K']:.2f} ({p_['K_kilde']}) | {rg.get('median_pt')} pt = {rg.get('median_px')} px | {int(100 * (rg.get('andel_under_3pt') or 0))} % | {fl} av {len(K.get('blokker', []))} | {', '.join(kort_id(i) for i in K.get('utenfor_tegningen', [])) or '-'} |")
-    L += ['', '## Per hus (maskinelt)', '', 'Alvor: **F** feil, A avvik, G avvik med grunn (modellens farge er Street View, tegningen er 2015). Tomt = ok eller ikke målt.', '']
+    L += ['', '## Per hus (maskinelt)', '', 'Alvor: **F** feil, A avvik, G avvik med grunn (modellens farge har en kilde nyere enn tegningen 2015: Street View 2016+ for vegg, ortofoto 2024 for tak). Tomt = ok eller ikke målt.', '']
     kat = ['finnes', 'slaatt_sammen', 'omriss', 'gesims', 'mone', 'takform', 'veggfarge', 'takfarge', 'vinduer', 'dorer', 'arker', 'piper']
     kort = dict(feil='**F**', avvik='A', ok='', **{'avvik med grunn': 'G'})
     for n in TEGNINGER:

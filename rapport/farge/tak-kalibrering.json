@@ -1,0 +1,2266 @@
+[
+ {
+  "id": "bnr-193870279",
+  "kilde": "Street View mai 2024",
+  "ord": "brun/rødbrun tegl",
+  "foto": [
+   201.0,
+   197.0,
+   177.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193870279",
+  "kilde": "kvartaltegningen Toihuset (lest for hånd)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   201.0,
+   197.0,
+   177.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868061",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl med mange takvinduer",
+  "foto": [
+   216.0,
+   193.0,
+   171.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867502",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   163.0,
+   157.0,
+   143.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867502",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.72)",
+  "tegning": [
+   66,
+   66,
+   65
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   163.0,
+   157.0,
+   143.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867677",
+  "kilde": "Street View mai 2024",
+  "ord": "rødbrun tegl (delvis bak trær)",
+  "foto": [
+   189.0,
+   183.0,
+   164.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867677",
+  "kilde": "kvartaltegningen tell (IoU 0.83)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   189.0,
+   183.0,
+   164.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868053",
+  "kilde": "Street View mai 2024",
+  "ord": "grå/brun gammel tegl, mosegrodd",
+  "foto": [
+   188.0,
+   185.0,
+   171.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867308",
+  "kilde": "kvartaltegningen (merknad)",
+  "tegning": [
+   245,
+   122,
+   105
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   186.0,
+   177.0,
+   159.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867634",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl",
+  "foto": [
+   175.0,
+   165.0,
+   149.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867634",
+  "kilde": "kvartaltegningen tell (IoU 0.57)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   175.0,
+   165.0,
+   149.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193869548",
+  "kilde": "Street View aug. 2019 (brukerfoto) / aug. 2010 (tunnel)",
+  "ord": "rød tegl",
+  "foto": [
+   190.0,
+   161.0,
+   138.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868045",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   222.0,
+   189.0,
+   165.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868045",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.67)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   222.0,
+   189.0,
+   165.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868460",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl",
+  "foto": [
+   168.0,
+   159.0,
+   148.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868460",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.50)",
+  "tegning": [
+   134,
+   134,
+   134
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   168.0,
+   159.0,
+   148.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867499",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.68)",
+  "tegning": [
+   184,
+   111,
+   93
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   185.0,
+   177.0,
+   161.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867510",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.83)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   182.0,
+   170.0,
+   154.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868428",
+  "kilde": "Street View mai 2024",
+  "ord": "mørk grå/sort (blikk eller tegl), takfot hvit",
+  "foto": [
+   197.0,
+   185.0,
+   165.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193869580",
+  "kilde": "kvartaltegningen Glasshytta (IoU 0.75)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   208.0,
+   198.0,
+   181.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868037",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl (kant synlig)",
+  "foto": [
+   232.0,
+   197.0,
+   172.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-13416559",
+  "kilde": "Street View mai 2024",
+  "ord": "mørk grå skifer/tegl",
+  "foto": [
+   100.0,
+   100.0,
+   105.0
+  ],
+  "klasse": "svart/antrasitt",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193820573",
+  "kilde": "Street View mai 2024",
+  "ord": "flatt (mosegrodd kant)",
+  "foto": [
+   161.0,
+   164.0,
+   157.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868355",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.68)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   222.0,
+   204.0,
+   180.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868339",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.74)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   207.0,
+   196.0,
+   175.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867626",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.66)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   145.0,
+   131.0,
+   117.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193874401",
+  "kilde": "Street View mai 2024",
+  "ord": "svart/mørk grå tegl",
+  "foto": [
+   69.0,
+   73.0,
+   86.0
+  ],
+  "klasse": "svart/antrasitt",
+  "sikker": false
+ },
+ {
+  "id": "bnr-6275990",
+  "kilde": "Street View nov. 2024",
+  "ord": "mørk grå/svart",
+  "foto": [
+   173.0,
+   169.0,
+   160.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6276016",
+  "kilde": "Street View nov. 2024",
+  "ord": "mørk (svart/grå)",
+  "foto": [
+   112.0,
+   113.0,
+   113.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6276008",
+  "kilde": "Street View nov. 2024",
+  "ord": "grå",
+  "foto": [
+   219.0,
+   194.0,
+   171.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6276520",
+  "kilde": "Street View nov. 2024",
+  "ord": "mørk grå/svart",
+  "foto": [
+   176.0,
+   177.0,
+   177.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-13384401",
+  "kilde": "Street View nov. 2024",
+  "ord": "grå",
+  "foto": [
+   134.0,
+   135.0,
+   133.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6276474",
+  "kilde": "Street View nov. 2024",
+  "ord": "mørk grå",
+  "foto": [
+   138.0,
+   140.0,
+   139.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6276490",
+  "kilde": "Street View apr. 2024",
+  "ord": "mørk",
+  "foto": [
+   186.0,
+   184.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972152",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.37)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   154.0,
+   152.0,
+   142.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868258",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.61)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   216.0,
+   193.0,
+   173.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868118",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.55)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   193.0,
+   183.0,
+   164.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971954",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.61)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   156.0,
+   137.0,
+   128.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6247822",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.49)",
+  "tegning": [
+   178,
+   110,
+   95
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   200.0,
+   187.0,
+   168.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972322",
+  "kilde": "Street View mai 2024",
+  "ord": "lys grå (bølgeblikk/papp?), saltak lav vinkel",
+  "foto": [
+   186.0,
+   183.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971369",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.67)",
+  "tegning": [
+   115,
+   117,
+   119
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   192.0,
+   190.0,
+   176.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868223",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.82)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   228.0,
+   202.0,
+   177.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6242812",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.64)",
+  "tegning": [
+   217,
+   110,
+   94
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   221.0,
+   196.0,
+   173.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868126",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.46)",
+  "tegning": [
+   211,
+   107,
+   92
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   195.0,
+   187.0,
+   168.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868371",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.69)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   173.0,
+   176.0,
+   180.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868134",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.77)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   213.0,
+   192.0,
+   171.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868150",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.68)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   219.0,
+   197.0,
+   172.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868088",
+  "kilde": "Street View mai 2024",
+  "ord": "mørk brun/grå tegl",
+  "foto": [
+   201.0,
+   195.0,
+   176.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868088",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.66)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   201.0,
+   195.0,
+   176.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868320",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.70)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   221.0,
+   204.0,
+   182.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972292",
+  "kilde": "Street View mai 2024 (og aug. 2010)",
+  "ord": "rød tegl (2024 ny, klar rød; 2010 mosegrodd)",
+  "foto": [
+   233.0,
+   195.0,
+   169.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868266",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.67)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   193.0,
+   183.0,
+   159.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868274",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.66)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   191.0,
+   184.0,
+   164.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868231",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.69)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   198.0,
+   184.0,
+   168.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "pb-6",
+  "kilde": "Street View mai 2024",
+  "ord": "mørk brunrød tegl, mosegrodd",
+  "foto": [
+   94.0,
+   93.0,
+   93.0
+  ],
+  "klasse": "svart/antrasitt",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867936",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.74)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   226.0,
+   227.0,
+   224.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868029",
+  "kilde": "Street View mai 2024",
+  "ord": "brun/grå tegl, mosegrodd",
+  "foto": [
+   177.0,
+   163.0,
+   146.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971334",
+  "kilde": "Street View mai 2024",
+  "ord": "brun/grå tegl, mosegrodd",
+  "foto": [
+   206.0,
+   183.0,
+   166.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193971334",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.64)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   206.0,
+   183.0,
+   166.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867863",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.63)",
+  "tegning": [
+   217,
+   110,
+   94
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   95.0,
+   89.0,
+   89.0
+  ],
+  "klasse": "mørk brun",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867618",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.73)",
+  "tegning": [
+   219,
+   111,
+   95
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   221.0,
+   202.0,
+   181.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868282",
+  "kilde": "Street View mai 2024",
+  "ord": "grå (blikk/papp)",
+  "foto": [
+   223.0,
+   207.0,
+   183.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868282",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.81)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   223.0,
+   207.0,
+   183.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-6251323",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.72)",
+  "tegning": [
+   135,
+   81,
+   70
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   242.0,
+   206.0,
+   171.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193918239",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.41)",
+  "tegning": [
+   132,
+   134,
+   136
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   217.0,
+   200.0,
+   179.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193987397",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.61)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   248.0,
+   208.0,
+   170.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868096",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.49)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   191.0,
+   186.0,
+   170.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867359",
+  "kilde": "Street View mai 2024",
+  "ord": "mørk grå/svart tegl",
+  "foto": [
+   188.0,
+   186.0,
+   169.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868142",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   218.0,
+   197.0,
+   172.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868142",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.68)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   218.0,
+   197.0,
+   172.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867901",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl, mosegrodd",
+  "foto": [
+   254.0,
+   208.0,
+   166.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6251331",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   236.0,
+   202.0,
+   168.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6251331",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.67)",
+  "tegning": [
+   217,
+   110,
+   94
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   236.0,
+   202.0,
+   168.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867944",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.60)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   253.0,
+   207.0,
+   173.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972136",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.58)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   146.0,
+   139.0,
+   133.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193971946",
+  "kilde": "Street View mai 2024",
+  "ord": "brun/rød tegl",
+  "foto": [
+   193.0,
+   183.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971946",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.63)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   193.0,
+   183.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972519",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.47)",
+  "tegning": [
+   145,
+   147,
+   150
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   192.0,
+   200.0,
+   205.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6275109",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.51)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   237.0,
+   204.0,
+   179.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193971318",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.54)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   200.0,
+   180.0,
+   158.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972624",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.61)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   245.0,
+   209.0,
+   173.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867928",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.72)",
+  "tegning": [
+   105,
+   109,
+   110
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   253.0,
+   215.0,
+   178.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867952",
+  "kilde": "Street View mai 2024",
+  "ord": "mørk grå (sink/skifer) på arkene",
+  "foto": [
+   240.0,
+   216.0,
+   187.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867952",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.53)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   240.0,
+   216.0,
+   187.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867898",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl",
+  "foto": [
+   221.0,
+   188.0,
+   161.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867898",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.50)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   221.0,
+   188.0,
+   161.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6251218",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.74)",
+  "tegning": [
+   217,
+   110,
+   94
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   249.0,
+   207.0,
+   171.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868290",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.76)",
+  "tegning": [
+   126,
+   128,
+   131
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   232.0,
+   242.0,
+   245.0
+  ],
+  "klasse": "lys grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868622",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl (kant)",
+  "foto": [
+   189.0,
+   196.0,
+   199.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868622",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.66)",
+  "tegning": [
+   105,
+   109,
+   110
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   189.0,
+   196.0,
+   199.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868215",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.67)",
+  "tegning": [
+   115,
+   117,
+   119
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   205.0,
+   189.0,
+   178.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972039",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.47)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   200.0,
+   190.0,
+   170.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971938",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.49)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   220.0,
+   196.0,
+   172.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972411",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.77)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   241.0,
+   198.0,
+   165.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193870260",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.62)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   210.0,
+   196.0,
+   177.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868592",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.58)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   149.0,
+   146.0,
+   135.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193870236",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.68)",
+  "tegning": [
+   66,
+   66,
+   65
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   193.0,
+   182.0,
+   162.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867693",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.59)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   254.0,
+   212.0,
+   175.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867782",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.69)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   197.0,
+   186.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867588",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.56)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   200.0,
+   188.0,
+   162.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193987370",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   215.0,
+   180.0,
+   154.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193987370",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.77)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   215.0,
+   180.0,
+   154.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972594",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.57)",
+  "tegning": [
+   66,
+   66,
+   65
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   191.0,
+   198.0,
+   202.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972101",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.56)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   188.0,
+   178.0,
+   159.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867804",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.49)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   186.0,
+   154.0,
+   134.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867723",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.52)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   181.0,
+   180.0,
+   161.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868711",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.72)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   211.0,
+   196.0,
+   175.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867758",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.61)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   223.0,
+   187.0,
+   158.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867731",
+  "kilde": "Street View mai 2024",
+  "ord": "grå (blikk/skifer?) på arkene",
+  "foto": [
+   213.0,
+   214.0,
+   217.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867731",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.50)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   213.0,
+   214.0,
+   217.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867839",
+  "kilde": "Street View mai 2024",
+  "ord": "grå/lys grå (blikk eller skifer)",
+  "foto": [
+   195.0,
+   193.0,
+   175.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867839",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.56)",
+  "tegning": [
+   119,
+   119,
+   118
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   195.0,
+   193.0,
+   175.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867766",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.57)",
+  "tegning": [
+   66,
+   66,
+   65
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   194.0,
+   185.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972462",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.63)",
+  "tegning": [
+   216,
+   109,
+   93
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   190.0,
+   177.0,
+   157.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972063",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.71)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   197.0,
+   187.0,
+   169.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867545",
+  "kilde": "Street View mai 2024",
+  "ord": "brun/rødbrun tegl",
+  "foto": [
+   112.0,
+   103.0,
+   93.0
+  ],
+  "klasse": "mørk brun",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867545",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.51)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   112.0,
+   103.0,
+   93.0
+  ],
+  "klasse": "mørk brun",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867715",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.54)",
+  "tegning": [
+   242,
+   149,
+   130
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   197.0,
+   190.0,
+   170.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-6276539",
+  "kilde": "Street View nov. 2024",
+  "ord": "mørk grå/svart",
+  "foto": [
+   127.0,
+   131.0,
+   135.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868533",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.51)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   200.0,
+   187.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-194006187",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   197.0,
+   179.0,
+   163.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193991718",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.57)",
+  "tegning": [
+   188,
+   190,
+   192
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   201.0,
+   190.0,
+   170.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972306",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.50)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   146.0,
+   130.0,
+   119.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972187",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl",
+  "foto": [
+   124.0,
+   120.0,
+   116.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972055",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.50)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   182.0,
+   174.0,
+   157.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971377",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.54)",
+  "tegning": [
+   165,
+   167,
+   170
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   100.0,
+   106.0,
+   114.0
+  ],
+  "klasse": "svart/antrasitt",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193971202",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.62)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   195.0,
+   183.0,
+   166.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971288",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.38)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   222.0,
+   201.0,
+   183.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193971261",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.60)",
+  "tegning": [
+   152,
+   154,
+   157
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   236.0,
+   206.0,
+   177.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972632",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.47)",
+  "tegning": [
+   217,
+   110,
+   94
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   168.0,
+   163.0,
+   149.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193972454",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.51)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   242.0,
+   200.0,
+   167.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868665",
+  "kilde": "Street View mai 2024",
+  "ord": "skjult (gavl mot gata)",
+  "foto": [
+   185.0,
+   174.0,
+   156.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868681",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.46)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   178.0,
+   176.0,
+   161.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193868517",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.33)",
+  "tegning": [
+   138,
+   140,
+   142
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   223.0,
+   193.0,
+   172.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868479",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.62)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   187.0,
+   180.0,
+   162.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867987",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.53)",
+  "tegning": [
+   178,
+   110,
+   95
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   229.0,
+   197.0,
+   173.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867774",
+  "kilde": "Street View mai 2024",
+  "ord": "grå/brun tegl",
+  "foto": [
+   205.0,
+   190.0,
+   169.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867774",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.59)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   205.0,
+   190.0,
+   169.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193870244",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.54)",
+  "tegning": [
+   198,
+   198,
+   197
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   174.0,
+   166.0,
+   150.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193867553",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.69)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   108.0,
+   110.0,
+   111.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-23730278",
+  "kilde": "Street View nov. 2024",
+  "ord": "mørk grå/svart tegl",
+  "foto": [
+   122.0,
+   124.0,
+   123.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-16313173",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.52)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   217.0,
+   177.0,
+   149.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6246729",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   160.0,
+   160.0,
+   154.0
+  ],
+  "klasse": "grå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-300399132",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.55)",
+  "tegning": [
+   163,
+   71,
+   68
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   152.0,
+   142.0,
+   129.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193870201",
+  "kilde": "kvartaltegningen sistekvartal (IoU 0.79)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   185.0,
+   181.0,
+   165.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ },
+ {
+  "id": "bnr-193869572",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.53)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   244.0,
+   209.0,
+   178.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972047",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.52)",
+  "tegning": [
+   237,
+   119,
+   102
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   184.0,
+   174.0,
+   156.0
+  ],
+  "klasse": "brungrå",
+  "sikker": false
+ }
+]
