@@ -324,3 +324,16 @@ tegningene og 2019-trykket er fasit for den tiden. Regelen (koden: verktoy/tak_f
   den fargen er nyere enn tegningen (2016+). verktoy/tak_fra_ortofoto.py er erstattet av tak_farge.py (linjene er tatt ut).
 - Kontrollark: `python3 verktoy/tak_farge.py ark` -> rapport/farge/tak.png og tak-<kvartal>.png (ortofoto | modellens tak ovenfra; bare
   lokalt, viser ortofotoet). Byttene: rapport/farge/bytter.md (før -> etter, kilde, dato), rapport/farge/tak.json og vegg.json.
+
+## Landemerkene (30.10, natt/landemerker)
+`python3 verktoy/landemerker.py` (sist i kjeden, etter fasade_former.py; begge stod ikke i bygg_kjede.py før, så linjene deres ble
+overstyrt når kjeden gikk på nytt). Form fra 2015-tegningene, plass og høyde fra DOM−DTM, farge fra Street View/ortofoto. To nye
+gjenbrukbare elementer i src/07, styrt av data (et nytt tårn eller en ny arkade = en ny post i verktøyet, ingen ny kode):
+- `deler: [{form: 'taarn', c, r, sider, skaft, krage, h, ut, tinde_h, tinder, vegg, veggs, topp, vinduer {z, b, h}, stang, flagg}]`
+  (bygTaarn): mangekantet skaft, utkraget brystning med tinder, flatt tak, flaggstang, ett rundbuevindu per side. Rådhustårnet.
+- `arkader: [{a, b, z0, h, topp, n, bredde, dybde, mork}]` (bygArkade): rundbuer med dybde langs veggen a→b, ramme i veggfargen og
+  mørk bakvegg. Rådhusets gatefasade og gårdsarkaden på 13394024 (Kvartal10).
+Høyder som tilpasningen per hus måler feil (tårn i omrisset, DTM på vollkrona ved Voldporten) står for hånd med grunn i
+kilder/hoyde-unntak.json; rapport/hoyder/legg_inn.py legger dem inn og regel 02 måler mot dem. Voldportens portmur står i data/porter.json
+(med kilde). verktoy/kontroll_iso.mjs slår av frustumtesten under kontrollrenderen (portbygg og bygg med deler ble kastet før).
+Rapport: rapport/landemerker/landemerker.md.

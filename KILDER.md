@@ -10,7 +10,9 @@
 | bygg.navn / nr / tekst | Tegnforklaringen i kartbrosjyren 2015 (1–46), norsk | Engelsk/tysk finnes i PDF-en, ikke lagt inn |
 | bygg.tak2 / gavl2 / takform | Gamlebyen fra 30.10: rene tak per hus (verktoy/tak_enkel.py): kropper fra kommunekartets omriss, takform og mønretning fra 2015-tegningene (kilder/tak-tegning.json) og ellers Kartverkets DOM−DTM | Utenfor Gamlebyen: rett skjelett fra fotavtrykket (verktoy/tak.py) |
 | bygg (husdeling) | 2015-tegningene (fasadegrensene) bekreftet av sprang i mønet i Kartverkets DOM, kilder/husdeling.json (verktoy/husdeling.py) | Sammenslåtte hus dekker flere kommunehus (regel 20: unntak med grunn) |
-| bygg.deler (rådhustårn) | Trykkfila | |
+| bygg.deler (rådhustårn) | Form: Kvartal14.ai (åttekant, brystning med tinder, flatt tak, flaggstang). Plass og høyde: Kartverkets DOM−DTM (platå 19,8–20,0 m ved (28,5, −87,8)); diameter fra ortofoto 2024 og DOM (verktoy/landemerker.py, 30.10) | Trykkfila hadde et firkantet pyramidetak på 21 m |
+| bygg.arkader | Kvartaltegningene (Kvartal10, Kvartal14), verktoy/landemerker.py | |
+| porter (Voldporten h, pw, ph) | Street View aug. 2010 (SØ) og DOM (takfot 7,5 m over veien) | `kilde` i data/porter.json |
 | veier, vann, gront, hull | OpenStreetMap | Plenene i Gamlebyen (3 OSM-flater) er skjult fra 29.10: plenene der tegnes fra ortofotoet (flater) |
 | landskap.veier[].w / p / flate (veibåndene) | Gamlebyen: bredde og midte målt mot kommunekartets gateareal (kjørevei) og ortofotoets belagte mark (gangvei), verktoy/bakke.py gater; «maalt» sier hva som gjelder per vei | Flate = flertallstypen under båndet; brostein tegnes med brosteinen (src/08) |
 | flater (typ gress/bed/grus/asfalt/brostein, kilde «ortofoto 2024 klassifisert …») | Ortofoto 2024 klassifisert per piksel (grønt, bar jord, belagt; belagt delt i brostein/asfalt/grus på farge og tekstur), kommunekartets arealtype der fotoet ikke ser (trær, skygge), verktoy/bakke.py overflater | Brostein er grunnen innenfor brosteinsflaten, gress på vollene; flatene er avvikene. Prøvepunkter dømt med øyet i kilder/bakke-maalt.json. Lys belegning kan ikke alltid skilles (brostein/grus) |
