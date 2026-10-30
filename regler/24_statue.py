@@ -41,4 +41,4 @@ for k in ('st.sokkel', 'st.retning', 'st.xy', 'st.figur'):
     if k not in kode: feil.append(f"- tegnekoden leser ikke {k} fra dataene")
 if not S: feil.append('- data/statue.json er tom')
 linjer += feil
-rapport('22_statue', not feil, linjer, 'rapport/torvet/statue.png')
+rapport('24_statue', not feil, linjer, 'rapport/torvet/statue.png')

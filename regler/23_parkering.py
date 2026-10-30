@@ -53,4 +53,4 @@ linjer.append(f"{len(P)} plasser fra kommunens lag, {sum(1 for p in P if p.get('
               f"antall kjent for {sum(1 for p in P if 'antall' in p)} ({sum(p.get('antall', 0) for p in P)} plasser), ukjent for {sum(1 for p in P if 'antall' not in p)}")
 linjer.append('kategorier: ' + ', '.join(f"{c} {n}" for c, n in sorted(kat.items(), key=lambda t: -t[1])))
 linjer += feil + adv
-rapport('21_parkering', not feil, linjer, 'rapport/torvet/parkering.png')
+rapport('23_parkering', not feil, linjer, 'rapport/torvet/parkering.png')
