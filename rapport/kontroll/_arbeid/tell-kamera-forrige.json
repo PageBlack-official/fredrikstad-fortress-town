@@ -1,0 +1,127 @@
+{
+ "tegning": "tell",
+ "par": {
+  "az": -12.32,
+  "el": 45.46,
+  "s": 5.1339,
+  "K": 4.7088,
+  "kz": 1.308,
+  "K_kilde": "tegnede vegger"
+ },
+ "A": [
+  [
+   4.930973548164219,
+   1.0769323999229483,
+   0.0,
+   -571.5835580239698
+  ],
+  [
+   1.4262162509165448,
+   -3.4984133604135583,
+   -4.708795066718822,
+   -408.40770529576605
+  ]
+ ],
+ "forskyvning": {
+  "bnr-193867677": [
+   0.5,
+   0.0
+  ],
+  "bnr-193867634": [
+   1.5,
+   2.49
+  ],
+  "bnr-193867685": [
+   0.82,
+   -4.91
+  ]
+ },
+ "blokker": [
+  {
+   "ids": [
+    "bnr-193867677"
+   ],
+   "d": [
+    0.5,
+    0.0
+   ],
+   "kant_for": 3.41,
+   "kant_etter": 3.36
+  },
+  {
+   "ids": [
+    "bnr-193867634"
+   ],
+   "d": [
+    1.5,
+    2.49
+   ],
+   "kant_for": 4.72,
+   "kant_etter": 4.41
+  },
+  {
+   "ids": [
+    "bnr-193867685"
+   ],
+   "d": [
+    0.82,
+    -4.91
+   ],
+   "kant_for": 2.57,
+   "kant_etter": 2.21
+  }
+ ],
+ "maal": {
+  "bunn": 3.0,
+  "topp": 4.0,
+  "iou": 0.5052300583969711,
+  "bare": 20,
+  "kant": 3.2029834985733032,
+  "omriss": 20.612887621298245
+ },
+ "bygg": [
+  "bnr-193867677",
+  "bnr-193867634",
+  "bnr-193867685"
+ ],
+ "utenfor_tegningen": [],
+ "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
+ "hus_forskyvning": {
+  "bnr-193867677": {
+   "median_pt": 3.15,
+   "median_px": 9.4,
+   "andel_innen_2pt": 0.38,
+   "beste_forskyvning_pt": [
+    1.5,
+    -1.0
+   ],
+   "median_etter_pt": 2.63
+  },
+  "bnr-193867634": {
+   "median_pt": 4.65,
+   "median_px": 14.0,
+   "andel_innen_2pt": 0.35,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 4.65
+  },
+  "bnr-193867685": {
+   "median_pt": 1.74,
+   "median_px": 5.2,
+   "andel_innen_2pt": 0.55,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 1.74
+  }
+ },
+ "registrering": {
+  "median_pt": 3.15,
+  "median_px": 9.4,
+  "andel_under_3pt": 0.33,
+  "R": 3.0
+ }
+}

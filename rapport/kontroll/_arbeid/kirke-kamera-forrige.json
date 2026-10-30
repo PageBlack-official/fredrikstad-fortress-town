@@ -1,0 +1,75 @@
+{
+ "tegning": "kirke",
+ "par": {
+  "az": -7.16,
+  "el": 45.46,
+  "s": 5.6005,
+  "K": 3.473,
+  "kz": 0.884,
+  "K_kilde": "median av de andre tegningene"
+ },
+ "A": [
+  [
+   5.530023358344996,
+   0.6950419766390696,
+   0.0,
+   251.56279807303937
+  ],
+  [
+   0.8803744477607496,
+   -3.932181709379842,
+   -3.473034456823627,
+   79.00027940088542
+  ]
+ ],
+ "forskyvning": {
+  "bnr-193867529": [
+   0.0,
+   -2.1
+  ]
+ },
+ "blokker": [
+  {
+   "ids": [
+    "bnr-193867529"
+   ],
+   "d": [
+    0.0,
+    -2.1
+   ],
+   "kant_for": 3.13,
+   "kant_etter": 3.08
+  }
+ ],
+ "maal": {
+  "bunn": 12.0,
+  "topp": 41.0,
+  "iou": 0.42380793597865957,
+  "bare": 24,
+  "kant": 4.2475457191467285,
+  "omriss": 58.78644632244362
+ },
+ "bygg": [
+  "bnr-193867529"
+ ],
+ "utenfor_tegningen": [],
+ "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
+ "hus_forskyvning": {
+  "bnr-193867529": {
+   "median_pt": 2.56,
+   "median_px": 7.7,
+   "andel_innen_2pt": 0.43,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 2.56
+  }
+ },
+ "registrering": {
+  "median_pt": 2.56,
+  "median_px": 7.7,
+  "andel_under_3pt": 1.0,
+  "R": 3.0
+ }
+}

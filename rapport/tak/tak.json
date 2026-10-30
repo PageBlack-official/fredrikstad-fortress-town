@@ -254,26 +254,8 @@
  },
  "bnr-193867502": {
   "takform": "vinkel:sal+sal",
-  "kilde": "DOM sal langs rms 1.35; DOM sal tvers rms 1.13",
+  "kilde": "DOM sal tvers rms 1.13; DOM sal langs rms 0.94",
   "kropper": [
-   {
-    "form": "sal",
-    "langs": true,
-    "ender": [
-     "fri",
-     "fri"
-    ],
-    "mål": [
-     24.8,
-     8.9
-    ],
-    "dom": {
-     "rms": 1.35,
-     "h": 6.14,
-     "th": 0.66,
-     "n": 737
-    }
-   },
    {
     "form": "sal",
     "langs": false,
@@ -283,13 +265,31 @@
     ],
     "mål": [
      8.3,
-     19.9
+     19.8
     ],
     "dom": {
      "rms": 1.13,
-     "h": 6.21,
-     "th": 1.11,
-     "n": 554
+     "h": 6.13,
+     "th": 1.15,
+     "n": 552
+    }
+   },
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     11.3,
+     8.9
+    ],
+    "dom": {
+     "rms": 0.94,
+     "h": 7.08,
+     "th": 0.62,
+     "n": 327
     }
    }
   ]
@@ -1633,8 +1633,8 @@
   ]
  },
  "bnr-193971369": {
-  "takform": "vinkel:sal+valm",
-  "kilde": "DOM sal tvers rms 1.37; DOM valm langs rms 0.67",
+  "takform": "sal",
+  "kilde": "DOM sal tvers rms 0.90",
   "kropper": [
    {
     "form": "sal",
@@ -1644,32 +1644,14 @@
      "fri"
     ],
     "mål": [
-     4.2,
-     27.8
+     8.4,
+     19.4
     ],
     "dom": {
-     "rms": 1.37,
-     "h": 5.3,
-     "th": 0.12,
-     "n": 272
-    }
-   },
-   {
-    "form": "valm",
-    "langs": true,
-    "ender": [
-     "inne",
-     "fri"
-    ],
-    "mål": [
-     4.7,
-     18.4
-    ],
-    "dom": {
-     "rms": 0.67,
-     "h": 4.92,
-     "th": 0.55,
-     "n": 235
+     "rms": 0.9,
+     "h": 3.26,
+     "th": 0.96,
+     "n": 457
     }
    }
   ]
@@ -2642,7 +2624,7 @@
  },
  "bnr-193868096": {
   "takform": "sal",
-  "kilde": "DOM sal tvers rms 0.53",
+  "kilde": "DOM sal tvers rms 0.42",
   "kropper": [
    {
     "form": "sal",
@@ -2652,14 +2634,14 @@
      "fri"
     ],
     "mål": [
-     11.8,
-     16.4
+     11.7,
+     13.5
     ],
     "dom": {
-     "rms": 0.53,
-     "h": 5.11,
-     "th": 0.33,
-     "n": 564
+     "rms": 0.42,
+     "h": 4.94,
+     "th": 0.4,
+     "n": 469
     }
    }
   ]
@@ -3140,7 +3122,7 @@
  },
  "bnr-193867928": {
   "takform": "vinkel:sal+sal",
-  "kilde": "DOM sal tvers rms 1.12; DOM sal tvers rms 0.41",
+  "kilde": "DOM sal tvers rms 1.22; DOM sal tvers rms 0.37",
   "kropper": [
    {
     "form": "sal",
@@ -3151,13 +3133,13 @@
     ],
     "mål": [
      20.2,
-     27.9
+     23.4
     ],
     "dom": {
-     "rms": 1.12,
-     "h": 8.94,
+     "rms": 1.22,
+     "h": 9.04,
      "th": 0.12,
-     "n": 1284
+     "n": 949
     }
    },
    {
@@ -3172,9 +3154,9 @@
      5.7
     ],
     "dom": {
-     "rms": 0.41,
-     "h": 7.78,
-     "th": 0.62,
+     "rms": 0.37,
+     "h": 7.9,
+     "th": 0.6,
      "n": 109
     }
    }
@@ -7904,6 +7886,126 @@
      "h": 6.82,
      "th": 0.12,
      "n": 36
+    }
+   }
+  ]
+ },
+ "pb-62": {
+  "takform": "sal",
+  "kilde": "DOM sal langs rms 0.50",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     9.9,
+     3.0
+    ],
+    "dom": {
+     "rms": 0.5,
+     "h": 5.93,
+     "th": 0.12,
+     "n": 59
+    }
+   }
+  ]
+ },
+ "pb-63": {
+  "takform": "sal",
+  "kilde": "DOM sal langs rms 1.04",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     11.0,
+     8.8
+    ],
+    "dom": {
+     "rms": 1.04,
+     "h": 5.06,
+     "th": 0.78,
+     "n": 305
+    }
+   }
+  ]
+ },
+ "pb-64": {
+  "takform": "sal",
+  "kilde": "DOM sal langs rms 1.94",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     2.5,
+     8.6
+    ],
+    "dom": {
+     "rms": 1.94,
+     "h": 5.19,
+     "th": 0.28,
+     "n": 40
+    }
+   }
+  ]
+ },
+ "pb-65": {
+  "takform": "sal",
+  "kilde": "DOM sal langs rms 1.04",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     4.4,
+     8.8
+    ],
+    "dom": {
+     "rms": 1.04,
+     "h": 6.51,
+     "th": 0.12,
+     "n": 80
+    }
+   }
+  ]
+ },
+ "pb-66": {
+  "takform": "sal",
+  "kilde": "DOM sal langs rms 0.57",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": true,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     20.2,
+     4.5
+    ],
+    "dom": {
+     "rms": 0.57,
+     "h": 8.9,
+     "th": 0.12,
+     "n": 257
     }
    }
   ]

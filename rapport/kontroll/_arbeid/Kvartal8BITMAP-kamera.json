@@ -1,25 +1,25 @@
 {
  "tegning": "Kvartal8BITMAP",
  "par": {
-  "az": -12.34,
+  "az": -12.99,
   "el": 45.46,
-  "s": 4.7898,
+  "s": 4.7375,
   "K": 2.5178,
-  "kz": 0.749,
+  "kz": 0.758,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.599956528005388,
-   1.006212553048754,
+   4.529062230934417,
+   1.0444219867884095,
    0.0,
-   -212.70023903039618
+   -210.16380932483543
   ],
   [
-   1.3326828203514454,
-   -3.263537434278865,
+   1.3874832727525575,
+   -3.212322593848904,
    -2.517845390606714,
-   263.1978219743909
+   256.61161101177805
   ]
  ],
  "forskyvning": {
@@ -117,17 +117,17 @@
     0.0,
     0.0
    ],
-   "kant_for": 2.27,
-   "kant_etter": 2.27
+   "kant_for": 2.34,
+   "kant_etter": 2.34
   }
  ],
  "maal": {
-  "bunn": 4.0,
-  "topp": 5.0,
-  "iou": 0.6330803644201337,
-  "bare": 6,
-  "kant": 2.495012402534485,
-  "omriss": 20.639283296839054
+  "bunn": 5.0,
+  "topp": 6.0,
+  "iou": 0.6179225626438135,
+  "bare": 10,
+  "kant": 2.5734291076660156,
+  "omriss": 23.331137436069746
  },
  "bygg": [
   "bnr-193972152",
@@ -152,54 +152,54 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193972152": {
-   "median_pt": 1.89,
-   "median_px": 5.7,
-   "andel_innen_2pt": 0.52,
+   "median_pt": 1.82,
+   "median_px": 5.5,
+   "andel_innen_2pt": 0.53,
    "beste_forskyvning_pt": [
-    3.5,
-    -2.5
+    5.0,
+    -4.5
    ],
    "median_etter_pt": 1.28
   },
   "bnr-193868258": {
-   "median_pt": 0.95,
-   "median_px": 2.8,
-   "andel_innen_2pt": 0.7,
+   "median_pt": 1.39,
+   "median_px": 4.2,
+   "andel_innen_2pt": 0.64,
    "beste_forskyvning_pt": [
-    2.0,
-    -10.0
-   ],
-   "median_etter_pt": 0.67
-  },
-  "pb-5": {
-   "median_pt": 2.08,
-   "median_px": 6.3,
-   "andel_innen_2pt": 0.48,
-   "beste_forskyvning_pt": [
-    5.0,
+    8.5,
     -8.5
    ],
-   "median_etter_pt": 1.53
+   "median_etter_pt": 0.81
   },
-  "bnr-193868266": {
-   "median_pt": 1.77,
-   "median_px": 5.3,
-   "andel_innen_2pt": 0.54,
+  "pb-5": {
+   "median_pt": 1.99,
+   "median_px": 6.0,
+   "andel_innen_2pt": 0.5,
    "beste_forskyvning_pt": [
-    1.5,
+    5.5,
     -10.0
    ],
-   "median_etter_pt": 1.56
+   "median_etter_pt": 1.54
+  },
+  "bnr-193868266": {
+   "median_pt": 2.14,
+   "median_px": 6.4,
+   "andel_innen_2pt": 0.48,
+   "beste_forskyvning_pt": [
+    8.5,
+    -2.5
+   ],
+   "median_etter_pt": 1.25
   },
   "bnr-193868274": {
-   "median_pt": 1.5,
-   "median_px": 4.5,
-   "andel_innen_2pt": 0.67,
+   "median_pt": 1.24,
+   "median_px": 3.7,
+   "andel_innen_2pt": 0.7,
    "beste_forskyvning_pt": [
-    3.5,
-    -3.5
+    7.5,
+    -4.0
    ],
-   "median_etter_pt": 0.89
+   "median_etter_pt": 0.94
   },
   "bnr-193868312": {
    "median_pt": 1.99,
@@ -207,124 +207,124 @@
    "andel_innen_2pt": 0.5,
    "beste_forskyvning_pt": [
     3.5,
-    0.0
+    1.0
    ],
-   "median_etter_pt": 1.65
+   "median_etter_pt": 1.72
   },
   "bnr-193868282": {
-   "median_pt": 1.33,
-   "median_px": 4.0,
+   "median_pt": 1.35,
+   "median_px": 4.1,
    "andel_innen_2pt": 0.62,
    "beste_forskyvning_pt": [
-    -3.5,
-    -0.5
+    -4.5,
+    -2.5
    ],
-   "median_etter_pt": 1.07
+   "median_etter_pt": 1.11
   },
   "bnr-13414904": {
-   "median_pt": 1.7,
-   "median_px": 5.1,
-   "andel_innen_2pt": 0.54,
+   "median_pt": 1.87,
+   "median_px": 5.6,
+   "andel_innen_2pt": 0.52,
    "beste_forskyvning_pt": [
     10.0,
-    -2.0
+    -0.5
    ],
-   "median_etter_pt": 1.22
+   "median_etter_pt": 1.27
   },
   "bnr-193972136": {
-   "median_pt": 4.11,
-   "median_px": 12.3,
-   "andel_innen_2pt": 0.32,
+   "median_pt": 4.18,
+   "median_px": 12.6,
+   "andel_innen_2pt": 0.31,
    "beste_forskyvning_pt": [
-    -1.5,
-    9.5
+    -2.5,
+    8.5
    ],
-   "median_etter_pt": 1.4
+   "median_etter_pt": 1.35
   },
   "bnr-300279164": {
-   "median_pt": 1.6,
-   "median_px": 4.8,
-   "andel_innen_2pt": 0.58,
+   "median_pt": 1.37,
+   "median_px": 4.1,
+   "andel_innen_2pt": 0.64,
    "beste_forskyvning_pt": [
-    5.5,
-    -4.0
+    8.0,
+    10.0
    ],
-   "median_etter_pt": 0.78
+   "median_etter_pt": 0.81
   },
   "bnr-193868290": {
    "median_pt": 1.88,
    "median_px": 5.6,
-   "andel_innen_2pt": 0.53,
+   "andel_innen_2pt": 0.52,
    "beste_forskyvning_pt": [
-    -2.0,
-    3.0
+    -4.0,
+    3.5
    ],
-   "median_etter_pt": 1.2
+   "median_etter_pt": 1.27
   },
   "bnr-193868533": {
-   "median_pt": 1.66,
-   "median_px": 5.0,
-   "andel_innen_2pt": 0.55,
+   "median_pt": 1.81,
+   "median_px": 5.4,
+   "andel_innen_2pt": 0.54,
    "beste_forskyvning_pt": [
-    9.5,
-    2.5
+    10.0,
+    1.0
    ],
    "median_etter_pt": 1.01
   },
   "pb-13": {
-   "median_pt": 1.43,
-   "median_px": 4.3,
-   "andel_innen_2pt": 0.62,
+   "median_pt": 1.32,
+   "median_px": 4.0,
+   "andel_innen_2pt": 0.66,
    "beste_forskyvning_pt": [
-    -1.5,
-    -0.5
+    4.5,
+    -4.5
    ],
-   "median_etter_pt": 1.28
+   "median_etter_pt": 0.74
   },
   "bnr-193972144": {
-   "median_pt": 3.41,
-   "median_px": 10.2,
-   "andel_innen_2pt": 0.37,
+   "median_pt": 3.76,
+   "median_px": 11.3,
+   "andel_innen_2pt": 0.36,
    "beste_forskyvning_pt": [
     10.0,
     -10.0
    ],
-   "median_etter_pt": 1.59
+   "median_etter_pt": 2.16
   },
   "bnr-193971288": {
-   "median_pt": 1.25,
-   "median_px": 3.8,
-   "andel_innen_2pt": 0.66,
+   "median_pt": 1.07,
+   "median_px": 3.2,
+   "andel_innen_2pt": 0.69,
    "beste_forskyvning_pt": [
-    -5.5,
-    6.0
+    0.5,
+    10.0
    ],
    "median_etter_pt": 0.95
   },
   "bnr-193971261": {
-   "median_pt": 1.67,
-   "median_px": 5.0,
-   "andel_innen_2pt": 0.55,
+   "median_pt": 1.61,
+   "median_px": 4.8,
+   "andel_innen_2pt": 0.57,
    "beste_forskyvning_pt": [
     10.0,
-    10.0
+    8.0
    ],
-   "median_etter_pt": 1.22
+   "median_etter_pt": 1.14
   },
   "bnr-16313173": {
-   "median_pt": 2.21,
-   "median_px": 6.6,
-   "andel_innen_2pt": 0.46,
+   "median_pt": 2.42,
+   "median_px": 7.3,
+   "andel_innen_2pt": 0.43,
    "beste_forskyvning_pt": [
-    3.5,
-    -4.5
+    5.5,
+    10.0
    ],
-   "median_etter_pt": 1.38
+   "median_etter_pt": 1.29
   }
  },
  "registrering": {
-  "median_pt": 1.7,
-  "median_px": 5.1,
+  "median_pt": 1.82,
+  "median_px": 5.5,
   "andel_under_3pt": 0.88,
   "R": 3.0
  }

@@ -3,23 +3,23 @@
  "par": {
   "az": -14.58,
   "el": 45.46,
-  "s": 5.0424,
+  "s": 5.0475,
   "K": 5.2531,
-  "kz": 1.485,
+  "kz": 1.484,
   "K_kilde": "tegnede vegger"
  },
  "A": [
   [
-   4.761867544235474,
-   1.2387409144958812,
+   4.766597929805393,
+   1.2401807199879173,
    0.0,
-   727.6558715761248
+   728.8036411104756
   ],
   [
-   1.6560449073387251,
-   -3.3750424497729665,
+   1.6579834882599034,
+   -3.3783916053308722,
    -5.253144290789383,
-   13.654012719496592
+   13.741310382379723
   ]
  ],
  "forskyvning": {
@@ -37,17 +37,17 @@
     0.0,
     0.0
    ],
-   "kant_for": 3.26,
-   "kant_etter": 3.26
+   "kant_for": 3.24,
+   "kant_etter": 3.24
   }
  ],
  "maal": {
   "bunn": 2.0,
   "topp": 6.0,
-  "iou": 0.65745555801431,
-  "bare": 7,
-  "kant": 3.388056755065918,
-  "omriss": 16.009787144798544
+  "iou": 0.6634202630971613,
+  "bare": 8,
+  "kant": 3.40262234210968,
+  "omriss": 15.786679483819485
  },
  "bygg": [
   "bnr-193870279"
@@ -56,19 +56,19 @@
  "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
  "hus_forskyvning": {
   "bnr-193870279": {
-   "median_pt": 2.8,
-   "median_px": 8.4,
+   "median_pt": 2.74,
+   "median_px": 8.2,
    "andel_innen_2pt": 0.41,
    "beste_forskyvning_pt": [
-    0.5,
-    0.5
+    0.0,
+    0.0
    ],
-   "median_etter_pt": 2.72
+   "median_etter_pt": 2.74
   }
  },
  "registrering": {
-  "median_pt": 2.8,
-  "median_px": 8.4,
+  "median_pt": 2.74,
+  "median_px": 8.2,
   "andel_under_3pt": 1.0,
   "R": 3.0
  }

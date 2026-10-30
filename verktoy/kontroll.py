@@ -382,7 +382,20 @@ def tilpass_kamera(navn, logg=print):
                 beste = (f, list(map(float, r.x)), info)
         return beste
 
-    beste = tilpass(start(), 'felles')
+    # forrige kamera (rapport/kontroll/_arbeid) er også en start: tilpasningen er ikke konveks, og en liten endring i modellen
+    # kan ellers sende den til et annet lokalt minimum (kvartal6 30.10: 5,88 -> 5,35 pt/m etter én husdeling). Beste mål vinner.
+    starter = start()
+    fk = os.path.join(ARB, navn + '-kamera.json')
+    for f_ in [fk] + sorted(__import__('glob').glob(os.path.join(ARB, navn + '-kamera-*.json'))):
+        if not os.path.exists(f_): continue
+        try:
+            Ap = np.array(json.load(open(f_))['A'], float)
+            Mr = Ap[:, :2] @ np.linalg.inv(FORM_REF)
+            w0 = float(math.sqrt(abs(np.linalg.det(Mr)))); w1 = math.degrees(math.atan2(Mr[1, 0], Mr[0, 0]))
+            starter.append([w0, w1, float(Ap[0, 3]), float(Ap[1, 3])] + ([] if K else [float(-Ap[1, 2])]))
+        except Exception:
+            pass
+    beste = tilpass(starter, 'felles')
     utenfor = []
     for runde in (2, 3):
         P = fast_P(beste[1]); inn = []; ut_ = []

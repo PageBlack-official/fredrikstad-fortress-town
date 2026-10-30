@@ -792,7 +792,7 @@
   "id": "bnr-193867502",
   "navn": "Kiørboegården",
   "vegger": {
-   "5": {
+   "0": {
     "tegning": "Kvartal13",
     "rader": [
      4,
@@ -804,22 +804,13 @@
    "3": {
     "tegning": "Kvartal13",
     "rader": [
-     1,
+     2,
      2
     ],
     "dorer": 1,
     "notat": []
    },
-   "2": {
-    "tegning": "Kvartal13",
-    "rader": [
-     6,
-     3
-    ],
-    "dorer": 1,
-    "notat": []
-   },
-   "4": {
+   "1": {
     "tegning": "Street View",
     "rader": [
      1,
@@ -831,9 +822,51 @@
     ]
    }
   },
-  "tegnet": 23,
+  "tegnet": 14,
   "regler": 28,
   "streetview": 3
+ },
+ {
+  "id": "pb-64",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal13",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal13",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 4,
+  "regler": 0,
+  "streetview": 0
+ },
+ {
+  "id": "pb-63",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal13",
+    "rader": [
+     3,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 4,
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "bnr-193868460",
@@ -1087,16 +1120,31 @@
   "id": "bnr-193868096",
   "navn": null,
   "vegger": {
-   "8": {
+   "1": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     7,
-     2
+     6,
+     1
     ],
     "dorer": 0,
     "notat": []
+   }
+  },
+  "tegnet": 7,
+  "regler": 2,
+  "streetview": 0
+ },
+ {
+  "id": "pb-62",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
    },
-   "6": {
+   "3": {
     "tegning": "Kvartal2BITMP",
     "rader": [
      1,
@@ -1106,8 +1154,8 @@
     "notat": []
    }
   },
-  "tegnet": 12,
-  "regler": 2,
+  "tegnet": 3,
+  "regler": 0,
   "streetview": 0
  },
  {
@@ -1927,10 +1975,10 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193867928",
+  "id": "pb-66",
   "navn": null,
   "vegger": {
-   "5": {
+   "2": {
     "tegning": "Kvartal9",
     "rader": [
      8
@@ -1940,7 +1988,7 @@
    }
   },
   "tegnet": 8,
-  "regler": 66,
+  "regler": 2,
   "streetview": 0
  },
  {
@@ -2373,20 +2421,37 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193971369",
+  "id": "pb-65",
   "navn": null,
   "vegger": {
-   "7": {
+   "0": {
     "tegning": "kvartal7",
     "rader": [
-     4
+     1
     ],
-    "dorer": 2,
+    "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 6,
-  "regler": 7,
+  "tegnet": 1,
+  "regler": 4,
+  "streetview": 0
+ },
+ {
+  "id": "bnr-193971369",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal7",
+    "rader": [
+     3
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 4,
+  "regler": 5,
   "streetview": 0
  },
  {

@@ -77,7 +77,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193820409 |  | [4, 1, 1] | [4, 1] | 1 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 | bnr-13418268 |  | [0, 1] | [0] | 2 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 
-## Fasithus fra kvartaltegningene, bare sammenlignet (102)
+## Fasithus fra kvartaltegningene, bare sammenlignet (101)
 
 Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 
@@ -109,14 +109,13 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868398 |  | [5] | [5] | 1 midt-høyre, rundbuet kjellernedgang med mørk dør | 1 | 0 | 0 | 2 | 1 |  |
 | bnr-193972292 |  | [4, 5] | [3, 2] | 2: grå/grønn fiskebeinsdør med trekantfronton midt, lav plankedør til venstre | 3 | 0 | 0 | 1 | 0 | ja |
 | bnr-193868525 |  | [1, 1] | [] | 1 grå tofløyet fyllingsdør med steintrapp og rekkverk | 0 | 0 | 0 | None | 2 | ja |
-| bnr-193868096 |  | [3, 3] | [1, 2] | kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10) | 0 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193971946 |  | [3] | [3] | 1 brun plankedør til venstre (ca. 0.12) med lykt og skilt | 1 | 1 lite takvindu | 0 | ikke synlig | 1 |  |
 | bnr-193868029 |  | [1, 1] | [1] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 1 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
 | bnr-6242812 |  | [5, 5, 4] | [4, 4, 3] | 0 på denne fasaden | 0 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
 | bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 0 | ja |
 | bnr-193868320 |  | [11, 11] | [11, 11] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 |  |
 | bnr-193972411 | Sindinggården | [0] | [] | 1 stor tofløyet låveport (ca. 0.15–0.45 av veggen) med jernbeslag, og 1 smal dør til høyre (ca. 0.88–0.98) | 1 | 0 | 0 | 0 | 1 |  |
-| bnr-193867502 | Kiørboegården | [1, 2] | [1, 2] | 0 på denne fasaden; port i muren | 0 | 0 | 0 | 1 rød teglpipe | 5 |  |
+| bnr-193867502 | Kiørboegården | [1, 2] | [1] | 0 på denne fasaden; port i muren | 0 | 0 | 0 | 1 rød teglpipe | 4 | ja |
 | bnr-193867499 | Kommandantgården | [9] | [9] | 1 mørk brun dør i sokkelen (ca. 0.60), kjellerluker med rundbue (4 stk) | 1 | 2 arker med saltak (ca. 0.55 og 0.70) med hvite vinduer | 0 | ikke synlig fra denne vinkelen | 6 |  |
 | bnr-193870295 | Bakeriet | [10] | [13] | 2 grå plankedører (ca. 0.27 og 0.72) med små steintrapper | 1 | 5 små takvinduer (skylights) | 0 | 3 (2 murte tegl, 1 blikk) | 4 | ja |
 | bnr-193870325 | Hovedvakten – det gamle slaveri | [1] | [4] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 4 | ja |
@@ -186,7 +185,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867510 | Ekserserhuset | [3] | [6] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193869580 | Voldportravelinet | [2, 2] | [2] | 1 dør på NV-siden (ca. 0.55), benk foran | 0 | 0 | 0 | 1 murt teglpipe på mønet | 2 | ja |
 
-## Hoppet over (143)
+## Hoppet over (144)
 
 - bnr-193869548 Voldporten med vaktstuen: portbygg (data/porter.json røres ikke)
 - bnr-193820883 : ikke synlig fra gata
@@ -218,6 +217,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193868118 : ikke synlig fra gata
 - bnr-193868703 : ikke synlig fra gata
 - bnr-193971962 : ikke synlig fra gata
+- bnr-193868096 : siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (mot Smedjegaten) + SV-hjørne)
 - bnr-193867324 Artillerismien: merknaden: ikke bekreftet at det er riktig bygg (lastebil dekker)
 - bnr-193868002 : samme vegg (7) som en annen side: NØ (gatefasade, venstre del) sett skrått
 - bnr-6242812 : siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (fasade mot Raadhusgaten))

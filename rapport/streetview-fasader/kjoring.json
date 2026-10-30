@@ -2055,39 +2055,8 @@
   "id": "bnr-193868096",
   "navn": null,
   "sikkerhet": "høy",
-  "side": "SØ (mot Smedjegaten) + SV-hjørne",
-  "vegg": 6,
-  "vegg_L": 9.6,
-  "avstand": 9.5,
-  "vinkel": 18.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10)",
-   "takvinduer": "0",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SØ (mot Smedjegaten) + SV-hjørne); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    1,
-    2
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": true,
-  "dorer_avvik": true
+  "status": "hoppet over",
+  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (mot Smedjegaten) + SV-hjørne)"
  },
  {
   "id": "bnr-193971946",
@@ -2816,10 +2785,10 @@
   "navn": "Kiørboegården",
   "sikkerhet": "høy",
   "side": "V/SV (gatefasade) + portmur",
-  "vegg": 4,
-  "vegg_L": 16.1,
-  "avstand": 25.7,
-  "vinkel": 1.0,
+  "vegg": 1,
+  "vegg_L": 3.1,
+  "avstand": 25.5,
+  "vinkel": 15.0,
   "sv": {
    "rader": [
     [
@@ -2839,14 +2808,13 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    1,
-    2
+    1
    ],
    "dorer": 0,
    "arker": 0,
-   "piper": 5
+   "piper": 4
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {

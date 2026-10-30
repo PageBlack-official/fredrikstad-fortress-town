@@ -101,6 +101,97 @@
    "nye_id": [
     "pb-61"
    ]
+  },
+  {
+   "id": "bnr-193868096",
+   "tegning": "Kvartal2BITMP",
+   "kutt": [
+    [
+     [
+      160.14,
+      136.16
+     ],
+     [
+      167.24,
+      148.0
+     ]
+    ]
+   ],
+   "grunn": "kontrollen fant to tegnede fasader i ulike farger på én modellvegg, og Kartverkets DOM har sprang i mønet: 1,1 m, 2,9 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-62"
+   ]
+  },
+  {
+   "id": "bnr-193867502",
+   "tegning": "Kvartal13",
+   "kutt": [
+    [
+     [
+      -87.11,
+      -22.86
+     ],
+     [
+      -97.26,
+      -18.83
+     ]
+    ],
+    [
+     [
+      -83.05,
+      -12.64
+     ],
+     [
+      -93.2,
+      -8.61
+     ]
+    ]
+   ],
+   "grunn": "Kvartal13: tegningen har tre grå hus der modellen hadde ett; Kartverkets DOM har sprang i mønet på 3,3 m og 1,6 m, 4–5 m fra fasadegrensene i tegningen",
+   "nye_id": [
+    "pb-63",
+    "pb-64"
+   ]
+  },
+  {
+   "id": "bnr-193971369",
+   "tegning": "kvartal7",
+   "kutt": [
+    [
+     [
+      -40.81,
+      63.93
+     ],
+     [
+      -38.57,
+      69.73
+     ]
+    ]
+   ],
+   "grunn": "kvartal7: tegningen har to fasader med hvert sitt saltak; Kartverkets DOM har sprang på 1,8 m i mønet 2 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-65"
+   ]
+  },
+  {
+   "id": "bnr-193867928",
+   "tegning": "Kvartal9",
+   "kutt": [
+    [
+     [
+      166.97,
+      29.42
+     ],
+     [
+      176.05,
+      49.69
+     ]
+    ]
+   ],
+   "grunn": "kontrollen fant to tegnede fasader i ulike farger på én modellvegg, og Kartverkets DOM har sprang i mønet: 1,6 m, 2,6 m fra fasadegrensen i tegningen",
+   "nye_id": [
+    "pb-66"
+   ]
   }
  ],
  "sammen": [
