@@ -2,7 +2,7 @@
 
 Laget av verktoy/sv_avvik.py (30.10) fra rapport/streetview-fasader/kjoring.json og vektoravlesningen av tegningene. Reglene står øverst i verktøyet. Tegningen er fasit for vinduer og dører; «endret siden 2015» betyr at Street View viser en annen fasade i dag, og huset står fortsatt etter tegningen til Vegar sier noe annet.
 
-feil vegg (Street View lagt på): 35 · feil vindu: 23 · feil vegg: 21 · endret siden 2015: 19 · feil vindu (rettet): 2
+feil vegg (Street View lagt på): 35 · feil vindu: 23 · feil vegg: 20 · endret siden 2015: 19 · feil vindu (rettet): 2
 
 | id | navn | siden kameraet så | Street View | før (modell) | vurdering | grunn |
 |---|---|---|---|---|---|---|
@@ -11,13 +11,13 @@ feil vegg (Street View lagt på): 35 · feil vindu: 23 · feil vegg: 21 · endre
 | bnr-193867715 |  | S | [2, 2] | [] | endret siden 2015 | tegningen [], Street View [2, 2] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193867723 |  | SØ | [6, 7] | [4, 6] | endret siden 2015 | tegningen [4, 6], Street View [6, 7] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193867839 |  | S | [6, 8] | [4, 4] | endret siden 2015 | tegningen [4, 4], Street View [6, 8] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
-| bnr-193867952 |  | SØ | [10, 9] | [7, 7] | endret siden 2015 | tegningen [8, 7], Street View [10, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
-| bnr-193868061 | Artillerigården | SV | [11, 12] | [2, 5] | endret siden 2015 | tegningen [3, 5], Street View [11, 12] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
+| bnr-193867952 |  | SØ | [10, 9] | [8, 7] | endret siden 2015 | tegningen [8, 7], Street View [10, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
+| bnr-193868061 | Artillerigården | SV | [11, 12] | [7, 8] | endret siden 2015 | tegningen [3, 5], Street View [11, 12] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193868096 |  | SØ | [3, 3] | [1, 2] | endret siden 2015 | tegningen [1, 2], Street View [3, 3] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193868347 |  | SØ | [5, 5] | [2] | endret siden 2015 | tegningen [2], Street View [5, 5] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193868533 |  | SØ | [1] | [] | endret siden 2015 | tegningen [], Street View [1] (middels sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193868568 | Brannstasjon - uthus til Infanterikasernen | S | [0] | [] | endret siden 2015 | tegningen [], Street View [0] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
-| bnr-193869572 |  | SV | [8, 9] | [5, 3] | endret siden 2015 | tegningen [6, 3], Street View [8, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
+| bnr-193869572 |  | SV | [8, 9] | [6, 8] | endret siden 2015 | tegningen [6, 3], Street View [8, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193870228 |  | SØ | [6, 6] | [5, 5, 1] | endret siden 2015 | tegningen [5, 5, 1], Street View [6, 6] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193870260 |  | S | [6, 6] | [4, 4] | endret siden 2015 | tegningen [4, 4], Street View [6, 6] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
 | bnr-193972292 |  | S | [4, 5] | [3, 2] | endret siden 2015 | tegningen [4, 2], Street View [4, 5] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen |
@@ -45,7 +45,6 @@ feil vegg (Street View lagt på): 35 · feil vindu: 23 · feil vegg: 21 · endre
 | bnr-193972195 |  | S | [2] | [1, 1, 1] | feil vegg | Street View så S-siden (4 m), som tegningen ikke viser; tegningen viser ingen lest vegg |
 | bnr-193972403 |  | N | [2, 4] | [2, 3, 2] | feil vegg | Street View så N-siden (17 m), som tegningen ikke viser; tegningen viser ingen lest vegg |
 | bnr-194006187 |  | V/S | [2] | [] | feil vegg | Street View så V/S-siden (10 m), som tegningen ikke viser; tegningen viser ingen lest vegg |
-| pb-45 |  | S | [0] | [] | feil vegg | Street View så S-siden (2 m), som tegningen ikke viser; tegningen viser ingen lest vegg |
 | bnr-193867499 | Kommandantgården | NV | [9] | [9] | feil vegg (Street View lagt på) | Street View så NV-siden (34 m), som tegningen ikke viser: veggen har nå Street View [9] i stedet for reglene |
 | bnr-193867502 | Kiørboegården | V/SV | [1, 2] | [1, 2] | feil vegg (Street View lagt på) | Street View så V/SV-siden (16 m), som tegningen ikke viser: veggen har nå Street View [1, 2] i stedet for reglene |
 | bnr-193867537 | Infanterikasernen | N | [6, 5] | [6, 5] | feil vegg (Street View lagt på) | Street View så N-siden (44 m), som tegningen ikke viser: veggen har nå Street View [6, 5] i stedet for reglene |

@@ -282,8 +282,8 @@
    12
   ],
   "modell": [
-   2,
-   5
+   7,
+   8
   ],
   "vurdering": "endret siden 2015",
   "grunn": "tegningen [3, 5], Street View [11, 12] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
@@ -808,7 +808,7 @@
    9
   ],
   "modell": [
-   7,
+   8,
    7
   ],
   "vurdering": "endret siden 2015",
@@ -1263,18 +1263,6 @@
   "sikkerhet": "middels"
  },
  {
-  "id": "pb-45",
-  "navn": null,
-  "side": "S",
-  "sv": [
-   0
-  ],
-  "modell": [],
-  "vurdering": "feil vegg",
-  "grunn": "Street View så S-siden (2 m), som tegningen ikke viser; tegningen viser ingen lest vegg",
-  "sikkerhet": "høy"
- },
- {
   "id": "bnr-193867855",
   "navn": null,
   "side": "S",
@@ -1479,8 +1467,8 @@
    9
   ],
   "modell": [
-   5,
-   3
+   6,
+   8
   ],
   "vurdering": "endret siden 2015",
   "grunn": "tegningen [6, 3], Street View [8, 9] (høy sikkerhet): flere etasjer eller vinduer i dag enn i tegningen",
