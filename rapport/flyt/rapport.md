@@ -36,4 +36,6 @@ Må sjekkes i ekte Chrome og på telefon (programvare-GPU-en her kan ikke vise f
 bunnarket (tast d / ?d=1), at bunnarket føles riktig under fingeren på iPhone (Safari) og Android, Android-tilbake, og at sidepanelet ikke
 dekker noe viktig på 13-tommers skjerm.
 
-Kontrollbilder: verktoy/kort-bilder.mjs (desktop: sidepanel med kirka midt i den frie flaten, sett 29.10).
+Sidepanelet, sett 30.10 etter klikk på kirka: på 1280×800 og 1440×900 dekker det 392×239 px øverst til venstre (9 % og 7 % av bildet), og kirka står hel i den frie flaten. Ikke endret.
+
+Kontrollbilder: verktoy/kort-bilder.mjs [desktop|d1280|d1440|mobil] (desktop: sidepanel med kirka midt i den frie flaten, sett 29.10).
