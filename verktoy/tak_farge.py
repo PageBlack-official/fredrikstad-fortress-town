@@ -71,6 +71,8 @@ def familie(rgb):
         return 'grå'
     if (hd < 70 or hd >= 335) and l < 0.36:
         return 'brun'
+    if 18 <= hd < 50 and l < 0.48 and s < 0.45:      # brunt panel i sol (146,104,80; Street View 867715): brunt, ikke oransje
+        return 'brun'
     if hd < 18 or hd >= 335:
         return 'rød'
     if hd < 42:
