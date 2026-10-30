@@ -730,11 +730,12 @@ def takform_modell(x):
     return 'sammensatt'
 
 
-def vinduer_modell(x, a, b):
+def vinduer_modell(x, a, b, synlig=None):
     """Modellens vinduer og dører på veggen a->b (utovernormal). Radene er vinduene samlet etter høyden (ny rad når midten
     står mer enn 1 m over forrige vindu), ikke faste 3 m-bånd: presset etasjehøyde (lave hus med to etasjer, fasade_tegning
     VH_PRESS) og kjellervinduer havnet før i samme bånd som 1. etasje (30.10). Vinduer over gesims (gavl) telles for seg.
-    Gir (vinduer under gesims, rader, dører, gavlvinduer)."""
+    synlig(v): bare vinduene som synes i kontrollbildet (et lavere nabohus eller taket foran skjuler resten, og tegningen viser
+    bare det som synes). Gir (vinduer under gesims, rader, dører, gavlvinduer)."""
     V = x.get('vind') or []
     ux, uy = b[0] - a[0], b[1] - a[1]; L = math.hypot(ux, uy) or 1
     tx, ty = ux / L, uy / L
@@ -745,6 +746,8 @@ def vinduer_modell(x, a, b):
         t = (vx - a[0]) * tx + (vy - a[1]) * ty
         dist = abs(-(vx - a[0]) * ty + (vy - a[1]) * tx)
         if not (-0.3 <= t <= L + 0.3 and dist < 0.8 and abs(nx * (-ty) + ny * tx) > 0.8 or (-0.3 <= t <= L + 0.3 and dist < 0.8 and abs(nx * ty - ny * tx) > 0.8)):
+            continue
+        if synlig is not None and not synlig(v):
             continue
         if typ in (1, 2): dorer += 1
         elif vz > (x.get('h') or 99): gavl += 1
@@ -819,6 +822,13 @@ def analyser(navn, logg=print):
     if os.path.exists(ftf):
         for v_ in json.load(open(ftf))['vegger']:
             FTJ.setdefault(v_['id'], []).append(v_)
+    # vegger tegningen viser, men som ikke er koblet for hånd: lest fra flatene kontrollen har lagt på dem (fasade_tegning.py
+    # les_fra_kontroll, kilder/fasade-tegning/kontroll/); håndavlesningen går foran på samme vegg
+    FTK = {}
+    ftk = os.path.join(ROT, 'kilder', 'fasade-tegning', 'kontroll', navn + '.json')
+    if os.path.exists(ftk):
+        for v_ in json.load(open(ftk))['vegger']:
+            FTK.setdefault(v_['id'], []).append(v_)
     # de andre tegningenes avlesninger: en vegg som bare er en bit i kanten her, men lest for hånd i sin egen tegning
     import glob as _g
     FTJ_ANDRE = {}
@@ -1088,10 +1098,13 @@ def analyser(navn, logg=print):
             if not jl: continue
             U = unary_union([F[j]['ytre'] for j in jl])
             lest = lest_vegg(FTJ.get(i, []), v['a'], v['b'])
-            kilde_ekstra = ''
+            kilde_ekstra = ''; for_haand = bool(lest)
+            if not lest:
+                lest = lest_vegg(FTK.get(i, []), v['a'], v['b'])
+                if lest: kilde_ekstra = ' (kontrollkobling)'
             if not lest:
                 lest = lest_vegg(FTJ_ANDRE.get(i, []), v['a'], v['b'])
-                if lest: kilde_ekstra = f" ({lest['_tegning']})"
+                if lest: kilde_ekstra = f" ({lest['_tegning']})"; for_haand = True
             if not lest:
                 ub = U.bounds
                 if ub[0] < KANT or ub[1] < KANT or ub[2] > rect_.width - KANT or ub[3] > rect_.height - KANT:
@@ -1120,9 +1133,20 @@ def analyser(navn, logg=print):
                     vb = (gb[3] - hb[3]) / Hh; ht = (hb[3] - hb[1]) / Hh
                     if vb < 0.1 and ht > 0.22: dor_t += 1
                     else: vs.append((gb[3] - 0.5 * (hb[1] + hb[3])) / Hh)
-            n_m, rader_m, dor_m, gavl_m = vinduer_modell(x, v['a'], v['b'])
+            def synlig(q, Pm=Pm, k_=k_):
+                # vinduets midtpunkt i kontrollbildet: id-bildet har huset og flatetypen vindu (3) der, eller like ved
+                c = proj(Pm, q[0] + q[5] * 0.06, q[1] + q[6] * 0.06, q[2])     # z er vinduets midte (vinduer_regler.element)
+                px, py = int(round(c[0] * R)), int(round(c[1] * R))
+                y0_, y1_, x0_, x1_ = max(0, py - 2), min(H, py + 3), max(0, px - 2), min(W, px + 3)
+                if y0_ >= y1_ or x0_ >= x1_: return False
+                return bool(((idx[y0_:y1_, x0_:x1_] == k_) & (typ[y0_:y1_, x0_:x1_] == 3)).any())
+            n_m, rader_m, dor_m, gavl_m = vinduer_modell(x, v['a'], v['b'], synlig if k_ else None)
             import vinduer_regler as VR
-            vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v,
+            # til kontrollkoblingen: flatene på veggen, veggens ender og hvilken ende som står til venstre i tegningen
+            pa_, pb_ = proj(Pm, v['a'][0], v['a'][1], 0), proj(Pm, v['b'][0], v['b'][1], 0)
+            kobling_ = dict(flater=[int(F[j]['i']) for j in jl], a=[float(c) for c in v['a']], b=[float(c) for c in v['b']],
+                            venstre=[float(c) for c in (v['a'] if pa_[0] <= pb_[0] else v['b'])], for_haand=for_haand)
+            vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v, kobling=kobling_,
                              tegning=dict(vinduer=len(vs), rader=rader_t if rader_t is not None else _rader(vs), dorer=dor_t, gavl=gavl_t),
                              modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m, gavl=gavl_m),
                              plass_etasjer=etasjer_plass(x.get('h') or 0, len(rader_t) if rader_t else 0)))
@@ -1296,12 +1320,43 @@ def avvik(navner, logg=print):
         for k, v in r['vurdering'].items():
             tot.setdefault(k, {}).setdefault(v['alvor'], 0); tot[k][v['alvor']] += 1
     tot['tegnet_hus_uten_modell'] = dict(feil=sum(g['hus_anslag'] for g in tegnet_uten))
+    skriv_kobling(alle, list(per), logg)
     json.dump(dict(laget=__import__('datetime').date.today().isoformat(), verktoy='verktoy/kontroll.py avvik', totalt=tot,
                    hus=alle, tegnet_uten_modell=tegnet_uten, per_tegning={n: dict(koblet_men_utenfor=A['koblet_men_utenfor'], hus_utenfor_tegningens_sett=A['hus_utenfor_tegningens_sett'])
                                                                          for n, A in per.items()}),
               open(os.path.join(UT, 'avvik.json'), 'w'), indent=1, ensure_ascii=False)
     logg(json.dumps(tot, ensure_ascii=False))
     return alle, tegnet_uten, tot
+
+
+KOBLING_KONTROLL = os.path.join(ROT, 'kilder', 'fasade-kobling-kontroll.json')
+
+
+def skriv_kobling(alle, navner, logg=print):
+    """kilder/fasade-kobling-kontroll.json: de synlige veggene tegningen viser uten håndkobling (kilder/fasade-kobling.json),
+    med flatene kontrollen har lagt på dem (registrert kamera, blokkvis). fasade_tegning.py les_fra_kontroll leser vinduene
+    der, så veggen får tegningens vinduer (eller ingen, når tegningen viser en blank vegg) i stedet for reglenes eller Street
+    Views (30.10). Regnes på nytt ved hver kontroll for tegningene som er kjørt; de andre tegningene beholder sine linjer.
+    Bare vegger som ikke er kuttet av arkkanten, og flater som ingen håndavlest vegg i samme tegning bruker."""
+    gml = json.load(open(KOBLING_KONTROLL, encoding='utf8')) if os.path.exists(KOBLING_KONTROLL) else {}
+    ut = {k: v for k, v in gml.items() if k not in navner and not k.startswith('_')}
+    for n in navner:
+        brukt = set()
+        f = os.path.join(ROT, 'kilder', 'fasade-tegning', n + '.json')
+        if os.path.exists(f):
+            for v in json.load(open(f))['vegger']: brukt.update(v.get('flater') or [])
+        L = []
+        for r in alle:
+            if r.get('tegning') != n: continue
+            for w in r.get('vinduer') or []:
+                k_ = w.get('kobling')
+                if not k_ or k_['for_haand'] or not k_['flater'] or brukt & set(k_['flater']): continue
+                L.append(dict(id=r['id'], vegg=w['vegg'], a=k_['a'], b=k_['b'], venstre=k_['venstre'], flater=k_['flater']))
+        ut[n] = L
+    ut = dict(sorted(ut.items()))
+    ut['_om'] = 'Laget av verktoy/kontroll.py avvik (skriv_kobling); leses av verktoy/fasade_tegning.py les_fra_kontroll. Ikke rett for hånd: rett kilder/fasade-kobling.json (håndkoblingen går foran).'
+    json.dump(ut, open(KOBLING_KONTROLL, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    logg(f"  kontrollkobling: {sum(len(v) for k, v in ut.items() if not k.startswith('_'))} vegger uten håndkobling (kilder/fasade-kobling-kontroll.json)")
 
 
 def md(logg=print):

@@ -1,0 +1,43 @@
+{
+ "tegning": "Kvartal13",
+ "laget": "2026-10-30",
+ "verktoy": "verktoy/fasade_tegning.py les_fra_kontroll",
+ "vegger": [
+  {
+   "id": "pb-63",
+   "vegg": 3,
+   "side": "kontroll",
+   "a": [
+    -88.15,
+    -22.45
+   ],
+   "b": [
+    -84.04,
+    -12.25
+   ],
+   "L": 11.0,
+   "venstre": [
+    -88.15,
+    -22.45
+   ],
+   "flater": [
+    48
+   ],
+   "farger": [
+    [
+     0.953,
+     0.953,
+     0.953
+    ]
+   ],
+   "elementer": [],
+   "geo": {
+    "fx0": 298.46977613090263,
+    "fx1": 317.6092869340829,
+    "H_venstre": 2.4240934386573088,
+    "H_hoyre": 2.0509166302111907
+   },
+   "kilde": "kontrollkobling"
+  }
+ ]
+}

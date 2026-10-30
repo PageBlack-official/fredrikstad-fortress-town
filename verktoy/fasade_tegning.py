@@ -467,7 +467,7 @@ def elementer(F_vegg, side, R=8.0, flatefarger=(), andre=()):
             and g['ytre'].intersection(U.buffer(3.5).buffer(-3.1)).area > 0.85 * g['ytre'].area]   # dør i et hakk i bunnkanten
     hull_alle = [h for f in F_vegg for h in f['hull']]
     egne = [e for e in egne if not any(h.buffer(0.3).contains(e.representative_point()) for h in hull_alle)]
-    for hp in [h for f in F_vegg for h in f['hull']] + egne:
+    for hp in [g_ for h in [h for f in F_vegg for h in f['hull']] + egne for g_ in getattr(h, 'geoms', [h]) if g_.geom_type == 'Polygon']:   # hull kan være flere biter
         if True:
             if hp.area < 0.15 or not U.buffer(2.5).buffer(-2.0).contains(hp.representative_point()):
                 continue
@@ -860,6 +860,37 @@ def vegger_paa_linja(V, vg, maks_d=1.5):
     return ut
 
 
+def les_fra_kontroll(navn=None):
+    """kilder/fasade-kobling-kontroll.json (verktoy/kontroll.py avvik) -> kilder/fasade-tegning/kontroll/<tegning>.json: vinduer
+    og dører lest på flatene kontrollen fant på veggene håndkoblingen ikke dekker, med samme leser som håndkoblingen
+    (elementer). Veggens ender er modellveggen kontrollen så; «venstre» er enden som står til venstre i tegningen."""
+    import datalag
+    f = os.path.join(ROT, 'kilder', 'fasade-kobling-kontroll.json')
+    if not os.path.exists(f):
+        print('ingen kontrollkobling (kjør verktoy/kontroll.py avvik)'); return
+    KK = json.load(open(f, encoding='utf8'))
+    os.makedirs(os.path.join(AVL, 'kontroll'), exist_ok=True)
+    for n, L in KK.items():
+        if n.startswith('_') or (navn and n not in navn): continue
+        if not os.path.exists(os.path.join(AI, n + '.ai')):
+            print(f'{n}: mangler {n}.ai (kilder/kvartal-ai bare lokalt), hoppes over'); continue
+        F = {fl['i']: fl for fl in flater(n)[0]}
+        side = fitz.open(os.path.join(AI, n + '.ai'))[0]
+        ut = []
+        for w in L:
+            if w['id'] in LANDEMERKER: continue      # kirka, rådhuset, Tøihuset, Voldporten: egne verktøy
+            fis = [fi for fi in w['flater'] if fi in F]
+            if not fis: continue
+            el, geo = elementer([F[fi] for fi in fis], side, andre=list(F.values()))
+            if geo is None: continue
+            a, b = np.array(w['a'], float), np.array(w['b'], float)
+            ut.append(dict(id=w['id'], vegg=w['vegg'], side='kontroll', a=w['a'], b=w['b'], L=round(float(np.linalg.norm(b - a)), 2),
+                           venstre=w['venstre'], flater=fis, farger=[F[fi]['farge'] for fi in fis], elementer=el, geo=geo, kilde='kontrollkobling'))
+        json.dump(dict(tegning=n, laget=__import__('datetime').date.today().isoformat(), verktoy='verktoy/fasade_tegning.py les_fra_kontroll',
+                       vegger=ut), open(os.path.join(AVL, 'kontroll', n + '.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+        print(f'{n}: {len(ut)} vegger lest fra kontrollkoblingen ({sum(len(v["elementer"]) for v in ut)} elementer)')
+
+
 def legg_inn(tørt=False, bare=None):
     """Vind fra avlesningene (kilder/fasade-tegning/*.json) som rettelser. Tegnede vegger får tegningens elementer; veggene
     tegningen ikke viser, får reglene (vinduer_regler). Idempotent: egne linjer (GRUNN) tas ut først."""
@@ -886,7 +917,8 @@ def legg_inn(tørt=False, bare=None):
         for i_ in list(slekt):
             for j_ in list(slekt[i_]):
                 slekt[i_] |= slekt.get(j_, set())
-    for f in sorted(_g.glob(os.path.join(AVL, '*.json'))):
+    # håndkoblingen først, så kontrollkoblingen (kilder/fasade-tegning/kontroll/): på samme modellvegg går håndavlesningen foran
+    for f in sorted(_g.glob(os.path.join(AVL, '*.json'))) + sorted(_g.glob(os.path.join(AVL, 'kontroll', '*.json'))):
         A = json.load(open(f, encoding='utf8'))
         if bare and A['tegning'] not in bare: continue
         for vg in A['vegger']:
@@ -948,7 +980,8 @@ def legg_inn(tørt=False, bare=None):
             # en vegg som står inntil nabohuset hele veien, kan ikke være den tegnede fasaden: avlesningen er gjort før huset
             # ble delt, og ytterveggen den gang er brannmur nå (pb-66/867928, Kvartal9: vinduene ble lagt på brannmuren) (30.10)
             if V[kk].get('felles', 0) >= 0.8 and brannmur_skjult(V[kk], x, omg, BY): continue
-            if kk not in beste or len(vg['elementer']) > len(beste[kk][1]['elementer']):
+            hand = vg.get('kilde') != 'kontrollkobling'
+            if kk not in beste or (hand, len(vg['elementer'])) > (beste[kk][1].get('kilde') != 'kontrollkobling', len(beste[kk][1]['elementer'])):
                 beste[kk] = (tg, vg)
         tegnet, info = [], {}
         for kk, (tg, vg) in beste.items():
@@ -968,7 +1001,16 @@ def legg_inn(tørt=False, bare=None):
                 vg2['elementer'] = [dict(e, u=float(((np.array(e['_g']) - wa) @ (wc - wa)) / Lw ** 2)) for e in vg['elementer']]
                 vg2['_Lk'] = L0
             el, inf = vegg_vind(vg2, x, P)
-            tegnet += el; info[kk] = dict(tegning=tg, **inf)
+            tegnet += el; info[kk] = dict(tegning=tg, **inf, **({'kobling': 'kontroll'} if vg.get('kilde') == 'kontrollkobling' else {}))
+        # hus som bare har vegger fra kontrollkoblingen: de andre veggene beholder det huset hadde (reglene eller Street View fra
+        # streetview_fasader.py, som bare skriver fasit-sv-vegger for hus som alt var fasithus)
+        bare_kontroll = beste and all(vg.get('kilde') == 'kontrollkobling' for _, vg in beste.values())
+        if bare_kontroll:
+            gml_vind = [list(v) for v in (x.get('vind') or []) if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in beste]
+            nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "vind", "verdi": gml_vind + tegnet, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
+            nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_tegning", "verdi": {str(k): v for k, v in info.items()}, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
+            logg.append(dict(id=i, navn=x.get('navn'), vegger=info, tegnet=len(tegnet), regler=0, streetview=0, beholdt=len(gml_vind)))
+            continue
         # vegger tegningen ikke viser: Street View der kameraet så veggen (streetview_fasader.py, fasithusene), ellers reglene (30.10)
         sv_vegger = {}
         for sv in FASIT_SV.get(i, []):
@@ -1069,6 +1111,8 @@ if __name__ == '__main__':
         for n in a[1:]:
             L = les(n); lagre_avlesning(L)
             os.makedirs(ARB, exist_ok=True); ark_kobling(L, os.path.join(ARB, n + '-kobling.png'))
+    elif a and a[0] == 'les_fra_kontroll':
+        les_fra_kontroll([n for n in a[1:]] or None)
     elif a and a[0] == 'legg_inn':
         legg_inn('--tørt' in a, [n for n in a[1:] if not n.startswith('--')] or None)
     else:

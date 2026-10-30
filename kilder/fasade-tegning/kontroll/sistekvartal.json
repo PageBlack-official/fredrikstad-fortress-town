@@ -1,0 +1,43 @@
+{
+ "tegning": "sistekvartal",
+ "laget": "2026-10-30",
+ "verktoy": "verktoy/fasade_tegning.py les_fra_kontroll",
+ "vegger": [
+  {
+   "id": "bnr-193972403",
+   "vegg": 1,
+   "side": "kontroll",
+   "a": [
+    56.39,
+    -123.55
+   ],
+   "b": [
+    42.62,
+    -119.22
+   ],
+   "L": 14.43,
+   "venstre": [
+    42.62,
+    -119.22
+   ],
+   "flater": [
+    53
+   ],
+   "farger": [
+    [
+     0.843,
+     0.756,
+     0.468
+    ]
+   ],
+   "elementer": [],
+   "geo": {
+    "fx0": 389.80052542018126,
+    "fx1": 409.7748494374661,
+    "H_venstre": 24.468807190288985,
+    "H_hoyre": 12.043374627996059
+   },
+   "kilde": "kontrollkobling"
+  }
+ ]
+}
