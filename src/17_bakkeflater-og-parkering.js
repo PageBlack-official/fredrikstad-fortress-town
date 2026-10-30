@@ -31,6 +31,14 @@
     if(g.gress) g.gress.forEach(p=>flat(p,0.3,plenMat)); else if(g.typ==='gress') flat(g.p,0.3,plenMat); });
   // flater målt i ortofotoet
   (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ]) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  // oppmerkede parkeringsfelt (kommunens lag, verktoy/bakke.py parkeringsfelt): hvite streker på tvers av raden, oppmerket+1 stk
+  { const strek=new THREE.MeshBasicMaterial({color:0xf4f2ec}); const G=new THREE.Group(); scene.add(G);
+    (DATA.flater||[]).forEach(f=>{ if(f.skjul || !f.linje || !f.oppmerket) return;
+      const [a,c]=f.linje, dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx);
+      for(let i=0;i<=f.oppmerket;i++){ const t=i/f.oppmerket, x=a[0]+dx*t, y=a[1]+dy*t;
+        const m=new THREE.Mesh(new THREE.PlaneGeometry(0.12, f.bredde*0.9), strek); m.rotation.x=-Math.PI/2; m.rotation.z=ang;
+        m.position.set(x, hAt(x,y)+0.14, -y); G.add(m); } });
+    flatGruppe(G); }
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
   (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
 }

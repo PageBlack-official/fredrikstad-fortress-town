@@ -22,25 +22,27 @@ for g in Gf:
     if r and (r['typ'] == g['typ'] or {r['typ'], g['typ']} <= {'gjerde', 'mur'}): sett += l
     else: ikke.append(f"- {g['id']} {g['typ']} ({g['p'][0][0]:.0f}, {g['p'][0][1]:.0f}) {l:.1f} m")
 pres = sett / max(tot, 1e-9)
+sperre = B.sperre_gjerder(d, f, R, M)   # gata (kommunekartets gateareal og veibåndene) og husene
 kart = unary_union([LineString(g['p']).buffer(1.0) for g in G]) if G else None
 ktot = kdek = 0.0
 for kilde, a, b in B._kandidater(d, R, M, f, dom):
     r = B.vurder_linje(a, b, L, gr, nd, R, M, sett=f['sett'])
     if not r: continue
     dx, dy = b[0] - a[0], b[1] - a[1]; ll = math.hypot(dx, dy); nx, ny = -dy / ll * r['fo'], dx / ll * r['fo']
-    l = LineString([(a[0] + nx, a[1] + ny), (b[0] + nx, b[1] + ny)]); ktot += l.length   # der fotoet viser linja
+    l = LineString([(a[0] + nx, a[1] + ny), (b[0] + nx, b[1] + ny)]).difference(sperre)   # der fotoet viser linja, utenfor gata og husene
+    if l.is_empty: continue
+    ktot += l.length
     if kart is not None: kdek += l.intersection(kart).length
 dek = kdek / max(ktot, 1e-9)
 from shapely.geometry import Polygon
-husu = unary_union([P.buffer(-0.3) for P in B.hus_polygoner(d)])
-gjennom = [g for g in Ga if LineString(g['p']).intersection(husu).length > 0.5]
+gjennom = [g for g in G if LineString(g['p']).intersection(sperre).length > 0.3]
 kilder = {}
 for g in Ga: k = g.get('kilde', '?').split(' (')[0]; kilder[k] = kilder.get(k, 0) + LineString(g['p']).length
 typer = {t: (sum(1 for g in G if g['typ'] == t), sum(LineString(g['p']).length for g in G if g['typ'] == t)) for t in ('gjerde', 'mur', 'hekk')}
 lin = [f"presisjon {pres:.1%} av {tot:.0f} m funnet i fotoet (krav 95 %), dekning {dek:.1%} av {ktot:.0f} m sett langs kandidatlinjene (krav 95 %); "
-       f"{len(gjennom)} av {len(Ga)} stykker fra Street View/hånd går gjennom et hus (krav 0)",
+       f"{len(gjennom)} av {len(G)} stykker krysser gateareal eller hus (krav 0)",
        'i kartet: ' + ', '.join(f"{t} {n} stk / {l:.0f} m" for t, (n, l) in typer.items()),
        'etter kilde (utenom fotoet): ' + ', '.join(f"{k} {v:.0f} m" for k, v in kilder.items())]
-if gjennom: lin += ['', 'Går gjennom hus:'] + [f"- {g['id']} {g['typ']} ({g['p'][0][0]:.0f}, {g['p'][0][1]:.0f})" for g in gjennom]
+if gjennom: lin += ['', 'Krysser gateareal eller hus:'] + [f"- {g['id']} {g['typ']} ({g['p'][0][0]:.0f}, {g['p'][0][1]:.0f})" for g in gjennom]
 if ikke: lin += ['', 'Stykker som ikke ses i fotoet der de står:'] + ikke[:40]
 rapport('33_gjerder', pres >= 0.95 and dek >= 0.95 and not gjennom, lin)

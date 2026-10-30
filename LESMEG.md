@@ -165,8 +165,12 @@ Trær: ett tre per tretopp i DOM−DTM; trær uten topp i et tett felt minst 5 m
 (dømt med øyet i fotoet) tas ut med grunn (kilder/bakke-maalt.json «traer_fjernet», «traer_dommer», «traer_nye»).
 Gater: gatene dømt i Street View-bildene (kilder/bakke-maalt.json «gater») går foran fotoets brostein/grus; gangveier som er gress
 i fotoet nesten hele veien, tas ut (rapport/bakke/veier-fjernet.json). Innkjørsler og plasser: `bakke.py innkjorsler`.
+Gata (`bakke.gatemaske`): kommunekartets gateareal + veibåndene; kommunekartet tegner mange gater i Gamlebyen hvite, så gatearealet
+alene mangler dem. Ingen gjerde, mur eller hekk får stå i gata eller i et hus (regel 33 feiler ellers). Gatene måles også utenfor
+vollene der kommunekartet dekker (`bakke.gate_omraade`). Oppmerkede parkeringsfelt: `bakke.py parkeringsfelt` (kommunens lag +
+radene målt i ortofotoet, også kilder/parkering-maalt.json fra torvet-arbeidet), tegnes som hvite streker i src/17.
 Regler: 31 overflater, 32 gater, 33 gjerder, 34 trær (alle måler mot kildene, krav 95 %).
-Rekkefølge: grunnmur.py → bakke.py gater (fra grunndataene) → overflater → innkjorsler → gjerder → traer → ark.
+Rekkefølge: grunnmur.py → bakke.py gater (fra grunndataene) → overflater → innkjorsler → parkeringsfelt → gjerder → traer → ark.
 
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.

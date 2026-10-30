@@ -1,5 +1,5 @@
 # 06_bygger_og_laster: OK
 
-- bygd enkel -> /home/claude/grunnmur/ut/enkel/index.html 2457 kB versjon 34
-- bygd server -> /home/claude/grunnmur/ut/server/index.html 239 kB versjon 34
+- bygd enkel -> /home/claude/wt-bakke/ut/enkel/index.html 2849 kB versjon 34
+- bygd server -> /home/claude/wt-bakke/ut/server/index.html 242 kB versjon 34
 - lastet: true feil: []

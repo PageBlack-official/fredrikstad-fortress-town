@@ -308,7 +308,7 @@ def modell(R, mpp=MPP, d=None, farge=False):
     for v in d['landskap']['veier']:
         mm = linjemaske([[q[:2] for q in v['p']]], R, v['w'], mpp)
         zz = max(q[2] for q in v['p']) + (-0.03 if v['k'] == 'gang' else 0)
-        legg(mm, np.maximum(zz, th + 0.0), K.get(v.get('flate'), K['belagt']), (146, 142, 134) if v['k'] == 'gang' else FARGE_KART[1] if v.get('flate') == 'brostein' else (128, 124, 120))
+        legg(mm, np.maximum(zz, th + 0.0), K.get(v.get('flate'), K['belagt']), FARGE_KART[K[v['flate']]] if v.get('flate') in ('brostein', 'heller', 'grus') else (146, 142, 134) if v['k'] == 'gang' else (128, 124, 120))
     for p in d.get('parkering', []):
         if p.get('p') and not p.get('skjul') and p.get('flate', 'asfalt') in K:   # parkering i gata (flate «gate») er gata selv
             legg(maske([p['p']], R, mpp), np.maximum(0.12, th + 0.12), K[p.get('flate', 'asfalt')], (160, 157, 152))
@@ -391,17 +391,20 @@ def maalt():
     return json.load(open(MAALT, encoding='utf8'))
 
 
-def bakkekart(d=None, R=None, mpp=MPP):
+def bakkekart(d=None, R=None, mpp=MPP, utenfor=False):
     """Den endelige typen per piksel i Gamlebyen (domene): fasit (ortofoto/kommunekart), belagt delt i brostein/asfalt/grus,
     og flatene målt for hånd (kilder/bakke-maalt.json «flater») lagt oppå. Gir (kart, f, R)."""
     d = d or datalag.alle(); dom = domene(); R = R or ramme(dom)
     f = fasit(R, mpp, d)
-    # grunntypen: brostein i byen (brosteinsflaten) og i kommunekartets gateareal inntil 15 m utenfor den (gatene langs vollene),
+    # grunntypen: brostein i byen (brosteinsflaten) og i kommunekartets gateareal inntil 6 m utenfor den (gatene langs vollene; 15 m tok med grusplassen ved Kasernen),
     # ellers grus (stiene og plassene på vollene)
     from shapely.geometry import Polygon as _P
     bro = maske([d['brostein']], R, mpp) > 0
-    naer = maske([_P(d['brostein']).buffer(15)], R, mpp) > 0
+    naer = maske([_P(d['brostein']).buffer(6)], R, mpp) > 0
     standard = np.where(bro | (naer & (f['kk'] == K['belagt'])), K['brostein'], K['grus']).astype(np.uint8)
+    if utenfor:   # utenfor vollene: gatene i kommunekartet er asfalt (boliggater, Kongsten), stiene grus
+        ute = maske([dom.buffer(15)], R, mpp) == 0
+        standard[ute & (f['kk'] == K['belagt'])] = K['asfalt']
     kl = f['kl'].copy(); t = belagt_endelig(f, standard, mpp); b = kl == K['belagt']; kl[b] = t[b]
     # det som er målt for hånd, går foran: flatene i flater-maalt.json (fl-1 …), parkeringsflatene og kilder/bakke-maalt.json
     faste = [(x['typ'], x['p']) for x in d.get('flater', []) if not x.get('skjul') and not x.get('kilde', '').startswith('ortofoto 2024 klassifisert') and x['typ'] in K]
@@ -413,7 +416,7 @@ def bakkekart(d=None, R=None, mpp=MPP):
     for typ, p in faste:
         mm = (maske([p], R, mpp) > 0) & ~np.isin(kl, (K['hus'], K['vann']))
         kl[mm & np.isin(kl, BELAGT + (K['gress'], K['bed']))] = K[typ] if typ != 'gress' else K['gress']
-    kl[maske([dom], R, mpp) == 0] = K['ukjent']
+    if not utenfor: kl[maske([dom], R, mpp) == 0] = K['ukjent']
     return kl, f, R
 
 
@@ -492,11 +495,22 @@ def overflater(skriv=True):
     # en belagt flate eller et bed som er mest grønt i fotoet (regel 15: under 30 %), er gjettet der fotoet ikke ser
     # (under trær, i skygge): den tas ikke med, grunnen (brostein/terreng) står
     hin = [b_['p'] for b_ in d['bygg'] if b_.get('p') and not b_.get('skjul')]
+    # en stor flate med grønne biter (gress i kanten, trær) mister de grønne bitene i stedet for å forsvinne
     beholdt = []; ut_gront = 0
     for typ, q in ut:
         if typ != 'gress':
             pts = [[round(c[0], 2), round(c[1], 2)] for c in q.exterior.coords][:-1]   # som det skrives
-            if F.maal_flate(pts, hin)[0] >= 0.25: ut_gront += 1; continue
+            andel, gp, _ = F.maal_flate(pts, hin)
+            if andel >= 0.25 and q.area >= 200 and gp:
+                from shapely.ops import unary_union as _uu
+                rest = q.difference(_uu([Polygon(g).buffer(0.5) for g in gp if len(g) >= 3]))
+                for r_ in getattr(rest, 'geoms', [rest]):
+                    if r_.geom_type != 'Polygon' or r_.area < MIN_M2[typ]: continue
+                    for r2 in uten_hull(r_.simplify(0.2)):
+                        p2 = [[round(c[0], 2), round(c[1], 2)] for c in r2.exterior.coords][:-1]
+                        if r2.area >= MIN_M2[typ] and F.maal_flate(p2, hin)[0] < 0.25: beholdt.append((typ, r2))
+                ut_gront += 1; continue
+            if andel >= 0.25: ut_gront += 1; continue
         beholdt.append((typ, q))
     ut = beholdt
     # id: arv fra forrige kjøring
@@ -583,9 +597,7 @@ def ark(omraader=None):
             cv2.polylines(mid, [P(pts)], False, c, 2, cv2.LINE_AA)
             cv2.polylines(m, [P(pts)], False, (60, 60, 60) if typ != 'hekk' else (40, 100, 40), 2, cv2.LINE_AA)
         KANT = {'asfalt': (40, 40, 40), 'grus': (60, 150, 200), 'bed': (30, 60, 110), 'brostein': (90, 90, 90), 'gress': (40, 120, 40)}
-        for fl in d.get('flater', []):
-            if fl.get('skjul') or fl['typ'] not in KANT: continue
-            cv2.polylines(m, [P(fl['p'])], True, KANT[fl['typ']], 1, cv2.LINE_AA)
+        # flatene tegnes uten kant (som i kartet: ingen strek rundt plener og belegg, bare høydespranget fra etterbehandlingen)
         lag = m.copy()
         for t in d['traer']:
             if x0 - 10 < t[0] < x1 + 10 and y0 - 10 < t[1] < y1 + 10:
@@ -601,6 +613,13 @@ def ark(omraader=None):
                 r = int(px(0, gy)[1]); cv2.line(im, (0, r), (10, r), (255, 255, 255), 1); cv2.putText(im, str(gy), (12, r + 4), cv2.FONT_HERSHEY_SIMPLEX, 0.35, (255, 255, 255), 1)
         ut = np.hstack([o, np.full((o.shape[0], 6, 3), 255, np.uint8), mid, np.full((o.shape[0], 6, 3), 255, np.uint8), m])
         bunn = np.full((26, ut.shape[1], 3), 32, np.uint8)
+        # trærne er kontrollert mot DOM−DTM bare i rammen rundt Gamlebyen; utenfor står de som lest 23.10
+        tr = ramme(domene()); ix = max(0, min(x1, tr[2]) - max(x0, tr[0])) * max(0, min(y1, tr[3]) - max(y0, tr[1])) / ((x1 - x0) * (y1 - y0))
+        if ix < 0.99:
+            note = np.full((22, ut.shape[1], 3), 32, np.uint8)
+            cv2.putText(note, f'Merk: {1 - ix:.0%} av arket ligger utenfor rammen der traerne er kontrollert mot DOM-DTM ({tr[0]}..{tr[2]}, {tr[1]}..{tr[3]}); '
+                        'traerne der staar som lest fra Google-flyfotoet 23.10', (8, 15), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 220, 255), 1)
+            bunn = np.vstack([note, bunn])
         cv2.putText(bunn, f'{nr:02d} {navn}: ortofoto 2024 (Fredrikstad kommune, bare kontroll) | med kartets gjerder (rodt), murer (oransje), hekker (gronnt), trekroner (gult) | modellens bakke ovenfra',
                     (8, 18), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1)
         cv2.imwrite(os.path.join(ARK_MAPPE, f'kvartal-{nr:02d}.png'), np.vstack([ut, bunn]))
@@ -652,6 +671,12 @@ def _forskyv(P, fo):
     return Q
 
 
+def gate_omraade():
+    """Der gatene måles: Gamlebyen og alt kommunekartet dekker (også utenfor vollene), innenfor ortofotoet."""
+    import shapely.geometry as _sg
+    return domene().union(KK.dekning()).intersection(_sg.box(*F.OMRAADE).buffer(-5))
+
+
 def gater(skriv=True):
     """Bredden på veibåndene (data/landskap.json «veier», tegnes i src/08) og hvor de står, målt mot kildene:
       kjørevei: kommunekartets gateareal (kanten mot hus, grønt og vann), der kommunekartet dekker; utenfor: ortofotoets belagte mark
@@ -660,8 +685,9 @@ def gater(skriv=True):
     (flertallet i bakkekartet) skrives i «flate». Det som ikke kan måles (åpne plasser, under trær, utenfor kildene), står som før,
     og «maalt» sier hva som gjelder for hver vei."""
     d = datalag.alle(); L = datalag.les('landskap'); mpp = MPP
-    dom = domene(); R = ramme(dom.buffer(40))
-    kl, f, _ = bakkekart(d, R, mpp)
+    # Gamlebyen og alt kommunekartet dekker utenfor vollene (ark 10–13), innenfor ortofotoet
+    dom = gate_omraade(); R = ramme(dom)
+    kl, f, _ = bakkekart(d, R, mpp, utenfor=True)
     kk = f['kk']; inn = f['kk_inn']
     ok_kk = np.zeros(256, bool); ok_kk[[K['belagt'], K['ukjent']]] = True
     ok_or = np.zeros(256, bool); ok_or[list(BELAGT)] = True
@@ -724,7 +750,7 @@ def gater(skriv=True):
                     w['maalt'] = v['maalt'].split(':')[0] + f': {r[2]} målinger, bredde {w["w"]} m' + (f', flyttet {fo:+.1f} m sideveis' if fl else '') + ' (delt der flatetypen skifter)'
         nye += biter
     L['veier'] = nye
-    print('veier i Gamlebyen målt:', {k: f'{a} av {n}' for k, (a, n) in tall.items()}, f'; {delt} delt der flatetypen skifter')
+    print('veier målt (Gamlebyen og kommunekartets dekning):', {k: f'{a} av {n}' for k, (a, n) in tall.items()}, f'; {delt} delt der flatetypen skifter')
     if endr:
         e = np.array(endr); print(f'bredde før {e[:, 0].mean():.1f} m snitt, etter {e[:, 1].mean():.1f} m; median endring {np.median(np.abs(e[:, 1] - e[:, 0])):.1f} m')
     if skriv:
@@ -892,6 +918,60 @@ def innkjorsler(skriv=True):
     return ut
 
 
+# ---------- oppmerkede parkeringsfelt fra kommunens parkeringslag ----------
+PARK_KILDE = 'kommunens parkeringslag + målte rader (verktoy/bakke.py parkeringsfelt)'
+
+
+def _rader():
+    """Radene med parkering målt i ortofotoet: kilder/flater-maalt.json «parkering» (linje + bredde) og kilder/parkering-maalt.json
+    (målt av torvet-arbeidet; finnes den ikke i arbeidstreet, leses den fra grenen origin/natt/torvet)."""
+    import subprocess
+    ut = {}
+    for k, v in json.load(open(os.path.join(ROT, 'kilder', 'flater-maalt.json'), encoding='utf8'))['parkering'].items():
+        if 'linje' in v: ut[k] = v
+    fil = os.path.join(ROT, 'kilder', 'parkering-maalt.json')
+    try:
+        t = json.load(open(fil, encoding='utf8')) if os.path.exists(fil) else json.loads(subprocess.run(
+            ['git', '-C', ROT, 'show', 'origin/natt/torvet:kilder/parkering-maalt.json'], capture_output=True, text=True).stdout)
+        for k, v in t.get('parkering', {}).items():
+            if 'linje' in v and k not in ut: ut[k] = v
+    except Exception as e:
+        print('parkering-maalt.json ikke tilgjengelig:', e)
+    return ut
+
+
+def parkeringsfelt(skriv=True):
+    """Oppmerkede parkeringsfelt: for hver plass i kommunens lag med en målt rad (senterlinje + bredde 2,5 = langs, 5 = vinkel)
+    blir raden et felt (flater, art «parkeringsfelt») med antall plasser = kommunens ANTALL (eller radlengden delt på 2,5 m for
+    vinkelparkering / 5,5 m for langsparkering) og «linje»/«bredde», så kartet kan tegne oppmerkingen."""
+    import flater as FL
+    k = json.load(open(os.path.join(ROT, 'kilder', 'parkering-kommunen.json'), encoding='utf8'))
+    antall = {f"parkering-1-{f['properties']['OBJECTID']}": f['properties'].get('ANTALL') for f in k['lag']['plasser']}
+    navn = {f"parkering-1-{f['properties']['OBJECTID']}": f['properties'].get('NAVN') for f in k['lag']['plasser']}
+    gamle = {x.get('parkering_id'): x['id'] for x in datalag.les('flater') if PARK_KILDE in x.get('kilde', '')}
+    reg_fil = os.path.join(ROT, 'kilder', 'id-register.txt'); reg = [l.strip() for l in open(reg_fil, encoding='utf8') if l.strip()]
+    n = max([int(i.split('-')[1]) for i in reg + [x['id'] for x in datalag.les('flater')] if i.startswith('fl-')] + [0])
+    ut = []
+    for pid, v in sorted(_rader().items()):
+        (a, b), br = v['linje'], v['bredde']; L = math.dist(a, b)
+        n_ = antall.get(pid) or max(1, int(round(L / (2.5 if br >= 4 else 5.5))))
+        n_ = min(n_, max(1, int(round(L / (2.3 if br >= 4 else 5.0)))))   # aldri flere enn raden har plass til
+        fid = gamle.get(pid)
+        if not fid: n += 1; fid = f'fl-{n}'
+        typ = v.get('flate', 'asfalt'); typ = typ if typ in K else 'brostein'
+        ut.append({'id': fid, 'typ': typ, 'art': 'parkeringsfelt', 'parkering_id': pid, 'p': FL.rad(v['linje'], br), 'linje': v['linje'], 'bredde': br,
+                   'oppmerket': n_, 'grunn': f"kommunens parkeringslag: {navn.get(pid) or pid}, {antall.get(pid) or '?'} plasser; raden målt i ortofoto 2024 ({v.get('grunn', '')[:80]})",
+                   'kilde': PARK_KILDE})
+    print(f'{len(ut)} oppmerkede parkeringsfelt ({sum(o["oppmerket"] for o in ut)} plasser)')
+    if skriv:
+        alle = [x for x in datalag.les('flater') if PARK_KILDE not in x.get('kilde', '')] + ut
+        with open(os.path.join(ROT, 'data', 'flater.json'), 'w', encoding='utf8') as fh:
+            fh.write('[\n' + ',\n'.join(json.dumps(u, ensure_ascii=False, separators=(',', ':')) for u in alle) + '\n]\n')
+        mangler = [o['id'] for o in ut if o['id'] not in reg]
+        if mangler: open(reg_fil, 'a', encoding='utf8').write('\n'.join(mangler) + '\n')
+    return ut
+
+
 # ---------- gjerder, murer og hekker ----------
 def _strimmel(bilde, R, mpp, a, b, bredde=3.0, steg=0.125, ds=0.25):
     """Bildet samplet i en strimmel langs linjestykket a–b: rader langs linja (hver ds m), kolonner på tvers (−bredde … +bredde,
@@ -986,6 +1066,23 @@ def vurder_linje(a, b, L, gr, nd, R, mpp, sok=1.5, sett=None):
     return None
 
 
+def gatemaske(d, f, R, mpp):
+    """Gata som maske: kommunekartets gateareal (fylt grått) og veibåndene (landskap.veier, målt bredde). Kommunekartet tegner
+    mange gater i Gamlebyen hvite som åpen mark, så gateareal alene mangler dem (ark 03, Voldportgaten, 30.10)."""
+    m = (f['kk'] == K['belagt']).astype(np.uint8)
+    for v in d['landskap']['veier']:
+        if v['k'] == 'kjore': m |= linjemaske([[q[:2] for q in v['p']]], R, v['w'], mpp)
+    return m > 0
+
+
+def sperre_gjerder(d, f, R, mpp):
+    """Der det ikke kan stå gjerde, mur eller hekk: kommunekartets gateareal (krympet 0,5 m, så kanten mot fortau/hage er fri)
+    og husene (krympet 0,2 m). Brukes av gjerder() og regel 33."""
+    from shapely.ops import unary_union
+    gate = _til_polygoner(gatemaske(d, f, R, mpp).astype(np.uint8), R, mpp, 10.0, 0.25)
+    return unary_union([g.buffer(-0.5) for g in gate] + [P.buffer(-0.2) for P in hus_polygoner(d)])
+
+
 def gjerder(skriv=True):
     """data/gjerder.json: gjerder, murer og hekker i Gamlebyen, sett i ortofoto 2024 langs eiendomsgrensene (kommunekartet),
     gårdsrommene og linjene kartet hadde. Hvert stykke er funnet i fotoet (mørk smal stripe = gjerdet og skyggen, eller grønn
@@ -1043,6 +1140,16 @@ def gjerder(skriv=True):
             g['andel'] = 1.0; g['kilde_linje'] = 'tegningen'; valgt.append(g)
       except FileNotFoundError as e:
         print('tegningen mangler lokalt (kilder/ai):', e)
+    # sperre for ALLE stykker (foto, Street View, tegning): ingen gjerde, mur eller hekk i kommunekartets gateareal eller i et hus
+    sperre = sperre_gjerder(d, f, R, mpp)
+    renset, kuttet = [], 0
+    for g in valgt:
+        l = LineString(g['p']).difference(sperre)
+        biter = [q for q in getattr(l, 'geoms', [l]) if q.geom_type == 'LineString' and q.length >= 1.0]
+        if not biter or abs(sum(q.length for q in biter) - LineString(g['p']).length) > 0.05: kuttet += 1
+        for q in biter: renset.append({**g, 'p': [[round(x, 2), round(y, 2)] for x, y in q.coords]})
+    valgt = renset
+    print(f'sperre: {kuttet} stykker kuttet eller tatt ut (gateareal eller hus)')
     # målt for hånd (kilder/bakke-maalt.json «gjerder»)
     for g in maalt().get('gjerder', []):
         valgt.append({'typ': g['typ'], 'art': g.get('art', g['typ']), 'p': g['p'], 'h': g.get('h', 1.5), 'grunn': g['grunn'], 'andel': 1.0, 'kilde_linje': 'hånd'})
@@ -1178,7 +1285,7 @@ def gjerder_streetview(d, R, mpp, f):
     from shapely.geometry import Polygon
     hus = {b['id']: Polygon(b['p']).buffer(0) for b in d['bygg'] if b.get('p') and not b.get('skjul') and len(b['p']) >= 3}
     alle = list(hus.values())
-    gate = f['kk'] == K['belagt']
+    gate = gatemaske(d, f, R, mpp)
     def til_gata(q, n):
         for t_ in np.arange(0.5, 20, 0.25):
             x, y = q[0] + n[0] * t_, q[1] + n[1] * t_
@@ -1198,8 +1305,13 @@ def gjerder_streetview(d, R, mpp, f):
         sider = side if side != 'F' else ''
         if side == 'F':
             sb = til_gata(((a[0] + b[0]) / 2, (a[1] + b[1]) / 2), n)
+            o = (sb or 0) - 0.3
+            pa = [(a[0] + n[0] * o, a[1] + n[1] * o), (b[0] + n[0] * o, b[1] + n[1] * o)]
+            # langt ut (over 3 m) må fotoet vise linja, ellers står gjerdet trolig inntil fasaden eller utenfor bildet: hopp over
+            langt_ut_uten_spor = sb is not None and o > 3.0 and vurder_linje(pa[0], pa[1], f['trekk']['L'], F.gront_maske(f['orto']).astype(np.float32), f['ndsm'], R, mpp, sett=f['sett']) is None
+            if langt_ut_uten_spor: hopp.append((k, tekst, f'foran fasaden {o:.1f} m ut, men fotoet viser ingen linje der')); continue
             if sb is not None and sb >= 1.5:
-                o = sb - 0.3; biter.append(([(a[0] + n[0] * o, a[1] + n[1] * o), (b[0] + n[0] * o, b[1] + n[1] * o)], f'foran fasaden, {o:.1f} m ut ved gatekanten'))
+                biter.append(([(a[0] + n[0] * o, a[1] + n[1] * o), (b[0] + n[0] * o, b[1] + n[1] * o)], f'foran fasaden, {o:.1f} m ut ved gatekanten'))
             else: sider = 'VH'
         for sd in sider:
             start, retn = (a, (-u[0], -u[1])) if sd == 'V' else (b, u)
@@ -1233,7 +1345,7 @@ def aapninger(d, f, R, mpp):
     from shapely.geometry import Polygon, LineString
     hus = [(b['id'], Polygon(b['p']).buffer(0), b) for b in d['bygg'] if b.get('p') and not b.get('skjul') and b.get('gml') and len(b['p']) >= 3]
     alle = [(i, P) for i, P, _ in hus]
-    gate = f['kk'] == K['belagt']
+    gate = gatemaske(d, f, R, mpp)
     def gate_ut(q, n):
         for t_ in np.arange(0.4, 3.0, 0.2):
             r, c = int((R[3] - q[1] - n[1] * t_) / mpp), int((q[0] + n[0] * t_ - R[0]) / mpp)
@@ -1561,6 +1673,7 @@ if __name__ == '__main__':
     if k == 'overflater': overflater()
     elif k == 'gater': gater()
     elif k == 'innkjorsler': innkjorsler()
+    elif k == 'parkeringsfelt': parkeringsfelt()
     elif k == 'gjerder': gjerder()
     elif k == 'traer': traer()
     elif k == 'ark': ark([int(a) for a in sys.argv[2:]] or None)

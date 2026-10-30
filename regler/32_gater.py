@@ -9,8 +9,8 @@ import bakke as B, datalag
 if not os.path.exists(B.KK.PDF):
     rapport('32_gater', False, ['kommunekartet mangler lokalt']); raise SystemExit
 from shapely.geometry import LineString
-d = datalag.alle(); dom = B.domene(); R = B.ramme(dom.buffer(40)); M = B.MPP
-kl, f, _ = B.bakkekart(d, R, M)
+d = datalag.alle(); dom = B.gate_omraade(); R = B.ramme(dom); M = B.MPP
+kl, f, _ = B.bakkekart(d, R, M, utenfor=True)
 kkl = f['kk'].copy(); kkl[~f['kk_inn']] = 255
 ok_kk = np.zeros(256, bool); ok_kk[[B.K['belagt'], B.K['ukjent']]] = True
 ok_or = np.zeros(256, bool); ok_or[list(B.BELAGT)] = True
@@ -26,4 +26,4 @@ for v in d['landskap']['veier']:
     if abs(b - v['w']) <= 1.0 and abs(fo) <= 1.0: god += 1
     else: avvik.append(f"- {v['k']} ved ({v['p'][0][0]:.0f}, {v['p'][0][1]:.0f}): kartet {v['w']} m, målt {b:.1f} m, midten {fo:+.1f} m ({k} målinger)")
 a = god / max(1, n)
-rapport('32_gater', a >= 0.95, [f"{god} av {n} målte veier i Gamlebyen har riktig bredde og kant ({a:.1%}, krav 95 %); {umaalt} kan ikke måles (åpen plass, trær, utenfor kildene)", ''] + (['Avvik:'] + avvik if avvik else []))
+rapport('32_gater', a >= 0.95, [f"{god} av {n} målte veier (Gamlebyen og kommunekartets dekning utenfor vollene) har riktig bredde og kant ({a:.1%}, krav 95 %); {umaalt} kan ikke måles (åpen plass, trær, utenfor kildene)", ''] + (['Avvik:'] + avvik if avvik else []))
