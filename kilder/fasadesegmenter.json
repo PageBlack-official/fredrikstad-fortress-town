@@ -1,0 +1,1417 @@
+{
+ "om": "Data: kilder/fasadesegmenter.json, per hus og vegg: {a, b (veggens ender i modellmeter, som da tegningen ble lest), side,\nsegmenter: [{fra_m, til_m, tegning_rgb, flater (stiene i .ai-fila)}]}. «for_haand»: true på et hus = funnet eller rettet for hånd;\nfinn rører det ikke. Rettelsen på bygget heter «fasadesegmenter»: [{a, b, segmenter: [{fra_m, til_m, vegg, kilde, aar}]}];\nveggen slås opp på nytt i dagens omriss hver gang (nærmeste vegg med samme retning), så den tåler ny grunnmur og husdeling.",
+ "hus": {
+  "bnr-193867510": {
+   "tegning": "Kvartal13",
+   "vegger": [
+    {
+     "a": [
+      -47.93,
+      -43.18
+     ],
+     "b": [
+      -67.29,
+      -74.97
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal13",
+     "dekning": 0.98,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 20.0,
+       "tegning_rgb": [
+        243,
+        149,
+        74
+       ],
+       "flater": [
+        25
+       ]
+      },
+      {
+       "fra_m": 20.0,
+       "til_m": 37.22,
+       "tegning_rgb": [
+        243,
+        149,
+        74
+       ],
+       "flater": [
+        26
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867626": {
+   "tegning": "kvartal7",
+   "vegger": [
+    {
+     "a": [
+      -2.73,
+      52.81
+     ],
+     "b": [
+      -13.2,
+      56.43
+     ],
+     "side": "S",
+     "tegning": "kvartal7",
+     "dekning": 0.89,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 8.26,
+       "tegning_rgb": [
+        218,
+        165,
+        125
+       ],
+       "flater": [
+        18
+       ]
+      },
+      {
+       "fra_m": 8.26,
+       "til_m": 11.08,
+       "tegning_rgb": [
+        222,
+        206,
+        155
+       ],
+       "flater": [
+        49
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867685": {
+   "tegning": "tell",
+   "vegger": [
+    {
+     "a": [
+      169.01,
+      -95.06
+     ],
+     "b": [
+      157.81,
+      -95.35
+     ],
+     "side": "S",
+     "tegning": "tell",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 1.91,
+       "tegning_rgb": [
+        251,
+        190,
+        143
+       ],
+       "flater": [
+        30
+       ]
+      },
+      {
+       "fra_m": 1.91,
+       "til_m": 11.2,
+       "tegning_rgb": [
+        218,
+        165,
+        125
+       ],
+       "flater": [
+        28
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867693": {
+   "tegning": "Kvartal14",
+   "vegger": [
+    {
+     "a": [
+      109.03,
+      -85.34
+     ],
+     "b": [
+      97.48,
+      -97.55
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal14",
+     "dekning": 1.0,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 10.75,
+       "tegning_rgb": [
+        198,
+        198,
+        197
+       ],
+       "flater": [
+        41,
+        80,
+        63
+       ]
+      },
+      {
+       "fra_m": 10.75,
+       "til_m": 16.81,
+       "tegning_rgb": [
+        167,
+        166,
+        166
+       ],
+       "flater": [
+        46,
+        81
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867715": {
+   "tegning": "Kvartal12",
+   "vegger": [
+    {
+     "a": [
+      121.42,
+      -69.21
+     ],
+     "b": [
+      107.05,
+      -64.13
+     ],
+     "side": "S",
+     "tegning": "Kvartal12",
+     "dekning": 1.0,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 3.96,
+       "tegning_rgb": [
+        249,
+        194,
+        147
+       ],
+       "flater": [
+        30
+       ]
+      },
+      {
+       "fra_m": 3.96,
+       "til_m": 15.24,
+       "tegning_rgb": [
+        221,
+        174,
+        132
+       ],
+       "flater": [
+        8
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867758": {
+   "tegning": "Kvartal12",
+   "vegger": [
+    {
+     "a": [
+      129.43,
+      -21.72
+     ],
+     "b": [
+      143.72,
+      -29.51
+     ],
+     "side": "SV",
+     "tegning": "Kvartal12",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 8.79,
+       "tegning_rgb": [
+        198,
+        198,
+        197
+       ],
+       "flater": [
+        62
+       ]
+      },
+      {
+       "fra_m": 8.79,
+       "til_m": 16.28,
+       "tegning_rgb": [
+        243,
+        243,
+        243
+       ],
+       "flater": [
+        74
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867804": {
+   "tegning": "Kvartal12",
+   "vegger": [
+    {
+     "a": [
+      80.92,
+      -53.41
+     ],
+     "b": [
+      70.46,
+      -49.17
+     ],
+     "side": "S",
+     "tegning": "Kvartal12",
+     "dekning": 0.98,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 3.31,
+       "tegning_rgb": [
+        232,
+        213,
+        198
+       ],
+       "flater": [
+        58
+       ]
+      },
+      {
+       "fra_m": 3.31,
+       "til_m": 11.29,
+       "tegning_rgb": [
+        243,
+        149,
+        74
+       ],
+       "flater": [
+        90,
+        53
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867839": {
+   "tegning": "Kvartal12",
+   "vegger": [
+    {
+     "a": [
+      70.46,
+      -49.17
+     ],
+     "b": [
+      50.75,
+      -41.96
+     ],
+     "side": "S",
+     "tegning": "Kvartal12",
+     "dekning": 1.0,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 8.55,
+       "tegning_rgb": [
+        243,
+        149,
+        74
+       ],
+       "flater": [
+        53
+       ]
+      },
+      {
+       "fra_m": 8.55,
+       "til_m": 20.99,
+       "tegning_rgb": [
+        218,
+        218,
+        218
+       ],
+       "flater": [
+        27,
+        46
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867928": {
+   "tegning": "Kvartal9",
+   "vegger": [
+    {
+     "a": [
+      160.17,
+      33.6
+     ],
+     "b": [
+      167.38,
+      30.34
+     ],
+     "side": "SV",
+     "tegning": "Kvartal9",
+     "dekning": 0.84,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 4.07,
+       "tegning_rgb": [
+        220,
+        137,
+        76
+       ],
+       "flater": [
+        74
+       ]
+      },
+      {
+       "fra_m": 4.07,
+       "til_m": 7.91,
+       "tegning_rgb": [
+        220,
+        137,
+        76
+       ],
+       "flater": [
+        92
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867936": {
+   "tegning": "Kvartal9",
+   "vegger": [
+    {
+     "a": [
+      117.91,
+      39.49
+     ],
+     "b": [
+      105.6,
+      21.89
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal9",
+     "dekning": 0.86,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 12.3,
+       "tegning_rgb": [
+        251,
+        202,
+        163
+       ],
+       "flater": [
+        33
+       ]
+      },
+      {
+       "fra_m": 12.3,
+       "til_m": 21.48,
+       "tegning_rgb": [
+        250,
+        171,
+        114
+       ],
+       "flater": [
+        53
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193867944": {
+   "tegning": "Kvartal9",
+   "vegger": [
+    {
+     "a": [
+      131.75,
+      58.9
+     ],
+     "b": [
+      117.91,
+      39.49
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal9",
+     "dekning": 0.75,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 5.68,
+       "tegning_rgb": [
+        188,
+        190,
+        192
+       ],
+       "flater": [
+        183
+       ]
+      },
+      {
+       "fra_m": 5.68,
+       "til_m": 23.84,
+       "tegning_rgb": [
+        239,
+        240,
+        240
+       ],
+       "flater": [
+        41
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868045": {
+   "tegning": "Kvartal3",
+   "vegger": [
+    {
+     "a": [
+      212.04,
+      113.53
+     ],
+     "b": [
+      171.65,
+      133.14
+     ],
+     "side": "SV",
+     "tegning": "Kvartal3",
+     "dekning": 0.8,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 14.07,
+       "tegning_rgb": [
+        218,
+        165,
+        125
+       ],
+       "flater": [
+        104
+       ]
+      },
+      {
+       "fra_m": 14.07,
+       "til_m": 44.9,
+       "tegning_rgb": [
+        217,
+        110,
+        94
+       ],
+       "flater": [
+        101
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868223": {
+   "tegning": "kvartal5",
+   "vegger": [
+    {
+     "a": [
+      87.21,
+      96.58
+     ],
+     "b": [
+      64.95,
+      105.22
+     ],
+     "side": "S",
+     "tegning": "kvartal5",
+     "dekning": 0.96,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 6.21,
+       "tegning_rgb": [
+        222,
+        206,
+        155
+       ],
+       "flater": [
+        42
+       ]
+      },
+      {
+       "fra_m": 6.21,
+       "til_m": 13.64,
+       "tegning_rgb": [
+        222,
+        206,
+        155
+       ],
+       "flater": [
+        35
+       ]
+      },
+      {
+       "fra_m": 13.64,
+       "til_m": 18.59,
+       "tegning_rgb": [
+        222,
+        206,
+        155
+       ],
+       "flater": [
+        46
+       ]
+      },
+      {
+       "fra_m": 18.59,
+       "til_m": 23.88,
+       "tegning_rgb": [
+        222,
+        206,
+        155
+       ],
+       "flater": [
+        40
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868282": {
+   "tegning": "Kvartal8BITMAP",
+   "vegger": [
+    {
+     "a": [
+      75.31,
+      76.39
+     ],
+     "b": [
+      64.86,
+      80.62
+     ],
+     "side": "S",
+     "tegning": "Kvartal8BITMAP",
+     "dekning": 1.0,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 4.58,
+       "tegning_rgb": [
+        188,
+        190,
+        192
+       ],
+       "flater": [
+        38
+       ]
+      },
+      {
+       "fra_m": 4.58,
+       "til_m": 11.27,
+       "tegning_rgb": [
+        188,
+        190,
+        192
+       ],
+       "flater": [
+        31
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868363": {
+   "tegning": "Kvartal4BITMP",
+   "vegger": [
+    {
+     "a": [
+      56.46,
+      109.4
+     ],
+     "b": [
+      38.09,
+      116.57
+     ],
+     "side": "S",
+     "tegning": "Kvartal4BITMP",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 12.19,
+       "tegning_rgb": [
+        249,
+        224,
+        204
+       ],
+       "flater": [
+        7
+       ]
+      },
+      {
+       "fra_m": 12.19,
+       "til_m": 19.72,
+       "tegning_rgb": [
+        173,
+        100,
+        86
+       ],
+       "flater": [
+        16
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868479": {
+   "tegning": "Kvartal10",
+   "vegger": [
+    {
+     "a": [
+      -29.03,
+      36.35
+     ],
+     "b": [
+      -34.04,
+      24.68
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal10",
+     "dekning": 0.87,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 3.43,
+       "tegning_rgb": [
+        255,
+        232,
+        161
+       ],
+       "flater": [
+        80
+       ]
+      },
+      {
+       "fra_m": 3.43,
+       "til_m": 12.7,
+       "tegning_rgb": [
+        242,
+        149,
+        130
+       ],
+       "flater": [
+        50
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868525": {
+   "tegning": "Kvartal4BITMP",
+   "vegger": [
+    {
+     "a": [
+      6.39,
+      96.21
+     ],
+     "b": [
+      -7.31,
+      103.24
+     ],
+     "side": "SV",
+     "tegning": "Kvartal4BITMP",
+     "dekning": 0.95,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 4.04,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        61
+       ]
+      },
+      {
+       "fra_m": 4.04,
+       "til_m": 15.4,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        20
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193868630": {
+   "tegning": "kvartal6",
+   "vegger": [
+    {
+     "a": [
+      157.12,
+      89.9
+     ],
+     "b": [
+      153.86,
+      91.96
+     ],
+     "side": "SV",
+     "tegning": "kvartal6",
+     "dekning": 0.98,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 1.55,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        59
+       ]
+      },
+      {
+       "fra_m": 1.55,
+       "til_m": 3.86,
+       "tegning_rgb": [
+        173,
+        100,
+        86
+       ],
+       "flater": [
+        56
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193870201": {
+   "tegning": "sistekvartal",
+   "vegger": [
+    {
+     "a": [
+      32.74,
+      -163.21
+     ],
+     "b": [
+      20.46,
+      -175.52
+     ],
+     "side": "SØ",
+     "tegning": "sistekvartal",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 3.96,
+       "tegning_rgb": [
+        222,
+        242,
+        246
+       ],
+       "flater": [
+        49
+       ]
+      },
+      {
+       "fra_m": 3.96,
+       "til_m": 17.39,
+       "tegning_rgb": [
+        222,
+        242,
+        246
+       ],
+       "flater": [
+        37,
+        42,
+        65
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193870252": {
+   "tegning": "sistekvartal",
+   "vegger": [
+    {
+     "a": [
+      70.88,
+      -124.58
+     ],
+     "b": [
+      53.14,
+      -142.64
+     ],
+     "side": "SØ",
+     "tegning": "sistekvartal",
+     "dekning": 0.86,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 19.55,
+       "tegning_rgb": [
+        190,
+        192,
+        194
+       ],
+       "flater": [
+        56
+       ]
+      },
+      {
+       "fra_m": 19.55,
+       "til_m": 25.32,
+       "tegning_rgb": [
+        233,
+        233,
+        234
+       ],
+       "flater": [
+        64
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193971954": {
+   "tegning": "Kvartal4BITMP",
+   "vegger": [
+    {
+     "a": [
+      32.65,
+      132.59
+     ],
+     "b": [
+      27.64,
+      120.81
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal4BITMP",
+     "dekning": 1.01,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 7.69,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        62
+       ]
+      },
+      {
+       "fra_m": 7.69,
+       "til_m": 12.8,
+       "tegning_rgb": [
+        222,
+        206,
+        155
+       ],
+       "flater": [
+        51
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193972101": {
+   "tegning": "Kvartal12",
+   "vegger": [
+    {
+     "a": [
+      109.87,
+      -13.29
+     ],
+     "b": [
+      101.98,
+      -9.74
+     ],
+     "side": "SV",
+     "tegning": "Kvartal12",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 5.23,
+       "tegning_rgb": [
+        250,
+        229,
+        212
+       ],
+       "flater": [
+        42
+       ]
+      },
+      {
+       "fra_m": 5.23,
+       "til_m": 8.65,
+       "tegning_rgb": [
+        232,
+        213,
+        198
+       ],
+       "flater": [
+        61
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193972160": {
+   "tegning": "kvartal6",
+   "vegger": [
+    {
+     "a": [
+      183.72,
+      95.16
+     ],
+     "b": [
+      176.07,
+      81.48
+     ],
+     "side": "SØ",
+     "tegning": "kvartal6",
+     "dekning": 0.82,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 9.1,
+       "tegning_rgb": [
+        188,
+        190,
+        192
+       ],
+       "flater": [
+        26
+       ]
+      },
+      {
+       "fra_m": 9.1,
+       "til_m": 15.67,
+       "tegning_rgb": [
+        246,
+        147,
+        129
+       ],
+       "flater": [
+        43
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193972373": {
+   "tegning": "Kvartal2BITMP",
+   "vegger": [
+    {
+     "a": [
+      167.72,
+      180.24
+     ],
+     "b": [
+      162.23,
+      173.14
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal2BITMP",
+     "dekning": 0.95,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 5.61,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        46
+       ]
+      },
+      {
+       "fra_m": 5.61,
+       "til_m": 8.97,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        52
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193972411": {
+   "tegning": "Kvartal10",
+   "vegger": [
+    {
+     "a": [
+      -70.27,
+      31.01
+     ],
+     "b": [
+      -84.6,
+      37.33
+     ],
+     "side": "SV",
+     "tegning": "Kvartal10",
+     "dekning": 0.71,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 9.49,
+       "tegning_rgb": [
+        228,
+        213,
+        163
+       ],
+       "flater": [
+        30
+       ]
+      },
+      {
+       "fra_m": 9.49,
+       "til_m": 15.66,
+       "tegning_rgb": [
+        255,
+        232,
+        161
+       ],
+       "flater": [
+        60
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-193987397": {
+   "tegning": "kvartal5",
+   "vegger": [
+    {
+     "a": [
+      123.09,
+      125.32
+     ],
+     "b": [
+      106.48,
+      99.35
+     ],
+     "side": "SØ",
+     "tegning": "kvartal5",
+     "dekning": 0.8,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 12.52,
+       "tegning_rgb": [
+        239,
+        240,
+        240
+       ],
+       "flater": [
+        15
+       ]
+      },
+      {
+       "fra_m": 12.52,
+       "til_m": 30.83,
+       "tegning_rgb": [
+        239,
+        240,
+        240
+       ],
+       "flater": [
+        29
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "bnr-6251218": {
+   "tegning": "kvartal5",
+   "vegger": [
+    {
+     "a": [
+      128.7,
+      89.49
+     ],
+     "b": [
+      114.98,
+      95.78
+     ],
+     "side": "SV",
+     "tegning": "kvartal5",
+     "dekning": 0.75,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 7.58,
+       "tegning_rgb": [
+        244,
+        123,
+        106
+       ],
+       "flater": [
+        49,
+        76
+       ]
+      },
+      {
+       "fra_m": 7.58,
+       "til_m": 15.09,
+       "tegning_rgb": [
+        246,
+        143,
+        124
+       ],
+       "flater": [
+        63
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "pb-60": {
+   "tegning": "kvartal5",
+   "vegger": [
+    {
+     "a": [
+      90.51,
+      121.58
+     ],
+     "b": [
+      96.03,
+      129.42
+     ],
+     "side": "SØ",
+     "tegning": "kvartal5",
+     "dekning": 0.86,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 2.68,
+       "tegning_rgb": [
+        226,
+        204,
+        187
+       ],
+       "flater": [
+        73
+       ]
+      },
+      {
+       "fra_m": 2.68,
+       "til_m": 7.63,
+       "tegning_rgb": [
+        249,
+        224,
+        204
+       ],
+       "flater": [
+        66
+       ]
+      },
+      {
+       "fra_m": 7.63,
+       "til_m": 9.59,
+       "tegning_rgb": [
+        226,
+        204,
+        187
+       ],
+       "flater": [
+        81
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "pb-66": {
+   "tegning": "Kvartal9",
+   "vegger": [
+    {
+     "a": [
+      171.22,
+      28.61
+     ],
+     "b": [
+      179.75,
+      46.94
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal9",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 6.06,
+       "tegning_rgb": [
+        250,
+        171,
+        114
+       ],
+       "flater": [
+        55
+       ]
+      },
+      {
+       "fra_m": 6.06,
+       "til_m": 20.22,
+       "tegning_rgb": [
+        249,
+        224,
+        204
+       ],
+       "flater": [
+        36
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "pb-7": {
+   "tegning": "Kvartal14",
+   "vegger": [
+    {
+     "a": [
+      95.48,
+      -98.85
+     ],
+     "b": [
+      89.26,
+      -105.31
+     ],
+     "side": "SØ",
+     "tegning": "Kvartal14",
+     "dekning": 0.89,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 6.74,
+       "tegning_rgb": [
+        245,
+        176,
+        163
+       ],
+       "flater": [
+        62,
+        103,
+        101
+       ]
+      },
+      {
+       "fra_m": 6.74,
+       "til_m": 8.97,
+       "tegning_rgb": [
+        242,
+        149,
+        130
+       ],
+       "flater": [
+        92
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "pb-8": {
+   "tegning": "Kvartal14",
+   "vegger": [
+    {
+     "a": [
+      49.68,
+      -104.76
+     ],
+     "b": [
+      35.11,
+      -100.41
+     ],
+     "side": "S",
+     "tegning": "Kvartal14",
+     "dekning": 0.99,
+     "segmenter": [
+      {
+       "fra_m": 0.0,
+       "til_m": 12.47,
+       "tegning_rgb": [
+        242,
+        149,
+        130
+       ],
+       "flater": [
+        8
+       ]
+      },
+      {
+       "fra_m": 12.47,
+       "til_m": 15.21,
+       "tegning_rgb": [
+        221,
+        174,
+        132
+       ],
+       "flater": [
+        51
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "laget": "2026-10-30",
+ "verktoy": "verktoy/fasadesegmenter.py finn"
+}
