@@ -1,5 +1,22 @@
 [
  {
+  "id": "bnr-193867537",
+  "kilde": "kvartaltegningen Kvartal11 (IoU 0.76)",
+  "tegning": [
+   196,
+   128,
+   114
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   248.0,
+   206.0,
+   166.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193870279",
   "kilde": "Street View mai 2024",
   "ord": "brun/rødbrun tegl",
@@ -7,6 +24,23 @@
    201.0,
    197.0,
    178.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868363",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.60)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   210.0,
+   195.0,
+   173.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -24,6 +58,40 @@
   "sikker": true
  },
  {
+  "id": "bnr-193868061",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.56)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   210.0,
+   191.0,
+   170.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193869556",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.83)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   198.0,
+   186.0,
+   171.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193867502",
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
@@ -37,7 +105,7 @@
  },
  {
   "id": "bnr-193867502",
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.72)",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.66)",
   "tegning": [
    66,
    66,
@@ -66,7 +134,7 @@
  },
  {
   "id": "bnr-193867677",
-  "kilde": "kvartaltegningen tell (IoU 0.83)",
+  "kilde": "kvartaltegningen tell (IoU 0.84)",
   "tegning": [
    244,
    123,
@@ -85,6 +153,23 @@
   "id": "bnr-193868053",
   "kilde": "Street View mai 2024",
   "ord": "grå/brun gammel tegl, mosegrodd",
+  "foto": [
+   188.0,
+   185.0,
+   171.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868053",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.53)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
   "foto": [
    188.0,
    185.0,
@@ -165,7 +250,7 @@
  },
  {
   "id": "bnr-193868045",
-  "kilde": "kvartaltegningen Kvartal3 (IoU 0.67)",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.71)",
   "tegning": [
    173,
    100,
@@ -194,11 +279,11 @@
  },
  {
   "id": "bnr-193868460",
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.50)",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.56)",
   "tegning": [
-   134,
-   134,
-   134
+   198,
+   198,
+   197
   ],
   "tegning_familie": "grå",
   "foto": [
@@ -211,7 +296,7 @@
  },
  {
   "id": "bnr-193867499",
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.68)",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.73)",
   "tegning": [
    184,
    111,
@@ -228,7 +313,7 @@
  },
  {
   "id": "bnr-193867510",
-  "kilde": "kvartaltegningen Kvartal13 (IoU 0.83)",
+  "kilde": "kvartaltegningen Kvartal13 (IoU 0.90)",
   "tegning": [
    237,
    119,
@@ -257,7 +342,7 @@
  },
  {
   "id": "bnr-193869580",
-  "kilde": "kvartaltegningen Glasshytta (IoU 0.75)",
+  "kilde": "kvartaltegningen Glasshytta (IoU 0.80)",
   "tegning": [
    173,
    100,
@@ -282,6 +367,23 @@
    172.0
   ],
   "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193867324",
+  "kilde": "kvartaltegningen Kvartal3 (IoU 0.53)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   202.0,
+   188.0,
+   169.0
+  ],
+  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -310,7 +412,7 @@
  },
  {
   "id": "bnr-193868355",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.68)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.65)",
   "tegning": [
    173,
    100,
@@ -327,11 +429,11 @@
  },
  {
   "id": "bnr-193868339",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.74)",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.80)",
   "tegning": [
-   244,
-   123,
-   106
+   173,
+   100,
+   86
   ],
   "tegning_familie": "rød",
   "foto": [
@@ -344,7 +446,7 @@
  },
  {
   "id": "bnr-193867626",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.66)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.64)",
   "tegning": [
    244,
    123,
@@ -456,20 +558,20 @@
   "sikker": true
  },
  {
-  "id": "bnr-193972152",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.37)",
+  "id": "bnr-193972373",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.48)",
   "tegning": [
-   246,
-   147,
-   129
+   173,
+   100,
+   86
   ],
   "tegning_familie": "rød",
   "foto": [
-   152.0,
-   149.0,
-   140.0
+   249.0,
+   204.0,
+   163.0
   ],
-  "klasse": "mørk grå",
+  "klasse": "rød tegl",
   "sikker": true
  },
  {
@@ -491,7 +593,7 @@
  },
  {
   "id": "bnr-193868118",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.55)",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.57)",
   "tegning": [
    244,
    123,
@@ -508,7 +610,7 @@
  },
  {
   "id": "bnr-193971954",
-  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.61)",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.59)",
   "tegning": [
    173,
    100,
@@ -521,23 +623,6 @@
    127.0
   ],
   "klasse": "rød tegl",
-  "sikker": true
- },
- {
-  "id": "bnr-6247822",
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.49)",
-  "tegning": [
-   178,
-   110,
-   95
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   199.0,
-   186.0,
-   167.0
-  ],
-  "klasse": "brungrå",
   "sikker": true
  },
  {
@@ -554,7 +639,7 @@
  },
  {
   "id": "bnr-193971369",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.67)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.63)",
   "tegning": [
    115,
    117,
@@ -571,7 +656,7 @@
  },
  {
   "id": "bnr-193868223",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.82)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.85)",
   "tegning": [
    173,
    100,
@@ -587,25 +672,8 @@
   "sikker": true
  },
  {
-  "id": "bnr-6242812",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.64)",
-  "tegning": [
-   217,
-   110,
-   94
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   139.0,
-   128.0,
-   119.0
-  ],
-  "klasse": "falmet tegl",
-  "sikker": true
- },
- {
   "id": "bnr-193868126",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.46)",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.60)",
   "tegning": [
    211,
    107,
@@ -621,25 +689,8 @@
   "sikker": true
  },
  {
-  "id": "bnr-193868371",
-  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.69)",
-  "tegning": [
-   244,
-   123,
-   106
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   142.0,
-   147.0,
-   153.0
-  ],
-  "klasse": "mørk grå",
-  "sikker": true
- },
- {
   "id": "bnr-193868134",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.77)",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.80)",
   "tegning": [
    244,
    123,
@@ -655,8 +706,25 @@
   "sikker": true
  },
  {
+  "id": "bnr-193867979",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.47)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   213.0,
+   204.0,
+   177.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193868150",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.68)",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.72)",
   "tegning": [
    173,
    100,
@@ -685,7 +753,7 @@
  },
  {
   "id": "bnr-193868088",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.66)",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.64)",
   "tegning": [
    244,
    123,
@@ -702,7 +770,7 @@
  },
  {
   "id": "bnr-193868320",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.70)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.68)",
   "tegning": [
    244,
    123,
@@ -731,7 +799,7 @@
  },
  {
   "id": "bnr-193868266",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.67)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.63)",
   "tegning": [
    244,
    123,
@@ -748,7 +816,7 @@
  },
  {
   "id": "bnr-193868274",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.66)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.65)",
   "tegning": [
    244,
    123,
@@ -765,7 +833,7 @@
  },
  {
   "id": "bnr-193868231",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.69)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.57)",
   "tegning": [
    244,
    123,
@@ -794,7 +862,7 @@
  },
  {
   "id": "bnr-193867936",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.74)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.60)",
   "tegning": [
    244,
    123,
@@ -822,6 +890,23 @@
   "sikker": true
  },
  {
+  "id": "bnr-193868029",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.54)",
+  "tegning": [
+   244,
+   123,
+   106
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   179.0,
+   169.0,
+   151.0
+  ],
+  "klasse": "falmet tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193971334",
   "kilde": "Street View mai 2024",
   "ord": "brun/grå tegl, mosegrodd",
@@ -835,7 +920,7 @@
  },
  {
   "id": "bnr-193971334",
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.64)",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.77)",
   "tegning": [
    244,
    123,
@@ -851,25 +936,8 @@
   "sikker": true
  },
  {
-  "id": "bnr-193867863",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.63)",
-  "tegning": [
-   217,
-   110,
-   94
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   70.0,
-   63.0,
-   69.0
-  ],
-  "klasse": null,
-  "sikker": false
- },
- {
   "id": "bnr-193867618",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.73)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.74)",
   "tegning": [
    219,
    111,
@@ -898,7 +966,7 @@
  },
  {
   "id": "bnr-193868282",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.81)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.83)",
   "tegning": [
    173,
    100,
@@ -915,7 +983,7 @@
  },
  {
   "id": "bnr-6251323",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.72)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.79)",
   "tegning": [
    135,
    81,
@@ -932,7 +1000,7 @@
  },
  {
   "id": "bnr-193918239",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.41)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.45)",
   "tegning": [
    132,
    134,
@@ -949,7 +1017,7 @@
  },
  {
   "id": "bnr-193987397",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.61)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.58)",
   "tegning": [
    244,
    123,
@@ -965,23 +1033,6 @@
   "sikker": true
  },
  {
-  "id": "bnr-193868096",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.49)",
-  "tegning": [
-   173,
-   100,
-   86
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   192.0,
-   186.0,
-   169.0
-  ],
-  "klasse": "brungrå",
-  "sikker": true
- },
- {
   "id": "bnr-193867359",
   "kilde": "Street View mai 2024",
   "ord": "mørk grå/svart tegl",
@@ -989,6 +1040,23 @@
    176.0,
    173.0,
    158.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868002",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.53)",
+  "tegning": [
+   197,
+   99,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   196.0,
+   185.0,
+   168.0
   ],
   "klasse": "brungrå",
   "sikker": true
@@ -1035,6 +1103,40 @@
   "sikker": true
  },
  {
+  "id": "bnr-193867901",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.46)",
+  "tegning": [
+   246,
+   147,
+   129
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   235.0,
+   184.0,
+   153.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868525",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.60)",
+  "tegning": [
+   128,
+   130,
+   133
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   211.0,
+   196.0,
+   176.0
+  ],
+  "klasse": "falmet tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-6251331",
   "kilde": "Street View mai 2024",
   "ord": "rød tegl",
@@ -1048,7 +1150,7 @@
  },
  {
   "id": "bnr-6251331",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.67)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.58)",
   "tegning": [
    217,
    110,
@@ -1065,7 +1167,7 @@
  },
  {
   "id": "bnr-193867944",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.60)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.62)",
   "tegning": [
    246,
    147,
@@ -1082,7 +1184,7 @@
  },
  {
   "id": "bnr-193972136",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.58)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.59)",
   "tegning": [
    246,
    147,
@@ -1111,7 +1213,7 @@
  },
  {
   "id": "bnr-193971946",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.63)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.61)",
   "tegning": [
    173,
    100,
@@ -1128,7 +1230,7 @@
  },
  {
   "id": "bnr-193972519",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.47)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.52)",
   "tegning": [
    145,
    147,
@@ -1145,7 +1247,7 @@
  },
  {
   "id": "bnr-6275109",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.51)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.54)",
   "tegning": [
    246,
    147,
@@ -1162,7 +1264,7 @@
  },
  {
   "id": "bnr-193971318",
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.54)",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.66)",
   "tegning": [
    244,
    123,
@@ -1179,7 +1281,7 @@
  },
  {
   "id": "bnr-193972624",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.61)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.55)",
   "tegning": [
    246,
    147,
@@ -1196,7 +1298,7 @@
  },
  {
   "id": "bnr-193867928",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.72)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.66)",
   "tegning": [
    105,
    109,
@@ -1225,7 +1327,7 @@
  },
  {
   "id": "bnr-193867952",
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.53)",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.57)",
   "tegning": [
    173,
    100,
@@ -1253,25 +1355,8 @@
   "sikker": true
  },
  {
-  "id": "bnr-193867898",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.50)",
-  "tegning": [
-   246,
-   147,
-   129
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   217.0,
-   178.0,
-   152.0
-  ],
-  "klasse": "rød tegl",
-  "sikker": true
- },
- {
   "id": "bnr-6251218",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.74)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.80)",
   "tegning": [
    217,
    110,
@@ -1288,7 +1373,7 @@
  },
  {
   "id": "bnr-193868290",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.76)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.69)",
   "tegning": [
    126,
    128,
@@ -1317,7 +1402,7 @@
  },
  {
   "id": "bnr-193868622",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.66)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.76)",
   "tegning": [
    105,
    109,
@@ -1334,7 +1419,7 @@
  },
  {
   "id": "bnr-193868215",
-  "kilde": "kvartaltegningen kvartal5 (IoU 0.67)",
+  "kilde": "kvartaltegningen kvartal5 (IoU 0.62)",
   "tegning": [
    115,
    117,
@@ -1350,25 +1435,8 @@
   "sikker": true
  },
  {
-  "id": "bnr-193972039",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.47)",
-  "tegning": [
-   180,
-   102,
-   84
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   201.0,
-   191.0,
-   170.0
-  ],
-  "klasse": "brungrå",
-  "sikker": true
- },
- {
   "id": "bnr-193971938",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.49)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.51)",
   "tegning": [
    237,
    119,
@@ -1385,7 +1453,7 @@
  },
  {
   "id": "bnr-193972411",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.77)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.78)",
   "tegning": [
    180,
    102,
@@ -1402,7 +1470,7 @@
  },
  {
   "id": "bnr-193870260",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.62)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.57)",
   "tegning": [
    180,
    102,
@@ -1419,7 +1487,7 @@
  },
  {
   "id": "bnr-193868592",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.58)",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.60)",
   "tegning": [
    244,
    123,
@@ -1436,7 +1504,7 @@
  },
  {
   "id": "bnr-193870236",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.68)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.73)",
   "tegning": [
    66,
    66,
@@ -1453,11 +1521,11 @@
  },
  {
   "id": "bnr-193867693",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.59)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.55)",
   "tegning": [
-   237,
-   119,
-   102
+   180,
+   102,
+   84
   ],
   "tegning_familie": "rød",
   "foto": [
@@ -1487,7 +1555,7 @@
  },
  {
   "id": "bnr-193867588",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.56)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.61)",
   "tegning": [
    180,
    102,
@@ -1516,7 +1584,7 @@
  },
  {
   "id": "bnr-193987370",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.77)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.76)",
   "tegning": [
    180,
    102,
@@ -1532,25 +1600,25 @@
   "sikker": true
  },
  {
-  "id": "bnr-193972594",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.57)",
+  "id": "bnr-193867707",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.32)",
   "tegning": [
-   66,
-   66,
-   65
+   237,
+   119,
+   102
   ],
-  "tegning_familie": "grå",
+  "tegning_familie": "rød",
   "foto": [
-   190.0,
-   198.0,
-   201.0
+   217.0,
+   200.0,
+   178.0
   ],
-  "klasse": "grå",
+  "klasse": "brungrå",
   "sikker": true
  },
  {
   "id": "bnr-193972101",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.56)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.60)",
   "tegning": [
    180,
    102,
@@ -1567,7 +1635,7 @@
  },
  {
   "id": "bnr-193867804",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.49)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.48)",
   "tegning": [
    180,
    102,
@@ -1584,7 +1652,7 @@
  },
  {
   "id": "bnr-193867723",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.52)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.51)",
   "tegning": [
    237,
    119,
@@ -1600,8 +1668,25 @@
   "sikker": true
  },
  {
+  "id": "bnr-193972403",
+  "kilde": "kvartaltegningen sistekvartal (IoU 0.31)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   211.0,
+   198.0,
+   173.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193868711",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.72)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.69)",
   "tegning": [
    180,
    102,
@@ -1617,8 +1702,25 @@
   "sikker": true
  },
  {
+  "id": "bnr-193972446",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.57)",
+  "tegning": [
+   180,
+   102,
+   84
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   244.0,
+   202.0,
+   170.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193867758",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.61)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.58)",
   "tegning": [
    237,
    119,
@@ -1647,7 +1749,7 @@
  },
  {
   "id": "bnr-193867731",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.50)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.48)",
   "tegning": [
    237,
    119,
@@ -1676,7 +1778,7 @@
  },
  {
   "id": "bnr-193867839",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.56)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.58)",
   "tegning": [
    119,
    119,
@@ -1693,7 +1795,7 @@
  },
  {
   "id": "bnr-193867766",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.57)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.61)",
   "tegning": [
    66,
    66,
@@ -1710,7 +1812,7 @@
  },
  {
   "id": "bnr-193972462",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.63)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.64)",
   "tegning": [
    216,
    109,
@@ -1726,8 +1828,25 @@
   "sikker": true
  },
  {
+  "id": "bnr-193870252",
+  "kilde": "kvartaltegningen sistekvartal (IoU 0.57)",
+  "tegning": [
+   213,
+   215,
+   216
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   113.0,
+   113.0,
+   116.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193972063",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.71)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.64)",
   "tegning": [
    180,
    102,
@@ -1746,23 +1865,6 @@
   "id": "bnr-193867545",
   "kilde": "Street View mai 2024",
   "ord": "brun/rødbrun tegl",
-  "foto": [
-   73.0,
-   67.0,
-   69.0
-  ],
-  "klasse": "mørk brun",
-  "sikker": true
- },
- {
-  "id": "bnr-193867545",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.51)",
-  "tegning": [
-   237,
-   119,
-   102
-  ],
-  "tegning_familie": "rød",
   "foto": [
    73.0,
    67.0,
@@ -1802,7 +1904,7 @@
  },
  {
   "id": "bnr-193868533",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.51)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.53)",
   "tegning": [
    244,
    123,
@@ -1830,8 +1932,25 @@
   "sikker": true
  },
  {
+  "id": "bnr-194006187",
+  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.45)",
+  "tegning": [
+   164,
+   84,
+   72
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   207.0,
+   191.0,
+   173.0
+  ],
+  "klasse": "falmet tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193991718",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.57)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.49)",
   "tegning": [
    188,
    190,
@@ -1848,7 +1967,7 @@
  },
  {
   "id": "bnr-193972306",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.50)",
+  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.44)",
   "tegning": [
    244,
    123,
@@ -1864,6 +1983,23 @@
   "sikker": true
  },
  {
+  "id": "bnr-193972144",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.46)",
+  "tegning": [
+   152,
+   154,
+   157
+  ],
+  "tegning_familie": "grå",
+  "foto": [
+   132.0,
+   126.0,
+   120.0
+  ],
+  "klasse": "mørk grå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193972187",
   "kilde": "Street View mai 2024",
   "ord": "rød/brun tegl",
@@ -1876,59 +2012,25 @@
   "sikker": true
  },
  {
-  "id": "bnr-193972055",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.50)",
+  "id": "bnr-193971385",
+  "kilde": "kvartaltegningen Kvartal9 (IoU 0.46)",
   "tegning": [
-   237,
-   119,
-   102
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   181.0,
-   174.0,
-   157.0
-  ],
-  "klasse": "brungrå",
-  "sikker": true
- },
- {
-  "id": "bnr-193971377",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.54)",
-  "tegning": [
-   165,
-   167,
-   170
+   105,
+   109,
+   110
   ],
   "tegning_familie": "grå",
   "foto": [
-   100.0,
-   106.0,
-   114.0
-  ],
-  "klasse": "svart/antrasitt",
-  "sikker": true
- },
- {
-  "id": "bnr-193971202",
-  "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.62)",
-  "tegning": [
-   246,
-   147,
-   129
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   195.0,
-   185.0,
-   168.0
+   165.0,
+   160.0,
+   148.0
   ],
   "klasse": "brungrå",
   "sikker": true
  },
  {
   "id": "bnr-193971288",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.38)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.34)",
   "tegning": [
    173,
    100,
@@ -1945,51 +2047,17 @@
  },
  {
   "id": "bnr-193971261",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.60)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.35)",
   "tegning": [
-   152,
-   154,
-   157
+   244,
+   123,
+   106
   ],
-  "tegning_familie": "grå",
+  "tegning_familie": "rød",
   "foto": [
    236.0,
    206.0,
    178.0
-  ],
-  "klasse": "rød tegl",
-  "sikker": true
- },
- {
-  "id": "bnr-193972632",
-  "kilde": "kvartaltegningen Kvartal9 (IoU 0.47)",
-  "tegning": [
-   217,
-   110,
-   94
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   168.0,
-   163.0,
-   149.0
-  ],
-  "klasse": "brungrå",
-  "sikker": true
- },
- {
-  "id": "bnr-193972454",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.51)",
-  "tegning": [
-   237,
-   119,
-   102
-  ],
-  "tegning_familie": "rød",
-  "foto": [
-   242.0,
-   199.0,
-   167.0
   ],
   "klasse": "rød tegl",
   "sikker": true
@@ -2007,25 +2075,25 @@
   "sikker": true
  },
  {
-  "id": "bnr-193868681",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.46)",
+  "id": "bnr-193868584",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.51)",
   "tegning": [
-   244,
-   123,
-   106
+   245,
+   176,
+   163
   ],
   "tegning_familie": "rød",
   "foto": [
-   178.0,
-   176.0,
-   160.0
+   183.0,
+   175.0,
+   159.0
   ],
-  "klasse": "brungrå",
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
   "id": "bnr-193868517",
-  "kilde": "kvartaltegningen kvartal7 (IoU 0.33)",
+  "kilde": "kvartaltegningen kvartal7 (IoU 0.36)",
   "tegning": [
    138,
    140,
@@ -2042,7 +2110,7 @@
  },
  {
   "id": "bnr-193868479",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.62)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.64)",
   "tegning": [
    237,
    119,
@@ -2059,7 +2127,7 @@
  },
  {
   "id": "bnr-193867987",
-  "kilde": "kvartaltegningen kvartal6 (IoU 0.53)",
+  "kilde": "kvartaltegningen kvartal6 (IoU 0.56)",
   "tegning": [
    178,
    110,
@@ -2088,7 +2156,7 @@
  },
  {
   "id": "bnr-193867774",
-  "kilde": "kvartaltegningen Kvartal12 (IoU 0.59)",
+  "kilde": "kvartaltegningen Kvartal12 (IoU 0.66)",
   "tegning": [
    180,
    102,
@@ -2105,13 +2173,13 @@
  },
  {
   "id": "bnr-193870244",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.54)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.56)",
   "tegning": [
-   198,
-   198,
-   197
+   180,
+   102,
+   84
   ],
-  "tegning_familie": "grå",
+  "tegning_familie": "rød",
   "foto": [
    174.0,
    167.0,
@@ -2121,8 +2189,25 @@
   "sikker": true
  },
  {
+  "id": "bnr-193867685",
+  "kilde": "kvartaltegningen tell (IoU 0.62)",
+  "tegning": [
+   173,
+   100,
+   86
+  ],
+  "tegning_familie": "rød",
+  "foto": [
+   205.0,
+   190.0,
+   169.0
+  ],
+  "klasse": "brungrå",
+  "sikker": true
+ },
+ {
   "id": "bnr-193867553",
-  "kilde": "kvartaltegningen Kvartal10 (IoU 0.69)",
+  "kilde": "kvartaltegningen Kvartal10 (IoU 0.66)",
   "tegning": [
    180,
    102,
@@ -2151,13 +2236,13 @@
  },
  {
   "id": "bnr-16313173",
-  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.52)",
+  "kilde": "kvartaltegningen Kvartal8BITMAP (IoU 0.47)",
   "tegning": [
-   244,
-   123,
-   106
+   152,
+   154,
+   157
   ],
-  "tegning_familie": "rød",
+  "tegning_familie": "grå",
   "foto": [
    219.0,
    171.0,
@@ -2179,25 +2264,25 @@
   "sikker": true
  },
  {
-  "id": "bnr-300399132",
-  "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.55)",
+  "id": "bnr-193870228",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.51)",
   "tegning": [
-   163,
-   71,
-   68
+   237,
+   119,
+   102
   ],
   "tegning_familie": "rød",
   "foto": [
-   152.0,
-   142.0,
-   129.0
+   191.0,
+   183.0,
+   169.0
   ],
   "klasse": "brungrå",
   "sikker": true
  },
  {
   "id": "bnr-193870201",
-  "kilde": "kvartaltegningen sistekvartal (IoU 0.79)",
+  "kilde": "kvartaltegningen sistekvartal (IoU 0.81)",
   "tegning": [
    244,
    123,
@@ -2214,7 +2299,7 @@
  },
  {
   "id": "bnr-193972047",
-  "kilde": "kvartaltegningen Kvartal14 (IoU 0.52)",
+  "kilde": "kvartaltegningen Kvartal14 (IoU 0.45)",
   "tegning": [
    237,
    119,
