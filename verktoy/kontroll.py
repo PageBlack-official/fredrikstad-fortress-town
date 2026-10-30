@@ -877,6 +877,8 @@ def analyser(navn, logg=print):
         # segmentveggen, flatene tegningen har på dem, x-utstrekningen i andel av den tegnede fasaden (frihånd), og for hvert
         # segment flaten som dekker mest av det, mot segmentets farge
         seg_k = {}; seg_dom = []
+        fsf = os.path.join(ROT, 'kilder', 'fasadesegmenter.json')
+        FSEG = json.load(open(fsf, encoding='utf8'))['hus'] if os.path.exists(fsf) else {}
         for sv_ in (x.get('fasadesegmenter') or []):
             sa_, sb_ = np.array(sv_['a'], float), np.array(sv_['b'], float); Ls = float(np.linalg.norm(sb_ - sa_)); us = (sb_ - sa_) / max(Ls, 1e-9)
             ns_ = np.array([-us[1], us[0]])
@@ -891,9 +893,22 @@ def analyser(navn, logg=print):
             T_ = [(sorted([sx(F[j]['ytre'].bounds[0]), sx(F[j]['ytre'].bounds[2])]), j) for j in jl]
             lo_, hi_ = min(t[0][0] for t in T_), max(t[0][1] for t in T_)
             if hi_ - lo_ < 1: continue
-            for sg in sv_['segmenter']:
+            # segmentene lest fra denne tegningen (kilder/fasadesegmenter.json, flatene sett på kontaktarket): dømmes mot sine egne flater
+            kilde_seg = (FSEG.get(i) or {})
+            egne = None
+            if kilde_seg.get('tegning') == navn:
+                vv_ = [w_ for w_ in kilde_seg['vegger'] if abs(float((np.array(w_['b']) - np.array(w_['a'])) @ us)) > 0.9 * Ls]
+                if vv_:
+                    egne = vv_[0]['segmenter']
+                    if float((np.array(vv_[0]['b']) - np.array(vv_[0]['a'])) @ us) < 0: egne = egne[::-1]
+            for nseg, sg in enumerate(sv_['segmenter']):
                 best = None
-                for (t0, t1), j in T_:
+                if egne and nseg < len(egne):
+                    fl_ = [F[j_] for j_ in range(len(F)) if F[j_]['i'] in egne[nseg]['flater']]
+                    if fl_:
+                        fbest = max(fl_, key=lambda f: f['ytre'].area)
+                        best = (1, tuple(int(round(c * 255)) for c in fbest['farge']))
+                for (t0, t1), j in ([] if best else T_):
                     t0_, t1_ = (t0 - lo_) / (hi_ - lo_) * Ls, (t1 - lo_) / (hi_ - lo_) * Ls
                     ov = min(t1_, sg['til_m']) - max(t0_, sg['fra_m'])
                     fa = tuple(int(round(c * 255)) for c in F[j]['farge'])

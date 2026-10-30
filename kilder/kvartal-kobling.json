@@ -855,11 +855,11 @@
       "bnr-193987370"
      ],
      "d": [
-      0,
-      0
+      -2,
+      4
      ],
-     "sok": 15,
-     "grunn": "det store oransje huset mot gata er tegnet som eget stykke, forskjøvet mot naboene (egen forskyvning)"
+     "sok": 4,
+     "grunn": "det store oransje huset mot gata: kantsøket låste seg på naboens kanter (+14 pt); forskyvningen satt fra kontrollarket (gatehjørnet nede til venstre), søket finjusterer ±4 pt"
     }
    ]
   },
