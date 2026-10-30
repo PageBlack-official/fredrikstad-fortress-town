@@ -1,0 +1,8 @@
+Toihuset
+  høydeskala fra tegnede vegger: 5.014 pt/m (3 vegger)
+  felles: omriss 13.7, kant 3.11 pt, nedre kant 2.0 pt, øvre 4.0 pt, IoU 0.666
+  felles: omriss 26.4, kant 4.02 pt, nedre kant 5.0 pt, øvre 13.0 pt, IoU 0.622
+  felles: omriss 31.9, kant 4.23 pt, nedre kant 5.0 pt, øvre 20.0 pt, IoU 0.599
+    blokk  1 hus (870279…): forskyvning +0.0, +0.0 pt, mål 2.76 -> 2.76
+  kamera: dreiing -14.8°, helning 45.5°, 4.978 pt/m, høyde 5.014 pt/m = 1.44 × ortografisk
+  registrering: median 2.03 pt (6.1 px ved 3 px/pt), 100% av husene innen 3 pt

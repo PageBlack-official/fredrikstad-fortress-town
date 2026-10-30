@@ -1,0 +1,9 @@
+kirke
+  høydeskala: ingen koblede vegger, tilpasses
+  høydeskala satt til median av de andre tegningene: 3.473 pt/m
+  felles: omriss 59.1, kant 4.36 pt, nedre kant 10.5 pt, øvre 42.0 pt, IoU 0.391
+  felles: omriss 58.8, kant 4.25 pt, nedre kant 12.0 pt, øvre 41.0 pt, IoU 0.424
+  felles: omriss 83.9, kant 4.39 pt, nedre kant 5.0 pt, øvre 103.0 pt, IoU 0.413
+    blokk  1 hus (867529…): forskyvning +0.0, -2.1 pt, mål 3.13 -> 3.08
+  kamera: dreiing -7.2°, helning 45.5°, 5.601 pt/m, høyde 3.473 pt/m = 0.88 × ortografisk
+  registrering: median 2.56 pt (7.7 px ved 3 px/pt), 100% av husene innen 3 pt

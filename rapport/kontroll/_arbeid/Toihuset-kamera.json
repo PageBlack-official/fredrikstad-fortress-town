@@ -1,0 +1,75 @@
+{
+ "tegning": "Toihuset",
+ "par": {
+  "az": -14.79,
+  "el": 45.46,
+  "s": 4.9777,
+  "K": 5.0144,
+  "kz": 1.436,
+  "K_kilde": "tegnede vegger"
+ },
+ "A": [
+  [
+   4.692752829198548,
+   1.23914473369786,
+   0.0,
+   727.4939217203107
+  ],
+  [
+   1.6577915969946067,
+   -3.3257424538823788,
+   -5.014365004844411,
+   22.897947169615087
+  ]
+ ],
+ "forskyvning": {
+  "bnr-193870279": [
+   0.0,
+   0.0
+  ]
+ },
+ "blokker": [
+  {
+   "ids": [
+    "bnr-193870279"
+   ],
+   "d": [
+    0.0,
+    0.0
+   ],
+   "kant_for": 2.76,
+   "kant_etter": 2.76
+  }
+ ],
+ "maal": {
+  "bunn": 2.0,
+  "topp": 4.0,
+  "iou": 0.6658771529014631,
+  "bare": 7,
+  "kant": 3.112451672554016,
+  "omriss": 13.740931518241924
+ },
+ "bygg": [
+  "bnr-193870279"
+ ],
+ "utenfor_tegningen": [],
+ "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
+ "hus_forskyvning": {
+  "bnr-193870279": {
+   "median_pt": 2.03,
+   "median_px": 6.1,
+   "andel_innen_2pt": 0.5,
+   "beste_forskyvning_pt": [
+    0.0,
+    0.0
+   ],
+   "median_etter_pt": 2.03
+  }
+ },
+ "registrering": {
+  "median_pt": 2.03,
+  "median_px": 6.1,
+  "andel_under_3pt": 1.0,
+  "R": 3.0
+ }
+}

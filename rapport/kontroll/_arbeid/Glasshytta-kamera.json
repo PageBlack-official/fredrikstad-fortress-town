@@ -1,0 +1,77 @@
+{
+ "tegning": "Glasshytta",
+ "par": {
+  "az": -10.57,
+  "el": 45.46,
+  "s": 5.0962,
+  "K": 4.0265,
+  "kz": 1.126,
+  "K_kilde": "tegnede vegger"
+ },
+ "A": [
+  [
+   4.949374265809881,
+   0.9237596392225041,
+   0.0,
+   -1121.4929963865843
+  ],
+  [
+   1.2110731715466403,
+   -3.514152724654439,
+   -4.026471004173253,
+   -182.83089423392727
+  ]
+ ],
+ "forskyvning": {
+  "bnr-193869580": [
+   3.11,
+   0.5
+  ]
+ },
+ "blokker": [
+  {
+   "ids": [
+    "bnr-193869580"
+   ],
+   "d": [
+    3.11,
+    0.5
+   ],
+   "kant_for": 2.41,
+   "kant_etter": 2.29
+  }
+ ],
+ "maal": {
+  "bunn": 2.0,
+  "topp": 3.0,
+  "iou": 0.3681776133209991,
+  "bare": 78,
+  "kant": 3.2578784227371216,
+  "omriss": 33.60163760699774
+ },
+ "bygg": [
+  "bnr-193869580"
+ ],
+ "utenfor_tegningen": [
+  "bnr-193869548"
+ ],
+ "enhet": "PDF-punkt (tegningens side), y ned; [x, y, z, 1] modellmeter -> punkt; forskyvning i pt per bygg",
+ "hus_forskyvning": {
+  "bnr-193869580": {
+   "median_pt": 1.7,
+   "median_px": 5.1,
+   "andel_innen_2pt": 0.56,
+   "beste_forskyvning_pt": [
+    2.0,
+    1.0
+   ],
+   "median_etter_pt": 1.5
+  }
+ },
+ "registrering": {
+  "median_pt": 1.7,
+  "median_px": 5.1,
+  "andel_under_3pt": 1.0,
+  "R": 3.0
+ }
+}

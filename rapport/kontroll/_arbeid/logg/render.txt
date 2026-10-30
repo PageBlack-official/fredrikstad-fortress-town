@@ -1,0 +1,38 @@
+ok Kvartal2BITMP 1223x904 261 nett 91.2s
+ok Kvartal3 1404x1584 261 nett 5.2s
+ok Kvartal4BITMP 1056x982 261 nett 5.3s
+ok kvartal5 1446x1029 261 nett 5.0s
+ok kvartal6 1428x1014 261 nett 5.3s
+ok kvartal7 1610x879 261 nett 4.2s
+ok Kvartal8BITMAP 1234x901 261 nett 5.6s
+ok Kvartal9 1511x927 261 nett 5.9s
+ok Kvartal10 1523x1078 261 nett 6.0s
+ok Kvartal11 1511x958 261 nett 6.1s
+ok Kvartal12 1474x957 261 nett 5.9s
+ok Kvartal13 1395x1107 261 nett 5.7s
+ok Kvartal14 1668x1019 261 nett 6.1s
+ok sistekvartal 1605x1236 261 nett 5.9s
+ok tell 806x505 261 nett 5.4s
+ok Glasshytta 1241x568 261 nett 5.5s
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Execution context was destroyed, most likely because of a navigation
+    at /home/claude/wt-kontroll/verktoy/kontroll_iso.mjs:35:26 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v22.23.4
+Traceback (most recent call last):
+  File "/home/claude/wt-kontroll/verktoy/kontroll.py", line 1033, in <module>
+    logg(f"  {n}: {len(A['hus'])} hus, {len(A['tegnet_uten_modell'])} tegnede grupper uten modellhus")
+    ^^^^^^^^^^^^
+  File "/home/claude/wt-kontroll/verktoy/kontroll.py", line 498, in render
+    subprocess.run(['node', os.path.join(ROT, 'verktoy', 'kontroll_iso.mjs'), html, jf, ARB], check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['node', '/home/claude/wt-kontroll/verktoy/kontroll_iso.mjs', '/home/claude/wt-kontroll/ut/enkel/index.html', '/home/claude/wt-kontroll/rapport/kontroll/_arbeid/jobb.json', '/home/claude/wt-kontroll/rapport/kontroll/_arbeid']' returned non-zero exit status 1.

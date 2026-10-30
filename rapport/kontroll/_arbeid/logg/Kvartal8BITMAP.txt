@@ -1,0 +1,12 @@
+Kvartal8BITMAP
+  høydeskala fra tegnede vegger: 2.433 pt/m (18 vegger)
+  felles: omriss 54.5, kant 2.89 pt, nedre kant 28.0 pt, øvre 6.0 pt, IoU 0.514
+  felles: omriss 58.6, kant 2.96 pt, nedre kant 30.0 pt, øvre 8.0 pt, IoU 0.481
+  felles: omriss 62.7, kant 3.16 pt, nedre kant 33.0 pt, øvre 6.0 pt, IoU 0.443
+  runde 2: 17 hus på det tegnede, 2 utenfor
+  felles, runde 2: omriss 24.2, kant 2.56 pt, nedre kant 5.0 pt, øvre 7.0 pt, IoU 0.603
+  runde 3: 18 hus på det tegnede, 1 utenfor
+  felles, runde 3: omriss 22.9, kant 2.57 pt, nedre kant 4.0 pt, øvre 6.5 pt, IoU 0.603
+    blokk 18 hus (414904…): forskyvning +0.0, +0.0 pt, mål 2.50 -> 2.50
+  kamera: dreiing -13.0°, helning 45.5°, 4.779 pt/m, høyde 2.433 pt/m = 0.73 × ortografisk
+  registrering: median 1.75 pt (5.2 px ved 3 px/pt), 89% av husene innen 3 pt
