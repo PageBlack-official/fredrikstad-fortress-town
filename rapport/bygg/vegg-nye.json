@@ -1,0 +1,2070 @@
+[
+ {
+  "id": "bnr-13416796",
+  "navn": "Installatøren Arena",
+  "type": "sports_centre",
+  "vegg": [
+   227,
+   224,
+   206
+  ],
+  "kilde": "nabohuset bnr-193874568 (garage, 11.7 m unna)"
+ },
+ {
+  "id": "bnr-193867316",
+  "navn": "Tennishuset",
+  "type": "warehouse",
+  "vegg": [
+   184,
+   98,
+   78
+  ],
+  "kilde": "nabohuset bnr-193867324 (Artillerismien, 0.9 m unna)"
+ },
+ {
+  "id": "bnr-13415846",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   184,
+   98,
+   78
+  ],
+  "kilde": "nabohuset bnr-193820387 (garage, 13.0 m unna)"
+ },
+ {
+  "id": "bnr-13415870",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   176,
+   172
+  ],
+  "kilde": "nabohuset bnr-193820409 (house, 26.8 m unna)"
+ },
+ {
+  "id": "bnr-193820433",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   176,
+   172
+  ],
+  "kilde": "nabohuset bnr-193820409 (house, 16.8 m unna)"
+ },
+ {
+  "id": "bnr-13415862",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   184,
+   98,
+   78
+  ],
+  "kilde": "nabohuset bnr-193820387 (garage, 32.7 m unna)"
+ },
+ {
+  "id": "bnr-193820786",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   176,
+   172
+  ],
+  "kilde": "nabohuset bnr-193820409 (house, 19.0 m unna)"
+ },
+ {
+  "id": "bnr-13416214",
+  "navn": null,
+  "type": "office",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 12.2 m unna)"
+ },
+ {
+  "id": "bnr-13416206",
+  "navn": "Cube 8 Gallery",
+  "type": "office",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 162.4 m unna)"
+ },
+ {
+  "id": "bnr-13416192",
+  "navn": null,
+  "type": "office",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 39.7 m unna)"
+ },
+ {
+  "id": "bnr-193987494",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 33.7 m unna)"
+ },
+ {
+  "id": "bnr-193992854",
+  "navn": null,
+  "type": "office",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 93.5 m unna)"
+ },
+ {
+  "id": "bnr-193992846",
+  "navn": null,
+  "type": "office",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 126.1 m unna)"
+ },
+ {
+  "id": "bnr-193820751",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 33.7 m unna)"
+ },
+ {
+  "id": "bnr-193820476",
+  "navn": null,
+  "type": "semidetached_house",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-13416559 (house, 21.7 m unna)"
+ },
+ {
+  "id": "bnr-13416346",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 26.7 m unna)"
+ },
+ {
+  "id": "bnr-193820778",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 25.7 m unna)"
+ },
+ {
+  "id": "bnr-13416230",
+  "navn": null,
+  "type": "retail",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 158.9 m unna)"
+ },
+ {
+  "id": "bnr-193820522",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 24.6 m unna)"
+ },
+ {
+  "id": "bnr-13415900",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 5.0 m unna)"
+ },
+ {
+  "id": "bnr-193820964",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 19.4 m unna)"
+ },
+ {
+  "id": "bnr-13416486",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 51.6 m unna)"
+ },
+ {
+  "id": "bnr-13416249",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 143.4 m unna)"
+ },
+ {
+  "id": "bnr-6269281",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 77.9 m unna)"
+ },
+ {
+  "id": "bnr-13415854",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820417 (garage, 6.2 m unna)"
+ },
+ {
+  "id": "bnr-13416389",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-13416060 (apartments, 38.9 m unna)"
+ },
+ {
+  "id": "bnr-193820603",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 37.0 m unna)"
+ },
+ {
+  "id": "bnr-13415927",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-13416060 (apartments, 11.1 m unna)"
+ },
+ {
+  "id": "bnr-13415919",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 11.8 m unna)"
+ },
+ {
+  "id": "bnr-193820697",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 99.4 m unna)"
+ },
+ {
+  "id": "bnr-13416109",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 28.0 m unna)"
+ },
+ {
+  "id": "bnr-193820689",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 84.2 m unna)"
+ },
+ {
+  "id": "bnr-193820514",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 83.6 m unna)"
+ },
+ {
+  "id": "bnr-193820492",
+  "navn": null,
+  "type": "semidetached_house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 98.2 m unna)"
+ },
+ {
+  "id": "bnr-193820719",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 56.0 m unna)"
+ },
+ {
+  "id": "bnr-193820638",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 70.6 m unna)"
+ },
+ {
+  "id": "bnr-13416281",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 43.2 m unna)"
+ },
+ {
+  "id": "bnr-13416478",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 9.7 m unna)"
+ },
+ {
+  "id": "bnr-193820735",
+  "navn": null,
+  "type": "garages",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 60.7 m unna)"
+ },
+ {
+  "id": "bnr-193820662",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 115.3 m unna)"
+ },
+ {
+  "id": "bnr-193820727",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 61.4 m unna)"
+ },
+ {
+  "id": "bnr-13416338",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 91.2 m unna)"
+ },
+ {
+  "id": "bnr-193820611",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-13416559 (house, 41.2 m unna)"
+ },
+ {
+  "id": "bnr-193820670",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 126.7 m unna)"
+ },
+ {
+  "id": "bnr-193992838",
+  "navn": null,
+  "type": "civic",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-13416559 (house, 131.9 m unna)"
+ },
+ {
+  "id": "bnr-13416087",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 105.6 m unna)"
+ },
+ {
+  "id": "bnr-13416354",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 97.0 m unna)"
+ },
+ {
+  "id": "bnr-193820654",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-13416559 (house, 66.8 m unna)"
+ },
+ {
+  "id": "bnr-13416311",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 116.4 m unna)"
+ },
+ {
+  "id": "bnr-193820506",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 108.1 m unna)"
+ },
+ {
+  "id": "bnr-193820808",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 13.8 m unna)"
+ },
+ {
+  "id": "bnr-13416451",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   214,
+   150,
+   84
+  ],
+  "kilde": "nabohuset bnr-13415897 (house, 11.3 m unna)"
+ },
+ {
+  "id": "bnr-193820743",
+  "navn": null,
+  "type": "garages",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 44.5 m unna)"
+ },
+ {
+  "id": "bnr-193867413",
+  "navn": null,
+  "type": "civic",
+  "vegg": [
+   184,
+   98,
+   78
+  ],
+  "kilde": "nabohuset bnr-193867405 (office, 10.6 m unna)"
+ },
+ {
+  "id": "bnr-193874398",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   176,
+   172
+  ],
+  "kilde": "nabohuset bnr-13384460 (house, 3.6 m unna)"
+ },
+ {
+  "id": "bnr-6276814",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 10.6 m unna)"
+ },
+ {
+  "id": "bnr-6241050",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 35.1 m unna)"
+ },
+ {
+  "id": "bnr-6277616",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 78.0 m unna)"
+ },
+ {
+  "id": "bnr-6276326",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 40.4 m unna)"
+ },
+ {
+  "id": "bnr-6276792",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 30.9 m unna)"
+ },
+ {
+  "id": "bnr-6276806",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 18.0 m unna)"
+ },
+ {
+  "id": "bnr-6276784",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 48.3 m unna)"
+ },
+ {
+  "id": "bnr-6276768",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 67.9 m unna)"
+ },
+ {
+  "id": "bnr-6276776",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 63.3 m unna)"
+ },
+ {
+  "id": "bnr-6276741",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 74.7 m unna)"
+ },
+ {
+  "id": "bnr-6276369",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 57.6 m unna)"
+ },
+ {
+  "id": "bnr-193981240",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 134.6 m unna)"
+ },
+ {
+  "id": "bnr-193981151",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 65.0 m unna)"
+ },
+ {
+  "id": "bnr-6276407",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 23.3 m unna)"
+ },
+ {
+  "id": "bnr-6276385",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 40.6 m unna)"
+ },
+ {
+  "id": "bnr-6276423",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 7.5 m unna)"
+ },
+ {
+  "id": "bnr-6276377",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 34.9 m unna)"
+ },
+ {
+  "id": "bnr-6247814",
+  "navn": null,
+  "type": "garages",
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "kilde": "nabohuset bnr-193867308 (Artillerismiens uthus, 266.2 m unna)"
+ },
+ {
+  "id": "bnr-13397198",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   217,
+   110,
+   94
+  ],
+  "kilde": "nabohuset bnr-193867308 (Artillerismiens uthus, 254.4 m unna)"
+ },
+ {
+  "id": "bnr-13393524",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 54.9 m unna)"
+ },
+ {
+  "id": "bnr-6276024",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 6.7 m unna)"
+ },
+ {
+  "id": "bnr-6276547",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 7.6 m unna)"
+ },
+ {
+  "id": "bnr-13389616",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 37.0 m unna)"
+ },
+ {
+  "id": "bnr-13393540",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 7.9 m unna)"
+ },
+ {
+  "id": "bnr-6276032",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 26.5 m unna)"
+ },
+ {
+  "id": "bnr-13393532",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 39.0 m unna)"
+ },
+ {
+  "id": "bnr-13384479",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 27.6 m unna)"
+ },
+ {
+  "id": "bnr-6277071",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 189.4 m unna)"
+ },
+ {
+  "id": "bnr-6277063",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 192.1 m unna)"
+ },
+ {
+  "id": "bnr-6277055",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 183.1 m unna)"
+ },
+ {
+  "id": "bnr-193871119",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 204.3 m unna)"
+ },
+ {
+  "id": "bnr-300165413",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 201.2 m unna)"
+ },
+ {
+  "id": "bnr-6277047",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 179.6 m unna)"
+ },
+ {
+  "id": "pb-12",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 210.6 m unna)"
+ },
+ {
+  "id": "bnr-6276040",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 210.3 m unna)"
+ },
+ {
+  "id": "bnr-300053567",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 208.7 m unna)"
+ },
+ {
+  "id": "bnr-24215326",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193870198 (Labratoriet, 225.3 m unna)"
+ },
+ {
+  "id": "bnr-24221342",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 63.4 m unna)"
+ },
+ {
+  "id": "bnr-193870090",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 51.7 m unna)"
+ },
+ {
+  "id": "bnr-300006318",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 45.2 m unna)"
+ },
+ {
+  "id": "bnr-193870112",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 43.1 m unna)"
+ },
+ {
+  "id": "bnr-193870120",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 8.1 m unna)"
+ },
+ {
+  "id": "bnr-193870139",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 4.3 m unna)"
+ },
+ {
+  "id": "bnr-193870147",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-6276822 (house, 4.1 m unna)"
+ },
+ {
+  "id": "bnr-193870171",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 10.8 m unna)"
+ },
+ {
+  "id": "bnr-6276709",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 155.7 m unna)"
+ },
+ {
+  "id": "bnr-6276725",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 138.0 m unna)"
+ },
+ {
+  "id": "bnr-6276733",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 115.3 m unna)"
+ },
+ {
+  "id": "bnr-193871232",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 109.4 m unna)"
+ },
+ {
+  "id": "bnr-6275982",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 99.9 m unna)"
+ },
+ {
+  "id": "bnr-300017669",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276458 (house, 3.1 m unna)"
+ },
+ {
+  "id": "bnr-300016784",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 16.4 m unna)"
+ },
+ {
+  "id": "bnr-250003021",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 51.8 m unna)"
+ },
+ {
+  "id": "bnr-193981232",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 128.5 m unna)"
+ },
+ {
+  "id": "bnr-193981224",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 122.8 m unna)"
+ },
+ {
+  "id": "bnr-193981216",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 116.9 m unna)"
+ },
+ {
+  "id": "bnr-193981119",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 42.5 m unna)"
+ },
+ {
+  "id": "bnr-193981143",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 59.4 m unna)"
+ },
+ {
+  "id": "bnr-193981135",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 54.0 m unna)"
+ },
+ {
+  "id": "bnr-193981127",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 48.0 m unna)"
+ },
+ {
+  "id": "bnr-193981208",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 88.4 m unna)"
+ },
+ {
+  "id": "bnr-193981194",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 82.2 m unna)"
+ },
+ {
+  "id": "bnr-193981186",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 76.3 m unna)"
+ },
+ {
+  "id": "bnr-193981178",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 70.8 m unna)"
+ },
+ {
+  "id": "bnr-193874959",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 53.6 m unna)"
+ },
+ {
+  "id": "bnr-193874924",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 60.3 m unna)"
+ },
+ {
+  "id": "bnr-193874487",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 46.2 m unna)"
+ },
+ {
+  "id": "bnr-193874444",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 37.2 m unna)"
+ },
+ {
+  "id": "bnr-193874428",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6276016 (house, 0.0 m unna)"
+ },
+ {
+  "id": "bnr-193874436",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 17.6 m unna)"
+ },
+ {
+  "id": "bnr-23057948",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 49.2 m unna)"
+ },
+ {
+  "id": "bnr-23056119",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 46.1 m unna)"
+ },
+ {
+  "id": "bnr-6277845",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 110.7 m unna)"
+ },
+ {
+  "id": "bnr-6277837",
+  "navn": null,
+  "type": "terrace",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 35.1 m unna)"
+ },
+ {
+  "id": "bnr-300635577",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 26.2 m unna)"
+ },
+ {
+  "id": "bnr-300498849",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 5.1 m unna)"
+ },
+ {
+  "id": "bnr-193987699",
+  "navn": null,
+  "type": "semidetached_house",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-13416559 (house, 11.8 m unna)"
+ },
+ {
+  "id": "bnr-193987680",
+  "navn": null,
+  "type": "semidetached_house",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-13416559 (house, 87.4 m unna)"
+ },
+ {
+  "id": "bnr-193867456",
+  "navn": "Lysthuset",
+  "type": "boathouse",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193867464 (Isegranhuset, 17.8 m unna)"
+ },
+ {
+  "id": "bnr-193820956",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 19.8 m unna)"
+ },
+ {
+  "id": "bnr-193820794",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   176,
+   172
+  ],
+  "kilde": "nabohuset bnr-193820409 (house, 17.4 m unna)"
+ },
+ {
+  "id": "bnr-193820646",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 65.9 m unna)"
+ },
+ {
+  "id": "bnr-193820441",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-13416435 (house, 23.0 m unna)"
+ },
+ {
+  "id": "bnr-193820484",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 19.6 m unna)"
+ },
+ {
+  "id": "bnr-193820581",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 17.9 m unna)"
+ },
+ {
+  "id": "bnr-193820530",
+  "navn": null,
+  "type": "house",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 21.5 m unna)"
+ },
+ {
+  "id": "bnr-193820549",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   214,
+   150,
+   84
+  ],
+  "kilde": "nabohuset bnr-13415897 (house, 19.3 m unna)"
+ },
+ {
+  "id": "bnr-16293962",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 138.7 m unna)"
+ },
+ {
+  "id": "bnr-13416400",
+  "navn": null,
+  "type": "apartments",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-16324507 (house, 25.4 m unna)"
+ },
+ {
+  "id": "bnr-13416265",
+  "navn": null,
+  "type": "garages",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 47.3 m unna)"
+ },
+ {
+  "id": "pb-16",
+  "navn": null,
+  "type": "shed",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193867464 (Isegranhuset, 17.6 m unna)"
+ },
+ {
+  "id": "pb-19",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276466 (house, 13.5 m unna)"
+ },
+ {
+  "id": "pb-20",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 13.0 m unna)"
+ },
+ {
+  "id": "pb-21",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 15.8 m unna)"
+ },
+ {
+  "id": "bnr-301395526",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 23.9 m unna)"
+ },
+ {
+  "id": "bnr-193871291",
+  "navn": null,
+  "type": "shed",
+  "vegg": [
+   104,
+   104,
+   102
+  ],
+  "kilde": "nabohuset bnr-6276431 (house, 34.4 m unna)"
+ },
+ {
+  "id": "bnr-193972047",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   247,
+   171,
+   157
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 0.97)"
+ },
+ {
+  "id": "bnr-193868649",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   249,
+   224,
+   204
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 0.95)"
+ },
+ {
+  "id": "pb-23",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   188,
+   190,
+   192
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 1.0)"
+ },
+ {
+  "id": "bnr-193972217",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   239,
+   240,
+   240
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 0.99)"
+ },
+ {
+  "id": "pb-24",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   227,
+   224,
+   206
+  ],
+  "kilde": "nabohuset bnr-193874568 (garage, 0.9 m unna)"
+ },
+ {
+  "id": "pb-25",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-24218023 (apartments, 25.4 m unna)"
+ },
+ {
+  "id": "pb-26",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   251,
+   202,
+   163
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 0.98)"
+ },
+ {
+  "id": "pb-27",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193972276 (university, 27.9 m unna)"
+ },
+ {
+  "id": "pb-28",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-193991718 (garages, 0.4 m unna)"
+ },
+ {
+  "id": "pb-29",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   168,
+   164,
+   156
+  ],
+  "kilde": "nabohuset bnr-193869556 (Krutthuset, 2.6 m unna)"
+ },
+ {
+  "id": "pb-30",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   168,
+   164,
+   156
+  ],
+  "kilde": "nabohuset bnr-193869556 (Krutthuset, 10.7 m unna)"
+ },
+ {
+  "id": "bnr-300002508",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   173,
+   102,
+   88
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 0.97)"
+ },
+ {
+  "id": "pb-31",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   168,
+   164,
+   156
+  ],
+  "kilde": "nabohuset bnr-193870317 (Det grundmurede provianthus, 0.2 m unna)"
+ },
+ {
+  "id": "pb-32",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6246729 (garage, 2.3 m unna)"
+ },
+ {
+  "id": "pb-34",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   215,
+   193,
+   119
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 1.0)"
+ },
+ {
+  "id": "pb-35",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   236,
+   240,
+   240
+  ],
+  "kilde": "nabohuset bnr-6251765 (garage, 0.0 m unna)"
+ },
+ {
+  "id": "pb-36",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-6275990 (apartments, 3.1 m unna)"
+ },
+ {
+  "id": "pb-37",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193972276 (university, 30.8 m unna)"
+ },
+ {
+  "id": "pb-38",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193874401 (garage, 0.0 m unna)"
+ },
+ {
+  "id": "pb-39",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-13384401 (house, 2.6 m unna)"
+ },
+ {
+  "id": "bnr-193820565",
+  "navn": null,
+  "type": "garage",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-193820557 (garage, 0.0 m unna)"
+ },
+ {
+  "id": "pb-40",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   168,
+   164,
+   156
+  ],
+  "kilde": "nabohuset bnr-193870317 (Det grundmurede provianthus, 0.0 m unna)"
+ },
+ {
+  "id": "pb-41",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193992765 (transportation, 4.3 m unna)"
+ },
+ {
+  "id": "pb-42",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   244,
+   123,
+   106
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 1.0)"
+ },
+ {
+  "id": "pb-43",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193972276 (university, 0.0 m unna)"
+ },
+ {
+  "id": "pb-44",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   242,
+   240,
+   232
+  ],
+  "kilde": "nabohuset bnr-6276520 (house, 2.8 m unna)"
+ },
+ {
+  "id": "pb-46",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193867782 (house, 9.9 m unna)"
+ },
+ {
+  "id": "pb-47",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   176,
+   74,
+   62
+  ],
+  "kilde": "nabohuset bnr-193971369 (retail, 0.6 m unna)"
+ },
+ {
+  "id": "pb-48",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   150,
+   62,
+   66
+  ],
+  "kilde": "nabohuset bnr-193868371 (residential, 2.8 m unna)"
+ },
+ {
+  "id": "pb-49",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   237,
+   238,
+   238
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 1.0)"
+ },
+ {
+  "id": "pb-50",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   196,
+   198,
+   196
+  ],
+  "kilde": "nabohuset bnr-193972322 (garage, 0.5 m unna)"
+ },
+ {
+  "id": "pb-51",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   184,
+   98,
+   78
+  ],
+  "kilde": "nabohuset bnr-193868568 (Brannstasjon - uthus til Infanterikasernen, 1.4 m unna)"
+ },
+ {
+  "id": "pb-52",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   232,
+   184,
+   92
+  ],
+  "kilde": "nabohuset bnr-193972411 (Sindinggården, 0.0 m unna)"
+ },
+ {
+  "id": "pb-53",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   150,
+   172,
+   140
+  ],
+  "kilde": "nabohuset bnr-193867693 (apartments, 0.0 m unna)"
+ },
+ {
+  "id": "pb-54",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   173,
+   100,
+   86
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 1.0)"
+ },
+ {
+  "id": "pb-55",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   214,
+   206,
+   190
+  ],
+  "kilde": "nabohuset bnr-6276474 (house, 3.9 m unna)"
+ },
+ {
+  "id": "pb-56",
+  "navn": null,
+  "type": "yes",
+  "vegg": [
+   201,
+   107,
+   94
+  ],
+  "kilde": "2017-tegningen som vektor (dekning 0.96)"
+ }
+]

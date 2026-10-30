@@ -1701,7 +1701,7 @@
     1
    ],
    "dorer": 0,
-   "arker": 1,
+   "arker": 0,
    "piper": 0
   },
   "avvik": true,
@@ -1779,15 +1779,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
-    5
+    4,
+    4
    ],
-   "dorer": 2,
+   "dorer": 1,
    "arker": 1,
    "piper": 1
   },
   "avvik": true,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193972373",
@@ -1861,9 +1861,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    10
+    2,
+    7
    ],
-   "dorer": 1,
+   "dorer": 3,
    "arker": 0,
    "piper": 5
   },
@@ -1945,7 +1946,7 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    5,
+    4,
     5
    ],
    "dorer": 1,
@@ -2025,7 +2026,7 @@
   "modell": {
    "rader": [
     3,
-    3
+    2
    ],
    "dorer": 2,
    "arker": 0,
@@ -2111,14 +2112,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
+    2,
     2
    ],
-   "dorer": 1,
+   "dorer": 0,
    "arker": 0,
    "piper": 1
   },
   "avvik": true,
-  "dorer_avvik": false
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193971946",
@@ -2187,7 +2189,9 @@
   "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
-   "rader": [],
+   "rader": [
+    1
+   ],
    "dorer": 0,
    "arker": 0,
    "piper": 2
@@ -2378,8 +2382,8 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    5,
-    6
+    6,
+    7
    ],
    "dorer": 1,
    "arker": 0,
@@ -2416,9 +2420,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
+    2,
     2
    ],
-   "dorer": 0,
+   "dorer": 2,
    "arker": 0,
    "piper": 1
   },
@@ -3799,11 +3804,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    6,
-    8,
-    5
+    7,
+    8
    ],
-   "dorer": 0,
+   "dorer": 1,
    "arker": 5,
    "piper": 1
   },
@@ -3839,15 +3843,13 @@
   "modell": {
    "rader": [
     7,
-    3,
-    3,
-    4
+    7
    ],
    "dorer": 0,
    "arker": 4,
    "piper": 1
   },
-  "avvik": true,
+  "avvik": false,
   "dorer_avvik": true
  },
  {
@@ -3878,10 +3880,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    3,
-    2
+    4,
+    3
    ],
-   "dorer": 0,
+   "dorer": 2,
    "arker": 0,
    "piper": 2
   },
@@ -3952,16 +3954,14 @@
   "modell": {
    "rader": [
     1,
-    2,
-    1,
     1
    ],
-   "dorer": 0,
+   "dorer": 1,
    "arker": 1,
    "piper": 0
   },
   "avvik": true,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193971334",
@@ -4066,10 +4066,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    3,
-    3
+    4,
+    4
    ],
-   "dorer": 0,
+   "dorer": 2,
    "arker": 0,
    "piper": 1
   },
@@ -4162,15 +4162,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
-    3
+    4,
+    4
    ],
-   "dorer": 1,
+   "dorer": 0,
    "arker": 0,
    "piper": 1
   },
   "avvik": true,
-  "dorer_avvik": false
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193867987",
@@ -5907,16 +5907,16 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
     7,
-    8
+    4,
+    7
    ],
-   "dorer": 2,
+   "dorer": 1,
    "arker": 0,
    "piper": 1
   },
   "avvik": true,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193972187",
@@ -6117,10 +6117,10 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
-    3
+    5,
+    5
    ],
-   "dorer": 1,
+   "dorer": 0,
    "arker": 0,
    "piper": 1
   },
@@ -6405,15 +6405,16 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    2,
-    7
+    5,
+    1,
+    8
    ],
-   "dorer": 1,
+   "dorer": 0,
    "arker": 0,
    "piper": 0
   },
   "avvik": true,
-  "dorer_avvik": false
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193868495",

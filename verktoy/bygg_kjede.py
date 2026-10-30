@@ -8,7 +8,7 @@ import subprocess, sys, os
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STEG = [['verktoy/grunnmur.py'], ['verktoy/id_flytt.py'], ['-I', 'rapport/hoyder/hent.py'], ['-I', 'rapport/hoyder/legg_inn.py'],
         ['verktoy/vinduer_regler.py'], ['verktoy/streetview_fasader.py'], ['verktoy/streetview_farger.py'],
-        ['verktoy/fasade_tegning.py', 'legg_inn'], ['verktoy/tak_fra_ortofoto.py'], ['verktoy/bygg_merknader.py']]
+        ['verktoy/fasade_tegning.py', 'legg_inn'], ['verktoy/tak_fra_ortofoto.py'], ['verktoy/vegg_nye.py'], ['verktoy/bygg_merknader.py']]
 for s in STEG:
     if s[0] == 'verktoy/grunnmur.py' and '--grunnmur' not in sys.argv:
         continue

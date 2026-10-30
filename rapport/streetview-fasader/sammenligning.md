@@ -107,20 +107,20 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868371 |  | [7, 3] | [10, 11] | ingen på denne fasaden | 1 | 0 | 0 | 1 | 2 | ja |
 | bnr-193868126 |  | [2, 3] | [4] | 1 midt, mørk brun dobbel fyllingsdør med trapp | 1 | 0 | 0 | 2 | 1 | ja |
 | bnr-193868142 | Prestegården | [5, 5] | [5, 5] | 1 brun kjellerluke/dør i sokkelen til venstre; ingen hovedinngang mot gata | 0 | 0 | 2 | 2 | 2 |  |
-| bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 1 | 0 | 0 | ja |
+| bnr-193868037 | Marketenteriet | [1, 1] | [1] | ingen på gavlen (gjenmurt åpning til venstre) | 0 | 0 | 0 | 0 | 0 | ja |
 | bnr-193868339 |  | [1, 1] | [2] | 1 rundbuet portrom med svart/grå port, skilt 'Kong Fredrik' | 0 | 0 | 0 | None | 1 | ja |
-| bnr-193868150 | Salamandergården | [4, 5] | [2, 5] | 1 midt-høyre, grønn dobbel fyllingsdør med rombe-overlys | 2 | 1 liten ark | 1 | 2 | 1 | ja |
-| bnr-193868061 | Artillerigården | [11, 12] | [10] | 2 synlige: oliven dobbeldør til venstre og til høyre (rundbuet overlys) | 1 | ca 10 små takvinduer | 0 | 2 | 5 | ja |
+| bnr-193868150 | Salamandergården | [4, 5] | [4, 4] | 1 midt-høyre, grønn dobbel fyllingsdør med rombe-overlys | 1 | 1 liten ark | 1 | 2 | 1 | ja |
+| bnr-193868061 | Artillerigården | [11, 12] | [2, 7] | 2 synlige: oliven dobbeldør til venstre og til høyre (rundbuet overlys) | 3 | ca 10 små takvinduer | 0 | 2 | 5 | ja |
 | bnr-193868428 | Kommisjonsgården | [5] | [6] | ingen på denne fasaden | 1 | 0 | 0 | 2 | 1 | ja |
-| bnr-193868401 |  | [3, 4] | [5, 5] | inngang med lite buet overbygg midt-høyre (delvis bak espalier) | 1 | 1 | 1 | 2 små pipehatter | 1 | ja |
+| bnr-193868401 |  | [3, 4] | [4, 5] | inngang med lite buet overbygg midt-høyre (delvis bak espalier) | 1 | 1 | 1 | 2 små pipehatter | 1 | ja |
 | bnr-193868398 |  | [5] | [4, 5] | 1 midt-høyre, rundbuet kjellernedgang med mørk dør | 1 | 0 | 0 | 2 | 1 | ja |
-| bnr-193972292 |  | [4, 5] | [3, 3] | 2: grå/grønn fiskebeinsdør med trekantfronton midt, lav plankedør til venstre | 2 | 0 | 0 | 1 | 0 | ja |
+| bnr-193972292 |  | [4, 5] | [3, 2] | 2: grå/grønn fiskebeinsdør med trekantfronton midt, lav plankedør til venstre | 2 | 0 | 0 | 1 | 0 | ja |
 | bnr-193868525 |  | [1, 1] | [] | 1 grå tofløyet fyllingsdør med steintrapp og rekkverk | 0 | 0 | 0 | None | 2 | ja |
-| bnr-193868096 |  | [3, 3] | [2] | kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10) | 1 | 0 | 0 | ikke synlig | 1 | ja |
+| bnr-193868096 |  | [3, 3] | [2, 2] | kafé-inngang på hjørnet mot Færgeportgaten (ca. 0.10) | 0 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193971946 |  | [3] | [5] | 1 brun plankedør til venstre (ca. 0.12) med lykt og skilt | 1 | 1 lite takvindu | 0 | ikke synlig | 1 | ja |
-| bnr-193868029 |  | [1, 1] | [] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 0 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
-| bnr-6242812 |  | [5, 5, 4] | [5, 6] | 0 på denne fasaden | 1 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
-| bnr-6242812 |  | [4, 4] | [2] | 1 mørk grønn tofløyet fyllingsdør med overlys, ca. 0.40 | 0 | 0 | 0 | ikke synlig | 1 | ja |
+| bnr-193868029 |  | [1, 1] | [1] | 1 brun plankedør med '85' over, ca. 0.45–0.70 av synlig vegg (høyre del) | 0 | 0 | 0 | 1 rød teglpipe midt på mønet | 2 | ja |
+| bnr-6242812 |  | [5, 5, 4] | [6, 7] | 0 på denne fasaden | 1 | 0 (loftsvinduene sitter i kneveggen under takfoten) | 0 | ikke synlig | 1 | ja |
+| bnr-6242812 |  | [4, 4] | [2, 2] | 1 mørk grønn tofløyet fyllingsdør med overlys, ca. 0.40 | 2 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193868231 | Balaklava | [3, 4, 3] | [4] | 0 på gavlen | 1 | 0 | 0 | ikke synlig | 2 | ja |
 | bnr-193868231 | Balaklava | [1] | [3] | 2 mørke dører (ca. 0.05 og 0.25), P-skilt | 0 | 0 | 0 | None | 2 | ja |
 | bnr-193868320 |  | [11, 11] | [9] | 1 mørk grønn dobbel fyllingsdør midt (ca. 0.50), med overlys og lykt over; kjellerdører: 2 grønne rundbuede (ca. 0.35 og 0.92) og små rundbuede luker | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
@@ -147,13 +147,13 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867758 |  | [4, 4] | [5, 6] | 1 brun/oker tofløyet fyllingsport med overlys og lykt (ca. 0.25) | 1 | 0 | 0 | 1 murt pipe | 1 | ja |
 | bnr-193867898 | Gamlebyen modelljernbanesenter | [6, 5] | [2, 1] | 1 rødbrun tofløyet fyllingsdør, ca. 0.33–0.40 av fasaden, med skilt og lykt | 0 | 0 | 0 | 1 murt teglpipe (bak mønet) | 4 | ja |
 | bnr-193867901 |  | [5, 3] | [1] | 1 blågrå tofløyet port/dør helt til venstre (ca. 0.03–0.25) | 0 | 0 | 1 | 2 murte teglpiper | 1 | ja |
-| bnr-193867952 |  | [10, 9] | [6, 8, 5] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 0 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
-| bnr-193867952 |  | [7, 7] | [7, 3, 3, 4] | 1 dør på hjørnet mot Voldgaten (høyre ende) | 0 | 4 arker (mørk grå sink) med takterrasse-rekkverk | 4 | ikke synlig | 1 | ja |
-| bnr-6247822 |  | [5, 4] | [3, 2] | 1 brun fyllingsdør med glass, ca. 0.42, i en nisje, med 5 steintrinn | 0 | ikke synlig | 0 | ikke synlig | 2 | ja |
-| bnr-6251331 |  | [3, 3] | [1, 2, 1, 1] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 0 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
+| bnr-193867952 |  | [10, 9] | [7, 8] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 1 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
+| bnr-193867952 |  | [7, 7] | [7, 7] | 1 dør på hjørnet mot Voldgaten (høyre ende) | 0 | 4 arker (mørk grå sink) med takterrasse-rekkverk | 4 | ikke synlig | 1 |  |
+| bnr-6247822 |  | [5, 4] | [4, 3] | 1 brun fyllingsdør med glass, ca. 0.42, i en nisje, med 5 steintrinn | 2 | ikke synlig | 0 | ikke synlig | 2 | ja |
+| bnr-6251331 |  | [3, 3] | [1, 1] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 1 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
 | bnr-193971334 |  | [3] | [3] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 1 |  |
-| bnr-6251218 |  | [4, 6] | [3, 3] | 1 grå/olivengrå tofløyet fyllingsdør med overlys ca. 0.40; 1 grå tofløyet port med overlys til venstre (ca. 0.05–0.25) | 0 | 0 | 0 | 1 murt teglpipe | 1 | ja |
-| bnr-193867987 |  | [2, 2] | [2, 3] | ikke i utsnittet (butikk med store vinduer) | 1 | 0 | 0 | ikke synlig | 1 | ja |
+| bnr-6251218 |  | [4, 6] | [4, 4] | 1 grå/olivengrå tofløyet fyllingsdør med overlys ca. 0.40; 1 grå tofløyet port med overlys til venstre (ca. 0.05–0.25) | 2 | 0 | 0 | 1 murt teglpipe | 1 | ja |
+| bnr-193867987 |  | [2, 2] | [4, 4] | ikke i utsnittet (butikk med store vinduer) | 0 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193867987 |  | [2] | [4] | ikke i utsnittet | 0 | 1 ark med 3-rams vindu | 0 | 1 murt pipe | 1 | ja |
 | bnr-193868266 |  | [3, 3] | [3] | 1 tofløyet port, rød med grønne fyllinger, ca. 0.65–0.90 av synlig vegg | 0 | 0 | 0 | 1 murt teglpipe | 2 | ja |
 | bnr-193868258 |  | [5] | [2, 1] | 0 synlig (busker foran) | 0 | 1 ark midt med 2-rams vindu; 2 små takvinduer | 0 | 2 murte teglpiper | 1 | ja |
@@ -177,19 +177,19 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867855 |  | [2] | [2] | 1 mørk grønn fyllingsdør med utskåret dekor, høyre (ca. 0.85) | 0 | 1 ark med hvite vinduer og blomsterkasser | 0 | 2 murte teglpiper | 1 |  |
 | bnr-193867766 |  | [4, 4] | [5, 6] | 1 brun tofløyet dør med diagonalt rutemønster i glassfeltene, ca. 0.65 av synlig del | 1 | 0 | 0 | ikke synlig | 2 | ja |
 | bnr-193868622 |  | [5, 4] | [3] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 1 | 0 | 0 | ikke synlig | 1 | ja |
-| bnr-193867979 |  | [5, 6] | [2, 7, 8] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 2 | ikke synlig | 0 | ikke synlig | 1 | ja |
+| bnr-193867979 |  | [5, 6] | [7, 4, 7] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-16290424 | annen lagerbygning | [2, 3] | [2] | 0 på gavlen | 0 | 0 | 0 | 0 | 0 | ja |
 | bnr-193972195 | kontor- og administrasjonsbygning | [2] | [1, 1, 1] | skjult bak gjerdet | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193868533 | annen lagerbygning | [1] | [] | 1 rundbuet åpning med grå tofløyet plankeport (ca. 0.10–0.35 av synlig del) | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193868444 |  | [8] | [5] | 0 i utsnittet | 1 | 7 arker med flate/pult-tak i grå sink og hvite vinduer | 0 | ikke synlig | 3 | ja |
-| bnr-193868223 | Muldvadgården | [4, 2] | [2, 3] | 2 rundbuede kjellerdører (grå/svarte) i sokkelen, ca. 0.30 og 0.90 | 1 | 0 | 0 | ikke synlig | 1 | ja |
+| bnr-193868223 | Muldvadgården | [4, 2] | [5, 5] | 2 rundbuede kjellerdører (grå/svarte) i sokkelen, ca. 0.30 og 0.90 | 0 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193868282 |  | [4] | [4, 5] | 2 svarte tofløyede kjellerdører i teglbuer i sokkelen (ca. 0.25 og 0.75) | 1 | 0 | 0 | ikke synlig | 4 | ja |
 | bnr-193868290 |  | [4, 4] | [5, 6, 6] | 0 i utsnittet | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-193868355 | Det gamle raadhus | [3, None] | [3, 4] | ikke i utsnittet | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193868347 |  | [5, 5] | [1, 2] | 2 butikkdører: grønn glassdør (ca. 0.12) og åpen dør med steintrapp (ca. 0.48) | 0 | 0 | 2 | 2 murte piper | 1 | ja |
 | bnr-193867545 | Arnesgården | [5, 5] | [1, 4, 3, 2] | 1 mørk grønn tofløyet fyllingsdør, ca. 0.40, med steintrinn | 0 | 0 | 2 | 1 murt teglpipe | 1 | ja |
 | bnr-193867510 | Ekserserhuset | [3] | [4] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 0 | 0 | 0 | ikke synlig | 1 | ja |
-| bnr-193869572 |  | [8, 9] | [2, 7] | 1 inngang med dør ca. 0.80 av synlig fasade | 1 | 6+ små takvinduer | 0 | 1 murt pipe | 0 | ja |
+| bnr-193869572 |  | [8, 9] | [5, 1, 8] | 1 inngang med dør ca. 0.80 av synlig fasade | 0 | 6+ små takvinduer | 0 | 1 murt pipe | 0 | ja |
 
 ## Hoppet over (139)
 

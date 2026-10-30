@@ -12,7 +12,7 @@ let views = JSON.parse(fs.readFileSync(viewsFile, 'utf8')); if (bare.length) vie
 const server = http.createServer((q, r) => { const u = q.url.split('?')[0]; const p = path.join(dir, u === '/' ? 'index.html' : u); if (fs.existsSync(p) && fs.statSync(p).isFile()) { r.setHeader('content-type', p.endsWith('.json') ? 'application/json' : p.endsWith('.js') ? 'text/javascript' : p.endsWith('.png') ? 'image/png' : 'text/html; charset=utf-8'); r.end(fs.readFileSync(p)); } else { r.statusCode = 404; r.end(); } });
 await new Promise(r => server.listen(0, '127.0.0.1', r)); const port = server.address().port;
 const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
-const ctx = await browser.newContext({ viewport: { width: W, height: H } }); const page = await ctx.newPage();
+const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: +(process.env.DPR || 1) }); const page = await ctx.newPage();
 const errs = []; page.on('pageerror', e => errs.push(e.message));
 await page.goto(`http://127.0.0.1:${port}/index.html?skip=1`, { waitUntil: 'load' }); await page.waitForTimeout(6000);
 await page.addStyleTag({ content: '#hjem,#hint,#kort,#lekkasje,.maplibregl-ctrl{display:none!important}' });

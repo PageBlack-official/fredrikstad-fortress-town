@@ -1,5 +1,889 @@
 [
  {
+  "id": "bnr-193869548",
+  "navn": "Voldporten med vaktstuen",
+  "vegger": {
+   "2": {
+    "tegning": "Glasshytta",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Glasshytta",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 1,
+  "regler": 9
+ },
+ {
+  "id": "bnr-193869580",
+  "navn": "Voldportravelinet",
+  "vegger": {
+   "11": {
+    "tegning": "Glasshytta",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "10": {
+    "tegning": "Glasshytta",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193868711",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal10",
+    "rader": [
+     1,
+     1,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal10",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal10",
+    "rader": [
+     1,
+     3
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 30
+ },
+ {
+  "id": "bnr-193972411",
+  "navn": "Sindinggården",
+  "vegger": {
+   "9": {
+    "tegning": "Kvartal10",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 14
+ },
+ {
+  "id": "bnr-193971911",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal10",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 1
+ },
+ {
+  "id": "bnr-193971938",
+  "navn": null,
+  "vegger": {
+   "8": {
+    "tegning": "Kvartal10",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193867596",
+  "navn": "Vennehaabet",
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal10",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal10",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 13,
+  "regler": 14
+ },
+ {
+  "id": "bnr-193971903",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal10",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193987370",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal10",
+    "rader": [
+     13
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal10",
+    "rader": [
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 17,
+  "regler": 54
+ },
+ {
+  "id": "bnr-193867545",
+  "navn": "Arnesgården",
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal10",
+    "rader": [
+     5,
+     5
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 12,
+  "regler": 3
+ },
+ {
+  "id": "bnr-193867588",
+  "navn": "Dunkejongården",
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal10",
+    "rader": [
+     1,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal10",
+    "rader": [
+     3,
+     1,
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": [
+     "rad 3 fikk ikke plass under gesims (h 6.9 m)",
+     "rad 4 fikk ikke plass under gesims (h 6.9 m)"
+    ]
+   }
+  },
+  "tegnet": 6,
+  "regler": 18
+ },
+ {
+  "id": "bnr-193867553",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal10",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193867537",
+  "navn": "Infanterikasernen",
+  "vegger": {
+   "13": {
+    "tegning": "Kvartal11",
+    "rader": [
+     3,
+     3,
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "8": {
+    "tegning": "Kvartal11",
+    "rader": [
+     6,
+     8,
+     8
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "7": {
+    "tegning": "Kvartal11",
+    "rader": [
+     4,
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "6": {
+    "tegning": "Kvartal11",
+    "rader": [
+     4,
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal11",
+    "rader": [
+     6,
+     7,
+     7
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "18": {
+    "tegning": "Kvartal11",
+    "rader": [
+     3,
+     3,
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 87,
+  "regler": 144
+ },
+ {
+  "id": "bnr-193868568",
+  "navn": "Brannstasjon - uthus til Infanterikasernen",
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal11",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 19
+ },
+ {
+  "id": "bnr-193867715",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal12",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal12",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 17,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193972462",
+  "navn": null,
+  "vegger": {
+   "12": {
+    "tegning": "Kvartal12",
+    "rader": [
+     9
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 24
+ },
+ {
+  "id": "bnr-193867804",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal12",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 8
+ },
+ {
+  "id": "bnr-193867839",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "Kvartal12",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 12
+ },
+ {
+  "id": "bnr-193972772",
+  "navn": null,
+  "vegger": {
+   "10": {
+    "tegning": "Kvartal12",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 0
+ },
+ {
+  "id": "bnr-193867723",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal12",
+    "rader": [
+     4,
+     6
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 11,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193867731",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal12",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 18
+ },
+ {
+  "id": "bnr-193867758",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal12",
+    "rader": [
+     6,
+     6
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 12,
+  "regler": 34
+ },
+ {
+  "id": "bnr-193867782",
+  "navn": null,
+  "vegger": {
+   "8": {
+    "tegning": "Kvartal12",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "7": {
+    "tegning": "Kvartal12",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal12",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193972101",
+  "navn": null,
+  "vegger": {
+   "8": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 22
+ },
+ {
+  "id": "bnr-193868592",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "Kvartal12",
+    "rader": [
+     1
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 5
+ },
+ {
+  "id": "bnr-193972454",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 3
+ },
+ {
+  "id": "bnr-193868606",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal12",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 8
+ },
+ {
+  "id": "bnr-193867766",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal12",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 20
+ },
+ {
+  "id": "bnr-193867774",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal12",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 9
+ },
+ {
+  "id": "bnr-193867510",
+  "navn": "Ekserserhuset",
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal13",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "0": {
+    "tegning": "Kvartal13",
+    "rader": [
+     6
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 11,
+  "regler": 19
+ },
+ {
+  "id": "bnr-193867499",
+  "navn": "Kommandantgården",
+  "vegger": {
+   "12": {
+    "tegning": "Kvartal13",
+    "rader": [
+     8
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "11": {
+    "tegning": "Kvartal13",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "22": {
+    "tegning": "Kvartal13",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "19": {
+    "tegning": "Kvartal13",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "0": {
+    "tegning": "Kvartal13",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "5": {
+    "tegning": "Kvartal13",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 14,
+  "regler": 96
+ },
+ {
+  "id": "bnr-193867502",
+  "navn": "Kiørboegården",
+  "vegger": {
+   "5": {
+    "tegning": "Kvartal13",
+    "rader": [
+     4,
+     5
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal13",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal13",
+    "rader": [
+     6,
+     3
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 23,
+  "regler": 40
+ },
+ {
+  "id": "bnr-193868460",
+  "navn": "Kjørbogårdens sidebygning",
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal13",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 15
+ },
+ {
+  "id": "pb-8",
+  "navn": null,
+  "vegger": {
+   "14": {
+    "tegning": "Kvartal14",
+    "rader": [
+     5,
+     5
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 21
+ },
+ {
+  "id": "bnr-193870260",
+  "navn": null,
+  "vegger": {
+   "8": {
+    "tegning": "Kvartal14",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 12
+ },
+ {
+  "id": "bnr-193972063",
+  "navn": null,
+  "vegger": {
+   "5": {
+    "tegning": "Kvartal14",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "4": {
+    "tegning": "Kvartal14",
+    "rader": [
+     2,
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 13,
+  "regler": 18
+ },
+ {
+  "id": "pb-7",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "Kvartal14",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal14",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 9
+ },
+ {
+  "id": "bnr-193867693",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal14",
+    "rader": [
+     6,
+     6
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal14",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 13,
+  "regler": 12
+ },
+ {
+  "id": "bnr-193867707",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal14",
+    "rader": [
+     2,
+     1,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 5,
+  "regler": 30
+ },
+ {
+  "id": "bnr-193972071",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal14",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 0
+ },
+ {
   "id": "bnr-193868142",
   "navn": "Prestegården",
   "vegger": {
@@ -43,11 +927,11 @@
      4,
      2
     ],
-    "dorer": 2,
+    "dorer": 3,
     "notat": []
    }
   },
-  "tegnet": 7,
+  "tegnet": 8,
   "regler": 5
  },
  {
@@ -57,7 +941,7 @@
    "8": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     8,
+     7,
      2
     ],
     "dorer": 0,
@@ -66,14 +950,14 @@
    "6": {
     "tegning": "Kvartal2BITMP",
     "rader": [
-     2,
+     1,
      2
     ],
     "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 14,
+  "tegnet": 12,
   "regler": 2
  },
  {
@@ -99,14 +983,12 @@
   "vegger": {
    "2": {
     "tegning": "Kvartal2BITMP",
-    "rader": [
-     1
-    ],
+    "rader": [],
     "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 1,
+  "tegnet": 0,
   "regler": 8
  },
  {
@@ -172,8 +1054,7 @@
    "2": {
     "tegning": "Kvartal3",
     "rader": [
-     4,
-     1
+     4
     ],
     "dorer": 0,
     "notat": []
@@ -187,7 +1068,7 @@
     "notat": []
    }
   },
-  "tegnet": 6,
+  "tegnet": 5,
   "regler": 8
  },
  {
@@ -214,13 +1095,13 @@
     "tegning": "Kvartal3",
     "rader": [
      2,
-     7
+     5
     ],
     "dorer": 3,
     "notat": []
    }
   },
-  "tegnet": 12,
+  "tegnet": 10,
   "regler": 36
  },
  {
@@ -230,9 +1111,8 @@
    "9": {
     "tegning": "Kvartal3",
     "rader": [
-     1,
      5,
-     8
+     3
     ],
     "dorer": 0,
     "notat": []
@@ -247,7 +1127,7 @@
     "notat": []
    }
   },
-  "tegnet": 18,
+  "tegnet": 12,
   "regler": 29
  },
  {
@@ -257,7 +1137,7 @@
    "3": {
     "tegning": "Kvartal3",
     "rader": [
-     2
+     7
     ],
     "dorer": 0,
     "notat": []
@@ -271,7 +1151,7 @@
     "notat": []
    }
   },
-  "tegnet": 3,
+  "tegnet": 8,
   "regler": 19
  },
  {
@@ -359,6 +1239,480 @@
   "regler": 20
  },
  {
+  "id": "bnr-193868274",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     4
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     7
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 12,
+  "regler": 9
+ },
+ {
+  "id": "bnr-193868266",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     4,
+     5
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193868258",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     6,
+     2
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 26
+ },
+ {
+  "id": "bnr-13414904",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     3,
+     3
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 11,
+  "regler": 30
+ },
+ {
+  "id": "bnr-193868312",
+  "navn": "Rosinggården",
+  "vegger": {
+   "7": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 2
+ },
+ {
+  "id": "bnr-16313173",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 4
+ },
+ {
+  "id": "bnr-300279164",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "4": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 0
+ },
+ {
+  "id": "bnr-193972152",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193868282",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     6
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 40
+ },
+ {
+  "id": "pb-5",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 5
+ },
+ {
+  "id": "bnr-193868533",
+  "navn": null,
+  "vegger": {
+   "0": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 5
+ },
+ {
+  "id": "bnr-193971288",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 12
+ },
+ {
+  "id": "bnr-193867936",
+  "navn": null,
+  "vegger": {
+   "5": {
+    "tegning": "Kvartal9",
+    "rader": [
+     2,
+     2,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Kvartal9",
+    "rader": [
+     5,
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 14,
+  "regler": 22
+ },
+ {
+  "id": "bnr-193867944",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal9",
+    "rader": [
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 4,
+  "regler": 15
+ },
+ {
+  "id": "bnr-193868622",
+  "navn": null,
+  "vegger": {
+   "10": {
+    "tegning": "Kvartal9",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 24
+ },
+ {
+  "id": "bnr-193867863",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "Kvartal9",
+    "rader": [
+     9,
+     10
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 21,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193972489",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal9",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal9",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 0
+ },
+ {
+  "id": "bnr-193972497",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal9",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 0
+ },
+ {
+  "id": "bnr-193867855",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "Kvartal9",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "5": {
+    "tegning": "Kvartal9",
+    "rader": [
+     1,
+     1
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 7
+ },
+ {
+  "id": "bnr-193867898",
+  "navn": "Gamlebyen modelljernbanesenter",
+  "vegger": {
+   "6": {
+    "tegning": "Kvartal9",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal9",
+    "rader": [
+     5,
+     5
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 12,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193867901",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "Kvartal9",
+    "rader": [
+     3,
+     3
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 7,
+  "regler": 4
+ },
+ {
+  "id": "bnr-193867928",
+  "navn": null,
+  "vegger": {
+   "5": {
+    "tegning": "Kvartal9",
+    "rader": [
+     8
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 8,
+  "regler": 44
+ },
+ {
+  "id": "bnr-193972543",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "Kvartal9",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 3
+ },
+ {
+  "id": "bnr-193972535",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal9",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 4
+ },
+ {
+  "id": "bnr-193870279",
+  "navn": "Tøihuset",
+  "vegger": {
+   "6": {
+    "tegning": "Toihuset",
+    "rader": [
+     19
+    ],
+    "dorer": 6,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Toihuset",
+    "rader": [
+     16
+    ],
+    "dorer": 3,
+    "notat": []
+   },
+   "1": {
+    "tegning": "Toihuset",
+    "rader": [
+     16
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 60,
+  "regler": 97
+ },
+ {
   "id": "bnr-193868223",
   "navn": "Muldvadgården",
   "vegger": {
@@ -367,7 +1721,7 @@
     "rader": [
      7
     ],
-    "dorer": 0,
+    "dorer": 1,
     "notat": []
    },
    "3": {
@@ -379,7 +1733,7 @@
     "notat": []
    }
   },
-  "tegnet": 8,
+  "tegnet": 9,
   "regler": 26
  },
  {
@@ -398,13 +1752,13 @@
    "4": {
     "tegning": "kvartal5",
     "rader": [
-     2
+     1
     ],
     "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 11,
+  "tegnet": 10,
   "regler": 1
  },
  {
@@ -492,13 +1846,13 @@
     "tegning": "kvartal6",
     "rader": [
      7,
-     8
+     7
     ],
     "dorer": 1,
     "notat": []
    }
   },
-  "tegnet": 30,
+  "tegnet": 29,
   "regler": 24
  },
  {
@@ -567,5 +1921,383 @@
   },
   "tegnet": 3,
   "regler": 7
+ },
+ {
+  "id": "bnr-193867618",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "kvartal7",
+    "rader": [
+     1,
+     2,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "kvartal7",
+    "rader": [
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 27
+ },
+ {
+  "id": "bnr-193868320",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal7",
+    "rader": [
+     2,
+     1,
+     4
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 27
+ },
+ {
+  "id": "bnr-193918239",
+  "navn": "Bullgården",
+  "vegger": {
+   "6": {
+    "tegning": "kvartal7",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 24
+ },
+ {
+  "id": "bnr-193868525",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "kvartal7",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 42
+ },
+ {
+  "id": "bnr-193971369",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "kvartal7",
+    "rader": [
+     4
+    ],
+    "dorer": 2,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 7
+ },
+ {
+  "id": "bnr-193991718",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "kvartal7",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "kvartal7",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 2
+ },
+ {
+  "id": "pb-33",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "kvartal7",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 0
+ },
+ {
+  "id": "bnr-193867626",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "kvartal7",
+    "rader": [
+     2,
+     1,
+     1
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "kvartal7",
+    "rader": [
+     6,
+     6
+    ],
+    "dorer": 0,
+    "notat": [
+     "1 vindu(er) over gesims i tegningen (gavl/ark)"
+    ]
+   }
+  },
+  "tegnet": 16,
+  "regler": 16
+ },
+ {
+  "id": "bnr-193868517",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "kvartal7",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 8
+ },
+ {
+  "id": "bnr-193868355",
+  "navn": "Det gamle raadhus",
+  "vegger": {
+   "2": {
+    "tegning": "kvartal7",
+    "rader": [
+     4,
+     4
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "1": {
+    "tegning": "kvartal7",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 11,
+  "regler": 18
+ },
+ {
+  "id": "bnr-193868347",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "kvartal7",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 2,
+  "regler": 4
+ },
+ {
+  "id": "bnr-193868339",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "kvartal7",
+    "rader": [
+     5,
+     1
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "7": {
+    "tegning": "kvartal7",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 12
+ },
+ {
+  "id": "bnr-193971946",
+  "navn": null,
+  "vegger": {
+   "2": {
+    "tegning": "kvartal7",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 0,
+  "regler": 6
+ },
+ {
+  "id": "bnr-193870201",
+  "navn": null,
+  "vegger": {
+   "4": {
+    "tegning": "sistekvartal",
+    "rader": [
+     4,
+     5
+    ],
+    "dorer": 1,
+    "notat": []
+   },
+   "3": {
+    "tegning": "sistekvartal",
+    "rader": [
+     3,
+     3
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 17,
+  "regler": 14
+ },
+ {
+  "id": "bnr-193870228",
+  "navn": null,
+  "vegger": {
+   "6": {
+    "tegning": "sistekvartal",
+    "rader": [
+     5,
+     5,
+     1
+    ],
+    "dorer": 1,
+    "notat": []
+   }
+  },
+  "tegnet": 12,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193870236",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "sistekvartal",
+    "rader": [
+     5,
+     5
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 10,
+  "regler": 12
+ },
+ {
+  "id": "bnr-193870252",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "sistekvartal",
+    "rader": [
+     4,
+     3
+    ],
+    "dorer": 6,
+    "notat": []
+   }
+  },
+  "tegnet": 13,
+  "regler": 10
+ },
+ {
+  "id": "bnr-193870198",
+  "navn": "Labratoriet",
+  "vegger": {
+   "1": {
+    "tegning": "sistekvartal",
+    "rader": [
+     6
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 19
+ },
+ {
+  "id": "bnr-193867677",
+  "navn": "Ingeniørgården",
+  "vegger": {
+   "7": {
+    "tegning": "tell",
+    "rader": [
+     3,
+     2
+    ],
+    "dorer": 2,
+    "notat": []
+   },
+   "5": {
+    "tegning": "tell",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "4": {
+    "tegning": "tell",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "tell",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 6,
+  "regler": 38
  }
 ]

@@ -26,9 +26,19 @@ const vindMat=new THREE.ShaderMaterial({
       vec3 c;
       if(typ<0.5 || typ>2.5){
         float ramme=0.08;
-        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-vSz.y*(typ>2.5?0.5:0.62));
-        float spr=max(1.-smoothstep(0.03,0.03+fw,pv),1.-smoothstep(0.03,0.03+fw,ph));
+        // sprosser etter zoom (30.10): post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1,5 px brede
+        // på nært hold og tones ut når én piksel blir for stor til å bære dem (fw = meter per piksel), så de ikke griser på avstand
+        float lo=vSz.y*(typ>2.5?0.5:0.62);
+        float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-lo);
+        float qs=(typ<0.5 && vSz.y>1.0)?abs(m.y-lo*0.5):1e3;               // sprossen midt i nedre ramme: seks ruter
+        // nærmeste zoom i kartet gir ~0,12–0,17 m per piksel på skjerm med pikseltetthet 1 (0,06–0,08 på mobil): korset (post og
+        // losholt) står til 0,2 m/px og er borte ved 0,32; sprossen i nedre ramme bare der det er minst ~8 px per meter
+        float bH=max(0.035,0.6*fw), bS=max(0.02,0.55*fw);
+        float aH=1.-smoothstep(0.20,0.32,fw), aS=1.-smoothstep(0.075,0.13,fw);
+        float spr=max(1.-smoothstep(bH,bH+fw,pv),1.-smoothstep(bH,bH+fw,ph))*aH;
+        spr=max(spr,(1.-smoothstep(bS,bS+fw,qs))*aS);
         float inn=smoothstep(ramme,ramme+fw,kant);
+        glas*=mix(1.,0.8,aS);                                                 // mørkere glass på nært hold: sprossene står ut
         c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn);
         c=mix(c, glas*1.4, smoothstep(0.25,-0.3,(m.x/vSz.x-0.5)+(m.y/vSz.y-0.5))*0.3*inn*(1.-spr));
       } else {
@@ -43,7 +53,7 @@ const vindMat=new THREE.ShaderMaterial({
           float ol=vSz.y-0.78; if(m.y>ol){ c=mix(glas, hvit, 1.-smoothstep(0.05,0.05+fw,min(kant,abs(m.y-ol)))); }
         }
       }
-      c=mix(c, mix(glas,hvit,0.35), smoothstep(0.08,0.2,fw)*0.6);
+      c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
       gl_FragColor=vec4(c,1.);
       #include <colorspace_fragment>
     }`
