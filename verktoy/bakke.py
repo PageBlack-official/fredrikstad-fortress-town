@@ -378,6 +378,44 @@ def belagt_endelig(f, standard, mpp=MPP, min_m2=15.0, min_sett=0.5):
     return ut
 
 
+# ---------- faste id-er: det som tas ut, skjules med grunn (regel 14) ----------
+def _historikk(emne):
+    """Siste kjente versjon av hvert objekt (id -> objekt) i data/<emne>.json gjennom git-historien, så et objekt som ble slettet
+    før regelen ble fulgt, kan stå igjen som skjult."""
+    import subprocess
+    ut = {}
+    revs = subprocess.run(['git', '-C', ROT, 'log', '--format=%H', '--reverse', '--all', '--', f'data/{emne}.json'], capture_output=True, text=True).stdout.split()
+    for r in revs:
+        t = subprocess.run(['git', '-C', ROT, 'show', f'{r}:data/{emne}.json'], capture_output=True, text=True).stdout
+        try: liste = json.loads(t)
+        except Exception: continue
+        for x in liste:
+            if isinstance(x, dict) and x.get('id'): ut[x['id']] = x
+    return ut
+
+
+def bevar_ider(emne, nye, prefiks, grunn):
+    """nye = lista som skal skrives. Hver id med prefiks som er delt ut (kilder/id-register.txt) og ikke står i nye, legges til
+    som skjult: siste kjente objekt (fila nå, ellers git-historien) med skjul = grunn. En id slettes aldri (regel 14)."""
+    reg = [l.strip() for l in open(os.path.join(ROT, 'kilder', 'id-register.txt'), encoding='utf8') if l.strip()]
+    har = {x['id'] for x in nye if isinstance(x, dict) and x.get('id')}
+    mangler = [i for i in reg if i.startswith(prefiks + '-') and i not in har]
+    if not mangler: return nye
+    kjent = {x['id']: x for x in datalag.les(emne) if isinstance(x, dict) and x.get('id')}
+    hist = None
+    for i in mangler:
+        x = kjent.get(i)
+        if x is None:
+            if hist is None: hist = _historikk(emne)
+            x = hist.get(i)
+        if x is None:   # delt ut i en mellomkjøring som aldri ble lagret: bare id-en finnes
+            x = {'id': i, 'typ': 'ukjent', 'p': [], 'skjul': grunn + ' (geometrien ble aldri lagret: id-en ble delt ut i en mellomkjøring 29.–30.10)'}
+        x = dict(x)
+        if not x.get('skjul'): x['skjul'] = grunn
+        nye.append(x)
+    return nye
+
+
 # ---------- overflatene i Gamlebyen (data/flater.json) ----------
 MAALT = os.path.join(ROT, 'kilder', 'bakke-maalt.json')
 GEN_KILDE = 'ortofoto 2024 klassifisert, kommunekartet der fotoet ikke ser (verktoy/bakke.py overflater)'
@@ -541,8 +579,10 @@ def overflater(skriv=True):
     print('flater fra ortofotoet:', len(liste), {k: v for k, v in tall.items() if v[0]}, len(nye_id), 'nye id-er;', ut_gront, 'belagte/bed tatt ut (mest grønt i fotoet)')
     if not skriv:
         return liste
+    alle = bevar_ider('flater', [x for x in gml if not ('verktoy/bakke.py' in x.get('kilde', '') and x.get('skjul'))] + liste, 'fl',
+                      'Claude 2026-10-30: ikke funnet igjen ved ny kjøring av verktoy/bakke.py (fotoet viser ikke flaten lenger, eller den er slått sammen)')
     with open(os.path.join(ROT, 'data', 'flater.json'), 'w', encoding='utf8') as fh:
-        fh.write('[\n' + ',\n'.join(json.dumps(u, ensure_ascii=False, separators=(',', ':')) for u in gml + liste) + '\n]\n')
+        fh.write('[\n' + ',\n'.join(json.dumps(u, ensure_ascii=False, separators=(',', ':')) for u in alle) + '\n]\n')
     mangler = [o['id'] for o in liste if o['id'] not in reg]
     if mangler:
         open(reg_fil, 'a', encoding='utf8').write('\n'.join(mangler) + '\n')
@@ -910,7 +950,8 @@ def innkjorsler(skriv=True):
     print(f"{len(ut)} biter gateareal utenfor veibåndene: {tall}, {sum(o['m2'] for o in ut):.0f} m²; oppmerket: {sum(1 for o in ut if o.get('oppmerket'))} "
           f"({sum(o.get('oppmerket', 0) for o in ut)} plasser)")
     if skriv:
-        alle = [x for x in datalag.les('flater') if INN_KILDE not in x.get('kilde', '')] + ut
+        alle = bevar_ider('flater', [x for x in datalag.les('flater') if INN_KILDE not in x.get('kilde', '')] + ut, 'fl',
+                          'Claude 2026-10-30: innkjørselen/plassen er ikke funnet igjen ved ny kjøring (verktoy/bakke.py innkjorsler)')
         with open(os.path.join(ROT, 'data', 'flater.json'), 'w', encoding='utf8') as fh:
             fh.write('[\n' + ',\n'.join(json.dumps(u, ensure_ascii=False, separators=(',', ':')) for u in alle) + '\n]\n')
         mangler = [o['id'] for o in ut if o['id'] not in reg]
@@ -964,7 +1005,8 @@ def parkeringsfelt(skriv=True):
                    'kilde': PARK_KILDE})
     print(f'{len(ut)} oppmerkede parkeringsfelt ({sum(o["oppmerket"] for o in ut)} plasser)')
     if skriv:
-        alle = [x for x in datalag.les('flater') if PARK_KILDE not in x.get('kilde', '')] + ut
+        alle = bevar_ider('flater', [x for x in datalag.les('flater') if PARK_KILDE not in x.get('kilde', '')] + ut, 'fl',
+                          'Claude 2026-10-30: parkeringsfeltet er ikke funnet igjen ved ny kjøring (verktoy/bakke.py parkeringsfelt)')
         with open(os.path.join(ROT, 'data', 'flater.json'), 'w', encoding='utf8') as fh:
             fh.write('[\n' + ',\n'.join(json.dumps(u, ensure_ascii=False, separators=(',', ':')) for u in alle) + '\n]\n')
         mangler = [o['id'] for o in ut if o['id'] not in reg]
@@ -1180,6 +1222,8 @@ def gjerder(skriv=True):
     tall = {t: (sum(1 for g in valgt if g['typ'] == t), round(sum(LineString(g['p']).length for g in valgt if g['typ'] == t))) for t in ('gjerde', 'mur', 'hekk')}
     print(f'{len(kand)} kandidatstykker; {len(valgt)} gjerder/murer/hekker i kartet (foto, Street View, hånd):', tall, f'; {len(forkastet)} av kartets gjerder fra før (gårdsromkantene) ses ikke og er tatt ut')
     if skriv:
+        valgt = bevar_ider('gjerder', valgt, 'gj', 'Claude 2026-10-30: ikke funnet igjen ved ny kjøring av verktoy/bakke.py gjerder '
+                           '(fotoet viser ikke linja, den står i gata eller et hus, eller den er slått sammen med et annet stykke)')
         with open(os.path.join(ROT, 'data', 'gjerder.json'), 'w', encoding='utf8') as fh:
             fh.write('[\n' + ',\n'.join(json.dumps(g, ensure_ascii=False, separators=(',', ':')) for g in valgt) + '\n]\n')
         mangler = [g['id'] for g in valgt if g['id'] not in reg]

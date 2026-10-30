@@ -14,10 +14,10 @@ if dobbel: feil.append(f"- id brukt flere ganger: {', '.join(dobbel)}")
 reg = [l.strip() for l in open(os.path.join(ROT, 'kilder', 'id-register.txt'), encoding='utf8') if l.strip()]
 # bakkeflatene har også faste id-er i samme register (27.10): gr- grøntflater, ga- gårdsrom, fl- flater målt i ortofotoet (verktoy/flater.py), vn- vannflater (verktoy/vann.py lag), br- brygger (verktoy/brygger.py maal)
 flate_ids = []
-for emne in ('gront', 'gardsrom', 'flater', 'vann', 'brygger', 'teglmurer', 'vinterhager', 'terrasser'):   # mu- gårdsmurer i tegl, vh- glasshus, te- verandaer (verktoy/kaserna.py, 27.10)
+for emne in ('gront', 'gardsrom', 'flater', 'vann', 'brygger', 'teglmurer', 'vinterhager', 'terrasser', 'gjerder'):   # gj- gjerder/murer/hekker (verktoy/bakke.py gjerder, 30.10)   # mu- gårdsmurer i tegl, vh- glasshus, te- verandaer (verktoy/kaserna.py, 27.10)
     try: fx = data(emne, raa=True)
     except FileNotFoundError: continue
-    fi = [x.get('id') for x in fx]
+    fi = [x.get('id') for x in fx if isinstance(x, dict)]
     if None in fi: feil.append(f"- {fi.count(None)} {emne} uten id (del ut med verktoy/flater.py id)")
     fd = sorted({i for i in fi if i and fi.count(i) > 1})
     if fd: feil.append(f"- {emne}: id brukt flere ganger: {', '.join(fd)}")

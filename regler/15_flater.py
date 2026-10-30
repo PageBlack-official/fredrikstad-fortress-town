@@ -42,7 +42,7 @@ for g in d['gardsrom']:
     rest, _ = andel(g['p'], hindre + gress)
     if rest >= 0.5: feil.append(f"- gårdsrom {g['id']}: det som tegnes belagt, er {rest:.0%} grønt")
 # belagte flater
-for f in [x for x in d.get('flater', []) if x['typ'] != 'gress' and not x.get('skjul')] + [p for p in d.get('parkering', []) if p.get('p') and not p.get('skjul')]:
+for f in [x for x in d.get('flater', []) if not x.get('skjul') and x['typ'] != 'gress'] + [p for p in d.get('parkering', []) if p.get('p') and not p.get('skjul')]:
     hin = [b['p'] for b in d['bygg'] if b.get('p') and not b.get('skjul')]
     a, m2 = andel(f['p'], hin)
     ok = a < 0.3
