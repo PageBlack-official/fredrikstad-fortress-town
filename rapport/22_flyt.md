@@ -1,21 +1,21 @@
 # 22_flyt: OK
 
-- ok   klikk på hus, kameraet glir inn: 912 ms, topp 57 px/bilde, hopp 0, rykk 0.2 (<= 0.45), bråstopp 0 (<= 0,15)
-- ok   lukk kortet, kameraet glir tilbake: 912 ms, topp 49.4 px/bilde, hopp 0, rykk 0.19 (<= 0.45), bråstopp 0.01 (<= 0,15)
+- ok   klikk på hus, kameraet glir inn: 928 ms, topp 53.9 px/bilde, hopp 0, rykk 0.24 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   lukk kortet, kameraet glir tilbake: 928 ms, topp 47.3 px/bilde, hopp 0, rykk 0.22 (<= 0.45), bråstopp 0.01 (<= 0,15)
 - ok   tilbake speiler inngangen (×): kameraet står 0 px fra der det stod før klikket (<= 2)
 - ok   Esc lukker kortet først og går samme vei ut: lukket True, 0 px fra start
 - ok   kortet glir inn og ut (ingen popp): inn transform 380 ms; ut transform 240 ms, visibility 0 ms
-- ok   desktop: sidepanel, huset synlig ved siden av: kort {'vis': True, 'top': 16, 'left': 16, 'bunn': 239, 'h': 223, 'w': 376, 'op': 1}, hus på [653.847662043436, 260.0608918851511]
-- ok   dobbeltklikk zoomer inn: 816 ms, topp 53 px/bilde, hopp 0, rykk 0.21 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   desktop: sidepanel, huset synlig ved siden av: kort {'vis': True, 'top': 16, 'left': 16, 'bunn': 239, 'h': 223, 'w': 376, 'op': 1}, hus på [653.8476620705673, 260.0608919550595]
+- ok   dobbeltklikk zoomer inn: 816 ms, topp 51 px/bilde, hopp 0, rykk 0.25 (<= 0.45), bråstopp 0 (<= 0,15)
 - ok   dobbeltklikk: punktet under pekeren står: glipper 0.2 px, zoom +1
-- ok   musehjul: jevn zoom over tre hakk (egen fjær, ikke utslag per hakk): 864 ms, topp 39.7 px/bilde, hopp 0, rykk 0.28 (<= 0.45), bråstopp 0.01 (<= 0,15)
+- ok   musehjul: jevn zoom over tre hakk (egen fjær, ikke utslag per hakk): 864 ms, topp 40.1 px/bilde, hopp 0, rykk 0.3 (<= 0.45), bråstopp 0.01 (<= 0,15)
 - ok   musehjul: punktet under pekeren står: glipper 0 px, zoom +1.2
 - ok   dra og slipp: tregheten tar over farten: fart i første bilde etter slipp / fart før slipp = 1.08 (0,8–1,25; 0 = et bilde står stille), [18.9, 17.8, 16.7]
-- ok   hjem-glidningen kan avbrytes av et dra: etter slipp glir kameraet 0.1 px/bilde (<= 2), hopp 0, rundt avbruddet [3.8, 11.8, 11.8, 11.8, 11.8]
-- ok   hjem: 1312 ms, topp 82.8 px/bilde, hopp 0, rykk 0.17 (<= 0.45), bråstopp 0.01 (<= 0,15)
+- ok   hjem-glidningen kan avbrytes av et dra: etter slipp glir kameraet 0.1 px/bilde (<= 2), hopp 0, rundt avbruddet [3.5, 11.8, 11.8, 11.8, 11.8]
+- ok   hjem: 1328 ms, topp 84.6 px/bilde, hopp 0, rykk 0.15 (<= 0.45), bråstopp 0.01 (<= 0,15)
 - ok   introen før avbrudd: topp 9.7 px/bilde, hopp 0, rykk 0.06 (målt til avbruddet, så bråstopp gjelder ikke)
 - ok   avbrutt intro: uskarpheten toner ut, hopper ikke: største endring per bilde 0.058 (<= 0,08), rundt avbruddet [1, 1, 1, 1, 0.999, 0.998], til slutt 0
-- ok   mobil: trykk på hus, kameraet glir inn: 912 ms, topp 43.2 px/bilde, hopp 0, rykk 0.28 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   mobil: trykk på hus, kameraet glir inn: 912 ms, topp 43 px/bilde, hopp 0, rykk 0.28 (<= 0.45), bråstopp 0 (<= 0,15)
 - ok   mobil: bunnark, huset over kortet: bunnark True, hus over kortet True, kort {'vis': True, 'top': 455, 'left': 16, 'bunn': 684, 'h': 229, 'w': 358, 'op': 1}
 - ok   mobil: dra kortet ned lukker det: kortet fulgte fingeren 144 px, lukket True
 - ok   mobil: tilbake (Android/nettleser) lukker kortet: historikk True, lukket True
@@ -24,9 +24,9 @@
 - ok   mobil: vri og slipp: tregheten tar over farten: fart i første bilde etter slipp / fart før slipp = 0.97 (0,8–1,25; 0 = et bilde står stille), [13.1, 12.3]
 - ok   mobil: klyp zoomer rundt fingrene: glipper 0 px, zoom +2.05
 - ok   mobil: dobbelttrykk zoomer inn mot punktet: glipper 0.3 px, zoom +1
-- ok   speilet i vannet står under glidning til hus: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart 103 ms (<= 300)
-- ok   speilet i vannet står under dra og treghet: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart 103 ms (<= 300)
-- ok   speilet i vannet står under hjem: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart 103 ms (<= 300)
+- ok   speilet i vannet står under glidning til hus: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart 110 ms (<= 300)
+- ok   speilet i vannet står under dra og treghet: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart 110 ms (<= 300)
+- ok   speilet i vannet står under hjem: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart 110 ms (<= 300)
 - ok   «Reduser bevegelse» på: kortet og kameraet glir likevel (Vegars valg, CHANGELOG v27): kort transform 380 ms; dobbeltklikk 816 ms
 - ok   ingen JS-feil: ingen
 - Ikke målt her (må ses i ekte Chrome/telefon): bildefrekvens, styreflate-treghet fra macOS, iOS Safari-gester.
