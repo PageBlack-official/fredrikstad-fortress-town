@@ -6,7 +6,8 @@ før (fasade_tegning.py / merknadene); her endres bare formen, portalfargen og p
   port_gronn    portene (typ 2, buet topp) blir grønne fløydører med overlys (bue = 2, som Kaserna)
   portal_hvit   hvitt veggfelt rundt hver port, gesims til bakke (b + 2 × kant)
   piper         pipene som tegningen viser, [x, y]; mønehøyden regnes av datalaget (til_monet / hoyden_styrer)
-  kirka         høydene (bygg.kirke.hoyder, tegnes i src/06) og silhuetten i h/tak2 som kontrolløren registrerer tegningen mot
+  kirka         høydene (bygg.kirke.hoyder, tegnes i src/06) og silhuetten i h/tak2 som kontrolløren registrerer tegningen mot;
+                buevinduene og dørene i skipet (bygg.kirke.vinduer, src/06 tegner dem; merknadene sier hva tegningen viser)
 
     python3 verktoy/fasade_former.py [--tørt]       etter bygg_merknader.py (sist i kjeden)
 """
@@ -74,6 +75,55 @@ def kirke_silhuett(k, H):
     return [[[round(float(v), 2) for v in q] for q in f] for f in F]
 
 
+KIRKE_VINDU = dict(b=1.55, h=5.0, bunn=2.6)          # høye buevinduer i skipet (src/06 tegnet disse målene før 31.10)
+KIRKE_DOR = {True: dict(b=2.3, h=4.3), False: dict(b=1.6, h=3.2)}   # stor rundbuet dør i omramming / mindre rundbuet dør
+
+
+def kirke_vinduer(k, merknader=()):
+    """Buevinduer og dører i kirkas skipsvegger som data (bygg.kirke.vinduer, vind-format: x, y, z midt, tx, ty, nx, ny, b, h,
+    typ (0 buevindu, 2 dør), stor (dør i rundbuet omramming), 0). Veggene kvartaltegningen kirke.ai viser hele, står i
+    kilder/bygg-merknader.json (side + «ved», «rader_u» og dører, talt for hånd); de andre frie veggene får regelen src/06
+    brukte: tre buevinduer på lange vegger (> 12 m), to på kortere (minst 3 m), ingen ved tårnet. Kontrolløren teller disse
+    (før 31.10 lå de bare i src/06, så kontrollen så null vinduer på kirka)."""
+    import numpy as np, math
+    sk = np.array(k['skip'], float); n = len(sk); c = sk.mean(axis=0)
+    t0 = np.array(k['torn'], float)
+    e = min(((t0[i] + t0[(i + 1) % 4]) / 2 for i in range(4)), key=lambda m: np.hypot(*(m - c)))
+    t = e + (t0 - e) * 1.3; tc = t.mean(axis=0); side = float(np.hypot(*(t[1] - t[0])))
+    KOMPASS = {'N': 0, 'NØ': 45, 'Ø': 90, 'SØ': 135, 'S': 180, 'SV': 225, 'V': 270, 'NV': 315}
+    ut = []
+    for i in range(n):
+        p0, p1 = sk[i], sk[(i + 1) % n]; L = float(np.hypot(*(p1 - p0))); u = (p1 - p0) / L
+        nn = np.array([u[1], -u[0]]); mid = (p0 + p1) / 2
+        if (mid - c) @ nn < 0: nn = -nn
+        if np.hypot(*(mid - tc)) < side * 0.75 or L < 3: continue
+        az = math.degrees(math.atan2(nn[0], nn[1])) % 360
+        ltr = float((p1 - p0) @ np.array([-nn[1], nn[0]])) > 0            # som fraVenstre i src/06: andel fra venstre sett utenfra
+        def pkt(a_):
+            s_ = a_ if ltr else 1 - a_; return p0 + (p1 - p0) * s_
+        spes = None
+        for m in merknader:
+            for w in m.get('vegg') or []:
+                if w.get('side') not in KOMPASS or abs((az - KOMPASS[w['side']] + 180) % 360 - 180) > 30: continue
+                if w.get('ved') is not None:
+                    q = np.array(w['ved'], float); tt = float(np.clip((q - p0) @ u, 0, L))
+                    if np.hypot(*(p0 + u * tt - q)) > 1.5: continue
+                spes = w
+        if spes and spes.get('rader_u'):
+            vin = [a_ for r in spes['rader_u'] for a_ in r]
+        else:
+            nv = (spes or {}).get('rader', [3 if L > 12 else 2])[0] if spes else (3 if L > 12 else 2)
+            vin = [(j + 0.5) / nv for j in range(nv)]
+        nx, ny = float(nn[0]), float(nn[1]); tx, ty = ny, -nx          # som vind: n = (-ty, tx)
+        for a_ in vin:
+            q = pkt(a_); V = KIRKE_VINDU
+            ut.append([round(float(q[0]), 2), round(float(q[1]), 2), round(V['bunn'] + V['h'] / 2, 2), round(tx, 4), round(ty, 4), round(nx, 4), round(ny, 4), V['b'], V['h'], 0, 0, 0])
+        for d in (spes or {}).get('dorer') or []:
+            q = pkt(d['u']); D = KIRKE_DOR[bool(d.get('stor'))]
+            ut.append([round(float(q[0]), 2), round(float(q[1]), 2), round(D['h'] / 2, 2), round(tx, 4), round(ty, 4), round(nx, 4), round(ny, 4), D['b'], D['h'], 2, int(bool(d.get('stor'))), 0])
+    return ut
+
+
 def main(tørt=False):
     ret = [r for r in datalag.les('rettelser') if not str(r.get('grunn', '')).startswith(GRUNN)]
     raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
@@ -114,6 +164,9 @@ def main(tørt=False):
     x = B.get(KIRKE)
     if x and x.get('kirke'):
         k = dict(x['kirke']); k['hoyder'] = KIRKE_HOYDER; k['visning'] = KIRKE_VISNING
+        mf = os.path.join(ROT, 'kilder', 'bygg-merknader.json')
+        MK = [m for m in (json.load(open(mf, encoding='utf8'))['hus'] if os.path.exists(mf) else []) if m['id'] == KIRKE and m.get('vegg')]
+        k['vinduer'] = kirke_vinduer(k, MK)
         g = f"{GRUNN}: kirka (DOM−DTM + kirke.ai)"
         # fargene i data er de src/06 tegner (hvit puss, skifer: tegningen og ortofotoet viser mørkt skifertak), så kontrolløren
         # sammenligner riktig farge; kirka står utenfor fargeregelens verktøy (egen modell)

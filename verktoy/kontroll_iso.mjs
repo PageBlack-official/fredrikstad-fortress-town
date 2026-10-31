@@ -113,7 +113,7 @@ for (const j of jobb) {
       let farge = new THREE.Color(0.8, 0.8, 0.8), skygge = null, typ = 0;
       if (mm.uniforms && mm.uniforms.farge) { farge = mm.uniforms.farge.value.clone(); skygge = mm.uniforms.skygge ? mm.uniforms.skygge.value.clone() : null; }
       else if (mm.color) farge = mm.color.clone();
-      if (o.isInstancedMesh) { typ = 3; farge = new THREE.Color(0.22, 0.25, 0.30); }
+      if (o.isInstancedMesh || (mm.userData && mm.userData.vindu)) { typ = 3; farge = new THREE.Color(0.22, 0.25, 0.30); }   // kirkas buevinduer og dører (src/06) er egne nett
       if (!skygge) { skygge = farge.clone(); skygge.r *= 0.72; skygge.g *= 0.8; skygge.b *= 0.8; }
       farge = farge.clone().convertLinearToSRGB(); skygge = skygge.clone().convertLinearToSRGB();   // materialene har lineære farger
       const fs = pass === 'farge' ? FS_FARGE : pass.startsWith('id') ? FS_ID : FS_N;

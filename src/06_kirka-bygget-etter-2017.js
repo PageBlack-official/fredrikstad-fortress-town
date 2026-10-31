@@ -24,8 +24,9 @@ function bygKirke(k, grp){
   // Domkirken slik den er tegnet i trykkfila 2019: korsformet skip med saltak i skifer, hvitt tårn med salviegrønn hjelm, lanterne og spir
   const HVIT=[252,252,252], HVIT_S=[192,196,196], SKIFER=[128,128,132], SKIFER_S=[68,68,72];
   const SALVIE=[196,228,202], SALVIE_S=[128,146,138], LANT=[176,212,190], LANT_S=[92,100,100], MORK=[92,100,100], MORK_S=[52,52,52];
-  const GLASS=[62,70,82], GLASS_S=[44,50,60];
-  const M=(f,sk)=>mat(f,false,sk,{ds:true});
+  const GLASS=[62,70,82], GLASS_S=[44,50,60], DORBLAD=[104,86,72], DORBLAD_S=[72,60,52];
+  // glass og dørblad er vinduer/dører for kontrolløren (verktoy/kontroll_iso.mjs: materialets userData.vindu gir flatetype 3)
+  const M=(f,sk)=>mat(f,false,sk,{ds:true, vindu:f===GLASS || f===DORBLAD});
   const add=(g,f,sk)=>{ const m=new THREE.Mesh(g,M(f,sk)); m.castShadow=true; m.receiveShadow=true; grp.add(m); return m; };
   const W3=(p,y)=>new THREE.Vector3(p[0],y,-p[1]);
   function loftK(pb, pt, y0, y1, f, sk, lukk=true){
@@ -116,8 +117,18 @@ function bygKirke(k, grp){
     const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; const opp=new THREE.Vector3(0,1,0);
     if(stor){ legg(new THREE.ShapeGeometry(bue(3.8,5.8),16), W3(p,-0.05), f.tan, opp, f.nor, 0.05, [150,150,146], [100,100,98]);   // omramming (rundbuet, som i tegningen)
               legg(new THREE.ShapeGeometry(bue(3.3,5.4),16), W3(p,0), f.tan, opp, f.nor, 0.07, [226,226,222], [160,160,156]); }
-    legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, [104,86,72], [72,60,52]);
+    legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, DORBLAD, DORBLAD_S);
   }
+  // buevinduer og dører i skipet fra data (bygg.kirke.vinduer, verktoy/fasade_former.py: veggene kirke.ai viser hele, talt for hånd
+  // i kilder/bygg-merknader.json, ellers regelen under), så kontrolløren teller de samme vinduene som kartet viser (31.10)
+  if(Array.isArray(k.vinduer) && k.vinduer.length){
+    const opp=new THREE.Vector3(0,1,0);
+    k.vinduer.forEach(e=>{ const [x,y,zc,tx,ty,nx,ny,b,h,typ,stor]=e; const nor=new THREE.Vector3(nx,0,-ny), tan=new THREE.Vector3(-tx,0,ty);   // tan × opp = nor
+      if(typ===2){ if(stor){ legg(new THREE.ShapeGeometry(bue(b+1.5,h+1.5),16), W3([x,y],-0.05), tan, opp, nor, 0.05, [150,150,146], [100,100,98]);
+                             legg(new THREE.ShapeGeometry(bue(b+1.0,h+1.1),16), W3([x,y],0), tan, opp, nor, 0.07, [226,226,222], [160,160,156]); }
+                   legg(new THREE.ShapeGeometry(bue(b,h),12), W3([x,y],0), tan, opp, nor, 0.10, DORBLAD, DORBLAD_S); }
+      else buevindu(W3([x,y],zc-h/2), tan, opp, nor, b, h); });
+  } else
   // høye buevinduer i alle frie skipsvegger
   flater(sk).forEach(f=>{
     if(nærTårn(f.mid) || f.L<3) return;
@@ -186,7 +197,7 @@ function bygKirke(k, grp){
   // inngangsdør i tårnfoten mot vest (siden lengst fra skipet)
   const fot=flater(t).reduce((a,f)=>{ const d=Math.hypot(f.mid[0]-sentr(sk)[0],f.mid[1]-sentr(sk)[1]); return (!a||d>a.d)?{f,d}:a; },null).f;
   legg(new THREE.ShapeGeometry(bue(2.6,4.8),12), W3(fot.mid,0).addScaledVector(opp,-0.05), fot.tan, opp, fot.nor, 0.06, HVIT, HVIT_S);
-  legg(new THREE.ShapeGeometry(bue(2.1,4.4),12), W3(fot.mid,0), fot.tan, opp, fot.nor, 0.10, [104,86,72], [72,60,52]);
+  legg(new THREE.ShapeGeometry(bue(2.1,4.4),12), W3(fot.mid,0), fot.tan, opp, fot.nor, 0.10, DORBLAD, DORBLAD_S);
 }
 
 const buildings=[];

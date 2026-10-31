@@ -760,6 +760,180 @@
     "sk": null,
     "takform": "flatt"
    }
+  },
+  {
+   "id": "bnr-193867529",
+   "kilde": "tegningen kirke.ai, talt for hånd i utsnittet 31.10",
+   "grunn": "kirkas skipsvegger som tegningen viser hele (tegnes i src/06 fra bygg.kirke.vinduer, lagt inn av verktoy/fasade_former.py): sørenden har to buevinduer og den store rundbuede døra i rundbuet omramming mellom dem; østenden to buevinduer og en mindre rundbuet dør mellom og under dem; korsarmenes sidevegger mot Ø og S ved krysset to høye buevinduer hver. Hulltellingen leser buevinduene med sprosser som flere hull",
+   "vegg": [
+    {
+     "side": "S",
+     "ved": [
+      -12.0,
+      -75.3
+     ],
+     "rader": [
+      2
+     ],
+     "dorer": [
+      {
+       "u": 0.43,
+       "typ": 2,
+       "stor": true
+      }
+     ],
+     "rader_u": [
+      [
+       0.2,
+       0.75
+      ]
+     ]
+    },
+    {
+     "side": "Ø",
+     "ved": [
+      6.4,
+      -61.2
+     ],
+     "rader": [
+      2
+     ],
+     "dorer": [
+      {
+       "u": 0.58,
+       "typ": 2
+      }
+     ],
+     "rader_u": [
+      [
+       0.31,
+       0.73
+      ]
+     ]
+    },
+    {
+     "side": "Ø",
+     "ved": [
+      -4.5,
+      -71.7
+     ],
+     "rader": [
+      2
+     ]
+    },
+    {
+     "side": "S",
+     "ved": [
+      0.4,
+      -67.9
+     ],
+     "rader": [
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868258",
+   "kilde": "tegningen Kvartal8BITMAP, sett i utsnittet 31.10 (flatene 80, 100, 106)",
+   "grunn": "den grå veggen mot SSV (inne i gården) er blank i tegningen; det mørke foran den er en pumpe/stolpe med kar på bakken, ikke dør eller vinduer (kontrollkoblingen leste den som dør og to vinduer)",
+   "vegg": [
+    {
+     "side": "SSV",
+     "ved": [
+      100.4,
+      70.7
+     ],
+     "rader": [],
+     "dorer": []
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867766",
+   "kilde": "tegningen Kvartal12, sett i utsnittet 31.10 (flate 29)",
+   "grunn": "den korte veggen mot SSV viser to vinduer høyt oppe; den nedre halvdelen står bak taket på det lavere huset foran, så vinduene er i 2. etasje (de stod i 1. etasje, bak nabotaket)",
+   "vegg": [
+    {
+     "side": "SSV",
+     "ved": [
+      121.2,
+      -10.2
+     ],
+     "rader": [
+      0,
+      2
+     ],
+     "rader_u": [
+      [],
+      [
+       0.53,
+       0.85
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867588",
+   "kilde": "tegningen Kvartal10, sett i utsnittet 31.10 (flate 14)",
+   "grunn": "langveggen mot SSV har vinduer bare på den vestre halvdelen: nede to vinduer og inngangsdøra mellom dem, oppe to vinduer og et karnapp i vestenden; resten av veggen er blank (fasadeavlesningen fant bare to av vinduene)",
+   "vegg": [
+    {
+     "side": "SSV",
+     "ved": [
+      -22.0,
+      38.2
+     ],
+     "plass": [
+      0,
+      0.52
+     ],
+     "rader": [
+      2,
+      3
+     ],
+     "rader_u": [
+      [
+       0.42,
+       0.88
+      ],
+      [
+       0.13,
+       0.52,
+       0.87
+      ]
+     ],
+     "dorer": [
+      {
+       "u": 0.64,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pb-59",
+   "kilde": "tegningen kvartal6, talt for hånd i utsnittet 31.10 (flatene 15, 251–263)",
+   "grunn": "langveggen mot SSV har sju vinduer i hver av de to etasjene og ingen dør; vinduene i 1. etasje står nær bunnkanten, så hulltellingen leste tre av dem som dører",
+   "vegg": [
+    {
+     "side": "SSV",
+     "ved": [
+      174.2,
+      60.0
+     ],
+     "rader": [
+      7,
+      7
+     ],
+     "dorer": [],
+     "bare_telling": true
+    }
+   ]
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

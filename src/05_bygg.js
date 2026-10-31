@@ -79,7 +79,7 @@ function fotBaand(pts, d, y){
 }
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
-  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'');
+  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+(opt.vindu?'V':'');
   if(!mats.has(key)){
     const c=new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`); if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8);
     // skyggetonen hentes fra trykkfila når bygget har en; ellers samme forhold som tegningen bruker
@@ -165,6 +165,7 @@ function mat(rgb, dim, sk, opt={}){
         }`
     });
     if(opt.ds) m.side=THREE.DoubleSide;
+    if(opt.vindu) m.userData.vindu=true;   // kontrolløren (verktoy/kontroll_iso.mjs) leser flaten som vindu/dør
     mats.set(key,m);
   }
   return mats.get(key);

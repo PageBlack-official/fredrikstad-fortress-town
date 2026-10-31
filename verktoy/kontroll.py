@@ -735,8 +735,8 @@ def vinduer_modell(x, a, b, synlig=None):
     står mer enn 1 m over forrige vindu), ikke faste 3 m-bånd: presset etasjehøyde (lave hus med to etasjer, fasade_tegning
     VH_PRESS) og kjellervinduer havnet før i samme bånd som 1. etasje (30.10). Vinduer over gesims (gavl) telles for seg.
     synlig(v): bare vinduene som synes i kontrollbildet (et lavere nabohus eller taket foran skjuler resten, og tegningen viser
-    bare det som synes). Gir (vinduer under gesims, rader, dører, gavlvinduer)."""
-    V = x.get('vind') or []
+    bare det som synes). Gir (vinduer under gesims, rader, dører, gavlvinduer, arkadebuer)."""
+    V = list(x.get('vind') or []) + list((x.get('kirke') or {}).get('vinduer') or [])   # kirka: src/06 tegner bygg.kirke.vinduer
     ux, uy = b[0] - a[0], b[1] - a[1]; L = math.hypot(ux, uy) or 1
     tx, ty = ux / L, uy / L
     zs = []; dorer = 0; gavl = 0
@@ -753,14 +753,15 @@ def vinduer_modell(x, a, b, synlig=None):
         elif vz > (x.get('h') or 99): gavl += 1
         else: zs.append(vz)
     # arkadene (landemerker.py: bygg.arkader) er åpninger i fasaden som tegningen viser som hull: hver bue telles som et vindu
+    buer = 0
     for A in (x.get('arkader') or []):
         aa, ab = np.array(A['a'], float), np.array(A['b'], float)
         for k in range(int(A.get('n') or 0)):
             q = aa + (ab - aa) * (k + 0.5) / A['n']
             t = (q[0] - a[0]) * tx + (q[1] - a[1]) * ty; dist = abs(-(q[0] - a[0]) * ty + (q[1] - a[1]) * tx)
             if -0.3 <= t <= L + 0.3 and dist < 1.0:
-                zs.append(float(A.get('z0', 0)) + 0.5 * float(A.get('h', 3)))
-    return len(zs), _rader(zs, gap=1.0), dorer, gavl
+                zs.append(float(A.get('z0', 0)) + 0.5 * float(A.get('h', 3))); buer += 1
+    return len(zs), _rader(zs, gap=1.0), dorer, gavl, buer
 
 
 def lest_vegg(lest, a, b):
@@ -792,9 +793,10 @@ def lest_vegg(lest, a, b):
 
 
 _MK = {}
-def merknad_vegg(i, navn, n):
+def merknad_vegg(i, navn, n, a=None, b=None):
     """Veggen i kilder/bygg-merknader.json («vegg»: side, rader, dorer) som vender samme vei som utovernormalen n (innen 30°),
-    når merknadens kilde nevner tegningen."""
+    når merknadens kilde nevner tegningen. Har merknaden «ved» (punkt på bakken, flere vegger mot samme side), må modellveggen
+    a->b gå innen 1,5 m fra punktet."""
     if not _MK:
         f = os.path.join(ROT, 'kilder', 'bygg-merknader.json')
         L = json.load(open(f, encoding='utf8')) if os.path.exists(f) else []
@@ -807,6 +809,10 @@ def merknad_vegg(i, navn, n):
         if navn.lower() not in str(m.get('kilde', '')).lower(): continue
         for w in m['vegg']:
             if w.get('side') in SV.KOMPASS and abs((vn - SV.KOMPASS[w['side']] + 180) % 360 - 180) <= 30:
+                if w.get('ved') is not None and a is not None:
+                    A, B_, Q = np.array(a, float), np.array(b, float), np.array(w['ved'], float)
+                    t = float(np.clip((Q - A) @ (B_ - A) / max((B_ - A) @ (B_ - A), 1e-9), 0, 1))
+                    if np.linalg.norm(A + t * (B_ - A) - Q) > 1.5: continue
                 return dict(w, _kilde=m.get('kilde'))
     return None
 
@@ -1177,7 +1183,7 @@ def analyser(navn, logg=print):
                 y0_, y1_, x0_, x1_ = max(0, py - 2), min(H, py + 3), max(0, px - 2), min(W, px + 3)
                 if y0_ >= y1_ or x0_ >= x1_: return False
                 return bool(((idx[y0_:y1_, x0_:x1_] == k_) & (typ[y0_:y1_, x0_:x1_] == 3)).any())
-            n_m, rader_m, dor_m, gavl_m = vinduer_modell(x, v['a'], v['b'], synlig if k_ else None)
+            n_m, rader_m, dor_m, gavl_m, buer_m = vinduer_modell(x, v['a'], v['b'], synlig if k_ else None)
             # veggen står inntil et nabohus som er minst like høyt i kommunekartet (FKB går foran for omriss): modellen kan ikke
             # vise vinduer der, selv om tegningen tegner veggen fri (868339/868347, Kvartal4BITMP)
             brannmur = None
@@ -1189,9 +1195,11 @@ def analyser(navn, logg=print):
                 brannmur = next((i2 for i2 in D['_omg'].ids if i2 != i and D['_omg'].poly[i2].contains(Point_(q_))), 'nabohus')
             # Vegars kvartalskontroll (kilder/bygg-merknader.json, «vegg»): veggen er talt for hånd i nærbildet av denne tegningen
             # og går foran vektorlesingen (bygg_merknader.py legger den inn sist i kjeden)
-            mk = merknad_vegg(i, navn, v['n'])
+            mk = merknad_vegg(i, navn, v['n'], v['a'], v['b'])
             if mk:
-                rad_mk = [int(str(q).lstrip('kl')) for q in mk['rader']]
+                # rader uten vinduer (en etasje skjult bak et lavere hus foran) er ikke tegnede rader
+                rad_mk = [int(str(q).lstrip('kl')) for q in (mk['rader'] if mk.get('rader') is not None else [len(r_) for r_ in mk.get('rader_u') or []])]
+                rad_mk = [q for q in rad_mk if q]
                 vs = [0.0] * sum(rad_mk); rader_t = rad_mk; dor_t = len(mk.get('dorer') or []); gavl_t = 0
                 kilde_v = 'merknad: ' + str(mk.get('_kilde'))[:80]
             import vinduer_regler as VR
@@ -1201,7 +1209,7 @@ def analyser(navn, logg=print):
                             venstre=[float(c) for c in (v['a'] if pa_[0] <= pb_[0] else v['b'])], for_haand=for_haand)
             vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v, kobling=kobling_,
                              tegning=dict(vinduer=len(vs), rader=rader_t if rader_t is not None else _rader(vs), dorer=dor_t, gavl=gavl_t),
-                             modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m, gavl=gavl_m),
+                             modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m, gavl=gavl_m, arkadebuer=buer_m),
                              brannmur=brannmur, plass_etasjer=etasjer_plass(x.get('h') or 0, len(rader_t) if rader_t else 0)))
         r['vinduer'] = vind
         # arker og piper (anslått): små flater på taket
@@ -1359,6 +1367,10 @@ def vurder(r, navn):
             hva += '; ' + ', '.join(f"vegg {w_['vegg']} står inntil {w_['brannmur']} i kommunekartet (tegningen: {w_['tegning']['vinduer']} vinduer, ikke dømt)" for w_ in bm)
         if a != 'ok' and r['id'] in LANDEMERKER_FASADE:
             a = 'avvik med grunn'; hva += f"; {LANDEMERKER_FASADE[r['id']]}"
+        elif a != 'ok' and w['modell'].get('arkadebuer') and w['kilde'] != 'merknad' and not w['kilde'].startswith('merknad'):
+            # arkaden er tegnet etter denne tegningen i landemerker.py (bygg.arkader, kilden står der); buene er tegnet som strek
+            # med veggfargen inni, ikke som hull, så verken hulltellingen eller fasadeavlesningen leser dem
+            a = 'avvik med grunn'; hva += f"; veggen er arkaden ({w['modell']['arkadebuer']} buer, verktoy/landemerker.py etter tegningen): buene er strek i tegningen, ikke hull, og leses ikke av tellingen"
         sett('vinduer', a, hva)
         dd = [(w['tegning']['dorer'], w['modell']['dorer'], w['vegg']) for w in vv if w['tegning']['dorer'] != w['modell']['dorer']]
         sett('dorer', 'avvik' if dd else 'ok', '; '.join(f"vegg {g}: tegning {a_}, modell {b_}" for a_, b_, g in dd) if dd else 'like')

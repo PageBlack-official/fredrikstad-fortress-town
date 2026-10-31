@@ -852,8 +852,8 @@
    "3": {
     "tegning": "Kvartal13",
     "rader": [
-     2,
-     2
+     3,
+     3
     ],
     "dorer": 1,
     "notat": []
@@ -870,9 +870,26 @@
     ]
    }
   },
-  "tegnet": 14,
+  "tegnet": 16,
   "regler": 28,
   "streetview": 3
+ },
+ {
+  "id": "pb-63",
+  "navn": null,
+  "vegger": {
+   "3": {
+    "tegning": "Kvartal13",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 4,
+  "streetview": 0
  },
  {
   "id": "pb-64",
@@ -886,36 +903,10 @@
     ],
     "dorer": 1,
     "notat": []
-   },
-   "3": {
-    "tegning": "Kvartal13",
-    "rader": [
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 5,
-  "regler": 0,
-  "streetview": 0
- },
- {
-  "id": "pb-63",
-  "navn": null,
-  "vegger": {
-   "3": {
-    "tegning": "Kvartal13",
-    "rader": [
-     3,
-     1
-    ],
-    "dorer": 0,
-    "notat": []
    }
   },
   "tegnet": 4,
-  "regler": 4,
+  "regler": 0,
   "streetview": 0
  },
  {
@@ -1747,6 +1738,14 @@
   "id": "bnr-193868282",
   "navn": null,
   "vegger": {
+   "6": {
+    "tegning": "Kvartal8BITMAP",
+    "rader": [
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   },
    "1": {
     "tegning": "Kvartal8BITMAP",
     "rader": [],
@@ -1780,8 +1779,8 @@
     ]
    }
   },
-  "tegnet": 4,
-  "regler": 30,
+  "tegnet": 6,
+  "regler": 20,
   "streetview": 6
  },
  {
