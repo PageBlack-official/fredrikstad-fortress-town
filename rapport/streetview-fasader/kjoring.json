@@ -3022,36 +3022,10 @@
  },
  {
   "id": "bnr-193870279",
-  "navn": "Tøihuset",
+  "navn": "Tøihuset, østfløya",
   "sikkerhet": "høy",
-  "side": "S (langfasade) + V-gavl",
-  "vegg": 6,
-  "vegg_L": 123.2,
-  "avstand": 70.2,
-  "vinkel": 1.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     5
-    ]
-   ],
-   "dorer": "1 dør på gavlen (V) med skilt",
-   "takvinduer": "1 lite takvindu på gavlhalvdelen",
-   "piper": "0 synlig"
-  },
-  "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    19
-   ],
-   "dorer": 6,
-   "arker": 0,
-   "piper": 3
-  },
-  "avvik": true,
-  "dorer_avvik": true
+  "status": "hoppet over",
+  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (S (langfasade) + V-gavl)"
  },
  {
   "id": "bnr-193870198",

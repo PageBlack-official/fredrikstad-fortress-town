@@ -70,7 +70,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193820409 |  | [4, 1, 1] | [4, 1] | 1 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 | bnr-13418268 |  | [0, 1] | [0] | 2 | 0 | – | 1 rad(er) fikk ikke plass under gesims |
 
-## Fasithus fra kvartaltegningene, bare sammenlignet (110)
+## Fasithus fra kvartaltegningene, bare sammenlignet (109)
 
 Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 
@@ -121,7 +121,6 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193870325 | Hovedvakten – det gamle slaveri | [1] | [4] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 4 | ja |
 | bnr-193870317 | Det grundmurede provianthus | [0] | [6] | 2 rundbuede dører (ca. 0.10 og 0.40 av synlig vegg), mørke | 3 | 0 | 0 | 0 | 9 | ja |
 | bnr-193870309 | Offisersvakten | [2] | [2] | 1 olivengrønn tofløyet fyllingsdør på gavlen med overlys og steintrapp | 1 | 0 | 0 | 1 rød teglpipe | 1 |  |
-| bnr-193870279 | Tøihuset | [5] | [19] | 1 dør på gavlen (V) med skilt | 6 | 1 lite takvindu på gavlhalvdelen | 0 | 0 synlig | 3 | ja |
 | bnr-193870201 |  | [4, 4] | [3, 3] | 1 på kortsiden nede til venstre (ca. 0.15), mørk skilt-tavle ved døra | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193870228 |  | [6, 6] | [5, 5, 1] | 1 grågrønn fyllingsdør med overlys og lykt, ca. 0.48 av fasaden; 1 tofløyet grågrønn port helt til venstre (ca. 0.03–0.17) | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-193870236 |  | [2, 2] | [5, 5] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |
@@ -187,7 +186,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867510 | Ekserserhuset | [3] | [6] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193869580 | Voldportravelinet | [2, 2] | [2] | 1 dør på NV-siden (ca. 0.55), benk foran | 0 | 0 | 0 | 1 murt teglpipe på mønet | 2 | ja |
 
-## Hoppet over (143)
+## Hoppet over (144)
 
 - bnr-193869548 Voldporten med vaktstuen: portbygg (data/porter.json røres ikke)
 - bnr-193820883 : ikke synlig fra gata
@@ -232,6 +231,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193971199 offentlig toalett: ingen vindustall (SØ (sett ovenfra fra vollen, bare taket))
 - bnr-193867596 Vennehaabet: siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (N/NV (gatefasade))
 - bnr-193870287 : ingen vindustall (S (sett på ~40 m langs veien))
+- bnr-193870279 Tøihuset, østfløya: siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (S (langfasade) + V-gavl)
 - bnr-193870198 Labratoriet: ingen vindustall (N (bak trær, ~28 m))
 - bnr-193870244 : ikke synlig fra gata
 - bnr-193870260 : ingen vindustall (S/SØ (~23–35 m, lengre ned i gata))

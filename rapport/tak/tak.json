@@ -8027,5 +8027,125 @@
     }
    }
   ]
+ },
+ "pb-68": {
+  "takform": "vinkel:sal+valm+valm",
+  "kilde": "DOM sal tvers rms 1.09; DOM valm langs rms 0.76; DOM valm tvers rms 0.53",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": false,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     17.4,
+     139.9
+    ],
+    "dom": {
+     "rms": 1.09,
+     "h": 4.65,
+     "th": 0.87,
+     "n": 8931
+    }
+   },
+   {
+    "form": "valm",
+    "langs": true,
+    "ender": [
+     "fri",
+     "inne"
+    ],
+    "mål": [
+     57.3,
+     17.2
+    ],
+    "dom": {
+     "rms": 0.76,
+     "h": 4.24,
+     "th": 0.91,
+     "n": 3612
+    }
+   },
+   {
+    "form": "valm",
+    "langs": false,
+    "ender": [
+     "inne",
+     "fri"
+    ],
+    "mål": [
+     17.9,
+     49.7
+    ],
+    "dom": {
+     "rms": 0.53,
+     "h": 3.7,
+     "th": 1.01,
+     "n": 3139
+    }
+   }
+  ]
+ },
+ "pb-69": {
+  "takform": "vinkel:sal+valm+valm",
+  "kilde": "DOM sal tvers rms 1.09; DOM valm langs rms 0.76; DOM valm tvers rms 0.53",
+  "kropper": [
+   {
+    "form": "sal",
+    "langs": false,
+    "ender": [
+     "fri",
+     "fri"
+    ],
+    "mål": [
+     17.4,
+     139.9
+    ],
+    "dom": {
+     "rms": 1.09,
+     "h": 4.65,
+     "th": 0.87,
+     "n": 8931
+    }
+   },
+   {
+    "form": "valm",
+    "langs": true,
+    "ender": [
+     "fri",
+     "inne"
+    ],
+    "mål": [
+     57.3,
+     17.2
+    ],
+    "dom": {
+     "rms": 0.76,
+     "h": 4.24,
+     "th": 0.91,
+     "n": 3612
+    }
+   },
+   {
+    "form": "valm",
+    "langs": false,
+    "ender": [
+     "inne",
+     "fri"
+    ],
+    "mål": [
+     17.9,
+     49.7
+    ],
+    "dom": {
+     "rms": 0.53,
+     "h": 3.7,
+     "th": 1.01,
+     "n": 3139
+    }
+   }
+  ]
  }
 }

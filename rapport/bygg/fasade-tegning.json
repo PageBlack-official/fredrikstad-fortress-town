@@ -2166,9 +2166,26 @@
  },
  {
   "id": "bnr-193870279",
-  "navn": "Tøihuset",
+  "navn": "Tøihuset, østfløya",
   "vegger": {
-   "6": {
+   "3": {
+    "tegning": "Toihuset",
+    "rader": [
+     9
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 15,
+  "streetview": 0
+ },
+ {
+  "id": "pb-68",
+  "navn": "Tøihuset, nordfløya",
+  "vegger": {
+   "1": {
     "tegning": "Toihuset",
     "rader": [
      19
@@ -2176,7 +2193,24 @@
     "dorer": 6,
     "notat": []
    },
-   "2": {
+   "3": {
+    "tegning": "Toihuset",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 27,
+  "regler": 58,
+  "streetview": 0
+ },
+ {
+  "id": "pb-69",
+  "navn": "Tøihuset, sørfløya",
+  "vegger": {
+   "3": {
     "tegning": "Toihuset",
     "rader": [
      16
@@ -2184,17 +2218,17 @@
     "dorer": 3,
     "notat": []
    },
-   "1": {
+   "4": {
     "tegning": "Toihuset",
     "rader": [
-     16
+     4
     ],
     "dorer": 0,
     "notat": []
    }
   },
-  "tegnet": 60,
-  "regler": 97,
+  "tegnet": 23,
+  "regler": 25,
   "streetview": 0
  },
  {
