@@ -35,7 +35,9 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #kort .lukk{position:absolute;right:12px;top:10px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}
 #kort .farge{display:flex;gap:6px;margin-top:10px;align-items:center;font-size:12px;color:var(--muted)}
 #kort .her{list-style:none;margin:8px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
-#kort .her:empty,#kort .id:empty,#kort .b:empty{display:none}
+#kort .ogsa-t{margin:12px 0 0;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);opacity:.6}
+#kort .ogsa{list-style:none;margin:4px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
+#kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty{display:none}
 #kort .id{margin-top:8px;font-size:11px;letter-spacing:.02em;opacity:.8}
 #kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
 
@@ -52,7 +54,7 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 <div id="kart" aria-label="Kart over Gamlebyen"></div>
 <button id="hjem" aria-label="Vis hele byen" title="Vis hele byen (Esc)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Hele byen</span></button>
 <div id="hint">Dra for å flytte · ctrl og dra for å snu byen · ⌘ og rull, klyp eller +/− for å zoome · dobbeltklikk nærmere, shift og dobbeltklikk lenger vekk</div><script>if(matchMedia("(pointer:coarse)").matches)document.getElementById("hint").textContent="Én finger flytter kartet · to fingre snur og zoomer · trykk på et hus";</script>
-<div id="kort" role="dialog" aria-label="Om bygget" aria-hidden="true"><div class="grep" aria-hidden="true"></div><button class="lukk" aria-label="Lukk">×</button><div class="innhold"><h2></h2><p class="a"></p><p class="b"></p><ul class="her"></ul><div class="farge"></div><p class="id"></p></div></div>
+<div id="kort" role="dialog" aria-label="Om bygget" aria-hidden="true"><div class="grep" aria-hidden="true"></div><button class="lukk" aria-label="Lukk">×</button><div class="innhold"><h2></h2><p class="a"></p><p class="b"></p><ul class="her"></ul><p class="ogsa-t"></p><ul class="ogsa"></ul><div class="farge"></div><p class="id"></p></div></div>
 <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","maplibre-gl":"https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.mjs"}}</script>
 
@@ -1999,7 +2001,7 @@ const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, 
 const kort=document.getElementById('kort');
 // adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
 const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
-const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const hjem=document.getElementById('hjem');
+const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const BYGG_ID=new Map((DATA.bygg||[]).map(x=>[x.id,x])); const hjem=document.getElementById('hjem');
 // treff: strålen mot alt i byen; i de sammenslåtte nettene gir trekantnummeret hvilket bygg som ble truffet (husDeler, 07)
 function byggFraTreff(hit){
   if(hit.object.isInstancedMesh && hit.object.geometry.getAttribute('aBygg')){ const k=hit.object.geometry.getAttribute('aBygg').getX(hit.instanceId)-1; return k>=0 ? buildings.find(g=>g.userData.i===k) : null; }
@@ -2025,9 +2027,16 @@ function fyllKort(b){
   kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
   kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
   kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig (27.10)
-  const hl=kort.querySelector('.her'); hl.innerHTML=''; her.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; hl.appendChild(li); });
-  const m=b.matrikkel&&b.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
-  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
+  const liste=(ul,vs)=>{ ul.innerHTML=''; vs.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; ul.appendChild(li); }); };
+  // bygg delt i fløyer (husdeling «felles_tak», 31.10 Tøihuset): fløyas egne steder øverst; de andre fløyenes og de uten kjent plass under «Også i …»
+  const fl=b.floyer||[], hele=v=>v.hele_bygget;
+  const ogsa=fl.flatMap(i=>(VIRKSOMHETER.get(i)||[]).filter(v=>i!==b.id||hele(v))).sort((x,y)=>(hele(x)?1:0)-(hele(y)?1:0));
+  liste(kort.querySelector('.her'), her.filter(v=>!(fl.length&&hele(v))));
+  liste(kort.querySelector('.ogsa'), ogsa);
+  kort.querySelector('.ogsa-t').textContent = ogsa.length ? `Også i ${(b.navn||'bygget').split(',')[0]}` : '';
+  const mb=(b.matrikkel&&b.matrikkel[0]) ? b : (b.floyer||[]).map(i=>BYGG_ID.get(i)).find(x=>x&&x.matrikkel&&x.matrikkel[0]) || b;   // fløyene deler bygningsnummeret
+  const m=mb.matrikkel&&mb.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
+  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${mb.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
 }
