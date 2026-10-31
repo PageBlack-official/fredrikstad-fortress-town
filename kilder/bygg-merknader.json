@@ -934,6 +934,155 @@
      "bare_telling": true
     }
    ]
+  },
+  {
+   "id": "bnr-193868673",
+   "kilde": "tegningen Kvartal2BITMP, sett i utsnittet 31.10 (flate 35)",
+   "grunn": "det lave røde huset: veggen mot SØ har inngangsdøra helt til venstre og tre vinduer i én rad; døra står i et hakk utenfor veggflaten, så fasadeavlesningen fant bare vinduene (kontrollkoblingen hadde lagt vinduene til det hvite nabohuset på veggen)",
+   "vegg": [
+    {
+     "side": "SØ",
+     "ved": [
+      178.7,
+      158.5
+     ],
+     "rader": [
+      3
+     ],
+     "rader_u": [
+      [
+       0.38,
+       0.62,
+       0.84
+      ]
+     ],
+     "dorer": [
+      {
+       "u": 0.15,
+       "typ": 1,
+       "b": 1.0,
+       "h": 2.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868061",
+   "kilde": "tegningen Kvartal3, talt for hånd i utsnittet 31.10 (flatene 10, 14, 16)",
+   "grunn": "gavlen mot SØ har to vinduer i etasjen over og to små vinduer i natursteinsetasjen, ingen dør; hulltellingen leste de små vinduene nede også som dører",
+   "vegg": [
+    {
+     "side": "SØ",
+     "ved": [
+      216.8,
+      151.8
+     ],
+     "rader": [
+      2,
+      2
+     ],
+     "dorer": [],
+     "bare_telling": true
+    }
+   ]
+  },
+  {
+   "id": "pb-61",
+   "kilde": "tegningen kvartal5, sett i utsnittet 31.10 (flatene 28, 268, 270, 272)",
+   "grunn": "det hvite huset: veggen mot SØ har fire vinduer oppe og nede ett vindu, en bred tofløyet port og to vinduer; reglene hadde fire vinduer og en dør midt på nede",
+   "vegg": [
+    {
+     "side": "SØ",
+     "ved": [
+      153.2,
+      124.1
+     ],
+     "rader": [
+      3,
+      4
+     ],
+     "rader_u": [
+      [
+       0.16,
+       0.64,
+       0.86
+      ],
+      [
+       0.16,
+       0.375,
+       0.62,
+       0.84
+      ]
+     ],
+     "dorer": [
+      {
+       "u": 0.375,
+       "typ": 1,
+       "b": 1.4,
+       "h": 2.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pb-64",
+   "kilde": "tegningen Kvartal13, sett i utsnittet 31.10 (flate 16)",
+   "grunn": "det grå gavlhuset: gavlen mot SSV har to små vinduer oppe og to større vinduer nede, ingen port; fasadeavlesningen leste det store vinduet nede til venstre som port fordi de små vinduene trakk vindushøyden ned",
+   "vegg": [
+    {
+     "side": "SSV",
+     "ved": [
+      -92.98,
+      -23.0
+     ],
+     "rader": [
+      2,
+      2
+     ],
+     "rader_u": [
+      [
+       0.23,
+       0.67
+      ],
+      [
+       0.34,
+       0.63
+      ]
+     ],
+     "dorer": []
+    }
+   ]
+  },
+  {
+   "id": "pb-62",
+   "kilde": "tegningen Kvartal2BITMP, sett i utsnittet 31.10 (flatene 23, 26)",
+   "grunn": "hjørnehuset: veggen mot SØ har to vinduer i hver etasje over hverandre; fasadeavlesningen fant bare det ene vinduet nede",
+   "vegg": [
+    {
+     "side": "SØ",
+     "ved": [
+      165.9,
+      140.6
+     ],
+     "rader": [
+      2,
+      2
+     ],
+     "rader_u": [
+      [
+       0.3,
+       0.73
+      ],
+      [
+       0.3,
+       0.73
+      ]
+     ],
+     "dorer": []
+    }
+   ]
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",
@@ -1594,6 +1743,17 @@
    "utfall": "avvik med grunn",
    "kategori": "mur",
    "grunn": "lav mur/portvegg langs gata mellom 868290 og 868282 (innkjørselen), ikke hus; DOM−DTM 0 m, ingen bygning i FKB"
+  },
+  {
+   "tegning": "Kvartal11",
+   "senter_pt": [
+    133.1,
+    193.0
+   ],
+   "utfall": "avvik med grunn",
+   "kategori": "mur",
+   "grunn": "vestenden av muren rundt plassen foran Infanterikasernen, med den svarte porten (sett i utsnittet 31.10); samme mur som gruppen ved [260.6, 239.6], som kontrollen delte i to 31.10 (flate 56 er ikke lenger med i gruppen). Murene hører til bakken (gjerder), ingen bygning i FKB eller DOM 2015",
+   "kilde": "Claude 31.10, utsnitt av Kvartal11 (flatene 4, 12, 23, 24, 25, 56) og domen for gruppen ved [260.6, 239.6]"
   }
  ]
 }

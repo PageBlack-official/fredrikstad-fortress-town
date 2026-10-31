@@ -1121,8 +1121,21 @@ def les_for_haand(navn, d=None):
 if __name__ == '__main__':
     a = sys.argv[1:]
     if a and a[0] == 'les_for_haand':
-        for n in a[1:]:
-            L = les_for_haand(n); lagre_avlesning(L)
+        # --bare id1,id2: les bare disse husene på nytt og behold resten av avlesningen som den står (koblingen deres er ikke
+        # endret, og omrissene kan ha endret seg siden de ble lest, så en full omlesing kan flytte avlesninger til andre vegger)
+        bare = a[a.index('--bare') + 1].split(',') if '--bare' in a else None
+        for n in [n for n in a[1:] if n != '--bare' and (not bare or n != a[a.index('--bare') + 1])]:
+            L = les_for_haand(n)
+            if bare:
+                gml = json.load(open(os.path.join(AVL, n + '.json'), encoding='utf8'))
+                ny = {k: v for k, v in gml.items()}
+                ny['vegger'] = [v for v in gml['vegger'] if v['id'] not in bare] + \
+                    [{k: v for k, v in vg.items() if k != 'farger'} | dict(farger=[[round(c * 255) for c in f] for f in vg['farger']]) for vg in L['vegger'] if vg['id'] in bare]
+                ny['laget'] = __import__('datetime').date.today().isoformat()
+                json.dump(ny, open(os.path.join(AVL, n + '.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=0, default=float)
+                L = dict(L, vegger=[vg for vg in L['vegger'] if vg['id'] in bare])
+            else:
+                lagre_avlesning(L)
             for v in L['vegger']: print(n, v['id'], v['side'], f"vegg {v['vegg']}", len(v['elementer']), 'elementer')
     elif a and a[0] == 'les':
         for n in a[1:]:

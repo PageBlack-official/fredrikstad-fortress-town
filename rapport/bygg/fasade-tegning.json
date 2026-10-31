@@ -1174,51 +1174,6 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193868096",
-  "navn": null,
-  "vegger": {
-   "1": {
-    "tegning": "Kvartal2BITMP",
-    "rader": [
-     6,
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 7,
-  "regler": 2,
-  "streetview": 0
- },
- {
-  "id": "pb-62",
-  "navn": null,
-  "vegger": {
-   "1": {
-    "tegning": "Kvartal2BITMP",
-    "rader": [
-     1,
-     1
-    ],
-    "dorer": 0,
-    "notat": []
-   },
-   "3": {
-    "tegning": "Kvartal2BITMP",
-    "rader": [
-     1,
-     2
-    ],
-    "dorer": 0,
-    "notat": []
-   }
-  },
-  "tegnet": 5,
-  "regler": 0,
-  "streetview": 0
- },
- {
   "id": "bnr-193868088",
   "navn": null,
   "vegger": {
@@ -1266,6 +1221,81 @@
   "tegnet": 0,
   "regler": 3,
   "streetview": 3
+ },
+ {
+  "id": "bnr-193868673",
+  "navn": null,
+  "vegger": {
+   "7": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     3
+    ],
+    "dorer": 0,
+    "notat": []
+   },
+   "4": {
+    "tegning": "Street View",
+    "rader": [
+     1
+    ],
+    "dorer": 0,
+    "notat": [
+     "Street View mai 2024"
+    ]
+   }
+  },
+  "tegnet": 3,
+  "regler": 7,
+  "streetview": 1
+ },
+ {
+  "id": "bnr-193868096",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     7,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 9,
+  "regler": 2,
+  "streetview": 0
+ },
+ {
+  "id": "pb-62",
+  "navn": null,
+  "vegger": {
+   "1": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "2": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [],
+    "dorer": 0,
+    "notat": []
+   },
+   "3": {
+    "tegning": "Kvartal2BITMP",
+    "rader": [
+     1,
+     2
+    ],
+    "dorer": 0,
+    "notat": []
+   }
+  },
+  "tegnet": 3,
+  "regler": 0,
+  "streetview": 0
  },
  {
   "id": "bnr-193867324",
@@ -3113,34 +3143,6 @@
   "tegnet": 0,
   "regler": 0,
   "streetview": 0
- },
- {
-  "id": "bnr-193868673",
-  "navn": null,
-  "vegger": {
-   "7": {
-    "tegning": "Kvartal2BITMP",
-    "rader": [
-     10
-    ],
-    "dorer": 2,
-    "notat": [],
-    "kobling": "kontroll"
-   },
-   "4": {
-    "tegning": "Street View",
-    "rader": [
-     1
-    ],
-    "dorer": 0,
-    "notat": [
-     "Street View mai 2024"
-    ]
-   }
-  },
-  "tegnet": 7,
-  "regler": 7,
-  "streetview": 1
  },
  {
   "id": "bnr-193869556",

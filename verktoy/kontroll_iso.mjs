@@ -23,16 +23,36 @@ await new Promise(r => server.listen(0, '127.0.0.1', r)); const port = server.ad
 const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const ctx = await browser.newContext({ viewport: { width: 900, height: 600 } }); const page = await ctx.newPage();
 const errs = []; page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error') errs.push('console: ' + m.text().slice(0, 200)); });
-await page.goto(`http://127.0.0.1:${port}/index.html?skip=1`, { waitUntil: 'load' });
-await page.waitForFunction(() => window.__scene && window.__vis, null, { timeout: 120000 });
-await page.waitForTimeout(3000);
-// husene i full høyde (introen hoppes over): __vis setter vekst 1 og løft 0 på alle bygg
-await page.evaluate(() => window.__vis(20, 1, 0, 0));
-await page.waitForTimeout(3000);
+async function klar() {
+  await page.goto(`http://127.0.0.1:${port}/index.html?skip=1`, { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__scene && window.__vis, null, { timeout: 120000 });
+  await page.waitForTimeout(3000);
+  // husene i full høyde (introen hoppes over): __vis setter vekst 1 og løft 0 på alle bygg
+  await page.evaluate(() => window.__vis(20, 1, 0, 0));
+  await page.waitForTimeout(3000);
+}
+await klar();
 fs.mkdirSync(utdir, { recursive: true });
+// programvare-GPU-en (SwiftShader) kan miste WebGL-konteksten etter mange store bilder i samme side; kartet laster seg da på nytt
+// (src/00: webglcontextlost -> reload) og jobben som stod, mister siden. Den lastes på nytt her og jobben tas én gang til (31.10:
+// kirke falt etter 16 tegninger i ett kall).
 for (const j of jobb) {
   const t0 = Date.now();
-  const res = await page.evaluate(async (j) => {
+  let res;
+  for (let forsok = 0; ; forsok++) {
+    try { res = await tegn(j); break; }
+    catch (e) {
+      if (forsok >= 1 || !/context was destroyed|navigation|Target closed/i.test(String(e.message))) throw e;
+      console.log('siden lastet på nytt under', j.navn, '(WebGL-konteksten), tar jobben om igjen');
+      await page.waitForTimeout(2000); await klar();
+    }
+  }
+  for (const [k, v] of Object.entries(res.ut)) fs.writeFileSync(path.join(utdir, `${j.navn}-${k}.png`), Buffer.from(v.split(',')[1], 'base64'));
+  fs.writeFileSync(path.join(utdir, `${j.navn}-id.json`), JSON.stringify(res.ids));
+  console.log('ok', j.navn, `${j.W}x${j.H}`, res.n, 'nett', ((Date.now() - t0) / 1000).toFixed(1) + 's');
+}
+async function tegn(j) {
+  return await page.evaluate(async (j) => {
     const THREE = await import('three');
     const { city } = window.__scene();
     const DATA = JSON.parse(document.getElementById('bydata').textContent);
@@ -107,9 +127,10 @@ for (const j of jobb) {
         gl_FragColor=vec4(floor(i/256.)/255., mod(i,256.)/255., t/255., 1.); }`;
     const FS_N = `${FORM}varying vec3 vw; varying float vId; void main(){ if(vId<0.5) discard; FORM(); vec3 nn=normalize(cross(dFdx(vw),dFdy(vw))); gl_FragColor=vec4(0.5+0.5*nn,1.); }`;
     const rU = new THREE.Vector3(U[0], U[1], U[2]);
-    const lager = new Map();
+    const lager = new Map(); let opprinnelig = null;
     function matFor(o, i, pass) {
-      const om = o.material; const mm = Array.isArray(om) ? om[0] : om;
+      // det opprinnelige materialet: fra andre pass står kontrollmaterialet fra forrige pass på nettet (userData.vindu var borte i id-passet)
+      const om = (opprinnelig && opprinnelig.get(o)) || o.material; const mm = Array.isArray(om) ? om[0] : om;
       let farge = new THREE.Color(0.8, 0.8, 0.8), skygge = null, typ = 0;
       if (mm.uniforms && mm.uniforms.farge) { farge = mm.uniforms.farge.value.clone(); skygge = mm.uniforms.skygge ? mm.uniforms.skygge.value.clone() : null; }
       else if (mm.color) farge = mm.color.clone();
@@ -122,6 +143,7 @@ for (const j of jobb) {
         uniforms: { farge: { value: farge }, skygge: { value: skygge }, rU: { value: rU }, typ: { value: typ }, uId: { value: i >= 0 ? i + 1 : 0 }, tVis: { value: pass === 'idalle' ? tAlle : tVis }, tOff: { value: tOff }, uWH: { value: new THREE.Vector2(W, H) } } });
     }
     const gamle = nett.map(([o]) => [o, o.material, o.visible, o.renderOrder, o.frustumCulled]);
+    opprinnelig = new Map(gamle.map(([o, m]) => [o, m]));
     // projeksjonsmatrisen er satt for hånd, så frustumtesten til three.js gjelder ikke: uten dette ble grupper med egne nett
     // (portbyggene, bygg med deler) kastet, og bare vinduene (frustumCulled false) kom med (30.10, natt/landemerker)
     nett.forEach(([o]) => { o.frustumCulled = false; });
@@ -142,9 +164,6 @@ for (const j of jobb) {
     const ids = {}; DATA.bygg.forEach((b, i) => { ids[i + 1] = b.id; });
     return { ut, ids, n: nett.length };
   }, j);
-  for (const [k, v] of Object.entries(res.ut)) fs.writeFileSync(path.join(utdir, `${j.navn}-${k}.png`), Buffer.from(v.split(',')[1], 'base64'));
-  fs.writeFileSync(path.join(utdir, `${j.navn}-id.json`), JSON.stringify(res.ids));
-  console.log('ok', j.navn, `${j.W}x${j.H}`, res.n, 'nett', ((Date.now() - t0) / 1000).toFixed(1) + 's');
 }
 if (errs.length) console.log('sidefeil:', errs.slice(0, 5));
 await browser.close(); server.close();

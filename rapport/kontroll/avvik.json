@@ -1,44 +1,44 @@
 {
- "laget": "2026-10-30",
+ "laget": "2026-10-31",
  "verktoy": "verktoy/kontroll.py avvik",
  "totalt": {
   "finnes": {
-   "ok": 194,
+   "ok": 195,
    "feil": 4,
    "avvik": 20
   },
   "omriss": {
    "avvik": 83,
    "ok": 47,
-   "feil": 64
+   "feil": 65
   },
   "mone": {
    "avvik": 51,
-   "ok": 98,
+   "ok": 99,
    "feil": 43
   },
   "takform": {
-   "ok": 187,
+   "ok": 188,
    "feil": 7
   },
   "takfarge": {
    "ok": 79,
-   "avvik med grunn": 105,
+   "avvik med grunn": 106,
    "feil": 1
   },
   "arker": {
-   "ok": 155,
+   "ok": 156,
    "avvik": 39
   },
   "piper": {
    "ok": 163,
-   "avvik": 31
+   "avvik": 32
   },
   "gesims": {
-   "ok": 69,
-   "avvik med grunn": 36,
-   "avvik": 13,
-   "feil": 20
+   "ok": 70,
+   "avvik med grunn": 37,
+   "avvik": 14,
+   "feil": 17
   },
   "veggfarge": {
    "ok": 81,
@@ -46,14 +46,13 @@
    "feil": 3
   },
   "vinduer": {
-   "ok": 76,
-   "avvik": 14,
-   "avvik med grunn": 4,
-   "feil": 10
+   "ok": 83,
+   "avvik": 8,
+   "avvik med grunn": 13
   },
   "dorer": {
-   "ok": 96,
-   "avvik": 8
+   "ok": 102,
+   "avvik med grunn": 2
   },
   "slaatt_sammen": {
    "feil": 11,
@@ -269,7 +268,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -568,7 +573,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -610,7 +621,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -823,7 +842,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -872,7 +897,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -1075,7 +1109,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -1267,7 +1310,16 @@
        2
       ],
       "dorer": 3,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       3,
+       2
+      ],
+      "dorer": 3
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -1438,7 +1490,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 0
@@ -1633,7 +1691,7 @@
    "andel_av_modell_dekket": 0.57,
    "andel_av_tegning_dekket": 0.55,
    "tegnede_fasader_per_vegg": {},
-   "gesims_forhold": 1.0,
+   "gesims_forhold": 0.68,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 0.97,
    "takform_modell": "sal",
@@ -1680,8 +1738,8 @@
      "hva": "IoU 0.43 (modell dekket 57%, tegning dekket 55%)"
     },
     "gesims": {
-     "alvor": "ok",
-     "hva": "tegnet/modell 1.00 (fasadeavlesningen (vegger lest for hånd))"
+     "alvor": "avvik med grunn",
+     "hva": "tegnet/modell 0.68 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd)); gesims 4.8 m er målt i Kartverkets DOM−DTM (sikkerhet høy, rest 0.65 m) og går foran: mønet stemmer (silhuett 0.97): tegningen fordeler høyden annerledes mellom vegg og tak"
     },
     "mone": {
      "alvor": "ok",
@@ -1879,7 +1937,16 @@
        5
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 10,
+      "rader": [
+       5,
+       5
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -2411,7 +2478,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl))",
    "tak_aar": 2024,
-   "synlig_px": 19005,
+   "synlig_px": 18999,
    "flater": [
     23,
     78,
@@ -2437,8 +2504,8 @@
    "tegnede_fasader_per_vegg": {
     "7": 3
    },
-   "gesims_forhold": 0.57,
-   "gesims_kilde": "veggflatene i tegningen",
+   "gesims_forhold": 0.94,
+   "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 0.78,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
@@ -2468,7 +2535,7 @@
     {
      "vegg": 7,
      "lengde_m": 14.1,
-     "kilde": "fasadeavlesningen (kontrollkobling)",
+     "kilde": "merknad: tegningen Kvartal2BITMP, sett i utsnittet 31.10 (flate 35)",
      "kobling": {
       "flater": [
        212,
@@ -2487,24 +2554,31 @@
        174.19,
        152.99
       ],
-      "for_haand": false
+      "for_haand": true
      },
      "tegning": {
-      "vinduer": 10,
+      "vinduer": 3,
       "rader": [
-       4,
-       6
-      ],
-      "dorer": 2,
-      "gavl": 0
-     },
-     "modell": {
-      "vinduer": 5,
-      "rader": [
-       5
+       3
       ],
       "dorer": 1,
       "gavl": 0
+     },
+     "modell": {
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
+      "dorer": 1,
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -2529,8 +2603,8 @@
      "hva": "IoU 0.53 (modell dekket 49%, tegning dekket 100%)"
     },
     "gesims": {
-     "alvor": "avvik med grunn",
-     "hva": "tegnet/modell 0.57 (tegningen lavere) (veggflatene i tegningen); gesims 2.8 m er målt i Kartverkets DOM−DTM (sikkerhet høy, rest 0.29 m) og går foran: silhuetten avviker samme vei (0.78): tegningen underdriver hele huset"
+     "alvor": "ok",
+     "hva": "tegnet/modell 0.94 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd))"
     },
     "mone": {
      "alvor": "avvik",
@@ -2545,12 +2619,12 @@
      "hva": "tegning (52, 50, 52) (grå/svart), modell (122, 86, 73) (rød), ΔE 26.6; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl))"
     },
     "vinduer": {
-     "alvor": "avvik med grunn",
-     "hva": "vegg 7 (14.1 m, fasadeavlesningen (kontrollkobling)): tegning 10 vinduer i rader [4, 6], modell 5 i rader [5]; tegningen viser 2 rader, men gesims 2.8 m (Kartverket) gir plass til 1 etasje(r): tegningen overdriver høyden"
+     "alvor": "ok",
+     "hva": "vegg 7 (14.1 m, merknad: tegningen Kvartal2BITMP, sett i utsnittet 31.10 (flate 35)): tegning 3 vinduer i rader [3], modell 3 i rader [3]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 7: tegning 2, modell 1"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "avvik",
@@ -2611,8 +2685,8 @@
    "tegnede_fasader_per_vegg": {
     "3": 1
    },
-   "gesims_forhold": 0.1,
-   "gesims_kilde": "veggflatene i tegningen",
+   "gesims_forhold": 1.06,
+   "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 0.36,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
@@ -2642,7 +2716,7 @@
     {
      "vegg": 3,
      "lengde_m": 8.6,
-     "kilde": "fasadeavlesningen (kontrollkobling)",
+     "kilde": "merknad: tegningen Kvartal2BITMP, sett i utsnittet 31.10 (flatene 23, 26)",
      "kobling": {
       "flater": [
        238
@@ -2659,24 +2733,34 @@
        163.78,
        137.43
       ],
-      "for_haand": false
+      "for_haand": true
      },
      "tegning": {
-      "vinduer": 1,
+      "vinduer": 4,
       "rader": [
-       1
-      ],
-      "dorer": 1,
-      "gavl": 0
-     },
-     "modell": {
-      "vinduer": 3,
-      "rader": [
-       1,
+       2,
        2
       ],
       "dorer": 0,
       "gavl": 0
+     },
+     "modell": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0,
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -2701,8 +2785,8 @@
      "hva": "IoU 0.24 (modell dekket 22%, tegning dekket 82%)"
     },
     "gesims": {
-     "alvor": "feil",
-     "hva": "tegnet/modell 0.10 (tegningen lavere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM"
+     "alvor": "ok",
+     "hva": "tegnet/modell 1.06 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd))"
     },
     "mone": {
      "alvor": "feil",
@@ -2717,12 +2801,12 @@
      "hva": "tegning (237, 213, 196) (oransje/brun), modell (170, 108, 92) (rød), ΔE 39.7; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (2019-trykket (dømt))"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 3 (8.6 m, fasadeavlesningen (kontrollkobling)): tegning 1 vinduer i rader [1], modell 3 i rader [1, 2]"
+     "alvor": "ok",
+     "hva": "vegg 3 (8.6 m, merknad: tegningen Kvartal2BITMP, sett i utsnittet 31.10 (flatene 23, 26)): tegning 4 vinduer i rader [2, 2], modell 4 i rader [2, 2]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 3: tegning 1, modell 0"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -2745,7 +2829,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal3 (IoU 0.56): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 203257,
+   "synlig_px": 203261,
    "flater": [
     0,
     8,
@@ -2850,7 +2934,7 @@
     {
      "vegg": 1,
      "lengde_m": 11.7,
-     "kilde": "hullene i veggflaten",
+     "kilde": "merknad: tegningen Kvartal3, talt for hånd i utsnittet 31.10 (flatene 10, 14, 16)",
      "kobling": {
       "flater": [
        10,
@@ -2877,7 +2961,7 @@
        2,
        2
       ],
-      "dorer": 2,
+      "dorer": 0,
       "gavl": 0
      },
      "modell": {
@@ -2887,7 +2971,16 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -2924,13 +3017,22 @@
       "gavl": 0
      },
      "modell": {
-      "vinduer": 7,
+      "vinduer": 15,
       "rader": [
-       3,
-       4
+       7,
+       8
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 15,
+      "rader": [
+       7,
+       8
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -2979,12 +3081,12 @@
      "hva": "tegning (173, 100, 86) (rød), modell (173, 100, 86) (rød), ΔE 0.0; modellens farge: ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal3 (IoU 0.56): tegningens farge"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 17 (30.9 m, merknad: tegningen Kvartal3, talt for hånd i nærbildet 30.10 (flate 9 over sokkelflatene ): tegning 15 vinduer i rader [7, 8], modell 7 i rader [3, 4]"
+     "alvor": "ok",
+     "hva": "vegg 1 (11.7 m, merknad: tegningen Kvartal3, talt for hånd i utsnittet 31.10 (flatene 10, 14, 16)): tegning 4 vinduer i rader [2, 2], modell 4 i rader [2, 2]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 1: tegning 2, modell 0"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "avvik",
@@ -3108,7 +3210,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -3535,7 +3643,15 @@
        7
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 7,
+      "rader": [
+       7
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -3612,7 +3728,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (rød tegl) = 2019-trykket (dømt): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 28870,
+   "synlig_px": 28865,
    "flater": [
     40,
     42,
@@ -3719,7 +3835,15 @@
        3
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -3764,8 +3888,8 @@
      "hva": "tegning (218, 165, 125) (oransje/brun), modell (175, 96, 83) (rød), ΔE 28.2; modellens farge: ortofoto 2024 (rød tegl) = 2019-trykket (dømt): tegningens farge"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 2 (14.0 m, merknad: Vegar, kvartalskontroll Kvartal3 29.10): tegning 4 vinduer i rader [4], modell 3 i rader [3]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 2 (14.0 m, merknad: Vegar, kvartalskontroll Kvartal3 29.10): tegning 4 vinduer i rader [4], modell 3 i rader [3]; modellen har 4 i rader [4] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -3895,7 +4019,15 @@
        8
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       8
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -4092,7 +4224,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       5,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -4358,7 +4499,16 @@
        1
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       5,
+       1
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -4402,7 +4552,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": "bnr-193868347",
      "plass_etasjer": 2
@@ -4588,7 +4744,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -4826,7 +4988,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -5196,7 +5364,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -5233,7 +5407,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -5431,7 +5611,16 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       3,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -5469,7 +5658,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": "bnr-6275109",
      "plass_etasjer": 2
@@ -5761,7 +5956,15 @@
        7
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 7,
+      "rader": [
+       7
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -5802,7 +6005,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -6206,7 +6417,16 @@
        3
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       2,
+       3
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -6403,7 +6623,16 @@
        4
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -6658,7 +6887,15 @@
        5
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       5
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -6695,7 +6932,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -6937,7 +7180,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -6979,7 +7230,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -7027,7 +7286,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -7240,7 +7508,16 @@
        1
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       1,
+       1
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -7446,7 +7723,16 @@
        4
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -7483,7 +7769,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -7674,7 +7966,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -7944,7 +8242,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -8358,7 +8664,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -8399,7 +8713,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -8436,7 +8758,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -8509,7 +8837,7 @@
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen kvartal5 (IoU 0.64): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 12090,
+   "synlig_px": 12091,
    "flater": [
     28,
     37,
@@ -8584,7 +8912,7 @@
     {
      "vegg": 2,
      "lengde_m": 10.4,
-     "kilde": "hullene i veggflaten",
+     "kilde": "merknad: tegningen kvartal5, sett i utsnittet 31.10 (flatene 28, 268, 270, 272)",
      "kobling": {
       "flater": [
        28,
@@ -8607,22 +8935,31 @@
       "for_haand": false
      },
      "tegning": {
-      "vinduer": 8,
+      "vinduer": 7,
       "rader": [
        3,
-       5
-      ],
-      "dorer": 0,
-      "gavl": 0
-     },
-     "modell": {
-      "vinduer": 8,
-      "rader": [
-       4,
        4
       ],
       "dorer": 1,
       "gavl": 0
+     },
+     "modell": {
+      "vinduer": 7,
+      "rader": [
+       3,
+       4
+      ],
+      "dorer": 1,
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 7,
+      "rader": [
+       3,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -8668,11 +9005,11 @@
     },
     "vinduer": {
      "alvor": "ok",
-     "hva": "vegg 2 (10.4 m, hullene i veggflaten): tegning 8 vinduer i rader [3, 5], modell 8 i rader [4, 4]"
+     "hva": "vegg 2 (10.4 m, merknad: tegningen kvartal5, sett i utsnittet 31.10 (flatene 28, 268, 270, 272)): tegning 7 vinduer i rader [3, 4], modell 7 i rader [3, 4]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 2: tegning 0, modell 1"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -8832,7 +9169,16 @@
        3
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 7,
+      "rader": [
+       4,
+       3
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -9082,7 +9428,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -9144,7 +9496,17 @@
        7
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 18,
+      "rader": [
+       7,
+       4,
+       7
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -9410,7 +9772,15 @@
        2
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -9771,7 +10141,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -10151,7 +10527,16 @@
        7
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 15,
+      "rader": [
+       8,
+       7
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -10699,7 +11084,15 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -11054,7 +11447,7 @@
     {
      "vegg": 2,
      "lengde_m": 15.8,
-     "kilde": "hullene i veggflaten",
+     "kilde": "merknad: tegningen kvartal6, talt for hånd i utsnittet 31.10 (flatene 15, 251–263)",
      "kobling": {
       "flater": [
        15,
@@ -11084,12 +11477,12 @@
       "for_haand": false
      },
      "tegning": {
-      "vinduer": 11,
+      "vinduer": 14,
       "rader": [
-       4,
+       7,
        7
       ],
-      "dorer": 3,
+      "dorer": 0,
       "gavl": 0
      },
      "modell": {
@@ -11099,7 +11492,16 @@
        7
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 14,
+      "rader": [
+       7,
+       7
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -11142,7 +11544,16 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -11187,12 +11598,12 @@
      "hva": "tegning (65, 65, 66) (grå/svart), modell (141, 73, 57) (rød), ΔE 37.3; modellens farge: ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen kvartal6 (IoU 0.69))"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 2 (15.8 m, hullene i veggflaten): tegning 11 vinduer i rader [4, 7], modell 14 i rader [7, 7]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 3 (2.6 m, fasadeavlesningen (kontrollkobling)): tegning 4 vinduer i rader [2, 2], modell 2 i rader [1, 1]; modellen har 4 i rader [2, 2] på veggen, som tegningen, men 2 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 2: tegning 3, modell 0"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -11383,7 +11794,15 @@
        3
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -11433,7 +11852,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -11655,7 +12083,16 @@
        1
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       5,
+       1
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -11696,7 +12133,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -11745,8 +12190,8 @@
      "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød tegl, mosegrodd)); tegningen har rød (kvartaltegningen Kvartal4BITMP (IoU 0.80))"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 7 (4.3 m, fasadeavlesningen): tegning 2 vinduer i rader [2], modell 1 i rader [1]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 7 (4.3 m, fasadeavlesningen): tegning 2 vinduer i rader [2], modell 1 i rader [1]; modellen har 2 i rader [2] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -11916,7 +12361,16 @@
        6
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 12,
+      "rader": [
+       6,
+       6
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -11962,7 +12416,17 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       1,
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -12174,7 +12638,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -12385,7 +12857,15 @@
        3
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -12605,7 +13085,16 @@
        7
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       2,
+       7
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -12817,7 +13306,17 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       1,
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -13841,7 +14340,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -14013,7 +14520,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -14086,7 +14599,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.72))",
    "tak_aar": 2024,
-   "synlig_px": 54538,
+   "synlig_px": 54526,
    "flater": [
     5,
     25,
@@ -14254,7 +14767,16 @@
        2
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       6,
+       2
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -14262,7 +14784,7 @@
     {
      "vegg": 7,
      "lengde_m": 6.9,
-     "kilde": "fasadeavlesningen (kontrollkobling)",
+     "kilde": "merknad: tegningen Kvartal8BITMAP, sett i utsnittet 31.10 (flatene 80, 100, 106)",
      "kobling": {
       "flater": [
        80,
@@ -14284,18 +14806,22 @@
       "for_haand": false
      },
      "tegning": {
-      "vinduer": 2,
-      "rader": [
-       2
-      ],
-      "dorer": 1,
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0,
       "gavl": 0
      },
      "modell": {
       "vinduer": 0,
       "rader": [],
-      "dorer": 1,
-      "gavl": 0
+      "dorer": 0,
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -14340,8 +14866,8 @@
      "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.72))"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 7 (6.9 m, fasadeavlesningen (kontrollkobling)): tegning 2 vinduer i rader [2], modell 0 i rader []"
+     "alvor": "ok",
+     "hva": "vegg 2 (21.1 m, fasadeavlesningen): tegning 8 vinduer i rader [6, 2], modell 8 i rader [6, 2]"
     },
     "dorer": {
      "alvor": "ok",
@@ -14547,7 +15073,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -14753,7 +15287,16 @@
        5
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       4,
+       5
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -14942,7 +15485,15 @@
        7
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 7,
+      "rader": [
+       7
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -15220,7 +15771,7 @@
      "segmenter": 2
     }
    ],
-   "gesims_forhold": 0.87,
+   "gesims_forhold": 0.9,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 1.02,
    "takform_modell": "valm",
@@ -15320,7 +15871,15 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -15358,7 +15917,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -15389,21 +15954,28 @@
       "for_haand": true
      },
      "tegning": {
-      "vinduer": 6,
+      "vinduer": 2,
       "rader": [
-       6
+       2
       ],
       "dorer": 0,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 9,
+      "vinduer": 2,
       "rader": [
-       4,
-       5
+       2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -15433,7 +16005,7 @@
     },
     "gesims": {
      "alvor": "ok",
-     "hva": "tegnet/modell 0.87 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd))"
+     "hva": "tegnet/modell 0.90 (tegningen lavere) (fasadeavlesningen (vegger lest for hånd))"
     },
     "mone": {
      "alvor": "ok",
@@ -15452,8 +16024,8 @@
      "hva": "tegning (173, 100, 86) (rød), modell (132, 122, 112) (grå/svart), ΔE 29.4; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal8BITMAP (IoU 0.85))"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 6 (11.6 m, fasadeavlesningen): tegning 6 vinduer i rader [6], modell 9 i rader [4, 5]"
+     "alvor": "ok",
+     "hva": "vegg 2 (11.3 m, fasadeavlesningen (kontrollkobling)): tegning 4 vinduer i rader [4], modell 4 i rader [4]"
     },
     "dorer": {
      "alvor": "ok",
@@ -15600,7 +16172,16 @@
        3
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       3,
+       3
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -15637,7 +16218,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -15678,7 +16265,15 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -16090,7 +16685,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": "bnr-193868312",
      "plass_etasjer": 3
@@ -16148,7 +16749,18 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 17,
+      "rader": [
+       6,
+       5,
+       4,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 4
@@ -16189,7 +16801,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -16238,8 +16858,8 @@
      "hva": "tegning (126, 128, 131) (grå/svart), modell (126, 128, 131) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (lys grå) = kvartaltegningen Kvartal8BITMAP (IoU 0.76): tegningens farge"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 1 (10.9 m, fasadeavlesningen (kontrollkobling)): tegning 17 vinduer i rader [6, 5, 4, 2], modell 16 i rader [5, 5, 4, 2]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 1 (10.9 m, fasadeavlesningen (kontrollkobling)): tegning 17 vinduer i rader [6, 5, 4, 2], modell 16 i rader [5, 5, 4, 2]; modellen har 17 i rader [6, 5, 4, 2] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -16743,7 +17363,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -16782,7 +17408,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -17265,7 +17899,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       5,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -17310,7 +17953,17 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       2,
+       2,
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -17355,8 +18008,8 @@
      "hva": "tegning (244, 123, 106) (rød), modell (170, 108, 92) (rød), ΔE 28.3; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal9 (IoU 0.59))"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 1 (21.5 m, fasadeavlesningen): tegning 9 vinduer i rader [5, 4], modell 8 i rader [4, 4]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 1 (21.5 m, fasadeavlesningen): tegning 9 vinduer i rader [5, 4], modell 8 i rader [4, 4]; modellen har 9 i rader [5, 4] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -17733,7 +18386,15 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -19388,7 +20049,16 @@
        5
       ],
       "dorer": 5,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       4,
+       5
+      ],
+      "dorer": 5
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -19650,7 +20320,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -19851,7 +20527,15 @@
        5
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 5
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       5
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -19900,8 +20584,8 @@
      "hva": "tegning (180, 102, 84) (rød), modell (132, 122, 112) (grå/svart), ΔE 32.3; modellens farge: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.49))"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 3 (13.8 m, fasadeavlesningen (kontrollkobling)): tegning 3 vinduer i rader [1, 2], modell 5 i rader [5]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 3 (13.8 m, fasadeavlesningen (kontrollkobling)): tegning 3 vinduer i rader [1, 2], modell 5 i rader [5]; veggen er arkaden (5 buer, verktoy/landemerker.py etter tegningen): buene er strek i tegningen, ikke hull, og leses ikke av tellingen"
     },
     "dorer": {
      "alvor": "ok",
@@ -20013,7 +20697,7 @@
     {
      "vegg": 2,
      "lengde_m": 21.6,
-     "kilde": "fasadeavlesningen",
+     "kilde": "merknad: tegningen Kvartal10, sett i utsnittet 31.10 (flate 14)",
      "kobling": {
       "flater": [
        70,
@@ -20035,21 +20719,30 @@
       "for_haand": true
      },
      "tegning": {
-      "vinduer": 2,
+      "vinduer": 5,
       "rader": [
-       1,
-       1
+       2,
+       3
       ],
-      "dorer": 0,
+      "dorer": 1,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 1,
+      "vinduer": 3,
       "rader": [
-       1
+       3
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 5,
+      "rader": [
+       2,
+       3
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -20098,12 +20791,12 @@
      "hva": "tegning (180, 102, 84) (rød), modell (70, 70, 72) (grå/svart), ΔE 44.1; modellens farge: ortofoto 2024 (svart/antrasitt); tegningen har rød (kvartaltegningen Kvartal10 (IoU 0.65))"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 2 (21.6 m, fasadeavlesningen): tegning 2 vinduer i rader [1, 1], modell 1 i rader [1]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 2 (21.6 m, merknad: tegningen Kvartal10, sett i utsnittet 31.10 (flate 14)): tegning 5 vinduer i rader [2, 3], modell 3 i rader [3]; modellen har 5 i rader [2, 3] på veggen, som tegningen, men 2 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
-     "alvor": "ok",
-     "hva": "like"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 2: tegning 1, modell 0 (modellen har 1, bak nabohuset i kontrollbildet)"
     },
     "arker": {
      "alvor": "ok",
@@ -20246,7 +20939,15 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -20287,7 +20988,15 @@
        13
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 13,
+      "rader": [
+       13
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -20469,7 +21178,17 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       4,
+       1,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -20658,7 +21377,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -20703,7 +21430,17 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 3,
+      "rader": [
+       1,
+       1,
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -20881,7 +21618,16 @@
        5
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 10,
+      "rader": [
+       5,
+       5
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -21051,7 +21797,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -21274,7 +22026,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 3
+      "gavl": 3,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -21785,7 +22545,17 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 12,
+      "rader": [
+       4,
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -21830,7 +22600,17 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 12,
+      "rader": [
+       4,
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -21875,7 +22655,17 @@
        3
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       3,
+       3,
+       3
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -21920,7 +22710,17 @@
        3
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       3,
+       3,
+       3
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -22067,11 +22867,80 @@
    "vegg_aar": null,
    "tak_kilde": "ortofoto 2024 (mørk grå)",
    "tak_aar": 2024,
-   "synlig_px": 0,
-   "flater": [],
-   "finnes": "skjult i modellbildet",
+   "synlig_px": 5715,
+   "flater": [
+    56
+   ],
+   "finnes": "ja",
+   "iou": 0.113,
+   "andel_av_modell_dekket": 0.1,
+   "andel_av_tegning_dekket": 0.98,
+   "tegnede_fasader_per_vegg": {},
+   "silhuett_forhold": 0.22,
+   "takform_modell": "sal",
+   "takform_tegning_tegn": {
+    "gavler": 0,
+    "trekantede_takflater": 0,
+    "takflater": 1,
+    "gavl_vegger": []
+   },
+   "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "veggfarger_tegning": [],
+   "takfarge": {
+    "tegning": [
+     180,
+     102,
+     84
+    ],
+    "modell": [
+     104,
+     104,
+     102
+    ],
+    "dE": 38.3,
+    "kulor_tegning": "rød",
+    "kulor_modell": "grå/svart"
+   },
+   "vinduer": [],
+   "arker": {
+    "tegning_anslag": 0,
+    "modell": 0
+   },
+   "piper": {
+    "tegning_anslag": 0,
+    "modell": 0
+   },
    "tegning": "Kvartal11",
-   "vurdering": {}
+   "vurdering": {
+    "finnes": {
+     "alvor": "ok",
+     "hva": "ja"
+    },
+    "omriss": {
+     "alvor": "feil",
+     "hva": "IoU 0.11 (modell dekket 10%, tegning dekket 98%)"
+    },
+    "mone": {
+     "alvor": "feil",
+     "hva": "silhuetthøyde tegnet/modell 0.22"
+    },
+    "takform": {
+     "alvor": "ok",
+     "hva": "modell sal; tegningen viser ikke gavl/endeflate"
+    },
+    "takfarge": {
+     "alvor": "avvik med grunn",
+     "hva": "tegning (180, 102, 84) (rød), modell (104, 104, 102) (grå/svart), ΔE 38.3; modellens farge: ortofoto 2024 (mørk grå)"
+    },
+    "arker": {
+     "alvor": "ok",
+     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 0"
+    },
+    "piper": {
+     "alvor": "ok",
+     "hva": "tegning ~0 (grovt anslag fra små takflater, også takvinduer), modell 0"
+    }
+   }
   },
   {
    "id": "bnr-193868592",
@@ -22301,7 +23170,16 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -22652,7 +23530,16 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -22894,7 +23781,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -23076,7 +23972,16 @@
        6
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 10,
+      "rader": [
+       4,
+       6
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -23350,7 +24255,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": "bnr-193867731",
      "plass_etasjer": 2
@@ -23393,7 +24304,16 @@
        6
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 12,
+      "rader": [
+       6,
+       6
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -23599,7 +24519,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -23636,7 +24565,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -23880,7 +24815,16 @@
        4
       ],
       "dorer": 2,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 2
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -24027,7 +24971,7 @@
     {
      "vegg": 7,
      "lengde_m": 5.5,
-     "kilde": "fasadeavlesningen (kontrollkobling)",
+     "kilde": "merknad: tegningen Kvartal12, sett i utsnittet 31.10 (flate 29)",
      "kobling": {
       "flater": [
        29
@@ -24055,10 +24999,20 @@
       "gavl": 0
      },
      "modell": {
-      "vinduer": 0,
-      "rader": [],
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -24103,8 +25057,8 @@
      "hva": "tegning (66, 66, 65) (grå/svart), modell (66, 66, 65) (grå/svart), ΔE 0.0; modellens farge: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal12 (IoU 0.61): tegningens farge"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 7 (5.5 m, fasadeavlesningen (kontrollkobling)): tegning 2 vinduer i rader [2], modell 0 i rader []"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 7 (5.5 m, merknad: tegningen Kvartal12, sett i utsnittet 31.10 (flate 29)): tegning 2 vinduer i rader [2], modell 1 i rader [1]; modellen har 2 i rader [2] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -24259,7 +25213,15 @@
        9
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 9,
+      "rader": [
+       9
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -24493,7 +25455,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -24538,7 +25509,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -25047,7 +26027,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -25297,20 +26283,20 @@
    "vegg_aar": 2024,
    "tak_kilde": "ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
    "tak_aar": 2024,
-   "synlig_px": 61237,
+   "synlig_px": 61231,
    "flater": [
     4,
     9,
     10
    ],
    "finnes": "ja",
-   "iou": 0.658,
+   "iou": 0.657,
    "andel_av_modell_dekket": 0.75,
    "andel_av_tegning_dekket": 0.82,
    "tegnede_fasader_per_vegg": {
     "3": 1
    },
-   "gesims_forhold": 1.28,
+   "gesims_forhold": 1.23,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 0.96,
    "takform_modell": "sal/sammensatt",
@@ -25386,22 +26372,31 @@
       "for_haand": true
      },
      "tegning": {
-      "vinduer": 4,
+      "vinduer": 6,
       "rader": [
-       2,
-       2
+       3,
+       3
       ],
       "dorer": 1,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 4,
+      "vinduer": 6,
       "rader": [
-       2,
-       2
+       3,
+       3
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       3,
+       3
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -25427,7 +26422,7 @@
     },
     "gesims": {
      "alvor": "avvik med grunn",
-     "hva": "tegnet/modell 1.28 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); gesims 6.7 m er målt i Kartverkets DOM−DTM (sikkerhet høy, rest 0.66 m) og går foran: mønet stemmer (silhuett 0.96): tegningen fordeler høyden annerledes mellom vegg og tak"
+     "hva": "tegnet/modell 1.23 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); gesims 6.7 m er målt i Kartverkets DOM−DTM (sikkerhet høy, rest 0.66 m) og går foran: mønet stemmer (silhuett 0.96): tegningen fordeler høyden annerledes mellom vegg og tak"
     },
     "mone": {
      "alvor": "ok",
@@ -25447,7 +26442,7 @@
     },
     "vinduer": {
      "alvor": "ok",
-     "hva": "vegg 3 (11.3 m, fasadeavlesningen): tegning 4 vinduer i rader [2, 2], modell 4 i rader [2, 2]"
+     "hva": "vegg 3 (11.3 m, fasadeavlesningen): tegning 6 vinduer i rader [3, 3], modell 6 i rader [3, 3]"
     },
     "dorer": {
      "alvor": "ok",
@@ -25766,7 +26761,15 @@
        8
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       8
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -25807,7 +26810,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -25848,7 +26859,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -25893,8 +26912,8 @@
      "hva": "tegning (184, 111, 93) (rød), modell (170, 108, 92) (rød), ΔE 5.7; modellens farge: ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (kvartaltegningen Kvartal13 (IoU 0.74))"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 22 (10.7 m, fasadeavlesningen): tegning 2 vinduer i rader [2], modell 1 i rader [1]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 22 (10.7 m, fasadeavlesningen): tegning 2 vinduer i rader [2], modell 1 i rader [1]; modellen har 2 i rader [2] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -26089,7 +27108,15 @@
        6
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       6
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -26179,8 +27206,8 @@
    "tegnede_fasader_per_vegg": {
     "3": 1
    },
-   "gesims_forhold": 0.18,
-   "gesims_kilde": "veggflatene i tegningen",
+   "gesims_forhold": 2.17,
+   "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 1.44,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
@@ -26235,7 +27262,7 @@
     {
      "vegg": 3,
      "lengde_m": 11.0,
-     "kilde": "fasadeavlesningen (kontrollkobling)",
+     "kilde": "fasadeavlesningen",
      "kobling": {
       "flater": [
        48
@@ -26252,22 +27279,31 @@
        -88.15,
        -22.45
       ],
-      "for_haand": false
+      "for_haand": true
      },
      "tegning": {
-      "vinduer": 0,
-      "rader": [],
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
       "dorer": 0,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 4,
+      "vinduer": 3,
       "rader": [
-       3,
-       1
+       3
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 3,
+      "rader": [
+       3
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -26292,8 +27328,8 @@
      "hva": "IoU 0.22 (modell dekket 27%, tegning dekket 42%)"
     },
     "gesims": {
-     "alvor": "feil",
-     "hva": "tegnet/modell 0.18 (tegningen lavere) (veggflatene i tegningen)"
+     "alvor": "avvik med grunn",
+     "hva": "tegnet/modell 2.17 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); gesims 4.3 m er målt i Kartverkets DOM−DTM (sikkerhet høy, rest 0.37 m) og går foran: silhuetten avviker samme vei (1.44): tegningen overdriver hele huset"
     },
     "mone": {
      "alvor": "feil",
@@ -26312,8 +27348,8 @@
      "hva": "tegning (134, 134, 134) (grå/svart), modell (66, 66, 65) (grå/svart), ΔE 28.0; modellens farge: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 3 (11.0 m, fasadeavlesningen (kontrollkobling)): tegning 0 vinduer i rader [], modell 4 i rader [3, 1]"
+     "alvor": "ok",
+     "hva": "vegg 3 (11.0 m, fasadeavlesningen): tegning 3 vinduer i rader [3], modell 3 i rader [3]"
     },
     "dorer": {
      "alvor": "ok",
@@ -26340,7 +27376,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "kvartaltegningen Kvartal13 (IoU 0.41) (ortofoto 2024: trær over taket (53% grønt))",
    "tak_aar": 2015,
-   "synlig_px": 13136,
+   "synlig_px": 13120,
    "flater": [
     16,
     24,
@@ -26353,8 +27389,8 @@
    "tegnede_fasader_per_vegg": {
     "2": 1
    },
-   "gesims_forhold": 1.4,
-   "gesims_kilde": "veggflatene i tegningen",
+   "gesims_forhold": 1.28,
+   "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
    "silhuett_forhold": 0.86,
    "takform_modell": "sal",
    "takform_tegning_tegn": {
@@ -26409,7 +27445,7 @@
     {
      "vegg": 2,
      "lengde_m": 8.5,
-     "kilde": "hullene i veggflaten",
+     "kilde": "merknad: tegningen Kvartal13, sett i utsnittet 31.10 (flate 16)",
      "kobling": {
       "flater": [
        24
@@ -26426,24 +27462,34 @@
        -96.86,
        -21.23
       ],
-      "for_haand": false
+      "for_haand": true
      },
      "tegning": {
-      "vinduer": 3,
+      "vinduer": 4,
       "rader": [
-       3
+       2,
+       2
       ],
       "dorer": 0,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 3,
+      "vinduer": 4,
       "rader": [
-       1,
+       2,
        2
       ],
-      "dorer": 1,
-      "gavl": 0
+      "dorer": 0,
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -26468,8 +27514,8 @@
      "hva": "IoU 0.41 (modell dekket 61%, tegning dekket 51%)"
     },
     "gesims": {
-     "alvor": "feil",
-     "hva": "tegnet/modell 1.40 (tegningen høyere) (veggflatene i tegningen); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM"
+     "alvor": "avvik",
+     "hva": "tegnet/modell 1.28 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM"
     },
     "mone": {
      "alvor": "ok",
@@ -26488,12 +27534,12 @@
      "hva": "tegning (198, 198, 197) (grå/svart), modell (198, 198, 197) (grå/svart), ΔE 0.0; modellens farge: kvartaltegningen Kvartal13 (IoU 0.41) (ortofoto 2024: trær over taket (53% grønt))"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 2 (8.5 m, hullene i veggflaten): tegning 3 vinduer i rader [3], modell 3 i rader [1, 2]"
+     "alvor": "ok",
+     "hva": "vegg 2 (8.5 m, merknad: tegningen Kvartal13, sett i utsnittet 31.10 (flate 16)): tegning 4 vinduer i rader [2, 2], modell 4 i rader [2, 2]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 2: tegning 0, modell 1"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "ok",
@@ -26598,12 +27644,12 @@
    "navn": "Det nye rådhus",
    "h": 9.79,
    "fasade_kilde": "kvartaltegning",
-   "farge_kilde": "vegg: kvartaltegningen Kvartal14 (lys side, IoU 0.71); tak: ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
+   "farge_kilde": "vegg: kvartaltegningen Kvartal14 (lys side, IoU 0.72); tak: ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "vegg_kilde": "kvartaltegningen Kvartal14 = Street View aug. 2010 (gul tegl)",
    "vegg_aar": 2015,
    "tak_kilde": "ortofoto 2024 (brungrå); tegningen har rød (2019-trykket (dømt))",
    "tak_aar": 2024,
-   "synlig_px": 129347,
+   "synlig_px": 134385,
    "flater": [
     4,
     6,
@@ -26616,6 +27662,7 @@
     53,
     65,
     66,
+    71,
     72,
     75,
     84,
@@ -26623,18 +27670,26 @@
     93,
     94,
     97,
+    100,
     104,
+    105,
+    109,
+    110,
+    114,
     116,
     121,
     125,
+    139,
     150,
+    152,
     153,
+    158,
     395,
     399,
     417
    ],
    "finnes": "ja",
-   "iou": 0.714,
+   "iou": 0.716,
    "andel_av_modell_dekket": 0.7,
    "andel_av_tegning_dekket": 0.9,
    "tegnede_fasader_per_vegg": {
@@ -26642,15 +27697,15 @@
    },
    "gesims_forhold": 1.22,
    "gesims_kilde": "fasadeavlesningen (vegger lest for hånd)",
-   "silhuett_forhold": 1.02,
+   "silhuett_forhold": 1.0,
    "takform_modell": "sal/sammensatt",
    "takform_tegning_tegn": {
-    "gavler": 0,
+    "gavler": 1,
     "trekantede_takflater": 0,
-    "takflater": 21,
+    "takflater": 24,
     "gavl_vegger": []
    },
-   "takform_tegning": "ukjent (ingen gavl/endeflate synlig)",
+   "takform_tegning": "sal",
    "veggfarger_tegning": [
     [
      [
@@ -26733,18 +27788,27 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 2
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       2,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 4
     }
    ],
    "arker": {
-    "tegning_anslag": 7,
+    "tegning_anslag": 8,
     "modell": 0
    },
    "piper": {
-    "tegning_anslag": 2,
+    "tegning_anslag": 5,
     "modell": 1
    },
    "tegning": "Kvartal14",
@@ -26755,7 +27819,7 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.71 (modell dekket 70%, tegning dekket 90%)"
+     "hva": "IoU 0.72 (modell dekket 70%, tegning dekket 90%)"
     },
     "gesims": {
      "alvor": "avvik",
@@ -26763,11 +27827,11 @@
     },
     "mone": {
      "alvor": "ok",
-     "hva": "silhuetthøyde tegnet/modell 1.02"
+     "hva": "silhuetthøyde tegnet/modell 1.00"
     },
     "takform": {
      "alvor": "ok",
-     "hva": "modell sal/sammensatt; tegningen viser ikke gavl/endeflate"
+     "hva": "tegning sal, modell sal/sammensatt"
     },
     "veggfarge": {
      "alvor": "ok",
@@ -26782,16 +27846,16 @@
      "hva": "vegg 0 (9.0 m, fasadeavlesningen): tegning 8 vinduer i rader [2, 2, 3, 1], modell 6 i rader [2, 4]; rådhuset: gatefasaden satt for hånd etter Kvartal14.ai i landemerker.py (fem arkadebuer, fem rundbuevinduer over, smale vinduspar i endefeltene, rundbuet dør), sammenlignet visuelt på kontrollarket 30.10"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 0: tegning 2, modell 1"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 0: tegning 2, modell 1; rådhuset: gatefasaden satt for hånd etter Kvartal14.ai i landemerker.py (fem arkadebuer, fem rundbuevinduer over, smale vinduspar i endefeltene, rundbuet dør), sammenlignet visuelt på kontrollarket 30.10"
     },
     "arker": {
      "alvor": "avvik",
-     "hva": "tegning ~7 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "hva": "tegning ~8 (grovt anslag fra små takflater, også takvinduer), modell 0"
     },
     "piper": {
-     "alvor": "ok",
-     "hva": "tegning ~2 (grovt anslag fra små takflater, også takvinduer), modell 1"
+     "alvor": "avvik",
+     "hva": "tegning ~5 (grovt anslag fra små takflater, også takvinduer), modell 1"
     }
    }
   },
@@ -26914,7 +27978,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -27210,7 +28283,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -27462,7 +28541,16 @@
        6
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 12,
+      "rader": [
+       6,
+       6
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -27838,7 +28926,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -28144,7 +29241,16 @@
        2
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 4,
+      "rader": [
+       2,
+       2
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -28189,7 +29295,16 @@
        4
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -28419,7 +29534,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -29030,7 +30154,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -29264,7 +30394,15 @@
        6
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       6
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -29492,7 +30630,16 @@
        5
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 10,
+      "rader": [
+       5,
+       5
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -29875,7 +31022,16 @@
        3
       ],
       "dorer": 6,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 7,
+      "rader": [
+       4,
+       3
+      ],
+      "dorer": 6
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -30219,7 +31375,17 @@
        1
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 11,
+      "rader": [
+       5,
+       5,
+       1
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -30527,7 +31693,16 @@
        3
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 6,
+      "rader": [
+       3,
+       3
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -30573,7 +31748,16 @@
        4
       ],
       "dorer": 1,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 8,
+      "rader": [
+       4,
+       4
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -30776,7 +31960,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -30813,7 +32003,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -30850,7 +32046,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 2
@@ -31031,7 +32233,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -31219,7 +32429,13 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 0,
+      "rader": [],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 0
@@ -31421,7 +32637,15 @@
       "vinduer": 0,
       "rader": [],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -31608,7 +32832,15 @@
        1
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 1,
+      "rader": [
+       1
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -31649,7 +32881,15 @@
        2
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -31722,7 +32962,7 @@
    "vegg_aar": 2024,
    "tak_kilde": "src/06: skifer som kirke.ai og ortofoto 2024",
    "tak_aar": 2024,
-   "synlig_px": 270509,
+   "synlig_px": 305475,
    "flater": [
     1,
     2,
@@ -31734,13 +32974,18 @@
     10,
     11,
     12,
+    13,
     18,
     22,
     23,
     33,
+    34,
     43,
+    53,
     56,
     59,
+    61,
+    62,
     95,
     96,
     97,
@@ -31785,9 +33030,9 @@
     260
    ],
    "finnes": "ja",
-   "iou": 0.694,
-   "andel_av_modell_dekket": 0.84,
-   "andel_av_tegning_dekket": 0.81,
+   "iou": 0.691,
+   "andel_av_modell_dekket": 0.8,
+   "andel_av_tegning_dekket": 0.84,
    "tegnede_fasader_per_vegg": {
     "4": 2,
     "6": 5,
@@ -31803,12 +33048,12 @@
    ],
    "gesims_forhold": 1.14,
    "gesims_kilde": "veggflatene i tegningen",
-   "silhuett_forhold": 1.55,
+   "silhuett_forhold": 1.15,
    "takform_modell": "valm",
    "takform_tegning_tegn": {
     "gavler": 2,
     "trekantede_takflater": 0,
-    "takflater": 46,
+    "takflater": 51,
     "gavl_vegger": [
      [
       [
@@ -31876,7 +33121,7 @@
     {
      "vegg": 4,
      "lengde_m": 8.9,
-     "kilde": "hullene i veggflaten",
+     "kilde": "merknad: tegningen kirke.ai, talt for hånd i utsnittet 31.10",
      "kobling": {
       "flater": [
        7,
@@ -31897,18 +33142,28 @@
       "for_haand": false
      },
      "tegning": {
-      "vinduer": 1,
+      "vinduer": 2,
       "rader": [
-       1
+       2
       ],
-      "dorer": 1,
+      "dorer": 0,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 0,
-      "rader": [],
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -31916,7 +33171,7 @@
     {
      "vegg": 6,
      "lengde_m": 14.2,
-     "kilde": "hullene i veggflaten",
+     "kilde": "merknad: tegningen kirke.ai, talt for hånd i utsnittet 31.10",
      "kobling": {
       "flater": [
        8,
@@ -31940,19 +33195,28 @@
       "for_haand": false
      },
      "tegning": {
-      "vinduer": 4,
+      "vinduer": 2,
       "rader": [
-       1,
-       3
+       2
       ],
       "dorer": 1,
       "gavl": 0
      },
      "modell": {
-      "vinduer": 0,
-      "rader": [],
-      "dorer": 0,
-      "gavl": 0
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 1,
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 1
      },
      "brannmur": null,
      "plass_etasjer": 3
@@ -31986,17 +33250,27 @@
       "gavl": 0
      },
      "modell": {
-      "vinduer": 0,
-      "rader": [],
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 2,
+      "rader": [
+       2
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 3
     }
    ],
    "arker": {
-    "tegning_anslag": 8,
+    "tegning_anslag": 6,
     "modell": 0
    },
    "piper": {
@@ -32015,15 +33289,15 @@
     },
     "omriss": {
      "alvor": "ok",
-     "hva": "IoU 0.69 (modell dekket 84%, tegning dekket 81%)"
+     "hva": "IoU 0.69 (modell dekket 80%, tegning dekket 84%)"
     },
     "gesims": {
      "alvor": "ok",
      "hva": "tegnet/modell 1.14 (tegningen høyere) (veggflatene i tegningen)"
     },
     "mone": {
-     "alvor": "feil",
-     "hva": "silhuetthøyde tegnet/modell 1.55"
+     "alvor": "ok",
+     "hva": "silhuetthøyde tegnet/modell 1.15"
     },
     "takform": {
      "alvor": "feil",
@@ -32038,16 +33312,16 @@
      "hva": "tegning (53, 52, 53) (grå/svart), modell (68, 68, 72) (grå/svart), ΔE 7.4; modellens farge: src/06: skifer som kirke.ai og ortofoto 2024"
     },
     "vinduer": {
-     "alvor": "feil",
-     "hva": "vegg 6 (14.2 m, hullene i veggflaten): tegning 4 vinduer i rader [1, 3], modell 0 i rader []"
+     "alvor": "avvik",
+     "hva": "vegg 8 (8.7 m, hullene i veggflaten): tegning 0 vinduer i rader [], modell 2 i rader [2]"
     },
     "dorer": {
-     "alvor": "avvik",
-     "hva": "vegg 4: tegning 1, modell 0; vegg 6: tegning 1, modell 0"
+     "alvor": "ok",
+     "hva": "like"
     },
     "arker": {
      "alvor": "avvik",
-     "hva": "tegning ~8 (grovt anslag fra små takflater, også takvinduer), modell 0"
+     "hva": "tegning ~6 (grovt anslag fra små takflater, også takvinduer), modell 0"
     },
     "piper": {
      "alvor": "avvik",
@@ -32357,7 +33631,15 @@
        16
       ],
       "dorer": 0,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 16,
+      "rader": [
+       16
+      ],
+      "dorer": 0
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -32405,7 +33687,15 @@
        16
       ],
       "dorer": 3,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 16,
+      "rader": [
+       16
+      ],
+      "dorer": 3
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -32449,7 +33739,15 @@
        18
       ],
       "dorer": 6,
-      "gavl": 0
+      "gavl": 0,
+      "arkadebuer": 0
+     },
+     "modell_alle": {
+      "vinduer": 19,
+      "rader": [
+       19
+      ],
+      "dorer": 6
      },
      "brannmur": null,
      "plass_etasjer": 1
@@ -32498,8 +33796,8 @@
      "hva": "tegning (82, 83, 85) (grå/svart), modell (100, 84, 73) (rød), ΔE 11.3; modellens farge: ortofoto 2024 (brungrått) + Street View mai 2024 (brunt mosegrodd teglstak), lest for hånd"
     },
     "vinduer": {
-     "alvor": "avvik",
-     "hva": "vegg 6 (123.2 m, fasadeavlesningen): tegning 19 vinduer i rader [19], modell 18 i rader [18]"
+     "alvor": "avvik med grunn",
+     "hva": "vegg 6 (123.2 m, fasadeavlesningen): tegning 19 vinduer i rader [19], modell 18 i rader [18]; modellen har 19 i rader [19] på veggen, som tegningen, men 1 står bak nabohuset i kontrollbildet (frihånd i tegningen)"
     },
     "dorer": {
      "alvor": "ok",
@@ -33151,26 +34449,21 @@
   },
   {
    "senter_pt": [
-    260.6,
-    239.6
+    133.1,
+    193.0
    ],
-   "areal_pt2": 8807,
+   "areal_pt2": 243,
    "flater": [
-    4,
-    12,
-    23,
-    24,
-    25,
-    56
+    24
    ],
    "vegger": 0,
    "hus_anslag": 1,
-   "naermeste_modellhus": "bnr-193868568",
+   "naermeste_modellhus": "pb-51",
    "tegning": "Kvartal11",
    "alvor": "avvik med grunn",
    "dom": "avvik med grunn",
-   "kategori": "mur/frihånd",
-   "grunn": "murene rundt plassen foran Infanterikasernen (ortofoto: smal mur langs gata, DOM 1–3 m) og 868568 tegnet lengre; ingen bygning i FKB eller DOM 2015. Matrikkelpunktet 301569312 har status RA (rammetillatelse), ikke bygd: ortofoto 2024 viser parkeringsplass. Murene hører til bakken (gjerder)"
+   "kategori": "mur",
+   "grunn": "vestenden av muren rundt plassen foran Infanterikasernen, med den svarte porten (sett i utsnittet 31.10); samme mur som gruppen ved [260.6, 239.6], som kontrollen delte i to 31.10 (flate 56 er ikke lenger med i gruppen). Murene hører til bakken (gjerder), ingen bygning i FKB eller DOM 2015"
   },
   {
    "senter_pt": [
@@ -33192,6 +34485,27 @@
    "dom": "avvik med grunn",
    "kategori": "detalj",
    "grunn": "pipe på 867537 (tegnet høyere), ikke hus"
+  },
+  {
+   "senter_pt": [
+    265.3,
+    241.3
+   ],
+   "areal_pt2": 8484,
+   "flater": [
+    4,
+    12,
+    23,
+    25
+   ],
+   "vegger": 0,
+   "hus_anslag": 1,
+   "naermeste_modellhus": "bnr-193868568",
+   "tegning": "Kvartal11",
+   "alvor": "avvik med grunn",
+   "dom": "avvik med grunn",
+   "kategori": "mur/frihånd",
+   "grunn": "murene rundt plassen foran Infanterikasernen (ortofoto: smal mur langs gata, DOM 1–3 m) og 868568 tegnet lengre; ingen bygning i FKB eller DOM 2015. Matrikkelpunktet 301569312 har status RA (rammetillatelse), ikke bygd: ortofoto 2024 viser parkeringsplass. Murene hører til bakken (gjerder)"
   },
   {
    "senter_pt": [
@@ -33456,36 +34770,6 @@
   },
   {
    "senter_pt": [
-    80.0,
-    38.0
-   ],
-   "areal_pt2": 587,
-   "flater": [
-    71,
-    100,
-    105,
-    107,
-    109,
-    110,
-    114,
-    115,
-    139,
-    151,
-    152,
-    157,
-    158
-   ],
-   "vegger": 6,
-   "hus_anslag": 1,
-   "naermeste_modellhus": "bnr-193972012",
-   "tegning": "Kvartal14",
-   "alvor": "avvik med grunn",
-   "dom": "avvik med grunn",
-   "kategori": "landemerke",
-   "grunn": "toppen av rådhustårnet (brystning med tinder) tegnet større; tårnet står i modellen (landemerker.py)"
-  },
-  {
-   "senter_pt": [
     31.0,
     274.4
    ],
@@ -33590,21 +34874,17 @@
   },
   {
    "senter_pt": [
-    69.3,
-    123.6
+    77.9,
+    117.7
    ],
-   "areal_pt2": 5033,
+   "areal_pt2": 3600,
    "flater": [
-    13,
     14,
     16,
     17,
     20,
-    34,
     36,
     44,
-    53,
-    61,
     106,
     107,
     230,

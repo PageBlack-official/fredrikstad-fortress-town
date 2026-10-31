@@ -404,3 +404,23 @@ Dommen per gruppe står i kilder/bygg-merknader.json «tegnet_uten_modell» (teg
 kontroll.py avvik: med dom blir gruppen «avvik med grunn» (eller «lagt inn»), uten dom «feil». Et hus som finnes og mangler, legges inn
 med kilder/husdeling.json («nye»/«deling») eller rettelseslaget; et hus Vegar tegnet som egen bit, kobles med «biter» i kvartal-kobling.json.
 Kommunens DOM/DTM 2015 hentes av `hent_2015()` til rapport/hoyder/kilder/*2015_25832.tif (bare lokalt, lisens ikke avklart).
+
+## Vinduene mot 2015-tegningene, runde 2 (31.10, natt/vinduer2)
+Kontrollen (`kontroll.py avvik`) gikk fra 10 til 0 «feil» for vinduer; dørene har ingen «avvik» uten grunn. Det som ble bygd:
+- Merknadene (kilder/bygg-merknader.json, `bygg_merknader.py`) har fått: `ved` [x, y] (velger veggen nærmest punktet når flere
+  vender samme vei), `plass` [fra, til] (gjelder bare den delen av veggen, andel fra venstre sett utenfra), `rader_u` (vinduene der
+  tegningen har dem, per etasje nederst først; en tom rad er en etasje uten synlige vinduer) og `bare_telling` (Vegars/Claudes
+  håndtelling til kontrollen; vinduene fra fasadeavlesningen står). Kontrollen leser de samme feltene (rader uten vinduer telles ikke).
+- Slått sammen hus (husdeling «sammen»): en vegg-merknad på det skjulte huset gjelder delen av vertens vegg som det gamle omrisset
+  dekker, og vertens egen merknad resten (Artillerigården 868061 + 869572: 7/8 og 6/8 vinduer på hver halvdel).
+- Kirka: buevinduene og dørene i skipet er data (`bygg.kirke.vinduer`, laget av `fasade_former.py` fra merknadene på kirka, ellers
+  regelen src/06 hadde: 3 på lange vegger, 2 på korte, ingen ved tårnet). src/06 tegner dem; glass og dørblad har materialet
+  `userData.vindu`, som `kontroll_iso.mjs` tegner som vindu (flatetype 3). Før så kontrollen null vinduer på kirka.
+- Kontrollen gir «avvik med grunn» når modellen har nøyaktig det tegningen viser på veggen, men noen elementer står bak et nabohus i
+  kontrollbildet (frihånd i tegningen), og når veggen er en arkade fra landemerker.py (buene er strek i tegningen, ikke hull).
+  Rådhusets dør følger rådhusets grunn (sett i utsnittet: én rundbuet dør i endefeltet).
+- `kontroll_iso.mjs`: id-passet leser det opprinnelige materialet (før så det kontrollmaterialet fra forrige pass), og en side som
+  laster seg på nytt etter tapt WebGL-kontekst (programvare-GPU etter mange store bilder) gir én ny runde for jobben, så alle 18
+  tegninger kan rendres i ett kall.
+- `fasade_tegning.py les_for_haand <tegning> --bare id1,id2` leser bare husene med endret håndkobling på nytt; en full omlesing kan
+  flytte gamle avlesninger til andre vegger når omrissene er endret siden (Kvartal2BITMP: 868096/pb-62).

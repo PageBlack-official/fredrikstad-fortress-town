@@ -1184,6 +1184,7 @@ def analyser(navn, logg=print):
                 if y0_ >= y1_ or x0_ >= x1_: return False
                 return bool(((idx[y0_:y1_, x0_:x1_] == k_) & (typ[y0_:y1_, x0_:x1_] == 3)).any())
             n_m, rader_m, dor_m, gavl_m, buer_m = vinduer_modell(x, v['a'], v['b'], synlig if k_ else None)
+            n_a, rader_a, dor_a, _, _ = vinduer_modell(x, v['a'], v['b'])     # alle på veggen, også de som står bak et nabohus i bildet
             # veggen står inntil et nabohus som er minst like høyt i kommunekartet (FKB går foran for omriss): modellen kan ikke
             # vise vinduer der, selv om tegningen tegner veggen fri (868339/868347, Kvartal4BITMP)
             brannmur = None
@@ -1210,6 +1211,7 @@ def analyser(navn, logg=print):
             vind.append(dict(vegg=v['k'], lengde_m=round(v['L'], 1), kilde=kilde_v, kobling=kobling_,
                              tegning=dict(vinduer=len(vs), rader=rader_t if rader_t is not None else _rader(vs), dorer=dor_t, gavl=gavl_t),
                              modell=dict(vinduer=n_m, rader=rader_m, dorer=dor_m, gavl=gavl_m, arkadebuer=buer_m),
+                             modell_alle=dict(vinduer=n_a, rader=rader_a, dorer=dor_a),
                              brannmur=brannmur, plass_etasjer=etasjer_plass(x.get('h') or 0, len(rader_t) if rader_t else 0)))
         r['vinduer'] = vind
         # arker og piper (anslått): små flater på taket
@@ -1371,14 +1373,33 @@ def vurder(r, navn):
             # arkaden er tegnet etter denne tegningen i landemerker.py (bygg.arkader, kilden står der); buene er tegnet som strek
             # med veggfargen inni, ikke som hull, så verken hulltellingen eller fasadeavlesningen leser dem
             a = 'avvik med grunn'; hva += f"; veggen er arkaden ({w['modell']['arkadebuer']} buer, verktoy/landemerker.py etter tegningen): buene er strek i tegningen, ikke hull, og leses ikke av tellingen"
+        elif a != 'ok' and bak_nabo(w, 'vinduer'):
+            # modellen har nøyaktig det tegningen viser på veggen, men noen står bak et nabohus i kontrollbildet: tegningen er
+            # frihånd og har flyttet nabohuset (eller tegnet det lavere), så vinduene synes der og ikke i modellens projeksjon
+            a = 'avvik med grunn'; ma = w['modell_alle']
+            hva += f"; modellen har {ma['vinduer']} i rader {ma['rader']} på veggen, som tegningen, men {ma['vinduer'] - w['modell']['vinduer']} står bak nabohuset i kontrollbildet (frihånd i tegningen)"
         sett('vinduer', a, hva)
-        dd = [(w['tegning']['dorer'], w['modell']['dorer'], w['vegg']) for w in vv if w['tegning']['dorer'] != w['modell']['dorer']]
-        sett('dorer', 'avvik' if dd else 'ok', '; '.join(f"vegg {g}: tegning {a_}, modell {b_}" for a_, b_, g in dd) if dd else 'like')
+        dd = [(w['tegning']['dorer'], w['modell']['dorer'], w['vegg'], w) for w in vv if w['tegning']['dorer'] != w['modell']['dorer']]
+        hd = '; '.join(f"vegg {g}: tegning {a_}, modell {b_}" + (f" (modellen har {w_['modell_alle']['dorer']}, bak nabohuset i kontrollbildet)" if bak_nabo(w_, 'dorer') else '') for a_, b_, g, w_ in dd)
+        a_d = ('avvik med grunn' if all(bak_nabo(w_, 'dorer') for *_, w_ in dd) else 'avvik') if dd else 'ok'
+        if a_d == 'avvik' and r['id'] in LANDEMERKER_FASADE:
+            a_d = 'avvik med grunn'; hd += f"; {LANDEMERKER_FASADE[r['id']]}"
+        sett('dorer', a_d, hd if dd else 'like')
     for k in ('arker', 'piper'):
         c = r.get(k)
         if c:
             sett(k, 'avvik' if abs(c['tegning_anslag'] - c['modell']) >= 3 else 'ok', f"tegning ~{c['tegning_anslag']} (grovt anslag fra små takflater, også takvinduer), modell {c['modell']}")
     return v
+
+
+def bak_nabo(w, hva):
+    """Modellens elementer på veggen (alle, ikke bare de synlige) er det tegningen viser: vinduene i samme antall og rader,
+    eller like mange dører. Da er forskjellen at noen står bak et nabohus i kontrollbildet, ikke at modellen mangler dem."""
+    ma = w.get('modell_alle')
+    if not ma: return False
+    if hva == 'dorer':
+        return ma['dorer'] == w['tegning']['dorer']
+    return ma['vinduer'] == w['tegning']['vinduer'] and [r for r in ma['rader'] if r] == [r for r in w['tegning']['rader'] if r]
 
 
 VEKT = dict(finnes=10, slaatt_sammen=9, omriss=6, takform=6, gesims=5, mone=4, vinduer=4, veggfarge=3, takfarge=3, dorer=1, arker=1, piper=0.5)
