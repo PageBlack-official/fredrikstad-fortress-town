@@ -212,6 +212,43 @@
    "nye_id": [
     "pb-67"
    ]
+  },
+  {
+   "id": "bnr-193870279",
+   "tegning": "Kvartal10",
+   "kutt": [
+    [
+     [
+      -21.56,
+      -114.13
+     ],
+     [
+      -5.04,
+      -118.23
+     ]
+    ],
+    [
+     [
+      -31.25,
+      -152.6
+     ],
+     [
+      -14.69,
+      -156.78
+     ]
+    ]
+   ],
+   "grunn": "Tøihuset (Vegar 31.10): bygget har ulike brukere per fløy. Nordfløya mot Tøihusgaten er Fredrikstad Museum (leieavtale 2019–2039, F-B 22.06.25), sørlige del av østfløya mot Laboratoriegaten er Atelier & Galleri Tøihuset. Kuttene følger innerveggene fra innerhjørnene i kommunekartets omriss; hjørnene går til nordfløya og sørfløya. Felles tak: taket regnes for hele omrisset og klippes per fløy, så bygget står som ett",
+   "nye_id": [
+    "pb-68",
+    "pb-69"
+   ],
+   "felles_tak": true,
+   "navn": {
+    "pb-68": "Tøihuset, nordfløya",
+    "bnr-193870279": "Tøihuset, østfløya",
+    "pb-69": "Tøihuset, sørfløya"
+   }
   }
  ],
  "sammen": [

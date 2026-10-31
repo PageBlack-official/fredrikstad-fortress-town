@@ -25,7 +25,9 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #kort .lukk{position:absolute;right:12px;top:10px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}
 #kort .farge{display:flex;gap:6px;margin-top:10px;align-items:center;font-size:12px;color:var(--muted)}
 #kort .her{list-style:none;margin:8px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
-#kort .her:empty,#kort .id:empty,#kort .b:empty{display:none}
+#kort .ogsa-t{margin:12px 0 0;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);opacity:.6}
+#kort .ogsa{list-style:none;margin:4px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
+#kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty{display:none}
 #kort .id{margin-top:8px;font-size:11px;letter-spacing:.02em;opacity:.8}
 #kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
 

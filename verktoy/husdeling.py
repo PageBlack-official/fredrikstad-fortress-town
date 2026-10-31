@@ -6,6 +6,8 @@ ett hus slutter og det neste begynner langs gata; Kartverkets DOM (møner og spr
 
 Kilden er kilder/husdeling.json (lest av tegningen med `forslag`, sett på og godkjent for hånd, med grunn per linje):
   deling   {"id", "kutt": [[[x, y], [x, y]], ...], "tegning", "grunn"}   kuttlinjene går fra gata (fasaden) inn gjennom huset
+           + «felles_tak»: true og «navn»: {id: navn}: fløyer av ett bygg med egne id-er; taket regnes for hele omrisset og klippes
+             per fløy (tak_enkel.py), høyden er felles (rapport/hoyder/legg_inn.py), og huskortet viser de andre fløyene (felt «floyer»)
   sammen   {"ids": [a, b, ...], "tegning", "grunn"}                       det første beholder id-en og får hele omrisset
   skjul    {"id", "grunn"}                                                  bygg som ikke står der (ortofoto 2024 + DOM)
   nye      {"id"?, "p", "h"?, "tegning", "grunn"}                          hus tegningen viser og kommunekartet mangler
@@ -183,9 +185,14 @@ def main(tørt=False):
                     obj[felt] = [q for q in v if _i(g, q, biter=biter, kutt=D['kutt'] if felt == 'vind' else None)]
             if obj.get('fasade_kilde') == 'kvartaltegning':
                 obj['fasade_fra'] = x['id']
+            if D.get('felles_tak'):      # fløyer av ett bygg (Tøihuset 31.10): eget navn, samme brosjyretekst, og hverandres id-er (huskortet)
+                obj.update(navn=(D.get('navn') or {}).get(ny), tekst=x.get('tekst'), floyer=[x['id']] + ider[:len(biter) - 1])
             nye_rett.append({"emne": "bygg", "id": ny, "op": "ny", "verdi": obj, "hvem": HVEM, "dato": DATO, "grunn": f"{GRUNN}: {gr} (del av {x['id']})"})
             barn_av[x['id']].append(ny)
             if ny not in reg: nye_reg.append(ny)
+        if D.get('felles_tak'):
+            if (D.get('navn') or {}).get(x['id']): r(x['id'], 'navn', D['navn'][x['id']], gr)
+            r(x['id'], 'floyer', [x['id']] + ider[:len(biter) - 1], gr)
         logg.append(f"{x['id']}: delt i {len(biter)} ({', '.join([x['id']] + ider[:len(biter) - 1])})")
     for S in H['sammen']:
         ids = [i for i in S['ids'] if i in BY and not BY[i].get('skjul')]

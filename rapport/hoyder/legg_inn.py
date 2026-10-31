@@ -35,5 +35,17 @@ for k, x in sorted(H.items(), key=lambda t: int(t[0])):
     R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "h", "verdi": x['h_per_hus'], "hvem": "Claude", "dato": dato(B[i]['id'], 'h', x['h_per_hus']), "grunn": g})
     R.append({"emne": "bygg", "id": B[i]["id"], "op": "sett", "felt": "th", "verdi": x['takhelning'], "hvem": "Claude", "dato": dato(B[i]['id'], 'th', x['takhelning']), "grunn": g})
     n += 1
+# fløyer under felles tak (kilder/husdeling.json «felles_tak», Tøihuset 31.10): samme gesims og takhelning på alle, snittet av
+# målingene veid med grunnflaten, så taket som er regnet for hele omrisset passer på hver fløy
+from shapely.geometry import Polygon
+HD = json.load(open(os.path.join(ROT, 'kilder/husdeling.json')))
+for D in HD.get('deling', []):
+    if not (D.get('felles_tak') and D.get('nye_id')): continue
+    g = [D['id']] + D['nye_id']; areal = {b['id']: Polygon(b['p']).area for b in B if b['id'] in g}
+    for felt in ('h', 'th'):
+        L = [r for r in R if r.get('id') in g and r.get('felt') == felt and r.get('grunn', '').startswith('Kartverket DOM') and r['verdi'] is not None]
+        if not L: continue
+        v = round(sum(r['verdi'] * areal.get(r['id'], 0) for r in L) / max(1e-9, sum(areal.get(r['id'], 0) for r in L)), 2)
+        for r in L: r['verdi'] = v; r['dato'] = dato(r['id'], felt, v); r['grunn'] += f"; felles tak med {', '.join(i for i in g if i != r['id'])} (snitt veid med grunnflaten)"
 datalag.skriv_rettelser(R)
 print(n, 'hus fått målt høyde og takhelning')

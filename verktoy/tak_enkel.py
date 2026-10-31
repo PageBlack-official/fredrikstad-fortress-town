@@ -459,16 +459,74 @@ def kandidater(d, ret):
     return ut
 
 
+def felles_tak_grupper():
+    """Hus delt med «felles_tak» i kilder/husdeling.json (fløyer med egne id-er under ett tak): {id: alle id-ene i gruppa}."""
+    H = json.load(open(os.path.join(ROT, 'kilder', 'husdeling.json'), encoding='utf8'))
+    ut = {}
+    for D in H.get('deling', []):
+        if D.get('felles_tak') and D.get('nye_id'):
+            g = [D['id']] + list(D['nye_id'])
+            for i in g: ut[i] = g
+    return ut
+
+
+def _plan_t(f):
+    """t = a x + b y + c for en takflate (t er lineær i planet)."""
+    A = np.array([[q[0], q[1], 1.0] for q in f]); z = np.array([q[2] for q in f])
+    return np.linalg.lstsq(A, z, rcond=None)[0]
+
+
+def klipp_tak(tak2, gavl2, P):
+    """Taket regnet for hele omrisset, klippet til biten P: flater og gavler innenfor P (t regnet fra flatens plan)."""
+    Pb = P.buffer(0.02, join_style=2)
+    nt = []
+    for f in tak2:
+        F = Polygon([(q[0], q[1]) for q in f]).buffer(0)
+        if F.area < 1e-3: continue
+        X = F.intersection(Pb)
+        a, b, c = _plan_t(f)
+        for g in getattr(X, 'geoms', [X]):
+            if g.geom_type != 'Polygon' or g.area < 0.05: continue
+            nt.append([[round(x, 2), round(y, 2), round(max(0.0, a * x + b * y + c), 3)] for x, y in list(orient(g).exterior.coords)[:-1]])
+    ng = []
+    for (pa, pb) in gavl2:
+        L = LineString([pa[:2], pb[:2]]); n = L.length
+        if n < 1e-6: continue
+        X = L.intersection(Pb)
+        for g in getattr(X, 'geoms', [X]):
+            if g.geom_type != 'LineString' or g.length < 0.05: continue
+            seg = []
+            for x, y in (g.coords[0], g.coords[-1]):
+                s_ = L.project(Point(x, y)) / n
+                seg.append([round(x, 2), round(y, 2), round(pa[2] + (pb[2] - pa[2]) * s_, 3)])
+            ng.append(seg)
+    return nt, ng
+
+
 def main(tørt=False):
     ret = [r for r in datalag.les('rettelser') if r.get('grunn') != GRUNN]
     raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
     d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, ret), grunn)
     T = tegning_spek()
     nye, logg = [], {}
+    FT = felles_tak_grupper(); BYI = {b['id']: b for b in d['bygg']}; felles = {}
     for x in kandidater(d, ret):
         try:
-            P, spek = spek_for(x, T)
-            tak2, gavl2 = tak_hus(P, spek)
+            if x['id'] in FT:
+                # fløyer under ett tak: taket regnes for hele omrisset (med originalens tegningsspek) og klippes til fløya
+                g = FT[x['id']]
+                if g[0] not in felles:
+                    U = unary_union([Polygon(BYI[i]['p']).buffer(0.05, join_style=2) for i in g if i in BYI]).buffer(-0.05, join_style=2).simplify(0.02)
+                    xu = dict(BYI[g[0]], p=[list(q) for q in list(orient(U).exterior.coords)[:-1]])
+                    Pu, spek_u = spek_for(xu, T)
+                    felles[g[0]] = (Pu, spek_u, tak_hus(Pu, spek_u))
+                Pu, spek, (tu, gu) = felles[g[0]]
+                P = Polygon(x['p']).buffer(0)
+                tak2, gavl2 = klipp_tak(tu, gu, P)
+                P = Pu                       # høyde og takhelning fra hele omrisset, så fløyene får samme gesims og møne
+            else:
+                P, spek = spek_for(x, T)
+                tak2, gavl2 = tak_hus(P, spek)
         except Exception as e:  # noqa
             logg[x['id']] = dict(feil=str(e)); continue
         if not tak2: continue

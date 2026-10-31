@@ -424,3 +424,18 @@ Kontrollen (`kontroll.py avvik`) gikk fra 10 til 0 «feil» for vinduer; dørene
   tegninger kan rendres i ett kall.
 - `fasade_tegning.py les_for_haand <tegning> --bare id1,id2` leser bare husene med endret håndkobling på nytt; en full omlesing kan
   flytte gamle avlesninger til andre vegger når omrissene er endret siden (Kvartal2BITMP: 868096/pb-62).
+
+## Tøihuset i fløyer (31.10, Vegar: «id-dele opp det bygget slik det faktisk er i dag»)
+Tøihuset (bnr-193870279) er delt i tre fløyer med egne id-er: nordfløya mot Tøihusgaten (pb-68), østfløya mot Laboratoriegaten
+(bnr-193870279, der matrikkelpunktet står) og sørfløya (pb-69). Kuttene står i kilder/husdeling.json og følger innerveggene fra
+innerhjørnene; hjørnene går til nordfløya og sørfløya. «felles_tak» gjør at fløyene står som ett bygg:
+- tak_enkel.py regner taket for hele omrisset (unionen av fløyene, originalens tegningsspek) og klipper flater og gavler per fløy;
+- rapport/hoyder/legg_inn.py gir alle fløyene samme vegghøyde og takhelning (snitt veid med grunnflaten);
+- husdeling.py gir fløyene navn («navn» i delingen), brosjyreteksten og feltet «floyer» (alle id-ene i bygget).
+Leietakerne: kilder/virksomheter-plassert.json, lagt oppå data/virksomheter.json og data/adresser.json av
+verktoy/virksomheter_plassert.py (siste steg i kjeden). «plassert» flytter en virksomhet fra Enhetsregisteret til riktig fløy,
+«steder» legger til steder som ikke står der, og «hele_bygget» betyr at plassen i bygget ikke er kjent. Huskortet viser fløyas egne
+steder øverst og de andre under «Også i Tøihuset»; adressen og bygningsnummeret står på alle fløyene.
+Plassert med kilde: Fredrikstad Museum i nordfløya, Atelier & Galleri Tøihuset i østfløya. Uten kjent plass: Tøihussalen,
+Bombardersalen, Kostymeloftet, Månefestivalen. Ikke lagt inn: husflidslaget, kunstforeningen, militærhistorisk museum, Østfold
+Teater og Studium Actoris (bare i en udatert artikkel på lokalhistoriewiki). Vegar kan rette plassene i kilder/virksomheter-plassert.json.

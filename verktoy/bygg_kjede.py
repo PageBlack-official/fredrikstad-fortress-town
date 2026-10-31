@@ -10,7 +10,7 @@ ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STEG = [['verktoy/grunnmur.py'], ['verktoy/id_flytt.py'], ['verktoy/husdeling.py'], ['verktoy/tak_enkel.py'], ['-I', 'rapport/hoyder/hent.py'], ['-I', 'rapport/hoyder/legg_inn.py'],
         ['verktoy/vinduer_regler.py'], ['verktoy/streetview_fasader.py'], ['verktoy/streetview_farger.py'],
         ['verktoy/fasade_tegning.py', 'les_fra_kontroll'], ['verktoy/fasade_tegning.py', 'legg_inn'], ['verktoy/tak_fra_ortofoto.py'], ['verktoy/tak_farge.py'], ['verktoy/vegg_nye.py'], ['verktoy/fasadesegmenter.py'], ['verktoy/bygg_merknader.py'],
-        ['verktoy/fasade_former.py'], ['verktoy/landemerker.py'], ['verktoy/register.py', 'kort']]
+        ['verktoy/fasade_former.py'], ['verktoy/landemerker.py'], ['verktoy/register.py', 'kort'], ['verktoy/virksomheter_plassert.py']]
 for s in STEG:
     if s[0] == 'verktoy/grunnmur.py' and '--grunnmur' not in sys.argv:
         continue

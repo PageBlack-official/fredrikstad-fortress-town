@@ -169,5 +169,7 @@
 {"bygg_id":"bnr-193820409","adresse":"Ove Ramms gate 9","gnr":300,"bnr":951,"kilde":"verktoy/register.py kort (Kartverkets adresse-API, adressepunktet i huset)"},
 {"bygg_id":"bnr-13416559","adresse":"Ove Ramms gate 10","gnr":300,"bnr":952,"kilde":"verktoy/register.py kort (Kartverkets adresse-API, adressepunktet i huset)"},
 {"bygg_id":"bnr-13416575","adresse":"Ove Ramms gate 12","gnr":300,"bnr":954,"kilde":"verktoy/register.py kort (Kartverkets adresse-API, adressepunktet i huset)"},
-{"bygg_id":"bnr-13393524","adresse":"Torsnesveien 2","gnr":303,"bnr":1095,"kilde":"verktoy/register.py kort (Kartverkets adresse-API, adressepunktet i huset)"}
+{"bygg_id":"bnr-13393524","adresse":"Torsnesveien 2","gnr":303,"bnr":1095,"kilde":"verktoy/register.py kort (Kartverkets adresse-API, adressepunktet i huset)"},
+{"bygg_id":"pb-68","adresse":"Tøihusgaten 41","gnr":302,"bnr":45,"kilde":"kilder/virksomheter-plassert.json"},
+{"bygg_id":"pb-69","adresse":"Tøihusgaten 41","gnr":302,"bnr":45,"kilde":"kilder/virksomheter-plassert.json"}
 ]

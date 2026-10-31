@@ -1,0 +1,15 @@
+{
+ "laget": "2026-10-31",
+ "verktoy": "verktoy/adresser.py koble",
+ "om": "Virksomheter plassert for hånd der Brønnøysund-adressen ikke sier hvilken del av bygget de er i (plassert), og steder som ikke står i Enhetsregisteret med adresse i Gamlebyen (steder). «bygg_id» er fløya; «hele_bygget»: true betyr at plassen i bygget ikke er kjent, og huskortet viser stedet på alle fløyene under «Også i bygget».",
+ "plassert": [
+  {"orgnr": "974565757", "bygg_id": "pb-68", "grunn": "Fredrikstad Museum leier nordfløya av Tøihuset mot Tøihusgaten (leieavtale 2019–2039, Fredriksstad Blad 22.06.25); museumsbutikken, Bar 1567 og utstillingen om Operasjon Polar Bear (østenden) er en del av museet"}
+ ],
+ "steder": [
+  {"id": "sted-atelier-galleri-toihuset", "navn": "Atelier & Galleri Tøihuset", "bygg_id": "bnr-193870279", "kilde": "Google Maps (lest 31.10.26): sørlige del av østfløya mot Laboratoriegaten"},
+  {"id": "sted-toihussalen", "navn": "Tøihussalen (utleie)", "bygg_id": "bnr-193870279", "hele_bygget": true, "kilde": "kulturkvartalene.org/utleie (lest 31.10.26): soldatenes gamle spisesal, 226 m², vinduer på tre sider"},
+  {"id": "sted-bombardersalen", "navn": "Bombardersalen (utleie)", "bygg_id": "bnr-193870279", "hele_bygget": true, "kilde": "kulturkvartalene.org/utleie (lest 31.10.26): i hjørnet, inngang fra Tøihusplassen"},
+  {"id": "sted-kostymeloftet", "navn": "Kostymeloftet", "bygg_id": "bnr-193870279", "hele_bygget": true, "kilde": "Fredriksstad Blad 22.06.25 og 25.08.26 (leietakerne i Tøihuset); plass i bygget ikke oppgitt"},
+  {"id": "sted-maanefestivalen", "navn": "Månefestivalen", "bygg_id": "bnr-193870279", "hele_bygget": true, "kilde": "Fredriksstad Blad 22.06.25 og 25.08.26: leieavtale i Tøihuset til 2029; plass i bygget ikke oppgitt"}
+ ]
+}
