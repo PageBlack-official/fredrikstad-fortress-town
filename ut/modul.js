@@ -588,7 +588,7 @@ function fotBaand(pts, d, y){
 }
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
-  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'');
+  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+(opt.vindu?'V':'');
   if(!mats.has(key)){
     const c=new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`); if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8);
     // skyggetonen hentes fra trykkfila når bygget har en; ellers samme forhold som tegningen bruker
@@ -674,6 +674,7 @@ function mat(rgb, dim, sk, opt={}){
         }`
     });
     if(opt.ds) m.side=THREE.DoubleSide;
+    if(opt.vindu) m.userData.vindu=true;   // kontrolløren (verktoy/kontroll_iso.mjs) leser flaten som vindu/dør
     mats.set(key,m);
   }
   return mats.get(key);
@@ -705,8 +706,9 @@ function bygKirke(k, grp){
   // Domkirken slik den er tegnet i trykkfila 2019: korsformet skip med saltak i skifer, hvitt tårn med salviegrønn hjelm, lanterne og spir
   const HVIT=[252,252,252], HVIT_S=[192,196,196], SKIFER=[128,128,132], SKIFER_S=[68,68,72];
   const SALVIE=[196,228,202], SALVIE_S=[128,146,138], LANT=[176,212,190], LANT_S=[92,100,100], MORK=[92,100,100], MORK_S=[52,52,52];
-  const GLASS=[62,70,82], GLASS_S=[44,50,60];
-  const M=(f,sk)=>mat(f,false,sk,{ds:true});
+  const GLASS=[62,70,82], GLASS_S=[44,50,60], DORBLAD=[104,86,72], DORBLAD_S=[72,60,52];
+  // glass og dørblad er vinduer/dører for kontrolløren (verktoy/kontroll_iso.mjs: materialets userData.vindu gir flatetype 3)
+  const M=(f,sk)=>mat(f,false,sk,{ds:true, vindu:f===GLASS || f===DORBLAD});
   const add=(g,f,sk)=>{ const m=new THREE.Mesh(g,M(f,sk)); m.castShadow=true; m.receiveShadow=true; grp.add(m); return m; };
   const W3=(p,y)=>new THREE.Vector3(p[0],y,-p[1]);
   function loftK(pb, pt, y0, y1, f, sk, lukk=true){
@@ -797,8 +799,18 @@ function bygKirke(k, grp){
     const p=[f.p0[0]+(f.p1[0]-f.p0[0])*s_, f.p0[1]+(f.p1[1]-f.p0[1])*s_]; const opp=new THREE.Vector3(0,1,0);
     if(stor){ legg(new THREE.ShapeGeometry(bue(3.8,5.8),16), W3(p,-0.05), f.tan, opp, f.nor, 0.05, [150,150,146], [100,100,98]);   // omramming (rundbuet, som i tegningen)
               legg(new THREE.ShapeGeometry(bue(3.3,5.4),16), W3(p,0), f.tan, opp, f.nor, 0.07, [226,226,222], [160,160,156]); }
-    legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, [104,86,72], [72,60,52]);
+    legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, DORBLAD, DORBLAD_S);
   }
+  // buevinduer og dører i skipet fra data (bygg.kirke.vinduer, verktoy/fasade_former.py: veggene kirke.ai viser hele, talt for hånd
+  // i kilder/bygg-merknader.json, ellers regelen under), så kontrolløren teller de samme vinduene som kartet viser (31.10)
+  if(Array.isArray(k.vinduer) && k.vinduer.length){
+    const opp=new THREE.Vector3(0,1,0);
+    k.vinduer.forEach(e=>{ const [x,y,zc,tx,ty,nx,ny,b,h,typ,stor]=e; const nor=new THREE.Vector3(nx,0,-ny), tan=new THREE.Vector3(-tx,0,ty);   // tan × opp = nor
+      if(typ===2){ if(stor){ legg(new THREE.ShapeGeometry(bue(b+1.5,h+1.5),16), W3([x,y],-0.05), tan, opp, nor, 0.05, [150,150,146], [100,100,98]);
+                             legg(new THREE.ShapeGeometry(bue(b+1.0,h+1.1),16), W3([x,y],0), tan, opp, nor, 0.07, [226,226,222], [160,160,156]); }
+                   legg(new THREE.ShapeGeometry(bue(b,h),12), W3([x,y],0), tan, opp, nor, 0.10, DORBLAD, DORBLAD_S); }
+      else buevindu(W3([x,y],zc-h/2), tan, opp, nor, b, h); });
+  } else
   // høye buevinduer i alle frie skipsvegger
   flater(sk).forEach(f=>{
     if(nærTårn(f.mid) || f.L<3) return;
@@ -817,6 +829,10 @@ function bygKirke(k, grp){
   // hele tårnet 910 pt: 18,5 m og 37,6 m). Før stod tårnet på 34 m mur og 60 m spir, nesten dobbelt så høyt som målt.
   // Tallene står i data (bygg.kirke.hoyder, verktoy/fasade_former.py, med kildene); her bare reserven.
   const HK=Object.assign({SH:18.5, SK1:22.8, OV1:26.9, LA0:28.0, LA1:30.5, KU1:32.0, SP1:36.7, TS:0.7}, k.hoyder||{});
+  // Landemerke (Vegar 30.10): tårnet skal fungere dramatisk, ikke korrekt, fordi det brukes til å orientere seg. bygg.kirke.visning
+  // {skala, detalj} forstørrer de målte høydene fra bakken og detaljene over muren; de målte tallene i hoyder røres ikke.
+  const VIS=Object.assign({skala:1, detalj:1}, k.visning||{});
+  ['SH','SK1','OV1','LA0','LA1','KU1','SP1'].forEach(n=>{ HK[n]*=VIS.skala; }); HK.TS*=VIS.detalj; HK.SPR=(HK.SPR||0.5)*VIS.detalj;
   const {SH, SK1, OV1, LA0, LA1, KU1, SP1, TS}=HK;   // TS: skala for detaljene over muren
   const te=new THREE.ExtrudeGeometry(polyShape(t),{depth:SH,bevelEnabled:false}); te.rotateX(-Math.PI/2); add(te,HVIT,HVIT_S);
   loftK(t, skaler(t,1.06), SH, SH+0.5, HVIT, HVIT_S);                     // gesims
@@ -832,7 +848,8 @@ function bygKirke(k, grp){
   const R0=side*0.25, prof=[[R0,0],[R0*0.98,0.35],[R0*0.8,0.95],[R0*0.52,1.5],[R0*0.3,1.85],[R0*0.18,2.15],[R0*0.2,2.4],[R0*0.12,2.6],[0.001,2.75]];
   const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y*0.55)),8); lat.rotateY(-rot+Math.PI/8);
   const kup=new THREE.Mesh(lat,M(LANT,LANT_S)); kup.position.set(tc[0],LA1+0.35,-tc[1]); kup.castShadow=true; grp.add(kup);
-  const sp=oktagon(tc, 0.3, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir
+  // spiret: foten er ~1/4 av lanternens bredde (foto Commons «Oestre fredrikstad kirke 01», 2008); 0,3 m ble en nål som forsvant på kartzoom (Vegar 30.10: «for kort»)
+  const sp=oktagon(tc, HK.SPR||0.5, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir
   const kule=new THREE.Mesh(new THREE.SphereGeometry(0.28,10,8), M(MORK,MORK_S)); kule.position.set(tc[0],SP1-1.1,-tc[1]); grp.add(kule);
   const fløy=new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.55), M(MORK,MORK_S)); fløy.position.set(tc[0]+0.45,SP1-0.5,-tc[1]); fløy.rotation.y=-rot; grp.add(fløy);
   // vinduer, urskiver og takarker på alle fire sider
@@ -862,7 +879,7 @@ function bygKirke(k, grp){
   // inngangsdør i tårnfoten mot vest (siden lengst fra skipet)
   const fot=flater(t).reduce((a,f)=>{ const d=Math.hypot(f.mid[0]-sentr(sk)[0],f.mid[1]-sentr(sk)[1]); return (!a||d>a.d)?{f,d}:a; },null).f;
   legg(new THREE.ShapeGeometry(bue(2.6,4.8),12), W3(fot.mid,0).addScaledVector(opp,-0.05), fot.tan, opp, fot.nor, 0.06, HVIT, HVIT_S);
-  legg(new THREE.ShapeGeometry(bue(2.1,4.4),12), W3(fot.mid,0), fot.tan, opp, fot.nor, 0.10, [104,86,72], [72,60,52]);
+  legg(new THREE.ShapeGeometry(bue(2.1,4.4),12), W3(fot.mid,0), fot.tan, opp, fot.nor, 0.10, DORBLAD, DORBLAD_S);
 }
 
 const buildings=[];
@@ -1003,6 +1020,10 @@ function ring(c, r, n, rot){ return Array.from({length:n},(_,k)=>{ const a=rot+k
 // ut (utkraging), tinde_h, tinder (antall), vegg, veggs, topp (takfarge), vinduer {z (midt), b, h}, stang (over taket), flagg [r,g,b]}.
 // Første bruk: tårnet på rådhuset (bnr-193972012): form fra Kvartal14.ai, plass og høyde fra Kartverkets DOM.
 function bygTaarn(t, grp){
+  // landemerke (Vegar 30.10): visningsskala forstørrer tårnet fra bakken; de målte tallene i dataene står
+  const f=t.visningsskala||1;
+  if(f!==1) t=Object.assign({}, t, {skaft:t.skaft*f, h:t.h*f, r:t.r*Math.sqrt(f), tinde_h:(t.tinde_h||0.7)*Math.sqrt(f), stang:t.stang&&t.stang*f,
+    vinduer:t.vinduer&&Object.assign({}, t.vinduer, {z:t.vinduer.z*f, b:t.vinduer.b*Math.sqrt(f), h:t.vinduer.h*Math.sqrt(f)})});
   const n=t.sider||8, rot=THREE.MathUtils.degToRad(t.rot||0)+Math.PI/n, r=t.r, ut=t.ut||0.4, th=t.tinde_h||0.7;
   const mv=mat(t.vegg||[236,214,180],false,t.veggs), mt=mat(t.topp||[120,160,138],false);
   const kv=t.skaft, kr=t.krage||0.7;                               // konsollbåndet: to trinn ut til brystningen
