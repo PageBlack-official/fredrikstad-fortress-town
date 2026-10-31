@@ -13,9 +13,20 @@ HID = {e['id']: e for e in H.values() if e.get('id')}
 # unntak med grunn (kilder/hoyde-unntak.json, 30.10): DOM lest for hånd der tilpasningen per hus måler feil
 for k_, u_ in json.load(open(os.path.join(ROT, 'kilder', 'hoyde-unntak.json')))['hus'].items():
     if k_ in HID: HID[k_] = dict(HID[k_], h_per_hus=u_['h'], takhelning=u_['th'], sikkerhet='høy')     # målingen følger id-en (29.10), plassen bare for gamle målinger
+# fløyer under felles tak (kilder/husdeling.json «felles_tak», Tøihuset 31.10): fasit er snittet av fløyenes målinger veid med
+# grunnflaten, så hele bygget står med én gesims og én takhelning (rapport/hoyder/legg_inn.py gjør det samme)
+from shapely.geometry import Polygon
+BID = {x['id']: x for x in b}; FELLES = {}
+for D in json.load(open(os.path.join(ROT, 'kilder', 'husdeling.json'))).get('deling', []):
+    if not (D.get('felles_tak') and D.get('nye_id')): continue
+    g = [i for i in [D['id']] + D['nye_id'] if i in BID and HID.get(i, {}).get('sikkerhet') in ('høy', 'middels') and HID[i].get('h_per_hus') is not None]
+    if not g: continue
+    w = {i: Polygon(BID[i]['p']).area for i in g}; W = sum(w.values())
+    snitt = dict(h_per_hus=round(sum(HID[i]['h_per_hus'] * w[i] for i in g) / W, 2), takhelning=round(sum(HID[i]['takhelning'] * w[i] for i in g) / W, 2))
+    for i in g: FELLES[i] = dict(HID[i], **snitt)
 for i, x in gamleby(b):
     if x.get('skjult') or x.get('kirke'): continue
-    m = HID.get(x['id']) if HID else H.get(str(i))
+    m = FELLES.get(x['id']) or (HID.get(x['id']) if HID else H.get(str(i)))
     if m and m.get('navn') and x.get('navn') and m['navn'] != x['navn']: navnfeil.append(f"- bygg {i}: hoyder.json sier «{m['navn']}», data sier «{x['navn']}» (rekkefølgen i bygg.json er endret?)")
     if m and m.get('sikkerhet') in ('høy', 'middels') and m.get('h_per_hus') is not None:
         maalt += 1

@@ -537,6 +537,20 @@ def les_kamera(navn):
     return json.load(open(os.path.join(ARB, navn + '-kamera.json')))
 
 
+def felles_tak():
+    """Bygg delt i fløyer under felles tak (husdeling «felles_tak», Tøihuset 31.10): {original id: alle id-ene}."""
+    H_ = json.load(open(os.path.join(ROT, 'kilder', 'husdeling.json'), encoding='utf8'))
+    return {D_['id']: [D_['id']] + D_['nye_id'] for D_ in H_.get('deling', []) if D_.get('felles_tak') and D_.get('nye_id')}
+
+
+def vis_ids(K):
+    """Husene som tegnes i kontrollbildet: tegningens hus, og fløyene til et bygg tegningen har som ett hus."""
+    ut = list(K['bygg'])
+    for i, g in felles_tak().items():
+        if i in K['bygg']: ut += [j for j in g if j not in ut]
+    return ut
+
+
 # ---------------------------------------------------------------- render (den ekte scenen)
 
 def render(navner, logg=print):
@@ -545,7 +559,7 @@ def render(navner, logg=print):
     for n in navner:
         K = les_kamera(n)
         _, rect = tegning_bilde(n, 0.1)
-        jobb.append(dict(navn=n, W=int(round(rect.width * R)), H=int(round(rect.height * R)), R=R, A=K['A'], vis=K['bygg'], forsk=K.get('forskyvning', {})))
+        jobb.append(dict(navn=n, W=int(round(rect.width * R)), H=int(round(rect.height * R)), R=R, A=K['A'], vis=vis_ids(K), forsk=K.get('forskyvning', {})))
     jf = os.path.join(ARB, 'jobb.json'); json.dump(jobb, open(jf, 'w'))
     html = os.path.join(ROT, 'ut', 'enkel', 'index.html')
     subprocess.run(['node', os.path.join(ROT, 'verktoy', 'kontroll_iso.mjs'), html, jf, ARB], check=True)
@@ -843,6 +857,7 @@ def analyser(navn, logg=print):
     f, idx, typ, nrm, idxa, ids = _les_render(navn, H, W)
     inv = {v: k for k, v in ids.items()}
     B = [BY[i] for i in K['bygg'] if i in BY]
+    FELLES = {i: g for i, g in felles_tak().items() if i in K['bygg']}   # tegningen har bygget som ett hus: fløyene måles sammen
     F, _ = FT.flater(navn)
     ftf = os.path.join(ROT, 'kilder', 'fasade-tegning', navn + '.json'); FTJ = {}
     if os.path.exists(ftf):
@@ -923,7 +938,9 @@ def analyser(navn, logg=print):
         i = x['id']; k_ = inv.get(i)
         Pm = P_hus(K, i)
         Mm = (idx == k_) if k_ else np.zeros((H, W), bool)
-        js = tildelt.get(i, [])
+        if FELLES.get(i):        # fløyer under felles tak (husdeling «felles_tak», Tøihuset 31.10): tegningen viser hele bygget
+            Mm = np.isin(idx, [inv[j] for j in FELLES[i] if j in inv])
+        js = sorted({q for j in FELLES.get(i, [i]) for q in tildelt.get(j, [])})
         Md = np.isin(Lf, js) if js else np.zeros((H, W), bool)
         r = dict(id=i, adr=x.get('adr'), navn=x.get('navn'), h=x.get('h'), fasade_kilde=x.get('fasade_kilde'), farge_kilde=x.get('farge_kilde'),
                  vegg_kilde=x.get('vegg_kilde'), vegg_aar=x.get('vegg_aar'), tak_kilde=x.get('tak_kilde'), tak_aar=x.get('tak_aar'),

@@ -1941,7 +1941,7 @@ const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, 
 const kort=document.getElementById('kort');
 // adresser og virksomheter per bygg, slått opp på byggets faste id (data/adresser.json, data/virksomheter.json; verktoy/adresser.py)
 const perBygg=liste=>{ const m=new Map(); (liste||[]).forEach(x=>{ if(x.skjul) return; if(!m.has(x.bygg_id)) m.set(x.bygg_id,[]); m.get(x.bygg_id).push(x); }); return m; };
-const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const hjem=document.getElementById('hjem');
+const ADRESSER=perBygg(DATA.adresser), VIRKSOMHETER=perBygg(DATA.virksomheter); const BYGG_ID=new Map((DATA.bygg||[]).map(x=>[x.id,x])); const hjem=document.getElementById('hjem');
 // treff: strålen mot alt i byen; i de sammenslåtte nettene gir trekantnummeret hvilket bygg som ble truffet (husDeler, 07)
 function byggFraTreff(hit){
   if(hit.object.isInstancedMesh && hit.object.geometry.getAttribute('aBygg')){ const k=hit.object.geometry.getAttribute('aBygg').getX(hit.instanceId)-1; return k>=0 ? buildings.find(g=>g.userData.i===k) : null; }
@@ -1967,9 +1967,16 @@ function fyllKort(b){
   kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
   kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
   kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig (27.10)
-  const hl=kort.querySelector('.her'); hl.innerHTML=''; her.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; hl.appendChild(li); });
-  const m=b.matrikkel&&b.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
-  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${b.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
+  const liste=(ul,vs)=>{ ul.innerHTML=''; vs.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; ul.appendChild(li); }); };
+  // bygg delt i fløyer (husdeling «felles_tak», 31.10 Tøihuset): fløyas egne steder øverst; de andre fløyenes og de uten kjent plass under «Også i …»
+  const fl=b.floyer||[], hele=v=>v.hele_bygget;
+  const ogsa=fl.flatMap(i=>(VIRKSOMHETER.get(i)||[]).filter(v=>i!==b.id||hele(v))).sort((x,y)=>(hele(x)?1:0)-(hele(y)?1:0));
+  liste(kort.querySelector('.her'), her.filter(v=>!(fl.length&&hele(v))));
+  liste(kort.querySelector('.ogsa'), ogsa);
+  kort.querySelector('.ogsa-t').textContent = ogsa.length ? `Også i ${(b.navn||'bygget').split(',')[0]}` : '';
+  const mb=(b.matrikkel&&b.matrikkel[0]) ? b : (b.floyer||[]).map(i=>BYGG_ID.get(i)).find(x=>x&&x.matrikkel&&x.matrikkel[0]) || b;   // fløyene deler bygningsnummeret
+  const m=mb.matrikkel&&mb.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
+  kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${mb.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
   const f=kort.querySelector('.farge'); f.innerHTML='';
   if(b.vegg){ f.innerHTML += `<i style="background:rgb(${b.vegg})"></i>Godkjent fasadefarge`; }
 }

@@ -143,18 +143,18 @@ står med «Street View (aug. 2010)», som er eldre enn tegningen.
 
 | kategori | feil | avvik | avvik med grunn | ok |
 |---|---|---|---|---|
-| finnes | 4 | 20 | 0 | 195 |
-| omriss | 65 | 83 | 0 | 47 |
-| mone | 43 | 51 | 0 | 99 |
-| takform | 7 | 0 | 0 | 188 |
-| takfarge | 1 | 0 | 106 | 79 |
-| arker | 0 | 39 | 0 | 156 |
-| piper | 0 | 32 | 0 | 163 |
+| finnes | 4 | 19 | 0 | 196 |
+| omriss | 66 | 83 | 0 | 47 |
+| mone | 44 | 51 | 0 | 99 |
+| takform | 7 | 0 | 0 | 189 |
+| takfarge | 1 | 0 | 106 | 80 |
+| arker | 0 | 39 | 0 | 157 |
+| piper | 0 | 32 | 0 | 164 |
 | gesims | 17 | 14 | 37 | 70 |
 | veggfarge | 3 | 0 | 16 | 81 |
-| vinduer | 0 | 8 | 13 | 83 |
+| vinduer | 0 | 8 | 12 | 84 |
 | dorer | 0 | 0 | 2 | 102 |
-| slaatt_sammen | 11 | 7 | 9 | 0 |
+| slaatt_sammen | 10 | 8 | 9 | 0 |
 | tegnet_hus_uten_modell | 0 | 0 | 67 | 0 |
 
 ## Registrering per tegning
@@ -433,7 +433,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 | 972438 |  |  | **F** |  | **F** |  |  | G |  |  |  |  |  |
 | 972454 |  |  | A | **F** | A |  |  |  |  |  |  |  | gesims: tegnet/modell 1.47 (tegningen høyere) (fasadeavlesningen (vegger lest for hånd)); høyden har lav sikkerhet i Kartverket-målingen (rapport/hoyder): må sjekkes mot DOM |
 | 868606 |  |  | **F** |  |  |  |  | G |  |  |  |  |  |
-| 867812 | A |  |  |  |  |  |  |  |  |  |  |  |  |
+| 867812 |  |  | **F** |  | **F** |  |  |  |  |  |  |  |  |
 | 867774 |  |  |  | G |  |  |  | G |  |  |  |  |  |
 | 6246753 | A |  |  |  |  |  |  |  |  |  |  |  |  |
 | pb-57 | A |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -525,7 +525,7 @@ Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknade
 
 | hus | finnes | slaatt_sammen | omriss | gesims | mone | takform | veggfarge | takfarge | vinduer | dorer | arker | piper | merknad |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 870279 |  | **F** |  |  |  | **F** |  |  | G |  | A | A | slaatt_sammen: tegningen har 5 fasader på én modellvegg (vegg 2, 1, 6; ulike farger: 3); takform: tegning sal, modell sammensatt |
+| 870279 |  | A |  |  |  | **F** |  |  |  |  | A | A | takform: tegning sal, modell sammensatt |
 
-Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved 870279 (235 pt², ~1 hus, avvik med grunn: detalj); ved 870279 (6413 pt², ~1 hus, avvik med grunn: frihånd); ved 870279 (209 pt², ~1 hus, avvik med grunn: detalj); ved 870279 (311 pt², ~1 hus, avvik med grunn: detalj); ved 870279 (253 pt², ~2 hus, avvik med grunn: detalj)
+Tegnet uten modellhus under (flategrupper; dom og grunn fra kilder/bygg-merknader.json, kontaktark rapport/manglende/): ved pb-68 (235 pt², ~1 hus, avvik med grunn: detalj); ved pb-69 (6413 pt², ~1 hus, avvik med grunn: frihånd); ved pb-68 (209 pt², ~1 hus, avvik med grunn: detalj); ved pb-68 (311 pt², ~1 hus, avvik med grunn: detalj); ved pb-68 (253 pt², ~2 hus, avvik med grunn: detalj)
 
