@@ -131,8 +131,20 @@ def main(tørt=False):
     B = {x['id']: x for x in d['bygg']}
     nye = []
     def sett(i, felt, verdi):
-        nye.append(dict(emne='bygg', id=i, op='sett', felt=felt, verdi=verdi, hvem='Claude', dato='2026-10-30', grunn=f"{GRUNN}: {FORMER[i]['kilde']}"))
-    for i, f in FORMER.items():
+        nye.append(dict(emne='bygg', id=i, op='sett', felt=felt, verdi=verdi, hvem='Claude', dato='2026-10-30', grunn=f"{GRUNN}: {ALLE[i]['kilde']}"))
+    # bygg delt i fløyer (husdeling «felles_tak», Tøihuset 31.10): formene gjelder alle fløyene, pipene den fløya de står i
+    from shapely.geometry import Polygon, Point
+    ALLE = {}
+    for i0, f0 in FORMER.items():
+        g = (B.get(i0) or {}).get('floyer') or [i0]
+        for j in g:
+            if j not in B: continue
+            fj = dict(f0)
+            if f0.get('piper') is not None and len(g) > 1:
+                P = Polygon(B[j]['p']).buffer(0.3)
+                fj['piper'] = [q for q in f0['piper'] if P.contains(Point(*q))]
+            ALLE[j] = fj
+    for i, f in ALLE.items():
         x = B.get(i)
         if not x:
             print(i, 'finnes ikke'); continue

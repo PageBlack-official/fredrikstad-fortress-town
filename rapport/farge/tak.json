@@ -5152,7 +5152,7 @@
     102,
     84
    ],
-   "kvartaltegningen Kvartal12 (IoU 0.58)"
+   "kvartaltegningen Kvartal12 (IoU 0.57)"
   ],
   "for_": [
    246,
@@ -5164,7 +5164,7 @@
    102,
    84
   ],
-  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal12 (IoU 0.58): tegningens farge",
+  "kilde": "ortofoto 2024 (rød tegl) = kvartaltegningen Kvartal12 (IoU 0.57): tegningens farge",
   "aar": 2024
  },
  {
