@@ -161,9 +161,9 @@ const post=(()=>{
       void main(){ float a=texture2D(tDep,vUv).x, b=texture2D(tDep,vUv+vec2(1.,0.)/res).x, c=texture2D(tDep,vUv+vec2(0.,1.)/res).x; gl_FragColor=vec4(min(a,min(b,c)),0.,0.,1.); }` });
   const qM=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mM); qM.frustumCulled=false; const msc=new THREE.Scene(); msc.add(qM);
   const m=new THREE.ShaderMaterial({ defines: MIN_TEX ? {MIN_TEX:1} : {},
-    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
+    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}, uPunch:{value:Q0.get('punch')==='0'?0:+(Q0.get('punch')||1)}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve, uPunch; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -190,7 +190,12 @@ const post=(()=>{
       // Målet er satt i skjermverdier (99,9-persentilen i hjemmevisningen 222–243, ingen piksel over ca. 240), men dette passet skriver
       // lineært til et sRGB-mål (skjermkoden legges på av grafikkortet), så knekk og tak står her som lineære verdier: 230/255 → 0,787, 241/255 → 0,880.
       const float KNE=0.787, TAK=0.880;
+      const float PUNCH_METNING=0.45, PUNCH_KONTRAST=0.18;
       vec3 kurve(vec3 c){ vec3 t=max(c-KNE,0.); vec3 b=KNE+(TAK-KNE)*(1.-exp(-t/(TAK-KNE))); return mix(c, b, step(KNE,c)*uKurve); }
+      // punch (02.11 kveld, Vegar: «før» så mer imponerende ut): i skjermrom, etter fargekoden. Metningen løftes mest der den er svak
+      // (vibrance), så fargetonen står og de dømte husfargene beholder kuløren; og en svak S-kurve gir kontrast rundt midten. Papiret rundt får ingenting.
+      vec3 punch(vec3 c, float p){ if(p<=0.) return c; float l=dot(c,vec3(0.2126,0.7152,0.0722)); float mx=max(c.r,max(c.g,c.b)), mn=min(c.r,min(c.g,c.b));
+        c=clamp(mix(vec3(l), c, 1.+p*PUNCH_METNING*(1.-(mx-mn))),0.,1.); return mix(c, c*c*(3.-2.*c), p*PUNCH_KONTRAST); }
       void main(){
         vec3 col=texture2D(tCol,vUv).rgb;
         // miniatyr-effekt: myk uskarphet øverst og nederst i bildet (sterkest i introen)
@@ -272,6 +277,7 @@ const post=(()=>{
         col*=1.+(0.03*h(floor(gl_FragCoord.xy*0.5))-0.015)*uKorn;
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
+        gl_FragColor.rgb=punch(gl_FragColor.rgb, uPunch*(1.-smoothstep(380.,600.,rr)));
         gl_FragColor.rgb=kurve(gl_FragColor.rgb);
       }`
   });
@@ -500,9 +506,9 @@ const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
     grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
     tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
-    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}},
+    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}},
   vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader:`uniform float t, maks, harFelt, reflStyrke; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -541,6 +547,13 @@ const waterMat = new THREE.ShaderMaterial({
     float refl=(1.-smoothstep(0.,3.5,d))*smoothstep(kw*0.5,kw*1.2,d)*kai*0.16;
     c=mix(c, hi, refl);
     c=mix(c, c*vec3(0.62,0.70,0.74), murK*0.85);
+    // solgløtt (lys-og-bevegelse pkt. 3, 24.10; bygd 02.11 kveld): sola speiler seg i små bølger, så glitteret glir når byen dreies.
+    // Normalen kommer fra den samme bølgestøyen som fargen; smal topp (glitter) og en bred, svak glans rundt. Sparsomt, og borte ved kai og i skummet.
+    if(gloett>0.){ vec2 q2=wp.xz*0.9+vec2(t*0.35,t*0.21); float e=0.35;
+      float hx=n(q2+vec2(e,0.))-n(q2-vec2(e,0.)), hz=n(q2+vec2(0.,e))-n(q2-vec2(0.,e));
+      vec3 nn=normalize(vec3(-hx*1.6,1.,-hz*1.6)); vec3 v=normalize(cameraPosition-wp); vec3 hh=normalize(normalize(solD)+v);
+      float sp=max(dot(nn,hh),0.); float glitter=pow(sp,260.)*step(0.62,n(wp.xz*2.3+vec2(t*0.6,-t*0.4))); float glans=pow(sp,22.)*0.10;
+      c=mix(c, vec3(1.,0.985,0.93), clamp((glitter*1.1+glans)*gloett*(1.-kai)*(1.-skumK),0.,0.9)); }
     // langt ute: vannet blir lysere og roligere, så byen står i fokus
     float u=smoothstep(650.,1500.,length(wp.xz-vec2(sentrum.x,-sentrum.y)));
     c=mix(c, fjern, u*0.55);
@@ -659,9 +672,12 @@ function flatGruppe(grp, ekstra=['aBygg','aTopp']){
 // ---- kontaktskygge (lys-og-bevegelse pkt. 1, 24.10): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
 // Geometri på bakken (ikke skjermeffekt): et bånd rundt hver husfot og en skive under hvert tre, med alfa 1 inne og 0 ute,
 // multiplisert inn i bakken. Stabilt i fart, ingen prikking, skalerer som husene. Styrken er KONTAKT_STYRKE, bredden settes der båndene lages.
-const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : 0.42;
+// 02.11 kveld: lå på 4 cm, under brosteinen (5 cm) og gresset (28 cm) etter bakkelagene (A8), så regel 12 målte 0,1–0,2 %.
+// Nå ligger skyggen over øverste bakkelag (KONTAKT_Y) og vinner dybdetesten over alle lag i src/03 (polygonOffset større enn lag 4).
+const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : +(Q0.get('kontaktS')||0.5);
+const KONTAKT_Y = 0.3, KONTAKT_BREDDE = 2.4;
 const kontaktMat=new THREE.ShaderMaterial({
-  transparent:true, depthWrite:false, blending:THREE.MultiplyBlending, polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-2,
+  transparent:true, depthWrite:false, blending:THREE.MultiplyBlending, polygonOffset:true, polygonOffsetFactor:-8, polygonOffsetUnits:-40,
   uniforms:{ styrke:{value:KONTAKT_STYRKE} },
   vertexShader:`attribute float aAlfa; varying float vA; void main(){ vA=aAlfa; vec4 p=vec4(position,1.);
     #ifdef USE_INSTANCING
@@ -673,7 +689,7 @@ const kontaktMat=new THREE.ShaderMaterial({
 // bånd rundt et polygon (modellkoordinater x,y → verden x,-y), bredde d meter; returnerer posisjoner og alfa
 function fotBaand(pts, d, y){
   const n=pts.length; let areal=0; for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; areal+=a[0]*c[1]-c[0]*a[1]; }
-  const ut=areal>0 ? 1 : -1;                        // orientering avgjør hvilken side som er ut
+  const ut=areal>0 ? -1 : 1;                        // orientering avgjør hvilken side som er ut: (-ey,ex) peker INN i et mot-klokka polygon (rettet 03.11, båndet lå under husene)
   const pos=[], alfa=[], nrm=[];
   for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; const ex=c[0]-a[0], ey=c[1]-a[1], L=Math.hypot(ex,ey)||1; nrm.push([ -ey/L*ut, ex/L*ut ]); }
   const P=(x,yy,al)=>{ pos.push(x,y,-yy); alfa.push(al); };
@@ -1399,7 +1415,7 @@ if(vinduSamling.length) city.add(lagVinduer(vinduSamling));
 samler.clear();
 // kontaktskygge rundt alle husføtter: ett nett for hele byen
 { const pos=[], alfa=[];
-  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, 1.3, 0.04); pos.push(...f.pos); alfa.push(...f.alfa); });
+  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, KONTAKT_BREDDE, KONTAKT_Y); pos.push(...f.pos); alfa.push(...f.alfa); });
   const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setAttribute('aAlfa', new THREE.Float32BufferAttribute(alfa,1));
   const m=new THREE.Mesh(g, kontaktMat); m.frustumCulled=false; m.renderOrder=1; city.add(m); }
 
@@ -1701,7 +1717,7 @@ const stammer=lagInst(STAMME,stammeMat,stammeData); stammer.userData.stamme=true
   SKIVE.setAttribute('aAlfa', new THREE.BufferAttribute(al,1));
   const skiver=new THREE.InstancedMesh(SKIVE, kontaktMat, Math.max(1,TP.length)); skiver.count=TP.length; skiver.frustumCulled=false; skiver.renderOrder=1;
   const d=new THREE.Object3D();
-  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+0.04, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
+  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+KONTAKT_Y, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
   scene.add(skiver); }
 const dummy=new THREE.Object3D();
 function setCrowns(t){
@@ -2078,7 +2094,7 @@ function oppdater(){
   maalYtelse();
   const naa=performance.now(), dt=Math.min(0.1,(naa-sisteTid)/1000); sisteTid=naa;
   const t=Q.get('t')?+Q.get('t'):clock.getElapsedTime();
-  waterMat.uniforms.t.value=t;
+  waterMat.uniforms.t.value=t; waterMat.uniforms.solD.value.copy(_sd);
   if(!vokst) vokse(t*VEKST_FART+0.45);
   anim=map.isMoving();
   // løftet hus (valgt) og svakt løftet hus (pekeren over), uavhengig av bildefrekvens
