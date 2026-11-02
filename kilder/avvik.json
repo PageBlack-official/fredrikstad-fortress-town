@@ -1,0 +1,10 @@
+{
+ "om": "Avvikslista (Vegar 02.11 16:44: «Kan du holde styr på dette slik at ting du gjør ikke havner i glemmeboken når du driver å fikser? ... nesten er ikke lov»). Hver feil Vegar eller vi selv ser i kartet står her til den er rettet OG bevist. Regel 36 er rød så lenge en sak er åpen, eller en lukket sak mangler bevis (skjermbilde før og etter som finnes i repoet) og vakt (regel eller test som fanger feilen hvis den kommer tilbake). Saker fjernes aldri; de lukkes.",
+ "saker": [
+  {"id": "A1", "dato": "2026-11-02", "fra": "Vegar", "hva": "Infanterikasernen (bnr-193867537): veggen mot vest mangler mange vinduer", "hvor": {"bygg_id": "bnr-193867537"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
+  {"id": "A2", "dato": "2026-11-02", "fra": "Vegar", "hva": "Et rart lite hus foran en port, plassert feil, «rett ovenfor kirken» sett fra mobilens sluttbilde (asimut 193), dvs. i retning Tøihuset", "hvor": {"naer": "bnr-193867529 (Kirken), mot Tøihuset"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
+  {"id": "A3", "dato": "2026-11-02", "fra": "Vegar", "hva": "Bygningsnr. 193972101 har fått «et eller annet rart foran huset»", "hvor": {"bygg_id": "bnr-193972101"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
+  {"id": "A4", "dato": "2026-11-02", "fra": "Vegar", "hva": "«en del annet rart der også»: gå hele byen systematisk etter samme typer feil (manglende vinduer, løse/feilplasserte småbygg og objekter foran fasader og porter) og legg hvert funn inn her som egen sak", "hvor": {"hele": true}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
+  {"id": "A5", "dato": "2026-11-02", "fra": "Vegar", "hva": "«versjonskonflikt»: sjekk om rettelser som en gang var gjort (vinduer, småbygg, porter) har falt ut ved sammenslåinger av greiner", "hvor": {"hele": true}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null}
+ ]
+}
