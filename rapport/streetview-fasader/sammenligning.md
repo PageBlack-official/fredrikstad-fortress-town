@@ -75,7 +75,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193918239 | Bullgården | [7, 5] | [7, 5] | 1 til høyre, brun/oliven dobbeldør med overlys | 1 | 1 midtark (gavl) med tre vinduer og rundt vindu | 0 | 1 | 1 |  |
 | bnr-193867359 |  | [1] | [5] | 0 synlig på langsiden | 0 | 0 | 0 | 1 murt pipe (lenger bort) | 1 | ja |
 | bnr-193867707 |  | [6, 6] | [6, 6] | 1 portrom/kjøreport til høyre med dobbel sandfarget fyllingsport (åpen) | 1 | None | 0 | None | 1 |  |
-| bnr-193972403 |  | [2, 4] | [2, 3, 2] | 1 til venstre, mørk brun dobbel fyllingsdør | 0 | 0 | 0 | 0 | 1 | ja |
+| bnr-193972403 |  | [2, 4] | [2, 3] | 1 til venstre, mørk brun dobbel fyllingsdør | 0 | 0 | 0 | 0 | 1 | ja |
 | bnr-193867839 |  | [6, 8] | [4, 4] | 1 mørk grønn fyllingsdør med overlys ca. 0.38, steintrapp med 3 trinn; 1 mørk grønn tofløyet port ca. 0.62–0.72 | 2 | 0 | 0 | 2 røde teglpiper | 0 | ja |
 | bnr-193971288 |  | [2, 2] | [2, 2] | 0 på fasaden | 0 | 0 | 0 | 1 murt teglpipe | 1 |  |
 | bnr-193867685 |  | [7] | [] | ingen på denne langsiden | 0 | 0 | 0 | 3 | 2 | ja |
@@ -110,8 +110,8 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867499 | Kommandantgården | [9] | [9] | 1 mørk brun dør i sokkelen (ca. 0.60), kjellerluker med rundbue (4 stk) | 1 | 2 arker med saltak (ca. 0.55 og 0.70) med hvite vinduer | 0 | ikke synlig fra denne vinkelen | 6 |  |
 | bnr-193870295 | Bakeriet | [10] | [13] | 2 grå plankedører (ca. 0.27 og 0.72) med små steintrapper | 1 | 5 små takvinduer (skylights) | 0 | 3 (2 murte tegl, 1 blikk) | 4 | ja |
 | bnr-193870325 | Hovedvakten – det gamle slaveri | [1] | [4] | 0 i utsnittet | 1 | 0 | 0 | ikke synlig | 4 | ja |
-| bnr-193870317 | Det grundmurede provianthus | [0] | [6] | 2 rundbuede dører (ca. 0.10 og 0.40 av synlig vegg), mørke | 3 | 0 | 0 | 0 | 9 | ja |
-| bnr-193870309 | Offisersvakten | [2] | [2] | 1 olivengrønn tofløyet fyllingsdør på gavlen med overlys og steintrapp | 1 | 0 | 0 | 1 rød teglpipe | 1 |  |
+| bnr-193870317 | Det grundmurede provianthus | [0] | [] | 2 rundbuede dører (ca. 0.10 og 0.40 av synlig vegg), mørke | 3 | 0 | 0 | 0 | 9 |  |
+| bnr-193870309 | Offisersvakten | [2] | [] | 1 olivengrønn tofløyet fyllingsdør på gavlen med overlys og steintrapp | 1 | 0 | 0 | 1 rød teglpipe | 1 | ja |
 | bnr-193870201 |  | [4, 4] | [3, 3] | 1 på kortsiden nede til venstre (ca. 0.15), mørk skilt-tavle ved døra | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193870228 |  | [6, 6] | [5, 5, 1] | 1 grågrønn fyllingsdør med overlys og lykt, ca. 0.48 av fasaden; 1 tofløyet grågrønn port helt til venstre (ca. 0.03–0.17) | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-193972063 | mediebygning | [3, 3] | [2, 2] | 1 rundbuet port/dør i rød tegl med brun dør, hjørnet til høyre (ca. 0.75–0.90) | 1 | 0 | 0 | ikke synlig | 0 | ja |
@@ -153,7 +153,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868622 |  | [5, 4] | [5, 4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 1 | 0 | 0 | ikke synlig | 1 |  |
 | bnr-193867979 |  | [5, 6] | [7, 4, 7] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-16290424 | annen lagerbygning | [2, 3] | [2, 3] | 0 på gavlen | 0 | 0 | 0 | 0 | 0 |  |
-| bnr-193972195 | kontor- og administrasjonsbygning | [2] | [1, 1, 1] | skjult bak gjerdet | 0 | 0 | 0 | None | 1 | ja |
+| bnr-193972195 | kontor- og administrasjonsbygning | [2] | [1] | skjult bak gjerdet | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193868444 |  | [8] | [5] | 0 i utsnittet | 1 | 7 arker med flate/pult-tak i grå sink og hvite vinduer | 0 | ikke synlig | 3 | ja |
 | bnr-193868223 | Muldvadgården | [4, 2] | [4, 2] | 2 rundbuede kjellerdører (grå/svarte) i sokkelen, ca. 0.30 og 0.90 | 2 | 0 | 0 | ikke synlig | 1 |  |
 | bnr-193868282 |  | [4] | [4] | 2 svarte tofløyede kjellerdører i teglbuer i sokkelen (ca. 0.25 og 0.75) | 2 | 0 | 0 | ikke synlig | 4 |  |

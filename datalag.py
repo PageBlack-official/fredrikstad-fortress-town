@@ -216,6 +216,27 @@ def til_monet(x, px, py):
     return px, py
 
 
+def sokkel_etasje(x):
+    """Sokkel som er en hel etasje (02.11, avvik A10): sokkel.etasje = steinen går fra bakken til underkant av vinduene i
+    andre etasje (første vindusrad over den nederste); sokkel.hele = hele veggen er stein. Høyden regnes her hver gang,
+    så den følger vinduene og høyden; et tall i sokkel.h overstyres. Ett vindusrad: hele veggen."""
+    s = x.get('sokkel')
+    if not s or not (s.get('etasje') or s.get('hele')):
+        return
+    h = float(x.get('h') or 0)
+    if s.get('etasje'):
+        v0 = sorted((v[2], v[8]) for v in (x.get('vind') or []) if v[9] == 0 and v[8] >= 0.8)
+        rader = []
+        for z, vh in v0:
+            if rader and z - rader[-1][0][0] <= 1.0: rader[-1].append((z, vh))
+            else: rader.append([(z, vh)])
+        rader = [r for r in rader if len(r) >= 2] or rader
+        ny = round(min(z - vh / 2 for z, vh in rader[1]), 2) if len(rader) >= 2 else h
+    else:
+        ny = h
+    x['sokkel'] = dict(s, h=round(min(ny, h), 2))
+
+
 def hoyden_styrer(data, grunn):
     """Høyden er grunnlaget for alt som står på huset (24.10).
     Piper og arker står på taket: høyden deres regnes alltid fra takflatene og husets høyde (h + t·th, samme formel som kartet
@@ -244,6 +265,14 @@ def hoyden_styrer(data, grunn):
                     z = q[2]
                 ny.append([q[0], q[1], z] + list(q[3:]))
             x[felt] = ny
+        # vinduer over takfoten (02.11, A13): en rettelse lest mot en eldre, høyere høyde (v33 og grunnmuren før høydene ble målt)
+        # beholdt radene over gesimsen, og de stod ute i lufta over takfoten (Det grundmurede provianthus: rader på 7,6 m, h 6,0).
+        # Vinduer i arker (innen 1,5 m fra en ark) og takvinduer (typ 3) står over gesimsen med vilje.
+        if x.get('vind') and not x.get('kirke'):
+            ark = x.get('arker') or []
+            x['vind'] = [v for v in x['vind'] if v[9] == 3 or v[2] + v[8] / 2 <= h1 - 0.1
+                         or any(math.hypot(v[0] - a[0], v[1] - a[1]) < 1.5 for a in ark)]
+        sokkel_etasje(x)
         if abs(h1 - h0) < 0.05 and abs(f - 1) < 0.01:
             continue
         if x.get('vind') and x['vind'] is g.get('vind'):   # vinduer satt med egen rettelse er allerede lest mot målt høyde (v33)

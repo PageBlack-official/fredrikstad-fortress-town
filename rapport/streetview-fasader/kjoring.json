@@ -1063,8 +1063,7 @@
   "modell": {
    "rader": [
     2,
-    3,
-    2
+    3
    ],
    "dorer": 0,
    "arker": 0,
@@ -2793,14 +2792,12 @@
   "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
-   "rader": [
-    6
-   ],
+   "rader": [],
    "dorer": 3,
    "arker": 0,
    "piper": 9
   },
-  "avvik": true,
+  "avvik": false,
   "dorer_avvik": true
  },
  {
@@ -2826,14 +2823,12 @@
   "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
-   "rader": [
-    2
-   ],
+   "rader": [],
    "dorer": 1,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {
@@ -5009,8 +5004,6 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    1,
-    1,
     1
    ],
    "dorer": 0,

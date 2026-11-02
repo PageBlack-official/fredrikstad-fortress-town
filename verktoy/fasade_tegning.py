@@ -907,6 +907,34 @@ def les_fra_kontroll(navn=None):
         print(f'{n}: {len(ut)} vegger lest fra kontrollkoblingen ({sum(len(v["elementer"]) for v in ut)} elementer)')
 
 
+def rader_som_tegnet(regler, tegnet):
+    """Vegger tegningen ikke viser, får husets tegnede etasjer, ikke reglenes (02.11, avvik A10/A13): reglene regner etasjer av
+    høyden (3 m), så et hus tegnet med to høye etasjer (Artillerigården, 9 m) fikk tre vindusrader på baksiden. Radene i reglene
+    flyttes til de tegnede radhøydene (nederst først); rader utover de tegnede tas ut. Dører (typ 1) står."""
+    import numpy as _np
+    def grupper(vs):
+        zs = sorted(v[2] for v in vs); g, ut = [], []
+        for z in zs:
+            if g and z - g[0] > 1.0: ut.append(g); g = []
+            g.append(z)
+        if g: ut.append(g)
+        return ut
+    t0 = [v for v in tegnet if v[9] == 0 and v[8] >= 0.8]
+    if not t0: return regler
+    tg = [g for g in grupper(t0) if len(g) >= 2] or grupper(t0)
+    trad = [float(_np.median(g)) for g in tg]
+    r0 = [v for v in regler if v[9] == 0]
+    rg = grupper(r0); rrad = [float(_np.median(g)) for g in rg]
+    def rad(z): return min(range(len(rrad)), key=lambda k: abs(rrad[k] - z)) if rrad else 0
+    ut = []
+    for v in regler:
+        if v[9] != 0: ut.append(v); continue
+        k = rad(v[2])
+        if k >= len(trad): continue
+        ut.append(list(v[:2]) + [round(trad[k], 2)] + list(v[3:]))
+    return ut
+
+
 def legg_inn(tørt=False, bare=None):
     """Vind fra avlesningene (kilder/fasade-tegning/*.json) som rettelser. Tegnede vegger får tegningens elementer; veggene
     tegningen ikke viser, får reglene (vinduer_regler). Idempotent: egne linjer (GRUNN) tas ut først."""
@@ -1039,6 +1067,7 @@ def legg_inn(tørt=False, bare=None):
                 info[kk] = dict(tegning='Street View', rader=sv['rader'], dorer=sum(1 for q in sv['vind'] if q[9] in (1, 2)), notat=[sv['kilde']])
         sv_vind = [v for sv in sv_vegger.values() for v in sv['vind']]
         regler = [v for v in VR.lag_vind(x, omg)[0] if VG.naermeste_vegg(V, np.array(v[:2]))[0] not in beste and VG.naermeste_vegg(V, np.array(v[:2]))[0] not in sv_vegger]
+        regler = rader_som_tegnet(regler, tegnet + [v for sv in sv_vegger.values() for v in sv['vind']])
         vind = regler + sv_vind + tegnet
         nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "vind", "verdi": vind, "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
         nye.append({"emne": "bygg", "id": i, "op": "sett", "felt": "fasade_kilde", "verdi": "kvartaltegning", "hvem": "Claude", "dato": '2026-10-29', "grunn": GRUNN})
