@@ -135,12 +135,16 @@
      -22
     ]
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "bakke.py overflater leste murens og brannstasjonens halvskygge i ortofoto 2024 som bar jord. Kvartal11 og fotoet viser belagt gård.",
-   "rettelse": "Gården langs innsiden av muren dømt som belagt i kilder/bakke-maalt.json («flater», med grunn), bakke.py overflater kjørt: fl-467 og fl-476 skjult.",
-   "rettet_i": "3a47f65",
-   "bevis": [],
-   "vakt": null
+   "rettelse": "bakke.py: bar jord (bed) må ses i sol på minst halve flaten (BED_SETT 0,5), som belagte flater allerede måtte. 30 av 61 bed i byen lå i skygge eller halvskygge og er tatt ut; ortofotoet sjekket for fl-278 og fl-341 (skygge av hus og tre). En håndflate langs muren ble prøvd først og tatt ut igjen (den ga en rett asfaltstripe). Regel 15 og 31 grønne.",
+   "rettet_i": "0ffb8c0",
+   "bevis": [
+    "rapport/avvik/A7-foer-kasernegaarden-ovenfra.jpg",
+    "rapport/avvik/A7-etter-kasernegaarden-ovenfra.jpg",
+    "rapport/avvik/A7-foer-etter-utsnitt.jpg"
+   ],
+   "vakt": "31_overflater"
   }
  ]
 }
