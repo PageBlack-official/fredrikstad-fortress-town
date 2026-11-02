@@ -6,6 +6,12 @@ function polyShape(pts){
   const s = new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0], p[1])));
   return s;
 }
+// BAKKELAG (02.11, avvik A8): flater som ligger nesten i samme høyde (brostein 5 cm, veier 7–10 cm, flater 9 cm, parkering 12 cm,
+// gress 28 cm) z-kjempet på avstand og flimret når kartet ble flyttet («tagger»). Rekkefølgen avgjøres nå i dybdetesten med
+// polygonOffset per lag, ikke av centimeterforskjeller: lag 0 terreng/brostein, 1 veier, 2 flater, 3 parkering, 4 gress.
+const BAKKELAG={terreng:0, brostein:0, vei:1, flate:2, parkering:3, gress:4};
+// Innen et lag får hver farge sitt underlag (0–3), så to veier eller to flater av ulik type som overlapper, heller ikke kjemper.
+function bakkelag(mat, lag, under=0){ mat.polygonOffset=true; mat.polygonOffsetFactor=-lag; mat.polygonOffsetUnits=-4*lag-under; mat.userData.bakkelag=[lag,under]; return mat; }
 function flat(pts, y, mat){
   if (pts.length<3) return null;
   const g = new THREE.ShapeGeometry(polyShape(pts));

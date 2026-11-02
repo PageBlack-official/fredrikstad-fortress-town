@@ -27,6 +27,7 @@ const stoneMat = new THREE.ShaderMaterial({
   }`
 });
 medSkygge(stoneMat);
+bakkelag(stoneMat, BAKKELAG.brostein);   // avvik A8: lagrekkefølgen i dybdetesten (src/03)
 if (DATA.brostein){ const m=flat(DATA.brostein,0.05,stoneMat); }
 const greenMat = new THREE.MeshLambertMaterial({color:0x9dcfa5});
 const plenMat=new THREE.ShaderMaterial({
@@ -39,5 +40,5 @@ const plenMat=new THREE.ShaderMaterial({
     #include <colorspace_fragment>
     }`
 });
-medSkygge(plenMat);
+medSkygge(plenMat); bakkelag(plenMat, BAKKELAG.gress);
 // plenene og gårdsrommene tegnes i 17_bakkeflater-og-parkering.js (sammen med parkering og flatene målt i ortofotoet)

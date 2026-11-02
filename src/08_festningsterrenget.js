@@ -47,7 +47,7 @@ if (TER){
         #include <colorspace_fragment>
       }`
   });
-  medSkygge(terMat);
+  medSkygge(terMat); bakkelag(terMat, BAKKELAG.terreng);
   const ter=new THREE.Mesh(g,terMat); ter.receiveShadow=true; scene.add(ter);
   // festningsområdet som flate under terrenget: gir eksakt kant mot bakken og vannet
   (DATA.landskap.fest||[]).forEach(p=>flatH(p,[],0.02,terMat));
@@ -59,12 +59,19 @@ if (TER){
   const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}, B:{p:[],i:[]}, H:{p:[],i:[]}, U:{p:[],i:[]}};
   const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
-    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.flate==='brostein'?buf.B:v.flate==='heller'?buf.H:v.flate==='grus'?buf.U:(v.k==='gang'?buf.G:buf.K);
-    const L=[], R=[];
+    // båndet legges på terrenget (avvik A8, 02.11): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
+    // skar gjennom vollens terreng (terrenget stakk opp som takker som flimret). Biten deles opp til halve terrengrutenettet, og
+    // hver kant løftes til minst terrenget + 6 cm.
+    const P0=v.p; if(P0.length<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.flate==='brostein'?buf.B:v.flate==='heller'?buf.H:v.flate==='grus'?buf.U:(v.k==='gang'?buf.G:buf.K);
+    const steg=TER?TER.g/2:2, P=[P0[0]];
+    for(let k=1;k<P0.length;k++){ const a=P0[k-1], c=P0[k], m=Math.max(1,Math.ceil(Math.hypot(c[0]-a[0],c[1]-a[1])/steg));
+      for(let j=1;j<=m;j++){ const t=j/m; P.push([a[0]+(c[0]-a[0])*t, a[1]+(c[1]-a[1])*t, a[2]+(c[2]-a[2])*t]); } }
+    const n=P.length, L=[], R=[];
     for(let k=0;k<n;k++){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
-      const nx=-dy*w, ny=dx*w, z=P[k][2]+dz;
-      L.push([P[k][0]+nx, z, -(P[k][1]+ny)]); R.push([P[k][0]-nx, z, -(P[k][1]-ny)]);
+      const nx=-dy*w, ny=dx*w;
+      const zL=Math.max(P[k][2], hAt(P[k][0]+nx,P[k][1]+ny)+0.06)+dz, zR=Math.max(P[k][2], hAt(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
+      L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){
       quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
@@ -73,9 +80,9 @@ if (TER){
       }
     }
   });
-  [[buf.K,mat([128,124,120],false)],[buf.G,mat([146,142,134],false)],[buf.S,mat([120,112,104],false)],[buf.H,mat([190,184,174],false)],[buf.U,mat([214,204,182],false)]].forEach(([B,m])=>{
+  [[buf.K,mat([128,124,120],false),0],[buf.G,mat([146,142,134],false),1],[buf.S,mat([120,112,104],false),0],[buf.H,mat([190,184,174],false),2],[buf.U,mat([214,204,182],false),3]].forEach(([B,m,under])=>{
     if(!B.p.length) return; const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3)); g.setIndex(B.i);
-    const mm=m.clone(); mm.side=THREE.DoubleSide; const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
+    const mm=m.clone(); mm.side=THREE.DoubleSide; if(B!==buf.S) bakkelag(mm, BAKKELAG.vei, under); const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
   if(buf.B.p.length){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(buf.B.p,3)); g.setIndex(buf.B.i);
     stoneMat.side=THREE.DoubleSide; const me=new THREE.Mesh(g,stoneMat); me.receiveShadow=true; scene.add(me); }
 }
