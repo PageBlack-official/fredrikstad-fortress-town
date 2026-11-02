@@ -312,86 +312,6 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193867537",
-  "navn": "Infanterikasernen",
-  "vegger": {
-   "13": {
-    "tegning": "Kvartal11",
-    "rader": [
-     3,
-     3,
-     3
-    ],
-    "dorer": 0,
-    "notat": []
-   },
-   "8": {
-    "tegning": "Kvartal11",
-    "rader": [
-     6,
-     8,
-     8
-    ],
-    "dorer": 1,
-    "notat": []
-   },
-   "7": {
-    "tegning": "Kvartal11",
-    "rader": [
-     4,
-     4,
-     4
-    ],
-    "dorer": 1,
-    "notat": []
-   },
-   "6": {
-    "tegning": "Kvartal11",
-    "rader": [
-     4,
-     4,
-     4
-    ],
-    "dorer": 1,
-    "notat": []
-   },
-   "3": {
-    "tegning": "Kvartal11",
-    "rader": [
-     6,
-     7,
-     7
-    ],
-    "dorer": 0,
-    "notat": []
-   },
-   "18": {
-    "tegning": "Kvartal11",
-    "rader": [
-     3,
-     3,
-     3
-    ],
-    "dorer": 0,
-    "notat": []
-   },
-   "17": {
-    "tegning": "Street View",
-    "rader": [
-     6,
-     5
-    ],
-    "dorer": 0,
-    "notat": [
-     "Street View aug. 2010"
-    ]
-   }
-  },
-  "tegnet": 87,
-  "regler": 93,
-  "streetview": 11
- },
- {
   "id": "bnr-193868568",
   "navn": "Brannstasjon - uthus til Infanterikasernen",
   "vegger": {
@@ -644,22 +564,11 @@
     "rader": [],
     "dorer": 0,
     "notat": []
-   },
-   "1": {
-    "tegning": "Street View",
-    "rader": [
-     3,
-     3
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 0,
-  "regler": 10,
-  "streetview": 7
+  "regler": 22,
+  "streetview": 0
  },
  {
   "id": "bnr-193868592",
@@ -1023,21 +932,11 @@
     "rader": [],
     "dorer": 0,
     "notat": []
-   },
-   "5": {
-    "tegning": "Street View",
-    "rader": [
-     0
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 0,
-  "regler": 5,
-  "streetview": 1
+  "regler": 9,
+  "streetview": 0
  },
  {
   "id": "bnr-193867693",
@@ -1438,21 +1337,11 @@
     ],
     "dorer": 0,
     "notat": []
-   },
-   "0": {
-    "tegning": "Street View",
-    "rader": [
-     1
-    ],
-    "dorer": 0,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 8,
-  "regler": 16,
-  "streetview": 1
+  "regler": 19,
+  "streetview": 0
  },
  {
   "id": "bnr-193868401",
@@ -1649,21 +1538,11 @@
     "dorer": 1,
     "notat": [],
     "kobling": "kontroll"
-   },
-   "6": {
-    "tegning": "Street View",
-    "rader": [
-     2
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 10,
-  "regler": 14,
-  "streetview": 3
+  "regler": 20,
+  "streetview": 0
  },
  {
   "id": "bnr-13414904",
@@ -2527,22 +2406,11 @@
     ],
     "dorer": 0,
     "notat": []
-   },
-   "8": {
-    "tegning": "Street View",
-    "rader": [
-     2,
-     2
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View aug. 2010"
-    ]
    }
   },
   "tegnet": 4,
-  "regler": 1,
-  "streetview": 5
+  "regler": 5,
+  "streetview": 0
  },
  {
   "id": "bnr-193868029",
@@ -2673,11 +2541,22 @@
     "rader": [],
     "dorer": 0,
     "notat": []
+   },
+   "1": {
+    "tegning": "Street View",
+    "rader": [
+     5,
+     8
+    ],
+    "dorer": 1,
+    "notat": [
+     "Street View aug. 2010"
+    ]
    }
   },
   "tegnet": 0,
-  "regler": 42,
-  "streetview": 0
+  "regler": 24,
+  "streetview": 14
  },
  {
   "id": "bnr-193971369",
@@ -2859,22 +2738,11 @@
     ],
     "dorer": 0,
     "notat": []
-   },
-   "4": {
-    "tegning": "Street View",
-    "rader": [
-     1,
-     1
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 9,
-  "regler": 9,
-  "streetview": 3
+  "regler": 12,
+  "streetview": 0
  },
  {
   "id": "bnr-193971946",
@@ -3088,22 +2956,11 @@
     "dorer": 0,
     "notat": [],
     "kobling": "kontroll"
-   },
-   "0": {
-    "tegning": "Street View",
-    "rader": [
-     4,
-     4
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View aug. 2010"
-    ]
    }
   },
   "tegnet": 2,
-  "regler": 8,
-  "streetview": 9
+  "regler": 22,
+  "streetview": 0
  },
  {
   "id": "bnr-193972047",
@@ -3438,16 +3295,6 @@
     "notat": [],
     "kobling": "kontroll"
    },
-   "8": {
-    "tegning": "Street View",
-    "rader": [
-     3
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View aug. 2010"
-    ]
-   },
    "7": {
     "tegning": "Street View",
     "rader": [
@@ -3460,8 +3307,8 @@
    }
   },
   "tegnet": 0,
-  "regler": 2,
-  "streetview": 10
+  "regler": 7,
+  "streetview": 6
  },
  {
   "id": "bnr-193867634",

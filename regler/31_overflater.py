@@ -4,6 +4,7 @@ Måles per piksel (0,25 m) der ortofotoet ser bakken (ikke hus, trekrone, skygge
   - type på belagt mark (brostein / asfalt / grus) = typen klassifisert fra fotoet: krav >= 95 %
   - prøvepunktene dømt med øyet i ortofotoet (kilder/bakke-maalt.json «prover»): modellens type = dommen, krav >= 95 %
   - dekning: hele Gamlebyen er tegnet (ingen bar bakgrunn utenfor hus og vann): krav >= 99 %
+  - hvert bed fra fotoet ses i sol på minst halve flaten (bakke.BED_SETT; avvik A7 02.11: skygge ved murer ble lest som bed)
 Fasit og modell kommer fra verktoy/bakke.py (bakkekart, modell). Bevis: rapport/31_overflater.jpg (ikke i git: ortofotoet),
 rødt = modellen har annen gruppe enn fotoet, gult = annen belagt type."""
 import os, sys, cv2, numpy as np
@@ -43,9 +44,16 @@ for a in (1, 2, 3):
     n = (s & (gf == a)).sum()
     if n: tab.append(f"- fotoet {navn[a]}: {n * M * M:.0f} m², modellen enig {((s & (gf == a) & (gm == a)).sum() / n):.1%}"
                      + ''.join(f", {navn[b]} {((s & (gf == a) & (gm == b)).sum() * M * M):.0f} m²" for b in (1, 2, 3) if b != a and (s & (gf == a) & (gm == b)).any()))
-ok = a_gr >= 0.95 and a_ty >= 0.95 and a_pr >= 0.95 and a_dk >= 0.99
+# bar jord (bed) må ses i sol på minst halve flaten (bakke.BED_SETT): bed i skygge inntil murer og vegger var skygge (avvik A7, 02.11)
+bed_skygge = []
+for fl in d['flater']:
+    if fl.get('skjul') or fl.get('typ') != 'bed' or not fl.get('kilde', '').startswith('ortofoto 2024 klassifisert'): continue
+    qm = (B.maske([fl['p']], R, M) > 0) & inn
+    if qm.sum() and (f['sett'][qm] > 0).mean() < B.BED_SETT: bed_skygge.append(f"{fl['id']} ({(f['sett'][qm] > 0).mean():.0%} sett i sol)")
+ok = a_gr >= 0.95 and a_ty >= 0.95 and a_pr >= 0.95 and a_dk >= 0.99 and not bed_skygge
 lin = [f"gruppe {a_gr:.1%} (krav 95 %), belagt type {a_ty:.1%} (krav 95 %), prøvepunkter {a_pr:.0%} av {len(treff)} (krav 95 %), dekning {a_dk:.2%} (krav 99 %)",
        f"målt på {s.sum() * M * M:.0f} m² bakke som ortofotoet ser, i Gamlebyen ({inn.sum() * M * M:.0f} m² med hus og vann)", ''] + tab
+if bed_skygge: lin += ['', f"FEIL bed som fotoet ikke ser i sol (krav {B.BED_SETT:.0%}): " + ', '.join(bed_skygge)]
 bom = [t for t in treff if not t[0]]
 if bom: lin += ['', 'Prøvepunkter der modellen bommer (x, y, dømt, modell):'] + [f"- ({x:.1f}, {y:.1f}) {t} / {mt}" for _, x, y, t, mt in bom]
 # bevis

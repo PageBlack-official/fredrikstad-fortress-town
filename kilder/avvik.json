@@ -56,15 +56,16 @@
    "hvor": {
     "bygg_id": "bnr-193972101"
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Parkeringsflaten til parkering-1-4627 (Torvgaten, beboerparkering): src/17 tegnet kommunens rad som en glatt grå flate 12 cm over brosteinen langs hele garasjefasaden, oppå den målte brosteinsflaten med oppmerking (fl-576). Det så ut som en mørk skrå plate foran huset. Samme feil på 19 andre rader med målt flate (bl.a. Kasernegaten ved Kasernen).",
    "rettet_i": "ea0b5af",
    "bevis": [
-    "rapport/avvik/A3-foer-torvgaten-az193.jpg"
+    "rapport/avvik/A3-foer-torvgaten-az193.jpg",
+    "rapport/avvik/A3-etter-torvgaten-az193.jpg",
+    "rapport/avvik/A3-foer-etter-utsnitt.jpg"
    ],
    "vakt": "40_parkering_paa_brostein",
-   "rettelse": "src/17: der raden er målt som flate (flater[].parkering_id), tegnes bare flaten og oppmerkingen.",
-   "merknad": "Rettet og bygget (ea0b5af); etterbildet fra samme kamera rendres (scratchpad b2/e0.png). Lukkes når det er lagt i rapport/avvik/ og sett."
+   "rettelse": "src/17: der raden er målt som flate (flater[].parkering_id), tegnes bare flaten og oppmerkingen."
   },
   {
    "id": "A4",
@@ -79,7 +80,7 @@
    "rettet_i": null,
    "bevis": [],
    "vakt": null,
-   "merknad": "Funnet så langt (02.11): A6 (parkering-1-4625), tre falske bed langs Kasernen (rettet med A1), to små bed i Kasernegården inntil mu-1 (fl-467, fl-476: trolig skygge fra brannstasjonen og muren, ikke dømt), 70 frie yttervegger over 8 m uten vinduer (de fleste er blanke i tegningen; uavklart: bnr-16308102 vegg 0, Voldporten vegg 0, bnr-194006187 vegg 2, Det nye rådhus vegg 4, bnr-193972306 og bnr-193972446 uten fasadekilde). Kvartal for kvartal med skjermbilder er ikke gjort ennå."
+   "merknad": "Gjort 02.11: kontaktark for alle 17 kvartaler fra asimut 200 (rapport/avvik/A4-kvartaler-az200.jpg), sluttbildene mobil og bred skjerm, datasjekker for småbygg i murer/porter (regel 38), parkeringsflater (regel 40), bed i skygge (regel 31), dører med ting foran, trær i hus, frie vegger uten vinduer. Funn rettet som egne saker: A6 (parkering-1-4625), A7 (30 falske bed). Åpne spørsmål, ikke avgjort: (1) frie vegger uten vinduer der tegningen ikke viser veggen: bnr-16308102 vegg 0, Voldporten vegg 0, bnr-194006187 vegg 2, Det nye rådhus vegg 4, bnr-193972306 og bnr-193972446 (ingen fasadekilde); (2) Mellomporten (pb-11) er rød etter 2015-trykkfila (ikke dømt) – riktig?; (3) en rett skjøt i brosteinsmønsteret over Torvet (to brosteinsflater møtes); (4) lyse fortau med fint stripemønster i smale gater (Raadhusgaten). Kontaktarket er bygd før A8–A12 og bør tas på nytt fra flere asimuter."
   },
   {
    "id": "A5",
@@ -113,13 +114,134 @@
      140
     ]
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Håndmålt ramme i kilder/flater-maalt.json (29.10) med seks grove hjørner: «nordkanten er usikker». Rammen tok med husveggene og plenkanten.",
-   "rettelse": "Målt på nytt i ortofoto 2024 langs husveggene og plenkanten (kilder/flater-maalt.json, verktoy/parkering.py lag).",
+   "rettelse": "Målt på nytt i ortofoto 2024 langs husveggene og plenkanten (kilder/flater-maalt.json, verktoy/parkering.py lag). Regel 40 er utvidet: en parkeringsflate som tegnes, kan ikke ligge over 10 % på gress eller i hus (den gamle rammen: 16 % i hus).",
    "rettet_i": "ea0b5af",
-   "bevis": [],
-   "vakt": null,
-   "merknad": "Før/etter-bilde rendres (scratchpad b2/f1.png og b2/e1.png). Vakt: regel 23 sjekker 25 % i hus; plenen er ikke sjekket ennå."
+   "bevis": [
+    "rapport/avvik/A6-foer-faergeportgaten-az200.jpg",
+    "rapport/avvik/A6-etter-faergeportgaten-az200.jpg"
+   ],
+   "vakt": "40_parkering_paa_brostein"
+  },
+  {
+   "id": "A7",
+   "dato": "2026-11-02",
+   "fra": "Claude (A4)",
+   "hva": "To små brune «bed» på brosteinen i Kasernegården, inntil gårdsmuren mot Rådhusgaten (fl-467, fl-476)",
+   "hvor": {
+    "naer": [
+     49,
+     -22
+    ]
+   },
+   "status": "lukket",
+   "aarsak": "bakke.py overflater leste murens og brannstasjonens halvskygge i ortofoto 2024 som bar jord. Kvartal11 og fotoet viser belagt gård.",
+   "rettelse": "bakke.py: bar jord (bed) må ses i sol på minst halve flaten (BED_SETT 0,5), som belagte flater allerede måtte. 30 av 61 bed i byen lå i skygge eller halvskygge og er tatt ut; ortofotoet sjekket for fl-278 og fl-341 (skygge av hus og tre). En håndflate langs muren ble prøvd først og tatt ut igjen (den ga en rett asfaltstripe). Regel 15 og 31 grønne.",
+   "rettet_i": "0ffb8c0",
+   "bevis": [
+    "rapport/avvik/A7-foer-kasernegaarden-ovenfra.jpg",
+    "rapport/avvik/A7-etter-kasernegaarden-ovenfra.jpg",
+    "rapport/avvik/A7-foer-etter-utsnitt.jpg"
+   ],
+   "vakt": "31_overflater"
+  },
+  {
+   "id": "A8",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.26, vedlegg 1 og 2)",
+   "hva": "«Tagger» som glitcher og vibrerer når man scroller: lyse takkete striper langs en liten rød portbygning (Mellomporten) og striper på bakken langs husvegger og stier",
+   "hvor": {
+    "naer": "Mellomporten pb-11 (-67, 75) og veikryss i hele byen"
+   },
+   "status": "lukket",
+   "aarsak": "Bakken er mange lag nesten i samme høyde: brostein 5 cm, gangveier 7 cm, flater 9 cm, kjøreveier 10 cm, parkering 12 cm, gress 28 cm. På avstand er dybdebufferen grovere enn centimeterne, så lag av ulik farge z-kjempet og flimret i fart: 139 kryss mellom veier med ulik flate (1 467 m²) og 2 overlapp mellom flater av ulik type lå i nøyaktig samme høyde. På vollene skar rette veibiter (punkter opptil 30 m fra hverandre) gjennom terrenget, som stakk opp som takker (ved Mellomporten).",
+   "rettelse": "src/03 BAKKELAG/bakkelag(): hvert bakkelag og hver farge i laget har egen polygonOffset (terreng/brostein < veier < flater < parkering < gress), så rekkefølgen ikke avhenger av centimeter; src/08: veibitene deles opp til halve terrengrutenettet og hver kant legges minst 6 cm over terrenget.",
+   "rettet_i": "7cd88da",
+   "bevis": [
+    "rapport/avvik/A8-foer-mellomporten-az200.jpg",
+    "rapport/avvik/A8-etter-mellomporten-az200.jpg",
+    "rapport/avvik/A8-foer-mellomporten-az20.jpg",
+    "rapport/avvik/A8-etter-mellomporten-az20.jpg",
+    "rapport/avvik/A8-foer-etter-utsnitt.jpg"
+   ],
+   "vakt": "42_bakkelag",
+   "merknad": "Flimringen i fart kan ikke filmes på programvare-GPU-en; stillbildene viser takkene ved Mellomporten (gress gjennom stien) før og etter. Vedlegg 2 (striper langs husvegger) er samme årsak: kryss mellom veier av ulik flate. Vegar bør se etter i Chrome når det er slått inn."
+  },
+  {
+   "id": "A9",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.26, vedlegg 3 og 4)",
+   "hva": "Artillerigården står «synket i jorden»: første etasje uten vinduer og dører til huset klikkes og løftes",
+   "hvor": {
+    "bygg_id": "bnr-193868061"
+   },
+   "status": "lukket",
+   "aarsak": "Ikke terrenget: src/19 tegnet en egen «granittsokkel» 16 cm utenfor veggen for alle hus med feltet sokkel (laget 27.10 for Kasernens 1,1 m). Artillerigården fikk 29.10 en natursteinsetasje på 3,1 m (merknad fra Vegars kvartalskontroll), så båndet dekket hele første etasje med vinduer og dør. Båndet lå i en egen gruppe som ikke ble løftet med huset, derfor kom vinduene fram ved klikk. Bare Artillerigården og Kasernen hadde sokkel; på Kasernen stod kjellervinduene 20 cm ut for å synes foran båndet.",
+   "rettelse": "src/19-båndet er tatt ut; sokkelen tegnes bare av src/07 (3 cm ut, vinduene 5 cm, løftes med huset). kaserna.py legger kjellervinduene i veggen.",
+   "rettet_i": "1c9f6e3",
+   "bevis": [
+    "rapport/avvik/A9-foer-artillerigaarden-az30.jpg",
+    "rapport/avvik/A9-etter-artillerigaarden-az30.jpg",
+    "rapport/avvik/A9-foer-artillerigaarden-az210.jpg",
+    "rapport/avvik/A9-etter-artillerigaarden-az210.jpg"
+   ],
+   "vakt": "41_sokkel_skjuler_ikke"
+  },
+  {
+   "id": "A10",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.26, vedlegg 5)",
+   "hva": "Artillerigårdens første etasje er grove natursteiner med tegl over; kartet hadde en brun flate",
+   "hvor": {
+    "bygg_id": "bnr-193868061"
+   },
+   "status": "lukket",
+   "aarsak": "Sokkelen hadde bare én farge (brun [178,150,138] fra tegningen) og ikke materiale. Street View-avlesningen har «kjeller_sokkel» for 160 sider, med naturstein/granitt/puss og høyde for mange hus, men den ble ikke brukt.",
+   "rettelse": "sokkel.type (naturstein/puss): src/05 tegner naturstein med skift, blokker, fuger og tone per stein (tegnet, ikke foto). Artillerigården: grå/rosa naturstein i merknaden (Vegar 02.11). Ny verktoy/sokkel.py i kjeden leser kjeller_sokkel i avlesningen: 48 hus fikk sokkel (43 naturstein, 5 puss), bare fra observasjoner som peker på huset (A12).",
+   "rettet_i": "1c9f6e3",
+   "bevis": [
+    "rapport/avvik/A10-foer-artillerigaarden-naer.jpg",
+    "rapport/avvik/A10-etter-artillerigaarden-naer.jpg"
+   ],
+   "vakt": "41_sokkel_skjuler_ikke"
+  },
+  {
+   "id": "A11",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.29, Street View-bilde)",
+   "hva": "Mormors Café er burgunder i kartet; skal være gul/oker",
+   "hvor": {
+    "bygg_id": "bnr-193867987"
+   },
+   "status": "lukket",
+   "aarsak": "Fargen kom fra kvartaltegningen kvartal6 (burgunder). Street View-avlesningen hadde «okergul» fra 2010 (eldre enn tegningen, derfor ikke brukt) og «lys okergul/gul» fra 2024 på siden mot Voldportgaten, men fargeregelen leste bare hovedbildet. Begge kamerastrålene treffer dessuten nabohusene (bnr-193971318 og bnr-193867979) først, så koblingen var usikker (A12).",
+   "rettelse": "Merknad på huset (kilder/bygg-merknader.json): okergul etter Vegar 02.11. sv_kobling.les() gjør nå nyeste godkjente observasjon til hovedavlesning.",
+   "rettet_i": "d60888d",
+   "bevis": [
+    "rapport/avvik/A11-foer-mormors-cafe.jpg",
+    "rapport/avvik/A11-etter-mormors-cafe.jpg"
+   ],
+   "vakt": "43_streetview_kobling"
+  },
+  {
+   "id": "A12",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.29)",
+   "hva": "Street View-bildene stemmer ikke helt med 3D-modellene: bilde→bygg-koblingen er feil for flere hus",
+   "hvor": {
+    "hele": true
+   },
+   "status": "lukket",
+   "aarsak": "Avlesningen (29.10) koblet bilder til hus etter adresse og retning uten å sjekke hva kameraet faktisk ser. Strålesjekk fra kamerapunkt og retning (pano_url) mot modellens omriss: 78 av 332 observasjoner (48 hus) har et annet hus først i den delen av bildet avlesningen sier (venstre/høyre/midten): nabohuset, huset over gata eller et skur foran. Eksempler: bnr-193972101 (A3-garasjene) fikk 67774 sin fasade, bnr-193867804 så 72462.",
+   "rettelse": "verktoy/sv_kobling.py i kjeden (før streetview_fasader.py): dommen per observasjon i kilder/streetview/kobling-geometri.json; streetview_farger, streetview_fasader, tak_farge/vegg_nye, sokkel og fasadesegmenter leser avlesningen gjennom sv_kobling.les(), så observasjoner som peker på et annet hus ikke brukes, og tegningen/trykket gjelder der. Endret: veggfarge på 12 hus, vinduer på 18, sokkel på 6, fasadekilde på 7.",
+   "rettet_i": "d60888d",
+   "bevis": [
+    "rapport/avvik/A12-straaler.png",
+    "kilder/streetview/kobling-geometri.json"
+   ],
+   "vakt": "43_streetview_kobling",
+   "merknad": "Strålesjekken er streng: en observasjon som beskriver huset helt ute i bildekanten bak et annet hus, regnes som feil og brukes ikke; da gjelder tegningen/trykket. Eksempel: bnr-193868525 (Torvet) går fra okergul til tegningens laks (Kvartal4BITMP), fordi 2024-bildet ser bnr-193971946 først. Vegar bør se over listen i kobling-geometri.json der han kjenner husene."
   }
  ]
 }

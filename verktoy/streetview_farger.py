@@ -81,7 +81,8 @@ NYERE_ENN = 2016      # Street View fra dette året og senere er nyere enn tegni
 
 def main():
     tørt = '--tørt' in sys.argv
-    avl = json.loads(KILDE.read_text())
+    sys.path.insert(0, str(ROT / 'verktoy')); import sv_kobling
+    avl = sv_kobling.les()   # bare observasjoner som peker på huset; nyeste godkjente er hovedavlesningen (avvik A12, 02.11)
     sys.path.insert(0, str(ROT)); sys.path.insert(0, str(ROT / 'verktoy')); import datalag, tak_farge as T
     rett = [r for r in datalag.les('rettelser') if r.get('grunn') != GRUNN]
     B = T.tilstand_uten_regelen(rett)

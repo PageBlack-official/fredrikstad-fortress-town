@@ -56,6 +56,20 @@
 "uthus": true
 },
 {
+"id": "bnr-13415897",
+"navn": null,
+"type": "house",
+"h": 5.9,
+"foer": 18,
+"etter": 36,
+"vinduer": 35,
+"dorer": 1,
+"gate": "gate",
+"etasjer": 2,
+"dor": true,
+"uthus": false
+},
+{
 "id": "bnr-193820832",
 "navn": null,
 "type": "garage",
@@ -68,6 +82,20 @@
 "etasjer": 1,
 "dor": false,
 "uthus": true
+},
+{
+"id": "bnr-13416559",
+"navn": null,
+"type": "house",
+"h": 6.9,
+"foer": 38,
+"etter": 38,
+"vinduer": 37,
+"dorer": 1,
+"gate": "gate",
+"etasjer": 2,
+"dor": true,
+"uthus": false
 },
 {
 "id": "pb-4",
@@ -98,6 +126,20 @@
 "uthus": true
 },
 {
+"id": "bnr-13384460",
+"navn": null,
+"type": "house",
+"h": 5.3,
+"foer": 14,
+"etter": 14,
+"vinduer": 13,
+"dorer": 1,
+"gate": "gate",
+"etasjer": 1,
+"dor": true,
+"uthus": false
+},
+{
 "id": "bnr-193874398",
 "navn": null,
 "type": "garage",
@@ -110,6 +152,20 @@
 "etasjer": 0,
 "dor": false,
 "uthus": true
+},
+{
+"id": "bnr-13384401",
+"navn": null,
+"type": "house",
+"h": 6.1,
+"foer": 37,
+"etter": 37,
+"vinduer": 36,
+"dorer": 1,
+"gate": "gate",
+"etasjer": 2,
+"dor": true,
+"uthus": false
 },
 {
 "id": "bnr-193874371",
@@ -880,6 +936,34 @@
 "etasjer": 1,
 "dor": true,
 "uthus": false
+},
+{
+"id": "bnr-6246729",
+"navn": null,
+"type": "garage",
+"h": 2.61,
+"foer": 10,
+"etter": 10,
+"vinduer": 10,
+"dorer": 0,
+"gate": "gate",
+"etasjer": 1,
+"dor": false,
+"uthus": true
+},
+{
+"id": "bnr-193971210",
+"navn": null,
+"type": "garage",
+"h": 3.1,
+"foer": 20,
+"etter": 20,
+"vinduer": 20,
+"dorer": 0,
+"gate": "gate",
+"etasjer": 1,
+"dor": false,
+"uthus": true
 },
 {
 "id": "bnr-300506942",
