@@ -56,15 +56,16 @@
    "hvor": {
     "bygg_id": "bnr-193972101"
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Parkeringsflaten til parkering-1-4627 (Torvgaten, beboerparkering): src/17 tegnet kommunens rad som en glatt grå flate 12 cm over brosteinen langs hele garasjefasaden, oppå den målte brosteinsflaten med oppmerking (fl-576). Det så ut som en mørk skrå plate foran huset. Samme feil på 19 andre rader med målt flate (bl.a. Kasernegaten ved Kasernen).",
    "rettet_i": "ea0b5af",
    "bevis": [
-    "rapport/avvik/A3-foer-torvgaten-az193.jpg"
+    "rapport/avvik/A3-foer-torvgaten-az193.jpg",
+    "rapport/avvik/A3-etter-torvgaten-az193.jpg",
+    "rapport/avvik/A3-foer-etter-utsnitt.jpg"
    ],
    "vakt": "40_parkering_paa_brostein",
-   "rettelse": "src/17: der raden er målt som flate (flater[].parkering_id), tegnes bare flaten og oppmerkingen.",
-   "merknad": "Rettet og bygget (ea0b5af); etterbildet fra samme kamera rendres (scratchpad b2/e0.png). Lukkes når det er lagt i rapport/avvik/ og sett."
+   "rettelse": "src/17: der raden er målt som flate (flater[].parkering_id), tegnes bare flaten og oppmerkingen."
   },
   {
    "id": "A4",
