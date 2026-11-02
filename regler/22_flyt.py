@@ -64,7 +64,7 @@ krav('mobil: dobbelttrykk zoomer inn mot punktet', tall(g('mdobbel', 'ankerPx'))
 for sc, navn in (('klikk', 'glidning til hus'), ('dra', 'dra og treghet'), ('hjem', 'hjem')):
     sp = g(sc, 'speil') or {}
     krav(f'speilet i vannet står under {navn}', sp.get('minsteAndel', 0) >= 0.98 and sp.get('eldsteMs', 9999) <= 300,
-         f"minste styrke i fart {sp.get('minsteAndel')} av full (>= 0,98; før tonet det til 0), eldste speil i fart {sp.get('eldsteMs')} ms (<= 300)")
+         f"minste styrke i fart {sp.get('minsteAndel')} av full (>= 0,98; før tonet det til 0), eldste speil i fart med vann i bildet {sp.get('eldsteMs')} ms (<= 300)")
 rk = [a for x in (g('redusert', 'kortInn') or []) for a in x['anim']]; rd = g('redusert', 'dobbel') or {}
 krav('«Reduser bevegelse» på: kortet og kameraet glir likevel (Vegars valg, CHANGELOG v27)', bool(g('redusert', 'kortVis')) and bool(g('redusert', 'kortGlir')) and rd.get('ms', 0) >= 500,
      ', '.join(f"kort {a['navn']} {a['ms']:.0f} ms" for a in rk) + f"; dobbeltklikk {rd.get('ms')} ms")

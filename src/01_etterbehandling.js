@@ -1,17 +1,39 @@
+// måling per bilde (verktoy/flyt_maal.mjs, tast d): ms brukt på oppdater(), speilpasset og skyggekartet i dette bildet
+const MAALT={oppdater:0, speil:0, skygge:0};
+window.__pt={scene:0, blekk:0, fxaa:0, kall:0, tri:0, skygge:0, maal:false, minTex:false};
+// window.__maal: true = gl.finish etter hvert pass (tast m); 'les' = les én piksel, så tida tar med alt GPU-en har igjen (programvare-GPU)
+const _px1=new Uint8Array(4);
+function maalVent(){ const m=window.__maal; if(!m) return; if(m!=='les'){ gl2.finish(); return; }
+  const rb=gl2.getParameter(gl2.READ_FRAMEBUFFER_BINDING); gl2.bindFramebuffer(gl2.READ_FRAMEBUFFER,null); gl2.readPixels(0,0,1,1,gl2.RGBA,gl2.UNSIGNED_BYTE,_px1); gl2.bindFramebuffer(gl2.READ_FRAMEBUFFER,rb); }
+{ const sr=renderer.shadowMap.render.bind(renderer.shadowMap); renderer.shadowMap.render=(l,s,c)=>{ if(!sun.shadow.needsUpdate) return sr(l,s,c); const t=performance.now(); sr(l,s,c); maalVent(); MAALT.skygge+=performance.now()-t; }; }
 // ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
 const post=(()=>{
   let W=2, H=2, skala=1;
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
-  const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
+  // (02.11) minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
+  const MIN_TEX=renderer.extensions.has('EXT_color_buffer_float') && !Q0.get('mintex0');
+  const rtM=new THREE.WebGLRenderTarget(2,2,{type:THREE.FloatType, format:THREE.RedFormat, minFilter:THREE.NearestFilter, magFilter:THREE.NearestFilter, depthBuffer:false, generateMipmaps:false});
+  const mM=new THREE.ShaderMaterial({ uniforms:{tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}},
+    vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
+    fragmentShader:`uniform sampler2D tDep; uniform vec2 res; varying vec2 vUv;
+      void main(){ float a=texture2D(tDep,vUv).x, b=texture2D(tDep,vUv+vec2(1.,0.)/res).x, c=texture2D(tDep,vUv+vec2(0.,1.)/res).x; gl_FragColor=vec4(min(a,min(b,c)),0.,0.,1.); }` });
+  const qM=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mM); qM.frustumCulled=false; const msc=new THREE.Scene(); msc.add(qM);
+  const m=new THREE.ShaderMaterial({ defines: MIN_TEX ? {MIN_TEX:1} : {},
+    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
     fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
       // dybde med lukking: hårfine sprekker mellom takflater (1 px) lukkes, så de ikke blir prikker i streken
+      #ifdef MIN_TEX
+      // (02.11) minimum av pikselen og naboen til høyre og over er regnet i et eget pass (tMin, rå dybde): én oppslag i stedet for tre, samme tall
+      uniform sampler2D tMin;
+      float Dm(vec2 o){ float d=texture2D(tMin, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
+      #else
       float Dm(vec2 o){ return min(D(o), min(D(o+vec2(1.,0.)), D(o+vec2(0.,1.)))); }
+      #endif
       // strekstyrke ved en forskyvning (piksler): knekker (inner) og dybdesprang (silhuett)
       float strekVed(vec2 o, float s1, float s2, float mpp){
         float ec=Dm(o);
@@ -126,15 +148,16 @@ const post=(()=>{
     samples(){ return rt.samples; },
     setSS(n){ m.uniforms.ssN.value=n; },
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
-    settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
+    settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); rtM.setSize(w,h); mM.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },
     render(){ const u=m.uniforms; u.mpp.value=kam.mpp*innerWidth/u.res.value.x; u.span.value=kam.mpp; u.naer.value=kam.naer; u.fjern.value=kam.fjern; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introTilt(); // miniatyr-uskarphet bare i introen
       // måling (tast m i feilsøkingsruta): gl.finish() etter hvert pass gir ekte GPU-tid per pass, ikke bare CPU-tid
-      const maal=!!window.__maal, fin=()=>{ if(maal) gl2.finish(); }, skyggeNaa=sun.shadow.needsUpdate;
+      const maal=!!window.__maal, fin=maalVent, skyggeNaa=sun.shadow.needsUpdate;
       const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const kall=renderer.info.render.calls, tri=renderer.info.render.triangles; fin(); const _t1=performance.now();
+      if(MIN_TEX){ renderer.setRenderTarget(rtM); renderer.render(msc,pc); }
       renderer.setRenderTarget(rtF); renderer.render(ps,pc); fin(); const _t2=performance.now();
       renderer.setRenderTarget(null); renderer.render(fs,pc); fin(); const _t3=performance.now();
-      window.__pt={scene:_t1-_t0, blekk:_t2-_t1, fxaa:_t3-_t2, kall, tri, skygge:skyggeNaa?1:0, maal}; }
+      const P=window.__pt; P.scene=_t1-_t0; P.blekk=_t2-_t1; P.fxaa=_t3-_t2; P.kall=kall; P.tri=tri; P.skygge=skyggeNaa?1:0; P.maal=maal; P.minTex=MIN_TEX; }   // samme objekt hvert bilde
   };
 })();
 
