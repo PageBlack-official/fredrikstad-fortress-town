@@ -1799,6 +1799,70 @@ window.__tilLngLat=tilLngLat; window.__BEV=BEV;
 // en ny gest stopper hjulzoomen (dra, klyp)
 map.getCanvasContainer().addEventListener('pointerdown', ()=>hjulZoom.stopp(), {capture:true, passive:true});
 
+// ---- lenka husker utsikten (02.11): #view=lat,lon,zoom,pitch,bearing&hus=<bygg-id> ----
+// Hashen skrives med history.replaceState (ingen nye historikkinnslag) når kameraet har stoppet, og når siden skjules eller lukkes.
+// En lenke med view= (eller hus=) hopper over introen og går rett dit; hus= løfter huset og åpner kortet som ved klikk.
+// Ugyldige verdier ignoreres: tall som ikke er tall, et senter utenfor kartets ramme, et hus som ikke finnes. Zoom og vinkler klemmes
+// innen kartets egne grenser. Inne i en sandbox (claude.ai-artefakten) kan history og localStorage mangle; da virker kartet uten dem.
+const LENKE=(()=>{
+  let h=''; try{ h=decodeURIComponent((location.hash||'').replace(/^#/,'')); }catch(e){ h=''; }
+  const par={}; h.split('&').forEach(d=>{ const i=d.indexOf('='); if(i>0) par[d.slice(0,i).trim().toLowerCase()]=d.slice(i+1).trim(); });
+  let vis=null;
+  if(par.view){
+    const v=par.view.split(',').map(s=>s.trim()==='' ? NaN : Number(s));
+    if(v.length===5 && v.every(Number.isFinite) && Math.abs(v[0])<=85 && Math.abs(v[1])<=180){
+      const [lat,lon,zoom,pitch,bearing]=v, m=tilModell([lon,lat]), g=GRENSE+300;
+      if(Math.abs(m[0])<=g && Math.abs(m[1])<=g){
+        const klem=(x,a,b)=>Math.min(b,Math.max(a,x));
+        vis={center:[lon,lat], zoom:klem(zoom,map.getMinZoom(),map.getMaxZoom()), pitch:klem(pitch,map.getMinPitch(),map.getMaxPitch()), bearing:((bearing%360)+540)%360-180};
+      }
+    }
+  }
+  const husId=/^[a-z]+-[0-9a-z]+$/i.test(par.hus||'') ? par.hus : null;
+  const hus=husId ? buildings.find(g=>g.userData.b && g.userData.b.id===husId && !g.userData.b.skjul) || null : null;
+  return {vis, hus, hopp: !!(vis||hus)};
+})();
+const LAGRET_UTSIKT='smart-old-town:utsikt';
+function lenkeHash(){
+  const c=map.getCenter(), f=(x,n)=>(+x.toFixed(n)).toString();
+  let s=`view=${f(c.lat,5)},${f(c.lng,5)},${f(map.getZoom(),2)},${f(map.getPitch(),0)},${f(map.getBearing(),0)}`;
+  if(valgt && valgt.userData.b && valgt.userData.b.id) s+=`&hus=${valgt.userData.b.id}`;
+  return s;
+}
+function lenkeUrl(){ let base=''; try{ base=location.href.split('#')[0]; }catch(e){ base=''; } return base+'#'+lenkeHash(); }
+// skrives bare når introen er ferdig (lenka til en halvferdig intro er ingen utsikt)
+function lenkeSkriv(){
+  if(!introDone) return;
+  const s='#'+lenkeHash();
+  try{ if(location.hash!==s) window.history.replaceState(window.history.state, '', s); }catch(e){ /* sandbox uten historikk: kartet virker likevel */ }
+  try{ window.localStorage.setItem(LAGRET_UTSIKT, s.slice(1)); }catch(e){ /* sandbox uten lagring */ }
+}
+// moveend: ett bilde etter, så introens egen moveend (som setter introDone) har kjørt først
+map.on('moveend', ()=>setTimeout(lenkeSkriv, 0));
+addEventListener('pagehide', lenkeSkriv);
+document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') lenkeSkriv(); });
+// nettleserens tilbake lukker kortet (16_interaksjon); etterpå står innslaget fra før kortet, så utsikten skrives på nytt uten hus=
+addEventListener('popstate', ()=>setTimeout(lenkeSkriv, 0));
+// ved oppstart (15_loop, map.on('load')): kameraet rett til utsikten, så huset som ved klikk
+function lenkeStart(){
+  if(LENKE.vis) map.jumpTo(LENKE.vis);
+  if(LENKE.hus) requestAnimationFrame(()=>{ velgHus(LENKE.hus); lenkeSkriv(); });
+  else lenkeSkriv();
+}
+// «Del» i huskortet: delingsarket på mobil (navigator.share), ellers utklippstavla; haken i knappen er bekreftelsen
+async function lenkeDel(knapp){
+  const url=lenkeUrl();
+  const ok=()=>{ knapp.classList.add('delt'); clearTimeout(knapp._t); knapp._t=setTimeout(()=>knapp.classList.remove('delt'), 1600); };
+  if(BERORING && navigator.share){
+    try{ await navigator.share({url, title: document.title}); return; }
+    catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  try{ await navigator.clipboard.writeText(url); ok(); return; }catch(e){ /* utklippstavla stengt (sandbox): prøv den gamle veien */ }
+  try{ const t=document.createElement('textarea'); t.value=url; t.setAttribute('readonly',''); t.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';
+    document.body.appendChild(t); t.select(); const lyktes=document.execCommand('copy'); t.remove(); if(lyktes) ok(); }catch(e){ /* ingen utklippstavle */ }
+}
+{ const knapp=document.querySelector('#kort .del'); if(knapp) knapp.addEventListener('click', ()=>lenkeDel(knapp)); }
+
 // ---- tegneløkka: MapLibre kaller lagets render() hvert bilde det tegner; vi ber om nye bilder når noe beveger seg ----
 lysFraVenstre();
 // byen tegner seg opp: høyden vokser kvartal for kvartal (sortert sørvest -> nordøst)
@@ -1829,7 +1893,7 @@ function overta(){ if(introDone) return; introDone=true; map.stop(); }
 // over byen fra solsiden (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de
 // godkjente 42° (23.10), så skyggene blir lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka
 // (teknikk 12): stopper du introen, henter solkanten seg inn på 0,8 s. ?solintro=0 hopper over det hele.
-const SOLINTRO = SOL_FAST && !Q0.get('sol') && Q0.get('solintro')!=='0' && !Q.get('skip');   // ?solintro=0 gir den gamle introen med fast sol
+const SOLINTRO = SOL_FAST && !Q0.get('sol') && Q0.get('solintro')!=='0' && !Q.get('skip') && !LENKE.hopp;   // ?solintro=0 gir den gamle introen med fast sol
 const solVei={ v0:0, v1:0, u:0, ferdig:!SOLINTRO, tHent:0 };
 function solStart(){
   // kanten vandrer langs solas horisontale retning: solsiden av byen først
@@ -1922,7 +1986,7 @@ window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__k
 map.on('load', ()=>{
   map.addLayer(byLag);
   kobleSol(); if(SOLINTRO) solStart();
-  if(Q.get('skip')){ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
+  if(Q.get('skip') || LENKE.hopp){ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); lenkeStart(); }
   else startIntro();
   puls();
 });
@@ -2000,7 +2064,7 @@ function velgHus(g){
   valgt=g; g.userData.lift=true;
   if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyllKort(g.userData.b); visKort(true); }
   else { fyllKort(g.userData.b); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }   // nytt hus i åpent kort: innholdet tones over, kortet står
-  glidTilHus(g);
+  glidTilHus(g); lenkeSkriv();   // hus= i lenka (15_lenke)
 }
 function visKort(vis){
   kort_.apent=vis; kort.style.transform='';
@@ -2015,6 +2079,7 @@ function lukkKort({tilbake=true, fraHistorikk=false}={}){
   if(tilbake && kort_.forKamera && !kort_.egenFlytt) glidKamera(kort_.forKamera, 'tilbake');
   kort_.forKamera=null;
   if(kort_.historikk){ kort_.historikk=false; if(!fraHistorikk){ try{ window.history.back(); }catch(e){ /* innebygd */ } } }
+  lenkeSkriv();   // hus= ut av lenka (15_lenke; etter tilbake skrives den på nytt ved popstate)
 }
 kort.addEventListener('transitionend', ()=>{ kort.style.transitionDuration=''; });   // farten fra et fingerkast gjelder bare den ene overgangen
 addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkKort({fraHistorikk:true}); } });

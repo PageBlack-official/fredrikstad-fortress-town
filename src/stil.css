@@ -30,6 +30,13 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty{display:none}
 #kort .id{margin-top:8px;font-size:11px;letter-spacing:.02em;opacity:.8}
 #kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
+/* «Del» (02.11): kopierer lenka til utsikten og huset (15_lenke); haken er bekreftelsen */
+#kort .del{display:inline-flex;align-items:center;gap:6px;margin-top:12px;border:0;border-radius:18px;padding:8px 13px;background:rgba(43,36,32,.07);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer;transition:background var(--t-kort-ut,240ms) var(--k-flytt,ease)}
+#kort .del:hover{background:rgba(43,36,32,.12)}
+#kort .del:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+#kort .del .ok{display:none}
+#kort .del.delt .ok{display:block}
+#kort .del.delt .ikon{display:none}
 
 /* MapLibre-knappene i kartets papirtone */
 .maplibregl-ctrl-bottom-right{right:max(12px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px))}

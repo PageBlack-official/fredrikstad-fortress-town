@@ -28,7 +28,7 @@ function overta(){ if(introDone) return; introDone=true; map.stop(); }
 // over byen fra solsiden (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de
 // godkjente 42° (23.10), så skyggene blir lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka
 // (teknikk 12): stopper du introen, henter solkanten seg inn på 0,8 s. ?solintro=0 hopper over det hele.
-const SOLINTRO = SOL_FAST && !Q0.get('sol') && Q0.get('solintro')!=='0' && !Q.get('skip');   // ?solintro=0 gir den gamle introen med fast sol
+const SOLINTRO = SOL_FAST && !Q0.get('sol') && Q0.get('solintro')!=='0' && !Q.get('skip') && !LENKE.hopp;   // ?solintro=0 gir den gamle introen med fast sol
 const solVei={ v0:0, v1:0, u:0, ferdig:!SOLINTRO, tHent:0 };
 function solStart(){
   // kanten vandrer langs solas horisontale retning: solsiden av byen først
@@ -121,7 +121,7 @@ window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__k
 map.on('load', ()=>{
   map.addLayer(byLag);
   kobleSol(); if(SOLINTRO) solStart();
-  if(Q.get('skip')){ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); }
+  if(Q.get('skip') || LENKE.hopp){ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); lenkeStart(); }
   else startIntro();
   puls();
 });
