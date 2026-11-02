@@ -80,7 +80,7 @@ function oppdater(){
   maalYtelse();
   const naa=performance.now(), dt=Math.min(0.1,(naa-sisteTid)/1000); sisteTid=naa;
   const t=Q.get('t')?+Q.get('t'):clock.getElapsedTime();
-  waterMat.uniforms.t.value=t;
+  waterMat.uniforms.t.value=t; waterMat.uniforms.solD.value.copy(_sd);
   if(!vokst) vokse(t*VEKST_FART+0.45);
   anim=map.isMoving();
   // løftet hus (valgt) og svakt løftet hus (pekeren over), uavhengig av bildefrekvens

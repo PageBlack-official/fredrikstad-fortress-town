@@ -116,7 +116,7 @@ const stammer=lagInst(STAMME,stammeMat,stammeData); stammer.userData.stamme=true
   SKIVE.setAttribute('aAlfa', new THREE.BufferAttribute(al,1));
   const skiver=new THREE.InstancedMesh(SKIVE, kontaktMat, Math.max(1,TP.length)); skiver.count=TP.length; skiver.frustumCulled=false; skiver.renderOrder=1;
   const d=new THREE.Object3D();
-  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+0.04, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
+  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+KONTAKT_Y, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
   scene.add(skiver); }
 const dummy=new THREE.Object3D();
 function setCrowns(t){

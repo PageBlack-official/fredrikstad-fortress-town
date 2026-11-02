@@ -49,9 +49,12 @@ function flatGruppe(grp, ekstra=['aBygg','aTopp']){
 // ---- kontaktskygge (lys-og-bevegelse pkt. 1, 24.10): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
 // Geometri på bakken (ikke skjermeffekt): et bånd rundt hver husfot og en skive under hvert tre, med alfa 1 inne og 0 ute,
 // multiplisert inn i bakken. Stabilt i fart, ingen prikking, skalerer som husene. Styrken er KONTAKT_STYRKE, bredden settes der båndene lages.
-const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : 0.42;
+// 02.11 kveld: lå på 4 cm, under brosteinen (5 cm) og gresset (28 cm) etter bakkelagene (A8), så regel 12 målte 0,1–0,2 %.
+// Nå ligger skyggen over øverste bakkelag (KONTAKT_Y) og vinner dybdetesten over alle lag i src/03 (polygonOffset større enn lag 4).
+const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : +(Q0.get('kontaktS')||0.5);
+const KONTAKT_Y = 0.3, KONTAKT_BREDDE = 2.4;
 const kontaktMat=new THREE.ShaderMaterial({
-  transparent:true, depthWrite:false, blending:THREE.MultiplyBlending, polygonOffset:true, polygonOffsetFactor:-2, polygonOffsetUnits:-2,
+  transparent:true, depthWrite:false, blending:THREE.MultiplyBlending, polygonOffset:true, polygonOffsetFactor:-8, polygonOffsetUnits:-40,
   uniforms:{ styrke:{value:KONTAKT_STYRKE} },
   vertexShader:`attribute float aAlfa; varying float vA; void main(){ vA=aAlfa; vec4 p=vec4(position,1.);
     #ifdef USE_INSTANCING
@@ -63,7 +66,7 @@ const kontaktMat=new THREE.ShaderMaterial({
 // bånd rundt et polygon (modellkoordinater x,y → verden x,-y), bredde d meter; returnerer posisjoner og alfa
 function fotBaand(pts, d, y){
   const n=pts.length; let areal=0; for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; areal+=a[0]*c[1]-c[0]*a[1]; }
-  const ut=areal>0 ? 1 : -1;                        // orientering avgjør hvilken side som er ut
+  const ut=areal>0 ? -1 : 1;                        // orientering avgjør hvilken side som er ut: (-ey,ex) peker INN i et mot-klokka polygon (rettet 03.11, båndet lå under husene)
   const pos=[], alfa=[], nrm=[];
   for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; const ex=c[0]-a[0], ey=c[1]-a[1], L=Math.hypot(ex,ey)||1; nrm.push([ -ey/L*ut, ex/L*ut ]); }
   const P=(x,yy,al)=>{ pos.push(x,y,-yy); alfa.push(al); };

@@ -20,9 +20,9 @@ const post=(()=>{
       void main(){ float a=texture2D(tDep,vUv).x, b=texture2D(tDep,vUv+vec2(1.,0.)/res).x, c=texture2D(tDep,vUv+vec2(0.,1.)/res).x; gl_FragColor=vec4(min(a,min(b,c)),0.,0.,1.); }` });
   const qM=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mM); qM.frustumCulled=false; const msc=new THREE.Scene(); msc.add(qM);
   const m=new THREE.ShaderMaterial({ defines: MIN_TEX ? {MIN_TEX:1} : {},
-    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
+    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}, uPunch:{value:Q0.get('punch')==='0'?0:+(Q0.get('punch')||1)}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve, uPunch; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -49,7 +49,12 @@ const post=(()=>{
       // Målet er satt i skjermverdier (99,9-persentilen i hjemmevisningen 222–243, ingen piksel over ca. 240), men dette passet skriver
       // lineært til et sRGB-mål (skjermkoden legges på av grafikkortet), så knekk og tak står her som lineære verdier: 230/255 → 0,787, 241/255 → 0,880.
       const float KNE=0.787, TAK=0.880;
+      const float PUNCH_METNING=0.45, PUNCH_KONTRAST=0.18;
       vec3 kurve(vec3 c){ vec3 t=max(c-KNE,0.); vec3 b=KNE+(TAK-KNE)*(1.-exp(-t/(TAK-KNE))); return mix(c, b, step(KNE,c)*uKurve); }
+      // punch (02.11 kveld, Vegar: «før» så mer imponerende ut): i skjermrom, etter fargekoden. Metningen løftes mest der den er svak
+      // (vibrance), så fargetonen står og de dømte husfargene beholder kuløren; og en svak S-kurve gir kontrast rundt midten. Papiret rundt får ingenting.
+      vec3 punch(vec3 c, float p){ if(p<=0.) return c; float l=dot(c,vec3(0.2126,0.7152,0.0722)); float mx=max(c.r,max(c.g,c.b)), mn=min(c.r,min(c.g,c.b));
+        c=clamp(mix(vec3(l), c, 1.+p*PUNCH_METNING*(1.-(mx-mn))),0.,1.); return mix(c, c*c*(3.-2.*c), p*PUNCH_KONTRAST); }
       void main(){
         vec3 col=texture2D(tCol,vUv).rgb;
         // miniatyr-effekt: myk uskarphet øverst og nederst i bildet (sterkest i introen)
@@ -131,6 +136,7 @@ const post=(()=>{
         col*=1.+(0.03*h(floor(gl_FragCoord.xy*0.5))-0.015)*uKorn;
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
+        gl_FragColor.rgb=punch(gl_FragColor.rgb, uPunch*(1.-smoothstep(380.,600.,rr)));
         gl_FragColor.rgb=kurve(gl_FragColor.rgb);
       }`
   });
