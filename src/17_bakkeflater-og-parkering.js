@@ -30,7 +30,7 @@
   (DATA.gardsrom||[]).forEach(g=>{ if(g.skjul) return;
     if(g.gress) g.gress.forEach(p=>flat(p,0.3,plenMat)); else if(g.typ==='gress') flat(g.p,0.3,plenMat); });
   // flater målt i ortofotoet
-  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ]) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ] && !(f.typ==='brostein' && alleIBrostein(f.p))) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
   // oppmerkede parkeringsfelt (kommunens lag, verktoy/bakke.py parkeringsfelt): hvite streker på tvers av raden, oppmerket+1 stk
   { const strek=new THREE.MeshBasicMaterial({color:0xf4f2ec}); const G=new THREE.Group(); scene.add(G);
     (DATA.flater||[]).forEach(f=>{ if(f.skjul || !f.linje || !f.oppmerket) return;

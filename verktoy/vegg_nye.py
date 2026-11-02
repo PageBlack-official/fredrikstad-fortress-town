@@ -27,6 +27,7 @@ from shapely.geometry import Polygon
 GRUNN = 'veggfarge etter fargeregelen (verktoy/vegg_nye.py, 30.10)'
 GAMMEL_GRUNN = 'veggfarge til nye hus (verktoy/vegg_nye.py, 30.10)'
 STANDARD = T.STANDARD_VEGG
+PORTAL_PUSS = [204, 200, 192]
 UT = os.path.join(ROT, 'rapport', 'farge')
 
 
@@ -84,6 +85,7 @@ def main(tørt=False):
         st = m.get('sett') or {}
         if st.get('vegg'):
             merk[m['id']] = (st['vegg'], f"merknad: {st.get('farge_kilde') or m.get('kilde')}")
+    portaler = {p.get('bygg_id') for p in d.get('porter', []) if p.get('typ') == 'mur'}
     nye, ut, satt = [], [], {}
     for x in maal:
         i = x['id']; farge = kilde = aar = None
@@ -92,6 +94,10 @@ def main(tørt=False):
             aar = T.sv_aar(kilde) if 'Street View' in kilde else T.TEGNINGSAAR
         elif str(x.get('vegg_kilde') or '').startswith('Street View') and (x.get('vegg_aar') or 0) >= SVF.NYERE_ENN:
             farge, kilde, aar = x['vegg'], x['vegg_kilde'], x['vegg_aar']          # 1) satt av streetview_farger.py
+        elif i in portaler and not (TF.get(i) or {}).get('vegg') and not sv.get(i) and i not in t17:
+            # portaler (data/porter.json typ mur) uten dømt kilde (02.11, avvik A14): en udømt trykkfarge er ikke nok for et
+            # landemerke (Mellomporten stod rød); grått puss til tegningen eller Street View avgjør
+            farge, kilde, aar = PORTAL_PUSS, 'portal uten dømt kilde: grått puss (verktoy/vegg_nye.py, avvik A14)', None
         elif (TF.get(i) or {}).get('vegg'):
             farge, kilde, aar = TF[i]['vegg'][0], TF[i]['vegg'][1], T.TEGNINGSAAR   # 2) tegningen
         else:

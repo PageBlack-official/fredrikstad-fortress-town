@@ -15,7 +15,7 @@ OK   verktoy/fasade_tegning.py les_fra_kontroll tell: 2 vegger lest fra kontroll
 OK   verktoy/fasade_tegning.py legg_inn       140 hus fikk vind fra tegningene (858 elementer fra tegning, 1364 etter reglene)
 OK   verktoy/tak_fra_ortofoto.py              0 tak fikk farge fra ortofotoet, 0 hoppet over
 OK   verktoy/tak_farge.py                     289 tak: 277 etter fotoet, 8 etter tegningen, 4 uten kilde
-OK   verktoy/vegg_nye.py                      438 hus, 438 fikk veggfarge, 0 uten kilde, 2 byttet kulør
+OK   verktoy/vegg_nye.py                      438 hus, 438 fikk veggfarge, 0 uten kilde, 3 byttet kulør
 OK   verktoy/fasadesegmenter.py               13 hus fikk fasadesegmenter (14 vegger, 30 segmenter)
 OK   verktoy/sokkel.py                        72 hus fikk sokkel fra Street View: 62 naturstein (1 hel etasje, 4 hele veggen), 10 puss
 OK   verktoy/bygg_merknader.py                47 hus, 104 rettelser

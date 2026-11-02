@@ -74,7 +74,8 @@ if (TER){
       L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){
-      quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
+      if(!(B===buf.B && alleIBrostein([P[k],P[k+1],[L[k][0],-L[k][2]],[R[k][0],-R[k][2]],[L[k+1][0],-L[k+1][2]],[R[k+1][0],-R[k+1][2]]])))   // brostein på brostein: grunnen (A15)
+        quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
       if(v.b && (P[k][2]>0.5 || P[k+1][2]>0.5)){
         [L,R].forEach(E=>{ const a=E[k], c=E[k+1]; quad(buf.S,[...a, ...c, a[0],Math.max(0.1,a[1]-0.8),a[2], c[0],Math.max(0.1,c[1]-0.8),c[2]]); });
       }

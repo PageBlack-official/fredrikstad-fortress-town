@@ -12,6 +12,13 @@ function polyShape(pts){
 const BAKKELAG={terreng:0, brostein:0, vei:1, flate:2, parkering:3, gress:4};
 // Innen et lag får hver farge sitt underlag (0–3), så to veier eller to flater av ulik type som overlapper, heller ikke kjemper.
 function bakkelag(mat, lag, under=0){ mat.polygonOffset=true; mat.polygonOffsetFactor=-lag; mat.polygonOffsetUnits=-4*lag-under; mat.userData.bakkelag=[lag,under]; return mat; }
+// I BROSTEINSFLATEN (02.11, avvik A15): brostein er grunnen der (src/04). En brosteinsflate, et brosteinsbånd i en vei eller et
+// parkeringsfelt i brostein oppå grunnen er samme stein et par centimeter høyere: streken (01) tegnet kanten som en skjøt over
+// Torvet og langs gatene. Slike flater tegnes ikke; oppmerkingen står. iBrostein(x,y): punktet ligger i brosteinsflaten.
+const _BR=(DATA.brostein&&DATA.brostein.length>2)?DATA.brostein:null;
+function iBrostein(x,y){ if(!_BR) return false; let inne=false; for(let k=0,j=_BR.length-1;k<_BR.length;j=k++){ const a=_BR[k],c=_BR[j];
+  if((a[1]>y)!==(c[1]>y) && x<(c[0]-a[0])*(y-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
+function alleIBrostein(pts){ return pts.every(q=>iBrostein(q[0],q[1])); }
 function flat(pts, y, mat){
   if (pts.length<3) return null;
   const g = new THREE.ShapeGeometry(polyShape(pts));

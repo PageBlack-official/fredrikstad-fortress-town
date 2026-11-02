@@ -58,4 +58,9 @@ for b in B:
             feil.append(f"FEIL småbygget {b['id']} ({Pb.area:.0f} m²) står {a_:.1f} m² i huset {o}")
         elif a_ > 0.5:
             linjer.append(f"merk {b['id']} ({Pb.area:.0f} m²) overlapper {o} med {a_:.1f} m² ({a_ / Pb.area:.0%}, omrisset til naboen er grovt)")
+# portalene har farge fra en dømt kilde (A14, 02.11: Mellomporten stod rød etter en udømt trykkfarge)
+BYm = {b['id']: b for b in d['bygg']}
+for i, pt_ in porter.items():
+    if pt_.get('typ') == 'mur' and i in BYm and 'ikke dømt' in str(BYm[i].get('vegg_kilde') or ''):
+        feil.append(f"FEIL portalen {i} ({BYm[i].get('navn') or ''}) har farge fra en udømt trykkfarge")
 rapport('38_porter_og_murer_fri', not feil, [f"{len(feil)} feil; {len(murflater)} murer, {len(porter)} portbygg, {sum(1 for b in B if P[b['id']].area < 15)} småbygg under 15 m²"] + feil + linjer)
