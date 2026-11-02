@@ -6,7 +6,9 @@ ok   src/04: gresset
 ok   src/08: terrenget
 ok   src/08: veiene
 ok   src/17: flatene
-ok   src/08: veikantene på terrenget
+ok   src/08: veikantene på terrengnettet (hTer)
+ok   src/17: flatene delt og lagt på terrengnettet (A16)
+ok   src/08: hTer definert (terrengnettets trekanter)
 ok   src/08: veibitene delt opp
 ok   fire veiflater med eget underlag
 - terreng: lag 0, underlag 0

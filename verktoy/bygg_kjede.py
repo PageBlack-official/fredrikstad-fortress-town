@@ -1,6 +1,6 @@
 """Kjeden for byggene i fast rekkefølge (LESMEG: «Byggene: kjeden»). Hvert steg flytter sine rettelser bakerst, så
 rekkefølgen avgjør hvem som vinner: grunnmur < id < husdeling < rene tak < høyde < regler < Street View < tegning (håndkobling, så kontrollkoblingen: kilder/fasade-kobling-kontroll.json fra kontroll.py avvik) < ortofoto-tak < takfarge (per takflate, etter de rene takene) < veggfarge < fasadesegmenter < sokkel fra Street View < merknader < former fra tegningen
-< landemerker < hus med eget fasadeverktøy (datalag.EGNE_FASADER: Kaserna, verktoy/kaserna.py, 02.11) (fasade_former.py og landemerker.py stod ikke i kjeden før 30.10, så linjene deres ble liggende foran og overstyrt).
+< landemerker < blanke frie vegger (blanke_vegger.py, 02.11) < hus med eget fasadeverktøy (datalag.EGNE_FASADER: Kaserna, verktoy/kaserna.py, 02.11) (fasade_former.py og landemerker.py stod ikke i kjeden før 30.10, så linjene deres ble liggende foran og overstyrt).
 
     python3 verktoy/bygg_kjede.py            alt etter grunnmur.py (grunnmuren tar ~8 min; kjør den selv når omrissene endres)
     python3 verktoy/bygg_kjede.py --grunnmur alt, også grunnmur.py
@@ -10,7 +10,12 @@ ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STEG = [['verktoy/grunnmur.py'], ['verktoy/id_flytt.py'], ['verktoy/husdeling.py'], ['verktoy/tak_enkel.py'], ['-I', 'rapport/hoyder/hent.py'], ['-I', 'rapport/hoyder/legg_inn.py'],
         ['verktoy/vinduer_regler.py'], ['verktoy/sv_kobling.py'], ['verktoy/streetview_fasader.py'], ['verktoy/streetview_farger.py'],
         ['verktoy/fasade_tegning.py', 'les_fra_kontroll'], ['verktoy/fasade_tegning.py', 'legg_inn'], ['verktoy/tak_fra_ortofoto.py'], ['verktoy/tak_farge.py'], ['verktoy/vegg_nye.py'], ['verktoy/fasadesegmenter.py'], ['verktoy/sokkel.py'], ['verktoy/bygg_merknader.py'],
-        ['verktoy/fasade_former.py'], ['verktoy/landemerker.py'], ['verktoy/kaserna.py'], ['verktoy/register.py', 'kort'], ['verktoy/virksomheter_plassert.py']]
+        ['verktoy/fasade_former.py'], ['verktoy/landemerker.py'], ['verktoy/blanke_vegger.py'], ['verktoy/kaserna.py'], ['verktoy/register.py', 'kort'], ['verktoy/virksomheter_plassert.py']]
+# verktøy som bygger på resultatet av alle de andre (blanke_vegger.py leser vinduene de andre har satt), tas ut før kjeden går,
+# så de tidligere stegene ikke ser forrige kjørings linjer og kjeden gir det samme hver gang (regel 39, 02.11)
+sys.path.insert(0, ROT); sys.path.insert(0, os.path.join(ROT, 'verktoy'))
+import datalag, blanke_vegger  # noqa: E402
+datalag.skriv_rettelser([r for r in datalag.les('rettelser') if r.get('grunn') != blanke_vegger.GRUNN])
 for s in STEG:
     if s[0] == 'verktoy/grunnmur.py' and '--grunnmur' not in sys.argv:
         continue

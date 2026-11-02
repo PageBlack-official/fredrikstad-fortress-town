@@ -15,7 +15,7 @@
 - ok   hjem: 1312 ms, topp 82 px/bilde, hopp 0, rykk 0.17 (<= 0.45), bråstopp 0.01 (<= 0,15)
 - ok   introen før avbrudd: topp 9.7 px/bilde, hopp 0, rykk 0.06 (målt til avbruddet, så bråstopp gjelder ikke)
 - ok   avbrutt intro: uskarpheten toner ut, hopper ikke: største endring per bilde 0.058 (<= 0,08), rundt avbruddet [1, 1, 1, 1, 0.999, 0.998], til slutt 0
-- ok   mobil: trykk på hus, kameraet glir inn: 928 ms, topp 63.3 px/bilde, hopp 0, rykk 0.24 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   mobil: trykk på hus, kameraet glir inn: 912 ms, topp 65.7 px/bilde, hopp 0, rykk 0.23 (<= 0.45), bråstopp 0 (<= 0,15)
 - ok   mobil: bunnark, huset over kortet: bunnark True, hus over kortet True, kort {'vis': True, 'top': 411, 'left': 16, 'bunn': 684, 'h': 273, 'w': 358, 'op': 1}
 - ok   mobil: dra kortet ned lukker det: kortet fulgte fingeren 126 px, lukket True
 - ok   mobil: tilbake (Android/nettleser) lukker kortet: historikk True, lukket True
@@ -27,6 +27,6 @@
 - ok   speilet i vannet står under glidning til hus: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart med vann i bildet 100 ms (<= 300)
 - ok   speilet i vannet står under dra og treghet: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart med vann i bildet 100 ms (<= 300)
 - ok   speilet i vannet står under hjem: minste styrke i fart 1 av full (>= 0,98; før tonet det til 0), eldste speil i fart med vann i bildet 100 ms (<= 300)
-- ok   «Reduser bevegelse» på: kortet og kameraet glir likevel (Vegars valg, CHANGELOG v27): kort transform 380 ms; dobbeltklikk 800 ms
+- ok   «Reduser bevegelse» på: kortet og kameraet glir likevel (Vegars valg, CHANGELOG v27): kort transform 380 ms; dobbeltklikk 816 ms
 - ok   ingen JS-feil: ingen
 - Ikke målt her (må ses i ekte Chrome/telefon): bildefrekvens, styreflate-treghet fra macOS, iOS Safari-gester.

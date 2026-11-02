@@ -4412,18 +4412,18 @@
   "navn": "Mellomporten",
   "adr": null,
   "for_": [
-   246,
-   122,
-   106
+   204,
+   200,
+   192
   ],
   "for_kilde": null,
   "vegg": [
-   246,
-   122,
-   106
+   204,
+   200,
+   192
   ],
-  "kilde": "2015-trykkfila (ikke dømt)",
-  "aar": 2015,
+  "kilde": "portal uten dømt kilde: grått puss (verktoy/vegg_nye.py, avvik A14)",
+  "aar": null,
   "byttet": false
  },
  {
@@ -8104,13 +8104,13 @@
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   246,
-   150,
-   130
+   204,
+   200,
+   192
   ],
-  "kilde": "nabohuset bnr-193868568 (Brannstasjon - uthus til Infanterikasernen, 1.4 m unna)",
+  "kilde": "portal uten dømt kilde: grått puss (verktoy/vegg_nye.py, avvik A14)",
   "aar": null,
-  "byttet": false
+  "byttet": true
  },
  {
   "id": "pb-52",
@@ -8250,7 +8250,7 @@
   "navn": null,
   "adr": null,
   "for_": [
-   239,
+   236,
    240,
    240
   ],

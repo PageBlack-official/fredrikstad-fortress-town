@@ -514,3 +514,13 @@ den er rettet ved kilden, bevist (før/etter-bilder i rapport/avvik/) og har en 
   Regel 43. Vegars egne dommer (som Mormors Café, okergul) står i kilder/bygg-merknader.json.
 - Regel 39 kjører kjeden i en kopi: alt i data/ skal være det kjeden gir. Et felt som kopieres ved husdeling (husdeling.py), må stå i unntakslisten
   hvis et senere verktøy setter det (sokkel, 02.11).
+
+## Blanke vegger, steinetasje og brostein på brostein (02.11, natt/avvik, A10/A13–A15)
+- verktoy/blanke_vegger.py (i kjeden etter landemerker.py): en fri vegg på minst 3 m uten vinduer får vinduer i husets rytme, med mindre
+  tegningen, en merknad eller Street View sier at veggen er blank. bygg_kjede.py tar ut linjene før kjeden går (de bygger på resultatet). Regel 44.
+- Utegnede vegger på tegnede hus får husets tegnede vindusrader, ikke reglenes 3-meters etasjer (fasade_tegning.rader_som_tegnet).
+  Vinduer over takfoten som ikke hører til en ark, tas ut i datalag.hoyden_styrer.
+- sokkel.etasje: steinen går fra bakken til underkant av andre etasjes vinduer; sokkel.hele: hele veggen. Høyden regnes i
+  datalag.sokkel_etasje hver gang. sokkel.py setter dem fra Street View-materialet («1. etg naturstein», «murt naturstein»). Regel 41.
+- Portaler (porter typ mur) uten dømt farge får grått puss (vegg_nye.py, PORTAL_PUSS). Regel 38.
+- Brostein tegnes ikke oppå brosteinsgrunnen (src/03 iBrostein; src/08 veier, src/17 flater): streken tegnet kanten som skjøt. Regel 45.

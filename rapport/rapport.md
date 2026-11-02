@@ -1,24 +1,24 @@
 # Regelrapport
 
-Kilde: d60888d versjon 34 kjørt 2026-11-02 20:01
+Kilde: f8e1f07 versjon 34 kjørt 2026-11-03 00:38
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
 - FEIL 03_fasader_fra_tegning  (158 hus med fasade fra tegning, 185 antatt (må kvalitetssikres kvartal for kvartal))
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(skalaStille) uavhengig av bevegelse)
-- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/wt-avvik/ut/enkel/index.html 3220 kB versjon 34)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az -1.36 zoom 0.73 → ferdig az -2.79 zoom 1.00 intro false)
+- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/wt-avvik/ut/enkel/index.html 3229 kB versjon 34)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az -1.18 zoom 0.70 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 32 (ønsket 34))
-- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19090 px, trinn 2: 18588 px)
+- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19092 px, trinn 2: 18591 px)
 - OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)
-- FEIL 12_kontaktskygge  (- 0.2 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
+- FEIL 12_kontaktskygge  (- 0.1 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
 - OK   13_deler_staar_paa_topp  (- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok)
 - OK   14_id  (498 bygg, 429 med bygningsnummer fra Matrikkelen (269 av 333 i Gamlebyen), 1637 id-er i registeret)
 - OK   15_flater  (0 avvik, 5 advarsler; 19 plener innenfor ortofotoet målt)
 - OK   16_vann  (99.40% av kartets vann er vann i ortofotoet (krav 98.5%), 99.48% av ortofotoets vann er dekket (krav 98.5%); før retting (OSM): 97.02% og 98.89%)
-- OK   17_vinduer_rytme  (126 antatte hus og Street View-hus, 1705 vinduer, 81 dører; 0 brudd)
+- OK   17_vinduer_rytme  (126 antatte hus og Street View-hus, 1797 vinduer, 81 dører; 0 brudd)
 - OK   18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 6 bilder – ingen ny tegning)
 - OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 7 unntak (fredet))
@@ -31,7 +31,7 @@ Kilde: d60888d versjon 34 kjørt 2026-11-02 20:01
 - OK   33_gjerder  (presisjon 95.3% av 163 m funnet i fotoet (krav 95 %), dekning 99.7% av 195 m sett langs kandidatlinjene (krav 95 %); 0 av 95 stykker krysser gateareal eller hus)
 - OK   34_traer  (1455 av 1458 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.8%, krav 95 %); 0 i vann, 0 i hus; 1592 trær i alt = 2343 fra 23.10 )
 - OK   35_mobil_sluttbilde  (ok   asimut 193)
-- FEIL 36_avviksliste  (1 åpne av 12)
+- FEIL 36_avviksliste  (2 åpne av 16)
 - OK   37_egne_fasader  (1 hus med eget fasadeverktøy)
 - OK   38_porter_og_murer_fri  (0 feil; 23 murer, 5 portbygg, 32 småbygg under 15 m²)
 - OK   39_kjeden_stabil  (0 objekter endres av en ny kjøring av kjeden)
@@ -39,5 +39,7 @@ Kilde: d60888d versjon 34 kjørt 2026-11-02 20:01
 - OK   41_sokkel_skjuler_ikke  (0 feil)
 - OK   42_bakkelag  (0 feil; 12 bakkeutseender med lag)
 - OK   43_streetview_kobling  (0 feil)
+- OK   44_ingen_blanke_vegger  (0 hus med blanke frie vegger uten kilde)
+- OK   45_brostein_paa_brostein  (0 feil)
 
 Detaljer per regel i samme mappe.

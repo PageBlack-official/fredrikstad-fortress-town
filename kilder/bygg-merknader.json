@@ -115,10 +115,9 @@
   {
    "id": "bnr-193868061",
    "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 + Street View",
-   "grunn": "mangler steinstrukturen (mørkere brun natursteinsetasje i tegningen, grå/rosa naturstein i Street View) og takvinduene (13 i tegningen over hele Artillerigården, 6 på denne delen) Steinen (02.11, Vegar med Street View): grove grå/rosa natursteiner (kvader/bruddstein) i hele første etasje, tegnes som stein (sokkel.type naturstein, src/05), ikke brun flate.",
+   "grunn": "mangler steinstrukturen (mørkere brun natursteinsetasje i tegningen, grå/rosa naturstein i Street View) og takvinduene (13 i tegningen over hele Artillerigården, 6 på denne delen) Steinen (02.11, Vegar med Street View): grove grå/rosa natursteiner (kvader/bruddstein) i hele første etasje, fra bakken til underkant av vinduene i andre etasje (sokkel.etasje, datalag.sokkel_etasje), tegnes som stein (sokkel.type naturstein, src/05), ikke brun flate.",
    "sett": {
     "sokkel": {
-     "h": 3.1,
      "farge": [
       180,
       166,
@@ -129,7 +128,8 @@
       112,
       110
      ],
-     "type": "naturstein"
+     "type": "naturstein",
+     "etasje": true
     }
    },
    "takvinduer": [
@@ -151,10 +151,9 @@
   {
    "id": "bnr-193869572",
    "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 + Street View",
-   "grunn": "samme bygning som Artillerigården i tegningen: natursteinsetasjen og 7 av de 13 takvinduene Steinen (02.11, Vegar med Street View): grove grå/rosa natursteiner (kvader/bruddstein) i hele første etasje, tegnes som stein (sokkel.type naturstein, src/05), ikke brun flate.",
+   "grunn": "samme bygning som Artillerigården i tegningen: natursteinsetasjen og 7 av de 13 takvinduene Steinen (02.11, Vegar med Street View): grove grå/rosa natursteiner (kvader/bruddstein) i hele første etasje, fra bakken til underkant av vinduene i andre etasje (sokkel.etasje, datalag.sokkel_etasje), tegnes som stein (sokkel.type naturstein, src/05), ikke brun flate.",
    "sett": {
     "sokkel": {
-     "h": 3.1,
      "farge": [
       180,
       166,
@@ -165,7 +164,8 @@
       112,
       110
      ],
-     "type": "naturstein"
+     "type": "naturstein",
+     "etasje": true
     }
    },
    "takvinduer": [

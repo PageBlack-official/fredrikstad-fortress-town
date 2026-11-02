@@ -3,7 +3,8 @@
 
     python3 verktoy/sokkel.py          rettelser «sokkel» for husene der avlesningen beskriver sokkelen (idempotent; --tørt viser bare)
 
-Kilde: kilder/streetview/avlesning.json, sider[].kjeller_sokkel (fritekst lest av i Street View 29.10, f.eks. «grov grå/rosa
+Kilde: kilder/streetview/avlesning.json, sider[].kjeller_sokkel og materialet (02.11: «1. etg naturstein» = etasje, «murt naturstein» = hele;
+høyden for dem regnes av datalag.sokkel_etasje), (fritekst lest av i Street View 29.10, f.eks. «grov grå/rosa
 natursteinsokkel ca. 1.2 m med kjellervinduer», «grå pusset sokkel ca. 0.4 m»). Regelen:
 - materialet: naturstein/granitt/gråstein/kvader/bruddstein -> type «naturstein» (tegnes med steinmønster i src/05),
   pusset -> «puss» (flat farge). Står bare «grå» eller «lav», er materialet ukjent og huset hoppes over.
@@ -21,6 +22,10 @@ import datalag  # noqa: E402
 GRUNN = 'sokkel fra Street View-avlesningen (verktoy/sokkel.py, 02.11)'
 STEIN = re.compile(r'naturstein|granitt|gråstein|kvader|bruddstein', re.I)
 PUSS = re.compile(r'pusset', re.I)
+# første etasje i stein: «1. etg kvader/bruddstein», «tegl over grov natursteinsmur», «natursteinsetasje», «naturstein (hele 1. etg)»
+ETASJE = re.compile(r'1\. ?etg[^,;]*(naturstein|kvader|bruddstein|granitt)|(naturstein|kvader|bruddstein)[^,;]*1\. ?etg|natursteinsetasje|over grov natursteinsmur', re.I)
+# hele veggen i stein: materialet er naturstein (ikke sokkel)
+HELE = re.compile(r'^\s*(murt |grå )?(naturstein|bruddstein|gråstein)|naturstein \(grov kvader\)', re.I)
 FARGER = {  # (farge, skygge)
     'naturstein': ([174, 168, 160], [118, 114, 110]),
     'naturstein_rosa': ([180, 166, 160], [122, 112, 110]),
@@ -53,9 +58,21 @@ def beregn(d=None):
     ut = {}
     for i, rec in A.items():
         if i not in BY or i in datalag.EGNE_FASADER or BY[i].get('skjul'): continue
+        # hele etasjen eller hele veggen i stein (materialet sier det): høyden regnes av datalag.sokkel_etasje
+        mat = ' '.join(str(o.get(k) or '') for o in [rec] + list(rec.get('sider') or []) for k in ('materiale', 'vegg_materiale')).lower()
+        vf = ' '.join(str((o.get('vegg') or {}).get('farge') if isinstance(o.get('vegg'), dict) else o.get('vegg_farge') or '') for o in [rec] + list(rec.get('sider') or [])).lower()
+        etasje = bool(ETASJE.search(mat) or ETASJE.search(vf))
+        hele = not etasje and bool(HELE.search(mat)) and not re.search(r'sokkel|over|kalket|puss', mat)
+        if etasje or hele:
+            nok = 'naturstein_rosa' if 'rosa' in mat + vf else 'naturstein'
+            f, sk = FARGER[nok]
+            for j in (BY[i].get('floyer') or [i]):
+                if j in BY and not BY[j].get('skjul'):
+                    ut[j] = {'farge': f, 'skygge': sk, 'type': 'naturstein', ('etasje' if etasje else 'hele'): True}
+            continue
         beste = None
-        for s in rec.get('sider') or []:
-            tk = s.get('kjeller_sokkel')
+        tekster = [s.get('kjeller_sokkel') for s in rec.get('sider') or []] + [m for m in re.split(r'[,;]', mat) if 'sokkel' in m]
+        for tk in tekster:
             if not isinstance(tk, str): continue
             r = les_sokkel(tk)
             if r and (beste is None or r[1] > beste[1]): beste = r
@@ -75,8 +92,8 @@ def main(tørt=False):
     ret += [{'emne': 'bygg', 'id': i, 'op': 'sett', 'felt': 'sokkel', 'verdi': v, 'hvem': 'Claude', 'dato': '2026-11-02', 'grunn': GRUNN}
             for i, v in sorted(ut.items())]
     if not tørt: datalag.skriv_rettelser(ret)
-    n = sum(1 for v in ut.values() if v['type'] == 'naturstein')
-    print(f"{len(ut)} hus fikk sokkel fra Street View: {n} naturstein, {len(ut) - n} puss")
+    n = sum(1 for v in ut.values() if v['type'] == 'naturstein'); ne = sum(1 for v in ut.values() if v.get('etasje')); nh = sum(1 for v in ut.values() if v.get('hele'))
+    print(f"{len(ut)} hus fikk sokkel fra Street View: {n} naturstein ({ne} hel etasje, {nh} hele veggen), {len(ut) - n} puss")
 
 
 if __name__ == '__main__':
