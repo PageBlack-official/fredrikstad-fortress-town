@@ -145,6 +145,86 @@
     "rapport/avvik/A7-foer-etter-utsnitt.jpg"
    ],
    "vakt": "31_overflater"
+  },
+  {
+   "id": "A8",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.26, vedlegg 1 og 2)",
+   "hva": "«Tagger» som glitcher og vibrerer når man scroller: lyse takkete striper langs en liten rød portbygning (Mellomporten) og striper på bakken langs husvegger og stier",
+   "hvor": {
+    "naer": "Mellomporten pb-11 (-67, 75) og veikryss i hele byen"
+   },
+   "status": "åpen",
+   "aarsak": "Bakken er mange lag nesten i samme høyde: brostein 5 cm, gangveier 7 cm, flater 9 cm, kjøreveier 10 cm, parkering 12 cm, gress 28 cm. På avstand er dybdebufferen grovere enn centimeterne, så lag av ulik farge z-kjempet og flimret i fart: 139 kryss mellom veier med ulik flate (1 467 m²) og 2 overlapp mellom flater av ulik type lå i nøyaktig samme høyde. På vollene skar rette veibiter (punkter opptil 30 m fra hverandre) gjennom terrenget, som stakk opp som takker (ved Mellomporten).",
+   "rettelse": "src/03 BAKKELAG/bakkelag(): hvert bakkelag og hver farge i laget har egen polygonOffset (terreng/brostein < veier < flater < parkering < gress), så rekkefølgen ikke avhenger av centimeter; src/08: veibitene deles opp til halve terrengrutenettet og hver kant legges minst 6 cm over terrenget.",
+   "rettet_i": "7cd88da",
+   "bevis": [],
+   "vakt": "42_bakkelag"
+  },
+  {
+   "id": "A9",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.26, vedlegg 3 og 4)",
+   "hva": "Artillerigården står «synket i jorden»: første etasje uten vinduer og dører til huset klikkes og løftes",
+   "hvor": {
+    "bygg_id": "bnr-193868061"
+   },
+   "status": "åpen",
+   "aarsak": "Ikke terrenget: src/19 tegnet en egen «granittsokkel» 16 cm utenfor veggen for alle hus med feltet sokkel (laget 27.10 for Kasernens 1,1 m). Artillerigården fikk 29.10 en natursteinsetasje på 3,1 m (merknad fra Vegars kvartalskontroll), så båndet dekket hele første etasje med vinduer og dør. Båndet lå i en egen gruppe som ikke ble løftet med huset, derfor kom vinduene fram ved klikk. Bare Artillerigården og Kasernen hadde sokkel; på Kasernen stod kjellervinduene 20 cm ut for å synes foran båndet.",
+   "rettelse": "src/19-båndet er tatt ut; sokkelen tegnes bare av src/07 (3 cm ut, vinduene 5 cm, løftes med huset). kaserna.py legger kjellervinduene i veggen.",
+   "rettet_i": "1c9f6e3",
+   "bevis": [
+    "rapport/avvik/A9-foer-artillerigaarden-az30.jpg",
+    "rapport/avvik/A9-etter-artillerigaarden-az30.jpg",
+    "rapport/avvik/A9-foer-artillerigaarden-az210.jpg",
+    "rapport/avvik/A9-etter-artillerigaarden-az210.jpg"
+   ],
+   "vakt": "41_sokkel_skjuler_ikke"
+  },
+  {
+   "id": "A10",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.26, vedlegg 5)",
+   "hva": "Artillerigårdens første etasje er grove natursteiner med tegl over; kartet hadde en brun flate",
+   "hvor": {
+    "bygg_id": "bnr-193868061"
+   },
+   "status": "åpen",
+   "aarsak": "Sokkelen hadde bare én farge (brun [178,150,138] fra tegningen) og ikke materiale. Street View-avlesningen har «kjeller_sokkel» for 160 sider, med naturstein/granitt/puss og høyde for mange hus, men den ble ikke brukt.",
+   "rettelse": "sokkel.type (naturstein/puss): src/05 tegner naturstein med skift, blokker, fuger og tone per stein (tegnet, ikke foto). Artillerigården: grå/rosa naturstein i merknaden (Vegar 02.11). Ny verktoy/sokkel.py i kjeden leser kjeller_sokkel i avlesningen: 48 hus fikk sokkel (43 naturstein, 5 puss), bare fra observasjoner som peker på huset (A12).",
+   "rettet_i": "1c9f6e3",
+   "bevis": [],
+   "vakt": "41_sokkel_skjuler_ikke"
+  },
+  {
+   "id": "A11",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.29, Street View-bilde)",
+   "hva": "Mormors Café er burgunder i kartet; skal være gul/oker",
+   "hvor": {
+    "bygg_id": "bnr-193867987"
+   },
+   "status": "åpen",
+   "aarsak": "Fargen kom fra kvartaltegningen kvartal6 (burgunder). Street View-avlesningen hadde «okergul» fra 2010 (eldre enn tegningen, derfor ikke brukt) og «lys okergul/gul» fra 2024 på siden mot Voldportgaten, men fargeregelen leste bare hovedbildet. Begge kamerastrålene treffer dessuten nabohusene (bnr-193971318 og bnr-193867979) først, så koblingen var usikker (A12).",
+   "rettelse": "Merknad på huset (kilder/bygg-merknader.json): okergul etter Vegar 02.11. sv_kobling.les() gjør nå nyeste godkjente observasjon til hovedavlesning.",
+   "rettet_i": "d60888d",
+   "bevis": [],
+   "vakt": "43_streetview_kobling"
+  },
+  {
+   "id": "A12",
+   "dato": "2026-11-02",
+   "fra": "Vegar (18.29)",
+   "hva": "Street View-bildene stemmer ikke helt med 3D-modellene: bilde→bygg-koblingen er feil for flere hus",
+   "hvor": {
+    "hele": true
+   },
+   "status": "åpen",
+   "aarsak": "Avlesningen (29.10) koblet bilder til hus etter adresse og retning uten å sjekke hva kameraet faktisk ser. Strålesjekk fra kamerapunkt og retning (pano_url) mot modellens omriss: 78 av 332 observasjoner (48 hus) har et annet hus først i den delen av bildet avlesningen sier (venstre/høyre/midten): nabohuset, huset over gata eller et skur foran. Eksempler: bnr-193972101 (A3-garasjene) fikk 67774 sin fasade, bnr-193867804 så 72462.",
+   "rettelse": "verktoy/sv_kobling.py i kjeden (før streetview_fasader.py): dommen per observasjon i kilder/streetview/kobling-geometri.json; streetview_farger, streetview_fasader, tak_farge/vegg_nye, sokkel og fasadesegmenter leser avlesningen gjennom sv_kobling.les(), så observasjoner som peker på et annet hus ikke brukes, og tegningen/trykket gjelder der. Endret: veggfarge på 12 hus, vinduer på 18, sokkel på 6, fasadekilde på 7.",
+   "rettet_i": "d60888d",
+   "bevis": [],
+   "vakt": "43_streetview_kobling"
   }
  ]
 }
