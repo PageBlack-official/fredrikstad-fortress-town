@@ -2251,7 +2251,10 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
         m.position.set(x, hAt(x,y)+0.14, -y); G.add(m); } });
     flatGruppe(G); }
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
-  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
+  // Er raden målt som flate i ortofotoet (flater[].parkering_id, verktoy/bakke.py parkeringsfelt), er det flatens type som gjelder
+  // (brostein i Gamlebyen) og bare oppmerkingen tegnes: den glatte parkeringsflaten oppå brosteinen var «noe rart foran huset» (avvik A3, 02.11)
+  const maaltFlate=new Set((DATA.flater||[]).filter(f=>!f.skjul && f.parkering_id).map(f=>f.parkering_id));
+  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p && !maaltFlate.has(p.id)) legg(p.p, 0.12, matFor('parkering')); });
 }
 
 // ---- brygger (27.10): fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
@@ -2319,9 +2322,12 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
       const mx=a[0]+dx*(s0+s1)/2/L, my=a[1]+dy*(s0+s1)/2/L, y0=hAt(mx,my);
       const w=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,mu.h,mu.tykk),tegl); w.position.set(mx,y0+mu.h/2,-my); w.rotation.y=ang; w.castShadow=w.receiveShadow=true; anlegg.add(w);
       const k=new THREE.Mesh(new THREE.BoxGeometry(s1-s0+0.1,0.16,mu.tykk+0.16),dekk); k.position.set(mx,y0+mu.h+0.08,-my); k.rotation.y=ang; k.castShadow=true; anlegg.add(k); };
-    const pt=mu.port;
-    if(!pt){ del(0,L); return; }
-    const sp=pt.s*L, P=pt.pilar; del(0,sp-P/2); del(sp+P/2,L);
+    // åpninger der et portbygg står i muren ([fra, til, id] i meter langs muren, verktoy/kaserna.py): muren tegnes ikke gjennom buen (avvik A2, 02.11)
+    const hull=(mu.aapninger||[]).map(q=>[q[0],q[1]]);
+    const pt=mu.port; if(pt) hull.push([pt.s*L-pt.pilar/2, pt.s*L+pt.pilar/2]);
+    hull.sort((u,v)=>u[0]-v[0]); let s0=0; hull.forEach(([h0,h1])=>{ del(s0,h0); s0=Math.max(s0,h1); }); del(s0,L);
+    if(!pt) return;
+    const P=pt.pilar;
     // portpilaren: rektangel med rundbuehull, ekstrudert gjennom muren
     const sh=new THREE.Shape(); sh.moveTo(-P/2,0); sh.lineTo(P/2,0); sh.lineTo(P/2,pt.pilar_h); sh.lineTo(-P/2,pt.pilar_h); sh.closePath();
     const r=pt.bredde/2, yb=pt.hoyde-r; const hul=new THREE.Path(); hul.moveTo(-r,0); hul.lineTo(-r,yb); hul.absarc(0,yb,r,Math.PI,0,true); hul.lineTo(r,0); hul.closePath(); sh.holes.push(hul);
