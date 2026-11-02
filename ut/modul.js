@@ -412,6 +412,12 @@ function polyShape(pts){
   const s = new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0], p[1])));
   return s;
 }
+// BAKKELAG (02.11, avvik A8): flater som ligger nesten i samme høyde (brostein 5 cm, veier 7–10 cm, flater 9 cm, parkering 12 cm,
+// gress 28 cm) z-kjempet på avstand og flimret når kartet ble flyttet («tagger»). Rekkefølgen avgjøres nå i dybdetesten med
+// polygonOffset per lag, ikke av centimeterforskjeller: lag 0 terreng/brostein, 1 veier, 2 flater, 3 parkering, 4 gress.
+const BAKKELAG={terreng:0, brostein:0, vei:1, flate:2, parkering:3, gress:4};
+// Innen et lag får hver farge sitt underlag (0–3), så to veier eller to flater av ulik type som overlapper, heller ikke kjemper.
+function bakkelag(mat, lag, under=0){ mat.polygonOffset=true; mat.polygonOffsetFactor=-lag; mat.polygonOffsetUnits=-4*lag-under; mat.userData.bakkelag=[lag,under]; return mat; }
 function flat(pts, y, mat){
   if (pts.length<3) return null;
   const g = new THREE.ShapeGeometry(polyShape(pts));
@@ -519,6 +525,7 @@ const stoneMat = new THREE.ShaderMaterial({
   }`
 });
 medSkygge(stoneMat);
+bakkelag(stoneMat, BAKKELAG.brostein);   // avvik A8: lagrekkefølgen i dybdetesten (src/03)
 if (DATA.brostein){ const m=flat(DATA.brostein,0.05,stoneMat); }
 const greenMat = new THREE.MeshLambertMaterial({color:0x9dcfa5});
 const plenMat=new THREE.ShaderMaterial({
@@ -531,7 +538,7 @@ const plenMat=new THREE.ShaderMaterial({
     #include <colorspace_fragment>
     }`
 });
-medSkygge(plenMat);
+medSkygge(plenMat); bakkelag(plenMat, BAKKELAG.gress);
 // plenene og gårdsrommene tegnes i 17_bakkeflater-og-parkering.js (sammen med parkering og flatene målt i ortofotoet)
 
 // ---- bygg ----
@@ -615,17 +622,17 @@ function fotBaand(pts, d, y){
 }
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
-  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+(opt.vindu?'V':'');
+  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+(opt.vindu?'V':'')+(opt.stein?'St':'');
   if(!mats.has(key)){
     const c=new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`); if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8);
     // skyggetonen hentes fra trykkfila når bygget har en; ellers samme forhold som tegningen bruker
     let s; if(sk && !dim){ s=new THREE.Color(`rgb(${sk[0]},${sk[1]},${sk[2]})`); } else { s=c.clone(); s.r*=0.72; s.g*=0.80; s.b*=0.80; }
     const m=new THREE.ShaderMaterial({
       lights:true,
-      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, tHus:U_HUS, uVask:{value:STIL.vask}, skravur:U_SKRAVUR }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, tHus:U_HUS, uVask:{value:STIL.vask}, skravur:U_SKRAVUR, uStein:{value:opt.stein?1:0} }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
       vertexShader:GL_SOL_V+GL_HUS_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos; vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
-      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
+      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask, uStein; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
         float nn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hh(i),hh(i+vec2(1,0)),f.x),mix(hh(i+vec2(0,1)),hh(i+vec2(1,1)),f.x),f.y);}
         void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge
@@ -647,6 +654,17 @@ function mat(rgb, dim, sk, opt={}){
             vec2 tq=normalize(vec2(-nq.z,nq.x)); float uq=dot(wq.xz,tq);
             float strok=nn(vec2(uq*0.7, wq.y*6.0))*0.7+nn(vec2(uq*2.1, wq.y*15.))*0.3;
             c*=1.+(strok-0.5)*0.05*naerhet*uVask;
+            if(uStein>0.5){
+              // naturstein (sokkel.type, avvik A10 02.11): skift med ujevn høyde, blokker med ujevn lengde, mørke fuger og
+              // tone per stein; tegnet, ikke fotografi. Borte på avstand som takstein og penselstrøk.
+              float sy=wq.y/0.46; float rad=floor(sy); float fy=fract(sy);
+              float sx=uq/(0.62+0.5*hh(vec2(rad,7.)))+hh(vec2(rad,3.)); float blk=floor(sx); float fx=fract(sx);
+              float fwy=max(fwidth(sy),1e-4), fwx=max(fwidth(sx),1e-4);
+              float fuge=max(1.-smoothstep(0.,fwy*1.6,min(fy,1.-fy)), 1.-smoothstep(0.,fwx*1.6,min(fx,1.-fx)));
+              float vis=1.-smoothstep(0.2,0.5,max(fwy,fwx));
+              c*=1.+(hh(vec2(blk,rad))-0.5)*0.20*mix(0.4,1.,vis);
+              c*=1.-0.30*fuge*vis;
+            }
           } else if(abs(nq.y)<0.985){
             // tak: rader med takstein langs fallet, antydet, borte på avstand
             vec2 ned=normalize(nq.xz); vec2 lang=vec2(-ned.y,ned.x);
@@ -1148,10 +1166,11 @@ DATA.bygg.forEach((b,i)=>{
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
-  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»)
+  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»); type naturstein
+  // gir steinmønster (src/05, avvik A10). Sokkelen står 3 cm ut og vinduene 5 cm, så vinduene i sokkelen synes; den løftes med huset.
   if(b.sokkel && b.sokkel.h>0.2 && !dim){
     const sg=new THREE.ExtrudeGeometry(polyShape(utvidPoly(pts,0.03)),{depth:Math.min(b.sokkel.h,h-0.05),bevelEnabled:false}); sg.rotateX(-Math.PI/2);
-    const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge)]); sm.receiveShadow=true; legg(sm);
+    const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge,{stein:b.sokkel.type==='naturstein'})]); sm.receiveShadow=true; legg(sm);
   }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2 && !b.kirke){
@@ -1366,7 +1385,7 @@ if (TER){
         #include <colorspace_fragment>
       }`
   });
-  medSkygge(terMat);
+  medSkygge(terMat); bakkelag(terMat, BAKKELAG.terreng);
   const ter=new THREE.Mesh(g,terMat); ter.receiveShadow=true; scene.add(ter);
   // festningsområdet som flate under terrenget: gir eksakt kant mot bakken og vannet
   (DATA.landskap.fest||[]).forEach(p=>flatH(p,[],0.02,terMat));
@@ -1378,12 +1397,19 @@ if (TER){
   const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}, B:{p:[],i:[]}, H:{p:[],i:[]}, U:{p:[],i:[]}};
   const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
-    const P=v.p, n=P.length; if(n<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.flate==='brostein'?buf.B:v.flate==='heller'?buf.H:v.flate==='grus'?buf.U:(v.k==='gang'?buf.G:buf.K);
-    const L=[], R=[];
+    // båndet legges på terrenget (avvik A8, 02.11): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
+    // skar gjennom vollens terreng (terrenget stakk opp som takker som flimret). Biten deles opp til halve terrengrutenettet, og
+    // hver kant løftes til minst terrenget + 6 cm.
+    const P0=v.p; if(P0.length<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.flate==='brostein'?buf.B:v.flate==='heller'?buf.H:v.flate==='grus'?buf.U:(v.k==='gang'?buf.G:buf.K);
+    const steg=TER?TER.g/2:2, P=[P0[0]];
+    for(let k=1;k<P0.length;k++){ const a=P0[k-1], c=P0[k], m=Math.max(1,Math.ceil(Math.hypot(c[0]-a[0],c[1]-a[1])/steg));
+      for(let j=1;j<=m;j++){ const t=j/m; P.push([a[0]+(c[0]-a[0])*t, a[1]+(c[1]-a[1])*t, a[2]+(c[2]-a[2])*t]); } }
+    const n=P.length, L=[], R=[];
     for(let k=0;k<n;k++){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
-      const nx=-dy*w, ny=dx*w, z=P[k][2]+dz;
-      L.push([P[k][0]+nx, z, -(P[k][1]+ny)]); R.push([P[k][0]-nx, z, -(P[k][1]-ny)]);
+      const nx=-dy*w, ny=dx*w;
+      const zL=Math.max(P[k][2], hAt(P[k][0]+nx,P[k][1]+ny)+0.06)+dz, zR=Math.max(P[k][2], hAt(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
+      L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){
       quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
@@ -1392,9 +1418,9 @@ if (TER){
       }
     }
   });
-  [[buf.K,mat([128,124,120],false)],[buf.G,mat([146,142,134],false)],[buf.S,mat([120,112,104],false)],[buf.H,mat([190,184,174],false)],[buf.U,mat([214,204,182],false)]].forEach(([B,m])=>{
+  [[buf.K,mat([128,124,120],false),0],[buf.G,mat([146,142,134],false),1],[buf.S,mat([120,112,104],false),0],[buf.H,mat([190,184,174],false),2],[buf.U,mat([214,204,182],false),3]].forEach(([B,m,under])=>{
     if(!B.p.length) return; const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3)); g.setIndex(B.i);
-    const mm=m.clone(); mm.side=THREE.DoubleSide; const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
+    const mm=m.clone(); mm.side=THREE.DoubleSide; if(B!==buf.S) bakkelag(mm, BAKKELAG.vei, under); const me=new THREE.Mesh(g,mm); me.receiveShadow=true; me.castShadow=(B===buf.S); scene.add(me); });
   if(buf.B.p.length){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(buf.B.p,3)); g.setIndex(buf.B.i);
     stoneMat.side=THREE.DoubleSide; const me=new THREE.Mesh(g,stoneMat); me.receiveShadow=true; scene.add(me); }
 }
@@ -2226,7 +2252,7 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
   }));
   // bed (bar jord) og brostein utenfor brosteinsflaten kommer fra ortofotoet (verktoy/bakke.py overflater, 29.10)
   const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152], bed:[132,108,86], brostein:[146,140,132] };
-  const MAT={brostein:stoneMat}; const matFor=k=>MAT[k]||(MAT[k]=flateMat(FARGE[k]));
+  const MAT={brostein:stoneMat}; const matFor=k=>MAT[k]||(MAT[k]=bakkelag(flateMat(FARGE[k]), k==='parkering'?BAKKELAG.parkering:BAKKELAG.flate, {asfalt:0,grus:1,heller:2,bed:3}[k]||0));   // lagene: src/03 (avvik A8)
   // flaten legges på terrenget (vollene og kaiene ligger på terrengnettet), aldri lavere enn y0
   const legg=(pts, y0, mat)=>{
     if(!pts || pts.length<3) return null;
@@ -2251,7 +2277,10 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
         m.position.set(x, hAt(x,y)+0.14, -y); G.add(m); } });
     flatGruppe(G); }
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
-  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
+  // Er raden målt som flate i ortofotoet (flater[].parkering_id, verktoy/bakke.py parkeringsfelt), er det flatens type som gjelder
+  // (brostein i Gamlebyen) og bare oppmerkingen tegnes: den glatte parkeringsflaten oppå brosteinen var «noe rart foran huset» (avvik A3, 02.11)
+  const maaltFlate=new Set((DATA.flater||[]).filter(f=>!f.skjul && f.parkering_id).map(f=>f.parkering_id));
+  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p && !maaltFlate.has(p.id)) legg(p.p, 0.12, matFor('parkering')); });
 }
 
 // ---- brygger (27.10): fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
@@ -2306,7 +2335,7 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
   g.traverse(c=>c.layers.enable(1));   // speilingen i vannet (14_speilinger) tar med bryggene
 }
 
-// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) og granittsokkel (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
+// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
 {
   const anlegg=new THREE.Group(); scene.add(anlegg);
   const fra=id=>DATA.bygg.find(b=>b.id===id)||{};
@@ -2319,9 +2348,12 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
       const mx=a[0]+dx*(s0+s1)/2/L, my=a[1]+dy*(s0+s1)/2/L, y0=hAt(mx,my);
       const w=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,mu.h,mu.tykk),tegl); w.position.set(mx,y0+mu.h/2,-my); w.rotation.y=ang; w.castShadow=w.receiveShadow=true; anlegg.add(w);
       const k=new THREE.Mesh(new THREE.BoxGeometry(s1-s0+0.1,0.16,mu.tykk+0.16),dekk); k.position.set(mx,y0+mu.h+0.08,-my); k.rotation.y=ang; k.castShadow=true; anlegg.add(k); };
-    const pt=mu.port;
-    if(!pt){ del(0,L); return; }
-    const sp=pt.s*L, P=pt.pilar; del(0,sp-P/2); del(sp+P/2,L);
+    // åpninger der et portbygg står i muren ([fra, til, id] i meter langs muren, verktoy/kaserna.py): muren tegnes ikke gjennom buen (avvik A2, 02.11)
+    const hull=(mu.aapninger||[]).map(q=>[q[0],q[1]]);
+    const pt=mu.port; if(pt) hull.push([pt.s*L-pt.pilar/2, pt.s*L+pt.pilar/2]);
+    hull.sort((u,v)=>u[0]-v[0]); let s0=0; hull.forEach(([h0,h1])=>{ del(s0,h0); s0=Math.max(s0,h1); }); del(s0,L);
+    if(!pt) return;
+    const P=pt.pilar;
     // portpilaren: rektangel med rundbuehull, ekstrudert gjennom muren
     const sh=new THREE.Shape(); sh.moveTo(-P/2,0); sh.lineTo(P/2,0); sh.lineTo(P/2,pt.pilar_h); sh.lineTo(-P/2,pt.pilar_h); sh.closePath();
     const r=pt.bredde/2, yb=pt.hoyde-r; const hul=new THREE.Path(); hul.moveTo(-r,0); hul.lineTo(-r,yb); hul.absarc(0,yb,r,Math.PI,0,true); hul.lineTo(r,0); hul.closePath(); sh.holes.push(hul);
@@ -2379,16 +2411,8 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
         const f=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.72,5),jern); f.position.set(x+tx*o,top+0.36,-(y+ty*o)); anlegg.add(f); });
     }
   });
-  // granittsokkel: lys stein rundt foten av huset (bygg med feltet sokkel)
-  DATA.bygg.forEach(b=>{
-    if(!b.sokkel || b.skjul || !b.p) return;
-    const stein=mat(b.sokkel.farge,false); const p=b.p;
-    const A=p.reduce((s,q,i)=>{ const c=p[(i+1)%p.length]; return s+q[0]*c[1]-c[0]*q[1]; },0), sg=A<0?1:-1;   // med klokka: utover er til venstre
-    for(let i=0;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length]; const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy); if(L<0.3) continue;
-      const nx=-dy/L*sg, ny=dx/L*sg;   // sokkelen står 0,16 m utenfor veggen, kjellervinduene ligger foran den
-      const mx=(a[0]+c[0])/2+nx*0.08, my=(a[1]+c[1])/2+ny*0.08, y0=hAt(mx,my);
-      const s=new THREE.Mesh(new THREE.BoxGeometry(L+0.32,b.sokkel.h,0.16),stein); s.position.set(mx,y0+b.sokkel.h/2,-my); s.rotation.y=Math.atan2(dy,dx); s.receiveShadow=true; anlegg.add(s); }
-  });
+  // (granittsokkelen som eget bånd 16 cm utenfor veggen er tatt ut 02.11, avvik A9: på Artillerigården (sokkel 3,1 m) dekket den
+  // vinduene og dørene i første etasje og ble stående når huset ble løftet. Sokkelen tegnes nå bare av src/07, med huset.)
   flatGruppe(anlegg);
 }
 

@@ -5,7 +5,7 @@ målt på 95251 m² bakke som ortofotoet ser, i Gamlebyen (280421 m² med hus og
 
 - fotoet belagt: 42793 m², modellen enig 94.6%, grønt 2305 m², bed 6 m²
 - fotoet grønt: 51978 m², modellen enig 97.5%, belagt 1313 m², bed 1 m²
-- fotoet bed: 480 m², modellen enig 51.1%, belagt 53 m², grønt 181 m²
+- fotoet bed: 480 m², modellen enig 51.0%, belagt 54 m², grønt 181 m²
 
 Prøvepunkter der modellen bommer (x, y, dømt, modell):
 - (252.6, 383.1) gress / grus
