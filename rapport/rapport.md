@@ -1,8 +1,8 @@
 # Regelrapport
 
-Kilde: af8bad8+urettet versjon 34 kjørt 2026-11-02 03:21
+Kilde: f0d3d76 versjon 34 kjørt 2026-11-02 03:34
 
-- FEIL 01_bygg_finnes  (krasjet: :)
+- OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
 - FEIL 03_fasader_fra_tegning  (158 hus med fasade fra tegning, 185 antatt (må kvalitetssikres kvartal for kvartal))
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
@@ -16,19 +16,19 @@ Kilde: af8bad8+urettet versjon 34 kjørt 2026-11-02 03:21
 - FEIL 12_kontaktskygge  (- 0.2 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
 - OK   13_deler_staar_paa_topp  (- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok)
 - OK   14_id  (498 bygg, 429 med bygningsnummer fra Matrikkelen (269 av 333 i Gamlebyen), 1627 id-er i registeret)
-- FEIL 15_flater  (ortofotoet mangler: kjør python3 verktoy/flater.py hent (flisene ligger ikke i git, lisensen er ikke avklart))
-- FEIL 16_vann  (ortofotoet eller vannfasiten mangler: kjør python3 verktoy/vann.py hent og maske (ligger ikke i git, lisensen er ikke avklart))
+- OK   15_flater  (0 avvik, 5 advarsler; 19 plener innenfor ortofotoet målt)
+- OK   16_vann  (99.40% av kartets vann er vann i ortofotoet (krav 98.5%), 99.48% av ortofotoets vann er dekket (krav 98.5%); før retting (OSM): 97.02% og 98.89%)
 - OK   17_vinduer_rytme  (127 antatte hus og Street View-hus, 1633 vinduer, 82 dører; 0 brudd)
-- FEIL 18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
+- OK   18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 6 bilder – ingen ny tegning)
-- FEIL 20_grunnmur_fkb  (kommunekartet mangler: mangler /home/claude/wt-flyt3/kilder/kommunekart/kommunekart.pdf (Vegars nedlasting fra kommunens kartportal; ligger bare lokalt))
-- FEIL 21_register  (krasjet: mangler /home/claude/wt-flyt3/kilder/kommunekart/kommunekart.pdf (Vegars nedlasting fra kommunens kartportal; ligger bare lokalt))
+- OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 7 unntak (fredet))
+- OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 300 modellhus)
 - OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 57 px/bilde, hopp 0, rykk 0.2 (<= 0.45), bråstopp 0 (<= 0,15))
 - OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
 - OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
-- FEIL 31_overflater  (ortofotoet eller kommunekartet mangler lokalt (verktoy/flater.py hent; kommunekart.pdf fra Vegar))
-- FEIL 32_gater  (kommunekartet mangler lokalt)
-- FEIL 33_gjerder  (krasjet: _DPI, alpha=False))
+- OK   31_overflater  (gruppe 96.0% (krav 95 %), belagt type 98.1% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
+- OK   32_gater  (123 av 126 målte veier (Gamlebyen og kommunekartets dekning utenfor vollene) har riktig bredde og kant (97.6%, krav 95 %); 164 kan ikke måles (åpen plass, trær,)
+- OK   33_gjerder  (presisjon 95.3% av 163 m funnet i fotoet (krav 95 %), dekning 99.7% av 195 m sett langs kandidatlinjene (krav 95 %); 0 av 95 stykker krysser gateareal eller hus)
 - OK   34_traer  (1455 av 1458 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.8%, krav 95 %); 0 i vann, 0 i hus; 1592 trær i alt = 2343 fra 23.10 )
 
 Detaljer per regel i samme mappe.
