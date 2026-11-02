@@ -500,3 +500,17 @@ den er rettet ved kilden, bevist (før/etter-bilder i rapport/avvik/) og har en 
   småbygg og at ingen mur går gjennom et portbygg.
 - bakke.py: sonen rundt hus der ortofotoet ser tak og vegg i stedet for bakken er 0,2 × mønehøyden (minst 1,25 m). Med 1,25 m for alle
   ble Kasernens tak som heller ut over torget lest som tre «bed» langs fasaden.
+
+## Bakkelag, sokkel og Street View-koblingen (02.11, natt/avvik, A8–A12)
+- Bakkelagene (A8): flatene på bakken ligger bare centimeter fra hverandre. Rekkefølgen avgjøres av `bakkelag(mat, lag, underlag)` i src/03
+  (polygonOffset): terreng/brostein 0 < veier 1 < flater 2 < parkering 3 < gress 4, og hver farge i et lag har eget underlag. Et nytt bakkemateriale
+  skal få lag, ellers flimrer det i fart. Veiene (src/08) deles opp til halve terrengrutenettet og legges minst 6 cm over terrenget. Regel 42.
+- Sokkelen (A9/A10): `sokkel {h, farge, skygge, type}` tegnes bare av src/07 (3 cm ut, vinduene 5 cm), løftes med huset. `type: naturstein` gir
+  steinmønster (src/05, mat(..., {stein})). verktoy/sokkel.py (i kjeden før bygg_merknader.py) leser «kjeller_sokkel» i Street View-avlesningen;
+  merknadene og kaserna.py går foran. Regel 41.
+- Street View-koblingen (A12): verktoy/sv_kobling.py (i kjeden før streetview_fasader.py) sjekker hver observasjon med stråler fra kamerapunktet
+  (pano_url) og skriver dommen i kilder/streetview/kobling-geometri.json. Alle verktøy leser avlesningen gjennom `sv_kobling.les()`: bare
+  observasjoner som peker på huset, og nyeste godkjente observasjon er hovedavlesningen. 02.11: 78 av 332 observasjoner (48 hus) pekte på et annet hus.
+  Regel 43. Vegars egne dommer (som Mormors Café, okergul) står i kilder/bygg-merknader.json.
+- Regel 39 kjører kjeden i en kopi: alt i data/ skal være det kjeden gir. Et felt som kopieres ved husdeling (husdeling.py), må stå i unntakslisten
+  hvis et senere verktøy setter det (sokkel, 02.11).
