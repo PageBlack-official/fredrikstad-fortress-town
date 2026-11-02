@@ -31,6 +31,14 @@ def til_modell(lon, lat):
     return (mx - _MX0) * _S, (my - _MY0) * _S
 
 
+# Hus med eget fasadeverktøy (02.11, avvik A1): vind, arker, piper og sokkel eies av verktøyet, og kjedens generelle
+# fasadeverktøy (fasade_tegning.py legg_inn m.fl.) hopper over dem. Verktøyet står i bygg_kjede.py etter fasadeverktøyene,
+# så det vinner også om en gammel linje skulle ligge igjen. Regel 37 sjekker at det effektive bygget er det verktøyet gir.
+# 29.10 manglet dette: fasade_tegning.py la Kvartal11 (2015) og Street View 2010 over Kaserna etter ombyggingen, og
+# veggen mot torget mistet 34 av 45 vinduer.
+EGNE_FASADER = {'bnr-193867537': 'verktoy/kaserna.py'}
+
+
 def les(navn):
     return json.load(open(os.path.join(ROT, 'data', navn + '.json'), encoding='utf8'))
 

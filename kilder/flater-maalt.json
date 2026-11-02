@@ -7,7 +7,7 @@
  "parkering-1-1921":{"linje":[[127,239],[143,221]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad på grusplassen ved Smedjegaten"},
  "parkering-1-8500":{"linje":[[115,248],[125,239.5]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad langs grøntkanten"},
  "parkering-1-15548":{"linje":[[106,256],[115,248]],"bredde":5,"flate":"grus","grunn":"ortofoto 2024: biler på rad langs grøntkanten"},
- "parkering-1-4625":{"p":[[170,140],[178,158],[240,158],[240,124],[215,118],[172,136]],"flate":"grus","grunn":"ortofoto 2024: grusplass nordøst i byen, biler langs alle kanter; nordkanten er usikker"},
+ "parkering-1-4625":{"p":[[196.5,155.5],[212.0,148.0],[220.0,155.5],[238.0,146.0],[240.0,142.0],[240.0,124.0],[234.0,122.2],[214.8,120.0],[185.5,133.7],[185.5,140.2]],"flate":"grus","grunn":"ortofoto 2024: grusplassen mellom husene, avgrenset av husveggene og plenkanten i øst (målt på nytt 02.11, avvik A6: den gamle rammen lå over to hus og plenen)"},
  "parkering-1-4599":{"linje":[[113,62],[96,36]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Raadhusgaten"},
  "parkering-1-4602":{"linje":[[156,123],[134,92]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Raadhusgaten"},
  "parkering-1-4626":{"linje":[[116,156],[150,139.5]],"bredde":2.5,"flate":"gate","grunn":"ortofoto 2024: langsparkering i Færgeportgaten"},

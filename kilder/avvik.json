@@ -1,10 +1,125 @@
 {
  "om": "Avvikslista (Vegar 02.11 16:44: «Kan du holde styr på dette slik at ting du gjør ikke havner i glemmeboken når du driver å fikser? ... nesten er ikke lov»). Hver feil Vegar eller vi selv ser i kartet står her til den er rettet OG bevist. Regel 36 er rød så lenge en sak er åpen, eller en lukket sak mangler bevis (skjermbilde før og etter som finnes i repoet) og vakt (regel eller test som fanger feilen hvis den kommer tilbake). Saker fjernes aldri; de lukkes.",
  "saker": [
-  {"id": "A1", "dato": "2026-11-02", "fra": "Vegar", "hva": "Infanterikasernen (bnr-193867537): veggen mot vest mangler mange vinduer", "hvor": {"bygg_id": "bnr-193867537"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A2", "dato": "2026-11-02", "fra": "Vegar", "hva": "Et rart lite hus foran en port, plassert feil, «rett ovenfor kirken» sett fra mobilens sluttbilde (asimut 193), dvs. i retning Tøihuset", "hvor": {"naer": "bnr-193867529 (Kirken), mot Tøihuset"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A3", "dato": "2026-11-02", "fra": "Vegar", "hva": "Bygningsnr. 193972101 har fått «et eller annet rart foran huset»", "hvor": {"bygg_id": "bnr-193972101"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A4", "dato": "2026-11-02", "fra": "Vegar", "hva": "«en del annet rart der også»: gå hele byen systematisk etter samme typer feil (manglende vinduer, løse/feilplasserte småbygg og objekter foran fasader og porter) og legg hvert funn inn her som egen sak", "hvor": {"hele": true}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A5", "dato": "2026-11-02", "fra": "Vegar", "hva": "«versjonskonflikt»: sjekk om rettelser som en gang var gjort (vinduer, småbygg, porter) har falt ut ved sammenslåinger av greiner", "hvor": {"hele": true}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null}
+  {
+   "id": "A1",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "Infanterikasernen (bnr-193867537): veggen mot vest mangler mange vinduer",
+   "hvor": {
+    "bygg_id": "bnr-193867537"
+   },
+   "status": "lukket",
+   "aarsak": "Versjonskonflikt i kjeden. Kasernens fasade etter ombyggingen (verktoy/kaserna.py, 27.10: akser på 3,4 m, granittsokkel med kjellervinduer, to etasjer, grønne dører mot torget) ble lagt inn utenfor kjeden (verktoy/bygg_kjede.py). 30.10 kl. 01.14 (195909a) la fasade_tegning.py legg_inn Kvartal11 og reglene over (3 rader på 1,6/4,6/7,6 m), og 01.35 (6b90384) fikk veggen mot torget (vegg 17, 44 m, normal 20°) Street View aug. 2010 der bare 6+5 vinduer synes: 11 vinduer i stedet for 45. grunnmur.py og streetview_fasader.py fredet Kasernen, fasade_tegning.py gjorde det ikke. Samme rot: gårdsmurene (data/teglmurer.json) stod med brannstasjonens gamle hjørner fra før grunnmuren, og tre «bed» langs vestveggen (bakke.py) var Kasernens tak som heller ut over torget i ortofotoet (sonen rundt hus var 1,25 m uansett høyde).",
+   "rettet_i": "c626945",
+   "bevis": [
+    "rapport/avvik/A1-foer-torgveggen-az160.jpg",
+    "rapport/avvik/A1-etter-torgveggen-az160.jpg",
+    "rapport/avvik/A1-foer-mobilretning-az193.jpg",
+    "rapport/avvik/A1-etter-mobilretning-az193.jpg",
+    "rapport/avvik/A1-foer-vestveggen-az235.jpg",
+    "rapport/avvik/A1-etter-vestveggen-az235.jpg",
+    "rapport/avvik/A1-foer-gaarden-az340.jpg",
+    "rapport/avvik/A1-etter-gaarden-az340.jpg"
+   ],
+   "vakt": "37_egne_fasader",
+   "rettelse": "datalag.EGNE_FASADER: Kasernen eies av kaserna.py; fasade_tegning.py hopper over den; kaserna.py står i kjeden etter landemerker.py og tar bare ut egne linjer. Dørene i gården fra Kvartal11 (gården er ikke i illustrasjonene). bakke.py: helningssone 0,2 × mønehøyden (min 1,25 m), de tre bed-flatene er skjult. Resultat: alle ni ytterveggene har kjellervinduer og vinduer i begge etasjer i hver akse (regel 37), vegg 17: 13+13+13. Kjeden kjørt i kopi gir samme data (regel 39)."
+  },
+  {
+   "id": "A2",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "Et rart lite hus foran en port, plassert feil, «rett ovenfor kirken» sett fra mobilens sluttbilde (asimut 193), dvs. i retning Tøihuset",
+   "hvor": {
+    "naer": "bnr-193867529 (Kirken), mot Tøihuset"
+   },
+   "status": "lukket",
+   "aarsak": "Porten i Kasernens gårdsmur mot Rådhusgaten (teglmurer mu-1) ble lagt midt i muren av verktoy/kaserna.py 27.10. 29.10 kom FKB-skuret pb-46 (5,4 × 2,4 m, grått tak i Kvartal11) inn fra kommunekartet akkurat der, med beige vegg og en dør satt av vinduer_regler.py: et lite hus inne i portbuen (bildet A2-foer-etter-porten-mot-gata-utsnitt.jpg, øverst). Kvartal11 tegner porten en firedel av muren fra fløyen og skuret midt på. Murens ender var dessuten de gamle hjørnene fra før grunnmuren (kaserna.py stod ikke i kjeden), så muren gikk 1,3 m² inn i skuret. Ved porten mot kirka (portbygget pb-51) gikk muren mu-2 tvers gjennom buen, og portbygget stod beige: murfargen satt for hånd 30.10 ble overstyrt av vegg_nye.py samme dag. Tolkning: «rett ovenfor kirken» = rett over for kirka, sett fra Kasernen; begge portene er mellom Kasernen og kirka.",
+   "rettet_i": "c626945",
+   "bevis": [
+    "rapport/avvik/A2-foer-etter-porten-mot-gata-utsnitt.jpg",
+    "rapport/avvik/A2-foer-muren-mot-gata-az64.jpg",
+    "rapport/avvik/A2-etter-muren-mot-gata-az64.jpg",
+    "rapport/avvik/A2-foer-porten-mot-gata-az60.jpg",
+    "rapport/avvik/A2-etter-porten-mot-gata-az60.jpg",
+    "rapport/avvik/A2-foer-porten-mot-kirka-az193.jpg",
+    "rapport/avvik/A2-etter-porten-mot-kirka-az193.jpg"
+   ],
+   "vakt": "38_porter_og_murer_fri",
+   "rettelse": "kaserna.py (nå i kjeden): porten i mu-1 på 23,5 % fra fløyen (Kvartal11), skuret pb-46 i murens tegl uten dør, «aapninger» i muren der et portbygg står (src/19), portbyggene i Kasernemurene i murens tegl. Usikkert: porten står under et tre (DOM-krone 1,5 m fra portens midte); ortofotoet kan ikke vise porten under kronene, så plassen er tegningens."
+  },
+  {
+   "id": "A3",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "Bygningsnr. 193972101 har fått «et eller annet rart foran huset»",
+   "hvor": {
+    "bygg_id": "bnr-193972101"
+   },
+   "status": "åpen",
+   "aarsak": "Parkeringsflaten til parkering-1-4627 (Torvgaten, beboerparkering): src/17 tegnet kommunens rad som en glatt grå flate 12 cm over brosteinen langs hele garasjefasaden, oppå den målte brosteinsflaten med oppmerking (fl-576). Det så ut som en mørk skrå plate foran huset. Samme feil på 19 andre rader med målt flate (bl.a. Kasernegaten ved Kasernen).",
+   "rettet_i": "ea0b5af",
+   "bevis": [
+    "rapport/avvik/A3-foer-torvgaten-az193.jpg"
+   ],
+   "vakt": "40_parkering_paa_brostein",
+   "rettelse": "src/17: der raden er målt som flate (flater[].parkering_id), tegnes bare flaten og oppmerkingen.",
+   "merknad": "Rettet og bygget (ea0b5af); etterbildet fra samme kamera rendres (scratchpad b2/e0.png). Lukkes når det er lagt i rapport/avvik/ og sett."
+  },
+  {
+   "id": "A4",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "«en del annet rart der også»: gå hele byen systematisk etter samme typer feil (manglende vinduer, løse/feilplasserte småbygg og objekter foran fasader og porter) og legg hvert funn inn her som egen sak",
+   "hvor": {
+    "hele": true
+   },
+   "status": "åpen",
+   "aarsak": null,
+   "rettet_i": null,
+   "bevis": [],
+   "vakt": null,
+   "merknad": "Funnet så langt (02.11): A6 (parkering-1-4625), tre falske bed langs Kasernen (rettet med A1), to små bed i Kasernegården inntil mu-1 (fl-467, fl-476: trolig skygge fra brannstasjonen og muren, ikke dømt), 70 frie yttervegger over 8 m uten vinduer (de fleste er blanke i tegningen; uavklart: bnr-16308102 vegg 0, Voldporten vegg 0, bnr-194006187 vegg 2, Det nye rådhus vegg 4, bnr-193972306 og bnr-193972446 uten fasadekilde). Kvartal for kvartal med skjermbilder er ikke gjort ennå."
+  },
+  {
+   "id": "A5",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "«versjonskonflikt»: sjekk om rettelser som en gang var gjort (vinduer, småbygg, porter) har falt ut ved sammenslåinger av greiner",
+   "hvor": {
+    "hele": true
+   },
+   "status": "lukket",
+   "aarsak": "Rettelser lagt inn utenfor kjeden (verktoy/bygg_kjede.py) ble overstyrt neste gang kjeden gikk, eller ble stående med gamle mål. Funnet: (1) verktoy/kaserna.py (27.10) stod ikke i kjeden: vind overstyrt av fasade_tegning.py 30.10 01.14 (195909a) og Street View 01.35 (6b90384), gårdsmurene med brannstasjonens hjørner fra før grunnmuren 29.10 (A1, A2). (2) pb-51 sin murfarge satt for hånd 30.10 17.45 (4d44b76), overstyrt av vegg_nye.py (A2). (3) bakke.py overflater var ikke kjørt etter siste grunnmur: en ny kjøring gir 7 nye flater (fl-641–647). Sjekket uten funn: alle 9 204 linjer i rettelseslaget mot det kartet viser; v33-vinduene er overstyrt med vilje av tegningen som vektor (29.10, kjedens rekkefølge); regel 04-flyttingen (24.10) er overstyrt, men regel 04 er grønn; Vegars tre linjer (Torvgata gul, 24.10) gjelder fortsatt gjennom merknadene; alle 46 hus i kilder/bygg-merknader.json har det merknaden setter. Kjeden kjørt på nytt i en kopi gir nøyaktig dataene i repoet (bare et IoU-tall i en kildetekst flytter seg).",
+   "rettet_i": "c626945",
+   "bevis": [
+    "rapport/avvik/A1-foer-torgveggen-az160.jpg",
+    "rapport/avvik/A1-etter-torgveggen-az160.jpg",
+    "rapport/avvik/A2-foer-etter-porten-mot-gata-utsnitt.jpg",
+    "rapport/39_kjeden_stabil.md"
+   ],
+   "vakt": "39_kjeden_stabil",
+   "rettelse": "kaserna.py i kjeden med datalag.EGNE_FASADER; pb-51/pb-46 sin farge fra kaserna.py; bakke.py overflater kjørt (fl-641–647 i id-registeret). Ny regel 39 kjører kjeden i en kopi og er rød når noe i repoet bare lever fordi kjeden ikke er kjørt siden."
+  },
+  {
+   "id": "A6",
+   "dato": "2026-11-02",
+   "fra": "Claude (A4)",
+   "hva": "Parkeringsflaten parkering-1-4625 (Færgeportgaten, beboerparkering) lå over to hus og plenen i øst",
+   "hvor": {
+    "parkering_id": "parkering-1-4625",
+    "naer": [
+     205,
+     140
+    ]
+   },
+   "status": "åpen",
+   "aarsak": "Håndmålt ramme i kilder/flater-maalt.json (29.10) med seks grove hjørner: «nordkanten er usikker». Rammen tok med husveggene og plenkanten.",
+   "rettelse": "Målt på nytt i ortofoto 2024 langs husveggene og plenkanten (kilder/flater-maalt.json, verktoy/parkering.py lag).",
+   "rettet_i": "ea0b5af",
+   "bevis": [],
+   "vakt": null,
+   "merknad": "Før/etter-bilde rendres (scratchpad b2/f1.png og b2/e1.png). Vakt: regel 23 sjekker 25 % i hus; plenen er ikke sjekket ennå."
+  }
  ]
 }

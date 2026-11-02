@@ -487,3 +487,16 @@ Vegar 02.11 14:18, mobil: «hopper bildet ganske langt mot venstre når jeg slip
 Årsaken: tregheten måler farten fra midtpunktet mellom fingrene. Når den ene tommelen slipper, hopper midtpunktet til den som er igjen, og hoppet ble lest som et kast på 267–352 px.
 Rettelsen ligger i src/15_bevegelse.js: målingen skjøtes når antallet fingre endrer seg, så farten fra hånda fortsetter uten hoppet.
 Test: node verktoy/tomler_test.mjs ut/enkel/index.html. Den sjekker begge tomlene og én finger som kontroll. Gammel versjon får FEIL, ny får OK, og glir ca. 30 px slik ekte fart skal gi.
+
+## Avvikslista og hus med eget fasadeverktøy (02.11, natt/avvik)
+Vegar 02.11 16:44: «Kan du holde styr på dette slik at ting du gjør ikke havner i glemmeboken». Hver feil står i kilder/avvik.json til
+den er rettet ved kilden, bevist (før/etter-bilder i rapport/avvik/) og har en vakt (regel eller test). Regel 36 er rød så lenge en sak er åpen.
+- Kasernen (bnr-193867537) har eget fasadeverktøy: `verktoy/kaserna.py` (hotellet etter ombyggingen, SG&CO-illustrasjonene; dørene i
+  gården og porten i muren mot gata fra Kvartal11). `datalag.EGNE_FASADER` gjør at de generelle fasadeverktøyene hopper over huset, og
+  kaserna.py står i kjeden etter landemerker.py. 29.10–02.11 lå Kvartal11 og Street View 2010 over (veggen mot torget: 11 av 45 vinduer).
+  Regel 37 sammenligner det effektive bygget med `kaserna.beregn()` og teller vinduer per akse på hver yttervegg.
+- Gårdsmurene (data/teglmurer.json) skrives av kaserna.py: `port` er en port i muren, `aapninger` [fra, til, id] der et portbygg
+  (data/porter.json, typ mur) står i muren, så muren ikke går gjennom buen (src/19). Regel 38 passer på at porter og murer er fri for
+  småbygg og at ingen mur går gjennom et portbygg.
+- bakke.py: sonen rundt hus der ortofotoet ser tak og vegg i stedet for bakken er 0,2 × mønehøyden (minst 1,25 m). Med 1,25 m for alle
+  ble Kasernens tak som heller ut over torget lest som tre «bed» langs fasaden.
