@@ -70,7 +70,9 @@ if (TER){
     for(let k=0;k<n;k++){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
       const nx=-dy*w, ny=dx*w;
-      const zL=Math.max(P[k][2], hAt(P[k][0]+nx,P[k][1]+ny)+0.06)+dz, zR=Math.max(P[k][2], hAt(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
+      // brostein ligger i samme høyde som brosteinsgrunnen (5 cm over terrenget): samme stein, ingen kant for streken (A15)
+      const zL=B===buf.B ? hAt(P[k][0]+nx,P[k][1]+ny)+0.05 : Math.max(P[k][2], hAt(P[k][0]+nx,P[k][1]+ny)+0.06)+dz,
+            zR=B===buf.B ? hAt(P[k][0]-nx,P[k][1]-ny)+0.05 : Math.max(P[k][2], hAt(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
       L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){
