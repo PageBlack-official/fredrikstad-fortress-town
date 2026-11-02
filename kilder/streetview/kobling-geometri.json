@@ -1,0 +1,5000 @@
+{
+ "om": "Street View-koblingen sjekket mot geometrien (02.11, avvik A12).",
+ "laget": "2026-11-02",
+ "verktoy": "verktoy/sv_kobling.py",
+ "tall": {
+  "observasjoner": 332,
+  "peker_ikke_paa_huset": 78,
+  "hus": 48
+ },
+ "dom": {
+  "bnr-193868045": {
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-62",
+    "kamera": [
+     165.0,
+     131.2,
+     23.0
+    ]
+   }
+  },
+  "bnr-193868460": {
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -116.4,
+     -1.1,
+     120.0
+    ]
+   }
+  },
+  "bnr-13416427": {
+   "side0": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -447.6,
+     418.5,
+     7.0
+    ]
+   }
+  },
+  "bnr-193820573": {
+   "side0": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -406.9,
+     371.9,
+     105.0
+    ]
+   }
+  },
+  "bnr-6276504": {
+   "side0": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     291.0,
+     -271.5,
+     312.0
+    ]
+   }
+  },
+  "bnr-193874363": {
+   "side0": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     291.0,
+     -271.5,
+     312.0
+    ]
+   }
+  },
+  "bnr-6276458": {
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6276474",
+    "kamera": [
+     364.9,
+     -190.9,
+     132.0
+    ]
+   }
+  },
+  "bnr-6276490": {
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6276474",
+    "kamera": [
+     364.9,
+     -190.9,
+     132.0
+    ]
+   }
+  },
+  "bnr-193971954": {
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     24.5,
+     115.8,
+     21.0
+    ]
+   }
+  },
+  "pb-6": {
+   "side0": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     197.5,
+     116.7,
+     206.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     186.3,
+     120.4,
+     206.0
+    ]
+   }
+  },
+  "bnr-193867359": {
+   "side0": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     101.3,
+     247.6,
+     125.0
+    ]
+   }
+  },
+  "bnr-193867928": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     175.4,
+     53.3,
+     203.0
+    ]
+   }
+  },
+  "bnr-193867839": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     57.8,
+     -50.2,
+     21.0
+    ]
+   }
+  },
+  "bnr-193972306": {
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972373",
+    "kamera": [
+     163.1,
+     188.8,
+     230.0
+    ]
+   }
+  },
+  "bnr-193971288": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     99.9,
+     85.1,
+     202.0
+    ]
+   }
+  },
+  "bnr-193992765": {
+   "side0": {
+    "ok": true,
+    "andel": 0.86,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -69.8,
+     380.9,
+     76.0
+    ]
+   }
+  },
+  "bnr-194006187": {
+   "side0": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     24.5,
+     115.8,
+     21.0
+    ]
+   }
+  },
+  "bnr-193868363": {
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.3,
+     119.7,
+     304.0
+    ]
+   }
+  },
+  "bnr-193867529": {
+   "side1": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -50.0,
+     -57.3,
+     90.0
+    ]
+   },
+   "side2": {
+    "ok": true,
+    "andel": 0.86,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     27.5,
+     -67.0,
+     270.0
+    ]
+   }
+  },
+  "bnr-193868134": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     119.7,
+     194.0,
+     124.0
+    ]
+   }
+  },
+  "bnr-193868339": {
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": "bnr-193971946",
+    "kamera": [
+     24.5,
+     115.8,
+     201.0
+    ]
+   }
+  },
+  "bnr-193972373": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     163.1,
+     188.8,
+     230.0
+    ]
+   }
+  },
+  "bnr-193971989": {
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     24.5,
+     115.8,
+     21.0
+    ]
+   }
+  },
+  "bnr-193868525": {
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     0,
+     45
+    ],
+    "ser": "bnr-193971946",
+    "kamera": [
+     24.5,
+     115.8,
+     201.0
+    ]
+   }
+  },
+  "bnr-193868096": {
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     165.0,
+     131.2,
+     23.0
+    ]
+   }
+  },
+  "bnr-193971946": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     24.5,
+     115.8,
+     201.0
+    ]
+   }
+  },
+  "bnr-193867324": {
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     133.4,
+     224.1,
+     33.0
+    ]
+   }
+  },
+  "bnr-193868029": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     197.5,
+     116.7,
+     206.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     197.5,
+     116.7,
+     206.0
+    ]
+   }
+  },
+  "bnr-193868665": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     197.5,
+     116.7,
+     206.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     197.5,
+     116.7,
+     206.0
+    ]
+   }
+  },
+  "bnr-193868002": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6242812",
+    "kamera": [
+     155.5,
+     135.9,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6242812",
+    "kamera": [
+     155.5,
+     135.9,
+     205.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": "pb-6",
+    "kamera": [
+     186.3,
+     120.4,
+     206.0
+    ]
+   },
+   "side2": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     154.5,
+     115.3,
+     125.0
+    ]
+   }
+  },
+  "bnr-6242812": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     155.5,
+     135.9,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     155.5,
+     135.9,
+     205.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     154.5,
+     115.3,
+     305.0
+    ]
+   }
+  },
+  "bnr-193868215": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     119.5,
+     152.4,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     119.5,
+     152.4,
+     205.0
+    ]
+   }
+  },
+  "bnr-193972209": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868215",
+    "kamera": [
+     119.5,
+     152.4,
+     205.0
+    ]
+   }
+  },
+  "bnr-193868231": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868215",
+    "kamera": [
+     119.5,
+     152.4,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     105.5,
+     158.9,
+     200.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868223",
+    "kamera": [
+     69.3,
+     119.7,
+     124.0
+    ]
+   }
+  },
+  "bnr-193971210": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868401",
+    "kamera": [
+     69.6,
+     175.3,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868401",
+    "kamera": [
+     69.6,
+     175.3,
+     205.0
+    ]
+   }
+  },
+  "bnr-193868436": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     82.9,
+     169.0,
+     25.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     82.9,
+     169.0,
+     25.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868452",
+    "kamera": [
+     69.6,
+     175.3,
+     10.0
+    ]
+   }
+  },
+  "bnr-193868452": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.6,
+     175.3,
+     10.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.6,
+     175.3,
+     10.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     74.5,
+     173.1,
+     300.0
+    ]
+   }
+  },
+  "bnr-193974767": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.6,
+     175.3,
+     10.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.6,
+     175.3,
+     10.0
+    ]
+   }
+  },
+  "bnr-193868320": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -36.7,
+     105.4,
+     131.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -36.7,
+     105.4,
+     131.0
+    ]
+   }
+  },
+  "bnr-193868711": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -69.3,
+     65.0,
+     126.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -69.3,
+     65.0,
+     126.0
+    ]
+   }
+  },
+  "bnr-193971199": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -50.1,
+     89.9,
+     311.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -50.1,
+     89.9,
+     311.0
+    ]
+   }
+  },
+  "bnr-193972411": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -85.5,
+     39.8,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -85.5,
+     39.8,
+     125.0
+    ]
+   }
+  },
+  "bnr-193867596": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972411",
+    "kamera": [
+     -85.5,
+     39.8,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972411",
+    "kamera": [
+     -85.5,
+     39.8,
+     125.0
+    ]
+   }
+  },
+  "bnr-193867502": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -116.4,
+     -1.1,
+     120.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -116.4,
+     -1.1,
+     120.0
+    ]
+   }
+  },
+  "bnr-193867499": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -137.8,
+     -38.6,
+     120.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -137.8,
+     -38.6,
+     120.0
+    ]
+   }
+  },
+  "bnr-193870295": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -153.0,
+     -107.0,
+     96.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -153.0,
+     -107.0,
+     96.0
+    ]
+   }
+  },
+  "bnr-193870325": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -155.5,
+     -121.1,
+     285.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -155.5,
+     -121.1,
+     285.0
+    ]
+   }
+  },
+  "bnr-193870317": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.64,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -155.5,
+     -121.1,
+     285.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.64,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -155.5,
+     -121.1,
+     285.0
+    ]
+   }
+  },
+  "bnr-193870309": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -155.5,
+     -121.1,
+     285.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -155.5,
+     -121.1,
+     285.0
+    ]
+   }
+  },
+  "bnr-193870333": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -163.7,
+     -154.1,
+     222.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -163.7,
+     -154.1,
+     222.0
+    ]
+   }
+  },
+  "bnr-193870287": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -94.4,
+     -168.0,
+     10.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -94.4,
+     -168.0,
+     10.0
+    ]
+   }
+  },
+  "bnr-193870279": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -94.4,
+     -168.0,
+     10.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -94.4,
+     -168.0,
+     10.0
+    ]
+   }
+  },
+  "bnr-193870198": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.93,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -8.3,
+     -179.7,
+     152.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.93,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -8.3,
+     -179.7,
+     152.0
+    ]
+   }
+  },
+  "bnr-193870201": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     24.5,
+     -178.4,
+     350.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     24.5,
+     -178.4,
+     350.0
+    ]
+   }
+  },
+  "bnr-193870228": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     43.0,
+     -160.6,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     43.0,
+     -160.6,
+     315.0
+    ]
+   }
+  },
+  "bnr-193870236": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193870228",
+    "kamera": [
+     43.0,
+     -160.6,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": "bnr-193870228",
+    "kamera": [
+     43.0,
+     -160.6,
+     315.0
+    ]
+   }
+  },
+  "bnr-193972063": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.86,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     84.2,
+     -120.5,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.86,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     84.2,
+     -120.5,
+     315.0
+    ]
+   }
+  },
+  "bnr-193870260": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     84.2,
+     -120.5,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     84.2,
+     -120.5,
+     315.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     54.5,
+     -111.2,
+     16.0
+    ]
+   }
+  },
+  "bnr-193870252": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972063",
+    "kamera": [
+     84.2,
+     -120.5,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.12,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     84.2,
+     -120.5,
+     315.0
+    ]
+   }
+  },
+  "bnr-193867693": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     104.8,
+     -98.3,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     104.8,
+     -98.3,
+     315.0
+    ]
+   }
+  },
+  "pb-7": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867693",
+    "kamera": [
+     104.8,
+     -98.3,
+     315.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867693",
+    "kamera": [
+     104.8,
+     -98.3,
+     315.0
+    ]
+   }
+  },
+  "bnr-193867723": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -49.6,
+     296.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -49.6,
+     296.0
+    ]
+   }
+  },
+  "bnr-193867731": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867723",
+    "kamera": [
+     141.1,
+     -49.6,
+     296.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867723",
+    "kamera": [
+     141.1,
+     -49.6,
+     296.0
+    ]
+   }
+  },
+  "bnr-193867758": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     155.4,
+     -25.7,
+     296.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     155.4,
+     -25.7,
+     296.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -2.3,
+     200.0
+    ]
+   }
+  },
+  "bnr-193867898": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     172.3,
+     15.5,
+     294.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     172.3,
+     15.5,
+     294.0
+    ]
+   }
+  },
+  "bnr-193867901": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867898",
+    "kamera": [
+     172.3,
+     15.5,
+     294.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867898",
+    "kamera": [
+     172.3,
+     15.5,
+     294.0
+    ]
+   }
+  },
+  "bnr-193867952": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     194.4,
+     66.9,
+     295.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     194.4,
+     66.9,
+     295.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     175.4,
+     53.3,
+     23.0
+    ]
+   }
+  },
+  "bnr-6247822": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     203.0,
+     84.7,
+     295.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     203.0,
+     84.7,
+     295.0
+    ]
+   }
+  },
+  "bnr-6251331": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     154.5,
+     115.3,
+     305.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     154.5,
+     115.3,
+     305.0
+    ]
+   }
+  },
+  "bnr-193971334": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868002",
+    "kamera": [
+     154.5,
+     115.3,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868002",
+    "kamera": [
+     154.5,
+     115.3,
+     125.0
+    ]
+   }
+  },
+  "bnr-193868673": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     165.0,
+     131.2,
+     23.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.14,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     165.0,
+     131.2,
+     23.0
+    ]
+   }
+  },
+  "bnr-6251218": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     138.2,
+     90.8,
+     305.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     138.2,
+     90.8,
+     305.0
+    ]
+   }
+  },
+  "bnr-193868207": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6251218",
+    "kamera": [
+     138.2,
+     90.8,
+     305.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.06,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     138.2,
+     90.8,
+     305.0
+    ]
+   }
+  },
+  "bnr-6251323": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6251218",
+    "kamera": [
+     138.2,
+     90.8,
+     305.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     0,
+     45
+    ],
+    "ser": "bnr-6251218",
+    "kamera": [
+     138.2,
+     90.8,
+     305.0
+    ]
+   }
+  },
+  "bnr-193971318": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     138.2,
+     90.8,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     138.2,
+     90.8,
+     125.0
+    ]
+   }
+  },
+  "bnr-193867987": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193971318",
+    "kamera": [
+     138.2,
+     90.8,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193971318",
+    "kamera": [
+     138.2,
+     90.8,
+     125.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867979",
+    "kamera": [
+     148.0,
+     66.6,
+     23.0
+    ]
+   }
+  },
+  "bnr-193868266": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868258",
+    "kamera": [
+     113.5,
+     55.8,
+     306.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.19,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     113.5,
+     55.8,
+     306.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868274",
+    "kamera": [
+     100.3,
+     37.1,
+     306.0
+    ]
+   }
+  },
+  "bnr-193868258": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     113.5,
+     55.8,
+     306.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     113.5,
+     55.8,
+     306.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193971288",
+    "kamera": [
+     99.9,
+     85.1,
+     202.0
+    ]
+   }
+  },
+  "bnr-193867944": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     113.5,
+     55.8,
+     126.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     113.5,
+     55.8,
+     126.0
+    ]
+   }
+  },
+  "bnr-193867936": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     100.3,
+     37.1,
+     126.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     100.3,
+     37.1,
+     126.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868274",
+    "kamera": [
+     86.1,
+     16.5,
+     20.0
+    ]
+   }
+  },
+  "bnr-193868274": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     100.3,
+     37.1,
+     306.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     100.3,
+     37.1,
+     306.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.1,
+     16.5,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867782": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     71.8,
+     -2.2,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     71.8,
+     -2.2,
+     125.0
+    ]
+   }
+  },
+  "bnr-193867537": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     71.8,
+     -2.2,
+     305.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     71.8,
+     -2.2,
+     305.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     44.3,
+     31.8,
+     200.0
+    ]
+   }
+  },
+  "bnr-193867820": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     54.6,
+     -26.5,
+     125.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     54.6,
+     -26.5,
+     125.0
+    ]
+   }
+  },
+  "bnr-193972012": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     27.5,
+     -67.0,
+     122.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     27.5,
+     -67.0,
+     122.0
+    ]
+   }
+  },
+  "bnr-193972039": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972012",
+    "kamera": [
+     27.5,
+     -67.0,
+     122.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972012",
+    "kamera": [
+     27.5,
+     -67.0,
+     122.0
+    ]
+   }
+  },
+  "bnr-193867634": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     125.4,
+     -76.3,
+     136.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     125.4,
+     -76.3,
+     136.0
+    ]
+   }
+  },
+  "bnr-193867715": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     125.4,
+     -76.3,
+     21.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     125.4,
+     -76.3,
+     21.0
+    ]
+   }
+  },
+  "bnr-16308102": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.9,
+     -61.0,
+     201.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.9,
+     -61.0,
+     201.0
+    ]
+   }
+  },
+  "bnr-193972462": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.9,
+     -61.0,
+     21.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.9,
+     -61.0,
+     21.0
+    ]
+   }
+  },
+  "bnr-193867804": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972462",
+    "kamera": [
+     86.9,
+     -61.0,
+     21.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": "bnr-193972462",
+    "kamera": [
+     86.9,
+     -61.0,
+     21.0
+    ]
+   }
+  },
+  "bnr-193867847": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     66.8,
+     -54.5,
+     201.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     66.8,
+     -54.5,
+     201.0
+    ]
+   }
+  },
+  "bnr-193868568": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     27.4,
+     -38.4,
+     21.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     27.4,
+     -38.4,
+     21.0
+    ]
+   }
+  },
+  "bnr-193987370": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -45.2,
+     -9.0,
+     21.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -45.2,
+     -9.0,
+     21.0
+    ]
+   }
+  },
+  "bnr-193868576": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -10.0,
+     -93.2,
+     14.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -10.0,
+     -93.2,
+     14.0
+    ]
+   }
+  },
+  "bnr-193991718": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-33",
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-33",
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   }
+  },
+  "pb-33": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867626": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867588": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -16.3,
+     52.9,
+     200.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -16.3,
+     52.9,
+     200.0
+    ]
+   }
+  },
+  "bnr-13414904": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     44.3,
+     31.8,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     44.3,
+     31.8,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867790": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.1,
+     16.5,
+     200.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     86.1,
+     16.5,
+     200.0
+    ]
+   }
+  },
+  "bnr-193867863": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     117.4,
+     7.5,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     117.4,
+     7.5,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867774": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     117.4,
+     7.5,
+     200.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     117.4,
+     7.5,
+     200.0
+    ]
+   }
+  },
+  "bnr-193972101": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867774",
+    "kamera": [
+     117.4,
+     7.5,
+     200.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867774",
+    "kamera": [
+     117.4,
+     7.5,
+     200.0
+    ]
+   }
+  },
+  "bnr-193972489": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972497",
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.12,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   }
+  },
+  "pb-45": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   }
+  },
+  "bnr-193971385": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972497",
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193972497",
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867855": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     141.1,
+     -2.3,
+     20.0
+    ]
+   }
+  },
+  "bnr-193867766": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-57",
+    "kamera": [
+     141.1,
+     -2.3,
+     200.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-57",
+    "kamera": [
+     141.1,
+     -2.3,
+     200.0
+    ]
+   }
+  },
+  "bnr-193971369": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-33",
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": "pb-33",
+    "kamera": [
+     -16.3,
+     52.9,
+     20.0
+    ]
+   }
+  },
+  "bnr-193868622": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.0,
+     66.6,
+     203.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.0,
+     66.6,
+     203.0
+    ]
+   }
+  },
+  "bnr-193867979": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.0,
+     66.6,
+     23.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.0,
+     66.6,
+     23.0
+    ]
+   }
+  },
+  "bnr-193972187": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-16290424",
+    "kamera": [
+     99.9,
+     85.1,
+     22.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": "bnr-16290424",
+    "kamera": [
+     99.9,
+     85.1,
+     22.0
+    ]
+   }
+  },
+  "bnr-16290424": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     99.9,
+     85.1,
+     22.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     99.9,
+     85.1,
+     22.0
+    ]
+   }
+  },
+  "bnr-193972195": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     99.9,
+     85.1,
+     22.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.29,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     99.9,
+     85.1,
+     22.0
+    ]
+   }
+  },
+  "bnr-193868533": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193971288",
+    "kamera": [
+     99.9,
+     85.1,
+     202.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193971288",
+    "kamera": [
+     99.9,
+     85.1,
+     202.0
+    ]
+   }
+  },
+  "bnr-193868444": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     119.7,
+     194.0,
+     304.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     119.7,
+     194.0,
+     304.0
+    ]
+   }
+  },
+  "bnr-193868223": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.64,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.3,
+     119.7,
+     124.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.64,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.3,
+     119.7,
+     124.0
+    ]
+   }
+  },
+  "bnr-193972225": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.3,
+     119.7,
+     124.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     69.3,
+     119.7,
+     124.0
+    ]
+   }
+  },
+  "bnr-193868282": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     50.6,
+     95.7,
+     124.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     50.6,
+     95.7,
+     124.0
+    ]
+   }
+  },
+  "bnr-193868290": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     37.3,
+     72.9,
+     124.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     37.3,
+     72.9,
+     124.0
+    ]
+   }
+  },
+  "bnr-193868355": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193868347",
+    "kamera": [
+     37.3,
+     72.9,
+     304.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.44,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     37.3,
+     72.9,
+     304.0
+    ]
+   }
+  },
+  "bnr-193868347": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     37.3,
+     72.9,
+     304.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     37.3,
+     72.9,
+     304.0
+    ]
+   }
+  },
+  "bnr-193867545": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -9.6,
+     8.7,
+     304.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -9.6,
+     8.7,
+     304.0
+    ]
+   }
+  },
+  "bnr-193867510": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -53.6,
+     -63.7,
+     302.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -53.6,
+     -63.7,
+     302.0
+    ]
+   }
+  },
+  "bnr-193869572": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     186.8,
+     164.3,
+     80.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     186.8,
+     164.3,
+     80.0
+    ]
+   }
+  },
+  "bnr-193869580": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     280.1,
+     6.9,
+     85.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     280.1,
+     6.9,
+     85.0
+    ]
+   }
+  },
+  "bnr-6276016": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     307.6,
+     -164.0,
+     220.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     307.6,
+     -164.0,
+     220.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193874401",
+    "kamera": [
+     323.5,
+     -179.4,
+     223.0
+    ]
+   }
+  },
+  "bnr-6276008": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     307.6,
+     -164.0,
+     220.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     307.6,
+     -164.0,
+     220.0
+    ]
+   },
+   "side1": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     269.0,
+     -178.9,
+     164.0
+    ]
+   }
+  },
+  "bnr-13384401": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     307.6,
+     -164.0,
+     220.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     307.6,
+     -164.0,
+     220.0
+    ]
+   },
+   "side1": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-23730278",
+    "kamera": [
+     269.0,
+     -178.9,
+     164.0
+    ]
+   }
+  },
+  "bnr-6275990": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     259.2,
+     -181.5,
+     234.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     259.2,
+     -181.5,
+     234.0
+    ]
+   }
+  },
+  "bnr-23730278": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     269.0,
+     -178.9,
+     164.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     269.0,
+     -178.9,
+     164.0
+    ]
+   }
+  },
+  "bnr-193874401": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     323.5,
+     -179.4,
+     223.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     323.5,
+     -179.4,
+     223.0
+    ]
+   }
+  },
+  "bnr-6246729": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-32",
+    "kamera": [
+     323.5,
+     -179.4,
+     50.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "pb-32",
+    "kamera": [
+     323.5,
+     -179.4,
+     50.0
+    ]
+   }
+  },
+  "bnr-6276539": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     364.9,
+     -190.9,
+     312.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     364.9,
+     -190.9,
+     312.0
+    ]
+   }
+  },
+  "bnr-6276474": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.64,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     364.9,
+     -190.9,
+     132.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.64,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     364.9,
+     -190.9,
+     132.0
+    ]
+   }
+  },
+  "bnr-6276520": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.93,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     337.7,
+     -219.9,
+     312.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.93,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     337.7,
+     -219.9,
+     312.0
+    ]
+   }
+  },
+  "bnr-13384460": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6276520",
+    "kamera": [
+     337.7,
+     -219.9,
+     312.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6276520",
+    "kamera": [
+     337.7,
+     -219.9,
+     312.0
+    ]
+   }
+  },
+  "bnr-6276512": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     317.6,
+     -242.2,
+     312.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     317.6,
+     -242.2,
+     312.0
+    ]
+   }
+  },
+  "bnr-13384444": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     337.7,
+     -219.9,
+     132.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     337.7,
+     -219.9,
+     132.0
+    ]
+   }
+  },
+  "bnr-6276415": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     317.6,
+     -242.2,
+     132.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.21,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     317.6,
+     -242.2,
+     132.0
+    ]
+   }
+  },
+  "bnr-6276393": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     317.6,
+     -242.2,
+     132.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     317.6,
+     -242.2,
+     132.0
+    ]
+   }
+  },
+  "bnr-13384452": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     291.0,
+     -271.5,
+     312.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.5,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     291.0,
+     -271.5,
+     312.0
+    ]
+   }
+  },
+  "bnr-6276431": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     185.4,
+     -392.5,
+     313.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.57,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     185.4,
+     -392.5,
+     313.0
+    ]
+   }
+  },
+  "bnr-6276466": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     185.4,
+     -392.5,
+     313.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     185.4,
+     -392.5,
+     313.0
+    ]
+   }
+  },
+  "bnr-6275338": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     242.4,
+     -252.1,
+     60.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     242.4,
+     -252.1,
+     60.0
+    ]
+   }
+  },
+  "bnr-6276830": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     174.4,
+     -313.6,
+     212.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     174.4,
+     -313.6,
+     212.0
+    ]
+   }
+  },
+  "bnr-300216650": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-6276830",
+    "kamera": [
+     174.4,
+     -313.6,
+     212.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.25,
+    "sektor": [
+     0,
+     45
+    ],
+    "ser": null,
+    "kamera": [
+     174.4,
+     -313.6,
+     212.0
+    ]
+   }
+  },
+  "bnr-6276822": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.1,
+     -299.3,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.79,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.1,
+     -299.3,
+     205.0
+    ]
+   }
+  },
+  "bnr-193870147": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.1,
+     -299.3,
+     205.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     148.1,
+     -299.3,
+     205.0
+    ]
+   }
+  },
+  "bnr-13415889": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.86,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -408.5,
+     361.6,
+     278.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.86,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -408.5,
+     361.6,
+     278.0
+    ]
+   }
+  },
+  "bnr-16300365": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-13415889",
+    "kamera": [
+     -408.5,
+     361.6,
+     278.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-13415889",
+    "kamera": [
+     -408.5,
+     361.6,
+     278.0
+    ]
+   }
+  },
+  "bnr-13415897": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193820832",
+    "kamera": [
+     -405.1,
+     381.9,
+     278.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193820832",
+    "kamera": [
+     -405.1,
+     381.9,
+     278.0
+    ]
+   }
+  },
+  "bnr-13416060": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -398.1,
+     421.3,
+     280.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -398.1,
+     421.3,
+     280.0
+    ]
+   }
+  },
+  "bnr-16324507": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-13416060",
+    "kamera": [
+     -398.1,
+     421.3,
+     280.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     0,
+     45
+    ],
+    "ser": "bnr-13416060",
+    "kamera": [
+     -398.1,
+     421.3,
+     280.0
+    ]
+   }
+  },
+  "bnr-193820824": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -405.1,
+     381.9,
+     278.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.07,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -405.1,
+     381.9,
+     278.0
+    ]
+   }
+  },
+  "bnr-193820557": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -406.9,
+     371.9,
+     105.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.36,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -406.9,
+     371.9,
+     105.0
+    ]
+   }
+  },
+  "bnr-13416559": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193820573",
+    "kamera": [
+     -406.9,
+     371.9,
+     105.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193820573",
+    "kamera": [
+     -406.9,
+     371.9,
+     105.0
+    ]
+   }
+  },
+  "bnr-13418292": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -447.6,
+     418.5,
+     7.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.43,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -447.6,
+     418.5,
+     7.0
+    ]
+   }
+  },
+  "bnr-13416370": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -447.6,
+     418.5,
+     187.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -447.6,
+     418.5,
+     187.0
+    ]
+   }
+  },
+  "pb-3": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-13416370",
+    "kamera": [
+     -447.6,
+     418.5,
+     187.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.31,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     -447.6,
+     418.5,
+     187.0
+    ]
+   }
+  },
+  "bnr-193867480": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -320.6,
+     80.3,
+     119.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -320.6,
+     80.3,
+     119.0
+    ]
+   }
+  },
+  "bnr-193867472": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193867480",
+    "kamera": [
+     -320.6,
+     80.3,
+     119.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.25,
+    "sektor": [
+     0,
+     45
+    ],
+    "ser": null,
+    "kamera": [
+     -320.6,
+     80.3,
+     119.0
+    ]
+   }
+  },
+  "bnr-193867464": {
+   "hoved": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -320.6,
+     80.3,
+     348.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.71,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -320.6,
+     80.3,
+     348.0
+    ]
+   }
+  },
+  "bnr-193867405": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -432.9,
+     38.7,
+     188.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -432.9,
+     38.7,
+     188.0
+    ]
+   }
+  },
+  "bnr-13416435": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -440.7,
+     269.3,
+     189.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -440.7,
+     269.3,
+     189.0
+    ]
+   }
+  },
+  "bnr-193820387": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-13416435",
+    "kamera": [
+     -440.7,
+     269.3,
+     189.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 0.19,
+    "sektor": [
+     -45,
+     0
+    ],
+    "ser": null,
+    "kamera": [
+     -440.7,
+     269.3,
+     189.0
+    ]
+   }
+  },
+  "bnr-193820409": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -427.3,
+     342.4,
+     190.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -427.3,
+     342.4,
+     190.0
+    ]
+   }
+  },
+  "bnr-193820417": {
+   "hoved": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": "bnr-193820409",
+    "kamera": [
+     -427.3,
+     342.4,
+     190.0
+    ]
+   },
+   "side0": {
+    "ok": false,
+    "andel": 0.0,
+    "sektor": [
+     0,
+     45
+    ],
+    "ser": "bnr-193820409",
+    "kamera": [
+     -427.3,
+     342.4,
+     190.0
+    ]
+   }
+  },
+  "bnr-13418268": {
+   "hoved": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -427.3,
+     466.1,
+     188.0
+    ]
+   },
+   "side0": {
+    "ok": true,
+    "andel": 1.0,
+    "sektor": [
+     -20,
+     20
+    ],
+    "ser": null,
+    "kamera": [
+     -427.3,
+     466.1,
+     188.0
+    ]
+   }
+  }
+ }
+}

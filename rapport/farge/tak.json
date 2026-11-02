@@ -3280,7 +3280,7 @@
   ],
   "klasse": "falmet tegl",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (rød/brun tegl)",
+  "grunn": "mellombånd: Street View 2024 (rød/brun tegl)",
   "tegning": [
    [
     246,
@@ -3299,7 +3299,7 @@
    108,
    92
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød/brun tegl)); tegningen har rød (2019-trykket (dømt))",
+  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød/brun tegl)); tegningen har rød (2019-trykket (dømt))",
   "aar": 2024
  },
  {
@@ -3345,7 +3345,7 @@
   ],
   "klasse": "falmet tegl",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (rød tegl)",
+  "grunn": "mellombånd: Street View 2024 (rød tegl)",
   "tegning": [
    [
     197,
@@ -3364,7 +3364,7 @@
    108,
    92
   ],
-  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2010 (rød tegl)); tegningen har rød (kvartaltegningen kvartal6 (IoU 0.66))",
+  "kilde": "ortofoto 2024 (falmet tegl; mellombånd: Street View 2024 (rød tegl)); tegningen har rød (kvartaltegningen kvartal6 (IoU 0.66))",
   "aar": 2024
  },
  {
@@ -6672,7 +6672,7 @@
   ],
   "klasse": "mørk brun",
   "sikker": true,
-  "grunn": "mellombånd: Street View 2010 (brun tegl (kant))",
+  "grunn": "mellombånd: Street View 2024 (brun tegl (kant))",
   "tegning": [
    [
     173,

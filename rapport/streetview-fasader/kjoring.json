@@ -41,33 +41,33 @@
   "id": "bnr-193868045",
   "navn": "Den gamle spisesal",
   "sikkerhet": "høy",
-  "side": "NV (gavl/kortvegg mot Smedjegaten)",
-  "vegg": 0,
-  "vegg_L": 6.7,
-  "avstand": 9.8,
-  "vinkel": 39.0,
+  "side": null,
+  "vegg": 3,
+  "vegg_L": 44.9,
+  "avstand": 6.6,
+  "vinkel": 12.0,
   "sv": {
    "rader": [
     [
      "etg",
-     1
+     4
     ]
    ],
-   "dorer": "0 synlig",
-   "takvinduer": "0",
-   "piper": "1 rød teglpipe med hvit topp (beslag)"
+   "dorer": "ingen synlig i denne vinkelen",
+   "takvinduer": 0,
+   "piper": "1 hvit ventil/pipeboks i venstre ende"
   },
-  "notat": "veggen valgt etter retningen i avlesningen (NV (gavl/kortvegg mot Smedjegaten)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
+  "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    1
+    7
    ],
    "dorer": 0,
    "arker": 0,
    "piper": 5
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {
@@ -551,48 +551,49 @@
   "id": "bnr-6276490",
   "navn": null,
   "sikkerhet": "middels",
-  "side": "SV/NV (~33 m)",
-  "vegg": 3,
-  "vegg_L": 9.8,
-  "avstand": 32.9,
-  "vinkel": 33.0,
+  "side": null,
+  "vegg": 0,
+  "vegg_L": 11.3,
+  "avstand": 22.7,
+  "vinkel": 3.0,
   "sv": {
    "rader": [
     [
      "etg",
-     2
+     3
     ],
     [
      "etg",
      2
     ]
    ],
-   "dorer": null,
-   "takvinduer": "0",
-   "piper": null
+   "dorer": "ingen synlig mot gata",
+   "takvinduer": 0,
+   "piper": 1
   },
-  "notat": "veggen valgt etter retningen i avlesningen (SV/NV (~33 m)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "dorer_fra": "beholdt (ukjent i Street View)",
+  "notat": "",
   "arker": 0,
+  "piper": 1,
   "status": "endret",
   "info": {
    "droppet_rader": 0,
-   "akser_onsket": 2,
-   "akser": 2,
-   "cc": 8.13,
+   "akser_onsket": 3,
+   "akser": 3,
+   "cc": 4.78,
    "akser_t": [
     0.85,
-    8.98
+    5.63,
+    10.41
    ],
    "rader": [
-    2,
+    3,
     2
    ],
    "dorer": 0,
    "rytme_ok": true,
    "topp_akser": [
     0,
-    1
+    2
    ]
   }
  },
@@ -1681,39 +1682,35 @@
   "id": "bnr-193868339",
   "navn": null,
   "sikkerhet": "middels",
-  "side": "NV (venstre i bildet) med portbue",
-  "vegg": 4,
-  "vegg_L": 7.2,
-  "avstand": 23.3,
-  "vinkel": 35.0,
+  "side": null,
+  "vegg": 2,
+  "vegg_L": 17.2,
+  "avstand": 4.9,
+  "vinkel": 15.0,
   "sv": {
    "rader": [
     [
      "etg",
-     1
-    ],
-    [
-     "etg",
-     1
+     5
     ]
    ],
-   "dorer": "1 rundbuet portrom med svart/grå port, skilt 'Kong Fredrik'",
-   "takvinduer": "0",
-   "piper": null
+   "dorer": "2: brun dør med trapp (venstre, butikk), brun dobbeldør med overlys og pilastre (midt)",
+   "takvinduer": 0,
+   "piper": 2
   },
-  "notat": "veggen valgt etter retningen i avlesningen (NV (venstre i bildet) med portbue); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
+  "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    1,
+    5,
     1
    ],
    "dorer": 1,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
-  "dorer_avvik": false
+  "avvik": true,
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193868150",
@@ -2016,36 +2013,39 @@
   "id": "bnr-193868525",
   "navn": null,
   "sikkerhet": "middels",
-  "side": "SØ/N (høyre i bildet)",
-  "vegg": 11,
-  "vegg_L": 2.7,
-  "avstand": 27.9,
-  "vinkel": 65.0,
+  "side": null,
+  "vegg": 1,
+  "vegg_L": 21.5,
+  "avstand": 4.3,
+  "vinkel": 15.0,
   "sv": {
    "rader": [
     [
      "etg",
-     1
+     5
     ],
     [
      "etg",
-     1
+     8
     ]
    ],
-   "dorer": "1 grå tofløyet fyllingsdør med steintrapp og rekkverk",
-   "takvinduer": "0",
-   "piper": null
+   "dorer": "1 til venstre, blågrå dobbeldør med glassfelt og gesims; stort tettet/hvitmalt vindusfelt midt i 1. etg",
+   "takvinduer": 0,
+   "piper": 2
   },
-  "notat": "veggen valgt etter retningen i avlesningen (SØ/N (høyre i bildet)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
+  "notat": "",
   "status": "fasit, bare sammenlignet",
   "modell": {
-   "rader": [],
-   "dorer": 0,
+   "rader": [
+    5,
+    8
+   ],
+   "dorer": 1,
    "arker": 0,
    "piper": 2
   },
-  "avvik": true,
-  "dorer_avvik": true
+  "avvik": false,
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193868096",
@@ -2174,46 +2174,6 @@
   "id": "bnr-193868002",
   "navn": null,
   "sikkerhet": "middels",
-  "side": "NØ (gatefasade) sett skrått fra øst",
-  "vegg": 7,
-  "vegg_L": 13.9,
-  "avstand": 21.7,
-  "vinkel": 76.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "1 brun dobbel fyllingsdør ca. midt (0.45–0.55)",
-   "takvinduer": "1 lite takvindu (skylight)",
-   "piper": "1 murt pipe (tegl, mørk)"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (NØ (gatefasade) sett skrått fra øst); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3
-   ],
-   "dorer": 1,
-   "arker": 1,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193868002",
-  "navn": null,
-  "sikkerhet": "middels",
-  "status": "hoppet over",
-  "grunn": "samme vegg (7) som en annen side: NØ (gatefasade, venstre del) sett skrått"
- },
- {
-  "id": "bnr-193868002",
-  "navn": null,
-  "sikkerhet": "middels",
   "side": "NV (langfasade mot Raadhusgaten)",
   "vegg": 6,
   "vegg_L": 17.9,
@@ -2327,13 +2287,6 @@
   "dorer_avvik": false
  },
  {
-  "id": "bnr-193972209",
-  "navn": null,
-  "sikkerhet": "ikke synlig",
-  "status": "hoppet over",
-  "grunn": "ikke synlig fra gata"
- },
- {
   "id": "bnr-193868231",
   "navn": "Balaklava",
   "sikkerhet": "lav",
@@ -2373,48 +2326,6 @@
   },
   "avvik": true,
   "dorer_avvik": true
- },
- {
-  "id": "bnr-193868231",
-  "navn": "Balaklava",
-  "sikkerhet": "lav",
-  "status": "hoppet over",
-  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SV (mot smuget/Kirkegaten) – identitet usikker)"
- },
- {
-  "id": "bnr-193971210",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "NØ/SØ (langvegg mot plassen)",
-  "vegg": 5,
-  "vegg_L": 6.2,
-  "avstand": 13.5,
-  "vinkel": 65.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     0
-    ]
-   ],
-   "dorer": "0 synlig",
-   "takvinduer": "0",
-   "piper": "0"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (NØ/SØ (langvegg mot plassen)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "arker": 0,
-  "piper": 0,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 0,
-   "akser": 0,
-   "rader": [
-    0
-   ],
-   "dorer": 0,
-   "rytme_ok": true
-  }
  },
  {
   "id": "bnr-193868436",
@@ -2472,51 +2383,6 @@
     5,
     6
    ]
-  }
- },
- {
-  "id": "bnr-193868436",
-  "navn": "Skolebygningen",
-  "sikkerhet": "høy",
-  "side": "NV (gavl/kortvegg mot smuget)",
-  "vegg": 13,
-  "vegg_L": 2.1,
-  "avstand": 19.2,
-  "vinkel": 31.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     1
-    ],
-    [
-     "etg",
-     0
-    ]
-   ],
-   "dorer": "0",
-   "takvinduer": "0",
-   "piper": "0"
-  },
-  "notat": "siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)",
-  "arker": 0,
-  "piper": 0,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 1,
-   "akser": 1,
-   "cc": 2.11,
-   "akser_t": [
-    1.05
-   ],
-   "rader": [
-    1,
-    0
-   ],
-   "dorer": 0,
-   "rytme_ok": true,
-   "topp_akser": []
   }
  },
  {
@@ -2766,13 +2632,6 @@
   },
   "avvik": false,
   "dorer_avvik": false
- },
- {
-  "id": "bnr-193867596",
-  "navn": "Vennehaabet",
-  "sikkerhet": "middels",
-  "status": "hoppet over",
-  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (N/NV (gatefasade))"
  },
  {
   "id": "bnr-193867502",
@@ -3112,44 +2971,6 @@
   "dorer_avvik": false
  },
  {
-  "id": "bnr-193870236",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "SØ (gatefasade, venstre del) sett skrått",
-  "vegg": 1,
-  "vegg_L": 15.5,
-  "avstand": 13.3,
-  "vinkel": 66.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ],
-    [
-     "etg",
-     2
-    ]
-   ],
-   "dorer": "ikke i utsnittet",
-   "takvinduer": "ikke synlig",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SØ (gatefasade, venstre del) sett skrått); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    5,
-    5
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 0
-  },
-  "avvik": true,
-  "dorer_avvik": true
- },
- {
   "id": "bnr-193870244",
   "navn": null,
   "sikkerhet": "ikke synlig",
@@ -3311,37 +3132,6 @@
   "dorer_avvik": false
  },
  {
-  "id": "pb-7",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "NØ (mot Voldgaten)",
-  "vegg": 5,
-  "vegg_L": 8.9,
-  "avstand": 12.9,
-  "vinkel": 34.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     0
-    ]
-   ],
-   "dorer": "1 tofløyet plankeport (hele fronten)",
-   "takvinduer": "0",
-   "piper": "0"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (NØ (mot Voldgaten)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 2
-  },
-  "avvik": false,
-  "dorer_avvik": false
- },
- {
   "id": "bnr-193867723",
   "navn": null,
   "sikkerhet": "høy",
@@ -3375,44 +3165,6 @@
    "dorer": 1,
    "arker": 0,
    "piper": 3
-  },
-  "avvik": true,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193867731",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "SØ (gatefasade)",
-  "vegg": 2,
-  "vegg_L": 12.9,
-  "avstand": 14.3,
-  "vinkel": 63.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "1 tofløyet hvit/grågrønn fyllingsport med overlys, ca. 0.05–0.25 av synlig del",
-   "takvinduer": "2 arker (saltak) med hvite vinduer",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SØ (gatefasade)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    4,
-    4
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 2
   },
   "avvik": true,
   "dorer_avvik": false
@@ -3534,44 +3286,6 @@
    "dorer": 1,
    "arker": 0,
    "piper": 4
-  },
-  "avvik": true,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193867901",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "SØ (gatefasade)",
-  "vegg": 1,
-  "vegg_L": 8.8,
-  "avstand": 9.8,
-  "vinkel": 47.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     5
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "1 blågrå tofløyet port/dør helt til venstre (ca. 0.03–0.25)",
-   "takvinduer": "0",
-   "piper": "2 murte teglpiper"
-  },
-  "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3,
-    3
-   ],
-   "dorer": 1,
-   "arker": 1,
-   "piper": 1
   },
   "avvik": true,
   "dorer_avvik": false
@@ -3733,39 +3447,6 @@
   "dorer_avvik": false
  },
  {
-  "id": "bnr-193971334",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "NV (gatefasade)",
-  "vegg": 8,
-  "vegg_L": 12.4,
-  "avstand": 10.1,
-  "vinkel": 64.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "0 i utsnittet",
-   "takvinduer": "0",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (NV (gatefasade)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": true
- },
- {
   "id": "bnr-193868673",
   "navn": null,
   "sikkerhet": "lav",
@@ -3844,13 +3525,6 @@
   "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (NØ (sett skrått, venstre i bildet))"
  },
  {
-  "id": "bnr-6251323",
-  "navn": null,
-  "sikkerhet": "middels",
-  "status": "hoppet over",
-  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (S/SØ (gatefasade, høyre i bildet))"
- },
- {
   "id": "bnr-193971318",
   "navn": "kontor- og administrasjonsbygning",
   "sikkerhet": "middels",
@@ -3895,77 +3569,6 @@
   }
  },
  {
-  "id": "bnr-193867987",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "NV (gatefasade, toetasjes delen)",
-  "vegg": 7,
-  "vegg_L": 10.1,
-  "avstand": 9.4,
-  "vinkel": 66.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ],
-    [
-     "etg",
-     2
-    ]
-   ],
-   "dorer": "ikke i utsnittet (butikk med store vinduer)",
-   "takvinduer": "0",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (NV (gatefasade, toetasjes delen)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    2,
-    2
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193867987",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "S/SØ (mot Voldportgaten)",
-  "vegg": 6,
-  "vegg_L": 14.9,
-  "avstand": 10.9,
-  "vinkel": 66.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ]
-   ],
-   "dorer": "ikke i utsnittet",
-   "takvinduer": "1 ark med 3-rams vindu",
-   "piper": "1 murt pipe"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (S/SØ (mot Voldportgaten)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    4
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": true,
-  "dorer_avvik": true
- },
- {
   "id": "bnr-193868266",
   "navn": null,
   "sikkerhet": "middels",
@@ -4004,13 +3607,6 @@
   "dorer_avvik": true
  },
  {
-  "id": "bnr-193868266",
-  "navn": null,
-  "sikkerhet": "middels",
-  "status": "hoppet over",
-  "grunn": "samme vegg (1) som en annen side: SØ (gatefasade) + SV-gavl"
- },
- {
   "id": "bnr-193868258",
   "navn": null,
   "sikkerhet": "middels",
@@ -4043,39 +3639,6 @@
   },
   "avvik": true,
   "dorer_avvik": true
- },
- {
-  "id": "bnr-193868258",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "NV (fasade mot Voldportgaten)",
-  "vegg": 6,
-  "vegg_L": 6.2,
-  "avstand": 18.1,
-  "vinkel": 28.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ]
-   ],
-   "dorer": "ikke i utsnittet",
-   "takvinduer": "2 små takvinduer",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (NV (fasade mot Voldportgaten)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    2
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": false
  },
  {
   "id": "bnr-193867944",
@@ -4146,45 +3709,6 @@
    "piper": 2
   },
   "avvik": false,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193867936",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "SV (gavl) + NV-hjørne av den gule pussgården",
-  "vegg": 5,
-  "vegg_L": 9.5,
-  "avstand": 10.5,
-  "vinkel": 60.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     1
-    ],
-    [
-     "etg",
-     1
-    ]
-   ],
-   "dorer": "0",
-   "takvinduer": "0",
-   "piper": "1 murt pipe"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SV (gavl) + NV-hjørne av den gule pussgården); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    2,
-    2,
-    1
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 2
-  },
-  "avvik": true,
   "dorer_avvik": false
  },
  {
@@ -4483,13 +4007,6 @@
   "grunn": "egen modell (kirka / bygg med deler)"
  },
  {
-  "id": "bnr-193972039",
-  "navn": "999",
-  "sikkerhet": "lav",
-  "status": "hoppet over",
-  "grunn": "ingen vindustall (NV (bak plankegjerdet))"
- },
- {
   "id": "bnr-193971903",
   "navn": null,
   "sikkerhet": "lav",
@@ -4641,13 +4158,6 @@
   },
   "avvik": true,
   "dorer_avvik": true
- },
- {
-  "id": "bnr-193867804",
-  "navn": null,
-  "sikkerhet": "middels",
-  "status": "hoppet over",
-  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (gatefasade, venstre kant av bildet))"
  },
  {
   "id": "bnr-193867847",
@@ -4896,39 +4406,6 @@
   "sikkerhet": "middels",
   "status": "hoppet over",
   "grunn": "pano_url mangler kamerapunkt/retning"
- },
- {
-  "id": "bnr-193991718",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "Ø/SØ (butikkfasade mot Torvgaten)",
-  "vegg": 3,
-  "vegg_L": 19.6,
-  "avstand": 13.7,
-  "vinkel": 11.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "1 butikkdør (åpen, hvit ramme) midt mellom to store utstillingsvinduer",
-   "takvinduer": "0",
-   "piper": "1 murt pipe"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (Ø/SØ (butikkfasade mot Torvgaten)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3
-   ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 3
-  },
-  "avvik": false,
-  "dorer_avvik": true
  },
  {
   "id": "pb-33",
@@ -5187,44 +4664,6 @@
   "dorer_avvik": false
  },
  {
-  "id": "bnr-193972101",
-  "navn": null,
-  "sikkerhet": "lav",
-  "side": "N (mot Torvgaten) – identitet usikker",
-  "vegg": 1,
-  "vegg_L": 16.7,
-  "avstand": 13.0,
-  "vinkel": 64.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "1 butikkdør med steintrapp og rekkverk (ca. 0.35 av synlig del), butikkskilt",
-   "takvinduer": "0",
-   "piper": null
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (N (mot Torvgaten) – identitet usikker); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    3,
-    3
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": false
- },
- {
   "id": "bnr-193972489",
   "navn": "annen forretningsbygning",
   "sikkerhet": "middels",
@@ -5280,13 +4719,6 @@
   "grunn": "veggen (vegg 3, 2.3 m) har plass til 0 akser, Street View trenger 1 – ingen gyldig akse på veggen: trolig feil vegg eller feil hus i modellen"
  },
  {
-  "id": "bnr-193971385",
-  "navn": null,
-  "sikkerhet": "lav",
-  "status": "hoppet over",
-  "grunn": "ingen vindustall (S (bak den brune portveggen))"
- },
- {
   "id": "bnr-193867855",
   "navn": null,
   "sikkerhet": "høy",
@@ -5318,51 +4750,6 @@
   },
   "avvik": true,
   "dorer_avvik": true
- },
- {
-  "id": "bnr-193867766",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "N (gatefasade)",
-  "vegg": 0,
-  "vegg_L": 15.4,
-  "avstand": 11.8,
-  "vinkel": 67.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     4
-    ],
-    [
-     "etg",
-     4
-    ]
-   ],
-   "dorer": "1 brun tofløyet dør med diagonalt rutemønster i glassfeltene, ca. 0.65 av synlig del",
-   "takvinduer": "0",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (N (gatefasade)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [
-    4,
-    4
-   ],
-   "dorer": 1,
-   "arker": 0,
-   "piper": 2
-  },
-  "avvik": false,
-  "dorer_avvik": false
- },
- {
-  "id": "bnr-193971369",
-  "navn": "restaurantbygning/kafé",
-  "sikkerhet": "lav",
-  "status": "hoppet over",
-  "grunn": "ingen vindustall (SØ (venstre kant av bildet, ~11 m))"
  },
  {
   "id": "bnr-193972497",
@@ -5561,13 +4948,6 @@
   "dorer_avvik": false
  },
  {
-  "id": "bnr-193972187",
-  "navn": null,
-  "sikkerhet": "middels",
-  "status": "hoppet over",
-  "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (SØ (fasade mot Voldportgaten, venstre i bildet))"
- },
- {
   "id": "bnr-16290424",
   "navn": "annen lagerbygning",
   "sikkerhet": "høy",
@@ -5633,37 +5013,6 @@
     1,
     1
    ],
-   "dorer": 0,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": true,
-  "dorer_avvik": true
- },
- {
-  "id": "bnr-193868533",
-  "navn": "annen lagerbygning",
-  "sikkerhet": "middels",
-  "side": "SØ (portmur mot Voldportgaten med rundbueport)",
-  "vegg": 0,
-  "vegg_L": 18.3,
-  "avstand": 15.2,
-  "vinkel": 27.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     1
-    ]
-   ],
-   "dorer": "1 rundbuet åpning med grå tofløyet plankeport (ca. 0.10–0.35 av synlig del)",
-   "takvinduer": "0",
-   "piper": null
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SØ (portmur mot Voldportgaten med rundbueport)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
-   "rader": [],
    "dorer": 0,
    "arker": 0,
    "piper": 1
@@ -6140,13 +5489,6 @@
   }
  },
  {
-  "id": "bnr-6276016",
-  "navn": null,
-  "sikkerhet": "høy",
-  "status": "hoppet over",
-  "grunn": "samme vegg (5) som en annen side: NØ/SØ (fra Huitfeldts gate)"
- },
- {
   "id": "bnr-6276008",
   "navn": null,
   "sikkerhet": "høy",
@@ -6253,57 +5595,6 @@
   "sikkerhet": "høy",
   "status": "hoppet over",
   "grunn": "ingen vindustall (NØ (~50 m))"
- },
- {
-  "id": "bnr-13384401",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "NØ (gatefasade, ~15 m)",
-  "vegg": 1,
-  "vegg_L": 11.3,
-  "avstand": 14.1,
-  "vinkel": 23.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "inngang på siden mot garasjen",
-   "takvinduer": "0",
-   "piper": "1 murt pipe"
-  },
-  "notat": "",
-  "arker": 0,
-  "piper": 1,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 3,
-   "akser": 3,
-   "cc": 4.82,
-   "akser_t": [
-    0.85,
-    5.67,
-    10.48
-   ],
-   "rader": [
-    2,
-    3
-   ],
-   "dorer": 1,
-   "rytme_ok": true,
-   "topp_akser": [
-    0,
-    1,
-    2
-   ]
-  }
  },
  {
   "id": "bnr-6275990",
@@ -6433,48 +5724,6 @@
    "dorer": 2,
    "rytme_ok": true,
    "topp_akser": []
-  }
- },
- {
-  "id": "bnr-6246729",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "SV (inne i hagen, ~19 m)",
-  "vegg": 3,
-  "vegg_L": 3.9,
-  "avstand": 22.7,
-  "vinkel": 7.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     1
-    ]
-   ],
-   "dorer": "ikke synlig",
-   "takvinduer": "0",
-   "piper": null
-  },
-  "notat": "",
-  "dorer_fra": "beholdt (ukjent i Street View)",
-  "arker": 0,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 1,
-   "akser": 1,
-   "cc": 3.86,
-   "akser_t": [
-    1.93
-   ],
-   "rader": [
-    1
-   ],
-   "dorer": 0,
-   "rytme_ok": true,
-   "topp_akser": [
-    0
-   ]
   }
  },
  {
@@ -6630,56 +5879,6 @@
    "topp_akser": [
     0,
     1,
-    2
-   ]
-  }
- },
- {
-  "id": "bnr-13384460",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "SØ (~27 m)",
-  "vegg": 3,
-  "vegg_L": 9.3,
-  "avstand": 26.8,
-  "vinkel": 46.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ],
-    [
-     "etg",
-     2
-    ]
-   ],
-   "dorer": "ikke synlig",
-   "takvinduer": "0",
-   "piper": "ikke synlig"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (SØ (~27 m)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "dorer_fra": "beholdt (ukjent i Street View)",
-  "arker": 0,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 3,
-   "akser": 3,
-   "cc": 3.79,
-   "akser_t": [
-    0.85,
-    4.64,
-    8.44
-   ],
-   "rader": [
-    2,
-    2
-   ],
-   "dorer": 1,
-   "rytme_ok": true,
-   "topp_akser": [
-    0,
     2
    ]
   }
@@ -7313,96 +6512,6 @@
   }
  },
  {
-  "id": "bnr-16300365",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "S/Ø (garasje med port mot gata)",
-  "vegg": 0,
-  "vegg_L": 7.4,
-  "avstand": 15.1,
-  "vinkel": 43.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     0
-    ]
-   ],
-   "dorer": "1 rød garasjeport (vippeport)",
-   "takvinduer": "0",
-   "piper": "0"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (S/Ø (garasje med port mot gata)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "arker": 0,
-  "piper": 0,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 1,
-   "akser": 1,
-   "cc": 7.44,
-   "akser_t": [
-    3.72
-   ],
-   "rader": [
-    0
-   ],
-   "dorer": 1,
-   "rytme_ok": true,
-   "topp_akser": []
-  }
- },
- {
-  "id": "bnr-13415897",
-  "navn": null,
-  "sikkerhet": "høy",
-  "side": "S/Ø (mot Cicignongata) med glassveranda",
-  "vegg": 7,
-  "vegg_L": 5.1,
-  "avstand": 16.0,
-  "vinkel": 37.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     2
-    ],
-    [
-     "etg",
-     2
-    ]
-   ],
-   "dorer": "ikke synlig (gjerde)",
-   "takvinduer": "0",
-   "piper": "2 murte teglpiper"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (S/Ø (mot Cicignongata) med glassveranda); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "dorer_fra": "beholdt (ukjent i Street View)",
-  "arker": 0,
-  "piper": 2,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 2,
-   "akser": 2,
-   "cc": 3.37,
-   "akser_t": [
-    0.85,
-    4.22
-   ],
-   "rader": [
-    2,
-    2
-   ],
-   "dorer": 0,
-   "rytme_ok": true,
-   "topp_akser": [
-    0,
-    1
-   ]
-  }
- },
- {
   "id": "bnr-13416060",
   "navn": null,
   "sikkerhet": "høy",
@@ -7457,34 +6566,6 @@
   }
  },
  {
-  "id": "bnr-16324507",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "S/Ø (~17 m, høyre i bildet)",
-  "vegg": 7,
-  "vegg_L": 3.6,
-  "avstand": 19.1,
-  "vinkel": 33.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "1 hvit dør",
-   "takvinduer": "0",
-   "piper": "1 murt pipe"
-  },
-  "notat": "siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)",
-  "status": "hoppet over",
-  "grunn": "veggen (vegg 7, 3.6 m) har plass til 2 akser, Street View trenger 4: trolig feil vegg eller feil hus i modellen; siktlinja går gjennom et annet hus (kamerapunktet er omtrentlig)"
- },
- {
   "id": "bnr-193820824",
   "navn": null,
   "sikkerhet": "lav",
@@ -7497,58 +6578,6 @@
   "sikkerhet": "lav",
   "status": "hoppet over",
   "grunn": "ingen vindustall (V (bak garasjen, ~16 m))"
- },
- {
-  "id": "bnr-13416559",
-  "navn": null,
-  "sikkerhet": "middels",
-  "side": "N/V (~18 m bak bjørka)",
-  "vegg": 0,
-  "vegg_L": 15.4,
-  "avstand": 19.3,
-  "vinkel": 30.0,
-  "sv": {
-   "rader": [
-    [
-     "etg",
-     3
-    ],
-    [
-     "etg",
-     3
-    ]
-   ],
-   "dorer": "ikke synlig",
-   "takvinduer": "1 ark/takvindu",
-   "piper": "1 murt pipe"
-  },
-  "notat": "veggen valgt etter retningen i avlesningen (N/V (~18 m bak bjørka)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren",
-  "dorer_fra": "beholdt (ukjent i Street View)",
-  "arker": 1,
-  "piper": 1,
-  "status": "endret",
-  "info": {
-   "droppet_rader": 0,
-   "akser_onsket": 3,
-   "akser": 3,
-   "cc": 6.84,
-   "akser_t": [
-    0.85,
-    7.69,
-    14.53
-   ],
-   "rader": [
-    3,
-    3
-   ],
-   "dorer": 0,
-   "rytme_ok": true,
-   "topp_akser": [
-    0,
-    1,
-    2
-   ]
-  }
  },
  {
   "id": "bnr-13418292",
@@ -7997,13 +7026,6 @@
     2
    ]
   }
- },
- {
-  "id": "bnr-193820417",
-  "navn": null,
-  "sikkerhet": "lav",
-  "status": "hoppet over",
-  "grunn": "ingen vindustall (N (~21 m, bak til høyre))"
  },
  {
   "id": "bnr-13418268",

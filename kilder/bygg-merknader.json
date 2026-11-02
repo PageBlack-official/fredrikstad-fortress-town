@@ -1085,6 +1085,22 @@
      "dorer": []
     }
    ]
+  },
+  {
+   "id": "bnr-193867987",
+   "kilde": "Vegar 02.11 18:29, med Street View-skjermbilde (2026; bare referanse, ikke i repoet)",
+   "grunn": "Mormors Café (Raadhusgaten 18A, hjørnet mot Voldportgaten): okergul/gul liggende panel med hvite hjørner og vindusomramminger, grå markiser. Kartet hadde burgunder fra kvartaltegningen kvartal6; Street View-observasjonene i avlesningen pekte på nabohusene (avvik A11/A12).",
+   "sett": {
+    "vegg": [
+     232,
+     184,
+     92
+    ],
+    "veggs": null,
+    "vegg_kilde": "Vegar 02.11 (Street View 2026): okergul",
+    "vegg_aar": 2026,
+    "farge_kilde": "vegg: Vegar 02.11 (Street View 2026): okergul"
+   }
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

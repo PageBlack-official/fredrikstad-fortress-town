@@ -48,7 +48,8 @@ def les_sokkel(tekst):
 
 def beregn(d=None):
     d = d or datalag.alle(); BY = {x['id']: x for x in d['bygg']}
-    A = json.load(open(os.path.join(ROT, 'kilder', 'streetview', 'avlesning.json'), encoding='utf8'))
+    sys.path.insert(0, os.path.join(ROT, 'verktoy')); import sv_kobling
+    A = sv_kobling.les(d)   # bare observasjoner som peker på huset (avvik A12)
     ut = {}
     for i, rec in A.items():
         if i not in BY or i in datalag.EGNE_FASADER or BY[i].get('skjul'): continue

@@ -135,8 +135,11 @@ def sv_vegg_aar(a):
 
 
 def les_sv():
+    """Street View-avlesningen med bare observasjoner som peker på huset (verktoy/sv_kobling.py, avvik A12 02.11)."""
     p = os.path.join(ROT, 'kilder', 'streetview', 'avlesning.json')
-    return json.load(open(p, encoding='utf8')) if os.path.exists(p) else {}
+    if not os.path.exists(p): return {}
+    sys.path.insert(0, os.path.join(ROT, 'verktoy')); import sv_kobling
+    return sv_kobling.les()
 
 
 def gamlebyen_ider():

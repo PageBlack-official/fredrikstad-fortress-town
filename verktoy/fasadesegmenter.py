@@ -250,7 +250,8 @@ def legg_inn(tørt=False, logg=print):
     raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
     D = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, ret), grunn)
     BY = {x['id']: x for x in D['bygg']}; omg = VG.Omgivelser(D['bygg'], D['veier'], D['gardsrom'])
-    avl = json.load(open(os.path.join(ROT, 'kilder', 'streetview', 'avlesning.json'), encoding='utf8'))
+    sys.path.insert(0, os.path.join(ROT, 'verktoy')); import sv_kobling
+    avl = sv_kobling.les()   # bare observasjoner som peker på huset (avvik A12, 02.11)
     dato = datetime.date.today().isoformat(); nye = []; rapport = {}
     dom = d.get('dom', {})
     for i, h in d['hus'].items():

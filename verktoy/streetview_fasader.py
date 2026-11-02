@@ -589,7 +589,8 @@ FASIT_SV_FIL = os.path.join(ROT, 'rapport', 'streetview-fasader', 'fasit-sv-vegg
 
 def kjor(tørt=False):
     FASIT_SV.clear()
-    avl = json.load(open(KILDE, encoding='utf8'))
+    import sv_kobling
+    avl = sv_kobling.les()   # bare observasjoner som peker på huset (avvik A12, 02.11)
     hopp = {k: v for k, v in json.load(open(HOPP, encoding='utf8')).items() if not k.startswith('_')}
     ret, d, grunn = tilstand()
     fasit_ret = {r['id'] for r in ret if r['op'] == 'sett' and r.get('felt') == 'vind'

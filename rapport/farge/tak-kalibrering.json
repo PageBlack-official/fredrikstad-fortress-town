@@ -421,18 +421,6 @@
   "sikker": true
  },
  {
-  "id": "bnr-13416559",
-  "kilde": "Street View mai 2024",
-  "ord": "mørk grå skifer/tegl",
-  "foto": [
-   100.0,
-   100.0,
-   105.0
-  ],
-  "klasse": "svart/antrasitt",
-  "sikker": true
- },
- {
   "id": "bnr-193820573",
   "kilde": "Street View mai 2024",
   "ord": "flatt (mosegrodd kant)",
@@ -593,6 +581,18 @@
  },
  {
   "id": "bnr-193972373",
+  "kilde": "Street View mai 2024",
+  "ord": "brun/grå tegl, mosegrodd",
+  "foto": [
+   249.0,
+   204.0,
+   163.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193972373",
   "kilde": "kvartaltegningen Kvartal2BITMP (IoU 0.48)",
   "tegning": [
    173,
@@ -678,6 +678,18 @@
  },
  {
   "id": "bnr-193971954",
+  "kilde": "Street View mai 2024",
+  "ord": "grå (blikk/takpapp)",
+  "foto": [
+   154.0,
+   136.0,
+   127.0
+  ],
+  "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193971954",
   "kilde": "kvartaltegningen Kvartal4BITMP (IoU 0.54)",
   "tegning": [
    173,
@@ -754,6 +766,18 @@
    177.0
   ],
   "klasse": "rød tegl",
+  "sikker": true
+ },
+ {
+  "id": "bnr-6242812",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl (bare kanten synlig)",
+  "foto": [
+   139.0,
+   128.0,
+   119.0
+  ],
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -1009,18 +1033,6 @@
   "sikker": true
  },
  {
-  "id": "bnr-193971334",
-  "kilde": "Street View mai 2024",
-  "ord": "brun/grå tegl, mosegrodd",
-  "foto": [
-   199.0,
-   180.0,
-   164.0
-  ],
-  "klasse": "falmet tegl",
-  "sikker": true
- },
- {
   "id": "bnr-193867618",
   "kilde": "kvartaltegningen kvartal7 (IoU 0.74)",
   "tegning": [
@@ -1135,6 +1147,18 @@
   "sikker": true
  },
  {
+  "id": "bnr-193868096",
+  "kilde": "Street View mai 2024",
+  "ord": "rød/brun tegl",
+  "foto": [
+   192.0,
+   186.0,
+   169.0
+  ],
+  "klasse": "falmet tegl",
+  "sikker": true
+ },
+ {
   "id": "bnr-193867359",
   "kilde": "Street View mai 2024",
   "ord": "mørk grå/svart tegl",
@@ -1144,6 +1168,18 @@
    158.0
   ],
   "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193868002",
+  "kilde": "Street View mai 2024",
+  "ord": "rød tegl",
+  "foto": [
+   196.0,
+   185.0,
+   168.0
+  ],
+  "klasse": "falmet tegl",
   "sikker": true
  },
  {
@@ -1190,18 +1226,6 @@
    170.0
   ],
   "klasse": "falmet tegl",
-  "sikker": true
- },
- {
-  "id": "bnr-193867901",
-  "kilde": "Street View mai 2024",
-  "ord": "rød/brun tegl, mosegrodd",
-  "foto": [
-   235.0,
-   184.0,
-   153.0
-  ],
-  "klasse": "rød tegl",
   "sikker": true
  },
  {
@@ -1890,18 +1914,6 @@
  },
  {
   "id": "bnr-193867731",
-  "kilde": "Street View mai 2024",
-  "ord": "grå (blikk/skifer?) på arkene",
-  "foto": [
-   187.0,
-   185.0,
-   176.0
-  ],
-  "klasse": "grå",
-  "sikker": true
- },
- {
-  "id": "bnr-193867731",
   "kilde": "kvartaltegningen Kvartal12 (IoU 0.48)",
   "tegning": [
    237,
@@ -2153,15 +2165,15 @@
   "sikker": true
  },
  {
-  "id": "bnr-193972187",
+  "id": "bnr-193971989",
   "kilde": "Street View mai 2024",
-  "ord": "rød/brun tegl",
+  "ord": "brun",
   "foto": [
-   124.0,
-   120.0,
-   116.0
+   215.0,
+   194.0,
+   174.0
   ],
-  "klasse": "mørk grå",
+  "klasse": "rød tegl",
   "sikker": true
  },
  {
@@ -2196,6 +2208,18 @@
    148.0
   ],
   "klasse": "brungrå",
+  "sikker": true
+ },
+ {
+  "id": "bnr-193971288",
+  "kilde": "Street View mai 2024",
+  "ord": "brun tegl (kant)",
+  "foto": [
+   222.0,
+   202.0,
+   181.0
+  ],
+  "klasse": "mørk brun",
   "sikker": true
  },
  {
@@ -2419,18 +2443,6 @@
    138.0
   ],
   "klasse": "rød tegl",
-  "sikker": true
- },
- {
-  "id": "bnr-6246729",
-  "kilde": "Street View mai 2024",
-  "ord": "rød tegl",
-  "foto": [
-   149.0,
-   150.0,
-   144.0
-  ],
-  "klasse": "mørk grå",
   "sikker": true
  },
  {
