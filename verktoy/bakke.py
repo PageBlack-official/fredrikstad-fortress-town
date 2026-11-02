@@ -220,6 +220,27 @@ def hus_polygoner(d=None):
     return ut
 
 
+HELNING_MIN, HELNING_PER_M = 1.25, 0.2
+
+
+def monehoyde(b):
+    """Høyeste punkt på taket over bakken (h + t·th, datalag.hoyden_styrer)."""
+    t = max((q[2] for f in (b.get('tak2') or b.get('sk') or []) for q in f), default=0.0)
+    return float(b.get('h') or 0) + t * float(b.get('th') or 1.0)
+
+
+def helningssoner(d, mpp=MPP):
+    """Radius i piksler -> husene: sonen rundt huset der fotoet ser taket/veggen i stedet for bakken."""
+    from shapely.geometry import Polygon
+    ut = {}
+    for b in d['bygg']:
+        if b.get('skjul') or not b.get('p') or len(b['p']) < 3: continue
+        rr = int(round(max(HELNING_MIN, HELNING_PER_M * monehoyde(b)) / mpp))
+        P = Polygon(b['p']).buffer(0)
+        if not P.is_empty: ut.setdefault(rr, []).append(P)
+    return ut
+
+
 def fasit(R, mpp=MPP, d=None):
     """Bakken slik kildene viser den, per piksel i R. Gir dict med:
       kl      klasse (gress, bed, belagt, vann, hus) for hele bakken
@@ -234,9 +255,15 @@ def fasit(R, mpp=MPP, d=None):
     vann = maske([w['p'] for w in d['vann'] if w.get('p')], R, mpp)
     hoyt = (n > 1.5).astype(np.uint8)
     hoyt = cv2.morphologyEx(hoyt, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
-    # takutstikk og helning i fotoet (ikke ekte ortofoto): 1,25 m rundt hus og alt som står høyt ses ikke som bakke
-    r = int(round(1.25 / mpp))
+    # takutstikk og helning i fotoet (ikke ekte ortofoto): 1,25 m rundt hus og alt som står høyt ses ikke som bakke.
+    # Høye hus heller mer: en sone på 0,2 × mønehøyden (minst 1,25 m). Før 02.11 var sonen 1,25 m for alle, og Kasernens
+    # tak (17 m) som heller 2–3,5 m ut over torget i fotoet, ble lest som tre «bed» langs fasaden (avvik A1/A4)
+    r = int(round(HELNING_MIN / mpp))
     skjult = cv2.dilate(np.maximum(hus, hoyt), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1)))
+    for rr, polys in helningssoner(d).items():
+        if rr <= r: continue
+        m = maske(polys, R, mpp)
+        if m.any(): skjult = np.maximum(skjult, cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * rr + 1, 2 * rr + 1))))
     sett = (skjult == 0) & (kl != K['skygge']) & (vann == 0)
     ut = np.full(kl.shape, K['ukjent'], np.uint8)
     ut[sett] = kl[sett]

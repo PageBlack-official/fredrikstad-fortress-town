@@ -948,11 +948,13 @@ def legg_inn(tørt=False, bare=None):
                            or not any((A['tegning'], vg['id'], fi) in erstattet for fi in vg.get('flater') or [])]
         if bare and A['tegning'] not in bare: continue
         for vg in A['vegger']:
+            if vg['id'] in datalag.EGNE_FASADER: continue   # eget fasadeverktøy (Kaserna: verktoy/kaserna.py), avvik A1 02.11
             v0 = np.array(vg['venstre'], float); v1 = np.array(vg['b'] if np.allclose(vg['venstre'], vg['a']) else vg['a'], float)
             els = []
             for e in vg['elementer']:
                 e = dict(e); e['_g'] = (v0 + e['u'] * (v1 - v0)).tolist(); els.append(e)
-            kand = [i_ for i_ in sorted(slekt.get(vg['id']) or {vg['id']}) if i_ in BY and not BY[i_].get('skjul')]   # sortert: settet gav ulik rekkefølge fra kjøring til kjøring
+            kand = [i_ for i_ in sorted(slekt.get(vg['id']) or {vg['id']}) if i_ in BY and not BY[i_].get('skjul')]
+            kand = [i_ for i_ in kand if i_ not in datalag.EGNE_FASADER]
             if len(kand) <= 1 and vg['id'] in BY and not BY[vg['id']].get('skjul'):
                 per_hus.setdefault(vg['id'], []).append((A['tegning'], dict(vg, elementer=els))); continue
             if not kand: continue
