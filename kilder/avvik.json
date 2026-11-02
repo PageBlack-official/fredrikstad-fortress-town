@@ -196,15 +196,16 @@
    "hvor": {
     "bygg_id": "bnr-193868061"
    },
-   "status": "lukket",
+   "status": "åpen",
    "aarsak": "Sokkelen hadde bare én farge (brun [178,150,138] fra tegningen) og ikke materiale. Street View-avlesningen har «kjeller_sokkel» for 160 sider, med naturstein/granitt/puss og høyde for mange hus, men den ble ikke brukt.",
    "rettelse": "sokkel.type (naturstein/puss): src/05 tegner naturstein med skift, blokker, fuger og tone per stein (tegnet, ikke foto). Artillerigården: grå/rosa naturstein i merknaden (Vegar 02.11). Ny verktoy/sokkel.py i kjeden leser kjeller_sokkel i avlesningen: 48 hus fikk sokkel (43 naturstein, 5 puss), bare fra observasjoner som peker på huset (A12).",
-   "rettet_i": "1c9f6e3",
+   "rettet_i": "ffcc0e4",
    "bevis": [
     "rapport/avvik/A10-foer-artillerigaarden-naer.jpg",
     "rapport/avvik/A10-etter-artillerigaarden-naer.jpg"
    ],
-   "vakt": "41_sokkel_skjuler_ikke"
+   "vakt": "41_sokkel_skjuler_ikke",
+   "gjenaapnet": "02.11 (koordinator, med A10-etter-bildet): steinen dekket bare et bånd under vinduene i første etasje. Vegar: hele første etasje er grov stein. Årsak: sokkelhøyden var et fast tall (3,1 m fra merknaden), mens huset har to høye etasjer (h 9,0) og de utegnede veggene fikk tre vindusrader fra reglene (3 m etasjehøyde), så første rad stod i steinen og to rader over. Rettelse: sokkel.etasje (merknaden) gir steinhøyden = underkant av andre etasjes vinduer, regnet hver gang (datalag.sokkel_etasje); utegnede vegger får husets tegnede rader (fasade_tegning.rader_som_tegnet), så Artillerigården har to rader overalt. De andre natursteinhusene: sokkel.py leser nå også materialet i Street View: 1 hel etasje (Artillerigården), 4 hus der hele veggen er stein (Krutthuset, Det grundmurede provianthus, Hovedvakten, Kruttårnet); de øvrige er lave sokler målt i Street View («ca. 1,2 m» o.l.), riktige som bånd. Vakt: regel 41 er rød når kildene sier steinetasje/steinvegg og steinen er lavere enn underkant av andre etasjes vinduer/veggen."
   },
   {
    "id": "A11",
@@ -242,6 +243,56 @@
    ],
    "vakt": "43_streetview_kobling",
    "merknad": "Strålesjekken er streng: en observasjon som beskriver huset helt ute i bildekanten bak et annet hus, regnes som feil og brukes ikke; da gjelder tegningen/trykket. Eksempel: bnr-193868525 (Torvet) går fra okergul til tegningens laks (Kvartal4BITMP), fordi 2024-bildet ser bnr-193971946 først. Vegar bør se over listen i kobling-geometri.json der han kjenner husene."
+  },
+  {
+   "id": "A13",
+   "dato": "2026-11-02",
+   "fra": "Koordinator (A4)",
+   "hva": "Frie vegger uten vinduer på hus som har vinduer på andre sider (bnr-16308102, Voldporten, bnr-194006187, Det nye rådhus, bnr-193972306, bnr-193972446 m.fl.), og vinduer over takfoten",
+   "hvor": {
+    "hele": true
+   },
+   "status": "åpen",
+   "aarsak": "Fasadeverktøyene ga vinduer bare til vegger med kilde (tegningen, Street View) eller til hus merket «antatt». Vegger tegningen ikke viser, på hus fra tegningen, og hus uten fasadekilde ble blanke: 52 frie vegger på 23 hus. Reglene ga også utegnede vegger etasjer etter 3 m (tre rader på Artillerigården). Vinduer lest mot en eldre, høyere høyde stod over takfoten (54 vinduer på 10 hus, f.eks. Det grundmurede provianthus med rader på 7,6 m og h 6,0).",
+   "rettelse": "verktoy/blanke_vegger.py i kjeden: frie vegger på minst 3 m uten vinduer og uten kilde for blank vegg får vinduer i husets egen rytme (radhøyder og vindusstørrelse fra husets vinduer, akser 2,8 m). fasade_tegning.rader_som_tegnet: reglenes rader flyttes til husets tegnede rader. datalag.hoyden_styrer tar ut vinduer over takfoten som ikke hører til en ark.",
+   "rettet_i": "ffcc0e4",
+   "bevis": [],
+   "vakt": "44_ingen_blanke_vegger"
+  },
+  {
+   "id": "A14",
+   "dato": "2026-11-02",
+   "fra": "Koordinator (A4)",
+   "hva": "Mellomporten (pb-11) er rød etter en udømt trykkfarge",
+   "hvor": {
+    "bygg_id": "pb-11"
+   },
+   "status": "åpen",
+   "aarsak": "vegg_nye.py brukte 2015-trykkfila (ikke dømt mot 2019-trykket) når tegningen ikke hadde huset. Det finnes ingen Street View-observasjon av porten, og ortofotoet ser bare taket (mørk grå).",
+   "rettelse": "Portaler (data/porter.json typ mur) uten dømt kilde får grått puss [204,200,192] i vegg_nye.py til tegningen eller Street View avgjør. Kongeporten og pb-51 (Kasernen) har egne kilder.",
+   "rettet_i": "3adf404",
+   "bevis": [],
+   "vakt": "38_porter_og_murer_fri"
+  },
+  {
+   "id": "A15",
+   "dato": "2026-11-02",
+   "fra": "Koordinator (A4)",
+   "hva": "Rett skjøt i brosteinen over Torvet, og stripete/omrissede bånd langs gatene",
+   "hvor": {
+    "naer": "Torvet og Raadhusgaten"
+   },
+   "status": "lukket",
+   "aarsak": "Brostein lå oppå brosteinen: 24 brosteinsflater (bl.a. parkeringsfelt) og 16 veier med brosteinsflate ligger helt inne i brosteinsgrunnen (src/04) et par centimeter høyere. Mønsteret er det samme, men streken (src/01) tegnet kanten der høyden skifter: en rett skjøt over Torvet og omrissede bånd i gatene.",
+   "rettelse": "src/03 iBrostein/alleIBrostein; src/08 og src/17 tegner ikke brostein som ligger i brosteinsgrunnen (oppmerkingen står).",
+   "rettet_i": "3adf404",
+   "bevis": [
+    "rapport/avvik/A15-foer-torvet-az193.jpg",
+    "rapport/avvik/A15-etter-torvet-az193.jpg",
+    "rapport/avvik/A15-foer-gate-az320.jpg",
+    "rapport/avvik/A15-etter-gate-az320.jpg"
+   ],
+   "vakt": "45_brostein_paa_brostein"
   }
  ]
 }
