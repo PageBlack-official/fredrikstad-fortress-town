@@ -27,8 +27,12 @@ for id_, verktoy in datalag.EGNE_FASADER.items():
     # 2. det effektive bygget = verktøyet
     spec = importlib.util.spec_from_file_location('v_' + id_.replace('-', '_'), os.path.join(ROT, verktoy))
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
-    felt, filer = m.beregn(d)
+    felt, filer, *andre = m.beregn(d)
     x = BY[id_]
+    for oid, of in (andre[0] if andre else {}).items():   # andre objekter verktøyet eier (portbygg og skur i Kasernens murer)
+        for f, v in of.items():
+            if json.dumps(BY[oid].get(f)) != json.dumps(v):
+                ok = False; linjer.append(f"FEIL {oid}: feltet {f} er ikke det {verktoy} gir")
     for f, v in felt.items():
         # arker og piper lagres i grunnhøyden og flyttes av datalag.hoyden_styrer: sammenlign med det samme løpet
         if f in ('arker', 'piper'):
