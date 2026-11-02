@@ -64,8 +64,9 @@ function maal(logg, fra = 0, til = logg.length) {
 }
 // speilet i vannet: styrken (delt på det den skal være ved zoomen) skal ikke falle mens kartet beveger seg, og speilet skal tegnes på nytt
 // jevnlig i fart (alder = ms siden det ble tegnet)
+// (alderen telles bare i bilder med vann i bildet: uten vann tegnes ikke speilet, 02.11)
 function speilMaal(logg) { const s = logg.map(l => l.speil).filter(Boolean); if (!s.length) return null;
-  return { minsteAndel: +Math.min(...s.map(x => x.maal > 0 ? x.styrke / x.maal : 1)).toFixed(2), eldsteMs: Math.round(Math.max(...logg.filter(l => l.mv && l.speil).map(l => l.speil.alder), 0)) }; }
+  return { minsteAndel: +Math.min(...s.map(x => x.maal > 0 ? x.styrke / x.maal : 1)).toFixed(2), eldsteMs: Math.round(Math.max(...logg.filter(l => l.mv && l.speil && l.speil.synlig !== false).map(l => l.speil.alder), 0)) }; }
 const ankerFeil = async (page, ll, px) => page.evaluate(([ll, px]) => { const s = map.project(ll); return +Math.hypot(s.x - px[0], s.y - px[1]).toFixed(1); }, [ll, px]);
 const kortLogg = page => page.evaluate(() => window.__kortLogg.splice(0));
 const skjerm = (page, x, h, y) => page.evaluate(([x, h, y]) => window.__skjerm3(x, h, -y), [x, h, y]);

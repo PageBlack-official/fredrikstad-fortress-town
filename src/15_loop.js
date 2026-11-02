@@ -99,8 +99,10 @@ function oppdater(){
   post.settSkala(skalaStille); post.setAO(aoStille); post.setSS(ssStille);
   // speilet (29.10): toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
   // flyttes det med kameraet (reflPV, 14/03). Før tonet det ut ved hver bevegelse og inn igjen 0,3 s etter stopp (synlig ny tegning).
+  // (02.11) uten vann i bildet tegnes ikke speilet (21_flyt: vannISyne); kommer vannet inn, tegnes det i samme bilde (nøkkelen er ny)
   if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
-    if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
+    if(!vannISyne()) speilFrisk=false;
+    else if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
     else { speilFrisk=false; if(naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
   sistTegnet=naa; fullTegnet=stille && !husBeveger;
@@ -111,11 +113,12 @@ function oppdater(){
 const TEGN = Q0.get('tegn')!=='0';
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
-  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
-// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet (vannet lever)
+  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
+    if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet når vann er i bildet (vannet lever), ellers ikke (02.11)
 // (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
@@ -131,6 +134,6 @@ window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(va
 window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
 window.__scene=()=>({scene, city});
-window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0)});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
+window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0), synlig:vannISyne()});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };

@@ -272,6 +272,25 @@ av en ny gest). Huskortet: bunnark under 720 px bredde, sidepanel over; tilbake 
 Testen kjører med Playwrights falske klokke (16 ms per bilde) og ?tegn=0 (kameraet og tilstanden oppdateres, byen tegnes ikke), så den måler
 hopp, rykk, bråstopp og ankerpunkt, ikke bildefrekvens. Bildefrekvens og følelsen i fingrene ses i ekte Chrome og på telefon (tast d, ?d=1).
 
+## Flyt uten lavere oppløsning (02.11, natt/flyt3)
+Vegar: «ikke dårligere oppløsning, heller motsatt, og vise at vår løsning er råere». Oppløsning, skygger, AO, strek og speil er urørt;
+det som er spart, er arbeid som ikke synes:
+- Bakkeflatene (plener, flater, parkering, vann, brostein) slås sammen per materiale og plass (src/21_flyt.js): 651 nett blir 17,
+  tegnekallene per bilde går fra 762 til 388 i hjemmevisningen (og færre i speilpasset). Rekkefølgen mellom materialene er den samme.
+- Vann i bildet (`vannISyne()`, 21_flyt: rutenett på 8 m over vannflatene, 33 x 21 skjermpunkter lagt ned på vannet, regnet bare når
+  kameraet har flyttet seg): uten vann i bildet tegnes ingenting når kartet står stille (før 10 hele bilder i sekundet), og speilpasset
+  hoppes over. Kommer vannet inn, tegnes speilet i samme bilde. Flyt-testen teller speilets alder bare når vann er i bildet.
+- Streken (01): minimum-dybden (pikselen og naboen til høyre og over) regnes i et eget R32F-pass; streken slår opp én verdi i stedet for
+  tre (ca. 120 -> 40 dybdeoppslag per piksel med fire prøver). Samme tall. `?mintex0=1` gir den gamle veien.
+- Lerretet har ikke lenger MSAA (00: antialias false): byen tegnes med MSAA i eget mål og FXAA til slutt, over hele lerretet.
+- Ingen ny tekst eller nye lister per bilde i speilet og målingen (matrisen sammenlignes direkte).
+
+    node verktoy/flyt_maal.mjs <ut.json> for=<a/index.html> etter=<b/index.html>   ro, ro tett på, panorering, zoom, klikk på hus
+    RUNDER=3 GPU=1 BREDDE=480 HOYDE=300 SCEN=ro,pan …                             GPU=1: venter på GPU-en etter hvert pass (leser én piksel)
+
+Per bilde logger siden (window.__logg) render() i laget, oppdater(), speilet, skyggekartet, 3D, strek og FXAA. Programvare-GPU-en gir
+relative tall; ekte bildefrekvens leses i Chrome med tast d. Rapport: rapport/flyt/flyt-02nov.md.
+
 ## Rene tak og husdeling etter tegningen (30.10, natt/tak)
 Kontrollen (verktoy/kontroll.py) viste at husene ikke lignet tegningene: taket var regnet som rett skjelett over hele husrekka
 (verktoy/tak.py), så hvert sprang i kommunekartets omriss ble en takflate og rekka fikk ett sammensatt valmtak. Vegar tegnet rene hus:

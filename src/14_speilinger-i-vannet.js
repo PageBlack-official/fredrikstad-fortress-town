@@ -8,22 +8,23 @@ const speil=(()=>{
   scene.traverse(o=>{ if(o.isMesh && o.material && o.material.uniforms && o.material.uniforms.skyggeF) deler.push(o); });  // festningsterrenget skjuler det som står bak vollene
   deler.forEach(o=>o.traverse(c=>c.layers.enable(LAG)));
   let paa=!Q0.get('nospeil');
-  const cc=new THREE.Color();
+  const cc=new THREE.Color(), _speilKam=new THREE.Matrix4().set(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), lagre=new Float64Array(2*deler.length);
   return {
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; rt.setSize(Math.max(2,w>>1), Math.max(2,h>>1)); },
     av(){ paa=false; waterMat.uniforms.reflStyrke.value=0; },
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
       // tegnes bare på nytt når kameraet eller husene har flyttet seg (stillestående bilde koster ingenting ekstra)
-      const e=cam.projectionMatrix.elements, nok=e.join(',')+(endret?Math.random():'');
-      if(nok===this._sist) return; this._sist=nok;
-      const lagre=deler.map(o=>[o.position.y,o.scale.y]);
+      if(!endret && _speilKam.equals(cam.projectionMatrix)) return; _speilKam.copy(cam.projectionMatrix);   // (02.11) matrisen sammenlignes direkte, ingen ny tekst per bilde
+      const _ts=performance.now();
+      deler.forEach((o,i)=>{ lagre[2*i]=o.position.y; lagre[2*i+1]=o.scale.y; });
       deler.forEach(o=>{ o.position.y=2*Y-o.position.y; o.scale.y=-o.scale.y; });
       const bg=scene.background; scene.background=null; renderer.getClearColor(cc); const ca=renderer.getClearAlpha();
       const au=renderer.shadowMap.autoUpdate; renderer.shadowMap.autoUpdate=false;
       cam.layers.set(LAG); renderer.setRenderTarget(rt); renderer.setClearColor(0x000000,0); renderer.clear(); renderer.render(scene,cam);
       cam.layers.set(0); renderer.setRenderTarget(null); renderer.setClearColor(cc,ca); renderer.shadowMap.autoUpdate=au; scene.background=bg;
-      deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
+      deler.forEach((o,i)=>{ o.position.y=lagre[2*i]; o.scale.y=lagre[2*i+1]; });
+      maalVent(); MAALT.speil+=performance.now()-_ts;   // måling (verktoy/flyt_maal.mjs)
       waterMat.uniforms.tRefl.value=rt.texture;
       // kameraets projeksjon da speilet ble tegnet: vannet slår opp i speilet med den (03), så speilet følger byen til neste tegning
       waterMat.uniforms.reflPV.value.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse); this.sist=performance.now();

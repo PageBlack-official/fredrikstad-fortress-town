@@ -97,7 +97,7 @@ function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(400
 const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||1.3));
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
   center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
-  attributionControl:false, antialias:true, reduceMotion:false /* «Reduser bevegelse» av: Vegars valg, CHANGELOG v27 (15_bevegelse) */, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
+  attributionControl:false, antialias:false /* (02.11) lerretet får ingen MSAA: byen tegnes kantutjevnet i eget mål (01: MSAA + FXAA) og legges over hele lerretet, så MSAA på lerretet var dobbeltarbeid */, reduceMotion:false /* «Reduser bevegelse» av: Vegars valg, CHANGELOG v27 (15_bevegelse) */, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
 window.map=map;
 map.scrollZoom.setWheelZoomRate(1/150); map.touchZoomRotate.enable(); map.dragRotate.enable(); map.keyboard.enable();
 // pluss/minus og kompass (snu byen, nordvend): synlig vei til zoom og rotasjon for mus uten klyp
@@ -128,20 +128,42 @@ const kam={zoomfaktor:1, mpp:1, pitch:PITCH0, bearing:-AZ0_GRADER, naer:1, fjern
 function fit(){ post.size(); }
 map.on('resize',fit);
 
+// måling per bilde (verktoy/flyt_maal.mjs, tast d): ms brukt på oppdater(), speilpasset og skyggekartet i dette bildet
+const MAALT={oppdater:0, speil:0, skygge:0};
+window.__pt={scene:0, blekk:0, fxaa:0, kall:0, tri:0, skygge:0, maal:false, minTex:false};
+// window.__maal: true = gl.finish etter hvert pass (tast m); 'les' = les én piksel, så tida tar med alt GPU-en har igjen (programvare-GPU)
+const _px1=new Uint8Array(4);
+function maalVent(){ const m=window.__maal; if(!m) return; if(m!=='les'){ gl2.finish(); return; }
+  const rb=gl2.getParameter(gl2.READ_FRAMEBUFFER_BINDING); gl2.bindFramebuffer(gl2.READ_FRAMEBUFFER,null); gl2.readPixels(0,0,1,1,gl2.RGBA,gl2.UNSIGNED_BYTE,_px1); gl2.bindFramebuffer(gl2.READ_FRAMEBUFFER,rb); }
+{ const sr=renderer.shadowMap.render.bind(renderer.shadowMap); renderer.shadowMap.render=(l,s,c)=>{ if(!sun.shadow.needsUpdate) return sr(l,s,c); const t=performance.now(); sr(l,s,c); maalVent(); MAALT.skygge+=performance.now()-t; }; }
 // ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
 const post=(()=>{
   let W=2, H=2, skala=1;
   const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
-  const m=new THREE.ShaderMaterial({
-    uniforms:{tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
+  // (02.11) minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
+  const MIN_TEX=renderer.extensions.has('EXT_color_buffer_float') && !Q0.get('mintex0');
+  const rtM=new THREE.WebGLRenderTarget(2,2,{type:THREE.FloatType, format:THREE.RedFormat, minFilter:THREE.NearestFilter, magFilter:THREE.NearestFilter, depthBuffer:false, generateMipmaps:false});
+  const mM=new THREE.ShaderMaterial({ uniforms:{tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}},
+    vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
+    fragmentShader:`uniform sampler2D tDep; uniform vec2 res; varying vec2 vUv;
+      void main(){ float a=texture2D(tDep,vUv).x, b=texture2D(tDep,vUv+vec2(1.,0.)/res).x, c=texture2D(tDep,vUv+vec2(0.,1.)/res).x; gl_FragColor=vec4(min(a,min(b,c)),0.,0.,1.); }` });
+  const qM=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mM); qM.frustumCulled=false; const msc=new THREE.Scene(); msc.add(qM);
+  const m=new THREE.ShaderMaterial({ defines: MIN_TEX ? {MIN_TEX:1} : {},
+    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
     fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
       // dybde med lukking: hårfine sprekker mellom takflater (1 px) lukkes, så de ikke blir prikker i streken
+      #ifdef MIN_TEX
+      // (02.11) minimum av pikselen og naboen til høyre og over er regnet i et eget pass (tMin, rå dybde): én oppslag i stedet for tre, samme tall
+      uniform sampler2D tMin;
+      float Dm(vec2 o){ float d=texture2D(tMin, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
+      #else
       float Dm(vec2 o){ return min(D(o), min(D(o+vec2(1.,0.)), D(o+vec2(0.,1.)))); }
+      #endif
       // strekstyrke ved en forskyvning (piksler): knekker (inner) og dybdesprang (silhuett)
       float strekVed(vec2 o, float s1, float s2, float mpp){
         float ec=Dm(o);
@@ -256,15 +278,16 @@ const post=(()=>{
     samples(){ return rt.samples; },
     setSS(n){ m.uniforms.ssN.value=n; },
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
-    settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
+    settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); rtM.setSize(w,h); mM.uniforms.res.value.set(w,h); try{ waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },
     render(){ const u=m.uniforms; u.mpp.value=kam.mpp*innerWidth/u.res.value.x; u.span.value=kam.mpp; u.naer.value=kam.naer; u.fjern.value=kam.fjern; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=introTilt(); // miniatyr-uskarphet bare i introen
       // måling (tast m i feilsøkingsruta): gl.finish() etter hvert pass gir ekte GPU-tid per pass, ikke bare CPU-tid
-      const maal=!!window.__maal, fin=()=>{ if(maal) gl2.finish(); }, skyggeNaa=sun.shadow.needsUpdate;
+      const maal=!!window.__maal, fin=maalVent, skyggeNaa=sun.shadow.needsUpdate;
       const _t0=performance.now(); renderer.setRenderTarget(rt); renderer.render(scene,cam); const kall=renderer.info.render.calls, tri=renderer.info.render.triangles; fin(); const _t1=performance.now();
+      if(MIN_TEX){ renderer.setRenderTarget(rtM); renderer.render(msc,pc); }
       renderer.setRenderTarget(rtF); renderer.render(ps,pc); fin(); const _t2=performance.now();
       renderer.setRenderTarget(null); renderer.render(fs,pc); fin(); const _t3=performance.now();
-      window.__pt={scene:_t1-_t0, blekk:_t2-_t1, fxaa:_t3-_t2, kall, tri, skygge:skyggeNaa?1:0, maal}; }
+      const P=window.__pt; P.scene=_t1-_t0; P.blekk=_t2-_t1; P.fxaa=_t3-_t2; P.kall=kall; P.tri=tri; P.skygge=skyggeNaa?1:0; P.maal=maal; P.minTex=MIN_TEX; }   // samme objekt hvert bilde
   };
 })();
 
@@ -1695,22 +1718,23 @@ const speil=(()=>{
   scene.traverse(o=>{ if(o.isMesh && o.material && o.material.uniforms && o.material.uniforms.skyggeF) deler.push(o); });  // festningsterrenget skjuler det som står bak vollene
   deler.forEach(o=>o.traverse(c=>c.layers.enable(LAG)));
   let paa=!Q0.get('nospeil');
-  const cc=new THREE.Color();
+  const cc=new THREE.Color(), _speilKam=new THREE.Matrix4().set(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), lagre=new Float64Array(2*deler.length);
   return {
     size(){ const w=renderer.domElement.width, h=renderer.domElement.height; rt.setSize(Math.max(2,w>>1), Math.max(2,h>>1)); },
     av(){ paa=false; waterMat.uniforms.reflStyrke.value=0; },
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
       // tegnes bare på nytt når kameraet eller husene har flyttet seg (stillestående bilde koster ingenting ekstra)
-      const e=cam.projectionMatrix.elements, nok=e.join(',')+(endret?Math.random():'');
-      if(nok===this._sist) return; this._sist=nok;
-      const lagre=deler.map(o=>[o.position.y,o.scale.y]);
+      if(!endret && _speilKam.equals(cam.projectionMatrix)) return; _speilKam.copy(cam.projectionMatrix);   // (02.11) matrisen sammenlignes direkte, ingen ny tekst per bilde
+      const _ts=performance.now();
+      deler.forEach((o,i)=>{ lagre[2*i]=o.position.y; lagre[2*i+1]=o.scale.y; });
       deler.forEach(o=>{ o.position.y=2*Y-o.position.y; o.scale.y=-o.scale.y; });
       const bg=scene.background; scene.background=null; renderer.getClearColor(cc); const ca=renderer.getClearAlpha();
       const au=renderer.shadowMap.autoUpdate; renderer.shadowMap.autoUpdate=false;
       cam.layers.set(LAG); renderer.setRenderTarget(rt); renderer.setClearColor(0x000000,0); renderer.clear(); renderer.render(scene,cam);
       cam.layers.set(0); renderer.setRenderTarget(null); renderer.setClearColor(cc,ca); renderer.shadowMap.autoUpdate=au; scene.background=bg;
-      deler.forEach((o,i)=>{ o.position.y=lagre[i][0]; o.scale.y=lagre[i][1]; });
+      deler.forEach((o,i)=>{ o.position.y=lagre[2*i]; o.scale.y=lagre[2*i+1]; });
+      maalVent(); MAALT.speil+=performance.now()-_ts;   // måling (verktoy/flyt_maal.mjs)
       waterMat.uniforms.tRefl.value=rt.texture;
       // kameraets projeksjon da speilet ble tegnet: vannet slår opp i speilet med den (03), så speilet følger byen til neste tegning
       waterMat.uniforms.reflPV.value.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse); this.sist=performance.now();
@@ -1960,8 +1984,10 @@ function oppdater(){
   post.settSkala(skalaStille); post.setAO(aoStille); post.setSS(ssStille);
   // speilet (29.10): toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
   // flyttes det med kameraet (reflPV, 14/03). Før tonet det ut ved hver bevegelse og inn igjen 0,3 s etter stopp (synlig ny tegning).
+  // (02.11) uten vann i bildet tegnes ikke speilet (21_flyt: vannISyne); kommer vannet inn, tegnes det i samme bilde (nøkkelen er ny)
   if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
-    if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
+    if(!vannISyne()) speilFrisk=false;
+    else if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
     else { speilFrisk=false; if(naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
   sistTegnet=naa; fullTegnet=stille && !husBeveger;
@@ -1972,11 +1998,12 @@ function oppdater(){
 const TEGN = Q0.get('tegn')!=='0';
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
-  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppdater(); if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0; if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
-// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet (vannet lever)
+  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
+    if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet når vann er i bildet (vannet lever), ellers ikke (02.11)
 // (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || naa-sistTegnet>100) map.triggerRepaint(); requestAnimationFrame(puls); }
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
@@ -1992,7 +2019,7 @@ window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(va
 window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
 window.__scene=()=>({scene, city});
-window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0)});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
+window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0), synlig:vannISyne()});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
 window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 
@@ -2451,6 +2478,62 @@ const FIGUR={
   g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:st.sted||'',tekst:st.tekst}}; flatGruppe(g); city.add(g);
 });
 })();
+
+// ---- flyt uten lavere oppløsning (02.11, Vegar: «ikke dårligere oppløsning, heller motsatt») ----
+// To ting som sparer arbeid per bilde uten å endre bildet:
+// 1) Vannet i bildet: et grovt rutenett over vannflatene (8 m), så tegneløkka vet om vann er i bildet. Står kartet stille uten vann i bildet,
+//    tegnes ingenting (før: 10 hele bilder i sekundet for at vannet skulle leve), og speilpasset hoppes over når vannet ikke synes.
+// 2) Bakkeflatene (plener, flater, parkering, vann, brostein) var ett nett per polygon: 600+ tegnekall i hvert bilde og i speilet.
+//    Nett med samme materiale og samme plass slås sammen til ett, så tegnekallene blir få. Rekkefølgen mellom materialene er den samme
+//    (three.js sorterer på materiale før avstand), så ingenting bytter plass i dybden.
+const vannRute=(()=>{
+  const C=8; let x0=1e9, z0=1e9, x1=-1e9, z1=-1e9; const tri=[];
+  const _a=new THREE.Vector3();
+  waterLayer.forEach(m=>{ m.updateMatrixWorld(); const P=m.geometry.attributes.position, I=m.geometry.index, n=I?I.count:P.count;
+    const pk=[]; for(let i=0;i<P.count;i++){ _a.fromBufferAttribute(P,i).applyMatrix4(m.matrixWorld); pk.push(_a.x,_a.z); x0=Math.min(x0,_a.x); x1=Math.max(x1,_a.x); z0=Math.min(z0,_a.z); z1=Math.max(z1,_a.z); }
+    for(let k=0;k<n;k+=3){ const a=I?I.getX(k):k, b=I?I.getX(k+1):k+1, c=I?I.getX(k+2):k+2; tri.push(pk[2*a],pk[2*a+1],pk[2*b],pk[2*b+1],pk[2*c],pk[2*c+1]); } });
+  if(!tri.length) return {har:()=>false};
+  x0-=C; z0-=C; const nx=Math.ceil((x1-x0)/C)+2, nz=Math.ceil((z1-z0)/C)+2, g=new Uint8Array(nx*nz);
+  // hver trekant merker rutene den dekker (sjekket i rutens hjørner og midte, pluss én rute rundt: heller for mye vann enn for lite)
+  const inni=(px,pz,t)=>{ const [ax,az,bx,bz,cx,cz]=t, d1=(px-bx)*(az-bz)-(ax-bx)*(pz-bz), d2=(px-cx)*(bz-cz)-(bx-cx)*(pz-cz), d3=(px-ax)*(cz-az)-(cx-ax)*(pz-az);
+    return !((d1<0||d2<0||d3<0) && (d1>0||d2>0||d3>0)); };
+  for(let k=0;k<tri.length;k+=6){ const t=tri.slice(k,k+6);
+    const i0=Math.floor((Math.min(t[0],t[2],t[4])-x0)/C), i1=Math.floor((Math.max(t[0],t[2],t[4])-x0)/C), j0=Math.floor((Math.min(t[1],t[3],t[5])-z0)/C), j1=Math.floor((Math.max(t[1],t[3],t[5])-z0)/C);
+    for(let j=j0;j<=j1;j++) for(let i=i0;i<=i1;i++){ if(g[j*nx+i]) continue; const cx=x0+i*C, cz=z0+j*C;
+      if(inni(cx+C/2,cz+C/2,t)||inni(cx,cz,t)||inni(cx+C,cz,t)||inni(cx,cz+C,t)||inni(cx+C,cz+C,t)||(t[0]>=cx&&t[0]<cx+C&&t[1]>=cz&&t[1]<cz+C)) g[j*nx+i]=1; } }
+  const h=new Uint8Array(g); for(let j=1;j<nz-1;j++) for(let i=1;i<nx-1;i++) if(g[j*nx+i]) for(let dj=-1;dj<=1;dj++) for(let di=-1;di<=1;di++) h[(j+dj)*nx+i+di]=1;
+  return { har:(x,z)=>{ const i=Math.floor((x-x0)/C), j=Math.floor((z-z0)/C); return i>=0&&j>=0&&i<nx&&j<nz&&h[j*nx+i]===1; } };
+})();
+// vann i bildet: 32 x 20 skjermpunkter legges ned på vannflaten (y 0,15); regnes på nytt bare når kameraet har flyttet seg
+const _vannKam=new THREE.Matrix4(), _vp=new THREE.Vector3(), _vq=new THREE.Vector3(); let _vannSist=true, _vannKjent=false;
+function vannISyne(){
+  if(_vannKjent && _vannKam.equals(cam.projectionMatrix)) return _vannSist;
+  _vannKam.copy(cam.projectionMatrix); _vannKjent=true; let ja=false;
+  for(let j=0;j<=20 && !ja;j++) for(let i=0;i<=32;i++){ const x=i/16-1, y=1-j/10;
+    _vp.set(x,y,-1).unproject(cam); _vq.set(x,y,1).unproject(cam); const dy=_vq.y-_vp.y; if(Math.abs(dy)<1e-9) continue;
+    const t=(0.15-_vp.y)/dy; if(t<0||t>1) continue;
+    if(vannRute.har(_vp.x+(_vq.x-_vp.x)*t, _vp.z+(_vq.z-_vp.z)*t)){ ja=true; break; } }
+  _vannSist=ja; return ja;
+}
+// bakkeflatene slås sammen: bare nett rett under scenen, uten barn, utenfor speilet (lag 1), med samme materiale, plass og skyggevalg
+const flaterSammen=(()=>{
+  const grupper=new Map(); const ut=[];
+  scene.children.forEach(o=>{
+    if(!o.isMesh || o.isInstancedMesh || o.children.length || o.layers.mask!==1 || Array.isArray(o.material) || !o.visible || o.onBeforeRender!==THREE.Object3D.prototype.onBeforeRender || Object.keys(o.userData).length) return;
+    const g=o.geometry; if(!g.isBufferGeometry || g.morphAttributes.position) return;
+    o.updateMatrix();
+    const k=[o.material.uuid, o.matrix.elements.join(','), o.castShadow, o.receiveShadow, o.renderOrder, o.frustumCulled, o.customDepthMaterial?o.customDepthMaterial.uuid:'', !!g.index, Object.keys(g.attributes).sort().join('+')].join('|');
+    if(!grupper.has(k)) grupper.set(k,[]); grupper.get(k).push(o); });
+  let for_=0, etter=0;
+  grupper.forEach(liste=>{ for_+=liste.length; if(liste.length<2){ etter+=liste.length; return; }
+    const geo=mergeGeometries(liste.map(o=>o.geometry), false); if(!geo){ etter+=liste.length; return; }
+    const f=liste[0], m=new THREE.Mesh(geo, f.material);
+    m.position.copy(f.position); m.quaternion.copy(f.quaternion); m.scale.copy(f.scale); m.castShadow=f.castShadow; m.receiveShadow=f.receiveShadow; m.renderOrder=f.renderOrder;
+    m.frustumCulled=f.frustumCulled; if(f.customDepthMaterial) m.customDepthMaterial=f.customDepthMaterial;
+    liste.forEach(o=>{ scene.remove(o); o.geometry.dispose(); }); scene.add(m); ut.push(m); etter++; });
+  return {for:for_, etter};
+})();
+window.__flytInfo=()=>({flaterFor:flaterSammen.for, flaterEtter:flaterSammen.etter, vann:vannISyne()});
 
 </script>
 </body>
