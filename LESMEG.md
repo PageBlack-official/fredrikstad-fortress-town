@@ -481,3 +481,9 @@ Stående skjerm (bredde/høyde < 0,8) ender introen med asimut 193, faktor 1,22 
 Bildet viser Torvet med statuen i midten, Det gamle rådhus bak, kirka oppe til høyre og elva nederst.
 Faktoren regnes mot skjermhøyden, så utsnittet blir det samme på alle telefoner. Bred skjerm er uendret (asimut 200, faktor 1,3, [25,25]).
 Fasit: rapport/mobil-sluttbilde/fasit.png. Regel 35 vokter tallene. De endres bare etter ny dom fra Vegar.
+
+## To tomler som slipper hver for seg (02.11)
+Vegar 02.11 14:18, mobil: «hopper bildet ganske langt mot venstre når jeg slipper tomlene».
+Årsaken: tregheten måler farten fra midtpunktet mellom fingrene. Når den ene tommelen slipper, hopper midtpunktet til den som er igjen, og hoppet ble lest som et kast på 267–352 px.
+Rettelsen ligger i src/15_bevegelse.js: målingen skjøtes når antallet fingre endrer seg, så farten fra hånda fortsetter uten hoppet.
+Test: node verktoy/tomler_test.mjs ut/enkel/index.html. Den sjekker begge tomlene og én finger som kontroll. Gammel versjon får FEIL, ny får OK, og glir ca. 30 px slik ekte fart skal gi.

@@ -1768,8 +1768,19 @@ const treghet=(()=>{
     const t=performance.now(); kam.push({t, z:map.getZoom(), b:map.getBearing(), p:map.getPitch()}); kort(kam,t); });
   const el=map.getCanvasContainer();
   const fingre=(x,y)=>{ const t=performance.now(); fing.push({t,x,y}); kort(fing,t); };
-  el.addEventListener('touchmove', e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } if(e.touches.length) fingre(x/e.touches.length, y/e.touches.length); }, {capture:true, passive:true});
-  el.addEventListener('touchstart', e=>{ fing.length=0; if(e.touches.length===1) stopp(); }, {capture:true, passive:true});   // nytt antall fingre: midtpunktet hopper
+  // Midtpunktet mellom fingrene hopper når en finger kommer til eller slipper (to tomler: det flytter seg til tommelen som er igjen).
+  // Hoppet er ikke bevegelse. Tas det med, leses det som et kast (Vegar 02.11, mobil: «hopper bildet ganske langt mot venstre når jeg
+  // slipper tomlene» = den ene tommelen slapp først). Derfor skjøtes målingen: forskyvningen legges til de nye punktene, så farten fra
+  // hånda fortsetter uten hoppet. Testen er verktoy/tomler_test.mjs.
+  let antall=0, skjot=null, fx=0, fy=0;
+  const midt=e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } return [x/e.touches.length, y/e.touches.length]; };
+  const nyttAntall=e=>{ if(e.touches.length===antall) return; antall=e.touches.length; if(antall>0 && fing.length) skjot=fing[fing.length-1]; };
+  el.addEventListener('touchmove', e=>{ if(!e.touches.length) return; nyttAntall(e); const [x,y]=midt(e);
+    if(skjot){ fx=skjot.x-x; fy=skjot.y-y; skjot=null; }   // første punkt etter skiftet står der det forrige sluttet
+    fingre(x+fx, y+fy); }, {capture:true, passive:true});
+  el.addEventListener('touchstart', e=>{ if(e.touches.length===e.changedTouches.length){ fing.length=0; fx=fy=0; skjot=null; antall=e.touches.length; if(antall===1) stopp(); } else nyttAntall(e); }, {capture:true, passive:true});   // ny gest: alle fingrene er nye
+  el.addEventListener('touchend', e=>nyttAntall(e), {capture:true, passive:true});
+  el.addEventListener('touchcancel', e=>nyttAntall(e), {capture:true, passive:true});
   el.addEventListener('pointermove', e=>{ if(e.pointerType==='mouse' && e.buttons) fingre(e.clientX, e.clientY); }, {capture:true, passive:true});
   el.addEventListener('pointerdown', ()=>{ stopp(); kam.length=0; fing.length=0; }, {capture:true, passive:true});
   el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
