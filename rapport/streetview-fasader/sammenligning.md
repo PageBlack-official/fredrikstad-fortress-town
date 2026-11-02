@@ -152,8 +152,8 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868274 |  | [4] | [7] | 1 mørk grå/grønn fyllingsdør med ovalt overlys og husnummer, ca. 0.85 | 0 | 3 små takvinduer | 1 | 2 (murte, en ved hver ende) | 2 | ja |
 | bnr-193868274 |  | [2, 2] | [2] | ikke i utsnittet | 1 | 0 | 2 | ikke synlig | 2 | ja |
 | bnr-193867782 |  | [6, 6] | [6, 6] | 1 grå tofløyet port med diagonale fyllinger helt til høyre (ca. 0.87–1.0) | 1 | ikke synlig | 0 | ikke synlig | 2 |  |
-| bnr-193867537 | Infanterikasernen | [2, 2] | [4, 4, 4] | 0 synlig | 1 | 0 | 5 | 1 | 12 | ja |
-| bnr-193867537 | Infanterikasernen | [6, 5] | [6, 5] | 0 på denne fasaden | 0 | ikke synlig | 7 | ikke synlig | 12 |  |
+| bnr-193867537 | Infanterikasernen | [2, 2] | [4, 4, 5, 2] | 0 synlig | 1 | 0 | 5 | 1 | 12 | ja |
+| bnr-193867537 | Infanterikasernen | [6, 5] | [13, 13, 13, 6] | 0 på denne fasaden | 0 | ikke synlig | 7 | ikke synlig | 12 | ja |
 | bnr-193867634 | Vollmesterboligen | [7] | [7] | 0 synlig på langfasaden | 0 | 0 | 0 | 3 (2 murte tegl, 1 hvit) | 3 |  |
 | bnr-193867715 |  | [2, 2] | [1, 1] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-16308102 |  | [5, 6] | [] | 1 mørk grønn tofløyet port/dør med overlys, ca. 0.25–0.33 av fasaden | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |

@@ -4325,7 +4325,8 @@
    "rader": [
     4,
     4,
-    4
+    5,
+    2
    ],
    "dorer": 1,
    "arker": 5,
@@ -4362,14 +4363,16 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    6,
-    5
+    13,
+    13,
+    13,
+    6
    ],
    "dorer": 0,
    "arker": 7,
    "piper": 12
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {

@@ -7965,9 +7965,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   249,
-   194,
-   147
+   196,
+   128,
+   114
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7977,7 +7977,7 @@
   ],
   "kilde": "nabohuset bnr-193867782 (house, 9.9 m unna)",
   "aar": null,
-  "byttet": false
+  "byttet": true
  },
  {
   "id": "pb-47",
@@ -8060,9 +8060,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   246,
-   150,
-   130
+   196,
+   128,
+   114
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
