@@ -169,7 +169,7 @@
    "hvor": {
     "bygg_id": "bnr-193868061"
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Ikke terrenget: src/19 tegnet en egen «granittsokkel» 16 cm utenfor veggen for alle hus med feltet sokkel (laget 27.10 for Kasernens 1,1 m). Artillerigården fikk 29.10 en natursteinsetasje på 3,1 m (merknad fra Vegars kvartalskontroll), så båndet dekket hele første etasje med vinduer og dør. Båndet lå i en egen gruppe som ikke ble løftet med huset, derfor kom vinduene fram ved klikk. Bare Artillerigården og Kasernen hadde sokkel; på Kasernen stod kjellervinduene 20 cm ut for å synes foran båndet.",
    "rettelse": "src/19-båndet er tatt ut; sokkelen tegnes bare av src/07 (3 cm ut, vinduene 5 cm, løftes med huset). kaserna.py legger kjellervinduene i veggen.",
    "rettet_i": "1c9f6e3",
@@ -219,12 +219,16 @@
    "hvor": {
     "hele": true
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Avlesningen (29.10) koblet bilder til hus etter adresse og retning uten å sjekke hva kameraet faktisk ser. Strålesjekk fra kamerapunkt og retning (pano_url) mot modellens omriss: 78 av 332 observasjoner (48 hus) har et annet hus først i den delen av bildet avlesningen sier (venstre/høyre/midten): nabohuset, huset over gata eller et skur foran. Eksempler: bnr-193972101 (A3-garasjene) fikk 67774 sin fasade, bnr-193867804 så 72462.",
    "rettelse": "verktoy/sv_kobling.py i kjeden (før streetview_fasader.py): dommen per observasjon i kilder/streetview/kobling-geometri.json; streetview_farger, streetview_fasader, tak_farge/vegg_nye, sokkel og fasadesegmenter leser avlesningen gjennom sv_kobling.les(), så observasjoner som peker på et annet hus ikke brukes, og tegningen/trykket gjelder der. Endret: veggfarge på 12 hus, vinduer på 18, sokkel på 6, fasadekilde på 7.",
    "rettet_i": "d60888d",
-   "bevis": [],
-   "vakt": "43_streetview_kobling"
+   "bevis": [
+    "rapport/avvik/A12-straaler.png",
+    "kilder/streetview/kobling-geometri.json"
+   ],
+   "vakt": "43_streetview_kobling",
+   "merknad": "Strålesjekken er streng: en observasjon som beskriver huset helt ute i bildekanten bak et annet hus, regnes som feil og brukes ikke; da gjelder tegningen/trykket. Eksempel: bnr-193868525 (Torvet) går fra okergul til tegningens laks (Kvartal4BITMP), fordi 2024-bildet ser bnr-193971946 først. Vegar bør se over listen i kobling-geometri.json der han kjenner husene."
   }
  ]
 }
