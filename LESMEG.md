@@ -439,3 +439,19 @@ steder øverst og de andre under «Også i Tøihuset»; adressen og bygningsnumm
 Plassert med kilde: Fredrikstad Museum i nordfløya, Atelier & Galleri Tøihuset i østfløya. Uten kjent plass: Tøihussalen,
 Bombardersalen, Kostymeloftet, Månefestivalen. Ikke lagt inn: husflidslaget, kunstforeningen, militærhistorisk museum, Østfold
 Teater og Studium Actoris (bare i en udatert artikkel på lokalhistoriewiki). Vegar kan rette plassene i kilder/virksomheter-plassert.json.
+
+## Lenka husker utsikten (02.11)
+Hashen er `#view=lat,lon,zoom,pitch,bearing` (MapLibres egne tall: 5 desimaler på gradene, 2 på zoom, hele grader på vinklene), og
+`&hus=<bygg-id>` når et huskort er åpent (f.eks. `#hus=pb-68` = Tøihuset, nordfløya). Koden står i src/15_lenke.js:
+- skrives med history.replaceState (ingen nye historikkinnslag) når kameraet har stoppet (moveend), når et kort åpnes/lukkes, og ved
+  pagehide/visibilitychange; også i localStorage (`smart-old-town:utsikt`), men den leses ikke ved oppstart: uten hash går introen.
+- en lenke med view= eller hus= hopper over introen og solintroen (som ?skip=1, 15_loop map.on('load') kaller lenkeStart());
+  hus= kaller velgHus som et klikk, så kortet, løftet og kameraets glid er de samme. Lukkes kortet (×, Esc, dra ned, nettleserens
+  tilbake), forsvinner hus=; etter tilbake skrives utsikten på nytt ved popstate. Kortets historikkinnslag (kort_.historikk) er uendret.
+- ugyldig hash ignoreres: tall som ikke er tall, et senter utenfor kartrammen (GRENSE+300 m), et hus som ikke finnes eller er skjult.
+  Zoom og pitch klemmes til kartets grenser, bearing til −180…180.
+- «Del» i huskortet: delingsarket på berøringsskjerm (navigator.share), ellers utklippstavla (med execCommand som reserve i sandbox);
+  haken i knappen er bekreftelsen. Lenka er sidens egen adresse + hashen; i claude.ai-artefakten er det sandboxens adresse.
+- history og localStorage står i try/catch; kartet virker uten dem (sandboxen i artefakten).
+
+    node verktoy/lenke_test.mjs ut/enkel/index.html [mappe]   view=, hus=, flytting, lukking, tilbake, Del, ugyldige hasher, sandbox

@@ -62,7 +62,7 @@ function velgHus(g){
   valgt=g; g.userData.lift=true;
   if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyllKort(g.userData.b); visKort(true); }
   else { fyllKort(g.userData.b); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }   // nytt hus i åpent kort: innholdet tones over, kortet står
-  glidTilHus(g);
+  glidTilHus(g); lenkeSkriv();   // hus= i lenka (15_lenke)
 }
 function visKort(vis){
   kort_.apent=vis; kort.style.transform='';
@@ -77,6 +77,7 @@ function lukkKort({tilbake=true, fraHistorikk=false}={}){
   if(tilbake && kort_.forKamera && !kort_.egenFlytt) glidKamera(kort_.forKamera, 'tilbake');
   kort_.forKamera=null;
   if(kort_.historikk){ kort_.historikk=false; if(!fraHistorikk){ try{ window.history.back(); }catch(e){ /* innebygd */ } } }
+  lenkeSkriv();   // hus= ut av lenka (15_lenke; etter tilbake skrives den på nytt ved popstate)
 }
 kort.addEventListener('transitionend', ()=>{ kort.style.transitionDuration=''; });   // farten fra et fingerkast gjelder bare den ene overgangen
 addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkKort({fraHistorikk:true}); } });
