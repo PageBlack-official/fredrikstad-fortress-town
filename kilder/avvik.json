@@ -1,10 +1,85 @@
 {
  "om": "Avvikslista (Vegar 02.11 16:44: «Kan du holde styr på dette slik at ting du gjør ikke havner i glemmeboken når du driver å fikser? ... nesten er ikke lov»). Hver feil Vegar eller vi selv ser i kartet står her til den er rettet OG bevist. Regel 36 er rød så lenge en sak er åpen, eller en lukket sak mangler bevis (skjermbilde før og etter som finnes i repoet) og vakt (regel eller test som fanger feilen hvis den kommer tilbake). Saker fjernes aldri; de lukkes.",
  "saker": [
-  {"id": "A1", "dato": "2026-11-02", "fra": "Vegar", "hva": "Infanterikasernen (bnr-193867537): veggen mot vest mangler mange vinduer", "hvor": {"bygg_id": "bnr-193867537"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A2", "dato": "2026-11-02", "fra": "Vegar", "hva": "Et rart lite hus foran en port, plassert feil, «rett ovenfor kirken» sett fra mobilens sluttbilde (asimut 193), dvs. i retning Tøihuset", "hvor": {"naer": "bnr-193867529 (Kirken), mot Tøihuset"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A3", "dato": "2026-11-02", "fra": "Vegar", "hva": "Bygningsnr. 193972101 har fått «et eller annet rart foran huset»", "hvor": {"bygg_id": "bnr-193972101"}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A4", "dato": "2026-11-02", "fra": "Vegar", "hva": "«en del annet rart der også»: gå hele byen systematisk etter samme typer feil (manglende vinduer, løse/feilplasserte småbygg og objekter foran fasader og porter) og legg hvert funn inn her som egen sak", "hvor": {"hele": true}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null},
-  {"id": "A5", "dato": "2026-11-02", "fra": "Vegar", "hva": "«versjonskonflikt»: sjekk om rettelser som en gang var gjort (vinduer, småbygg, porter) har falt ut ved sammenslåinger av greiner", "hvor": {"hele": true}, "status": "åpen", "aarsak": null, "rettet_i": null, "bevis": [], "vakt": null}
+  {
+   "id": "A1",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "Infanterikasernen (bnr-193867537): veggen mot vest mangler mange vinduer",
+   "hvor": {
+    "bygg_id": "bnr-193867537"
+   },
+   "status": "lukket",
+   "aarsak": "Versjonskonflikt i kjeden. Kasernens fasade etter ombyggingen (verktoy/kaserna.py, 27.10: akser på 3,4 m, granittsokkel med kjellervinduer, to etasjer, grønne dører mot torget) ble lagt inn utenfor kjeden (verktoy/bygg_kjede.py). 30.10 kl. 01.14 (195909a) la fasade_tegning.py legg_inn Kvartal11 og reglene over (3 rader på 1,6/4,6/7,6 m), og 01.35 (6b90384) fikk veggen mot torget (vegg 17, 44 m, normal 20°) Street View aug. 2010 der bare 6+5 vinduer synes: 11 vinduer i stedet for 45. grunnmur.py og streetview_fasader.py fredet Kasernen, fasade_tegning.py gjorde det ikke. Samme rot: gårdsmurene (data/teglmurer.json) stod med brannstasjonens gamle hjørner fra før grunnmuren, og tre «bed» langs vestveggen (bakke.py) var Kasernens tak som heller ut over torget i ortofotoet (sonen rundt hus var 1,25 m uansett høyde).",
+   "rettet_i": "c626945",
+   "bevis": [
+    "rapport/avvik/A1-foer-torgveggen-az160.jpg",
+    "rapport/avvik/A1-etter-torgveggen-az160.jpg",
+    "rapport/avvik/A1-foer-mobilretning-az193.jpg",
+    "rapport/avvik/A1-etter-mobilretning-az193.jpg",
+    "rapport/avvik/A1-foer-vestveggen-az235.jpg",
+    "rapport/avvik/A1-etter-vestveggen-az235.jpg",
+    "rapport/avvik/A1-foer-gaarden-az340.jpg",
+    "rapport/avvik/A1-etter-gaarden-az340.jpg"
+   ],
+   "vakt": "37_egne_fasader",
+   "rettelse": "datalag.EGNE_FASADER: Kasernen eies av kaserna.py; fasade_tegning.py hopper over den; kaserna.py står i kjeden etter landemerker.py og tar bare ut egne linjer. Dørene i gården fra Kvartal11 (gården er ikke i illustrasjonene). bakke.py: helningssone 0,2 × mønehøyden (min 1,25 m), de tre bed-flatene er skjult. Resultat: alle ni ytterveggene har kjellervinduer og vinduer i begge etasjer i hver akse (regel 37), vegg 17: 13+13+13. Kjeden kjørt i kopi gir samme data (regel 39)."
+  },
+  {
+   "id": "A2",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "Et rart lite hus foran en port, plassert feil, «rett ovenfor kirken» sett fra mobilens sluttbilde (asimut 193), dvs. i retning Tøihuset",
+   "hvor": {
+    "naer": "bnr-193867529 (Kirken), mot Tøihuset"
+   },
+   "status": "åpen",
+   "aarsak": null,
+   "rettet_i": null,
+   "bevis": [],
+   "vakt": null
+  },
+  {
+   "id": "A3",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "Bygningsnr. 193972101 har fått «et eller annet rart foran huset»",
+   "hvor": {
+    "bygg_id": "bnr-193972101"
+   },
+   "status": "åpen",
+   "aarsak": null,
+   "rettet_i": null,
+   "bevis": [],
+   "vakt": null
+  },
+  {
+   "id": "A4",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "«en del annet rart der også»: gå hele byen systematisk etter samme typer feil (manglende vinduer, løse/feilplasserte småbygg og objekter foran fasader og porter) og legg hvert funn inn her som egen sak",
+   "hvor": {
+    "hele": true
+   },
+   "status": "åpen",
+   "aarsak": null,
+   "rettet_i": null,
+   "bevis": [],
+   "vakt": null
+  },
+  {
+   "id": "A5",
+   "dato": "2026-11-02",
+   "fra": "Vegar",
+   "hva": "«versjonskonflikt»: sjekk om rettelser som en gang var gjort (vinduer, småbygg, porter) har falt ut ved sammenslåinger av greiner",
+   "hvor": {
+    "hele": true
+   },
+   "status": "åpen",
+   "aarsak": null,
+   "rettet_i": null,
+   "bevis": [],
+   "vakt": null
+  }
  ]
 }
