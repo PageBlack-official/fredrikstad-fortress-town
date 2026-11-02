@@ -154,12 +154,19 @@
    "hvor": {
     "naer": "Mellomporten pb-11 (-67, 75) og veikryss i hele byen"
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Bakken er mange lag nesten i samme høyde: brostein 5 cm, gangveier 7 cm, flater 9 cm, kjøreveier 10 cm, parkering 12 cm, gress 28 cm. På avstand er dybdebufferen grovere enn centimeterne, så lag av ulik farge z-kjempet og flimret i fart: 139 kryss mellom veier med ulik flate (1 467 m²) og 2 overlapp mellom flater av ulik type lå i nøyaktig samme høyde. På vollene skar rette veibiter (punkter opptil 30 m fra hverandre) gjennom terrenget, som stakk opp som takker (ved Mellomporten).",
    "rettelse": "src/03 BAKKELAG/bakkelag(): hvert bakkelag og hver farge i laget har egen polygonOffset (terreng/brostein < veier < flater < parkering < gress), så rekkefølgen ikke avhenger av centimeter; src/08: veibitene deles opp til halve terrengrutenettet og hver kant legges minst 6 cm over terrenget.",
    "rettet_i": "7cd88da",
-   "bevis": [],
-   "vakt": "42_bakkelag"
+   "bevis": [
+    "rapport/avvik/A8-foer-mellomporten-az200.jpg",
+    "rapport/avvik/A8-etter-mellomporten-az200.jpg",
+    "rapport/avvik/A8-foer-mellomporten-az20.jpg",
+    "rapport/avvik/A8-etter-mellomporten-az20.jpg",
+    "rapport/avvik/A8-foer-etter-utsnitt.jpg"
+   ],
+   "vakt": "42_bakkelag",
+   "merknad": "Flimringen i fart kan ikke filmes på programvare-GPU-en; stillbildene viser takkene ved Mellomporten (gress gjennom stien) før og etter. Vedlegg 2 (striper langs husvegger) er samme årsak: kryss mellom veier av ulik flate. Vegar bør se etter i Chrome når det er slått inn."
   },
   {
    "id": "A9",
