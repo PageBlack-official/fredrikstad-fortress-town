@@ -16,6 +16,7 @@ OK   verktoy/tak_fra_ortofoto.py              0 tak fikk farge fra ortofotoet, 0
 OK   verktoy/tak_farge.py                     289 tak: 277 etter fotoet, 8 etter tegningen, 4 uten kilde
 OK   verktoy/vegg_nye.py                      436 hus, 436 fikk veggfarge, 0 uten kilde, 2 byttet kulør
 OK   verktoy/fasadesegmenter.py               13 hus fikk fasadesegmenter (14 vegger, 30 segmenter)
+OK   verktoy/sokkel.py                        54 hus fikk sokkel fra Street View: 48 naturstein, 6 puss
 OK   verktoy/bygg_merknader.py                46 hus, 93 rettelser
 OK   verktoy/fasade_former.py                 bnr-193867529 kirka: h 8.8 m (skipets takfot), tårnmur 18.5 m, spir 36.7 m, silhuett i tak2
 OK   verktoy/landemerker.py                   bnr-16308102 atrium: h 9.46 th 0.55, glass til 11.71 m, 5 takflater, 15 brannmurstykker, rms 0.48 m

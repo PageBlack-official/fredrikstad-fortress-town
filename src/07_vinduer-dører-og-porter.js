@@ -235,10 +235,11 @@ DATA.bygg.forEach((b,i)=>{
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
-  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»)
+  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»); type naturstein
+  // gir steinmønster (src/05, avvik A10). Sokkelen står 3 cm ut og vinduene 5 cm, så vinduene i sokkelen synes; den løftes med huset.
   if(b.sokkel && b.sokkel.h>0.2 && !dim){
     const sg=new THREE.ExtrudeGeometry(polyShape(utvidPoly(pts,0.03)),{depth:Math.min(b.sokkel.h,h-0.05),bevelEnabled:false}); sg.rotateX(-Math.PI/2);
-    const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge)]); sm.receiveShadow=true; legg(sm);
+    const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge,{stein:b.sokkel.type==='naturstein'})]); sm.receiveShadow=true; legg(sm);
   }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2 && !b.kirke){

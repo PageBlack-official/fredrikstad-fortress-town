@@ -121,8 +121,7 @@ def beregn(d=None):
                 if i == midt:
                     vind.append(vindu(xy, 1.6, k, 1.6, 3.0, 1)[:10] + [2, 0])   # dør fra hotellet ut i glasshuset
             else:
-                ku = (xy[0] + k['n'][0] * 0.2, xy[1] + k['n'][1] * 0.2)      # foran granittsokkelen
-                vind.append(vindu(ku, KJELLER[0], k, KJELLER[2], KJELLER[1]))
+                vind.append(vindu(xy, KJELLER[0], k, KJELLER[2], KJELLER[1]))   # i veggen; sokkelen (src/07) står 3 cm ut, vinduene 5 cm
                 vind.append(vindu(xy, ETG[0][0], k, VB, ETG[0][1]))
             vind.append(vindu(xy, ETG[1][0], k, VB, ETG[1][1]))
         # takarker: oksøye over inngangen i hjørnet, ellers over annenhver akse på langsidene (ikke på gavlene)
@@ -192,7 +191,7 @@ def beregn(d=None):
     terrasser = [{'id': 'te-1', 'navn': 'Uteserveringen mot torget', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in vp], 'h': VH_,
                   'parasoller': 5, 'aapning': 2.4}]
     vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H}]
-    nye = {'vind': vind, 'arker': arker, 'piper': piper, 'sokkel': {'h': SOKKEL, 'farge': [206, 202, 192]}}
+    nye = {'vind': vind, 'arker': arker, 'piper': piper, 'sokkel': {'h': SOKKEL, 'farge': [206, 202, 192], 'skygge': [146, 142, 136], 'type': 'naturstein'}}
     # portbyggene i Kasernemurene har murens tegl (Kasernens vegg). Verktøyet står sist i kjeden, så vegg_nye.py sin nabofarge
     # legger seg ikke over igjen (30.10 ble pb-51 satt for hånd og overstyrt av vegg_nye.py samme dag; avvik A5)
     andre = {pid: {'vegg': b['vegg'], 'veggs': b.get('veggs')} for pid in portfarge}

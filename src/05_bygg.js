@@ -79,17 +79,17 @@ function fotBaand(pts, d, y){
 }
 // to toner som i tegningen: flater som vender mot sola (alltid øverst til venstre i bildet) får full farge, resten skyggetonen
 function mat(rgb, dim, sk, opt={}){
-  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+(opt.vindu?'V':'');
+  const key = rgb.join(',')+(dim?'d':'')+(sk?'s'+sk.join(','):'')+(opt.ds?'D':'')+(opt.vindu?'V':'')+(opt.stein?'St':'');
   if(!mats.has(key)){
     const c=new THREE.Color(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`); if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8);
     // skyggetonen hentes fra trykkfila når bygget har en; ellers samme forhold som tegningen bruker
     let s; if(sk && !dim){ s=new THREE.Color(`rgb(${sk[0]},${sk[1]},${sk[2]})`); } else { s=c.clone(); s.r*=0.72; s.g*=0.80; s.b*=0.80; }
     const m=new THREE.ShaderMaterial({
       lights:true,
-      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, tHus:U_HUS, uVask:{value:STIL.vask}, skravur:U_SKRAVUR }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+      uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, tHus:U_HUS, uVask:{value:STIL.vask}, skravur:U_SKRAVUR, uStein:{value:opt.stein?1:0} }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
       vertexShader:GL_SOL_V+GL_HUS_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos; vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
-      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
+      fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask, uStein; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
         float nn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hh(i),hh(i+vec2(1,0)),f.x),mix(hh(i+vec2(0,1)),hh(i+vec2(1,1)),f.x),f.y);}
         void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge
@@ -111,6 +111,17 @@ function mat(rgb, dim, sk, opt={}){
             vec2 tq=normalize(vec2(-nq.z,nq.x)); float uq=dot(wq.xz,tq);
             float strok=nn(vec2(uq*0.7, wq.y*6.0))*0.7+nn(vec2(uq*2.1, wq.y*15.))*0.3;
             c*=1.+(strok-0.5)*0.05*naerhet*uVask;
+            if(uStein>0.5){
+              // naturstein (sokkel.type, avvik A10 02.11): skift med ujevn høyde, blokker med ujevn lengde, mørke fuger og
+              // tone per stein; tegnet, ikke fotografi. Borte på avstand som takstein og penselstrøk.
+              float sy=wq.y/0.46; float rad=floor(sy); float fy=fract(sy);
+              float sx=uq/(0.62+0.5*hh(vec2(rad,7.)))+hh(vec2(rad,3.)); float blk=floor(sx); float fx=fract(sx);
+              float fwy=max(fwidth(sy),1e-4), fwx=max(fwidth(sx),1e-4);
+              float fuge=max(1.-smoothstep(0.,fwy*1.6,min(fy,1.-fy)), 1.-smoothstep(0.,fwx*1.6,min(fx,1.-fx)));
+              float vis=1.-smoothstep(0.2,0.5,max(fwy,fwx));
+              c*=1.+(hh(vec2(blk,rad))-0.5)*0.20*mix(0.4,1.,vis);
+              c*=1.-0.30*fuge*vis;
+            }
           } else if(abs(nq.y)<0.985){
             // tak: rader med takstein langs fallet, antydet, borte på avstand
             vec2 ned=normalize(nq.xz); vec2 lang=vec2(-ned.y,ned.x);

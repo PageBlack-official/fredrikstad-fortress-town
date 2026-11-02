@@ -115,20 +115,21 @@
   {
    "id": "bnr-193868061",
    "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 + Street View",
-   "grunn": "mangler steinstrukturen (mørkere brun natursteinsetasje i tegningen, grå/rosa naturstein i Street View) og takvinduene (13 i tegningen over hele Artillerigården, 6 på denne delen)",
+   "grunn": "mangler steinstrukturen (mørkere brun natursteinsetasje i tegningen, grå/rosa naturstein i Street View) og takvinduene (13 i tegningen over hele Artillerigården, 6 på denne delen) Steinen (02.11, Vegar med Street View): grove grå/rosa natursteiner (kvader/bruddstein) i hele første etasje, tegnes som stein (sokkel.type naturstein, src/05), ikke brun flate.",
    "sett": {
     "sokkel": {
      "h": 3.1,
      "farge": [
-      178,
-      150,
-      138
+      180,
+      166,
+      160
      ],
      "skygge": [
-      128,
-      108,
-      100
-     ]
+      122,
+      112,
+      110
+     ],
+     "type": "naturstein"
     }
    },
    "takvinduer": [
@@ -150,20 +151,21 @@
   {
    "id": "bnr-193869572",
    "kilde": "Vegar, kvartalskontroll Kvartal3 29.10 + Street View",
-   "grunn": "samme bygning som Artillerigården i tegningen: natursteinsetasjen og 7 av de 13 takvinduene",
+   "grunn": "samme bygning som Artillerigården i tegningen: natursteinsetasjen og 7 av de 13 takvinduene Steinen (02.11, Vegar med Street View): grove grå/rosa natursteiner (kvader/bruddstein) i hele første etasje, tegnes som stein (sokkel.type naturstein, src/05), ikke brun flate.",
    "sett": {
     "sokkel": {
      "h": 3.1,
      "farge": [
-      178,
-      150,
-      138
+      180,
+      166,
+      160
      ],
      "skygge": [
-      128,
-      108,
-      100
-     ]
+      122,
+      112,
+      110
+     ],
+     "type": "naturstein"
     }
    },
    "takvinduer": [

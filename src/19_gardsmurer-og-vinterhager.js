@@ -1,4 +1,4 @@
-// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) og granittsokkel (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
+// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
 {
   const anlegg=new THREE.Group(); scene.add(anlegg);
   const fra=id=>DATA.bygg.find(b=>b.id===id)||{};
@@ -74,15 +74,7 @@
         const f=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.72,5),jern); f.position.set(x+tx*o,top+0.36,-(y+ty*o)); anlegg.add(f); });
     }
   });
-  // granittsokkel: lys stein rundt foten av huset (bygg med feltet sokkel)
-  DATA.bygg.forEach(b=>{
-    if(!b.sokkel || b.skjul || !b.p) return;
-    const stein=mat(b.sokkel.farge,false); const p=b.p;
-    const A=p.reduce((s,q,i)=>{ const c=p[(i+1)%p.length]; return s+q[0]*c[1]-c[0]*q[1]; },0), sg=A<0?1:-1;   // med klokka: utover er til venstre
-    for(let i=0;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length]; const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy); if(L<0.3) continue;
-      const nx=-dy/L*sg, ny=dx/L*sg;   // sokkelen står 0,16 m utenfor veggen, kjellervinduene ligger foran den
-      const mx=(a[0]+c[0])/2+nx*0.08, my=(a[1]+c[1])/2+ny*0.08, y0=hAt(mx,my);
-      const s=new THREE.Mesh(new THREE.BoxGeometry(L+0.32,b.sokkel.h,0.16),stein); s.position.set(mx,y0+b.sokkel.h/2,-my); s.rotation.y=Math.atan2(dy,dx); s.receiveShadow=true; anlegg.add(s); }
-  });
+  // (granittsokkelen som eget bånd 16 cm utenfor veggen er tatt ut 02.11, avvik A9: på Artillerigården (sokkel 3,1 m) dekket den
+  // vinduene og dørene i første etasje og ble stående når huset ble løftet. Sokkelen tegnes nå bare av src/07, med huset.)
   flatGruppe(anlegg);
 }

@@ -169,7 +169,7 @@ def main(tørt=False):
         barn_av[x['id']] = []
         for n_, k in enumerate(orden[1:]):
             g = biter[k]; ny = ider[n_]
-            obj = {kk: vv for kk, vv in x.items() if kk not in ('tak2', 'gavl2', 'sk', 'vind', 'piper', 'arker', 'skjul', 'navn', 'adr', 'matrikkel', 'tegnet_vegger', 'fasade_tegning', '_knekk', 'deler', 'arkader', 'nr', 'tekst')}
+            obj = {kk: vv for kk, vv in x.items() if kk not in ('tak2', 'gavl2', 'sk', 'vind', 'piper', 'arker', 'skjul', 'navn', 'adr', 'matrikkel', 'tegnet_vegger', 'fasade_tegning', '_knekk', 'deler', 'arkader', 'nr', 'tekst', 'sokkel')}   # sokkel: fra sokkel.py senere i kjeden (02.11)
             for felt in ('deler', 'arkader'):
                 if x.get(felt):
                     v = x[felt] if not isinstance(x[felt], str) else json.loads(x[felt])
