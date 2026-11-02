@@ -34,10 +34,11 @@
     "naer": "bnr-193867529 (Kirken), mot Tøihuset"
    },
    "status": "åpen",
-   "aarsak": null,
-   "rettet_i": null,
+   "aarsak": "Porten i Kasernens gårdsmur mot Rådhusgaten (teglmurer mu-1) ble lagt midt i muren av verktoy/kaserna.py 27.10. 29.10 kom FKB-skuret pb-46 (5,4 × 2,4 m, grått tak i Kvartal11) inn fra kommunekartet akkurat der, med beige vegg og en dør satt av vinduer_regler.py: et lite hus inne i portbuen (bildet A2-foer-etter-porten-mot-gata-utsnitt.jpg, øverst). Kvartal11 tegner porten en firedel av muren fra fløyen og skuret midt på. Murens ender var dessuten de gamle hjørnene fra før grunnmuren (kaserna.py stod ikke i kjeden), så muren gikk 1,3 m² inn i skuret. Ved porten mot kirka (portbygget pb-51) gikk muren mu-2 tvers gjennom buen, og portbygget stod beige: murfargen satt for hånd 30.10 ble overstyrt av vegg_nye.py samme dag. Tolkning: «rett ovenfor kirken» = rett over for kirka, sett fra Kasernen; begge portene er mellom Kasernen og kirka.",
+   "rettet_i": "c626945",
    "bevis": [],
-   "vakt": null
+   "vakt": "38_porter_og_murer_fri",
+   "rettelse": "kaserna.py (nå i kjeden): porten i mu-1 på 23,5 % fra fløyen (Kvartal11), skuret pb-46 i murens tegl uten dør, «aapninger» i muren der et portbygg står (src/19), portbyggene i Kasernemurene i murens tegl. Usikkert: porten står under et tre (DOM-krone 1,5 m fra portens midte); ortofotoet kan ikke vise porten under kronene, så plassen er tegningens."
   },
   {
    "id": "A3",
@@ -48,10 +49,11 @@
     "bygg_id": "bnr-193972101"
    },
    "status": "åpen",
-   "aarsak": null,
-   "rettet_i": null,
+   "aarsak": "Parkeringsflaten til parkering-1-4627 (Torvgaten, beboerparkering): src/17 tegnet kommunens rad som en glatt grå flate 12 cm over brosteinen langs hele garasjefasaden, oppå den målte brosteinsflaten med oppmerking (fl-576). Det så ut som en mørk skrå plate foran huset. Samme feil på 19 andre rader med målt flate (bl.a. Kasernegaten ved Kasernen).",
+   "rettet_i": "ea0b5af",
    "bevis": [],
-   "vakt": null
+   "vakt": "40_parkering_paa_brostein",
+   "rettelse": "src/17: der raden er målt som flate (flater[].parkering_id), tegnes bare flaten og oppmerkingen."
   },
   {
    "id": "A4",

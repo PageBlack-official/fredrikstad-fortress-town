@@ -5,7 +5,7 @@ kom inn akkurat der: et lite beige hus med dør stod i porten. Porten mot kirka 
 mu-2 tvers gjennom buen. Regelen er rød når
   - en port i en mur (teglmurer[].port) overlapper et hus som vises,
   - en mur går gjennom et portbygg (porter typ mur) eller under 1 m foran det, uten åpning der (teglmurer[].aapninger),
-  - et hus under 15 m² står med mer enn 0,5 m² i en mur eller i en port, eller i et annet hus (løst småbygg plassert feil).
+  - et hus under 15 m² står med mer enn 0,5 m² i en gårdsmur, eller med mer enn 15 % i en OSM-mur eller et annet hus (løst småbygg plassert feil).
 """
 import sys, math
 from _felles import *
@@ -46,11 +46,16 @@ T = STRtree(list(P.values())); ids = list(P.keys())
 for b in B:
     Pb = P[b['id']]
     if Pb.area >= 15 or b['id'] in porter: continue
+    # gårdsmurene (teglmurer) er tegnet etter FKB og ortofoto: 0,5 m² er feil. OSM-murene (data/murer.json) og nabohus med omriss
+    # utenfor kommunekartet er grovere: feil først når mer enn 15 % av småbygget står i dem (pb-37 og pb-43: 5 og 10 %, 02.11)
     for navn, M in murflater:
         a_ = Pb.intersection(M).area
-        if a_ > 0.5: feil.append(f"FEIL småbygget {b['id']} ({Pb.area:.0f} m²) står {a_:.1f} m² i muren {navn}")
+        if a_ > (0.5 if not navn.startswith('murer:') else 0.15 * Pb.area): feil.append(f"FEIL småbygget {b['id']} ({Pb.area:.0f} m²) står {a_:.1f} m² i muren {navn}")
     for j in T.query(Pb):
         o = ids[j]
-        if o != b['id'] and Pb.intersection(P[o]).area > 0.5:
-            feil.append(f"FEIL småbygget {b['id']} ({Pb.area:.0f} m²) står {Pb.intersection(P[o]).area:.1f} m² i huset {o}")
+        a_ = Pb.intersection(P[o]).area if o != b['id'] else 0
+        if a_ > 0.15 * Pb.area:
+            feil.append(f"FEIL småbygget {b['id']} ({Pb.area:.0f} m²) står {a_:.1f} m² i huset {o}")
+        elif a_ > 0.5:
+            linjer.append(f"merk {b['id']} ({Pb.area:.0f} m²) overlapper {o} med {a_:.1f} m² ({a_ / Pb.area:.0%}, omrisset til naboen er grovt)")
 rapport('38_porter_og_murer_fri', not feil, [f"{len(feil)} feil; {len(murflater)} murer, {len(porter)} portbygg, {sum(1 for b in B if P[b['id']].area < 15)} småbygg under 15 m²"] + feil + linjer)
