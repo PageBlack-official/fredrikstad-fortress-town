@@ -196,11 +196,14 @@
    "hvor": {
     "bygg_id": "bnr-193868061"
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Sokkelen hadde bare én farge (brun [178,150,138] fra tegningen) og ikke materiale. Street View-avlesningen har «kjeller_sokkel» for 160 sider, med naturstein/granitt/puss og høyde for mange hus, men den ble ikke brukt.",
    "rettelse": "sokkel.type (naturstein/puss): src/05 tegner naturstein med skift, blokker, fuger og tone per stein (tegnet, ikke foto). Artillerigården: grå/rosa naturstein i merknaden (Vegar 02.11). Ny verktoy/sokkel.py i kjeden leser kjeller_sokkel i avlesningen: 48 hus fikk sokkel (43 naturstein, 5 puss), bare fra observasjoner som peker på huset (A12).",
    "rettet_i": "1c9f6e3",
-   "bevis": [],
+   "bevis": [
+    "rapport/avvik/A10-foer-artillerigaarden-naer.jpg",
+    "rapport/avvik/A10-etter-artillerigaarden-naer.jpg"
+   ],
    "vakt": "41_sokkel_skjuler_ikke"
   },
   {
@@ -211,11 +214,14 @@
    "hvor": {
     "bygg_id": "bnr-193867987"
    },
-   "status": "åpen",
+   "status": "lukket",
    "aarsak": "Fargen kom fra kvartaltegningen kvartal6 (burgunder). Street View-avlesningen hadde «okergul» fra 2010 (eldre enn tegningen, derfor ikke brukt) og «lys okergul/gul» fra 2024 på siden mot Voldportgaten, men fargeregelen leste bare hovedbildet. Begge kamerastrålene treffer dessuten nabohusene (bnr-193971318 og bnr-193867979) først, så koblingen var usikker (A12).",
    "rettelse": "Merknad på huset (kilder/bygg-merknader.json): okergul etter Vegar 02.11. sv_kobling.les() gjør nå nyeste godkjente observasjon til hovedavlesning.",
    "rettet_i": "d60888d",
-   "bevis": [],
+   "bevis": [
+    "rapport/avvik/A11-foer-mormors-cafe.jpg",
+    "rapport/avvik/A11-etter-mormors-cafe.jpg"
+   ],
    "vakt": "43_streetview_kobling"
   },
   {
