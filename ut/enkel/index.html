@@ -98,10 +98,14 @@ function tilModell(ll){ const o=maplibregl.MercatorCoordinate.fromLngLat([ORIGO.
 // hjemmevisningen (26.10, Vegar: «sluttbildet i dette utsnittet»): byen sett fra elva, kirka oppe til høyre, litt brattere enn plakaten.
 // Før: plakatvinkelen (asimut 40/130, høyde 33°). ?hjem=plakat gir den gamle.
 const HJEM_PLAKAT=Q0.get('hjem')==='plakat';
+// stående telefon har sitt eget sluttbilde (Vegar 02.11 13:23, skjermbilde fra iPhone: «Uansett versjon vil jeg at denne stillingen skal være siste frame på mobilvisningen»):
+// Torvet med statuen midt i bildet, Det gamle rådhus bak, kirka oppe til høyre, Vollgraven øverst, elva nederst. Asimut 193, faktor 1,22, sentrum MOBIL_START (14_speilinger), høyde 40°.
+// Faktoren er relativ til skjermhøyden (zoomFor), så utsnittet blir det samme på alle telefoner. Endres bare etter ny dom fra Vegar; regel 35 vokter den.
+const STAAENDE=innerWidth/innerHeight<0.8;
 // hjemmevisningens høyde over horisonten: 48° på bred skjerm; 40° på smal (stående telefon), der 48° leses som «for mye ovenfra» (Vegar 28.10)
-const PITCH0=90-(HJEM_PLAKAT?33:+(Q0.get('hoyde')||(innerWidth/innerHeight<0.8 ? 40 : 48))), AZ0_GRADER=HJEM_PLAKAT ? (innerWidth/innerHeight<0.8 ? 130 : 40) : +(Q0.get('az0')||(innerWidth/innerHeight<0.8 ? 290 : 200));
+const PITCH0=90-(HJEM_PLAKAT?33:+(Q0.get('hoyde')||(innerWidth/innerHeight<0.8 ? 40 : 48))), AZ0_GRADER=HJEM_PLAKAT ? (innerWidth/innerHeight<0.8 ? 130 : 40) : +(Q0.get('az0')||(STAAENDE ? 193 : 200));
 function zoomFor(faktor){ const mpp=372/innerHeight/faktor; return Math.log2(40075016.686*Math.cos(ORIGO.lat*Math.PI/180)/(512*mpp)); }
-const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||1.3));
+const Z_HJEM=zoomFor(HJEM_PLAKAT?1:+(Q0.get('z0')||(STAAENDE ? 1.22 : 1.3)));
 const map = new maplibregl.Map({ container:'kart', style:{version:8, sources:{}, layers:[{id:'papir', type:'background', paint:{'background-color':'#e2e1d6'}}]},
   center: tilLngLat(10,0), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0, minZoom: zoomFor(0.85), maxZoom: zoomFor(6), maxPitch: 72, minPitch: 18,
   attributionControl:false, antialias:false /* (02.11) lerretet får ingen MSAA: byen tegnes kantutjevnet i eget mål (01: MSAA + FXAA) og legges over hele lerretet, så MSAA på lerretet var dobbeltarbeid */, reduceMotion:false /* «Reduser bevegelse» av: Vegars valg, CHANGELOG v27 (15_bevegelse) */, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
@@ -1756,7 +1760,8 @@ const clock=new THREE.Clock(); let _synlig=false;
 const Q=Q0; let introDone=false;
 if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
   const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
-const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : (HJEM_PLAKAT ? [10,0] : [25,25]);   // ny hjemmevisning (26.10): midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
+const MOBIL_START=[12,67];   // stående telefon: sentrum for sluttbildet (Vegar 02.11, se 00_oppsett STAAENDE)
+const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : (HJEM_PLAKAT ? [10,0] : (STAAENDE ? MOBIL_START : [25,25]));   // ny hjemmevisning (26.10): midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.

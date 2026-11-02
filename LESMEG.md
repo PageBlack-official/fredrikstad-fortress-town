@@ -474,3 +474,10 @@ Hashen er `#view=lat,lon,zoom,pitch,bearing` (MapLibres egne tall: 5 desimaler p
 - history og localStorage står i try/catch; kartet virker uten dem (sandboxen i artefakten).
 
     node verktoy/lenke_test.mjs ut/enkel/index.html [mappe]   view=, hus=, flytting, lukking, tilbake, Del, ugyldige hasher, sandbox
+
+## Mobilens sluttbilde (02.11)
+Vegar 02.11 13:23, med skjermbilde fra iPhone: «Uansett versjon vil jeg at denne stillingen skal være siste frame på mobilvisningen».
+Stående skjerm (bredde/høyde < 0,8) ender introen med asimut 193, faktor 1,22 og sentrum [12,67] (MOBIL_START), høyde 40°.
+Bildet viser Torvet med statuen i midten, Det gamle rådhus bak, kirka oppe til høyre og elva nederst.
+Faktoren regnes mot skjermhøyden, så utsnittet blir det samme på alle telefoner. Bred skjerm er uendret (asimut 200, faktor 1,3, [25,25]).
+Fasit: rapport/mobil-sluttbilde/fasit.png. Regel 35 vokter tallene. De endres bare etter ny dom fra Vegar.
