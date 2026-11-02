@@ -122,32 +122,7 @@
    "brostein"
   ]
  ],
- "flater": [
-  {
-   "typ": "asfalt",
-   "p": [
-    [
-     47.86,
-     -26.75
-    ],
-    [
-     57.14,
-     -13.48
-    ],
-    [
-     54.68,
-     -11.76
-    ],
-    [
-     45.4,
-     -25.03
-    ]
-   ],
-   "hvem": "Claude",
-   "dato": "2026-11-02",
-   "grunn": "ortofoto 2024 (16 x 16 m utsnitt sett 02.11, avvik A7): Kasernegården langs innsiden av gårdsmuren mot Rådhusgaten er belagt som resten av gården; de to «bed» (fl-467, fl-476) var murens og brannstasjonens skygge"
-  }
- ],
+ "flater": [],
  "traer_fjernet": [
   {
    "p": [
