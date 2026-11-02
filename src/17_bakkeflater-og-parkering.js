@@ -40,5 +40,8 @@
         m.position.set(x, hAt(x,y)+0.14, -y); G.add(m); } });
     flatGruppe(G); }
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
-  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p) legg(p.p, 0.12, matFor('parkering')); });
+  // Er raden målt som flate i ortofotoet (flater[].parkering_id, verktoy/bakke.py parkeringsfelt), er det flatens type som gjelder
+  // (brostein i Gamlebyen) og bare oppmerkingen tegnes: den glatte parkeringsflaten oppå brosteinen var «noe rart foran huset» (avvik A3, 02.11)
+  const maaltFlate=new Set((DATA.flater||[]).filter(f=>!f.skjul && f.parkering_id).map(f=>f.parkering_id));
+  (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p && !maaltFlate.has(p.id)) legg(p.p, 0.12, matFor('parkering')); });
 }
