@@ -446,6 +446,7 @@ def bevar_ider(emne, nye, prefiks, grunn):
 # ---------- overflatene i Gamlebyen (data/flater.json) ----------
 MAALT = os.path.join(ROT, 'kilder', 'bakke-maalt.json')
 GEN_KILDE = 'ortofoto 2024 klassifisert, kommunekartet der fotoet ikke ser (verktoy/bakke.py overflater)'
+BED_SETT = 0.5
 MIN_M2 = {'gress': 4.0, 'bed': 2.0, 'grus': 6.0, 'asfalt': 10.0, 'brostein': 6.0, 'heller': 6.0}
 
 
@@ -556,7 +557,13 @@ def overflater(skriv=True):
             for g in getattr(P, 'geoms', [P]):
                 if g.geom_type != 'Polygon' or g.area < MIN_M2[typ]: continue
                 for q in uten_hull(g):
-                    if q.area >= MIN_M2[typ] * 0.5: ut.append((typ, q))
+                    if q.area < MIN_M2[typ] * 0.5: continue
+                    # bar jord må ses i sol på minst halve flaten: i halvskygge inntil murer og vegger ble skygge lest som bed
+                    # (Kasernegården fl-467/fl-476, avvik A7 02.11); som for belagte flater (belagt_endelig: ses i sol på halve arealet)
+                    if typ == 'bed':
+                        qm = maske([[list(c) for c in q.exterior.coords]], R, mpp) > 0
+                        if qm.sum() and (f['sett'][qm] > 0).mean() < BED_SETT: continue
+                    ut.append((typ, q))
     # en belagt flate eller et bed som er mest grønt i fotoet (regel 15: under 30 %), er gjettet der fotoet ikke ser
     # (under trær, i skygge): den tas ikke med, grunnen (brostein/terreng) står
     hin = [b_['p'] for b_ in d['bygg'] if b_.get('p') and not b_.get('skjul')]
