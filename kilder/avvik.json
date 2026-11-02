@@ -80,7 +80,7 @@
    "rettet_i": null,
    "bevis": [],
    "vakt": null,
-   "merknad": "Gjort 02.11: kontaktark for alle 17 kvartaler fra asimut 200 (rapport/avvik/A4-kvartaler-az200.jpg), sluttbildene mobil og bred skjerm, datasjekker for småbygg i murer/porter (regel 38), parkeringsflater (regel 40), bed i skygge (regel 31), dører med ting foran, trær i hus, frie vegger uten vinduer. Funn rettet som egne saker: A6 (parkering-1-4625), A7 (30 falske bed). Åpne spørsmål, ikke avgjort: (1) frie vegger uten vinduer der tegningen ikke viser veggen: bnr-16308102 vegg 0, Voldporten vegg 0, bnr-194006187 vegg 2, Det nye rådhus vegg 4, bnr-193972306 og bnr-193972446 (ingen fasadekilde); (2) Mellomporten (pb-11) er rød etter 2015-trykkfila (ikke dømt) – riktig?; (3) en rett skjøt i brosteinsmønsteret over Torvet (to brosteinsflater møtes); (4) lyse fortau med fint stripemønster i smale gater (Raadhusgaten). Kontaktarket er bygd før A8–A12 og bør tas på nytt fra flere asimuter."
+   "merknad": "02.11 kveld: kontaktark for alle 17 kvartaler fra tre vinkler (asimut 193, 200 og 20) med A8–A15 på plass: rapport/avvik/A4-kvartaler-tre-vinkler.jpg. Funn rettet som egne saker: A13 (blanke vegger, vinduer over takfoten), A14 (Mellomporten), A15 (brostein på brostein), A10 gjenåpnet og lukket (steinetasjen). Funn som står åpent: A16 (hvit flekk ved Tell). A4 lukkes når A16 er lukket."
   },
   {
    "id": "A5",
@@ -316,6 +316,27 @@
     "rapport/avvik/A15-etter-gate-az320.jpg"
    ],
    "vakt": "45_brostein_paa_brostein"
+  },
+  {
+   "id": "A16",
+   "dato": "2026-11-02",
+   "fra": "Claude (A4, kontaktark fra tre vinkler)",
+   "hva": "Hvit flekk på vollen ved Tell (rundt x 150, y -80) som kommer og går med kameraet: asimut 193 gir hvitt, 194 gir grønt gress, 193 igjen hvitt (samme senter [158,-79], faktor 3)",
+   "hvor": {
+    "naer": [
+     150,
+     -80
+    ]
+   },
+   "status": "åpen",
+   "aarsak": "Ikke funnet. Utelukket med prøvebygg: lagforskyvningen (A8, polygonOffset av), papirtoningen i etterbehandlingen (farget magenta: uendret), bakgrunnsgrensen for dybden (>=1,0: uendret), frustum-culling av de sammenslåtte bakkeflatene (av: uendret), kontaktskyggen (av: uendret). Fantes også før dagens endringer (bygg fra før A8). Fargen (239,236,228) er nesten papirfargen. Ortofotoet viser en lys grusplass rundt de to husene, men den hvite flaten går også inn i gresset under trærne.",
+   "rettelse": "Delvis: flatene og veiene legges nå på terrengnettets trekanter (hTer, src/08) og deles opp (delPaaTerreng, src/17), så de ikke skjærer gjennom vollene (vakt i regel 42). Flekken står igjen.",
+   "rettet_i": null,
+   "bevis": [
+    "rapport/avvik/A16-hvit-flekk-az193-194-193.jpg"
+   ],
+   "vakt": null,
+   "neste": "Lese pikselen i WebGL med kameraet synket (raycasten mot cam ga feil kamera), eller slå av ett lag om gangen (trær, gress, grus, terreng) til flekken forsvinner."
   }
  ]
 }

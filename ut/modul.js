@@ -418,6 +418,13 @@ function polyShape(pts){
 const BAKKELAG={terreng:0, brostein:0, vei:1, flate:2, parkering:3, gress:4};
 // Innen et lag får hver farge sitt underlag (0–3), så to veier eller to flater av ulik type som overlapper, heller ikke kjemper.
 function bakkelag(mat, lag, under=0){ mat.polygonOffset=true; mat.polygonOffsetFactor=-lag; mat.polygonOffsetUnits=-4*lag-under; mat.userData.bakkelag=[lag,under]; return mat; }
+// I BROSTEINSFLATEN (02.11, avvik A15): brostein er grunnen der (src/04). En brosteinsflate, et brosteinsbånd i en vei eller et
+// parkeringsfelt i brostein oppå grunnen er samme stein et par centimeter høyere: streken (01) tegnet kanten som en skjøt over
+// Torvet og langs gatene. Slike flater tegnes ikke; oppmerkingen står. iBrostein(x,y): punktet ligger i brosteinsflaten.
+const _BR=(DATA.brostein&&DATA.brostein.length>2)?DATA.brostein:null;
+function iBrostein(x,y){ if(!_BR) return false; let inne=false; for(let k=0,j=_BR.length-1;k<_BR.length;j=k++){ const a=_BR[k],c=_BR[j];
+  if((a[1]>y)!==(c[1]>y) && x<(c[0]-a[0])*(y-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
+function alleIBrostein(pts){ return pts.every(q=>iBrostein(q[0],q[1])); }
 function flat(pts, y, mat){
   if (pts.length<3) return null;
   const g = new THREE.ShapeGeometry(polyShape(pts));
@@ -1338,7 +1345,7 @@ samler.clear();
 
 // ---- festningsterrenget: voller med skråninger, grønt som plenene i tegningen ----
 const TER = DATA.landskap && DATA.landskap.terreng;
-let hAt = ()=>0;
+let hAt = ()=>0, hTer = ()=>0;   // hTer: terrengnettets høyde (trekantene), se under
 if (TER){
   const b64=s=>{ const b=atob(s); const a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
   const MB=b64(TER.m), nx=TER.nx, ny=TER.ny, G=TER.g;
@@ -1360,6 +1367,12 @@ if (TER){
   const hv=(i,j)=>H[j*nx+i]/20-(TER.off||0);
   hAt=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
     const tx=fx-i, ty=fy-j; return (hv(i,j)*(1-tx)+hv(i+1,j)*tx)*(1-ty)+(hv(i,j+1)*(1-tx)+hv(i+1,j+1)*tx)*ty; };
+  // hTer: høyden på terrengnettet slik det tegnes (samme trekanter som indeksen under: (a,b,c) og (b,d,c), +0,03), ikke bilineær.
+  // Flater og veier legges på den (avvik A16, 02.11): med bilineær høyde og hjørner bare i polygonets punkter skar store flater
+  // gjennom vollens nett, og grus og gress byttet plass når kameraet flyttet seg.
+  hTer=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
+    const tx=fx-i, ty=fy-j, a=hv(i,j), b=hv(i+1,j), c=hv(i,j+1), d=hv(i+1,j+1);
+    return (tx+ty<=1 ? a+(b-a)*tx+(c-a)*ty : d+(c-d)*(1-tx)+(b-d)*(1-ty))+0.03; };
   const pos=new Float32Array(nx*ny*3);
   for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const k=(j*nx+i)*3; pos[k]=TER.x0+i*G; pos[k+1]=hv(i,j)+0.03; pos[k+2]=-(TER.y0+j*G); }
   const idx=[];
@@ -1408,11 +1421,14 @@ if (TER){
     for(let k=0;k<n;k++){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
       const nx=-dy*w, ny=dx*w;
-      const zL=Math.max(P[k][2], hAt(P[k][0]+nx,P[k][1]+ny)+0.06)+dz, zR=Math.max(P[k][2], hAt(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
+      // brostein ligger i samme høyde som brosteinsgrunnen (5 cm over terrenget): samme stein, ingen kant for streken (A15)
+      const zL=B===buf.B ? hTer(P[k][0]+nx,P[k][1]+ny)+0.05 : Math.max(P[k][2], hTer(P[k][0]+nx,P[k][1]+ny)+0.06)+dz,
+            zR=B===buf.B ? hTer(P[k][0]-nx,P[k][1]-ny)+0.05 : Math.max(P[k][2], hTer(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
       L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){
-      quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
+      if(!(B===buf.B && alleIBrostein([P[k],P[k+1],[L[k][0],-L[k][2]],[R[k][0],-R[k][2]],[L[k+1][0],-L[k+1][2]],[R[k+1][0],-R[k+1][2]]])))   // brostein på brostein: grunnen (A15)
+        quad(B,[...L[k],...R[k],...L[k+1],...R[k+1]]);
       if(v.b && (P[k][2]>0.5 || P[k+1][2]>0.5)){
         [L,R].forEach(E=>{ const a=E[k], c=E[k+1]; quad(buf.S,[...a, ...c, a[0],Math.max(0.1,a[1]-0.8),a[2], c[0],Math.max(0.1,c[1]-0.8),c[2]]); });
       }
@@ -2254,10 +2270,26 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
   const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152], bed:[132,108,86], brostein:[146,140,132] };
   const MAT={brostein:stoneMat}; const matFor=k=>MAT[k]||(MAT[k]=bakkelag(flateMat(FARGE[k]), k==='parkering'?BAKKELAG.parkering:BAKKELAG.flate, {asfalt:0,grus:1,heller:2,bed:3}[k]||0));   // lagene: src/03 (avvik A8)
   // flaten legges på terrenget (vollene og kaiene ligger på terrengnettet), aldri lavere enn y0
+  // deler trekantene i g til lengste kant er under maks (midtpunktdeling), så de følger terrengnettet
+  const delPaaTerreng=(g0, maks)=>{ const g=g0.index?g0.toNonIndexed():g0; let T=Array.from(g.attributes.position.array); let ut=[];
+    for(let runde=0;runde<10;runde++){ let delt=false; ut=[];
+      for(let k=0;k<T.length;k+=9){ const A=T.slice(k,k+3), B=T.slice(k+3,k+6), C=T.slice(k+6,k+9);
+        const l=(p,q)=>Math.hypot(p[0]-q[0],p[2]-q[2]); const ab=l(A,B), bc=l(B,C), ca=l(C,A), m=Math.max(ab,bc,ca);
+        if(m<=maks){ ut.push(...A,...B,...C); continue; } delt=true;
+        const mid=(p,q)=>[(p[0]+q[0])/2,(p[1]+q[1])/2,(p[2]+q[2])/2];
+        if(m===ab){ const M=mid(A,B); ut.push(...A,...M,...C, ...M,...B,...C); }
+        else if(m===bc){ const M=mid(B,C); ut.push(...A,...B,...M, ...A,...M,...C); }
+        else { const M=mid(C,A); ut.push(...A,...B,...M, ...M,...B,...C); } }
+      T=ut; if(!delt) break; }
+    const n=new THREE.BufferGeometry(); n.setAttribute('position', new THREE.Float32BufferAttribute(T,3)); return n; };
   const legg=(pts, y0, mat)=>{
     if(!pts || pts.length<3) return null;
-    const g=new THREE.ShapeGeometry(polyShape(pts)); g.rotateX(-Math.PI/2);
-    const P=g.attributes.position; for(let i=0;i<P.count;i++) P.setY(i, Math.max(y0, hAt(P.getX(i), -P.getZ(i))+y0));
+    let g=new THREE.ShapeGeometry(polyShape(pts)); g.rotateX(-Math.PI/2);
+    // på terrenget: trekantene deles til de er mindre enn terrengrutene, og hvert punkt får terrengnettets høyde (hTer, src/08),
+    // så flaten ligger på nettet og ikke skjærer gjennom det (avvik A16)
+    if(pts.some(q=>hTer(q[0],q[1])>0.05) || (()=>{ const P0=g.attributes.position; for(let i=0;i<P0.count;i++) if(hTer(P0.getX(i),-P0.getZ(i))>0.05) return true; return false; })())
+      g=delPaaTerreng(g, TER?TER.g/2:1);
+    const P=g.attributes.position; for(let i=0;i<P.count;i++){ const t=hTer(P.getX(i), -P.getZ(i)); P.setY(i, t>0.05 ? t+y0 : Math.max(y0, hAt(P.getX(i), -P.getZ(i))+y0)); }
     P.needsUpdate=true; g.computeVertexNormals();
     const m=new THREE.Mesh(g, mat); m.receiveShadow=true; scene.add(m); return m;
   };
@@ -2267,7 +2299,7 @@ if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace
   (DATA.gardsrom||[]).forEach(g=>{ if(g.skjul) return;
     if(g.gress) g.gress.forEach(p=>flat(p,0.3,plenMat)); else if(g.typ==='gress') flat(g.p,0.3,plenMat); });
   // flater målt i ortofotoet
-  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ]) legg(f.p, f.typ==='gress'?0.28:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ] && !(f.typ==='brostein' && alleIBrostein(f.p))) legg(f.p, f.typ==='gress'?0.28:f.typ==='brostein'?0.05:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
   // oppmerkede parkeringsfelt (kommunens lag, verktoy/bakke.py parkeringsfelt): hvite streker på tvers av raden, oppmerket+1 stk
   { const strek=new THREE.MeshBasicMaterial({color:0xf4f2ec}); const G=new THREE.Group(); scene.add(G);
     (DATA.flater||[]).forEach(f=>{ if(f.skjul || !f.linje || !f.oppmerket) return;

@@ -1,6 +1,6 @@
 // ---- festningsterrenget: voller med skråninger, grønt som plenene i tegningen ----
 const TER = DATA.landskap && DATA.landskap.terreng;
-let hAt = ()=>0;
+let hAt = ()=>0, hTer = ()=>0;   // hTer: terrengnettets høyde (trekantene), se under
 if (TER){
   const b64=s=>{ const b=atob(s); const a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
   const MB=b64(TER.m), nx=TER.nx, ny=TER.ny, G=TER.g;
@@ -22,6 +22,12 @@ if (TER){
   const hv=(i,j)=>H[j*nx+i]/20-(TER.off||0);
   hAt=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
     const tx=fx-i, ty=fy-j; return (hv(i,j)*(1-tx)+hv(i+1,j)*tx)*(1-ty)+(hv(i,j+1)*(1-tx)+hv(i+1,j+1)*tx)*ty; };
+  // hTer: høyden på terrengnettet slik det tegnes (samme trekanter som indeksen under: (a,b,c) og (b,d,c), +0,03), ikke bilineær.
+  // Flater og veier legges på den (avvik A16, 02.11): med bilineær høyde og hjørner bare i polygonets punkter skar store flater
+  // gjennom vollens nett, og grus og gress byttet plass når kameraet flyttet seg.
+  hTer=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
+    const tx=fx-i, ty=fy-j, a=hv(i,j), b=hv(i+1,j), c=hv(i,j+1), d=hv(i+1,j+1);
+    return (tx+ty<=1 ? a+(b-a)*tx+(c-a)*ty : d+(c-d)*(1-tx)+(b-d)*(1-ty))+0.03; };
   const pos=new Float32Array(nx*ny*3);
   for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const k=(j*nx+i)*3; pos[k]=TER.x0+i*G; pos[k+1]=hv(i,j)+0.03; pos[k+2]=-(TER.y0+j*G); }
   const idx=[];
@@ -71,8 +77,8 @@ if (TER){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
       const nx=-dy*w, ny=dx*w;
       // brostein ligger i samme høyde som brosteinsgrunnen (5 cm over terrenget): samme stein, ingen kant for streken (A15)
-      const zL=B===buf.B ? hAt(P[k][0]+nx,P[k][1]+ny)+0.05 : Math.max(P[k][2], hAt(P[k][0]+nx,P[k][1]+ny)+0.06)+dz,
-            zR=B===buf.B ? hAt(P[k][0]-nx,P[k][1]-ny)+0.05 : Math.max(P[k][2], hAt(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
+      const zL=B===buf.B ? hTer(P[k][0]+nx,P[k][1]+ny)+0.05 : Math.max(P[k][2], hTer(P[k][0]+nx,P[k][1]+ny)+0.06)+dz,
+            zR=B===buf.B ? hTer(P[k][0]-nx,P[k][1]-ny)+0.05 : Math.max(P[k][2], hTer(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
       L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){

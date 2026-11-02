@@ -21,5 +21,5 @@ n_f = sum(1 for f in d['flater'] if not f.get('skjul') and f['typ'] == 'brostein
 n_v = sum(1 for v in d['landskap']['veier'] if v.get('flate') == 'brostein' and all(B.contains(Point(q[:2])) for q in v['p']))
 linjer.append(f"{n_f} brosteinsflater og {n_v} brosteinsveier ligger i brosteinsflaten og tegnes ikke (grunnen er brostein)")
 if "f.typ==='brostein'?0.05" not in src['17']: feil.append('FEIL src/17: brosteinsflater utenfor grunnen ligger ikke i grunnens høyde (5 cm)')
-if not re.search(r"B===buf\.B \? hAt\(P\[k\]\[0\]\+nx,P\[k\]\[1\]\+ny\)\+0\.05", src['08']): feil.append('FEIL src/08: brosteinsbånd ligger ikke i grunnens høyde (5 cm)')
+if not re.search(r"B===buf\.B \? hTer\(P\[k\]\[0\]\+nx,P\[k\]\[1\]\+ny\)\+0\.05", src['08']): feil.append('FEIL src/08: brosteinsbånd ligger ikke i grunnens høyde (5 cm)')
 rapport('45_brostein_paa_brostein', not feil, [f"{len(feil)} feil"] + feil + linjer)

@@ -20,7 +20,7 @@ feil, linjer = [], []
 src = {os.path.basename(f)[:2]: open(f, encoding='utf8').read() for f in glob.glob(os.path.join(ROT, 'src', '*.js'))}
 krav = [('04', r'bakkelag\(stoneMat,\s*BAKKELAG\.brostein\)', 'brosteinen'), ('04', r'bakkelag\(plenMat,\s*BAKKELAG\.gress\)', 'gresset'),
         ('08', r'bakkelag\(terMat,\s*BAKKELAG\.terreng\)', 'terrenget'), ('08', r'bakkelag\(mm,\s*BAKKELAG\.vei,\s*under\)', 'veiene'),
-        ('17', r'bakkelag\(flateMat\(FARGE\[k\]\)', 'flatene'), ('08', r'hAt\(P\[k\]\[0\]\+nx', 'veikantene på terrenget'),
+        ('17', r'bakkelag\(flateMat\(FARGE\[k\]\)', 'flatene'), ('08', r'hTer\(P\[k\]\[0\]\+nx', 'veikantene på terrengnettet (hTer)'), ('17', r'delPaaTerreng\(g', 'flatene delt og lagt på terrengnettet (A16)'), ('08', r'hTer=\(x,y\)=>', 'hTer definert (terrengnettets trekanter)'),
         ('08', r'Math\.ceil\(Math\.hypot\(c\[0\]-a\[0\],c\[1\]-a\[1\]\)/steg\)', 'veibitene delt opp')]
 for fil, mønster, hva in krav:
     if not re.search(mønster, src.get(fil, '')): feil.append(f"FEIL src/{fil}: {hva} mangler (bakkelag/terreng)")
