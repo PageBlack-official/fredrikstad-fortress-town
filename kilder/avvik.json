@@ -75,11 +75,13 @@
    "hvor": {
     "hele": true
    },
-   "status": "åpen",
-   "aarsak": null,
-   "rettet_i": null,
-   "bevis": [],
-   "vakt": null,
+   "status": "lukket",
+   "aarsak": "Runden kvartal for kvartal: funnene ble egne saker (A10, A13–A16), alle lukket med bevis og vakt.",
+   "rettet_i": "12ab1ca",
+   "bevis": [
+    "rapport/avvik/A4-kvartaler-tre-vinkler.jpg"
+   ],
+   "vakt": "36_avviksliste",
    "merknad": "02.11 kveld: kontaktark for alle 17 kvartaler fra tre vinkler (asimut 193, 200 og 20) med A8–A15 på plass: rapport/avvik/A4-kvartaler-tre-vinkler.jpg. Funn rettet som egne saker: A13 (blanke vegger, vinduer over takfoten), A14 (Mellomporten), A15 (brostein på brostein), A10 gjenåpnet og lukket (steinetasjen). Funn som står åpent: A16 (hvit flekk ved Tell). A4 lukkes når A16 er lukket."
   },
   {
@@ -328,15 +330,15 @@
      -80
     ]
    },
-   "status": "åpen",
-   "aarsak": "Ikke funnet. Utelukket med prøvebygg: lagforskyvningen (A8, polygonOffset av), papirtoningen i etterbehandlingen (farget magenta: uendret), bakgrunnsgrensen for dybden (>=1,0: uendret), frustum-culling av de sammenslåtte bakkeflatene (av: uendret), kontaktskyggen (av: uendret). Fantes også før dagens endringer (bygg fra før A8). Fargen (239,236,228) er nesten papirfargen. Ortofotoet viser en lys grusplass rundt de to husene, men den hvite flaten går også inn i gresset under trærne.",
+   "status": "lukket",
+   "aarsak": "Ikke funnet. Utelukket med prøvebygg: lagforskyvningen (A8, polygonOffset av), papirtoningen i etterbehandlingen (farget magenta: uendret), bakgrunnsgrensen for dybden (>=1,0: uendret), frustum-culling av de sammenslåtte bakkeflatene (av: uendret), kontaktskyggen (av: uendret). Fantes også før dagens endringer (bygg fra før A8). Fargen (239,236,228) er nesten papirfargen. Ortofotoet viser en lys grusplass rundt de to husene, men den hvite flaten går også inn i gresset under trærne. 03.11 01:40: ikke gjenskapt i 12ab1ca (asimut 190, 193 og 194 gir grønt gress). Det som kom inn mellom: natt/samlet b6f7c26 (kontaktskyggen snudd ut og løftet over bakkelagene, punch, solgløtt) og agentens siste bygg med hTer/delPaaTerreng. Hvilken av dem som fjernet flekken, er ikke isolert.",
    "rettelse": "Delvis: flatene og veiene legges nå på terrengnettets trekanter (hTer, src/08) og deles opp (delPaaTerreng, src/17), så de ikke skjærer gjennom vollene (vakt i regel 42). Flekken står igjen.",
-   "rettet_i": null,
+   "rettet_i": "12ab1ca",
    "bevis": [
-    "rapport/avvik/A16-hvit-flekk-az193-194-193.jpg"
+    "rapport/avvik/A16-hvit-flekk-az193-194-193.jpg",
+    "rapport/avvik/A16-etter-az193-194.jpg"
    ],
-   "vakt": null,
-   "neste": "Lese pikselen i WebGL med kameraet synket (raycasten mot cam ga feil kamera), eller slå av ett lag om gangen (trær, gress, grus, terreng) til flekken forsvinner."
+   "vakt": "46_ingen_papirflekk"
   }
  ]
 }
