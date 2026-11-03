@@ -1,6 +1,6 @@
 # Regelrapport
 
-Kilde: 12ab1ca versjon 34 kjørt 2026-11-03 01:26
+Kilde: c769e9a versjon 34 kjørt 2026-11-03 18:03
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
@@ -8,7 +8,7 @@ Kilde: 12ab1ca versjon 34 kjørt 2026-11-03 01:26
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(skalaStille) uavhengig av bevegelse)
 - OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/wt-samlet/ut/enkel/index.html 3231 kB versjon 34)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az -2.78 zoom 1.00 → ferdig az -2.79 zoom 1.00 intro false)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az -1.26 zoom 0.71 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 32 (ønsket 34))
 - OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 20374 px, trinn 2: 19534 px)
@@ -23,7 +23,7 @@ Kilde: 12ab1ca versjon 34 kjørt 2026-11-03 01:26
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 6 bilder – ingen ny tegning)
 - OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 7 unntak (fredet))
 - OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 300 modellhus)
-- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 56.3 px/bilde, hopp 0, rykk 0.21 (<= 0.45), bråstopp 0 (<= 0,15))
+- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 57 px/bilde, hopp 0, rykk 0.19 (<= 0.45), bråstopp 0 (<= 0,15))
 - OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
 - OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
 - OK   31_overflater  (gruppe 95.9% (krav 95 %), belagt type 98.0% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
@@ -31,7 +31,7 @@ Kilde: 12ab1ca versjon 34 kjørt 2026-11-03 01:26
 - OK   33_gjerder  (presisjon 95.3% av 163 m funnet i fotoet (krav 95 %), dekning 99.7% av 195 m sett langs kandidatlinjene (krav 95 %); 0 av 95 stykker krysser gateareal eller hus)
 - OK   34_traer  (1455 av 1458 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.8%, krav 95 %); 0 i vann, 0 i hus; 1592 trær i alt = 2343 fra 23.10 )
 - OK   35_mobil_sluttbilde  (ok   asimut 193)
-- FEIL 36_avviksliste  (2 åpne av 16)
+- OK   36_avviksliste  (0 åpne av 16)
 - OK   37_egne_fasader  (1 hus med eget fasadeverktøy)
 - OK   38_porter_og_murer_fri  (0 feil; 23 murer, 5 portbygg, 32 småbygg under 15 m²)
 - OK   39_kjeden_stabil  (0 objekter endres av en ny kjøring av kjeden)
@@ -41,5 +41,6 @@ Kilde: 12ab1ca versjon 34 kjørt 2026-11-03 01:26
 - OK   43_streetview_kobling  (0 feil)
 - OK   44_ingen_blanke_vegger  (0 hus med blanke frie vegger uten kilde)
 - OK   45_brostein_paa_brostein  (0 feil)
+- OK   46_ingen_papirflekk  (- asimut 193: 0.00 % papirfarget i midtfeltet (krav under 1 %; flekken ga 8 %))
 
 Detaljer per regel i samme mappe.
