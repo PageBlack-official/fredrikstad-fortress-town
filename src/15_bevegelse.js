@@ -68,7 +68,7 @@ const treghet=(()=>{
   el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
   const F=s=>1-Math.exp(-T.k*s);
   const kl=(x,m)=>Math.max(-m,Math.min(m,x));
-  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=T.vindu); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
+  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=Math.max(T.vindu, 3*(window.__ramme||0)+40)); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
   function steg(){ rid=0; if(!anim) return; const s=Math.min(1+anim.g, (performance.now()-anim.t0)/1000/(T.k*T.tau)); sett(s); if(s<1+anim.g) rid=requestAnimationFrame(steg); else anim=null; }
   function sett(s){ const A=anim, ut=T.tau*F(s), d=ut-A.ut; A.ut=ut;
     const o={duration:0}; if(A.vz) o.zoom=map.getZoom()+A.vz*d; if(A.vb) o.bearing=map.getBearing()+A.vb*d; if(A.vp) o.pitch=map.getPitch()+A.vp*d;
@@ -82,7 +82,11 @@ const treghet=(()=>{
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
     if(!slipp) return easeTo0(opt,ev);
     const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
-    if(naa-siste>T.vindu+20){ kam.length=0; fing.length=0; return easeTo0(opt,ev); }   // holdt stille før slipp: MapLibre avgjør
+    // Vinduet vokser med bildetiden: på en treg telefon kan slippet behandles 100–200 ms etter siste fingerpunkt (bildet tok så lang tid),
+    // og da slapp vi gjennom til MapLibres treghet, som regner farten med tommelhoppet inne (sprett ved slipp, Vegar 03.11 via datteren).
+    // Berøring som har stått stille lenger enn det får ingen treghet i det hele tatt: et dødt stopp er riktig, et sprett er feil.
+    const vindu=Math.max(T.vindu, 3*(window.__ramme||0)+40);
+    if(naa-siste>vindu+20){ kam.length=0; fing.length=0; return ev.originalEvent.type.startsWith('touch') ? map : easeTo0(opt,ev); }   // holdt stille før slipp
     const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
     if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
     if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }

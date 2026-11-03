@@ -10,7 +10,9 @@ function vokse(t){
   if(t<3.4){ setCrowns(t); ferdig=false; } else setCrowns(null);
   if(ferdig) vokst=true;
 }
-const SPIN=3.4, VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
+const INTRO=(DATA.ferge&&DATA.ferge.intro)||{};   // introens start (over elva, ferga i bildet) og varighet: data/ferge.json; ?introfra=0 gir den gamle (stille over START)
+const INTRO_FRA = (INTRO.fra && Q0.get('introfra')!=='0') ? INTRO.fra : START;
+const SPIN=+(Q0.get('spin')||INTRO.sekunder||3.4), VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
 // kurvene (glid, glidUt) og alle varigheter står i 15_bevegelse.js
 let anim=false, husBeveger=false, sisteTid=performance.now();
 const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0});
@@ -18,7 +20,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
-  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true;
+  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true;
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
@@ -68,7 +70,7 @@ function tiltOppdater(dt){ if(!introStartet) return; if(!introDone){ tiltU=Math.
   if(tiltAv.b0===null) tiltAv.b0 = (tiltU>=1 || !introKjort) ? 0 : introTiltKurve(); tiltAv.s=Math.min(1, tiltAv.s+dt/BEV.hentInn); }
 function introTilt(){ if(!introStartet) return 1; if(!introDone) return introTiltKurve(); return tiltAv.b0===null ? (introKjort ? introTiltKurve() : 0) : tiltAv.b0*(1-myk(tiltAv.s)); }
 window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig, tilt:introTilt()});
-window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, START[0], START[1]); window.__solTil(u); };   // kamera + lys ved u langs introveien
+window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, INTRO_FRA[0]+(START[0]-INTRO_FRA[0])*u, INTRO_FRA[1]+(START[1]-INTRO_FRA[1])*u); window.__solTil(u); ferge.til(u); };   // kamera + lys ved u langs introveien
 window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
 map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
@@ -90,6 +92,7 @@ function oppdater(){
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
   solOppdater(dt); tiltOppdater(dt);
+  ferge.til(introDone ? 1 : (introStartet ? introU() : 0));   // byferga følger introsveipet (22_byferga)
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
@@ -120,6 +123,7 @@ const byLag={ id:'byen', type:'custom', renderingMode:'3d',
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
 function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
+window.__klar=()=>vokst && introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
   map.addLayer(byLag);

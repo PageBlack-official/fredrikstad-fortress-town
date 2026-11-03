@@ -20,9 +20,9 @@ const post=(()=>{
       void main(){ float a=texture2D(tDep,vUv).x, b=texture2D(tDep,vUv+vec2(1.,0.)/res).x, c=texture2D(tDep,vUv+vec2(0.,1.)/res).x; gl_FragColor=vec4(min(a,min(b,c)),0.,0.,1.); }` });
   const qM=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mM); qM.frustumCulled=false; const msc=new THREE.Scene(); msc.add(qM);
   const m=new THREE.ShaderMaterial({ defines: MIN_TEX ? {MIN_TEX:1} : {},
-    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}, uPunch:{value:Q0.get('punch')==='0'?0:+(Q0.get('punch')||1)}},
+    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}, uPunch:{value:Q0.get('punch')==='0'?0:+(Q0.get('punch')||1)}, uMetning:{value:+(Q0.get('metning')||0.93)}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve, uPunch; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve, uPunch, uMetning; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -137,6 +137,8 @@ const post=(()=>{
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
         gl_FragColor.rgb=punch(gl_FragColor.rgb, uPunch*(1.-smoothstep(380.,600.,rr)));
+        // metning ned 7 % (Vegar 03.11 21:34: «litt glorete»): etter punchen, i skjermrom, bare på kartet (papiret rundt står). ?metning=1 gir urørt.
+        { float lm=dot(gl_FragColor.rgb,vec3(0.2126,0.7152,0.0722)); gl_FragColor.rgb=mix(vec3(lm), gl_FragColor.rgb, uMetning*(1.-smoothstep(380.,600.,rr))+smoothstep(380.,600.,rr)); }
         gl_FragColor.rgb=kurve(gl_FragColor.rgb);
       }`
   });

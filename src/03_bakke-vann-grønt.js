@@ -34,9 +34,9 @@ const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
     grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
     tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
-    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}},
+    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}, uKaiskum:{value:Q0.get('kaiskum')==='0'?0:1}},
   vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett, uKaiskum; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -69,7 +69,12 @@ const waterMat = new THREE.ShaderMaterial({
     // naturlig kant (gress, stein, siv): vannet skyller inn med skum, glorie og ringen som puster.
     // kai og mur: rett, rolig kant uten skum; en smal, mørk stripe der muren går ned i vannet og en svak lys refleks like utenfor
     float nat=1.-kai;
-    c=mix(c, skum, max(max(skumK, ring), glor)*nat);
+    // 03.11 (Vegar: «savner livet i vannet, hvordan det skummer langs bryggene»): kai og brygge får også skum, smalere og svakere enn
+    // stranda (vannet slår mot muren), og glorien like utenfor. Ringen som puster hører til naturlig kant. ?kaiskum=0 slår av.
+    float slag=0.5+0.5*sin(t*1.3+n(wp.xz*0.05)*6.28);                                   // bølgeslaget mot muren puster
+    float kaiSkum=kai*uKaiskum*(1.-smoothstep(bw*0.5, bw*0.5+max(pm,0.35)+0.6*slag, d+wob*0.45));
+    float kaiRing=kai*uKaiskum*linje(d, 2.2+1.4*slag+wob*0.6, 0.35, pm)*0.3;                // en svak ring som ruller ut fra muren
+    c=mix(c, skum, max(max(skumK, ring), glor)*nat + max(max(kaiSkum*0.85, kaiRing), glor*0.6*kai));
     float kw=max(0.55, pm*1.3);
     float murK=(1.-smoothstep(kw*0.5, kw*0.5+max(pm,0.25), d))*kai;
     float refl=(1.-smoothstep(0.,3.5,d))*smoothstep(kw*0.5,kw*1.2,d)*kai*0.16;

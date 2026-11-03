@@ -1,0 +1,100 @@
+{
+ "om": "Byferga som legger til fergeleiet i Gamlebyen i introen (Vegar 03.11.2026: «se byferga entre kaia i gamlebyen i introswipen»). Banen er en kubisk Bézier i modellkoordinater (x øst, y nord, meter) fra Sentrum-siden til kaiplassen mellom de to landgangene (data/brygger.json). Kaiplassen ligger 2,5 m utenfor landgangenes ytterender; retningen i mål er kaias retning. Formen er den enkleste (Vegars tegning 03.11 22:04): rødt skrog som dominerer, lang hvit salong med en rekke vinduer, styrhuset og det åpne dekket med rekke i enden mot rampa (baugen, flat), salongen i den andre enden der skroget er spisset (Vegar 03.11 22:46: «snu på den røde delen»). skala: ferga tegnes større enn målt, slik landemerkene gjør, fordi den skal ses i introsveipet; målene står urørt. Baugrampe (Vegar 03.11 22:07): ferga legger til med baugen mot kaia; rampa senkes ned på kaia når den er framme (rampe.ned, andel av introen), og står nede mens den ligger. Kaiplassen: baugen 1 m fra kaimuren midt mellom landgangene, banens sluttretning rett mot land.",
+ "bane": [
+  [
+   -58,
+   368
+  ],
+  [
+   -10,
+   318
+  ],
+  [
+   23.6,
+   279
+  ],
+  [
+   40.6,
+   268.4
+  ]
+ ],
+ "fart": {
+  "start": 0.0,
+  "slutt": 0.78,
+  "om": "andel av introsveipet (u) der ferga starter og ligger til kai; den bremser mykt inn de siste 25 %"
+ },
+ "mål": {
+  "lengde": 14.5,
+  "bredde": 4.4,
+  "fribord": 1.5,
+  "salong": [
+   7.6,
+   3.6,
+   2.2
+  ],
+  "salong_fra": -2.3,
+  "vindu_fra": 0.8,
+  "vinduer": 5,
+  "styrhus": [
+   2.6,
+   3.0,
+   2.8
+  ],
+  "rekke": 0.9
+ },
+ "farge": {
+  "skrog": [
+   204,
+   30,
+   36
+  ],
+  "dekk": [
+   214,
+   212,
+   206
+  ],
+  "vindu": [
+   58,
+   66,
+   80
+  ],
+  "salong": [
+   240,
+   240,
+   236
+  ],
+  "tak": [
+   226,
+   226,
+   222
+  ],
+  "rekke": [
+   70,
+   72,
+   76
+  ]
+ },
+ "kilder": [
+  "data/brygger.json: landgang til fergeleiet Gamlebyen (sør) og (nord), landgang til fergeleiet Sentrum",
+  "data/vann.json: hele banen ligger i vann (sjekket 03.11, t=0 ligger 2 m inne på Sentrum-kaia og er skjult av sveipets start)"
+ ],
+ "skala": 1.8,
+ "rampe": {
+  "bredde": 2.6,
+  "lengde": 2.4,
+  "oppe_grader": 92,
+  "nede_grader": -8,
+  "ned": [
+   0.8,
+   0.92
+  ]
+ },
+ "intro": {
+  "fra": [
+   -12,
+   296
+  ],
+  "sekunder": 4.4,
+  "om": "Introsveipet starter med kameraet over elva ved fergas bane (fra, modellkoordinater) og glir inn til hjemmevisningen mens det svinger (Vegar 03.11: «panorert lengre og kulere», ferga i sveipet). Sluttbildet er låst som før. Uten denne står kameraet stille over START hele sveipet."
+ }
+}
