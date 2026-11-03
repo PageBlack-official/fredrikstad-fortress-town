@@ -161,9 +161,9 @@ const post=(()=>{
       void main(){ float a=texture2D(tDep,vUv).x, b=texture2D(tDep,vUv+vec2(1.,0.)/res).x, c=texture2D(tDep,vUv+vec2(0.,1.)/res).x; gl_FragColor=vec4(min(a,min(b,c)),0.,0.,1.); }` });
   const qM=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mM); qM.frustumCulled=false; const msc=new THREE.Scene(); msc.add(qM);
   const m=new THREE.ShaderMaterial({ defines: MIN_TEX ? {MIN_TEX:1} : {},
-    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}, uPunch:{value:Q0.get('punch')==='0'?0:+(Q0.get('punch')||1)}},
+    uniforms:{tMin:{value:rtM.texture}, tCol:{value:rt.texture}, tDep:{value:rt.depthTexture}, res:{value:new THREE.Vector2(2,2)}, mpp:{value:1}, span:{value:8000}, naer:{value:1}, fjern:{value:10000}, px:{value:1}, tilt:{value:0}, aoN:{value:14}, ssN:{value:1}, tid:{value:0}, sk:{value:1}, dpr:{value:1}, invPV:{value:new THREE.Matrix4()}, blekk:{value:new THREE.Color(0x24211f)}, tPensel:{value:penselTex}, uPensel:{value:STIL.pensel}, uKorn:{value:STIL.korn}, uVignett:{value:STIL.vignett}, uKurve:{value:STIL.kurve}, uSky:{value:STIL.sky}, uPunch:{value:Q0.get('punch')==='0'?0:+(Q0.get('punch')||1)}, uMetning:{value:+(Q0.get('metning')||0.93)}},
     vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
-    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve, uPunch; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
+    fragmentShader:`uniform sampler2D tCol, tDep, tPensel; uniform vec2 res; uniform float uKurve, uPunch, uMetning; uniform float mpp, span, px, tilt, aoN, tid, sk, dpr, ssN, naer, fjern, uPensel, uKorn, uVignett, uSky; uniform mat4 invPV; uniform vec3 blekk;
  varying vec2 vUv;
       // dybde i meter langs synsretningen (perspektiv: dybdebufferet lineariseres med kartets nær/fjern-plan)
       float D(vec2 o){ float d=texture2D(tDep, vUv+o/res).x*2.-1.; return (2.*naer*fjern/(fjern+naer-d*(fjern-naer)))*span; }
@@ -278,6 +278,8 @@ const post=(()=>{
         gl_FragColor=vec4(col,1.);
         #include <colorspace_fragment>
         gl_FragColor.rgb=punch(gl_FragColor.rgb, uPunch*(1.-smoothstep(380.,600.,rr)));
+        // metning ned 7 % (Vegar 03.11 21:34: «litt glorete»): etter punchen, i skjermrom, bare på kartet (papiret rundt står). ?metning=1 gir urørt.
+        { float lm=dot(gl_FragColor.rgb,vec3(0.2126,0.7152,0.0722)); gl_FragColor.rgb=mix(vec3(lm), gl_FragColor.rgb, uMetning*(1.-smoothstep(380.,600.,rr))+smoothstep(380.,600.,rr)); }
         gl_FragColor.rgb=kurve(gl_FragColor.rgb);
       }`
   });
@@ -513,9 +515,9 @@ const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
     grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
     tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
-    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}},
+    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}, uKaiskum:{value:Q0.get('kaiskum')==='0'?0:1}},
   vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett, uKaiskum; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -548,7 +550,12 @@ const waterMat = new THREE.ShaderMaterial({
     // naturlig kant (gress, stein, siv): vannet skyller inn med skum, glorie og ringen som puster.
     // kai og mur: rett, rolig kant uten skum; en smal, mørk stripe der muren går ned i vannet og en svak lys refleks like utenfor
     float nat=1.-kai;
-    c=mix(c, skum, max(max(skumK, ring), glor)*nat);
+    // 03.11 (Vegar: «savner livet i vannet, hvordan det skummer langs bryggene»): kai og brygge får også skum, smalere og svakere enn
+    // stranda (vannet slår mot muren), og glorien like utenfor. Ringen som puster hører til naturlig kant. ?kaiskum=0 slår av.
+    float slag=0.5+0.5*sin(t*1.3+n(wp.xz*0.05)*6.28);                                   // bølgeslaget mot muren puster
+    float kaiSkum=kai*uKaiskum*(1.-smoothstep(bw*0.5, bw*0.5+max(pm,0.35)+0.6*slag, d+wob*0.45));
+    float kaiRing=kai*uKaiskum*linje(d, 2.2+1.4*slag+wob*0.6, 0.35, pm)*0.3;                // en svak ring som ruller ut fra muren
+    c=mix(c, skum, max(max(skumK, ring), glor)*nat + max(max(kaiSkum*0.85, kaiRing), glor*0.6*kai));
     float kw=max(0.55, pm*1.3);
     float murK=(1.-smoothstep(kw*0.5, kw*0.5+max(pm,0.25), d))*kai;
     float refl=(1.-smoothstep(0.,3.5,d))*smoothstep(kw*0.5,kw*1.2,d)*kai*0.16;
@@ -1911,7 +1918,7 @@ const treghet=(()=>{
   el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
   const F=s=>1-Math.exp(-T.k*s);
   const kl=(x,m)=>Math.max(-m,Math.min(m,x));
-  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=T.vindu); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
+  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=Math.max(T.vindu, 3*(window.__ramme||0)+40)); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
   function steg(){ rid=0; if(!anim) return; const s=Math.min(1+anim.g, (performance.now()-anim.t0)/1000/(T.k*T.tau)); sett(s); if(s<1+anim.g) rid=requestAnimationFrame(steg); else anim=null; }
   function sett(s){ const A=anim, ut=T.tau*F(s), d=ut-A.ut; A.ut=ut;
     const o={duration:0}; if(A.vz) o.zoom=map.getZoom()+A.vz*d; if(A.vb) o.bearing=map.getBearing()+A.vb*d; if(A.vp) o.pitch=map.getPitch()+A.vp*d;
@@ -1925,7 +1932,11 @@ const treghet=(()=>{
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
     if(!slipp) return easeTo0(opt,ev);
     const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
-    if(naa-siste>T.vindu+20){ kam.length=0; fing.length=0; return easeTo0(opt,ev); }   // holdt stille før slipp: MapLibre avgjør
+    // Vinduet vokser med bildetiden: på en treg telefon kan slippet behandles 100–200 ms etter siste fingerpunkt (bildet tok så lang tid),
+    // og da slapp vi gjennom til MapLibres treghet, som regner farten med tommelhoppet inne (sprett ved slipp, Vegar 03.11 via datteren).
+    // Berøring som har stått stille lenger enn det får ingen treghet i det hele tatt: et dødt stopp er riktig, et sprett er feil.
+    const vindu=Math.max(T.vindu, 3*(window.__ramme||0)+40);
+    if(naa-siste>vindu+20){ kam.length=0; fing.length=0; return ev.originalEvent.type.startsWith('touch') ? map : easeTo0(opt,ev); }   // holdt stille før slipp
     const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
     if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
     if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }
@@ -2040,7 +2051,9 @@ function vokse(t){
   if(t<3.4){ setCrowns(t); ferdig=false; } else setCrowns(null);
   if(ferdig) vokst=true;
 }
-const SPIN=3.4, VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
+const INTRO=(DATA.ferge&&DATA.ferge.intro)||{};   // introens start (over elva, ferga i bildet) og varighet: data/ferge.json; ?introfra=0 gir den gamle (stille over START)
+const INTRO_FRA = (INTRO.fra && Q0.get('introfra')!=='0') ? INTRO.fra : START;
+const SPIN=+(Q0.get('spin')||INTRO.sekunder||3.4), VEKST_FART=1.8, Z0=0.82, EL0=52, SVEIP=110;
 // kurvene (glid, glidUt) og alle varigheter står i 15_bevegelse.js
 let anim=false, husBeveger=false, sisteTid=performance.now();
 const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bearing: -AZ0_GRADER, pitch: PITCH0});
@@ -2048,7 +2061,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
-  map.jumpTo({center: tilLngLat(START[0],START[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true;
+  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true;
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
@@ -2098,7 +2111,7 @@ function tiltOppdater(dt){ if(!introStartet) return; if(!introDone){ tiltU=Math.
   if(tiltAv.b0===null) tiltAv.b0 = (tiltU>=1 || !introKjort) ? 0 : introTiltKurve(); tiltAv.s=Math.min(1, tiltAv.s+dt/BEV.hentInn); }
 function introTilt(){ if(!introStartet) return 1; if(!introDone) return introTiltKurve(); return tiltAv.b0===null ? (introKjort ? introTiltKurve() : 0) : tiltAv.b0*(1-myk(tiltAv.s)); }
 window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig, tilt:introTilt()});
-window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, START[0], START[1]); window.__solTil(u); };   // kamera + lys ved u langs introveien
+window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, INTRO_FRA[0]+(START[0]-INTRO_FRA[0])*u, INTRO_FRA[1]+(START[1]-INTRO_FRA[1])*u); window.__solTil(u); ferge.til(u); };   // kamera + lys ved u langs introveien
 window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
 map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
@@ -2120,6 +2133,7 @@ function oppdater(){
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
   solOppdater(dt); tiltOppdater(dt);
+  ferge.til(introDone ? 1 : (introStartet ? introU() : 0));   // byferga følger introsveipet (22_byferga)
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
@@ -2150,6 +2164,7 @@ const byLag={ id:'byen', type:'custom', renderingMode:'3d',
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
 function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
+window.__klar=()=>vokst && introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
   map.addLayer(byLag);
@@ -2694,6 +2709,63 @@ const flaterSammen=(()=>{
   return {for:for_, etter};
 })();
 window.__flytInfo=()=>({flaterFor:flaterSammen.for, flaterEtter:flaterSammen.etter, vann:vannISyne()});
+
+// ---- Byferga (03.11, Vegar: «frisefett … se byferga entre kaia i gamlebyen i introswipen») ----
+// Den enkleste formen (Vegars tegning 03.11): rødt skrog som dominerer, lang hvit salong med en rekke vinduer, et høyere hvitt
+// styrhus bak salongen, åpent dekk med rekke bakerst. Alt om bane, mål og farger står i data/ferge.json. Ferga følger
+// introsveipet: ved u = fart.start ligger den på Sentrum-siden, ved fart.slutt til kai, og der blir den liggende (også med
+// ?skip og delte lenker). Kursen er banens tangent; baugen peker framover langs banen. ?ferge=0 slår av.
+const ferge=(()=>{
+  const F=DATA.ferge; if(!F || Q0.get('ferge')==='0') return {til(){}, grp:null};
+  const VANN_Y=0.15, M=F.mål, C=F.farge, L=M.lengde, B=M.bredde;
+  const g=new THREE.Group(); g.name='byferga';
+  const m=(rgb)=>mat(rgb,false);
+  const kloss=(dx,dy,dz,x,y,z,mt)=>{ const k=new THREE.Mesh(new THREE.BoxGeometry(dx,dy,dz),mt); k.position.set(x,y,z); k.castShadow=k.receiveShadow=true; g.add(k); return k; };
+  // skroget: boks med avfasede ender. Rampeenden (+x, baugen mot kaia) er flat og bred, den andre enden er spisset (Vegar 03.11 22:46)
+  const skrog=new THREE.Shape(); const hl=L/2, hb=B/2, fb=0.9, fh=2.4;
+  skrog.moveTo(-hl+fh,-hb); skrog.lineTo(hl-fb,-hb); skrog.lineTo(hl,-hb*0.75); skrog.lineTo(hl,hb*0.75); skrog.lineTo(hl-fb,hb); skrog.lineTo(-hl+fh,hb); skrog.lineTo(-hl,hb*0.3); skrog.lineTo(-hl,-hb*0.3); skrog.closePath();
+  const sg=new THREE.ExtrudeGeometry(skrog,{depth:M.fribord+0.5, bevelEnabled:false}); sg.rotateX(-Math.PI/2); sg.translate(0,-0.5,0);
+  const s=new THREE.Mesh(sg, m(C.skrog)); s.castShadow=s.receiveShadow=true; g.add(s);
+  const yd=M.fribord;
+  kloss(L-fb-fh, 0.06, B-0.3, (fh-fb)/2, yd+0.03, 0, m(C.dekk));                              // dekket (salongenden spisset, rampeenden flat)
+  // salongen: hvit boks, vindusrekka som mørke ruter på begge sider og i framkant
+  const [sl,sb,sh]=M.salong, sx=M.salong_fra;
+  kloss(sl, sh, sb, sx, yd+sh/2, 0, m(C.salong));
+  const vh=sh-M.vindu_fra-0.35, vy=yd+M.vindu_fra+vh/2, n=M.vinduer, vb=(sl-0.6)/n;
+  for(let i=0;i<n;i++){ const x=sx-sl/2+0.3+vb*(i+0.5); kloss(vb-0.35, vh, sb+0.06, x, vy, 0, m(C.vindu)); }
+  kloss(0.06, vh, sb-0.8, sx-sl/2-0.01, vy, 0, m(C.vindu));                                    // endevinduet mot akterenden
+  kloss(sl+0.5, 0.16, sb+0.5, sx, yd+sh+0.08, 0, m(C.tak));                                     // salongtaket, litt utenfor
+  // styrhuset foran salongen, mot rampa: høyere, med vindusbånd rundt og eget tak
+  const [hl2,hb2,hh]=M.styrhus, hx=sx+sl/2+hl2/2+0.1;
+  kloss(hl2, hh, hb2, hx, yd+hh/2, 0, m(C.salong));
+  kloss(hl2+0.06, hh*0.4, hb2+0.06, hx, yd+hh*0.62, 0, m(C.vindu));
+  kloss(hl2+0.5, 0.16, hb2+0.5, hx, yd+hh+0.08, 0, m(C.tak));
+  // baugrampa: ei rød plate hengslet i baugen på dekkshøyde; oppe (lukket) under overfarten, senkes ned på kaia når ferga er framme
+  const R=F.rampe||{bredde:2.6,lengde:2.4,oppe_grader:92,nede_grader:-8,ned:[0.8,0.92]}; const R_B=()=>R.bredde;
+  const rampe=new THREE.Group(); rampe.position.set(hl,yd,0); g.add(rampe);
+  { const k=new THREE.Mesh(new THREE.BoxGeometry(R.lengde,0.08,R.bredde),m(C.skrog)); k.position.set(R.lengde/2,0,0); k.castShadow=k.receiveShadow=true; rampe.add(k); }
+  const rampeTil=v=>{ rampe.rotation.z=THREE.MathUtils.degToRad(R.oppe_grader+(R.nede_grader-R.oppe_grader)*v); };   // v 0 = oppe, 1 = nede
+  rampeTil(1);
+  // åpent dekk mellom styrhuset og rampa, med rekke: tynne stolper og en topplist
+  const rx0=hl-fb-0.2, rx1=hx+hl2/2+0.1, rl=rx0-rx1;
+  [1,-1].forEach(sd=>{ kloss(rl, 0.05, 0.05, (rx0+rx1)/2, yd+M.rekke, sd*(hb-0.2), m(C.rekke)); for(let i=0;i<=3;i++) kloss(0.05, M.rekke, 0.05, rx1+rl*i/3, yd+M.rekke/2, sd*(hb-0.2), m(C.rekke)); });
+  [1,-1].forEach(sd=>kloss(0.05, 0.05, (B-0.4-R_B())/2, rx0, yd+M.rekke, sd*((B-0.4)/2-(B-0.4-R_B())/4), m(C.rekke)));   // tverrekke i baugen, åpning for rampa
+  g.scale.setScalar(F.skala||1); g.position.y=VANN_Y; scene.add(g);   // landemerke-skala (se data)
+  // banen: kubisk Bézier i modellplanet; p(t) og tangent
+  const [P0,P1,P2,P3]=F.bane.map(p=>new THREE.Vector2(p[0],p[1]));
+  const pos=t=>{ const u=1-t; return new THREE.Vector2().addScaledVector(P0,u*u*u).addScaledVector(P1,3*u*u*t).addScaledVector(P2,3*u*t*t).addScaledVector(P3,t*t*t); };
+  const tan=t=>{ const u=1-t; return new THREE.Vector2().addScaledVector(P1.clone().sub(P0),3*u*u).addScaledVector(P2.clone().sub(P1),6*u*t).addScaledVector(P3.clone().sub(P2),3*t*t).normalize(); };
+  let sist=-1;
+  // u = introens framdrift 0..1; ferga går fra fart.start til fart.slutt, med myk brems inn mot kaia (eksponentiell landing, teknikk 20)
+  let sistR=-1;
+  function til(u){ const r=THREE.MathUtils.clamp((u-R.ned[0])/(R.ned[1]-R.ned[0]),0,1); if(r!==sistR){ sistR=r; rampeTil(r*r*(3-2*r)); }
+    let a=THREE.MathUtils.clamp((u-F.fart.start)/(F.fart.slutt-F.fart.start),0,1); a=1-Math.pow(1-a,2.2); if(Math.abs(a-sist)<1e-5) return; sist=a;
+    const p=pos(a), d=tan(a); g.position.x=p.x; g.position.z=-p.y; g.rotation.y=Math.atan2(d.y,d.x);   // modell y nord = -z; baugen (+x) langs banen
+    g.position.y=VANN_Y+0.04*Math.sin(a*9);                                                            // svak dupp
+  }
+  til(1);
+  return {til, grp:g};
+})();
 
 </script>
 </body>
