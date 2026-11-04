@@ -21,7 +21,7 @@ function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p)
 // Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
 // kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.
 const kortInnhold=kort.querySelector('.innhold');
-const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false};
+const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false, ferge:null};
 const SIDEPANEL=window.matchMedia('(min-width: 720px)');
 const kameraNaa=()=>({center:map.getCenter(), zoom:map.getZoom(), bearing:map.getBearing(), pitch:map.getPitch()});
 function fyllKort(b){
@@ -56,7 +56,22 @@ function glidTilHus(g){
   if(Math.hypot(s.x-mx, s.y-my) < 0.12*Math.min(fri.x1-fri.x0, fri.y1-fri.y0) && zoom-map.getZoom()<0.05) return;
   glidKamera({center:ll, zoom, offset:[mx-innerWidth/2, my-innerHeight/2]}, 'hus');
 }
+// byfergene (22_byferga): kortet viser hvor båten er og de neste avgangene, og fylles på nytt mens det står åpent
+function fyllFergeKort(id){ const k=ferge.kort(id); if(!k) return;
+  kort.querySelector('h2').textContent=k.tittel; kort.querySelector('.a').textContent=k.a; kort.querySelector('.b').textContent=k.b;
+  const ul=kort.querySelector('.her'); ul.innerHTML=''; k.linjer.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
+  kort.querySelector('.ogsa').innerHTML=''; kort.querySelector('.ogsa-t').textContent=''; kort.querySelector('.farge').innerHTML=''; kort.querySelector('.id').textContent=k.id; }
+function velgFerge(id){
+  if(valgt){ valgt.userData.lift=false; valgt=null; }
+  const nytt=kort_.ferge!==id; kort_.ferge=id;
+  if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyllFergeKort(id); visKort(true); }
+  else if(nytt){ fyllFergeKort(id); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }
+  lenkeSkriv();
+}
+setInterval(()=>{ if(kort_.apent && kort_.ferge) fyllFergeKort(kort_.ferge); }, 10000);   // nye tider fra Entur fyller kortet med en gang (22_byferga)
+function treffFerge(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam); return ferge.treff(ray); }
 function velgHus(g){
+  kort_.ferge=null;
   if(valgt===g) return;
   if(valgt) valgt.userData.lift=false;
   valgt=g; g.userData.lift=true;
@@ -72,6 +87,7 @@ function visKort(vis){
 // lukk: tilbake=true glir kameraet tilbake dit det stod før kortet (om du ikke har flyttet kartet selv); fraHistorikk: nettleserens tilbake
 function lukkKort({tilbake=true, fraHistorikk=false}={}){
   if(valgt){ valgt.userData.lift=false; valgt=null; }
+  kort_.ferge=null;
   if(!kort_.apent) return;
   visKort(false);
   if(tilbake && kort_.forKamera && !kort_.egenFlytt) glidKamera(kort_.forKamera, 'tilbake');
@@ -84,7 +100,7 @@ addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkK
 // flytter du kartet selv mens kortet er åpent, blir kameraet der du la det når kortet lukkes (som Apple og Google Maps)
 map.on('movestart', e=>{ if(e.originalEvent && kort_.apent) kort_.egenFlytt=true; });
 function hjemNaa(){ lukkKort({tilbake:false}); glidKamera({...hjemVisning(), offset:[0,0]}, 'hjem'); }
-// «Hele byen» spiller introen på nytt (Vegar 04.11), på mobil og bred skjerm; Esc glir bare hjem som før
+// «Hele Gamlebyen» spiller introen på nytt (Vegar 04.11), på mobil og bred skjerm; Esc glir bare hjem som før
 hjem.onclick=()=>{ lukkKort({tilbake:false}); if(introDone) introIgjen(); else overta(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 // Esc: lukker kortet først (samme vei ut), neste Esc går hjem
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); if(kort_.apent) lukkKort(); else hjemNaa(); } });
@@ -98,6 +114,7 @@ map.on('click', e=>{ if(!introDone) return;
   const dobbel = naa-klikk.t < BEV.dobbelVindu && Math.hypot(p.x-klikk.x, p.y-klikk.y) < BEV.dobbelAvstand;
   if(dobbel){ klikk.t=-1e9; clearTimeout(lukkTimer); overta(); glidKamera({zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), around:e.lngLat}, 'dobbel'); return; }
   klikk.t=naa; klikk.x=p.x; klikk.y=p.y;
+  const fg=treffFerge(p.x,p.y); if(fg){ velgFerge(fg.id); return; }
   const h=treffHus(p.x,p.y); if(performance.now()-SLIPP.t<600) slippLogg(`klikk (${e.originalEvent.type}) ${h?'traff hus '+(h.g.userData.b.id||''):'traff ikke hus'}`);
   if(h) velgHus(h.g); else if(kort_.apent){ clearTimeout(lukkTimer); lukkTimer=setTimeout(()=>lukkKort(), BEV.dobbelVindu); }
 });
@@ -124,7 +141,7 @@ kort.addEventListener('pointerup', arkSlipp); kort.addEventListener('pointercanc
 let sisteHover=0;
 map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }
   const n=performance.now(); if(n-sisteHover<45) return; sisteHover=n;
-  const h=treffHus(e.point.x,e.point.y); hover=h?h.g:null; map.getCanvas().style.cursor=hover?'pointer':''; });
+  const h=treffHus(e.point.x,e.point.y); hover=h?h.g:null; map.getCanvas().style.cursor=(hover||treffFerge(e.point.x,e.point.y))?'pointer':''; });
 map.on('mouseout', ()=>{ hover=null; map.getCanvas().style.cursor=''; });
 // styreflate på Mac: to fingre flytter kartet (som Apple og Google Maps), klyp zoomer (ctrl+hjul), et musehjul zoomer.
 // Én gest er én ting: første hendelse avgjør, hendelser innen 120 ms arver valget.

@@ -1,27 +1,9 @@
 {
- "om": "Byferga som legger til fergeleiet i Gamlebyen i introen (Vegar 03.11.2026: «se byferga entre kaia i gamlebyen i introswipen»). Banen er en kubisk Bézier i modellkoordinater (x øst, y nord, meter) fra Sentrum-siden til kaiplassen mellom de to landgangene (data/brygger.json). Kaiplassen ligger 2,5 m utenfor landgangenes ytterender; retningen i mål er kaias retning. Formen er den enkleste (Vegars tegning 03.11 22:04): rødt skrog som dominerer, lang hvit salong med en rekke vinduer, styrhuset og det åpne dekket med rekke i enden mot rampa (baugen, flat), salongen i den andre enden der skroget er spisset (Vegar 03.11 22:46: «snu på den røde delen»). skala: ferga tegnes større enn målt, slik landemerkene gjør, fordi den skal ses i introsveipet; målene står urørt. Baugrampe (Vegar 03.11 22:07): ferga legger til med baugen mot kaia; rampa senkes ned på kaia når den er framme (rampe.ned, andel av introen), og står nede mens den ligger. Kaiplassen: baugen 1 m fra kaimuren midt mellom landgangene, banens sluttretning rett mot land.",
- "bane": [
-  [
-   -58,
-   368
-  ],
-  [
-   -10,
-   318
-  ],
-  [
-   23.6,
-   279
-  ],
-  [
-   40.6,
-   268.4
-  ]
- ],
+ "om": "Byfergene i Gamlebyen (Vegar 03.11 og 04.11.2026). To like båter (Vegar: «Båtene er helt like»), bygd etter Vegars tegning 03.11 22:04: rødt skrog som dominerer, lang hvit salong med en rekke vinduer, styrhuset og åpent dekk med rekke i enden mot rampa (baugen, flat), salongen i den spisse enden. Båtene går etter sanntid fra Entur (ruter, kaier og stoppesteder fra Nasjonalt stoppestedsregister), med rutetabellen i reserve når Entur ikke svarer. Gamlebyen fergeleie har to kaier: nordkaia (803 Gamlebyfergen, fram og tilbake til Cicignon) og sørkaia (805 Ålekilen-Sentrum: Smertu, Sentrum, Værste, Gressvik, Ålekilen). Båtene legger til med baugen mot kaia og rampa ned på flytebrygga; ut fra kai rygger de og svinger rundt. Kaiplassen: tuppen er landgangens ytre ende (data/brygger.json), ut er retningen ut fra land, baug er avstanden fra tuppen til baugen (flytebryggas ytterkant). skala: båtene tegnes større enn målt, som landemerkene; målene står urørt. Introen viser 803 sin siste overfart (eller den den er midt i) og lander der båten faktisk er når introen slutter.",
  "fart": {
   "start": 0.0,
   "slutt": 0.78,
-  "om": "andel av introsveipet (u) der ferga starter og ligger til kai; den bremser mykt inn de siste 25 %"
+  "om": "andel av introsveipet (u) der introens overfart starter og ender; den bremser mykt inn de siste 25 %. Er båten midt i en overfart når introen slutter, går overfarten over hele sveipet og ender der båten er."
  },
  "mål": {
   "lengde": 14.5,
@@ -75,8 +57,9 @@
   ]
  },
  "kilder": [
-  "data/brygger.json: landgang til fergeleiet Gamlebyen (sør) og (nord), landgang til fergeleiet Sentrum",
-  "data/vann.json: hele banen ligger i vann (sjekket 03.11, t=0 ligger 2 m inne på Sentrum-kaia og er skjult av sveipets start)"
+  "data/brygger.json: landgangene og flytebryggene ved fergeleiet Gamlebyen (nord og sør) og «landgang til fergeleiet Sentrum» (Cicignon)",
+  "Entur/NSR: NSR:StopPlace:2448 Gamlebyen fergeleie, NSR:Quay:4260 (nord, 803), NSR:Quay:4259 (sør, 805), NSR:Quay:4267 Cicignon, NSR:Quay:4251 Smertu (hentet 04.11.2026)",
+  "data/vann.json: hele veien til Smertu og overfarten ligger i vann (sjekket 04.11)"
  ],
  "skala": 1.8,
  "rampe": {
@@ -96,5 +79,150 @@
   ],
   "sekunder": 4.4,
   "om": "Introsveipet starter med kameraet over elva ved fergas bane (fra, modellkoordinater) og glir inn til hjemmevisningen mens det svinger (Vegar 03.11: «panorert lengre og kulere», ferga i sveipet). Sluttbildet er låst som før. Uten denne står kameraet stille over START hele sveipet."
+ },
+ "entur": {
+  "url": "https://api.entur.io/journey-planner/v3/graphql",
+  "klient": "pageblack-gamlebyen",
+  "hvert_sek": 120,
+  "bakover_min": 20,
+  "vindu_timer": 4,
+  "om": "Entur Journey Planner v3 (developer.entur.no). Hentes ved oppstart og hvert annet minutt; svarer ikke Entur innen 8 s, gjelder rutetabellen under."
+ },
+ "ruter": {
+  "803": {
+   "navn": "Gamlebyfergen",
+   "linje": "803",
+   "strekning": "Gamlebyen – Cicignon",
+   "kaier": {
+    "G": {
+     "quay": "NSR:Quay:4260",
+     "navn": "Gamlebyen",
+     "tupp": [
+      55.5,
+      281.5
+     ],
+     "ut": [
+      -0.7071,
+      0.7071
+     ],
+     "baug": 4
+    },
+    "C": {
+     "quay": "NSR:Quay:4267",
+     "navn": "Cicignon",
+     "tupp": [
+      -45.5,
+      370.5
+     ],
+     "ut": [
+      0.7071,
+      -0.7071
+     ],
+     "baug": 6
+    }
+   },
+   "ut_m": 25,
+   "snu_m": [
+    12,
+    80
+   ],
+   "reserve": {
+    "fra_C": "05:15",
+    "til_C": "24:00",
+    "hvert_min": 15,
+    "G_etter_min": 2,
+    "overfart_min": 1
+   },
+   "om": "Overfarten tar ett minutt i rutetabellen. Kaiene står mot hverandre over elva, så båten snur 180 grader på veien (snu_m: fra og til, meter langs veien)."
+  },
+  "805": {
+   "navn": "Byferga",
+   "linje": "805",
+   "strekning": "Gamlebyen – Smertu – Sentrum – Værste – Gressvik – Ålekilen",
+   "kai": {
+    "quay": "NSR:Quay:4259",
+    "navn": "Gamlebyen",
+    "tupp": [
+     37.5,
+     253
+    ],
+    "ut": [
+     -0.764,
+     0.646
+    ],
+    "baug": 5
+   },
+   "bak_m": 12,
+   "snu_m": [
+    6,
+    60
+   ],
+   "ut": [
+    [
+     -10,
+     255
+    ],
+    [
+     -60,
+     215
+    ],
+    [
+     -150,
+     195
+    ],
+    [
+     -300,
+     190
+    ],
+    [
+     -450,
+     186
+    ],
+    [
+     -661,
+     193
+    ]
+   ],
+   "inn": [
+    [
+     -661,
+     193
+    ],
+    [
+     -450,
+     186
+    ],
+    [
+     -300,
+     190
+    ],
+    [
+     -150,
+     195
+    ],
+    [
+     -60,
+     215
+    ],
+    [
+     -15,
+     240
+    ],
+    [
+     0,
+     268
+    ]
+   ],
+   "inn_kai_m": 14,
+   "til_smertu_min": 5,
+   "fra_smertu_min": 7,
+   "reserve": {
+    "fra": "06:00",
+    "til": "18:30",
+    "hvert_min": 30,
+    "ankomst_for_min": 8
+   },
+   "om": "Smertu fergeleie (NSR:Quay:4251) ligger i (-661, 193), utenfor papirkanten: båten forsvinner i papiret på vei dit og kommer ut av det på vei inn. Veien går sør for land ved x -400…-280 (data/vann.json, sjekket 04.11). Gangtid fra rutetabellen: 5 min til Smertu, 7 min fra Smertu."
+  }
  }
 }

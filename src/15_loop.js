@@ -20,7 +20,7 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
-  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true;
+  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true; ferge.intro(SPIN*1000);
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
@@ -33,7 +33,7 @@ function introIgjen(){
   clock.start();   // vokse() leser klokka fra null igjen
   buildings.forEach(g=>{ g.scale.y=0.001; g.position.y=0; husTil(g); });
   if(SOL_FAST && Q0.get('solintro')!=='0'){ solVei.ferdig=false; solVei.u=0; solStart(); }
-  ferge.til(0); skyggeSkitten=true;
+  skyggeSkitten=true;
   startIntro();
 }
 window.__introIgjen=introIgjen;
@@ -104,7 +104,7 @@ function oppdater(){
   buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
   if(!introDone) skyggeSkitten=true;
   solOppdater(dt); tiltOppdater(dt);
-  ferge.til(introDone ? 1 : (introStartet ? introU() : 0));   // byferga følger introsveipet (22_byferga)
+  ferge.til(introDone ? null : (introStartet ? introU() : 0));   // byfergene: introens overfart, så sanntid (22_byferga)
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
@@ -134,7 +134,7 @@ const byLag={ id:'byen', type:'custom', renderingMode:'3d',
 // ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet når vann er i bildet (vannet lever), ellers ikke (02.11)
 // (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (ferge.beveger() && naa-sistTegnet>33) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
 window.__klar=()=>vokst && introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
