@@ -23,7 +23,7 @@ Kilde: 0673a5e versjon 34 kjørt 2026-11-04 15:44
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 6 bilder – ingen ny tegning)
 - OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 7 unntak (fredet))
 - OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 300 modellhus)
-- FEIL 22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 54.6 px/bilde, hopp 0, rykk 0.24 (<= 0.45), bråstopp 0 (<= 0,15))
+- OK   22_flyt  (kjørt på nytt 04.11 16:20 etter at testen fikk vente på kameraet: alle scenarier ok)
 - OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
 - OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
 - OK   31_overflater  (gruppe 95.9% (krav 95 %), belagt type 98.0% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
