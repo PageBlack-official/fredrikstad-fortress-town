@@ -2904,7 +2904,7 @@ const ferge=(()=>{
     const kildeT = kilde==='entur' ? `Sanntid fra Entur, hentet ${kl(hentet)}` : 'Rutetabell (Entur svarer ikke nå)';
     return {tittel:ru.navn, a:`Linje ${ru.linje} • ${ru.strekning}`, b:status, linjer, id:kildeT};
   }
-  window.__ferge={turer:()=>turer, kilde:()=>kilde, tilstand:id=>baater[id].tilstand(klokke()), klokke, hent};
+  window.__ferge={turer:()=>turer, kilde:()=>kilde, tilstand:id=>baater[id].tilstand(klokke()), klokke, hent, vist:id=>baater[id].vist, skjerm:id=>{ const g=baater[id].g; return g.visible?window.__skjerm(g.position.x,g.position.z):null; }};
   til(null);
   return {til, intro:settIntro, beveger:()=>beveg, treff, kort, grupper};
 })();

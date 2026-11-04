@@ -1,14 +1,14 @@
 # Regelrapport
 
-Kilde: 0673a5e versjon 34 kjørt 2026-11-04 15:44
+Kilde: 3d08976 versjon 34 kjørt 2026-11-04 23:44
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
 - FEIL 03_fasader_fra_tegning  (158 hus med fasade fra tegning, 185 antatt (må kvalitetssikres kvartal for kvartal))
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(skalaStille) uavhengig av bevegelse)
-- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/wt-samlet/ut/enkel/index.html 3245 kB versjon 34)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az -0.98 zoom 0.67 → ferdig az -2.79 zoom 1.00 intro false)
+- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/wt-samlet/ut/enkel/index.html 3261 kB versjon 34)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az -1.09 zoom 0.69 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 34 (ønsket 34))
 - OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19097 px, trinn 2: 18460 px)
@@ -23,7 +23,7 @@ Kilde: 0673a5e versjon 34 kjørt 2026-11-04 15:44
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 6 bilder – ingen ny tegning)
 - OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 7 unntak (fredet))
 - OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 300 modellhus)
-- OK   22_flyt  (kjørt på nytt 04.11 16:20 etter at testen fikk vente på kameraet: alle scenarier ok)
+- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 56.6 px/bilde, hopp 0, rykk 0.21 (<= 0.45), bråstopp 0 (<= 0,15))
 - OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
 - OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
 - OK   31_overflater  (gruppe 95.9% (krav 95 %), belagt type 98.0% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
