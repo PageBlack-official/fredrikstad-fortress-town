@@ -52,9 +52,11 @@ let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, a
 // Måler tiden vår egen tegning tar (render(), CPU-siden), ikke avstanden mellom bildene: den styres også av verten og skjermen, og
 // lavere kvalitet hjelper ikke mot den. Introen (vekst + skygge hvert bilde) måles ikke; den er dyrere enn vanlig bruk.
 function maalYtelse(){ const n=performance.now(); perfLast=n; if(perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
-  const dt=window.__ramme||0;
+  // (04.11) tiden fra bilde til bilde, ikke prosessortiden i render(): på Vegars iPhone var render() 3 ms og «mellom bildene» 25 ms
+  // (grafikkortet venter), så måleren trodde alt var fint ved 38 bilder/s. Under 45 bilder/s i bevegelse trappes det ned ett trinn.
+  const dt=(window.__ramme||0)+(window.__mellom||0);
   perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
-    if(avg>30){ perfOnsket=Math.max(perfOnsket, perfNivaa+1); } } } }
+    if(avg>22){ perfOnsket=Math.max(perfOnsket, perfNivaa+1); } } } }
 // trinnene som egen funksjon, så de kan tvinges fram (?nivaa=2) og testes uten å vente på måleren
 function settNivaa(n){ perfNivaa=n;
   if(n===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning

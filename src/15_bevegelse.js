@@ -34,7 +34,7 @@ const BEV = {
 ['zoomIn','zoomOut'].forEach(f=>{ const o=map[f].bind(map); map[f]=(opt,ev)=>o({duration:BEV.kamera.knapp, easing:myk, ...(opt||{})}, ev); });
 ['resetNorth','resetNorthPitch'].forEach(f=>{ const o=map[f].bind(map); map[f]=(opt,ev)=>o({duration:BEV.kamera.hus, easing:glid, ...(opt||{})}, ev); });
 // ett kameraflytt: alltid avbrytbart (MapLibre stopper en pågående easeTo så snart en gest starter; en ny easeTo starter fra der kameraet er)
-function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: BEV.kamera[type], easing: glid}); }
+function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: BEV.kamera[type], easing: glid, __fra:type}); }
 
 // ---- treghet etter dra, klyp og vri (29.10) ----
 // MapLibre tar med 0,3 av farten fra klyp og vri (kan ikke stilles), og tregheten starter et bilde for sent, så det står ett bilde stille
@@ -44,6 +44,9 @@ function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: 
 // fingrene også mens tregheten virker. Vi kjenner igjen MapLibres treghetskall på at det er easeTo med noMoveStart + freezeElevation og en
 // slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
 let fingerNede=false;   // settes av berøringslytterne under; leses av tegneløkka (15_loop) og skyggekartet (02_lys)
+// slipplogg (04.11, Vegar: «den flytter seg fremdeles når jeg slipper tommelen»): hvert slipp og hvert kameraflytt de neste 600 ms
+// skrives her med hvem som utløste det, og vises i feilsøkingsruta (?d=1). Måling før gjetning.
+const SLIPP={t:0, rader:[]}; const slippLogg=(tekst)=>{ SLIPP.rader.push(`${((performance.now()-SLIPP.t)|0)} ms: ${tekst}`); if(SLIPP.rader.length>8) SLIPP.rader.shift(); };
 const treghet=(()=>{
   const T=BEV.treghet, kam=[], fing=[]; let rid=0, anim=null;
   const kort=(a,tid)=>{ while(a.length>2 && tid-a[0].t>200) a.shift(); };
@@ -83,6 +86,7 @@ const treghet=(()=>{
   map.easeTo=(opt,ev)=>{
     if(anim && !(opt && opt.duration===0)) stopp();   // et nytt kameraflytt avbryter tregheten (våre egne trinn har duration 0)
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
+    if(!slipp && opt && opt.duration!==0 && performance.now()-SLIPP.t<600) slippLogg(`easeTo fra ${opt.__fra||(ev&&ev.originalEvent?ev.originalEvent.type:'ukjent')}: varighet ${opt.duration|0}${opt.center?' senter':''}${opt.zoom!==undefined?' zoom':''}${opt.bearing!==undefined?' vri':''}`);
     if(!slipp) return easeTo0(opt,ev);
     const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
     // Slipp-tiden leses av selve berøringshendelsen (timeStamp, samme klokke som performance.now), ikke av når kartet rakk å behandle den.
@@ -92,16 +96,22 @@ const treghet=(()=>{
     // ligget stille mer enn vinduet før den løftet, er det et dødt stopp, uansett hvor sent kartet behandler slippet. Mus: MapLibre avgjør.
     const loft=(ev.originalEvent.timeStamp>0 && ev.originalEvent.timeStamp<naa+1) ? ev.originalEvent.timeStamp : naa;
     const beroring=String(ev.originalEvent.type).startsWith('touch');
-    if(loft-siste>T.vindu+20){ kam.length=0; fing.length=0; return beroring ? map : easeTo0(opt,ev); }   // holdt stille før slipp
+    SLIPP.t=naa; SLIPP.rader.length=0; SLIPP.p0=map.getCenter(); slippLogg(`slipp (${ev.originalEvent.type}): stille ${(loft-siste)|0} ms før løft, behandlet ${(naa-loft)|0} ms etter, fingerpunkter ${fing.length}, timeStamp ${ev.originalEvent.timeStamp>0&&ev.originalEvent.timeStamp<naa+1?'ok':'ubrukelig'}`);
+    if(loft-siste>T.vindu+20){ kam.length=0; fing.length=0; slippLogg(beroring ? 'dødt stopp (vår)' : 'MapLibre avgjør (mus)'); return beroring ? map : easeTo0(opt,ev); }   // holdt stille før slipp
     const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
     if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
     if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }
     kam.length=0; fing.length=0;
-    if(!(A.vx||A.vy||A.vz||A.vb||A.vp)) return easeTo0(opt,ev);
+    slippLogg(`fart vår: x ${A.vx|0} y ${A.vy|0} px/s, zoom ${A.vz.toFixed(2)}, vri ${A.vb|0}, vipp ${A.vp|0}`);
+    if(!(A.vx||A.vy||A.vz||A.vb||A.vp)){ slippLogg('ingen fart: MapLibre avgjør'); return easeTo0(opt,ev); }
     stopp(); anim=A; A.g=(naa-siste)/1000/(T.k*T.tau);
     sett(A.g);   // MapLibre kaller dette i bildet der slippet behandles: flytt med en gang, så dette bildet ikke står stille
     rid=requestAnimationFrame(steg); return map;
   };
+  const jumpTo0=map.jumpTo.bind(map); map.jumpTo=(opt,ev)=>{ if(performance.now()-SLIPP.t<600) slippLogg('jumpTo'); return jumpTo0(opt,ev); };
+  const panBy0=map.panBy.bind(map); map.panBy=(o,opt,ev)=>{ if(!anim && performance.now()-SLIPP.t<600) slippLogg(`panBy ${o[0]|0},${o[1]|0}`); return panBy0(o,opt,ev); };
+  map.on('moveend', ()=>{ if(performance.now()-SLIPP.t<2000) slippLogg(`moveend, senter flyttet ${SLIPP.p0 ? Math.hypot(map.project(SLIPP.p0).x-innerWidth/2, map.project(SLIPP.p0).y-innerHeight/2)|0 : '?'} px siden slippet`); });
+  map.on('movestart', e=>{ if(performance.now()-SLIPP.t<600) slippLogg(`movestart (${e.originalEvent?e.originalEvent.type:'program'})`); });
   return {stopp};
 })();
 
