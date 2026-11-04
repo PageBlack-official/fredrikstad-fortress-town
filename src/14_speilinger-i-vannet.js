@@ -45,7 +45,7 @@ const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.
 // Trinnet gjelder både i fart og i ro, så bildet aldri bytter utseende når en gest starter eller slutter.
-let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0;
+let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0; let perfOnsket=0;   // trinnet måleren vil ha; settes først når kartet står (15_loop)
 function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
 let ssStille=4;
 let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
@@ -54,7 +54,7 @@ let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, a
 function maalYtelse(){ const n=performance.now(); perfLast=n; if(perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
   const dt=window.__ramme||0;
   perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
-    if(avg>30){ settNivaa(perfNivaa+1); } } } }
+    if(avg>30){ perfOnsket=Math.max(perfOnsket, perfNivaa+1); } } } }
 // trinnene som egen funksjon, så de kan tvinges fram (?nivaa=2) og testes uten å vente på måleren
 function settNivaa(n){ perfNivaa=n;
   if(n===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning

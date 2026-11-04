@@ -43,6 +43,7 @@ function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: 
 // bilde etter slipp fortsetter med samme fart. Zoom og vri skjer rundt punktet mellom fingrene (MapLibres «around»), så det står under
 // fingrene også mens tregheten virker. Vi kjenner igjen MapLibres treghetskall på at det er easeTo med noMoveStart + freezeElevation og en
 // slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
+let fingerNede=false;   // settes av berøringslytterne under; leses av tegneløkka (15_loop) og skyggekartet (02_lys)
 const treghet=(()=>{
   const T=BEV.treghet, kam=[], fing=[]; let rid=0, anim=null;
   const kort=(a,tid)=>{ while(a.length>2 && tid-a[0].t>200) a.shift(); };
@@ -55,20 +56,22 @@ const treghet=(()=>{
   // slipper tomlene» = den ene tommelen slapp først). Derfor skjøtes målingen: forskyvningen legges til de nye punktene, så farten fra
   // hånda fortsetter uten hoppet. Testen er verktoy/tomler_test.mjs.
   let antall=0, skjot=null, fx=0, fy=0;
+  // fingerNede: minst én finger er på kartet (leses av 15_loop og 02_lys: ingen tunge pass mens fingeren er nede, 04.11)
+  const settFinger=e=>{ fingerNede=e.touches.length>0; };
   const midt=e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } return [x/e.touches.length, y/e.touches.length]; };
   const nyttAntall=e=>{ if(e.touches.length===antall) return; antall=e.touches.length; if(antall>0 && fing.length) skjot=fing[fing.length-1]; };
   el.addEventListener('touchmove', e=>{ if(!e.touches.length) return; nyttAntall(e); const [x,y]=midt(e);
     if(skjot){ fx=skjot.x-x; fy=skjot.y-y; skjot=null; }   // første punkt etter skiftet står der det forrige sluttet
     fingre(x+fx, y+fy); }, {capture:true, passive:true});
-  el.addEventListener('touchstart', e=>{ if(e.touches.length===e.changedTouches.length){ fing.length=0; fx=fy=0; skjot=null; antall=e.touches.length; if(antall===1) stopp(); } else nyttAntall(e); }, {capture:true, passive:true});   // ny gest: alle fingrene er nye
-  el.addEventListener('touchend', e=>nyttAntall(e), {capture:true, passive:true});
-  el.addEventListener('touchcancel', e=>nyttAntall(e), {capture:true, passive:true});
+  el.addEventListener('touchstart', e=>{ settFinger(e); if(e.touches.length===e.changedTouches.length){ fing.length=0; fx=fy=0; skjot=null; antall=e.touches.length; if(antall===1) stopp(); } else nyttAntall(e); }, {capture:true, passive:true});   // ny gest: alle fingrene er nye
+  el.addEventListener('touchend', e=>{ settFinger(e); nyttAntall(e); }, {capture:true, passive:true});
+  el.addEventListener('touchcancel', e=>{ settFinger(e); nyttAntall(e); }, {capture:true, passive:true});
   el.addEventListener('pointermove', e=>{ if(e.pointerType==='mouse' && e.buttons) fingre(e.clientX, e.clientY); }, {capture:true, passive:true});
   el.addEventListener('pointerdown', ()=>{ stopp(); kam.length=0; fing.length=0; }, {capture:true, passive:true});
   el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
   const F=s=>1-Math.exp(-T.k*s);
   const kl=(x,m)=>Math.max(-m,Math.min(m,x));
-  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=Math.max(T.vindu, 3*(window.__ramme||0)+40)); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
+  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=T.vindu); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
   function steg(){ rid=0; if(!anim) return; const s=Math.min(1+anim.g, (performance.now()-anim.t0)/1000/(T.k*T.tau)); sett(s); if(s<1+anim.g) rid=requestAnimationFrame(steg); else anim=null; }
   function sett(s){ const A=anim, ut=T.tau*F(s), d=ut-A.ut; A.ut=ut;
     const o={duration:0}; if(A.vz) o.zoom=map.getZoom()+A.vz*d; if(A.vb) o.bearing=map.getBearing()+A.vb*d; if(A.vp) o.pitch=map.getPitch()+A.vp*d;
@@ -82,11 +85,14 @@ const treghet=(()=>{
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
     if(!slipp) return easeTo0(opt,ev);
     const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
-    // Vinduet vokser med bildetiden: på en treg telefon kan slippet behandles 100–200 ms etter siste fingerpunkt (bildet tok så lang tid),
-    // og da slapp vi gjennom til MapLibres treghet, som regner farten med tommelhoppet inne (sprett ved slipp, Vegar 03.11 via datteren).
-    // Berøring som har stått stille lenger enn det får ingen treghet i det hele tatt: et dødt stopp er riktig, et sprett er feil.
-    const vindu=Math.max(T.vindu, 3*(window.__ramme||0)+40);
-    if(naa-siste>vindu+20){ kam.length=0; fing.length=0; return ev.originalEvent.type.startsWith('touch') ? map : easeTo0(opt,ev); }   // holdt stille før slipp
+    // Slipp-tiden leses av selve berøringshendelsen (timeStamp, samme klokke som performance.now), ikke av når kartet rakk å behandle den.
+    // På en treg telefon kan behandlingen komme 100–300 ms etter at fingeren løftet; da gikk vi (02.11) til MapLibres treghet, som regner
+    // farten med tommelhoppet inne (sprett). Natt til 04.11 lot jeg i stedet målevinduet vokse med bildetiden, og da fikk en finger som
+    // hadde STOPPET fart fra bevegelsen før stoppet (Vegar 04.11: «kartet glir litt mot høyre» når tommelen slipper). Nå: har fingeren
+    // ligget stille mer enn vinduet før den løftet, er det et dødt stopp, uansett hvor sent kartet behandler slippet. Mus: MapLibre avgjør.
+    const loft=(ev.originalEvent.timeStamp>0 && ev.originalEvent.timeStamp<naa+1) ? ev.originalEvent.timeStamp : naa;
+    const beroring=String(ev.originalEvent.type).startsWith('touch');
+    if(loft-siste>T.vindu+20){ kam.length=0; fing.length=0; return beroring ? map : easeTo0(opt,ev); }   // holdt stille før slipp
     const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
     if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
     if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }

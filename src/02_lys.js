@@ -65,7 +65,7 @@ function oppdaterSol(){
   // myke grunner (litt snudd, hus som glir) ventes med til 150 ms har gått mens kameraet er i fart, så et dra ikke tegner skyggekartet hvert bilde;
   // står kameraet stille, tegnes det med en gang, så det siste bildet alltid er riktig
   const naa=performance.now();
-  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150 && introDone) grunn='';   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
+  if((grunn==='snudd' || grunn==='by') && introDone && ((kameraBeveget && naa-dekning.sist<150) || fingerNede)) grunn='';   // (04.11) og aldri mens en finger er nede: skyggekartet tegnes når du slipper   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
   if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
     // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
     // marginen ofte, og hver ny tegning med ny skala og nytt senter flyttet tekselrutenettet, så de myke kantene krøp. Nå er

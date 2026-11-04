@@ -25,6 +25,18 @@ function startIntro(){
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ if(introDone) return; introDone=true; map.stop(); }
+// introen om igjen (Vegar 04.11: «når man klikker på hele byen ønsker jeg at introen starter igjen»): samme løp som ved lasting,
+// husene vokser opp, sola finner byen, ferga krysser. Kortet lukkes og huset slippes først (16_interaksjon kaller hit).
+function introIgjen(){
+  map.stop(); treghet.stopp(); hjulZoom.stopp();
+  introDone=false; introStartet=false; introKjort=false; vokst=false; tiltU=0; tiltAv.b0=null; tiltAv.s=0; speilInn=0; speilFrisk=false;
+  clock.start();   // vokse() leser klokka fra null igjen
+  buildings.forEach(g=>{ g.scale.y=0.001; g.position.y=0; husTil(g); });
+  if(SOL_FAST && Q0.get('solintro')!=='0'){ solVei.ferdig=false; solVei.u=0; solStart(); }
+  ferge.til(0); skyggeSkitten=true;
+  startIntro();
+}
+window.__introIgjen=introIgjen;
 // ---- Sola finner byen (28.10, Vegar: «A») ----
 // Introen starter overskyet: tegningens to toner, ingen kastskygger, litt kjøligere. Mens kameraet svinger inn, vandrer en solkant
 // over byen fra solsiden (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de
@@ -106,7 +118,8 @@ function oppdater(){
   if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
     if(!vannISyne()) speilFrisk=false;
     else if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
-    else { speilFrisk=false; if(naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }
+    else { speilFrisk=false; if(!fingerNede && naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }   // (04.11) aldri et speilpass mens en finger er nede: det var støtene som hakket på telefonen; det forrige speilet følger kameraet imens
+  if(perfOnsket>perfNivaa && stille && !fingerNede) settNivaa(perfOnsket);   // (04.11) kvalitetstrinnet byttes bare når kartet står: midt i et dra kjentes det som at kartet «hentet seg inn»
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
   sistTegnet=naa; fullTegnet=stille && !husBeveger;
   dbgTegn(naa);

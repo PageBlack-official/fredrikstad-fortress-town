@@ -17,8 +17,9 @@ await page.waitForFunction(()=>window.__klar && window.__klar(), null, {timeout:
 let feil=0;
 // Den aller første gesten etter lasting gir 1 px uansett versjon (sett 03.11 på c769e9a og eldre, også etter at siden er klar), så
 // den kjøres som oppvarming og telles ikke. Årsaken er ikke funnet; skal den finnes, er det her den ligger.
-for(const [navn, forst, en] of [['oppvarming (telles ikke)',0,true],['én finger, kontroll: ekte kast virker',0,true],['venstre tommel slipper først',0,false],['høyre tommel slipper først',1,false],['venstre tommel slipper først, igjen',0,false]]){
-  const r=await page.evaluate(async ([forst,en])=>{
+// stille: fingeren holdes i ro så lenge (ms) før den løfter; da skal kartet ikke gli (Vegar 04.11: «glir litt mot høyre» når tommelen slipper)
+for(const [navn, forst, en, stille] of [['oppvarming (telles ikke)',0,true,0],['én finger, kontroll: ekte kast virker',0,true,0],['venstre tommel slipper først',0,false,0],['høyre tommel slipper først',1,false,0],['venstre tommel slipper først, igjen',0,false,0],['én finger, holdt stille 250 ms før slipp: ingen glidning',0,true,250]]){
+  const r=await page.evaluate(async ([forst,en,stille])=>{
     const el=map.getCanvasContainer(), ref=map.getCenter();
     const vent=ms=>{ const t=performance.now(); while(performance.now()-t<ms); };
     const T=(id,x,y)=>new Touch({identifier:id, target:el, clientX:x, clientY:y});
@@ -29,14 +30,15 @@ for(const [navn, forst, en] of [['oppvarming (telles ikke)',0,true],['én finger
     for(let i=0;i<10;i++){ vent(10); dx+=v*10; send('touchmove', pts(dx)); }
     if(!en){ const igjen = forst===0 ? [T(1,B[0]+dx,B[1])] : [T(0,A[0]+dx,A[1])];
       send('touchend', igjen); vent(10); dx+=v*10; send('touchmove', forst===0 ? [T(1,B[0]+dx,B[1])] : [T(0,A[0]+dx,A[1])]); }
-    vent(5); send('touchend', []);
+    vent(5+stille); send('touchend', []); const loft=performance.now();
     map.jumpTo({center:ref}); const p0=map.project(ref);
-    map.easeTo({center:map.getCenter(), noMoveStart:true, freezeElevation:true, duration:500}, {originalEvent:{type:'touchend'}});
+    vent(120);   // en treg telefon behandler slippet lenge etter at fingeren løftet; slipp-tiden er hendelsens timeStamp, ikke nå
+    map.easeTo({center:map.getCenter(), noMoveStart:true, freezeElevation:true, duration:500}, {originalEvent:{type:'touchend', timeStamp:loft}});
     await new Promise(r=>setTimeout(r,12000)); const p1=map.project(ref);
     return {dx:p1.x-p0.x, dy:p1.y-p0.y};
-  }, [forst,en]);
+  }, [forst,en,stille]);
   const hopp=Math.hypot(r.dx,r.dy), legit=150*0.26;   // ekte fart × tau (BEV.treghet)
-  const ok = en ? hopp>legit*0.5 && hopp<legit*2 : hopp<legit*2;
+  const ok = stille ? hopp<5 : en ? hopp>legit*0.5 && hopp<legit*2 : hopp<legit*2;
   if(!ok && !navn.startsWith('oppvarming')) feil++;
   console.log(`${ok?'OK  ':'FEIL'} ${navn}: kartet gled ${hopp.toFixed(0)} px etter slipp (${r.dx.toFixed(0)}, ${r.dy.toFixed(0)}); ekte fart gir ca. ${legit.toFixed(0)} px`);
 }

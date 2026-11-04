@@ -84,7 +84,8 @@ addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkK
 // flytter du kartet selv mens kortet er åpent, blir kameraet der du la det når kortet lukkes (som Apple og Google Maps)
 map.on('movestart', e=>{ if(e.originalEvent && kort_.apent) kort_.egenFlytt=true; });
 function hjemNaa(){ lukkKort({tilbake:false}); glidKamera({...hjemVisning(), offset:[0,0]}, 'hjem'); }
-hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
+// «Hele byen» spiller introen på nytt (Vegar 04.11), på mobil og bred skjerm; Esc glir bare hjem som før
+hjem.onclick=()=>{ lukkKort({tilbake:false}); if(introDone) introIgjen(); else overta(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 // Esc: lukker kortet først (samme vei ut), neste Esc går hjem
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); if(kort_.apent) lukkKort(); else hjemNaa(); } });
 kort.querySelector('.lukk').onclick=()=>lukkKort();
