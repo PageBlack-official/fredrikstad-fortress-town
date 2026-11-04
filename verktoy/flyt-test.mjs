@@ -165,6 +165,10 @@ if (['mtrykk', 'klyp', 'vri', 'mdobbel', 'ark'].some(ok)) {
       res.scenarier.ark = { folgerFingeren: +(spor.at(-1) - k1.kort.top).toFixed(0), lukket: !k2.kort.vis, kortUt: await kortLogg(page) };
     }
     // tilbake (Android-tilbake / nettleserens tilbake) lukker kortet i stedet for å forlate siden
+    // (04.11) venter til kameraet står: etter at arket ble dratt ned, glir kameraet tilbake i 912 ms, og testen ventet 900. Da ble kirkas
+    // skjermplass regnet midt i glidningen, trykket bommet, og regelen ble rød uten at kartet hadde endret seg.
+    for (let i = 0; i < 60 && await page.evaluate(() => window.map.isMoving()); i++) await kjor(page, BILDE);   // klokka er styrt: steg bilde for bilde til kameraet står
+    await kjor(page, 200);
     const kp2 = await skjerm(page, ...KIRKE); await page.touchscreen.tap(kp2[0], kp2[1]); await kjor(page, 2400);
     const harState = await page.evaluate(() => !!(history.state && history.state.kort));
     if (harState) { await page.evaluate(() => history.back()); await kjor(page, 1200); }
