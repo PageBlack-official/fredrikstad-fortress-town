@@ -1,10 +1,10 @@
 # 07_ingen_feil_i_bruk: OK
 
-- intro: underveis az -0.97 zoom 0.67 → ferdig az -2.79 zoom 1.00 intro false
+- intro: underveis az -1.02 zoom 0.68 → ferdig az -2.79 zoom 1.00 intro false
 - klikk kirka: {"vis":true,"navn":"Kirken"}
-- esc → hjem: x 25.0 z -25.0 zoom 1.00 kort vis false
-- styreflate-dra: x 25.0 z -25.0 zoom 1.00
-- hjul: zoom 1.00
-- dobbeltklikk: zoom 1.00 kort vis false
-- musedra: x 181.2 z -7.9 az -2.79
+- esc → hjem: x 33.2 z 41.2 zoom 1.84 kort vis false
+- styreflate-dra: x 33.2 z 41.2 zoom 1.84
+- hjul: zoom 1.84
+- dobbeltklikk: zoom 1.84 kort vis true
+- musedra: x 103.7 z 47.0 az -2.79
 - feil []

@@ -1,4 +1,4 @@
 # 09_publisert: FEIL
 
-- Pages: versjon 32 (ønsket 34)
+- Pages: versjon 34 (ønsket 34)
 - artefaktbygg: fil mangler
