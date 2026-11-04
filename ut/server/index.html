@@ -380,7 +380,7 @@ function oppdaterSol(){
   // myke grunner (litt snudd, hus som glir) ventes med til 150 ms har gått mens kameraet er i fart, så et dra ikke tegner skyggekartet hvert bilde;
   // står kameraet stille, tegnes det med en gang, så det siste bildet alltid er riktig
   const naa=performance.now();
-  if((grunn==='snudd' || grunn==='by') && kameraBeveget && naa-dekning.sist<150 && introDone) grunn='';   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
+  if((grunn==='snudd' || grunn==='by') && introDone && ((kameraBeveget && naa-dekning.sist<150) || fingerNede)) grunn='';   // (04.11) og aldri mens en finger er nede: skyggekartet tegnes når du slipper   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
   if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
     // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
     // marginen ofte, og hver ny tegning med ny skala og nytt senter flyttet tekselrutenettet, så de myke kantene krøp. Nå er
@@ -1831,7 +1831,7 @@ const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 // ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.
 // Trinnet gjelder både i fart og i ro, så bildet aldri bytter utseende når en gest starter eller slutter.
-let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0;
+let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0; let perfOnsket=0;   // trinnet måleren vil ha; settes først når kartet står (15_loop)
 function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
 let ssStille=4;
 let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
@@ -1840,7 +1840,7 @@ let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, a
 function maalYtelse(){ const n=performance.now(); perfLast=n; if(perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
   const dt=window.__ramme||0;
   perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
-    if(avg>30){ settNivaa(perfNivaa+1); } } } }
+    if(avg>30){ perfOnsket=Math.max(perfOnsket, perfNivaa+1); } } } }
 // trinnene som egen funksjon, så de kan tvinges fram (?nivaa=2) og testes uten å vente på måleren
 function settNivaa(n){ perfNivaa=n;
   if(n===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning
@@ -1893,6 +1893,7 @@ function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: 
 // bilde etter slipp fortsetter med samme fart. Zoom og vri skjer rundt punktet mellom fingrene (MapLibres «around»), så det står under
 // fingrene også mens tregheten virker. Vi kjenner igjen MapLibres treghetskall på at det er easeTo med noMoveStart + freezeElevation og en
 // slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
+let fingerNede=false;   // settes av berøringslytterne under; leses av tegneløkka (15_loop) og skyggekartet (02_lys)
 const treghet=(()=>{
   const T=BEV.treghet, kam=[], fing=[]; let rid=0, anim=null;
   const kort=(a,tid)=>{ while(a.length>2 && tid-a[0].t>200) a.shift(); };
@@ -1905,20 +1906,22 @@ const treghet=(()=>{
   // slipper tomlene» = den ene tommelen slapp først). Derfor skjøtes målingen: forskyvningen legges til de nye punktene, så farten fra
   // hånda fortsetter uten hoppet. Testen er verktoy/tomler_test.mjs.
   let antall=0, skjot=null, fx=0, fy=0;
+  // fingerNede: minst én finger er på kartet (leses av 15_loop og 02_lys: ingen tunge pass mens fingeren er nede, 04.11)
+  const settFinger=e=>{ fingerNede=e.touches.length>0; };
   const midt=e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } return [x/e.touches.length, y/e.touches.length]; };
   const nyttAntall=e=>{ if(e.touches.length===antall) return; antall=e.touches.length; if(antall>0 && fing.length) skjot=fing[fing.length-1]; };
   el.addEventListener('touchmove', e=>{ if(!e.touches.length) return; nyttAntall(e); const [x,y]=midt(e);
     if(skjot){ fx=skjot.x-x; fy=skjot.y-y; skjot=null; }   // første punkt etter skiftet står der det forrige sluttet
     fingre(x+fx, y+fy); }, {capture:true, passive:true});
-  el.addEventListener('touchstart', e=>{ if(e.touches.length===e.changedTouches.length){ fing.length=0; fx=fy=0; skjot=null; antall=e.touches.length; if(antall===1) stopp(); } else nyttAntall(e); }, {capture:true, passive:true});   // ny gest: alle fingrene er nye
-  el.addEventListener('touchend', e=>nyttAntall(e), {capture:true, passive:true});
-  el.addEventListener('touchcancel', e=>nyttAntall(e), {capture:true, passive:true});
+  el.addEventListener('touchstart', e=>{ settFinger(e); if(e.touches.length===e.changedTouches.length){ fing.length=0; fx=fy=0; skjot=null; antall=e.touches.length; if(antall===1) stopp(); } else nyttAntall(e); }, {capture:true, passive:true});   // ny gest: alle fingrene er nye
+  el.addEventListener('touchend', e=>{ settFinger(e); nyttAntall(e); }, {capture:true, passive:true});
+  el.addEventListener('touchcancel', e=>{ settFinger(e); nyttAntall(e); }, {capture:true, passive:true});
   el.addEventListener('pointermove', e=>{ if(e.pointerType==='mouse' && e.buttons) fingre(e.clientX, e.clientY); }, {capture:true, passive:true});
   el.addEventListener('pointerdown', ()=>{ stopp(); kam.length=0; fing.length=0; }, {capture:true, passive:true});
   el.addEventListener('wheel', ()=>stopp(), {capture:true, passive:true});
   const F=s=>1-Math.exp(-T.k*s);
   const kl=(x,m)=>Math.max(-m,Math.min(m,x));
-  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=Math.max(T.vindu, 3*(window.__ramme||0)+40)); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
+  const fart=(a,f,m)=>{ const siste=a[a.length-1]; const v=a.filter(x=>siste.t-x.t<=T.vindu); const forste=v[0]; const dt=(siste.t-forste.t)/1000; return dt<0.008 ? 0 : kl(f(siste,forste)/dt, m); };
   function steg(){ rid=0; if(!anim) return; const s=Math.min(1+anim.g, (performance.now()-anim.t0)/1000/(T.k*T.tau)); sett(s); if(s<1+anim.g) rid=requestAnimationFrame(steg); else anim=null; }
   function sett(s){ const A=anim, ut=T.tau*F(s), d=ut-A.ut; A.ut=ut;
     const o={duration:0}; if(A.vz) o.zoom=map.getZoom()+A.vz*d; if(A.vb) o.bearing=map.getBearing()+A.vb*d; if(A.vp) o.pitch=map.getPitch()+A.vp*d;
@@ -1932,11 +1935,14 @@ const treghet=(()=>{
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
     if(!slipp) return easeTo0(opt,ev);
     const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
-    // Vinduet vokser med bildetiden: på en treg telefon kan slippet behandles 100–200 ms etter siste fingerpunkt (bildet tok så lang tid),
-    // og da slapp vi gjennom til MapLibres treghet, som regner farten med tommelhoppet inne (sprett ved slipp, Vegar 03.11 via datteren).
-    // Berøring som har stått stille lenger enn det får ingen treghet i det hele tatt: et dødt stopp er riktig, et sprett er feil.
-    const vindu=Math.max(T.vindu, 3*(window.__ramme||0)+40);
-    if(naa-siste>vindu+20){ kam.length=0; fing.length=0; return ev.originalEvent.type.startsWith('touch') ? map : easeTo0(opt,ev); }   // holdt stille før slipp
+    // Slipp-tiden leses av selve berøringshendelsen (timeStamp, samme klokke som performance.now), ikke av når kartet rakk å behandle den.
+    // På en treg telefon kan behandlingen komme 100–300 ms etter at fingeren løftet; da gikk vi (02.11) til MapLibres treghet, som regner
+    // farten med tommelhoppet inne (sprett). Natt til 04.11 lot jeg i stedet målevinduet vokse med bildetiden, og da fikk en finger som
+    // hadde STOPPET fart fra bevegelsen før stoppet (Vegar 04.11: «kartet glir litt mot høyre» når tommelen slipper). Nå: har fingeren
+    // ligget stille mer enn vinduet før den løftet, er det et dødt stopp, uansett hvor sent kartet behandler slippet. Mus: MapLibre avgjør.
+    const loft=(ev.originalEvent.timeStamp>0 && ev.originalEvent.timeStamp<naa+1) ? ev.originalEvent.timeStamp : naa;
+    const beroring=String(ev.originalEvent.type).startsWith('touch');
+    if(loft-siste>T.vindu+20){ kam.length=0; fing.length=0; return beroring ? map : easeTo0(opt,ev); }   // holdt stille før slipp
     const A={t0:siste, ut:0, ev, around:opt.around||null, vx:0, vy:0, vz:0, vb:0, vp:0};
     if(opt.center!==undefined && fing.length>1){ A.vx=fart(fing,(a,b)=>a.x-b.x,T.maks.pan); A.vy=fart(fing,(a,b)=>a.y-b.y,T.maks.pan); }
     if(kam.length>1){ if(opt.zoom!==undefined) A.vz=fart(kam,(a,b)=>a.z-b.z,T.maks.zoom); if(opt.bearing!==undefined) A.vb=fart(kam,(a,b)=>((a.b-b.b)%360+540)%360-180,T.maks.bearing); if(opt.pitch!==undefined) A.vp=fart(kam,(a,b)=>a.p-b.p,T.maks.pitch); }
@@ -2066,6 +2072,18 @@ function startIntro(){
   map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ if(introDone) return; introDone=true; map.stop(); }
+// introen om igjen (Vegar 04.11: «når man klikker på hele byen ønsker jeg at introen starter igjen»): samme løp som ved lasting,
+// husene vokser opp, sola finner byen, ferga krysser. Kortet lukkes og huset slippes først (16_interaksjon kaller hit).
+function introIgjen(){
+  map.stop(); treghet.stopp(); hjulZoom.stopp();
+  introDone=false; introStartet=false; introKjort=false; vokst=false; tiltU=0; tiltAv.b0=null; tiltAv.s=0; speilInn=0; speilFrisk=false;
+  clock.start();   // vokse() leser klokka fra null igjen
+  buildings.forEach(g=>{ g.scale.y=0.001; g.position.y=0; husTil(g); });
+  if(SOL_FAST && Q0.get('solintro')!=='0'){ solVei.ferdig=false; solVei.u=0; solStart(); }
+  ferge.til(0); skyggeSkitten=true;
+  startIntro();
+}
+window.__introIgjen=introIgjen;
 // ---- Sola finner byen (28.10, Vegar: «A») ----
 // Introen starter overskyet: tegningens to toner, ingen kastskygger, litt kjøligere. Mens kameraet svinger inn, vandrer en solkant
 // over byen fra solsiden (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de
@@ -2147,7 +2165,8 @@ function oppdater(){
   if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
     if(!vannISyne()) speilFrisk=false;
     else if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
-    else { speilFrisk=false; if(naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }
+    else { speilFrisk=false; if(!fingerNede && naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }   // (04.11) aldri et speilpass mens en finger er nede: det var støtene som hakket på telefonen; det forrige speilet følger kameraet imens
+  if(perfOnsket>perfNivaa && stille && !fingerNede) settNivaa(perfOnsket);   // (04.11) kvalitetstrinnet byttes bare når kartet står: midt i et dra kjentes det som at kartet «hentet seg inn»
   waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
   sistTegnet=naa; fullTegnet=stille && !husBeveger;
   dbgTegn(naa);
@@ -2269,7 +2288,8 @@ addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkK
 // flytter du kartet selv mens kortet er åpent, blir kameraet der du la det når kortet lukkes (som Apple og Google Maps)
 map.on('movestart', e=>{ if(e.originalEvent && kort_.apent) kort_.egenFlytt=true; });
 function hjemNaa(){ lukkKort({tilbake:false}); glidKamera({...hjemVisning(), offset:[0,0]}, 'hjem'); }
-hjem.onclick=()=>{ overta(); hjemNaa(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
+// «Hele byen» spiller introen på nytt (Vegar 04.11), på mobil og bred skjerm; Esc glir bare hjem som før
+hjem.onclick=()=>{ lukkKort({tilbake:false}); if(introDone) introIgjen(); else overta(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 // Esc: lukker kortet først (samme vei ut), neste Esc går hjem
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); if(kort_.apent) lukkKort(); else hjemNaa(); } });
 kort.querySelector('.lukk').onclick=()=>lukkKort();
