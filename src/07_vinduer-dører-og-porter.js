@@ -1,3 +1,11 @@
+import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { DATA } from './00_oppsett.js';
+import { V } from './01_etterbehandling.js';
+import { GL_SOL_F, GL_SOL_V, glSolVMain } from './02_lys.js';
+import { polyShape } from './03_bakke-vann-grønt.js';
+import { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, flatGruppe, fotBaand, husDybde, kontaktMat, mat } from './05_bygg.js';
+import { buildings, bygKirke } from './06_kirka-bygget-etter-2017.js';
 // ---- vinduer, dører og porter: plassering og størrelse fra Vegars kvartaltegninger (etter/42_fasader.py); alt tegnes her ----
 const VIND_GEO=new THREE.PlaneGeometry(1,1); VIND_GEO.translate(0,0,0);
 const vindMat=new THREE.ShaderMaterial({
@@ -12,11 +20,11 @@ const vindMat=new THREE.ShaderMaterial({
     void main(){
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
-      float d=dot(normalize(mat3(viewMatrix)*vN),solRetning());   // kamerarom som husene (28.10)
+      float d=dot(normalize(mat3(viewMatrix)*vN),solRetning());   // kamerarom som husene 
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
       vec3 sf=mix(vec3(1.),solFarge(),0.6*solHer(vWq));
       if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
-      else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }   // buet topp: port (typ 2) og rundbuevindu (typ 0, bue 1; Tøihuset 30.10)
+      else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }   // buet topp: port (typ 2) og rundbuevindu (typ 0, bue 1; Tøihuset)
       float fw=max(fwidth(m.x),fwidth(m.y));
       float kant=min(min(m.x,vSz.x-m.x),min(m.y,vSz.y-m.y));
       if(typ>2.5) kant=vSz.x*0.5-length(m-vSz*0.5);
@@ -26,7 +34,7 @@ const vindMat=new THREE.ShaderMaterial({
       vec3 c;
       if(typ<0.5 || typ>2.5){
         float ramme=0.08;
-        // sprosser etter zoom (30.10): post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
+        // sprosser etter zoom : post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
         // på nært hold og tones ut når én piksel blir for stor til å bære dem (fw = meter per piksel), så de ikke griser på avstand
         float lo=vSz.y*(typ>2.5?0.5:0.62);
         float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-lo);
@@ -124,7 +132,7 @@ function utvidPoly(P,d){ let A=0; for(let k=0;k<P.length;k++){ const a=P[k],c=P[
 function iPoly(p,f){ let inne=false; for(let k=0,j=f.length-1;k<f.length;j=k++){ const a=f[k],c=f[j]; if((a[1]>p[1])!==(c[1]>p[1]) && p[0]<(c[0]-a[0])*(p[1]-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; }
 function planZ(f,x,y){ const [a,b2,c]=f; const ux=b2[0]-a[0],uy=b2[1]-a[1],uz=b2[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2];
   const nx=uy*vz-uz*vy, ny=uz*vx-ux*vz, nz=ux*vy-uy*vx; if(Math.abs(nz)<1e-9) return a[2]; return a[2]-(nx*(x-a[0])+ny*(y-a[1]))/nz; }
-// ---- landemerker (30.10, natt/landemerker): gjenbrukbare elementer som styres av data, ikke engangsfikser ----
+// ---- landemerker (natt/landemerker): gjenbrukbare elementer som styres av data, ikke engangsfikser ----
 // prisme: polygon (modellmeter) løftet fra z0 til z1; [topp, sider] som husene
 function prisme(P, z0, z1, mTopp, mSide){ const g=new THREE.ExtrudeGeometry(polyShape(P),{depth:Math.max(0.01,z1-z0),bevelEnabled:false}); g.rotateX(-Math.PI/2); g.translate(0,z0,0);
   const m=new THREE.Mesh(g,[mTopp,mSide]); m.castShadow=m.receiveShadow=true; return m; }
@@ -134,7 +142,7 @@ function ring(c, r, n, rot){ return Array.from({length:n},(_,k)=>{ const a=rot+k
 // ut (utkraging), tinde_h, tinder (antall), vegg, veggs, topp (takfarge), vinduer {z (midt), b, h}, stang (over taket), flagg [r,g,b]}.
 // Første bruk: tårnet på rådhuset (bnr-193972012): form fra Kvartal14.ai, plass og høyde fra Kartverkets DOM.
 function bygTaarn(t, grp){
-  // landemerke (Vegar 30.10): visningsskala forstørrer tårnet fra bakken; de målte tallene i dataene står
+  // landemerke (Vegar): visningsskala forstørrer tårnet fra bakken; de målte tallene i dataene står
   const f=t.visningsskala||1;
   if(f!==1) t=Object.assign({}, t, {skaft:t.skaft*f, h:t.h*f, r:t.r*Math.sqrt(f), tinde_h:(t.tinde_h||0.7)*Math.sqrt(f), stang:t.stang&&t.stang*f,
     vinduer:t.vinduer&&Object.assign({}, t.vinduer, {z:t.vinduer.z*f, b:t.vinduer.b*Math.sqrt(f), h:t.vinduer.h*Math.sqrt(f)})});
@@ -173,7 +181,7 @@ function bygArkade(A, pts, wall, dim, veggs){
   const bg=new THREE.PlaneGeometry(L,top); bg.translate(L/2,top/2,0.012); bg.applyMatrix4(M);
   // bakveggen i buegangen ligger i dyp skygge: mørk og nøytral både i sol og skygge (ikke brunlig av sollyset)
   const mk=A.mork||[34,33,33], bak=new THREE.Mesh(bg,mat(mk,false,mk.map(c=>Math.round(c*0.8)))); bak.receiveShadow=true; grp.add(bak);
-  // felt over arkaden (A.felt {z0, z1, bredde, dybde}, natt/atrium 30.10): etasjen over har høye innfelte felt med samme deling som buene,
+  // felt over arkaden (A.felt {z0, z1, bredde, dybde}, natt/atrium): etasjen over har høye innfelte felt med samme deling som buene,
   // lisener mellom; en plate i veggfargen fra rammens overkant til z1 med hull, og innfeltene en tone mørkere (Kvartal10: 13394024)
   if(A.felt){ const F=A.felt, z1=F.z1, sf=new THREE.Shape(); sf.moveTo(0,top); sf.lineTo(L,top); sf.lineTo(L,z1+0.2); sf.lineTo(0,z1+0.2); sf.closePath();
     for(let k=0;k<n;k++){ const u=(k+0.5)*L/n, hp=new THREE.Path(); hp.moveTo(u-F.bredde/2,F.z0); hp.lineTo(u+F.bredde/2,F.z0); hp.lineTo(u+F.bredde/2,z1); hp.lineTo(u-F.bredde/2,z1); hp.lineTo(u-F.bredde/2,F.z0); sf.holes.push(hp); }
@@ -183,7 +191,7 @@ function bygArkade(A, pts, wall, dim, veggs){
     const bm=new THREE.Mesh(bf,mat(inn,dim,inn.map(c=>Math.round(c*0.8)))); bm.receiveShadow=true; grp.add(bm); }
   return grp;
 }
-// ATRIUM (bygg.atrium, 30.10): innglasset gårdsrom i en ring av tak (ringtaket står i tak2/gavl2, regnet av verktoy/landemerker.py).
+// ATRIUM (bygg.atrium): innglasset gårdsrom i en ring av tak (ringtaket står i tak2/gavl2, regnet av verktoy/landemerker.py).
 // Her tegnes karmen og glasset: {gaard (gårdsrommets omriss, glass med karm), kant (karmens bredde), z (karmens fot = takfoten),
 // topp (glassets topp), glass, ramme}. Firkantet gårdsrom: glassvalm med mønet langs den lange siden, kvadrat = pyramide.
 // Gratene og mønet får sprosser i karmfargen, flatene tre sprosser hver vei. Første bruk: 16308102 (Kvartal14, ortofoto 2024).
@@ -235,7 +243,7 @@ DATA.bygg.forEach((b,i)=>{
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
-  // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»); type naturstein
+  // sokkel / natursteinsetasje i egen farge (tegningen og Street View viser «rød tegl over grå natursteinsetasje»); type naturstein
   // gir steinmønster (src/05, avvik A10). Sokkelen står 3 cm ut og vinduene 5 cm, så vinduene i sokkelen synes; den løftes med huset.
   if(b.sokkel && b.sokkel.h>0.2 && !dim){
     const sg=new THREE.ExtrudeGeometry(polyShape(utvidPoly(pts,0.03)),{depth:Math.min(b.sokkel.h,h-0.05),bevelEnabled:false}); sg.rotateX(-Math.PI/2);
@@ -244,7 +252,7 @@ DATA.bygg.forEach((b,i)=>{
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2 && !b.kirke){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
-    const SLOPE=b.th||0.82; const pos=[];   // takhelning per hus (th) fra Kartverkets høydemodell der den er målt (24.10)
+    const SLOPE=b.th||0.82; const pos=[];   // takhelning per hus (th) fra Kartverkets høydemodell der den er målt 
     b.tak2.forEach(f0=>{
       // hver takflate utvides 6 cm i sitt eget plan, så nabotak i en rekke overlapper og ingen lyse sprekker vises langs møner og grenser
       const f=utvidFlate(f0,0.06);
@@ -331,7 +339,7 @@ DATA.bygg.forEach((b,i)=>{
     g.add(new THREE.Mesh(gv, mat(wall,dim,b.veggs,{ds:true})));
     legg(g);
   });
-  // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård; 29.10)
+  // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)
   if(b.veggfelt && !dim){
     b.veggfelt.forEach(([x1,y1,x2,y2,r,g,bb])=>{
       const L=Math.hypot(x2-x1,y2-y1); if(L<0.3) return; let nx=(y2-y1)/L, ny=-(x2-x1)/L;
@@ -341,7 +349,7 @@ DATA.bygg.forEach((b,i)=>{
       gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat([r,g,bb],dim,null,{ds:true})));
     });
   }
-  // fasadesegmenter (30.10): én kropp etter DOM/Matrikkelen, men tegningen viser flere fasader på veggen. Hvert segment er en
+  // fasadesegmenter : én kropp etter DOM/Matrikkelen, men tegningen viser flere fasader på veggen. Hvert segment er en
   // veggflate i egen farge (fra_m–til_m langs veggen a→b); brannmurlinjen mellom to segmenter er en tynn mørk loddrett kant
   if(b.fasadesegmenter && !dim){
     const flate=(A,B,c)=>{ const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
@@ -370,7 +378,7 @@ DATA.bygg.forEach((b,i)=>{
   }
   if(b.arkader && !dim) b.arkader.forEach(A=>{ const g=bygArkade(A, pts, wall, dim, b.veggs); if(g) legg(g); });
   if(b.atrium && !dim){ const g=bygAtrium(b.atrium); if(g) legg(g); }
-  // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
+  // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene 
   if(b.takvinduer && b.tak2 && !dim){ const S=b.th||0.82;
     b.takvinduer.forEach(([x,y,bw,bh])=>{
       const f=b.tak2.find(f=>iPoly([x,y],f)); if(!f) return;
@@ -404,3 +412,5 @@ samler.clear();
   DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, KONTAKT_BREDDE, KONTAKT_Y); pos.push(...f.pos); alfa.push(...f.alfa); });
   const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setAttribute('aAlfa', new THREE.Float32BufferAttribute(alfa,1));
   const m=new THREE.Mesh(g, kontaktMat); m.frustumCulled=false; m.renderOrder=1; city.add(m); }
+
+export { husDeler };

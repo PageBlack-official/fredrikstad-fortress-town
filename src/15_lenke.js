@@ -1,4 +1,8 @@
-// ---- lenka husker utsikten (02.11): #view=lat,lon,zoom,pitch,bearing&hus=<bygg-id> ----
+import { SENERE, TILSTAND } from './tilstand.js';
+import { BERORING, map, tilModell } from './00_oppsett.js';
+import { buildings } from './06_kirka-bygget-etter-2017.js';
+import { GRENSE } from './13_kart.js';
+// ---- lenka husker utsikten : #view=lat,lon,zoom,pitch,bearing&hus=<bygg-id> ----
 // Hashen skrives med history.replaceState (ingen nye historikkinnslag) når kameraet har stoppet, og når siden skjules eller lukkes.
 // En lenke med view= (eller hus=) hopper over introen og går rett dit; hus= løfter huset og åpner kortet som ved klikk.
 // Ugyldige verdier ignoreres: tall som ikke er tall, et senter utenfor kartets ramme, et hus som ikke finnes. Zoom og vinkler klemmes
@@ -25,13 +29,13 @@ const LAGRET_UTSIKT='smart-old-town:utsikt';
 function lenkeHash(){
   const c=map.getCenter(), f=(x,n)=>(+x.toFixed(n)).toString();
   let s=`view=${f(c.lat,5)},${f(c.lng,5)},${f(map.getZoom(),2)},${f(map.getPitch(),0)},${f(map.getBearing(),0)}`;
-  if(valgt && valgt.userData.b && valgt.userData.b.id) s+=`&hus=${valgt.userData.b.id}`;
+  if(SENERE.valgt && SENERE.valgt.userData.b && SENERE.valgt.userData.b.id) s+=`&hus=${SENERE.valgt.userData.b.id}`;
   return s;
 }
 function lenkeUrl(){ let base=''; try{ base=location.href.split('#')[0]; }catch(e){ base=''; } return base+'#'+lenkeHash(); }
 // skrives bare når introen er ferdig (lenka til en halvferdig intro er ingen utsikt)
 function lenkeSkriv(){
-  if(!introDone) return;
+  if(!TILSTAND.introDone) return;
   const s='#'+lenkeHash();
   try{ if(location.hash!==s) window.history.replaceState(window.history.state, '', s); }catch(e){ /* sandbox uten historikk: kartet virker likevel */ }
   try{ window.localStorage.setItem(LAGRET_UTSIKT, s.slice(1)); }catch(e){ /* sandbox uten lagring */ }
@@ -45,7 +49,7 @@ addEventListener('popstate', ()=>setTimeout(lenkeSkriv, 0));
 // ved oppstart (15_loop, map.on('load')): kameraet rett til utsikten, så huset som ved klikk
 function lenkeStart(){
   if(LENKE.vis) map.jumpTo(LENKE.vis);
-  if(LENKE.hus) requestAnimationFrame(()=>{ velgHus(LENKE.hus); lenkeSkriv(); });
+  if(LENKE.hus) requestAnimationFrame(()=>{ SENERE.velgHus(LENKE.hus); lenkeSkriv(); });
   else lenkeSkriv();
 }
 // «Del» i huskortet: delingsarket på mobil (navigator.share), ellers utklippstavla; haken i knappen er bekreftelsen
@@ -61,3 +65,5 @@ async function lenkeDel(knapp){
     document.body.appendChild(t); t.select(); const lyktes=document.execCommand('copy'); t.remove(); if(lyktes) ok(); }catch(e){ /* ingen utklippstavle */ }
 }
 { const knapp=document.querySelector('#kort .del'); if(knapp) knapp.addEventListener('click', ()=>lenkeDel(knapp)); }
+
+export { LENKE, lenkeSkriv, lenkeStart };

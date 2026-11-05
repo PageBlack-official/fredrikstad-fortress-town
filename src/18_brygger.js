@@ -1,4 +1,8 @@
-// ---- brygger (27.10): fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
+import * as THREE from 'three';
+import { DATA } from './00_oppsett.js';
+import { polyShape } from './03_bakke-vann-grønt.js';
+import { city, flatGruppe, fotBaand, kontaktMat, mat } from './05_bygg.js';
+// ---- brygger : fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
 // (verktoy/brygger.py: OSM rettet mot ortofoto 2024 og målt for hånd). Husstilen som broene: treplanker i flat farge med mørke
 // skjøter på tvers, blekkstreken kommer fra etterbehandlingen. Faste brygger står på stolper ca. 1 m over vannet, flytebrygger
 // ligger lavt (ca. 0,4 m) som en ponton uten stolper, utriggerne er smale bommer på vannet. Bryggene kaster skygge og står

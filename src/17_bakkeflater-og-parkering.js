@@ -1,4 +1,11 @@
-// ---- bakkeflater og parkering (27.10): plenene (OSM, rettet mot ortofoto 2024), gresset i gårdsrommene slik ortofotoet viser det,
+import * as THREE from 'three';
+import { DATA, scene } from './00_oppsett.js';
+import { medSkygge } from './02_lys.js';
+import { BAKKELAG, alleIBrostein, bakkelag, flat, polyShape } from './03_bakke-vann-grønt.js';
+import { plenMat, stoneMat } from './04_brostein-i-hele-gamlebyen.js';
+import { flatGruppe } from './05_bygg.js';
+import { TER, hAt, hTer } from './08_festningsterrenget.js';
+// ---- bakkeflater og parkering : plenene (OSM, rettet mot ortofoto 2024), gresset i gårdsrommene slik ortofotoet viser det,
 // flatene målt i ortofotoet (grus, heller, asfalt) og parkeringsplassene fra kommunens lag. Flate farger, tynn strek fra
 // etterbehandlingen (høydesprang mellom flatene), ingen tekst på bakken. Skjulte objekter (rettelse «skjul») tegnes ikke.
 {
@@ -13,7 +20,7 @@
       #include <colorspace_fragment>
       }`
   }));
-  // bed (bar jord) og brostein utenfor brosteinsflaten kommer fra ortofotoet (verktoy/bakke.py overflater, 29.10)
+  // bed (bar jord) og brostein utenfor brosteinsflaten kommer fra ortofotoet (verktoy/bakke.py overflater)
   const FARGE={ grus:[214,204,182], heller:[190,184,174], asfalt:[150,146,140], gress:[126,180,134], parkering:[160,157,152], bed:[132,108,86], brostein:[146,140,132] };
   const MAT={brostein:stoneMat}; const matFor=k=>MAT[k]||(MAT[k]=bakkelag(flateMat(FARGE[k]), k==='parkering'?BAKKELAG.parkering:BAKKELAG.flate, {asfalt:0,grus:1,heller:2,bed:3}[k]||0));   // lagene: src/03 (avvik A8)
   // flaten legges på terrenget (vollene og kaiene ligger på terrengnettet), aldri lavere enn y0
@@ -57,7 +64,7 @@
     flatGruppe(G); }
   // parkering: bare plasser med målt flate; punktene (uten flate) finnes i dataene, men tegnes ikke på bakken
   // Er raden målt som flate i ortofotoet (flater[].parkering_id, verktoy/bakke.py parkeringsfelt), er det flatens type som gjelder
-  // (brostein i Gamlebyen) og bare oppmerkingen tegnes: den glatte parkeringsflaten oppå brosteinen var «noe rart foran huset» (avvik A3, 02.11)
+  // (brostein i Gamlebyen) og bare oppmerkingen tegnes: den glatte parkeringsflaten oppå brosteinen var «noe rart foran huset» (avvik A3)
   const maaltFlate=new Set((DATA.flater||[]).filter(f=>!f.skjul && f.parkering_id).map(f=>f.parkering_id));
   (DATA.parkering||[]).forEach(p=>{ if(!p.skjul && p.p && !maaltFlate.has(p.id)) legg(p.p, 0.12, matFor('parkering')); });
 }

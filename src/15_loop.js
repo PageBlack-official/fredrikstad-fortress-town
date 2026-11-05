@@ -1,3 +1,17 @@
+import * as THREE from 'three';
+import { SENERE, TILSTAND, registrer } from './tilstand.js';
+import { AZ0_GRADER, BERORING, DATA, PITCH0, Q0, SOL_FAST, STIL, Z_HJEM, cam, kam, map, renderer, scene, tilLngLat, zoomFor } from './00_oppsett.js';
+import { MAALT, post } from './01_etterbehandling.js';
+import { GRAD, U_SKRAVUR, U_SOL, _sd, kobleSol, lysFraVenstre, oppdaterSol, setSol } from './02_lys.js';
+import { KVAL, byttNivaaNaarStille, maalYtelse } from './kvalitet.js';
+import { waterMat } from './03_bakke-vann-grønt.js';
+import { city, kontaktMat, settHus } from './05_bygg.js';
+import { buildings } from './06_kirka-bygget-etter-2017.js';
+import { setCrowns } from './12_trær.js';
+import { kameraFraKartet, vinkler } from './13_kart.js';
+import { Q, START, clock, speil, speilStyrke } from './14_speilinger-i-vannet.js';
+import { BEV, GLID, fingerNede, glid, hjulZoom, myk, treghet } from './15_bevegelse.js';
+import { LENKE, lenkeStart } from './15_lenke.js';
 // ---- tegneløkka: MapLibre kaller lagets render() hvert bilde det tegner; vi ber om nye bilder når noe beveger seg ----
 lysFraVenstre();
 // byen tegner seg opp: høyden vokser kvartal for kvartal (sortert sørvest -> nordøst)
@@ -20,27 +34,27 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
 function startIntro(){
-  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true; ferge.intro(SPIN*1000);
+  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true; SENERE.ferge.intro(SPIN*1000);
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
-  map.once('moveend', ()=>{ if(!introDone){ introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
+  map.once('moveend', ()=>{ if(!TILSTAND.introDone){ TILSTAND.introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
-function overta(){ if(introDone) return; introDone=true; map.stop(); }
-// introen om igjen (Vegar 04.11: «når man klikker på hele byen ønsker jeg at introen starter igjen»): samme løp som ved lasting,
+function overta(){ if(TILSTAND.introDone) return; TILSTAND.introDone=true; map.stop(); }
+// introen om igjen (Vegar: «når man klikker på hele byen ønsker jeg at introen starter igjen»): samme løp som ved lasting,
 // husene vokser opp, sola finner byen, ferga krysser. Kortet lukkes og huset slippes først (16_interaksjon kaller hit).
 function introIgjen(){
   map.stop(); treghet.stopp(); hjulZoom.stopp();
-  introDone=false; introStartet=false; introKjort=false; vokst=false; tiltU=0; tiltAv.b0=null; tiltAv.s=0; speilInn=0; speilFrisk=false;
+  TILSTAND.introDone=false; introStartet=false; introKjort=false; vokst=false; tiltU=0; tiltAv.b0=null; tiltAv.s=0; TILSTAND.speilInn=0; TILSTAND.speilFrisk=false;
   clock.start();   // vokse() leser klokka fra null igjen
   buildings.forEach(g=>{ g.scale.y=0.001; g.position.y=0; husTil(g); });
   if(SOL_FAST && Q0.get('solintro')!=='0'){ solVei.ferdig=false; solVei.u=0; solStart(); }
-  skyggeSkitten=true;
+  TILSTAND.skyggeSkitten=true;
   startIntro();
 }
 window.__introIgjen=introIgjen;
-// ---- Sola finner byen (28.10, Vegar: «A») ----
+// ---- Sola finner byen (Vegar: «A») ----
 // Introen starter overskyet: tegningens to toner, ingen kastskygger, litt kjøligere. Mens kameraet svinger inn, vandrer en solkant
 // over byen fra solsiden (høye punkter først), kastskyggene vokser fram der kanten har passert, og sola synker fra 58° til de
-// godkjente 42° (23.10), så skyggene blir lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka
+// godkjente 42° , så skyggene blir lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka
 // (teknikk 12): stopper du introen, henter solkanten seg inn på 0,8 s. ?solintro=0 hopper over det hele.
 const SOLINTRO = SOL_FAST && !Q0.get('sol') && Q0.get('solintro')!=='0' && !Q.get('skip') && !LENKE.hopp;   // ?solintro=0 gir den gamle introen med fast sol
 const solVei={ v0:0, v1:0, u:0, ferdig:!SOLINTRO, tHent:0 };
@@ -53,37 +67,37 @@ function solStart(){
 }
 function solTil(u){   // u 0..1 langs kameraets vei
   // kameraets u har alt glid-kurven i seg (80 % av svingen skjer på det midterste sekundet), så kanten følger u rett fram over hele veien;
-  // en kurve til oppå gjorde at sola var over byen på 0,6 s (målt i Vegars Chrome 28.10 kl. 16.30)
+  // en kurve til oppå gjorde at sola var over byen på 0,6 s (målt i Vegars Chrome)
   const k=THREE.MathUtils.clamp(u/0.97, 0, 1);
   U_SOL.front.value=solVei.v0+(solVei.v1-solVei.v0)*k;
   setSol(250*GRAD, (58-16*k)*GRAD);
   if(k>=1 && u>=0.999){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; solVei.ferdig=true; }
 }
 // u = hvor langt kameraet har kommet langs introveien, lest av kartets bearing uansett hjemmevisning (AZ0 er 200/290 fra v33, ikke 40):
-// avstanden fra startvinkelen, målt den korte veien rundt, delt på sveipet. Før 28.10 kl. 16 ble u regnet med fortegn fra plakatvinkelen
+// avstanden fra startvinkelen, målt den korte veien rundt, delt på sveipet. Tidligere ble u regnet med fortegn fra plakatvinkelen
 // og ble 1 fra første bilde i den nye hjemmevisningen, så sola stod ferdig hele introen (Vegar: «ingen effekt når jeg starter introen»).
 function introU(){ const b0=-(AZ0_GRADER+SVEIP); let d=((map.getBearing()-b0)%360+540)%360-180; return THREE.MathUtils.clamp(Math.abs(d)/SVEIP,0,1); }
 function solOppdater(dt){
   if(solVei.ferdig) return;
-  if(!introDone){ if(!introStartet) return; solVei.u=introU(); solTil(solVei.u); }
+  if(!TILSTAND.introDone){ if(!introStartet) return; solVei.u=introU(); solTil(solVei.u); }
   else { solVei.u=Math.min(1, solVei.u+dt/0.8); solTil(solVei.u); if(solVei.u>=1) solTil(1); }   // introen ble avbrutt: hent inn resten
-  skyggeSkitten=true;
+  TILSTAND.skyggeSkitten=true;
 }
 // miniatyr-uskarpheten i introen glir ut i takt med kameraet (samme kurve), i stedet for å hoppe fra 1 til 0 når introen er ferdig
-// (Vegar 28.10: «ytterkantene er blury helt til introen er ferdig, og da blir alt skarpt samtidig»). Uten solintro: ut over de siste 40 %.
+// (Vegar: «ytterkantene er blury helt til introen er ferdig, og da blir alt skarpt samtidig»). Uten solintro: ut over de siste 40 %.
 let tiltU=0;
 // tiltU låses til maks først etter at introen har satt startvinkelen (introStartet): før det står kartet i hjemmevisningen og introU() er 1
 let introStartet=false;
-// avbrutt intro (29.10, oppdrag 15): før ble tiltU satt til 1 i bildet etter avbruddet, så uskarpheten forsvant på ett bilde (målt i
+// avbrutt intro (oppdrag 15): før ble tiltU satt til 1 i bildet etter avbruddet, så uskarpheten forsvant på ett bilde (målt i
 // flyt-test: hopp 0,78 i ett bilde). Nå tones den ut fra der den stod, på samme tid som lyset hentes inn (BEV.hentInn), med myk kurve.
 const tiltAv={b0:null, s:0}; let introKjort=false;   // introKjort: introen har faktisk startet (ikke ?skip eller testkrokene)
 function introTiltKurve(){ return 1-glid(THREE.MathUtils.clamp((tiltU-0.35)/0.55,0,1)); }
-function tiltOppdater(dt){ if(!introStartet) return; if(!introDone){ tiltU=Math.max(tiltU, introU()); return; }
+function tiltOppdater(dt){ if(!introStartet) return; if(!TILSTAND.introDone){ tiltU=Math.max(tiltU, introU()); return; }
   if(tiltAv.b0===null) tiltAv.b0 = (tiltU>=1 || !introKjort) ? 0 : introTiltKurve(); tiltAv.s=Math.min(1, tiltAv.s+dt/BEV.hentInn); }
-function introTilt(){ if(!introStartet) return 1; if(!introDone) return introTiltKurve(); return tiltAv.b0===null ? (introKjort ? introTiltKurve() : 0) : tiltAv.b0*(1-myk(tiltAv.s)); }
+function introTilt(){ if(!introStartet) return 1; if(!TILSTAND.introDone) return introTiltKurve(); return tiltAv.b0===null ? (introKjort ? introTiltKurve() : 0) : tiltAv.b0*(1-myk(tiltAv.s)); }
 window.__solvei=()=>({u:solVei.u, front:U_SOL.front.value, ute:U_SOL.ute.value, ferdig:solVei.ferdig, tilt:introTilt()});
-window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, INTRO_FRA[0]+(START[0]-INTRO_FRA[0])*u, INTRO_FRA[1]+(START[1]-INTRO_FRA[1])*u); window.__solTil(u); ferge.til(u); };   // kamera + lys ved u langs introveien
-window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
+window.__introStill=u=>{ window.__vis(AZ0_GRADER+SVEIP*(1-u), Z0+(1-Z0)*u, INTRO_FRA[0]+(START[0]-INTRO_FRA[0])*u, INTRO_FRA[1]+(START[1]-INTRO_FRA[1])*u); window.__solTil(u); SENERE.ferge.til(u); };   // kamera + lys ved u langs introveien
+window.__solTil=u=>{ if(solVei.v0===0) solStart(); solVei.ferdig=true; U_SOL.ute.value=0; solTil(u); if(u>=1){ U_SOL.ute.value=1; U_SOL.front.value=-1e6; } TILSTAND.skyggeSkitten=true; map.triggerRepaint(); };   // stillbilder av introlyset (verktoy/sol-intro-stills.mjs); u 0..1
 map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
 // husets løft og vekst: egne grupper (kirka, portbygg, bygg med deler) flyttes som objekter; alle andre ligger i de sammenslåtte nettene og styres per bygg via hus-teksturen (05_bygg)
@@ -101,28 +115,28 @@ function oppdater(){
   const kl=1-Math.exp(-dt*11);
   husBeveger=!vokst;
   // skyggekartet tegnes på nytt bare mens et hus flytter seg merkbart (over 2 cm per bilde); halen av glidningen synes ikke i skyggen
-  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) skyggeSkitten=true; } });
-  if(!introDone) skyggeSkitten=true;
+  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===SENERE.hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) TILSTAND.skyggeSkitten=true; } });
+  if(!TILSTAND.introDone) TILSTAND.skyggeSkitten=true;
   solOppdater(dt); tiltOppdater(dt);
-  ferge.til(introDone ? null : (introStartet ? introU() : 0));   // byfergene: introens overfart, så sanntid (22_byferga)
+  SENERE.ferge.til(TILSTAND.introDone ? null : (introStartet ? introU() : 0));   // byfergene: introens overfart, så sanntid (22_byferga)
   oppdaterSol();
   U_SKRAVUR.value = STIL.skravur ? kam.mpp*5*innerWidth/renderer.domElement.width*renderer.getPixelRatio() : 0;   // skravur: 5 skjermpunkter mellom strekene
   // én kvalitet: oppløsning, hjørneskygge og strek er de samme i fart og i ro (se 00_oppsett). «stille» styrer bare speilet i vannet.
   const kamFlytt = !_sisteProj.equals(cam.projectionMatrix); _sisteProj.copy(cam.projectionMatrix);
-  if(kamFlytt || anim || !introDone) sistBeveg=naa;
-  const stille = naa-sistBeveg>300;
-  post.settSkala(skalaStille); post.setAO(aoStille); post.setSS(ssStille);
-  // speilet (29.10): toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
+  if(kamFlytt || anim || !TILSTAND.introDone) TILSTAND.sistBeveg=naa;
+  const stille = naa-TILSTAND.sistBeveg>300;
+  post.settSkala(KVAL.skalaStille); post.setAO(KVAL.aoStille); post.setSS(KVAL.ssStille);
+  // speilet : toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
   // flyttes det med kameraet (reflPV, 14/03). Før tonet det ut ved hver bevegelse og inn igjen 0,3 s etter stopp (synlig ny tegning).
-  // (02.11) uten vann i bildet tegnes ikke speilet (21_flyt: vannISyne); kommer vannet inn, tegnes det i samme bilde (nøkkelen er ny)
-  if(introDone){ speilInn=Math.min(1,speilInn+dt*2.8);
-    if(!vannISyne()) speilFrisk=false;
-    else if(stille){ speil.render(husBeveger || !speilFrisk); speilFrisk=true; }
-    else { speilFrisk=false; if(!fingerNede && naa-(speil.sist||0) >= BEV.speilMs*(perfNivaa>=2?2:1)) speil.render(true); } }   // (04.11) aldri et speilpass mens en finger er nede: det var støtene som hakket på telefonen; det forrige speilet følger kameraet imens
-  if(perfOnsket>perfNivaa && stille && !fingerNede) settNivaa(perfOnsket);   // (04.11) kvalitetstrinnet byttes bare når kartet står: midt i et dra kjentes det som at kartet «hentet seg inn»
-  waterMat.uniforms.reflStyrke.value=speilStyrke()*speilInn;
-  sistTegnet=naa; fullTegnet=stille && !husBeveger;
-  dbgTegn(naa);
+  // uten vann i bildet tegnes ikke speilet (21_flyt: vannISyne); kommer vannet inn, tegnes det i samme bilde (nøkkelen er ny)
+  if(TILSTAND.introDone){ TILSTAND.speilInn=Math.min(1,TILSTAND.speilInn+dt*2.8);
+    if(!SENERE.vannISyne()) TILSTAND.speilFrisk=false;
+    else if(stille){ speil.render(husBeveger || !TILSTAND.speilFrisk); TILSTAND.speilFrisk=true; }
+    else { TILSTAND.speilFrisk=false; if(!fingerNede && naa-(speil.sist||0) >= BEV.speilMs*(KVAL.nivaa>=2?2:1)) speil.render(true); } }   // aldri et speilpass mens en finger er nede: det var støtene som hakket på telefonen; det forrige speilet følger kameraet imens
+  byttNivaaNaarStille(stille, fingerNede);   // kvalitetstrinnet byttes bare når kartet står: midt i et dra kjentes det som at kartet «hentet seg inn»
+  waterMat.uniforms.reflStyrke.value=speilStyrke()*TILSTAND.speilInn;
+  TILSTAND.sistTegnet=naa; TILSTAND.fullTegnet=stille && !husBeveger;
+  SENERE.dbgTegn(naa);
 }
 // laget: kartet tegner byen gjennom dette. ?tegn=0 (bare flyt-test): kameraet og tilstanden oppdateres hvert bilde, men byen tegnes ikke,
 // så kamerabanen kan måles bilde for bilde uten å vente på programvare-GPU-en
@@ -130,27 +144,30 @@ const TEGN = Q0.get('tegn')!=='0';
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
   render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
-    if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
-// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 30 ganger i sekundet på maskin (05.11, Vegar: «refresh-raten»), 10 på telefon, når vann er i bildet (vannet lever), ellers ikke (02.11)
-// (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
+    if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!TILSTAND._synlig){ TILSTAND._synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
+// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 30 ganger i sekundet på maskin (Vegar: «refresh-raten»), 10 på telefon, når vann er i bildet (vannet lever), ellers ikke 
+// også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (ferge.beveger() && naa-sistTegnet>33) || (naa-sistTegnet>(BERORING?100:33) && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
+function puls(){ const naa=performance.now(); if(!vokst || !TILSTAND.introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (SENERE.ferge.beveger() && naa-TILSTAND.sistTegnet>33) || (naa-TILSTAND.sistTegnet>(BERORING?100:33) && SENERE.vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
-window.__klar=()=>vokst && introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
+window.__klar=()=>vokst && TILSTAND.introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test)
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });
 map.on('load', ()=>{
   map.addLayer(byLag);
   kobleSol(); if(SOLINTRO) solStart();
-  if(Q.get('skip') || LENKE.hopp){ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); lenkeStart(); }
+  if(Q.get('skip') || LENKE.hopp){ introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); lenkeStart(); }
   else startIntro();
   puls();
 });
 // testkroker (skjermbilder uten ny sidelasting)
 window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
-window.__kam=()=>{ const v=vinkler(); let vs=null; if(valgt){ const c=husBoks(valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
-window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+window.__kam=()=>{ const v=vinkler(); let vs=null; if(SENERE.valgt){ const c=SENERE.husBoks(SENERE.valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!TILSTAND.introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
+window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
 window.__scene=()=>({scene, city});
-window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0), synlig:vannISyne()});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
-window.__kval=()=>({skala:post.skala(), ao:aoStille, ss:ssStille, perfNivaa, stille:performance.now()-sistBeveg>300, beveger:map.isMoving()});
+window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:TILSTAND.introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0), synlig:SENERE.vannISyne()});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)
+window.__kval=()=>({skala:post.skala(), ao:KVAL.aoStille, ss:KVAL.ssStille, perfNivaa:KVAL.nivaa, stille:performance.now()-TILSTAND.sistBeveg>300, beveger:map.isMoving()});
 window.__skjerm3=(x,y,z)=>{ const v=new THREE.Vector3(x,y,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
+registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });   // brukes av tidligere moduler via SENERE (tilstand.js)
+
+export { hjemVisning, introIgjen, overta };

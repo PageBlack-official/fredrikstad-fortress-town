@@ -1,3 +1,16 @@
+import * as THREE from 'three';
+import { SENERE, TILSTAND, registrer } from './tilstand.js';
+import { AZ0_GRADER, DATA, Q0, Z_HJEM, cam, gl2, kam, map, tilLngLat, tilModell, zoomFor } from './00_oppsett.js';
+import { post } from './01_etterbehandling.js';
+import { dekning } from './02_lys.js';
+import { KVAL, feilsokTast } from './kvalitet.js';
+import { city } from './05_bygg.js';
+import { buildings } from './06_kirka-bygget-etter-2017.js';
+import { husDeler } from './07_vinduer-dører-og-porter.js';
+import { START, speil } from './14_speilinger-i-vannet.js';
+import { BEV, SLIPP, glidKamera, hjulZoom, slippLogg } from './15_bevegelse.js';
+import { lenkeSkriv } from './15_lenke.js';
+import { hjemVisning, introIgjen, overta } from './15_loop.js';
 // ---- klikk, peker, huskort, hjem, styreflate og feilsøking. Dra, klyp, vri, vipp og hjul er MapLibres egne; dobbeltklikk er vårt. ----
 const ray=new THREE.Raycaster(); const ptr=new THREE.Vector2(); let valgt=null, hover=null;
 const kort=document.getElementById('kort');
@@ -17,7 +30,7 @@ function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.set
 // bygget som boks (til kamera og kort): egne grupper måles, sammenslåtte bygg regnes ut fra grunnrisset og høyden
 function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE.Box3().setFromObject(g);
   const bb=new THREE.Box3(); g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,0,-y)); bb.expandByPoint(new THREE.Vector3(x,g.userData.h+g.position.y,-y)); }); return bb; }
-// ---- huskortet (oppdrag 15, 29.10): klikk -> huset løfter seg og kameraet glir inn, kortet glir inn (mobil: bunnark fra bunnen, som
+// ---- huskortet (oppdrag 15): klikk -> huset løfter seg og kameraet glir inn, kortet glir inn (mobil: bunnark fra bunnen, som
 // Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
 // kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.
 const kortInnhold=kort.querySelector('.innhold');
@@ -28,9 +41,9 @@ function fyllKort(b){
   const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
   kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
   kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
-  kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig (27.10)
+  kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig 
   const liste=(ul,vs)=>{ ul.innerHTML=''; vs.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; ul.appendChild(li); }); };
-  // bygg delt i fløyer (husdeling «felles_tak», 31.10 Tøihuset): fløyas egne steder øverst; de andre fløyenes og de uten kjent plass under «Også i …»
+  // bygg delt i fløyer (husdeling «felles_tak», Tøihuset): fløyas egne steder øverst; de andre fløyenes og de uten kjent plass under «Også i …»
   const fl=b.floyer||[], hele=v=>v.hele_bygget;
   const ogsa=fl.flatMap(i=>(VIRKSOMHETER.get(i)||[]).filter(v=>i!==b.id||hele(v))).sort((x,y)=>(hele(x)?1:0)-(hele(y)?1:0));
   liste(kort.querySelector('.her'), her.filter(v=>!(fl.length&&hele(v))));
@@ -57,7 +70,7 @@ function glidTilHus(g){
   glidKamera({center:ll, zoom, offset:[mx-innerWidth/2, my-innerHeight/2]}, 'hus');
 }
 // byfergene (22_byferga): kortet viser hvor båten er og de neste avgangene, og fylles på nytt mens det står åpent
-function fyllFergeKort(id){ const k=ferge.kort(id); if(!k) return;
+function fyllFergeKort(id){ const k=SENERE.ferge.kort(id); if(!k) return;
   kort.querySelector('h2').textContent=k.tittel; kort.querySelector('.a').textContent=k.a; kort.querySelector('.b').textContent=k.b;
   const ul=kort.querySelector('.her'); ul.innerHTML=''; k.linjer.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
   kort.querySelector('.ogsa').innerHTML=''; kort.querySelector('.ogsa-t').textContent=''; kort.querySelector('.farge').innerHTML=''; kort.querySelector('.id').textContent=k.id; }
@@ -69,7 +82,7 @@ function velgFerge(id){
   lenkeSkriv();
 }
 setInterval(()=>{ if(kort_.apent && kort_.ferge) fyllFergeKort(kort_.ferge); }, 10000);   // nye tider fra Entur fyller kortet med en gang (22_byferga)
-function treffFerge(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam); return ferge.treff(ray); }
+function treffFerge(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam); return SENERE.ferge.treff(ray); }
 function velgHus(g){
   kort_.ferge=null;
   if(valgt===g) return;
@@ -100,8 +113,8 @@ addEventListener('popstate', ()=>{ if(kort_.apent){ kort_.historikk=false; lukkK
 // flytter du kartet selv mens kortet er åpent, blir kameraet der du la det når kortet lukkes (som Apple og Google Maps)
 map.on('movestart', e=>{ if(e.originalEvent && kort_.apent) kort_.egenFlytt=true; });
 function hjemNaa(){ lukkKort({tilbake:false}); glidKamera({...hjemVisning(), offset:[0,0]}, 'hjem'); }
-// «Hele Gamlebyen» spiller introen på nytt (Vegar 04.11), på mobil og bred skjerm; Esc glir bare hjem som før
-hjem.onclick=()=>{ lukkKort({tilbake:false}); if(introDone) introIgjen(); else overta(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
+// «Hele Gamlebyen» spiller introen på nytt (Vegar), på mobil og bred skjerm; Esc glir bare hjem som før
+hjem.onclick=()=>{ lukkKort({tilbake:false}); if(TILSTAND.introDone) introIgjen(); else overta(); }; window.__hjem=()=>{ overta(); hjemNaa(); };
 // Esc: lukker kortet først (samme vei ut), neste Esc går hjem
 addEventListener('keydown',e=>{ if(e.key==='Escape'){ overta(); if(kort_.apent) lukkKort(); else hjemNaa(); } });
 kort.querySelector('.lukk').onclick=()=>lukkKort();
@@ -109,7 +122,7 @@ kort.querySelector('.lukk').onclick=()=>lukkKort();
 // Vi gjenkjenner dobbeltklikk selv fra klikkene, så det virker likt med mus og finger (MapLibres dobbeltklikk-zoom er av, se under).
 // Klikk utenfor et hus lukker kortet, men først når det ikke kom et klikk til (ellers ville et dobbeltklikk lukke og zoome samtidig).
 const klikk={t:-1e9, x:0, y:0}; let lukkTimer=null;
-map.on('click', e=>{ if(!introDone) return;
+map.on('click', e=>{ if(!TILSTAND.introDone) return;
   const naa=performance.now(), p=e.point;
   const dobbel = naa-klikk.t < BEV.dobbelVindu && Math.hypot(p.x-klikk.x, p.y-klikk.y) < BEV.dobbelAvstand;
   if(dobbel){ klikk.t=-1e9; clearTimeout(lukkTimer); overta(); glidKamera({zoom: map.getZoom()+(e.originalEvent.shiftKey?-1:1), around:e.lngLat}, 'dobbel'); return; }
@@ -139,7 +152,7 @@ function arkSlipp(e){ if(e.pointerId!==ark.id) return; ark.id=null; kort.style.t
 kort.addEventListener('pointerup', arkSlipp); kort.addEventListener('pointercancel', arkSlipp);
 // peker over et hus (bare mus): huset løfter seg litt
 let sisteHover=0;
-map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }
+map.on('mousemove', e=>{ if(e.originalEvent.buttons || map.isMoving() || !TILSTAND.introDone){ if(hover){ hover=null; map.getCanvas().style.cursor=''; } return; }
   const n=performance.now(); if(n-sisteHover<45) return; sisteHover=n;
   const h=treffHus(e.point.x,e.point.y); hover=h?h.g:null; map.getCanvas().style.cursor=(hover||treffFerge(e.point.x,e.point.y))?'pointer':''; });
 map.on('mouseout', ()=>{ hover=null; map.getCanvas().style.cursor=''; });
@@ -159,7 +172,7 @@ map.getCanvasContainer().addEventListener('wheel', e=>{
   e.preventDefault(); e.stopImmediatePropagation(); overta();
   map.panBy([e.deltaX, e.deltaY], {animate:false});       // innholdet følger fingrene
 }, {capture:true, passive:false});
-function visHjem(){ const c=tilModell(map.getCenter()); const borte = Math.abs(map.getZoom()-Z_HJEM)>0.07 || Math.hypot(c[0]-START[0], c[1]-START[1])>8 || Math.abs(((map.getBearing()+AZ0_GRADER+540)%360)-180)>4; hjem.classList.toggle('vis', introDone && borte); }
+function visHjem(){ const c=tilModell(map.getCenter()); const borte = Math.abs(map.getZoom()-Z_HJEM)>0.07 || Math.hypot(c[0]-START[0], c[1]-START[1])>8 || Math.abs(((map.getBearing()+AZ0_GRADER+540)%360)-180)>4; hjem.classList.toggle('vis', TILSTAND.introDone && borte); }
 map.on('move', visHjem); map.on('moveend', visHjem);
 // feilsøkingsrute (tast d): bildefrekvens, tegnetilstand og styreflatehendelser som tall. Taster s/a/x/p prøver stillbildekvalitet.
 const dbg={paa:false, rader:[], el:null, fps:[], pek:{ned:0,flytt:0,opp:0,sist:'',knapper:0,type:''}};
@@ -173,11 +186,14 @@ function dbgTegn(naa){ if(!dbg.paa) return; dbg.fps.push(naa); while(dbg.fps.len
   if(map.isMoving()){ if(!fart.i){ fart.i=true; fart.t0=naa; fart.n=0; fart.s=0; fart.b=0; fart.f=0; fart.sk=0; fart.r=0; fart.m=0; fart.k0=window.__kartBilder; fart.v0=window.__vaareBilder; } fart.n++; fart.s+=pt.scene||0; fart.b+=pt.blekk||0; fart.f+=pt.fxaa||0; fart.sk+=pt.skygge||0; fart.r+=window.__ramme||0; fart.m+=window.__mellom||0; }
   else if(fart.i){ fart.i=false; const ms=naa-fart.t0, n=fart.n; if(ms>150) fart.sist=`siste bevegelse ${ms|0} ms, ${n} bilder = ${(n*1000/ms).toFixed(0)}/s  (snitt per bilde: 3D ${(fart.s/n).toFixed(0)} ms, blekk ${(fart.b/n).toFixed(0)} ms, fxaa ${(fart.f/n).toFixed(0)} ms, skyggekart i ${fart.sk} av ${n}, hele render() ${(fart.r/n).toFixed(0)} ms, mellom bildene ${(fart.m/n).toFixed(0)} ms, kartet tegnet ${window.__kartBilder-fart.k0} bilder, laget vårt ${window.__vaareBilder-fart.v0}${pt.maal?', GPU-målt':', CPU-målt, tast m for GPU'})`; }
   const glFeil=gl2.getError();
-  dbg.el.textContent=`v${document.querySelector('meta[name=description]').content.match(/Versjon ([\d.]+)/)[1]}  nær ${kam.naer.toFixed(1)} fjern ${kam.fjern.toFixed(0)}  glFeil ${glFeil}  kall ${(window.__pt||{}).kall}  dpr ${devicePixelRatio}  ${innerWidth}x${innerHeight}\ntegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${perfNivaa}  skala ${skalaStille.toFixed(2)}  stille ${naa-sistBeveg>300?1:0}  ss ${ssStille} ao ${aoStille} msaa ${post.samples()}`
+  dbg.el.textContent=`v${document.querySelector('meta[name=description]').content.match(/Versjon ([\d.]+)/)[1]}  nær ${kam.naer.toFixed(1)} fjern ${kam.fjern.toFixed(0)}  glFeil ${glFeil}  kall ${(window.__pt||{}).kall}  dpr ${devicePixelRatio}  ${innerWidth}x${innerHeight}\ntegnet/s ${dbg.fps.length} (i ro tegnes det 10/s med vilje)  zoom ${map.getZoom().toFixed(2)} (x${kam.zoomfaktor.toFixed(2)})  pitch ${kam.pitch.toFixed(0)}  bearing ${kam.bearing.toFixed(0)}  perfNivaa ${KVAL.nivaa}  skala ${KVAL.skalaStille.toFixed(2)}  stille ${naa-TILSTAND.sistBeveg>300?1:0}  ss ${KVAL.ssStille} ao ${KVAL.aoStille} msaa ${post.samples()}`
     +String.fromCharCode(10)+fart.sist+String.fromCharCode(10)+'siste slipp: '+(SLIPP.rader.join(' | ')||'ingen')
     +String.fromCharCode(10)+`3D ${pt.scene|0} ms  blekk ${pt.blekk|0} ms  fxaa ${pt.fxaa|0} ms  kall ${pt.kall}  tri ${pt.tri}  skyggekart ${pt.skygge} (grunner: ${JSON.stringify(dekning.grunner)})  ${pt.maal?'GPU-målt':'CPU-målt'}`+String.fromCharCode(10)+`peker: ned ${dbg.pek.ned} flytt ${dbg.pek.flytt} opp ${dbg.pek.opp}  sist ${dbg.pek.sist}  knapper ${dbg.pek.knapper} ${dbg.pek.type}  senter ${tilModell(map.getCenter()).map(v=>v.toFixed(0)).join(',')}  dragPan ${map.dragPan.isEnabled()?'på':'av'} aktiv ${map.dragPan.isActive()?'ja':'nei'}`+String.fromCharCode(10)+dbg.rader.join(String.fromCharCode(10)); }
-addEventListener('keydown',e=>{ if(!dbg.paa) return; if(e.key==='s'){ ssStille=ssStille===4?2:ssStille===2?1:4; } if(e.key==='a'){ aoStille=aoStille===14?7:aoStille===7?0:14; } if(e.key==='x'){ skalaStille=skalaStille===1?0.75:1; } if(e.key==='p'){ speil.av(); } if(e.key==='m'){ window.__maal=!window.__maal; } if(e.key==='n'){ post.msaa(post.samples()?0:2); } });
+addEventListener('keydown',e=>{ if(!dbg.paa) return; feilsokTast(e.key); if(e.key==='p'){ speil.av(); } if(e.key==='m'){ window.__maal=!window.__maal; } if(e.key==='n'){ post.msaa(post.samples()?0:2); } });
 function dbgVeksle(){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createElement('pre'); dbg.el.style.cssText='position:fixed;left:8px;top:8px;z-index:9;margin:0;padding:8px;font:11px/1.25 ui-monospace,monospace;background:rgba(255,255,255,.92);color:#222;max-height:92vh;overflow:hidden;pointer-events:none;border-radius:6px'; document.body.appendChild(dbg.el); } dbg.el.style.display=dbg.paa?'block':'none'; }
 addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey) dbgVeksle(); });
 // mobil: ?d=1 slår ruta på fra start (ingen tastatur), større skrift, og glen-feil + nær/fjern tas med
 if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace'; dbg.el.style.maxWidth='96vw'; dbg.el.style.whiteSpace='pre-wrap'; }
+registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });   // brukes av tidligere moduler via SENERE (tilstand.js)
+
+export { fyllFergeKort, kort_ };

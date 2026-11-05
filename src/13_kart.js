@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import * as maplibregl from 'maplibre-gl';
+import { M_PER_MERC, ORIGO, Z_HJEM, cam, kam, map, tilLngLat } from './00_oppsett.js';
 // ---- kamerabroen: MapLibre eier kameraet; three.js-kameraet settes fra kartets matrise hvert bilde ----
 // Modellen er i meter (x øst, y opp, z = -nord). MapLibre regner i mercator (x øst, y sør, z opp), så
 // modellmatrisen er: flytt til origo · skaler(s,-s,s) · roter 90° om x.  (Samme oppskrift som MapLibres three.js-eksempel.)
@@ -26,3 +29,5 @@ function vinkler(){ return {az:-kam.bearing*Math.PI/180, pol:kam.pitch*Math.PI/1
 // kartet får vite hvor byen ligger, så det ikke kan dras ut av syne
 const GRENSE=560;
 map.setMaxBounds([tilLngLat(-GRENSE-300,-GRENSE-300), tilLngLat(GRENSE+300,GRENSE+300)]);
+
+export { GRENSE, kameraFraKartet, vinkler };

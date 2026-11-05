@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { DATA } from './00_oppsett.js';
+import { city, edgeMat, flatGruppe, mat } from './05_bygg.js';
 // ---- broer: tredekke, gitterrekkverk, pilarer; vindebro får heiseverk (to stolper, tverrbjelke, vippebommer) som i brosjyretegningen ----
 (DATA.broer||[]).forEach((br,bi)=>{
   const g=new THREE.Group(); g.userData={i:-1-bi, b:{navn:br.navn||'Bro', tekst:br.tekst||'', nr:br.nr}, h:2};

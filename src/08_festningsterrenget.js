@@ -1,3 +1,9 @@
+import * as THREE from 'three';
+import { DATA, scene } from './00_oppsett.js';
+import { medSkygge } from './02_lys.js';
+import { BAKKELAG, alleIBrostein, bakkelag, flatH } from './03_bakke-vann-grønt.js';
+import { stoneMat } from './04_brostein-i-hele-gamlebyen.js';
+import { mat } from './05_bygg.js';
 // ---- festningsterrenget: voller med skråninger, grønt som plenene i tegningen ----
 const TER = DATA.landskap && DATA.landskap.terreng;
 let hAt = ()=>0, hTer = ()=>0;   // hTer: terrengnettets høyde (trekantene), se under
@@ -8,7 +14,7 @@ if (TER){
   // høydene ligger bare for punktene i masken (rad for rad); utenfor er bakken null
   const H=new Uint8Array(nx*ny); H.fill(Math.round((TER.off||0)*20)); { const hk=b64(TER.h); let c=0; for(let i=0;i<nx*ny;i++) if(inn0(i)) H[i]=hk[c++]; }
   const MK=new Uint8Array(nx*ny); for(let i=0;i<nx*ny;i++) MK[i]=inn0(i); const inn=i=>MK[i];
-  // TERRENGFLIKER (30.10, data/terrengflikker.json): Kartverkets DTM lagt over det beregnede terrenget der det beregnede er feil
+  // TERRENGFLIKER (data/terrengflikker.json): Kartverkets DTM lagt over det beregnede terrenget der det beregnede er feil
   // (verktoy/landemerker.py; første bruk: Voldporten, der vollen i terrenget stod 12 m for langt øst og porten stod på flat mark).
   // {x0, y0, g, nx, ny, h (cm, rad for rad fra sør), kant (m: myk overgang til terrenget rundt)}
   (DATA.terrengflikker||[]).forEach(F=>{ const fh=(i,j)=>F.h[Math.min(F.ny-1,Math.max(0,j))*F.nx+Math.min(F.nx-1,Math.max(0,i))]/100;
@@ -23,7 +29,7 @@ if (TER){
   hAt=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
     const tx=fx-i, ty=fy-j; return (hv(i,j)*(1-tx)+hv(i+1,j)*tx)*(1-ty)+(hv(i,j+1)*(1-tx)+hv(i+1,j+1)*tx)*ty; };
   // hTer: høyden på terrengnettet slik det tegnes (samme trekanter som indeksen under: (a,b,c) og (b,d,c), +0,03), ikke bilineær.
-  // Flater og veier legges på den (avvik A16, 02.11): med bilineær høyde og hjørner bare i polygonets punkter skar store flater
+  // Flater og veier legges på den (avvik A16): med bilineær høyde og hjørner bare i polygonets punkter skar store flater
   // gjennom vollens nett, og grus og gress byttet plass når kameraet flyttet seg.
   hTer=(x,y)=>{ const fx=(x-TER.x0)/G, fy=(y-TER.y0)/G; const i=Math.floor(fx), j=Math.floor(fy); if(i<0||j<0||i>=nx-1||j>=ny-1) return 0;
     const tx=fx-i, ty=fy-j, a=hv(i,j), b=hv(i+1,j), c=hv(i,j+1), d=hv(i+1,j+1);
@@ -60,12 +66,12 @@ if (TER){
 }
 // veier som bånd i tegningens gategrå; bruer ligger over vannet med sider (slått sammen til tre mesher)
 {
-  // flate (data/landskap.json, verktoy/bakke.py gater 29.10): kjøreveier lagt med brostein tegnes med brosteinen, ikke gategrått
-  // heller og grus (kaia, plassene, stiene på vollene) får flatens farge, som flatene i 17 (30.10)
+  // flate (data/landskap.json, verktoy/bakke.py gater): kjøreveier lagt med brostein tegnes med brosteinen, ikke gategrått
+  // heller og grus (kaia, plassene, stiene på vollene) får flatens farge, som flatene i 17 
   const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}, B:{p:[],i:[]}, H:{p:[],i:[]}, U:{p:[],i:[]}};
   const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
-    // båndet legges på terrenget (avvik A8, 02.11): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
+    // båndet legges på terrenget (avvik A8): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
     // skar gjennom vollens terreng (terrenget stakk opp som takker som flimret). Biten deles opp til halve terrengrutenettet, og
     // hver kant løftes til minst terrenget + 6 cm.
     const P0=v.p; if(P0.length<2) return; const w=v.w/2, dz=v.k==='gang'?-0.03:0; const B=v.flate==='brostein'?buf.B:v.flate==='heller'?buf.H:v.flate==='grus'?buf.U:(v.k==='gang'?buf.G:buf.K);
@@ -95,3 +101,5 @@ if (TER){
   if(buf.B.p.length){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(buf.B.p,3)); g.setIndex(buf.B.i);
     stoneMat.side=THREE.DoubleSide; const me=new THREE.Mesh(g,stoneMat); me.receiveShadow=true; scene.add(me); }
 }
+
+export { TER, hAt, hTer };

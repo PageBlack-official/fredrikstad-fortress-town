@@ -1,7 +1,10 @@
+import * as THREE from 'three';
+import { polyShape } from './03_bakke-vann-grønt.js';
+import { edgeMat, mat } from './05_bygg.js';
 // ---- kirka, bygget etter 2017-tegningen: hvitt tårn, grønt kobber, korsformet skip med valmede skifertak ----
-// Korsarmene (30.10, natt/farge): valm i endene, som kvartaltegningen kirke.ai (trekantet takflate over hver endevegg, ingen gavlvegg)
+// Korsarmene (natt/farge): valm i endene, som kvartaltegningen kirke.ai (trekantet takflate over hver endevegg, ingen gavlvegg)
 // og ortofoto 2024 (gratene deler seg ~en halv armbredde fra hver ende) viser. Kontrollørens «saltak med gavler» stemmer ikke med
-// noen av kildene. ENDE = 'gavl' gir saltak med gavlvegg og rundvindu i gavlen (slik det stod 29.10).
+// noen av kildene. ENDE = 'gavl' gir saltak med gavlvegg og rundvindu i gavlen (den eldre formen).
 const KIRKE_ENDE='valm';
 function sentr(p){ return p.reduce((a,q)=>[a[0]+q[0]/p.length,a[1]+q[1]/p.length],[0,0]); }
 function skaler(p,f){ const c=sentr(p); return p.map(q=>[c[0]+(q[0]-c[0])*f, c[1]+(q[1]-c[1])*f]); }
@@ -70,7 +73,7 @@ function bygKirke(k, grp){
   const nærTårn=(p)=>Math.hypot(p[0]-tc[0],p[1]-tc[1])<side*0.75;
 
   // ---- skipet ----
-  const WH=(k.hoyder&&k.hoyder.WH)||8.8, RISE=(k.hoyder&&k.hoyder.RISE)||5.6, OH=0.35;   // målt i Kartverkets DOM−DTM 25.10: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
+  const WH=(k.hoyder&&k.hoyder.WH)||8.8, RISE=(k.hoyder&&k.hoyder.RISE)||5.6, OH=0.35;   // målt i Kartverkets DOM−DTM: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
   const sk=k.skip;
   const eg=new THREE.ExtrudeGeometry(polyShape(sk),{depth:WH,bevelEnabled:false}); eg.rotateX(-Math.PI/2);
   add(eg,HVIT,HVIT_S);
@@ -106,7 +109,7 @@ function bygKirke(k, grp){
   // kompassretningen en flate vender mot (grader, 0 = nord, 90 = øst), fra utovernormalen
   const kompass=f=>((Math.atan2(f.nor.x,-f.nor.z)*180/Math.PI)+360)%360;
   const mot=(f,az)=>Math.abs(((kompass(f)-az)%360+540)%360-180)<30;
-  // korsarmenes endevegger mot sør og øst har dør, som i kvartaltegningen (Vegar 29.10: «det mangler en dør plassert inni en
+  // korsarmenes endevegger mot sør og øst har dør, som i kvartaltegningen (Vegar: «det mangler en dør plassert inni en
   // oval form» på den ene, «der mangler det også en dør» på den andre): sørenden stor rundbuet dør i rundbuet omramming og
   // ett buevindu, østenden ett buevindu og en mindre rundbuet dør. Plass langs veggen i andel, lest fra tegningen.
   const DORER={186:{dor:0.34, vindu:[0.72], stor:true}, 96:{dor:0.74, vindu:[0.3], stor:false}};
@@ -120,7 +123,7 @@ function bygKirke(k, grp){
     legg(new THREE.ShapeGeometry(bue(stor?2.3:1.6, stor?4.3:3.2),12), W3(p,0), f.tan, opp, f.nor, 0.10, DORBLAD, DORBLAD_S);
   }
   // buevinduer og dører i skipet fra data (bygg.kirke.vinduer, verktoy/fasade_former.py: veggene kirke.ai viser hele, talt for hånd
-  // i kilder/bygg-merknader.json, ellers regelen under), så kontrolløren teller de samme vinduene som kartet viser (31.10)
+  // i kilder/bygg-merknader.json, ellers regelen under), så kontrolløren teller de samme vinduene som kartet viser 
   if(Array.isArray(k.vinduer) && k.vinduer.length){
     const opp=new THREE.Vector3(0,1,0);
     k.vinduer.forEach(e=>{ const [x,y,zc,tx,ty,nx,ny,b,h,typ,stor]=e; const nor=new THREE.Vector3(nx,0,-ny), tan=new THREE.Vector3(-tx,0,ty);   // tan × opp = nor
@@ -142,12 +145,12 @@ function bygKirke(k, grp){
   });
 
   // ---- tårnet ----
-  // høydene (30.10): Kartverkets DOM−DTM ved tårnet har murkronen på 18–19 m (kanten av tårnet) og toppen 32 m midt over
+  // høydene : Kartverkets DOM−DTM ved tårnet har murkronen på 18–19 m (kanten av tårnet) og toppen 32 m midt over
   // lanternen/kuppelen (spiret er for tynt for 1 m-rutene); kvartaltegningen kirke.ai gir resten i samme forhold (tårnmur 447 pt,
   // hele tårnet 910 pt: 18,5 m og 37,6 m). Før stod tårnet på 34 m mur og 60 m spir, nesten dobbelt så høyt som målt.
   // Tallene står i data (bygg.kirke.hoyder, verktoy/fasade_former.py, med kildene); her bare reserven.
   const HK=Object.assign({SH:18.5, SK1:22.8, OV1:26.9, LA0:28.0, LA1:30.5, KU1:32.0, SP1:36.7, TS:0.7}, k.hoyder||{});
-  // Landemerke (Vegar 30.10): tårnet skal fungere dramatisk, ikke korrekt, fordi det brukes til å orientere seg. bygg.kirke.visning
+  // Landemerke (Vegar): tårnet skal fungere dramatisk, ikke korrekt, fordi det brukes til å orientere seg. bygg.kirke.visning
   // {skala, detalj} forstørrer de målte høydene fra bakken og detaljene over muren; de målte tallene i hoyder røres ikke.
   const VIS=Object.assign({skala:1, detalj:1}, k.visning||{});
   ['SH','SK1','OV1','LA0','LA1','KU1','SP1'].forEach(n=>{ HK[n]*=VIS.skala; }); HK.TS*=VIS.detalj; HK.SPR=(HK.SPR||0.5)*VIS.detalj;
@@ -166,7 +169,7 @@ function bygKirke(k, grp){
   const R0=side*0.25, prof=[[R0,0],[R0*0.98,0.35],[R0*0.8,0.95],[R0*0.52,1.5],[R0*0.3,1.85],[R0*0.18,2.15],[R0*0.2,2.4],[R0*0.12,2.6],[0.001,2.75]];
   const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y*0.55)),8); lat.rotateY(-rot+Math.PI/8);
   const kup=new THREE.Mesh(lat,M(LANT,LANT_S)); kup.position.set(tc[0],LA1+0.35,-tc[1]); kup.castShadow=true; grp.add(kup);
-  // spiret: foten er ~1/4 av lanternens bredde (foto Commons «Oestre fredrikstad kirke 01», 2008); 0,3 m ble en nål som forsvant på kartzoom (Vegar 30.10: «for kort»)
+  // spiret: foten er ~1/4 av lanternens bredde (foto Commons «Oestre fredrikstad kirke 01», 2008); 0,3 m ble en nål som forsvant på kartzoom (Vegar: «for kort»)
   const sp=oktagon(tc, HK.SPR||0.5, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir
   const kule=new THREE.Mesh(new THREE.SphereGeometry(0.28,10,8), M(MORK,MORK_S)); kule.position.set(tc[0],SP1-1.1,-tc[1]); grp.add(kule);
   const fløy=new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.55), M(MORK,MORK_S)); fløy.position.set(tc[0]+0.45,SP1-0.5,-tc[1]); fløy.rotation.y=-rot; grp.add(fløy);
@@ -174,7 +177,7 @@ function bygKirke(k, grp){
   const opp=new THREE.Vector3(0,1,0);
   flater(t).forEach(f=>{
     const c2=f.mid;
-    if(!mot(f,96)){   // tårnfoten mot øst har ingen vinduer i tegningen (Vegar 29.10: «på tårnet skal det ikke være vindu vendt mot sør øst»)
+    if(!mot(f,96)){   // tårnfoten mot øst har ingen vinduer i tegningen (Vegar: «på tårnet skal det ikke være vindu vendt mot sør øst»)
       buevindu(W3(c2,SH*0.55), f.tan, opp, f.nor, 1.6, 3.6);     // som i tegningen: buevindu ~2/3 opp, ovalene på ~1/3 og ~1/6
       rundvindu(W3(c2,SH*0.35), f.tan, opp, f.nor, 0.85);
       rundvindu(W3(c2,SH*0.15), f.tan, opp, f.nor, 0.85);
@@ -201,3 +204,5 @@ function bygKirke(k, grp){
 }
 
 const buildings=[];
+
+export { buildings, bygKirke };

@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { registrer } from './tilstand.js';
+import { DATA, Q0, TEX_VANN, scene, texLoader } from './00_oppsett.js';
 // ---- bakke, vann, grønt ----
 const ground = new THREE.Mesh(new THREE.PlaneGeometry(6000,6000), new THREE.MeshBasicMaterial({color:0xefece4}));
 ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; scene.add(ground);
@@ -6,13 +9,13 @@ function polyShape(pts){
   const s = new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0], p[1])));
   return s;
 }
-// BAKKELAG (02.11, avvik A8): flater som ligger nesten i samme høyde (brostein 5 cm, veier 7–10 cm, flater 9 cm, parkering 12 cm,
+// BAKKELAG (avvik A8): flater som ligger nesten i samme høyde (brostein 5 cm, veier 7–10 cm, flater 9 cm, parkering 12 cm,
 // gress 28 cm) z-kjempet på avstand og flimret når kartet ble flyttet («tagger»). Rekkefølgen avgjøres nå i dybdetesten med
 // polygonOffset per lag, ikke av centimeterforskjeller: lag 0 terreng/brostein, 1 veier, 2 flater, 3 parkering, 4 gress.
 const BAKKELAG={terreng:0, brostein:0, vei:1, flate:2, parkering:3, gress:4};
 // Innen et lag får hver farge sitt underlag (0–3), så to veier eller to flater av ulik type som overlapper, heller ikke kjemper.
 function bakkelag(mat, lag, under=0){ mat.polygonOffset=true; mat.polygonOffsetFactor=-lag; mat.polygonOffsetUnits=-4*lag-under; mat.userData.bakkelag=[lag,under]; return mat; }
-// I BROSTEINSFLATEN (02.11, avvik A15): brostein er grunnen der (src/04). En brosteinsflate, et brosteinsbånd i en vei eller et
+// I BROSTEINSFLATEN (avvik A15): brostein er grunnen der (src/04). En brosteinsflate, et brosteinsbånd i en vei eller et
 // parkeringsfelt i brostein oppå grunnen er samme stein et par centimeter høyere: streken (01) tegnet kanten som en skjøt over
 // Torvet og langs gatene. Slike flater tegnes ikke; oppmerkingen står. iBrostein(x,y): punktet ligger i brosteinsflaten.
 const _BR=(DATA.brostein&&DATA.brostein.length>2)?DATA.brostein:null;
@@ -69,7 +72,7 @@ const waterMat = new THREE.ShaderMaterial({
     // naturlig kant (gress, stein, siv): vannet skyller inn med skum, glorie og ringen som puster.
     // kai og mur: rett, rolig kant uten skum; en smal, mørk stripe der muren går ned i vannet og en svak lys refleks like utenfor
     float nat=1.-kai;
-    // 03.11 (Vegar: «savner livet i vannet, hvordan det skummer langs bryggene»): kai og brygge får også skum, smalere og svakere enn
+    // (Vegar: «savner livet i vannet, hvordan det skummer langs bryggene»): kai og brygge får også skum, smalere og svakere enn
     // stranda (vannet slår mot muren), og glorien like utenfor. Ringen som puster hører til naturlig kant. ?kaiskum=0 slår av.
     float slag=0.5+0.5*sin(t*1.3+n(wp.xz*0.05)*6.28);                                   // bølgeslaget mot muren puster
     float kaiSkum=kai*uKaiskum*(1.-smoothstep(bw*0.5, bw*0.5+max(pm,0.35)+0.6*slag, d+wob*0.45));
@@ -80,7 +83,7 @@ const waterMat = new THREE.ShaderMaterial({
     float refl=(1.-smoothstep(0.,3.5,d))*smoothstep(kw*0.5,kw*1.2,d)*kai*0.16;
     c=mix(c, hi, refl);
     c=mix(c, c*vec3(0.62,0.70,0.74), murK*0.85);
-    // solgløtt (lys-og-bevegelse pkt. 3, 24.10; bygd 02.11 kveld): sola speiler seg i små bølger, så glitteret glir når byen dreies.
+    // solgløtt (lys-og-bevegelse pkt. 3): sola speiler seg i små bølger, så glitteret glir når byen dreies.
     // Normalen kommer fra den samme bølgestøyen som fargen; smal topp (glitter) og en bred, svak glans rundt. Sparsomt, og borte ved kai og i skummet.
     if(gloett>0.){ vec2 q2=wp.xz*0.9+vec2(t*0.35,t*0.21); float e=0.35;
       float hx=n(q2+vec2(e,0.))-n(q2-vec2(e,0.)), hz=n(q2+vec2(0.,e))-n(q2-vec2(0.,e));
@@ -108,3 +111,6 @@ DATA.vann.forEach(w=>{ const t=w.t; if (t.natural==='water'||t.water||['riverban
 
 
 // elva Glomma rundt byen: fallback-stripe hvis data mangler
+registrer({ waterMat: () => waterMat });   // brukes av tidligere moduler via SENERE (tilstand.js)
+
+export { BAKKELAG, alleIBrostein, bakkelag, flat, flatH, polyShape, waterLayer, waterMat };

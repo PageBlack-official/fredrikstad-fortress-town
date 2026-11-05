@@ -1,4 +1,9 @@
-// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
+import * as THREE from 'three';
+import { DATA, scene } from './00_oppsett.js';
+import { polyShape } from './03_bakke-vann-grønt.js';
+import { flatGruppe, mat } from './05_bygg.js';
+import { hAt } from './08_festningsterrenget.js';
+// ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
 {
   const anlegg=new THREE.Group(); scene.add(anlegg);
   const fra=id=>DATA.bygg.find(b=>b.id===id)||{};
@@ -11,7 +16,7 @@
       const mx=a[0]+dx*(s0+s1)/2/L, my=a[1]+dy*(s0+s1)/2/L, y0=hAt(mx,my);
       const w=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,mu.h,mu.tykk),tegl); w.position.set(mx,y0+mu.h/2,-my); w.rotation.y=ang; w.castShadow=w.receiveShadow=true; anlegg.add(w);
       const k=new THREE.Mesh(new THREE.BoxGeometry(s1-s0+0.1,0.16,mu.tykk+0.16),dekk); k.position.set(mx,y0+mu.h+0.08,-my); k.rotation.y=ang; k.castShadow=true; anlegg.add(k); };
-    // åpninger der et portbygg står i muren ([fra, til, id] i meter langs muren, verktoy/kaserna.py): muren tegnes ikke gjennom buen (avvik A2, 02.11)
+    // åpninger der et portbygg står i muren ([fra, til, id] i meter langs muren, verktoy/kaserna.py): muren tegnes ikke gjennom buen (avvik A2)
     const hull=(mu.aapninger||[]).map(q=>[q[0],q[1]]);
     const pt=mu.port; if(pt) hull.push([pt.s*L-pt.pilar/2, pt.s*L+pt.pilar/2]);
     hull.sort((u,v)=>u[0]-v[0]); let s0=0; hull.forEach(([h0,h1])=>{ del(s0,h0); s0=Math.max(s0,h1); }); del(s0,L);
@@ -74,7 +79,7 @@
         const f=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,0.72,5),jern); f.position.set(x+tx*o,top+0.36,-(y+ty*o)); anlegg.add(f); });
     }
   });
-  // (granittsokkelen som eget bånd 16 cm utenfor veggen er tatt ut 02.11, avvik A9: på Artillerigården (sokkel 3,1 m) dekket den
+  // (granittsokkelen som eget bånd 16 cm utenfor veggen er tatt ut avvik A9: på Artillerigården (sokkel 3,1 m) dekket den
   // vinduene og dørene i første etasje og ble stående når huset ble løftet. Sokkelen tegnes nå bare av src/07, med huset.)
   flatGruppe(anlegg);
 }

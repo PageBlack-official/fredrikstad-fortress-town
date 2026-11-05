@@ -1,5 +1,10 @@
-// ---- Byfergene (03.11 og 04.11, Vegar: «se byferga entre kaia i gamlebyen i introswipen», «koble fergetider til fergen») ----
-// To like båter (Vegars tegning 03.11 22:04): rødt skrog som dominerer, lang hvit salong med en rekke vinduer, styrhus og åpent dekk
+import * as THREE from 'three';
+import { registrer } from './tilstand.js';
+import { DATA, Q0, scene } from './00_oppsett.js';
+import { mat } from './05_bygg.js';
+import { fyllFergeKort, kort_ } from './16_interaksjon.js';
+// ---- Byfergene (Vegar: «se byferga entre kaia i gamlebyen i introswipen», «koble fergetider til fergen») ----
+// To like båter (Vegars tegning): rødt skrog som dominerer, lang hvit salong med en rekke vinduer, styrhus og åpent dekk
 // med rekke i enden mot rampa (baugen, flat). 803 Gamlebyfergen går fram og tilbake fra nordkaia til Cicignon; 805 Byferga går fra
 // sørkaia til Smertu, Sentrum, Værste, Gressvik og Ålekilen og forsvinner i papirkanten på veien. Tidene er sanntid fra Entur
 // (Journey Planner v3), med rutetabellen i data/ferge.json i reserve. Alt om kaier, veier, mål og farger står i data/ferge.json.
@@ -14,7 +19,7 @@ const ferge=(()=>{
   function byggBaat(navn){
     const g=new THREE.Group(); g.name=navn;
     const kloss=(dx,dy,dz,x,y,z,mt)=>{ const k=new THREE.Mesh(new THREE.BoxGeometry(dx,dy,dz),mt); k.position.set(x,y,z); k.castShadow=k.receiveShadow=true; g.add(k); return k; };
-    // skroget: boks med avfasede ender. Rampeenden (+x, baugen mot kaia) er flat og bred, den andre enden er spisset (Vegar 03.11 22:46)
+    // skroget: boks med avfasede ender. Rampeenden (+x, baugen mot kaia) er flat og bred, den andre enden er spisset (Vegar)
     const skrog=new THREE.Shape(); const hl=L/2, hb=B/2, fb=0.9, fh=2.4;
     skrog.moveTo(-hl+fh,-hb); skrog.lineTo(hl-fb,-hb); skrog.lineTo(hl,-hb*0.75); skrog.lineTo(hl,hb*0.75); skrog.lineTo(hl-fb,hb); skrog.lineTo(-hl+fh,hb); skrog.lineTo(-hl,hb*0.3); skrog.lineTo(-hl,-hb*0.3); skrog.closePath();
     const sg=new THREE.ExtrudeGeometry(skrog,{depth:M.fribord+0.5, bevelEnabled:false}); sg.rotateX(-Math.PI/2); sg.translate(0,-0.5,0);
@@ -40,7 +45,7 @@ const ferge=(()=>{
     const rx0=hl-fb-0.2, rx1=hx+hl2/2+0.1, rl=rx0-rx1;
     [1,-1].forEach(sd=>{ kloss(rl, 0.05, 0.05, (rx0+rx1)/2, yd+M.rekke, sd*(hb-0.2), m(C.rekke)); for(let i=0;i<=3;i++) kloss(0.05, M.rekke, 0.05, rx1+rl*i/3, yd+M.rekke/2, sd*(hb-0.2), m(C.rekke)); });
     [1,-1].forEach(sd=>kloss(0.05, 0.05, (B-0.4-R.bredde)/2, rx0, yd+M.rekke, sd*((B-0.4)/2-(B-0.4-R.bredde)/4), m(C.rekke)));
-    // (05.11, regel 19) båtene kaster ikke i skyggekartet: det skal stå stille når kartet står, og en båt i fart ville tegnet det på nytt hele tiden
+    // (regel 19) båtene kaster ikke i skyggekartet: det skal stå stille når kartet står, og en båt i fart ville tegnet det på nytt hele tiden
     g.traverse(o=>{ o.castShadow=false; });
     g.scale.setScalar(SK); g.position.y=VANN_Y; scene.add(g);
     let sistR=-1;
@@ -214,3 +219,4 @@ const ferge=(()=>{
   til(null);
   return {til, intro:settIntro, beveger:()=>beveg, treff, kort, grupper};
 })();
+registrer({ ferge: () => ferge });   // brukes av tidligere moduler via SENERE (tilstand.js)

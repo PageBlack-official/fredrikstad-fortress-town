@@ -1,3 +1,7 @@
+import * as THREE from 'three';
+import { DATA } from './00_oppsett.js';
+import { medSkygge } from './02_lys.js';
+import { BAKKELAG, bakkelag, flat } from './03_bakke-vann-grønt.js';
 // ---- brostein i hele Gamlebyen ----
 const stoneMat = new THREE.ShaderMaterial({
   uniforms:{ base:{value:new THREE.Color('rgb(146,140,132)')}, fuge:{value:new THREE.Color('rgb(96,92,88)')}, ang:{value:THREE.MathUtils.degToRad(DATA.gatevinkel||0)} },
@@ -11,7 +15,7 @@ const stoneMat = new THREE.ShaderMaterial({
     vec2 S=vec2(1.05,0.8); vec2 p=q/S; float rad=floor(p.y); p.x+=fract(rad*0.5)*1.0+h(vec2(rad,3.))*0.3;
     vec2 id=floor(p), f=fract(p);
     vec2 e=min(f,1.-f)*S; float kant=min(e.x,e.y);
-    // (05.11, Vegar: «virker pixlete» på desktop) fugene er 8 cm: blir de smalere enn en skjermpiksel, flimret de i et kornete mønster.
+    // (Vegar: «virker pixlete» på desktop) fugene er 8 cm: blir de smalere enn en skjermpiksel, flimret de i et kornete mønster.
     // Kanten kantutjevnes med sin egen bredde i piksler, og fugen tones mot snittfargen når den ikke lenger kan tegnes skarpt.
     float aw=fwidth(kant); float j=smoothstep(0.07-0.04-aw,0.07+0.04+aw,kant); j=mix(j,0.86,smoothstep(0.025,0.07,aw));
     float v=h(id);
@@ -44,3 +48,5 @@ const plenMat=new THREE.ShaderMaterial({
 });
 medSkygge(plenMat); bakkelag(plenMat, BAKKELAG.gress);
 // plenene og gårdsrommene tegnes i 17_bakkeflater-og-parkering.js (sammen med parkering og flatene målt i ortofotoet)
+
+export { plenMat, stoneMat };

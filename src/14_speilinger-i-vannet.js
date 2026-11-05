@@ -1,5 +1,12 @@
+import * as THREE from 'three';
+import { BERORING, HJEM_PLAKAT, Q0, STAAENDE, cam, kam, renderer, scene } from './00_oppsett.js';
+import { MAALT, maalVent } from './01_etterbehandling.js';
+import { setSol, solposisjon } from './02_lys.js';
+import { waterMat } from './03_bakke-vann-grønt.js';
+import { city } from './05_bygg.js';
+import { crowns } from './12_trær.js';
 // ---- speilinger i vannet: hus, trær og terreng tegnes speilvendt om vannflaten i et eget, halvt så stort lag ----
-// 29.10: speilet toner ikke lenger ut når kartet beveger seg. Det tegnes på nytt høyst hvert BEV.speilMs ms i fart (og hvert bilde i ro
+// speilet toner ikke lenger ut når kartet beveger seg. Det tegnes på nytt høyst hvert BEV.speilMs ms i fart (og hvert bilde i ro
 // når noe endrer seg), og mellom gangene slår vannet opp i det med kameraet fra da det ble tegnet, så det står fast i byen.
 const speil=(()=>{
   const Y=0.15, LAG=1;
@@ -10,12 +17,12 @@ const speil=(()=>{
   let paa=!Q0.get('nospeil');
   const cc=new THREE.Color(), _speilKam=new THREE.Matrix4().set(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), lagre=new Float64Array(2*deler.length);
   return {
-    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; const d=BERORING?2:1; rt.setSize(Math.max(2,Math.round(w/d)), Math.max(2,Math.round(h/d))); },   // (05.11) speilet i full oppløsning på maskin, halv på telefon
+    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; const d=BERORING?2:1; rt.setSize(Math.max(2,Math.round(w/d)), Math.max(2,Math.round(h/d))); },   // speilet i full oppløsning på maskin, halv på telefon
     av(){ paa=false; waterMat.uniforms.reflStyrke.value=0; },
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
       // tegnes bare på nytt når kameraet eller husene har flyttet seg (stillestående bilde koster ingenting ekstra)
-      if(!endret && _speilKam.equals(cam.projectionMatrix)) return; _speilKam.copy(cam.projectionMatrix);   // (02.11) matrisen sammenlignes direkte, ingen ny tekst per bilde
+      if(!endret && _speilKam.equals(cam.projectionMatrix)) return; _speilKam.copy(cam.projectionMatrix);   // matrisen sammenlignes direkte, ingen ny tekst per bilde
       const _ts=performance.now();
       deler.forEach((o,i)=>{ lagre[2*i]=o.position.y; lagre[2*i+1]=o.scale.y; });
       deler.forEach(o=>{ o.position.y=2*Y-o.position.y; o.scale.y=-o.scale.y; });
@@ -34,38 +41,16 @@ const speil=(()=>{
   };
 })();
 
-const clock=new THREE.Clock(); let _synlig=false;
+const clock=new THREE.Clock();
 
-const Q=Q0; let introDone=false;
+const Q=Q0;
 if(Q.get('sol')){ const dato=Q.get('dato')||new Date().toISOString().slice(0,10); const mnd=+dato.slice(5,7); const off=(mnd>=4&&mnd<=10)?'+02:00':'+01:00';
   const p=solposisjon(new Date(dato+'T'+Q.get('sol')+':00'+off)); setSol(p.asimut,p.hoyde); }
-const MOBIL_START=[12,67];   // stående telefon: sentrum for sluttbildet (Vegar 02.11, se 00_oppsett STAAENDE)
-const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : (HJEM_PLAKAT ? [10,0] : (STAAENDE ? MOBIL_START : [25,25]));   // ny hjemmevisning (26.10): midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
+const MOBIL_START=[12,67];   // stående telefon: sentrum for sluttbildet (se 00_oppsett STAAENDE)
+const START = Q.get('tx') ? [+Q.get('tx'), +Q.get('ty')] : (HJEM_PLAKAT ? [10,0] : (STAAENDE ? MOBIL_START : [25,25]));   // ny hjemmevisning : midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
-// ytelse: måler bildefrekvensen mens kartet beveger seg og senker kvaliteten ett trinn for godt på svake maskiner.
-// Trinnet gjelder både i fart og i ro, så bildet aldri bytter utseende når en gest starter eller slutter.
-let perfN=0, perfSum=0, perfLast=performance.now(), perfNivaa=Q.get('noadapt')?9:0; let perfOnsket=0;   // trinnet måleren vil ha; settes først når kartet står (15_loop)
 function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
-let ssStille=4;
-let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
-// Måler tiden vår egen tegning tar (render(), CPU-siden), ikke avstanden mellom bildene: den styres også av verten og skjermen, og
-// lavere kvalitet hjelper ikke mot den. Introen (vekst + skygge hvert bilde) måles ikke; den er dyrere enn vanlig bruk.
-// (05.11, Vegar: «Kartet på desktop er skarp etter introen, og med en gang jeg beveger meg, faller kvaliteten») på maskin trappes det
-// aldri ned: iMac-en hans tegner 20–30 ms per bilde i fart, måleren satte trinn 1 (80 % oppløsning, strek med to prøver) ved første
-// stopp, og det ble stående. 35–45 bilder/s er godt nok på maskin; full kvalitet er kravet («ikke dårligere oppløsning», 02.11).
-// (05.11 17:14, Vegar etter ?noadapt=1 på iMac og iPhone: «funka veldig veldig bra både på desktop og mobil! Det er akkurat det jeg har
-// ønsket det hele tiden») heller ikke på telefon: kvaliteten trappes aldri ned av seg selv. ?adapt=1 slår måleren på (test).
-const MAAL_PAA = !!Q.get('adapt');
-function maalYtelse(){ const n=performance.now(); perfLast=n; if(!MAAL_PAA || perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
-  // (04.11) tiden fra bilde til bilde, ikke prosessortiden i render(): på Vegars iPhone var render() 3 ms og «mellom bildene» 25 ms
-  // (grafikkortet venter), så måleren trodde alt var fint ved 38 bilder/s. Under 45 bilder/s i bevegelse trappes det ned ett trinn.
-  const dt=(window.__ramme||0)+(window.__mellom||0);
-  perfN++; if(perfN>15){ perfSum+=dt; if(perfN>=75){ const avg=perfSum/60; perfN=0; perfSum=0;
-    if(avg>22){ perfOnsket=Math.max(perfOnsket, perfNivaa+1); } } } }
-// trinnene som egen funksjon, så de kan tvinges fram (?nivaa=2) og testes uten å vente på måleren
-function settNivaa(n){ perfNivaa=n;
-  if(n===1){ ssStille=2; skalaMaskin=0.8; }                                    // trinn 1: strek med to prøver, 80 % oppløsning
-  else if(n>=2){ ssStille=1; skalaMaskin=0.6; aoStille=8; sun.shadow.mapSize.set(1024,1024); if(sun.shadow.map) sun.shadow.map.setSize(1024,1024); skyggeSkitten=true; }   // setSize beholder teksturobjektet; dispose+null ga skyggekart uten skygger og ødelagte kroner på mobil (24.10) // trinn 2: mobil som sliter
-  beregnSkala(); }
-if(Q.get('nivaa')) settNivaa(+Q.get('nivaa'));
+const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
+
+export { Q, START, clock, speil, speilStyrke };

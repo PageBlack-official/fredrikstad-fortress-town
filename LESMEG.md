@@ -8,7 +8,7 @@ Kilden til kartet. Alt som publiseres bygges herfra; ingenting rettes i ferdig H
 
 ## Mapper
 - data/      én JSON per emne (bygg, veier, vann, trær, legende, porter, broer …). Hva hvert felt kommer fra: KILDER.md
-- src/       koden, én fil per del, i rekkefølge (00_oppsett … 16_klikk). stil.css, kropp.html, mal.html, manifest, sw.js
+- src/       koden som ES-moduler (se «Koden» under): main.js er inngangen og bestemmer rekkefølgen; tilstand.js og kvalitet.js eier det som deles. stil.css, kropp.html, mal.html, manifest, sw.js
 - assets/    teksturer (vann, pensel), app-ikoner, logo
 - regler/    Vegars regler som kjørbare sjekker; hver skriver rapport/<regel>.md og evt. bevisbilde
 - kilder/    referanser som sjekkene måler mot (flyfoto med transform)
@@ -16,7 +16,7 @@ Kilden til kartet. Alt som publiseres bygges herfra; ingenting rettes i ferdig H
 - ut/        bygd resultat (ikke kilde)
 
 ## Status 23.10.2026 (v30)
-Motor: MapLibre GL JS 6.14.0 (kamera, gester, koordinater). Byen: three.js 0.160 som custom layer. Koden er filer i rekkefølge i ett modulskop (ikke ekte ES-moduler ennå).
+Motor: MapLibre GL JS 6.14.0 (kamera, gester, koordinater). Byen: three.js 0.160 som custom layer. Koden er ekte ES-moduler fra 05.11 (se «Koden»).
 Geometrien er slått sammen (v29): vanlige hus ligger i ett nett per materiale med byggindeks per punkt; løft og vekst per bygg går gjennom hus-teksturen tHus (05_bygg: settHus). Et hus som skal endres, endres i data (rettelser.json) og bygges på nytt, ikke i scenen. Grupper som flyttes som objekter (kirka, portbygg, bygg med deler, broer) slås sammen med flatGruppe.
 Neste: kvalitetssikring kvartal for kvartal (bevisark tegning mot modell), deretter regel 02–04 grønne. v30: husfarger dømt visuelt mot 2019-trykket (rapport/farger-dom, rettelser i data/rettelser.json), trær fra flyfoto på flatene og dagens rekker på vollene. Åpne datakilder til POI-laget: rapport/apne-data.md.
 
@@ -319,10 +319,37 @@ Kontrollen: kvartal-kobling.json kan ha «biter» ({ids, d: [dx, dy] pt, grunn})
 arket; forskyvningen settes for hånd og finjusteres av blokksøket. Hvert kontrollark kjøres for seg (render kan krasje på én tegning).
 
 ## Oppsett på en ny maskin
-Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (ESLint til regel 08); Playwright med Chromium til nettlesertestene.
+Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (esbuild til bygget, ESLint til regel 08); Playwright med Chromium til nettlesertestene.
+
+## Koden: moduler, eiere og publisering (05.11)
+Vegar 05.11: «fiks spagettien». Før var de 25 filene limt sammen til ett skript der 263 navn delte samme rom, 12 variabler ble skrevet
+fra andre filer enn sin egen, og 13 tidlige filer brukte noe fra senere filer. Nå:
+- **Hver fil i src/ er en ES-modul** som importerer det den bruker og eksporterer det andre bruker. `src/main.js` laster dem i rekkefølge;
+  `bygg.py` pakker dem til én modul med esbuild (`npm install`), så kartet er fortsatt én side (enkel) eller side + data (server).
+- **Ingen modul importerer fra en senere modul.** Trenger en tidlig modul noe fra en senere (tegneløkka, husvalget, ferga), slås det opp
+  i `SENERE` (tilstand.js) når det brukes; eieren registrerer det nederst i fila (`registrer({...})`). Regel 08 er rød ellers.
+- **Én eier for delt tilstand.** `TILSTAND` (tilstand.js): tegneløkkas flagg (skyggekart skittent, intro ferdig, speil, sist beveget/tegnet).
+  `KVAL` (kvalitet.js): oppløsning, strek, skyggelegging og trinn, med all logikk som endrer dem. Ingen annen modul skriver KVAL (regel 08).
+- **Kvaliteten trappes aldri ned av seg selv** (Vegar 05.11: «akkurat det jeg har ønsket det hele tiden»). ?adapt=1 slår måleren på for test.
+- **Lint per modul** (regel 08): no-undef på hver fil for seg fanger navn som ikke er importert, i tillegg til lint av den pakkede modulen.
+- **Kommentarene sier hvorfor koden er slik nå.** Når og i hvilken rekkefølge står i CHANGELOG.md (kommentarhistorikken er flyttet dit).
+- Omleggingen kan gjentas og etterprøves: `verktoy/omlegging-05nov/` (1 håndgrep, 2 moduler, 3 datoer; kjørt på 3b93557).
+
+Publisering (publiser.sh, lagt om 05.11 etter at forsiden ble byttet uten ja to ganger):
+- `sh publiser.sh prove` bytter bare /prove/. Forsiden og /backup/ hentes fra gh-pages slik de står.
+- `sh publiser.sh forside` bytter forsiden (og /prove/ til samme bygg). Den gamle forsiden flyttes til /backup/v<versjon>-<dato>/ og føres
+  i lista. Krever Vegars ja, grønne regler (eller `TILLAT_RODE='<hans ja>'`) og grønn maskinsjekk mot samme kilde.
+
+## Maskinsjekken (05.11)
+Testene her tegner med programvare (swiftshader) og ser ikke det et ekte skjermkort gjør: feilen 05.11 (kvaliteten falt ved første
+bevegelse på Vegars iMac) var grønn i alle regler. Derfor, før forsiden byttes:
+1. `sh publiser.sh prove`, vent til /prove/ har den nye kilden (`<meta name="kilde">` i siden = `git log -1 --format=%h -- src data regler bygg.py datalag.py assets`).
+2. I Vegars Chrome (Claude in Chrome): åpne /prove/?skip=1, kjør innholdet i `verktoy/maskin-sjekk.js` med javascript_tool.
+3. Lagre svaret som `rapport/maskin.json` og commit det. Den er rød når oppløsning, strek eller skyggelegging endrer seg etter to
+   rotasjoner, når kvalitetstrinnet ikke er 0, eller når oppløsningen er lavere enn skjermen og pikselbudsjettet gir.
 
 ## Regler som må være grønne før publisering
-01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra, 22 overganger uten hopp, rykk og bråstopp (flyt-test). `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
+01–04 innhold mot kildene (02: Kartverket er fasit for høyde, tegningene for fasade – Vegar 28.10), 05 én tegnekvalitet, 06 bygger og laster, 07 ingen JS-feil i bruk (interaksjonstesten), 08 ESLint på den sammensatte modulen og hver modul for seg, ingen import fra senere modul, 09 publisert versjon = VERSJON (Pages og artefaktbygget), 10 ytelsestrinn 2 tegner likt som trinn 0 (mobil, nærbilde), 19 skyggekartet dekker bildet og tegnes ikke på nytt under dra, 22 overganger uten hopp, rykk og bråstopp (flyt-test). `PYTHONPATH=regler python3 regler/kjor.py` (kjører fra hvilken som helst mappe; 07 og 08 gikk bare fra prosjektmappa før 23.10).
 
 ## Agenter: brief og mottakskontroll (23.10)
 Vegar: «jeg liker ikke at du ikke merker noe agenter glipper.» Derfor:
@@ -335,7 +362,7 @@ Vegar: «jeg liker ikke at du ikke merker noe agenter glipper.» Derfor:
 - Det samme for egen publisering: regel 09 henter Pages og sjekker versjonen. (23.10: publiser.sh stoppet stille, Pages stod på v27 hele kvelden.)
 
 ## GitHub
-Repo: github.com/PageBlack-official/fredrikstad-fortress-town. main = kilden, gh-pages = server-bygget (publiser.sh). Pages: pageblack-official.github.io/fredrikstad-fortress-town
+Repo: github.com/PageBlack-official/fredrikstad-fortress-town. natt/samlet = kilden, gh-pages = det som ligger ute (publiser.sh prove | forside). Pages: pageblack-official.github.io/fredrikstad-fortress-town
 
 ## Fargene: regelen fra 30.10 (Vegar)
 Mange husfarger kom fra Street View-bilder fra august 2010, ELDRE enn tegningene. Vegar samlet selv husfargene med Street View i 2015;

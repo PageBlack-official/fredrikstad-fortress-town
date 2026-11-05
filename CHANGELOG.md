@@ -128,3 +128,119 @@
 
 ## 23 (23.10.2026)
 - Porter med passasje (Voldporten, Færgeporten; Kongeporten og Mellomporten som portal i mur). Vindebroen med gitterrekkverk og heiseverk; bro fra ravelinet; gangbro nord.
+
+## Kommentarhistorikk 23.10–05.11 (flyttet ut av koden 05.11)
+Kommentarene i src/ sier nå hvorfor koden er slik. Datoene og rekkefølgen stod slik i kommentarene før omleggingen (fil:linje i 3b93557 etter steg 1–2):
+- 00_oppsett.js:15: // ---- tegnestil (23.10, bestemt med Vegar): streken er stikkets, flatene er flate, lyset er glatt. 2015-teknikkens varme (akvarellvask,
+- 00_oppsett.js:18: // kurve: filmkurven over høylysene (lys-og-bevegelse pkt. 1, 24.10), avslått i kartet.
+- 00_oppsett.js:19: // av i kartet (ingen synlig forskjell, 24.10); ?kurve=1 for introfilmen
+- 00_oppsett.js:30: // hjemmevisningen (26.10, Vegar: «sluttbildet i dette utsnittet»): byen sett fra elva, kirka oppe til høyre, litt brattere enn plakaten.
+- 00_oppsett.js:33: // stående telefon har sitt eget sluttbilde (Vegar 02.11 13:23, skjermbilde fra iPhone: «Uansett versjon vil jeg at denne stillingen skal være siste frame på mobilvisningen»):
+- 00_oppsett.js:37: // hjemmevisningens høyde over horisonten: 48° på bred skjerm; 40° på smal (stående telefon), der 48° leses som «for mye ovenfra» (Vegar 28.10)
+- 00_oppsett.js:43: /* (02.11) lerretet får ingen MSAA: byen tegnes kantutjevnet i eget mål (01: MSAA + FXAA) og legges over hele lerretet, så MSAA på lerretet var dobbeltarbeid */, reduceMotion:false /* «Reduser bevegelse» av: Vegars valg, CHANGELOG v27 (15_bevegelse) */, pixelRatio: Math.min(devicePixelRatio,2), doubleClickZoom:true, dragRotate:true, touchPitch:true, fadeDuration:0, renderWorldCopies:false });
+- 00_oppsett.js:54: // Vegar 28.10; ytelsesmåleren trappet først ned etter 75 trege bilder). ?pix=<millioner> overstyrer.
+- 01_etterbehandling.js:16: /* (05.11, Vegar: «refresh-raten + oppløsningen») maskin: alltid 4x MSAA */ type:THREE.HalfFloatType});
+- 01_etterbehandling.js:18: // (02.11) minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
+- 01_etterbehandling.js:35: // (02.11) minimum av pikselen og naboen til høyre og over er regnet i et eget pass (tMin, rå dybde): én oppslag i stedet for tre, samme tall
+- 01_etterbehandling.js:52: // filmkurve (teknikk 15, 24.10): toppen bøyes av over KNE (230/255) mot TAK (241/255), alt under står urørt, så husfargene (fasit) ikke flytter seg.
+- 01_etterbehandling.js:58: // punch (02.11 kveld, Vegar: «før» så mer imponerende ut): i skjermrom, etter fargekoden. Metningen løftes mest der den er svak
+- 01_etterbehandling.js:144: // metning ned 7 % (Vegar 03.11 21:34: «litt glorete»): etter punchen, i skjermrom, bare på kartet (papiret rundt står). ?metning=1 gir urørt.
+- 02_lys.js:32: // 48°: den faste sola (42°) er svakt gyllen, ikke hvit (28.10)
+- 02_lys.js:71: // (04.11) og aldri mens en finger er nede: skyggekartet tegnes når du slipper   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
+- 02_lys.js:73: // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
+- 02_lys.js:77: // 28.10: trinnet rundes NED, så R alltid er minst 1,4·r. Med Math.ceil (24.10–27.10) ble R ofte mindre enn bildet: skyggene
+- 02_lys.js:109: // Sola finner byen (28.10, Vegar: «A»): i introen er byen overskyet (ingen kastskygger, kjølig), og en solkant vandrer over byen.
+- 02_lys.js:114: // overskyet: tydelig mørkere og blåere (28.10 kl. 16.40: 0,86/0,90/0,97 var usynlig i Vegars Chrome)
+- kvalitet.js:6: // Regelen: kvaliteten trappes aldri ned av seg selv (Vegar, se CHANGELOG 05.11). Oppløsningen settes av pikselbudsjettet (PIX) og skjermen.
+- 03_bakke-vann-grønt.js:12: // BAKKELAG (02.11, avvik A8): flater som ligger nesten i samme høyde (brostein 5 cm, veier 7–10 cm, flater 9 cm, parkering 12 cm,
+- 03_bakke-vann-grønt.js:18: // I BROSTEINSFLATEN (02.11, avvik A15): brostein er grunnen der (src/04). En brosteinsflate, et brosteinsbånd i en vei eller et
+- 03_bakke-vann-grønt.js:75: // 03.11 (Vegar: «savner livet i vannet, hvordan det skummer langs bryggene»): kai og brygge får også skum, smalere og svakere enn
+- 03_bakke-vann-grønt.js:86: // solgløtt (lys-og-bevegelse pkt. 3, 24.10; bygd 02.11 kveld): sola speiler seg i små bølger, så glitteret glir når byen dreies.
+- 04_brostein-i-hele-gamlebyen.js:18: // (05.11, Vegar: «virker pixlete» på desktop) fugene er 8 cm: blir de smalere enn en skjermpiksel, flimret de i et kornete mønster.
+- 05_bygg.js:53: // ---- kontaktskygge (lys-og-bevegelse pkt. 1, 24.10): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
+- 05_bygg.js:56: // 02.11 kveld: lå på 4 cm, under brosteinen (5 cm) og gresset (28 cm) etter bakkelagene (A8), så regel 12 målte 0,1–0,2 %.
+- 05_bygg.js:73: // orientering avgjør hvilken side som er ut: (-ey,ex) peker INN i et mot-klokka polygon (rettet 03.11, båndet lå under husene)
+- 05_bygg.js:122: // naturstein (sokkel.type, avvik A10 02.11): skift med ujevn høyde, blokker med ujevn lengde, mørke fuger og
+- 06_kirka-bygget-etter-2017.js:5: // Korsarmene (30.10, natt/farge): valm i endene, som kvartaltegningen kirke.ai (trekantet takflate over hver endevegg, ingen gavlvegg)
+- 06_kirka-bygget-etter-2017.js:7: // noen av kildene. ENDE = 'gavl' gir saltak med gavlvegg og rundvindu i gavlen (slik det stod 29.10).
+- 06_kirka-bygget-etter-2017.js:76: // målt i Kartverkets DOM−DTM 25.10: takfot ca. 8,8 m, møne 14,4 m (før 9,5 + 8,2 = 17,7, 3 m for høyt)
+- 06_kirka-bygget-etter-2017.js:112: // korsarmenes endevegger mot sør og øst har dør, som i kvartaltegningen (Vegar 29.10: «det mangler en dør plassert inni en
+- 06_kirka-bygget-etter-2017.js:126: // i kilder/bygg-merknader.json, ellers regelen under), så kontrolløren teller de samme vinduene som kartet viser (31.10)
+- 06_kirka-bygget-etter-2017.js:148: // høydene (30.10): Kartverkets DOM−DTM ved tårnet har murkronen på 18–19 m (kanten av tårnet) og toppen 32 m midt over
+- 06_kirka-bygget-etter-2017.js:153: // Landemerke (Vegar 30.10): tårnet skal fungere dramatisk, ikke korrekt, fordi det brukes til å orientere seg. bygg.kirke.visning
+- 06_kirka-bygget-etter-2017.js:172: // spiret: foten er ~1/4 av lanternens bredde (foto Commons «Oestre fredrikstad kirke 01», 2008); 0,3 m ble en nål som forsvant på kartzoom (Vegar 30.10: «for kort»)
+- 06_kirka-bygget-etter-2017.js:180: // tårnfoten mot øst har ingen vinduer i tegningen (Vegar 29.10: «på tårnet skal det ikke være vindu vendt mot sør øst»)
+- 07_vinduer-dører-og-porter.js:23: // kamerarom som husene (28.10)
+- 07_vinduer-dører-og-porter.js:27: // buet topp: port (typ 2) og rundbuevindu (typ 0, bue 1; Tøihuset 30.10)
+- 07_vinduer-dører-og-porter.js:37: // sprosser etter zoom (30.10): post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
+- 07_vinduer-dører-og-porter.js:135: // ---- landemerker (30.10, natt/landemerker): gjenbrukbare elementer som styres av data, ikke engangsfikser ----
+- 07_vinduer-dører-og-porter.js:145: // landemerke (Vegar 30.10): visningsskala forstørrer tårnet fra bakken; de målte tallene i dataene står
+- 07_vinduer-dører-og-porter.js:184: // felt over arkaden (A.felt {z0, z1, bredde, dybde}, natt/atrium 30.10): etasjen over har høye innfelte felt med samme deling som buene,
+- 07_vinduer-dører-og-porter.js:194: // ATRIUM (bygg.atrium, 30.10): innglasset gårdsrom i en ring av tak (ringtaket står i tak2/gavl2, regnet av verktoy/landemerker.py).
+- 07_vinduer-dører-og-porter.js:246: // sokkel / natursteinsetasje i egen farge (29.10: tegningen og Street View viser «rød tegl over grå natursteinsetasje»); type naturstein
+- 07_vinduer-dører-og-porter.js:255: // takhelning per hus (th) fra Kartverkets høydemodell der den er målt (24.10)
+- 07_vinduer-dører-og-porter.js:342: // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård; 29.10)
+- 07_vinduer-dører-og-porter.js:352: // fasadesegmenter (30.10): én kropp etter DOM/Matrikkelen, men tegningen viser flere fasader på veggen. Hvert segment er en
+- 07_vinduer-dører-og-porter.js:381: // takvinduer: flate vinduer i takflaten (x, y, bredde, høyde langs fallet), som i kvartaltegningene (29.10)
+- 08_festningsterrenget.js:17: // TERRENGFLIKER (30.10, data/terrengflikker.json): Kartverkets DTM lagt over det beregnede terrenget der det beregnede er feil
+- 08_festningsterrenget.js:32: // Flater og veier legges på den (avvik A16, 02.11): med bilineær høyde og hjørner bare i polygonets punkter skar store flater
+- 08_festningsterrenget.js:69: // flate (data/landskap.json, verktoy/bakke.py gater 29.10): kjøreveier lagt med brostein tegnes med brosteinen, ikke gategrått
+- 08_festningsterrenget.js:70: // heller og grus (kaia, plassene, stiene på vollene) får flatens farge, som flatene i 17 (30.10)
+- 08_festningsterrenget.js:74: // båndet legges på terrenget (avvik A8, 02.11): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
+- 09_murer-plankegjerder-og-voller.js:16: // gjerdelinjer som ligger i sporet til en teglmur (data/teglmurer.json), tegnes ikke: teglmuren erstatter dem (27.10, Kaserna)
+- 09_murer-plankegjerder-og-voller.js:18: // gjerder, murer og hekker sett i ortofoto 2024 (data/gjerder.json, verktoy/bakke.py gjerder 29.10): {typ, p, h}; gammel form (bare punkter) = gjerde
+- 10_porter.js:23: // VINGEMURER (30.10): skrå murer som holder vollen ved porten. [x0, y0, x1, y1, h0, h1, tykk]: innerflaten fra porthjørnet ut til
+- 12_trær.js:16: // dybdeskriving og egen skyggeoppslag fram til 24.10; på iPhone forsvant de ved zoom og dra uten at noen av delene kunne pekes ut
+- 12_trær.js:34: // solRetning() er i kamerarommet (three.js); normalen må dit, ellers dreier lyssiden med kameraet (28.10)
+- 14_speilinger-i-vannet.js:9: // 29.10: speilet toner ikke lenger ut når kartet beveger seg. Det tegnes på nytt høyst hvert BEV.speilMs ms i fart (og hvert bilde i ro
+- 14_speilinger-i-vannet.js:20: // (05.11) speilet i full oppløsning på maskin, halv på telefon
+- 14_speilinger-i-vannet.js:25: // (02.11) matrisen sammenlignes direkte, ingen ny tekst per bilde
+- 14_speilinger-i-vannet.js:49: // stående telefon: sentrum for sluttbildet (Vegar 02.11, se 00_oppsett STAAENDE)
+- 14_speilinger-i-vannet.js:50: // ny hjemmevisning (26.10): midt i byen, torget litt under midten   // ?tx=&ty= setter startpunktet (test)
+- 15_bevegelse.js:4: // ---- bevegelse: én modul for varighet og kurver i hele kartet (oppdrag 15, 29.10; kilder: rapport/flyt/kilder.md) ----
+- 15_bevegelse.js:22: // s: en avbrutt intro henter inn lyset og uskarpheten på denne tida (28.10)
+- 15_bevegelse.js:31: // (CHANGELOG v27, 23.10: «respectPrefersReducedMotion av ("Reduser bevegelse" i macOS slo av alle animasjoner)»; bekreftet av hovedagenten
+- 15_bevegelse.js:32: // 29.10). Valget het feil i MapLibre 6 og ble ignorert; riktig navn er reduceMotion:false i kartvalgene (00_oppsett).
+- 15_bevegelse.js:42: // ---- treghet etter dra, klyp og vri (29.10) ----
+- 15_bevegelse.js:50: // slipplogg (04.11, Vegar: «den flytter seg fremdeles når jeg slipper tommelen»): hvert slipp og hvert kameraflytt de neste 600 ms
+- 15_bevegelse.js:61: // Hoppet er ikke bevegelse. Tas det med, leses det som et kast (Vegar 02.11, mobil: «hopper bildet ganske langt mot venstre når jeg
+- 15_bevegelse.js:65: // fingerNede: minst én finger er på kartet (leses av 15_loop og 02_lys: ingen tunge pass mens fingeren er nede, 04.11)
+- 15_bevegelse.js:96: // På en treg telefon kan behandlingen komme 100–300 ms etter at fingeren løftet; da gikk vi (02.11) til MapLibres treghet, som regner
+- 15_bevegelse.js:97: // farten med tommelhoppet inne (sprett). Natt til 04.11 lot jeg i stedet målevinduet vokse med bildetiden, og da fikk en finger som
+- 15_bevegelse.js:98: // hadde STOPPET fart fra bevegelsen før stoppet (Vegar 04.11: «kartet glir litt mot høyre» når tommelen slipper). Nå: har fingeren
+- 15_bevegelse.js:121: // ---- musehjul (29.10): jevn zoom i stedet for ett utslag per hakk ----
+- 15_lenke.js:5: // ---- lenka husker utsikten (02.11): #view=lat,lon,zoom,pitch,bearing&hus=<bygg-id> ----
+- 15_loop.js:42: // introen om igjen (Vegar 04.11: «når man klikker på hele byen ønsker jeg at introen starter igjen»): samme løp som ved lasting,
+- 15_loop.js:54: // ---- Sola finner byen (28.10, Vegar: «A») ----
+- 15_loop.js:57: // godkjente 42° (23.10), så skyggene blir lange idet kameraet lander. Lyset er bundet til kameraets vei (bearing), ikke til klokka
+- 15_loop.js:70: // en kurve til oppå gjorde at sola var over byen på 0,6 s (målt i Vegars Chrome 28.10 kl. 16.30)
+- 15_loop.js:77: // avstanden fra startvinkelen, målt den korte veien rundt, delt på sveipet. Før 28.10 kl. 16 ble u regnet med fortegn fra plakatvinkelen
+- 15_loop.js:87: // (Vegar 28.10: «ytterkantene er blury helt til introen er ferdig, og da blir alt skarpt samtidig»). Uten solintro: ut over de siste 40 %.
+- 15_loop.js:91: // avbrutt intro (29.10, oppdrag 15): før ble tiltU satt til 1 i bildet etter avbruddet, så uskarpheten forsvant på ett bilde (målt i
+- 15_loop.js:129: // speilet (29.10): toner inn én gang etter introen og blir stående. I fart tegnes det på nytt høyst hvert BEV.speilMs ms; mellom gangene
+- 15_loop.js:131: // (02.11) uten vann i bildet tegnes ikke speilet (21_flyt: vannISyne); kommer vannet inn, tegnes det i samme bilde (nøkkelen er ny)
+- 15_loop.js:135: // (04.11) aldri et speilpass mens en finger er nede: det var støtene som hakket på telefonen; det forrige speilet følger kameraet imens
+- 15_loop.js:136: // (04.11) kvalitetstrinnet byttes bare når kartet står: midt i et dra kjentes det som at kartet «hentet seg inn»
+- 15_loop.js:148: // ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 30 ganger i sekundet på maskin (05.11, Vegar: «refresh-raten»), 10 på telefon, når vann er i bildet (vannet lever), ellers ikke (02.11)
+- 15_loop.js:149: // (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
+- 15_loop.js:153: // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
+- 16_interaksjon.js:33: // ---- huskortet (oppdrag 15, 29.10): klikk -> huset løfter seg og kameraet glir inn, kortet glir inn (mobil: bunnark fra bunnen, som
+- 16_interaksjon.js:44: // tomt kort fremfor plassholder: det som vises, er ferdig (27.10)
+- 16_interaksjon.js:46: // bygg delt i fløyer (husdeling «felles_tak», 31.10 Tøihuset): fløyas egne steder øverst; de andre fløyenes og de uten kjent plass under «Også i …»
+- 16_interaksjon.js:116: // «Hele Gamlebyen» spiller introen på nytt (Vegar 04.11), på mobil og bred skjerm; Esc glir bare hjem som før
+- 17_bakkeflater-og-parkering.js:8: // ---- bakkeflater og parkering (27.10): plenene (OSM, rettet mot ortofoto 2024), gresset i gårdsrommene slik ortofotoet viser det,
+- 17_bakkeflater-og-parkering.js:23: // bed (bar jord) og brostein utenfor brosteinsflaten kommer fra ortofotoet (verktoy/bakke.py overflater, 29.10)
+- 17_bakkeflater-og-parkering.js:67: // (brostein i Gamlebyen) og bare oppmerkingen tegnes: den glatte parkeringsflaten oppå brosteinen var «noe rart foran huset» (avvik A3, 02.11)
+- 18_brygger.js:5: // ---- brygger (27.10): fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
+- 19_gardsmurer-og-vinterhager.js:6: // ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (27.10, Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
+- 19_gardsmurer-og-vinterhager.js:19: // åpninger der et portbygg står i muren ([fra, til, id] i meter langs muren, verktoy/kaserna.py): muren tegnes ikke gjennom buen (avvik A2, 02.11)
+- 19_gardsmurer-og-vinterhager.js:82: // (granittsokkelen som eget bånd 16 cm utenfor veggen er tatt ut 02.11, avvik A9: på Artillerigården (sokkel 3,1 m) dekket den
+- 20_statuen-paa-torvet.js:24: // kontrollert mot Wilse 1931 og nb.no 1969. Posituren rettet 30.10 etter Street View mai 2024 (rett forfra, fra vest-nordvest) og
+- 20_statuen-paa-torvet.js:30: // jernsko (sabaton): avrundet, ikke kasse (30.10)
+- 20_statuen-paa-torvet.js:35: // pluderhoser/lårplater: buklet profil (30.10)
+- 20_statuen-paa-torvet.js:38: // brystharnisk: rundet bryst, smalt mot beltet (30.10)
+- 21_flyt.js:6: // ---- flyt uten lavere oppløsning (02.11, Vegar: «ikke dårligere oppløsning, heller motsatt») ----
+- 22_byferga.js:6: // ---- Byfergene (03.11 og 04.11, Vegar: «se byferga entre kaia i gamlebyen i introswipen», «koble fergetider til fergen») ----
+- 22_byferga.js:7: // To like båter (Vegars tegning 03.11 22:04): rødt skrog som dominerer, lang hvit salong med en rekke vinduer, styrhus og åpent dekk
+- 22_byferga.js:22: // skroget: boks med avfasede ender. Rampeenden (+x, baugen mot kaia) er flat og bred, den andre enden er spisset (Vegar 03.11 22:46)
+- 22_byferga.js:48: // (05.11, regel 19) båtene kaster ikke i skyggekartet: det skal stå stille når kartet står, og en båt i fart ville tegnet det på nytt hele tiden

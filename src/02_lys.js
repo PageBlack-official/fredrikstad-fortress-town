@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { SENERE, TILSTAND, registrer } from './tilstand.js';
+import { SOL_FAST, cam, kam, scene } from './00_oppsett.js';
 // ---- lys: sola ----
 // Plakatsolen (standard): sola står øverst til venstre i bildet uansett hvordan byen snus, som i trykkfila.
 // Ekte sol: setSol(asimut, høyde) i radianer, asimut fra nord med klokka. Skyggene følger sola i begge moduser.
@@ -26,16 +29,16 @@ function solposisjon(dato, lat=59.2075, lon=10.9545){
 }
 const SOL={modus:'plakat', asimut:0, hoyde:35*GRAD};
 // sollyset blir varmere jo lavere sola står
-function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,48*GRAD);   // 48°: den faste sola (42°) er svakt gyllen, ikke hvit (28.10)
+function solFargeFor(hoyde){ const k=THREE.MathUtils.smoothstep(hoyde,4*GRAD,48*GRAD);   // 48°: den faste sola (42°) er svakt gyllen, ikke hvit 
   sun.color.setRGB(1.0, THREE.MathUtils.lerp(0.80,0.985,k), THREE.MathUtils.lerp(0.62,0.95,k)); }
 function setSol(asimut, hoyde){
   SOL.modus='ekte'; SOL.asimut=asimut; SOL.hoyde=Math.max(hoyde,3*GRAD);
-  solFargeFor(SOL.hoyde); skyggeSkitten=true;
+  solFargeFor(SOL.hoyde); TILSTAND.skyggeSkitten=true;
 }
 function plakatSol(){
   SOL.modus='plakat';
   if(sun.parent!==scene){ sun.parent&&sun.parent.remove(sun); sun.target.parent&&sun.target.parent.remove(sun.target); scene.add(sun); scene.add(sun.target); }
-  solFargeFor(35*GRAD); skyggeSkitten=true;
+  solFargeFor(35*GRAD); TILSTAND.skyggeSkitten=true;
 }
 window.__skyggeNy=()=>{ dekning.r=0; };   // test: tvinger skyggekartet tegnet på nytt om samme senter (verktoy/skygge-dra-test.mjs)
 window.__sol=()=>({sd:_sd.toArray(), q:cam.quaternion.toArray(), grunner:dekning.grunner, R:dekning.r, r:dekning.rBilde}); window.setSol=setSol; window.plakatSol=plakatSol; window.solposisjon=solposisjon;
@@ -45,12 +48,12 @@ function lysFraVenstre(){ plakatSol(); if(SOL_FAST) setSol(250*GRAD, 42*GRAD); }
 const U_SKRAVUR={value:0};
 // skyggekartet er forankret i byen og tegnes på nytt bare når det må: bildet har gått ut av dekningen, zoomen eller
 // solretningen har endret seg merkbart, eller sola/husene har flyttet seg. Flytting (dra) innenfor dekningen koster ingen skyggetegning.
-sun.shadow.autoUpdate=false; let skyggeSkitten=true, kameraBeveget=true; const sistKam=new THREE.Matrix4();
+sun.shadow.autoUpdate=false; let kameraBeveget=true; const sistKam=new THREE.Matrix4();
 const dekning={r:0, senter:new THREE.Vector3(), retning:new THREE.Vector3(), grunner:{}, sist:0};
 const _sd=new THREE.Vector3(), _st=new THREE.Vector3(), _q=new THREE.Quaternion(), _m4=new THREE.Matrix4(), _hoyre=new THREE.Vector3(), _opp=new THREE.Vector3(), _senter=new THREE.Vector3();
 function oppdaterSol(){
   const tg=kam.senter;
-  cam.updateMatrixWorld(); kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !introDone; if(kameraBeveget) sistKam.copy(cam.projectionMatrix);
+  cam.updateMatrixWorld(); kameraBeveget = !sistKam.equals(cam.projectionMatrix) || !TILSTAND.introDone; if(kameraBeveget) sistKam.copy(cam.projectionMatrix);
   // solretningen (lyset på fasadene) følger kameraet hvert bilde; skyggekartet følger etter i steg
   if(SOL.modus==='ekte'){ const ca=Math.cos(SOL.hoyde); _sd.set(Math.sin(SOL.asimut)*ca, Math.sin(SOL.hoyde), -Math.cos(SOL.asimut)*ca); }
   else _sd.copy(PLAKAT).applyQuaternion(cam.quaternion);   // plakatsola: øverst til venstre i bildet uansett hvordan byen snus
@@ -61,17 +64,17 @@ function oppdaterSol(){
   let grunn = dekning.r===0 ? 'start' : (r>dekning.r*0.78 || r<dekning.r*0.45) ? 'zoom'   // zoomet: kartet dekker for lite eller er for grovt
     : Math.hypot(tg.x-dekning.senter.x, tg.z-dekning.senter.z) > dekning.r*0.3 ? 'dratt'    // dratt ut av marginen
     : _sd.angleTo(dekning.retning) > 1.5*GRAD ? 'snudd'                                      // snudd eller vippet: sola står et annet sted
-    : skyggeSkitten ? 'by' : '';                                                             // sola, husene eller introen
+    : TILSTAND.skyggeSkitten ? 'by' : '';                                                             // sola, husene eller introen
   // myke grunner (litt snudd, hus som glir) ventes med til 150 ms har gått mens kameraet er i fart, så et dra ikke tegner skyggekartet hvert bilde;
   // står kameraet stille, tegnes det med en gang, så det siste bildet alltid er riktig
   const naa=performance.now();
-  if((grunn==='snudd' || grunn==='by') && introDone && ((kameraBeveget && naa-dekning.sist<150) || fingerNede)) grunn='';   // (04.11) og aldri mens en finger er nede: skyggekartet tegnes når du slipper   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
+  if((grunn==='snudd' || grunn==='by') && TILSTAND.introDone && ((kameraBeveget && naa-dekning.sist<150) || SENERE.fingerNede)) grunn='';   // og aldri mens en finger er nede: skyggekartet tegnes når du slipper   // i introen tegnes skyggekartet hvert bilde: sola synker og skyggene vokser
   if(grunn){ dekning.grunner[grunn]=(dekning.grunner[grunn]||0)+1; dekning.sist=naa;
-    // Stabilt skyggekart (24.10, Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
+    // Stabilt skyggekart (Vegar på mobil: «skyggene tegnes hele tiden så det flakker»): på en liten skjerm går et dra ut av
     // marginen ofte, og hver ny tegning med ny skala og nytt senter flyttet tekselrutenettet, så de myke kantene krøp. Nå er
     // dekningen trinnvis (1100 m delt på 1,5^k) og senteret låst til tekselrutenettet i lysets plan, så to tegninger av samme
     // sted gir samme teksler; bare innholdet (hus som løfter seg) kan endre seg.
-    // 28.10: trinnet rundes NED, så R alltid er minst 1,4·r. Med Math.ceil (24.10–27.10) ble R ofte mindre enn bildet: skyggene
+    // trinnet rundes NED, så R alltid er minst 1,4·r. Med Math.ceil ble R ofte mindre enn bildet: skyggene
     // kuttet i kanten av dekningen, kanten fulgte kameraet, og «zoom» tegnet kartet på nytt hvert bilde (Vegar: «trærnes skygge
     // tegnes på nytt hver gang jeg flytter meg»). Regel 19 måler at dekningen holder og at et dra ikke tegner kartet på nytt.
     const trinn=Math.max(-1, Math.floor(Math.log(1100/(r*1.4))/Math.log(1.5)));
@@ -84,7 +87,7 @@ function oppdaterSol(){
     _senter.copy(tg).addScaledVector(_hoyre, Math.round(cx/teksel)*teksel-cx).addScaledVector(_opp, Math.round(cy/teksel)*teksel-cy);
     sun.target.position.copy(_senter); sun.position.copy(_senter).addScaledVector(_sd,2500); sun.target.updateMatrixWorld(); sun.updateMatrixWorld();
     dekning.r=R; dekning.senter.copy(_senter); dekning.retning.copy(_sd);
-    sun.shadow.needsUpdate=true; skyggeSkitten=false;
+    sun.shadow.needsUpdate=true; TILSTAND.skyggeSkitten=false;
   }
   // trærne henter solretningen selv (se tre-blokken)
 }
@@ -103,12 +106,12 @@ const GL_SOL_F=`#include <common>
 #include <packing>
 #include <shadowmap_pars_fragment>
 varying vec3 vWq;
-// Sola finner byen (28.10, Vegar: «A»): i introen er byen overskyet (ingen kastskygger, kjølig), og en solkant vandrer over byen.
+// Sola finner byen (Vegar: «A»): i introen er byen overskyet (ingen kastskygger, kjølig), og en solkant vandrer over byen.
 // Kanten er et plan i verden (solFrontDir), flyttet av solFront, myk over solBredde meter; høye punkter (kirketårnet) får lys litt før.
 // Etter introen er solUte 1 og alt dette er én sammenligning per piksel. Ingen overlegg: skyggene som vokser fram er ekte skygger.
 uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
 float solHer(vec3 wq){ if(solUte>=1.) return 1.; float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; return smoothstep(solFront, solFront+solBredde, v); }
-const vec3 OVERSKYET=vec3(0.74,0.80,0.92);   // overskyet: tydelig mørkere og blåere (28.10 kl. 16.40: 0,86/0,90/0,97 var usynlig i Vegars Chrome)
+const vec3 OVERSKYET=vec3(0.74,0.80,0.92);   // overskyet: tydelig mørkere og blåere (0,86/0,90/0,97 var usynlig i Vegars Chrome)
 // overskyet tar også metningen ned: byen ser ut som tegningen i gråvær, og sola gir fargene tilbake
 vec3 graavaer(vec3 c){ float g=dot(c, vec3(0.299,0.587,0.114)); return mix(vec3(g), c, 0.72)*OVERSKYET; }
 #if NUM_DIR_LIGHTS>0
@@ -163,3 +166,6 @@ function medSkygge(m){
   m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(graavaer(gl_FragColor.rgb), sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); }\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }
+registrer({ sun: () => sun });   // brukes av tidligere moduler via SENERE (tilstand.js)
+
+export { GL_SOL_F, GL_SOL_V, GRAD, U_SKRAVUR, U_SOL, _sd, dekning, glSolVMain, kobleSol, lysFraVenstre, medSkygge, oppdaterSol, setSol, solposisjon, sun };

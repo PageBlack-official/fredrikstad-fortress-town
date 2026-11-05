@@ -1,3 +1,7 @@
+import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { INK, Q0, STIL, scene } from './00_oppsett.js';
+import { GL_SOL_F, GL_SOL_V, U_SKRAVUR, glSolVMain } from './02_lys.js';
 // ---- bygg ----
 const city = new THREE.Group(); scene.add(city);
 const edgeMat = new THREE.LineBasicMaterial({color:INK, transparent:true, opacity:.4}); edgeMat.visible=false; // blekkstreken tegnes i etterbehandlingen
@@ -46,10 +50,10 @@ function flatGruppe(grp, ekstra=['aBygg','aTopp']){
   grp.children.filter(c=>c.isGroup && !c.children.length).forEach(c=>c.removeFromParent());
   return grp;
 }
-// ---- kontaktskygge (lys-og-bevegelse pkt. 1, 24.10): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
+// ---- kontaktskygge (lys-og-bevegelse pkt. 1): et mykt mørke på bakken der hus og trær står, i tillegg til kastskyggen.
 // Geometri på bakken (ikke skjermeffekt): et bånd rundt hver husfot og en skive under hvert tre, med alfa 1 inne og 0 ute,
 // multiplisert inn i bakken. Stabilt i fart, ingen prikking, skalerer som husene. Styrken er KONTAKT_STYRKE, bredden settes der båndene lages.
-// 02.11 kveld: lå på 4 cm, under brosteinen (5 cm) og gresset (28 cm) etter bakkelagene (A8), så regel 12 målte 0,1–0,2 %.
+// lå på 4 cm, under brosteinen (5 cm) og gresset (28 cm) etter bakkelagene (A8), så regel 12 målte 0,1–0,2 %.
 // Nå ligger skyggen over øverste bakkelag (KONTAKT_Y) og vinner dybdetesten over alle lag i src/03 (polygonOffset større enn lag 4).
 const KONTAKT_STYRKE = Q0.get('kontakt')==='0' ? 0 : +(Q0.get('kontaktS')||0.5);
 const KONTAKT_Y = 0.3, KONTAKT_BREDDE = 2.4;
@@ -66,7 +70,7 @@ const kontaktMat=new THREE.ShaderMaterial({
 // bånd rundt et polygon (modellkoordinater x,y → verden x,-y), bredde d meter; returnerer posisjoner og alfa
 function fotBaand(pts, d, y){
   const n=pts.length; let areal=0; for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; areal+=a[0]*c[1]-c[0]*a[1]; }
-  const ut=areal>0 ? -1 : 1;                        // orientering avgjør hvilken side som er ut: (-ey,ex) peker INN i et mot-klokka polygon (rettet 03.11, båndet lå under husene)
+  const ut=areal>0 ? -1 : 1;                        // orientering avgjør hvilken side som er ut: (-ey,ex) peker INN i et mot-klokka polygon (feil vei la båndet under husene)
   const pos=[], alfa=[], nrm=[];
   for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; const ex=c[0]-a[0], ey=c[1]-a[1], L=Math.hypot(ex,ey)||1; nrm.push([ -ey/L*ut, ex/L*ut ]); }
   const P=(x,yy,al)=>{ pos.push(x,y,-yy); alfa.push(al); };
@@ -115,7 +119,7 @@ function mat(rgb, dim, sk, opt={}){
             float strok=nn(vec2(uq*0.7, wq.y*6.0))*0.7+nn(vec2(uq*2.1, wq.y*15.))*0.3;
             c*=1.+(strok-0.5)*0.05*naerhet*uVask;
             if(uStein>0.5){
-              // naturstein (sokkel.type, avvik A10 02.11): skift med ujevn høyde, blokker med ujevn lengde, mørke fuger og
+              // naturstein (sokkel.type, avvik A10): skift med ujevn høyde, blokker med ujevn lengde, mørke fuger og
               // tone per stein; tegnet, ikke fotografi. Borte på avstand som takstein og penselstrøk.
               float sy=wq.y/0.46; float rad=floor(sy); float fy=fract(sy);
               float sx=uq/(0.62+0.5*hh(vec2(rad,7.)))+hh(vec2(rad,3.)); float blk=floor(sx); float fx=fract(sx);
@@ -184,3 +188,5 @@ function mat(rgb, dim, sk, opt={}){
   }
   return mats.get(key);
 }
+
+export { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, edgeMat, flatGruppe, fotBaand, husDybde, kontaktMat, mat, settHus };

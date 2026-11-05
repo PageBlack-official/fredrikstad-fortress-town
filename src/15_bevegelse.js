@@ -1,4 +1,7 @@
-// ---- bevegelse: én modul for varighet og kurver i hele kartet (oppdrag 15, 29.10; kilder: rapport/flyt/kilder.md) ----
+import * as maplibregl from 'maplibre-gl';
+import { SENERE, registrer } from './tilstand.js';
+import { Q0, map, tilLngLat } from './00_oppsett.js';
+// ---- bevegelse: én modul for varighet og kurver i hele kartet (oppdrag 15; kilder: rapport/flyt/kilder.md) ----
 // Kameraet glir med glid (eksponentiell inn og ut, v32, godkjent av Vegar): farten bygges opp like lenge som den dør ut, og avstanden
 // til målet halveres jevnt mot slutten i stedet for å stoppe på et punkt. Korte flytt (knappene) bruker myk (kubisk inn og ut): glid
 // på under et halvt sekund dobler farten for hvert bilde og ser ut som et hopp. Kortet og knappene på skjermen bruker Material-kurvene:
@@ -16,7 +19,7 @@ const BEV = {
   dobbelVindu: 300,   // ms mellom to klikk/trykk som regnes som dobbelt (samme som MapLibres og de fleste systemer)
   dobbelAvstand: 30,  // px
   husZoom: 2.4,       // zoomfaktor kameraet glir inn til ved klikk på et hus (aldri ut: står du nærmere, blir du stående)
-  hentInn: 0.8,       // s: en avbrutt intro henter inn lyset og uskarpheten på denne tida (28.10)
+  hentInn: 0.8,       // s: en avbrutt intro henter inn lyset og uskarpheten på denne tida 
   // treghet etter dra, klyp og vri (egen, se under): farten fra hånda dør ut eksponentielt med tidskonstant tau
   treghet: { tau: 0.26, k: 5, vindu: 70, maks: { pan: 1600, zoom: 4, bearing: 360, pitch: 90 } },   // s, -, ms, per sekund (pan i px)
   // musehjul (egen, se under): hvert hakk flytter målet; zoomen følger målet som en kritisk dempet fjær (ingen utslag per hakk)
@@ -25,8 +28,8 @@ const BEV = {
   speilMs: 110,
 };
 // «Reduser bevegelse» (systeminnstilling) gjelder ikke kartet: Vegars Mac har den på, og han valgte selv at kartet og kortet skal bevege seg
-// (CHANGELOG v27, 23.10: «respectPrefersReducedMotion av ("Reduser bevegelse" i macOS slo av alle animasjoner)»; bekreftet av hovedagenten
-// 29.10). Valget het feil i MapLibre 6 og ble ignorert; riktig navn er reduceMotion:false i kartvalgene (00_oppsett).
+// (CHANGELOG v27: «respectPrefersReducedMotion av ("Reduser bevegelse" i macOS slo av alle animasjoner)»).
+// Valget het feil i MapLibre 6 og ble ignorert; riktig navn er reduceMotion:false i kartvalgene (00_oppsett).
 (()=>{ const s=document.documentElement.style; s.setProperty('--t-kort-inn', BEV.kort.inn+'ms'); s.setProperty('--t-kort-ut', BEV.kort.ut+'ms');
   s.setProperty('--k-inn', BEV.kurve.inn); s.setProperty('--k-ut', BEV.kurve.ut); s.setProperty('--k-flytt', BEV.kurve.flytt); })();
 // MapLibres egne knapper (+/−, kompass) og tastatur bruker 300–500 ms med en annen kurve; knappene får vår korte kurve og tid
@@ -36,7 +39,7 @@ const BEV = {
 // ett kameraflytt: alltid avbrytbart (MapLibre stopper en pågående easeTo så snart en gest starter; en ny easeTo starter fra der kameraet er)
 function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: BEV.kamera[type], easing: glid, __fra:type}); }
 
-// ---- treghet etter dra, klyp og vri (29.10) ----
+// ---- treghet etter dra, klyp og vri ----
 // MapLibre tar med 0,3 av farten fra klyp og vri (kan ikke stilles), og tregheten starter et bilde for sent, så det står ett bilde stille
 // idet du slipper (flyt-test). Vi måler farten selv i de siste 70 ms av gesten: flytt = fingrenes midtpunkt på skjermen (som MapLibres
 // dra), zoom/vri/vipp = kameraet. Farten dør ut eksponentielt, x(t) = v0·tau·(1 − e^(−t/tau)) regnet fra siste bevegelse, så første
@@ -44,7 +47,7 @@ function glidKamera(mal, type){ hjulZoom.stopp(); map.easeTo({...mal, duration: 
 // fingrene også mens tregheten virker. Vi kjenner igjen MapLibres treghetskall på at det er easeTo med noMoveStart + freezeElevation og en
 // slipp-hendelse; endrer MapLibre det, får vi bare MapLibres egen treghet tilbake (ingen feil).
 let fingerNede=false;   // settes av berøringslytterne under; leses av tegneløkka (15_loop) og skyggekartet (02_lys)
-// slipplogg (04.11, Vegar: «den flytter seg fremdeles når jeg slipper tommelen»): hvert slipp og hvert kameraflytt de neste 600 ms
+// slipplogg (Vegar: «den flytter seg fremdeles når jeg slipper tommelen»): hvert slipp og hvert kameraflytt de neste 600 ms
 // skrives her med hvem som utløste det, og vises i feilsøkingsruta (?d=1). Måling før gjetning.
 const SLIPP={t:0, rader:[]}; const slippLogg=(tekst)=>{ SLIPP.rader.push(`${((performance.now()-SLIPP.t)|0)} ms: ${tekst}`); if(SLIPP.rader.length>8) SLIPP.rader.shift(); };
 const treghet=(()=>{
@@ -55,11 +58,11 @@ const treghet=(()=>{
   const el=map.getCanvasContainer();
   const fingre=(x,y)=>{ const t=performance.now(); fing.push({t,x,y}); kort(fing,t); };
   // Midtpunktet mellom fingrene hopper når en finger kommer til eller slipper (to tomler: det flytter seg til tommelen som er igjen).
-  // Hoppet er ikke bevegelse. Tas det med, leses det som et kast (Vegar 02.11, mobil: «hopper bildet ganske langt mot venstre når jeg
+  // Hoppet er ikke bevegelse. Tas det med, leses det som et kast (mobil: «hopper bildet ganske langt mot venstre når jeg
   // slipper tomlene» = den ene tommelen slapp først). Derfor skjøtes målingen: forskyvningen legges til de nye punktene, så farten fra
   // hånda fortsetter uten hoppet. Testen er verktoy/tomler_test.mjs.
   let antall=0, skjot=null, fx=0, fy=0;
-  // fingerNede: minst én finger er på kartet (leses av 15_loop og 02_lys: ingen tunge pass mens fingeren er nede, 04.11)
+  // fingerNede: minst én finger er på kartet (leses av 15_loop og 02_lys: ingen tunge pass mens fingeren er nede)
   const settFinger=e=>{ fingerNede=e.touches.length>0; };
   const midt=e=>{ let x=0,y=0; for(const f of e.touches){ x+=f.clientX; y+=f.clientY; } return [x/e.touches.length, y/e.touches.length]; };
   const nyttAntall=e=>{ if(e.touches.length===antall) return; antall=e.touches.length; if(antall>0 && fing.length) skjot=fing[fing.length-1]; };
@@ -90,9 +93,9 @@ const treghet=(()=>{
     if(!slipp) return easeTo0(opt,ev);
     const naa=performance.now(); const siste=Math.max(kam.length?kam[kam.length-1].t:-1e9, fing.length?fing[fing.length-1].t:-1e9);
     // Slipp-tiden leses av selve berøringshendelsen (timeStamp, samme klokke som performance.now), ikke av når kartet rakk å behandle den.
-    // På en treg telefon kan behandlingen komme 100–300 ms etter at fingeren løftet; da gikk vi (02.11) til MapLibres treghet, som regner
-    // farten med tommelhoppet inne (sprett). Natt til 04.11 lot jeg i stedet målevinduet vokse med bildetiden, og da fikk en finger som
-    // hadde STOPPET fart fra bevegelsen før stoppet (Vegar 04.11: «kartet glir litt mot høyre» når tommelen slipper). Nå: har fingeren
+    // På en treg telefon kan behandlingen komme 100–300 ms etter at fingeren løftet; da gikk vi til MapLibres treghet, som regner
+    // farten med tommelhoppet inne (sprett). En senere versjon lot i stedet målevinduet vokse med bildetiden, og da fikk en finger som
+    // hadde STOPPET fart fra bevegelsen før stoppet (Vegar: «kartet glir litt mot høyre» når tommelen slipper). Nå: har fingeren
     // ligget stille mer enn vinduet før den løftet, er det et dødt stopp, uansett hvor sent kartet behandler slippet. Mus: MapLibre avgjør.
     const loft=(ev.originalEvent.timeStamp>0 && ev.originalEvent.timeStamp<naa+1) ? ev.originalEvent.timeStamp : naa;
     const beroring=String(ev.originalEvent.type).startsWith('touch');
@@ -115,7 +118,7 @@ const treghet=(()=>{
   return {stopp};
 })();
 
-// ---- musehjul (29.10): jevn zoom i stedet for ett utslag per hakk ----
+// ---- musehjul : jevn zoom i stedet for ett utslag per hakk ----
 // Hvert hakk flytter et mål; zoomen følger målet som en kritisk dempet fjær (Apple: fjær uten oversving), så farten er sammenhengende
 // også når hakkene kommer tett. Punktet under pekeren står. Styreflate (to fingre = flytt, klyp = ctrl+hjul) går ikke hit (16_interaksjon).
 const hjulZoom=(()=>{
@@ -128,7 +131,7 @@ const hjulZoom=(()=>{
     if(ferdig){ mal=null; return; } rid=requestAnimationFrame(steg); }
   return {
     hakk(e, delta){   // delta i zoomnivå (+ = inn)
-      overta(); const r=map.getCanvas().getBoundingClientRect(); px=[e.clientX-r.left, e.clientY-r.top]; anker=map.unproject(px);
+      SENERE.overta(); const r=map.getCanvas().getBoundingClientRect(); px=[e.clientX-r.left, e.clientY-r.top]; anker=map.unproject(px);
       if(mal===null){ z=map.getZoom(); v=0; mal=z; sist=performance.now(); }
       mal=Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), mal+delta));
       if(!rid) rid=requestAnimationFrame(steg);
@@ -140,3 +143,6 @@ const hjulZoom=(()=>{
 window.__tilLngLat=tilLngLat; window.__BEV=BEV;
 // en ny gest stopper hjulzoomen (dra, klyp)
 map.getCanvasContainer().addEventListener('pointerdown', ()=>hjulZoom.stopp(), {capture:true, passive:true});
+registrer({ fingerNede: () => fingerNede });   // brukes av tidligere moduler via SENERE (tilstand.js)
+
+export { BEV, GLID, SLIPP, fingerNede, glid, glidKamera, hjulZoom, myk, slippLogg, treghet };

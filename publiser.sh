@@ -1,31 +1,60 @@
 #!/bin/sh
-# Legger server-bygget (ut/server) på grenen gh-pages, som GitHub Pages serverer. Bruk: sh publiser.sh
-# Bygger en fersk, historieløs gren hver gang (midlertidig navn, så det går også når gh-pages finnes lokalt fra før).
+# Legger kartet ut på GitHub Pages (grenen gh-pages). To veier, og ingen av dem kan bytte feil adresse:
+#   sh publiser.sh prove     -> bare /prove/ byttes (ett-fils-bygget). Forsiden og /backup/ står som de står på gh-pages.
+#   sh publiser.sh forside   -> forsiden byttes (server-bygget) og /prove/ får samme bygg. Den gamle forsiden flyttes til
+#                               /backup/v<versjon>-<dato>/ og føres i lista. Krever Vegars ja og en grønn maskinsjekk (rapport/maskin.json)
+#                               fra hans Chrome mot akkurat denne kilden (verktoy/maskin-sjekk.js, LESMEG «Maskinsjekken»).
+# (Før 05.11 bygde «prove» også forsiden på nytt fra SERVER_FRA; det la nye bygg på forsiden uten ja og mistet backupene.)
 set -e
+export TZ=Europe/Oslo
 ROT=$(cd "$(dirname "$0")" && pwd)
-# Sperre (28.10): ingen publisering uten fersk samlerapport kjørt mot akkurat denne kilden (regler/kjor.py), og ingen røde regler
-# utenom 09 (publisert versjon er alltid gammel rett før en ny publisering). På /prove/ slipper røde regler gjennom, men listes.
+MODUS="$1"
+if [ "$MODUS" != "prove" ] && [ "$MODUS" != "forside" ]; then echo "bruk: sh publiser.sh prove | forside"; exit 1; fi
+# Sperre: ingen publisering uten fersk samlerapport kjørt mot akkurat denne kilden (regler/kjor.py). På /prove/ slipper røde regler
+# gjennom, men listes; forsiden stopper på røde regler utenom 09 (publisert versjon er alltid gammel rett før en ny publisering).
 HASH=$(git -C "$ROT" log -1 --format=%h -- src data regler bygg.py datalag.py assets); URETTET=$(git -C "$ROT" status --porcelain -- src data regler bygg.py datalag.py assets)
-RAPP="$ROT/rapport/rapport.md"
+RAPP="$ROT/rapport/rapport.md"; VERSJON=$(cat "$ROT/VERSJON")
 if [ -n "$URETTET" ]; then echo "STOPP: urettede endringer i kilden; commit først, så regler/kjor.py"; exit 1; fi
-if ! grep -q "^Kilde: $HASH versjon $(cat "$ROT/VERSJON") " "$RAPP" 2>/dev/null; then echo "STOPP: rapport/rapport.md er ikke kjørt mot $HASH (kjør: PYTHONPATH=regler python3 regler/kjor.py)"; exit 1; fi
+if ! grep -q "^Kilde: $HASH versjon $VERSJON " "$RAPP" 2>/dev/null; then echo "STOPP: rapport/rapport.md er ikke kjørt mot $HASH (kjør: PYTHONPATH=regler python3 regler/kjor.py)"; exit 1; fi
 RODE=$(grep "^- FEIL" "$RAPP" | grep -v " 09_publisert " || true)
 if [ -n "$RODE" ]; then
-  if [ "$1" = "prove" ]; then echo "røde regler går til /prove/ (dom før de går inn):"; echo "$RODE"; else echo "STOPP: røde regler:"; echo "$RODE"; exit 1; fi
+  if [ "$MODUS" = "prove" ] || [ -n "$TILLAT_RODE" ]; then echo "røde regler går ut (${TILLAT_RODE:-prove}):"; echo "$RODE"; else echo "STOPP: røde regler (TILLAT_RODE='<Vegars ja>' når han har bestemt det):"; echo "$RODE"; exit 1; fi
 fi
-if [ -z "$SERVER_FRA" ]; then python3 "$ROT/bygg.py" server; else rm -rf "$ROT/ut/server"; cp -r "$SERVER_FRA" "$ROT/ut/server"; fi   # SERVER_FRA=<mappe>: legg ut et ferdig server-bygg (f.eks. forrige versjon) i stedet for å bygge
+if [ "$MODUS" = "forside" ]; then
+  python3 - "$ROT/rapport/maskin.json" "$HASH" <<'PY' || exit 1
+import json, sys
+try: m = json.load(open(sys.argv[1]))
+except Exception: sys.exit('STOPP: rapport/maskin.json mangler (maskinsjekken i Vegars Chrome, LESMEG «Maskinsjekken»)')
+if m.get('kilde') != sys.argv[2]: sys.exit(f"STOPP: maskinsjekken er kjørt mot {m.get('kilde')}, ikke {sys.argv[2]} (legg ut på /prove/ og kjør den der)")
+if not m.get('ok'): sys.exit('STOPP: maskinsjekken er rød: ' + '; '.join(m.get('feil', [])))
+print('maskinsjekk grønn:', m.get('gpu'), m.get('ms_per_bilde'), 'ms per bilde')
+PY
+fi
+python3 "$ROT/bygg.py" enkel >/dev/null; [ "$MODUS" = "forside" ] && python3 "$ROT/bygg.py" server >/dev/null
+git -C "$ROT" fetch -q origin gh-pages
 TMP=$(mktemp -d); GREN="pages-$(date +%s)"
 git -C "$ROT" worktree add --detach "$TMP" >/dev/null
 cd "$TMP"
 git checkout -q --orphan "$GREN"
 git rm -rfq . >/dev/null 2>&1 || true
-cp -R "$ROT/ut/server/." .
-# prøvebygg (valgfritt): sh publiser.sh prove legger ut/enkel/index.html (ett-fils-bygget) på /prove/ ved siden av det publiserte, til dom før det går inn
-if [ "$1" = "prove" ]; then mkdir -p prove; cp "$ROT/ut/enkel/index.html" prove/index.html; fi
+git -C "$ROT" archive origin/gh-pages | tar -x -C "$TMP"          # det som ligger ute nå
+mkdir -p prove; cp "$ROT/ut/enkel/index.html" prove/index.html
+if [ "$MODUS" = "forside" ]; then
+  B="backup/v$VERSJON-$(date +%d%b | tr 'A-Z' 'a-z')"; [ -e "$B" ] && B="$B-$(date +%H%M)"; mkdir -p "$B"
+  for f in $(ls -A | grep -v -x -e prove -e backup -e .nojekyll -e .git); do mv "$f" "$B/"; done
+  python3 - "$TMP/backup/index.html" "$(basename "$B")" "$(date '+%d.%m.%Y kl. %H.%M')" <<'PY'
+import sys
+p, mappe, naar = sys.argv[1:]
+s = open(p, encoding='utf8').read()
+s = s.replace('<ul>\n', f'<ul>\n<li><a href="{mappe}/">Forsiden fram til {naar}</a></li>\n', 1)
+open(p, 'w', encoding='utf8').write(s)
+PY
+  cp -R "$ROT/ut/server/." .
+fi
 touch .nojekyll
 git add -A
-git commit -qm "Pages: versjon $(cat "$ROT/VERSJON") $(date +%Y-%m-%d)"
+git commit -qm "Pages ($MODUS): versjon $VERSJON, kilde $HASH, $(date +%Y-%m-%d)"
 git push -f origin "$GREN:gh-pages"
 cd "$ROT"; git worktree remove --force "$TMP"; git branch -q -D "$GREN"
 git branch -q -D gh-pages 2>/dev/null || true
-echo "publisert gh-pages, versjon $(cat "$ROT/VERSJON")"
+echo "publisert gh-pages ($MODUS), versjon $VERSJON, kilde $HASH"

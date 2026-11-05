@@ -1,4 +1,9 @@
-// ---- flyt uten lavere oppløsning (02.11, Vegar: «ikke dårligere oppløsning, heller motsatt») ----
+import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { registrer } from './tilstand.js';
+import { cam, scene } from './00_oppsett.js';
+import { waterLayer } from './03_bakke-vann-grønt.js';
+// ---- flyt uten lavere oppløsning (Vegar: «ikke dårligere oppløsning, heller motsatt») ----
 // To ting som sparer arbeid per bilde uten å endre bildet:
 // 1) Vannet i bildet: et grovt rutenett over vannflatene (8 m), så tegneløkka vet om vann er i bildet. Står kartet stille uten vann i bildet,
 //    tegnes ingenting (før: 10 hele bilder i sekundet for at vannet skulle leve), og speilpasset hoppes over når vannet ikke synes.
@@ -53,3 +58,4 @@ const flaterSammen=(()=>{
   return {for:for_, etter};
 })();
 window.__flytInfo=()=>({flaterFor:flaterSammen.for, flaterEtter:flaterSammen.etter, vann:vannISyne()});
+registrer({ vannISyne: () => vannISyne });   // brukes av tidligere moduler via SENERE (tilstand.js)

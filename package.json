@@ -1,8 +1,9 @@
 {
   "name": "fredrikstad-fortress-town",
   "private": true,
-  "description": "Verktøy for regel 08 (lint). Installeres med: npm install. Nettlesertestene (07, 10, 12) bruker Playwright med Chromium fra maskinen.",
+  "description": "Verktøy for byggingen (esbuild pakker src/ til én modul) og regel 08 (lint). Installeres med: npm install. Nettlesertestene (07, 10, 12) bruker Playwright med Chromium fra maskinen.",
   "devDependencies": {
+    "esbuild": "0.25.10",
     "eslint": "9.39.5"
   }
 }

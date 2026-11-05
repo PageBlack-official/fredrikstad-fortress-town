@@ -1,3 +1,8 @@
+import * as THREE from 'three';
+import { DATA } from './00_oppsett.js';
+import { mat } from './05_bygg.js';
+import { buildings } from './06_kirka-bygget-etter-2017.js';
+import { hAt } from './08_festningsterrenget.js';
 // ---- porter: huset står oppå en portblokk med buet passasje (retning = veien gjennom bygget) ----
 (DATA.porter||[]).forEach(pt=>{
   const grp=buildings.find(g=>g.userData.i===pt.bygg); if(!grp) return;
@@ -15,7 +20,7 @@
   const y0=(pt.bunn!=null)?pt.bunn:hAt(cx,cy);                      // veien i porten (data), ellers terrenget midt under huset
   m.position.set(cx, y0, -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
   grp.add(m);
-  // VINGEMURER (30.10): skrå murer som holder vollen ved porten. [x0, y0, x1, y1, h0, h1, tykk]: innerflaten fra porthjørnet ut til
+  // VINGEMURER : skrå murer som holder vollen ved porten. [x0, y0, x1, y1, h0, h1, tykk]: innerflaten fra porthjørnet ut til
   // foten, toppen fra h0 (ved porten) til h1 (ved foten) over veien i porten; tykkelsen legges bort fra huset. Mål: verktoy/landemerker.py
   (pt.vingemurer||[]).forEach(([ax,ay,bx,by,h0,h1,t])=>{
     const L=Math.hypot(bx-ax,by-ay); if(L<0.3) return; const ux=(bx-ax)/L, uy=(by-ay)/L; let nx=-uy, ny=ux;

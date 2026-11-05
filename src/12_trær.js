@@ -1,3 +1,7 @@
+import * as THREE from 'three';
+import { DATA, STIL, scene } from './00_oppsett.js';
+import { GL_SOL_F, GL_SOL_V, glSolVMain, sun } from './02_lys.js';
+import { KONTAKT_Y, kontaktMat } from './05_bygg.js';
 // ---- trær: posisjoner fra trykkfila; tegnet som i Messenger: stamme og greiner, krone av løvklaser med takket kant og 3 toner ----
 let seed=11; const rnd=()=>{seed=(seed*16807)%2147483647; return seed/2147483647;};
 // Kronene tegnes som løvklaser vendt mot kameraet: takket, buet silhuett og en kuleformet normal, så lys- og skyggetonene
@@ -9,7 +13,7 @@ const SKYGGEKROPP=new THREE.IcosahedronGeometry(1,1);
 const sunW=new THREE.Vector3(), tgtW=new THREE.Vector3(), camF=new THREE.Vector3();
 const treU={ sunDir:{value:new THREE.Vector3(-0.5,0.7,0.5)} };   // stammene får solretningen herfra
 // Kronene er geometri (kuler i klaser), tegnet med samme sol, skygge og strek som husene. De var tegnede skiver (billboards) med egen
-// dybdeskriving og egen skyggeoppslag fram til 24.10; på iPhone forsvant de ved zoom og dra uten at noen av delene kunne pekes ut
+// dybdeskriving og egen skyggeoppslag i en eldre versjon; på iPhone forsvant de ved zoom og dra uten at noen av delene kunne pekes ut
 // (?kroner=enkel/utendybde/utenskygge/nospeil ga samme feil). Vegar: «lås størrelsene og la dem zoomes som husene.»
 function lovMatLag(){
   return new THREE.ShaderMaterial({
@@ -27,7 +31,7 @@ function lovMatLag(){
     fragmentShader:GL_SOL_F+`varying vec3 vN; varying vec3 vCol; uniform float uStoy;
       void main(){
         vec3 n=normalize(vN);
-        float w=dot(normalize(mat3(viewMatrix)*n),solRetning())*0.5+0.5;   // solRetning() er i kamerarommet (three.js); normalen må dit, ellers dreier lyssiden med kameraet (28.10)
+        float w=dot(normalize(mat3(viewMatrix)*n),solRetning())*0.5+0.5;   // solRetning() er i kamerarommet (three.js); normalen må dit, ellers dreier lyssiden med kameraet 
         w=mix(w, w*0.55, (1.-skyggeMask())*0.85);
         // tre toner som i tegningen: lys solside, grunnfarge, kjølig skyggeside
         float lys=smoothstep(0.60,0.64,w), mid=smoothstep(0.36,0.40,w);
@@ -130,3 +134,5 @@ function setCrowns(t){
 // solretningen hentes fra sola hver ramme, så trærne følger samme lys som byen
 crowns[0].onBeforeRender=(r,sc_,c)=>{ sun.getWorldPosition(sunW); sun.target.getWorldPosition(tgtW); treU.sunDir.value.copy(sunW).sub(tgtW).normalize(); c.getWorldDirection(camF); };
 setCrowns(0);
+
+export { crowns, setCrowns };
