@@ -1839,7 +1839,12 @@ let ssStille=4;
 let speilInn=0, speilFrisk=false, sistBeveg=0, sistTegnet=0, fullTegnet=false, aoStille=14; const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
 // Måler tiden vår egen tegning tar (render(), CPU-siden), ikke avstanden mellom bildene: den styres også av verten og skjermen, og
 // lavere kvalitet hjelper ikke mot den. Introen (vekst + skygge hvert bilde) måles ikke; den er dyrere enn vanlig bruk.
-function maalYtelse(){ const n=performance.now(); perfLast=n; if(perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
+// (05.11, Vegar: «Kartet på desktop er skarp etter introen, og med en gang jeg beveger meg, faller kvaliteten») på maskin trappes det
+// aldri ned: iMac-en hans tegner 20–30 ms per bilde i fart, måleren satte trinn 1 (80 % oppløsning, strek med to prøver) ved første
+// stopp, og det ble stående. 35–45 bilder/s er godt nok på maskin; full kvalitet er kravet («ikke dårligere oppløsning», 02.11).
+// Telefon og nettbrett (BERORING) måles som før. ?adapt=1 slår måleren på også på maskin (test).
+const MAAL_PAA = BERORING || !!Q.get('adapt');
+function maalYtelse(){ const n=performance.now(); perfLast=n; if(!MAAL_PAA || perfNivaa>=2 || document.hidden || !introDone || !vokst || (n-sistBeveg>300 && n-sistTegnet>40)) return;
   // (04.11) tiden fra bilde til bilde, ikke prosessortiden i render(): på Vegars iPhone var render() 3 ms og «mellom bildene» 25 ms
   // (grafikkortet venter), så måleren trodde alt var fint ved 38 bilder/s. Under 45 bilder/s i bevegelse trappes det ned ett trinn.
   const dt=(window.__ramme||0)+(window.__mellom||0);
