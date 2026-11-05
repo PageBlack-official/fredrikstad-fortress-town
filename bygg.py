@@ -47,7 +47,9 @@ with tempfile.TemporaryDirectory() as tmp:
     if not esbuild: sys.exit('esbuild mangler: kjør npm install')
     js = subprocess.run([esbuild, os.path.join(tmp, 'main.js'), '--bundle', '--format=esm', '--target=es2022', '--charset=utf8', '--legal-comments=none',
                          '--external:three', '--external:three/*', '--external:maplibre-gl', '--log-level=warning'],
-                        check=True, capture_output=True, text=True).stdout
+                        capture_output=True, text=True)
+    if js.returncode != 0: sys.exit('esbuild feilet:\n' + js.stderr)
+    js = js.stdout
 
 if MODUS == 'server':
     os.makedirs(os.path.join(UT, 'data'), exist_ok=True)

@@ -1,0 +1,24 @@
+[
+ {
+  "id": "maanefestivalen",
+  "navn": "Månefestivalen",
+  "plass": "Tøihusplassen",
+  "fra": null,
+  "til": null,
+  "merknad": "Datoene settes når programmet er klart. Uten datoer vises festivalen bare med ?festival=maanefestivalen.",
+  "scene": {
+   "x": -40,
+   "y": -127,
+   "retning": 180,
+   "bredde": 14,
+   "dybde": 8
+  },
+  "publikum": {
+   "x0": -92,
+   "x1": -48,
+   "y0": -139,
+   "y1": -113,
+   "antall": 200
+  }
+ }
+]

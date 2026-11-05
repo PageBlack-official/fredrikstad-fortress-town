@@ -30,3 +30,4 @@ import './23_vaer.js';
 import './24_sok.js';
 import './25_her.js';
 import './26_turer.js';
+import './27_festival.js';
