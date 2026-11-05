@@ -15,7 +15,10 @@ import { GRAD, U_SOL, solposisjon } from './02_lys.js';
 // Test og demo: ?vaer=sol|lettskyet|skyet|regn|sno|taake (fast vær), ?vaer=0 (av), ?aarstid=vaar|sommer|hoest|vinter, ?sno=0..1,
 // ?natt=0..1 eller ?tid=HH:MM (kvelden etter sola den tida i dag).
 const PUNKT = { lat: 59.2055, lon: 10.9545 };
-const VAER_AV = Q0.get('vaer') === '0';
+// Automatiserte tester (Playwright: navigator.webdriver) får alltid sol, sommerfarger og dag, med mindre lenka sier noe annet: reglene skal
+// måle det samme bildet hver gang, ikke været eller klokka den kvelden de kjøres (regel 10 målte 0 px kronegrønt i høstfarger).
+const TEST = !!navigator.webdriver;
+const VAER_AV = Q0.get('vaer') === '0' || (TEST && Q0.get('vaer') === null);
 const NAVN = { sol: 'Sol', lettskyet: 'Lettskyet', delvis: 'Delvis skyet', skyet: 'Skyet', regn: 'Regn', sludd: 'Sludd', sno: 'Snø', taake: 'Tåke', torden: 'Torden' };
 
 // MET-symbolet (f.eks. «partlycloudy_day», «lightrainshowers_night») til våre fem størrelser
@@ -40,7 +43,7 @@ const FAST = {
 
 // årstiden etter dato (Fredrikstad): fargen grønt ganges med, og styrken. Sommer er tegningens egne farger.
 function aarstidFor(d){
-  const tving = Q0.get('aarstid'); const m = d.getMonth() + 1, dag = d.getDate();
+  const tving = Q0.get('aarstid') || (TEST ? 'sommer' : null); const m = d.getMonth() + 1, dag = d.getDate();
   const a = tving || (m <= 2 || m === 12 ? 'vinter' : m <= 5 ? 'vaar' : m <= 8 ? 'sommer' : 'hoest');
   const sen = (m === 11 || (m === 10 && dag > 15));   // seint på høsten: brunere, mindre metning
   return a === 'vinter' ? { navn: a, farge: [0.98, 1.04, 0.94], styrke: 0.6 }          // gråere grønt, lite metning
@@ -59,6 +62,7 @@ const VAER = { naa: null, kilde: null, mal: { sky: 0, sno: 0, natt: 0 }, tid: 0,
 function nattNaa(){
   if (VAER.kveld) return 0.9;
   const t = Q0.get('natt'); if (t !== null && !isNaN(+t)) return +t;
+  if (TEST && !Q0.get('tid')) return 0;
   let d = new Date(); const tid = Q0.get('tid'); if (tid && /^\d{1,2}:\d\d$/.test(tid)) { const [h, m] = tid.split(':'); d.setHours(+h, +m, 0, 0); }
   const h = solposisjon(d).hoyde / GRAD; return 0.9 * Math.min(1, Math.max(0, (1 - h) / 7));
 }
