@@ -67,6 +67,14 @@ function nattNaa(){
   let d = new Date(); const tid = Q0.get('tid'); if (tid && /^\d{1,2}:\d\d$/.test(tid)) { const [h, m] = tid.split(':'); d.setHours(+h, +m, 0, 0); }
   const h = solposisjon(d).hoyde / GRAD; return 0.9 * Math.min(1, Math.max(0, (1 - h) / 7));
 }
+// de enkle stoffene (bakken utenfor festningen, oppmerking, gresskanter) har ingen skyggekode: de mørkner her, fra fargen de hadde
+let enkle = null;
+const NATT_F = new THREE.Color(0.10, 0.13, 0.27);
+function enkleStoff(n){
+  if (!enkle) { enkle = []; scene.traverse(o => { const ms = o.material ? [].concat(o.material) : [];
+    for (const m of ms) if ((m.isMeshBasicMaterial || m.isMeshLambertMaterial) && m.color && m.colorWrite !== false && !m.transparent && !enkle.some(e => e.m === m)) enkle.push({ m, c: m.color.clone() }); }); }
+  for (const e of enkle) e.m.color.copy(e.c).lerp(e.c.clone().multiply(NATT_F), n);
+}
 const PAPIR = new THREE.Color(0xe2e1d6), PAPIR_NATT = new THREE.Color(0x2c3346), _p = new THREE.Color();
 async function hent(){
   const fast = Q0.get('vaer');
@@ -93,7 +101,7 @@ function glid(naa){
   const dt = glidSist ? Math.min(200, naa - glidSist) : 16; glidSist = naa;
   const m = VAER.mal, k = 1 - Math.exp(-dt / 550); let igjen = false;   // tidsbasert: like lang overgang på treg og rask maskin (~2 s)
   for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno], [U_SOL.natt, m.natt]]) { const d = mal - u.value; if (Math.abs(d) > 0.003) { u.value += d * k; igjen = true; } else u.value = mal; }
-  post.settNatt(U_SOL.natt.value); _p.copy(PAPIR).lerp(PAPIR_NATT, U_SOL.natt.value / 0.9); scene.background.copy(_p); try { map.setPaintProperty('papir', 'background-color', '#' + _p.getHexString()); } catch (_) { /* stilen er ikke lastet ennå */ }
+  post.settNatt(U_SOL.natt.value); enkleStoff(U_SOL.natt.value); _p.copy(PAPIR).lerp(PAPIR_NATT, U_SOL.natt.value / 0.9); scene.background.copy(_p); try { map.setPaintProperty('papir', 'background-color', '#' + _p.getHexString()); } catch (_) { /* stilen er ikke lastet ennå */ }
   TILSTAND.skyggeSkitten = true; map.triggerRepaint();
   if (igjen) requestAnimationFrame(glid); else { glir = false; glidSist = 0; }
 }
