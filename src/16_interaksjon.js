@@ -34,7 +34,7 @@ function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p)
 // Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
 // kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.
 const kortInnhold=kort.querySelector('.innhold');
-const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false, ferge:null, vedLukk:[]};   // vedLukk: andre moduler (24_sok) rydder når kortet lukkes
+const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false, ferge:null, vedLukk:[], vedVelg:[]};   // vedLukk/vedVelg: andre moduler (24_sok, 26_turer) rydder når kortet lukkes eller et hus velges
 const SIDEPANEL=window.matchMedia('(min-width: 720px)');
 const kameraNaa=()=>({center:map.getCenter(), zoom:map.getZoom(), bearing:map.getBearing(), pitch:map.getPitch()});
 function fyllKort(b){
@@ -71,6 +71,7 @@ function glidTilHus(g){
 }
 // et punkt uten eget bygg (stedene i søket, 24_sok): den som kaller fyller kortet; kameraet glir til punktet midt i den frie flaten
 function velgPunkt(fyll, x, y){
+  kort_.vedVelg.forEach(f=>f(null));
   if(valgt){ valgt.userData.lift=false; valgt=null; }
   kort_.ferge=null;
   if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyll(); visKort(true); }
@@ -94,7 +95,7 @@ function velgFerge(id){
 setInterval(()=>{ if(kort_.apent && kort_.ferge) fyllFergeKort(kort_.ferge); }, 10000);   // nye tider fra Entur fyller kortet med en gang (22_byferga)
 function treffFerge(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam); return SENERE.ferge.treff(ray); }
 function velgHus(g){
-  kort_.ferge=null;
+  kort_.ferge=null; kort_.vedVelg.forEach(f=>f(g));
   if(valgt===g) return;
   if(valgt) valgt.userData.lift=false;
   valgt=g; g.userData.lift=true;

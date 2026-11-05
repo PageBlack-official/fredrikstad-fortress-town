@@ -100,3 +100,14 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #melding{z-index:7;position:fixed;left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%,-8px);background:var(--ink);color:var(--paper);font:500 13px/1.3 "Helvetica Neue",Helvetica,Arial,sans-serif;padding:10px 16px;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;max-width:calc(100vw - 40px);text-align:center}
 #melding.vis{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){.her-prikk{animation:none}}
+/* turer (26_turer): bla i kortet, velg i søket */
+#kort .tur{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(43,36,32,.1)}
+#kort .tur button{width:44px;height:36px;border:0;border-radius:18px;background:var(--ink);color:var(--paper);font-size:22px;line-height:1;cursor:pointer}
+#kort .tur button:disabled{opacity:.25;cursor:default}
+#kort .tur .teller{font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--muted)}
+#kort .b{white-space:pre-line}
+#sokpanel .turer{padding:8px 12px 2px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex-wrap:wrap}
+#sokpanel .turer .t{width:100%;margin:2px 2px 0;font-size:12px;color:var(--muted)}
+#sokpanel .turer button{flex:1 1 160px;text-align:left;border:0;border-radius:12px;background:rgba(43,36,32,.06);padding:10px 12px;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:3px}
+#sokpanel .turer button small{color:var(--muted);font-size:12px}
+#sokpanel .turer button:hover{background:rgba(43,36,32,.1)}
