@@ -3,9 +3,9 @@
   "id": "maanefestivalen",
   "navn": "Månefestivalen",
   "plass": "Tøihusplassen",
-  "fra": null,
-  "til": null,
-  "merknad": "Datoene settes når programmet er klart. Uten datoer vises festivalen bare med ?festival=maanefestivalen.",
+  "fra": "2027-07-29",
+  "til": "2027-07-31",
+  "merknad": "Alltid siste helg i juli, torsdag til lørdag (Vegar 05.11). Hovedscenen på Tøihusplassen står inne i Tøihus-gården mot østfløya med publikum mot vest; Månehagen (mat) ligger vest for gården (festivalkartet 2026 på maanefestivalen.no). Vollen stage og Ridehusplenen er ikke tegnet.",
   "scene": {
    "x": -40,
    "y": -127,
@@ -19,6 +19,15 @@
    "y0": -139,
    "y1": -113,
    "antall": 200
+  },
+  "regel": "siste-helg-i-juli",
+  "nettside": "https://www.maanefestivalen.no/",
+  "boder": {
+   "x0": -128,
+   "x1": -96,
+   "y0": -128,
+   "y1": -100,
+   "antall": 7
   }
  }
 ]

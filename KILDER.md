@@ -49,3 +49,10 @@ Modellkoordinater: meter, x = øst, y = nord, origo ca. 59,202835 N 10,952745 Ø
 - Parkering: Fredrikstad kommune (data/parkering.json, som før).
 - Severdighetene med nummer fra kartbrosjyren til Visit Fredrikstad (2015, data/legende.json) der OSM ikke har stedet.
 - Koblingen sted → bygg er punktet i grunnrisset (bygg.p). Regel 47 vokter.
+- Kulturminnene: Fredrikstad kommune, Kulturminneplan_kommunekart/MapServer/19 «Alle kulturminner samlet» (kilder/kulturminner.json, hentet 05.11.2026, tips fra Vegar), avgrenset til det kartet tegner: navn, gruppe, verdi, vern og lenke til kommunens vedlegg (PDF). Orddelinger fra tabellen er slått sammen.
+
+## Festivalene (data/arrangementer.json)
+- Månefestivalen: maanefestivalen.no (29.–31. juli 2027; alltid siste helg i juli, torsdag–lørdag, Vegar 05.11). Hovedscenens plass og retning, Månehagen og inngangen fra festivalkartet 2026 (maanefestivalen.no/nyheter/festivalkart).
+
+## Kvelden (23_vaer)
+- Solhøyden i Gamlebyen regnes i nettleseren (solposisjon i 02_lys, samme formler som SunCalc). Mørkt fra sola er 1° over til 6° under horisonten.

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { U_SOL } from './02_lys.js';
 import { registrer } from './tilstand.js';
 import { DATA, Q0, TEX_VANN, scene, texLoader } from './00_oppsett.js';
 // ---- bakke, vann, grønt ----
@@ -37,9 +38,9 @@ const waterMat = new THREE.ShaderMaterial({
   uniforms:{t:{value:0}, strek:{value:null}, c1:{value:new THREE.Color('rgb(150,212,224)')}, c2:{value:new THREE.Color('rgb(112,186,206)')}, hi:{value:new THREE.Color(0xf4fbf8)},
     grunt:{value:new THREE.Color('rgb(190,230,230)')}, skum:{value:new THREE.Color('rgb(250,252,247)')}, fjern:{value:new THREE.Color('rgb(206,228,226)')},
     tFelt:{value:null}, felt:{value:new THREE.Vector4(0,0,1,1)}, maks:{value:VF?VF.maks:42}, harFelt:{value:VF?1:0},
-    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}, uKaiskum:{value:Q0.get('kaiskum')==='0'?0:1}},
+    tRefl:{value:null}, reflPV:{value:new THREE.Matrix4()}, res:{value:new THREE.Vector2(2,2)}, reflStyrke:{value:0}, natt:U_SOL.natt, sentrum:{value:new THREE.Vector2(10,0)}, solD:{value:new THREE.Vector3(0.3,0.6,-0.7)}, gloett:{value:Q0.get('gloett')==='0'?0:1}, uKaiskum:{value:Q0.get('kaiskum')==='0'?0:1}},
   vertexShader:`varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett, uKaiskum; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
+  fragmentShader:`uniform float t, maks, harFelt, reflStyrke, gloett, uKaiskum, natt; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -93,6 +94,7 @@ const waterMat = new THREE.ShaderMaterial({
     // langt ute: vannet blir lysere og roligere, så byen står i fokus
     float u=smoothstep(650.,1500.,length(wp.xz-vec2(sentrum.x,-sentrum.y)));
     c=mix(c, fjern, u*0.55);
+    c=mix(c, c*vec3(0.22,0.28,0.48), natt);   // kveld (23_vaer)
     gl_FragColor=vec4(c,1.);
   #include <colorspace_fragment>
   }`

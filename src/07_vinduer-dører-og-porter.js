@@ -62,6 +62,9 @@ const vindMat=new THREE.ShaderMaterial({
         }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
+      { float paa=step(0.34, fract(sin(dot(floor(vWq.xz*0.7)+floor(vWq.y*0.4), vec2(12.9898,78.233)))*43758.5453));   // to av tre vinduer har lys inne om kvelden
+        float glass=1.-smoothstep(0.30,0.42,max(c.r,max(c.g,c.b)));   // bare de mørke glassflatene, ikke ramme og sprosser
+        c=kveld(c); c=mix(c, vec3(1.0,0.80,0.46)*1.15, natt*paa*glass*(typ<1.5||typ>2.5?1.:0.)); }
       gl_FragColor=vec4(c,1.);
       #include <colorspace_fragment>
     }`

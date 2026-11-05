@@ -1,6 +1,7 @@
 import { TILSTAND } from './tilstand.js';
-import { Q0, map } from './00_oppsett.js';
-import { U_SOL } from './02_lys.js';
+import * as THREE from 'three';
+import { Q0, map, scene } from './00_oppsett.js';
+import { GRAD, U_SOL, solposisjon } from './02_lys.js';
 // ---- været: kartet viser været i Gamlebyen nå (Vegar: «Er det overskyet er det det du ser, er det vinter, vår, sol») ----
 // Kilde: Meteorologisk institutt, Locationforecast 2.0 (api.met.no, CC BY 4.0, «Data fra MET Norway»). Hentes ved lasting og hvert
 // 15. minutt, mellomlagres i økta. Svarer ikke MET, står kartet i sol som før (ingenting brytes).
@@ -10,7 +11,9 @@ import { U_SOL } from './02_lys.js';
 //   tåke      -> et lyst slør over kartet
 //   årstid    -> U_SOL.aarstid: grønt (plener, trær) får vår-, sommer-, høst- eller vinterfarge etter datoen
 //   snødekke  -> U_SOL.sno: tak, bakke og trekroner hvitner når det snør eller er kuldegrader om vinteren
-// Test og demo: ?vaer=sol|lettskyet|skyet|regn|sno|taake (fast vær), ?vaer=0 (av), ?aarstid=vaar|sommer|hoest|vinter, ?sno=0..1.
+//   kveld     -> U_SOL.natt: når sola er under horisonten i Gamlebyen mørkner byen og papiret, og vinduene lyser (07)
+// Test og demo: ?vaer=sol|lettskyet|skyet|regn|sno|taake (fast vær), ?vaer=0 (av), ?aarstid=vaar|sommer|hoest|vinter, ?sno=0..1,
+// ?natt=0..1 eller ?tid=HH:MM (kvelden etter sola den tida i dag).
 const PUNKT = { lat: 59.2055, lon: 10.9545 };
 const VAER_AV = Q0.get('vaer') === '0';
 const NAVN = { sol: 'Sol', lettskyet: 'Lettskyet', delvis: 'Delvis skyet', skyet: 'Skyet', regn: 'Regn', sludd: 'Sludd', sno: 'Snø', taake: 'Tåke', torden: 'Torden' };
@@ -51,7 +54,15 @@ const skyFor = v => (v.nedbor || v.taake) ? Math.max(0.85, v.sky) : Math.min(1, 
 const snoFor = (v, aar) => { const t = +Q0.get('sno'); if (!isNaN(t) && Q0.get('sno') !== null) return t;
   if (v.nedbor === 'sno') return 0.85; if (v.nedbor === 'sludd') return 0.3; if (aar.navn === 'vinter' && v.temp != null && v.temp <= -1) return 0.6; return 0; };
 
-const VAER = { naa: null, kilde: null, mal: { sky: 0, sno: 0 }, tid: 0, feil: null };
+const VAER = { naa: null, kilde: null, mal: { sky: 0, sno: 0, natt: 0 }, tid: 0, feil: null, kveld: false };
+// kvelden: hvor mørkt det er nå, etter solhøyden i Gamlebyen (borgerlig skumring = sola 0° til −6°)
+function nattNaa(){
+  if (VAER.kveld) return 0.9;
+  const t = Q0.get('natt'); if (t !== null && !isNaN(+t)) return +t;
+  let d = new Date(); const tid = Q0.get('tid'); if (tid && /^\d{1,2}:\d\d$/.test(tid)) { const [h, m] = tid.split(':'); d.setHours(+h, +m, 0, 0); }
+  const h = solposisjon(d).hoyde / GRAD; return 0.9 * Math.min(1, Math.max(0, (1 - h) / 7));
+}
+const PAPIR = new THREE.Color(0xe2e1d6), PAPIR_NATT = new THREE.Color(0x2c3346), _p = new THREE.Color();
 async function hent(){
   const fast = Q0.get('vaer');
   if (fast && FAST[fast]) { VAER.kilde = 'fast'; return FAST[fast](); }
@@ -76,7 +87,8 @@ let glir = false, glidSist = 0;
 function glid(naa){
   const dt = glidSist ? Math.min(200, naa - glidSist) : 16; glidSist = naa;
   const m = VAER.mal, k = 1 - Math.exp(-dt / 550); let igjen = false;   // tidsbasert: like lang overgang på treg og rask maskin (~2 s)
-  for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno]]) { const d = mal - u.value; if (Math.abs(d) > 0.003) { u.value += d * k; igjen = true; } else u.value = mal; }
+  for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno], [U_SOL.natt, m.natt]]) { const d = mal - u.value; if (Math.abs(d) > 0.003) { u.value += d * k; igjen = true; } else u.value = mal; }
+  _p.copy(PAPIR).lerp(PAPIR_NATT, U_SOL.natt.value / 0.9); scene.background.copy(_p); try { map.setPaintProperty('papir', 'background-color', '#' + _p.getHexString()); } catch (_) { /* stilen er ikke lastet ennå */ }
   TILSTAND.skyggeSkitten = true; map.triggerRepaint();
   if (igjen) requestAnimationFrame(glid); else { glir = false; glidSist = 0; }
 }
@@ -84,7 +96,7 @@ function settVaer(v){
   const aar = aarstidFor(new Date()); VAER.aarstid = aar.navn;
   U_SOL.aarstid.value.set(aar.farge[0], aar.farge[1], aar.farge[2], aar.styrke);
   VAER.naa = v;
-  VAER.mal = v ? { sky: skyFor(v), sno: snoFor(v, aar) } : { sky: 0, sno: snoFor({}, aar) };
+  VAER.mal = v ? { sky: skyFor(v), sno: snoFor(v, aar), natt: nattNaa() } : { sky: 0, sno: snoFor({}, aar), natt: nattNaa() };
   nedbor.sett(v); taake.style.opacity = v ? String(v.taake) : '0'; merke(v);
   if (!glir) { glir = true; requestAnimationFrame(glid); }
 }
@@ -124,7 +136,7 @@ const IKON = {
 const ikonFor = n => n === 'sol' || n === 'lettskyet' ? 'sol' : n === 'regn' || n === 'sludd' || n === 'torden' ? 'regn' : n === 'sno' ? 'sno' : n === 'taake' ? 'taake' : 'sky';
 const merkeEl = document.createElement('button'); merkeEl.id = 'vaer'; merkeEl.type = 'button'; merkeEl.setAttribute('aria-haspopup', 'true'); merkeEl.hidden = true;
 const valgEl = document.createElement('div'); valgEl.id = 'vaervalg'; valgEl.setAttribute('role', 'menu'); valgEl.hidden = true;
-valgEl.innerHTML = `<p class="t">Vis kartet med</p>` + [['naa', 'Været nå'], ['sol', 'Sol'], ['skyet', 'Skyet'], ['regn', 'Regn'], ['sno', 'Snø'], ['taake', 'Tåke']]
+valgEl.innerHTML = `<p class="t">Vis kartet med</p>` + [['naa', 'Været nå'], ['sol', 'Sol'], ['skyet', 'Skyet'], ['regn', 'Regn'], ['sno', 'Snø'], ['taake', 'Tåke'], ['kveld', 'Kveld']]
   .map(([k, t]) => `<button type="button" role="menuitemradio" data-v="${k}">${t}</button>`).join('') + `<p class="kilde">Værdata: <a href="https://www.met.no/" target="_blank" rel="noopener">MET Norway</a></p>`;
 (document.getElementById('topp') || document.body).append(merkeEl); document.body.append(valgEl);
 let valgt = Q0.get('vaer') && FAST[Q0.get('vaer')] ? Q0.get('vaer') : 'naa', metNaa = null;
@@ -139,12 +151,14 @@ function merke(v){
 merkeEl.addEventListener('click', e => { e.stopPropagation(); valgEl.hidden = !valgEl.hidden; merkeEl.setAttribute('aria-expanded', String(!valgEl.hidden)); });
 addEventListener('pointerdown', e => { if (!valgEl.hidden && !valgEl.contains(e.target) && e.target !== merkeEl && !merkeEl.contains(e.target)) valgEl.hidden = true; });
 valgEl.addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; valgt = b.dataset.v; valgEl.hidden = true;
-  if (valgt === 'naa') settVaer(metNaa); else { const v = FAST[valgt](); if (metNaa && metNaa.temp != null) v.temp = metNaa.temp; settVaer(v); } });
+  VAER.kveld = valgt === 'kveld';
+  if (valgt === 'naa' || valgt === 'kveld') settVaer(metNaa); else { const v = FAST[valgt](); if (metNaa && metNaa.temp != null) v.temp = metNaa.temp; settVaer(v); } });
 
 async function oppdater(){ const v = await hent(); if (VAER.kilde === 'met') metNaa = v; if (valgt === 'naa' || !metNaa) settVaer(valgt === 'naa' ? v : FAST[valgt]()); VAER.tid = Date.now(); }
 if (!VAER_AV) { oppdater(); setInterval(() => { if (!document.hidden && Q0.get('vaer') === null) { try { sessionStorage.removeItem('vaer'); } catch (_) { /* */ } oppdater(); } }, 15 * 60e3); }
 else settVaer(null);
+setInterval(() => { const n = nattNaa(); if (Math.abs(n - VAER.mal.natt) > 0.01) { VAER.mal.natt = n; if (!glir) { glir = true; requestAnimationFrame(glid); } } }, 60e3);
 document.addEventListener('visibilitychange', () => { if (!document.hidden && VAER.naa && VAER.naa.nedbor) nedbor.sett(VAER.naa); });
 
-window.__vaer = () => ({ naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt });
+window.__vaer = () => ({ natt: U_SOL.natt.value, naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt });
 export { VAER, settVaer, aarstidFor, fraSymbol };

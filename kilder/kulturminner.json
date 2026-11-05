@@ -1,0 +1,2257 @@
+{
+"displayFieldName": "NAVN",
+"fieldAliases": {
+"URL": "URL",
+"OBJECTID": "OBJECTID",
+"NR": "Nr",
+"NAVN": "Navn",
+"TYPE": "Type",
+"EKSISTERENDE_VERN": "Eksisterende_vern",
+"AREALPLANSTATUS": "Arealplanstatus",
+"GRUPPE": "Gruppe",
+"VERDI": "Verdi",
+"FASONG": "Fasong",
+"UTSNITT": "Utsnitt",
+"GRUPPE_KORTNAVN": "gruppe_kortnavn",
+"KOMMUNEDEL": "Kommunedel",
+"KOMMUNEPLAN": "Kommuneplan",
+"REGULERINGSPLAN": "Reguleringsplan",
+"ANNEN_VERNEFORM": "Annen verneform",
+"JOIN_": "JOIN"
+},
+"geometryType": "esriGeometryPoint",
+"spatialReference": {
+"wkid": 4326,
+"latestWkid": 4326
+},
+"fields": [
+{
+"name": "URL",
+"type": "esriFieldTypeString",
+"alias": "URL",
+"length": 255
+},
+{
+"name": "OBJECTID",
+"type": "esriFieldTypeOID",
+"alias": "OBJECTID"
+},
+{
+"name": "NR",
+"type": "esriFieldTypeInteger",
+"alias": "Nr"
+},
+{
+"name": "NAVN",
+"type": "esriFieldTypeString",
+"alias": "Navn",
+"length": 255
+},
+{
+"name": "TYPE",
+"type": "esriFieldTypeString",
+"alias": "Type",
+"length": 255
+},
+{
+"name": "EKSISTERENDE_VERN",
+"type": "esriFieldTypeString",
+"alias": "Eksisterende_vern",
+"length": 255
+},
+{
+"name": "AREALPLANSTATUS",
+"type": "esriFieldTypeString",
+"alias": "Arealplanstatus",
+"length": 255
+},
+{
+"name": "GRUPPE",
+"type": "esriFieldTypeString",
+"alias": "Gruppe",
+"length": 255
+},
+{
+"name": "VERDI",
+"type": "esriFieldTypeString",
+"alias": "Verdi",
+"length": 255
+},
+{
+"name": "FASONG",
+"type": "esriFieldTypeString",
+"alias": "Fasong",
+"length": 10
+},
+{
+"name": "UTSNITT",
+"type": "esriFieldTypeSmallInteger",
+"alias": "Utsnitt"
+},
+{
+"name": "GRUPPE_KORTNAVN",
+"type": "esriFieldTypeString",
+"alias": "gruppe_kortnavn",
+"length": 100
+},
+{
+"name": "KOMMUNEDEL",
+"type": "esriFieldTypeString",
+"alias": "Kommunedel",
+"length": 255
+},
+{
+"name": "KOMMUNEPLAN",
+"type": "esriFieldTypeString",
+"alias": "Kommuneplan",
+"length": 255
+},
+{
+"name": "REGULERINGSPLAN",
+"type": "esriFieldTypeString",
+"alias": "Reguleringsplan",
+"length": 255
+},
+{
+"name": "ANNEN_VERNEFORM",
+"type": "esriFieldTypeString",
+"alias": "Annen verneform",
+"length": 255
+},
+{
+"name": "JOIN_",
+"type": "esriFieldTypeString",
+"alias": "JOIN",
+"length": 255
+}
+],
+"features": [
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/fritid.pdf",
+"OBJECTID": 430,
+"NR": 4,
+"NAVN": "Fredrikstad bibliotek",
+"TYPE": "Se også Off. adm. og tjenesteyt.",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Fritid",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "fritid",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Fredet, NB!-reg., Rødlistet, Fy.pl.",
+"JOIN_": "Fritid_4"
+},
+"geometry": {
+"x": 10.942020692868251,
+"y": 59.20616172042967
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 284,
+"NR": 17,
+"NAVN": "1000-årsstedet",
+"TYPE": "Monument i Lykkebergparken",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "lokal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret",
+"JOIN_": "Andre særegne kulturminner_17"
+},
+"geometry": {
+"x": 10.941140964132122,
+"y": 59.209603301135665
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 169,
+"NR": 16,
+"NAVN": "Alders Hvile",
+"TYPE": "Tidl. aldershjem Cicignongata 1",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_16"
+},
+"geometry": {
+"x": 10.945059234739443,
+"y": 59.2054828472423
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 175,
+"NR": 12,
+"NAVN": "St.Croixgt. 17",
+"TYPE": "Fredrikstad brannstasjon",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_12"
+},
+"geometry": {
+"x": 10.944871924061971,
+"y": 59.21015423094621
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 132,
+"NR": 2,
+"NAVN": "Isegran (Gule huset)",
+"TYPE": "Empire",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB-reg., Rødlist., Fylkesplanen",
+"JOIN_": "Arkitektur og stil_2"
+},
+"geometry": {
+"x": 10.945313617947653,
+"y": 59.20315646476199
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 487,
+"NR": 32,
+"NAVN": "Nabbetorpvn. s-del",
+"TYPE": "Allé fra hagebyetableringen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": "Delvis reg.",
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Infrastruktur og kommunikasjon_32"
+},
+"geometry": {
+"x": 10.963963848395805,
+"y": 59.20574373326096
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 195,
+"NR": 3,
+"NAVN": "Sprøitehus ved Ø. Fredrikstad kirke",
+"TYPE": "Liten teglbygning, brannstasjon for Gamlebyen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_3"
+},
+"geometry": {
+"x": 10.952681372756166,
+"y": 59.20205142522163
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 146,
+"NR": 17,
+"NAVN": "St. Croix",
+"TYPE": "Nyklassisisme, modernisme",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Arkitektur og stil_17"
+},
+"geometry": {
+"x": 10.94985712462076,
+"y": 59.20996345403626
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/byutvikling.pdf",
+"OBJECTID": 95,
+"NR": 3,
+"NAVN": "Cicignon",
+"TYPE": "Kvartalsstruktur, byplan 1873",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Byutvikling og byplan",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "byutvikling",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistende, Fylkespl.",
+"JOIN_": "Byutvikling og byplan_3"
+},
+"geometry": {
+"x": 10.945854210366903,
+"y": 59.206403029906596
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/fritid.pdf",
+"OBJECTID": 427,
+"NR": 1,
+"NAVN": "Turnhallen",
+"TYPE": "Dragestil",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Fritid",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "fritid",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Fritid_1"
+},
+"geometry": {
+"x": 10.941989196809217,
+"y": 59.20730644930036
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 404,
+"NR": 14,
+"NAVN": "Ved Rehbindersgt. 2",
+"TYPE": "Kolerakirkegård (treklynge)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-registeret, KULA,  Fylkespl.",
+"JOIN_": "Tro og livssyn_14"
+},
+"geometry": {
+"x": 10.951421206043952,
+"y": 59.199478785656375
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 281,
+"NR": 14,
+"NAVN": "Stenhoggermonumentet",
+"TYPE": "Monument i Lykkebergparken",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "lokal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret",
+"JOIN_": "Andre særegne kulturminner_14"
+},
+"geometry": {
+"x": 10.940500064592856,
+"y": 59.21104470386048
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 381,
+"NR": 31,
+"NAVN": "Trafo Heibergs gate",
+"TYPE": "Tårntrafo ved Heibergsgt’s start",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Ligger i KULA-område",
+"JOIN_": "Infrastruktur og kommunikasjon_31"
+},
+"geometry": {
+"x": 10.953222921679467,
+"y": 59.19804369679642
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 358,
+"NR": 11,
+"NAVN": "Bjarne Aas’ gate 7A",
+"TYPE": "Vognremisse",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Infrastruktur og kommunikasjon_11"
+},
+"geometry": {
+"x": 10.943260690730826,
+"y": 59.20525891579887
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 172,
+"NR": 14,
+"NAVN": "St. Josephs gate 8",
+"TYPE": "St. Josephs hospital, fødestue",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkespla- nen, Statlig verneplan",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_14"
+},
+"geometry": {
+"x": 10.945348815058843,
+"y": 59.20784910483155
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 421,
+"NR": 31,
+"NAVN": "Kråkerøy misjonshus",
+"TYPE": "Bedehus, Kråkerøyveien 49",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Kråkerøy",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Tro og livssyn_31"
+},
+"geometry": {
+"x": 10.94064667646829,
+"y": 59.19937725430707
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 178,
+"NR": 20,
+"NAVN": "Nygaardsgata 16 og 18",
+"TYPE": "Fredrikstad rådhus",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_20"
+},
+"geometry": {
+"x": 10.940086833643832,
+"y": 59.21041293631155
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/herregard.pdf",
+"OBJECTID": 35,
+"NR": 12,
+"NAVN": "Nygaard",
+"TYPE": "Evt. spor etter tidligere herregård",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Herregård",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "herregard",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Herregård_12"
+},
+"geometry": {
+"x": 10.94108392977178,
+"y": 59.21097028727555
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 398,
+"NR": 8,
+"NAVN": "St. Birgitta katolske k",
+"TYPE": "Kuppelkrk. St. Josephs gt 15 og 17",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen",
+"JOIN_": "Tro og livssyn_8"
+},
+"geometry": {
+"x": 10.943683369133677,
+"y": 59.207630340361966
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 198,
+"NR": 15,
+"NAVN": "Østfold sentralsykehus",
+"TYPE": "A- og B-blokka",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": "Reg.best.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_15"
+},
+"geometry": {
+"x": 10.94715102570666,
+"y": 59.20721254036771
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 167,
+"NR": 4,
+"NAVN": "Færgeportgaten 77 og\nKirkegaten 33",
+"TYPE": "Gamlebyen skole (nå Plusskolen)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_4"
+},
+"geometry": {
+"x": 10.95431307369,
+"y": 59.20444094164427
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 359,
+"NR": 12,
+"NAVN": "Trafo Færgeportg. 78",
+"TYPE": "Integrert trafo Gamlebyen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-registeret, Rødlistet",
+"JOIN_": "Infrastruktur og kommunikasjon_12"
+},
+"geometry": {
+"x": 10.954810330516947,
+"y": 59.20412685204539
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/forsvarkrig.pdf",
+"OBJECTID": 236,
+"NR": 3,
+"NAVN": "Isegran fort",
+"TYPE": "Detasjert fort til Fr.stad festn.,\nteglbygninger Mineforsvaret",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Forsvar og krigsminner",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "forsvarkrig",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen",
+"JOIN_": "Forsvar og krigsminner_3"
+},
+"geometry": {
+"x": 10.945972475793683,
+"y": 59.20296830817105
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 350,
+"NR": 2,
+"NAVN": "Byportene",
+"TYPE": "4 porthus, 3 svarteporter",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Fredet, NB!-reg., KULA",
+"JOIN_": "Infrastruktur og kommunikasjon_2"
+},
+"geometry": {
+"x": 10.956357783483705,
+"y": 59.2032130011845
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 399,
+"NR": 9,
+"NAVN": "Fr.st. metodistkirke",
+"TYPE": "Trekirke Ridehusgata 7",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Reg.best.",
+"ANNEN_VERNEFORM": "Aut. fredet, Rødlistet, Fylkesplan",
+"JOIN_": "Tro og livssyn_9"
+},
+"geometry": {
+"x": 10.9442614578671,
+"y": 59.206911227481186
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/maritime.pdf",
+"OBJECTID": 293,
+"NR": 4,
+"NAVN": "Gamlebyen",
+"TYPE": "Pålebrygger",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Maritime kulturminner",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "maritime",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-registeret, KULA, Fylkesplan",
+"JOIN_": "Maritime kulturminner_4"
+},
+"geometry": {
+"x": 10.951201800362186,
+"y": 59.20366342120033
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 356,
+"NR": 8,
+"NAVN": "Hamburgerskuret",
+"TYPE": "Kaipakkhus Phønixbrygga 3",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen",
+"JOIN_": "Infrastruktur og kommunikasjon_8"
+},
+"geometry": {
+"x": 10.940800991747407,
+"y": 59.206062975744196
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 402,
+"NR": 12,
+"NAVN": "Ø. Fredrikstad kapell",
+"TYPE": "Kapell og gravlund nær Gamleb.",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "KULA,Rødlistet, Fylkesplanen",
+"JOIN_": "Tro og livssyn_12"
+},
+"geometry": {
+"x": 10.96110689029105,
+"y": 59.2032013569512
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/byutvikling.pdf",
+"OBJECTID": 93,
+"NR": 1,
+"NAVN": "Gamlebyen",
+"TYPE": "Norges første planlagte bystruk- tur",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Byutvikling og byplan",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "byutvikling",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., KULA, Rødl. delv. fredet",
+"JOIN_": "Byutvikling og byplan_1"
+},
+"geometry": {
+"x": 10.952972232453089,
+"y": 59.20272038111915
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 362,
+"NR": 15,
+"NAVN": "Fredrikstad stasjon",
+"TYPE": "Jernbanestasjon 1878 med lok- stall og jernbanepark",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "regional",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Foreslått i nasjonal verneplan for\njernbanen",
+"JOIN_": "Infrastruktur og kommunikasjon_15"
+},
+"geometry": {
+"x": 10.95073249724939,
+"y": 59.20895064975068
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 270,
+"NR": 3,
+"NAVN": "Grensestener Fredrikstad festning",
+"TYPE": "Vaterland, Byens marker, Gudeberg og Cicignon",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "nasjonal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Delvis- spes.omr.",
+"ANNEN_VERNEFORM": "Delvis NB!-registeret og KULA",
+"JOIN_": "Andre særegne kulturminner_3"
+},
+"geometry": {
+"x": 10.962456094953724,
+"y": 59.20490215654434
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 170,
+"NR": 17,
+"NAVN": "Ferjestedsveien 5A-B",
+"TYPE": "Kommunalt adm. hus, ombygd 1916, samt prestebolig (nå ØKS)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_17"
+},
+"geometry": {
+"x": 10.949076462797514,
+"y": 59.20678800646324
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 176,
+"NR": 11,
+"NAVN": "St.Croixgt. 16",
+"TYPE": "St.Croix skole (også vernev. som eks. på ungdomshus fra 1990-t.)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_11"
+},
+"geometry": {
+"x": 10.945009253643082,
+"y": 59.21080103672297
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/politikkorg.pdf",
+"OBJECTID": 224,
+"NR": 1,
+"NAVN": "Kasernegaten 46",
+"TYPE": "Vennehaabet Herrekl./Frimurerl.",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Politikk og organisasjonsarbeid",
+"VERDI": "nasjonal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "politikkorg",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Politikk og organisasjonsarbeid_1"
+},
+"geometry": {
+"x": 10.952082437509985,
+"y": 59.20281002353202
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 133,
+"NR": 3,
+"NAVN": "Cicignon/Lykkeberg (Vestsiden NB!-omr.)",
+"TYPE": "Nybarokk, nyklassisisme, sveitser-\nstil, dragestil, modernisme",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB-reg., Rødlistede, Fylkespla- nen",
+"JOIN_": "Arkitektur og stil_3"
+},
+"geometry": {
+"x": 10.945959148731253,
+"y": 59.20639834755406
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 196,
+"NR": 5,
+"NAVN": "Gamlebyen Toldbod",
+"TYPE": "Teglbygg på kaia + Toldbodg. 37",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_5"
+},
+"geometry": {
+"x": 10.95223402576254,
+"y": 59.20372532735531
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 147,
+"NR": 27,
+"NAVN": "Bellevue",
+"TYPE": "Etterkrigsmodernisme",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Arkitektur og stil_27"
+},
+"geometry": {
+"x": 10.95370382738998,
+"y": 59.20851542060638
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/byutvikling.pdf",
+"OBJECTID": 96,
+"NR": 4,
+"NAVN": "Cicignonparken",
+"TYPE": "Hist. park ved tidl. Cicignon fort",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Byutvikling og byplan",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "byutvikling",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen",
+"JOIN_": "Byutvikling og byplan_4"
+},
+"geometry": {
+"x": 10.949432889979363,
+"y": 59.20621025213474
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 282,
+"NR": 15,
+"NAVN": "22. juli-monumentet",
+"TYPE": "Monument i Lykkebergparken",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "lokal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret",
+"JOIN_": "Andre særegne kulturminner_15"
+},
+"geometry": {
+"x": 10.941899796668132,
+"y": 59.20977307712043
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/forsvarkrig.pdf",
+"OBJECTID": 234,
+"NR": 1,
+"NAVN": "Fredrikstad festning",
+"TYPE": "Depotfestning/festningsby",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Forsvar og krigsminner",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "forsvarkrig",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Fredete militære anlegg og bygn.",
+"JOIN_": "Forsvar og krigsminner_1"
+},
+"geometry": {
+"x": 10.953370418141608,
+"y": 59.20310398803215
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 357,
+"NR": 10,
+"NAVN": "Trafo Phønix",
+"TYPE": "Nyklassisistisk trafo",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Infrastruktur og kommunikasjon_10"
+},
+"geometry": {
+"x": 10.944063668968434,
+"y": 59.20694770734902
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 171,
+"NR": 8,
+"NAVN": "J.N. Jacobsens gate 1",
+"TYPE": "Fredrikstad bibliotek med park",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Fredet, NB!-reg. Rødlistet",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_8"
+},
+"geometry": {
+"x": 10.94178071659091,
+"y": 59.20632258862002
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 271,
+"NR": 3,
+"NAVN": "Grensestener Fredrikstad festning",
+"TYPE": "Vaterland, Byens marker, Gudeberg og Cicignon",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "nasjonal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Delvis- spes.omr.",
+"ANNEN_VERNEFORM": "Delvis NB!-registeret og KULA",
+"JOIN_": "Andre særegne kulturminner_3"
+},
+"geometry": {
+"x": 10.949392096497602,
+"y": 59.2061958705859
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/politikkorg.pdf",
+"OBJECTID": 228,
+"NR": 5,
+"NAVN": "Kråkerøyveien 46",
+"TYPE": "Folkvang (Gerhardsens tale 1948)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Politikk og organisasjonsarbeid",
+"VERDI": "regional",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "politikkorg",
+"KOMMUNEDEL": "Kråkerøy",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Politikk og organisasjonsarbeid_5"
+},
+"geometry": {
+"x": 10.941322273993816,
+"y": 59.1993497288606
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 179,
+"NR": 18,
+"NAVN": "Lykkeberg 1",
+"TYPE": "Kommunalt adm. hus siden 1930, samt sidebygning",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_18"
+},
+"geometry": {
+"x": 10.94170906660153,
+"y": 59.210452906879226
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 136,
+"NR": 8,
+"NAVN": "St. Croix hovedgård, samt Sportsvn. 10A",
+"TYPE": "Klassisisme og nyklassisisme",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "regional",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Delvis før 1850",
+"JOIN_": "Arkitektur og stil_8"
+},
+"geometry": {
+"x": 10.947997728555217,
+"y": 59.21090763192311
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/maritime.pdf",
+"OBJECTID": 291,
+"NR": 2,
+"NAVN": "Ringverven",
+"TYPE": "Stor sjøbod Ringvervveien 1",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Maritime kulturminner",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "maritime",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Rødl.,NB!-reg., KULA, Fylkesplan",
+"JOIN_": "Maritime kulturminner_2"
+},
+"geometry": {
+"x": 10.946910602634762,
+"y": 59.198780013603646
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 397,
+"NR": 7,
+"NAVN": "Tidl. katolsk kirke og prestegård",
+"TYPE": "Dragestilsbygninger, Ridehusgata\n26, Kongens gate 9",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Reg. best.",
+"ANNEN_VERNEFORM": "NB!-registeret, Rødlistet, Fylkes- planen",
+"JOIN_": "Tro og livssyn_7"
+},
+"geometry": {
+"x": 10.94532874506388,
+"y": 59.208269069840306
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 148,
+"NR": 24,
+"NAVN": "Heibergs gate",
+"TYPE": "Nyklassisisme, hagebystil",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "KULA, Fylkesplanen",
+"JOIN_": "Arkitektur og stil_24"
+},
+"geometry": {
+"x": 10.953267741127352,
+"y": 59.197809560804444
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 168,
+"NR": 9,
+"NAVN": "Toldbodbrygga 2",
+"TYPE": "Tollboden",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Fredet, NB!-reg. Rødlistet",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_9"
+},
+"geometry": {
+"x": 10.950052181867132,
+"y": 59.20588971367029
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 139,
+"NR": 25,
+"NAVN": "General Ohmes vei, Lammers gate, Jens Meinichs gate",
+"TYPE": "Byggmesterfunkis",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "KULA, Fylkesplanen",
+"JOIN_": "Arkitektur og stil_25"
+},
+"geometry": {
+"x": 10.958121865241445,
+"y": 59.20156130290213
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 354,
+"NR": 6,
+"NAVN": "Fredrikstadbrua",
+"TYPE": "Buebru, åpnet 1957, landemerke",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Fredet, KULA, Fylkesplan",
+"JOIN_": "Infrastruktur og kommunikasjon_6"
+},
+"geometry": {
+"x": 10.960224840749376,
+"y": 59.21037965098461
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/fritid.pdf",
+"OBJECTID": 431,
+"NR": 5,
+"NAVN": "Byparkene",
+"TYPE": "Kirkeparken, Lykkebergparken, Cicignonparken og Jernbanepar- ken. Se også Byutv. og byplaner",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Fritid",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "fritid",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Delvis NB!-registeret",
+"JOIN_": "Fritid_5"
+},
+"geometry": {
+"x": 10.949844033539645,
+"y": 59.206282863103304
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/bolig.pdf",
+"OBJECTID": 122,
+"NR": 16,
+"NAVN": "Rektor Westerns gt. og Lærer Slangs gt.",
+"TYPE": "Sveitserjugend langs jernbanen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Boligutvikling og arbeiderbolig",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "bolig",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Boligutvikling og arbeiderbolig_16"
+},
+"geometry": {
+"x": 10.949362621626252,
+"y": 59.20950863368932
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/forsvarkrig.pdf",
+"OBJECTID": 471,
+"NR": 26,
+"NAVN": "Kirkeparken",
+"TYPE": "Minnesmerke falne under 2. VK",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Forsvar og krigsminner",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "forsvarkrig",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Inngår i NB!-område",
+"JOIN_": "Forsvar og krigsminner_26"
+},
+"geometry": {
+"x": 10.94281956111785,
+"y": 59.20819515754252
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/politikkorg.pdf",
+"OBJECTID": 225,
+"NR": 2,
+"NAVN": "Ferjestedsvn. 17",
+"TYPE": "Klubselskabet Phønix",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Politikk og organisasjonsarbeid",
+"VERDI": "nasjonal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "politikkorg",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Politikk og organisasjonsarbeid_2"
+},
+"geometry": {
+"x": 10.943511978082975,
+"y": 59.2067746162128
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 400,
+"NR": 10,
+"NAVN": "Ø. Fredrikstad kirke",
+"TYPE": "Stenkirke",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Listeført RA, NB!-reg., Rødlistet",
+"JOIN_": "Tro og livssyn_10"
+},
+"geometry": {
+"x": 10.952514562340262,
+"y": 59.20230053862596
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 351,
+"NR": 3,
+"NAVN": "Brolegging Gamle- byen",
+"TYPE": "Eldste hogde brolegging gjennom hovedporten, samt bruk av øst- foldgranitt og skifer",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., KULA, Fylkesplanen",
+"JOIN_": "Infrastruktur og kommunikasjon_3"
+},
+"geometry": {
+"x": 10.956533196872112,
+"y": 59.20316980185304
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/maritime.pdf",
+"OBJECTID": 294,
+"NR": 5,
+"NAVN": "Isegran fartøyvern",
+"TYPE": "Fartøyvernsenter/hist. båtmiljø",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Maritime kulturminner",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "maritime",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Regionalt fartøyvernsenter",
+"JOIN_": "Maritime kulturminner_5"
+},
+"geometry": {
+"x": 10.942560017807814,
+"y": 59.2035908162481
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 145,
+"NR": 18,
+"NAVN": "Sverres gt. 2B, Ha- rald Hårfagres gt. 17, Haakons gt. 3",
+"TYPE": "Jugendstil",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Reg.best.",
+"ANNEN_VERNEFORM": "Rødlistede",
+"JOIN_": "Arkitektur og stil_18"
+},
+"geometry": {
+"x": 10.944026466553897,
+"y": 59.2114518835329
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/landskap.pdf",
+"OBJECTID": 2,
+"NR": 2,
+"NAVN": "Glommas utløp med Isegran",
+"TYPE": "Elveløp",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Kulturhistorisk landskap",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "landskap",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Delvis hensynssone",
+"ANNEN_VERNEFORM": "KULA, Fylkesplanen",
+"JOIN_": "Kulturhistorisk landskap_2"
+},
+"geometry": {
+"x": 10.947467024189853,
+"y": 59.20154661588187
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 380,
+"NR": 30,
+"NAVN": "Trafo Gudeberg",
+"TYPE": "Tårntrafo Nabbetorpveien 2",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Ligger i KULA-område",
+"JOIN_": "Infrastruktur og kommunikasjon_30"
+},
+"geometry": {
+"x": 10.962697721528873,
+"y": 59.2042936438659
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 286,
+"NR": 19,
+"NAVN": "Møllehjulet Isegran",
+"TYPE": "Rekonstruert møllehjul",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "lokal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret",
+"JOIN_": "Andre særegne kulturminner_19"
+},
+"geometry": {
+"x": 10.947996313143395,
+"y": 59.20410009670947
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 403,
+"NR": 13,
+"NAVN": "Isegran",
+"TYPE": "Første garnisonskirkegård (bauta)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "KULA, Fylkesplanen",
+"JOIN_": "Tro og livssyn_13"
+},
+"geometry": {
+"x": 10.945991954932161,
+"y": 59.2028054992834
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/industri.pdf",
+"OBJECTID": 332,
+"NR": 18,
+"NAVN": "Spinnerikroken 3",
+"TYPE": "Kontorbygning, samt pipe",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Industri",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "industri",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Reg.best.",
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Industri_18"
+},
+"geometry": {
+"x": 10.96112786850026,
+"y": 59.20952605863041
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 372,
+"NR": 23,
+"NAVN": "Rektor Østbys gt. 7",
+"TYPE": "Vognremisse",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": null,
+"JOIN_": "Infrastruktur og kommunikasjon_23"
+},
+"geometry": {
+"x": 10.950803860526332,
+"y": 59.21035980608575
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 269,
+"NR": 2,
+"NAVN": "Frederik II statue",
+"TYPE": "Byens grunnl. Torvet Gamlebyen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "nasjonal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-registeret",
+"JOIN_": "Andre særegne kulturminner_2"
+},
+"geometry": {
+"x": 10.953064330386997,
+"y": 59.20322710038173
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/politikkorg.pdf",
+"OBJECTID": 226,
+"NR": 3,
+"NAVN": "H.J. Nilsens gt. 7",
+"TYPE": "Ynglingen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Politikk og organisasjonsarbeid",
+"VERDI": "nasjonal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "politikkorg",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Politikk og organisasjonsarbeid_3"
+},
+"geometry": {
+"x": 10.945640415822231,
+"y": 59.20958143802191
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 183,
+"NR": 7,
+"NAVN": "Borgarveien 1",
+"TYPE": "Amtsykehus for Smaalenes Amt 1795-1956",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "KULA, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_7"
+},
+"geometry": {
+"x": 10.964012816017137,
+"y": 59.202666531848564
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/fritid.pdf",
+"OBJECTID": 446,
+"NR": 20,
+"NAVN": "Flora",
+"TYPE": "Uterestaurant Kirkeparken",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Fritid",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "fritid",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen",
+"JOIN_": "Fritid_20"
+},
+"geometry": {
+"x": 10.941974464492498,
+"y": 59.208523806893176
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 352,
+"NR": 4,
+"NAVN": "Adkomst Gamlebyen",
+"TYPE": "Brolagt allé, adkomstportal",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., KULA, Fylkesplanen",
+"JOIN_": "Infrastruktur og kommunikasjon_4"
+},
+"geometry": {
+"x": 10.958859573886595,
+"y": 59.20212295544056
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/byutvikling.pdf",
+"OBJECTID": 103,
+"NR": 12,
+"NAVN": "Apenesfjellet og St.Hansfjellet",
+"TYPE": "Kvartalsstruktur, byplan 1873,\nmed tilhørende bebyggelse",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Byutvikling og byplan",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "byutvikling",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Delvis hens.sone",
+"REGULERINGSPLAN": "Delvis spes. omr.",
+"ANNEN_VERNEFORM": "Delvis rødlistede byninger, delvis før 1850",
+"JOIN_": "Byutvikling og byplan_12"
+},
+"geometry": {
+"x": 10.943341381968574,
+"y": 59.212247892676544
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/livssyn.pdf",
+"OBJECTID": 395,
+"NR": 5,
+"NAVN": "Fredrikstad domkirke",
+"TYPE": "Teglkirke, landemerke",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Tro og livssyn",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "livssyn",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Listeført RA, NB!-reg., Rødlistet",
+"JOIN_": "Tro og livssyn_5"
+},
+"geometry": {
+"x": 10.942864661723997,
+"y": 59.2094873921615
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/byutvikling.pdf",
+"OBJECTID": 97,
+"NR": 5,
+"NAVN": "Kirkeparken, Lyk- kebergparken og Biblioteksparken",
+"TYPE": "Historiske parker ved Domkirken og Lykkeberg, Fontene, Paviljong, 1000-årssted",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Byutvikling og byplan",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "byutvikling",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen, Biblioteksparken er fredet",
+"JOIN_": "Byutvikling og byplan_5"
+},
+"geometry": {
+"x": 10.94193926088421,
+"y": 59.20942883598495
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 197,
+"NR": 13,
+"NAVN": "Skolegata 2",
+"TYPE": "Cicignon skole",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_13"
+},
+"geometry": {
+"x": 10.95106755274277,
+"y": 59.20707258099398
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/forsvarkrig.pdf",
+"OBJECTID": 237,
+"NR": 4,
+"NAVN": "Cicignon fort",
+"TYPE": "Detasjert fort (rester av voller)",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Forsvar og krigsminner",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "forsvarkrig",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-registeret, Fylkesplanen",
+"JOIN_": "Forsvar og krigsminner_4"
+},
+"geometry": {
+"x": 10.94901479622471,
+"y": 59.20595799495063
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 166,
+"NR": 2,
+"NAVN": "Tøihusgaten 42 og\nVoldgaten 4",
+"TYPE": "Fredrikstad råhus fra 1864, feng- sel og sykehus",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_2"
+},
+"geometry": {
+"x": 10.953153562510089,
+"y": 59.2020368712272
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 360,
+"NR": 13,
+"NAVN": "Telef.kiosk Gamleb.",
+"TYPE": "Modernistisk telefonkiosk",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Fredet, NB!-reg.",
+"JOIN_": "Infrastruktur og kommunikasjon_13"
+},
+"geometry": {
+"x": 10.956222865139944,
+"y": 59.203349518299184
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/forsvarkrig.pdf",
+"OBJECTID": 260,
+"NR": 28,
+"NAVN": "Tollbodplassen",
+"TYPE": "Eneste gjenværende tyrskerbrakke i sentrum",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Forsvar og krigsminner",
+"VERDI": "lokal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "forsvarkrig",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Inngår i NB!-område",
+"JOIN_": "Forsvar og krigsminner_28"
+},
+"geometry": {
+"x": 10.94840573598971,
+"y": 59.205849285057575
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/andrekulturminner.pdf",
+"OBJECTID": 283,
+"NR": 16,
+"NAVN": "Katti Anker Møller-skulpturen",
+"TYPE": "Monument i Biblioteksparken",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Andre særegne kulturminner",
+"VERDI": "lokal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "andrekulturminner",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-registeret",
+"JOIN_": "Andre særegne kulturminner_16"
+},
+"geometry": {
+"x": 10.94275598080692,
+"y": 59.20628673351194
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/landbruk.pdf",
+"OBJECTID": 68,
+"NR": 33,
+"NAVN": "Smertu, Smertuvn. 2",
+"TYPE": "Våningshus og tømmerlåve",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Kulturminne i landbruk",
+"VERDI": "lokal",
+"FASONG": "Rund",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "landbruk",
+"KOMMUNEDEL": "Kråkerøy",
+"KOMMUNEPLAN": null,
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "Før 1850",
+"JOIN_": "Kulturminne i landbruk_33"
+},
+"geometry": {
+"x": 10.940836841068492,
+"y": 59.20247891939928
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 174,
+"NR": 10,
+"NAVN": "J.N. Jacobsens gate 15",
+"TYPE": "Fredrikstad bad",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": null,
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_10"
+},
+"geometry": {
+"x": 10.944071348756022,
+"y": 59.21073840749397
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/arkitektur.pdf",
+"OBJECTID": 131,
+"NR": 1,
+"NAVN": "Gamlebyen",
+"TYPE": "Empire, klassisisme, sveitserstil",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Arkitektur og stil",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 0,
+"GRUPPE_KORTNAVN": "arkitektur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "KULA, Rødlistede, Fylkesplanen",
+"JOIN_": "Arkitektur og stil_1"
+},
+"geometry": {
+"x": 10.953465196013589,
+"y": 59.203133302238506
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/infrastruktur.pdf",
+"OBJECTID": 349,
+"NR": 1,
+"NAVN": "Vindebrua",
+"TYPE": "Vippebru over vollgr., Gamlebyen",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Infrastruktur og kommunikasjon",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "infrastruktur",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "Fredet, NB!-reg., KULA",
+"JOIN_": "Infrastruktur og kommunikasjon_1"
+},
+"geometry": {
+"x": 10.95728467284962,
+"y": 59.20298507191484
+}
+},
+{
+"attributes": {
+"URL": "https://arcgis.fredrikstad.kommune.no/webdocs/kulturminneplan/vedlegg/offadmtjeneste.pdf",
+"OBJECTID": 194,
+"NR": 1,
+"NAVN": "Kirkegaten 27",
+"TYPE": "Fredrikstad rådhus 1784-1865",
+"EKSISTERENDE_VERN": null,
+"AREALPLANSTATUS": null,
+"GRUPPE": "Offentlig administrasjon og tjenesteyting",
+"VERDI": "nasjonal",
+"FASONG": "Kvadrat",
+"UTSNITT": 1,
+"GRUPPE_KORTNAVN": "offadmtjeneste",
+"KOMMUNEDEL": "Sentrum",
+"KOMMUNEPLAN": "Hens.sone",
+"REGULERINGSPLAN": "Spes.omr.",
+"ANNEN_VERNEFORM": "NB!-reg., Rødlistet, Fylkesplanen",
+"JOIN_": "Offentlig administrasjon og tjenesteyting_1"
+},
+"geometry": {
+"x": 10.953075285398972,
+"y": 59.20347626540554
+}
+}
+],
+"hentet": "2026-11-05",
+"url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/BSU/Kulturminneplan_kommunekart/MapServer/19"
+}

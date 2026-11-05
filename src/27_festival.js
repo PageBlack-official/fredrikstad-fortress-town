@@ -3,15 +3,20 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { DATA, Q0, map, scene } from './00_oppsett.js';
 import { mat } from './05_bygg.js';
 // ---- festivaler: plassen gjøres om når det er festival der (Vegar: «Månefestivalen … hele Tøihusplassen omgjøres med scene, lysshow») ----
-// Arrangementene står i data/arrangementer.json: navn, plass, fra/til (datoer), scenens plass og retning, publikumsflaten. Kartet viser
+// Arrangementene står i data/arrangementer.json: navn, plass, fra/til (datoer) eller regel, scenens plass og retning, publikum, boder. Kartet viser
 // festivalen fra kvelden før første dag til siste dag er over; ?festival=<id> viser den uansett dato (til visning), ?festival=0 aldri.
 // Scenen er bygd som husene (samme strek og skygge); lysene og skjermen er egne, ulyste stoffer som ikke tegner strek.
 const ARR = DATA.arrangementer || [];
 const tving = Q0.get('festival');
 const idag = new Date();
+// datoene: fra/til i dataene, eller regelen «siste-helg-i-juli» (torsdag til lørdag i helgen med julis siste lørdag) for andre år
+function datoer(a, aar){
+  if (a.fra && a.til && +a.fra.slice(0, 4) === aar) return [new Date(a.fra + 'T00:00:00'), new Date(a.til + 'T23:59:59')];
+  if (a.regel === 'siste-helg-i-juli') { const l = new Date(aar, 6, 31); l.setDate(31 - ((l.getDay() + 1) % 7)); const f = new Date(l); f.setDate(l.getDate() - 2); l.setHours(23, 59, 59); return [f, l]; }
+  return null;
+}
 const aktiv = tving === '0' ? null : ARR.find(a => a.id === tving) || (tving ? null : ARR.find(a => {
-  if (!a.fra || !a.til) return false; const fra = new Date(a.fra + 'T00:00:00'), til = new Date(a.til + 'T23:59:59'); fra.setHours(fra.getHours() - 6); return idag >= fra && idag <= til; }));
-
+  const d = datoer(a, idag.getFullYear()); if (!d) return false; const fra = new Date(d[0]); fra.setHours(fra.getHours() - 6); return idag >= fra && idag <= d[1]; }));
 let anim = null;
 if (aktiv) anim = bygg(aktiv);
 
@@ -56,6 +61,10 @@ function bygg(a){
       if (rnd() > Math.exp(-(d - D / 2) / 70)) continue;                                                // tettere nær scenen
       deler.push(fig.clone().applyMatrix4(m4.makeTranslation(x, 0.05, -y))); n++; }
     if (!deler.length) return; const m = new THREE.Mesh(mergeGeometries(deler), mat(f, false)); m.castShadow = m.receiveShadow = true; g.add(m); });
+  // boder (Månehagen): små telt med farget tak der maten er
+  if (a.boder) { const Bd = a.boder, takF = [[196, 74, 62], [236, 226, 206], [60, 86, 140]];
+    for (let k = 0; k < Bd.antall; k++) { const x = Bd.x0 + (k + 0.5) * (Bd.x1 - Bd.x0) / Bd.antall, y = Bd.y0 + (k % 2 ? 0.25 : 0.75) * (Bd.y1 - Bd.y0);
+      kloss(3, 2.2, 3, x, 1.1, -y, M.telt); kloss(3.4, 0.5, 3.4, x, 2.45, -y, mat(takF[k % 3], false)); } }
   // lyslenker over plassen: små lys på tråder fra scenen og utover
   const lysPos = []; for (let k = 0; k < 6; k++) { const ang = (k - 2.5) * 0.28; for (let j = 0; j <= 24; j++) { const t = j / 24, r = D / 2 + t * 40;
     const lx = r * Math.cos(ang), lz = r * Math.sin(ang), h = 6.5 - Math.sin(t * Math.PI) * 1.6; lysPos.push(new THREE.Vector3(lx, h, lz).applyAxisAngle(new THREE.Vector3(0, 1, 0), sc.rotation.y).add(new THREE.Vector3(S.x, 0, -S.y))); } }
@@ -78,4 +87,5 @@ if (anim) {
   requestAnimationFrame(steg);
 }
 window.__festival = () => anim ? { id: anim.a.id, navn: anim.a.navn, straler: anim.straler.length } : null;
+window.__festivalDatoer = aar => ARR.map(a => ({ id: a.id, d: (datoer(a, aar) || []).map(x => x.toISOString()) }));
 export { aktiv as festival };
