@@ -9,7 +9,7 @@ OK   verktoy/streetview_fasader.py            55 hus endret, 95 fasithus sammenl
 OK   verktoy/streetview_farger.py             104 vegger fra Street View 2016 eller senere
 FEIL verktoy/fasade_tegning.py les_fra_kontroll 
 Traceback (most recent call last):
-  File "/tmp/kjede-mlzz5_pm/repo/verktoy/fasade_tegning.py", line 20, in <module>
+  File "/tmp/kjede-dt2_5lbb/repo/verktoy/fasade_tegning.py", line 20, in <module>
     import fitz
 ModuleNotFoundError: No module named 'fitz'
 

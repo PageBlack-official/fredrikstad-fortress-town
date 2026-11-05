@@ -1,5 +1,5 @@
 
-// ../../../tmp/tmp6c2id0vv/tilstand.js
+// ../../../../tmp/tmpfzobimrm/tilstand.js
 var TILSTAND = {
   skyggeSkitten: true,
   // skyggekartet må tegnes på nytt (sola, husene eller introen har endret seg)
@@ -23,7 +23,7 @@ function registrer(navn) {
   for (const [k, f] of Object.entries(navn)) Object.defineProperty(SENERE, k, { get: f, enumerable: true });
 }
 
-// ../../../tmp/tmp6c2id0vv/00_oppsett.js
+// ../../../../tmp/tmpfzobimrm/00_oppsett.js
 import * as THREE from "three";
 import * as maplibregl from "maplibre-gl";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
@@ -115,7 +115,7 @@ var cam = new THREE.PerspectiveCamera(60, 1, 1, 1e4);
 cam.matrixAutoUpdate = false;
 var kam = { zoomfaktor: 1, mpp: 1, pitch: PITCH0, bearing: -AZ0_GRADER, naer: 1, fjern: 1e4 };
 
-// ../../../tmp/tmp6c2id0vv/01_etterbehandling.js
+// ../../../../tmp/tmpfzobimrm/01_etterbehandling.js
 import * as THREE2 from "three";
 import { FXAAShader as FXAAShader2 } from "three/addons/shaders/FXAAShader.js";
 var MAALT = { oppdater: 0, speil: 0, skygge: 0 };
@@ -328,8 +328,8 @@ var post = (() => {
       rtF.setSize(w, h);
       fx.uniforms.resolution.value.set(1 / w, 1 / h);
     },
-    settSkala(s, tving) {
-      if (!tving && Math.abs(s - skala) < 0.02) return;
+    settSkala(s, tving2) {
+      if (!tving2 && Math.abs(s - skala) < 0.02) return;
       skala = s;
       const w = Math.max(2, Math.round(W * s)), h = Math.max(2, Math.round(H * s));
       rt.setSize(w, h);
@@ -376,15 +376,15 @@ var post = (() => {
       renderer.render(fs, pc);
       fin();
       const _t3 = performance.now();
-      const P = window.__pt;
-      P.scene = _t1 - _t0;
-      P.blekk = _t2 - _t1;
-      P.fxaa = _t3 - _t2;
-      P.kall = kall;
-      P.tri = tri;
-      P.skygge = skyggeNaa ? 1 : 0;
-      P.maal = maal;
-      P.minTex = MIN_TEX;
+      const P2 = window.__pt;
+      P2.scene = _t1 - _t0;
+      P2.blekk = _t2 - _t1;
+      P2.fxaa = _t3 - _t2;
+      P2.kall = kall;
+      P2.tri = tri;
+      P2.skygge = skyggeNaa ? 1 : 0;
+      P2.maal = maal;
+      P2.minTex = MIN_TEX;
     }
     // samme objekt hvert bilde
   };
@@ -395,7 +395,7 @@ function fit() {
 }
 map.on("resize", fit);
 
-// ../../../tmp/tmp6c2id0vv/02_lys.js
+// ../../../../tmp/tmpfzobimrm/02_lys.js
 import * as THREE3 from "three";
 var hemi = new THREE3.HemisphereLight(16777215, 15131350, 1);
 scene.add(hemi);
@@ -540,9 +540,11 @@ varying vec3 vWq;
 uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
 // Været (23_vaer): skyDekke 0 = sol, 1 = helt overskyet (samme gråvær som introen, uten kastskygger). sno: snødekke 0–1 på flater som
 // vender opp. aarstid: fargen grønt får i årstiden (rgb ganges inn, a = styrke).
-uniform float skyDekke, sno; uniform vec4 aarstid;   // rgb = fargen grønt går mot (ganget med lysheten), a = styrke
+uniform float skyDekke, sno, natt; uniform vec4 aarstid;   // rgb = fargen grønt går mot (ganget med lysheten), a = styrke
 float solHer(vec3 wq){ float s=1.; if(solUte<1.){ float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; s=smoothstep(solFront, solFront+solBredde, v); } return s*(1.-skyDekke); }
 vec3 aarstidFarge(vec3 c){ float gronn=smoothstep(0.015,0.10, c.g-max(c.r,c.b)); float l=dot(c, vec3(0.30,0.59,0.11)); return mix(c, l*aarstid.rgb, gronn*aarstid.a); }   // grønt får årstidens farge med samme lyshet
+// kveld og natt (23_vaer: sola under horisonten): byen mørkner mot blått; vinduene lyser (07)
+vec3 kveld(vec3 c){ return mix(c, c*vec3(0.10,0.13,0.27), natt); }   // lineært fargerom: 0,10 her er omtrent 0,35 på skjermen
 vec3 snoPaa(vec3 c, float opp){ return mix(c, vec3(0.92,0.94,0.97)*mix(0.86,1.,smoothstep(0.6,1.,opp)), sno*smoothstep(0.45,0.8,opp)); }
 const vec3 OVERSKYET=vec3(0.74,0.80,0.92);   // overskyet: tydelig mørkere og blåere (0,86/0,90/0,97 var usynlig i Vegars Chrome)
 // overskyet tar også metningen ned: byen ser ut som tegningen i gråvær, og sola gir fargene tilbake
@@ -589,7 +591,7 @@ float skravurMaske(vec3 wq, float k){ if(skravur<=0.) return 0.;
 const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
-var U_SOL = { ute: { value: 1 }, front: { value: -1e6 }, bredde: { value: 160 }, dir: { value: new THREE3.Vector3(1, 0, 0) }, sky: { value: 0 }, sno: { value: 0 }, aarstid: { value: new THREE3.Vector4(1, 1, 1, 0) } };
+var U_SOL = { ute: { value: 1 }, front: { value: -1e6 }, bredde: { value: 160 }, dir: { value: new THREE3.Vector3(1, 0, 0) }, sky: { value: 0 }, sno: { value: 0 }, natt: { value: 0 }, aarstid: { value: new THREE3.Vector4(1, 1, 1, 0) } };
 function kobleSol() {
   let n = 0;
   scene.traverse((o) => {
@@ -602,6 +604,7 @@ function kobleSol() {
         m.uniforms.solFrontDir = U_SOL.dir;
         m.uniforms.skyDekke = U_SOL.sky;
         m.uniforms.sno = U_SOL.sno;
+        m.uniforms.natt = U_SOL.natt;
         m.uniforms.aarstid = U_SOL.aarstid;
         m.needsUpdate = true;
         n++;
@@ -614,13 +617,13 @@ function medSkygge(m) {
   m.lights = true;
   Object.assign(m.uniforms, THREE3.UniformsUtils.clone(THREE3.UniformsLib.lights), { skravur: U_SKRAVUR });
   m.vertexShader = GL_SOL_V + m.vertexShader.replace(/}\s*$/, glSolVMain("(modelMatrix*vec4(position,1.))", "vec3(0.,1.,0.)") + "}");
-  m.fragmentShader = GL_SOL_F + m.fragmentShader.replace("#include <colorspace_fragment>", "{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(graavaer(gl_FragColor.rgb), sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); gl_FragColor.rgb=snoPaa(aarstidFarge(gl_FragColor.rgb), 1.); }\n#include <colorspace_fragment>");
+  m.fragmentShader = GL_SOL_F + m.fragmentShader.replace("#include <colorspace_fragment>", "{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(graavaer(gl_FragColor.rgb), sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); gl_FragColor.rgb=kveld(snoPaa(aarstidFarge(gl_FragColor.rgb), 1.)); }\n#include <colorspace_fragment>");
   m.needsUpdate = true;
   return m;
 }
 registrer({ sun: () => sun });
 
-// ../../../tmp/tmp6c2id0vv/kvalitet.js
+// ../../../../tmp/tmpfzobimrm/kvalitet.js
 import * as THREE4 from "three";
 var KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get("noadapt") ? 9 : 0, onsket: 0 };
 var MAAL_PAA = !!Q0.get("adapt");
@@ -671,7 +674,7 @@ function feilsokTast(t) {
 if (Q0.get("nivaa")) settNivaa(+Q0.get("nivaa"));
 registrer({ beregnSkala: () => beregnSkala });
 
-// ../../../tmp/tmp6c2id0vv/03_bakke-vann-grønt.js
+// ../../../../tmp/tmpfzobimrm/03_bakke-vann-grønt.js
 import * as THREE5 from "three";
 var ground = new THREE5.Mesh(new THREE5.PlaneGeometry(6e3, 6e3), new THREE5.MeshBasicMaterial({ color: 15723748 }));
 ground.rotation.x = -Math.PI / 2;
@@ -682,11 +685,11 @@ function polyShape(pts) {
   return s;
 }
 var BAKKELAG = { terreng: 0, brostein: 0, vei: 1, flate: 2, parkering: 3, gress: 4 };
-function bakkelag(mat2, lag, under = 0) {
+function bakkelag(mat2, lag2, under = 0) {
   mat2.polygonOffset = true;
-  mat2.polygonOffsetFactor = -lag;
-  mat2.polygonOffsetUnits = -4 * lag - under;
-  mat2.userData.bakkelag = [lag, under];
+  mat2.polygonOffsetFactor = -lag2;
+  mat2.polygonOffsetUnits = -4 * lag2 - under;
+  mat2.userData.bakkelag = [lag2, under];
   return mat2;
 }
 var _BR = DATA.brostein && DATA.brostein.length > 2 ? DATA.brostein : null;
@@ -731,13 +734,14 @@ var waterMat = new THREE5.ShaderMaterial({
     reflPV: { value: new THREE5.Matrix4() },
     res: { value: new THREE5.Vector2(2, 2) },
     reflStyrke: { value: 0 },
+    natt: U_SOL.natt,
     sentrum: { value: new THREE5.Vector2(10, 0) },
     solD: { value: new THREE5.Vector3(0.3, 0.6, -0.7) },
     gloett: { value: Q0.get("gloett") === "0" ? 0 : 1 },
     uKaiskum: { value: Q0.get("kaiskum") === "0" ? 0 : 1 }
   },
   vertexShader: `varying vec3 wp; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-  fragmentShader: `uniform float t, maks, harFelt, reflStyrke, gloett, uKaiskum; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
+  fragmentShader: `uniform float t, maks, harFelt, reflStyrke, gloett, uKaiskum, natt; uniform vec3 solD; uniform sampler2D strek, tFelt, tRefl; uniform vec3 c1,c2,hi,grunt,skum,fjern; uniform vec4 felt; uniform vec2 res, sentrum; uniform mat4 reflPV; varying vec3 wp;
   float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
   float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
   // tynn linje i avstand r fra land, bredde w (meter), aldri tynnere enn én piksel (ingen flimring)
@@ -791,6 +795,7 @@ var waterMat = new THREE5.ShaderMaterial({
     // langt ute: vannet blir lysere og roligere, så byen står i fokus
     float u=smoothstep(650.,1500.,length(wp.xz-vec2(sentrum.x,-sentrum.y)));
     c=mix(c, fjern, u*0.55);
+    c=mix(c, c*vec3(0.10,0.14,0.30), natt);   // kveld (23_vaer)
     gl_FragColor=vec4(c,1.);
   #include <colorspace_fragment>
   }`
@@ -831,7 +836,7 @@ DATA.vann.forEach((w) => {
 });
 registrer({ waterMat: () => waterMat });
 
-// ../../../tmp/tmp6c2id0vv/04_brostein-i-hele-gamlebyen.js
+// ../../../../tmp/tmpfzobimrm/04_brostein-i-hele-gamlebyen.js
 import * as THREE6 from "three";
 var stoneMat = new THREE6.ShaderMaterial({
   uniforms: { base: { value: new THREE6.Color("rgb(146,140,132)") }, fuge: { value: new THREE6.Color("rgb(96,92,88)") }, ang: { value: THREE6.MathUtils.degToRad(DATA.gatevinkel || 0) } },
@@ -881,7 +886,7 @@ var plenMat = new THREE6.ShaderMaterial({
 medSkygge(plenMat);
 bakkelag(plenMat, BAKKELAG.gress);
 
-// ../../../tmp/tmp6c2id0vv/05_bygg.js
+// ../../../../tmp/tmpfzobimrm/05_bygg.js
 import * as THREE7 from "three";
 import { mergeGeometries as mergeGeometries2 } from "three/addons/utils/BufferGeometryUtils.js";
 var city = new THREE7.Group();
@@ -891,18 +896,18 @@ edgeMat.visible = false;
 var mats = /* @__PURE__ */ new Map();
 var HUS_N = 512;
 var husData = new Float32Array(HUS_N * 4);
-for (let i = 0; i < HUS_N; i++) {
-  husData[i * 4] = 0;
-  husData[i * 4 + 1] = 1;
-  husData[i * 4 + 2] = 0;
-  husData[i * 4 + 3] = 1;
+for (let i2 = 0; i2 < HUS_N; i2++) {
+  husData[i2 * 4] = 0;
+  husData[i2 * 4 + 1] = 1;
+  husData[i2 * 4 + 2] = 0;
+  husData[i2 * 4 + 3] = 1;
 }
 var tHus = new THREE7.DataTexture(husData, HUS_N, 1, THREE7.RGBAFormat, THREE7.FloatType);
 tHus.minFilter = tHus.magFilter = THREE7.NearestFilter;
 tHus.needsUpdate = true;
 var U_HUS = { value: tHus };
-function settHus(i, loft, vekst) {
-  const k = (i + 1) * 4;
+function settHus(i2, loft, vekst) {
+  const k = (i2 + 1) * 4;
   if (husData[k] !== loft || husData[k + 1] !== vekst) {
     husData[k] = loft;
     husData[k + 1] = vekst;
@@ -920,15 +925,15 @@ husDybde.onBeforeCompile = (sh) => {
   );
 };
 var _mFlat = new THREE7.Matrix4();
-function bitAv(geo, start2, antall, ekstra) {
+function bitAv(geo, start3, antall, ekstra) {
   const ut = new THREE7.BufferGeometry(), n = antall;
   for (const navn of ["position", "normal"]) {
     const a = geo.getAttribute(navn);
-    ut.setAttribute(navn, new THREE7.BufferAttribute(a.array.slice(start2 * a.itemSize, (start2 + n) * a.itemSize), a.itemSize));
+    ut.setAttribute(navn, new THREE7.BufferAttribute(a.array.slice(start3 * a.itemSize, (start3 + n) * a.itemSize), a.itemSize));
   }
   ekstra.forEach((navn) => {
     const a = geo.getAttribute(navn);
-    ut.setAttribute(navn, new THREE7.BufferAttribute(a ? a.array.slice(start2, start2 + n) : new Float32Array(n), 1));
+    ut.setAttribute(navn, new THREE7.BufferAttribute(a ? a.array.slice(start3, start3 + n) : new Float32Array(n), 1));
   });
   return ut;
 }
@@ -937,11 +942,11 @@ function biterAv(mesh, matrise, ekstra) {
   if (!geo.getAttribute("normal")) geo.computeVertexNormals();
   const n = geo.getAttribute("position").count;
   const grupper = Array.isArray(mesh.material) && geo.groups.length ? geo.groups.map((g) => [mesh.material[g.materialIndex], g.start, Math.min(g.count, n - g.start)]) : [[Array.isArray(mesh.material) ? mesh.material[0] : mesh.material, 0, n]];
-  return grupper.map(([m, start2, antall]) => [m, bitAv(geo, start2, antall, ekstra).applyMatrix4(matrise)]);
+  return grupper.map(([m, start3, antall]) => [m, bitAv(geo, start3, antall, ekstra).applyMatrix4(matrise)]);
 }
 function flatGruppe(grp, ekstra = ["aBygg", "aTopp"]) {
   const samling = /* @__PURE__ */ new Map(), vekk = [];
-  (function gaa(o, forelder) {
+  (function gaa2(o, forelder) {
     o.children.forEach((c) => {
       c.updateMatrix();
       const m = _mFlat.multiplyMatrices(forelder, c.matrix).clone();
@@ -959,7 +964,7 @@ function flatGruppe(grp, ekstra = ["aBygg", "aTopp"]) {
         });
         vekk.push(c);
       }
-      gaa(c, m);
+      gaa2(c, m);
     });
   })(grp, new THREE7.Matrix4());
   vekk.forEach((o) => o.removeFromParent());
@@ -997,40 +1002,40 @@ var kontaktMat = new THREE7.ShaderMaterial({
 function fotBaand(pts, d, y) {
   const n = pts.length;
   let areal = 0;
-  for (let i = 0; i < n; i++) {
-    const a = pts[i], c = pts[(i + 1) % n];
+  for (let i2 = 0; i2 < n; i2++) {
+    const a = pts[i2], c = pts[(i2 + 1) % n];
     areal += a[0] * c[1] - c[0] * a[1];
   }
   const ut = areal > 0 ? -1 : 1;
   const pos = [], alfa = [], nrm = [];
-  for (let i = 0; i < n; i++) {
-    const a = pts[i], c = pts[(i + 1) % n];
+  for (let i2 = 0; i2 < n; i2++) {
+    const a = pts[i2], c = pts[(i2 + 1) % n];
     const ex = c[0] - a[0], ey = c[1] - a[1], L = Math.hypot(ex, ey) || 1;
     nrm.push([-ey / L * ut, ex / L * ut]);
   }
-  const P = (x, yy, al) => {
+  const P2 = (x, yy, al) => {
     pos.push(x, y, -yy);
     alfa.push(al);
   };
-  for (let i = 0; i < n; i++) {
-    const a = pts[i], c = pts[(i + 1) % n], m = nrm[i];
+  for (let i2 = 0; i2 < n; i2++) {
+    const a = pts[i2], c = pts[(i2 + 1) % n], m = nrm[i2];
     const a2 = [a[0] + m[0] * d, a[1] + m[1] * d], c2 = [c[0] + m[0] * d, c[1] + m[1] * d];
-    P(a[0], a[1], 1);
-    P(c[0], c[1], 1);
-    P(c2[0], c2[1], 0);
-    P(a[0], a[1], 1);
-    P(c2[0], c2[1], 0);
-    P(a2[0], a2[1], 0);
-    const m2 = nrm[(i + 1) % n];
+    P2(a[0], a[1], 1);
+    P2(c[0], c[1], 1);
+    P2(c2[0], c2[1], 0);
+    P2(a[0], a[1], 1);
+    P2(c2[0], c2[1], 0);
+    P2(a2[0], a2[1], 0);
+    const m2 = nrm[(i2 + 1) % n];
     const kryss = (m[0] * m2[1] - m[1] * m2[0]) * ut;
     if (kryss > 1e-6) {
-      P(c[0], c[1], 1);
-      P(c[0] + m[0] * d, c[1] + m[1] * d, 0);
-      P(c[0] + m2[0] * d, c[1] + m2[1] * d, 0);
+      P2(c[0], c[1], 1);
+      P2(c[0] + m[0] * d, c[1] + m[1] * d, 0);
+      P2(c[0] + m2[0] * d, c[1] + m2[1] * d, 0);
     } else if (kryss < -1e-6) {
-      P(c[0], c[1], 1);
-      P(c[0] + m2[0] * d, c[1] + m2[1] * d, 0);
-      P(c[0] + m[0] * d, c[1] + m[1] * d, 0);
+      P2(c[0], c[1], 1);
+      P2(c[0] + m2[0] * d, c[1] + m2[1] * d, 0);
+      P2(c[0] + m[0] * d, c[1] + m[1] * d, 0);
     }
   }
   return { pos, alfa };
@@ -1065,6 +1070,7 @@ function mat(rgb, dim, sk, opt = {}) {
           float su=solHer(wq);
           vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6*su), lit); c=mix(graavaer(c), c, su);
           c=snoPaa(c, abs(normalize(cross(dFdx(lp),dFdy(lp))).y));   // snø på takene (23_vaer)
+          c=kveld(c);
           // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
           vec3 nq=normalize(cross(dFdx(lp),dFdy(lp)));
           float vask=nn(wq.xz*0.045+wq.y*0.031)*0.62+nn(wq.xz*0.17+vec2(wq.y*0.23,3.1))*0.38;
@@ -1118,6 +1124,9 @@ function mat(rgb, dim, sk, opt = {}) {
               vec3 hvit=vec3(0.96,0.94,0.90)*mix(1.,0.74,k);
               vec3 glas=mix(vec3(0.27,0.31,0.36),vec3(0.20,0.22,0.27),k);
               glas=mix(glas, glas*1.35, smoothstep(0.2,-0.4,q.x+q.y*0.5)*0.6);
+              // kveld (23_vaer): rammene mørkner med veggen, og to av tre vinduer har lys inne (fast per vindu, varmt gult)
+              float lysInne=step(0.34, hh(vec2(floor(u/2.6)+floor(wq.x*0.05)*17., rad+floor(wq.z*0.05)*31.)));
+              hvit=kveld(hvit); glas=mix(kveld(glas), vec3(1.0,0.72,0.34)*1.6, natt*lysInne);
               vec3 w=mix(hvit, glas, glass*(1.-kryss));
               float fjern=smoothstep(0.12,0.3,fw);
               // dør på gateplan i annenhver fjerde akse, som i tegningen
@@ -1148,7 +1157,7 @@ function mat(rgb, dim, sk, opt = {}) {
   return mats.get(key);
 }
 
-// ../../../tmp/tmp6c2id0vv/06_kirka-bygget-etter-2017.js
+// ../../../../tmp/tmpfzobimrm/06_kirka-bygget-etter-2017.js
 import * as THREE8 from "three";
 var KIRKE_ENDE = "valm";
 function sentr(p) {
@@ -1160,8 +1169,8 @@ function skaler(p, f) {
 }
 function oktagon(c, r, rot) {
   const o = [];
-  for (let i = 0; i < 8; i++) {
-    const a = rot + i * Math.PI / 4 + Math.PI / 8;
+  for (let i2 = 0; i2 < 8; i2++) {
+    const a = rot + i2 * Math.PI / 4 + Math.PI / 8;
     o.push([c[0] + Math.cos(a) * r, c[1] + Math.sin(a) * r]);
   }
   return o;
@@ -1182,14 +1191,14 @@ function bygKirke(k, grp) {
   function loftK(pb, pt, y0, y1, f, sk2, lukk2 = true) {
     const pos = [];
     const n = pb.length;
-    for (let i = 0; i < n; i++) {
-      const a = pb[i], b2 = pb[(i + 1) % n], c = pt[(i + 1) % n], d = pt[i];
+    for (let i2 = 0; i2 < n; i2++) {
+      const a = pb[i2], b2 = pb[(i2 + 1) % n], c = pt[(i2 + 1) % n], d = pt[i2];
       pos.push(a[0], y0, -a[1], b2[0], y0, -b2[1], c[0], y1, -c[1], a[0], y0, -a[1], c[0], y1, -c[1], d[0], y1, -d[1]);
     }
     if (lukk2) {
       const cc = sentr(pt);
-      for (let i = 0; i < n; i++) {
-        const a = pt[i], b2 = pt[(i + 1) % n];
+      for (let i2 = 0; i2 < n; i2++) {
+        const a = pt[i2], b2 = pt[(i2 + 1) % n];
         pos.push(a[0], y1, -a[1], b2[0], y1, -b2[1], cc[0], y1, -cc[1]);
       }
     }
@@ -1198,9 +1207,9 @@ function bygKirke(k, grp) {
     g.computeVertexNormals();
     return add(g, f, sk2);
   }
-  function legg(geo, P, tan, opp2, nor, off, f, sk2) {
+  function legg(geo, P2, tan, opp2, nor, off, f, sk2) {
     const m4 = new THREE8.Matrix4().makeBasis(tan, opp2, nor);
-    m4.setPosition(P.clone().addScaledVector(nor, off));
+    m4.setPosition(P2.clone().addScaledVector(nor, off));
     geo.applyMatrix4(m4);
     return add(geo, f, sk2);
   }
@@ -1214,27 +1223,27 @@ function bygKirke(k, grp) {
     s.lineTo(-r, 0);
     return s;
   }
-  function buevindu(P, tan, opp2, nor, w, h, sprosser = true) {
-    legg(new THREE8.ShapeGeometry(bue(w + 0.36, h + 0.18), 10), P.clone().addScaledVector(opp2, -0.09), tan, opp2, nor, 0.06, HVIT, HVIT_S);
-    legg(new THREE8.ShapeGeometry(bue(w, h), 10), P, tan, opp2, nor, 0.1, GLASS, GLASS_S);
+  function buevindu(P2, tan, opp2, nor, w, h, sprosser = true) {
+    legg(new THREE8.ShapeGeometry(bue(w + 0.36, h + 0.18), 10), P2.clone().addScaledVector(opp2, -0.09), tan, opp2, nor, 0.06, HVIT, HVIT_S);
+    legg(new THREE8.ShapeGeometry(bue(w, h), 10), P2, tan, opp2, nor, 0.1, GLASS, GLASS_S);
     if (sprosser) {
-      legg(new THREE8.PlaneGeometry(0.09, h - 0.05).translate(0, (h - 0.05) / 2, 0), P, tan, opp2, nor, 0.13, HVIT, HVIT_S);
-      legg(new THREE8.PlaneGeometry(w, 0.09).translate(0, h - w / 2, 0), P, tan, opp2, nor, 0.13, HVIT, HVIT_S);
+      legg(new THREE8.PlaneGeometry(0.09, h - 0.05).translate(0, (h - 0.05) / 2, 0), P2, tan, opp2, nor, 0.13, HVIT, HVIT_S);
+      legg(new THREE8.PlaneGeometry(w, 0.09).translate(0, h - w / 2, 0), P2, tan, opp2, nor, 0.13, HVIT, HVIT_S);
     }
   }
-  function rundvindu(P, tan, opp2, nor, r, kors = true) {
-    legg(new THREE8.CircleGeometry(r + 0.17, 20), P, tan, opp2, nor, 0.06, HVIT, HVIT_S);
-    legg(new THREE8.CircleGeometry(r, 20), P, tan, opp2, nor, 0.1, GLASS, GLASS_S);
+  function rundvindu(P2, tan, opp2, nor, r, kors = true) {
+    legg(new THREE8.CircleGeometry(r + 0.17, 20), P2, tan, opp2, nor, 0.06, HVIT, HVIT_S);
+    legg(new THREE8.CircleGeometry(r, 20), P2, tan, opp2, nor, 0.1, GLASS, GLASS_S);
     if (kors) {
-      legg(new THREE8.PlaneGeometry(0.08, 2 * r), P, tan, opp2, nor, 0.13, HVIT, HVIT_S);
-      legg(new THREE8.PlaneGeometry(2 * r, 0.08), P, tan, opp2, nor, 0.13, HVIT, HVIT_S);
+      legg(new THREE8.PlaneGeometry(0.08, 2 * r), P2, tan, opp2, nor, 0.13, HVIT, HVIT_S);
+      legg(new THREE8.PlaneGeometry(2 * r, 0.08), P2, tan, opp2, nor, 0.13, HVIT, HVIT_S);
     }
   }
   function flater(poly) {
     const c = sentr(poly);
     const out = [];
-    for (let i = 0; i < poly.length; i++) {
-      const p0 = poly[i], p1 = poly[(i + 1) % poly.length];
+    for (let i2 = 0; i2 < poly.length; i2++) {
+      const p0 = poly[i2], p1 = poly[(i2 + 1) % poly.length];
       const dx = p1[0] - p0[0], dy = p1[1] - p0[1];
       const L = Math.hypot(dx, dy);
       let nx = dy / L, ny = -dx / L;
@@ -1248,7 +1257,7 @@ function bygKirke(k, grp) {
     return out;
   }
   const t0 = k.torn, skc = sentr(k.skip);
-  const øst = t0.map((p, i) => [p, t0[(i + 1) % t0.length]]).reduce((a, e) => {
+  const øst = t0.map((p, i2) => [p, t0[(i2 + 1) % t0.length]]).reduce((a, e) => {
     const m = [(e[0][0] + e[1][0]) / 2, (e[0][1] + e[1][1]) / 2];
     const dd = Math.hypot(m[0] - skc[0], m[1] - skc[1]);
     return !a || dd < a.d ? { m, d: dd } : a;
@@ -1263,42 +1272,42 @@ function bygKirke(k, grp) {
   const eg = new THREE8.ExtrudeGeometry(polyShape(sk), { depth: WH, bevelEnabled: false });
   eg.rotateX(-Math.PI / 2);
   add(eg, HVIT, HVIT_S);
-  const kanter = sk.map((p, i) => [i, Math.hypot(sk[(i + 1) % sk.length][0] - p[0], sk[(i + 1) % sk.length][1] - p[1])]);
+  const kanter = sk.map((p, i2) => [i2, Math.hypot(sk[(i2 + 1) % sk.length][0] - p[0], sk[(i2 + 1) % sk.length][1] - p[1])]);
   const ender = kanter.filter((e) => e[1] > 12).map((e) => e[0]);
   const armer = [];
-  ender.forEach((i) => {
-    const j = (i + sk.length / 2) % sk.length;
-    if (ender.includes(j) && i < j) armer.push([i, j]);
+  ender.forEach((i2) => {
+    const j = (i2 + sk.length / 2) % sk.length;
+    if (ender.includes(j) && i2 < j) armer.push([i2, j]);
   });
-  armer.forEach(([i, j]) => {
-    const a0 = sk[i], a1 = sk[(i + 1) % sk.length], b0 = sk[j], b1 = sk[(j + 1) % sk.length];
+  armer.forEach(([i2, j]) => {
+    const a0 = sk[i2], a1 = sk[(i2 + 1) % sk.length], b0 = sk[j], b1 = sk[(j + 1) % sk.length];
     const m1 = [(a0[0] + a1[0]) / 2, (a0[1] + a1[1]) / 2], m2 = [(b0[0] + b1[0]) / 2, (b0[1] + b1[1]) / 2];
     const ax = [m2[0] - m1[0], m2[1] - m1[1]];
     const L = Math.hypot(ax[0], ax[1]);
     const u = [ax[0] / L, ax[1] / L], n = [-u[1], u[0]];
     const w = Math.hypot(a1[0] - a0[0], a1[1] - a0[1]) / 2;
-    const P = (s_, t_, y) => new THREE8.Vector3(m1[0] + u[0] * s_ + n[0] * t_, y, -(m1[1] + u[1] * s_ + n[1] * t_));
+    const P2 = (s_, t_, y) => new THREE8.Vector3(m1[0] + u[0] * s_ + n[0] * t_, y, -(m1[1] + u[1] * s_ + n[1] * t_));
     const s0 = -0.3, s1 = L + 0.3, we = w + OH, yE = WH - OH * RISE / w, yR = WH + RISE;
     const q = (A, B, C, D, arr) => arr.push(...[A, B, C, A, C, D].flatMap((v) => [v.x, v.y, v.z]));
     const tak = [];
     if (KIRKE_ENDE === "valm") {
       const r0 = s0 + we, r1 = s1 - we;
-      q(P(s0, -we, yE), P(s1, -we, yE), P(r1, 0, yR), P(r0, 0, yR), tak);
-      q(P(s0, we, yE), P(r0, 0, yR), P(r1, 0, yR), P(s1, we, yE), tak);
-      [[P(s0, we, yE), P(s0, -we, yE), P(r0, 0, yR)], [P(s1, -we, yE), P(s1, we, yE), P(r1, 0, yR)]].forEach(([A, B, C]) => tak.push(...[A, B, C].flatMap((v) => [v.x, v.y, v.z])));
+      q(P2(s0, -we, yE), P2(s1, -we, yE), P2(r1, 0, yR), P2(r0, 0, yR), tak);
+      q(P2(s0, we, yE), P2(r0, 0, yR), P2(r1, 0, yR), P2(s1, we, yE), tak);
+      [[P2(s0, we, yE), P2(s0, -we, yE), P2(r0, 0, yR)], [P2(s1, -we, yE), P2(s1, we, yE), P2(r1, 0, yR)]].forEach(([A, B, C]) => tak.push(...[A, B, C].flatMap((v) => [v.x, v.y, v.z])));
       const tg2 = new THREE8.BufferGeometry();
       tg2.setAttribute("position", new THREE8.Float32BufferAttribute(tak, 3));
       add(tg2, SKIFER, SKIFER_S);
       return;
     }
-    q(P(s0, -we, yE), P(s1, -we, yE), P(s1, 0, yR), P(s0, 0, yR), tak);
-    q(P(s0, we, yE), P(s0, 0, yR), P(s1, 0, yR), P(s1, we, yE), tak);
+    q(P2(s0, -we, yE), P2(s1, -we, yE), P2(s1, 0, yR), P2(s0, 0, yR), tak);
+    q(P2(s0, we, yE), P2(s0, 0, yR), P2(s1, 0, yR), P2(s1, we, yE), tak);
     const tg = new THREE8.BufferGeometry();
     tg.setAttribute("position", new THREE8.Float32BufferAttribute(tak, 3));
     add(tg, SKIFER, SKIFER_S);
     const gv = [];
     [[0, 1], [L, -1]].forEach(([s_]) => {
-      const A = P(s_, -w, WH), B = P(s_, w, WH), C = P(s_, 0, yR - 0.25);
+      const A = P2(s_, -w, WH), B = P2(s_, w, WH), C = P2(s_, 0, yR - 0.25);
       gv.push(A.x, A.y, A.z, B.x, B.y, B.z, C.x, C.y, C.z);
     });
     const gg = new THREE8.BufferGeometry();
@@ -1308,7 +1317,7 @@ function bygKirke(k, grp) {
       const mid = [m1[0] + u[0] * s_, m1[1] + u[1] * s_];
       if (nærTårn(mid)) return;
       const nor = new THREE8.Vector3(u[0] * sg, 0, -u[1] * sg), tan = new THREE8.Vector3(n[0], 0, -n[1]);
-      rundvindu(P(s_, 0, WH + RISE * 0.38), tan, new THREE8.Vector3(0, 1, 0), nor, 1.05);
+      rundvindu(P2(s_, 0, WH + RISE * 0.38), tan, new THREE8.Vector3(0, 1, 0), nor, 1.05);
     });
   });
   const kompass = (f) => (Math.atan2(f.nor.x, -f.nor.z) * 180 / Math.PI + 360) % 360;
@@ -1358,8 +1367,8 @@ function bygKirke(k, grp) {
       }
       const n = f.L > 12 ? 3 : 2;
       const step = f.L / n;
-      for (let i = 0; i < n; i++) {
-        const s_ = step * (i + 0.5);
+      for (let i2 = 0; i2 < n; i2++) {
+        const s_ = step * (i2 + 0.5);
         const p = [f.p0[0] + (f.p1[0] - f.p0[0]) * s_ / f.L, f.p0[1] + (f.p1[1] - f.p0[1]) * s_ / f.L];
         buevindu(W3(p, 2.6), f.tan, new THREE8.Vector3(0, 1, 0), f.nor, 1.55, 5);
       }
@@ -1439,7 +1448,7 @@ function bygKirke(k, grp) {
 }
 var buildings = [];
 
-// ../../../tmp/tmp6c2id0vv/07_vinduer-dører-og-porter.js
+// ../../../../tmp/tmpfzobimrm/07_vinduer-dører-og-porter.js
 import * as THREE9 from "three";
 import { mergeGeometries as mergeGeometries3 } from "three/addons/utils/BufferGeometryUtils.js";
 var VIND_GEO = new THREE9.PlaneGeometry(1, 1);
@@ -1498,6 +1507,9 @@ var vindMat = new THREE9.ShaderMaterial({
         }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
+      { float paa=step(0.34, fract(sin(dot(floor(vWq.xz*0.7)+floor(vWq.y*0.4), vec2(12.9898,78.233)))*43758.5453));   // to av tre vinduer har lys inne om kvelden
+        float glass=1.-smoothstep(0.30,0.42,max(c.r,max(c.g,c.b)));   // bare de mørke glassflatene, ikke ramme og sprosser
+        c=kveld(c); c=mix(c, vec3(1.0,0.80,0.46)*1.15, natt*paa*glass*(typ<1.5||typ>2.5?1.:0.)); }
       gl_FragColor=vec4(c,1.);
       #include <colorspace_fragment>
     }`
@@ -1506,8 +1518,8 @@ var _X = new THREE9.Vector3();
 var _Y = new THREE9.Vector3(0, 1, 0);
 var _Z = new THREE9.Vector3();
 var _M = new THREE9.Matrix4();
-function vindusData(V2, i) {
-  const mats2 = [], info = new Float32Array(V2.length * 4), nrm = new Float32Array(V2.length * 3), bygg = new Float32Array(V2.length).fill(i + 1);
+function vindusData(V2, i2) {
+  const mats2 = [], info = new Float32Array(V2.length * 4), nrm = new Float32Array(V2.length * 3), bygg2 = new Float32Array(V2.length).fill(i2 + 1);
   V2.forEach((v, k) => {
     const [x, y, z, tx, ty, nx, ny, w, h, typ, bue, ant] = v;
     _X.set(-tx, 0, ty);
@@ -1518,25 +1530,25 @@ function vindusData(V2, i) {
     info.set([typ, bue, ant, 0], k * 4);
     nrm.set([nx, 0, -ny], k * 3);
   });
-  return { mats: mats2, info, nrm, bygg };
+  return { mats: mats2, info, nrm, bygg: bygg2 };
 }
 function lagVinduer(deler) {
   const n = deler.reduce((a, d) => a + d.mats.length, 0);
   const im = new THREE9.InstancedMesh(VIND_GEO.clone(), vindMat, n);
-  const info = new Float32Array(n * 4), nrm = new Float32Array(n * 3), bygg = new Float32Array(n);
+  const info = new Float32Array(n * 4), nrm = new Float32Array(n * 3), bygg2 = new Float32Array(n);
   let k = 0;
   deler.forEach((d) => {
     d.mats.forEach((m, j) => {
       im.setMatrixAt(k, m);
       info.set(d.info.subarray(j * 4, j * 4 + 4), k * 4);
       nrm.set(d.nrm.subarray(j * 3, j * 3 + 3), k * 3);
-      bygg[k] = d.bygg[j];
+      bygg2[k] = d.bygg[j];
       k++;
     });
   });
   im.geometry.setAttribute("aInfo", new THREE9.InstancedBufferAttribute(info, 4));
   im.geometry.setAttribute("aNorm", new THREE9.InstancedBufferAttribute(nrm, 3));
-  im.geometry.setAttribute("aBygg", new THREE9.InstancedBufferAttribute(bygg, 1));
+  im.geometry.setAttribute("aBygg", new THREE9.InstancedBufferAttribute(bygg2, 1));
   im.frustumCulled = false;
   im.customDepthMaterial = husDybde;
   return im;
@@ -1552,14 +1564,14 @@ function utvidFlate(f, e) {
     cy += q2[1] / n;
   });
   let best = null, A = 0;
-  for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) for (let k = j + 1; k < n; k++) {
-    const p2 = f[i], q2 = f[j], r2 = f[k];
+  for (let i2 = 0; i2 < n; i2++) for (let j = i2 + 1; j < n; j++) for (let k = j + 1; k < n; k++) {
+    const p2 = f[i2], q2 = f[j], r2 = f[k];
     const ar = Math.abs((q2[0] - p2[0]) * (r2[1] - p2[1]) - (r2[0] - p2[0]) * (q2[1] - p2[1]));
     if (ar > A) {
       A = ar;
       best = [p2, q2, r2];
     }
-    if (n > 12 && k > i + 6) break;
+    if (n > 12 && k > i2 + 6) break;
   }
   if (!best || A < 1e-6) return f;
   const [p, q, r] = best;
@@ -1579,32 +1591,32 @@ var samler = /* @__PURE__ */ new Map();
 var husDeler = /* @__PURE__ */ new Map();
 var vinduSamling = [];
 var _mSamle = new THREE9.Matrix4();
-function samleMesh(mesh, matrise, i, topp) {
+function samleMesh(mesh, matrise, i2, topp) {
   biterAv(mesh, matrise, []).forEach(([m, bit]) => {
     const k = bit.getAttribute("position").count;
-    bit.setAttribute("aBygg", new THREE9.BufferAttribute(new Float32Array(k).fill(i + 1), 1));
+    bit.setAttribute("aBygg", new THREE9.BufferAttribute(new Float32Array(k).fill(i2 + 1), 1));
     bit.setAttribute("aTopp", new THREE9.BufferAttribute(new Float32Array(k).fill(m === mesh.material?.[1] ? topp : 0), 1));
-    bit.userData.bygg = i;
+    bit.userData.bygg = i2;
     if (!samler.has(m)) samler.set(m, []);
     samler.get(m).push(bit);
   });
 }
-function samleObjekt(obj, forelder, i, topp) {
+function samleObjekt(obj, forelder, i2, topp) {
   obj.updateMatrix();
   _mSamle.multiplyMatrices(forelder, obj.matrix);
   const m = _mSamle.clone();
-  if (obj.isMesh) samleMesh(obj, m, i, topp);
-  obj.children.forEach((c) => samleObjekt(c, m, i, topp));
+  if (obj.isMesh) samleMesh(obj, m, i2, topp);
+  obj.children.forEach((c) => samleObjekt(c, m, i2, topp));
 }
-function utvidPoly(P, d) {
+function utvidPoly(P2, d) {
   let A = 0;
-  for (let k = 0; k < P.length; k++) {
-    const a = P[k], c = P[(k + 1) % P.length];
+  for (let k = 0; k < P2.length; k++) {
+    const a = P2[k], c = P2[(k + 1) % P2.length];
     A += a[0] * c[1] - c[0] * a[1];
   }
   const sg = A > 0 ? 1 : -1;
-  return P.map((q, k) => {
-    const a = P[(k - 1 + P.length) % P.length], c = P[(k + 1) % P.length];
+  return P2.map((q, k) => {
+    const a = P2[(k - 1 + P2.length) % P2.length], c = P2[(k + 1) % P2.length];
     const n1 = [q[1] - a[1], -(q[0] - a[0])], n2 = [c[1] - q[1], -(c[0] - q[0])];
     const l1 = Math.hypot(...n1) || 1, l2 = Math.hypot(...n2) || 1;
     const m = [(n1[0] / l1 + n2[0] / l2) / 2 * sg, (n1[1] / l1 + n2[1] / l2) / 2 * sg];
@@ -1628,8 +1640,8 @@ function planZ(f, x, y) {
   if (Math.abs(nz) < 1e-9) return a[2];
   return a[2] - (nx * (x - a[0]) + ny * (y - a[1])) / nz;
 }
-function prisme(P, z0, z1, mTopp, mSide) {
-  const g = new THREE9.ExtrudeGeometry(polyShape(P), { depth: Math.max(0.01, z1 - z0), bevelEnabled: false });
+function prisme(P2, z0, z1, mTopp, mSide) {
+  const g = new THREE9.ExtrudeGeometry(polyShape(P2), { depth: Math.max(0.01, z1 - z0), bevelEnabled: false });
   g.rotateX(-Math.PI / 2);
   g.translate(0, z0, 0);
   const m = new THREE9.Mesh(g, [mTopp, mSide]);
@@ -1782,13 +1794,13 @@ function bygAtrium(A) {
   grp.add(km);
   let fl = [], mone = null;
   if (inn2.length === 4) {
-    let P = inn2.map((q) => [q[0], q[1]]);
+    let P2 = inn2.map((q) => [q[0], q[1]]);
     const L = (a, b) => Math.hypot(b[0] - a[0], b[1] - a[1]);
-    if (L(P[1], P[2]) > L(P[0], P[1])) P = [P[1], P[2], P[3], P[0]];
-    const l = L(P[0], P[1]), w = L(P[1], P[2]) / 2, u = [(P[1][0] - P[0][0]) / l, (P[1][1] - P[0][1]) / l], e = Math.min(w, l / 2);
-    const m0 = [(P[0][0] + P[3][0]) / 2 + u[0] * e, (P[0][1] + P[3][1]) / 2 + u[1] * e], m1 = [(P[1][0] + P[2][0]) / 2 - u[0] * e, (P[1][1] + P[2][1]) / 2 - u[1] * e];
+    if (L(P2[1], P2[2]) > L(P2[0], P2[1])) P2 = [P2[1], P2[2], P2[3], P2[0]];
+    const l = L(P2[0], P2[1]), w = L(P2[1], P2[2]) / 2, u = [(P2[1][0] - P2[0][0]) / l, (P2[1][1] - P2[0][1]) / l], e = Math.min(w, l / 2);
+    const m0 = [(P2[0][0] + P2[3][0]) / 2 + u[0] * e, (P2[0][1] + P2[3][1]) / 2 + u[1] * e], m1 = [(P2[1][0] + P2[2][0]) / 2 - u[0] * e, (P2[1][1] + P2[2][1]) / 2 - u[1] * e];
     mone = [m0, m1];
-    fl = [[P[0], P[1], m1, m0], [P[1], P[2], m1], [P[2], P[3], m0, m1], [P[3], P[0], m0]];
+    fl = [[P2[0], P2[1], m1, m0], [P2[1], P2[2], m1], [P2[2], P2[3], m0, m1], [P2[3], P2[0], m0]];
   } else {
     const c = inn2.reduce((s, q) => [s[0] + q[0] / inn2.length, s[1] + q[1] / inn2.length], [0, 0]);
     mone = [c, c];
@@ -1826,16 +1838,16 @@ function bygAtrium(A) {
   if (mone[0] !== mone[1]) rib(P3(mone[0]), P3(mone[1]), 0.07);
   return grp;
 }
-DATA.bygg.forEach((b, i) => {
+DATA.bygg.forEach((b, i2) => {
   const pts = b.p;
   if (pts.length < 3 || b.skjul) return;
-  const spesiell = !!(b.kirke || b.deler && b.deler.length || PORT_BYGG.has(i));
+  const spesiell = !!(b.kirke || b.deler && b.deler.length || PORT_BYGG.has(i2));
   const dim = !b.gml;
   const wall = b.vegg || (dim ? [214, 210, 198] : [238, 230, 214]);
   const roof = b.tak || (dim ? [196, 170, 160] : [232, 124, 104]);
   const grp = new THREE9.Group();
   const toppVindu = b.vind && b.vind.length || b.gml ? 0 : Math.round(b.h * 2) / 2;
-  const legg = spesiell ? ((o) => grp.add(o)) : ((o) => samleObjekt(o, new THREE9.Matrix4(), i, toppVindu));
+  const legg = spesiell ? ((o) => grp.add(o)) : ((o) => samleObjekt(o, new THREE9.Matrix4(), i2, toppVindu));
   const shape = polyShape(pts);
   (b.ph || []).forEach((r) => {
     if (r.length > 2) shape.holes.push(new THREE9.Path(r.map(V)));
@@ -1866,13 +1878,13 @@ DATA.bygg.forEach((b, i) => {
       const v2 = f.map((q) => new THREE9.Vector2(q[0], q[1]));
       const tri = THREE9.ShapeUtils.triangulateShape(v2, []);
       tri.forEach((t) => {
-        const P = t.map((k) => {
+        const P2 = t.map((k) => {
           const q = f[k];
           return new THREE9.Vector3(q[0], h + q[2] * SLOPE, -q[1]);
         });
-        const nrm = new THREE9.Vector3().subVectors(P[1], P[0]).cross(new THREE9.Vector3().subVectors(P[2], P[0]));
-        if (nrm.y < 0) P.reverse();
-        P.forEach((v) => pos.push(v.x, v.y, v.z));
+        const nrm = new THREE9.Vector3().subVectors(P2[1], P2[0]).cross(new THREE9.Vector3().subVectors(P2[2], P2[0]));
+        if (nrm.y < 0) P2.reverse();
+        P2.forEach((v) => pos.push(v.x, v.y, v.z));
       });
     });
     const g = new THREE9.BufferGeometry();
@@ -1909,13 +1921,13 @@ DATA.bygg.forEach((b, i) => {
         for (let j = 1; j < f.length - 1; j++) tri.push([0, j, j + 1]);
       }
       tri.forEach((t) => {
-        const P = t.map((k) => {
+        const P2 = t.map((k) => {
           const q = f[k];
           return new THREE9.Vector3(q[0], h + Math.min(q[2] * SLOPE, CAP), -q[1]);
         });
-        const nrm = new THREE9.Vector3().subVectors(P[1], P[0]).cross(new THREE9.Vector3().subVectors(P[2], P[0]));
-        if (nrm.y < 0) P.reverse();
-        P.forEach((v) => pos.push(v.x, v.y, v.z));
+        const nrm = new THREE9.Vector3().subVectors(P2[1], P2[0]).cross(new THREE9.Vector3().subVectors(P2[2], P2[0]));
+        if (nrm.y < 0) P2.reverse();
+        P2.forEach((v) => pos.push(v.x, v.y, v.z));
       });
     });
     const g = new THREE9.BufferGeometry();
@@ -2134,22 +2146,22 @@ DATA.bygg.forEach((b, i) => {
       let nr = new THREE9.Vector3().subVectors(W[1], W[0]).cross(new THREE9.Vector3().subVectors(W[2], W[0])).normalize();
       if (nr.y < 0) nr.negate();
       if (nr.y > 0.995) return;
-      const z = h + planZ(f, x, y) * S2, P = new THREE9.Vector3(x, z, -y);
+      const z = h + planZ(f, x, y) * S2, P2 = new THREE9.Vector3(x, z, -y);
       const oppF = new THREE9.Vector3(0, 1, 0).sub(nr.clone().multiplyScalar(nr.y)).normalize(), tan = new THREE9.Vector3().crossVectors(oppF, nr).normalize();
       [[bw + 0.16, bh + 0.16, 0.03, [244, 242, 236]], [bw, bh, 0.05, [52, 58, 68]]].forEach(([w2, h2, off, c]) => {
         const g = new THREE9.PlaneGeometry(w2, h2);
         g.applyMatrix4(new THREE9.Matrix4().makeBasis(tan, oppF, nr));
-        g.translate(P.x + nr.x * off, P.y + nr.y * off, P.z + nr.z * off);
+        g.translate(P2.x + nr.x * off, P2.y + nr.y * off, P2.z + nr.z * off);
         legg(new THREE9.Mesh(g, mat(c, false)));
       });
     });
   }
   if (b.vind && b.vind.length && !dim) {
-    const vd = vindusData(b.vind, spesiell ? -1 : i);
+    const vd = vindusData(b.vind, spesiell ? -1 : i2);
     if (spesiell) grp.add(lagVinduer([vd]));
     else vinduSamling.push(vd);
   }
-  grp.userData = { i, b, h, spesiell };
+  grp.userData = { i: i2, b, h, spesiell };
   if (spesiell) {
     flatGruppe(grp);
     city.add(grp);
@@ -2166,12 +2178,12 @@ samler.forEach((biter, m) => {
   mesh.frustumCulled = false;
   city.add(mesh);
   husNett.push(mesh);
-  let start2 = 0;
+  let start3 = 0;
   biter.forEach((bit) => {
     const n = bit.getAttribute("position").count;
     if (!husDeler.has(bit.userData.bygg)) husDeler.set(bit.userData.bygg, []);
-    husDeler.get(bit.userData.bygg).push({ mesh, start: start2, antall: n });
-    start2 += n;
+    husDeler.get(bit.userData.bygg).push({ mesh, start: start3, antall: n });
+    start3 += n;
     bit.dispose();
   });
 });
@@ -2194,7 +2206,7 @@ samler.clear();
   city.add(m);
 }
 
-// ../../../tmp/tmp6c2id0vv/08_festningsterrenget.js
+// ../../../../tmp/tmpfzobimrm/08_festningsterrenget.js
 import * as THREE10 from "three";
 var TER = DATA.landskap && DATA.landskap.terreng;
 var hAt = () => 0;
@@ -2203,60 +2215,60 @@ if (TER) {
   const b64 = (s) => {
     const b = atob(s);
     const a = new Uint8Array(b.length);
-    for (let i = 0; i < b.length; i++) a[i] = b.charCodeAt(i);
+    for (let i2 = 0; i2 < b.length; i2++) a[i2] = b.charCodeAt(i2);
     return a;
   };
   const MB = b64(TER.m), nx = TER.nx, ny = TER.ny, G = TER.g;
-  const inn0 = (i) => MB[i >> 3] >> 7 - (i & 7) & 1;
+  const inn0 = (i2) => MB[i2 >> 3] >> 7 - (i2 & 7) & 1;
   const H = new Uint8Array(nx * ny);
   H.fill(Math.round((TER.off || 0) * 20));
   {
     const hk = b64(TER.h);
     let c = 0;
-    for (let i = 0; i < nx * ny; i++) if (inn0(i)) H[i] = hk[c++];
+    for (let i2 = 0; i2 < nx * ny; i2++) if (inn0(i2)) H[i2] = hk[c++];
   }
   const MK = new Uint8Array(nx * ny);
-  for (let i = 0; i < nx * ny; i++) MK[i] = inn0(i);
-  const inn2 = (i) => MK[i];
+  for (let i2 = 0; i2 < nx * ny; i2++) MK[i2] = inn0(i2);
+  const inn2 = (i2) => MK[i2];
   (DATA.terrengflikker || []).forEach((F) => {
-    const fh = (i, j) => F.h[Math.min(F.ny - 1, Math.max(0, j)) * F.nx + Math.min(F.nx - 1, Math.max(0, i))] / 100;
+    const fh = (i2, j) => F.h[Math.min(F.ny - 1, Math.max(0, j)) * F.nx + Math.min(F.nx - 1, Math.max(0, i2))] / 100;
     const X1 = F.x0 + (F.nx - 1) * F.g, Y1 = F.y0 + (F.ny - 1) * F.g, off = TER.off || 0;
-    for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
-      const X = TER.x0 + i * G, Y = TER.y0 + j * G;
+    for (let j = 0; j < ny; j++) for (let i2 = 0; i2 < nx; i2++) {
+      const X = TER.x0 + i2 * G, Y = TER.y0 + j * G;
       if (X < F.x0 || X > X1 || Y < F.y0 || Y > Y1) continue;
       const fx = (X - F.x0) / F.g, fy = (Y - F.y0) / F.g, a = Math.floor(fx), b = Math.floor(fy), tx = fx - a, ty = fy - b;
       const p = (fh(a, b) * (1 - tx) + fh(a + 1, b) * tx) * (1 - ty) + (fh(a, b + 1) * (1 - tx) + fh(a + 1, b + 1) * tx) * ty;
       const d = Math.min(X - F.x0, X1 - X, Y - F.y0, Y1 - Y), w = Math.min(1, Math.max(0, d / (F.kant || 1))), w2 = w * w * (3 - 2 * w);
-      const k = j * nx + i, gml = MK[k] ? H[k] / 20 - off : 0, ny_ = w2 * p + (1 - w2) * gml;
+      const k = j * nx + i2, gml = MK[k] ? H[k] / 20 - off : 0, ny_ = w2 * p + (1 - w2) * gml;
       H[k] = Math.max(0, Math.min(255, Math.round((ny_ + off) * 20)));
       MK[k] = ny_ > 0.02 || MK[k] && w2 < 1 ? 1 : 0;
     }
   });
-  const hv = (i, j) => H[j * nx + i] / 20 - (TER.off || 0);
+  const hv = (i2, j) => H[j * nx + i2] / 20 - (TER.off || 0);
   hAt = (x, y) => {
     const fx = (x - TER.x0) / G, fy = (y - TER.y0) / G;
-    const i = Math.floor(fx), j = Math.floor(fy);
-    if (i < 0 || j < 0 || i >= nx - 1 || j >= ny - 1) return 0;
-    const tx = fx - i, ty = fy - j;
-    return (hv(i, j) * (1 - tx) + hv(i + 1, j) * tx) * (1 - ty) + (hv(i, j + 1) * (1 - tx) + hv(i + 1, j + 1) * tx) * ty;
+    const i2 = Math.floor(fx), j = Math.floor(fy);
+    if (i2 < 0 || j < 0 || i2 >= nx - 1 || j >= ny - 1) return 0;
+    const tx = fx - i2, ty = fy - j;
+    return (hv(i2, j) * (1 - tx) + hv(i2 + 1, j) * tx) * (1 - ty) + (hv(i2, j + 1) * (1 - tx) + hv(i2 + 1, j + 1) * tx) * ty;
   };
   hTer = (x, y) => {
     const fx = (x - TER.x0) / G, fy = (y - TER.y0) / G;
-    const i = Math.floor(fx), j = Math.floor(fy);
-    if (i < 0 || j < 0 || i >= nx - 1 || j >= ny - 1) return 0;
-    const tx = fx - i, ty = fy - j, a = hv(i, j), b = hv(i + 1, j), c = hv(i, j + 1), d = hv(i + 1, j + 1);
+    const i2 = Math.floor(fx), j = Math.floor(fy);
+    if (i2 < 0 || j < 0 || i2 >= nx - 1 || j >= ny - 1) return 0;
+    const tx = fx - i2, ty = fy - j, a = hv(i2, j), b = hv(i2 + 1, j), c = hv(i2, j + 1), d = hv(i2 + 1, j + 1);
     return (tx + ty <= 1 ? a + (b - a) * tx + (c - a) * ty : d + (c - d) * (1 - tx) + (b - d) * (1 - ty)) + 0.03;
   };
   const pos = new Float32Array(nx * ny * 3);
-  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) {
-    const k = (j * nx + i) * 3;
-    pos[k] = TER.x0 + i * G;
-    pos[k + 1] = hv(i, j) + 0.03;
+  for (let j = 0; j < ny; j++) for (let i2 = 0; i2 < nx; i2++) {
+    const k = (j * nx + i2) * 3;
+    pos[k] = TER.x0 + i2 * G;
+    pos[k + 1] = hv(i2, j) + 0.03;
     pos[k + 2] = -(TER.y0 + j * G);
   }
   const idx = [];
-  for (let j = 0; j < ny - 1; j++) for (let i = 0; i < nx - 1; i++) {
-    const a = j * nx + i, b = a + 1, c = a + nx, d = c + 1;
+  for (let j = 0; j < ny - 1; j++) for (let i2 = 0; i2 < nx - 1; i2++) {
+    const a = j * nx + i2, b = a + 1, c = a + nx, d = c + 1;
     if (inn2(a) + inn2(b) + inn2(c) + inn2(d) >= 2) {
       idx.push(a, b, c, b, d, c);
     }
@@ -2304,30 +2316,30 @@ if (TER) {
     if (P0.length < 2) return;
     const w = v.w / 2, dz = v.k === "gang" ? -0.03 : 0;
     const B = v.flate === "brostein" ? buf.B : v.flate === "heller" ? buf.H : v.flate === "grus" ? buf.U : v.k === "gang" ? buf.G : buf.K;
-    const steg = TER ? TER.g / 2 : 2, P = [P0[0]];
+    const steg = TER ? TER.g / 2 : 2, P2 = [P0[0]];
     for (let k = 1; k < P0.length; k++) {
       const a = P0[k - 1], c = P0[k], m = Math.max(1, Math.ceil(Math.hypot(c[0] - a[0], c[1] - a[1]) / steg));
       for (let j = 1; j <= m; j++) {
         const t = j / m;
-        P.push([a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t, a[2] + (c[2] - a[2]) * t]);
+        P2.push([a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t, a[2] + (c[2] - a[2]) * t]);
       }
     }
-    const n = P.length, L = [], R = [];
+    const n = P2.length, L = [], R = [];
     for (let k = 0; k < n; k++) {
-      const a = P[Math.max(0, k - 1)], b = P[Math.min(n - 1, k + 1)];
+      const a = P2[Math.max(0, k - 1)], b = P2[Math.min(n - 1, k + 1)];
       let dx = b[0] - a[0], dy = b[1] - a[1];
       const l = Math.hypot(dx, dy) || 1;
       dx /= l;
       dy /= l;
       const nx = -dy * w, ny = dx * w;
-      const zL = B === buf.B ? hTer(P[k][0] + nx, P[k][1] + ny) + 0.05 : Math.max(P[k][2], hTer(P[k][0] + nx, P[k][1] + ny) + 0.06) + dz, zR = B === buf.B ? hTer(P[k][0] - nx, P[k][1] - ny) + 0.05 : Math.max(P[k][2], hTer(P[k][0] - nx, P[k][1] - ny) + 0.06) + dz;
-      L.push([P[k][0] + nx, zL, -(P[k][1] + ny)]);
-      R.push([P[k][0] - nx, zR, -(P[k][1] - ny)]);
+      const zL = B === buf.B ? hTer(P2[k][0] + nx, P2[k][1] + ny) + 0.05 : Math.max(P2[k][2], hTer(P2[k][0] + nx, P2[k][1] + ny) + 0.06) + dz, zR = B === buf.B ? hTer(P2[k][0] - nx, P2[k][1] - ny) + 0.05 : Math.max(P2[k][2], hTer(P2[k][0] - nx, P2[k][1] - ny) + 0.06) + dz;
+      L.push([P2[k][0] + nx, zL, -(P2[k][1] + ny)]);
+      R.push([P2[k][0] - nx, zR, -(P2[k][1] - ny)]);
     }
     for (let k = 0; k < n - 1; k++) {
-      if (!(B === buf.B && alleIBrostein([P[k], P[k + 1], [L[k][0], -L[k][2]], [R[k][0], -R[k][2]], [L[k + 1][0], -L[k + 1][2]], [R[k + 1][0], -R[k + 1][2]]])))
+      if (!(B === buf.B && alleIBrostein([P2[k], P2[k + 1], [L[k][0], -L[k][2]], [R[k][0], -R[k][2]], [L[k + 1][0], -L[k + 1][2]], [R[k + 1][0], -R[k + 1][2]]])))
         quad(B, [...L[k], ...R[k], ...L[k + 1], ...R[k + 1]]);
-      if (v.b && (P[k][2] > 0.5 || P[k + 1][2] > 0.5)) {
+      if (v.b && (P2[k][2] > 0.5 || P2[k + 1][2] > 0.5)) {
         [L, R].forEach((E) => {
           const a = E[k], c = E[k + 1];
           quad(buf.S, [...a, ...c, a[0], Math.max(0.1, a[1] - 0.8), a[2], c[0], Math.max(0.1, c[1] - 0.8), c[2]]);
@@ -2359,7 +2371,7 @@ if (TER) {
   }
 }
 
-// ../../../tmp/tmp6c2id0vv/09_murer-plankegjerder-og-voller.js
+// ../../../../tmp/tmpfzobimrm/09_murer-plankegjerder-og-voller.js
 import * as THREE11 from "three";
 var murer = new THREE11.Group();
 scene.add(murer);
@@ -2399,7 +2411,7 @@ var _iMur = (q) => (DATA.teglmurer || []).some((m) => {
 });
 flatGruppe(murer);
 
-// ../../../tmp/tmp6c2id0vv/10_porter.js
+// ../../../../tmp/tmpfzobimrm/10_porter.js
 import * as THREE12 from "three";
 (DATA.porter || []).forEach((pt) => {
   const grp = buildings.find((g) => g.userData.i === pt.bygg);
@@ -2462,7 +2474,7 @@ import * as THREE12 from "three";
   });
 });
 
-// ../../../tmp/tmp6c2id0vv/11_broer.js
+// ../../../../tmp/tmpfzobimrm/11_broer.js
 import * as THREE13 from "three";
 (DATA.broer || []).forEach((br, bi) => {
   const g = new THREE13.Group();
@@ -2546,7 +2558,7 @@ import * as THREE13 from "three";
   city.add(g);
 });
 
-// ../../../tmp/tmp6c2id0vv/12_trær.js
+// ../../../../tmp/tmpfzobimrm/12_trær.js
 import * as THREE14 from "three";
 var seed = 11;
 var rnd = () => {
@@ -2583,7 +2595,7 @@ function lovMatLag() {
         float lys=smoothstep(0.60,0.64,w), mid=smoothstep(0.36,0.40,w);
         vec3 lysF=vCol*vec3(1.30,1.22,0.98)+vec3(0.04,0.045,0.0);
         vec3 mork=vCol*vec3(0.50,0.60,0.68);
-        vec3 c=mix(mork, mix(vCol,lysF,lys), mid); c=mix(graavaer(c), c, solHer(vWq)); c=aarstidFarge(c); c=mix(c, snoPaa(c, n.y*1.3+0.15), 0.9);   // årstid og snø i kronene (23_vaer)
+        vec3 c=mix(mork, mix(vCol,lysF,lys), mid); c=mix(graavaer(c), c, solHer(vWq)); c=aarstidFarge(c); c=mix(c, snoPaa(c, n.y*1.3+0.15), 0.9); c=kveld(c);   // årstid og snø i kronene (23_vaer)
         gl_FragColor=vec4(c,1.);
         #include <colorspace_fragment>
       }`
@@ -2633,7 +2645,7 @@ var TP = DATA.traer;
 var klaseData = [];
 var skyggeData = [];
 var stammeData = [];
-TP.forEach((p, i) => {
+TP.forEach((p, i2) => {
   const s = p[2] ? p[2] : 2.6 + rnd() * 2.8;
   const g0 = p[3] || 0;
   const col = GREENS[rnd() * GREENS.length | 0];
@@ -2668,7 +2680,7 @@ function lagInst(geo, mat2, data) {
   m.castShadow = true;
   m.receiveShadow = true;
   m.frustumCulled = false;
-  data.forEach((d, i) => m.setColorAt(i, d.c));
+  data.forEach((d, i2) => m.setColorAt(i2, d.c));
   if (m.instanceColor) m.instanceColor.needsUpdate = true;
   m.userData.data = data;
   trMesh.push(m);
@@ -2687,19 +2699,19 @@ stammer.userData.stamme = true;
   SKIVE.rotateX(-Math.PI / 2);
   const n = SKIVE.getAttribute("position").count, al = new Float32Array(n);
   const p = SKIVE.getAttribute("position");
-  for (let i = 0; i < n; i++) al[i] = 1 - Math.min(1, Math.hypot(p.getX(i), p.getZ(i)));
+  for (let i2 = 0; i2 < n; i2++) al[i2] = 1 - Math.min(1, Math.hypot(p.getX(i2), p.getZ(i2)));
   SKIVE.setAttribute("aAlfa", new THREE14.BufferAttribute(al, 1));
   const skiver = new THREE14.InstancedMesh(SKIVE, kontaktMat, Math.max(1, TP.length));
   skiver.count = TP.length;
   skiver.frustumCulled = false;
   skiver.renderOrder = 1;
   const d = new THREE14.Object3D();
-  TP.forEach((pt, i) => {
+  TP.forEach((pt, i2) => {
     const s = pt[2] || 3.5, g0 = pt[3] || 0;
     d.position.set(pt[0], g0 + KONTAKT_Y, -pt[1]);
     d.scale.setScalar(s * 0.8);
     d.updateMatrix();
-    skiver.setMatrixAt(i, d.matrix);
+    skiver.setMatrixAt(i2, d.matrix);
   });
   scene.add(skiver);
 }
@@ -2707,7 +2719,7 @@ var dummy = new THREE14.Object3D();
 function setCrowns(t) {
   trMesh.forEach((m) => {
     const st = m.userData.stamme;
-    m.userData.data.forEach((c, i) => {
+    m.userData.data.forEach((c, i2) => {
       const k = t === null ? 1 : THREE14.MathUtils.clamp((t - c.delay) / 0.7, 0, 1);
       const e = 1 - Math.pow(1 - k, 3);
       if (st) {
@@ -2721,7 +2733,7 @@ function setCrowns(t) {
         dummy.scale.set(c.r * e + 1e-3, c.r * c.sy * e + 1e-3, c.r * e + 1e-3);
       }
       dummy.updateMatrix();
-      m.setMatrixAt(i, dummy.matrix);
+      m.setMatrixAt(i2, dummy.matrix);
     });
     m.instanceMatrix.needsUpdate = true;
   });
@@ -2734,7 +2746,7 @@ crowns[0].onBeforeRender = (r, sc_, c) => {
 };
 setCrowns(0);
 
-// ../../../tmp/tmp6c2id0vv/13_kart.js
+// ../../../../tmp/tmpfzobimrm/13_kart.js
 import * as THREE15 from "three";
 import * as maplibregl2 from "maplibre-gl";
 var _merc = maplibregl2.MercatorCoordinate.fromLngLat([ORIGO.lon, ORIGO.lat], 0);
@@ -2779,7 +2791,7 @@ function vinkler() {
 var GRENSE = 560;
 map.setMaxBounds([tilLngLat(-GRENSE - 300, -GRENSE - 300), tilLngLat(GRENSE + 300, GRENSE + 300)]);
 
-// ../../../tmp/tmp6c2id0vv/14_speilinger-i-vannet.js
+// ../../../../tmp/tmpfzobimrm/14_speilinger-i-vannet.js
 import * as THREE16 from "three";
 var speil = (() => {
   const Y = 0.15, LAG = 1;
@@ -2810,9 +2822,9 @@ var speil = (() => {
       if (!endret && _speilKam.equals(cam.projectionMatrix)) return;
       _speilKam.copy(cam.projectionMatrix);
       const _ts = performance.now();
-      deler.forEach((o, i) => {
-        lagre[2 * i] = o.position.y;
-        lagre[2 * i + 1] = o.scale.y;
+      deler.forEach((o, i2) => {
+        lagre[2 * i2] = o.position.y;
+        lagre[2 * i2 + 1] = o.scale.y;
       });
       deler.forEach((o) => {
         o.position.y = 2 * Y - o.position.y;
@@ -2834,9 +2846,9 @@ var speil = (() => {
       renderer.setClearColor(cc, ca);
       renderer.shadowMap.autoUpdate = au;
       scene.background = bg;
-      deler.forEach((o, i) => {
-        o.position.y = lagre[2 * i];
-        o.scale.y = lagre[2 * i + 1];
+      deler.forEach((o, i2) => {
+        o.position.y = lagre[2 * i2];
+        o.scale.y = lagre[2 * i2 + 1];
       });
       maalVent();
       MAALT.speil += performance.now() - _ts;
@@ -2863,7 +2875,7 @@ function speilStyrke() {
 }
 var _sisteKam = new THREE16.Matrix4();
 
-// ../../../tmp/tmp6c2id0vv/15_bevegelse.js
+// ../../../../tmp/tmpfzobimrm/15_bevegelse.js
 import * as maplibregl3 from "maplibre-gl";
 var GLID = Q0.get("glid") !== "0";
 var glid = (t) => !GLID ? t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 : t <= 0 ? 0 : t >= 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
@@ -2920,12 +2932,12 @@ var slippLogg = (tekst) => {
 };
 var treghet = (() => {
   const T = BEV.treghet, kam2 = [], fing = [];
-  let rid = 0, anim2 = null;
+  let rid = 0, anim3 = null;
   const kort2 = (a, tid) => {
     while (a.length > 2 && tid - a[0].t > 200) a.shift();
   };
   map.on("move", (e) => {
-    if (!e.originalEvent || anim2 || /up$|end$|cancel$/.test(e.originalEvent.type)) return;
+    if (!e.originalEvent || anim3 || /up$|end$|cancel$/.test(e.originalEvent.type)) return;
     const t = performance.now();
     kam2.push({ t, z: map.getZoom(), b: map.getBearing(), p: map.getPitch() });
     kort2(kam2, t);
@@ -3002,14 +3014,14 @@ var treghet = (() => {
   };
   function steg() {
     rid = 0;
-    if (!anim2) return;
-    const s = Math.min(1 + anim2.g, (performance.now() - anim2.t0) / 1e3 / (T.k * T.tau));
+    if (!anim3) return;
+    const s = Math.min(1 + anim3.g, (performance.now() - anim3.t0) / 1e3 / (T.k * T.tau));
     sett(s);
-    if (s < 1 + anim2.g) rid = requestAnimationFrame(steg);
-    else anim2 = null;
+    if (s < 1 + anim3.g) rid = requestAnimationFrame(steg);
+    else anim3 = null;
   }
   function sett(s) {
-    const A = anim2, ut = T.tau * F(s), d = ut - A.ut;
+    const A = anim3, ut = T.tau * F(s), d = ut - A.ut;
     A.ut = ut;
     const o = { duration: 0 };
     if (A.vz) o.zoom = map.getZoom() + A.vz * d;
@@ -3025,7 +3037,7 @@ var treghet = (() => {
     }
   }
   function stopp2() {
-    anim2 = null;
+    anim3 = null;
     if (rid) {
       window.cancelAnimationFrame(rid);
       rid = 0;
@@ -3033,7 +3045,7 @@ var treghet = (() => {
   }
   const easeTo0 = map.easeTo.bind(map);
   map.easeTo = (opt, ev) => {
-    if (anim2 && !(opt && opt.duration === 0)) stopp2();
+    if (anim3 && !(opt && opt.duration === 0)) stopp2();
     const slipp = opt && opt.noMoveStart && opt.freezeElevation && ev && ev.originalEvent;
     if (!slipp && opt && opt.duration !== 0 && performance.now() - SLIPP.t < 600) slippLogg(`easeTo fra ${opt.__fra || (ev && ev.originalEvent ? ev.originalEvent.type : "ukjent")}: varighet ${opt.duration | 0}${opt.center ? " senter" : ""}${opt.zoom !== void 0 ? " zoom" : ""}${opt.bearing !== void 0 ? " vri" : ""}`);
     if (!slipp) return easeTo0(opt, ev);
@@ -3069,7 +3081,7 @@ var treghet = (() => {
       return easeTo0(opt, ev);
     }
     stopp2();
-    anim2 = A;
+    anim3 = A;
     A.g = (naa - siste) / 1e3 / (T.k * T.tau);
     sett(A.g);
     rid = requestAnimationFrame(steg);
@@ -3082,7 +3094,7 @@ var treghet = (() => {
   };
   const panBy0 = map.panBy.bind(map);
   map.panBy = (o, opt, ev) => {
-    if (!anim2 && performance.now() - SLIPP.t < 600) slippLogg(`panBy ${o[0] | 0},${o[1] | 0}`);
+    if (!anim3 && performance.now() - SLIPP.t < 600) slippLogg(`panBy ${o[0] | 0},${o[1] | 0}`);
     return panBy0(o, opt, ev);
   };
   map.on("moveend", () => {
@@ -3142,7 +3154,7 @@ window.__BEV = BEV;
 map.getCanvasContainer().addEventListener("pointerdown", () => hjulZoom.stopp(), { capture: true, passive: true });
 registrer({ fingerNede: () => fingerNede });
 
-// ../../../tmp/tmp6c2id0vv/15_lenke.js
+// ../../../../tmp/tmpfzobimrm/15_lenke.js
 var LENKE = (() => {
   let h = "";
   try {
@@ -3152,23 +3164,23 @@ var LENKE = (() => {
   }
   const par = {};
   h.split("&").forEach((d) => {
-    const i = d.indexOf("=");
-    if (i > 0) par[d.slice(0, i).trim().toLowerCase()] = d.slice(i + 1).trim();
+    const i2 = d.indexOf("=");
+    if (i2 > 0) par[d.slice(0, i2).trim().toLowerCase()] = d.slice(i2 + 1).trim();
   });
-  let vis = null;
+  let vis2 = null;
   if (par.view) {
     const v = par.view.split(",").map((s) => s.trim() === "" ? NaN : Number(s));
     if (v.length === 5 && v.every(Number.isFinite) && Math.abs(v[0]) <= 85 && Math.abs(v[1]) <= 180) {
       const [lat, lon, zoom, pitch, bearing] = v, m = tilModell([lon, lat]), g = GRENSE + 300;
       if (Math.abs(m[0]) <= g && Math.abs(m[1]) <= g) {
         const klem = (x, a, b) => Math.min(b, Math.max(a, x));
-        vis = { center: [lon, lat], zoom: klem(zoom, map.getMinZoom(), map.getMaxZoom()), pitch: klem(pitch, map.getMinPitch(), map.getMaxPitch()), bearing: (bearing % 360 + 540) % 360 - 180 };
+        vis2 = { center: [lon, lat], zoom: klem(zoom, map.getMinZoom(), map.getMaxZoom()), pitch: klem(pitch, map.getMinPitch(), map.getMaxPitch()), bearing: (bearing % 360 + 540) % 360 - 180 };
       }
     }
   }
   const husId = /^[a-z]+-[0-9a-z]+$/i.test(par.hus || "") ? par.hus : null;
   const hus = husId ? buildings.find((g) => g.userData.b && g.userData.b.id === husId && !g.userData.b.skjul) || null : null;
-  return { vis, hus, hopp: !!(vis || hus) };
+  return { vis: vis2, hus, hopp: !!(vis2 || hus) };
 })();
 var LAGRET_UTSIKT = "smart-old-town:utsikt";
 function lenkeHash() {
@@ -3212,12 +3224,12 @@ function lenkeStart() {
   });
   else lenkeSkriv();
 }
-async function lenkeDel(knapp3) {
+async function lenkeDel(knapp4) {
   const url = lenkeUrl();
   const ok = () => {
-    knapp3.classList.add("delt");
-    clearTimeout(knapp3._t);
-    knapp3._t = setTimeout(() => knapp3.classList.remove("delt"), 1600);
+    knapp4.classList.add("delt");
+    clearTimeout(knapp4._t);
+    knapp4._t = setTimeout(() => knapp4.classList.remove("delt"), 1600);
   };
   if (BERORING && navigator.share) {
     try {
@@ -3247,11 +3259,11 @@ async function lenkeDel(knapp3) {
   }
 }
 {
-  const knapp3 = document.querySelector("#kort .del");
-  if (knapp3) knapp3.addEventListener("click", () => lenkeDel(knapp3));
+  const knapp4 = document.querySelector("#kort .del");
+  if (knapp4) knapp4.addEventListener("click", () => lenkeDel(knapp4));
 }
 
-// ../../../tmp/tmp6c2id0vv/15_loop.js
+// ../../../../tmp/tmpfzobimrm/15_loop.js
 import * as THREE17 from "three";
 lysFraVenstre();
 var order = buildings.map((g) => {
@@ -3578,7 +3590,7 @@ window.__skjerm3 = (x, y, z) => {
 };
 registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });
 
-// ../../../tmp/tmp6c2id0vv/16_interaksjon.js
+// ../../../../tmp/tmpfzobimrm/16_interaksjon.js
 import * as THREE18 from "three";
 var ray = new THREE18.Raycaster();
 var ptr = new THREE18.Vector2();
@@ -3604,9 +3616,9 @@ function byggFraTreff(hit) {
     return k >= 0 ? buildings.find((g2) => g2.userData.i === k) : null;
   }
   const f = hit.faceIndex * 3;
-  for (const [i, deler] of husDeler) {
+  for (const [i2, deler] of husDeler) {
     for (const d of deler) {
-      if (d.mesh === hit.object && f >= d.start && f < d.start + d.antall) return buildings.find((g2) => g2.userData.i === i);
+      if (d.mesh === hit.object && f >= d.start && f < d.start + d.antall) return buildings.find((g2) => g2.userData.i === i2);
     }
   }
   let g = hit.object;
@@ -3631,7 +3643,7 @@ function husBoks(g) {
   return bb;
 }
 var kortInnhold = kort.querySelector(".innhold");
-var kort_ = { apent: false, forKamera: null, egenFlytt: false, historikk: false, ferge: null, vedLukk: [] };
+var kort_ = { apent: false, forKamera: null, egenFlytt: false, historikk: false, ferge: null, vedLukk: [], vedVelg: [] };
 var SIDEPANEL = window.matchMedia("(min-width: 720px)");
 var kameraNaa = () => ({ center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
 function fyllKort(b) {
@@ -3648,11 +3660,11 @@ function fyllKort(b) {
     });
   };
   const fl = b.floyer || [], hele = (v) => v.hele_bygget;
-  const ogsa = fl.flatMap((i) => (VIRKSOMHETER.get(i) || []).filter((v) => i !== b.id || hele(v))).sort((x, y) => (hele(x) ? 1 : 0) - (hele(y) ? 1 : 0));
+  const ogsa = fl.flatMap((i2) => (VIRKSOMHETER.get(i2) || []).filter((v) => i2 !== b.id || hele(v))).sort((x, y) => (hele(x) ? 1 : 0) - (hele(y) ? 1 : 0));
   liste2(kort.querySelector(".her"), her.filter((v) => !(fl.length && hele(v))));
   liste2(kort.querySelector(".ogsa"), ogsa);
   kort.querySelector(".ogsa-t").textContent = ogsa.length ? `Også i ${(b.navn || "bygget").split(",")[0]}` : "";
-  const mb = b.matrikkel && b.matrikkel[0] ? b : (b.floyer || []).map((i) => BYGG_ID.get(i)).find((x) => x && x.matrikkel && x.matrikkel[0]) || b;
+  const mb = b.matrikkel && b.matrikkel[0] ? b : (b.floyer || []).map((i2) => BYGG_ID.get(i2)).find((x) => x && x.matrikkel && x.matrikkel[0]) || b;
   const m = mb.matrikkel && mb.matrikkel[0];
   kort.querySelector(".id").textContent = m ? `Bygningsnr. ${m.bygningsnummer}${mb.matrikkel.some((x) => x.kulturminne) ? " • Kulturminne" : ""}` : "";
   const f = kort.querySelector(".farge");
@@ -3675,7 +3687,8 @@ function glidTilHus(g) {
   if (Math.hypot(s.x - mx, s.y - my) < 0.12 * Math.min(fri.x1 - fri.x0, fri.y1 - fri.y0) && zoom - map.getZoom() < 0.05) return;
   glidKamera({ center: ll, zoom, offset: [mx - innerWidth / 2, my - innerHeight / 2] }, "hus");
 }
-function velgPunkt(fyll, x, y) {
+function velgPunkt(fyll2, x, y) {
+  kort_.vedVelg.forEach((f) => f(null));
   if (valgt) {
     valgt.userData.lift = false;
     valgt = null;
@@ -3684,10 +3697,10 @@ function velgPunkt(fyll, x, y) {
   if (!kort_.apent) {
     kort_.forKamera = kameraNaa();
     kort_.egenFlytt = false;
-    fyll();
+    fyll2();
     visKort(true);
   } else {
-    fyll();
+    fyll2();
     kortInnhold.animate([{ opacity: 0 }, { opacity: 1 }], { duration: BEV.kort.innhold, easing: "ease-out" });
   }
   const ll = tilLngLat(x, y), fri = friFlate(), mx = (fri.x0 + fri.x1) / 2, my = (fri.y0 + fri.y1) / 2;
@@ -3740,6 +3753,7 @@ function treffFerge(x, y) {
 }
 function velgHus(g) {
   kort_.ferge = null;
+  kort_.vedVelg.forEach((f) => f(g));
   if (valgt === g) return;
   if (valgt) valgt.userData.lift = false;
   valgt = g;
@@ -3756,12 +3770,12 @@ function velgHus(g) {
   glidTilHus(g);
   lenkeSkriv();
 }
-function visKort(vis) {
-  kort_.apent = vis;
+function visKort(vis2) {
+  kort_.apent = vis2;
   kort.style.transform = "";
-  kort.classList.toggle("vis", vis);
-  kort.setAttribute("aria-hidden", vis ? "false" : "true");
-  if (vis && !kort_.historikk) {
+  kort.classList.toggle("vis", vis2);
+  kort.setAttribute("aria-hidden", vis2 ? "false" : "true");
+  if (vis2 && !kort_.historikk) {
     try {
       window.history.pushState({ ...window.history.state || {}, kort: 1 }, "");
       kort_.historikk = true;
@@ -4019,7 +4033,7 @@ if (Q0.get("d")) {
 }
 registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });
 
-// ../../../tmp/tmp6c2id0vv/17_bakkeflater-og-parkering.js
+// ../../../../tmp/tmpfzobimrm/17_bakkeflater-og-parkering.js
 import * as THREE19 from "three";
 {
   const flateMat = (rgb) => medSkygge(new THREE19.ShaderMaterial({
@@ -4076,16 +4090,16 @@ import * as THREE19 from "three";
     g.rotateX(-Math.PI / 2);
     if (pts.some((q) => hTer(q[0], q[1]) > 0.05) || (() => {
       const P0 = g.attributes.position;
-      for (let i = 0; i < P0.count; i++) if (hTer(P0.getX(i), -P0.getZ(i)) > 0.05) return true;
+      for (let i2 = 0; i2 < P0.count; i2++) if (hTer(P0.getX(i2), -P0.getZ(i2)) > 0.05) return true;
       return false;
     })())
       g = delPaaTerreng(g, TER ? TER.g / 2 : 1);
-    const P = g.attributes.position;
-    for (let i = 0; i < P.count; i++) {
-      const t = hTer(P.getX(i), -P.getZ(i));
-      P.setY(i, t > 0.05 ? t + y0 : Math.max(y0, hAt(P.getX(i), -P.getZ(i)) + y0));
+    const P2 = g.attributes.position;
+    for (let i2 = 0; i2 < P2.count; i2++) {
+      const t = hTer(P2.getX(i2), -P2.getZ(i2));
+      P2.setY(i2, t > 0.05 ? t + y0 : Math.max(y0, hAt(P2.getX(i2), -P2.getZ(i2)) + y0));
     }
-    P.needsUpdate = true;
+    P2.needsUpdate = true;
     g.computeVertexNormals();
     const m = new THREE19.Mesh(g, mat2);
     m.receiveShadow = true;
@@ -4110,8 +4124,8 @@ import * as THREE19 from "three";
     (DATA.flater || []).forEach((f) => {
       if (f.skjul || !f.linje || !f.oppmerket) return;
       const [a, c] = f.linje, dx = c[0] - a[0], dy = c[1] - a[1], L = Math.hypot(dx, dy), ang = Math.atan2(dy, dx);
-      for (let i = 0; i <= f.oppmerket; i++) {
-        const t = i / f.oppmerket, x = a[0] + dx * t, y = a[1] + dy * t;
+      for (let i2 = 0; i2 <= f.oppmerket; i2++) {
+        const t = i2 / f.oppmerket, x = a[0] + dx * t, y = a[1] + dy * t;
         const m = new THREE19.Mesh(new THREE19.PlaneGeometry(0.12, f.bredde * 0.9), strek);
         m.rotation.x = -Math.PI / 2;
         m.rotation.z = ang;
@@ -4127,7 +4141,7 @@ import * as THREE19 from "three";
   });
 }
 
-// ../../../tmp/tmp6c2id0vv/18_brygger.js
+// ../../../../tmp/tmpfzobimrm/18_brygger.js
 import * as THREE20 from "three";
 {
   const VANN_Y = 0.15, PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
@@ -4159,9 +4173,9 @@ import * as THREE20 from "three";
       const U = b.p.map((q) => q[0] * ux + q[1] * uy), V2 = b.p.map((q) => q[0] * vx + q[1] * vy), n = b.p.length;
       for (let s = Math.min(...U) + PLANKE / 2; s < Math.max(...U); s += PLANKE) {
         const kr = [];
-        for (let i = 0; i < n; i++) {
-          const j = (i + 1) % n, di = U[i] - s, dj = U[j] - s;
-          if (di < 0 !== dj < 0) kr.push(V2[i] + (V2[j] - V2[i]) * di / (di - dj));
+        for (let i2 = 0; i2 < n; i2++) {
+          const j = (i2 + 1) % n, di = U[i2] - s, dj = U[j] - s;
+          if (di < 0 !== dj < 0) kr.push(V2[i2] + (V2[j] - V2[i2]) * di / (di - dj));
         }
         kr.sort((p, q) => p - q);
         for (let k = 0; k + 1 < kr.length; k += 2) {
@@ -4174,13 +4188,13 @@ import * as THREE20 from "three";
     }
     if (b.typ === "fast") {
       let areal = 0;
-      for (let i = 0; i < b.p.length; i++) {
-        const p = b.p[i], q = b.p[(i + 1) % b.p.length];
+      for (let i2 = 0; i2 < b.p.length; i2++) {
+        const p = b.p[i2], q = b.p[(i2 + 1) % b.p.length];
         areal += p[0] * q[1] - q[0] * p[1];
       }
       const inn2 = areal > 0 ? 1 : -1;
-      for (let i = 0; i < b.p.length; i++) {
-        const p = b.p[i], q = b.p[(i + 1) % b.p.length], dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy);
+      for (let i2 = 0; i2 < b.p.length; i2++) {
+        const p = b.p[i2], q = b.p[(i2 + 1) % b.p.length], dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy);
         if (L < 0.8) continue;
         const nx = -dy / L * inn2 * 0.16, ny = dx / L * inn2 * 0.16, m = Math.max(1, Math.round(L / STOLPE_AVSTAND));
         for (let k = 0; k < m; k++) {
@@ -4208,7 +4222,7 @@ import * as THREE20 from "three";
   g.traverse((c) => c.layers.enable(1));
 }
 
-// ../../../tmp/tmp6c2id0vv/19_gardsmurer-og-vinterhager.js
+// ../../../../tmp/tmpfzobimrm/19_gardsmurer-og-vinterhager.js
 import * as THREE21 from "three";
 {
   const anlegg = new THREE21.Group();
@@ -4245,12 +4259,12 @@ import * as THREE21 from "three";
     });
     del(s0, L);
     if (!pt) return;
-    const P = pt.pilar;
+    const P2 = pt.pilar;
     const sh = new THREE21.Shape();
-    sh.moveTo(-P / 2, 0);
-    sh.lineTo(P / 2, 0);
-    sh.lineTo(P / 2, pt.pilar_h);
-    sh.lineTo(-P / 2, pt.pilar_h);
+    sh.moveTo(-P2 / 2, 0);
+    sh.lineTo(P2 / 2, 0);
+    sh.lineTo(P2 / 2, pt.pilar_h);
+    sh.lineTo(-P2 / 2, pt.pilar_h);
     sh.closePath();
     const r = pt.bredde / 2, yb = pt.hoyde - r;
     const hul = new THREE21.Path();
@@ -4269,7 +4283,7 @@ import * as THREE21 from "three";
     m.rotation.y = ang;
     m.castShadow = m.receiveShadow = true;
     anlegg.add(m);
-    const k = new THREE21.Mesh(new THREE21.BoxGeometry(P + 0.2, 0.22, D + 0.2), dekk);
+    const k = new THREE21.Mesh(new THREE21.BoxGeometry(P2 + 0.2, 0.22, D + 0.2), dekk);
     k.position.set(mx, y0 + pt.pilar_h + 0.11, -my);
     k.rotation.y = ang;
     k.castShadow = true;
@@ -4301,8 +4315,8 @@ import * as THREE21 from "three";
     kropp.castShadow = kropp.receiveShadow = true;
     anlegg.add(kropp);
     const gx = p.reduce((s, q) => s + q[0], 0) / p.length, gy = p.reduce((s, q) => s + q[1], 0) / p.length;
-    for (let i = 1; i < p.length; i++) {
-      const a2 = p[i], c = p[(i + 1) % p.length];
+    for (let i2 = 1; i2 < p.length; i2++) {
+      const a2 = p[i2], c = p[(i2 + 1) % p.length];
       const dx = c[0] - a2[0], dy = c[1] - a2[1], L2 = Math.hypot(dx, dy), ang = Math.atan2(dy, dx), n = Math.max(1, Math.round(L2 / 1.1));
       let nx = dy / L2, ny = -dx / L2;
       if (nx * ((a2[0] + c[0]) / 2 - gx) + ny * ((a2[1] + c[1]) / 2 - gy) < 0) {
@@ -4342,10 +4356,10 @@ import * as THREE21 from "three";
     anlegg.add(pl);
     const top = y0 + v.h, a0 = p[0], a1 = p[1], ux = a1[0] - a0[0], uy = a1[1] - a0[1], L = Math.hypot(ux, uy), tx = ux / L, ty = uy / L;
     const nx = p[3][0] - p[0][0], ny = p[3][1] - p[0][1], D = Math.hypot(nx, ny), ex = nx / D, ey = ny / D, ang = Math.atan2(ty, tx);
-    const P = (s, d) => [a0[0] + tx * s + ex * d, a0[1] + ty * s + ey * d];
+    const P2 = (s, d) => [a0[0] + tx * s + ex * d, a0[1] + ty * s + ey * d];
     const kasseLangs = (s0, s1, d) => {
       if (s1 - s0 < 0.3) return;
-      const [x, y] = P((s0 + s1) / 2, d);
+      const [x, y] = P2((s0 + s1) / 2, d);
       const k = new THREE21.Mesh(new THREE21.BoxGeometry(s1 - s0, 0.55, 0.5), kasse);
       k.position.set(x, top + 0.275, -y);
       k.rotation.y = ang;
@@ -4361,7 +4375,7 @@ import * as THREE21 from "three";
     kasseLangs(0, (L - ap) / 2, D - 0.25);
     kasseLangs((L + ap) / 2, L, D - 0.25);
     [0.25, L - 0.25].forEach((s) => {
-      const [x, y] = P(s, (D - 0.5) / 2 + 0.2);
+      const [x, y] = P2(s, (D - 0.5) / 2 + 0.2);
       const k = new THREE21.Mesh(new THREE21.BoxGeometry(0.5, 0.55, D - 0.9), kasse);
       k.position.set(x, top + 0.275, -y);
       k.rotation.y = ang;
@@ -4373,8 +4387,8 @@ import * as THREE21 from "three";
       anlegg.add(g);
     });
     const n = v.parasoller || 4;
-    for (let i = 0; i < n; i++) {
-      const [x, y] = P(L * (i + 0.5) / n, D * 0.52);
+    for (let i2 = 0; i2 < n; i2++) {
+      const [x, y] = P2(L * (i2 + 0.5) / n, D * 0.52);
       const st = new THREE21.Mesh(new THREE21.CylinderGeometry(0.04, 0.04, 2.5, 6), jern);
       st.position.set(x, top + 1.25, -y);
       anlegg.add(st);
@@ -4396,15 +4410,15 @@ import * as THREE21 from "three";
   flatGruppe(anlegg);
 }
 
-// ../../../tmp/tmp6c2id0vv/20_statuen-paa-torvet.js
+// ../../../../tmp/tmpfzobimrm/20_statuen-paa-torvet.js
 import * as THREE22 from "three";
 (() => {
   const STEINFARGE = { "mørk": [[66, 68, 72], [40, 41, 44]], lys: [[178, 176, 170], [124, 122, 118]], trinn: [[104, 106, 110], [66, 67, 70]], bronse: [[120, 160, 138], [70, 98, 86]] };
   const PATINA = [120, 160, 138], PATINA_S = [70, 98, 86], RELIEFF = [96, 128, 112], GULL = [214, 206, 170];
   const V2 = (a, b, c) => new THREE22.Vector3(a, b, c);
   const dreid = (prof, n) => {
-    const P = [new THREE22.Vector2(0, prof[0][1]), ...prof.map(([r, y]) => new THREE22.Vector2(r, y)), new THREE22.Vector2(0, prof[prof.length - 1][1])];
-    return new THREE22.LatheGeometry(P, n);
+    const P2 = [new THREE22.Vector2(0, prof[0][1]), ...prof.map(([r, y]) => new THREE22.Vector2(r, y)), new THREE22.Vector2(0, prof[prof.length - 1][1])];
+    return new THREE22.LatheGeometry(P2, n);
   };
   const pipekrage = (r, h, k) => {
     const g = new THREE22.CylinderGeometry(r, r * 0.94, h, k * 4, 1);
@@ -4477,9 +4491,9 @@ import * as THREE22 from "three";
       kule(0.15, V2(0, 0.2, -0.08), 1.05, 0.8, 0.9);
       lem(V2(0, 0.22, -0.07), V2(0, 0.62, 0.03), 0.12, 0.105).scale.set(1, 1, 0.75);
       const skS = [V2(-0.12, 0.6, 0.04), V2(0.12, 0.6, 0.04)], hand = [V2(-0.1, 0.13, 0.34), V2(0.1, 0.13, 0.34)];
-      [0, 1].forEach((i) => {
-        lem(skS[i], hand[i], 0.035, 0.028);
-        kule(0.032, hand[i], 1, 0.7, 1.3);
+      [0, 1].forEach((i2) => {
+        lem(skS[i2], hand[i2], 0.035, 0.028);
+        kule(0.032, hand[i2], 1, 0.7, 1.3);
       });
       lem(V2(0, 0.62, 0.04), V2(0, 0.7, 0.06), 0.035, 0.035);
       const hode = new THREE22.Group();
@@ -4550,7 +4564,7 @@ import * as THREE22 from "three";
   });
 })();
 
-// ../../../tmp/tmp6c2id0vv/21_flyt.js
+// ../../../../tmp/tmpfzobimrm/21_flyt.js
 import * as THREE23 from "three";
 import { mergeGeometries as mergeGeometries4 } from "three/addons/utils/BufferGeometryUtils.js";
 var vannRute = (() => {
@@ -4560,10 +4574,10 @@ var vannRute = (() => {
   const _a = new THREE23.Vector3();
   waterLayer.forEach((m) => {
     m.updateMatrixWorld();
-    const P = m.geometry.attributes.position, I = m.geometry.index, n = I ? I.count : P.count;
+    const P2 = m.geometry.attributes.position, I = m.geometry.index, n = I ? I.count : P2.count;
     const pk = [];
-    for (let i = 0; i < P.count; i++) {
-      _a.fromBufferAttribute(P, i).applyMatrix4(m.matrixWorld);
+    for (let i2 = 0; i2 < P2.count; i2++) {
+      _a.fromBufferAttribute(P2, i2).applyMatrix4(m.matrixWorld);
       pk.push(_a.x, _a.z);
       x0 = Math.min(x0, _a.x);
       x1 = Math.max(x1, _a.x);
@@ -4586,17 +4600,17 @@ var vannRute = (() => {
   for (let k = 0; k < tri.length; k += 6) {
     const t = tri.slice(k, k + 6);
     const i0 = Math.floor((Math.min(t[0], t[2], t[4]) - x0) / C), i1 = Math.floor((Math.max(t[0], t[2], t[4]) - x0) / C), j0 = Math.floor((Math.min(t[1], t[3], t[5]) - z0) / C), j1 = Math.floor((Math.max(t[1], t[3], t[5]) - z0) / C);
-    for (let j = j0; j <= j1; j++) for (let i = i0; i <= i1; i++) {
-      if (g[j * nx + i]) continue;
-      const cx = x0 + i * C, cz = z0 + j * C;
-      if (inni(cx + C / 2, cz + C / 2, t) || inni(cx, cz, t) || inni(cx + C, cz, t) || inni(cx, cz + C, t) || inni(cx + C, cz + C, t) || t[0] >= cx && t[0] < cx + C && t[1] >= cz && t[1] < cz + C) g[j * nx + i] = 1;
+    for (let j = j0; j <= j1; j++) for (let i2 = i0; i2 <= i1; i2++) {
+      if (g[j * nx + i2]) continue;
+      const cx = x0 + i2 * C, cz = z0 + j * C;
+      if (inni(cx + C / 2, cz + C / 2, t) || inni(cx, cz, t) || inni(cx + C, cz, t) || inni(cx, cz + C, t) || inni(cx + C, cz + C, t) || t[0] >= cx && t[0] < cx + C && t[1] >= cz && t[1] < cz + C) g[j * nx + i2] = 1;
     }
   }
   const h = new Uint8Array(g);
-  for (let j = 1; j < nz - 1; j++) for (let i = 1; i < nx - 1; i++) if (g[j * nx + i]) for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) h[(j + dj) * nx + i + di] = 1;
+  for (let j = 1; j < nz - 1; j++) for (let i2 = 1; i2 < nx - 1; i2++) if (g[j * nx + i2]) for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) h[(j + dj) * nx + i2 + di] = 1;
   return { har: (x, z) => {
-    const i = Math.floor((x - x0) / C), j = Math.floor((z - z0) / C);
-    return i >= 0 && j >= 0 && i < nx && j < nz && h[j * nx + i] === 1;
+    const i2 = Math.floor((x - x0) / C), j = Math.floor((z - z0) / C);
+    return i2 >= 0 && j >= 0 && i2 < nx && j < nz && h[j * nx + i2] === 1;
   } };
 })();
 var _vannKam = new THREE23.Matrix4();
@@ -4609,8 +4623,8 @@ function vannISyne() {
   _vannKam.copy(cam.projectionMatrix);
   _vannKjent = true;
   let ja = false;
-  for (let j = 0; j <= 20 && !ja; j++) for (let i = 0; i <= 32; i++) {
-    const x = i / 16 - 1, y = 1 - j / 10;
+  for (let j = 0; j <= 20 && !ja; j++) for (let i2 = 0; i2 <= 32; i2++) {
+    const x = i2 / 16 - 1, y = 1 - j / 10;
     _vp.set(x, y, -1).unproject(cam);
     _vq.set(x, y, 1).unproject(cam);
     const dy = _vq.y - _vp.y;
@@ -4671,7 +4685,7 @@ var flaterSammen = (() => {
 window.__flytInfo = () => ({ flaterFor: flaterSammen.for, flaterEtter: flaterSammen.etter, vann: vannISyne() });
 registrer({ vannISyne: () => vannISyne });
 
-// ../../../tmp/tmp6c2id0vv/22_byferga.js
+// ../../../../tmp/tmpfzobimrm/22_byferga.js
 import * as THREE24 from "three";
 var ferge = (() => {
   const F = DATA.ferge;
@@ -4714,8 +4728,8 @@ var ferge = (() => {
     const [sl, sb, sh] = M.salong, sx = M.salong_fra;
     kloss(sl, sh, sb, sx, yd + sh / 2, 0, m(C.salong));
     const vh = sh - M.vindu_fra - 0.35, vy = yd + M.vindu_fra + vh / 2, n = M.vinduer, vb = (sl - 0.6) / n;
-    for (let i = 0; i < n; i++) {
-      const x = sx - sl / 2 + 0.3 + vb * (i + 0.5);
+    for (let i2 = 0; i2 < n; i2++) {
+      const x = sx - sl / 2 + 0.3 + vb * (i2 + 0.5);
       kloss(vb - 0.35, vh, sb + 0.06, x, vy, 0, m(C.vindu));
     }
     kloss(0.06, vh, sb - 0.8, sx - sl / 2 - 0.01, vy, 0, m(C.vindu));
@@ -4736,7 +4750,7 @@ var ferge = (() => {
     const rx0 = hl - fb - 0.2, rx1 = hx + hl2 / 2 + 0.1, rl = rx0 - rx1;
     [1, -1].forEach((sd) => {
       kloss(rl, 0.05, 0.05, (rx0 + rx1) / 2, yd + M.rekke, sd * (hb - 0.2), m(C.rekke));
-      for (let i = 0; i <= 3; i++) kloss(0.05, M.rekke, 0.05, rx1 + rl * i / 3, yd + M.rekke / 2, sd * (hb - 0.2), m(C.rekke));
+      for (let i2 = 0; i2 <= 3; i2++) kloss(0.05, M.rekke, 0.05, rx1 + rl * i2 / 3, yd + M.rekke / 2, sd * (hb - 0.2), m(C.rekke));
     });
     [1, -1].forEach((sd) => kloss(0.05, 0.05, (B - 0.4 - R.bredde) / 2, rx0, yd + M.rekke, sd * ((B - 0.4) / 2 - (B - 0.4 - R.bredde) / 4), m(C.rekke)));
     g.traverse((o) => {
@@ -4829,10 +4843,10 @@ var ferge = (() => {
   }
   turer = reserve(klokke());
   const E = F.entur || {};
-  async function hent2() {
+  async function hent3() {
     if (Q0.get("entur") === "0" || !E.url) return;
-    const T = klokke(), start2 = new Date(T - (E.bakover_min || 20) * MIN).toISOString();
-    const felt = `name estimatedCalls(startTime:"${start2}", timeRange:${(E.vindu_timer || 4) * 3600}, numberOfDepartures:60, arrivalDeparture:both, includeCancelledTrips:true){ aimedArrivalTime expectedArrivalTime aimedDepartureTime expectedDepartureTime cancellation realtime forBoarding forAlighting serviceJourney{ id } }`;
+    const T = klokke(), start3 = new Date(T - (E.bakover_min || 20) * MIN).toISOString();
+    const felt = `name estimatedCalls(startTime:"${start3}", timeRange:${(E.vindu_timer || 4) * 3600}, numberOfDepartures:60, arrivalDeparture:both, includeCancelledTrips:true){ aimedArrivalTime expectedArrivalTime aimedDepartureTime expectedDepartureTime cancellation realtime forBoarding forAlighting serviceJourney{ id } }`;
     const query = `{ g: quay(id:"${KAI.G.quay}"){ ${felt} } c: quay(id:"${KAI.C.quay}"){ ${felt} } s: quay(id:"${KAI.S.quay}"){ ${felt} } }`;
     const ac = new AbortController();
     const tid = setTimeout(() => ac.abort(), 8e3);
@@ -4877,15 +4891,15 @@ var ferge = (() => {
   const oppfrisk = () => {
     if (kort_.apent && kort_.ferge) fyllFergeKort(kort_.ferge);
   };
-  hent2();
-  setInterval(hent2, (E.hvert_sek || 120) * 1e3);
+  hent3();
+  setInterval(hent3, (E.hvert_sek || 120) * 1e3);
   addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible" && klokke() - hentet > 6e4) hent2();
+    if (document.visibilityState === "visible" && klokke() - hentet > 6e4) hent3();
   });
   const rampeVed = (T, arr, dep) => myk2(arr == null ? 1 : (T - arr - 2e3) / 4e3) * (1 - myk2(dep == null ? 0 : (T - (dep - 9e3)) / 4e3));
-  function turPose(tur, T) {
-    const s = THREE24.MathUtils.clamp((T - tur.dep) / Math.max(1, tur.arr - tur.dep), 0, 1);
-    return poseLangs(VEI[tur.vei], GANG[tur.vei](s));
+  function turPose(tur2, T) {
+    const s = THREE24.MathUtils.clamp((T - tur2.dep) / Math.max(1, tur2.arr - tur2.dep), 0, 1);
+    return poseLangs(VEI[tur2.vei], GANG[tur2.vei](s));
   }
   function tilstand803(T) {
     const ts = turer.filter((t) => t.rute === "803" && !t.innstilt);
@@ -5000,14 +5014,14 @@ var ferge = (() => {
     } else {
       if (s.tur) status = s.tur.vei === "ut805" ? `På vei til Smertu og Sentrum, gikk ${kl(s.tur.dep)}` : `På vei inn, fram ${kl(s.tur.arr)}`;
       else if (s.vis) status = `Ved kaia${s.neste ? `, går ${kl(s.neste.dep)}` : ""}`;
-      const a = avg((t) => t.vei === "ut805", 4), i = ts.filter((t) => t.vei === "inn805" && t.arr > T).slice(0, 4);
+      const a = avg((t) => t.vei === "ut805", 4), i2 = ts.filter((t) => t.vei === "inn805" && t.arr > T).slice(0, 4);
       linjer.push(`Avgang: ${a.length ? a.map((t) => tidTekst(t, t.dep, t.aimDep)).join(" · ") : "ingen de neste timene"}`);
-      if (i.length) linjer.push(`Ankomst: ${i.map((t) => tidTekst(t, t.arr, t.aimArr)).join(" · ")}`);
+      if (i2.length) linjer.push(`Ankomst: ${i2.map((t) => tidTekst(t, t.arr, t.aimArr)).join(" · ")}`);
     }
     const kildeT = kilde === "entur" ? `Sanntid fra Entur, hentet ${kl(hentet)}` : "Rutetabell (Entur svarer ikke nå)";
     return { tittel: ru.navn, a: `Linje ${ru.linje} • ${ru.strekning}`, b: status, linjer, id: kildeT };
   }
-  window.__ferge = { turer: () => turer, kilde: () => kilde, tilstand: (id) => baater[id].tilstand(klokke()), klokke, hent: hent2, vist: (id) => baater[id].vist, skjerm: (id) => {
+  window.__ferge = { turer: () => turer, kilde: () => kilde, tilstand: (id) => baater[id].tilstand(klokke()), klokke, hent: hent3, vist: (id) => baater[id].vist, skjerm: (id) => {
     const g = baater[id].g;
     return g.visible ? window.__skjerm(g.position.x, g.position.z) : null;
   } };
@@ -5016,9 +5030,11 @@ var ferge = (() => {
 })();
 registrer({ ferge: () => ferge });
 
-// ../../../tmp/tmp6c2id0vv/23_vaer.js
+// ../../../../tmp/tmpfzobimrm/23_vaer.js
+import * as THREE25 from "three";
 var PUNKT = { lat: 59.2055, lon: 10.9545 };
-var VAER_AV = Q0.get("vaer") === "0";
+var TEST = !!navigator.webdriver;
+var VAER_AV = Q0.get("vaer") === "0" || TEST && Q0.get("vaer") === null;
 var NAVN = { sol: "Sol", lettskyet: "Lettskyet", delvis: "Delvis skyet", skyet: "Skyet", regn: "Regn", sludd: "Sludd", sno: "Snø", taake: "Tåke", torden: "Torden" };
 function fraSymbol(sym, skyProsent, mm, temp) {
   const s = (sym || "").replace(/_(day|night|polartwilight)$/, "");
@@ -5053,9 +5069,9 @@ var FAST = {
   taake: () => fraSymbol("fog", 100, 0, 3)
 };
 function aarstidFor(d) {
-  const tving = Q0.get("aarstid");
+  const tving2 = Q0.get("aarstid") || (TEST ? "sommer" : null);
   const m = d.getMonth() + 1, dag = d.getDate();
-  const a = tving || (m <= 2 || m === 12 ? "vinter" : m <= 5 ? "vaar" : m <= 8 ? "sommer" : "hoest");
+  const a = tving2 || (m <= 2 || m === 12 ? "vinter" : m <= 5 ? "vaar" : m <= 8 ? "sommer" : "hoest");
   const sen = m === 11 || m === 10 && dag > 15;
   return a === "vinter" ? { navn: a, farge: [0.98, 1.04, 0.94], styrke: 0.6 } : a === "vaar" ? { navn: a, farge: [0.95, 1.42, 0.62], styrke: 0.45 } : a === "hoest" ? { navn: a, farge: sen ? [1.32, 1.02, 0.58] : [1.55, 1.05, 0.42], styrke: sen ? 0.55 : 0.6 } : { navn: a, farge: [1, 1, 1], styrke: 0 };
 }
@@ -5068,7 +5084,24 @@ var snoFor = (v, aar) => {
   if (aar.navn === "vinter" && v.temp != null && v.temp <= -1) return 0.6;
   return 0;
 };
-var VAER = { naa: null, kilde: null, mal: { sky: 0, sno: 0 }, tid: 0, feil: null };
+var VAER = { naa: null, kilde: null, mal: { sky: 0, sno: 0, natt: 0 }, tid: 0, feil: null, kveld: false };
+function nattNaa() {
+  if (VAER.kveld) return 0.9;
+  const t = Q0.get("natt");
+  if (t !== null && !isNaN(+t)) return +t;
+  if (TEST && !Q0.get("tid")) return 0;
+  let d = /* @__PURE__ */ new Date();
+  const tid = Q0.get("tid");
+  if (tid && /^\d{1,2}:\d\d$/.test(tid)) {
+    const [h2, m] = tid.split(":");
+    d.setHours(+h2, +m, 0, 0);
+  }
+  const h = solposisjon(d).hoyde / GRAD;
+  return 0.9 * Math.min(1, Math.max(0, (1 - h) / 7));
+}
+var PAPIR = new THREE25.Color(14868950);
+var PAPIR_NATT = new THREE25.Color(2896710);
+var _p = new THREE25.Color();
 async function hent() {
   const fast = Q0.get("vaer");
   if (fast && FAST[fast]) {
@@ -5116,27 +5149,39 @@ async function hent() {
   }
 }
 var glir = false;
-function glid2() {
-  const m = VAER.mal, k = 0.06;
+var glidSist = 0;
+function glid2(naa) {
+  const dt = glidSist ? Math.min(200, naa - glidSist) : 16;
+  glidSist = naa;
+  const m = VAER.mal, k = 1 - Math.exp(-dt / 550);
   let igjen = false;
-  for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno]]) {
+  for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno], [U_SOL.natt, m.natt]]) {
     const d = mal - u.value;
     if (Math.abs(d) > 3e-3) {
       u.value += d * k;
       igjen = true;
     } else u.value = mal;
   }
+  _p.copy(PAPIR).lerp(PAPIR_NATT, U_SOL.natt.value / 0.9);
+  scene.background.copy(_p);
+  try {
+    map.setPaintProperty("papir", "background-color", "#" + _p.getHexString());
+  } catch (_) {
+  }
   TILSTAND.skyggeSkitten = true;
   map.triggerRepaint();
   if (igjen) requestAnimationFrame(glid2);
-  else glir = false;
+  else {
+    glir = false;
+    glidSist = 0;
+  }
 }
 function settVaer(v) {
   const aar = aarstidFor(/* @__PURE__ */ new Date());
   VAER.aarstid = aar.navn;
   U_SOL.aarstid.value.set(aar.farge[0], aar.farge[1], aar.farge[2], aar.styrke);
   VAER.naa = v;
-  VAER.mal = v ? { sky: skyFor(v), sno: snoFor(v, aar) } : { sky: 0, sno: snoFor({}, aar) };
+  VAER.mal = v ? { sky: skyFor(v), sno: snoFor(v, aar), natt: nattNaa() } : { sky: 0, sno: snoFor({}, aar), natt: nattNaa() };
   nedbor.sett(v);
   taake.style.opacity = v ? String(v.taake) : "0";
   merke(v);
@@ -5235,7 +5280,7 @@ var valgEl = document.createElement("div");
 valgEl.id = "vaervalg";
 valgEl.setAttribute("role", "menu");
 valgEl.hidden = true;
-valgEl.innerHTML = `<p class="t">Vis kartet med</p>` + [["naa", "Været nå"], ["sol", "Sol"], ["skyet", "Skyet"], ["regn", "Regn"], ["sno", "Snø"], ["taake", "Tåke"]].map(([k, t]) => `<button type="button" role="menuitemradio" data-v="${k}">${t}</button>`).join("") + `<p class="kilde">Værdata: <a href="https://www.met.no/" target="_blank" rel="noopener">MET Norway</a></p>`;
+valgEl.innerHTML = `<p class="t">Vis kartet med</p>` + [["naa", "Været nå"], ["sol", "Sol"], ["skyet", "Skyet"], ["regn", "Regn"], ["sno", "Snø"], ["taake", "Tåke"], ["kveld", "Kveld"]].map(([k, t]) => `<button type="button" role="menuitemradio" data-v="${k}">${t}</button>`).join("") + `<p class="kilde">Værdata: <a href="https://www.met.no/" target="_blank" rel="noopener">MET Norway</a></p>`;
 (document.getElementById("topp") || document.body).append(merkeEl);
 document.body.append(valgEl);
 var valgt2 = Q0.get("vaer") && FAST[Q0.get("vaer")] ? Q0.get("vaer") : "naa";
@@ -5264,7 +5309,8 @@ valgEl.addEventListener("click", (e) => {
   if (!b) return;
   valgt2 = b.dataset.v;
   valgEl.hidden = true;
-  if (valgt2 === "naa") settVaer(metNaa);
+  VAER.kveld = valgt2 === "kveld";
+  if (valgt2 === "naa" || valgt2 === "kveld") settVaer(metNaa);
   else {
     const v = FAST[valgt2]();
     if (metNaa && metNaa.temp != null) v.temp = metNaa.temp;
@@ -5289,23 +5335,43 @@ if (!VAER_AV) {
     }
   }, 15 * 6e4);
 } else settVaer(null);
+setInterval(() => {
+  const n = nattNaa();
+  if (Math.abs(n - VAER.mal.natt) > 0.01) {
+    VAER.mal.natt = n;
+    if (!glir) {
+      glir = true;
+      requestAnimationFrame(glid2);
+    }
+  }
+}, 6e4);
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden && VAER.naa && VAER.naa.nedbor) nedbor.sett(VAER.naa);
 });
-window.__vaer = () => ({ naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt: valgt2 });
+window.__vaer = () => ({ natt: U_SOL.natt.value, naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt: valgt2 });
 
-// ../../../tmp/tmp6c2id0vv/24_sok.js
+// ../../../../tmp/tmpfzobimrm/24_sok.js
 import * as maplibregl4 from "maplibre-gl";
 var S = DATA.steder || { kategorier: [], steder: [] };
+var GJEST = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
+if (GJEST && GJEST.anbefalt && GJEST.anbefalt.length) {
+  S.kategorier = [{ id: "anbefalt", navn: `Anbefalt av ${GJEST.navn}` }, ...S.kategorier];
+  for (const id of GJEST.anbefalt) {
+    const s = S.steder.find((x) => x.id === id);
+    if (s) S.steder.push({ ...s, id: "anbefalt-" + s.id, kategori: "anbefalt" });
+  }
+}
 var KAT = new Map(S.kategorier.map((k) => [k.id, k.navn]));
 var IKON2 = {
   // én strek per kategori, samme stil som knappene
   spise: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M16 3c-2 1.5-2.5 4-2.5 7h2.5v11"/>',
   kultur: '<path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/>',
   se: '<circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/>',
+  kulturminne: '<path d="M4 21h16M6 21V10M10 21V10M14 21V10M18 21V10M3 10l9-6 9 6z"/>',
   handle: '<path d="M5 8h14l-1 12H6L5 8zM9 8a3 3 0 0 1 6 0"/>',
   sove: '<path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3M7 11.5h.01"/>',
   parkering: '<path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7"/>',
+  anbefalt: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/>',
   toalett: '<circle cx="8" cy="5" r="1.6"/><circle cx="16" cy="5" r="1.6"/><path d="M8 8v12M6 10h4M16 8l-3 7h6l-3-7v12"/>'
 };
 var svg = (k, s = 18) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${IKON2[k] || IKON2.se}</svg>`;
@@ -5317,15 +5383,15 @@ var MND = { Jan: "jan", Feb: "feb", Mar: "mar", Apr: "apr", May: "mai", Jun: "ju
 var aapent = (t) => !t ? "" : t === "24/7" ? "Døgnåpent" : t.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, (m) => MND[m]).replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\b/g, (d) => DAG[d]).replace(/\boff\b/g, "stengt").replace(/;\s*/g, " · ").replace(/,/g, ", ");
 function fyllSted(s, b) {
   kort.querySelector("h2").textContent = s.navn;
-  const bygg = b && (b.navn || b.adr);
-  kort.querySelector(".a").textContent = [s.type, s.adresse || (bygg && bygg !== s.navn ? bygg : "")].filter(Boolean).join(" · ");
+  const bygg2 = b && (b.navn || b.adr);
+  kort.querySelector(".a").textContent = [s.type, s.adresse || (bygg2 && bygg2 !== s.navn ? bygg2 : "")].filter(Boolean).join(" · ");
   kort.querySelector(".b").textContent = s.merknad || "";
   const linjer = [];
   if (s.aapent) linjer.push(`<li>${esc(aapent(s.aapent))}</li>`);
   if (s.mat) linjer.push(`<li>${esc(s.mat[0].toUpperCase() + s.mat.slice(1))}</li>`);
   if (s.easypark) linjer.push(`<li>EasyPark-sone ${esc(s.easypark)}</li>`);
   if (s.telefon) linjer.push(`<li><a href="tel:${esc(s.telefon.replace(/\s/g, ""))}">${esc(s.telefon)}</a></li>`);
-  if (s.nettside) linjer.push(`<li><a href="${esc(/^https?:/.test(s.nettside) ? s.nettside : "https://" + s.nettside)}" target="_blank" rel="noopener">${esc(s.nettside.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a></li>`);
+  if (s.nettside) linjer.push(`<li><a href="${esc(/^https?:/.test(s.nettside) ? s.nettside : "https://" + s.nettside)}" target="_blank" rel="noopener">${s.kategori === "kulturminne" ? "Kulturminneplanen (PDF)" : esc(s.nettside.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a></li>`);
   const ll = tilLngLat(s.x, s.y);
   const vei = IOS ? `https://maps.apple.com/?daddr=${ll.lat.toFixed(6)},${ll.lng.toFixed(6)}&dirflg=w` : `https://www.google.com/maps/dir/?api=1&destination=${ll.lat.toFixed(6)},${ll.lng.toFixed(6)}&travelmode=walking`;
   linjer.push(`<li class="vei"><a href="${vei}" target="_blank" rel="noopener">Veibeskrivelse</a></li>`);
@@ -5370,13 +5436,13 @@ function naal(s) {
   return new maplibregl4.Marker({ element: el, anchor: "bottom" }).setLngLat(tilLngLat(s.x, s.y));
 }
 function tegnNaaler() {
-  const vis = new Set(S.steder.filter((s) => s.kategori === aktivKat).map((s) => s.id));
-  if (valgtSted) vis.add(valgtSted.id);
-  for (const [id, m] of naaler) if (!vis.has(id)) {
+  const vis2 = new Set(S.steder.filter((s) => s.kategori === aktivKat).map((s) => s.id));
+  if (valgtSted) vis2.add(valgtSted.id);
+  for (const [id, m] of naaler) if (!vis2.has(id)) {
     m.remove();
     naaler.delete(id);
   }
-  for (const s of S.steder) if (vis.has(s.id) && !naaler.has(s.id)) {
+  for (const s of S.steder) if (vis2.has(s.id) && !naaler.has(s.id)) {
     const m = naal(s);
     m.addTo(map);
     naaler.set(s.id, m);
@@ -5396,7 +5462,7 @@ panel.setAttribute("aria-label", "Finn steder");
 panel.hidden = true;
 panel.innerHTML = `<div class="felt">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>'}<input type="search" placeholder="Spisested, museum, parkering …" aria-label="Søk etter sted" autocomplete="off" enterkeyhint="search"><button type="button" class="lukk" aria-label="Lukk">×</button></div>
 <div class="kat" role="group" aria-label="Kategorier">${S.kategorier.filter((k) => S.steder.some((s) => s.kategori === k.id)).map((k) => `<button type="button" data-k="${k.id}" aria-pressed="false">${svg(k.id, 16)}<span>${esc(k.navn)}</span></button>`).join("")}</div>
-<ul class="treff" role="listbox" aria-label="Treff"></ul><p class="kilde">Steder: © OpenStreetMap-bidragsytere, Fredrikstad kommune</p>`;
+<ul class="treff" role="listbox" aria-label="Treff"></ul><p class="kilde">Steder: © OpenStreetMap-bidragsytere, Fredrikstad kommune (parkering, kulturminneplanen)</p>`;
 (document.getElementById("topp") || document.body).prepend(knapp);
 document.body.append(panel);
 var inn = panel.querySelector("input");
@@ -5406,8 +5472,8 @@ function treff() {
   const q = enkel(inn.value.trim()), ord = q.split(/\s+/).filter(Boolean);
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every((o) => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
-  const vis = q || aktivKat ? r.slice(0, 60) : [];
-  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ""}>${svg(s.kategori, 16)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.aapent ? aapent(s.aapent).split(" · ")[0] : ""].filter(Boolean).join(" · "))}</small></span></li>`).join("") || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : "");
+  const vis2 = q || aktivKat ? r.slice(0, 60) : [];
+  liste.innerHTML = vis2.map(({ s }, i2) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i2 === 0 ? 'aria-selected="true"' : ""}>${svg(s.kategori, 16)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.aapent ? aapent(s.aapent).split(" · ")[0] : ""].filter(Boolean).join(" · "))}</small></span></li>`).join("") || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : "");
 }
 function apne() {
   panel.hidden = false;
@@ -5426,15 +5492,15 @@ knapp.addEventListener("click", (e) => {
 panel.querySelector(".lukk").addEventListener("click", lukk);
 inn.addEventListener("input", treff);
 inn.addEventListener("keydown", (e) => {
-  const alle = [...liste.querySelectorAll("[data-i]")], i = alle.findIndex((x) => x.getAttribute("aria-selected") === "true");
+  const alle = [...liste.querySelectorAll("[data-i]")], i2 = alle.findIndex((x) => x.getAttribute("aria-selected") === "true");
   if (e.key === "ArrowDown" || e.key === "ArrowUp") {
     e.preventDefault();
-    const n = Math.max(0, Math.min(alle.length - 1, i + (e.key === "ArrowDown" ? 1 : -1)));
+    const n = Math.max(0, Math.min(alle.length - 1, i2 + (e.key === "ArrowDown" ? 1 : -1)));
     alle.forEach((x, j) => x.setAttribute("aria-selected", String(j === n)));
     alle[n] && alle[n].scrollIntoView({ block: "nearest" });
   }
-  if (e.key === "Enter" && alle[Math.max(0, i)]) {
-    velgSted(S.steder[+alle[Math.max(0, i)].dataset.i]);
+  if (e.key === "Enter" && alle[Math.max(0, i2)]) {
+    velgSted(S.steder[+alle[Math.max(0, i2)].dataset.i]);
     lukk();
   }
   if (e.key === "Escape") {
@@ -5476,7 +5542,7 @@ window.__sok = { velgSted: (id) => {
   return naaler.size;
 }, antall: () => S.steder.length };
 
-// ../../../tmp/tmp6c2id0vv/25_her.js
+// ../../../../tmp/tmpfzobimrm/25_her.js
 import * as maplibregl5 from "maplibre-gl";
 var RADIUS = 1400;
 var vakt = null;
@@ -5565,4 +5631,351 @@ function stopp() {
   knapp2.b.classList.remove("paa", "leter");
   knapp2.b.setAttribute("aria-pressed", "false");
 }
+
+// ../../../../tmp/tmpfzobimrm/26_turer.js
+var TURER = DATA.turer || [];
+var LEGENDE = new Map((DATA.legende || []).map((l) => [l.nr, l]));
+var tur = null;
+var i = 0;
+var egen = false;
+function stoppData(nr) {
+  const l = LEGENDE.get(nr);
+  if (!l) return null;
+  const b = l.bygg_id && BYGG_ID.get(l.bygg_id);
+  return { nr, navn: l.navn, tekst: b && b.tekst || "", bygg_id: l.bygg_id, x: l.xy[0], y: l.xy[1] };
+}
+function fyll(s) {
+  kort.querySelector("h2").textContent = s.navn;
+  kort.querySelector(".a").textContent = `${tur.navn} · stopp ${i + 1} av ${tur.stopp.length}`;
+  kort.querySelector(".b").textContent = s.tekst;
+  kort.querySelector(".her").innerHTML = "";
+  kort.querySelector(".ogsa").innerHTML = "";
+  kort.querySelector(".ogsa-t").textContent = "";
+  kort.querySelector(".farge").innerHTML = "";
+  kort.querySelector(".id").textContent = s.tekst ? "Tekst: kartbrosjyren til Visit Fredrikstad (2015)" : "";
+  let f = kort.querySelector(".tur");
+  if (!f) {
+    f = document.createElement("div");
+    f.className = "tur";
+    f.innerHTML = '<button type="button" class="forrige" aria-label="Forrige stopp">‹</button><span class="teller" aria-live="polite"></span><button type="button" class="neste" aria-label="Neste stopp">›</button>';
+    kortInnhold.after(f);
+    f.querySelector(".forrige").onclick = () => gaa(-1);
+    f.querySelector(".neste").onclick = () => gaa(1);
+  }
+  f.hidden = false;
+  f.querySelector(".teller").textContent = `${i + 1} / ${tur.stopp.length}`;
+  f.querySelector(".forrige").disabled = i === 0;
+  f.querySelector(".neste").disabled = i === tur.stopp.length - 1;
+}
+function vis() {
+  const s = stoppData(tur.stopp[i]);
+  if (!s) return gaa(1);
+  const g = s.bygg_id && buildings.find((x) => x.userData.b && x.userData.b.id === s.bygg_id);
+  egen = true;
+  if (g) {
+    velgHus(g);
+    fyll(s);
+  } else velgPunkt(() => fyll(s), s.x, s.y);
+  egen = false;
+  kort_.tur = tur.id;
+}
+function gaa(d) {
+  if (!tur) return;
+  const n = i + d;
+  if (n < 0 || n >= tur.stopp.length) return;
+  i = n;
+  vis();
+}
+function start2(id) {
+  tur = TURER.find((t) => t.id === id);
+  if (!tur) return false;
+  i = 0;
+  vis();
+  return true;
+}
+function slutt() {
+  if (!tur) return;
+  tur = null;
+  kort_.tur = null;
+  const f = kort.querySelector(".tur");
+  if (f) f.hidden = true;
+}
+kort_.vedLukk.push(slutt);
+kort_.vedVelg.push(() => {
+  if (!egen) slutt();
+});
+addEventListener("keydown", (e) => {
+  if (!tur || e.target.closest("input,textarea")) return;
+  if (e.key === "ArrowRight") {
+    e.preventDefault();
+    gaa(1);
+  }
+  if (e.key === "ArrowLeft") {
+    e.preventDefault();
+    gaa(-1);
+  }
+});
+var panel2 = document.getElementById("sokpanel");
+if (panel2 && TURER.length) {
+  const rad = document.createElement("div");
+  rad.className = "turer";
+  rad.setAttribute("role", "group");
+  rad.setAttribute("aria-label", "Turer");
+  rad.innerHTML = '<p class="t">Turer</p>' + TURER.map((t) => `<button type="button" data-tur="${t.id}"><b>${t.navn}</b><small>${t.om}</small></button>`).join("");
+  panel2.querySelector(".kat").before(rad);
+  rad.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-tur]");
+    if (!b) return;
+    panel2.hidden = true;
+    start2(b.dataset.tur);
+  });
+}
+window.__tur = { start: start2, gaa, slutt, naa: () => tur && { id: tur.id, i } };
+
+// ../../../../tmp/tmpfzobimrm/27_festival.js
+import * as THREE26 from "three";
+import { mergeGeometries as mergeGeometries5 } from "three/addons/utils/BufferGeometryUtils.js";
+var ARR = DATA.arrangementer || [];
+var tving = Q0.get("festival");
+var idag = /* @__PURE__ */ new Date();
+function datoer(a, aar) {
+  if (a.fra && a.til && +a.fra.slice(0, 4) === aar) return [/* @__PURE__ */ new Date(a.fra + "T00:00:00"), /* @__PURE__ */ new Date(a.til + "T23:59:59")];
+  if (a.regel === "siste-helg-i-juli") {
+    const l = new Date(aar, 6, 31);
+    l.setDate(31 - (l.getDay() + 1) % 7);
+    const f = new Date(l);
+    f.setDate(l.getDate() - 2);
+    l.setHours(23, 59, 59);
+    return [f, l];
+  }
+  return null;
+}
+var aktiv = tving === "0" ? null : ARR.find((a) => a.id === tving) || (tving ? null : ARR.find((a) => {
+  const d = datoer(a, idag.getFullYear());
+  if (!d) return false;
+  const fra = new Date(d[0]);
+  fra.setHours(fra.getHours() - 6);
+  return idag >= fra && idag <= d[1];
+}));
+var anim2 = null;
+if (aktiv) anim2 = bygg(aktiv);
+function bygg(a) {
+  const S2 = a.scene, g = new THREE26.Group();
+  g.name = "festival-" + a.id;
+  const M = { gulv: mat([40, 38, 42], false), stål: mat([70, 72, 78], false), høyttaler: mat([28, 28, 30], false), telt: mat([235, 232, 222], false) };
+  const kloss = (dx, dy, dz, x, y, z, m, gr = g) => {
+    const k = new THREE26.Mesh(new THREE26.BoxGeometry(dx, dy, dz), m);
+    k.position.set(x, y, z);
+    k.castShadow = k.receiveShadow = true;
+    gr.add(k);
+    return k;
+  };
+  const sc2 = new THREE26.Group();
+  g.add(sc2);
+  const B = S2.bredde, D = S2.dybde, H = 7.5;
+  kloss(D, 1.2, B, 0, 0.6, 0, M.gulv, sc2);
+  for (const z of [-B / 2, B / 2]) for (const x of [-D / 2, D / 2]) kloss(0.35, H, 0.35, x, H / 2, z, M.stål, sc2);
+  kloss(D + 0.6, 0.5, B + 0.6, 0, H, 0, M.stål, sc2);
+  kloss(D * 0.9, 0.3, B * 0.95, 0, H + 0.6, 0, M.telt, sc2);
+  for (const z of [-B / 2 - 1.6, B / 2 + 1.6]) kloss(1.4, 5, 1.4, D / 2 - 0.4, 2.5, z, M.høyttaler, sc2);
+  const skjermU = { tid: { value: 0 } };
+  const skjerm = new THREE26.Mesh(new THREE26.PlaneGeometry(B * 0.8, 4.2), new THREE26.ShaderMaterial({
+    uniforms: skjermU,
+    depthWrite: true,
+    side: THREE26.DoubleSide,
+    vertexShader: "varying vec2 vU; void main(){ vU=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }",
+    fragmentShader: `uniform float tid; varying vec2 vU; void main(){ float m=0.5+0.5*sin(vU.x*6.+tid*0.8)*cos(vU.y*4.-tid*0.6);
+      vec3 c=mix(vec3(0.95,0.78,0.30), vec3(0.20,0.25,0.75), m); c=mix(c, vec3(0.85,0.35,0.55), 0.5+0.5*sin(tid*0.3)); gl_FragColor=vec4(c*0.95,1.); }`
+  }));
+  skjerm.position.set(-D / 2 + 0.3, 1.2 + 2.6, 0);
+  skjerm.rotation.y = Math.PI / 2;
+  sc2.add(skjerm);
+  const straler = [];
+  const strMat = (c) => new THREE26.ShaderMaterial({
+    transparent: true,
+    depthWrite: false,
+    blending: THREE26.AdditiveBlending,
+    side: THREE26.DoubleSide,
+    uniforms: { farge: { value: new THREE26.Color(c) }, styrke: { value: 0.55 } },
+    vertexShader: "varying float vY; void main(){ vY=position.y; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }",
+    fragmentShader: "uniform vec3 farge; uniform float styrke; varying float vY; void main(){ float a=smoothstep(-28.,0.,vY); gl_FragColor=vec4(farge*styrke*a*a, 1.); }"
+  });
+  const kjegle = new THREE26.ConeGeometry(2.6, 28, 24, 1, true);
+  kjegle.translate(0, -14, 0);
+  const farger = [16765562, 9418495, 16744370, 16777215];
+  for (let i2 = 0; i2 < 8; i2++) {
+    const z = -B / 2 + (i2 + 0.5) * B / 8;
+    const p = new THREE26.Group();
+    p.position.set(D / 2 - 0.2, H - 0.3, z);
+    const s = new THREE26.Mesh(kjegle, strMat(farger[i2 % 4]));
+    s.renderOrder = 10;
+    p.add(s);
+    sc2.add(p);
+    straler.push({ p, fase: i2 * 0.7 });
+  }
+  sc2.position.set(S2.x, 0, -S2.y);
+  sc2.rotation.y = (S2.retning || 0) * Math.PI / 180;
+  const P2 = a.publikum, fig = new THREE26.CylinderGeometry(0.22, 0.26, 1.7, 6);
+  fig.translate(0, 0.85, 0);
+  const fargerP = [[196, 74, 62], [60, 86, 140], [222, 196, 120], [72, 120, 92]], per = Math.ceil(P2.antall / 4), m4 = new THREE26.Matrix4();
+  const front = new THREE26.Vector3(1, 0, 0).applyAxisAngle(new THREE26.Vector3(0, 1, 0), sc2.rotation.y);
+  let seed2 = 7;
+  const rnd2 = () => (seed2 = seed2 * 16807 % 2147483647) / 2147483647;
+  fargerP.forEach((f) => {
+    const deler = [];
+    let n = 0;
+    for (let t = 0; t < per * 6 && n < per; t++) {
+      const x = P2.x0 + rnd2() * (P2.x1 - P2.x0), y = P2.y0 + rnd2() * (P2.y1 - P2.y0);
+      const d = (x - S2.x) * front.x + (-y + S2.y) * front.z;
+      if (d < D / 2 + 1.5) continue;
+      if (rnd2() > Math.exp(-(d - D / 2) / 70)) continue;
+      deler.push(fig.clone().applyMatrix4(m4.makeTranslation(x, 0.05, -y)));
+      n++;
+    }
+    if (!deler.length) return;
+    const m = new THREE26.Mesh(mergeGeometries5(deler), mat(f, false));
+    m.castShadow = m.receiveShadow = true;
+    g.add(m);
+  });
+  if (a.boder) {
+    const Bd = a.boder, takF = [[196, 74, 62], [236, 226, 206], [60, 86, 140]];
+    for (let k = 0; k < Bd.antall; k++) {
+      const x = Bd.x0 + (k + 0.5) * (Bd.x1 - Bd.x0) / Bd.antall, y = Bd.y0 + (k % 2 ? 0.25 : 0.75) * (Bd.y1 - Bd.y0);
+      kloss(3, 2.2, 3, x, 1.1, -y, M.telt);
+      kloss(3.4, 0.5, 3.4, x, 2.45, -y, mat(takF[k % 3], false));
+    }
+  }
+  const lysPos = [];
+  for (let k = 0; k < 6; k++) {
+    const ang = (k - 2.5) * 0.28;
+    for (let j = 0; j <= 24; j++) {
+      const t = j / 24, r = D / 2 + t * 40;
+      const lx = r * Math.cos(ang), lz = r * Math.sin(ang), h = 6.5 - Math.sin(t * Math.PI) * 1.6;
+      lysPos.push(new THREE26.Vector3(lx, h, lz).applyAxisAngle(new THREE26.Vector3(0, 1, 0), sc2.rotation.y).add(new THREE26.Vector3(S2.x, 0, -S2.y)));
+    }
+  }
+  const lysGeo = new THREE26.BufferGeometry().setFromPoints(lysPos);
+  const lys = new THREE26.Points(lysGeo, new THREE26.PointsMaterial({ color: 16769696, size: 0.9, sizeAttenuation: true, transparent: true, depthWrite: false, blending: THREE26.AdditiveBlending }));
+  g.add(lys);
+  scene.add(g);
+  return { g, straler, skjermU, a };
+}
+if (anim2) {
+  const t0 = performance.now();
+  let sist = 0;
+  const steg = (naa) => {
+    if (!document.hidden && naa - sist > 33) {
+      sist = naa;
+      const t = (naa - t0) / 1e3;
+      anim2.skjermU.tid.value = t;
+      for (const s of anim2.straler) {
+        s.p.rotation.z = Math.PI / 2 + 0.45 + 0.35 * Math.sin(t * 0.9 + s.fase);
+        s.p.rotation.x = 0.5 * Math.sin(t * 0.6 + s.fase * 1.3);
+      }
+      map.triggerRepaint();
+    }
+    requestAnimationFrame(steg);
+  };
+  requestAnimationFrame(steg);
+}
+window.__festival = () => anim2 ? { id: anim2.a.id, navn: anim2.a.navn, straler: anim2.straler.length } : null;
+window.__festivalDatoer = (aar) => ARR.map((a) => ({ id: a.id, d: (datoer(a, aar) || []).map((x) => x.toISOString()) }));
+
+// ../../../../tmp/tmpfzobimrm/28_start.js
+var laster = document.getElementById("laster");
+if (laster) {
+  const se = () => {
+    if (TILSTAND._synlig) {
+      laster.classList.add("ferdig");
+      setTimeout(() => laster.remove(), 800);
+    } else requestAnimationFrame(se);
+  };
+  requestAnimationFrame(se);
+}
+
+// ../../../../tmp/tmpfzobimrm/29_postkort.js
+var MND2 = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
+var knapp3 = document.createElement("button");
+knapp3.id = "postkort";
+knapp3.type = "button";
+knapp3.setAttribute("aria-label", "Lag postkort av utsikten");
+knapp3.title = "Postkort";
+knapp3.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.4"/><path d="M8.5 6l1.4-2h4.2l1.4 2"/></svg>';
+(document.getElementById("topp") || document.body).append(knapp3);
+function hent2() {
+  return new Promise((ok) => {
+    map.once("render", () => map.getCanvas().toBlob(ok, "image/png"));
+    map.triggerRepaint();
+  });
+}
+async function lag() {
+  knapp3.disabled = true;
+  try {
+    const bilde = await createImageBitmap(await hent2()), w = bilde.width, h = bilde.height;
+    const kant = Math.round(Math.min(w, h) * 0.045), tekstH = Math.round(Math.min(w, h) * 0.11);
+    const c = document.createElement("canvas");
+    c.width = w + 2 * kant;
+    c.height = h + kant + tekstH;
+    const g = c.getContext("2d");
+    g.fillStyle = "#f6f3ea";
+    g.fillRect(0, 0, c.width, c.height);
+    g.drawImage(bilde, kant, kant);
+    g.strokeStyle = "rgba(43,36,32,.18)";
+    g.lineWidth = Math.max(1, kant * 0.04);
+    g.strokeRect(kant, kant, w, h);
+    const d = /* @__PURE__ */ new Date(), v = VAER.naa, f = Math.round(tekstH * 0.34);
+    g.fillStyle = "#2b2420";
+    g.font = `600 ${f}px "Helvetica Neue", Helvetica, Arial, sans-serif`;
+    g.textBaseline = "middle";
+    g.fillText("Gamle Fredrikstad", kant, h + kant + tekstH / 2);
+    g.font = `400 ${Math.round(f * 0.72)}px "Helvetica Neue", Helvetica, Arial, sans-serif`;
+    g.fillStyle = "#7a7166";
+    g.textAlign = "right";
+    const vt = v && v.temp != null ? ` · ${Math.round(v.temp)}°` : "";
+    g.fillText(`${d.getDate()}. ${MND2[d.getMonth()]} ${d.getFullYear()}${vt}`, c.width - kant, h + kant + tekstH / 2);
+    const blob = await new Promise((ok) => c.toBlob(ok, "image/jpeg", 0.92)), navn = `gamlebyen-${d.toISOString().slice(0, 10)}.jpg`;
+    const fil = new File([blob], navn, { type: "image/jpeg" });
+    if (navigator.canShare && navigator.canShare({ files: [fil] })) {
+      try {
+        await navigator.share({ files: [fil], title: "Gamle Fredrikstad" });
+      } catch (_) {
+      }
+    } else {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = navn;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(a.href);
+        a.remove();
+      }, 1e3);
+      melding("Postkortet er lagret.");
+    }
+  } catch (e) {
+    melding("Fikk ikke laget postkortet.");
+  } finally {
+    knapp3.disabled = false;
+  }
+}
+knapp3.addEventListener("click", lag);
+window.__postkort = lag;
+
+// ../../../../tmp/tmpfzobimrm/30_gjest.js
+var P = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
+if (P) {
+  document.documentElement.style.setProperty("--gjest", P.farge || "#2b2420");
+  document.documentElement.classList.add("gjest");
+  const merke2 = document.createElement("div");
+  merke2.id = "gjestemerke";
+  merke2.textContent = P.navn;
+  (document.getElementById("topp") || document.body).prepend(merke2);
+  const hus = () => buildings.find((g) => g.userData.b && g.userData.b.id === P.bygg_id);
+  const vent = () => {
+    if (TILSTAND.introDone && hus()) setTimeout(() => velgHus(hus()), 400);
+    else requestAnimationFrame(vent);
+  };
+  if (P.bygg_id && !location.hash.includes("hus=")) requestAnimationFrame(vent);
+}
+window.__gjest = () => P ? { id: P.id, navn: P.navn } : null;
 

@@ -84,7 +84,7 @@ if (['klikk', 'dobbel', 'hjul', 'dra', 'avbryt', 'hjem'].some(ok)) {
     const husEtter = await skjerm(page, ...KIRKE);
     const K = k1.kort; const iKort = husEtter[0] > K.left - 8 && husEtter[0] < K.left + K.w + 8 && husEtter[1] > K.top - 8 && husEtter[1] < K.bunn + 8;
     const husSynlig = K.vis && !iKort && husEtter[0] > 0 && husEtter[0] < vp.width && husEtter[1] > 0 && husEtter[1] < vp.height;
-    const sidepanel = K.vis && K.left < 40 && K.top < 40 && K.w < vp.width * 0.5;
+    const sidepanel = K.vis && K.left < 40 && K.top < 100 && K.w < vp.width * 0.5;   // (05.11) kortet starter under toppen med Finn og været (68 px)
     const logg2 = [k1]; const lukk = await page.$('#kort .lukk'); await lukk.click(); await kjor(page, 2400, logg2);
     const ut = maal(logg2); const kl2 = await kortLogg(page); const k2 = logg2.at(-1);
     res.scenarier.klikk = { inn, ut, speil: speilMaal(logg), kortInn: kl1, kortUt: kl2, kortSynlig: k1.kort.vis, sidepanel, kortRamme: k1.kort, husSynligVedSidenAvKortet: husSynlig, husPx: husEtter,

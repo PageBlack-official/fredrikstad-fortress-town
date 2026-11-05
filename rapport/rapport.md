@@ -1,17 +1,17 @@
 # Regelrapport
 
-Kilde: 5263446 versjon 34 kjørt 2026-11-05 22:55
+Kilde: 705f9f1 versjon 34 kjørt 2026-11-06 00:32
 
 - FEIL 01_bygg_finnes  (krasjet: laude/fredrikstad-fortress-town/regler/01_bygg_finnes.py", line 6, in <module>)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
 - FEIL 03_fasader_fra_tegning  (158 hus med fasade fra tegning, 185 antatt (må kvalitetssikres kvartal for kvartal))
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(KVAL.skalaStille) uavhengig av bevegelse)
-- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/fredrikstad-fortress-town/ut/enkel/index.html 3235 kB versjon 34)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az -0.90 zoom 0.66 → ferdig az -2.79 zoom 1.00 intro false)
+- OK   06_bygger_og_laster  (- bygd enkel -> /home/claude/fredrikstad-fortress-town/ut/enkel/index.html 3355 kB versjon 34)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az -0.89 zoom 0.66 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 34 (ønsket 34))
-- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19102 px, trinn 2: 18466 px)
+- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 18958 px, trinn 2: 18327 px)
 - OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)
 - OK   12_kontaktskygge  (- 3.9 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
 - OK   13_deler_staar_paa_topp  (- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok)
@@ -23,7 +23,7 @@ Kilde: 5263446 versjon 34 kjørt 2026-11-05 22:55
 - OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 9 bilder – ingen ny tegning)
 - FEIL 20_grunnmur_fkb  (krasjet: gler/20_grunnmur_fkb.py", line 19, in <module>)
 - FEIL 21_register  (krasjet:  File "/home/claude/fredrikstad-fortress-town/verktoy/register.py", line 147, in last)
-- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 56.3 px/bilde, hopp 0, rykk 0.22 (<= 0.45), bråstopp 0 (<= 0,15))
+- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 928 ms, topp 53.8 px/bilde, hopp 0, rykk 0.24 (<= 0.45), bråstopp 0 (<= 0,15))
 - OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
 - OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
 - FEIL 31_overflater  (ortofotoet eller kommunekartet mangler lokalt (verktoy/flater.py hent; kommunekart.pdf fra Vegar))
@@ -42,5 +42,6 @@ Kilde: 5263446 versjon 34 kjørt 2026-11-05 22:55
 - OK   44_ingen_blanke_vegger  (0 hus med blanke frie vegger uten kilde)
 - OK   45_brostein_paa_brostein  (0 feil)
 - OK   46_ingen_papirflekk  (- asimut 193: 0.00 % papirfarget i midtfeltet (krav under 1 %; flekken ga 8 %))
+- OK   47_steder  (- alle steder har id, kategori, plass, kilde og gyldig bygg)
 
 Detaljer per regel i samme mappe.
