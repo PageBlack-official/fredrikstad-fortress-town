@@ -161,6 +161,9 @@ function mat(rgb, dim, sk, opt={}){
               vec3 hvit=vec3(0.96,0.94,0.90)*mix(1.,0.74,k);
               vec3 glas=mix(vec3(0.27,0.31,0.36),vec3(0.20,0.22,0.27),k);
               glas=mix(glas, glas*1.35, smoothstep(0.2,-0.4,q.x+q.y*0.5)*0.6);
+              // kveld (23_vaer): rammene mørkner med veggen, og to av tre vinduer har lys inne (fast per vindu, varmt gult)
+              float lysInne=step(0.34, hh(vec2(floor(u/2.6)+floor(wq.x*0.05)*17., rad+floor(wq.z*0.05)*31.)));
+              hvit=kveld(hvit); glas=mix(kveld(glas), vec3(1.0,0.72,0.34)*1.6, natt*lysInne);
               vec3 w=mix(hvit, glas, glass*(1.-kryss));
               float fjern=smoothstep(0.12,0.3,fw);
               // dør på gateplan i annenhver fjerde akse, som i tegningen

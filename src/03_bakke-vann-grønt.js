@@ -94,7 +94,7 @@ const waterMat = new THREE.ShaderMaterial({
     // langt ute: vannet blir lysere og roligere, så byen står i fokus
     float u=smoothstep(650.,1500.,length(wp.xz-vec2(sentrum.x,-sentrum.y)));
     c=mix(c, fjern, u*0.55);
-    c=mix(c, c*vec3(0.22,0.28,0.48), natt);   // kveld (23_vaer)
+    c=mix(c, c*vec3(0.10,0.14,0.30), natt);   // kveld (23_vaer)
     gl_FragColor=vec4(c,1.);
   #include <colorspace_fragment>
   }`

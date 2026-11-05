@@ -116,7 +116,7 @@ uniform float skyDekke, sno, natt; uniform vec4 aarstid;   // rgb = fargen grøn
 float solHer(vec3 wq){ float s=1.; if(solUte<1.){ float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; s=smoothstep(solFront, solFront+solBredde, v); } return s*(1.-skyDekke); }
 vec3 aarstidFarge(vec3 c){ float gronn=smoothstep(0.015,0.10, c.g-max(c.r,c.b)); float l=dot(c, vec3(0.30,0.59,0.11)); return mix(c, l*aarstid.rgb, gronn*aarstid.a); }   // grønt får årstidens farge med samme lyshet
 // kveld og natt (23_vaer: sola under horisonten): byen mørkner mot blått; vinduene lyser (07)
-vec3 kveld(vec3 c){ return mix(c, c*vec3(0.26,0.31,0.50), natt); }
+vec3 kveld(vec3 c){ return mix(c, c*vec3(0.10,0.13,0.27), natt); }   // lineært fargerom: 0,10 her er omtrent 0,35 på skjermen
 vec3 snoPaa(vec3 c, float opp){ return mix(c, vec3(0.92,0.94,0.97)*mix(0.86,1.,smoothstep(0.6,1.,opp)), sno*smoothstep(0.45,0.8,opp)); }
 const vec3 OVERSKYET=vec3(0.74,0.80,0.92);   // overskyet: tydelig mørkere og blåere (0,86/0,90/0,97 var usynlig i Vegars Chrome)
 // overskyet tar også metningen ned: byen ser ut som tegningen i gråvær, og sola gir fargene tilbake
