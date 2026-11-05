@@ -125,7 +125,7 @@ const merkeEl = document.createElement('button'); merkeEl.id = 'vaer'; merkeEl.t
 const valgEl = document.createElement('div'); valgEl.id = 'vaervalg'; valgEl.setAttribute('role', 'menu'); valgEl.hidden = true;
 valgEl.innerHTML = `<p class="t">Vis kartet med</p>` + [['naa', 'Været nå'], ['sol', 'Sol'], ['skyet', 'Skyet'], ['regn', 'Regn'], ['sno', 'Snø'], ['taake', 'Tåke']]
   .map(([k, t]) => `<button type="button" role="menuitemradio" data-v="${k}">${t}</button>`).join('') + `<p class="kilde">Værdata: <a href="https://www.met.no/" target="_blank" rel="noopener">MET Norway</a></p>`;
-document.body.append(merkeEl, valgEl);
+(document.getElementById('topp') || document.body).append(merkeEl); document.body.append(valgEl);
 let valgt = Q0.get('vaer') && FAST[Q0.get('vaer')] ? Q0.get('vaer') : 'naa', metNaa = null;
 function merke(v){
   if (!v) { merkeEl.hidden = true; return; }

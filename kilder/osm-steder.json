@@ -1,0 +1,1951 @@
+{
+"version": 0.6,
+"generator": "Overpass API 0.7.62.11 87bfad18",
+"osm3s": {
+"timestamp_osm_base": "2026-11-05T21:45:36Z",
+"copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+},
+"elements": [
+{
+"type": "node",
+"id": 367678069,
+"lat": 59.2005743,
+"lon": 10.9446416,
+"tags": {
+"contact:website": "http://nokledypet.no/",
+"leisure": "marina",
+"name": "Nøkledypet Båthavn",
+"operator": "Kråkerøy Båtforening",
+"seamark:harbour:category": "marina",
+"seamark:name": "Nøkledypet Båthavn",
+"seamark:type": "harbour"
+}
+},
+{
+"type": "node",
+"id": 372716527,
+"lat": 59.2034776,
+"lon": 10.9547769,
+"tags": {
+"check_date": "2025-09-13",
+"check_date:opening_hours": "2025-09-13",
+"indoor_seating": "yes",
+"name": "Gamlebyen konditori",
+"opening_hours": "Mo-Fr 09:00-16:00; Sa,Su 09:00-17:00",
+"outdoor_seating": "sidewalk",
+"shop": "bakery",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 372716536,
+"lat": 59.2033307,
+"lon": 10.9553759,
+"tags": {
+"alt_name": "Majorstuen",
+"amenity": "restaurant",
+"check_date": "2025-07-15",
+"indoor_seating": "yes",
+"name": "Majorens kro & stue",
+"outdoor_seating": "yes",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 372716546,
+"lat": 59.2033996,
+"lon": 10.9522814,
+"tags": {
+"amenity": "cafe"
+}
+},
+{
+"type": "node",
+"id": 481231936,
+"lat": 59.2104783,
+"lon": 10.9400195,
+"tags": {
+"amenity": "cinema",
+"name": "Fredrikstad Kino",
+"name:en": "Fredrikstad Cinema",
+"toilets:wheelchair": "yes",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 541921838,
+"lat": 59.2035325,
+"lon": 10.9551486,
+"tags": {
+"air_conditioning": "yes",
+"amenity": "cafe",
+"check_date": "2025-09-13",
+"check_date:diet:vegetarian": "2025-09-13",
+"check_date:opening_hours": "2025-08-22",
+"diet:vegetarian": "yes",
+"indoor_seating": "yes",
+"name": "Mormors Café",
+"opening_hours": "Mo-Fr 11:00-17:00; Sa 11:00-18:00; Su 12:00-18:00",
+"outdoor_seating": "patio",
+"toilets:access": "customers",
+"toilets:number": "2",
+"toilets:unisex": "yes",
+"toilets:wheelchair": "no",
+"website": "https://mormorscafe.no",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 665459759,
+"lat": 59.203446,
+"lon": 10.955601,
+"tags": {
+"amenity": "restaurant",
+"food": "pizza",
+"name": "No74",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 665479829,
+"lat": 59.2042125,
+"lon": 10.9545439,
+"tags": {
+"amenity": "restaurant",
+"name": "Balaklava"
+}
+},
+{
+"type": "node",
+"id": 829117408,
+"lat": 59.2029389,
+"lon": 10.9564757,
+"tags": {
+"check_date": "2023-06-03",
+"description": "Map in stone over the old town",
+"information": "map",
+"map_size": "city",
+"map_type": "street",
+"name": "Festningsbyen Fredrikstad",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 829117718,
+"lat": 59.201001,
+"lon": 10.9519628,
+"tags": {
+"board_type": "notice",
+"check_date": "2023-06-03",
+"description": "Nytt liv på historisk grunn (Siri Austeen)",
+"information": "board",
+"name": "Kunstneriske intervensjoner",
+"source": "image",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 829118234,
+"lat": 59.2033574,
+"lon": 10.9562159,
+"tags": {
+"board_type": "history",
+"check_date": "2025-08-22",
+"description": "Om historiske hendelser ved Fredrikstad Festning",
+"information": "board",
+"name": "Hørespill",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 829118267,
+"lat": 59.2027687,
+"lon": 10.9560627,
+"tags": {
+"board_type": "notice",
+"description": "Restaurert 1991 - 1994",
+"information": "board",
+"name": "Fredrikstad Festning",
+"source": "image",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 829118279,
+"lat": 59.2010107,
+"lon": 10.9511992,
+"tags": {
+"description": "Av Siri Austeen",
+"fee": "no",
+"information": "audioguide",
+"name": "Sivilt rosignal",
+"operator": "Nasjonale Festningsverk",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 829118327,
+"lat": 59.2033211,
+"lon": 10.9566141,
+"tags": {
+"description": "av Linde Hagerup",
+"fee": "no",
+"information": "audioguide",
+"lit": "yes",
+"name": "3 Hørespill",
+"source": "image",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 831600437,
+"lat": 59.2031787,
+"lon": 10.9557977,
+"tags": {
+"name": "Hygge og Lykke",
+"shop": "gift",
+"website": "https://www.hyggeoglykke.no/"
+}
+},
+{
+"type": "node",
+"id": 1127801208,
+"lat": 59.2085303,
+"lon": 10.9412873,
+"tags": {
+"entrance": "main",
+"name": "Senze",
+"shop": "hairdresser"
+}
+},
+{
+"type": "node",
+"id": 1127801425,
+"lat": 59.207604,
+"lon": 10.9422159,
+"tags": {
+"name": "Hotell Viktoria",
+"tourism": "hotel"
+}
+},
+{
+"type": "node",
+"id": 1144451751,
+"lat": 59.2090845,
+"lon": 10.9408079,
+"tags": {
+"amenity": "cafe",
+"entrance": "main",
+"name": "Art & Urter"
+}
+},
+{
+"type": "node",
+"id": 1981132038,
+"lat": 59.2032053,
+"lon": 10.9530144,
+"tags": {
+"artwork_type": "statue",
+"name": "Fredrik II",
+"tourism": "artwork",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 2112423893,
+"lat": 59.2105219,
+"lon": 10.9596292,
+"tags": {
+"tourism": "viewpoint"
+}
+},
+{
+"type": "node",
+"id": 2393456191,
+"lat": 59.2037081,
+"lon": 10.9516311,
+"tags": {
+"amenity": "toilets",
+"check_date": "2023-06-03",
+"fee": "no",
+"source": "Survey",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 2393456192,
+"lat": 59.2020114,
+"lon": 10.9498769,
+"tags": {
+"amenity": "toilets",
+"changing_table": "yes",
+"fee": "no",
+"female": "yes",
+"male": "yes",
+"source": "Survey",
+"toilets:disposal": "flush",
+"toilets:handwashing": "yes",
+"toilets:position": "seated",
+"unisex": "yes",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 3208292716,
+"lat": 59.2019313,
+"lon": 10.9520402,
+"tags": {
+"fee": "yes",
+"name": "Fredrikstad Museum",
+"tourism": "museum",
+"wikidata": "Q17773946"
+}
+},
+{
+"type": "node",
+"id": 3208292718,
+"lat": 59.203366,
+"lon": 10.9526902,
+"tags": {
+"information": "office",
+"name": "Fredrikstad turistkontor",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 3266526861,
+"lat": 59.2069788,
+"lon": 10.9447568,
+"tags": {
+"amenity": "cafe",
+"name": "Cafe Cicignon",
+"source:name": "survey"
+}
+},
+{
+"type": "node",
+"id": 3666387223,
+"lat": 59.202975,
+"lon": 10.955577,
+"tags": {
+"check_date": "2026-05-30",
+"check_date:opening_hours": "2026-05-30",
+"name": "Gamlebyen modelljernbanesenter",
+"opening_hours": "Sa 11:00-16:00; Su 12:00-16:00",
+"tourism": "theme_park",
+"website": "https://www.gbmj.no/index.html"
+}
+},
+{
+"type": "node",
+"id": 5115030859,
+"lat": 59.2073535,
+"lon": 10.9413373,
+"tags": {
+"name": "Salong Victoria",
+"shop": "hairdresser"
+}
+},
+{
+"type": "node",
+"id": 5280483094,
+"lat": 59.2078692,
+"lon": 10.9416382,
+"tags": {
+"name": "M-hårstudio",
+"shop": "hairdresser"
+}
+},
+{
+"type": "node",
+"id": 5343200755,
+"lat": 59.2042684,
+"lon": 10.9541109,
+"tags": {
+"tourism": "picnic_site"
+}
+},
+{
+"type": "node",
+"id": 5343200756,
+"lat": 59.2042781,
+"lon": 10.9538989,
+"tags": {
+"tourism": "picnic_site"
+}
+},
+{
+"type": "node",
+"id": 5343220864,
+"lat": 59.2068081,
+"lon": 10.9428964,
+"tags": {
+"artwork_type": "statue",
+"name": "Severin",
+"tourism": "artwork"
+}
+},
+{
+"type": "node",
+"id": 5638205937,
+"lat": 59.2085049,
+"lon": 10.9420709,
+"tags": {
+"amenity": "toilets",
+"description": "Offentlig toalett. Nøkkel hentes i restaurant",
+"fee": "no",
+"operator": "Flora Grill og Pizza"
+}
+},
+{
+"type": "node",
+"id": 5639402221,
+"lat": 59.2056584,
+"lon": 10.9419327,
+"tags": {
+"name:en": "Plensa heads",
+"tourism": "artwork"
+}
+},
+{
+"type": "node",
+"id": 6010827029,
+"lat": 59.208477,
+"lon": 10.951365,
+"tags": {
+"name": "Pedalen sykkelverksted",
+"operator": "Kirkens bymisjon",
+"ownership": "private_nonprofit",
+"service:bicycle:cleaning": "yes",
+"service:bicycle:repair": "yes",
+"service:bicycle:retail": "yes",
+"shop": "bicycle",
+"website": "https://kirkensbymisjon.no/pedalen-sykkelverksted-fredrikstad/"
+}
+},
+{
+"type": "node",
+"id": 6591528084,
+"lat": 59.2018019,
+"lon": 10.9502305,
+"tags": {
+"check_date:opening_hours": "2025-08-30",
+"name": "Galleri Gunne",
+"opening_hours": "Tu-Sa 11:00-16:00; Su 12:00-16:00",
+"shop": "art",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 6591537390,
+"lat": 59.20685,
+"lon": 10.94622,
+"tags": {
+"name": "Østfold Kunstsenter / Galleri ØKS",
+"tourism": "gallery"
+}
+},
+{
+"type": "node",
+"id": 6591537391,
+"lat": 59.2029782,
+"lon": 10.9555462,
+"tags": {
+"fee": "yes",
+"museum": "local;railway",
+"name": "Gamlebyen Modelljernbanesenter",
+"payment:cards": "yes",
+"payment:cash": "yes",
+"payment:qr_code": "no",
+"subject:wikidata": "Q623272",
+"tourism": "museum"
+}
+},
+{
+"type": "node",
+"id": 6591537394,
+"lat": 59.2028787,
+"lon": 10.9579697,
+"tags": {
+"fee": "no",
+"name": "Glasshytta",
+"opening_hours": "Mo-Fr 12:00-16:00; Sa 12:00-15:00; Su off",
+"tourism": "museum",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 6591537397,
+"lat": 59.2016703,
+"lon": 10.9497854,
+"tags": {
+"name": "Bastion 5",
+"tourism": "museum"
+}
+},
+{
+"type": "node",
+"id": 6802559323,
+"lat": 59.202865,
+"lon": 10.9452474,
+"tags": {
+"name": "Magasinet Isegran B&B",
+"phone": "+47 69 03 29 30",
+"tourism": "guest_house",
+"website": "https://www.minemagasinet.no/overnatting"
+}
+},
+{
+"type": "node",
+"id": 6802559327,
+"lat": 59.2036237,
+"lon": 10.9548531,
+"tags": {
+"check_date": "2025-08-22",
+"name": "Gamlebyen hotell",
+"tourism": "hotel"
+}
+},
+{
+"type": "node",
+"id": 6837062298,
+"lat": 59.203655,
+"lon": 10.953437,
+"tags": {
+"check_date:opening_hours": "2024-07-24",
+"name": "Annes begravelsesbyrå",
+"opening_hours": "Mo-Fr 09:00-16:00",
+"operator": "Jølstad begravelsesbyrå",
+"shop": "funeral_directors",
+"website": "https://jolstad.no/kontor/annes-begravelsesbyra/"
+}
+},
+{
+"type": "node",
+"id": 7179166849,
+"lat": 59.2068779,
+"lon": 10.9418865,
+"tags": {
+"name": "Gavegrotten",
+"shop": "gift"
+}
+},
+{
+"type": "node",
+"id": 7179357338,
+"lat": 59.2090162,
+"lon": 10.9406877,
+"tags": {
+"amenity": "pub",
+"internet_access": "wlan",
+"internet_access:fee": "no",
+"name": "Kjelleren på Hotell Fredrikstad",
+"outdoor_seating": "yes",
+"smoking": "outside",
+"toilets": "yes",
+"toilets:access": "customers"
+}
+},
+{
+"type": "node",
+"id": 7626230768,
+"lat": 59.2108174,
+"lon": 10.9574135,
+"tags": {
+"branch": "Fredrikstad (Rybom)",
+"brand": "Maxbo",
+"name": "Maxbo Fredrikstad (Rybom)",
+"opening_hours": "Mo-Fr 07:00-17:00, Sa 09:00-14:00",
+"phone": "+47 69 30 14 50",
+"ref:maxbo": "14778",
+"shop": "trade",
+"trade": "building_supplies"
+}
+},
+{
+"type": "node",
+"id": 8529604374,
+"lat": 59.2016238,
+"lon": 10.9490276,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 8529604375,
+"lat": 59.2014896,
+"lon": 10.9491111,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 8529604376,
+"lat": 59.2015301,
+"lon": 10.9490307,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 8529604377,
+"lat": 59.2015727,
+"lon": 10.9489422,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 9388910802,
+"lat": 59.2086958,
+"lon": 10.9508862,
+"tags": {
+"historic": "monument"
+}
+},
+{
+"type": "node",
+"id": 9389462389,
+"lat": 59.2063248,
+"lon": 10.9425022,
+"tags": {
+"artwork_type": "bust",
+"tourism": "artwork"
+}
+},
+{
+"type": "node",
+"id": 10100844883,
+"lat": 59.2019131,
+"lon": 10.9497012,
+"tags": {
+"fee": "no",
+"name": "Det Grunnmurede Galleri",
+"opening_hours": "Su 12:00-15:00; Tu, We, Fr, Sa 10:00-16:00; Th 10:00-17:00",
+"tourism": "gallery"
+}
+},
+{
+"type": "node",
+"id": 10100855750,
+"lat": 59.2053905,
+"lon": 10.9542426,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100867602,
+"lat": 59.2053659,
+"lon": 10.9542012,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100878361,
+"lat": 59.2033694,
+"lon": 10.9512151,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100883207,
+"lat": 59.2007584,
+"lon": 10.9491611,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100899269,
+"lat": 59.200752,
+"lon": 10.9490695,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100901497,
+"lat": 59.2022659,
+"lon": 10.9498909,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100907062,
+"lat": 59.202217,
+"lon": 10.9499585,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100919857,
+"lat": 59.2007659,
+"lon": 10.9492372,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100923923,
+"lat": 59.2012854,
+"lon": 10.9501847,
+"tags": {
+"historic": "cannon",
+"note": "Anti-Aircraft Gun"
+}
+},
+{
+"type": "node",
+"id": 10100925513,
+"lat": 59.2009226,
+"lon": 10.9499128,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 10100942674,
+"lat": 59.2020555,
+"lon": 10.9551847,
+"tags": {
+"description": "Smykker, mineraler, fossiler, Steiner ; Jewlery, Minerals, Fossils, Stones",
+"name": "Gamelbyen Steinsenter",
+"shop": "gift"
+}
+},
+{
+"type": "node",
+"id": 10100956838,
+"lat": 59.2031313,
+"lon": 10.9527311,
+"tags": {
+"historic": "gallows"
+}
+},
+{
+"type": "node",
+"id": 10100960823,
+"lat": 59.2036874,
+"lon": 10.9543749,
+"tags": {
+"craft": "jeweller",
+"name": "Ageker Galleri",
+"opening_hours": "Sa 12:00-15:00"
+}
+},
+{
+"type": "node",
+"id": 10100962666,
+"lat": 59.2034998,
+"lon": 10.9532717,
+"tags": {
+"name": "SisterSoul",
+"shop": "clothes"
+}
+},
+{
+"type": "node",
+"id": 10100966632,
+"lat": 59.2034378,
+"lon": 10.9527755,
+"tags": {
+"shop": "clothes"
+}
+},
+{
+"type": "node",
+"id": 10100990020,
+"lat": 59.2033596,
+"lon": 10.9548601,
+"tags": {
+"description": "Retro & Nostalgia based items. Scandinavian focus",
+"name": "Du og jeg pappa",
+"opening_hours": "Mo-Fr 11:05-16:30; Sa 10:05-16:30; Su 11:05-16:00; PH 12:00-16:00",
+"shop": "gift",
+"website": "http://nostalgiogretro.no/",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 10101003819,
+"lat": 59.2032118,
+"lon": 10.9546621,
+"tags": {
+"clothes:children": "yes",
+"name": "Hey kiddo",
+"shop": "clothes"
+}
+},
+{
+"type": "node",
+"id": 10101034555,
+"lat": 59.2030605,
+"lon": 10.9556972,
+"tags": {
+"clothes:women": "yes",
+"name": "Kong Frederiks Damer",
+"shop": "clothes"
+}
+},
+{
+"type": "node",
+"id": 10101040148,
+"lat": 59.2029522,
+"lon": 10.954778,
+"tags": {
+"book": "yes;used",
+"description": "Used book shop with some odds and other non book items",
+"name": "Fredrikstad Antikvariat",
+"opening_hours": "Mo-Su 09:00-15:00",
+"shop": "antiques",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 10101040656,
+"lat": 59.2034305,
+"lon": 10.95499,
+"tags": {
+"clothes:women": "yes",
+"name": "Therese M",
+"opening_hours": "Mo-Sa 11:00-17:00; Su 12:00-17:00",
+"shop": "clothes",
+"website": "https://therese-m.no/",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 10879225505,
+"lat": 59.2106923,
+"lon": 10.9450507,
+"tags": {
+"amenity": "community_centre",
+"name": "St.Croix huset",
+"owner": "Fredrikstad kommune",
+"ref:anlegg": "11215",
+"website": "https://www.fredrikstad.kommune.no/tjenester/kunst-og-kultur/stcroix-huset/om-stcroix-huset/"
+}
+},
+{
+"type": "node",
+"id": 10949233550,
+"lat": 59.2031953,
+"lon": 10.9563195,
+"tags": {
+"access": "yes",
+"amenity": "toilets",
+"check_date": "2023-06-03",
+"fee": "no",
+"opening_hours": "Mo-Fr 09:00-21:00",
+"toilets:disposal": "flush",
+"toilets:handwashing": "yes",
+"toilets:position": "seated"
+}
+},
+{
+"type": "node",
+"id": 10949289121,
+"lat": 59.2062769,
+"lon": 10.9517697,
+"tags": {
+"access": "yes",
+"amenity": "toilets",
+"check_date": "2025-04-04",
+"check_date:wheelchair": "2025-04-04",
+"fee": "no",
+"toilets:disposal": "flush",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 11182963742,
+"lat": 59.2061803,
+"lon": 10.951269,
+"tags": {
+"historic": "monument",
+"name": "Roald Amundsen"
+}
+},
+{
+"type": "node",
+"id": 11182965841,
+"lat": 59.2088478,
+"lon": 10.9503566,
+"tags": {
+"amenity": "toilets",
+"description": "10 NOK for each entrance to toilets",
+"fee": "yes"
+}
+},
+{
+"type": "node",
+"id": 11182966147,
+"lat": 59.2088587,
+"lon": 10.9507782,
+"tags": {
+"name": "Narvesen",
+"shop": "convenience"
+}
+},
+{
+"type": "node",
+"id": 12055321029,
+"lat": 59.2016767,
+"lon": 10.9636259,
+"tags": {
+"branch": "Gamle Fredrikstad",
+"brand": "Spar",
+"email": "spar.gamle.fredrikstad@spar.no",
+"name": "Spar Gamle Fredrikstad",
+"opening_hours": "Mo-Fr 07:00-22:00, Sa 08:00-20:00",
+"phone": "+47 69321000",
+"ref:norgesgruppen": "4421882",
+"service:postnord": "yes",
+"shop": "supermarket"
+}
+},
+{
+"type": "node",
+"id": 12076667685,
+"lat": 59.2032094,
+"lon": 10.9535157,
+"tags": {
+"amenity": "bar",
+"indoor_seating": "yes",
+"name": "Galleriet Vinbar",
+"outdoor_seating": "yes"
+}
+},
+{
+"type": "node",
+"id": 12076673244,
+"lat": 59.2041655,
+"lon": 10.9560658,
+"tags": {
+"craft": "shoemaker",
+"name": "Skomaker",
+"opening_hours": "Mo-Fr 11:00-17:00"
+}
+},
+{
+"type": "node",
+"id": 12076690887,
+"lat": 59.2038883,
+"lon": 10.9564121,
+"tags": {
+"amenity": "toilets"
+}
+},
+{
+"type": "node",
+"id": 12076718706,
+"lat": 59.2039584,
+"lon": 10.9561223,
+"tags": {
+"name": "Galleri 1845",
+"tourism": "gallery"
+}
+},
+{
+"type": "node",
+"id": 12076801141,
+"lat": 59.2108615,
+"lon": 10.9409193,
+"tags": {
+"board_type": "history",
+"information": "board",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 13088995206,
+"lat": 59.2034948,
+"lon": 10.956028,
+"tags": {
+"female:signed": "no",
+"male:signed": "no",
+"name": "Saksa",
+"opening_hours": "Tu,We,Fr 09:00-16:30; Th 09:00-17:00; Sa 10:00-14:00",
+"shop": "hairdresser"
+}
+},
+{
+"type": "node",
+"id": 13089010218,
+"lat": 59.2035769,
+"lon": 10.9542902,
+"tags": {
+"name": "Studio Moyo Strikk",
+"opening_hours": "Mo-Fr 11:00-16:30; Sa 11:00-16:00; Su 12:00-16:00",
+"shop": "wool"
+}
+},
+{
+"type": "node",
+"id": 13089011978,
+"lat": 59.2067343,
+"lon": 10.9502906,
+"tags": {
+"artwork_type": "sculpture",
+"tourism": "artwork"
+}
+},
+{
+"type": "node",
+"id": 13108480222,
+"lat": 59.2037266,
+"lon": 10.9535041,
+"tags": {
+"contact:website": "https://emmk.no",
+"name": "The Emm K Design Studio",
+"opening_hours": "Mo-Sa 11:00-17:00; Su 12:00-17:00",
+"shop": "clothes",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 13108614927,
+"lat": 59.2041267,
+"lon": 10.9554617,
+"tags": {
+"name": "Gamlebyen Frukt og Tobakk",
+"shop": "kiosk"
+}
+},
+{
+"type": "node",
+"id": 13140613081,
+"lat": 59.2016273,
+"lon": 10.9551316,
+"tags": {
+"historic": "cannon"
+}
+},
+{
+"type": "node",
+"id": 13140616751,
+"lat": 59.2007865,
+"lon": 10.9512891,
+"tags": {
+"board_type": "wildlife",
+"information": "board",
+"name": "Fuglene i gamlebyen våtmark",
+"name:en": "The birds of gamlebyen wetlands",
+"tourism": "information"
+}
+},
+{
+"type": "node",
+"id": 13140671688,
+"lat": 59.2033867,
+"lon": 10.9549503,
+"tags": {
+"contact:phone": "+4791178153",
+"name": "Fredrikstad Antikvariat",
+"shop": "antiques"
+}
+},
+{
+"type": "node",
+"id": 13608270241,
+"lat": 59.2027785,
+"lon": 10.9476148,
+"tags": {
+"name": "Isegran tårnet",
+"tourism": "viewpoint",
+"viewpoint": "platform"
+}
+},
+{
+"type": "node",
+"id": 13608574746,
+"lat": 59.203009,
+"lon": 10.9425641,
+"tags": {
+"historic": "memorial",
+"inscription": "Fredrikstads festnings første Garnisonskirkegård lå her i årene 1670-1741",
+"memorial": "stone",
+"name": "Garnisonskirkegården på Isegran"
+}
+},
+{
+"type": "node",
+"id": 13608574756,
+"lat": 59.2026815,
+"lon": 10.9450266,
+"tags": {
+"amenity": "cafe",
+"email": "post@minemagasinet.no",
+"name": "Kafé Magasinet",
+"opening_hours": "Jul 01-Aug 16 Tu-Su 11:00-16:00",
+"phone": "+47 69 03 29 30",
+"website": "https://www.minemagasinet.no/minemagasinet"
+}
+},
+{
+"type": "node",
+"id": 13717155906,
+"lat": 59.209719,
+"lon": 10.944276,
+"tags": {
+"amenity": "cafe",
+"email": "post@numero13.no",
+"facebook": "https://www.facebook.com/p/Caf%C3%A9-Num%C3%A9ro-13-61579274813285/",
+"name": "Café Numéro 13",
+"phone": "+47 92 92 33 00",
+"ref:mattilsynet": "Z2502190644035410127YYQFW"
+}
+},
+{
+"type": "node",
+"id": 13898671677,
+"lat": 59.2038455,
+"lon": 10.9536498,
+"tags": {
+"name": "Kari Gallery",
+"shop": "art"
+}
+},
+{
+"type": "node",
+"id": 13898699215,
+"lat": 59.2038351,
+"lon": 10.9537345,
+"tags": {
+"amenity": "cafe",
+"cuisine": "coffee_shop"
+}
+},
+{
+"type": "node",
+"id": 13898722604,
+"lat": 59.2039086,
+"lon": 10.9537013,
+"tags": {
+"name": "Weekend Vintage",
+"second_hand": "only",
+"shop": "clothes"
+}
+},
+{
+"type": "node",
+"id": 13974701753,
+"lat": 59.2054625,
+"lon": 10.9489295,
+"tags": {
+"amenity": "cafe",
+"name": "CUBE8 CAFÉ",
+"outdoor_seating": "yes",
+"website": "https://cube8gallery.no/pages/visit"
+}
+},
+{
+"type": "node",
+"id": 13974728565,
+"lat": 59.2081985,
+"lon": 10.942819,
+"tags": {
+"artwork_type": "statue",
+"tourism": "artwork"
+}
+},
+{
+"type": "node",
+"id": 13974740180,
+"lat": 59.2090789,
+"lon": 10.9413503,
+"tags": {
+"artwork_type": "statue",
+"tourism": "artwork"
+}
+},
+{
+"type": "node",
+"id": 14014697743,
+"lat": 59.2039355,
+"lon": 10.9544092,
+"tags": {
+"amenity": "restaurant",
+"check_date": "2026-07-14",
+"indoor_seating": "yes",
+"name": "Værk",
+"outdoor_seating": "yes",
+"start_date": "2018"
+}
+},
+{
+"type": "node",
+"id": 14014697744,
+"lat": 59.2035339,
+"lon": 10.951872,
+"tags": {
+"amenity": "restaurant",
+"check_date": "2026-07-14",
+"name": "Pepo's",
+"outdoor_seating": "yes"
+}
+},
+{
+"type": "node",
+"id": 14048116430,
+"lat": 59.2055055,
+"lon": 10.9489634,
+"tags": {
+"amenity": "cafe",
+"name": "Cube8 Cafe"
+}
+},
+{
+"type": "node",
+"id": 14048130216,
+"lat": 59.2097876,
+"lon": 10.9442404,
+"tags": {
+"amenity": "cafe",
+"name": "Café Numero 13"
+}
+},
+{
+"type": "way",
+"id": 38336109,
+"center": {
+"lat": 59.2103253,
+"lon": 10.9413715
+},
+"tags": {
+"leisure": "park",
+"name": "Lykkebergparken",
+"source": "Yahoo"
+}
+},
+{
+"type": "way",
+"id": 38336110,
+"center": {
+"lat": 59.2086228,
+"lon": 10.9425808
+},
+"tags": {
+"leisure": "park",
+"name": "Kirkeparken"
+}
+},
+{
+"type": "way",
+"id": 38605398,
+"center": {
+"lat": 59.2007605,
+"lon": 10.9612673
+},
+"tags": {
+"leisure": "park",
+"source": "Bing"
+}
+},
+{
+"type": "way",
+"id": 39177390,
+"center": {
+"lat": 59.2106304,
+"lon": 10.9569874
+},
+"tags": {
+"landuse": "retail",
+"name": "Rybom",
+"shop": "doityourself",
+"source": "Yahoo"
+}
+},
+{
+"type": "way",
+"id": 39177816,
+"center": {
+"lat": 59.2084881,
+"lon": 10.9496926
+},
+"tags": {
+"leisure": "park",
+"name": "Jernbaneparken",
+"source": "Bing"
+}
+},
+{
+"type": "way",
+"id": 39177945,
+"center": {
+"lat": 59.2062598,
+"lon": 10.9499696
+},
+"tags": {
+"leisure": "park",
+"name": "Kunstparken"
+}
+},
+{
+"type": "way",
+"id": 39362030,
+"center": {
+"lat": 59.2060835,
+"lon": 10.9419399
+},
+"tags": {
+"leisure": "park",
+"name": "Bibliotekparken"
+}
+},
+{
+"type": "way",
+"id": 40023555,
+"center": {
+"lat": 59.2104905,
+"lon": 10.940146
+},
+"tags": {
+"amenity": "townhall",
+"building": "office",
+"internet_access": "yes",
+"internet_access:fee": "no",
+"internet_access:type": "wlan",
+"name": "Fredrikstad rådhus",
+"ref": "3004",
+"ref:bygningsnr": "16316121",
+"website": "https://www.fredrikstad.kommune.no/",
+"wheelchair": "yes"
+}
+},
+{
+"type": "way",
+"id": 44447712,
+"center": {
+"lat": 59.2018075,
+"lon": 10.9494855
+},
+"tags": {
+"building": "civic",
+"building:material": "stone",
+"description": "Proviantmagasin 1674-96",
+"emergency": "fire_detection_system",
+"height": "11",
+"heritage": "yes",
+"name": "Provianthuset",
+"ref:bygningsnr": "193870317",
+"roof:height": "8",
+"roof:material": "roof_tiles",
+"roof:shape": "gabled",
+"tourism": "gallery"
+}
+},
+{
+"type": "way",
+"id": 44447716,
+"center": {
+"lat": 59.2022953,
+"lon": 10.9524873
+},
+"tags": {
+"alt_name": "Gamlebyen kirke",
+"amenity": "place_of_worship",
+"architect": "J.G.Peltz / J.W. Nordan / Bjørn Ianke",
+"building": "church",
+"capacity": "495",
+"check_date": "2026-08-08",
+"deanery": "Fredrikstad Domprosti",
+"denomination": "lutheran",
+"diocese": "Borg",
+"hearing_aids": "yes",
+"heritage": "yes",
+"image": "https://www.kirkebyggdatabasen.no/KBDBweb/getPublicImage.aspx?vedleggId=83357B0B-19AD-4E07-B5A9-CA53C03BF6B3",
+"name": "Østre Fredrikstad kirke",
+"note": "Soknekirke",
+"operator": "Fredrikstad kirkelige fellesråd",
+"parish": "Østre Fredrikstad",
+"ref:bygningsnr": "193867529",
+"religion": "christian",
+"start_date": "1779",
+"toilets": "yes",
+"toilets:wheelchair": "yes",
+"website": "http://www.ostrefredrikstadkirke.no",
+"wheelchair": "yes",
+"wikidata": "Q308382",
+"wikipedia": "no:Østre Fredrikstad kirke"
+}
+},
+{
+"type": "way",
+"id": 53014273,
+"center": {
+"lat": 59.1999408,
+"lon": 10.9645009
+},
+"tags": {
+"name": "Fredrikstad Motel & Camping",
+"phone": "+47 992 21 999",
+"tourism": "camp_site",
+"website": "https://www.fredrikstadmotel.no/"
+}
+},
+{
+"type": "way",
+"id": 53014290,
+"center": {
+"lat": 59.1978754,
+"lon": 10.9628888
+},
+"tags": {
+"area": "yes",
+"castle_type": "fortress",
+"historic": "castle",
+"name": "Kongsten Fort"
+}
+},
+{
+"type": "way",
+"id": 56303764,
+"center": {
+"lat": 59.212297,
+"lon": 10.964744
+},
+"tags": {
+"leisure": "park"
+}
+},
+{
+"type": "way",
+"id": 69112218,
+"center": {
+"lat": 59.201559,
+"lon": 10.949113
+},
+"tags": {
+"building": "civic",
+"description": "Del av festningens forsvar mot elven 1682",
+"heritage": "yes",
+"name": "Brannbatteriet",
+"ref:bygningsnr": "193870317",
+"tourism": "viewpoint"
+}
+},
+{
+"type": "way",
+"id": 69583189,
+"center": {
+"lat": 59.2026249,
+"lon": 10.9518265
+},
+"tags": {
+"area": "yes",
+"leisure": "park",
+"name": "Ridhusplenen"
+}
+},
+{
+"type": "way",
+"id": 69713457,
+"center": {
+"lat": 59.2031924,
+"lon": 10.9528209
+},
+"tags": {
+"alt_name": "Gamle Fredrikstad",
+"historic": "yes",
+"image": "https://commons.wikimedia.org/wiki/File:Fredrikstad_OldTownSquare01.JPG",
+"image:0": "https://photos.app.goo.gl/miXhFMRBiS2eMsjBA",
+"landuse": "residential",
+"name": "Gamlebyen",
+"place": "suburb",
+"source": "knowledge",
+"ssr:stedsnr": "365351",
+"tourism": "attraction",
+"url": "https://youtu.be/1bpYGc-IC_I",
+"wikidata": "Q11971499"
+}
+},
+{
+"type": "way",
+"id": 69821316,
+"center": {
+"lat": 59.2035007,
+"lon": 10.9515597
+},
+"tags": {
+"foot": "designated",
+"highway": "cycleway",
+"historic": "city_gate",
+"name": "Mellomporten",
+"segregated": "no",
+"source": "Lovdata.no",
+"surface": "sett",
+"tunnel": "building_passage"
+}
+},
+{
+"type": "way",
+"id": 69821318,
+"center": {
+"lat": 59.203195,
+"lon": 10.956424
+},
+"tags": {
+"access": "yes",
+"barrier": "sally_port",
+"building": "office",
+"description": "Vaktlokale 1695",
+"heritage": "yes",
+"historic": "city_gate",
+"name": "Vollportvakten",
+"ref:bygningsnr": "193869548"
+}
+},
+{
+"type": "way",
+"id": 83128998,
+"center": {
+"lat": 59.2029009,
+"lon": 10.9475547
+},
+"tags": {
+"access": "yes",
+"barrier": "wall",
+"historic": "ruins",
+"historic:civilization": "modern",
+"name": "Tårnet på Isegran",
+"ruins": "fort",
+"tourism": "attraction",
+"wikidata": "Q11977563"
+}
+},
+{
+"type": "way",
+"id": 89360938,
+"center": {
+"lat": 59.2062025,
+"lon": 10.9420015
+},
+"tags": {
+"access": "yes",
+"amenity": "library",
+"building": "civic",
+"heritage": "yes",
+"int_name": "Fredrikstad Library",
+"internet_access": "wlan",
+"internet_access:fee": "no",
+"name": "Fredrikstad bibliotek",
+"phone": "+47 69 38 34 00",
+"ref:bygningsnr": "193920020",
+"ref:isil": "NO-2010600",
+"website": "https://www.fredrikstad.kommune.no/biblioteket",
+"wikidata": "Q17194608"
+}
+},
+{
+"type": "way",
+"id": 94532231,
+"center": {
+"lat": 59.2094947,
+"lon": 10.9428656
+},
+"tags": {
+"amenity": "place_of_worship",
+"architect": "Waldemar Lühr",
+"building": "cathedral",
+"capacity": "790",
+"deanery": "Fredrikstad Domprosti",
+"denomination": "lutheran",
+"diocese": "Borg",
+"hearing_aids": "yes",
+"heritage": "yes",
+"image": "https://www.kirkebyggdatabasen.no/KBDBweb/getPublicImage.aspx?vedleggId=1CB44987-C9E6-4AB7-A518-8BC9769ABF86",
+"name": "Fredrikstad domkirke",
+"note": "Domkirke",
+"operator": "Fredrikstad kirkelige fellesråd",
+"parish": "Fredrikstad Domkirke",
+"ref:bygningsnr": "193914683",
+"religion": "christian",
+"start_date": "1880",
+"toilets": "yes",
+"toilets:wheelchair": "yes",
+"website": "https://www.fredrikstad.kirken.no/",
+"wheelchair": "yes",
+"wikidata": "Q1453342",
+"wikipedia": "no:Fredrikstad domkirke"
+}
+},
+{
+"type": "way",
+"id": 97011911,
+"center": {
+"lat": 59.208462,
+"lon": 10.9511755
+},
+"tags": {
+"building": "transportation",
+"description": "locomotive shed",
+"historic": "yes",
+"ref:bygningsnr": "13415412"
+}
+},
+{
+"type": "way",
+"id": 97011915,
+"center": {
+"lat": 59.2055022,
+"lon": 10.9491077
+},
+"tags": {
+"building": "office",
+"building:levels": "1",
+"name": "Cube 8 Gallery",
+"operator": "Cube 8 GAllery",
+"ref:bygningsnr": "13416206",
+"roof:levels": "1",
+"tourism": "gallery",
+"website": "https://cube8gallery.no/pages/visit"
+}
+},
+{
+"type": "way",
+"id": 97373518,
+"center": {
+"lat": 59.20852,
+"lon": 10.941977
+},
+"tags": {
+"amenity": "fast_food",
+"building": "kiosk",
+"cuisine": "burger;pizza;kebab;ice_cream",
+"drive_through": "no",
+"name": "Flora Grill og Pizza",
+"ref:bygningsnr": "13413320"
+}
+},
+{
+"type": "way",
+"id": 98934028,
+"center": {
+"lat": 59.208975,
+"lon": 10.9406685
+},
+"tags": {
+"building": "office",
+"building:levels": "2",
+"name": "Hotel Fredrikstad",
+"ref:bygningsnr": "13413355",
+"tourism": "hotel"
+}
+},
+{
+"type": "way",
+"id": 104802705,
+"center": {
+"lat": 59.2031506,
+"lon": 10.9610547
+},
+"tags": {
+"amenity": "place_of_worship",
+"building": "chapel",
+"denomination": "lutheran",
+"name": "Østre Gravlund kapell",
+"ref:bygningsnr": "193918255",
+"religion": "christian"
+}
+},
+{
+"type": "way",
+"id": 104802706,
+"center": {
+"lat": 59.202311,
+"lon": 10.9525351
+},
+"tags": {
+"leisure": "park"
+}
+},
+{
+"type": "way",
+"id": 104971360,
+"center": {
+"lat": 59.2076277,
+"lon": 10.9436861
+},
+"tags": {
+"amenity": "place_of_worship",
+"building": "church",
+"denomination": "catholic",
+"name": "St. Birgitta kirke",
+"religion": "christian",
+"source": "Bing"
+}
+},
+{
+"type": "way",
+"id": 104984416,
+"center": {
+"lat": 59.2100593,
+"lon": 10.9407061
+},
+"tags": {
+"tourism": "artwork"
+}
+},
+{
+"type": "way",
+"id": 107107735,
+"center": {
+"lat": 59.19996,
+"lon": 10.964771
+},
+"tags": {
+"amenity": "toilets",
+"building": "hotel",
+"ref:bygningsnr": "13400970"
+}
+},
+{
+"type": "way",
+"id": 109862196,
+"center": {
+"lat": 59.2026984,
+"lon": 10.9461627
+},
+"tags": {
+"leisure": "park"
+}
+},
+{
+"type": "way",
+"id": 205367856,
+"center": {
+"lat": 59.1995184,
+"lon": 10.9609484
+},
+"tags": {
+"name": "Friluftsbadet",
+"operator": "Fredrikstad Kommune",
+"sport": "swimming",
+"tourism": "attraction",
+"wikidata": "Q11981714"
+}
+},
+{
+"type": "way",
+"id": 205759578,
+"center": {
+"lat": 59.2045844,
+"lon": 10.9531971
+},
+"tags": {
+"building": "yes",
+"historic": "city_gate",
+"name": "Ferjeporten"
+}
+},
+{
+"type": "way",
+"id": 205759583,
+"center": {
+"lat": 59.2024441,
+"lon": 10.9499978
+},
+"tags": {
+"building": "yes",
+"historic": "city_gate",
+"name": "Kommandantporten",
+"source": "Bing"
+}
+},
+{
+"type": "way",
+"id": 205759587,
+"center": {
+"lat": 59.2035068,
+"lon": 10.9515685
+},
+"tags": {
+"building": "yes",
+"historic": "city_gate",
+"name": "Mellomporten",
+"source": "Bing"
+}
+},
+{
+"type": "way",
+"id": 361016198,
+"center": {
+"lat": 59.2040887,
+"lon": 10.9479947
+},
+"tags": {
+"man_made": "watermill",
+"name": "Vannmølla på Isegran",
+"tourism": "attraction"
+}
+},
+{
+"type": "way",
+"id": 552363862,
+"center": {
+"lat": 59.1979367,
+"lon": 10.9628899
+},
+"tags": {
+"leisure": "park",
+"name": "Kongsten Fort",
+"wikidata": "Q11981717"
+}
+},
+{
+"type": "way",
+"id": 553571144,
+"center": {
+"lat": 59.2042778,
+"lon": 10.9540217
+},
+"tags": {
+"leisure": "park",
+"name": "Tamburparken"
+}
+},
+{
+"type": "way",
+"id": 670824759,
+"center": {
+"lat": 59.2033866,
+"lon": 10.9562166
+},
+"tags": {
+"amenity": "public_bookcase",
+"building": "old_telephone_booth",
+"check_date": "2025-07-15",
+"historic": "telephone_booth",
+"model": "Riks",
+"name": "Bokkiosk",
+"ref:telemuseet_riks": "100"
+}
+},
+{
+"type": "way",
+"id": 1034558948,
+"center": {
+"lat": 59.2069167,
+"lon": 10.9442319
+},
+"tags": {
+"amenity": "place_of_worship",
+"building": "church",
+"denomination": "methodist",
+"name": "Metodistkirken Fredrikstad",
+"ref:bygningsnr": "13414653",
+"religion": "christian"
+}
+},
+{
+"type": "way",
+"id": 1368353885,
+"center": {
+"lat": 59.2034021,
+"lon": 10.9452497
+},
+"tags": {
+"leisure": "park"
+}
+},
+{
+"type": "way",
+"id": 1421621853,
+"center": {
+"lat": 59.2035848,
+"lon": 10.9473937
+},
+"tags": {
+"leisure": "park"
+}
+},
+{
+"type": "way",
+"id": 1484179503,
+"center": {
+"lat": 59.2030127,
+"lon": 10.9469201
+},
+"tags": {
+"access": "yes",
+"building": "bunker",
+"building:levels": "0",
+"building:levels:underground": "1",
+"bunker_type": "munitions",
+"historic": "yes",
+"level": "-1",
+"location": "underground",
+"military": "bunker",
+"name": "Kruttmagasinet"
+}
+},
+{
+"type": "relation",
+"id": 18849627,
+"center": {
+"lat": 59.2035235,
+"lon": 10.9462912
+},
+"tags": {
+"leisure": "park",
+"type": "multipolygon"
+}
+},
+{
+"type": "relation",
+"id": 18849697,
+"center": {
+"lat": 59.2024486,
+"lon": 10.9441745
+},
+"tags": {
+"leisure": "park",
+"type": "multipolygon"
+}
+}
+],
+"hentet": "2026-11-05",
+"url": "https://overpass-api.de/api/interpreter"
+}

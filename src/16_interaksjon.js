@@ -34,7 +34,7 @@ function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p)
 // Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
 // kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.
 const kortInnhold=kort.querySelector('.innhold');
-const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false, ferge:null};
+const kort_={apent:false, forKamera:null, egenFlytt:false, historikk:false, ferge:null, vedLukk:[]};   // vedLukk: andre moduler (24_sok) rydder når kortet lukkes
 const SIDEPANEL=window.matchMedia('(min-width: 720px)');
 const kameraNaa=()=>({center:map.getCenter(), zoom:map.getZoom(), bearing:map.getBearing(), pitch:map.getPitch()});
 function fyllKort(b){
@@ -69,6 +69,16 @@ function glidTilHus(g){
   if(Math.hypot(s.x-mx, s.y-my) < 0.12*Math.min(fri.x1-fri.x0, fri.y1-fri.y0) && zoom-map.getZoom()<0.05) return;
   glidKamera({center:ll, zoom, offset:[mx-innerWidth/2, my-innerHeight/2]}, 'hus');
 }
+// et punkt uten eget bygg (stedene i søket, 24_sok): den som kaller fyller kortet; kameraet glir til punktet midt i den frie flaten
+function velgPunkt(fyll, x, y){
+  if(valgt){ valgt.userData.lift=false; valgt=null; }
+  kort_.ferge=null;
+  if(!kort_.apent){ kort_.forKamera=kameraNaa(); kort_.egenFlytt=false; fyll(); visKort(true); }
+  else { fyll(); kortInnhold.animate([{opacity:0},{opacity:1}], {duration:BEV.kort.innhold, easing:'ease-out'}); }
+  const ll=tilLngLat(x,y), fri=friFlate(), mx=(fri.x0+fri.x1)/2, my=(fri.y0+fri.y1)/2;
+  glidKamera({center:ll, zoom:Math.max(map.getZoom(), zoomFor(BEV.husZoom)), offset:[mx-innerWidth/2, my-innerHeight/2]}, 'hus');
+  lenkeSkriv();
+}
 // byfergene (22_byferga): kortet viser hvor båten er og de neste avgangene, og fylles på nytt mens det står åpent
 function fyllFergeKort(id){ const k=SENERE.ferge.kort(id); if(!k) return;
   kort.querySelector('h2').textContent=k.tittel; kort.querySelector('.a').textContent=k.a; kort.querySelector('.b').textContent=k.b;
@@ -100,7 +110,7 @@ function visKort(vis){
 // lukk: tilbake=true glir kameraet tilbake dit det stod før kortet (om du ikke har flyttet kartet selv); fraHistorikk: nettleserens tilbake
 function lukkKort({tilbake=true, fraHistorikk=false}={}){
   if(valgt){ valgt.userData.lift=false; valgt=null; }
-  kort_.ferge=null;
+  kort_.ferge=null; kort_.vedLukk.forEach(f=>f());
   if(!kort_.apent) return;
   visKort(false);
   if(tilbake && kort_.forKamera && !kort_.egenFlytt) glidKamera(kort_.forKamera, 'tilbake');
@@ -196,4 +206,4 @@ addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey) dbgVeksl
 if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace'; dbg.el.style.maxWidth='96vw'; dbg.el.style.whiteSpace='pre-wrap'; }
 registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });   // brukes av tidligere moduler via SENERE (tilstand.js)
 
-export { fyllFergeKort, kort_ };
+export { velgHus, BYGG_ID, fyllFergeKort, kort, kortInnhold, kort_, lukkKort, velgPunkt };
