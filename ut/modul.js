@@ -1,5 +1,5 @@
 
-// ../../../tmp/tmpob1fwtor/tilstand.js
+// ../../../../tmp/tmp7eq3bk75/tilstand.js
 var TILSTAND = {
   skyggeSkitten: true,
   // skyggekartet må tegnes på nytt (sola, husene eller introen har endret seg)
@@ -23,7 +23,7 @@ function registrer(navn) {
   for (const [k, f] of Object.entries(navn)) Object.defineProperty(SENERE, k, { get: f, enumerable: true });
 }
 
-// ../../../tmp/tmpob1fwtor/00_oppsett.js
+// ../../../../tmp/tmp7eq3bk75/00_oppsett.js
 import * as THREE from "three";
 import * as maplibregl from "maplibre-gl";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
@@ -115,7 +115,7 @@ var cam = new THREE.PerspectiveCamera(60, 1, 1, 1e4);
 cam.matrixAutoUpdate = false;
 var kam = { zoomfaktor: 1, mpp: 1, pitch: PITCH0, bearing: -AZ0_GRADER, naer: 1, fjern: 1e4 };
 
-// ../../../tmp/tmpob1fwtor/01_etterbehandling.js
+// ../../../../tmp/tmp7eq3bk75/01_etterbehandling.js
 import * as THREE2 from "three";
 import { FXAAShader as FXAAShader2 } from "three/addons/shaders/FXAAShader.js";
 var MAALT = { oppdater: 0, speil: 0, skygge: 0 };
@@ -395,7 +395,7 @@ function fit() {
 }
 map.on("resize", fit);
 
-// ../../../tmp/tmpob1fwtor/02_lys.js
+// ../../../../tmp/tmp7eq3bk75/02_lys.js
 import * as THREE3 from "three";
 var hemi = new THREE3.HemisphereLight(16777215, 15131350, 1);
 scene.add(hemi);
@@ -612,7 +612,7 @@ function medSkygge(m) {
 }
 registrer({ sun: () => sun });
 
-// ../../../tmp/tmpob1fwtor/kvalitet.js
+// ../../../../tmp/tmp7eq3bk75/kvalitet.js
 import * as THREE4 from "three";
 var KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get("noadapt") ? 9 : 0, onsket: 0 };
 var MAAL_PAA = !!Q0.get("adapt");
@@ -663,7 +663,7 @@ function feilsokTast(t) {
 if (Q0.get("nivaa")) settNivaa(+Q0.get("nivaa"));
 registrer({ beregnSkala: () => beregnSkala });
 
-// ../../../tmp/tmpob1fwtor/03_bakke-vann-grønt.js
+// ../../../../tmp/tmp7eq3bk75/03_bakke-vann-grønt.js
 import * as THREE5 from "three";
 var ground = new THREE5.Mesh(new THREE5.PlaneGeometry(6e3, 6e3), new THREE5.MeshBasicMaterial({ color: 15723748 }));
 ground.rotation.x = -Math.PI / 2;
@@ -823,7 +823,7 @@ DATA.vann.forEach((w) => {
 });
 registrer({ waterMat: () => waterMat });
 
-// ../../../tmp/tmpob1fwtor/04_brostein-i-hele-gamlebyen.js
+// ../../../../tmp/tmp7eq3bk75/04_brostein-i-hele-gamlebyen.js
 import * as THREE6 from "three";
 var stoneMat = new THREE6.ShaderMaterial({
   uniforms: { base: { value: new THREE6.Color("rgb(146,140,132)") }, fuge: { value: new THREE6.Color("rgb(96,92,88)") }, ang: { value: THREE6.MathUtils.degToRad(DATA.gatevinkel || 0) } },
@@ -873,7 +873,7 @@ var plenMat = new THREE6.ShaderMaterial({
 medSkygge(plenMat);
 bakkelag(plenMat, BAKKELAG.gress);
 
-// ../../../tmp/tmpob1fwtor/05_bygg.js
+// ../../../../tmp/tmp7eq3bk75/05_bygg.js
 import * as THREE7 from "three";
 import { mergeGeometries as mergeGeometries2 } from "three/addons/utils/BufferGeometryUtils.js";
 var city = new THREE7.Group();
@@ -1139,7 +1139,7 @@ function mat(rgb, dim, sk, opt = {}) {
   return mats.get(key);
 }
 
-// ../../../tmp/tmpob1fwtor/06_kirka-bygget-etter-2017.js
+// ../../../../tmp/tmp7eq3bk75/06_kirka-bygget-etter-2017.js
 import * as THREE8 from "three";
 var KIRKE_ENDE = "valm";
 function sentr(p) {
@@ -1430,7 +1430,7 @@ function bygKirke(k, grp) {
 }
 var buildings = [];
 
-// ../../../tmp/tmpob1fwtor/07_vinduer-dører-og-porter.js
+// ../../../../tmp/tmp7eq3bk75/07_vinduer-dører-og-porter.js
 import * as THREE9 from "three";
 import { mergeGeometries as mergeGeometries3 } from "three/addons/utils/BufferGeometryUtils.js";
 var VIND_GEO = new THREE9.PlaneGeometry(1, 1);
@@ -2185,7 +2185,7 @@ samler.clear();
   city.add(m);
 }
 
-// ../../../tmp/tmpob1fwtor/08_festningsterrenget.js
+// ../../../../tmp/tmp7eq3bk75/08_festningsterrenget.js
 import * as THREE10 from "three";
 var TER = DATA.landskap && DATA.landskap.terreng;
 var hAt = () => 0;
@@ -2350,7 +2350,7 @@ if (TER) {
   }
 }
 
-// ../../../tmp/tmpob1fwtor/09_murer-plankegjerder-og-voller.js
+// ../../../../tmp/tmp7eq3bk75/09_murer-plankegjerder-og-voller.js
 import * as THREE11 from "three";
 var murer = new THREE11.Group();
 scene.add(murer);
@@ -2390,7 +2390,7 @@ var _iMur = (q) => (DATA.teglmurer || []).some((m) => {
 });
 flatGruppe(murer);
 
-// ../../../tmp/tmpob1fwtor/10_porter.js
+// ../../../../tmp/tmp7eq3bk75/10_porter.js
 import * as THREE12 from "three";
 (DATA.porter || []).forEach((pt) => {
   const grp = buildings.find((g) => g.userData.i === pt.bygg);
@@ -2453,7 +2453,7 @@ import * as THREE12 from "three";
   });
 });
 
-// ../../../tmp/tmpob1fwtor/11_broer.js
+// ../../../../tmp/tmp7eq3bk75/11_broer.js
 import * as THREE13 from "three";
 (DATA.broer || []).forEach((br, bi) => {
   const g = new THREE13.Group();
@@ -2537,7 +2537,7 @@ import * as THREE13 from "three";
   city.add(g);
 });
 
-// ../../../tmp/tmpob1fwtor/12_trær.js
+// ../../../../tmp/tmp7eq3bk75/12_trær.js
 import * as THREE14 from "three";
 var seed = 11;
 var rnd = () => {
@@ -2725,7 +2725,7 @@ crowns[0].onBeforeRender = (r, sc_, c) => {
 };
 setCrowns(0);
 
-// ../../../tmp/tmpob1fwtor/13_kart.js
+// ../../../../tmp/tmp7eq3bk75/13_kart.js
 import * as THREE15 from "three";
 import * as maplibregl2 from "maplibre-gl";
 var _merc = maplibregl2.MercatorCoordinate.fromLngLat([ORIGO.lon, ORIGO.lat], 0);
@@ -2770,7 +2770,7 @@ function vinkler() {
 var GRENSE = 560;
 map.setMaxBounds([tilLngLat(-GRENSE - 300, -GRENSE - 300), tilLngLat(GRENSE + 300, GRENSE + 300)]);
 
-// ../../../tmp/tmpob1fwtor/14_speilinger-i-vannet.js
+// ../../../../tmp/tmp7eq3bk75/14_speilinger-i-vannet.js
 import * as THREE16 from "three";
 var speil = (() => {
   const Y = 0.15, LAG = 1;
@@ -2854,7 +2854,7 @@ function speilStyrke() {
 }
 var _sisteKam = new THREE16.Matrix4();
 
-// ../../../tmp/tmpob1fwtor/15_bevegelse.js
+// ../../../../tmp/tmp7eq3bk75/15_bevegelse.js
 import * as maplibregl3 from "maplibre-gl";
 var GLID = Q0.get("glid") !== "0";
 var glid = (t) => !GLID ? t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 : t <= 0 ? 0 : t >= 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
@@ -3133,7 +3133,7 @@ window.__BEV = BEV;
 map.getCanvasContainer().addEventListener("pointerdown", () => hjulZoom.stopp(), { capture: true, passive: true });
 registrer({ fingerNede: () => fingerNede });
 
-// ../../../tmp/tmpob1fwtor/15_lenke.js
+// ../../../../tmp/tmp7eq3bk75/15_lenke.js
 var LENKE = (() => {
   let h = "";
   try {
@@ -3242,7 +3242,7 @@ async function lenkeDel(knapp) {
   if (knapp) knapp.addEventListener("click", () => lenkeDel(knapp));
 }
 
-// ../../../tmp/tmpob1fwtor/15_loop.js
+// ../../../../tmp/tmp7eq3bk75/15_loop.js
 import * as THREE17 from "three";
 lysFraVenstre();
 var order = buildings.map((g) => {
@@ -3569,7 +3569,7 @@ window.__skjerm3 = (x, y, z) => {
 };
 registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });
 
-// ../../../tmp/tmpob1fwtor/16_interaksjon.js
+// ../../../../tmp/tmp7eq3bk75/16_interaksjon.js
 import * as THREE18 from "three";
 var ray = new THREE18.Raycaster();
 var ptr = new THREE18.Vector2();
@@ -3990,7 +3990,7 @@ if (Q0.get("d")) {
 }
 registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });
 
-// ../../../tmp/tmpob1fwtor/17_bakkeflater-og-parkering.js
+// ../../../../tmp/tmp7eq3bk75/17_bakkeflater-og-parkering.js
 import * as THREE19 from "three";
 {
   const flateMat = (rgb) => medSkygge(new THREE19.ShaderMaterial({
@@ -4098,7 +4098,7 @@ import * as THREE19 from "three";
   });
 }
 
-// ../../../tmp/tmpob1fwtor/18_brygger.js
+// ../../../../tmp/tmp7eq3bk75/18_brygger.js
 import * as THREE20 from "three";
 {
   const VANN_Y = 0.15, PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
@@ -4179,7 +4179,7 @@ import * as THREE20 from "three";
   g.traverse((c) => c.layers.enable(1));
 }
 
-// ../../../tmp/tmpob1fwtor/19_gardsmurer-og-vinterhager.js
+// ../../../../tmp/tmp7eq3bk75/19_gardsmurer-og-vinterhager.js
 import * as THREE21 from "three";
 {
   const anlegg = new THREE21.Group();
@@ -4367,7 +4367,7 @@ import * as THREE21 from "three";
   flatGruppe(anlegg);
 }
 
-// ../../../tmp/tmpob1fwtor/20_statuen-paa-torvet.js
+// ../../../../tmp/tmp7eq3bk75/20_statuen-paa-torvet.js
 import * as THREE22 from "three";
 (() => {
   const STEINFARGE = { "mørk": [[66, 68, 72], [40, 41, 44]], lys: [[178, 176, 170], [124, 122, 118]], trinn: [[104, 106, 110], [66, 67, 70]], bronse: [[120, 160, 138], [70, 98, 86]] };
@@ -4521,7 +4521,7 @@ import * as THREE22 from "three";
   });
 })();
 
-// ../../../tmp/tmpob1fwtor/21_flyt.js
+// ../../../../tmp/tmp7eq3bk75/21_flyt.js
 import * as THREE23 from "three";
 import { mergeGeometries as mergeGeometries4 } from "three/addons/utils/BufferGeometryUtils.js";
 var vannRute = (() => {
@@ -4642,7 +4642,7 @@ var flaterSammen = (() => {
 window.__flytInfo = () => ({ flaterFor: flaterSammen.for, flaterEtter: flaterSammen.etter, vann: vannISyne() });
 registrer({ vannISyne: () => vannISyne });
 
-// ../../../tmp/tmpob1fwtor/22_byferga.js
+// ../../../../tmp/tmp7eq3bk75/22_byferga.js
 import * as THREE24 from "three";
 var ferge = (() => {
   const F = DATA.ferge;

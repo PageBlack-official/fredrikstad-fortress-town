@@ -1,8 +1,4 @@
-# 43_streetview_kobling: FEIL
+# 43_streetview_kobling: OK
 
-krasjet: gler/43_streetview_kobling.py", line 17, in <module>
-    nå = sv_kobling.dom(d)
-         ~~~~~~~~~~~~~~^^^
-  File "/home/claude/fredrikstad-fortress-town/verktoy/sv_kobling.py", line 67, in dom
-    from shapely.geometry import Polygon, LineString, Point
-ModuleNotFoundError: No module named 'shapely'
+0 feil
+332 observasjoner, 78 peker ikke på huset (48 hus); de brukes ikke

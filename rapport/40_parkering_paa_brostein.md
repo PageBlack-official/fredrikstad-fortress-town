@@ -1,7 +1,9 @@
-# 40_parkering_paa_brostein: FEIL
+# 40_parkering_paa_brostein: OK
 
-krasjet: Traceback (most recent call last):
-  File "/home/claude/fredrikstad-fortress-town/regler/40_parkering_paa_brostein.py", line 16, in <module>
-    from shapely.geometry import Polygon  # noqa: E402
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ModuleNotFoundError: No module named 'shapely'
+0 feil; 5 parkeringsflater tegnes
+ok   parkering-1-211 (Tolboden): parkeringsflaten tegnes, 0% på brostein, 0% på gress, 0% i hus
+ok   parkering-1-1953 (Kongsten p-plass (Takstgruppe 1241)): parkeringsflaten tegnes, 0% på brostein, 0% på gress, 0% i hus
+ok   parkering-1-4625 (Færgeportgaten - beboerparkering): parkeringsflaten tegnes, 0% på brostein, 0% på gress, 1% i hus
+ok   parkering-1-5309 (Kongstenhallen): parkeringsflaten tegnes, 0% på brostein, 0% på gress, 0% i hus
+ok   parkering-1-5310 (Kongstenhallen): parkeringsflaten tegnes, 0% på brostein, 0% på gress, 0% i hus
+20 rader målt som flate (oppmerking på flaten, ingen parkeringsflate oppå)
