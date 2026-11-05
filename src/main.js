@@ -26,3 +26,4 @@ import './19_gardsmurer-og-vinterhager.js';
 import './20_statuen-paa-torvet.js';
 import './21_flyt.js';
 import './22_byferga.js';
+import './23_vaer.js';
