@@ -33,3 +33,4 @@ import './26_turer.js';
 import './27_festival.js';
 import './28_start.js';
 import './29_postkort.js';
+import './30_gjest.js';

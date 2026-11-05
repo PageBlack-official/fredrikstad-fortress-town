@@ -1,11 +1,17 @@
 import * as maplibregl from 'maplibre-gl';
-import { DATA, map, tilLngLat } from './00_oppsett.js';
+import { DATA, Q0, map, tilLngLat } from './00_oppsett.js';
 import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { BYGG_ID, kort, kort_, velgHus, velgPunkt } from './16_interaksjon.js';
 // ---- søk og kategorier (Vegar: «parkering, finne steder å spise, kultur»): finn et sted, fly dit, les kortet ----
 // Stedene står i data/steder.json (verktoy/steder.py: OpenStreetMap, kommunens parkering, kartbrosjyren). Et sted i et bygg løfter bygget
 // og viser stedet i kortet; et sted ute (parkering, toalett, statue) får en nål og kortet. En kategori viser nåler for alle stedene i den.
 const S = DATA.steder || { kategorier: [], steder: [] };
+// gjesteversjonen (30_gjest, ?gjest=<id>): partnerens anbefalte steder er en egen kategori øverst
+const GJEST = (DATA.partnere || []).find(p => p.id === Q0.get('gjest'));
+if (GJEST && GJEST.anbefalt && GJEST.anbefalt.length) {
+  S.kategorier = [{ id: 'anbefalt', navn: `Anbefalt av ${GJEST.navn}` }, ...S.kategorier];
+  for (const id of GJEST.anbefalt) { const s = S.steder.find(x => x.id === id); if (s) S.steder.push({ ...s, id: 'anbefalt-' + s.id, kategori: 'anbefalt' }); }
+}
 const KAT = new Map(S.kategorier.map(k => [k.id, k.navn]));
 const IKON = {   // én strek per kategori, samme stil som knappene
   spise: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M16 3c-2 1.5-2.5 4-2.5 7h2.5v11"/>',
@@ -14,6 +20,7 @@ const IKON = {   // én strek per kategori, samme stil som knappene
   handle: '<path d="M5 8h14l-1 12H6L5 8zM9 8a3 3 0 0 1 6 0"/>',
   sove: '<path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3M7 11.5h.01"/>',
   parkering: '<path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7"/>',
+  anbefalt: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/>',
   toalett: '<circle cx="8" cy="5" r="1.6"/><circle cx="16" cy="5" r="1.6"/><path d="M8 8v12M6 10h4M16 8l-3 7h6l-3-7v12"/>',
 };
 const svg = (k, s = 18) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${IKON[k] || IKON.se}</svg>`;
