@@ -40,3 +40,12 @@
 | flater (grus, heller, asfalt) | Målt for hånd i ortofoto 2024 (kilder/flater-maalt.json), id fl-<løpenummer> | ±2 m |
 
 Modellkoordinater: meter, x = øst, y = nord, origo ca. 59,202835 N 10,952745 Ø (utledet 23.10 fra kirka og statuen, ±3 m).
+
+## Været (23_vaer, fra 05.11)
+- Meteorologisk institutt, Locationforecast 2.0 compact (api.met.no), punkt 59.2055 N 10.9545 Ø. Lisens CC BY 4.0, kreditering «Værdata: MET Norway» i værvalget. Hentes i nettleseren ved lasting og hvert 15. minutt; brukes til skydekke, nedbør (type og mm per time), tåke og temperatur.
+
+## Stedene i søket (data/steder.json, verktoy/steder.py, fra 05.11)
+- OpenStreetMap via Overpass (kilder/osm-steder.json, hentet 05.11.2026), lisens ODbL, kreditering «© OpenStreetMap-bidragsytere» i søket og på stedskortet. Navn, type, åpningstider, nettside, telefon, mat. Bare steder innenfor det kartet tegner.
+- Parkering: Fredrikstad kommune (data/parkering.json, som før).
+- Severdighetene med nummer fra kartbrosjyren til Visit Fredrikstad (2015, data/legende.json) der OSM ikke har stedet.
+- Koblingen sted → bygg er punktet i grunnrisset (bygg.p). Regel 47 vokter.

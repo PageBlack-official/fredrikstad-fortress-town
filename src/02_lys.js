@@ -110,7 +110,12 @@ varying vec3 vWq;
 // Kanten er et plan i verden (solFrontDir), flyttet av solFront, myk over solBredde meter; høye punkter (kirketårnet) får lys litt før.
 // Etter introen er solUte 1 og alt dette er én sammenligning per piksel. Ingen overlegg: skyggene som vokser fram er ekte skygger.
 uniform float solUte, solFront, solBredde; uniform vec3 solFrontDir;
-float solHer(vec3 wq){ if(solUte>=1.) return 1.; float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; return smoothstep(solFront, solFront+solBredde, v); }
+// Været (23_vaer): skyDekke 0 = sol, 1 = helt overskyet (samme gråvær som introen, uten kastskygger). sno: snødekke 0–1 på flater som
+// vender opp. aarstid: fargen grønt får i årstiden (rgb ganges inn, a = styrke).
+uniform float skyDekke, sno; uniform vec4 aarstid;   // rgb = fargen grønt går mot (ganget med lysheten), a = styrke
+float solHer(vec3 wq){ float s=1.; if(solUte<1.){ float v=dot(wq.xz, solFrontDir.xz)+0.8*wq.y; s=smoothstep(solFront, solFront+solBredde, v); } return s*(1.-skyDekke); }
+vec3 aarstidFarge(vec3 c){ float gronn=smoothstep(0.015,0.10, c.g-max(c.r,c.b)); float l=dot(c, vec3(0.30,0.59,0.11)); return mix(c, l*aarstid.rgb, gronn*aarstid.a); }   // grønt får årstidens farge med samme lyshet
+vec3 snoPaa(vec3 c, float opp){ return mix(c, vec3(0.92,0.94,0.97)*mix(0.86,1.,smoothstep(0.6,1.,opp)), sno*smoothstep(0.45,0.8,opp)); }
 const vec3 OVERSKYET=vec3(0.74,0.80,0.92);   // overskyet: tydelig mørkere og blåere (0,86/0,90/0,97 var usynlig i Vegars Chrome)
 // overskyet tar også metningen ned: byen ser ut som tegningen i gråvær, og sola gir fargene tilbake
 vec3 graavaer(vec3 c){ float g=dot(c, vec3(0.299,0.587,0.114)); return mix(vec3(g), c, 0.72)*OVERSKYET; }
@@ -157,13 +162,13 @@ const vec3 KALD=vec3(0.92,0.96,1.07);   // skyggetonen litt kjølig
 const vec3 KASTSKYGGE=vec3(0.57,0.62,0.80); // kastskygge på bakken: mørkere og blålig
 `;
 // solfronten deles av alle materialer: ett objekt per uniform, koblet inn etter at scenen er bygd (kobleSol, kalles fra 15_loop)
-const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:160}, dir:{value:new THREE.Vector3(1,0,0)} };   // kanten er 160 m myk: et gløtt som vandrer, ikke en linje
-function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(o.material):[]; for(const m of ms){ if(m.isShaderMaterial && m.fragmentShader.includes('solHer(')){ m.uniforms.solUte=U_SOL.ute; m.uniforms.solFront=U_SOL.front; m.uniforms.solBredde=U_SOL.bredde; m.uniforms.solFrontDir=U_SOL.dir; m.needsUpdate=true; n++; } } }); return n; }
+const U_SOL={ ute:{value:1}, front:{value:-1e6}, bredde:{value:160}, dir:{value:new THREE.Vector3(1,0,0)}, sky:{value:0}, sno:{value:0}, aarstid:{value:new THREE.Vector4(1,1,1,0)} };   // sky, sno, aarstid: været (23_vaer)   // kanten er 160 m myk: et gløtt som vandrer, ikke en linje
+function kobleSol(){ let n=0; scene.traverse(o=>{ const ms=o.material?[].concat(o.material):[]; for(const m of ms){ if(m.isShaderMaterial && m.fragmentShader.includes('solHer(')){ m.uniforms.solUte=U_SOL.ute; m.uniforms.solFront=U_SOL.front; m.uniforms.solBredde=U_SOL.bredde; m.uniforms.solFrontDir=U_SOL.dir; m.uniforms.skyDekke=U_SOL.sky; m.uniforms.sno=U_SOL.sno; m.uniforms.aarstid=U_SOL.aarstid; m.needsUpdate=true; n++; } } }); return n; }
 // gjør et eksisterende ShaderMaterial for flater (bakke, plen, brostein) mottakelig for kastskygger
 function medSkygge(m){
   m.lights=true; Object.assign(m.uniforms, THREE.UniformsUtils.clone(THREE.UniformsLib.lights), {skravur:U_SKRAVUR});
   m.vertexShader=GL_SOL_V+m.vertexShader.replace(/}\s*$/, glSolVMain('(modelMatrix*vec4(position,1.))','vec3(0.,1.,0.)')+'}');
-  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(graavaer(gl_FragColor.rgb), sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); }\n#include <colorspace_fragment>');
+  m.fragmentShader=GL_SOL_F+m.fragmentShader.replace('#include <colorspace_fragment>','{ float su=solHer(vWq); vec3 sol=mix(gl_FragColor.rgb*KASTSKYGGE, gl_FragColor.rgb*mix(vec3(1.),solFarge(),0.5), skyggeMask()); gl_FragColor.rgb=mix(graavaer(gl_FragColor.rgb), sol, su); gl_FragColor.rgb*=1.-0.28*skravurMaske(vWq, 1.-skyggeMask()); gl_FragColor.rgb=snoPaa(aarstidFarge(gl_FragColor.rgb), 1.); }\n#include <colorspace_fragment>');
   m.needsUpdate=true; return m;
 }
 registrer({ sun: () => sun });   // brukes av tidligere moduler via SENERE (tilstand.js)
