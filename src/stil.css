@@ -111,3 +111,14 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #sokpanel .turer button{flex:1 1 160px;text-align:left;border:0;border-radius:12px;background:rgba(43,36,32,.06);padding:10px 12px;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:3px}
 #sokpanel .turer button small{color:var(--muted);font-size:12px}
 #sokpanel .turer button:hover{background:rgba(43,36,32,.1)}
+/* lasting: festningens omriss tegnes mens kartet laster (28_start fjerner det når byen er tegnet) */
+#laster{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--ink);background:var(--bg);z-index:1;font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.04em;transition:opacity .6s ease}
+#laster path{stroke-dasharray:420;stroke-dashoffset:420;animation:lasterTegn 2.4s ease-in-out infinite alternate}
+#laster path+path{animation-delay:.5s}
+#laster span{opacity:.7}
+#laster.ferdig{opacity:0;pointer-events:none}
+@keyframes lasterTegn{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){#laster path{animation:none;stroke-dashoffset:0}}
+#postkort{display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:rgba(246,243,234,.92);color:var(--ink);box-shadow:0 4px 16px rgba(40,30,20,.14);cursor:pointer}
+#postkort:disabled{opacity:.5}
+#postkort:focus-visible{outline:2px solid var(--ink);outline-offset:2px}

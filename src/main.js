@@ -31,3 +31,5 @@ import './24_sok.js';
 import './25_her.js';
 import './26_turer.js';
 import './27_festival.js';
+import './28_start.js';
+import './29_postkort.js';

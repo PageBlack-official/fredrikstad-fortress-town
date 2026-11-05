@@ -72,12 +72,13 @@ async function hent(){
 }
 
 // overgangen: verdiene glir mot målet på ~2 s, så været aldri popper inn
-let glir = false;
-function glid(){
-  const m = VAER.mal, k = 0.06; let igjen = false;
+let glir = false, glidSist = 0;
+function glid(naa){
+  const dt = glidSist ? Math.min(200, naa - glidSist) : 16; glidSist = naa;
+  const m = VAER.mal, k = 1 - Math.exp(-dt / 550); let igjen = false;   // tidsbasert: like lang overgang på treg og rask maskin (~2 s)
   for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno]]) { const d = mal - u.value; if (Math.abs(d) > 0.003) { u.value += d * k; igjen = true; } else u.value = mal; }
   TILSTAND.skyggeSkitten = true; map.triggerRepaint();
-  if (igjen) requestAnimationFrame(glid); else glir = false;
+  if (igjen) requestAnimationFrame(glid); else { glir = false; glidSist = 0; }
 }
 function settVaer(v){
   const aar = aarstidFor(new Date()); VAER.aarstid = aar.navn;
