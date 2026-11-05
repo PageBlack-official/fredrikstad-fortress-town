@@ -150,7 +150,7 @@ function maalVent(){ const m=window.__maal; if(!m) return; if(m!=='les'){ gl2.fi
 // ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
 const post=(()=>{
   let W=2, H=2, skala=1;
-  const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
+  const rt=new THREE.WebGLRenderTarget(2,2,{samples: (BERORING && devicePixelRatio>=1.5)?2:4,   /* (05.11, Vegar: «refresh-raten + oppløsningen») maskin: alltid 4x MSAA */ type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   // (02.11) minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
   const MIN_TEX=renderer.extensions.has('EXT_color_buffer_float') && !Q0.get('mintex0');
@@ -1798,7 +1798,7 @@ const speil=(()=>{
   let paa=!Q0.get('nospeil');
   const cc=new THREE.Color(), _speilKam=new THREE.Matrix4().set(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), lagre=new Float64Array(2*deler.length);
   return {
-    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; rt.setSize(Math.max(2,w>>1), Math.max(2,h>>1)); },
+    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; const d=BERORING?2:1; rt.setSize(Math.max(2,Math.round(w/d)), Math.max(2,Math.round(h/d))); },   // (05.11) speilet i full oppløsning på maskin, halv på telefon
     av(){ paa=false; waterMat.uniforms.reflStyrke.value=0; },
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }
@@ -2192,10 +2192,10 @@ const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
   render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
     if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
-// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet når vann er i bildet (vannet lever), ellers ikke (02.11)
+// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 30 ganger i sekundet på maskin (05.11, Vegar: «refresh-raten»), 10 på telefon, når vann er i bildet (vannet lever), ellers ikke (02.11)
 // (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (ferge.beveger() && naa-sistTegnet>33) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (ferge.beveger() && naa-sistTegnet>33) || (naa-sistTegnet>(BERORING?100:33) && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
 window.__klar=()=>vokst && introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });

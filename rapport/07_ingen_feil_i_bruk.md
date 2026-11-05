@@ -2,9 +2,9 @@
 
 - intro: underveis az -0.92 zoom 0.66 → ferdig az -2.79 zoom 1.00 intro false
 - klikk kirka: {"vis":true,"navn":"Kirken"}
-- esc → hjem: x 33.1 z 40.0 zoom 1.80 kort vis false
-- styreflate-dra: x 33.1 z 40.0 zoom 1.80
-- hjul: zoom 1.80
-- dobbeltklikk: zoom 2.06 kort vis true
-- musedra: x 105.0 z 45.8 az -2.79
+- esc → hjem: x 33.3 z 41.4 zoom 1.85 kort vis false
+- styreflate-dra: x 33.3 z 41.4 zoom 1.85
+- hjul: zoom 1.85
+- dobbeltklikk: zoom 3.69 kort vis false
+- musedra: x 103.5 z 47.1 az -2.79
 - feil []
