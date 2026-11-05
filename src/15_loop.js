@@ -131,10 +131,10 @@ const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
   render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
     if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!_synlig){ _synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
-// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 10 ganger i sekundet når vann er i bildet (vannet lever), ellers ikke (02.11)
+// ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 30 ganger i sekundet på maskin (05.11, Vegar: «refresh-raten»), 10 på telefon, når vann er i bildet (vannet lever), ellers ikke (02.11)
 // (29.10) også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
 // tonet ut i trapper (flyt-test: samme verdi i 8 bilder, så et sprang på 0,33)
-function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (ferge.beveger() && naa-sistTegnet>33) || (naa-sistTegnet>100 && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
+function puls(){ const naa=performance.now(); if(!vokst || !introDone || husBeveger || map.isMoving() || !solVei.ferdig || (tiltAv.b0>0 && tiltAv.s<1) || (ferge.beveger() && naa-sistTegnet>33) || (naa-sistTegnet>(BERORING?100:33) && vannISyne())) map.triggerRepaint(); requestAnimationFrame(puls); }
 // teller kartets egne bilder mot våre: tegner kartet et bilde uten å kalle laget vårt, blir det et papirfarget blink
 window.__klar=()=>vokst && introDone && !map.isMoving();   // testene venter på dette i stedet for et fast antall sekunder (tomler_test, 03.11)
 window.__kartBilder=0; window.__vaareBilder=0; map.on('render', ()=>{ window.__kartBilder++; });

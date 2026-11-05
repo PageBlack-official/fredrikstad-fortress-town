@@ -10,7 +10,7 @@ const speil=(()=>{
   let paa=!Q0.get('nospeil');
   const cc=new THREE.Color(), _speilKam=new THREE.Matrix4().set(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), lagre=new Float64Array(2*deler.length);
   return {
-    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; rt.setSize(Math.max(2,w>>1), Math.max(2,h>>1)); },
+    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; const d=BERORING?2:1; rt.setSize(Math.max(2,Math.round(w/d)), Math.max(2,Math.round(h/d))); },   // (05.11) speilet i full oppløsning på maskin, halv på telefon
     av(){ paa=false; waterMat.uniforms.reflStyrke.value=0; },
     render(endret){
       if(!paa){ waterMat.uniforms.reflStyrke.value=0; return; }

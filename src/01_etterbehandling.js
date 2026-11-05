@@ -9,7 +9,7 @@ function maalVent(){ const m=window.__maal; if(!m) return; if(m!=='les'){ gl2.fi
 // ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
 const post=(()=>{
   let W=2, H=2, skala=1;
-  const rt=new THREE.WebGLRenderTarget(2,2,{samples: devicePixelRatio>=1.5?2:4, type:THREE.HalfFloatType});
+  const rt=new THREE.WebGLRenderTarget(2,2,{samples: (BERORING && devicePixelRatio>=1.5)?2:4,   /* (05.11, Vegar: «refresh-raten + oppløsningen») maskin: alltid 4x MSAA */ type:THREE.HalfFloatType});
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   // (02.11) minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
   const MIN_TEX=renderer.extensions.has('EXT_color_buffer_float') && !Q0.get('mintex0');
