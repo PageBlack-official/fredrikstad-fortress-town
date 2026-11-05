@@ -1,11 +1,8 @@
-# 34_traer: OK
+# 34_traer: FEIL
 
-1455 av 1458 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.8%, krav 95 %); 0 i vann, 0 i hus; 1592 trær i alt = 2343 fra 23.10 − 1312 tatt ut + 561 nye fra DOM-toppene, alle med grunn (regnskapet skal gå opp)
-
-3 trær står mer enn 1 m fra vegetasjon (største avstand først, de 30 første):
-- (-127.1, -166.9) 13.7 m
-- (-145.5, -164.2) 12.5 m
-- (324.2, -193.1) 5.2 m
-
-1 ekte trær (krone i DOM−DTM) står der data/vann.json har vann (vannflaten bør sjekkes, regel 16):
-- (250.8, -11.7)
+krasjet: mport bakke as B, datalag
+  File "/home/claude/fredrikstad-fortress-town/verktoy/bakke.py", line 27, in <module>
+    import kommunekart as KK
+  File "/home/claude/fredrikstad-fortress-town/verktoy/kommunekart.py", line 12, in <module>
+    import shapely
+ModuleNotFoundError: No module named 'shapely'

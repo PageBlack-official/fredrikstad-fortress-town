@@ -1,5 +1,7 @@
-# 13_deler_staar_paa_topp: OK
+# 13_deler_staar_paa_topp: FEIL
 
-- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok
-- bygg 252 (None) del 0: h 16.3, målt topp 16.3, p90 i delen 15.8, kropp p50 10.2 → ok
-- piper og arker: 477 sjekket, 0 står ikke på taket
+krasjet: zen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/claude/fredrikstad-fortress-town/rapport/hoyder/hent.py", line 29, in <module>
+    import shapely
+ModuleNotFoundError: No module named 'shapely'

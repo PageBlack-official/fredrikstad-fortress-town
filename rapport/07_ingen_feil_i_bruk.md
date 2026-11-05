@@ -5,6 +5,6 @@
 - esc → hjem: x 33.3 z 41.4 zoom 1.85 kort vis false
 - styreflate-dra: x 33.3 z 41.4 zoom 1.85
 - hjul: zoom 1.85
-- dobbeltklikk: zoom 3.69 kort vis false
+- dobbeltklikk: zoom 3.69 kort vis true
 - musedra: x 103.5 z 47.1 az -2.79
 - feil []
