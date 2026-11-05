@@ -1,6 +1,7 @@
 import { TILSTAND } from './tilstand.js';
 import * as THREE from 'three';
 import { Q0, map, scene } from './00_oppsett.js';
+import { post } from './01_etterbehandling.js';
 import { GRAD, U_SOL, solposisjon } from './02_lys.js';
 // ---- været: kartet viser været i Gamlebyen nå (Vegar: «Er det overskyet er det det du ser, er det vinter, vår, sol») ----
 // Kilde: Meteorologisk institutt, Locationforecast 2.0 (api.met.no, CC BY 4.0, «Data fra MET Norway»). Hentes ved lasting og hvert
@@ -19,7 +20,7 @@ const PUNKT = { lat: 59.2055, lon: 10.9545 };
 // måle det samme bildet hver gang, ikke været eller klokka den kvelden de kjøres (regel 10 målte 0 px kronegrønt i høstfarger).
 const TEST = !!navigator.webdriver;
 const VAER_AV = Q0.get('vaer') === '0' || (TEST && Q0.get('vaer') === null);
-const NAVN = { sol: 'Sol', lettskyet: 'Lettskyet', delvis: 'Delvis skyet', skyet: 'Skyet', regn: 'Regn', sludd: 'Sludd', sno: 'Snø', taake: 'Tåke', torden: 'Torden' };
+const NAVN = { sol: 'Sol', klart: 'Klart', lettskyet: 'Lettskyet', delvis: 'Delvis skyet', skyet: 'Skyet', regn: 'Regn', sludd: 'Sludd', sno: 'Snø', taake: 'Tåke', torden: 'Torden' };
 
 // MET-symbolet (f.eks. «partlycloudy_day», «lightrainshowers_night») til våre fem størrelser
 function fraSymbol(sym, skyProsent, mm, temp){
@@ -30,7 +31,7 @@ function fraSymbol(sym, skyProsent, mm, temp){
   else if (/snow/.test(s)) { v.nedbor = 'sno'; v.navn = 'sno'; }
   else if (/sleet/.test(s)) { v.nedbor = 'sludd'; v.navn = 'sludd'; }
   else if (/rain/.test(s)) { v.nedbor = 'regn'; v.navn = 'regn'; }
-  else if (s === 'clearsky' || s === 'fair') v.navn = s === 'fair' ? 'lettskyet' : 'sol';
+  else if (s === 'clearsky' || s === 'fair') v.navn = s === 'fair' ? 'lettskyet' : (/_night$/.test(sym || '') ? 'klart' : 'sol');
   else if (s === 'partlycloudy') v.navn = 'delvis';
   else if (s === 'cloudy') v.navn = 'skyet';
   if (v.nedbor && !v.mengde) v.mengde = /light/.test(s) ? 0.4 : /heavy/.test(s) ? 4 : 1.2;
@@ -92,7 +93,7 @@ function glid(naa){
   const dt = glidSist ? Math.min(200, naa - glidSist) : 16; glidSist = naa;
   const m = VAER.mal, k = 1 - Math.exp(-dt / 550); let igjen = false;   // tidsbasert: like lang overgang på treg og rask maskin (~2 s)
   for (const [u, mal] of [[U_SOL.sky, m.sky], [U_SOL.sno, m.sno], [U_SOL.natt, m.natt]]) { const d = mal - u.value; if (Math.abs(d) > 0.003) { u.value += d * k; igjen = true; } else u.value = mal; }
-  _p.copy(PAPIR).lerp(PAPIR_NATT, U_SOL.natt.value / 0.9); scene.background.copy(_p); try { map.setPaintProperty('papir', 'background-color', '#' + _p.getHexString()); } catch (_) { /* stilen er ikke lastet ennå */ }
+  post.settNatt(U_SOL.natt.value); _p.copy(PAPIR).lerp(PAPIR_NATT, U_SOL.natt.value / 0.9); scene.background.copy(_p); try { map.setPaintProperty('papir', 'background-color', '#' + _p.getHexString()); } catch (_) { /* stilen er ikke lastet ennå */ }
   TILSTAND.skyggeSkitten = true; map.triggerRepaint();
   if (igjen) requestAnimationFrame(glid); else { glir = false; glidSist = 0; }
 }
@@ -136,8 +137,9 @@ const IKON = {
   regn: '<path d="M7 14h10.5a4 4 0 0 0 .4-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 14z"/><path d="M8.5 17l-1 3M12.5 17l-1 3M16.5 17l-1 3"/>',
   sno: '<path d="M7 14h10.5a4 4 0 0 0 .4-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 14z"/><path d="M8.5 18.5h.01M12 20h.01M15.5 18.5h.01"/>',
   taake: '<path d="M4 9h16M3 13h18M5 17h14"/>',
+  maane: '<path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z"/>',
 };
-const ikonFor = n => n === 'sol' || n === 'lettskyet' ? 'sol' : n === 'regn' || n === 'sludd' || n === 'torden' ? 'regn' : n === 'sno' ? 'sno' : n === 'taake' ? 'taake' : 'sky';
+const ikonFor = n => n === 'klart' ? 'maane' : n === 'sol' || n === 'lettskyet' ? 'sol' : n === 'regn' || n === 'sludd' || n === 'torden' ? 'regn' : n === 'sno' ? 'sno' : n === 'taake' ? 'taake' : 'sky';
 const merkeEl = document.createElement('button'); merkeEl.id = 'vaer'; merkeEl.type = 'button'; merkeEl.setAttribute('aria-haspopup', 'true'); merkeEl.hidden = true;
 const valgEl = document.createElement('div'); valgEl.id = 'vaervalg'; valgEl.setAttribute('role', 'menu'); valgEl.hidden = true;
 valgEl.innerHTML = `<p class="t">Vis kartet med</p>` + [['naa', 'Været nå'], ['sol', 'Sol'], ['skyet', 'Skyet'], ['regn', 'Regn'], ['sno', 'Snø'], ['taake', 'Tåke'], ['kveld', 'Kveld']]
