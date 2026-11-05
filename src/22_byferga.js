@@ -40,6 +40,8 @@ const ferge=(()=>{
     const rx0=hl-fb-0.2, rx1=hx+hl2/2+0.1, rl=rx0-rx1;
     [1,-1].forEach(sd=>{ kloss(rl, 0.05, 0.05, (rx0+rx1)/2, yd+M.rekke, sd*(hb-0.2), m(C.rekke)); for(let i=0;i<=3;i++) kloss(0.05, M.rekke, 0.05, rx1+rl*i/3, yd+M.rekke/2, sd*(hb-0.2), m(C.rekke)); });
     [1,-1].forEach(sd=>kloss(0.05, 0.05, (B-0.4-R.bredde)/2, rx0, yd+M.rekke, sd*((B-0.4)/2-(B-0.4-R.bredde)/4), m(C.rekke)));
+    // (05.11, regel 19) båtene kaster ikke i skyggekartet: det skal stå stille når kartet står, og en båt i fart ville tegnet det på nytt hele tiden
+    g.traverse(o=>{ o.castShadow=false; });
     g.scale.setScalar(SK); g.position.y=VANN_Y; scene.add(g);
     let sistR=-1;
     const rampeTil=v=>{ if(Math.abs(v-sistR)<1e-4) return; sistR=v; rampe.rotation.z=THREE.MathUtils.degToRad(R.oppe_grader+(R.nede_grader-R.oppe_grader)*v); };   // 0 oppe, 1 nede
@@ -152,10 +154,8 @@ const ferge=(()=>{
   const vinkel=(a,b,k)=>{ let d=((b-a)%(2*Math.PI)+3*Math.PI)%(2*Math.PI)-Math.PI; return a+d*k; };
   function sett(b, p){
     b.g.visible=!!p.vis; if(!p.vis){ b.vist=null; return; }
-    const forr=b.vist;
     b.g.position.x=p.x; b.g.position.z=-p.y; b.g.rotation.y=p.h; b.rampeTil(p.r);
     b.g.position.y=VANN_Y+(p.beveger?0.05*Math.sin(klokke()/700):0);   // svak dupp i fart
-    if(!forr || Math.hypot(p.x-forr.x,p.y-forr.y)>0.15 || Math.abs(p.h-forr.h)>0.01) skyggeSkitten=true;
     b.vist={...p};
   }
   // introen: 803 sin siste overfart (eller den den er midt i) spilles av og lander der båten er når introen slutter

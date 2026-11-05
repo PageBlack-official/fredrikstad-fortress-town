@@ -1,4 +1,4 @@
 # 10_mobiltrinn_tegner_likt: OK
 
-- kronegrønt trinn 0: 19097 px, trinn 2: 18460 px
-- piksler med avvik over 60: 378 av 329160
+- kronegrønt trinn 0: 19102 px, trinn 2: 18466 px
+- piksler med avvik over 60: 382 av 329160
