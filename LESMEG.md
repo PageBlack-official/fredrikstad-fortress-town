@@ -340,6 +340,14 @@ Publisering (publiser.sh, lagt om 05.11 etter at forsiden ble byttet uten ja to 
 - `sh publiser.sh forside` bytter forsiden (og /prove/ til samme bygg). Den gamle forsiden flyttes til /backup/v<versjon>-<dato>/ og føres
   i lista. Krever Vegars ja, grønne regler (eller `TILLAT_RODE='<hans ja>'`) og grønn maskinsjekk mot samme kilde.
 
+## Brukeropplevelsen (05.11, Vegar: «kjør dette»)
+- **Været** (src/23_vaer.js): MET Norway nå. Skyet = gråvær uten kastskygger (U_SOL.sky i solHer), regn/sludd/snø på eget lerret,
+  tåkeslør, snø på tak/bakke/kroner (U_SOL.sno), årstidsfarge på grønt (U_SOL.aarstid). Merket oppe til venstre: temperatur og vær,
+  trykk for å vise kartet i sol, skyet, regn, snø eller tåke. Test: ?vaer=sol|skyet|regn|sno|taake, ?aarstid=, ?sno=, ?vaer=0.
+- **Søk og kategorier** (src/24_sok.js, data/steder.json): «Finn» oppe til venstre (eller / og ⌘K). Kategoriene gir nåler i kartet;
+  et sted i et bygg løfter bygget og viser stedet i kortet (åpningstider, telefon, nettside, Veibeskrivelse til Apple/Google Maps).
+- **Du er her** (src/25_her.js): knappen over pluss/minus. Prikken vises bare innenfor 1,4 km fra Torvet; ellers sier kartet avstanden.
+
 ## Maskinsjekken (05.11)
 Testene her tegner med programvare (swiftshader) og ser ikke det et ekte skjermkort gjør: feilen 05.11 (kvaliteten falt ved første
 bevegelse på Vegars iMac) var grønn i alle regler. Derfor, før forsiden byttes:
