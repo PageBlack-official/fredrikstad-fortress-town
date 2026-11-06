@@ -85,7 +85,8 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #sokpanel .kat{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%)}
 #sokpanel .treff li{display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:10px;cursor:pointer}
 #sokpanel .treff li .merke{margin-top:0}
-#sokpanel .treff li span{display:flex;flex-direction:column;gap:2px;min-width:0}
+/* bare tekstblokka: «li span» traff også .merke (et span) og gjorde sirkelen til flex-kolonne, så ikonet la seg øverst (06.11) */
+#sokpanel .treff li .tekst{display:flex;flex-direction:column;gap:2px;min-width:0}
 #sokpanel .treff li small{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #sokpanel .treff li:hover,#sokpanel .treff li[aria-selected="true"]{background:rgba(43,36,32,.06)}
 #sokpanel .treff li.tom{color:var(--muted);cursor:default}

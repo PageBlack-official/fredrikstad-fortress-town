@@ -106,7 +106,7 @@ function treff(){
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every(o => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
   const vis = (q || aktivKat) ? r.slice(0, 60) : [];
-  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? '' : s.type, s.punkter ? `${s.punkter.length} plasser` : '', s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
+  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span class="tekst"><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? '' : s.type, s.punkter ? `${s.punkter.length} plasser` : '', s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
     || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : '');
 }
 function apne(){ panel.hidden = false; knapp.setAttribute('aria-expanded', 'true'); treff(); setTimeout(() => inn.focus({ preventScroll: true }), 30); }
