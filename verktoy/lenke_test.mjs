@@ -1,8 +1,8 @@
 // Lenka husker utsikten (02.11): #view=lat,lon,zoom,pitch,bearing og &hus=<bygg-id>.
 // Bruk: node verktoy/lenke_test.mjs ut/enkel/index.html [mappe for skjermbilder]   (exit 1 ved første feil)
-// (a) view= setter kameraet  (b) hus=pb-68 åpner kortet  (c) flytting skriver hashen  (d) lukket kort fjerner hus=
-// (e) ugyldige hasher krasjer ikke og gir ingen utsikt utenfor kartet  (f) nettleserens tilbake lukker kortet og fjerner hus=
-// (g) «Del» kopierer lenka  (h) uten hash går introen som før
+// (a) view= setter kameraet, og hashen ryddes etter landing  (b) hus=pb-68 åpner kortet  (c) flytting skriver ikke hashen (06.11: intro ved
+// hver ny lasting)  (d) lukk lukker  (e) ugyldige hasher krasjer ikke og gir ingen utsikt utenfor kartet  (f) nettleserens tilbake lukker kortet
+// (g) «Del» kopierer lenka med view= og hus=  (h) uten hash går introen som før
 import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const file=process.argv[2]; const utDir=process.argv[3]||path.join(path.dirname(file),'..'); const dir=path.dirname(file);
@@ -29,19 +29,18 @@ const V={lat:59.20262, lon:10.95215, zoom:17.6, pitch:52, bearing:-140};
   const ok=Math.abs(k.lat-V.lat)<1e-5 && Math.abs(k.lon-V.lon)<1e-5 && Math.abs(k.zoom-V.zoom)<0.01 && Math.abs(k.pitch-V.pitch)<0.5 && Math.abs(k.bearing-V.bearing)<0.5;
   const kOk=Math.abs(k.kam.az-(-V.bearing*Math.PI/180))<0.01 && Math.abs(k.kam.pol-V.pitch*Math.PI/180)<0.01 && !k.kam.intro;
   sjekk('(a) view= setter kameraet', ok && kOk, `lat ${k.lat.toFixed(5)} lon ${k.lon.toFixed(5)} zoom ${k.zoom.toFixed(2)} pitch ${k.pitch.toFixed(1)} bearing ${k.bearing.toFixed(1)}; __kam az ${k.kam.az.toFixed(3)} pol ${k.kam.pol.toFixed(3)} intro ${k.kam.intro}`);
-  sjekk('(a) hashen står igjen etter oppstart', (await hash(page)).startsWith(`#view=${V.lat},${V.lon},${V.zoom},${V.pitch},${V.bearing}`), await hash(page));
+  sjekk('(a) hashen er ryddet etter landing', (await hash(page))==='', await hash(page));
   await page.waitForTimeout(1500); await skjerm(page,'lenke-a.png');
   // (c) flytt kameraet: hashen følger når kameraet har stoppet, og historikken vokser ikke
   const lengde0=await page.evaluate(()=>history.length);
   await page.evaluate(()=>map.jumpTo({center:[10.9535,59.2031], zoom:17.2, bearing:30, pitch:45})); await ro(page);
   const h=await hash(page);
-  sjekk('(c) flytting skriver hashen', h==='#view=59.2031,10.9535,17.2,45,30', h);
+  sjekk('(c) flytting skriver ikke hashen', h==='', h);
   // musedra (ekte gest), så hashen etter at kartet har stoppet
   await page.mouse.move(550,400); await page.mouse.down(); await page.mouse.move(450,350,{steps:8}); await page.mouse.up(); await ro(page);
   const h2=await hash(page), k2=await kamera(page);
-  sjekk('(c) dra med mus skriver hashen', h2===`#view=${+k2.lat.toFixed(5)},${+k2.lon.toFixed(5)},${+k2.zoom.toFixed(2)},${+k2.pitch.toFixed(0)},${+k2.bearing.toFixed(0)}` && h2!==h, h2);
+  sjekk('(c) dra med mus skriver ikke hashen', h2==='' && !!k2, h2);
   sjekk('(c) replaceState: ingen nye historikkinnslag', await page.evaluate(()=>history.length)===lengde0);
-  sjekk('(c) lagret i localStorage', (await page.evaluate(()=>localStorage.getItem('smart-old-town:utsikt')))===h2.slice(1));
   sjekk('(a,c) ingen JS-feil', errs.length===0, errs.join(' | '));
   await page.close(); }
 
@@ -50,7 +49,7 @@ const V={lat:59.20262, lon:10.95215, zoom:17.6, pitch:52, bearing:-140};
   await ro(page); await page.waitForTimeout(1500);
   const kort=await page.evaluate(()=>({vis:document.getElementById('kort').classList.contains('vis'), navn:document.querySelector('#kort h2').textContent, valgt:window.__kam().valgt}));
   sjekk('(b) hus=pb-68 åpner kortet', kort.vis && kort.navn==='Tøihuset, nordfløya', JSON.stringify(kort));
-  const h=await hash(page); sjekk('(b) hashen har view= og hus=pb-68', /^#view=[-\d.]+,[-\d.]+,[\d.]+,\d+,-?\d+&hus=pb-68$/.test(h), h);
+  const h=await hash(page); sjekk('(b) hashen er ryddet etter landing', h==='', h);
   // kameraet står på huset (huset midt i flaten kortet ikke dekker)
   const fri=await page.evaluate(()=>{ const k=document.getElementById('kort'); return {x0:k.offsetLeft+k.offsetWidth+16, x1:innerWidth, y1:innerHeight}; });
   sjekk('(b) kameraet har landet på huset', kort.valgt && Math.abs(kort.valgt[0]-(fri.x0+fri.x1)/2)<80 && Math.abs(kort.valgt[1]-fri.y1/2)<80, `huset på skjermen ${kort.valgt&&kort.valgt.map(v=>v|0)}`);
@@ -58,10 +57,10 @@ const V={lat:59.20262, lon:10.95215, zoom:17.6, pitch:52, bearing:-140};
   // (g) Del: lenka i utklippstavla er den samme som i adresselinja, og knappen viser haken
   await page.click('#kort .del'); await page.waitForTimeout(300);
   const delt=await page.evaluate(async()=>({tekst:await navigator.clipboard.readText(), haken:document.querySelector('#kort .del').classList.contains('delt'), knapp:document.querySelector('#kort .del').textContent}));
-  sjekk('(g) Del kopierer lenka med hus=', decodeURIComponent(delt.tekst)===`${BASE}${h}` && delt.haken && delt.knapp==='Del', JSON.stringify(delt));
+  sjekk('(g) Del kopierer lenka med view= og hus=', new RegExp('^'+BASE.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'#view=[-\\d.]+,[-\\d.]+,[\\d.]+,\\d+,-?\\d+&hus=pb-68$').test(decodeURIComponent(delt.tekst)) && delt.haken && delt.knapp==='Del', JSON.stringify(delt));
   // (d) lukk kortet med ×: hus= forsvinner
   await page.click('#kort .lukk'); await ro(page); await page.waitForTimeout(500);
-  const hd=await hash(page); sjekk('(d) lukk fjerner hus=', !hd.includes('hus=') && hd.startsWith('#view='), hd);
+  const hd=await hash(page); sjekk('(d) etter lukk er hashen ren', hd==='', hd);
   sjekk('(d) kortet er lukket', !(await page.evaluate(()=>document.getElementById('kort').classList.contains('vis'))));
   // (f) klikk på huset igjen (som en bruker), så nettleserens tilbake: kortet lukkes og hus= forsvinner
   const pk=await page.evaluate(()=>window.__skjerm3(-70,2.5,93));   // midt på nordfløya (modell x -70, y -93, halv vegghøyde)
@@ -69,10 +68,10 @@ const V={lat:59.20262, lon:10.95215, zoom:17.6, pitch:52, bearing:-140};
   const aapen=await page.evaluate(()=>document.getElementById('kort').classList.contains('vis'));
   await ro(page);
   const hf=await hash(page);
-  sjekk('(f) kortet åpnet igjen med hus=', aapen && hf.includes('hus=pb-68'), hf);
+  sjekk('(f) kortet åpnet igjen', aapen, hf);
   await page.goBack(); await ro(page); await page.waitForTimeout(600);
   const etter=await page.evaluate(()=>({vis:document.getElementById('kort').classList.contains('vis'), hash:decodeURIComponent(location.hash), url:location.pathname}));
-  sjekk('(f) tilbake lukker kortet og fjerner hus=, siden står', !etter.vis && !etter.hash.includes('hus=') && etter.hash.startsWith('#view=') && etter.url.endsWith('index.html'), JSON.stringify(etter));
+  sjekk('(f) tilbake lukker kortet, siden står', !etter.vis && !etter.hash.includes('hus=') && etter.url.endsWith('index.html'), JSON.stringify(etter));
   sjekk('(b,d,f,g) ingen JS-feil', errs.length===0, errs.join(' | '));
   await page.close(); }
 

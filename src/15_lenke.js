@@ -2,9 +2,10 @@ import { SENERE, TILSTAND } from './tilstand.js';
 import { BERORING, map, tilModell } from './00_oppsett.js';
 import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { GRENSE } from './13_kart.js';
-// ---- lenka husker utsikten : #view=lat,lon,zoom,pitch,bearing&hus=<bygg-id> ----
-// Hashen skrives med history.replaceState (ingen nye historikkinnslag) når kameraet har stoppet, og når siden skjules eller lukkes.
-// En lenke med view= (eller hus=) hopper over introen og går rett dit; hus= løfter huset og åpner kortet som ved klikk.
+// ---- delte lenker: #view=lat,lon,zoom,pitch,bearing&hus=<bygg-id> ----
+// «Del» i kortet lager lenka til utsikten du står i. En lenke med view= (eller hus=) hopper over introen og går rett dit; hus= løfter huset
+// og åpner kortet som ved klikk. Adresselinja skriver ikke utsikten underveis, og en delt lenke ryddes bort når du har landet, så en ny
+// lasting alltid gir introen (Vegar 06.11: «Intro ved hver ny lasting»; før hoppet han over introen hver gang fordi adressen husket utsikten).
 // Ugyldige verdier ignoreres: tall som ikke er tall, et senter utenfor kartets ramme, et hus som ikke finnes. Zoom og vinkler klemmes
 // innen kartets egne grenser. Inne i en sandbox (claude.ai-artefakten) kan history og localStorage mangle; da virker kartet uten dem.
 const LENKE=(()=>{
@@ -25,7 +26,6 @@ const LENKE=(()=>{
   const hus=husId ? buildings.find(g=>g.userData.b && g.userData.b.id===husId && !g.userData.b.skjul) || null : null;
   return {vis, hus, hopp: !!(vis||hus)};
 })();
-const LAGRET_UTSIKT='smart-old-town:utsikt';
 function lenkeHash(){
   const c=map.getCenter(), f=(x,n)=>(+x.toFixed(n)).toString();
   let s=`view=${f(c.lat,5)},${f(c.lng,5)},${f(map.getZoom(),2)},${f(map.getPitch(),0)},${f(map.getBearing(),0)}`;
@@ -33,12 +33,10 @@ function lenkeHash(){
   return s;
 }
 function lenkeUrl(){ let base=''; try{ base=location.href.split('#')[0]; }catch(e){ base=''; } return base+'#'+lenkeHash(); }
-// skrives bare når introen er ferdig (lenka til en halvferdig intro er ingen utsikt)
+// adresselinja holdes ren for utsikt (se øverst): en hash fra en delt lenke tas bort når kartet har landet
 function lenkeSkriv(){
-  if(!TILSTAND.introDone) return;
-  const s='#'+lenkeHash();
-  try{ if(location.hash!==s) window.history.replaceState(window.history.state, '', s); }catch(e){ /* sandbox uten historikk: kartet virker likevel */ }
-  try{ window.localStorage.setItem(LAGRET_UTSIKT, s.slice(1)); }catch(e){ /* sandbox uten lagring */ }
+  if(!TILSTAND.introDone || !location.hash) return;
+  try{ window.history.replaceState(window.history.state, '', location.pathname + location.search); }catch(e){ /* sandbox uten historikk: kartet virker likevel */ }
 }
 // moveend: ett bilde etter, så introens egen moveend (som setter introDone) har kjørt først
 map.on('moveend', ()=>setTimeout(lenkeSkriv, 0));
