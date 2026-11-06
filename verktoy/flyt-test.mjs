@@ -5,7 +5,7 @@
 // Bruk: node verktoy/flyt-test.mjs <index.html> <ut.json> [scenario ...]   (FLYT_TEGN=1: tegn byen også; standard er ?tegn=0, bare kameraet)
 // Måles på skjermen: for ni faste skjermpunkter, hvor langt bakken under dem flyttet seg siden forrige bilde (kartets egen projeksjon);
 // den største av dem er bildets bevegelse (dekker flytt, zoom og rotasjon). Fem faste bakkepunkter brukes til «står kameraet der det stod».
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, utfil, ...valgte] = process.argv; const dir = path.dirname(file);
 const server = http.createServer((q, r) => { const p = path.join(dir, q.url.split('?')[0] === '/' ? 'index.html' : q.url.split('?')[0]); if (fs.existsSync(p) && fs.statSync(p).isFile()) { r.setHeader('content-type', 'text/html; charset=utf-8'); r.end(fs.readFileSync(p)); } else { r.statusCode = 404; r.end(); } });

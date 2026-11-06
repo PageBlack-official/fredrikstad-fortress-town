@@ -4,7 +4,7 @@
 // cx, cy er modellmeter (x øst, y nord) og går rett inn i window.__vis(az, zoom, x, y) (src/15_loop.js -> tilLngLat(x, y), y nord).
 // Skriver <utmappe>/<n>-az<az>.png og <n>-az<az>.json ({kam, bygg:[{id, tak:[sx,sy], bakke:[sx,sy]}]}); hopper over det som finnes.
 // Mal: rapport/bevisark/lag-bilder.mjs og verktoy/bilde.mjs (venter til kameraet står, UI skjult som UI=0).
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, viewsFile, utdir, ...bare] = process.argv; const dir = path.dirname(file);
 const W = 1100, H = 760;

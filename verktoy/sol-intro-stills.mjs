@@ -1,6 +1,6 @@
 // Stillbilder av «sola finner byen» ved u = 0, 0.25, 0.5, 0.75, 1 langs introens kameravei (programvare-GPU-en er for treg til å se introen i fart).
 // Bruk: node verktoy/sol-intro-stills.mjs <index.html> <utmappe>
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, ut] = process.argv; const dir=path.dirname(file); fs.mkdirSync(ut,{recursive:true});
 const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[0]==='/'?'index.html':q.url.split('?')[0]); if(fs.existsSync(p)&&fs.statSync(p).isFile()){ r.setHeader('content-type','text/html; charset=utf-8'); r.end(fs.readFileSync(p)); } else { r.statusCode=404; r.end(); } });

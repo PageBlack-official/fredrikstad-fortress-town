@@ -5,7 +5,7 @@
 //       ved å lese én piksel (GPU=finish: gl.finish som tast m), BREDDE/HOYDE/DPR for vinduet)
 // Per bilde logger siden (15_loop: window.__logg): r = hele render() i laget, o = oppdater(), sp = speilpasset, sk = skyggekartet,
 // s/b/f = 3D-passet, blekkstrek+AO og FXAA (01_etterbehandling). «hele siden» er tida mellom kartets bilder (map 'render').
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, utfil, ...varianter] = process.argv;
 const V = varianter.map(a => { const [n, f] = a.split('='); return { navn: n, fil: path.resolve(f) }; });

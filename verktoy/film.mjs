@@ -1,6 +1,6 @@
 // Film av kartet med styrt klokke: performance.now og requestAnimationFrame byttes ut, og hvert bilde skyver klokka 1/30 s og kjører
 // bildekallene selv. Bevegelsen blir riktig uansett hvor treg testmaskinen er (programvare-GPU bruker sekunder per bilde). Manus: intro → dobbeltklikk (zoom inn) → klikk på hus (kort, glidning) → Esc (hjem). Bruk: node film.mjs <index.html> <ut.mp4> [sek]
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path'; import { execSync } from 'node:child_process';
 const [,, file, ut, sekArg='11'] = process.argv; const dir=path.dirname(file); const FPS=+(process.env.FPS||20), SEK=+sekArg;
 const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[0]==='/'?'index.html':q.url.split('?')[0]); if(fs.existsSync(p)&&fs.statSync(p).isFile()){ r.setHeader('content-type', p.endsWith('.json')?'application/json':p.endsWith('.js')?'text/javascript':'text/html; charset=utf-8'); r.end(fs.readFileSync(p)); } else { r.statusCode=404; r.end(); } });

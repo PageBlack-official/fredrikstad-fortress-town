@@ -14,7 +14,7 @@
 // Bare bygg tegnes (alt i byen med byggindeks: vanlige hus, spesielle grupper som kirka og portbyggene, vinduene). Trær, bakke,
 // vann, murer, broer, brygger, statuen og kontaktskyggen tegnes ikke. Kameraet: THREE.Camera med projeksjonsmatrisen satt direkte
 // (verdensrom = modell x, høyde, -y; src/05_bygg.js), dybde langs synsretningen (nullrommet til A).
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, jobbFil, utdir] = process.argv; const dir = path.dirname(file);
 const jobb = JSON.parse(fs.readFileSync(jobbFil, 'utf8'));

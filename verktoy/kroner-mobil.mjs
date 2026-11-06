@@ -1,5 +1,5 @@
 // Trekroner på mobil: klyp og dra med to fingre (CDP touch), skjermbilde underveis, teller kronegrønt per bilde.
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium, devices } = pw;
+import pw from './pw.mjs'; const { chromium, devices } = pw;
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, ut] = process.argv; const dir=path.dirname(file);
 const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[0]==='/'?'index.html':q.url.split('?')[0]); if(fs.existsSync(p)&&fs.statSync(p).isFile()){ r.setHeader('content-type', p.endsWith('.json')?'application/json':p.endsWith('.js')?'text/javascript':'text/html; charset=utf-8'); r.end(fs.readFileSync(p)); } else { r.statusCode=404; r.end(); } });

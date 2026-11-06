@@ -3,7 +3,7 @@
 // Bruk: node verktoy/statue_ark.mjs [ut.png]   (standard rapport/torvet/statue.png)
 // Materialet er en flat to-tone-erstatning for kartets mat() (lys side / skyggeside), så arket viser form og proporsjon;
 // fargene er de samme RGB-verdiene som i kartet.
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
 const ROT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const ut = process.argv[2] || path.join(ROT, 'rapport', 'torvet', 'statue.png');

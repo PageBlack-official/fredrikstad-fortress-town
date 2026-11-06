@@ -3,7 +3,7 @@
 // Testen sender berøringene i nøyaktig takt inne i siden (programvare-GPU tegner for sakte til å treffe tidsvinduet med ekte berøring) og
 // gjør så det MapLibre gjør ved slipp: easeTo med noMoveStart + freezeElevation og slipp-hendelsen. Måler hvor langt kartet glir etterpå.
 // Bruk: node verktoy/tomler_test.mjs ut/enkel/index.html   (exit 1 ved feil)
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const file=process.argv[2]; const dir=path.dirname(file);
 const server=http.createServer((q,r)=>{ r.setHeader('content-type','text/html; charset=utf-8'); r.end(fs.readFileSync(path.join(dir,'index.html'))); });

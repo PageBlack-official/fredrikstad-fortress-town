@@ -3,7 +3,7 @@
 // (a) view= setter kameraet, og hashen ryddes etter landing  (b) hus=pb-68 åpner kortet  (c) flytting skriver ikke hashen (06.11: intro ved
 // hver ny lasting)  (d) lukk lukker  (e) ugyldige hasher krasjer ikke og gir ingen utsikt utenfor kartet  (f) nettleserens tilbake lukker kortet
 // (g) «Del» kopierer lenka med view= og hus=  (h) uten hash går introen som før
-import pw from '/opt/npm-tools/node_modules/playwright/index.js'; const { chromium } = pw;
+import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const file=process.argv[2]; const utDir=process.argv[3]||path.join(path.dirname(file),'..'); const dir=path.dirname(file);
 const server=http.createServer((q,r)=>{ const p=path.join(dir, q.url.split('?')[0]==='/'?'index.html':q.url.split('?')[0]); if(fs.existsSync(p)&&fs.statSync(p).isFile()){ r.setHeader('content-type', p.endsWith('.html')?'text/html; charset=utf-8':'application/octet-stream'); r.end(fs.readFileSync(p)); } else { r.statusCode=404; r.end(); } });
