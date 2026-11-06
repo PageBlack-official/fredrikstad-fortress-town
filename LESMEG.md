@@ -321,6 +321,15 @@ arket; forskyvningen settes for hånd og finjusteres av blokksøket. Hvert kontr
 ## Oppsett på en ny maskin
 Python 3 med opencv-python-headless, numpy, scipy, shapely, pyproj, tifffile, pymupdf (kommunekartet) og scikit-image (bakke.py); Node 22 og `npm install` (esbuild til bygget, ESLint til regel 08); Playwright med Chromium til nettlesertestene.
 
+## Regler på Mac minien (06.11, Vegar: «bruk Mac minien … du bestemmer»)
+Hele regelsjekken går på Vegars Mac mini (Vegars-Plex.local, Intel UHD 630, aldri i dvale), med ekte skjermkort i stedet for SwiftShader.
+- Oppsett i `~/sot-maskin/`: `node/` (Node 22), `py/` (Python 3.12 via uv, pakkene over), `repo/` (klonen, Playwright + Chromium via npm).
+- Kjøring fra iMac-en: `ssh Vegars-Plex.local 'nohup sh ~/sot-maskin/repo/verktoy/maskin-kjor.sh [gren|commit] [nr …] > ~/sot-maskin/kjor.log 2>&1 &'`.
+  Skriptet sjekker ut grenen, henter Google-flyfotoet fra git-historikken og ortofotoflisene fra kommunen, og kjører `regler/kjor.py`
+  med `PW_GPU=1`. Ferdig når siste linje i kjor.log er «FERDIG <kilde>».
+- `verktoy/pw.mjs`: alle nettlesertestene henter Playwright herfra. Uten PW_GPU tegnes det med SwiftShader som før (skyen).
+- Data-reglene (01, 15, 16, 18, 20, 21, 31–33, 39) krever flyfotoet og ortofotoet. I skyen mangler de og reglene krasjer; på minien går de.
+
 ## Koden: moduler, eiere og publisering (05.11)
 Vegar 05.11: «fiks spagettien». Før var de 25 filene limt sammen til ett skript der 263 navn delte samme rom, 12 variabler ble skrevet
 fra andre filer enn sin egen, og 13 tidlige filer brukte noe fra senere filer. Nå:
