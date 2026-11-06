@@ -25,5 +25,8 @@ for f in mangler:
     flater.hent_fliser((x0, y0, x1, y1))
 print('ortofoto: hentet', len(mangler), 'fliser')
 PY
+[ -s kilder/ortofoto-2024/vannfasit.png ] || python3 verktoy/vann.py maske
+# kommunekartet: Vegars nedlasting fra kartportalen 29.10 (_ags_A4LandscapeFred_cf65bfda….pdf), kopiert til ~/sot-maskin/kommunekart.pdf
+P=kilder/kommunekart/kommunekart.pdf; [ -s "$P" ] || cp "$M/kommunekart.pdf" "$P"
 python3 regler/kjor.py "$@"
 echo "FERDIG $(git log -1 --format=%h -- src data regler bygg.py datalag.py assets)"
