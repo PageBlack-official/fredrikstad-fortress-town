@@ -67,11 +67,12 @@ import { hAt } from './08_festningsterrenget.js';
     const hg=v.hage; if(!hg) return;
     const plen=mat([104,150,78],false,[78,116,60]), hekk=mat([70,112,62],false,[50,84,46]), blomst=[mat([142,108,170],false,[104,80,128]), mat([232,226,236],false,[180,174,186])];
     const yp=Math.min(...hg.p.map(q=>hAt(q[0],q[1])));
-    const pg=new THREE.ExtrudeGeometry(polyShape(hg.p),{depth:0.06,bevelEnabled:false}); pg.rotateX(-Math.PI/2); pg.translate(0,yp,0);
+    const PL=0.14;   // plenen 14 cm over terrenget: med 6 cm var den dekket av gårdsflaten (skjermbildet på minien 06.11)
+    const pg=new THREE.ExtrudeGeometry(polyShape(hg.p),{depth:PL,bevelEnabled:false}); pg.rotateX(-Math.PI/2); pg.translate(0,yp,0);
     const pm=new THREE.Mesh(pg,[plen,plen]); pm.receiveShadow=true; anlegg.add(pm);
     (hg.hekker||[]).forEach(lin=>{ for(let i=0;i+1<lin.length;i++){ const A=lin[i], B=lin[i+1], len=Math.hypot(B[0]-A[0],B[1]-A[1]);
-      const m=new THREE.Mesh(new THREE.BoxGeometry(len,0.85,0.7),hekk); m.position.set((A[0]+B[0])/2, yp+0.06+0.425, -(A[1]+B[1])/2); m.rotation.y=Math.atan2(B[1]-A[1],B[0]-A[0]); m.castShadow=m.receiveShadow=true; anlegg.add(m); } });
-    (hg.busker||[]).forEach(([x,y,r],i)=>{ const m=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),i%3===2?blomst[1]:i%3===1?blomst[0]:hekk); m.scale.y=0.75; m.position.set(x,yp+0.06+r*0.7,-y); m.castShadow=true; anlegg.add(m); });
+      const m=new THREE.Mesh(new THREE.BoxGeometry(len,0.7,0.55),hekk); m.position.set((A[0]+B[0])/2, yp+PL+0.35, -(A[1]+B[1])/2); m.rotation.y=Math.atan2(B[1]-A[1],B[0]-A[0]); m.castShadow=m.receiveShadow=true; anlegg.add(m); } });
+    (hg.busker||[]).forEach(([x,y,r],i)=>{ const m=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),i%2?blomst[0]:hekk); m.scale.y=0.75; m.position.set(x,yp+PL+r*0.7,-y); m.castShadow=true; anlegg.add(m); });
   });
   // verandaer: uteservering langs fasaden som i SG&CO-kveldsbildet: lavt dekke, plantekasser langs ytterkanten med åpning
   // midt foran, parasoller med bord under (te-, verktoy/kaserna.py)
