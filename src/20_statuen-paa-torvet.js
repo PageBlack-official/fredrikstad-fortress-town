@@ -72,6 +72,23 @@ const FIGUR={
     kule(0.075,V(0,0,0),0.9,1.08,1,hode); kule(0.08,V(0,0.03,-0.015),1,0.9,1,hode);          // ansikt og hår (kort, fyldig)
     return 0.88;
   },
+  // vanntrauet ved Voldporten (Vegars foto 2012, plass markert av Vegar i ortofotoet 06.11): rektangulært granitttrau med
+  // langsiden på tvers (x), vannposten i svart støpejern midt foran (+z, mot byen) med tuten inn over trauet, og en lav
+  // granittkloss ved høyre ende sett forfra (+x). Mål i meter (posten ca. 1,2 m), returnerer postens høyde.
+  vanntrau({stein}){
+    const G=[150,148,140], GS=[104,102,98], J=[44,46,48], JS=[24,25,27], L=1.4, D=0.62, H=0.46, t=0.1;
+    const boks=(b,h,d,x,y,z,f=G,sk=GS)=>stein(new THREE.BoxGeometry(b,h,d),f,sk,x,y,z);
+    boks(L,0.16,D,0,0.08,0);                                                         // bunnen
+    boks(L,H-0.16,t,0,0.16+(H-0.16)/2,D/2-t/2); boks(L,H-0.16,t,0,0.16+(H-0.16)/2,-D/2+t/2);   // langsidene
+    boks(t,H-0.16,D-2*t,L/2-t/2,0.16+(H-0.16)/2,0); boks(t,H-0.16,D-2*t,-L/2+t/2,0.16+(H-0.16)/2,0);   // endene
+    boks(L-2*t,0.02,D-2*t,0,H-0.12,0,[70,84,88],[52,62,66]);                         // vannet, litt under kanten
+    const zp=D/2+0.09, xp=0.1, syl=(r1,r2,h,y)=>stein(new THREE.CylinderGeometry(r2,r1,h,16),J,JS,xp,y,zp);
+    syl(0.085,0.075,0.1,0.05); syl(0.06,0.05,0.88,0.54); syl(0.062,0.062,0.04,0.95);   // fot, stamme, krage
+    syl(0.07,0.07,0.16,1.05); syl(0.07,0.03,0.07,1.165); syl(0.02,0.02,0.03,1.185);     // hode, kuppel, knapp
+    const tut=stein(new THREE.CylinderGeometry(0.022,0.026,0.16,10),J,JS,xp,0.84,zp-0.09); tut.rotation.x=Math.PI/2.3;   // tuten inn over trauet
+    boks(0.22,0.3,0.22,L/2+0.2,0.15,D/2-0.05,[170,168,160],[118,116,110]);           // klossen ved høyre ende
+    return 1.2;
+  },
 };
 (DATA.statue||[]).filter(st=>st.tegnes!==false && st.figur && FIGUR[st.figur.form]).forEach(st=>{
   const g=new THREE.Group(); const [x,y]=st.xy;
@@ -100,7 +117,8 @@ const FIGUR={
   const lem=(a,b,r1,r2,forelder=k)=>{ const d=b.clone().sub(a), L=d.length(); const m=del(new THREE.CylinderGeometry(r2,r1,L,16),(a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2,forelder);
     m.quaternion.setFromUnitVectors(V(0,1,0), d.normalize()); return m; };
   const kule=(r,p,sx=1,sy=1,sz=1,forelder=k)=>{ const m=del(new THREE.SphereGeometry(r,20,14),p.x,p.y,p.z,forelder); m.scale.set(sx,sy,sz); return m; };
-  const hoyde=FIGUR[st.figur.form]({k,del,lem,kule});
+  const stein=(geo,f,sk,px,py,pz)=>legg(geo,f,sk,px,py,pz,k);   // egne farger (vanntrauet: granitt og støpejern)
+  const hoyde=FIGUR[st.figur.form]({k,del,lem,kule,stein});
   k.scale.setScalar(st.figur.h/hoyde);
   // retning: kompassgrader -> rotasjon om y (lokal +z = fram); verden: x = øst, -z = nord
   const b=(st.retning||0)*Math.PI/180; g.rotation.y=Math.atan2(Math.sin(b),-Math.cos(b));

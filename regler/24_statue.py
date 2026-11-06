@@ -18,7 +18,9 @@ hus = unary_union([Polygon(b['p']).buffer(0) for b in bygg if not b.get('skjul')
 kode = open(os.path.join(ROT, 'src', '20_statuen-paa-torvet.js'), encoding='utf8').read()
 for st in S:
     n = st.get('navn', '?'); tegnes = st.get('tegnes', True)
-    for felt in ('navn', 'billedhugger', 'xy', 'kilder') + (('avduket', 'materiale', 'retning', 'figur', 'sokkel') if tegnes else ('grunn',)):
+    # bruksgjenstander (vanntrauet ved Voldporten, 06.11) har ingen kjent billedhugger, avduking eller sokkel
+    bruk = st.get('type') == 'vanntrau'
+    for felt in (('navn', 'xy', 'kilder') if bruk else ('navn', 'billedhugger', 'xy', 'kilder')) + ((('materiale', 'retning', 'figur') if bruk else ('avduket', 'materiale', 'retning', 'figur', 'sokkel')) if tegnes else ('grunn',)):
         if not st.get(felt): feil.append(f"- {n}: mangler {felt}")
     if not all(str(k).startswith(('http', 'kilder/')) for k in st.get('kilder', [])): feil.append(f"- {n}: kilde som ikke er URL eller kildefil")
     if not tegnes:
