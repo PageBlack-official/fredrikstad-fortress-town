@@ -106,7 +106,7 @@ function treff(){
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every(o => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
   const vis = (q || aktivKat) ? r.slice(0, 60) : [];
-  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.punkter ? `${s.punkter.length} plasser` : '', s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
+  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? '' : s.type, s.punkter ? `${s.punkter.length} plasser` : '', s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
     || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : '');
 }
 function apne(){ panel.hidden = false; knapp.setAttribute('aria-expanded', 'true'); treff(); setTimeout(() => inn.focus({ preventScroll: true }), 30); }
@@ -124,7 +124,7 @@ liste.addEventListener('click', e => { const li = e.target.closest('[data-i]'); 
 panel.querySelector('.kat').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (!b) return;
   aktivKat = aktivKat === b.dataset.k ? null : b.dataset.k;
   panel.querySelectorAll('[data-k]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.k === aktivKat)));
-  b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });   // valgt kategori står helt i raden
+  b.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });   // valgt kategori midt i raden, ikke under kanttoningen
   tegnNaaler(); treff(); });
 addEventListener('pointerdown', e => { if (!panel.hidden && !panel.contains(e.target) && !knapp.contains(e.target)) lukk(); });
 addEventListener('keydown', e => { if ((e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) && document.activeElement !== inn) { e.preventDefault(); apne(); } });
