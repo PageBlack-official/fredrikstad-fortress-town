@@ -76,18 +76,25 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #sokpanel .kat{display:flex;gap:6px;padding:10px 12px;overflow-x:auto;scrollbar-width:none}
 #sokpanel .kat::-webkit-scrollbar{display:none}
 #sokpanel .kat button{flex:none;display:flex;align-items:center;gap:6px;border:1px solid rgba(43,36,32,.16);background:none;border-radius:18px;padding:7px 12px 7px 9px;font:500 13px/1 inherit;font-family:inherit;color:inherit;cursor:pointer;white-space:nowrap}
+#sokpanel .kat button .merke svg{width:13px;height:13px}
 #sokpanel .kat button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 #sokpanel .treff{list-style:none;margin:0;padding:4px 6px 6px;overflow-y:auto;min-height:0}
-#sokpanel .treff li{display:flex;gap:10px;align-items:flex-start;padding:9px 8px;border-radius:10px;cursor:pointer}
-#sokpanel .treff li svg{flex:none;margin-top:1px;color:var(--muted)}
+#sokpanel .treff li{display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:10px;cursor:pointer}
+#sokpanel .treff li .merke{margin-top:0}
 #sokpanel .treff li span{display:flex;flex-direction:column;gap:2px;min-width:0}
 #sokpanel .treff li small{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #sokpanel .treff li:hover,#sokpanel .treff li[aria-selected="true"]{background:rgba(43,36,32,.06)}
 #sokpanel .treff li.tom{color:var(--muted);cursor:default}
 #sokpanel .kilde{margin:0;padding:6px 14px 10px;font-size:11px;color:var(--muted)}
-.naal{width:30px;height:30px;border-radius:50% 50% 50% 4px;transform:rotate(-45deg);border:0;padding:0;display:grid;place-items:center;background:var(--paper);color:var(--ink);box-shadow:0 3px 10px rgba(40,30,20,.25);cursor:pointer}
-.naal svg{transform:rotate(45deg)}
-.naal.valgt{background:var(--ink);color:var(--paper);width:36px;height:36px}
+/* Nålene (24_sok) som i Apple Kart: hvitt symbol på farget sirkel med hvit kant og en liten spiss under, rett opp. MapLibre styrer
+   transform på selve markøren, så nåla dreies aldri med CSS (06.11: den dreide formen ble overstyrt og ikonene stod skrått). */
+.merke{flex:none;width:var(--d);height:var(--d);border-radius:50%;background:var(--f);color:#fff;display:grid;place-items:center}
+.naal{border:0;padding:0;background:none;display:flex;flex-direction:column;align-items:center;cursor:pointer;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.25)) drop-shadow(0 3px 6px rgba(0,0,0,.18))}
+.naal .merke{box-shadow:0 0 0 2px #fff;transition:width .18s ease,height .18s ease}
+.naal::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #fff;margin-top:1px}
+.naal.valgt .merke{--d:40px}
+.naal.valgt .merke svg{width:24px;height:24px}
+.naal:focus-visible{outline:none}.naal:focus-visible .merke{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--f)}
 #kort .her a{color:inherit}
 #kort .her li.vei a{display:inline-block;margin-top:6px;padding:8px 14px;border-radius:18px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500}
 /* «Du er her» (25_her) og korte meldinger */
@@ -124,7 +131,8 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #postkort:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 /* gjesteversjonen (30_gjest): partnerens navn først i toppen, aksentfargen på Finn og valgte nåler */
 #gjestemerke{display:flex;align-items:center;height:36px;padding:0 14px;border-radius:22px;background:var(--gjest);color:#fff;font:600 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.02em;box-shadow:0 4px 16px rgba(40,30,20,.18)}
-.gjest #sok,.gjest .naal.valgt,.gjest #kort .her li.vei a{background:var(--gjest)}
+.gjest #sok,.gjest #kort .her li.vei a{background:var(--gjest)}
+.gjest .naal.valgt .merke{--f:var(--gjest)}
 /* smal skjerm: toppen får plass ved siden av «Hele Gamlebyen» (bare ikon på Finn, bare temperatur på været) */
 @media (max-width:560px){
   #topp{gap:6px}

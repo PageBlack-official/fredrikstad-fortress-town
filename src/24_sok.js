@@ -16,7 +16,7 @@ const KAT = new Map(S.kategorier.map(k => [k.id, k.navn]));
 const IKON = {   // én strek per kategori, samme stil som knappene
   spise: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M16 3c-2 1.5-2.5 4-2.5 7h2.5v11"/>',
   kultur: '<path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/>',
-  se: '<circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/>',
+  se: '<path d="M4 8.5h3.2L8.8 6h6.4l1.6 2.5H20V19H4z"/><circle cx="12" cy="13.4" r="3.1"/>',
   kulturminne: '<path d="M4 21h16M6 21V10M10 21V10M14 21V10M18 21V10M3 10l9-6 9 6z"/>',
   handle: '<path d="M5 8h14l-1 12H6L5 8zM9 8a3 3 0 0 1 6 0"/>',
   sove: '<path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3M7 11.5h.01"/>',
@@ -24,7 +24,11 @@ const IKON = {   // én strek per kategori, samme stil som knappene
   anbefalt: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/>',
   toalett: '<circle cx="8" cy="5" r="1.6"/><circle cx="16" cy="5" r="1.6"/><path d="M8 8v12M6 10h4M16 8l-3 7h6l-3-7v12"/>',
 };
-const svg = (k, s = 18) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${IKON[k] || IKON.se}</svg>`;
+// fargen per kategori (som Apple Kart: én farge per slags sted, hvitt symbol på farget sirkel)
+const FARGE = { spise: '#f0892b', kultur: '#d6457a', se: '#139a8a', kulturminne: '#9c7350', handle: '#e2a312', sove: '#8657cf', parkering: '#2f6fd6', anbefalt: '#e0483e', toalett: '#7a838e' };
+// merket: ikonet hvitt på en sirkel i kategoriens farge; rett opp, aldri dreid (Vegar 06.11: «du har lagt dem skrått»)
+const merke = (k, d = 24) => `<span class="merke" style="--f:${FARGE[k] || '#5f6670'};--d:${d}px">${svg(k, Math.round(d * 0.6), 2.1)}</span>`;
+const svg = (k, s = 18, w = 1.7) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${IKON[k] || IKON.se}</svg>`;
 const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const enkel = t => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/å/g, 'a');
 const IOS = /iP(hone|ad|od)|Macintosh.*Mobile/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -67,7 +71,7 @@ kort_.vedLukk.push(() => { kort_.sted = null; if (valgtSted) { valgtSted = null;
 const naaler = new Map(); let aktivKat = null;
 function naal(s){
   const el = document.createElement('button'); el.type = 'button'; el.className = 'naal'; el.dataset.kat = s.kategori;
-  el.innerHTML = svg(s.kategori, 15); el.setAttribute('aria-label', `${s.navn}, ${s.type || KAT.get(s.kategori) || ''}`); el.title = s.navn;
+  el.innerHTML = merke(s.kategori, 28); el.setAttribute('aria-label', `${s.navn}, ${s.type || KAT.get(s.kategori) || ''}`); el.title = s.navn;
   el.addEventListener('click', e => { e.stopPropagation(); velgSted(s); });
   return new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat(tilLngLat(s.x, s.y));
 }
@@ -84,7 +88,7 @@ knapp.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="
 knapp.setAttribute('aria-label', 'Finn steder i Gamlebyen');
 const panel = document.createElement('div'); panel.id = 'sokpanel'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Finn steder'); panel.hidden = true;
 panel.innerHTML = `<div class="felt">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>'}<input type="search" placeholder="Spisested, museum, parkering …" aria-label="Søk etter sted" autocomplete="off" enterkeyhint="search"><button type="button" class="lukk" aria-label="Lukk">×</button></div>
-<div class="kat" role="group" aria-label="Kategorier">${S.kategorier.filter(k => S.steder.some(s => s.kategori === k.id)).map(k => `<button type="button" data-k="${k.id}" aria-pressed="false">${svg(k.id, 16)}<span>${esc(k.navn)}</span></button>`).join('')}</div>
+<div class="kat" role="group" aria-label="Kategorier">${S.kategorier.filter(k => S.steder.some(s => s.kategori === k.id)).map(k => `<button type="button" data-k="${k.id}" aria-pressed="false">${merke(k.id, 22)}<span>${esc(k.navn)}</span></button>`).join('')}</div>
 <ul class="treff" role="listbox" aria-label="Treff"></ul><p class="kilde">Steder: © OpenStreetMap-bidragsytere, Fredrikstad kommune (parkering, kulturminneplanen)</p>`;
 (document.getElementById('topp') || document.body).prepend(knapp); document.body.append(panel);
 const inn = panel.querySelector('input'), liste = panel.querySelector('.treff');
@@ -94,7 +98,7 @@ function treff(){
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every(o => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
   const vis = (q || aktivKat) ? r.slice(0, 60) : [];
-  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${svg(s.kategori, 16)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
+  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
     || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : '');
 }
 function apne(){ panel.hidden = false; knapp.setAttribute('aria-expanded', 'true'); treff(); setTimeout(() => inn.focus({ preventScroll: true }), 30); }
