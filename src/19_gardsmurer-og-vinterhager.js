@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { DATA, scene } from './00_oppsett.js';
-import { flat, polyShape } from './03_bakke-vann-grønt.js';
-import { plenMat } from './04_brostein-i-hele-gamlebyen.js';
+import { BAKKELAG, bakkelag, flat, polyShape } from './03_bakke-vann-grønt.js';
 import { flatGruppe, mat } from './05_bygg.js';
 import { hAt } from './08_festningsterrenget.js';
 // ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
@@ -34,45 +33,39 @@ import { hAt } from './08_festningsterrenget.js';
     const bk=new THREE.Shape(); bk.absarc(0,yb,r+0.32,0,Math.PI,false); bk.lineTo(-r,yb); bk.absarc(0,yb,r,Math.PI,0,true); bk.closePath();
     [1,-1].forEach(sd=>{ const g=new THREE.Mesh(new THREE.ShapeGeometry(bk,16),dekk); g.position.set(mx,y0,-my); g.rotation.y=ang; g.translateZ(sd*(D/2+0.01)); if(sd<0) g.rotateY(Math.PI); anlegg.add(g); });
   });
-  // glasshus: lyse olivengrønne sprosser, glassvegger og saltak i glass med mønet langs husveggen (SG&CO «Utefølelse inne»,
-  // Metropolis 06.11; før: mørk grønn kasse med flatt tak og lanterne). Første kant i p står mot husveggen.
+  // glasshus (SG&CO-illustrasjonen av gården, Vegar 06.11): mørk grønne stolper og flatt tak med lav glasslanterne midt på,
+  // høye glassfelt med en rad småruter øverst, dobbeltdør midt foran; varmt lys innenfor. Første kant i p står mot husveggen.
   (DATA.vinterhager||[]).forEach(v=>{
     if(v.skjul) return;
     const p=v.p, H=v.h; const y0=Math.min(...p.map(q=>hAt(q[0],q[1])));
-    const glass=mat([196,212,206],false,[146,164,160]), glassD=mat([196,212,206],false,[146,164,160],{ds:true}), ramme=mat([128,134,102],false,[92,98,74]), innhold=mat([92,122,80],false);
-    const gx=p.reduce((s,q)=>s+q[0],0)/p.length, gy=p.reduce((s,q)=>s+q[1],0)/p.length;
-    // glassveggene
-    const kropp=new THREE.Mesh((()=>{ const g=new THREE.ExtrudeGeometry(polyShape(p),{depth:H,bevelEnabled:false}); g.rotateX(-Math.PI/2); g.translate(0,y0,0); return g; })(),[glass,glass]);
+    const glass=mat([182,170,140],false,[128,118,96]), ramme=mat([46,62,52],false,[34,46,38]), tak=mat([58,64,60],false), lanterne=mat([150,110,84],false,[110,80,62]);
+    const kropp=new THREE.Mesh((()=>{ const g=new THREE.ExtrudeGeometry(polyShape(p),{depth:H,bevelEnabled:false}); g.rotateX(-Math.PI/2); g.translate(0,y0,0); return g; })(),[tak,glass]);
     kropp.castShadow=kropp.receiveShadow=true; anlegg.add(kropp);
-    // grønt innenfor glasset (trærne i potter): lave kroner som skimtes gjennom
-    const S2=polyShape(p.map(q=>[gx+(q[0]-gx)*0.7, gy+(q[1]-gy)*0.7])); const ig=new THREE.ExtrudeGeometry(S2,{depth:0.05,bevelEnabled:false}); ig.rotateX(-Math.PI/2); ig.translate(0,y0+H*0.55,0);
-    anlegg.add(new THREE.Mesh(ig,[innhold,innhold]));
-    for(let i=0;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length];
-      const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx), n=Math.max(1,Math.round(L/1.1));
+    const gx=p.reduce((s,q)=>s+q[0],0)/p.length, gy=p.reduce((s,q)=>s+q[1],0)/p.length;
+    for(let i=1;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length];   // første kant (mot husveggen) uten sprosser
+      const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx), n=Math.max(1,Math.round(L/1.05));
       let nx=dy/L, ny=-dx/L; if(nx*((a[0]+c[0])/2-gx)+ny*((a[1]+c[1])/2-gy)<0){ nx=-nx; ny=-ny; }
-      if(i===0) continue;   // mot husveggen: ingen sprosser
-      for(let j=0;j<=n;j++){ const s=j/n; const st=new THREE.Mesh(new THREE.BoxGeometry(0.09,H,0.09),ramme); st.position.set(a[0]+dx*s+nx*0.03, y0+H/2, -(a[1]+dy*s+ny*0.03)); anlegg.add(st); }
-      [[0.35,0.16],[2.6,0.08],[H-0.1,0.2]].forEach(([z,t])=>{ const b=new THREE.Mesh(new THREE.BoxGeometry(L,t,0.11),ramme); b.position.set((a[0]+c[0])/2+nx*0.03, y0+z, -((a[1]+c[1])/2+ny*0.03)); b.rotation.y=ang; anlegg.add(b); });
+      for(let j=0;j<=n;j++){ const s=j/n; const st=new THREE.Mesh(new THREE.BoxGeometry(0.13,H,0.13),ramme); st.position.set(a[0]+dx*s+nx*0.03, y0+H/2, -(a[1]+dy*s+ny*0.03)); anlegg.add(st); }
+      // sokkel, losholt under smårutene, smårutenes midtpost og takgesimsen
+      [[0.2,0.4],[H-1.05,0.1],[H-0.55,0.05],[H-0.15,0.32]].forEach(([z,t])=>{ const b=new THREE.Mesh(new THREE.BoxGeometry(L+0.1,t,0.16),ramme); b.position.set((a[0]+c[0])/2+nx*0.03, y0+z, -((a[1]+c[1])/2+ny*0.03)); b.rotation.y=ang; anlegg.add(b); });
+      // dobbeltdøra midt på langsiden mot gården
+      if(i===2){ const [mx,my]=[(a[0]+c[0])/2+nx*0.05,(a[1]+c[1])/2+ny*0.05]; [-0.45,0,0.45].forEach(o=>{ const d=new THREE.Mesh(new THREE.BoxGeometry(o?0.08:0.1,2.5,0.16),ramme); d.position.set(mx+dx/L*o, y0+1.25, -(my+dy/L*o)); d.rotation.y=ang; anlegg.add(d); }); }
     }
-    // saltaket: mønet parallelt med husveggen midt over glasshuset, takflater i glass med sperrer, gavltrekanter i glass
-    const a=p[0], c=p[1], ux=c[0]-a[0], uy=c[1]-a[1], L=Math.hypot(ux,uy), tx=ux/L, ty=uy/L;
-    const D=Math.hypot(p[3][0]-p[0][0],p[3][1]-p[0][1]), ex=(p[3][0]-p[0][0])/D, ey=(p[3][1]-p[0][1])/D, RISE=v.rise||Math.min(1.8,D*0.28);
-    const P=(s,d,z)=>new THREE.Vector3(a[0]+tx*s+ex*d, y0+H+z, -(a[1]+ty*s+ey*d));
-    const flate=(q)=>{ const g=new THREE.BufferGeometry().setFromPoints(q); g.setIndex([0,1,2,0,2,3]); g.computeVertexNormals(); const m=new THREE.Mesh(g,glassD); m.castShadow=m.receiveShadow=true; anlegg.add(m); };
-    flate([P(0,0,0),P(L,0,0),P(L,D/2,RISE),P(0,D/2,RISE)]); flate([P(0,D,0),P(0,D/2,RISE),P(L,D/2,RISE),P(L,D,0)]);
-    [0,L].forEach(s=>{ const g=new THREE.BufferGeometry().setFromPoints([P(s,0,0),P(s,D,0),P(s,D/2,RISE)]); g.computeVertexNormals(); anlegg.add(new THREE.Mesh(g,glassD)); });
-    const bjelke=(A,B,t)=>{ const d=new THREE.Vector3().subVectors(B,A), len=d.length(); const m=new THREE.Mesh(new THREE.BoxGeometry(t,t,len),ramme); m.position.copy(A).addScaledVector(d,0.5); m.lookAt(B); anlegg.add(m); };
-    const ns=Math.max(2,Math.round(L/1.1)); for(let j=0;j<=ns;j++){ const s=L*j/ns; bjelke(P(s,0,0),P(s,D/2,RISE),0.08); bjelke(P(s,D,0),P(s,D/2,RISE),0.08); }
-    bjelke(P(0,D/2,RISE),P(L,D/2,RISE),0.16); bjelke(P(0,0,0),P(L,0,0),0.12); bjelke(P(0,D,0),P(L,D,0),0.12);
-    // hagen foran: plen, lave klippede hekker langs kanten og blomstrende busker (v.hage fra verktoy/kaserna.py)
-    const hg=v.hage; if(!hg) return;
-    const hekk=mat([70,112,62],false,[50,84,46]), blomst=[mat([142,108,170],false,[104,80,128]), mat([232,226,236],false,[180,174,186])];
-    // plenen tegnes som alle plenene i kartet (flat 0,28 m, plenMat i gresslaget, src/03/04/17): samme farge og samme lag over
-    // gårdsflaten (06.11: egen plate i egen farge ble enten dekket av gårdsflaten eller stod som et grønt bord)
-    const yp=0.28; flat(hg.p, yp, plenMat); const PL=0;
-    (hg.hekker||[]).forEach(lin=>{ for(let i=0;i+1<lin.length;i++){ const A=lin[i], B=lin[i+1], len=Math.hypot(B[0]-A[0],B[1]-A[1]);
-      const m=new THREE.Mesh(new THREE.BoxGeometry(len,0.7,0.55),hekk); m.position.set((A[0]+B[0])/2, yp+PL+0.35, -(A[1]+B[1])/2); m.rotation.y=Math.atan2(B[1]-A[1],B[0]-A[0]); m.castShadow=m.receiveShadow=true; anlegg.add(m); } });
-    (hg.busker||[]).forEach(([x,y,r],i)=>{ const m=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),i%2?blomst[0]:hekk); m.scale.y=0.75; m.position.set(x,yp+PL+r*0.7,-y); m.castShadow=true; anlegg.add(m); });
+    // lanterna: lav glassoverbygning midt på det flate taket
+    const a=Math.atan2(p[1][1]-p[0][1],p[1][0]-p[0][0]), L=Math.hypot(p[1][0]-p[0][0],p[1][1]-p[0][1]), D=Math.hypot(p[3][0]-p[0][0],p[3][1]-p[0][1]);
+    const lt=new THREE.Mesh(new THREE.BoxGeometry(L*0.3,0.4,D*0.4),lanterne); lt.position.set(gx,y0+H+0.2,-gy); lt.rotation.y=a; lt.castShadow=true; anlegg.add(lt);
+    // uteplassen foran (v.uteplass fra verktoy/kaserna.py): lyst steindekke i laget over gresset, kafébord med kurvstoler, bed med
+    // hortensia, små trær
+    const u=v.uteplass; if(!u) return;
+    const belegg=bakkelag(mat([206,198,184],false,[160,152,140]), BAKKELAG.gress);
+    flat(u.p, 0.28, belegg); const yp=0.28;
+    const bordMat=mat([214,196,160],false), kurv=mat([168,128,84],false), jern=mat([46,46,44],false), blad=mat([96,132,84],false,[70,100,62]), horts=[mat([156,142,196],false,[118,106,150]), mat([206,196,226],false,[156,148,172])], stamme=mat([96,78,62],false);
+    (u.bord||[]).forEach(([x,y],i)=>{ const b=new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.55,0.05,14),bordMat); b.position.set(x,yp+0.74,-y); b.castShadow=true; anlegg.add(b);
+      const f=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.07,0.72,6),jern); f.position.set(x,yp+0.36,-y); anlegg.add(f);
+      for(let k=0;k<4;k++){ const w=k*Math.PI/2+i*0.4; const st=new THREE.Mesh(new THREE.BoxGeometry(0.46,0.75,0.46),kurv); st.position.set(x+Math.cos(w)*0.85,yp+0.375,-(y+Math.sin(w)*0.85)); st.rotation.y=-w; st.castShadow=true; anlegg.add(st); } });
+    (u.bed||[]).forEach(([x,y,r],i)=>{ const m=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),i%3===0?blad:horts[i%2]); m.scale.y=0.6; m.position.set(x,yp+r*0.45,-y); m.castShadow=true; anlegg.add(m); });
+    (u.traer||[]).forEach(([x,y,r])=>{ const st=new THREE.Mesh(new THREE.CylinderGeometry(0.1,0.13,2.2,6),stamme); st.position.set(x,yp+1.1,-y); anlegg.add(st);
+      const k=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),blad); k.position.set(x,yp+2.6,-y); k.castShadow=true; anlegg.add(k); });
   });
   // verandaer: uteservering langs fasaden som i SG&CO-kveldsbildet: lavt dekke, plantekasser langs ytterkanten med åpning
   // midt foran, parasoller med bord under (te-, verktoy/kaserna.py)
@@ -90,11 +83,11 @@ import { hAt } from './08_festningsterrenget.js';
       const k=new THREE.Mesh(new THREE.BoxGeometry(s1-s0,0.55,0.5),kasse); k.position.set(x,top+0.275,-y); k.rotation.y=ang; k.castShadow=true; anlegg.add(k);
       const g=new THREE.Mesh(new THREE.BoxGeometry(s1-s0-0.1,0.35,0.42),gront); g.position.set(x,top+0.72,-y); g.rotation.y=ang; g.castShadow=true; anlegg.add(g); };
     const ap=v.aapning||2.4; kasseLangs(0,(L-ap)/2,D-0.25); kasseLangs((L+ap)/2,L,D-0.25);
-    [0.25,L-0.25].forEach(s=>{ const [x,y]=P(s,(D-0.5)/2+0.2); const k=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.55,D-0.9),kasse); k.position.set(x,top+0.275,-y); k.rotation.y=ang; k.castShadow=true; anlegg.add(k);
+    [0.25,L-0.25].filter((s,i)=>!(i===0 && (v.uten_kasse||[]).includes('start'))).forEach(s=>{ const [x,y]=P(s,(D-0.5)/2+0.2); const k=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.55,D-0.9),kasse); k.position.set(x,top+0.275,-y); k.rotation.y=ang; k.castShadow=true; anlegg.add(k);
       const g=new THREE.Mesh(new THREE.BoxGeometry(0.42,0.35,D-1.0),gront); g.position.set(x,top+0.72,-y); g.rotation.y=ang; anlegg.add(g); });
     // parasoller med bord: jevnt fordelt langs dekket, halvveis ut
-    const n=v.parasoller||4;
-    for(let i=0;i<n;i++){ const [x,y]=P(L*(i+0.5)/n, D*0.52);
+    const n=v.parasoller||4, R=v.rader||1;   // rader: kvadratisk veranda (innerhjørnet) får parasollene i flere rader
+    for(let r=0;r<R;r++) for(let i=0;i<n;i++){ const [x,y]=P(L*(i+0.5)/n, R===1 ? D*0.52 : D*(r+0.6)/(R+0.3));
       const st=new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,2.5,6),jern); st.position.set(x,top+1.25,-y); anlegg.add(st);
       const sk=new THREE.Mesh(new THREE.ConeGeometry(1.55,0.55,8,1,true),duk); sk.position.set(x,top+2.55,-y); sk.castShadow=true; anlegg.add(sk);
       [-0.75,0.75].forEach(o=>{ const b=new THREE.Mesh(new THREE.CylinderGeometry(0.38,0.38,0.06,10),bord); b.position.set(x+tx*o,top+0.74,-(y+ty*o)); b.castShadow=true; anlegg.add(b);

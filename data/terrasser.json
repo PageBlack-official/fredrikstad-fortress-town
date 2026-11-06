@@ -1,3 +1,3 @@
 [
-{"id":"te-1","navn":"Uteserveringen mot torget","bygg_id":"bnr-193867537","p":[[27.75,15.41],[35.11,30.32],[30.89,32.4],[23.54,17.49]],"h":0.18,"parasoller":5,"aapning":2.4}
+{"id":"te-1","navn":"Uteserveringen mot torget","bygg_id":"bnr-193867537","p":[[27.65,15.24],[31.94,23.94],[23.78,27.96],[19.49,19.26]],"h":0.18,"parasoller":3,"rader":2,"aapning":2.4,"uten_kasse":["start","inn"]}
 ]

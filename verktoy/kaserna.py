@@ -11,9 +11,10 @@ mistet 34 av 45 vinduer (avvik A1). Regel 37 sammenligner det effektive bygget m
 Fasaden følger illustrasjonene og bygget slik det står:
 - to høye etasjer over en lys granittsokkel, vinduene i faste akser (omtrent 3,4 m) og like store i hele bygget
 - små kjellervinduer i sokkelen under vinduene
-- to nye innganger fra torget (godkjent av Riksantikvaren 2025): midt på hver side av hjørnet, grønne fløydører med overlys
+- dører mot torget (Vegar 06.11, markert flyfoto): ny dør midt på hjørnesiden mot vest (et vindu forlenget ned, Riksantikvaren
+  2025) og den eksisterende døra i den sørvestre langfløyen (8. akse fra hjørnet); grønne fløydører med overlys
 - veranda: uteservering med plantekasser og parasoller langs hjørnesiden mot vest, der statuen står (SG&CO-kveldsbildet)
-- over inngangene i hjørnet et oksøye i en arke; ellers takarker over annenhver akse på langsidene
+- over begge hjørnesidene et oksøye i en arke; ellers takarker over annenhver akse på langsidene
 - 12 piper på mønene (det kalendariske systemet: årets måneder)
 - gården lukkes av en teglmur fra fløyene til brannstasjonen; inngangen fra gata er en port med rundbue (målt i ortofoto 2024:
   murene står der i dag, porten midt i muren mot gata)
@@ -100,9 +101,15 @@ def beregn(d=None):
     torg = [k for k in K if k['n'][1] > 0.3 and k['L'] > 10]
     hjorne = sorted([k for k in torg if k['L'] < 25], key=lambda k: k['mid'][0])      # de to sidene av hjørnet mot torget
     lang = [k for k in torg if k['L'] >= 25]                                            # langfløyene mot torget
-    # Riksantikvaren (dispensasjon juni 2025, FB 21.06.25): to nye innganger fra Kongens torv, én på hver side av hjørnet
-    # (resepsjonen og bakeriet), kopier av eksisterende dører. Langfløyene har ingen dør mot torget.
-    inngang = set(id(k) for k in hjorne)
+    # dørene mot torget (Vegar 06.11, flyfoto med markering): én dør midt på hjørnesiden som vender mot vest (ny, blå sirkel; et
+    # vindu forlenget ned, Riksantikvaren 2025), og den eksisterende døra i den sørvestre langfløyen, midt i det midtre feltet
+    # mellom lisenene: 8. akse fra hjørnet (grønn sirkel). Hjørnesiden mot nord har ingen dør (X). Den andre nye døra Riksantikvaren
+    # har godkjent (bakeriet), er ikke plassert: ingen kilde viser hvor. Oksøyene i arkene står over begge hjørnesidene (fotoet).
+    vk = min(hjorne, key=lambda k: k['n'][0])
+    inngang = {id(vk)}
+    ark_hjorne = set(id(k) for k in hjorne)
+    langdor = min(lang, key=lambda k: k['mid'][0])         # langfløyen mot sørvest (Kasernegaten)
+    LANGDOR_FRA_HJORNET = 8
     # glasshuset står mot hjørnets gårdsfasade (den kanten som vender mot sørvest og er nærmest gården midt i)
     # (gården ligger mellom fløyene og brannstasjonen: nærmest brannstasjonens midte, ikke gavlene)
     bc = [sum(q[0] for q in brann['p']) / len(brann['p']), sum(q[1] for q in brann['p']) / len(brann['p'])]
@@ -116,7 +123,7 @@ def beregn(d=None):
         midt = min(range(len(ss)), key=lambda i: abs(ss[i] - k['L'] / 2))
         for i, s in enumerate(ss):
             xy = punkt(k, s)
-            dor = id(k) in inngang and i == midt
+            dor = (id(k) in inngang and i == midt) or (k is langdor and i == len(ss) - LANGDOR_FRA_HJORNET)
             under_glass = k is gard_hjorne and abs(s - k['L'] / 2) < GH_B / 2
             if dor:
                 vind.append(vindu(xy, 1.75, k, 1.7, 3.3, 1)[:10] + [2, 0])   # grønn fløydør med overlys
@@ -130,7 +137,7 @@ def beregn(d=None):
                 vind.append(vindu(xy, ETG[0][0], k, VB, ETG[0][1]))
             vind.append(vindu(xy, ETG[1][0], k, VB, ETG[1][1]))
         # takarker: oksøye over inngangen i hjørnet, ellers over annenhver akse på langsidene (ikke på gavlene)
-        if k['L'] < 15.5 and id(k) not in inngang:
+        if k['L'] < 15.5 and id(k) not in ark_hjorne:
             continue
         inn = 0.7
         for i, s in enumerate(ss):
@@ -187,40 +194,44 @@ def beregn(d=None):
                   and Polygon(x['p']).area < 15 and any(LineString(mu['p']).distance(Polygon(x['p'])) < 0.6 for mu in murer))
     g = gard_hjorne; m = g['mid']; t = g['t']; n = g['n']
     hj = [[m[0] + t[0] * sa * GH_B / 2 + n[0] * dd, m[1] + t[1] * sa * GH_B / 2 + n[1] * dd] for sa, dd in ((-1, 0), (1, 0), (1, GH_D), (-1, GH_D))]
-    # verandaen (uteservering): langs hjørnesiden som vender mot vest, med statuen ved enden (SG&CO-kveldsbildet med Fredrik II),
-    # lavt dekke på torget, plantekasser rundt og parasoller; åpning midt foran
-    vk = min(hjorne, key=lambda k: k['n'][0])
-    VB_, VD_, VH_ = round(vk['L'] - 1.0, 2), 5.0, 0.18
-    m, t, n = vk['mid'], vk['t'], vk['n']
-    vp = [[m[0] + t[0] * sa * VB_ / 2 + n[0] * dd, m[1] + t[1] * sa * VB_ / 2 + n[1] * dd] for sa, dd in ((-1, 0.3), (1, 0.3), (1, VD_), (-1, VD_))]
+    # verandaen (uteservering): i innerhjørnet mot torget (Vegar 06.11, oransje firkant på flyfotoet), et kvadrat langs begge
+    # hjørnesidene, omtrent halve sidelengden ut fra hjørnet; den nye døra midt på vestsiden går rett ut på den. Lavt dekke,
+    # plantekasser langs de to frie sidene med åpning, parasoller i to rader.
+    k15 = [k for k in hjorne if k is not vk][0]
+    c0 = vk['a'] if math.hypot(vk['a'][0] - k15['b'][0], vk['a'][1] - k15['b'][1]) < 0.5 else vk['b']   # innerhjørnet
+    VA, VB2, VH_ = round(vk['L'] * 0.55, 2), round(k15['L'] * 0.52, 2), 0.18
+    tv = vk['t'] if c0 is vk['a'] else (-vk['t'][0], -vk['t'][1])                 # langs vestsiden ut fra hjørnet
+    o = (c0[0] + (vk['n'][0] + k15['n'][0]) * 0.3, c0[1] + (vk['n'][1] + k15['n'][1]) * 0.3)
+    vp = [o, (o[0] + tv[0] * VA, o[1] + tv[1] * VA), (o[0] + tv[0] * VA + vk['n'][0] * VB2, o[1] + tv[1] * VA + vk['n'][1] * VB2), (o[0] + vk['n'][0] * VB2, o[1] + vk['n'][1] * VB2)]
     terrasser = [{'id': 'te-1', 'navn': 'Uteserveringen mot torget', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in vp], 'h': VH_,
-                  'parasoller': 5, 'aapning': 2.4}]
-    # hagen foran glasshuset (SG&CO «Utefølelse inne»: plen helt inn til glasset, lave hekker, blomstrende busker): et felt ut i gården,
-    # klippet mot fløyene, brannstasjonen og murene så det bare ligger i gården
-    HAGE_D, HAGE_EKSTRA = 9.0, 3.0
-    hp = [[m0[0] + t0[0] * sa * (GH_B / 2 + HAGE_EKSTRA) + n0[0] * dd, m0[1] + t0[1] * sa * (GH_B / 2 + HAGE_EKSTRA) + n0[1] * dd]
-          for m0, t0, n0 in [(g['mid'], g['t'], g['n'])] for sa, dd in ((-1, 0.2), (1, 0.2), (1, GH_D + HAGE_D), (-1, GH_D + HAGE_D))]
-    hage = Polygon(hp).difference(Polygon(b['p']).buffer(0.3)).difference(Polygon(brann['p']).buffer(2.0))
-    for mu in murer: hage = hage.difference(LineString(mu['p']).buffer(1.2))
-    hage = max(getattr(hage, 'geoms', [hage]), key=lambda q: q.area).simplify(0.2)
-    plen = [[round(x, 2), round(y, 2)] for x, y in list(hage.exterior.coords)[:-1]]
-    # hekkene: langs plenens ytterkant (ikke mot glasshuset), busker i hjørnene og langs glasset
-    ytter = hage.exterior
-    gl = Polygon(hj).buffer(0.6)
-    hekker, cur = [], []
-    for q in list(ytter.coords):
-        if gl.contains(Point(q)):
-            if len(cur) > 1: hekker.append(cur)
-            cur = []
-        else: cur.append([round(q[0] - (q[0] - hage.centroid.x) * 0.04, 2), round(q[1] - (q[1] - hage.centroid.y) * 0.04, 2)])
-    if len(cur) > 1: hekker.append(cur)
-    busker = []
-    for j in range(7):
-        u = (j + 0.5) / 7
-        bx = hj[3][0] + (hj[2][0] - hj[3][0]) * u + g['n'][0] * 0.9; by = hj[3][1] + (hj[2][1] - hj[3][1]) * u + g['n'][1] * 0.9
-        if hage.contains(Point(bx, by)): busker.append([round(bx, 2), round(by, 2), 0.7 if j % 2 else 0.55])
-    vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H, 'rise': 1.6,
-                    'hage': {'p': plen, 'hekker': hekker, 'busker': busker}}]
+                  'parasoller': 3, 'rader': 2, 'aapning': 2.4, 'uten_kasse': ['start', 'inn']}]
+    # uteplassen foran glasshuset (SG&CO-illustrasjonen av gården, Vegar 06.11): lyst steindekke, runde kafébord med kurvstoler,
+    # bed med hortensia langs kanten og små trær i bed; et felt ut i gården, klippet mot fløyene, brannstasjonen og murene
+    UTE_D, UTE_EKSTRA = 9.0, 3.0
+    hp = [[g['mid'][0] + g['t'][0] * sa * (GH_B / 2 + UTE_EKSTRA) + g['n'][0] * dd, g['mid'][1] + g['t'][1] * sa * (GH_B / 2 + UTE_EKSTRA) + g['n'][1] * dd]
+          for sa, dd in ((-1, 0.2), (1, 0.2), (1, GH_D + UTE_D), (-1, GH_D + UTE_D))]
+    ute = Polygon(hp).difference(Polygon(b['p']).buffer(0.3)).difference(Polygon(brann['p']).buffer(2.0))
+    for mu in murer: ute = ute.difference(LineString(mu['p']).buffer(1.2))
+    ute = max(getattr(ute, 'geoms', [ute]), key=lambda q: q.area).simplify(0.2)
+    gl = Polygon(hj)
+    fri = ute.difference(gl.buffer(1.8)).buffer(-1.4)                       # der bordene står: 1,8 m fra glasset, 1,4 m fra kanten
+    bord = []
+    for i in range(-12, 13):
+        for j in range(1, 8):
+            x = g['mid'][0] + g['t'][0] * i * 3.4 + g['n'][0] * (GH_D + j * 3.0); y = g['mid'][1] + g['t'][1] * i * 3.4 + g['n'][1] * (GH_D + j * 3.0)
+            x += g['t'][0] * (1.7 if j % 2 else 0); y += g['t'][1] * (1.7 if j % 2 else 0)
+            if fri.contains(Point(x, y)): bord.append([round(x, 2), round(y, 2)])
+    bed = []                                                                 # hortensia langs ytterkanten, ikke mot glasset
+    kant = ute.exterior
+    for j in range(int(kant.length / 1.6)):
+        q = kant.interpolate(j * 1.6)
+        if gl.buffer(1.0).contains(q) or Polygon(b['p']).buffer(1.2).contains(q): continue
+        c = ute.centroid; bed.append([round(q.x + (c.x - q.x) * 0.06, 2), round(q.y + (c.y - q.y) * 0.06, 2), 0.55 if j % 2 else 0.7])
+    c = ute.centroid
+    hjorner = sorted(list(ute.exterior.coords)[:-1], key=lambda q: -gl.distance(Point(q)))[:2]     # de to hjørnene lengst fra glasset
+    traer = [[round(x + (c.x - x) * 0.18, 2), round(y + (c.y - y) * 0.18, 2), 1.6] for x, y in hjorner]
+    vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H,
+                    'uteplass': {'p': [[round(x, 2), round(y, 2)] for x, y in list(ute.exterior.coords)[:-1]], 'bord': bord, 'bed': bed, 'traer': traer}}]
     nye = {'vind': vind, 'arker': arker, 'piper': piper, 'sokkel': {'h': SOKKEL, 'farge': [206, 202, 192], 'skygge': [146, 142, 136], 'type': 'naturstein'}, 'gesims': GESIMS}
     # portbyggene i Kasernemurene har murens tegl (Kasernens vegg). Verktøyet står sist i kjeden, så vegg_nye.py sin nabofarge
     # legger seg ikke over igjen (30.10 ble pb-51 satt for hånd og overstyrt av vegg_nye.py samme dag; avvik A5)
