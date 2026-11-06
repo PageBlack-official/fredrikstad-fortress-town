@@ -1,5 +1,5 @@
 # 06_bygger_og_laster: OK
 
-- bygd enkel -> /home/claude/fredrikstad-fortress-town/ut/enkel/index.html 3358 kB versjon 34
-- bygd server -> /home/claude/fredrikstad-fortress-town/ut/server/index.html 374 kB versjon 34
+- bygd enkel -> /Users/vegarbakken/sot-maskin/repo/ut/enkel/index.html 3360 kB versjon 34
+- bygd server -> /Users/vegarbakken/sot-maskin/repo/ut/server/index.html 376 kB versjon 34
 - lastet: true feil: []
