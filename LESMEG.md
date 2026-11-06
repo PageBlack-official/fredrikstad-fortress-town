@@ -355,6 +355,13 @@ Publisering (publiser.sh, lagt om 05.11 etter at forsiden ble byttet uten ja to 
   trykk for å vise kartet i sol, skyet, regn, snø eller tåke. Test: ?vaer=sol|skyet|regn|sno|taake, ?aarstid=, ?sno=, ?vaer=0.
 - **Søk og kategorier** (src/24_sok.js, data/steder.json): «Finn» oppe til venstre (eller / og ⌘K). Kategoriene gir nåler i kartet;
   et sted i et bygg løfter bygget og viser stedet i kortet (åpningstider, telefon, nettside, Veibeskrivelse til Apple/Google Maps).
+- **Lista i Finn viser hvert sted én gang** (06.11, Vegar: Parkering hadde samme gate tre ganger): steder.py slår sammen samme
+  kategori + navn + type (parkering: samme gate) til ett sted med `punkter`; kartet har én nål per plass, og kortet viser typen og
+  merknaden til plassen du trykket på. Typen står ikke i navnet; gatenavn rettes etter Kartverket (kilder/gatenavn-kartverket.json).
+  Regel 47 er rød ved like linjer.
+- **Se på det før det går ut** (06.11, Vegar: «du er ikke i en sky lenger»): endringer i grensesnittet sjekkes med skjermbilder på
+  Mac minien (ekte skjermkort), smal og bred skjerm: `PW_GPU=1 node verktoy/sok-bilder.mjs ut/enkel/index.html /tmp/sok 451 840`
+  (hver kategori i Finn + kortet) og `verktoy/naal-bilder.mjs`. Bildene ses på før /prove/, ikke bare tallene.
 - **Du er her** (src/25_her.js): knappen over pluss/minus. Prikken vises bare innenfor 1,4 km fra Torvet; ellers sier kartet avstanden.
 
 ## Maskinsjekken (05.11)
