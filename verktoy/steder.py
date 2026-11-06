@@ -87,7 +87,7 @@ def bygg():
     global UT
     xs = [p[0] for b in bygg if b.get('p') and not b.get('skjul') for p in b['p']]; ys = [p[1] for b in bygg if b.get('p') and not b.get('skjul') for p in b['p']]
     UT = (min(xs) - 25, max(xs) + 25, min(ys) - 25, max(ys) + 25)
-    enkel = lambda n: ''.join(c for c in __import__('unicodedata').normalize('NFD', n.lower()) if c.isalnum())
+    enkel = lambda n: ''.join(c for c in __import__('unicodedata').normalize('NFD', n.lower().replace('&', 'og')) if c.isalnum())   # «kro & stue» = «kro og stue»
     steder, sett = [], set()
     for e in osm['elements']:
         t = e.get('tags', {}); navn = t.get('name')
@@ -119,6 +119,21 @@ def bygg():
             if not lik['bygg_id'] and s['bygg_id']: steder[steder.index(lik)] = {**s, **{f: lik[f] for f in ('aapent', 'nettside', 'telefon') if lik.get(f) and not s.get(f)}}
             continue
         steder.append(s)
+    # Vegars liste (kilder/steder-vegar.json, 06.11): adressen fra Enhetsregisteret, plassen fra Kartverkets adressepunkt. Den vinner over
+    # OSM-oppføringen med samme navn i nærheten; to steder på samme adresse får hver sin side av punktet så nålene ikke dekker hverandre.
+    vp = os.path.join(ROT, 'kilder', 'steder-vegar.json')
+    if os.path.exists(vp):
+        V = json.load(open(vp, encoding='utf8')); brukt = {}
+        for v in V['steder']:
+            if 'lat' not in v: continue
+            x, y = datalag.til_modell(v['lon'], v['lat']); n = brukt.get(v['adresse'], 0); brukt[v['adresse']] = n + 1
+            if n: x += 5 * n; y -= 3 * n
+            if not (UT[0] <= x <= UT[1] and UT[2] <= y <= UT[3]): continue
+            steder[:] = [o for o in steder if not (o['kilde'] == 'OpenStreetMap' and enkel(o['navn']) == enkel(v['navn']) and math.hypot(o['x'] - x, o['y'] - y) < 150)]   # samme navn i Gamlebyen = samme sted; Brreg/Kartverket vinner over OSM-punktet
+            ny = {'id': 'pb-' + (v.get('orgnr') or enkel(v['navn'])), 'navn': v['navn'], 'kategori': 'spise', 'type': v['type'], 'x': round(x, 1), 'y': round(y, 1),
+                  'bygg_id': bygg_for(x, y, bygg), 'adresse': v['adresse'], 'kilde': 'Page Black (Vegar), ' + v['kilde_adresse'], 'hentet': '2026-11-06'}
+            if v.get('nettside'): ny['nettside'] = v['nettside']
+            steder.append(ny)
     # parkeringen fra kommunen (samme data som kartet tegner)
     for p in data.get('parkering', []):
         if p.get('skjul') or p.get('x') is None or not (UT[0] <= p['x'] <= UT[1] and UT[2] <= p['y'] <= UT[3]): continue

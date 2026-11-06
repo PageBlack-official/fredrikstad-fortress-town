@@ -1,0 +1,94 @@
+{
+ "om": "Spisesteder Vegar listet 06.11.2026 (fra Google-søk og visitfredrikstadhvaler.com). Adressen er beliggenhetsadressen i Enhetsregisteret (orgnr), eller stedets egen nettside der Brreg ikke har den; plassen er Kartverkets adressepunkt (ws.geonorge.no/adresser). Steder utenfor kartet er utelatt med grunn.",
+ "steder": [
+  {
+   "navn": "Majorens Kro og Stue",
+   "type": "Restaurant",
+   "adresse": "Voldportgaten 73",
+   "orgnr": "971633506",
+   "nettside": "http://www.majoren.no/",
+   "kilde_adresse": "Enhetsregisteret (MAJOR - STUEN AS)",
+   "lat": 59.20324046341083,
+   "lon": 10.955169005937123,
+   "postnr": "1632"
+  },
+  {
+   "navn": "VÆRK",
+   "type": "Restaurant og scene",
+   "adresse": "Færgeportgaten 78B",
+   "orgnr": "920730213",
+   "nettside": "https://www.vaerk.no/",
+   "kilde_adresse": "Enhetsregisteret (VÆRK AS)",
+   "lat": 59.20406059263791,
+   "lon": 10.954392723895001,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Restaurant Kong-Frederik",
+   "type": "Restaurant",
+   "adresse": "Kirkegaten 28B",
+   "orgnr": "934669436",
+   "kilde_adresse": "Enhetsregisteret (RESTAURANT KONG-FREDERIK AS)",
+   "lat": 59.203567945302886,
+   "lon": 10.953103557747855,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Tamburen",
+   "type": "Pub og kro",
+   "adresse": "Færgeportgaten 78B",
+   "orgnr": "912580938",
+   "kilde_adresse": "Enhetsregisteret (TAMBUREN AS)",
+   "lat": 59.20406059263791,
+   "lon": 10.954392723895001,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Mormors Café",
+   "type": "Kafé",
+   "adresse": "Raadhusgaten 18A",
+   "orgnr": "988109711",
+   "nettside": "http://www.mormorscafe.no/",
+   "kilde_adresse": "Enhetsregisteret (MORMORS CAFE AS)",
+   "lat": 59.203553540248926,
+   "lon": 10.955256961652273,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Café Magenta",
+   "type": "Kafé, galleri og scene",
+   "adresse": "Toldbodgaten 105",
+   "nettside": "https://cafemagenta.no/",
+   "kilde_adresse": "cafemagenta.no",
+   "lat": 59.20180964822709,
+   "lon": 10.949955857998525,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Råde Bakeri og Konditori",
+   "type": "Bakeri og konditori",
+   "adresse": "Voldportgaten 71",
+   "orgnr": "980959775",
+   "kilde_adresse": "Enhetsregisteret (RÅDE BAKERI UTSALG AS AVD GAMLEBYEN)",
+   "lat": 59.20345504906642,
+   "lon": 10.9546383406912,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Galleriet Vinbar",
+   "type": "Vinbar, galleri og scene",
+   "adresse": "Torvgaten 61",
+   "kilde_adresse": "Enhetsregisteret (GALLERIET VINBAR AS, forretningsadresse)",
+   "lat": 59.20323721498276,
+   "lon": 10.953592571333486,
+   "postnr": "1632"
+  }
+ ],
+ "utelatt": [
+  {
+   "navn": "Palmiros Mat AS",
+   "grunn": "Enhetsregisteret: Fagerliveien 39 (ikke Gamlebyen); plassen i Gamlebyen ukjent"
+  }
+ ],
+ "merknad_pepos": "Pepo's står i Gamlebyen i OpenStreetMap (beholdt derfra); Enhetsregisteret har bare Pepo's Döner på Stortorvet (sentrum)."
+}

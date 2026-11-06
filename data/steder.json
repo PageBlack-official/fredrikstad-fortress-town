@@ -59,6 +59,19 @@
    "hentet": "2026-11-05"
   },
   {
+   "id": "pb-cafemagenta",
+   "navn": "Café Magenta",
+   "kategori": "spise",
+   "type": "Kafé, galleri og scene",
+   "x": -159.0,
+   "y": -114.1,
+   "bygg_id": "bnr-193870309",
+   "adresse": "Toldbodgaten 105",
+   "kilde": "Page Black (Vegar), cafemagenta.no",
+   "hentet": "2026-11-06",
+   "nettside": "https://cafemagenta.no/"
+  },
+  {
    "id": "osm-n14048116430",
    "navn": "Cube8 Cafe",
    "kategori": "spise",
@@ -72,16 +85,16 @@
    "nettside": "https://cube8gallery.no/pages/visit"
   },
   {
-   "id": "osm-n12076667685",
+   "id": "pb-gallerietvinbar",
    "navn": "Galleriet Vinbar",
    "kategori": "spise",
-   "type": "Bar",
-   "x": 43.9,
-   "y": 41.7,
+   "type": "Vinbar, galleri og scene",
+   "x": 48.3,
+   "y": 44.8,
    "bygg_id": "bnr-13414904",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/12076667685",
-   "hentet": "2026-11-05"
+   "adresse": "Torvgaten 61",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (GALLERIET VINBAR AS, forretningsadresse)",
+   "hentet": "2026-11-06"
   },
   {
    "id": "osm-n13608574756",
@@ -99,31 +112,30 @@
    "telefon": "+47 69 03 29 30"
   },
   {
-   "id": "osm-n372716536",
-   "navn": "Majorens kro & stue",
+   "id": "pb-971633506",
+   "navn": "Majorens Kro og Stue",
    "kategori": "spise",
    "type": "Restaurant",
-   "x": 149.9,
-   "y": 55.2,
-   "bygg_id": "bnr-193867928",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/372716536",
-   "hentet": "2026-11-05",
-   "rullestol": "yes"
+   "x": 138.2,
+   "y": 45.1,
+   "bygg_id": "bnr-193868622",
+   "adresse": "Voldportgaten 73",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (MAJOR - STUEN AS)",
+   "hentet": "2026-11-06",
+   "nettside": "http://www.majoren.no/"
   },
   {
-   "id": "osm-n541921838",
+   "id": "pb-988109711",
    "navn": "Mormors Café",
    "kategori": "spise",
    "type": "Kafé",
-   "x": 137.0,
-   "y": 77.6,
+   "x": 143.2,
+   "y": 80.0,
    "bygg_id": "bnr-193867987",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/541921838",
-   "hentet": "2026-11-05",
-   "aapent": "Mo-Fr 11:00-17:00; Sa 11:00-18:00; Su 12:00-18:00",
-   "nettside": "https://mormorscafe.no"
+   "adresse": "Raadhusgaten 18A",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (MORMORS CAFE AS)",
+   "hentet": "2026-11-06",
+   "nettside": "http://www.mormorscafe.no/"
   },
   {
    "id": "osm-n665459759",
@@ -150,16 +162,53 @@
    "hentet": "2026-11-05"
   },
   {
-   "id": "osm-n14014697743",
-   "navn": "Værk",
+   "id": "pb-934669436",
+   "navn": "Restaurant Kong-Frederik",
    "kategori": "spise",
    "type": "Restaurant",
-   "x": 94.9,
-   "y": 122.5,
-   "bygg_id": null,
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/14014697743",
-   "hentet": "2026-11-05"
+   "x": 20.4,
+   "y": 81.6,
+   "bygg_id": "bnr-193868347",
+   "adresse": "Kirkegaten 28B",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (RESTAURANT KONG-FREDERIK AS)",
+   "hentet": "2026-11-06"
+  },
+  {
+   "id": "pb-980959775",
+   "navn": "Råde Bakeri og Konditori",
+   "kategori": "spise",
+   "type": "Bakeri og konditori",
+   "x": 107.9,
+   "y": 69.0,
+   "bygg_id": "bnr-193868258",
+   "adresse": "Voldportgaten 71",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (RÅDE BAKERI UTSALG AS AVD GAMLEBYEN)",
+   "hentet": "2026-11-06"
+  },
+  {
+   "id": "pb-912580938",
+   "navn": "Tamburen",
+   "kategori": "spise",
+   "type": "Pub og kro",
+   "x": 98.9,
+   "y": 133.4,
+   "bygg_id": "bnr-193868231",
+   "adresse": "Færgeportgaten 78B",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (TAMBUREN AS)",
+   "hentet": "2026-11-06"
+  },
+  {
+   "id": "pb-920730213",
+   "navn": "VÆRK",
+   "kategori": "spise",
+   "type": "Restaurant og scene",
+   "x": 93.9,
+   "y": 136.4,
+   "bygg_id": "bnr-193868231",
+   "adresse": "Færgeportgaten 78B",
+   "kilde": "Page Black (Vegar), Enhetsregisteret (VÆRK AS)",
+   "hentet": "2026-11-06",
+   "nettside": "https://www.vaerk.no/"
   },
   {
    "id": "osm-n6591537397",

@@ -56,3 +56,4 @@ Modellkoordinater: meter, x = øst, y = nord, origo ca. 59,202835 N 10,952745 Ø
 
 ## Kvelden (23_vaer)
 - Solhøyden i Gamlebyen regnes i nettleseren (solposisjon i 02_lys, samme formler som SunCalc). Mørkt fra sola er 1° over til 6° under horisonten.
+- Spisestedene Vegar listet 06.11 (kilder/steder-vegar.json): adressen fra Enhetsregisteret (data.brreg.no, beliggenhetsadresse; organisasjonsnummer i fila) eller stedets nettside, plassen fra Kartverkets adressepunkt (ws.geonorge.no/adresser). De vinner over OSM-oppføringen med samme navn. Palmiros Mat er utelatt: adressen i registeret er ikke i Gamlebyen.
