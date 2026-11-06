@@ -1,3 +1,4 @@
+// Skjermbilder av nålene (24_sok): panel med kategori, nålene i kartet, valgt nål. Bruk: node verktoy/naal-bilder.mjs <index.html> <ut-prefiks>
 import { chromium } from './pw.mjs';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [,, file, ut] = process.argv; const dir = path.dirname(file);
@@ -10,8 +11,9 @@ const feil = []; page.on('pageerror', e => feil.push(e.message));
 await page.goto(`http://127.0.0.1:${server.address().port}/index.html?skip=1&vaer=sol`); await page.waitForTimeout(9000);
 await page.click('#sok'); await page.waitForTimeout(500); await page.click('[data-k="spise"]'); await page.waitForTimeout(800);
 await bilde(ut + '-panel.png');
-await page.keyboard.press('Escape'); await page.waitForTimeout(6000);
+await page.click('#sokpanel .lukk'); await page.waitForTimeout(6000);
 await bilde(ut + '-naaler.png');
 const n = await page.$$('.naal'); if (n.length) { await n[2].evaluate(e => e.click()); await page.waitForTimeout(6000); }
 await bilde(ut + '-valgt.png');
-console.log('naaler', n.length, 'feil', JSON.stringify(feil)); await b.close(); server.close();
+const v = await page.evaluate(() => [...document.querySelectorAll('.naal.valgt .merke')].map(e => e.getBoundingClientRect().width));
+console.log('naaler', n.length, 'valgt', JSON.stringify(v), 'feil', JSON.stringify(feil)); await b.close(); server.close();
