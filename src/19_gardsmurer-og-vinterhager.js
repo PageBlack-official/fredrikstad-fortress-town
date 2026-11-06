@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { DATA, scene } from './00_oppsett.js';
-import { BAKKELAG, bakkelag, polyShape } from './03_bakke-vann-grønt.js';
+import { flat, polyShape } from './03_bakke-vann-grønt.js';
+import { plenMat } from './04_brostein-i-hele-gamlebyen.js';
 import { flatGruppe, mat } from './05_bygg.js';
 import { hAt } from './08_festningsterrenget.js';
 // ---- gårdsmurer i tegl med rundbueport, glasshus (vinterhager) (Kaserna etter ombyggingen; data fra verktoy/kaserna.py) ----
@@ -65,15 +66,10 @@ import { hAt } from './08_festningsterrenget.js';
     bjelke(P(0,D/2,RISE),P(L,D/2,RISE),0.16); bjelke(P(0,0,0),P(L,0,0),0.12); bjelke(P(0,D,0),P(L,D,0),0.12);
     // hagen foran: plen, lave klippede hekker langs kanten og blomstrende busker (v.hage fra verktoy/kaserna.py)
     const hg=v.hage; if(!hg) return;
-    const plen=mat([104,150,78],false,[78,116,60]), hekk=mat([70,112,62],false,[50,84,46]), blomst=[mat([142,108,170],false,[104,80,128]), mat([232,226,236],false,[180,174,186])];
-    // terrenget i gården heller: plenen legges over det høyeste punktet under seg og går ned til det laveste, og den tegnes i laget
-    // over gresset (03_bakke: BAKKELAG), så gårdsflaten ikke dekker den (06.11: bare en flik av plenen synlig på minien)
-    const xs=hg.p.map(q=>q[0]), ys=hg.p.map(q=>q[1]); let ylo=1e9, yhi=-1e9;
-    for(let i=0;i<=12;i++) for(let j=0;j<=12;j++){ const x=Math.min(...xs)+(Math.max(...xs)-Math.min(...xs))*i/12, y=Math.min(...ys)+(Math.max(...ys)-Math.min(...ys))*j/12, t=hAt(x,y); ylo=Math.min(ylo,t); yhi=Math.max(yhi,t); }
-    const yp=ylo, PL=yhi-ylo+0.08;
-    bakkelag(plen, BAKKELAG.gress+1);
-    const pg=new THREE.ExtrudeGeometry(polyShape(hg.p),{depth:PL,bevelEnabled:false}); pg.rotateX(-Math.PI/2); pg.translate(0,yp,0);
-    const pm=new THREE.Mesh(pg,[plen,plen]); pm.receiveShadow=true; anlegg.add(pm);
+    const hekk=mat([70,112,62],false,[50,84,46]), blomst=[mat([142,108,170],false,[104,80,128]), mat([232,226,236],false,[180,174,186])];
+    // plenen tegnes som alle plenene i kartet (flat 0,28 m, plenMat i gresslaget, src/03/04/17): samme farge og samme lag over
+    // gårdsflaten (06.11: egen plate i egen farge ble enten dekket av gårdsflaten eller stod som et grønt bord)
+    const yp=0.28; flat(hg.p, yp, plenMat); const PL=0;
     (hg.hekker||[]).forEach(lin=>{ for(let i=0;i+1<lin.length;i++){ const A=lin[i], B=lin[i+1], len=Math.hypot(B[0]-A[0],B[1]-A[1]);
       const m=new THREE.Mesh(new THREE.BoxGeometry(len,0.7,0.55),hekk); m.position.set((A[0]+B[0])/2, yp+PL+0.35, -(A[1]+B[1])/2); m.rotation.y=Math.atan2(B[1]-A[1],B[0]-A[0]); m.castShadow=m.receiveShadow=true; anlegg.add(m); } });
     (hg.busker||[]).forEach(([x,y,r],i)=>{ const m=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),i%2?blomst[0]:hekk); m.scale.y=0.75; m.position.set(x,yp+PL+r*0.7,-y); m.castShadow=true; anlegg.add(m); });
