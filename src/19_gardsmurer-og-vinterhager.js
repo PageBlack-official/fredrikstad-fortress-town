@@ -38,14 +38,14 @@ import { hAt } from './08_festningsterrenget.js';
   (DATA.vinterhager||[]).forEach(v=>{
     if(v.skjul) return;
     const p=v.p, H=v.h; const y0=Math.min(...p.map(q=>hAt(q[0],q[1])));
-    const glass=mat([182,170,140],false,[128,118,96]), ramme=mat([46,62,52],false,[34,46,38]), tak=mat([58,64,60],false), lanterne=mat([150,110,84],false,[110,80,62]);
+    const glass=mat([196,184,150],false,[140,130,104]), ramme=mat([62,84,68],false,[44,60,48]), tak=mat([96,104,98],false,[72,78,74]), lanterne=mat([170,128,96],false,[124,94,70]);   // taket mørkt grått som på illustrasjonen, men lyst nok til kartets palett (06.11: [58,64,60] ble en svart kasse sett ovenfra)
     const kropp=new THREE.Mesh((()=>{ const g=new THREE.ExtrudeGeometry(polyShape(p),{depth:H,bevelEnabled:false}); g.rotateX(-Math.PI/2); g.translate(0,y0,0); return g; })(),[tak,glass]);
     kropp.castShadow=kropp.receiveShadow=true; anlegg.add(kropp);
     const gx=p.reduce((s,q)=>s+q[0],0)/p.length, gy=p.reduce((s,q)=>s+q[1],0)/p.length;
     for(let i=1;i<p.length;i++){ const a=p[i], c=p[(i+1)%p.length];   // første kant (mot husveggen) uten sprosser
       const dx=c[0]-a[0], dy=c[1]-a[1], L=Math.hypot(dx,dy), ang=Math.atan2(dy,dx), n=Math.max(1,Math.round(L/1.05));
       let nx=dy/L, ny=-dx/L; if(nx*((a[0]+c[0])/2-gx)+ny*((a[1]+c[1])/2-gy)<0){ nx=-nx; ny=-ny; }
-      for(let j=0;j<=n;j++){ const s=j/n; const st=new THREE.Mesh(new THREE.BoxGeometry(0.13,H,0.13),ramme); st.position.set(a[0]+dx*s+nx*0.03, y0+H/2, -(a[1]+dy*s+ny*0.03)); anlegg.add(st); }
+      for(let j=0;j<=n;j++){ const s=j/n; const st=new THREE.Mesh(new THREE.BoxGeometry(0.09,H,0.09),ramme); st.position.set(a[0]+dx*s+nx*0.03, y0+H/2, -(a[1]+dy*s+ny*0.03)); anlegg.add(st); }
       // sokkel, losholt under smårutene, smårutenes midtpost og takgesimsen
       [[0.2,0.4],[H-1.05,0.1],[H-0.55,0.05],[H-0.15,0.32]].forEach(([z,t])=>{ const b=new THREE.Mesh(new THREE.BoxGeometry(L+0.1,t,0.16),ramme); b.position.set((a[0]+c[0])/2+nx*0.03, y0+z, -((a[1]+c[1])/2+ny*0.03)); b.rotation.y=ang; anlegg.add(b); });
       // dobbeltdøra midt på langsiden mot gården
