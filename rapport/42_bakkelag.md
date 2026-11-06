@@ -10,6 +10,7 @@ ok   src/08: veikantene på terrengnettet (hTer)
 ok   src/17: flatene delt og lagt på terrengnettet (A16)
 ok   src/08: hTer definert (terrengnettets trekanter)
 ok   src/08: veibitene delt opp
+ok   src/08: veiene smeltet til én flate per dekke, ikke bånd oppå bånd (06.11, Vegar: «lappeteppe»)
 ok   fire veiflater med eget underlag
 - terreng: lag 0, underlag 0
 - brostein: lag 0, underlag 0
