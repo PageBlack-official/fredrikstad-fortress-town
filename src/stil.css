@@ -93,8 +93,9 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 /* Nålene (24_sok) som i Apple Kart: hvitt symbol på farget sirkel med hvit kant og en liten spiss under, rett opp. MapLibre styrer
    transform på selve markøren, så nåla dreies aldri med CSS (06.11: den dreide formen ble overstyrt og ikonene stod skrått). */
 .merke{flex:none;width:var(--d);height:var(--d);border-radius:50%;background:var(--f);color:#fff;display:grid;place-items:center}
-.naal{border:0;padding:0;background:none;display:flex;flex-direction:column;align-items:center;cursor:pointer;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.25)) drop-shadow(0 3px 6px rgba(0,0,0,.18))}
-.naal .merke{box-shadow:0 0 0 2px #fff;transition:width .18s ease,height .18s ease}
+/* skyggen er box-shadow på sirkelen, ikke filter: drop-shadow på 51 nåler kostet ~10 ms per bilde mens kartet dreies (målt i Vegars Chrome 06.11) */
+.naal{border:0;padding:0;background:none;display:flex;flex-direction:column;align-items:center;cursor:pointer}
+.naal .merke{box-shadow:0 0 0 2px #fff,0 2px 6px rgba(0,0,0,.28);transition:width .18s ease,height .18s ease}
 .naal::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #fff;margin-top:1px}
 .naal.valgt .merke{width:40px;height:40px}   /* --d står i style på merket, så størrelsen settes direkte */
 .naal.valgt .merke svg{width:24px;height:24px}
