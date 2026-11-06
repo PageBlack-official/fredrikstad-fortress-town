@@ -1711,6 +1711,19 @@
    "hentet": "2026-11-05"
   },
   {
+   "id": "pb-hotellkasernen",
+   "navn": "Hotell Kasernen",
+   "kategori": "sove",
+   "type": "Hotell (under ombygging)",
+   "x": 29.2,
+   "y": 6.3,
+   "bygg_id": "bnr-193867537",
+   "adresse": "Kasernegaten 47",
+   "kilde": "Page Black (Vegar), Vegar 06.11 (Infanterikasernen, byggherre Fredriksborg Eiendom AS 919939389); prosjektet: Metropolis",
+   "hentet": "2026-11-06",
+   "nettside": "https://www.metropolis.no/prosjekter/hotell-kasernen/"
+  },
+  {
    "id": "osm-n6802559323",
    "navn": "Magasinet Isegran B&B",
    "kategori": "sove",

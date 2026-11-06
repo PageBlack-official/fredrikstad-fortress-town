@@ -4,13 +4,15 @@
 # Bruk (fra iMac-en):  ssh Vegars-Plex.local 'sh ~/sot-maskin/repo/verktoy/maskin-kjor.sh [gren-eller-commit] [regelnr …]'
 # Kjører i bakgrunnen; følg med i ~/sot-maskin/kjor.log. Ferdig når siste linje er «FERDIG <hash>».
 set -e
+# kjør fra en kopi: checkouten under bytter ut denne fila mens sh fortsatt leser den
+if [ -z "$SOT_KOPI" ]; then cp "$0" /tmp/sot-maskin-kjor.sh; SOT_KOPI=1 exec sh /tmp/sot-maskin-kjor.sh "$@"; fi
 M="$HOME/sot-maskin"; R="$M/repo"
 export PATH="$M/py/bin:$M/node/bin:$PATH" PW_GPU=1 PYTHONPATH="$R/regler"
 REF="${1:-origin/funk/brukeropplevelse}"; [ $# -gt 0 ] && shift
 cd "$R"
 git fetch -q origin
-git checkout -q --detach "$REF" 2>/dev/null || git checkout -q --detach "origin/$REF"
-git clean -qfd -- rapport ut 2>/dev/null || true; git checkout -q -- rapport ut 2>/dev/null || true
+git checkout -q -f --detach "$REF" 2>/dev/null || git checkout -q -f --detach "origin/$REF"   # -f: lokale filer (ortofoto-json, package-lock) skal ikke stoppe kjøringen
+git clean -qfd -- rapport ut 2>/dev/null || true
 [ -d node_modules/esbuild ] || npm install --no-audit --no-fund >/dev/null
 # referanser som ikke ligger i git: Google-flyfotoet (ut av git i 5b09956, hentes fra historikken) og kommunens ortofotofliser (lisens ikke avklart)
 F=kilder/flyfoto-google-2026-10-23.jpg; [ -s "$F" ] || git show 5b09956^:$F > "$F"

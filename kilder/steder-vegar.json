@@ -1,5 +1,5 @@
 {
- "om": "Spisesteder Vegar listet 06.11.2026 (fra Google-søk og visitfredrikstadhvaler.com). Adressen er beliggenhetsadressen i Enhetsregisteret (orgnr), eller stedets egen nettside der Brreg ikke har den; plassen er Kartverkets adressepunkt (ws.geonorge.no/adresser). Steder utenfor kartet er utelatt med grunn.",
+ "om": "Spisesteder Vegar listet 06.11.2026 (fra Google-søk og visitfredrikstadhvaler.com). Adressen er beliggenhetsadressen i Enhetsregisteret (orgnr), eller stedets egen nettside der Brreg ikke har den; plassen er Kartverkets adressepunkt (ws.geonorge.no/adresser). Steder utenfor kartet er utelatt med grunn. 06.11 11:13: Hotell Kasernen (Infanterikasernen) lagt til under Overnatting etter Vegar; navnet og adressen er hans, plassen Kartverkets adressepunkt for Kasernegaten 47.",
  "steder": [
   {
    "navn": "Majorens Kro og Stue",
@@ -81,6 +81,17 @@
    "kilde_adresse": "Enhetsregisteret (GALLERIET VINBAR AS, forretningsadresse)",
    "lat": 59.20323721498276,
    "lon": 10.953592571333486,
+   "postnr": "1632"
+  },
+  {
+   "navn": "Hotell Kasernen",
+   "kategori": "sove",
+   "type": "Hotell (under ombygging)",
+   "adresse": "Kasernegaten 47",
+   "nettside": "https://www.metropolis.no/prosjekter/hotell-kasernen/",
+   "kilde_adresse": "Vegar 06.11 (Infanterikasernen, byggherre Fredriksborg Eiendom AS 919939389); prosjektet: Metropolis",
+   "lat": 59.202891917541265,
+   "lon": 10.953257599514494,
    "postnr": "1632"
   }
  ],

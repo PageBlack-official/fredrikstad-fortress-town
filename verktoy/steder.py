@@ -194,7 +194,7 @@ def bygg():
             if n: x += 5 * n; y -= 3 * n
             if not (UT[0] <= x <= UT[1] and UT[2] <= y <= UT[3]): continue
             steder[:] = [o for o in steder if not (o['kilde'] == 'OpenStreetMap' and enkel(o['navn']) == enkel(v['navn']) and math.hypot(o['x'] - x, o['y'] - y) < 150)]   # samme navn i Gamlebyen = samme sted; Brreg/Kartverket vinner over OSM-punktet
-            ny = {'id': 'pb-' + (v.get('orgnr') or enkel(v['navn'])), 'navn': v['navn'], 'kategori': 'spise', 'type': v['type'], 'x': round(x, 1), 'y': round(y, 1),
+            ny = {'id': 'pb-' + (v.get('orgnr') or enkel(v['navn'])), 'navn': v['navn'], 'kategori': v.get('kategori', 'spise'), 'type': v['type'], 'x': round(x, 1), 'y': round(y, 1),
                   'bygg_id': bygg_for(x, y, bygg), 'adresse': v['adresse'], 'kilde': 'Page Black (Vegar), ' + v['kilde_adresse'], 'hentet': '2026-11-06'}
             if v.get('nettside'): ny['nettside'] = v['nettside']
             steder.append(ny)
