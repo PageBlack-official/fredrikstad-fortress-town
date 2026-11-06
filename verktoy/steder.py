@@ -125,14 +125,22 @@ def slaa_sammen(steder):
     """Samme kategori, navn og type = ett sted i lista, med alle plassene i «punkter» (kartet setter en nål på hver, og kortet viser
     merknaden til plassen du trykket på: to plasser i samme gate kan ha ulike regler). Stedet i lista står på plassen nærmest midten."""
     grupper = {}
-    for s in steder: grupper.setdefault((s['kategori'], enkel(s['navn']), s.get('type')), []).append(s)
+    for s in steder:   # parkering: én linje per gate, typene (beboer, forflytningshemmede, el-bil …) står på hver plass
+        grupper.setdefault((s['kategori'], enkel(s['navn'])) if s['kategori'] == 'parkering' else (s['kategori'], enkel(s['navn']), s.get('type')), []).append(s)
     ut = []
     for g in grupper.values():
         if len(g) == 1: ut.append(g[0]); continue
         cx, cy = sum(s['x'] for s in g) / len(g), sum(s['y'] for s in g) / len(g)
         g.sort(key=lambda s: math.hypot(s['x'] - cx, s['y'] - cy))
         a = dict(g[0])
-        a['punkter'] = [{k: s[k] for k in ('id', 'x', 'y', 'merknad', 'bygg_id', 'kilde_url') if s.get(k) is not None} for s in g]
+        typer = []
+        for s in g:
+            if s.get('type') not in typer: typer.append(s.get('type'))
+        if len(typer) > 1:   # «Parkering, beboer, forflytningshemmede»: fast rekkefølge, kortord etter det første
+            KORT = {'Parkering': 'parkering', 'Grønn sone': 'grønn sone', 'Beboerparkering': 'beboer', 'Parkering forflytningshemmede': 'forflytningshemmede', 'Parkering el-bil': 'el-bil'}
+            typer.sort(key=lambda t: list(KORT).index(t) if t in KORT else 99)
+            o = ', '.join(KORT.get(t, t.lower()) for t in typer); a['type'] = o[0].upper() + o[1:]
+        a['punkter'] = [{k: s[k] for k in ('id', 'x', 'y', 'type', 'merknad', 'bygg_id', 'kilde_url') if s.get(k) is not None} for s in g]
         ut.append(a)
     return ut
 

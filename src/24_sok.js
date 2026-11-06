@@ -43,7 +43,7 @@ const aapent = t => !t ? '' : t === '24/7' ? 'Døgnåpent' : t.replace(/\b(Jan|F
 function fyllSted(s, b, p = s){
   kort.querySelector('h2').textContent = s.navn;
   const bygg = b && (b.navn || b.adr);
-  kort.querySelector('.a').textContent = [s.type, s.adresse || (bygg && bygg !== s.navn ? bygg : '')].filter(Boolean).join(' · ');
+  kort.querySelector('.a').textContent = [p.type ?? s.type, s.adresse || (bygg && bygg !== s.navn ? bygg : '')].filter(Boolean).join(' · ');
   kort.querySelector('.b').textContent = p.merknad ?? s.merknad ?? '';
   const linjer = [];
   if (s.aapent) linjer.push(`<li>${esc(aapent(s.aapent))}</li>`);

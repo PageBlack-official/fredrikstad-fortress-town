@@ -30,7 +30,7 @@ for i, a in enumerate(st):
 # lista viser hvert sted én gang (06.11: Parkering hadde samme gate to og tre ganger): samme kategori + navn + type skal være ett sted
 # med «punkter»; typen står i typen, ikke i navnet; hver plass står i kartet
 from collections import Counter as _C
-for (k, n, t), c in _C((s['kategori'], enkel(s['navn']), s.get('type')) for s in S['steder']).items():
+for (k, n, t), c in _C((s['kategori'], enkel(s['navn']), None if s['kategori'] == 'parkering' else s.get('type')) for s in S['steder']).items():
     if c > 1: feil.append(f'- {c} like linjer i lista: {n} ({t}, {k})')
 for s in S['steder']:
     if 'beboerparkering' in s['navn'].lower() and s['navn'].lower() != 'beboerparkering': feil.append(f"- typen står i navnet: {s['navn']}")
