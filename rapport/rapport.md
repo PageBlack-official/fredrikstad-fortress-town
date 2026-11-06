@@ -1,6 +1,6 @@
 # Regelrapport
 
-Kilde: 9c1f9c5 versjon 34 kjørt 2026-11-06 10:15
+Kilde: 7947119 versjon 34 kjørt 2026-11-06 10:25
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
@@ -10,7 +10,7 @@ Kilde: 9c1f9c5 versjon 34 kjørt 2026-11-06 10:15
 - OK   06_bygger_og_laster  (- bygd enkel -> /Users/vegarbakken/sot-maskin/repo/ut/enkel/index.html 3361 kB versjon 34)
 - OK   07_ingen_feil_i_bruk  (- intro: underveis az -0.96 zoom 0.67 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
-- FEIL 09_publisert  (- Pages: versjon 34 (ønsket 34))
+- OK   09_publisert  (- forsiden: versjon 34 (ønsket 34), bygd før kilde-merket (05.11))
 - OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19189 px, trinn 2: 18816 px)
 - OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)
 - OK   12_kontaktskygge  (- 3.9 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
