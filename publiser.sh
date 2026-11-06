@@ -57,4 +57,10 @@ git commit -qm "Pages ($MODUS): versjon $VERSJON, kilde $HASH, $(date +%Y-%m-%d)
 git push -f origin "$GREN:gh-pages"
 cd "$ROT"; git worktree remove --force "$TMP"; git branch -q -D "$GREN"
 git branch -q -D gh-pages 2>/dev/null || true
-echo "publisert gh-pages ($MODUS), versjon $VERSJON, kilde $HASH"
+# venter til /prove/ viser den nye kilden (23.10: publiseringen stoppet stille og Pages stod på en gammel versjon hele kvelden)
+URL="https://pageblack-official.github.io/fredrikstad-fortress-town/prove/"
+for i in $(seq 1 40); do
+  curl -s -A sot-publiser "$URL?n=$i$$" | grep -q "name=\"kilde\" content=\"$HASH\"" && { echo "publisert gh-pages ($MODUS), versjon $VERSJON, kilde $HASH (sjekket ute etter $((i * 15)) s)"; exit 0; }
+  sleep 15
+done
+echo "STOPP: pushet til gh-pages, men /prove/ viser ikke kilde $HASH etter 10 min (sjekk GitHub Pages)"; exit 1
