@@ -1,14 +1,14 @@
 # Regelrapport
 
-Kilde: 5307d73 versjon 34 kjørt 2026-11-06 08:56
+Kilde: 9c1f9c5 versjon 34 kjørt 2026-11-06 10:15
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
 - FEIL 03_fasader_fra_tegning  (158 hus med fasade fra tegning, 185 antatt (må kvalitetssikres kvartal for kvartal))
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(KVAL.skalaStille) uavhengig av bevegelse)
-- OK   06_bygger_og_laster  (- bygd enkel -> /Users/vegarbakken/sot-maskin/repo/ut/enkel/index.html 3360 kB versjon 34)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az -0.95 zoom 0.67 → ferdig az -2.79 zoom 1.00 intro false)
+- OK   06_bygger_og_laster  (- bygd enkel -> /Users/vegarbakken/sot-maskin/repo/ut/enkel/index.html 3361 kB versjon 34)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az -0.96 zoom 0.67 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - FEIL 09_publisert  (- Pages: versjon 34 (ønsket 34))
 - OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19189 px, trinn 2: 18816 px)
@@ -20,10 +20,10 @@ Kilde: 5307d73 versjon 34 kjørt 2026-11-06 08:56
 - OK   16_vann  (99.24% av kartets vann er vann i ortofotoet (krav 98.5%), 99.41% av ortofotoets vann er dekket (krav 98.5%); før retting (OSM): 96.94% og 98.89%)
 - OK   17_vinduer_rytme  (126 antatte hus og Street View-hus, 1797 vinduer, 81 dører; 0 brudd)
 - OK   18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
-- OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 10 bilder – ingen ny tegning)
+- OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 9 bilder – ingen ny tegning)
 - OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 7 unntak (fredet))
 - OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 300 modellhus)
-- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 928 ms, topp 54.7 px/bilde, hopp 0, rykk 0.23 (<= 0.45), bråstopp 0 (<= 0,15))
+- OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 56.9 px/bilde, hopp 0, rykk 0.2 (<= 0.45), bråstopp 0 (<= 0,15))
 - OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
 - OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
 - OK   31_overflater  (gruppe 95.9% (krav 95 %), belagt type 98.0% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
@@ -34,7 +34,7 @@ Kilde: 5307d73 versjon 34 kjørt 2026-11-06 08:56
 - OK   36_avviksliste  (0 åpne av 16)
 - OK   37_egne_fasader  (1 hus med eget fasadeverktøy)
 - OK   38_porter_og_murer_fri  (0 feil; 23 murer, 5 portbygg, 32 småbygg under 15 m²)
-- FEIL 39_kjeden_stabil  (32 objekter endres av en ny kjøring av kjeden)
+- FEIL 39_kjeden_stabil  (1 objekter endres av en ny kjøring av kjeden)
 - OK   40_parkering_paa_brostein  (0 feil; 5 parkeringsflater tegnes)
 - OK   41_sokkel_skjuler_ikke  (0 feil)
 - OK   42_bakkelag  (0 feil; 12 bakkeutseender med lag)

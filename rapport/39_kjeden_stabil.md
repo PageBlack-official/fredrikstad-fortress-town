@@ -1,38 +1,7 @@
 # 39_kjeden_stabil: FEIL
 
-32 objekter endres av en ny kjøring av kjeden
-FEIL bygg bnr-193867332: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193867499: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193867502: tak2 blir annerledes når kjeden kjøres
+1 objekter endres av en ny kjøring av kjeden
 FEIL bygg bnr-193867677: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193867863: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868002: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868053: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868320: vind blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868339: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868355: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868371: vind blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868444: piper, tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868517: piper, tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868541: vind blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868622: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193868657: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193870228: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193870260: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193870309: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193971210: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193972063: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-193972543: vind blir annerledes når kjeden kjøres
-FEIL bygg bnr-300399132: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-6276415: vind blir annerledes når kjeden kjøres
-FEIL bygg bnr-6276490: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-6276520: tak2 blir annerledes når kjeden kjøres
-FEIL bygg bnr-6276539: tak2 blir annerledes når kjeden kjøres
-FEIL bygg pb-13: tak2 blir annerledes når kjeden kjøres
-FEIL bygg pb-32: tak2 blir annerledes når kjeden kjøres
-FEIL bygg pb-46: tak2 blir annerledes når kjeden kjøres
-FEIL bygg pb-59: tak2 blir annerledes når kjeden kjøres
-FEIL bygg pb-69: tak2 blir annerledes når kjeden kjøres
 
 OK   verktoy/id_flytt.py                      61 rettelser; nye id-er i registeret: []
 OK   verktoy/husdeling.py                       sammen: bnr-193868061, bnr-193869572 -> bnr-193868061
