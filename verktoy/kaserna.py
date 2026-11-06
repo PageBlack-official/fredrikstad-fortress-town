@@ -19,6 +19,10 @@ Fasaden følger illustrasjonene og bygget slik det står:
   murene står der i dag, porten midt i muren mot gata)
 - glasshuset (vinterhagen) står mot hjørnets gårdsfasade
 
+Fra Metropolis (interiørarkitektene, metropolis.no/prosjekter/hotell-kasernen, Vegar 06.11; bildene i teknisk-veikart/arkiv/
+kasernen-metropolis/): vinterhagen er et lyst glasshus med smale olivengrønne sprosser og saltak i glass, med plen, hekker og
+blomstrende busker foran (SG&CO «Utefølelse inne»); okergul gesims under takfoten; kjellervinduene i granittsokkelen har segmentbue
+(fotoet av døra). Dørene (grønne fløydører med overlys) og 24-ruters vinduer stemmer med fotoene.
 Tallene her er Page Blacks lesing av illustrasjonene og flyfotoet; når tegningene fra arkitekten kommer, rettes de her.
 """
 import json, math, os, sys
