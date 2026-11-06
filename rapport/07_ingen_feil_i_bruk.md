@@ -6,5 +6,5 @@
 - styreflate-dra: x 108.2 z -75.8 zoom 1.00
 - hjul: zoom 1.00
 - dobbeltklikk: zoom 2.00 kort vis true
-- musedra: x 176.5 z -9.1 az -2.79
+- musedra: x 179.5 z -8.3 az -2.79
 - feil []
