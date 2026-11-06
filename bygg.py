@@ -17,6 +17,7 @@ def les(p): return open(os.path.join(ROT, p), encoding='utf8').read()
 sys.path.insert(0, ROT)
 import datalag
 data = datalag.koble_til_plass(datalag.alle())
+data['landskap']['veiflater'] = datalag.veiflater(data)   # veiene som én flate per dekke (src/08, 06.11)
 rettelser = datalag.les('rettelser')
 versjon = les('VERSJON').strip()
 # kilden bygget kommer fra (samme hash som sperren i publiser.sh og regelrapporten bruker), som meta i siden: maskinsjekken leser den

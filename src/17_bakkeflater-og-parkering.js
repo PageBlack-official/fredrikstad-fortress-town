@@ -4,7 +4,7 @@ import { medSkygge } from './02_lys.js';
 import { BAKKELAG, alleIBrostein, bakkelag, flat, polyShape } from './03_bakke-vann-grønt.js';
 import { plenMat, stoneMat } from './04_brostein-i-hele-gamlebyen.js';
 import { flatGruppe } from './05_bygg.js';
-import { TER, hAt, hTer } from './08_festningsterrenget.js';
+import { TER, hAt, hTer, paaTerreng } from './08_festningsterrenget.js';
 // ---- bakkeflater og parkering : plenene (OSM, rettet mot ortofoto 2024), gresset i gårdsrommene slik ortofotoet viser det,
 // flatene målt i ortofotoet (grus, heller, asfalt) og parkeringsplassene fra kommunens lag. Flate farger, tynn strek fra
 // etterbehandlingen (høydesprang mellom flatene), ingen tekst på bakken. Skjulte objekter (rettelse «skjul») tegnes ikke.
@@ -47,13 +47,19 @@ import { TER, hAt, hTer } from './08_festningsterrenget.js';
     P.needsUpdate=true; g.computeVertexNormals();
     const m=new THREE.Mesh(g, mat); m.receiveShadow=true; scene.add(m); return m;
   };
+  // brosteinsgrunnen (flyttet hit fra 04, 06.11): på terrenget som flatene, så terrenget aldri stikker opp gjennom steinen
+  // (på flat mark 5 cm som før; der terrenget er høyere, 2 cm over det). Store trekanter der marka er flat, små på vollene.
+  const BR_VF=!!(DATA.landskap && DATA.landskap.veiflater && DATA.landskap.veiflater.B);   // brosteinen er én flate i src/08 (datalag.veiflater)
+  if(!BR_VF && DATA.brostein && DATA.brostein.length>2){ const B={p:[],i:[]}; paaTerreng([[DATA.brostein]], (x,y)=>Math.max(0.05, hTer(x,y)+0.02), B, 40);
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3)); g.setIndex(B.i); g.computeVertexNormals();
+    const m=new THREE.Mesh(g, stoneMat); m.receiveShadow=true; scene.add(m); }
   // plenene (flyttet hit fra 04)
   DATA.gront.forEach(g=>{ if(!g.skjul) flat(g.p,0.28,plenMat); });
   // gårdsrommene: målt gress (felt «gress») tegnes som polygoner; uten måling gjelder typen for hele gårdsrommet
   (DATA.gardsrom||[]).forEach(g=>{ if(g.skjul) return;
     if(g.gress) g.gress.forEach(p=>flat(p,0.3,plenMat)); else if(g.typ==='gress') flat(g.p,0.3,plenMat); });
   // flater målt i ortofotoet
-  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ] && !(f.typ==='brostein' && alleIBrostein(f.p))) legg(f.p, f.typ==='gress'?0.28:f.typ==='brostein'?0.05:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ] && !(f.typ==='brostein' && (BR_VF || alleIBrostein(f.p)))) legg(f.p, f.typ==='gress'?0.28:f.typ==='brostein'?0.05:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
   // oppmerkede parkeringsfelt (kommunens lag, verktoy/bakke.py parkeringsfelt): hvite streker på tvers av raden, oppmerket+1 stk
   { const strek=new THREE.MeshBasicMaterial({color:0xf4f2ec}); const G=new THREE.Group(); scene.add(G);
     (DATA.flater||[]).forEach(f=>{ if(f.skjul || !f.linje || !f.oppmerket) return;

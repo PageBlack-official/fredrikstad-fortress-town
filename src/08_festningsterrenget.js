@@ -64,13 +64,50 @@ if (TER){
   // festningsområdet som flate under terrenget: gir eksakt kant mot bakken og vannet
   (DATA.landskap.fest||[]).forEach(p=>flatH(p,[],0.02,terMat));
 }
+// veiflatene på terrenget: kanten deles opp til terrengrutenettet, flaten trianguleres, og trekanter der flaten ville skåret
+// gjennom terrenget (feil over 2 cm midt på lengste kant) deles til de følger det. Høyden er terrenget + 6 cm som båndene
+// (gangvei 3 cm, brostein 5 cm som grunnen).
+// paaTerreng: polygoner [[ytterkant, hull …], …] lagt på terrenget med høyden z(x,y) i hvert punkt. Kanten deles opp til
+// terrengrutenettet, flaten trianguleres, og en trekant deles på lengste kant så lenge den er lengre enn maks, eller flaten
+// ellers ville avveket over 2 cm fra z langs kanten (på flat mark blir trekantene store, på vollene små). Midtpunktene deles
+// mellom naboene, så flaten henger sammen. Skriver til B {p, i} (x, høyde, -y).
+function paaTerreng(deler, z, B, maks){
+  const steg=TER?TER.g:1.5;
+  const tett=r=>{ const u=[]; for(let k=0;k<r.length;k++){ const a=r[k], c=r[(k+1)%r.length], m=Math.max(1,Math.ceil(Math.hypot(c[0]-a[0],c[1]-a[1])/steg));
+    for(let j=0;j<m;j++) u.push([a[0]+(c[0]-a[0])*j/m, a[1]+(c[1]-a[1])*j/m]); } return u; };
+  deler.forEach(d=>{
+    const ytre=tett(d[0]), hull=d.slice(1).map(tett), V=[...ytre, ...hull.flat()];
+    const tri=THREE.ShapeUtils.triangulateShape(ytre.map(q=>new THREE.Vector2(q[0],q[1])), hull.map(h=>h.map(q=>new THREE.Vector2(q[0],q[1]))));
+    const P=V.map(q=>[q[0],q[1],z(q[0],q[1])]), midt=new Map();
+    const mid=(i,j)=>{ const k=i<j?i+','+j:j+','+i; let n=midt.get(k); if(n===undefined){ const x=(P[i][0]+P[j][0])/2, y=(P[i][1]+P[j][1])/2; n=P.length; P.push([x,y,z(x,y)]); midt.set(k,n); } return n; };
+    const avvik=(a,c)=>[0.25,0.5,0.75].some(t=>Math.abs(z(a[0]+(c[0]-a[0])*t, a[1]+(c[1]-a[1])*t)-(a[2]+(c[2]-a[2])*t))>0.02);
+    const ko=tri.map(t=>[t[0],t[1],t[2]]), ut=[];
+    while(ko.length){ const t=ko.pop(); let L=-1, e=0;
+      for(let s=0;s<3;s++){ const a=P[t[s]], c=P[t[(s+1)%3]], l=Math.hypot(c[0]-a[0],c[1]-a[1]); if(l>L){ L=l; e=s; } }
+      const i=t[e], j=t[(e+1)%3], o=t[(e+2)%3];
+      if(L>steg && (L>maks || avvik(P[i],P[j]) || avvik(P[j],P[o]) || avvik(P[o],P[i]))){ const m=mid(i,j); ko.push([i,m,o],[m,j,o]); continue; }
+      ut.push(t); }
+    const o0=B.p.length/3; P.forEach(q=>B.p.push(q[0],q[2],-q[1])); ut.forEach(t=>B.i.push(o0+t[0],o0+t[2],o0+t[1]));
+  });
+}
+// veiflatene (datalag.veiflater) på terrenget: terrenget + 6 cm som båndene (gangvei 3 cm)
+function veiflater(VF, buf){
+  // brosteinen (B) er grunnen i byen, gatene og brosteinsflatene i én: 5 cm på flat mark, 2 cm over terrenget der det er høyere
+  Object.entries(VF).forEach(([gr, deler])=>{ const B=buf[gr]; if(!B) return; const lofT=gr==='G'?0.03:0.06;
+    paaTerreng(deler, gr==='B' ? (x,y)=>Math.max(0.05, hTer(x,y)+0.02) : (x,y)=>hTer(x,y)+lofT, B, gr==='B'?40:3*(TER?TER.g:1.5)); });
+}
 // veier som bånd i tegningens gategrå; bruer ligger over vannet med sider (slått sammen til tre mesher)
 {
   // flate (data/landskap.json, verktoy/bakke.py gater): kjøreveier lagt med brostein tegnes med brosteinen, ikke gategrått
   // heller og grus (kaia, plassene, stiene på vollene) får flatens farge, som flatene i 17 
   const buf={K:{p:[],i:[]}, G:{p:[],i:[]}, S:{p:[],i:[]}, B:{p:[],i:[]}, H:{p:[],i:[]}, U:{p:[],i:[]}};
   const quad=(B,v)=>{ const o=B.p.length/3; B.p.push(...v); B.i.push(o,o+2,o+1, o+1,o+2,o+3); };
+  // veiflatene (datalag.veiflater, 06.11): alle bånd med samme dekke smeltet til én flate, så de ikke ligger oppå hverandre
+  // som et lappeteppe med strek rundt hvert bånd. Bruer og bånd over 0,5 m tegnes fortsatt som bånd under (med sider).
+  const VF=DATA.landskap&&DATA.landskap.veiflater;
+  if(VF) veiflater(VF, buf);
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
+    if(VF && !v.b && !v.p.some(q=>q[2]>0.5)) return;
     // båndet legges på terrenget (avvik A8): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
     // skar gjennom vollens terreng (terrenget stakk opp som takker som flimret). Biten deles opp til halve terrengrutenettet, og
     // hver kant løftes til minst terrenget + 6 cm.
@@ -102,4 +139,4 @@ if (TER){
     stoneMat.side=THREE.DoubleSide; const me=new THREE.Mesh(g,stoneMat); me.receiveShadow=true; scene.add(me); }
 }
 
-export { TER, hAt, hTer };
+export { TER, hAt, hTer, paaTerreng };

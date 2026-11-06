@@ -299,3 +299,58 @@ def skriv_rettelser(rettelser):
     """Én linje per rettelse (lett å lese og å se i git). Alle verktøy som lager rettelser, skriver med denne."""
     with open(os.path.join(ROT, 'data', 'rettelser.json'), 'w', encoding='utf8') as f:
         f.write('[\n' + ',\n'.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) for r in rettelser) + '\n]\n')
+
+
+def veiflater(data, forenkle=0.05):
+    """Veibåndene (landskap.veier) smeltet sammen til én flate per dekke, for src/08 (06.11, Vegar: «veiene er laget som et
+    lappeteppe som går over hverandre»). Hvert bånd ble tegnet for seg, med egen høyde der det lå: der to bånd møttes, svingte
+    eller krysset, lå det ene noen centimeter over det andre, og streken (src/01) tegnet kanten til hvert bånd tvers over veien.
+    Nå: én flate per gruppe (samme gruppene og fargene som før), og en gruppe som ligger over en annen i tegningen trekkes ut av
+    den under, så ingen flater ligger dobbelt. Brosteinen (grunnen, flatene og båndene) er én flate, gruppe B.
+    Bruer (b) og deler som ligger over 0,5 m tegnes fortsatt som bånd med sider. Kanten deles opp så den følger
+    terrenget (i src/08). Ut: {gruppe: [[ytterkant, hull …], …]}."""
+    from shapely.geometry import LineString, Polygon, MultiPolygon
+    from shapely.ops import unary_union
+
+    def gruppe(v):
+        f = v.get('flate')
+        return 'B' if f == 'brostein' else 'H' if f == 'heller' else 'U' if f == 'grus' else 'G' if v.get('k') == 'gang' else 'K'
+    biter = {}
+    for v in data.get('landskap', {}).get('veier', []):
+        if v.get('b') or len(v.get('p', [])) < 2 or any(p[2] > 0.5 for p in v['p']):
+            continue
+        l = LineString([(p[0], p[1]) for p in v['p']])
+        if l.length < 0.01:
+            continue
+        biter.setdefault(gruppe(v), []).append(l.buffer(v['w'] / 2, quad_segs=4, cap_style='flat', join_style='round'))
+    flater = {g: unary_union(b).buffer(0) for g, b in biter.items()}
+    # brostein: grunnen (data/brostein), brosteinsflatene (flater typ brostein) og brosteinsbåndene i veiene er samme stein og
+    # blir én flate. Hver for seg lå de kant i kant med glipper der festningsterrenget stakk fram som grønne streker
+    # (plassen innenfor Voldporten, Vegar 06.11). Glipper smalere enn 1,2 m lukkes (de var opptil 0,4 m).
+    B = list(biter.get('B', []))
+    if len(data.get('brostein') or []) > 2:
+        B.append(Polygon(data['brostein']).buffer(0))
+    B += [Polygon(f['p']).buffer(0) for f in data.get('flater', []) if f.get('typ') == 'brostein' and not f.get('skjul') and len(f.get('p', [])) > 2]
+    if B:
+        flater['B'] = unary_union(B).buffer(0.6, join_style='mitre').buffer(-0.6, join_style='mitre')
+    # grus- og helleflatene (src/17) har samme farge som grus- og hellebåndene: der de dekker hverandre, tegnes bare flaten
+    for g, typ in (('U', 'grus'), ('H', 'heller')):
+        fl = [Polygon(f['p']).buffer(0) for f in data.get('flater', []) if f.get('typ') == typ and not f.get('skjul') and len(f.get('p', [])) > 2]
+        if g in flater and fl:
+            flater[g] = flater[g].difference(unary_union(fl))
+    over = None   # tegnerekkefølgen i src/08 (polygonOffset): grus over heller over gangvei over kjørevei over brostein
+    for g in ('U', 'H', 'G', 'K', 'B'):
+        if g not in flater:
+            continue
+        if over is not None:
+            flater[g] = flater[g].difference(over)
+        over = flater[g] if over is None else over.union(flater[g])
+
+    def ring(r):   # kanten deles opp i src/08 (til terrengrutenettet), ikke her: dataene er med i siden
+        return [[round(x, 2), round(y, 2)] for x, y in list(r.coords)[:-1]]
+    ut = {}
+    for g, f in flater.items():
+        f = f.simplify(forenkle)
+        deler = f.geoms if isinstance(f, MultiPolygon) else [f] if isinstance(f, Polygon) else [x for x in getattr(f, 'geoms', []) if isinstance(x, Polygon)]
+        ut[g] = [[ring(d.exterior)] + [ring(h) for h in d.interiors if Polygon(h).area > 0.05] for d in deler if d.area > 0.2]
+    return ut

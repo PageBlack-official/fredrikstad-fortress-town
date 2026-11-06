@@ -9,7 +9,8 @@ dem på terrenget. Regelen er rød når
   - et bakkemateriale ikke har lag (stoneMat, plenMat, terMat, veiene i src/08, flatene i src/17),
   - to ulike utseender har samme (lag, underlag),
   - veibåndet i src/08 ikke legges på terrenget (hAt i kantene) eller ikke deles opp,
-  - en flatetype eller veiflate i dataene ikke har et underlag.
+  - en flatetype eller veiflate i dataene ikke har et underlag,
+  - veiene ikke tegnes som én flate per dekke (datalag.veiflater, 06.11: båndene lå oppå hverandre som et lappeteppe).
 """
 import sys, re, glob
 from _felles import *
@@ -21,7 +22,8 @@ src = {os.path.basename(f)[:2]: open(f, encoding='utf8').read() for f in glob.gl
 krav = [('04', r'bakkelag\(stoneMat,\s*BAKKELAG\.brostein\)', 'brosteinen'), ('04', r'bakkelag\(plenMat,\s*BAKKELAG\.gress\)', 'gresset'),
         ('08', r'bakkelag\(terMat,\s*BAKKELAG\.terreng\)', 'terrenget'), ('08', r'bakkelag\(mm,\s*BAKKELAG\.vei,\s*under\)', 'veiene'),
         ('17', r'bakkelag\(flateMat\(FARGE\[k\]\)', 'flatene'), ('08', r'hTer\(P\[k\]\[0\]\+nx', 'veikantene på terrengnettet (hTer)'), ('17', r'delPaaTerreng\(g', 'flatene delt og lagt på terrengnettet (A16)'), ('08', r'hTer=\(x,y\)=>', 'hTer definert (terrengnettets trekanter)'),
-        ('08', r'Math\.ceil\(Math\.hypot\(c\[0\]-a\[0\],c\[1\]-a\[1\]\)/steg\)', 'veibitene delt opp')]
+        ('08', r'Math\.ceil\(Math\.hypot\(c\[0\]-a\[0\],c\[1\]-a\[1\]\)/steg\)', 'veibitene delt opp'),
+        ('08', r'if\(VF\) veiflater\(VF, buf\)', 'veiene smeltet til én flate per dekke, ikke bånd oppå bånd (06.11, Vegar: «lappeteppe»)')]
 for fil, mønster, hva in krav:
     if not re.search(mønster, src.get(fil, '')): feil.append(f"FEIL src/{fil}: {hva} mangler (bakkelag/terreng)")
     else: linjer.append(f"ok   src/{fil}: {hva}")

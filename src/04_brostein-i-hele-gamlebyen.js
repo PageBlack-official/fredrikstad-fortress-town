@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { DATA } from './00_oppsett.js';
 import { medSkygge } from './02_lys.js';
-import { BAKKELAG, bakkelag, flat } from './03_bakke-vann-grønt.js';
+import { BAKKELAG, bakkelag } from './03_bakke-vann-grønt.js';
 // ---- brostein i hele Gamlebyen ----
 const stoneMat = new THREE.ShaderMaterial({
   uniforms:{ base:{value:new THREE.Color('rgb(146,140,132)')}, fuge:{value:new THREE.Color('rgb(96,92,88)')}, ang:{value:THREE.MathUtils.degToRad(DATA.gatevinkel||0)} },
@@ -34,7 +34,8 @@ const stoneMat = new THREE.ShaderMaterial({
 });
 medSkygge(stoneMat);
 bakkelag(stoneMat, BAKKELAG.brostein);   // avvik A8: lagrekkefølgen i dybdetesten (src/03)
-if (DATA.brostein){ const m=flat(DATA.brostein,0.05,stoneMat); }
+// brosteinsgrunnen (DATA.brostein) legges på terrenget i src/17 (legg), ikke flatt i 5 cm: der festningsterrenget lå høyere,
+// stakk det grønne terrenget opp gjennom steinen i striper og trekanter (Vegar 06.11, plassen innenfor Voldporten)
 const greenMat = new THREE.MeshLambertMaterial({color:0x9dcfa5});
 const plenMat=new THREE.ShaderMaterial({
   uniforms:{ c1:{value:new THREE.Color('rgb(126,180,134)')} },
