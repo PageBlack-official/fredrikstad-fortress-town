@@ -80,6 +80,62 @@ def bygg_for(x, y, bygg):
         if i_polygon(x, y, b['p']): return b['id']
     return None
 
+
+enkel = lambda n: ''.join(c for c in __import__('unicodedata').normalize('NFD', (n or '').lower().replace('&', 'og')) if c.isalnum())   # «kro & stue» = «kro og stue»
+
+# ---- lista viser hvert sted én gang (Vegar 06.11: Parkering-lista hadde samme gate to og tre ganger) ----
+GATE_CACHE = os.path.join(ROT, 'kilder', 'gatenavn-kartverket.json')
+
+def gatenavn(navn):
+    """Gatenavnet slik Kartverket skriver det (kommunens parkeringslag har skrivefeil, f.eks. «Labratoriegaten»). Svarene lagres i
+    kilder/gatenavn-kartverket.json, så bygget går uten nett etter første gang. Navn som ikke er en gate (Kongstenhallen), står urørt."""
+    c = json.load(open(GATE_CACHE, encoding='utf8')) if os.path.exists(GATE_CACHE) else {}
+    if navn not in c:
+        def sok(**q):
+            url = 'https://ws.geonorge.no/adresser/v1/sok?' + urllib.parse.urlencode({'kommunenummer': '3107', 'treffPerSide': 1, **q})
+            with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'sot-steder'}), timeout=20) as r: return json.load(r)
+        try:
+            if sok(adressenavn=navn)['metadata']['totaltAntallTreff']: c[navn] = navn
+            else:
+                a = sok(sok=navn, fuzzy='true')['adresser']; n = a[0]['adressenavn'] if a else navn
+                import difflib
+                c[navn] = n if difflib.SequenceMatcher(None, navn.lower(), n.lower()).ratio() >= 0.85 else navn
+        except Exception: return navn
+        json.dump(c, open(GATE_CACHE, 'w', encoding='utf8'), ensure_ascii=False, indent=1, sort_keys=True)
+    return c[navn]
+
+def rydd_parkering(steder):
+    """«Gate - beboerparkering» blir navn «Gate», type «Beboerparkering»; gatenavn rettes etter Kartverket (også i «A/B»);
+    plasser uten gatenavn («For beboere med p-kort») får navnet til nærmeste parkering innen 150 m."""
+    P = [s for s in steder if s['kategori'] == 'parkering']
+    for s in P:
+        m = re.match(r'(.*?)\s*-\s*beboerparkering\s*$', s['navn'], re.I)
+        if m: s['navn'], s['type'] = m.group(1).strip(), 'Beboerparkering'
+        elif re.search(r'beboere|p-kort', s['navn'], re.I): s['type'] = 'Beboerparkering'; s['uten_navn'] = True
+        else: s['navn'] = '/'.join(gatenavn(d.strip()) for d in s['navn'].split('/'))
+        if m: s['navn'] = gatenavn(s['navn'])
+    for s in P:
+        if s.pop('uten_navn', False):
+            n = min((o for o in P if o is not s and 'uten_navn' not in o), key=lambda o: math.hypot(o['x'] - s['x'], o['y'] - s['y']), default=None)
+            s['navn'] = n['navn'] if n and math.hypot(n['x'] - s['x'], n['y'] - s['y']) < 150 else 'Beboerparkering'
+        if s.get('merknad'): s['merknad'] = re.sub(r'\s+', ' ', s['merknad']).strip()
+        s['navn'] = re.sub(r'\s*\(takstgruppe[^)]*\)', '', s['navn'], flags=re.I).strip()   # kommunens interne takstnummer, ikke et navn
+
+def slaa_sammen(steder):
+    """Samme kategori, navn og type = ett sted i lista, med alle plassene i «punkter» (kartet setter en nål på hver, og kortet viser
+    merknaden til plassen du trykket på: to plasser i samme gate kan ha ulike regler). Stedet i lista står på plassen nærmest midten."""
+    grupper = {}
+    for s in steder: grupper.setdefault((s['kategori'], enkel(s['navn']), s.get('type')), []).append(s)
+    ut = []
+    for g in grupper.values():
+        if len(g) == 1: ut.append(g[0]); continue
+        cx, cy = sum(s['x'] for s in g) / len(g), sum(s['y'] for s in g) / len(g)
+        g.sort(key=lambda s: math.hypot(s['x'] - cx, s['y'] - cy))
+        a = dict(g[0])
+        a['punkter'] = [{k: s[k] for k in ('id', 'x', 'y', 'merknad', 'bygg_id', 'kilde_url') if s.get(k) is not None} for s in g]
+        ut.append(a)
+    return ut
+
 def bygg():
     osm = json.load(open(os.path.join(ROT, 'kilder', 'osm-steder.json'), encoding='utf8'))
     data = datalag.alle()
@@ -161,6 +217,8 @@ def bygg():
                        'x': round(x, 1), 'y': round(y, 1), 'bygg_id': bygg_for(x, y, bygg),
                        'merknad': ' · '.join(t for t in [a.get('TYPE'), f'Verdi: {verdi}' if verdi else '', f'Vern: {vern}' if vern else ''] if t and not t.startswith('Se også')),
                        'nettside': a.get('URL'), 'kilde': 'Fredrikstad kommune, kulturminneplanen', 'kilde_url': km.get('url'), 'hentet': km.get('hentet')})
+    rydd_parkering(steder)
+    steder[:] = slaa_sammen(steder)
     steder.sort(key=lambda s: ([k for k, _ in KATEGORIER].index(s['kategori']), s['navn'].lower()))
     ut = {'kategorier': [{'id': k, 'navn': n} for k, n in KATEGORIER], 'steder': steder,
           'kilder': {'osm': f"© OpenStreetMap-bidragsytere (ODbL), hentet {osm.get('hentet')}", 'parkering': 'Fredrikstad kommune', 'brosjyre': 'Visit Fredrikstad 2015'}}

@@ -39,18 +39,20 @@ const MND = { Jan: 'jan', Feb: 'feb', Mar: 'mar', Apr: 'apr', May: 'mai', Jun: '
 const aapent = t => !t ? '' : t === '24/7' ? 'Døgnåpent' : t.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, m => MND[m]).replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\b/g, d => DAG[d]).replace(/\boff\b/g, 'stengt').replace(/;\s*/g, ' · ').replace(/,/g, ', ');
 
 // ---- kortet for et sted ----
-function fyllSted(s, b){
+// et sted kan ha flere plasser (punkter: samme gate med beboerparkering i tre strekk, fem toaletter); kortet viser plassen du valgte
+function fyllSted(s, b, p = s){
   kort.querySelector('h2').textContent = s.navn;
   const bygg = b && (b.navn || b.adr);
   kort.querySelector('.a').textContent = [s.type, s.adresse || (bygg && bygg !== s.navn ? bygg : '')].filter(Boolean).join(' · ');
-  kort.querySelector('.b').textContent = s.merknad || '';
+  kort.querySelector('.b').textContent = p.merknad ?? s.merknad ?? '';
   const linjer = [];
   if (s.aapent) linjer.push(`<li>${esc(aapent(s.aapent))}</li>`);
   if (s.mat) linjer.push(`<li>${esc(s.mat[0].toUpperCase() + s.mat.slice(1))}</li>`);
   if (s.easypark) linjer.push(`<li>EasyPark-sone ${esc(s.easypark)}</li>`);
   if (s.telefon) linjer.push(`<li><a href="tel:${esc(s.telefon.replace(/\s/g, ''))}">${esc(s.telefon)}</a></li>`);
   if (s.nettside) linjer.push(`<li><a href="${esc(/^https?:/.test(s.nettside) ? s.nettside : 'https://' + s.nettside)}" target="_blank" rel="noopener">${s.kategori === 'kulturminne' ? 'Kulturminneplanen (PDF)' : esc(s.nettside.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a></li>`);
-  const ll = tilLngLat(s.x, s.y);
+  if (s.punkter) linjer.push(`<li>${s.punkter.length} plasser i kartet</li>`);
+  const ll = tilLngLat(p.x, p.y);
   const vei = IOS ? `https://maps.apple.com/?daddr=${ll.lat.toFixed(6)},${ll.lng.toFixed(6)}&dirflg=w` : `https://www.google.com/maps/dir/?api=1&destination=${ll.lat.toFixed(6)},${ll.lng.toFixed(6)}&travelmode=walking`;
   linjer.push(`<li class="vei"><a href="${vei}" target="_blank" rel="noopener">Veibeskrivelse</a></li>`);
   kort.querySelector('.her').innerHTML = linjer.join('');
@@ -58,28 +60,34 @@ function fyllSted(s, b){
   kort.querySelector('.id').textContent = s.kilde === 'OpenStreetMap' ? '© OpenStreetMap-bidragsytere' : (s.kilde || '');
 }
 let valgtSted = null;
-function velgSted(s){
-  valgtSted = s; tegnNaaler();
-  const g = s.bygg_id && buildings.find(x => x.userData.b && x.userData.b.id === s.bygg_id);
-  if (g) { velgHus(g); fyllSted(s, BYGG_ID.get(s.bygg_id)); }
-  else velgPunkt(() => fyllSted(s), s.x, s.y);
+let valgtNaal = null;   // nøkkelen til nåla som er valgt: id, eller id#n for plass n
+function velgSted(s, n = 0){
+  const p = s.punkter ? s.punkter[n] || s.punkter[0] : s;
+  valgtSted = s; valgtNaal = s.punkter ? `${s.id}#${s.punkter.indexOf(p)}` : s.id; tegnNaaler();
+  const bid = p.bygg_id ?? s.bygg_id, g = bid && buildings.find(x => x.userData.b && x.userData.b.id === bid);
+  if (g) { velgHus(g); fyllSted(s, BYGG_ID.get(bid), p); }
+  else velgPunkt(() => fyllSted(s, null, p), p.x, p.y);
   kort_.sted = s.id;
 }
-kort_.vedLukk.push(() => { kort_.sted = null; if (valgtSted) { valgtSted = null; tegnNaaler(); } });
+kort_.vedLukk.push(() => { kort_.sted = null; if (valgtSted) { valgtSted = null; valgtNaal = null; tegnNaaler(); } });
 
 // ---- nålene: alle stedene i valgt kategori, og stedet som er valgt ----
 const naaler = new Map(); let aktivKat = null;
-function naal(s){
+function naal(s, n){
+  const p = n === undefined ? s : s.punkter[n];
   const el = document.createElement('button'); el.type = 'button'; el.className = 'naal'; el.dataset.kat = s.kategori;
   el.innerHTML = merke(s.kategori, 28); el.setAttribute('aria-label', `${s.navn}, ${s.type || KAT.get(s.kategori) || ''}`); el.title = s.navn;
-  el.addEventListener('click', e => { e.stopPropagation(); velgSted(s); });
-  return new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat(tilLngLat(s.x, s.y));
+  el.addEventListener('click', e => { e.stopPropagation(); velgSted(s, n); });
+  return new maplibregl.Marker({ element: el, anchor: 'bottom' }).setLngLat(tilLngLat(p.x, p.y));
 }
 function tegnNaaler(){
-  const vis = new Set(S.steder.filter(s => s.kategori === aktivKat).map(s => s.id)); if (valgtSted) vis.add(valgtSted.id);
-  for (const [id, m] of naaler) if (!vis.has(id)) { m.remove(); naaler.delete(id); }
-  for (const s of S.steder) if (vis.has(s.id) && !naaler.has(s.id)) { const m = naal(s); m.addTo(map); naaler.set(s.id, m); }
-  for (const [id, m] of naaler) m.getElement().classList.toggle('valgt', !!valgtSted && id === valgtSted.id);
+  // én nål per plass: nøkkel id for et sted med én plass, id#n for plass n
+  const vis = new Map();
+  for (const s of S.steder) if (s.kategori === aktivKat || s === valgtSted) {
+    if (s.punkter) s.punkter.forEach((_, n) => vis.set(`${s.id}#${n}`, [s, n])); else vis.set(s.id, [s, undefined]); }
+  for (const [k, m] of naaler) if (!vis.has(k)) { m.remove(); naaler.delete(k); }
+  for (const [k, [s, n]] of vis) if (!naaler.has(k)) { const m = naal(s, n); m.addTo(map); naaler.set(k, m); }
+  for (const [k, m] of naaler) m.getElement().classList.toggle('valgt', k === valgtNaal);
 }
 
 // ---- panelet: søkefelt, kategorier, treff ----
@@ -98,7 +106,7 @@ function treff(){
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every(o => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
   const vis = (q || aktivKat) ? r.slice(0, 60) : [];
-  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
+  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span><b>${esc(s.navn)}</b><small>${esc([s.type, s.punkter ? `${s.punkter.length} plasser` : '', s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
     || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : '');
 }
 function apne(){ panel.hidden = false; knapp.setAttribute('aria-expanded', 'true'); treff(); setTimeout(() => inn.focus({ preventScroll: true }), 30); }

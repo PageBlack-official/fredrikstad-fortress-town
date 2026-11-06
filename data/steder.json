@@ -1725,24 +1725,10 @@
    "telefon": "+47 69 03 29 30"
   },
   {
-   "id": "parkering-1-15543",
-   "navn": "Carsten Ankers gate - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 255.1,
-   "y": -264.9,
-   "bygg_id": null,
-   "merknad": "Parkering med gyldig avtale 08-16",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15543)",
-   "hentet": "2026-10-29"
-  },
-  {
    "id": "parkering-1-15544",
-   "navn": "Carsten Ankers gate - beboerparkering",
+   "navn": "Carsten Ankers gate",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 240.8,
    "y": -245.3,
    "bygg_id": null,
@@ -1750,7 +1736,23 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15544)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-15544",
+     "x": 240.8,
+     "y": -245.3,
+     "merknad": "med gyldig avtale 08-16",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15544)"
+    },
+    {
+     "id": "parkering-1-15543",
+     "x": 255.1,
+     "y": -264.9,
+     "merknad": "Parkering med gyldig avtale 08-16",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15543)"
+    }
+   ]
   },
   {
    "id": "parkering-1-4522",
@@ -1760,59 +1762,17 @@
    "x": -386.1,
    "y": 473.6,
    "bygg_id": null,
-   "merknad": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "merknad": "Avgiftstiden kl. 08.00 - 18.00 (08.00 15.00)",
    "easypark": "1230",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4522)",
    "hentet": "2026-10-29"
   },
   {
-   "id": "parkering-1-4631",
-   "navn": "For beboere med p-kort",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": -239.0,
-   "y": 368.2,
-   "bygg_id": null,
-   "merknad": "Med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4631)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4618",
-   "navn": "Færgeportgaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 88.7,
-   "y": 171.3,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4618)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4625",
-   "navn": "Færgeportgaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 204.8,
-   "y": 115.1,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4625)",
-   "hentet": "2026-10-29"
-  },
-  {
    "id": "parkering-1-4626",
-   "navn": "Færgeportgaten - beboerparkering",
+   "navn": "Færgeportgaten",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 148.7,
    "y": 143.8,
    "bygg_id": null,
@@ -1820,13 +1780,36 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4626)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4626",
+     "x": 148.7,
+     "y": 143.8,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4626)"
+    },
+    {
+     "id": "parkering-1-4625",
+     "x": 204.8,
+     "y": 115.1,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4625)"
+    },
+    {
+     "id": "parkering-1-4618",
+     "x": 88.7,
+     "y": 171.3,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4618)"
+    }
+   ]
   },
   {
    "id": "parkering-1-15545",
-   "navn": "General Ohmes vei - beboerparkering",
+   "navn": "General Ohmes vei",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 303.7,
    "y": -172.7,
    "bygg_id": null,
@@ -1834,49 +1817,30 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15545)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-15943",
-   "navn": "General Ohmes vei - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 247.4,
-   "y": -188.6,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale 08-16",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15943)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-15944",
-   "navn": "General Ohmes vei - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 308.8,
-   "y": -133.5,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale 08-16",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15944)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-9140",
-   "navn": "Heibergskrysset",
-   "kategori": "parkering",
-   "type": "Parkering el-bil",
-   "x": 498.4,
-   "y": -102.1,
-   "bygg_id": null,
-   "merknad": "Maks 3 t. 16A som gir maks 3 kwt",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 9140)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-15545",
+     "x": 303.7,
+     "y": -172.7,
+     "merknad": "med gyldig avtale 08-16",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15545)"
+    },
+    {
+     "id": "parkering-1-15944",
+     "x": 308.8,
+     "y": -133.5,
+     "merknad": "med gyldig avtale 08-16",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15944)"
+    },
+    {
+     "id": "parkering-1-15943",
+     "x": 247.4,
+     "y": -188.6,
+     "merknad": "med gyldig avtale 08-16",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15943)"
+    }
+   ]
   },
   {
    "id": "parkering-1-12022",
@@ -1890,7 +1854,60 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 12022)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-12022",
+     "x": 481.7,
+     "y": -123.2,
+     "merknad": "Maks 3 t. 16A som gir maks 3 kwt",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 12022)"
+    },
+    {
+     "id": "parkering-1-9140",
+     "x": 498.4,
+     "y": -102.1,
+     "merknad": "Maks 3 t. 16A som gir maks 3 kwt",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 9140)"
+    }
+   ]
+  },
+  {
+   "id": "parkering-1-4619",
+   "navn": "Kasernegaten",
+   "kategori": "parkering",
+   "type": "Beboerparkering",
+   "x": 34.1,
+   "y": -35.5,
+   "bygg_id": null,
+   "merknad": "med gyldig avtale",
+   "easypark": null,
+   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
+   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4619)",
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4619",
+     "x": 34.1,
+     "y": -35.5,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4619)"
+    },
+    {
+     "id": "parkering-1-4616",
+     "x": -34.0,
+     "y": -10.7,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4616)"
+    },
+    {
+     "id": "parkering-1-4620",
+     "x": 113.3,
+     "y": -67.4,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4620)"
+    }
+   ]
   },
   {
    "id": "parkering-1-4623",
@@ -1921,48 +1938,6 @@
    "hentet": "2026-10-29"
   },
   {
-   "id": "parkering-1-4616",
-   "navn": "Kasernegaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": -34.0,
-   "y": -10.7,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4616)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4619",
-   "navn": "Kasernegaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 34.1,
-   "y": -35.5,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4619)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4620",
-   "navn": "Kasernegaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 113.3,
-   "y": -67.4,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4620)",
-   "hentet": "2026-10-29"
-  },
-  {
    "id": "parkering-1-4601",
    "navn": "Kirkegaten",
    "kategori": "parkering",
@@ -1970,7 +1945,7 @@
    "x": -42.2,
    "y": -35.6,
    "bygg_id": null,
-   "merknad": "01.09.-31.05. grønn sone  01.06.-31.08. rød sone",
+   "merknad": "01.09.-31.05. grønn sone 01.06.-31.08. rød sone",
    "easypark": "1240",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4601)",
@@ -1992,9 +1967,9 @@
   },
   {
    "id": "parkering-1-4613",
-   "navn": "Kirkegaten - beboerparkering",
+   "navn": "Kirkegaten",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 107.9,
    "y": 170.1,
    "bygg_id": null,
@@ -2002,21 +1977,23 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4613)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4614",
-   "navn": "Kirkegaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 77.6,
-   "y": 125.7,
-   "bygg_id": null,
-   "merknad": "med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4614)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4613",
+     "x": 107.9,
+     "y": 170.1,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4613)"
+    },
+    {
+     "id": "parkering-1-4614",
+     "x": 77.6,
+     "y": 125.7,
+     "merknad": "med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4614)"
+    }
+   ]
   },
   {
    "id": "parkering-1-4604",
@@ -2030,21 +2007,23 @@
    "easypark": "1240",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4604)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4605",
-   "navn": "Kirkegaten/Tøihusgaten",
-   "kategori": "parkering",
-   "type": "Grønn sone",
-   "x": -59.4,
-   "y": -85.9,
-   "bygg_id": null,
-   "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
-   "easypark": "1240",
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4605)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4604",
+     "x": -128.1,
+     "y": -69.7,
+     "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4604)"
+    },
+    {
+     "id": "parkering-1-4605",
+     "x": -59.4,
+     "y": -85.9,
+     "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4605)"
+    }
+   ]
   },
   {
    "id": "parkering-1-1953",
@@ -2054,7 +2033,7 @@
    "x": 515.0,
    "y": -71.5,
    "bygg_id": null,
-   "merknad": "Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00) Gratis i 3 t. mot registrering.",
+   "merknad": "Avgiftstiden kl. 08.00 - 18.00 (08.00 15.00) Gratis i 3 t. mot registrering.",
    "easypark": "1241",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 1953)",
@@ -2086,77 +2065,60 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 5309)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-5310",
-   "navn": "Kongstenhallen",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 314.4,
-   "y": -297.6,
-   "bygg_id": null,
-   "merknad": "Parkering forbudt over 3 t fra kl. 08-16 - ingen avgift. Egner seg også for buss",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 5310)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-15942",
-   "navn": "Laboratoriegaten",
-   "kategori": "parkering",
-   "type": "Grønn sone",
-   "x": -146.2,
-   "y": -167.5,
-   "bygg_id": null,
-   "merknad": "Rød sone 01.06.-31.08  grønn sone  01.09.-31.05.",
-   "easypark": "1240",
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15942)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4606",
-   "navn": "Labratoriegaten",
-   "kategori": "parkering",
-   "type": "Grønn sone",
-   "x": -42.7,
-   "y": -173.6,
-   "bygg_id": null,
-   "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
-   "easypark": "1240",
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4606)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-5309",
+     "x": 506.6,
+     "y": -193.3,
+     "merknad": "Parkering forbudt over 3 t",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 5309)"
+    },
+    {
+     "id": "parkering-1-5310",
+     "x": 314.4,
+     "y": -297.6,
+     "merknad": "Parkering forbudt over 3 t fra kl. 08-16 - ingen avgift. Egner seg også for buss",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 5310)"
+    }
+   ]
   },
   {
    "id": "parkering-1-4607",
-   "navn": "Labratoriegaten",
+   "navn": "Laboratoriegaten",
    "kategori": "parkering",
    "type": "Grønn sone",
    "x": -93.9,
    "y": -172.9,
    "bygg_id": null,
-   "merknad": "Grønn sone 01.09.-31.05.  Rød sone 01.06.-31.08.",
+   "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
    "easypark": "1240",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4607)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4599",
-   "navn": "Raadhusgaten",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 115.5,
-   "y": 68.2,
-   "bygg_id": null,
-   "merknad": "Parkering forbudt over 1 t. 08-18 (08-15)",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4599)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4607",
+     "x": -93.9,
+     "y": -172.9,
+     "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4607)"
+    },
+    {
+     "id": "parkering-1-4606",
+     "x": -42.7,
+     "y": -173.6,
+     "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4606)"
+    },
+    {
+     "id": "parkering-1-15942",
+     "x": -146.2,
+     "y": -167.5,
+     "merknad": "Rød sone 01.06.-31.08 grønn sone 01.09.-31.05.",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15942)"
+    }
+   ]
   },
   {
    "id": "parkering-1-4602",
@@ -2170,13 +2132,29 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4602)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4602",
+     "x": 154.0,
+     "y": 123.1,
+     "merknad": "Parkering forbudt over 1t 08-18 (08-15)",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4602)"
+    },
+    {
+     "id": "parkering-1-4599",
+     "x": 115.5,
+     "y": 68.2,
+     "merknad": "Parkering forbudt over 1 t. 08-18 (08-15)",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4599)"
+    }
+   ]
   },
   {
    "id": "parkering-1-4640",
-   "navn": "Raadhusgaten - beboerparkering",
+   "navn": "Raadhusgaten",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 74.1,
    "y": 9.1,
    "bygg_id": null,
@@ -2184,21 +2162,23 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4640)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-15547",
-   "navn": "Raadhusgaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 75.3,
-   "y": 11.0,
-   "bygg_id": null,
-   "merknad": "Med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15547)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4640",
+     "x": 74.1,
+     "y": 9.1,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4640)"
+    },
+    {
+     "id": "parkering-1-15547",
+     "x": 75.3,
+     "y": 11.0,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15547)"
+    }
+   ]
   },
   {
    "id": "parkering-1-1921",
@@ -2208,7 +2188,7 @@
    "x": 133.5,
    "y": 236.9,
    "bygg_id": null,
-   "merknad": "Grønn sone 01.09.-31.05. Rød sone  01.06.-31.08.",
+   "merknad": "Grønn sone 01.09.-31.05. Rød sone 01.06.-31.08.",
    "easypark": "1240",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 1921)",
@@ -2216,9 +2196,9 @@
   },
   {
    "id": "parkering-1-8500",
-   "navn": "Smedjegaten - beboerparkering",
+   "navn": "Smedjegaten",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 122.2,
    "y": 249.0,
    "bygg_id": null,
@@ -2226,20 +2206,36 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 8500)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-8500",
+     "x": 122.2,
+     "y": 249.0,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 8500)"
+    },
+    {
+     "id": "parkering-1-15548",
+     "x": 109.6,
+     "y": 257.4,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15548)"
+    }
+   ]
   },
   {
-   "id": "parkering-1-15548",
-   "navn": "Smedjegaten - beboerparkering",
+   "id": "parkering-1-4631",
+   "navn": "Strandpromenaden",
    "kategori": "parkering",
-   "type": "Parkering",
-   "x": 109.6,
-   "y": 257.4,
+   "type": "Beboerparkering",
+   "x": -239.0,
+   "y": 368.2,
    "bygg_id": null,
    "merknad": "Med gyldig avtale",
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15548)",
+   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4631)",
    "hentet": "2026-10-29"
   },
   {
@@ -2264,7 +2260,7 @@
    "x": -368.7,
    "y": 244.1,
    "bygg_id": null,
-   "merknad": "Egner seg også for buss.Avgiftstiden kl. 08.00 - 18.00 (08.00  15.00)",
+   "merknad": "Egner seg også for buss.Avgiftstiden kl. 08.00 - 18.00 (08.00 15.00)",
    "easypark": "1215",
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4656)",
@@ -2285,6 +2281,43 @@
    "hentet": "2026-10-29"
   },
   {
+   "id": "parkering-1-4641",
+   "navn": "Toldbodgaten",
+   "kategori": "parkering",
+   "type": "Beboerparkering",
+   "x": -27.1,
+   "y": 131.7,
+   "bygg_id": null,
+   "merknad": "Med gyldig avtale",
+   "easypark": null,
+   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
+   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4641)",
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-4641",
+     "x": -27.1,
+     "y": 131.7,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4641)"
+    },
+    {
+     "id": "parkering-1-4612",
+     "x": 47.3,
+     "y": 209.8,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4612)"
+    },
+    {
+     "id": "parkering-1-4615",
+     "x": -140.4,
+     "y": -34.8,
+     "merknad": "Med gyldig avtale",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4615)"
+    }
+   ]
+  },
+  {
    "id": "parkering-1-12023",
    "navn": "Toldbodgaten",
    "kategori": "parkering",
@@ -2296,48 +2329,6 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 12023)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4615",
-   "navn": "Toldbodgaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": -140.4,
-   "y": -34.8,
-   "bygg_id": null,
-   "merknad": "Med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4615)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4641",
-   "navn": "Toldbodgaten - beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": -27.1,
-   "y": 131.7,
-   "bygg_id": null,
-   "merknad": "Med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4641)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-4612",
-   "navn": "Toldbodgaten- beboerparkering",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 47.3,
-   "y": 209.8,
-   "bygg_id": null,
-   "merknad": "Med gyldig avtale",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 4612)",
    "hentet": "2026-10-29"
   },
   {
@@ -2356,9 +2347,9 @@
   },
   {
    "id": "parkering-1-4627",
-   "navn": "Torvgaten - beboerparkering",
+   "navn": "Torvgaten",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 101.8,
    "y": 6.9,
    "bygg_id": null,
@@ -2370,9 +2361,9 @@
   },
   {
    "id": "parkering-1-4621",
-   "navn": "Tøihusgaten - beboerparkering",
+   "navn": "Tøihusgaten",
    "kategori": "parkering",
-   "type": "Parkering",
+   "type": "Beboerparkering",
    "x": 39.2,
    "y": -111.3,
    "bygg_id": null,
@@ -2404,7 +2395,7 @@
    "x": 194.8,
    "y": 58.4,
    "bygg_id": null,
-   "merknad": "Parkering forbudt over 2 timer ",
+   "merknad": "Parkering forbudt over 2 timer",
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 10740)",
@@ -2422,21 +2413,23 @@
    "easypark": null,
    "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
    "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 10742)",
-   "hentet": "2026-10-29"
-  },
-  {
-   "id": "parkering-1-15549",
-   "navn": "Voldgaten",
-   "kategori": "parkering",
-   "type": "Parkering",
-   "x": 166.1,
-   "y": -17.0,
-   "bygg_id": null,
-   "merknad": "Grønn sone 01.09.-31.05. Rød sone01.06.-31.08.",
-   "easypark": null,
-   "kilde": "Fredrikstad kommune, TekniskDrift/Parkering lag 1",
-   "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15549)",
-   "hentet": "2026-10-29"
+   "hentet": "2026-10-29",
+   "punkter": [
+    {
+     "id": "parkering-1-10742",
+     "x": 199.1,
+     "y": 67.8,
+     "merknad": "Parkering forbudt over 1 t fra kl. 08. - 18.00 (08.00-15.00)",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 10742)"
+    },
+    {
+     "id": "parkering-1-15549",
+     "x": 166.1,
+     "y": -17.0,
+     "merknad": "Grønn sone 01.09.-31.05. Rød sone01.06.-31.08.",
+     "kilde_url": "https://arcgis.fredrikstad.kommune.no/server/rest/services/TekniskDrift/Parkering/MapServer/1 (OBJECTID 15549)"
+    }
+   ]
   },
   {
    "id": "osm-n2393456191",
@@ -2448,57 +2441,44 @@
    "bygg_id": "bnr-193971199",
    "kilde": "OpenStreetMap",
    "kilde_url": "https://www.openstreetmap.org/node/2393456191",
-   "hentet": "2026-11-05"
-  },
-  {
-   "id": "osm-n2393456192",
-   "navn": "Toalett",
-   "kategori": "toalett",
-   "type": "Toalett",
-   "x": -163.5,
-   "y": -91.7,
-   "bygg_id": "pb-2",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/2393456192",
    "hentet": "2026-11-05",
-   "rullestol": "yes"
-  },
-  {
-   "id": "osm-n10949233550",
-   "navn": "Toalett",
-   "kategori": "toalett",
-   "type": "Toalett",
-   "x": 203.7,
-   "y": 40.1,
-   "bygg_id": "bnr-193869548",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/10949233550",
-   "hentet": "2026-11-05",
-   "aapent": "Mo-Fr 09:00-21:00"
-  },
-  {
-   "id": "osm-n10949289121",
-   "navn": "Toalett",
-   "kategori": "toalett",
-   "type": "Toalett",
-   "x": -55.6,
-   "y": 383.2,
-   "bygg_id": "bnr-193992765",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/10949289121",
-   "hentet": "2026-11-05"
-  },
-  {
-   "id": "osm-n12076690887",
-   "navn": "Toalett",
-   "kategori": "toalett",
-   "type": "Toalett",
-   "x": 209.0,
-   "y": 117.3,
-   "bygg_id": "bnr-193868045",
-   "kilde": "OpenStreetMap",
-   "kilde_url": "https://www.openstreetmap.org/node/12076690887",
-   "hentet": "2026-11-05"
+   "punkter": [
+    {
+     "id": "osm-n2393456191",
+     "x": -63.5,
+     "y": 97.2,
+     "bygg_id": "bnr-193971199",
+     "kilde_url": "https://www.openstreetmap.org/node/2393456191"
+    },
+    {
+     "id": "osm-n12076690887",
+     "x": 209.0,
+     "y": 117.3,
+     "bygg_id": "bnr-193868045",
+     "kilde_url": "https://www.openstreetmap.org/node/12076690887"
+    },
+    {
+     "id": "osm-n10949233550",
+     "x": 203.7,
+     "y": 40.1,
+     "bygg_id": "bnr-193869548",
+     "kilde_url": "https://www.openstreetmap.org/node/10949233550"
+    },
+    {
+     "id": "osm-n2393456192",
+     "x": -163.5,
+     "y": -91.7,
+     "bygg_id": "pb-2",
+     "kilde_url": "https://www.openstreetmap.org/node/2393456192"
+    },
+    {
+     "id": "osm-n10949289121",
+     "x": -55.6,
+     "y": 383.2,
+     "bygg_id": "bnr-193992765",
+     "kilde_url": "https://www.openstreetmap.org/node/10949289121"
+    }
+   ]
   }
  ],
  "kilder": {

@@ -2,6 +2,7 @@
 - hvert sted har id (ingen to like), navn, en kategori som finnes, plass innenfor det kartet tegner, og kilde
 - et sted som peker på et bygg, peker på et bygg som finnes og ikke er skjult
 - ingen kategori i søket er tom, og ingen to steder har samme navn innen 60 m (dobbeltoppføringer fra OSM)
+- ingen to linjer i lista med samme kategori, navn og type (06.11); flere plasser står som «punkter» på ett sted
 - OSM-stedene har hentedato, og den er ikke eldre enn 120 dager (åpningstider og nedlagte steder endrer seg)"""
 import datetime, math, unicodedata
 from _felles import *
@@ -26,6 +27,15 @@ st = [s for s in S['steder'] if s['kategori'] not in ('toalett', 'parkering')]
 for i, a in enumerate(st):
     for b in st[i + 1:]:
         if enkel(a['navn']) == enkel(b['navn']) and math.hypot(a['x'] - b['x'], a['y'] - b['y']) < 60: feil.append(f"- dobbel: {a['navn']} ({a['id']}, {b['id']})")
+# lista viser hvert sted én gang (06.11: Parkering hadde samme gate to og tre ganger): samme kategori + navn + type skal være ett sted
+# med «punkter»; typen står i typen, ikke i navnet; hver plass står i kartet
+from collections import Counter as _C
+for (k, n, t), c in _C((s['kategori'], enkel(s['navn']), s.get('type')) for s in S['steder']).items():
+    if c > 1: feil.append(f'- {c} like linjer i lista: {n} ({t}, {k})')
+for s in S['steder']:
+    if 'beboerparkering' in s['navn'].lower() and s['navn'].lower() != 'beboerparkering': feil.append(f"- typen står i navnet: {s['navn']}")
+    for p in s.get('punkter') or []:
+        if not (UT[0] <= p['x'] <= UT[1] and UT[2] <= p['y'] <= UT[3]): feil.append(f"- {s['id']}: plass {p['id']} står utenfor kartet")
 hentet = {s.get('hentet') for s in S['steder'] if s.get('kilde') == 'OpenStreetMap'}
 for h in hentet:
     if not h: feil.append('- OSM-steder uten hentedato'); continue
