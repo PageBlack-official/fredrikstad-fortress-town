@@ -167,7 +167,10 @@ function bygKirke(k, grp){
   loftK(o3, oktagon(tc, side*0.265, rot), LA1, LA1+0.35, LANT, LANT_S);    // gesims
   // klokkeformet kuppel over lanternen (åttekantet dreiing)
   const R0=side*0.25, prof=[[R0,0],[R0*0.98,0.35],[R0*0.8,0.95],[R0*0.52,1.5],[R0*0.3,1.85],[R0*0.18,2.15],[R0*0.2,2.4],[R0*0.12,2.6],[0.001,2.75]];
-  const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y*0.55)),8); lat.rotateY(-rot+Math.PI/8);
+  // kuppelen fyller hele høyden fra lanternens gesims til spirets fot, også når landemerket er forstørret (visning.skala): før var den
+  // fast 1,5 m høy, og med skala 1,6 ble det 0,8 m luft mellom kuppel og spir (Vegar 06.11: «toppdelene henger ikke sammen»)
+  const kupH=(KU1+0.3)-(LA1+0.35), kupY=kupH/prof[prof.length-1][1];
+  const lat=new THREE.LatheGeometry(prof.map(([r,y])=>new THREE.Vector2(r,y*kupY)),8); lat.rotateY(-rot+Math.PI/8);
   const kup=new THREE.Mesh(lat,M(LANT,LANT_S)); kup.position.set(tc[0],LA1+0.35,-tc[1]); kup.castShadow=true; grp.add(kup);
   // spiret: foten er ~1/4 av lanternens bredde (foto Commons «Oestre fredrikstad kirke 01», 2008); 0,3 m ble en nål som forsvant på kartzoom (Vegar: «for kort»)
   const sp=oktagon(tc, HK.SPR||0.5, rot); loftK(sp, sp.map(()=>tc), KU1+0.3, SP1, MORK, MORK_S, false);   // spir

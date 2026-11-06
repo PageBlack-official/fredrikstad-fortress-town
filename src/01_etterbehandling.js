@@ -159,7 +159,9 @@ const post=(()=>{
     msaa(n){ rt.samples=n; rt.dispose(); },   // kantutjevning i 3D-passet av/på (feilsøking: tast n)
     samples(){ return rt.samples; },
     setSS(n){ m.uniforms.ssN.value=n; },
-    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; SENERE.beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
+    // three tegner til lerretet MapLibre eier; uten setSize står tegneflaten (viewport) på størrelsen lerretet hadde da kartet startet,
+    // og et større vindu ble bare tegnet i hjørnet (Vegar 06.11: «kan ikke skalere vinduet»). setSize(…, false) rører ikke CSS-størrelsen.
+    size(){ const w=renderer.domElement.width, h=renderer.domElement.height; W=w; H=h; renderer.setPixelRatio(1); renderer.setSize(w,h,false); SENERE.beregnSkala(); this.settSkala(skala,true); rtF.setSize(w,h); fx.uniforms.resolution.value.set(1/w,1/h); },
     settNatt(v){ m.uniforms.uNatt.value=v; },   // kvelden (23_vaer)
     settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); rtM.setSize(w,h); mM.uniforms.res.value.set(w,h); try{ SENERE.waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },

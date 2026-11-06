@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { BERORING, HJEM_PLAKAT, Q0, STAAENDE, cam, kam, renderer, scene } from './00_oppsett.js';
+import { BERORING, HJEM_PLAKAT, Q0, STAAENDE, cam, kam, map, renderer, scene } from './00_oppsett.js';
 import { MAALT, maalVent } from './01_etterbehandling.js';
 import { setSol, solposisjon } from './02_lys.js';
 import { waterMat } from './03_bakke-vann-grønt.js';
@@ -52,5 +52,8 @@ const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const easeUt=t=>1-Math.pow(1-t,4);
 function speilStyrke(){ return THREE.MathUtils.clamp(0.16+0.10*Math.log2(Math.max(kam.zoomfaktor,0.5)),0.1,0.36); }
 const _sisteKam=new THREE.Matrix4(); let _sisteZ=0;
+
+// speilet følger vindusstørrelsen (som etterbehandlingen i 01)
+map.on('resize', () => speil.size());
 
 export { Q, START, clock, speil, speilStyrke };
