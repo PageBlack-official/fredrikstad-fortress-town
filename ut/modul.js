@@ -1,5 +1,5 @@
 
-// ../../../../tmp/tmpilbdi3hx/tilstand.js
+// ../../../../tmp/tmp1mvwg6p_/tilstand.js
 var TILSTAND = {
   skyggeSkitten: true,
   // skyggekartet må tegnes på nytt (sola, husene eller introen har endret seg)
@@ -23,7 +23,7 @@ function registrer(navn) {
   for (const [k, f] of Object.entries(navn)) Object.defineProperty(SENERE, k, { get: f, enumerable: true });
 }
 
-// ../../../../tmp/tmpilbdi3hx/00_oppsett.js
+// ../../../../tmp/tmp1mvwg6p_/00_oppsett.js
 import * as THREE from "three";
 import * as maplibregl from "maplibre-gl";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
@@ -115,7 +115,7 @@ var cam = new THREE.PerspectiveCamera(60, 1, 1, 1e4);
 cam.matrixAutoUpdate = false;
 var kam = { zoomfaktor: 1, mpp: 1, pitch: PITCH0, bearing: -AZ0_GRADER, naer: 1, fjern: 1e4 };
 
-// ../../../../tmp/tmpilbdi3hx/01_etterbehandling.js
+// ../../../../tmp/tmp1mvwg6p_/01_etterbehandling.js
 import * as THREE2 from "three";
 import { FXAAShader as FXAAShader2 } from "three/addons/shaders/FXAAShader.js";
 var MAALT = { oppdater: 0, speil: 0, skygge: 0 };
@@ -319,10 +319,14 @@ var post = (() => {
     setSS(n) {
       m.uniforms.ssN.value = n;
     },
+    // three tegner til lerretet MapLibre eier; uten setSize står tegneflaten (viewport) på størrelsen lerretet hadde da kartet startet,
+    // og et større vindu ble bare tegnet i hjørnet (Vegar 06.11: «kan ikke skalere vinduet»). setSize(…, false) rører ikke CSS-størrelsen.
     size() {
       const w = renderer.domElement.width, h = renderer.domElement.height;
       W = w;
       H = h;
+      renderer.setPixelRatio(1);
+      renderer.setSize(w, h, false);
       SENERE.beregnSkala();
       this.settSkala(skala, true);
       rtF.setSize(w, h);
@@ -399,7 +403,7 @@ function fit() {
 }
 map.on("resize", fit);
 
-// ../../../../tmp/tmpilbdi3hx/02_lys.js
+// ../../../../tmp/tmp1mvwg6p_/02_lys.js
 import * as THREE3 from "three";
 var hemi = new THREE3.HemisphereLight(16777215, 15131350, 1);
 scene.add(hemi);
@@ -627,7 +631,7 @@ function medSkygge(m) {
 }
 registrer({ sun: () => sun });
 
-// ../../../../tmp/tmpilbdi3hx/kvalitet.js
+// ../../../../tmp/tmp1mvwg6p_/kvalitet.js
 import * as THREE4 from "three";
 var KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get("noadapt") ? 9 : 0, onsket: 0 };
 var MAAL_PAA = !!Q0.get("adapt");
@@ -678,7 +682,7 @@ function feilsokTast(t) {
 if (Q0.get("nivaa")) settNivaa(+Q0.get("nivaa"));
 registrer({ beregnSkala: () => beregnSkala });
 
-// ../../../../tmp/tmpilbdi3hx/03_bakke-vann-grønt.js
+// ../../../../tmp/tmp1mvwg6p_/03_bakke-vann-grønt.js
 import * as THREE5 from "three";
 var ground = new THREE5.Mesh(new THREE5.PlaneGeometry(6e3, 6e3), new THREE5.MeshBasicMaterial({ color: 15723748 }));
 ground.rotation.x = -Math.PI / 2;
@@ -840,7 +844,7 @@ DATA.vann.forEach((w) => {
 });
 registrer({ waterMat: () => waterMat });
 
-// ../../../../tmp/tmpilbdi3hx/04_brostein-i-hele-gamlebyen.js
+// ../../../../tmp/tmp1mvwg6p_/04_brostein-i-hele-gamlebyen.js
 import * as THREE6 from "three";
 var stoneMat = new THREE6.ShaderMaterial({
   uniforms: { base: { value: new THREE6.Color("rgb(146,140,132)") }, fuge: { value: new THREE6.Color("rgb(96,92,88)") }, ang: { value: THREE6.MathUtils.degToRad(DATA.gatevinkel || 0) } },
@@ -890,7 +894,7 @@ var plenMat = new THREE6.ShaderMaterial({
 medSkygge(plenMat);
 bakkelag(plenMat, BAKKELAG.gress);
 
-// ../../../../tmp/tmpilbdi3hx/05_bygg.js
+// ../../../../tmp/tmp1mvwg6p_/05_bygg.js
 import * as THREE7 from "three";
 import { mergeGeometries as mergeGeometries2 } from "three/addons/utils/BufferGeometryUtils.js";
 var city = new THREE7.Group();
@@ -1161,7 +1165,7 @@ function mat(rgb, dim, sk, opt = {}) {
   return mats.get(key);
 }
 
-// ../../../../tmp/tmpilbdi3hx/06_kirka-bygget-etter-2017.js
+// ../../../../tmp/tmp1mvwg6p_/06_kirka-bygget-etter-2017.js
 import * as THREE8 from "three";
 var KIRKE_ENDE = "valm";
 function sentr(p) {
@@ -1398,7 +1402,8 @@ function bygKirke(k, grp) {
   loftK(o3, o3, LA0, LA1, LANT, LANT_S);
   loftK(o3, oktagon(tc, side * 0.265, rot), LA1, LA1 + 0.35, LANT, LANT_S);
   const R0 = side * 0.25, prof = [[R0, 0], [R0 * 0.98, 0.35], [R0 * 0.8, 0.95], [R0 * 0.52, 1.5], [R0 * 0.3, 1.85], [R0 * 0.18, 2.15], [R0 * 0.2, 2.4], [R0 * 0.12, 2.6], [1e-3, 2.75]];
-  const lat = new THREE8.LatheGeometry(prof.map(([r, y]) => new THREE8.Vector2(r, y * 0.55)), 8);
+  const kupH = KU1 + 0.3 - (LA1 + 0.35), kupY = kupH / prof[prof.length - 1][1];
+  const lat = new THREE8.LatheGeometry(prof.map(([r, y]) => new THREE8.Vector2(r, y * kupY)), 8);
   lat.rotateY(-rot + Math.PI / 8);
   const kup = new THREE8.Mesh(lat, M(LANT, LANT_S));
   kup.position.set(tc[0], LA1 + 0.35, -tc[1]);
@@ -1452,7 +1457,7 @@ function bygKirke(k, grp) {
 }
 var buildings = [];
 
-// ../../../../tmp/tmpilbdi3hx/07_vinduer-dører-og-porter.js
+// ../../../../tmp/tmp1mvwg6p_/07_vinduer-dører-og-porter.js
 import * as THREE9 from "three";
 import { mergeGeometries as mergeGeometries3 } from "three/addons/utils/BufferGeometryUtils.js";
 var VIND_GEO = new THREE9.PlaneGeometry(1, 1);
@@ -2210,7 +2215,7 @@ samler.clear();
   city.add(m);
 }
 
-// ../../../../tmp/tmpilbdi3hx/08_festningsterrenget.js
+// ../../../../tmp/tmp1mvwg6p_/08_festningsterrenget.js
 import * as THREE10 from "three";
 var TER = DATA.landskap && DATA.landskap.terreng;
 var hAt = () => 0;
@@ -2375,7 +2380,7 @@ if (TER) {
   }
 }
 
-// ../../../../tmp/tmpilbdi3hx/09_murer-plankegjerder-og-voller.js
+// ../../../../tmp/tmp1mvwg6p_/09_murer-plankegjerder-og-voller.js
 import * as THREE11 from "three";
 var murer = new THREE11.Group();
 scene.add(murer);
@@ -2415,7 +2420,7 @@ var _iMur = (q) => (DATA.teglmurer || []).some((m) => {
 });
 flatGruppe(murer);
 
-// ../../../../tmp/tmpilbdi3hx/10_porter.js
+// ../../../../tmp/tmp1mvwg6p_/10_porter.js
 import * as THREE12 from "three";
 (DATA.porter || []).forEach((pt) => {
   const grp = buildings.find((g) => g.userData.i === pt.bygg);
@@ -2478,7 +2483,7 @@ import * as THREE12 from "three";
   });
 });
 
-// ../../../../tmp/tmpilbdi3hx/11_broer.js
+// ../../../../tmp/tmp1mvwg6p_/11_broer.js
 import * as THREE13 from "three";
 (DATA.broer || []).forEach((br, bi) => {
   const g = new THREE13.Group();
@@ -2562,7 +2567,7 @@ import * as THREE13 from "three";
   city.add(g);
 });
 
-// ../../../../tmp/tmpilbdi3hx/12_trær.js
+// ../../../../tmp/tmp1mvwg6p_/12_trær.js
 import * as THREE14 from "three";
 var seed = 11;
 var rnd = () => {
@@ -2750,7 +2755,7 @@ crowns[0].onBeforeRender = (r, sc_, c) => {
 };
 setCrowns(0);
 
-// ../../../../tmp/tmpilbdi3hx/13_kart.js
+// ../../../../tmp/tmp1mvwg6p_/13_kart.js
 import * as THREE15 from "three";
 import * as maplibregl2 from "maplibre-gl";
 var _merc = maplibregl2.MercatorCoordinate.fromLngLat([ORIGO.lon, ORIGO.lat], 0);
@@ -2795,7 +2800,7 @@ function vinkler() {
 var GRENSE = 560;
 map.setMaxBounds([tilLngLat(-GRENSE - 300, -GRENSE - 300), tilLngLat(GRENSE + 300, GRENSE + 300)]);
 
-// ../../../../tmp/tmpilbdi3hx/14_speilinger-i-vannet.js
+// ../../../../tmp/tmp1mvwg6p_/14_speilinger-i-vannet.js
 import * as THREE16 from "three";
 var speil = (() => {
   const Y = 0.15, LAG = 1;
@@ -2878,8 +2883,9 @@ function speilStyrke() {
   return THREE16.MathUtils.clamp(0.16 + 0.1 * Math.log2(Math.max(kam.zoomfaktor, 0.5)), 0.1, 0.36);
 }
 var _sisteKam = new THREE16.Matrix4();
+map.on("resize", () => speil.size());
 
-// ../../../../tmp/tmpilbdi3hx/15_bevegelse.js
+// ../../../../tmp/tmp1mvwg6p_/15_bevegelse.js
 import * as maplibregl3 from "maplibre-gl";
 var GLID = Q0.get("glid") !== "0";
 var glid = (t) => !GLID ? t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 : t <= 0 ? 0 : t >= 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
@@ -3158,7 +3164,7 @@ window.__BEV = BEV;
 map.getCanvasContainer().addEventListener("pointerdown", () => hjulZoom.stopp(), { capture: true, passive: true });
 registrer({ fingerNede: () => fingerNede });
 
-// ../../../../tmp/tmpilbdi3hx/15_lenke.js
+// ../../../../tmp/tmp1mvwg6p_/15_lenke.js
 var LENKE = (() => {
   let h = "";
   try {
@@ -3186,7 +3192,6 @@ var LENKE = (() => {
   const hus = husId ? buildings.find((g) => g.userData.b && g.userData.b.id === husId && !g.userData.b.skjul) || null : null;
   return { vis: vis2, hus, hopp: !!(vis2 || hus) };
 })();
-var LAGRET_UTSIKT = "smart-old-town:utsikt";
 function lenkeHash() {
   const c = map.getCenter(), f = (x, n) => (+x.toFixed(n)).toString();
   let s = `view=${f(c.lat, 5)},${f(c.lng, 5)},${f(map.getZoom(), 2)},${f(map.getPitch(), 0)},${f(map.getBearing(), 0)}`;
@@ -3203,14 +3208,9 @@ function lenkeUrl() {
   return base + "#" + lenkeHash();
 }
 function lenkeSkriv() {
-  if (!TILSTAND.introDone) return;
-  const s = "#" + lenkeHash();
+  if (!TILSTAND.introDone || !location.hash) return;
   try {
-    if (location.hash !== s) window.history.replaceState(window.history.state, "", s);
-  } catch (e) {
-  }
-  try {
-    window.localStorage.setItem(LAGRET_UTSIKT, s.slice(1));
+    window.history.replaceState(window.history.state, "", location.pathname + location.search);
   } catch (e) {
   }
 }
@@ -3267,7 +3267,7 @@ async function lenkeDel(knapp4) {
   if (knapp4) knapp4.addEventListener("click", () => lenkeDel(knapp4));
 }
 
-// ../../../../tmp/tmpilbdi3hx/15_loop.js
+// ../../../../tmp/tmp1mvwg6p_/15_loop.js
 import * as THREE17 from "three";
 lysFraVenstre();
 var order = buildings.map((g) => {
@@ -3594,7 +3594,7 @@ window.__skjerm3 = (x, y, z) => {
 };
 registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });
 
-// ../../../../tmp/tmpilbdi3hx/16_interaksjon.js
+// ../../../../tmp/tmp1mvwg6p_/16_interaksjon.js
 import * as THREE18 from "three";
 var ray = new THREE18.Raycaster();
 var ptr = new THREE18.Vector2();
@@ -4037,7 +4037,7 @@ if (Q0.get("d")) {
 }
 registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });
 
-// ../../../../tmp/tmpilbdi3hx/17_bakkeflater-og-parkering.js
+// ../../../../tmp/tmp1mvwg6p_/17_bakkeflater-og-parkering.js
 import * as THREE19 from "three";
 {
   const flateMat = (rgb) => medSkygge(new THREE19.ShaderMaterial({
@@ -4145,7 +4145,7 @@ import * as THREE19 from "three";
   });
 }
 
-// ../../../../tmp/tmpilbdi3hx/18_brygger.js
+// ../../../../tmp/tmp1mvwg6p_/18_brygger.js
 import * as THREE20 from "three";
 {
   const VANN_Y = 0.15, PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
@@ -4226,7 +4226,7 @@ import * as THREE20 from "three";
   g.traverse((c) => c.layers.enable(1));
 }
 
-// ../../../../tmp/tmpilbdi3hx/19_gardsmurer-og-vinterhager.js
+// ../../../../tmp/tmp1mvwg6p_/19_gardsmurer-og-vinterhager.js
 import * as THREE21 from "three";
 {
   const anlegg = new THREE21.Group();
@@ -4414,7 +4414,7 @@ import * as THREE21 from "three";
   flatGruppe(anlegg);
 }
 
-// ../../../../tmp/tmpilbdi3hx/20_statuen-paa-torvet.js
+// ../../../../tmp/tmp1mvwg6p_/20_statuen-paa-torvet.js
 import * as THREE22 from "three";
 (() => {
   const STEINFARGE = { "mørk": [[66, 68, 72], [40, 41, 44]], lys: [[178, 176, 170], [124, 122, 118]], trinn: [[104, 106, 110], [66, 67, 70]], bronse: [[120, 160, 138], [70, 98, 86]] };
@@ -4568,7 +4568,7 @@ import * as THREE22 from "three";
   });
 })();
 
-// ../../../../tmp/tmpilbdi3hx/21_flyt.js
+// ../../../../tmp/tmp1mvwg6p_/21_flyt.js
 import * as THREE23 from "three";
 import { mergeGeometries as mergeGeometries4 } from "three/addons/utils/BufferGeometryUtils.js";
 var vannRute = (() => {
@@ -4689,7 +4689,7 @@ var flaterSammen = (() => {
 window.__flytInfo = () => ({ flaterFor: flaterSammen.for, flaterEtter: flaterSammen.etter, vann: vannISyne() });
 registrer({ vannISyne: () => vannISyne });
 
-// ../../../../tmp/tmpilbdi3hx/22_byferga.js
+// ../../../../tmp/tmp1mvwg6p_/22_byferga.js
 import * as THREE24 from "three";
 var ferge = (() => {
   const F = DATA.ferge;
@@ -5034,7 +5034,7 @@ var ferge = (() => {
 })();
 registrer({ ferge: () => ferge });
 
-// ../../../../tmp/tmpilbdi3hx/23_vaer.js
+// ../../../../tmp/tmp1mvwg6p_/23_vaer.js
 import * as THREE25 from "three";
 var PUNKT = { lat: 59.2055, lon: 10.9545 };
 var TEST = !!navigator.webdriver;
@@ -5369,7 +5369,7 @@ document.addEventListener("visibilitychange", () => {
 });
 window.__vaer = () => ({ natt: U_SOL.natt.value, naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt: valgt2 });
 
-// ../../../../tmp/tmpilbdi3hx/24_sok.js
+// ../../../../tmp/tmp1mvwg6p_/24_sok.js
 import * as maplibregl4 from "maplibre-gl";
 var S = DATA.steder || { kategorier: [], steder: [] };
 var GJEST = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
@@ -5561,7 +5561,7 @@ window.__sok = { velgSted: (id) => {
   return naaler.size;
 }, antall: () => S.steder.length };
 
-// ../../../../tmp/tmpilbdi3hx/25_her.js
+// ../../../../tmp/tmp1mvwg6p_/25_her.js
 import * as maplibregl5 from "maplibre-gl";
 var RADIUS = 1400;
 var vakt = null;
@@ -5651,7 +5651,7 @@ function stopp() {
   knapp2.b.setAttribute("aria-pressed", "false");
 }
 
-// ../../../../tmp/tmpilbdi3hx/26_turer.js
+// ../../../../tmp/tmp1mvwg6p_/26_turer.js
 var TURER = DATA.turer || [];
 var LEGENDE = new Map((DATA.legende || []).map((l) => [l.nr, l]));
 var tur = null;
@@ -5751,7 +5751,7 @@ if (panel2 && TURER.length) {
 }
 window.__tur = { start: start2, gaa, slutt, naa: () => tur && { id: tur.id, i } };
 
-// ../../../../tmp/tmpilbdi3hx/27_festival.js
+// ../../../../tmp/tmp1mvwg6p_/27_festival.js
 import * as THREE26 from "three";
 import { mergeGeometries as mergeGeometries5 } from "three/addons/utils/BufferGeometryUtils.js";
 var ARR = DATA.arrangementer || [];
@@ -5900,7 +5900,7 @@ if (anim2) {
 window.__festival = () => anim2 ? { id: anim2.a.id, navn: anim2.a.navn, straler: anim2.straler.length } : null;
 window.__festivalDatoer = (aar) => ARR.map((a) => ({ id: a.id, d: (datoer(a, aar) || []).map((x) => x.toISOString()) }));
 
-// ../../../../tmp/tmpilbdi3hx/28_start.js
+// ../../../../tmp/tmp1mvwg6p_/28_start.js
 var laster = document.getElementById("laster");
 if (laster) {
   const se = () => {
@@ -5912,7 +5912,7 @@ if (laster) {
   requestAnimationFrame(se);
 }
 
-// ../../../../tmp/tmpilbdi3hx/29_postkort.js
+// ../../../../tmp/tmp1mvwg6p_/29_postkort.js
 var MND2 = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
 var knapp3 = document.createElement("button");
 knapp3.id = "postkort";
@@ -5980,7 +5980,7 @@ async function lag() {
 knapp3.addEventListener("click", lag);
 window.__postkort = lag;
 
-// ../../../../tmp/tmpilbdi3hx/30_gjest.js
+// ../../../../tmp/tmp1mvwg6p_/30_gjest.js
 var P = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
 if (P) {
   document.documentElement.style.setProperty("--gjest", P.farge || "#2b2420");
