@@ -25,10 +25,12 @@ const vindMat=new THREE.ShaderMaterial({
       vec3 sf=mix(vec3(1.),solFarge(),0.6*solHer(vWq));
       if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
       else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }   // buet topp: port (typ 2) og rundbuevindu (typ 0, bue 1; Tøihuset)
+      else if(typ<0.5 && bue>1.5){ float st=min(vSz.y*0.3,vSz.x*0.25), R=(vSz.x*vSz.x*0.25+st*st)/(2.*st); if(m.y>vSz.y-st && length(vec2(m.x-vSz.x*0.5,m.y-(vSz.y-R)))>R) discard; }   // segmentbue (bue 2): kjellervinduene i Kasernens sokkel (Metropolis-fotoet av døra)
       float fw=max(fwidth(m.x),fwidth(m.y));
       float kant=min(min(m.x,vSz.x-m.x),min(m.y,vSz.y-m.y));
       if(typ>2.5) kant=vSz.x*0.5-length(m-vSz*0.5);
       else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy) kant=min(kant, r-length(vec2(m.x-r,m.y-cy))); }
+      else if(typ<0.5 && bue>1.5){ float st=min(vSz.y*0.3,vSz.x*0.25), R=(vSz.x*vSz.x*0.25+st*st)/(2.*st); if(m.y>vSz.y-st) kant=min(kant, R-length(vec2(m.x-vSz.x*0.5,m.y-(vSz.y-R)))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
       vec3 c;
@@ -251,6 +253,13 @@ DATA.bygg.forEach((b,i)=>{
   if(b.sokkel && b.sokkel.h>0.2 && !dim){
     const sg=new THREE.ExtrudeGeometry(polyShape(utvidPoly(pts,0.03)),{depth:Math.min(b.sokkel.h,h-0.05),bevelEnabled:false}); sg.rotateX(-Math.PI/2);
     const sm=new THREE.Mesh(sg,[mat(roof,dim,b.taks),mat(b.sokkel.farge,dim,b.sokkel.skygge,{stein:b.sokkel.type==='naturstein'})]); sm.receiveShadow=true; legg(sm);
+  }
+  // gesims: lyst bånd under takfoten, 6 cm ut fra veggen (Kasernen: okergul gesims på fotoene og illustrasjonene, b.gesims fra verktoy/kaserna.py)
+  if(b.gesims && !dim && !b.kirke){
+    const G=b.gesims, gh=Math.min(G.h||0.35,h*0.2);
+    const sh=polyShape(utvidPoly(pts,0.06)); sh.holes.push(new THREE.Path(utvidPoly(pts,-0.05).map(V).reverse()));
+    const gg=new THREE.ExtrudeGeometry(sh,{depth:gh,bevelEnabled:false}); gg.rotateX(-Math.PI/2); gg.translate(0,h-gh-0.02,0);
+    const gm=new THREE.Mesh(gg,[mat(G.farge,dim,G.skygge),mat(G.farge,dim,G.skygge)]); gm.castShadow=true; gm.receiveShadow=true; legg(gm);
   }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
   if (b.tak2 && !b.kirke){

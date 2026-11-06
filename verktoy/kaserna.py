@@ -43,7 +43,8 @@ KANT = 1.9            # fra hjørnet til første akse
 SOKKEL = 1.1          # granittsokkel
 ETG = [(3.0, 2.0), (6.6, 2.0)]   # (midt, høyde) for 1. og 2. etasje
 VB = 1.15             # vindusbredde
-KJELLER = (0.55, 0.42, 0.95)     # midt, høyde, bredde
+KJELLER = (0.56, 0.62, 1.05, 2)  # midt, høyde, bredde, bue 2 = segmentbue (Metropolis-fotoet av døra, 06.11: buede kjellervinduer i granitten)
+GESIMS = {'h': 0.34, 'farge': [214, 186, 120], 'skygge': [168, 142, 88]}   # okergul gesims under takfoten (Metropolis/SG&CO, fotoet av gavlen mot torget)
 # dørene i gårdsfasadene (illustrasjonene viser ikke gården): Kvartal11 (2015), lest av fasade_tegning.py 29.10, i modellmeter.
 # Døra står i aksen nærmest punktet. Døra under glasshuset kommer fra glasshuset (under_glass), ikke herfra. (avvik A1, 02.11)
 GARDSDORER = [(3.9, -15.93), (38.64, 2.73)]
@@ -121,7 +122,7 @@ def beregn(d=None):
                 if i == midt:
                     vind.append(vindu(xy, 1.6, k, 1.6, 3.0, 1)[:10] + [2, 0])   # dør fra hotellet ut i glasshuset
             else:
-                vind.append(vindu(xy, KJELLER[0], k, KJELLER[2], KJELLER[1]))   # i veggen; sokkelen (src/07) står 3 cm ut, vinduene 5 cm
+                vind.append(vindu(xy, KJELLER[0], k, KJELLER[2], KJELLER[1])[:10] + [KJELLER[3], 0])   # i veggen; sokkelen (src/07) står 3 cm ut, vinduene 5 cm
                 vind.append(vindu(xy, ETG[0][0], k, VB, ETG[0][1]))
             vind.append(vindu(xy, ETG[1][0], k, VB, ETG[1][1]))
         # takarker: oksøye over inngangen i hjørnet, ellers over annenhver akse på langsidene (ikke på gavlene)
@@ -190,8 +191,33 @@ def beregn(d=None):
     vp = [[m[0] + t[0] * sa * VB_ / 2 + n[0] * dd, m[1] + t[1] * sa * VB_ / 2 + n[1] * dd] for sa, dd in ((-1, 0.3), (1, 0.3), (1, VD_), (-1, VD_))]
     terrasser = [{'id': 'te-1', 'navn': 'Uteserveringen mot torget', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in vp], 'h': VH_,
                   'parasoller': 5, 'aapning': 2.4}]
-    vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H}]
-    nye = {'vind': vind, 'arker': arker, 'piper': piper, 'sokkel': {'h': SOKKEL, 'farge': [206, 202, 192], 'skygge': [146, 142, 136], 'type': 'naturstein'}}
+    # hagen foran glasshuset (SG&CO «Utefølelse inne»: plen helt inn til glasset, lave hekker, blomstrende busker): et felt ut i gården,
+    # klippet mot fløyene, brannstasjonen og murene så det bare ligger i gården
+    HAGE_D, HAGE_EKSTRA = 9.0, 3.0
+    hp = [[m0[0] + t0[0] * sa * (GH_B / 2 + HAGE_EKSTRA) + n0[0] * dd, m0[1] + t0[1] * sa * (GH_B / 2 + HAGE_EKSTRA) + n0[1] * dd]
+          for m0, t0, n0 in [(g['mid'], g['t'], g['n'])] for sa, dd in ((-1, 0.2), (1, 0.2), (1, GH_D + HAGE_D), (-1, GH_D + HAGE_D))]
+    hage = Polygon(hp).difference(Polygon(b['p']).buffer(0.3)).difference(Polygon(brann['p']).buffer(2.0))
+    for mu in murer: hage = hage.difference(LineString(mu['p']).buffer(1.2))
+    hage = max(getattr(hage, 'geoms', [hage]), key=lambda q: q.area).simplify(0.2)
+    plen = [[round(x, 2), round(y, 2)] for x, y in list(hage.exterior.coords)[:-1]]
+    # hekkene: langs plenens ytterkant (ikke mot glasshuset), busker i hjørnene og langs glasset
+    ytter = hage.exterior
+    gl = Polygon(hj).buffer(0.6)
+    hekker, cur = [], []
+    for q in list(ytter.coords):
+        if gl.contains(Point(q)):
+            if len(cur) > 1: hekker.append(cur)
+            cur = []
+        else: cur.append([round(q[0] - (q[0] - hage.centroid.x) * 0.04, 2), round(q[1] - (q[1] - hage.centroid.y) * 0.04, 2)])
+    if len(cur) > 1: hekker.append(cur)
+    busker = []
+    for j in range(7):
+        u = (j + 0.5) / 7
+        bx = hj[3][0] + (hj[2][0] - hj[3][0]) * u + g['n'][0] * 0.9; by = hj[3][1] + (hj[2][1] - hj[3][1]) * u + g['n'][1] * 0.9
+        if hage.contains(Point(bx, by)): busker.append([round(bx, 2), round(by, 2), 0.7 if j % 2 else 0.55])
+    vinterhager = [{'id': 'vh-1', 'navn': 'Vinterhagen', 'bygg_id': ID, 'p': [[round(a, 2), round(c, 2)] for a, c in hj], 'h': GH_H, 'rise': 1.6,
+                    'hage': {'p': plen, 'hekker': hekker, 'busker': busker}}]
+    nye = {'vind': vind, 'arker': arker, 'piper': piper, 'sokkel': {'h': SOKKEL, 'farge': [206, 202, 192], 'skygge': [146, 142, 136], 'type': 'naturstein'}, 'gesims': GESIMS}
     # portbyggene i Kasernemurene har murens tegl (Kasernens vegg). Verktøyet står sist i kjeden, så vegg_nye.py sin nabofarge
     # legger seg ikke over igjen (30.10 ble pb-51 satt for hånd og overstyrt av vegg_nye.py samme dag; avvik A5)
     andre = {pid: {'vegg': b['vegg'], 'veggs': b.get('veggs')} for pid in portfarge}
