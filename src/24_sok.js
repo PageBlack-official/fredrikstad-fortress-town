@@ -17,7 +17,7 @@ const IKON = {   // én strek per kategori, samme stil som knappene
   spise: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M16 3c-2 1.5-2.5 4-2.5 7h2.5v11"/>',
   kultur: '<path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/>',
   se: '<path d="M4 8.5h3.2L8.8 6h6.4l1.6 2.5H20V19H4z"/><circle cx="12" cy="13.4" r="3.1"/>',
-  kulturminne: '<path d="M4 21h16M6 21V10M10 21V10M14 21V10M18 21V10M3 10l9-6 9 6z"/>',
+  kulturminne: '<path d="M10.2 4.5 12 2.8l1.8 1.7.9 14.5H9.3zM6.5 21.2h11M8 19h8"/>',   // obelisk (minnesmerke), ikke samme søylehus som Kultur
   handle: '<path d="M5 8h14l-1 12H6L5 8zM9 8a3 3 0 0 1 6 0"/>',
   sove: '<path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3M7 11.5h.01"/>',
   parkering: '<path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7"/>',
@@ -44,7 +44,7 @@ function fyllSted(s, b, p = s){
   kort.querySelector('h2').textContent = s.navn;
   const bygg = b && (b.navn || b.adr);
   kort.querySelector('.a').textContent = [p.type ?? s.type, s.adresse || (bygg && bygg !== s.navn ? bygg : '')].filter(Boolean).join(' · ');
-  kort.querySelector('.b').textContent = p.merknad ?? s.merknad ?? '';
+  { const m = p.merknad ?? s.merknad ?? ''; kort.querySelector('.b').textContent = m && m[0].toUpperCase() + m.slice(1); }   // kommunens tekst kan starte med liten bokstav
   const linjer = [];
   if (s.aapent) linjer.push(`<li>${esc(aapent(s.aapent))}</li>`);
   if (s.mat) linjer.push(`<li>${esc(s.mat[0].toUpperCase() + s.mat.slice(1))}</li>`);
@@ -124,6 +124,7 @@ liste.addEventListener('click', e => { const li = e.target.closest('[data-i]'); 
 panel.querySelector('.kat').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (!b) return;
   aktivKat = aktivKat === b.dataset.k ? null : b.dataset.k;
   panel.querySelectorAll('[data-k]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.k === aktivKat)));
+  b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });   // valgt kategori står helt i raden
   tegnNaaler(); treff(); });
 addEventListener('pointerdown', e => { if (!panel.hidden && !panel.contains(e.target) && !knapp.contains(e.target)) lukk(); });
 addEventListener('keydown', e => { if ((e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) && document.activeElement !== inn) { e.preventDefault(); apne(); } });
