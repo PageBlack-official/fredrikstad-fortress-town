@@ -92,7 +92,7 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 .naal{border:0;padding:0;background:none;display:flex;flex-direction:column;align-items:center;cursor:pointer;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.25)) drop-shadow(0 3px 6px rgba(0,0,0,.18))}
 .naal .merke{box-shadow:0 0 0 2px #fff;transition:width .18s ease,height .18s ease}
 .naal::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #fff;margin-top:1px}
-.naal.valgt .merke{--d:40px}
+.naal.valgt .merke{width:40px;height:40px}   /* --d står i style på merket, så størrelsen settes direkte */
 .naal.valgt .merke svg{width:24px;height:24px}
 .naal:focus-visible{outline:none}.naal:focus-visible .merke{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--f)}
 #kort .her a{color:inherit}
