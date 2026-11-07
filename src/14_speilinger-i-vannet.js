@@ -2,14 +2,14 @@ import * as THREE from 'three';
 import { BERORING, HJEM_PLAKAT, Q0, STAAENDE, cam, kam, map, renderer, scene } from './00_oppsett.js';
 import { MAALT, maalVent } from './01_etterbehandling.js';
 import { setSol, solposisjon } from './02_lys.js';
-import { waterMat } from './03_bakke-vann-grønt.js';
+import { VANN_Y, waterMat } from './03_bakke-vann-grønt.js';
 import { city } from './05_bygg.js';
 import { crowns } from './12_trær.js';
 // ---- speilinger i vannet: hus, trær og terreng tegnes speilvendt om vannflaten i et eget, halvt så stort lag ----
 // speilet toner ikke lenger ut når kartet beveger seg. Det tegnes på nytt høyst hvert BEV.speilMs ms i fart (og hvert bilde i ro
 // når noe endrer seg), og mellom gangene slår vannet opp i det med kameraet fra da det ble tegnet, så det står fast i byen.
 const speil=(()=>{
-  const Y=0.15, LAG=1;
+  const Y=VANN_Y, LAG=1;   // vannflaten (src/03)
   const rt=new THREE.WebGLRenderTarget(2,2,{type:THREE.HalfFloatType});
   const deler=[city, ...[].concat(crowns)];
   scene.traverse(o=>{ if(o.isMesh && o.material && o.material.uniforms && o.material.uniforms.skyggeF) deler.push(o); });  // festningsterrenget skjuler det som står bak vollene

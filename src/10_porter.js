@@ -18,7 +18,9 @@ import { hAt } from './08_festningsterrenget.js';
   const m=new THREE.Mesh(eg,[mat(wall,false,b.veggs,{ds:true}),mat(wall,false,b.veggs,{ds:true})]); m.castShadow=m.receiveShadow=true;
   const ang=Math.atan2(pt.ret[1],pt.ret[0]);
   const y0=(pt.bunn!=null)?pt.bunn:hAt(cx,cy);                      // veien i porten (data), ellers terrenget midt under huset
-  m.position.set(cx, y0, -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
+  // porthuset står på veien i porten (07.11): gruppa flyttes dit, og portblokka og vingemurene står i gruppas bunn
+  grp.userData.fot=y0; grp.position.y=y0;
+  m.position.set(cx, 0, -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
   grp.add(m);
   // VINGEMURER : skrå murer som holder vollen ved porten. [x0, y0, x1, y1, h0, h1, tykk]: innerflaten fra porthjørnet ut til
   // foten, toppen fra h0 (ved porten) til h1 (ved foten) over veien i porten; tykkelsen legges bort fra huset. Mål: verktoy/landemerker.py
@@ -28,6 +30,6 @@ import { hAt } from './08_festningsterrenget.js';
     const s2=new THREE.Shape(); s2.moveTo(0,-1); s2.lineTo(L,-1); s2.lineTo(L,h1); s2.lineTo(0,h0); s2.closePath();
     const g=new THREE.ExtrudeGeometry(s2,{depth:t,bevelEnabled:false});
     g.applyMatrix4(new THREE.Matrix4().makeBasis(new THREE.Vector3(ux,0,-uy),new THREE.Vector3(0,1,0),new THREE.Vector3(nx,0,-ny)));
-    const vm=new THREE.Mesh(g,mat(wall,false,b.veggs,{ds:true})); vm.position.set(ax,y0,-ay); vm.castShadow=vm.receiveShadow=true; grp.add(vm);
+    const vm=new THREE.Mesh(g,mat(wall,false,b.veggs,{ds:true})); vm.position.set(ax,0,-ay); vm.castShadow=vm.receiveShadow=true; grp.add(vm);
   });
 });

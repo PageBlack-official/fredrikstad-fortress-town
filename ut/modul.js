@@ -1,5 +1,5 @@
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/tilstand.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/tilstand.js
 var TILSTAND = {
   skyggeSkitten: true,
   // skyggekartet må tegnes på nytt (sola, husene eller introen har endret seg)
@@ -23,7 +23,7 @@ function registrer(navn) {
   for (const [k, f] of Object.entries(navn)) Object.defineProperty(SENERE, k, { get: f, enumerable: true });
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/00_oppsett.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/00_oppsett.js
 import * as THREE from "three";
 import * as maplibregl from "maplibre-gl";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
@@ -115,7 +115,7 @@ var cam = new THREE.PerspectiveCamera(60, 1, 1, 1e4);
 cam.matrixAutoUpdate = false;
 var kam = { zoomfaktor: 1, mpp: 1, pitch: PITCH0, bearing: -AZ0_GRADER, naer: 1, fjern: 1e4 };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/01_etterbehandling.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/01_etterbehandling.js
 import * as THREE2 from "three";
 import { FXAAShader as FXAAShader2 } from "three/addons/shaders/FXAAShader.js";
 var MAALT = { oppdater: 0, speil: 0, skygge: 0 };
@@ -403,7 +403,7 @@ function fit() {
 }
 map.on("resize", fit);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/02_lys.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/02_lys.js
 import * as THREE3 from "three";
 var hemi = new THREE3.HemisphereLight(16777215, 15131350, 1);
 scene.add(hemi);
@@ -631,7 +631,7 @@ function medSkygge(m) {
 }
 registrer({ sun: () => sun });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/kvalitet.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/kvalitet.js
 import * as THREE4 from "three";
 var KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get("noadapt") ? 9 : 0, onsket: 0 };
 var MAAL_PAA = !!Q0.get("adapt");
@@ -682,10 +682,38 @@ function feilsokTast(t) {
 if (Q0.get("nivaa")) settNivaa(+Q0.get("nivaa"));
 registrer({ beregnSkala: () => beregnSkala });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/03_bakke-vann-grønt.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/03_bakke-vann-grønt.js
 import * as THREE5 from "three";
+var BK = DATA.bakke || null;
+var VANN_Y = BK ? BK.vann : 0.15;
+var BK_H = null;
+if (BK) {
+  const s = atob(BK.h);
+  BK_H = new Float32Array(s.length);
+  for (let i2 = 0; i2 < s.length; i2++) BK_H[i2] = s.charCodeAt(i2) * BK.s - BK.off;
+}
+function bakkeV(i2, j) {
+  i2 = Math.max(0, Math.min(BK.nx - 1, i2));
+  j = Math.max(0, Math.min(BK.ny - 1, j));
+  return BK_H[j * BK.nx + i2];
+}
+function bakke(x, y) {
+  if (!BK) return 0;
+  const fx = (x - BK.x0) / BK.g, fy = (y - BK.y0) / BK.g, i2 = Math.floor(fx), j = Math.floor(fy), tx = Math.min(1, Math.max(0, fx - i2)), ty = Math.min(1, Math.max(0, fy - j));
+  return (bakkeV(i2, j) * (1 - tx) + bakkeV(i2 + 1, j) * tx) * (1 - ty) + (bakkeV(i2, j + 1) * (1 - tx) + bakkeV(i2 + 1, j + 1) * tx) * ty;
+}
+function bakkeFot(pts) {
+  if (!BK || !pts || !pts.length) return 0;
+  let m = Infinity;
+  for (let k = 0; k < pts.length; k++) {
+    const a = pts[k], c = pts[(k + 1) % pts.length], n = Math.max(1, Math.ceil(Math.hypot(c[0] - a[0], c[1] - a[1])));
+    for (let j = 0; j < n; j++) m = Math.min(m, bakke(a[0] + (c[0] - a[0]) * j / n, a[1] + (c[1] - a[1]) * j / n));
+  }
+  return m;
+}
 var ground = new THREE5.Mesh(new THREE5.PlaneGeometry(6e3, 6e3), new THREE5.MeshBasicMaterial({ color: 15723748 }));
 ground.rotation.x = -Math.PI / 2;
+ground.position.y = BK ? VANN_Y - 0.4 : 0;
 ground.receiveShadow = true;
 scene.add(ground);
 function polyShape(pts) {
@@ -838,13 +866,13 @@ function flatH(pts, holes, y, mat2) {
 DATA.vann.forEach((w) => {
   const t = w.t;
   if (t.natural === "water" || t.water || ["riverbank", "dock", "canal"].includes(t.waterway)) {
-    const m = flatH(w.p, w.h, 0.15, waterMat);
+    const m = flatH(w.p, w.h, VANN_Y, waterMat);
     if (m) waterLayer.push(m);
   }
 });
 registrer({ waterMat: () => waterMat });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/04_brostein-i-hele-gamlebyen.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/04_brostein-i-hele-gamlebyen.js
 import * as THREE6 from "three";
 var stoneMat = new THREE6.ShaderMaterial({
   uniforms: { base: { value: new THREE6.Color("rgb(146,140,132)") }, fuge: { value: new THREE6.Color("rgb(96,92,88)") }, ang: { value: THREE6.MathUtils.degToRad(DATA.gatevinkel || 0) } },
@@ -891,7 +919,7 @@ var plenMat = new THREE6.ShaderMaterial({
 medSkygge(plenMat);
 bakkelag(plenMat, BAKKELAG.gress);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/05_bygg.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/05_bygg.js
 import * as THREE7 from "three";
 import { mergeGeometries as mergeGeometries2 } from "three/addons/utils/BufferGeometryUtils.js";
 var city = new THREE7.Group();
@@ -919,8 +947,16 @@ function settHus(i2, loft2, vekst) {
     tHus.needsUpdate = true;
   }
 }
+function settFot(i2, fot) {
+  const k = (i2 + 1) * 4 + 2;
+  if (husData[k] !== fot) {
+    husData[k] = fot;
+    tHus.needsUpdate = true;
+  }
+}
 var GL_HUS_V = `attribute float aBygg; attribute float aTopp; uniform sampler2D tHus;
-  vec3 husPos(vec3 p){ vec4 h=texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)); p.y=p.y*h.g+h.r; return p; }`;
+  vec3 husPos(vec3 p){ vec4 h=texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)); p.y=(p.y-h.b)*h.g+h.b+h.r; return p; }   // foten (b) er bakt inn i geometrien; veksten regnes fra den
+  float husFot(){ return texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)).b; }`;
 var husDybde = new THREE7.MeshDepthMaterial({ depthPacking: THREE7.RGBADepthPacking });
 husDybde.onBeforeCompile = (sh) => {
   sh.uniforms.tHus = U_HUS;
@@ -1005,6 +1041,7 @@ var kontaktMat = new THREE7.ShaderMaterial({
   fragmentShader: `uniform float styrke; varying float vA; void main(){ float a=vA*vA*(3.-2.*vA)*styrke; gl_FragColor=vec4(mix(vec3(1.), vec3(0.62,0.66,0.78), a), 1.); }`
 });
 function fotBaand(pts, d, y) {
+  const yf = typeof y === "function" ? y : (() => y);
   const n = pts.length;
   let areal = 0;
   for (let i2 = 0; i2 < n; i2++) {
@@ -1019,7 +1056,7 @@ function fotBaand(pts, d, y) {
     nrm.push([-ey / L * ut, ex / L * ut]);
   }
   const P2 = (x, yy, al) => {
-    pos.push(x, y, -yy);
+    pos.push(x, yf(x, yy), -yy);
     alfa.push(al);
   };
   for (let i2 = 0; i2 < n; i2++) {
@@ -1062,7 +1099,7 @@ function mat(rgb, dim, sk, opt = {}) {
     const m = new THREE7.ShaderMaterial({
       lights: true,
       uniforms: Object.assign({ farge: { value: c }, skygge: { value: s }, tHus: U_HUS, uVask: { value: STIL.vask }, skravur: U_SKRAVUR, uStein: { value: opt.stein ? 1 : 0 } }, THREE7.UniformsUtils.clone(THREE7.UniformsLib.lights)),
-      vertexShader: GL_SOL_V + GL_HUS_V + `varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos; vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
+      vertexShader: GL_SOL_V + GL_HUS_V + `varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos-vec3(0.,husFot(),0.); vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));` + glSolVMain("wp", "wn") + `}`,
       fragmentShader: GL_SOL_F + `uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask, uStein; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
@@ -1162,7 +1199,7 @@ function mat(rgb, dim, sk, opt = {}) {
   return mats.get(key);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/06_kirka-bygget-etter-2017.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/06_kirka-bygget-etter-2017.js
 import * as THREE8 from "three";
 var KIRKE_ENDE = "valm";
 function sentr(p) {
@@ -1454,7 +1491,7 @@ function bygKirke(k, grp) {
 }
 var buildings = [];
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/07_vinduer-dører-og-porter.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/07_vinduer-dører-og-porter.js
 import * as THREE9 from "three";
 import { mergeGeometries as mergeGeometries3 } from "three/addons/utils/BufferGeometryUtils.js";
 var VIND_GEO = new THREE9.PlaneGeometry(1, 1);
@@ -1547,14 +1584,14 @@ var _X = new THREE9.Vector3();
 var _Y = new THREE9.Vector3(0, 1, 0);
 var _Z = new THREE9.Vector3();
 var _M = new THREE9.Matrix4();
-function vindusData(V2, i2, b) {
+function vindusData(V2, i2, b, fot = 0) {
   const mats2 = [], info = new Float32Array(V2.length * 4), nrm = new Float32Array(V2.length * 3), bygg2 = new Float32Array(V2.length).fill(i2 + 1);
   V2.forEach((v, k) => {
     const [x, y, z, tx, ty, nx, ny, w, h, typ, bue, ant] = v;
     _X.set(-tx, 0, ty);
     _Z.set(nx, 0, -ny);
     _M.makeBasis(_X.clone().multiplyScalar(w), _Y.clone().multiplyScalar(h), _Z);
-    _M.setPosition(x + nx * 0.05, z, -(y + ny * 0.05));
+    _M.setPosition(x + nx * 0.05, z + fot, -(y + ny * 0.05));
     mats2.push(_M.clone());
     info.set([typ, bue, ant, palIx(v[12]) || palIx(b && (typ > 0.5 && typ < 2.5 ? b.dor_farge : b.karm_farge))], k * 4);
     nrm.set([nx, 0, -ny], k * 3);
@@ -1876,7 +1913,8 @@ DATA.bygg.forEach((b, i2) => {
   const roof = b.tak || (dim ? [196, 170, 160] : [232, 124, 104]);
   const grp = new THREE9.Group();
   const toppVindu = b.vind && b.vind.length || b.gml ? 0 : Math.round(b.h * 2) / 2;
-  const legg = spesiell ? ((o) => grp.add(o)) : ((o) => samleObjekt(o, new THREE9.Matrix4(), i2, toppVindu));
+  const fot = bakkeFot(pts), fotM = new THREE9.Matrix4().makeTranslation(0, fot, 0);
+  const legg = spesiell ? ((o) => grp.add(o)) : ((o) => samleObjekt(o, fotM, i2, toppVindu));
   const shape = polyShape(pts);
   (b.ph || []).forEach((r) => {
     if (r.length > 2) shape.holes.push(new THREE9.Path(r.map(V)));
@@ -2198,15 +2236,16 @@ DATA.bygg.forEach((b, i2) => {
     });
   }
   if (b.vind && b.vind.length && !dim) {
-    const vd = vindusData(b.vind, spesiell ? -1 : i2, b);
+    const vd = vindusData(b.vind, spesiell ? -1 : i2, b, spesiell ? 0 : fot);
     if (spesiell) grp.add(lagVinduer([vd]));
     else vinduSamling.push(vd);
   }
-  grp.userData = { i: i2, b, h, spesiell };
+  grp.userData = { i: i2, b, h, spesiell, fot };
   if (spesiell) {
+    grp.position.y = fot;
     flatGruppe(grp);
     city.add(grp);
-  }
+  } else settFot(i2, fot);
   buildings.push(grp);
 });
 var husNett = [];
@@ -2234,7 +2273,7 @@ samler.clear();
   const pos = [], alfa = [];
   DATA.bygg.forEach((b) => {
     if (!b.p || b.p.length < 3 || b.skjul) return;
-    const f = fotBaand(b.p, KONTAKT_BREDDE, KONTAKT_Y);
+    const f = fotBaand(b.p, KONTAKT_BREDDE, BK ? (x, y) => bakke(x, y) + KONTAKT_Y : KONTAKT_Y);
     pos.push(...f.pos);
     alfa.push(...f.alfa);
   });
@@ -2247,12 +2286,81 @@ samler.clear();
   city.add(m);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/08_festningsterrenget.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/08_festningsterrenget.js
 import * as THREE10 from "three";
-var TER = DATA.landskap && DATA.landskap.terreng;
+var TER0 = DATA.landskap && DATA.landskap.terreng;
+var TER = BK ? { x0: BK.x0, y0: BK.y0, g: BK.g, nx: BK.nx, ny: BK.ny, off: 0 } : TER0;
 var hAt = () => 0;
 var hTer = () => 0;
-if (TER) {
+var terFarge = { lysF: { value: new THREE10.Color("rgb(128,180,136)") }, skyggeF: { value: new THREE10.Color("rgb(92,142,108)") }, bakkeF: { value: new THREE10.Color(15723748) } };
+if (BK) {
+  const nx = BK.nx, ny = BK.ny, G = BK.g, HV = new Float32Array(nx * ny);
+  for (let j = 0; j < ny; j++) for (let i2 = 0; i2 < nx; i2++) HV[j * nx + i2] = bakke(BK.x0 + i2 * G, BK.y0 + j * G);
+  const hv = (i2, j) => HV[Math.max(0, Math.min(ny - 1, j)) * nx + Math.max(0, Math.min(nx - 1, i2))];
+  hAt = bakke;
+  hTer = (x, y) => {
+    const fx = (x - BK.x0) / G, fy = (y - BK.y0) / G;
+    const i2 = Math.max(0, Math.min(nx - 2, Math.floor(fx))), j = Math.max(0, Math.min(ny - 2, Math.floor(fy)));
+    const tx = Math.min(1, Math.max(0, fx - i2)), ty = Math.min(1, Math.max(0, fy - j)), a = hv(i2, j), b = hv(i2 + 1, j), c = hv(i2, j + 1), d = hv(i2 + 1, j + 1);
+    return (tx + ty <= 1 ? a + (b - a) * tx + (c - a) * ty : d + (c - d) * (1 - tx) + (b - d) * (1 - ty)) + 0.03;
+  };
+  let gress = () => 0;
+  if (TER0) {
+    const b = atob(TER0.m);
+    const MB = new Uint8Array(b.length);
+    for (let i2 = 0; i2 < b.length; i2++) MB[i2] = b.charCodeAt(i2);
+    gress = (x, y) => {
+      const i2 = Math.round((x - TER0.x0) / TER0.g), j = Math.round((y - TER0.y0) / TER0.g);
+      if (i2 < 0 || j < 0 || i2 >= TER0.nx || j >= TER0.ny) return 0;
+      const k = j * TER0.nx + i2;
+      return MB[k >> 3] >> 7 - (k & 7) & 1;
+    };
+  }
+  const pos = new Float32Array(nx * ny * 3), gr = new Float32Array(nx * ny);
+  for (let j = 0; j < ny; j++) for (let i2 = 0; i2 < nx; i2++) {
+    const k = j * nx + i2, X = BK.x0 + i2 * G, Y = BK.y0 + j * G;
+    pos[k * 3] = X;
+    pos[k * 3 + 1] = HV[k] + 0.03;
+    pos[k * 3 + 2] = -Y;
+    gr[k] = gress(X, Y);
+  }
+  const idx = [], under = VANN_Y - 0.05;
+  for (let j = 0; j < ny - 1; j++) for (let i2 = 0; i2 < nx - 1; i2++) {
+    const a = j * nx + i2, b = a + 1, c = a + nx, d = c + 1;
+    if (HV[a] < under && HV[b] < under && HV[c] < under && HV[d] < under) continue;
+    idx.push(a, b, c, b, d, c);
+  }
+  const g = new THREE10.BufferGeometry();
+  g.setAttribute("position", new THREE10.BufferAttribute(pos, 3));
+  g.setAttribute("aGress", new THREE10.BufferAttribute(gr, 1));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  const terMat = new THREE10.ShaderMaterial({
+    uniforms: terFarge,
+    vertexShader: `attribute float aGress; varying vec3 vn; varying vec3 wp; varying float ny; varying float vg; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; vn=normalize(normalMatrix*normal); ny=normal.y; vg=aGress; gl_Position=projectionMatrix*viewMatrix*w; }`,
+    fragmentShader: `uniform vec3 lysF, skyggeF, bakkeF; varying vec3 vn; varying vec3 wp; varying float ny; varying float vg;
+      float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      void main(){ vec3 nn=normalize(vn); float d=dot(nn,solRetning()); float hell=1.-ny;
+        // gress (vollene): to toner som tegningen, skråninger bort fra sola får skyggegrønt
+        float k = (1.-smoothstep(0.437,0.443,d)) * smoothstep(0.108,0.112,hell);
+        vec3 g=mix(lysF, skyggeF, k);
+        g=mix(g, lysF*1.06, smoothstep(0.62,0.75,d)*smoothstep(0.05,0.15,hell)*0.6);
+        float m=n(wp.xz*0.025)*0.6+n(wp.xz*0.09)*0.4; g*=0.94+0.12*m;
+        float gs=n(vec2(wp.x*0.55+wp.z*0.22, wp.z*1.9-wp.x*0.3))*0.6+n(vec2(wp.x*1.7, wp.z*4.3))*0.4; g*=0.975+0.05*gs;
+        // bakken (byen, kaiene, strendene): den lyse grunnfargen; bratte skråninger bort fra sola litt mørkere, så kaikanten leses
+        vec3 b=bakkeF*(1.-0.10*(1.-smoothstep(0.30,0.45,d))*smoothstep(0.15,0.35,hell));
+        vec3 c=mix(b, g, step(0.5,vg));
+        gl_FragColor=vec4(c,0.);
+        #include <colorspace_fragment>
+      }`
+  });
+  medSkygge(terMat);
+  bakkelag(terMat, BAKKELAG.terreng);
+  const ter = new THREE10.Mesh(g, terMat);
+  ter.receiveShadow = true;
+  scene.add(ter);
+} else if (TER) {
   const b64 = (s) => {
     const b = atob(s);
     const a = new Uint8Array(b.length);
@@ -2343,7 +2451,7 @@ if (TER) {
   const ter = new THREE10.Mesh(g, terMat);
   ter.receiveShadow = true;
   scene.add(ter);
-  (DATA.landskap.fest || []).forEach((p) => flatH(p, [], 0.02, terMat));
+  if (!BK) (DATA.landskap.fest || []).forEach((p) => flatH(p, [], 0.02, terMat));
 }
 function paaTerreng(deler, z, B, maks) {
   const steg = TER ? TER.g : 1.5;
@@ -2400,7 +2508,7 @@ function veiflater(VF2, buf) {
     const B = buf[gr];
     if (!B) return;
     const lofT = gr === "G" ? 0.03 : 0.06;
-    paaTerreng(deler, gr === "B" ? (x, y) => Math.max(0.05, hTer(x, y) + 0.02) : (x, y) => hTer(x, y) + lofT, B, gr === "B" ? 40 : 3 * (TER ? TER.g : 1.5));
+    paaTerreng(deler, gr === "B" ? BK ? (x, y) => hTer(x, y) + 0.05 : (x, y) => Math.max(0.05, hTer(x, y) + 0.02) : (x, y) => hTer(x, y) + lofT, B, gr === "B" ? 40 : 3 * (TER ? TER.g : 1.5));
   });
 }
 {
@@ -2434,7 +2542,8 @@ function veiflater(VF2, buf) {
       dx /= l;
       dy /= l;
       const nx = -dy * w, ny = dx * w;
-      const zL = B === buf.B ? hTer(P2[k][0] + nx, P2[k][1] + ny) + 0.05 : Math.max(P2[k][2], hTer(P2[k][0] + nx, P2[k][1] + ny) + 0.06) + dz, zR = B === buf.B ? hTer(P2[k][0] - nx, P2[k][1] - ny) + 0.05 : Math.max(P2[k][2], hTer(P2[k][0] - nx, P2[k][1] - ny) + 0.06) + dz;
+      const zP = BK && !v.b ? -1e9 : P2[k][2];
+      const zL = B === buf.B ? hTer(P2[k][0] + nx, P2[k][1] + ny) + 0.05 : Math.max(zP, hTer(P2[k][0] + nx, P2[k][1] + ny) + 0.06) + dz, zR = B === buf.B ? hTer(P2[k][0] - nx, P2[k][1] - ny) + 0.05 : Math.max(zP, hTer(P2[k][0] - nx, P2[k][1] - ny) + 0.06) + dz;
       L.push([P2[k][0] + nx, zL, -(P2[k][1] + ny)]);
       R.push([P2[k][0] - nx, zR, -(P2[k][1] - ny)]);
     }
@@ -2473,7 +2582,7 @@ function veiflater(VF2, buf) {
   }
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/09_murer-plankegjerder-og-voller.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/09_murer-plankegjerder-og-voller.js
 import * as THREE11 from "three";
 var murer = new THREE11.Group();
 scene.add(murer);
@@ -2513,7 +2622,7 @@ var _iMur = (q) => (DATA.teglmurer || []).some((m) => {
 });
 flatGruppe(murer);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/10_porter.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/10_porter.js
 import * as THREE12 from "three";
 (DATA.porter || []).forEach((pt) => {
   const grp = buildings.find((g) => g.userData.i === pt.bygg);
@@ -2549,7 +2658,9 @@ import * as THREE12 from "three";
   m.castShadow = m.receiveShadow = true;
   const ang = Math.atan2(pt.ret[1], pt.ret[0]);
   const y0 = pt.bunn != null ? pt.bunn : hAt(cx, cy);
-  m.position.set(cx, y0, -cy);
+  grp.userData.fot = y0;
+  grp.position.y = y0;
+  m.position.set(cx, 0, -cy);
   m.rotation.y = ang + Math.PI / 2;
   grp.add(m);
   (pt.vingemurer || []).forEach(([ax, ay, bx, by, h0, h1, t]) => {
@@ -2570,13 +2681,13 @@ import * as THREE12 from "three";
     const g = new THREE12.ExtrudeGeometry(s2, { depth: t, bevelEnabled: false });
     g.applyMatrix4(new THREE12.Matrix4().makeBasis(new THREE12.Vector3(ux, 0, -uy), new THREE12.Vector3(0, 1, 0), new THREE12.Vector3(nx, 0, -ny)));
     const vm = new THREE12.Mesh(g, mat(wall, false, b.veggs, { ds: true }));
-    vm.position.set(ax, y0, -ay);
+    vm.position.set(ax, 0, -ay);
     vm.castShadow = vm.receiveShadow = true;
     grp.add(vm);
   });
 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/11_broer.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/11_broer.js
 import * as THREE13 from "three";
 (DATA.broer || []).forEach((br, bi) => {
   const g = new THREE13.Group();
@@ -2584,7 +2695,9 @@ import * as THREE13 from "three";
   const tre = mat([150, 112, 78], false), mork = mat([96, 70, 48], false), stein = mat([176, 170, 156], false);
   const pts = br.p;
   const W = br.w;
-  const yd = 1.35;
+  const yd = BK ? Math.max(bakke(pts[0][0], pts[0][1]), bakke(pts[pts.length - 1][0], pts[pts.length - 1][1])) + 0.35 : 1.35;
+  const pilTopp = yd - 0.2, pilBunn = BK ? VANN_Y - 0.4 : yd - 1.8;
+  const pilH = pilTopp - pilBunn, pilY = (pilTopp + pilBunn) / 2;
   const kant = (geo) => new THREE13.LineSegments(new THREE13.EdgesGeometry(geo, 20), edgeMat);
   for (let k = 0; k < pts.length - 1; k++) {
     const a = pts[k], c = pts[k + 1];
@@ -2626,7 +2739,7 @@ import * as THREE13 from "three";
     });
     const np = Math.max(1, Math.round(len / 7));
     for (let q = 1; q <= np; q++) {
-      const pil = place(new THREE13.Mesh(new THREE13.BoxGeometry(1, 1.6, W * 0.8), stein), -len / 2 + len * (q - 0.5) / np, yd - 1, 0);
+      const pil = place(new THREE13.Mesh(new THREE13.BoxGeometry(1, pilH, W * 0.8), stein), -len / 2 + len * (q - 0.5) / np, pilY, 0);
       const kp = kant(pil.geometry);
       kp.position.copy(pil.position);
       kp.rotation.copy(pil.rotation);
@@ -2660,8 +2773,9 @@ import * as THREE13 from "three";
   city.add(g);
 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/12_trær.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/12_trær.js
 import * as THREE14 from "three";
+var treBakke = (p) => BK ? bakke(p[0], p[1]) : p[3] || 0;
 var seed = 11;
 var rnd = () => {
   seed = seed * 16807 % 2147483647;
@@ -2749,14 +2863,14 @@ var skyggeData = [];
 var stammeData = [];
 TP.forEach((p, i2) => {
   const s = p[2] ? p[2] : 2.6 + rnd() * 2.8;
-  const g0 = p[3] || 0;
+  const g0 = treBakke(p);
   const col = GREENS[rnd() * GREENS.length | 0];
   const delay = 0.6 + 1.6 * ((p[0] + p[1] + 500) / 1e3);
   const x = p[0], z = -p[1];
   const kj = (k) => col.clone().offsetHSL((rnd() - 0.5) * 0.02, 0, (rnd() - 0.5) * 0.05 + k);
-  const legg = (liste2, px, py, pz, r, sy, k) => liste2.push({ pos: [px, py, pz], r, sy, rot: [rnd() * 6.28, rnd() * 6.28, rnd() * 6.28], c: kj(k), delay });
+  const legg = (liste2, px, py, pz, r, sy, k) => liste2.push({ pos: [px, py, pz], r, sy, rot: [rnd() * 6.28, rnd() * 6.28, rnd() * 6.28], c: kj(k), delay, b0: g0 });
   legg(klaseData, x, g0 + s * 1.3, z, s * 0.74, 0.92, 0);
-  skyggeData.push({ pos: [x, g0 + s * 1.35, z], r: s * 0.95, sy: 0.9, rot: [0, 0, 0], c: col, delay });
+  skyggeData.push({ pos: [x, g0 + s * 1.35, z], r: s * 0.95, sy: 0.9, rot: [0, 0, 0], c: col, delay, b0: g0 });
   const n = 3 + (rnd() * 2 | 0), a0 = rnd() * 6.28;
   for (let k = 0; k < n; k++) {
     const a = a0 + k * 6.28 / n + (rnd() - 0.5) * 0.8, rr = s * (0.48 + rnd() * 0.18);
@@ -2809,7 +2923,7 @@ stammer.userData.stamme = true;
   skiver.renderOrder = 1;
   const d = new THREE14.Object3D();
   TP.forEach((pt, i2) => {
-    const s = pt[2] || 3.5, g0 = pt[3] || 0;
+    const s = pt[2] || 3.5, g0 = treBakke(pt);
     d.position.set(pt[0], g0 + KONTAKT_Y, -pt[1]);
     d.scale.setScalar(s * 0.8);
     d.updateMatrix();
@@ -2829,8 +2943,8 @@ function setCrowns(t) {
         dummy.rotation.set(c.rx, 0, c.rz);
         dummy.scale.set(c.r * (0.3 + 0.7 * e) + 1e-3, c.h * e + 1e-3, c.r * (0.3 + 0.7 * e) + 1e-3);
       } else {
-        const g0 = c.pos[1];
-        dummy.position.set(c.pos[0], g0 * e, c.pos[2]);
+        const b0 = c.b0 || 0;
+        dummy.position.set(c.pos[0], b0 + (c.pos[1] - b0) * e, c.pos[2]);
         dummy.rotation.set(c.rot[0], c.rot[1], c.rot[2]);
         dummy.scale.set(c.r * e + 1e-3, c.r * c.sy * e + 1e-3, c.r * e + 1e-3);
       }
@@ -2848,7 +2962,7 @@ crowns[0].onBeforeRender = (r, sc_, c) => {
 };
 setCrowns(0);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/13_kart.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/13_kart.js
 import * as THREE15 from "three";
 import * as maplibregl2 from "maplibre-gl";
 var _merc = maplibregl2.MercatorCoordinate.fromLngLat([ORIGO.lon, ORIGO.lat], 0);
@@ -2893,10 +3007,10 @@ function vinkler() {
 var GRENSE = 560;
 map.setMaxBounds([tilLngLat(-GRENSE - 300, -GRENSE - 300), tilLngLat(GRENSE + 300, GRENSE + 300)]);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/14_speilinger-i-vannet.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/14_speilinger-i-vannet.js
 import * as THREE16 from "three";
 var speil = (() => {
-  const Y = 0.15, LAG = 1;
+  const Y = VANN_Y, LAG = 1;
   const rt = new THREE16.WebGLRenderTarget(2, 2, { type: THREE16.HalfFloatType });
   const deler = [city, ...[].concat(crowns)];
   scene.traverse((o) => {
@@ -2978,7 +3092,7 @@ function speilStyrke() {
 var _sisteKam = new THREE16.Matrix4();
 map.on("resize", () => speil.size());
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/15_bevegelse.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/15_bevegelse.js
 import * as maplibregl3 from "maplibre-gl";
 var GLID = Q0.get("glid") !== "0";
 var glid = (t) => !GLID ? t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 : t <= 0 ? 0 : t >= 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
@@ -3258,7 +3372,7 @@ window.__BEV = BEV;
 map.getCanvasContainer().addEventListener("pointerdown", () => hjulZoom.stopp(), { capture: true, passive: true });
 registrer({ fingerNede: () => fingerNede });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/15_lenke.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/15_lenke.js
 var LENKE = (() => {
   let h = "";
   try {
@@ -3361,7 +3475,7 @@ async function lenkeDel(knapp4) {
   if (knapp4) knapp4.addEventListener("click", () => lenkeDel(knapp4));
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/15_loop.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/15_loop.js
 import * as THREE17 from "three";
 lysFraVenstre();
 var order = buildings.map((g) => {
@@ -3484,7 +3598,7 @@ function introIgjen() {
   clock.start();
   buildings.forEach((g) => {
     g.scale.y = 1e-3;
-    g.position.y = 0;
+    g.position.y = fot0(g);
     husTil(g);
   });
   if (SOL_FAST && Q0.get("solintro") !== "0") {
@@ -3587,6 +3701,9 @@ map.on("movestart", (e) => {
 function husTil(g) {
   if (!g.userData.spesiell) settHus(g.userData.i, g.position.y, g.scale.y);
 }
+function fot0(g) {
+  return g.userData.spesiell ? g.userData.fot || 0 : 0;
+}
 var _sisteProj = new THREE17.Matrix4();
 function oppdater() {
   maalYtelse();
@@ -3600,7 +3717,7 @@ function oppdater() {
   const kl = 1 - Math.exp(-dt * 11);
   husBeveger = !vokst;
   buildings.forEach((g) => {
-    const ty = g.userData.lift ? 3 : g === SENERE.hover ? 0.9 : 0;
+    const ty = fot0(g) + (g.userData.lift ? 3 : g === SENERE.hover ? 0.9 : 0);
     const dy = (ty - g.position.y) * kl;
     if (Math.abs(dy) > 1e-3) {
       g.position.y += dy;
@@ -3738,15 +3855,15 @@ window.__gate = ({ lat, lon, heading, pitch = 90, fov = 75, oye = 2.5 }) => {
   const [x, y] = tilModell([lon, lat]);
   _gateStraale.set(new THREE17.Vector3(x, 400, -y), new THREE17.Vector3(0, -1, 0));
   const treff2 = _gateStraale.intersectObjects(scene.children, true).filter((t) => t.object.visible && !t.object.isInstancedMesh);
-  const bakke = treff2.length ? treff2[treff2.length - 1].point.y : 0;
+  const bakke2 = treff2.length ? treff2[treff2.length - 1].point.y : 0;
   const vfov = 2 * Math.atan(Math.tan(fov * Math.PI / 360) * innerHeight / innerWidth) * 180 / Math.PI;
   map.setMaxBounds(null);
   map.setMinZoom(0);
   map.setMaxZoom(24);
   map.setMinPitch(0);
   map.setMaxPitch(110);
-  map.jumpTo(map.calculateCameraOptionsFromCameraLngLatAltRotation({ lng: lon, lat }, bakke + oye, heading, pitch));
-  return { x, y, bakke, hoyde: bakke + oye, vfov, treff: treff2.length };
+  map.jumpTo(map.calculateCameraOptionsFromCameraLngLatAltRotation({ lng: lon, lat }, bakke2 + oye, heading, pitch));
+  return { x, y, bakke: bakke2, hoyde: bakke2 + oye, vfov, treff: treff2.length };
 };
 window.__gateKamera = () => {
   const c = map.getCenter();
@@ -3772,7 +3889,7 @@ window.__skjerm3 = (x, y, z) => {
 };
 registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/16_interaksjon.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/16_interaksjon.js
 import * as THREE18 from "three";
 var ray = new THREE18.Raycaster();
 var ptr = new THREE18.Vector2();
@@ -3818,9 +3935,10 @@ function treffHus(x, y) {
 function husBoks(g) {
   if (g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE18.Box3().setFromObject(g);
   const bb = new THREE18.Box3();
+  const f = g.userData.fot || 0;
   g.userData.b.p.forEach(([x, y]) => {
-    bb.expandByPoint(new THREE18.Vector3(x, 0, -y));
-    bb.expandByPoint(new THREE18.Vector3(x, g.userData.h + g.position.y, -y));
+    bb.expandByPoint(new THREE18.Vector3(x, f, -y));
+    bb.expandByPoint(new THREE18.Vector3(x, f + g.userData.h + g.position.y, -y));
   });
   return bb;
 }
@@ -4215,7 +4333,7 @@ if (Q0.get("d")) {
 }
 registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/17_bakkeflater-og-parkering.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/17_bakkeflater-og-parkering.js
 import * as THREE19 from "three";
 {
   const flateMat = (rgb) => medSkygge(new THREE19.ShaderMaterial({
@@ -4270,7 +4388,7 @@ import * as THREE19 from "three";
     if (!pts || pts.length < 3) return null;
     let g = new THREE19.ShapeGeometry(polyShape(pts));
     g.rotateX(-Math.PI / 2);
-    if (pts.some((q) => hTer(q[0], q[1]) > 0.05) || (() => {
+    if (BK || pts.some((q) => hTer(q[0], q[1]) > 0.05) || (() => {
       const P0 = g.attributes.position;
       for (let i2 = 0; i2 < P0.count; i2++) if (hTer(P0.getX(i2), -P0.getZ(i2)) > 0.05) return true;
       return false;
@@ -4279,7 +4397,7 @@ import * as THREE19 from "three";
     const P2 = g.attributes.position;
     for (let i2 = 0; i2 < P2.count; i2++) {
       const t = hTer(P2.getX(i2), -P2.getZ(i2));
-      P2.setY(i2, t > 0.05 ? t + y0 : Math.max(y0, hAt(P2.getX(i2), -P2.getZ(i2)) + y0));
+      P2.setY(i2, BK || t > 0.05 ? t + y0 : Math.max(y0, hAt(P2.getX(i2), -P2.getZ(i2)) + y0));
     }
     P2.needsUpdate = true;
     g.computeVertexNormals();
@@ -4291,7 +4409,7 @@ import * as THREE19 from "three";
   const BR_VF = !!(DATA.landskap && DATA.landskap.veiflater && DATA.landskap.veiflater.B);
   if (!BR_VF && DATA.brostein && DATA.brostein.length > 2) {
     const B = { p: [], i: [] };
-    paaTerreng([[DATA.brostein]], (x, y) => Math.max(0.05, hTer(x, y) + 0.02), B, 40);
+    paaTerreng([[DATA.brostein]], (x, y) => BK ? hTer(x, y) + 0.05 : Math.max(0.05, hTer(x, y) + 0.02), B, 40);
     const g = new THREE19.BufferGeometry();
     g.setAttribute("position", new THREE19.Float32BufferAttribute(B.p, 3));
     g.setIndex(B.i);
@@ -4300,13 +4418,14 @@ import * as THREE19 from "three";
     m.receiveShadow = true;
     scene.add(m);
   }
+  const plen = (p, y) => BK ? legg(p, y, plenMat) : flat(p, y, plenMat);
   DATA.gront.forEach((g) => {
-    if (!g.skjul) flat(g.p, 0.28, plenMat);
+    if (!g.skjul) plen(g.p, 0.28);
   });
   (DATA.gardsrom || []).forEach((g) => {
     if (g.skjul) return;
-    if (g.gress) g.gress.forEach((p) => flat(p, 0.3, plenMat));
-    else if (g.typ === "gress") flat(g.p, 0.3, plenMat);
+    if (g.gress) g.gress.forEach((p) => plen(p, 0.3));
+    else if (g.typ === "gress") plen(g.p, 0.3);
   });
   (DATA.flater || []).forEach((f) => {
     if (!f.skjul && FARGE2[f.typ] && !(f.typ === "brostein" && (BR_VF || alleIBrostein(f.p)))) legg(f.p, f.typ === "gress" ? 0.28 : f.typ === "brostein" ? 0.05 : 0.09, f.typ === "gress" ? plenMat : matFor(f.typ));
@@ -4335,10 +4454,10 @@ import * as THREE19 from "three";
   });
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/18_brygger.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/18_brygger.js
 import * as THREE20 from "three";
 {
-  const VANN_Y = 0.15, PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
+  const PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
   const FARGE2 = { tre: [[150, 112, 78], [96, 70, 48]], metall: [[168, 170, 168], [92, 94, 96]], plast: [[218, 186, 78], [140, 112, 40]] };
   const T_DEKK = { fast: 0.28, flytebrygge: 0.42, utrigger: 0.32 };
   const g = new THREE20.Group();
@@ -4416,7 +4535,7 @@ import * as THREE20 from "three";
   g.traverse((c) => c.layers.enable(1));
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/19_gardsmurer-og-vinterhager.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/19_gardsmurer-og-vinterhager.js
 import * as THREE21 from "three";
 {
   const anlegg = new THREE21.Group();
@@ -4549,8 +4668,8 @@ import * as THREE21 from "three";
     const u = v.uteplass;
     if (!u) return;
     const belegg = bakkelag(mat([206, 198, 184], false, [160, 152, 140]), BAKKELAG.gress);
-    flat(u.p, 0.28, belegg);
-    const yp = 0.28;
+    const yp = 0.28 + hAt(u.p.reduce((s, q) => s + q[0], 0) / u.p.length, u.p.reduce((s, q) => s + q[1], 0) / u.p.length);
+    flat(u.p, yp, belegg);
     const bordMat = mat([214, 196, 160], false), kurv = mat([168, 128, 84], false), jern = mat([46, 46, 44], false), blad = mat([96, 132, 84], false, [70, 100, 62]), horts = [mat([156, 142, 196], false, [118, 106, 150]), mat([206, 196, 226], false, [156, 148, 172])], stamme = mat([96, 78, 62], false);
     (u.bord || []).forEach(([x, y], i2) => {
       const b = new THREE21.Mesh(new THREE21.CylinderGeometry(0.55, 0.55, 0.05, 14), bordMat);
@@ -4652,7 +4771,7 @@ import * as THREE21 from "three";
   flatGruppe(anlegg);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/20_statuen-paa-torvet.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/20_statuen-paa-torvet.js
 import * as THREE22 from "three";
 (() => {
   const STEINFARGE = { "mørk": [[66, 68, 72], [40, 41, 44]], lys: [[178, 176, 170], [124, 122, 118]], trinn: [[104, 106, 110], [66, 67, 70]], bronse: [[120, 160, 138], [70, 98, 86]] };
@@ -4824,14 +4943,14 @@ import * as THREE22 from "three";
     const b = (st.retning || 0) * Math.PI / 180;
     g.rotation.y = Math.atan2(Math.sin(b), -Math.cos(b));
     g.scale.setScalar(st.visningsskala || 1);
-    g.position.set(x, 0, -y);
+    g.position.set(x, bakke(x, y), -y);
     g.userData = { b: { navn: st.navn, adr: st.sted || "", tekst: st.tekst } };
     flatGruppe(g);
     city.add(g);
   });
 })();
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/21_flyt.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/21_flyt.js
 import * as THREE23 from "three";
 import { mergeGeometries as mergeGeometries4 } from "three/addons/utils/BufferGeometryUtils.js";
 var vannRute = (() => {
@@ -4952,14 +5071,14 @@ var flaterSammen = (() => {
 window.__flytInfo = () => ({ flaterFor: flaterSammen.for, flaterEtter: flaterSammen.etter, vann: vannISyne() });
 registrer({ vannISyne: () => vannISyne });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/22_byferga.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/22_byferga.js
 import * as THREE24 from "three";
 var ferge = (() => {
   const F = DATA.ferge;
   if (!F || !F.ruter || Q0.get("ferge") === "0") return { til() {
   }, intro() {
   }, beveger: () => false, treff: () => null, kort: () => null, grupper: [] };
-  const VANN_Y = 0.15, M = F.mål, C = F.farge, L = M.lengde, B = M.bredde, SK = F.skala || 1, HL = L / 2 * SK, MIN = 6e4;
+  const M = F.mål, C = F.farge, L = M.lengde, B = M.bredde, SK = F.skala || 1, HL = L / 2 * SK, MIN = 6e4;
   const R = F.rampe;
   const mats2 = {};
   const m = (rgb) => mats2[rgb] || (mats2[rgb] = mat(rgb, false));
@@ -5297,7 +5416,7 @@ var ferge = (() => {
 })();
 registrer({ ferge: () => ferge });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/23_vaer.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/23_vaer.js
 import * as THREE25 from "three";
 var PUNKT = { lat: 59.2055, lon: 10.9545 };
 var TEST = !!navigator.webdriver;
@@ -5632,7 +5751,7 @@ document.addEventListener("visibilitychange", () => {
 });
 window.__vaer = () => ({ natt: U_SOL.natt.value, naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt: valgt2 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/24_sok.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/24_sok.js
 import * as maplibregl4 from "maplibre-gl";
 var S = DATA.steder || { kategorier: [], steder: [] };
 var GJEST = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
@@ -5840,7 +5959,7 @@ window.__sok = { velgSted: (id) => {
   return naaler.size;
 }, antall: () => S.steder.length };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/25_her.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/25_her.js
 import * as maplibregl5 from "maplibre-gl";
 var RADIUS = 1400;
 var vakt = null;
@@ -5930,7 +6049,7 @@ function stopp() {
   knapp2.b.setAttribute("aria-pressed", "false");
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/26_turer.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/26_turer.js
 var TURER = DATA.turer || [];
 var LEGENDE = new Map((DATA.legende || []).map((l) => [l.nr, l]));
 var tur = null;
@@ -6030,7 +6149,7 @@ if (panel2 && TURER.length) {
 }
 window.__tur = { start: start2, gaa, slutt, naa: () => tur && { id: tur.id, i } };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/27_festival.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/27_festival.js
 import * as THREE26 from "three";
 import { mergeGeometries as mergeGeometries5 } from "three/addons/utils/BufferGeometryUtils.js";
 var ARR = DATA.arrangementer || [];
@@ -6179,7 +6298,7 @@ if (anim2) {
 window.__festival = () => anim2 ? { id: anim2.a.id, navn: anim2.a.navn, straler: anim2.straler.length } : null;
 window.__festivalDatoer = (aar) => ARR.map((a) => ({ id: a.id, d: (datoer(a, aar) || []).map((x) => x.toISOString()) }));
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/28_start.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/28_start.js
 var laster = document.getElementById("laster");
 if (laster) {
   const se = () => {
@@ -6191,7 +6310,7 @@ if (laster) {
   requestAnimationFrame(se);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/29_postkort.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/29_postkort.js
 var MND2 = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
 var knapp3 = document.createElement("button");
 knapp3.id = "postkort";
@@ -6259,7 +6378,7 @@ async function lag() {
 knapp3.addEventListener("click", lag);
 window.__postkort = lag;
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmpnquvzwm2/30_gjest.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/tmppcr21ji2/30_gjest.js
 var P = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
 if (P) {
   document.documentElement.style.setProperty("--gjest", P.farge || "#2b2420");

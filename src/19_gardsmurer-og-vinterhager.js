@@ -58,7 +58,8 @@ import { hAt } from './08_festningsterrenget.js';
     // hortensia, små trær
     const u=v.uteplass; if(!u) return;
     const belegg=bakkelag(mat([206,198,184],false,[160,152,140]), BAKKELAG.gress);
-    flat(u.p, 0.28, belegg); const yp=0.28;
+    // uteplassen ligger 28 cm over bakken midt på plassen (målt bakke, 07.11; 0 uten bakke.json)
+    const yp=0.28+hAt(u.p.reduce((s,q)=>s+q[0],0)/u.p.length, u.p.reduce((s,q)=>s+q[1],0)/u.p.length); flat(u.p, yp, belegg);
     const bordMat=mat([214,196,160],false), kurv=mat([168,128,84],false), jern=mat([46,46,44],false), blad=mat([96,132,84],false,[70,100,62]), horts=[mat([156,142,196],false,[118,106,150]), mat([206,196,226],false,[156,148,172])], stamme=mat([96,78,62],false);
     (u.bord||[]).forEach(([x,y],i)=>{ const b=new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.55,0.05,14),bordMat); b.position.set(x,yp+0.74,-y); b.castShadow=true; anlegg.add(b);
       const f=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.07,0.72,6),jern); f.position.set(x,yp+0.36,-y); anlegg.add(f);

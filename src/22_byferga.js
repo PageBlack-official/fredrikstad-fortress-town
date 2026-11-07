@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { registrer } from './tilstand.js';
 import { DATA, Q0, scene } from './00_oppsett.js';
+import { VANN_Y } from './03_bakke-vann-grønt.js';
 import { mat } from './05_bygg.js';
 import { fyllFergeKort, kort_ } from './16_interaksjon.js';
 // ---- Byfergene (Vegar: «se byferga entre kaia i gamlebyen i introswipen», «koble fergetider til fergen») ----
@@ -12,7 +13,7 @@ import { fyllFergeKort, kort_ } from './16_interaksjon.js';
 // ?ferge=0 slår av. ?fergetid=HH:MM[:SS] stiller fergeklokka, ?fergefrys=1 holder den (test). ?entur=0 bruker bare rutetabellen.
 const ferge=(()=>{
   const F=DATA.ferge; if(!F || !F.ruter || Q0.get('ferge')==='0') return {til(){}, intro(){}, beveger:()=>false, treff:()=>null, kort:()=>null, grupper:[]};
-  const VANN_Y=0.15, M=F.mål, C=F.farge, L=M.lengde, B=M.bredde, SK=F.skala||1, HL=L/2*SK, MIN=60000;
+  const M=F.mål, C=F.farge, L=M.lengde, B=M.bredde, SK=F.skala||1, HL=L/2*SK, MIN=60000;
   const R=F.rampe;
   const mats={}; const m=rgb=>mats[rgb] || (mats[rgb]=mat(rgb,false));
   // ---- båten (samme bygg for begge) ----

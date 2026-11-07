@@ -3,8 +3,21 @@ import { U_SOL } from './02_lys.js';
 import { registrer } from './tilstand.js';
 import { DATA, Q0, TEX_VANN, scene, texLoader } from './00_oppsett.js';
 // ---- bakke, vann, grønt ----
+// BAKKEN (07.11, Vegar: «terreng/høyder fra vann til by»): data/bakke.json er Kartverkets DTM minus kartets bakkeplan (7,0 moh),
+// verktoy/bakke_dtm.py. bakke(x,y) er høyden i modellkoordinater (bilineær, kantverdien utenfor rammen); VANN_Y er vannflaten.
+// Uten bakke.json er alt som før: bakken i 0, vannet i 0,15.
+const BK = DATA.bakke || null;
+const VANN_Y = BK ? BK.vann : 0.15;
+let BK_H = null;
+if(BK){ const s=atob(BK.h); BK_H=new Float32Array(s.length); for(let i=0;i<s.length;i++) BK_H[i]=s.charCodeAt(i)*BK.s-BK.off; }
+function bakkeV(i,j){ i=Math.max(0,Math.min(BK.nx-1,i)); j=Math.max(0,Math.min(BK.ny-1,j)); return BK_H[j*BK.nx+i]; }
+function bakke(x,y){ if(!BK) return 0; const fx=(x-BK.x0)/BK.g, fy=(y-BK.y0)/BK.g, i=Math.floor(fx), j=Math.floor(fy), tx=Math.min(1,Math.max(0,fx-i)), ty=Math.min(1,Math.max(0,fy-j));
+  return (bakkeV(i,j)*(1-tx)+bakkeV(i+1,j)*tx)*(1-ty)+(bakkeV(i,j+1)*(1-tx)+bakkeV(i+1,j+1)*tx)*ty; }
+// laveste bakke langs et omriss (husfot): kantene samples hver meter
+function bakkeFot(pts){ if(!BK || !pts || !pts.length) return 0; let m=Infinity; for(let k=0;k<pts.length;k++){ const a=pts[k], c=pts[(k+1)%pts.length], n=Math.max(1,Math.ceil(Math.hypot(c[0]-a[0],c[1]-a[1])));
+  for(let j=0;j<n;j++) m=Math.min(m, bakke(a[0]+(c[0]-a[0])*j/n, a[1]+(c[1]-a[1])*j/n)); } return m; }
 const ground = new THREE.Mesh(new THREE.PlaneGeometry(6000,6000), new THREE.MeshBasicMaterial({color:0xefece4}));
-ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; scene.add(ground);
+ground.rotation.x=-Math.PI/2; ground.position.y=BK ? VANN_Y-0.4 : 0; ground.receiveShadow=true; scene.add(ground);
 
 function polyShape(pts){
   const s = new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0], p[1])));
@@ -109,10 +122,10 @@ function flatH(pts, holes, y, mat){
   const g=new THREE.ShapeGeometry(sh); g.rotateX(-Math.PI/2);
   const m=new THREE.Mesh(g,mat); m.position.y=y; m.receiveShadow=true; scene.add(m); return m;
 }
-DATA.vann.forEach(w=>{ const t=w.t; if (t.natural==='water'||t.water||['riverbank','dock','canal'].includes(t.waterway)) { const m=flatH(w.p,w.h,0.15,waterMat); if(m) waterLayer.push(m);} });
+DATA.vann.forEach(w=>{ const t=w.t; if (t.natural==='water'||t.water||['riverbank','dock','canal'].includes(t.waterway)) { const m=flatH(w.p,w.h,VANN_Y,waterMat); if(m) waterLayer.push(m);} });
 
 
 // elva Glomma rundt byen: fallback-stripe hvis data mangler
 registrer({ waterMat: () => waterMat });   // brukes av tidligere moduler via SENERE (tilstand.js)
 
-export { BAKKELAG, alleIBrostein, bakkelag, flat, flatH, polyShape, waterLayer, waterMat };
+export { BAKKELAG, BK, VANN_Y, alleIBrostein, bakke, bakkeFot, bakkelag, flat, flatH, polyShape, waterLayer, waterMat };

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { DATA } from './00_oppsett.js';
+import { bakke } from './03_bakke-vann-grønt.js';
 import { city, flatGruppe, mat } from './05_bygg.js';
 // ---- Statuer og skulpturer: Frederik II på Torvet (Wilhelm Rasmussen 1917), «Sittende pike» i Tamburparken (Arne Durban 1957/58) ----
 // Alle mål, retning og plass står i data/statue.json med kilder (KILDER.md). Koden tegner bare det dataene sier:
@@ -123,6 +124,7 @@ const FIGUR={
   // retning: kompassgrader -> rotasjon om y (lokal +z = fram); verden: x = øst, -z = nord
   const b=(st.retning||0)*Math.PI/180; g.rotation.y=Math.atan2(Math.sin(b),-Math.cos(b));
   g.scale.setScalar(st.visningsskala||1);
-  g.position.set(x,0,-y); g.userData={b:{navn:st.navn,adr:st.sted||'',tekst:st.tekst}}; flatGruppe(g); city.add(g);
+  // på torvet: målt bakke (07.11; 0 uten bakke.json)
+  g.position.set(x,bakke(x,y),-y); g.userData={b:{navn:st.navn,adr:st.sted||'',tekst:st.tekst}}; flatGruppe(g); city.add(g);
 });
 })();

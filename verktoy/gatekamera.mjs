@@ -2,7 +2,7 @@
 // Street View-bilde, så modell og virkelighet kan legges side om side og leses hus for hus.
 // Bruk:  PW_GPU=1 node verktoy/gatekamera.mjs ut/enkel/index.html kilder/gate/standpunkter.json rapport/gate [navn ...]
 // standpunkter.json: [{navn, pano, dato, lat, lon, heading, pitch, fov, oye}] – tallene rett fra Street View-lenka:
-//   …/@59.2029732,10.9560839,10a,75y,285.23h,88.51t/…!1s<pano>… → lat, lon, fov 75 (vannrett), heading 285.23, pitch 88.51 (90 = vannrett).
+//   …/@59.2029732,10.9560839,10a,75y,285.23h,88.51t/…!1s<pano>… → lat, lon, fov 75 (loddrett, målt 07.11), heading 285.23, pitch 88.51 (90 = vannrett).
 //   oye = kamerahøyde over bakken i meter (standard 2,5: Street View-kameraet sitter på biltaket).
 // Skriver <utmappe>/<navn>.png og <navn>.json (kamera, bakkehøyde, husene som står i bildet med skjermpunkt).
 // Kartet har en egen testinngang window.__gate i src/15_loop.js; den rører ikke kartet slik brukeren ser det.

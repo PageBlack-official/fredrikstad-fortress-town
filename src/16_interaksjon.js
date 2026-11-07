@@ -29,7 +29,7 @@ function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.set
   const g=byggFraTreff(hit); return g ? {g, p:hit.point} : null; }
 // bygget som boks (til kamera og kort): egne grupper måles, sammenslåtte bygg regnes ut fra grunnrisset og høyden
 function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE.Box3().setFromObject(g);
-  const bb=new THREE.Box3(); g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,0,-y)); bb.expandByPoint(new THREE.Vector3(x,g.userData.h+g.position.y,-y)); }); return bb; }
+  const bb=new THREE.Box3(); const f=g.userData.fot||0; g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,f,-y)); bb.expandByPoint(new THREE.Vector3(x,f+g.userData.h+g.position.y,-y)); }); return bb; }
 // ---- huskortet (oppdrag 15): klikk -> huset løfter seg og kameraet glir inn, kortet glir inn (mobil: bunnark fra bunnen, som
 // Apple/Google Maps; bred skjerm: sidepanel fra venstre). Tilbake (×, Esc, trykk utenfor, nettleserens/Androids tilbake) går samme vei ut:
 // kortet glir ut, og kameraet glir tilbake dit det stod, så lenge du ikke har flyttet kartet selv i mellomtida. Varighet og kurver: 15_bevegelse.

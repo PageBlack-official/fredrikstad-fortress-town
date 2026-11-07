@@ -1,13 +1,68 @@
 import * as THREE from 'three';
 import { DATA, scene } from './00_oppsett.js';
 import { medSkygge } from './02_lys.js';
-import { BAKKELAG, alleIBrostein, bakkelag, flatH } from './03_bakke-vann-grønt.js';
+import { BAKKELAG, BK, VANN_Y, alleIBrostein, bakke, bakkelag, flatH, waterMat } from './03_bakke-vann-grønt.js';
 import { stoneMat } from './04_brostein-i-hele-gamlebyen.js';
 import { mat } from './05_bygg.js';
 // ---- festningsterrenget: voller med skråninger, grønt som plenene i tegningen ----
-const TER = DATA.landskap && DATA.landskap.terreng;
+const TER0 = DATA.landskap && DATA.landskap.terreng;
+// Med målt bakke (BK, 07.11) er terrenget hele DTM-rammen: én bakke for byen, vollene, kaiene og strendene ned til vannet.
+// TER beskriver da bakkens rutenett (paaTerreng deler kantene etter det); det gamle festningsterrenget gir bare hvor det er gress.
+const TER = BK ? {x0:BK.x0, y0:BK.y0, g:BK.g, nx:BK.nx, ny:BK.ny, off:0} : TER0;
 let hAt = ()=>0, hTer = ()=>0;   // hTer: terrengnettets høyde (trekantene), se under
-if (TER){
+const terFarge = { lysF:{value:new THREE.Color('rgb(128,180,136)')}, skyggeF:{value:new THREE.Color('rgb(92,142,108)')}, bakkeF:{value:new THREE.Color(0xefece4)} };
+if (BK){
+  const nx=BK.nx, ny=BK.ny, G=BK.g, HV=new Float32Array(nx*ny);
+  for(let j=0;j<ny;j++) for(let i=0;i<nx;i++) HV[j*nx+i]=bakke(BK.x0+i*G, BK.y0+j*G);
+  const hv=(i,j)=>HV[Math.max(0,Math.min(ny-1,j))*nx+Math.max(0,Math.min(nx-1,i))];
+  hAt=bakke;
+  hTer=(x,y)=>{ const fx=(x-BK.x0)/G, fy=(y-BK.y0)/G; const i=Math.max(0,Math.min(nx-2,Math.floor(fx))), j=Math.max(0,Math.min(ny-2,Math.floor(fy)));
+    const tx=Math.min(1,Math.max(0,fx-i)), ty=Math.min(1,Math.max(0,fy-j)), a=hv(i,j), b=hv(i+1,j), c=hv(i,j+1), d=hv(i+1,j+1);
+    return (tx+ty<=1 ? a+(b-a)*tx+(c-a)*ty : d+(c-d)*(1-tx)+(b-d)*(1-ty))+0.03; };
+  // gress der det gamle festningsterrenget var (vollene, plenene på festningen) og i festningsområdet (landskap.fest: vollgravenes
+  // bredder); ellers bakkens lyse farge som før
+  let gammel=()=>0;
+  if(TER0){ const b=atob(TER0.m); const MB=new Uint8Array(b.length); for(let i=0;i<b.length;i++) MB[i]=b.charCodeAt(i);
+    gammel=(x,y)=>{ const i=Math.round((x-TER0.x0)/TER0.g), j=Math.round((y-TER0.y0)/TER0.g); if(i<0||j<0||i>=TER0.nx||j>=TER0.ny) return 0; const k=j*TER0.nx+i; return (MB[k>>3]>>(7-(k&7)))&1; }; }
+  const FEST=(DATA.landskap&&DATA.landskap.fest)||[];
+  const iPol=(x,y,P)=>{ let inne=false; for(let k=0,j=P.length-1;k<P.length;j=k++){ const a=P[k],c=P[j]; if((a[1]>y)!==(c[1]>y) && x<(c[0]-a[0])*(y-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; };
+  const gress=(x,y)=>gammel(x,y) || FEST.some(P=>iPol(x,y,P)) ? 1 : 0;
+  const pos=new Float32Array(nx*ny*3), gr=new Float32Array(nx*ny);
+  for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const k=j*nx+i, X=BK.x0+i*G, Y=BK.y0+j*G; pos[k*3]=X; pos[k*3+1]=HV[k]+0.03; pos[k*3+2]=-Y; gr[k]=gress(X,Y); }
+  // ruter helt under vannflaten tegnes ikke (vannet dekker dem)
+  const idx=[], under=VANN_Y-0.05;
+  for(let j=0;j<ny-1;j++) for(let i=0;i<nx-1;i++){ const a=j*nx+i, b=a+1, c=a+nx, d=c+1; if(HV[a]<under && HV[b]<under && HV[c]<under && HV[d]<under) continue; idx.push(a,b,c, b,d,c); }
+  const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.BufferAttribute(pos,3)); g.setAttribute('aGress',new THREE.BufferAttribute(gr,1));
+  g.setIndex(idx); g.computeVertexNormals();
+  // vannfeltet (src/03, verktoy/vann.py): r = avstand inn i vannet; bakken kuttes der vannflaten begynner, så strandkanten følger
+  // vannets omriss og ikke rutenettets tagger
+  const WU=waterMat.uniforms;
+  const terMat=new THREE.ShaderMaterial({
+    uniforms:Object.assign({ tFelt:WU.tFelt, felt:WU.felt, maks:WU.maks, harFelt:WU.harFelt, vannY:{value:VANN_Y} }, terFarge),
+    vertexShader:`attribute float aGress; varying vec3 vn; varying vec3 wp; varying float ny; varying float vg; void main(){ vec4 w=modelMatrix*vec4(position,1.); wp=w.xyz; vn=normalize(normalMatrix*normal); ny=normal.y; vg=aGress; gl_Position=projectionMatrix*viewMatrix*w; }`,
+    fragmentShader:`uniform vec3 lysF, skyggeF, bakkeF; uniform sampler2D tFelt; uniform vec4 felt; uniform float maks, harFelt, vannY; varying vec3 vn; varying vec3 wp; varying float ny; varying float vg;
+      float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      void main(){
+        if(harFelt>0.5 && wp.y<vannY+1.5){ float r=texture2D(tFelt, vec2((wp.x-felt.x)/felt.z, (-wp.z-felt.y)/felt.w)).r*maks; if(r>0.3) discard; }
+        vec3 nn=normalize(vn); float d=dot(nn,solRetning()); float hell=1.-ny;
+        // gress (vollene): to toner som tegningen, skråninger bort fra sola får skyggegrønt
+        float k = (1.-smoothstep(0.437,0.443,d)) * smoothstep(0.108,0.112,hell);
+        vec3 g=mix(lysF, skyggeF, k);
+        g=mix(g, lysF*1.06, smoothstep(0.62,0.75,d)*smoothstep(0.05,0.15,hell)*0.6);
+        float m=n(wp.xz*0.025)*0.6+n(wp.xz*0.09)*0.4; g*=0.94+0.12*m;
+        float gs=n(vec2(wp.x*0.55+wp.z*0.22, wp.z*1.9-wp.x*0.3))*0.6+n(vec2(wp.x*1.7, wp.z*4.3))*0.4; g*=0.975+0.05*gs;
+        // bakken (byen, kaiene, strendene): den lyse grunnfargen; bratte skråninger bort fra sola litt mørkere, så kaikanten leses
+        vec3 b=bakkeF*(1.-0.10*(1.-smoothstep(0.30,0.45,d))*smoothstep(0.15,0.35,hell));
+        vec3 c=mix(b, g, smoothstep(0.35,0.65,vg));
+        gl_FragColor=vec4(c,0.);
+        #include <colorspace_fragment>
+      }`
+  });
+  medSkygge(terMat); bakkelag(terMat, BAKKELAG.terreng);
+  const ter=new THREE.Mesh(g,terMat); ter.receiveShadow=true; scene.add(ter);
+}
+else if (TER){
   const b64=s=>{ const b=atob(s); const a=new Uint8Array(b.length); for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i); return a; };
   const MB=b64(TER.m), nx=TER.nx, ny=TER.ny, G=TER.g;
   const inn0=i=>(MB[i>>3]>>(7-(i&7)))&1;
@@ -62,7 +117,7 @@ if (TER){
   medSkygge(terMat); bakkelag(terMat, BAKKELAG.terreng);
   const ter=new THREE.Mesh(g,terMat); ter.receiveShadow=true; scene.add(ter);
   // festningsområdet som flate under terrenget: gir eksakt kant mot bakken og vannet
-  (DATA.landskap.fest||[]).forEach(p=>flatH(p,[],0.02,terMat));
+  if(!BK) (DATA.landskap.fest||[]).forEach(p=>flatH(p,[],0.02,terMat));
 }
 // veiflatene på terrenget: kanten deles opp til terrengrutenettet, flaten trianguleres, og trekanter der flaten ville skåret
 // gjennom terrenget (feil over 2 cm midt på lengste kant) deles til de følger det. Høyden er terrenget + 6 cm som båndene
@@ -94,7 +149,7 @@ function paaTerreng(deler, z, B, maks){
 function veiflater(VF, buf){
   // brosteinen (B) er grunnen i byen, gatene og brosteinsflatene i én: 5 cm på flat mark, 2 cm over terrenget der det er høyere
   Object.entries(VF).forEach(([gr, deler])=>{ const B=buf[gr]; if(!B) return; const lofT=gr==='G'?0.03:0.06;
-    paaTerreng(deler, gr==='B' ? (x,y)=>Math.max(0.05, hTer(x,y)+0.02) : (x,y)=>hTer(x,y)+lofT, B, gr==='B'?40:3*(TER?TER.g:1.5)); });
+    paaTerreng(deler, gr==='B' ? (BK ? (x,y)=>hTer(x,y)+0.05 : (x,y)=>Math.max(0.05, hTer(x,y)+0.02)) : (x,y)=>hTer(x,y)+lofT, B, gr==='B'?40:3*(TER?TER.g:1.5)); });
 }
 // veier som bånd i tegningens gategrå; bruer ligger over vannet med sider (slått sammen til tre mesher)
 {
@@ -120,8 +175,10 @@ function veiflater(VF, buf){
       const a=P[Math.max(0,k-1)], b=P[Math.min(n-1,k+1)]; let dx=b[0]-a[0], dy=b[1]-a[1]; const l=Math.hypot(dx,dy)||1; dx/=l; dy/=l;
       const nx=-dy*w, ny=dx*w;
       // brostein ligger i samme høyde som brosteinsgrunnen (5 cm over terrenget): samme stein, ingen kant for streken (A15)
-      const zL=B===buf.B ? hTer(P[k][0]+nx,P[k][1]+ny)+0.05 : Math.max(P[k][2], hTer(P[k][0]+nx,P[k][1]+ny)+0.06)+dz,
-            zR=B===buf.B ? hTer(P[k][0]-nx,P[k][1]-ny)+0.05 : Math.max(P[k][2], hTer(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
+      // med målt bakke (BK) følger veien bakken; bare bruer (v.b) beholder høyden i dataene der den er over bakken
+      const zP=(BK && !v.b) ? -1e9 : P[k][2];
+      const zL=B===buf.B ? hTer(P[k][0]+nx,P[k][1]+ny)+0.05 : Math.max(zP, hTer(P[k][0]+nx,P[k][1]+ny)+0.06)+dz,
+            zR=B===buf.B ? hTer(P[k][0]-nx,P[k][1]-ny)+0.05 : Math.max(zP, hTer(P[k][0]-nx,P[k][1]-ny)+0.06)+dz;
       L.push([P[k][0]+nx, zL, -(P[k][1]+ny)]); R.push([P[k][0]-nx, zR, -(P[k][1]-ny)]);
     }
     for(let k=0;k<n-1;k++){

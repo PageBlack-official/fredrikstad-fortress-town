@@ -1,0 +1,23 @@
+{
+ "_om": "Øyekontroll 07.11 (Claude): Street View | før | etter fra samme standpunkt (gatekameraet med loddrett synsvinkel). Bare hus der etter-bildet er klart nærmere Street View enn før-bildet. Ark: ~/Claude/gate/sml3.tar. Avvist: liten endring, spaltevinduer, borte dører, kamera inne i et hus.",
+ "godkjent": {
+  "bnr-193867634": "bnr-193867634-0",
+  "bnr-193868045": "bnr-193868045-0",
+  "bnr-193972489": "bnr-193972489-0",
+  "bnr-193971954": "bnr-193971954-0",
+  "bnr-193868436": "bnr-193868436-0",
+  "bnr-16312916": "bnr-16312916-0",
+  "bnr-193972276": "bnr-193972276-0",
+  "bnr-193972292": "bnr-193972292-0",
+  "bnr-193974686": "bnr-193974686-0",
+  "bnr-193867359": "bnr-193867359-0",
+  "bnr-193868525": "bnr-193868525-0",
+  "bnr-193971946": "bnr-193971946-0",
+  "bnr-193867952": "bnr-193867952-0",
+  "bnr-193868452": "bnr-193868452-0",
+  "bnr-193870236": "bnr-193870236-0",
+  "bnr-193867723": "bnr-193867723-0",
+  "bnr-193867731": "bnr-193867731-0",
+  "bnr-193991718": "bnr-193991718-0"
+ }
+}

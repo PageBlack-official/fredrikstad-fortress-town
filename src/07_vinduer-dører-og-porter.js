@@ -3,8 +3,8 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { DATA } from './00_oppsett.js';
 import { V } from './01_etterbehandling.js';
 import { GL_SOL_F, GL_SOL_V, glSolVMain } from './02_lys.js';
-import { polyShape } from './03_bakke-vann-grønt.js';
-import { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, flatGruppe, fotBaand, husDybde, kontaktMat, mat } from './05_bygg.js';
+import { BK, bakke, bakkeFot, polyShape } from './03_bakke-vann-grønt.js';
+import { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, flatGruppe, fotBaand, husDybde, kontaktMat, mat, settFot } from './05_bygg.js';
 import { buildings, bygKirke } from './06_kirka-bygget-etter-2017.js';
 // ---- vinduer, dører og porter: plassering og størrelse fra Vegars kvartaltegninger (etter/42_fasader.py); alt tegnes her ----
 const VIND_GEO=new THREE.PlaneGeometry(1,1); VIND_GEO.translate(0,0,0);
@@ -82,13 +82,13 @@ const vindMat=new THREE.ShaderMaterial({
 });
 const _X=new THREE.Vector3(), _Y=new THREE.Vector3(0,1,0), _Z=new THREE.Vector3(), _M=new THREE.Matrix4();
 // vinduer for ett bygg: instansmatriser + info. aBygg = byggindeks + 1 (0 = ikke et bygg), så løft og vekst leses fra hus-teksturen
-function vindusData(V, i, b){
+function vindusData(V, i, b, fot=0){
   const mats=[], info=new Float32Array(V.length*4), nrm=new Float32Array(V.length*3), bygg=new Float32Array(V.length).fill(i+1);
   V.forEach((v,k)=>{
     const [x,y,z,tx,ty,nx,ny,w,h,typ,bue,ant]=v;
     _X.set(-tx,0,ty); _Z.set(nx,0,-ny);   // høyrehendt basis (ellers snus trekantene og plata vises ikke)
     _M.makeBasis(_X.clone().multiplyScalar(w), _Y.clone().multiplyScalar(h), _Z);
-    _M.setPosition(x+nx*0.05, z, -(y+ny*0.05));
+    _M.setPosition(x+nx*0.05, z+fot, -(y+ny*0.05));
     mats.push(_M.clone());
     info.set([typ,bue,ant,palIx(v[12]) || palIx(b && (typ>0.5 && typ<2.5 ? b.dor_farge : b.karm_farge))],k*4); nrm.set([nx,0,-ny],k*3);
   });
@@ -248,7 +248,10 @@ DATA.bygg.forEach((b,i)=>{
   const roof = b.tak || (dim? [196,170,160] : [232,124,104]);
   const grp = new THREE.Group();
   const toppVindu = (b.vind&&b.vind.length)||b.gml ? 0 : Math.round(b.h*2)/2;
-  const legg = spesiell ? (o=>grp.add(o)) : (o=>samleObjekt(o, new THREE.Matrix4(), i, toppVindu));
+  // husfoten (07.11): huset står på den laveste målte bakken langs omrisset. Egne grupper løftes som gruppe; i de sammenslåtte
+  // nettene er foten bakt inn i geometrien (så treff med musa stemmer), og teksturen kjenner den (vekst og tegnede vinduer regnes fra foten)
+  const fot = bakkeFot(pts), fotM = new THREE.Matrix4().makeTranslation(0, fot, 0);
+  const legg = spesiell ? (o=>grp.add(o)) : (o=>samleObjekt(o, fotM, i, toppVindu));
   const shape = polyShape(pts);
   (b.ph||[]).forEach(r=>{ if(r.length>2) shape.holes.push(new THREE.Path(r.map(V))); });
   const h = b.kirke ? 0.01 : b.h;   // kirka: formen tegnes av bygKirke (src/06); h og tak2 i data er silhuetten kontrolløren registrerer mot
@@ -413,9 +416,9 @@ DATA.bygg.forEach((b,i)=>{
         legg(new THREE.Mesh(g,mat(c,false))); });
     });
   }
-  if(b.vind && b.vind.length && !dim){ const vd=vindusData(b.vind, spesiell?-1:i, b); if(spesiell) grp.add(lagVinduer([vd])); else vinduSamling.push(vd); }
-  grp.userData={i, b, h, spesiell};
-  if(spesiell){ flatGruppe(grp); city.add(grp); }
+  if(b.vind && b.vind.length && !dim){ const vd=vindusData(b.vind, spesiell?-1:i, b, spesiell?0:fot); if(spesiell) grp.add(lagVinduer([vd])); else vinduSamling.push(vd); }
+  grp.userData={i, b, h, spesiell, fot};
+  if(spesiell){ grp.position.y=fot; flatGruppe(grp); city.add(grp); } else settFot(i, fot);
   buildings.push(grp);
 });
 // ---- nettene: ett per materiale, med byggindeks per punkt. Skyggekartet bruker husDybde, så løft og vekst følger med.
@@ -430,7 +433,7 @@ if(vinduSamling.length) city.add(lagVinduer(vinduSamling));
 samler.clear();
 // kontaktskygge rundt alle husføtter: ett nett for hele byen
 { const pos=[], alfa=[];
-  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, KONTAKT_BREDDE, KONTAKT_Y); pos.push(...f.pos); alfa.push(...f.alfa); });
+  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, KONTAKT_BREDDE, BK ? (x,y)=>bakke(x,y)+KONTAKT_Y : KONTAKT_Y); pos.push(...f.pos); alfa.push(...f.alfa); });
   const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setAttribute('aAlfa', new THREE.Float32BufferAttribute(alfa,1));
   const m=new THREE.Mesh(g, kontaktMat); m.frustumCulled=false; m.renderOrder=1; city.add(m); }
 

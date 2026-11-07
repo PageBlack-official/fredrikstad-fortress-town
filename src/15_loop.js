@@ -4,7 +4,7 @@ import { AZ0_GRADER, BERORING, DATA, PITCH0, Q0, SOL_FAST, STIL, Z_HJEM, cam, ka
 import { MAALT, post } from './01_etterbehandling.js';
 import { GRAD, U_SKRAVUR, U_SOL, _sd, kobleSol, lysFraVenstre, oppdaterSol, setSol } from './02_lys.js';
 import { KVAL, byttNivaaNaarStille, maalYtelse } from './kvalitet.js';
-import { waterMat } from './03_bakke-vann-grønt.js';
+import { BK, bakke as maaltBakke, waterMat } from './03_bakke-vann-grønt.js';
 import { city, kontaktMat, settHus } from './05_bygg.js';
 import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { setCrowns } from './12_trær.js';
@@ -68,7 +68,7 @@ function introIgjen(){
   map.stop(); treghet.stopp(); hjulZoom.stopp();
   TILSTAND.introDone=false; introStartet=false; introKjort=false; vokst=false; tiltU=0; tiltAv.b0=null; tiltAv.s=0; TILSTAND.speilInn=0; TILSTAND.speilFrisk=false;
   clock.start();   // vokse() leser klokka fra null igjen
-  buildings.forEach(g=>{ g.scale.y=0.001; g.position.y=0; husTil(g); });
+  buildings.forEach(g=>{ g.scale.y=0.001; g.position.y=fot0(g); husTil(g); });
   if(SOL_FAST && Q0.get('solintro')!=='0'){ solVei.ferdig=false; solVei.u=0; solStart(); }
   TILSTAND.skyggeSkitten=true;
   startIntro();
@@ -125,6 +125,8 @@ map.on('movestart', e=>{ if(e.originalEvent) overta(); });
 
 // husets løft og vekst: egne grupper (kirka, portbygg, bygg med deler) flyttes som objekter; alle andre ligger i de sammenslåtte nettene og styres per bygg via hus-teksturen (05_bygg)
 function husTil(g){ if(!g.userData.spesiell) settHus(g.userData.i, g.position.y, g.scale.y); }
+// egne grupper (kirka, hus med deler, porthus) står på bakken med gruppa: løftet regnes fra husfoten (07.11); de andre har foten i teksturen
+function fot0(g){ return g.userData.spesiell ? (g.userData.fot||0) : 0; }
 // tilstand per bilde: vekst, hus som løfter seg, sol/skygge, tegnekvalitet
 const _sisteProj=new THREE.Matrix4();
 function oppdater(){
@@ -138,7 +140,7 @@ function oppdater(){
   const kl=1-Math.exp(-dt*11);
   husBeveger=!vokst;
   // skyggekartet tegnes på nytt bare mens et hus flytter seg merkbart (over 2 cm per bilde); halen av glidningen synes ikke i skyggen
-  buildings.forEach(g=>{ const ty=g.userData.lift?3:(g===SENERE.hover?0.9:0); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) TILSTAND.skyggeSkitten=true; } });
+  buildings.forEach(g=>{ const ty=fot0(g)+(g.userData.lift?3:(g===SENERE.hover?0.9:0)); const dy=(ty-g.position.y)*kl; if(Math.abs(dy)>1e-3){ g.position.y+=dy; husTil(g); husBeveger=true; if(Math.abs(dy)>0.02) TILSTAND.skyggeSkitten=true; } });
   if(!TILSTAND.introDone) TILSTAND.skyggeSkitten=true;
   solOppdater(dt); tiltOppdater(dt);
   SENERE.ferge.til(TILSTAND.introDone ? null : (introStartet ? introU() : 0));   // byfergene: introens overfart, så sanntid (22_byferga)
@@ -188,16 +190,20 @@ window.__kam=()=>{ const v=vinkler(); let vs=null; if(SENERE.valgt){ const c=SEN
 window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
 
 // Gatekamera (06.11, verktoy/gatekamera.mjs): kartet fra øyehøyde på et Street View-punkt. Bare for testverktøy; brukeren når det aldri.
-// Street View-tallene går rett inn: heading = kompassretning, pitch 90 = vannrett, fov = vannrett synsvinkel. Bakken finnes med en stråle ned i scenen.
+// Street View-tallene går rett inn: heading = kompassretning, pitch 90 = vannrett, fov = loddrett synsvinkel. Bakken finnes med en stråle ned i scenen.
 const _gateStraale=new THREE.Raycaster();
 window.__gate=({lat,lon,heading,pitch=90,fov=75,oye=2.5})=>{
   introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null);
   const [x,y]=tilModell([lon,lat]);
   _gateStraale.set(new THREE.Vector3(x,400,-y), new THREE.Vector3(0,-1,0));
   const treff=_gateStraale.intersectObjects(scene.children,true).filter(t=>t.object.visible&&!t.object.isInstancedMesh);
-  const bakke=treff.length?treff[treff.length-1].point.y:0;   // laveste treff = bakken (ikke trekroner eller tak)
-  const vfov=2*Math.atan(Math.tan(fov*Math.PI/360)*innerHeight/innerWidth)*180/Math.PI;
-  map.setMaxBounds(null); map.setMinZoom(0); map.setMaxZoom(24); map.setMinPitch(0); map.setMaxPitch(110);   // uten grenser: et senterpunkt langt fram (nesten vannrett blikk) skal ikke flytte kameraet map.setVerticalFieldOfView(vfov);
+  // bakken: målt bakke (07.11; under terrenget ligger grunnplata ved vannet, så laveste treff er ikke bakken lenger), ellers laveste treff
+  const bakke=BK ? maaltBakke(x,y) : (treff.length?treff[treff.length-1].point.y:0);
+  // Street View-lenkas fov (…,75y,…) er loddrett synsvinkel (målt 07.11: Voldgaten 9, samme husbredde i SV og her bare slik)
+  const vfov=fov;
+  map.setMaxBounds(null); map.setMinZoom(0); map.setMaxZoom(24); map.setMinPitch(0); map.setMaxPitch(110);   // uten grenser: et senterpunkt langt fram (nesten vannrett blikk) skal ikke flytte kameraet
+  // synsvinkelen (07.11): kallet stod inne i kommentaren over siden 06.11, så gatekameraet tegnet med MapLibres faste 36,9° og ble smalere enn Street View
+  if(map.setVerticalFieldOfView) map.setVerticalFieldOfView(vfov);
   map.jumpTo(map.calculateCameraOptionsFromCameraLngLatAltRotation({lng:lon,lat}, bakke+oye, heading, pitch));
   return {x,y,bakke,hoyde:bakke+oye,vfov,treff:treff.length};
 };

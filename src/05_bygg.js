@@ -13,9 +13,13 @@ for(let i=0;i<HUS_N;i++){ husData[i*4]=0; husData[i*4+1]=1; husData[i*4+2]=0; hu
 const tHus=new THREE.DataTexture(husData, HUS_N, 1, THREE.RGBAFormat, THREE.FloatType); tHus.minFilter=tHus.magFilter=THREE.NearestFilter; tHus.needsUpdate=true;
 const U_HUS={value:tHus};
 function settHus(i, loft, vekst){ const k=(i+1)*4; if(husData[k]!==loft || husData[k+1]!==vekst){ husData[k]=loft; husData[k+1]=vekst; tHus.needsUpdate=true; } }
+// husfoten (b, 07.11): bakken under huset (laveste målte bakke langs omrisset, src/03 bakkeFot). Geometrien står alt på foten (07);
+// teksturen trengs for at veksten skal regnes fra foten og de tegnede vinduene fra husets egen bunn
+function settFot(i, fot){ const k=(i+1)*4+2; if(husData[k]!==fot){ husData[k]=fot; tHus.needsUpdate=true; } }
 // GLSL som alle husmaterialer deler: aBygg (bygg + 1, 0 = ikke et bygg) peker på texelen; aTopp er hushøyden der veggen skal få tegnede vinduer
 const GL_HUS_V=`attribute float aBygg; attribute float aTopp; uniform sampler2D tHus;
-  vec3 husPos(vec3 p){ vec4 h=texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)); p.y=p.y*h.g+h.r; return p; }`;
+  vec3 husPos(vec3 p){ vec4 h=texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)); p.y=(p.y-h.b)*h.g+h.b+h.r; return p; }   // foten (b) er bakt inn i geometrien; veksten regnes fra den
+  float husFot(){ return texture2D(tHus, vec2((aBygg+0.5)/${HUS_N}., 0.5)).b; }`;
 // skyggekartet må løfte og vokse husene likt: ett dybdemateriale for alle sammenslåtte nett
 const husDybde=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking});
 husDybde.onBeforeCompile=sh=>{ sh.uniforms.tHus=U_HUS;
@@ -68,12 +72,13 @@ const kontaktMat=new THREE.ShaderMaterial({
   fragmentShader:`uniform float styrke; varying float vA; void main(){ float a=vA*vA*(3.-2.*vA)*styrke; gl_FragColor=vec4(mix(vec3(1.), vec3(0.62,0.66,0.78), a), 1.); }`
 });
 // bånd rundt et polygon (modellkoordinater x,y → verden x,-y), bredde d meter; returnerer posisjoner og alfa
-function fotBaand(pts, d, y){
+function fotBaand(pts, d, y){   // y: tall, eller funksjon (x,y) → høyde (bakken, 07.11)
+  const yf = typeof y==='function' ? y : (()=>y);
   const n=pts.length; let areal=0; for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; areal+=a[0]*c[1]-c[0]*a[1]; }
   const ut=areal>0 ? -1 : 1;                        // orientering avgjør hvilken side som er ut: (-ey,ex) peker INN i et mot-klokka polygon (feil vei la båndet under husene)
   const pos=[], alfa=[], nrm=[];
   for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n]; const ex=c[0]-a[0], ey=c[1]-a[1], L=Math.hypot(ex,ey)||1; nrm.push([ -ey/L*ut, ex/L*ut ]); }
-  const P=(x,yy,al)=>{ pos.push(x,y,-yy); alfa.push(al); };
+  const P=(x,yy,al)=>{ pos.push(x,yf(x,yy),-yy); alfa.push(al); };
   for(let i=0;i<n;i++){ const a=pts[i], c=pts[(i+1)%n], m=nrm[i];
     const a2=[a[0]+m[0]*d, a[1]+m[1]*d], c2=[c[0]+m[0]*d, c[1]+m[1]*d];
     P(a[0],a[1],1); P(c[0],c[1],1); P(c2[0],c2[1],0);  P(a[0],a[1],1); P(c2[0],c2[1],0); P(a2[0],a2[1],0);
@@ -94,7 +99,7 @@ function mat(rgb, dim, sk, opt={}){
     const m=new THREE.ShaderMaterial({
       lights:true,
       uniforms:Object.assign({ farge:{value:c}, skygge:{value:s}, tHus:U_HUS, uVask:{value:STIL.vask}, skravur:U_SKRAVUR, uStein:{value:opt.stein?1:0} }, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
-      vertexShader:GL_SOL_V+GL_HUS_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos; vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
+      vertexShader:GL_SOL_V+GL_HUS_V+`varying vec3 vp; varying vec3 lp; varying vec3 wq; varying float topp; void main(){ topp=aTopp; vec3 pos=husPos(position); lp=pos-vec3(0.,husFot(),0.); vec4 wp=modelMatrix*vec4(pos,1.); wq=wp.xyz; vec4 mv=viewMatrix*wp; vp=mv.xyz; gl_Position=projectionMatrix*mv;
         vec3 wn=normalize(mat3(modelMatrix)*normal+vec3(0.,1e-5,0.));`+glSolVMain('wp','wn')+`}`,
       fragmentShader:GL_SOL_F+`uniform mat3 normalMatrix; uniform vec3 farge, skygge; uniform float uVask, uStein; varying float topp; varying vec3 vp; varying vec3 lp; varying vec3 wq;
         float hh(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
@@ -194,4 +199,4 @@ function mat(rgb, dim, sk, opt={}){
   return mats.get(key);
 }
 
-export { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, edgeMat, flatGruppe, fotBaand, husDybde, kontaktMat, mat, settHus };
+export { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, edgeMat, flatGruppe, fotBaand, husDybde, kontaktMat, mat, settFot, settHus };

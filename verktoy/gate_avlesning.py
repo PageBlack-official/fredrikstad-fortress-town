@@ -30,6 +30,19 @@ PUNKT = os.path.join(ROT, 'kilder', 'gate', 'standpunkter.json')
 GRUNN = 'Gatevandring (gatekamera + Street View med dato)'
 
 
+
+def halvvinkler(bilde):
+    """(tan av halv vannrett, tan av halv loddrett synsvinkel). Street View-lenkas fov er loddrett (målt 07.11, se verktoy/gatekamera.mjs)."""
+    Fv = math.radians(float(bilde.get('fov', 75))); B, Hh = float(bilde.get('bredde', 1280)), float(bilde.get('hoyde', 720))
+    tv = math.tan(Fv / 2)
+    return tv * B / Hh, tv
+
+
+def vannrett_fov(sp):
+    """vannrett synsvinkel i grader for et standpunkt (fov i lenka er loddrett)"""
+    th, _ = halvvinkler(sp)
+    return 2 * math.degrees(math.atan(th))
+
 def hexfarge(v):
     """Farge som hex: '#rrggbb' lest rett fra bildet, ellers ordet («blå», «burgunder») via streetview_farger."""
     if not v: return None
@@ -55,8 +68,7 @@ def kamera_fra_hjorner(w, C0, bilde, les):
     Hjørnene i bildet (husets fasade fra hjørne til hjørne, u_venstre/u_hoyre) gir kameraet ved to peilinger: C er punktet der
     strålene mot veggens to ender har de vinklene bildet viser. Ett hjørne: kameraet flyttes langs veggen til den peilingen stemmer.
     Bakkelinja (v_bakke) gir øyehøyden. Gir (C, øye, hvordan)."""
-    Fh = math.radians(float(bilde.get('fov', 75))); B, Hh = float(bilde.get('bredde', 1280)), float(bilde.get('hoyde', 720))
-    th, tv = math.tan(Fh / 2), math.tan(Fh / 2) * Hh / B
+    th, tv = halvvinkler(bilde)
     hd = math.radians(float(bilde['heading'])); p = math.radians(float(bilde.get('pitch', 90)) - 90)
     f = np.array([math.sin(hd), math.cos(hd)]); r = np.array([math.cos(hd), -math.sin(hd)])
     A = w['a']; E = w['a'] + w['u'] * w['L']
@@ -103,8 +115,7 @@ def fra_bilde(w, C, bilde, boks, oye=2.5):
     """Tegn av bildet (Vegar 06.11): en boks i Street View-bildet (u0..u1, v0..v1 i andel av bredde/høyde, v fra toppen) blir
     (t0, t1, z0, z1) på veggen w: strålene fra kameraet (C, øyehøyde, retning, helning, vannrett synsvinkel) skjæres med veggens
     loddrette plan. Gir None når strålen ikke treffer veggen foran kameraet."""
-    Fh = math.radians(float(bilde.get('fov', 75))); B, Hh = float(bilde.get('bredde', 1280)), float(bilde.get('hoyde', 720))
-    th, tv = math.tan(Fh / 2), math.tan(Fh / 2) * Hh / B
+    th, tv = halvvinkler(bilde)
     hd = math.radians(float(bilde['heading'])); p = math.radians(float(bilde.get('pitch', 90)) - 90)
     f = np.array([math.sin(hd), math.cos(hd)]); r = np.array([math.cos(hd), -math.sin(hd)])
     def punkt(u, v):
@@ -132,8 +143,7 @@ def fra_bilde(w, C, bilde, boks, oye=2.5):
     """Tegn av bildet (Vegar 06.11): en boks i Street View-bildet (u0..u1, v0..v1 i andel av bredde/høyde, v fra toppen) blir
     (t0, t1, z0, z1) på veggen w: strålene fra kameraet (C, øyehøyde, retning, helning, vannrett synsvinkel) skjæres med veggens
     loddrette plan. Gir None når strålen ikke treffer veggen foran kameraet."""
-    Fh = math.radians(float(bilde.get('fov', 75))); B, Hh = float(bilde.get('bredde', 1280)), float(bilde.get('hoyde', 720))
-    th, tv = math.tan(Fh / 2), math.tan(Fh / 2) * Hh / B
+    th, tv = halvvinkler(bilde)
     hd = math.radians(float(bilde['heading'])); p = math.radians(float(bilde.get('pitch', 90)) - 90)
     f = np.array([math.sin(hd), math.cos(hd)]); r = np.array([math.cos(hd), -math.sin(hd)])
     def punkt(u, v):
@@ -219,11 +229,22 @@ def tilstand():
     return ret, d, {g['id']: g for g in grunn}
 
 
+
+def _oyekontroll():
+    """husene som er godkjent etter øyekontroll (kilder/gate/godkjent-*.json); None = ingen kontroll lagt inn (alle slipper)"""
+    import glob as _g
+    filer = sorted(_g.glob(os.path.join(ROT, 'kilder', 'gate', 'godkjent-*.json')))
+    if not filer: return lambda i: True
+    ok = set()
+    for f in filer: ok |= set(json.load(open(f, encoding='utf8')).get('godkjent', {}))
+    return lambda i: i in ok
+
 def kjor(tørt=False):
     if not os.path.exists(KILDE):
         print('0 hus (ingen kilder/gate/avlesning.json)'); return
     avl = [a for a in json.load(open(KILDE, encoding='utf8')) if not a.get('id', '').startswith('_')]
     punkt = {p['navn']: p for p in json.load(open(PUNKT, encoding='utf8'))}
+    OYE = _oyekontroll()
     ret, d, grunn = tilstand()
     B = {x['id']: x for x in d['bygg']}
     omg = VG.Omgivelser(d['bygg'], d['veier'], d['gardsrom'])
@@ -235,13 +256,15 @@ def kjor(tørt=False):
             logg.append(f'{id_}: hoppet over (eget fasadeverktøy)'); continue
         if x is None or sp is None:
             logg.append(f'{id_}: hoppet over ({"finnes ikke" if x is None else "ukjent standpunkt"})'); continue
+        if a.get('hvem') != 'Vegar' and not x.get('gml'):
+            logg.append(f'{id_}: hoppet over (utenfor Gamlebyen, tegnes blekt med malte vinduer)'); continue
         C = np.array(datalag.til_modell(sp['lon'], sp['lat']))
         P = np.array(x['p'], float); mid_hus = P.mean(axis=0); v = mid_hus - C
         heading = (math.degrees(math.atan2(v[0], v[1])) + 360) % 360     # fra standpunktet mot huset, ikke panoramaets retning
         V = VG.vegger(x, omg, slaa_sammen=True)
         wi, notat = SVF.gatevegg(x, V, omg, C, heading)
         if wi is None:   # vinkelhus/lange rekker: midtpunktet ligger utenfor fasaden; søk over bildets bredde fra standpunktets retning
-            for dh in sorted(range(-int(sp.get('fov', 75)) // 2, int(sp.get('fov', 75)) // 2 + 1, 5), key=abs):
+            for dh in sorted(range(-int(vannrett_fov(sp)) // 2, int(vannrett_fov(sp)) // 2 + 1, 5), key=abs):
                 wi, notat = SVF.gatevegg(x, V, omg, C, (sp['heading'] + dh) % 360)
                 if wi is not None:
                     heading = (sp['heading'] + dh) % 360; break
@@ -280,7 +303,7 @@ def kjor(tørt=False):
                                           n=[round(float(q), 4) for q in w['n']], rader=[], dorer=info['dorer']))]
             info_ut = dict(maalt=info['maalt'], kantsjekk=info['kantsjekk'], kastet=info['kastet'], utenfor=info['utenfor'], kamera=info['kamera'], oye=info['oye'], simulert=info.get('simulert', 0))
             rader = None
-            if a.get('hvem') != 'Vegar' and not (info['kamera'] == 'to hjørner' and info['kastet'] == 0 and info['utenfor'] == 0
+            if a.get('hvem') != 'Vegar' and not (OYE(id_) and info['kamera'] in ('to hjørner', 'ett hjørne') and info['kastet'] == 0 and info['utenfor'] == 0
                                                   and info['kantsjekk'] <= 2 and info['maalt'] >= 2):
                 linjer = [l for l in linjer if l[0] not in ('vind', 'fasade_kilde', 'fasade_sv')]
                 info_ut = dict(maalt_avvist=info)

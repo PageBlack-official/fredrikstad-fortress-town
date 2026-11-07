@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { DATA } from './00_oppsett.js';
-import { polyShape } from './03_bakke-vann-grønt.js';
+import { VANN_Y, polyShape } from './03_bakke-vann-grønt.js';
 import { city, flatGruppe, fotBaand, kontaktMat, mat } from './05_bygg.js';
 // ---- brygger : fergeleiet, gjestebrygga i Toldbodgaten, Isegran og båtplassene langs Glomma, fra data/brygger.json
 // (verktoy/brygger.py: OSM rettet mot ortofoto 2024 og målt for hånd). Husstilen som broene: treplanker i flat farge med mørke
@@ -9,7 +9,7 @@ import { city, flatGruppe, fotBaand, kontaktMat, mat } from './05_bygg.js';
 // oppå vannflaten (y = 0,15); vannets skum ligger under dem. Et mykt mørke på vannet rundt hver brygge (kontaktskyggen fra
 // husene) gir skyggen der vannet selv ikke tar kastskygge. Skjulte brygger (rettelse «skjul») tegnes ikke.
 {
-  const VANN_Y=0.15, PLANKE=0.9, STOLPE_AVSTAND=2.6;
+  const PLANKE=0.9, STOLPE_AVSTAND=2.6;
   const FARGE={ tre:[[150,112,78],[96,70,48]], metall:[[168,170,168],[92,94,96]], plast:[[218,186,78],[140,112,40]] };
   const T_DEKK={ fast:0.28, flytebrygge:0.42, utrigger:0.32 };   // dekket for faste brygger; flytebrygga og bommen er pontonen helt ned i vannet
   const g=new THREE.Group(); g.name='brygger';

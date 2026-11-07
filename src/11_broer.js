@@ -1,11 +1,15 @@
 import * as THREE from 'three';
 import { DATA } from './00_oppsett.js';
+import { BK, VANN_Y, bakke } from './03_bakke-vann-grønt.js';
 import { city, edgeMat, flatGruppe, mat } from './05_bygg.js';
 // ---- broer: tredekke, gitterrekkverk, pilarer; vindebro får heiseverk (to stolper, tverrbjelke, vippebommer) som i brosjyretegningen ----
 (DATA.broer||[]).forEach((br,bi)=>{
   const g=new THREE.Group(); g.userData={i:-1-bi, b:{navn:br.navn||'Bro', tekst:br.tekst||'', nr:br.nr}, h:2};
   const tre=mat([150,112,78],false), mork=mat([96,70,48],false), stein=mat([176,170,156],false);
-  const pts=br.p; const W=br.w; const yd=1.35;
+  // dekket: 1,35 m over kartets bakkeplan; med målt bakke (07.11) 0,35 m over den høyeste enden, og pilarene ned i vannet
+  const pts=br.p; const W=br.w; const yd=BK ? Math.max(bakke(pts[0][0],pts[0][1]), bakke(pts[pts.length-1][0],pts[pts.length-1][1]))+0.35 : 1.35;
+  const pilTopp=yd-0.2, pilBunn=BK ? VANN_Y-0.4 : yd-1.8;   // under dekket, ned i vannet
+  const pilH=pilTopp-pilBunn, pilY=(pilTopp+pilBunn)/2;
   const kant=geo=>new THREE.LineSegments(new THREE.EdgesGeometry(geo,20),edgeMat);
   for(let k=0;k<pts.length-1;k++){
     const a=pts[k], c=pts[k+1]; const dx=c[0]-a[0], dy=c[1]-a[1]; const len=Math.hypot(dx,dy); if(len<0.5) continue;
@@ -27,7 +31,7 @@ import { city, edgeMat, flatGruppe, mat } from './05_bygg.js';
       for(let q=0;q<n;q++){ const x=-L/2+fag*(q+0.5); place(new THREE.Mesh(new THREE.BoxGeometry(dl,0.05,0.05),mork),x,yd+0.45+(RH-0.4)/2,z,v); place(new THREE.Mesh(new THREE.BoxGeometry(dl,0.05,0.05),mork),x,yd+0.45+(RH-0.4)/2,z,-v); }
     });
     // pilarer i vannet
-    const np=Math.max(1,Math.round(len/7)); for(let q=1;q<=np;q++){ const pil=place(new THREE.Mesh(new THREE.BoxGeometry(1.0,1.6,W*0.8),stein),-len/2+len*(q-0.5)/np,yd-1.0,0); const kp=kant(pil.geometry); kp.position.copy(pil.position); kp.rotation.copy(pil.rotation); g.add(kp); }
+    const np=Math.max(1,Math.round(len/7)); for(let q=1;q<=np;q++){ const pil=place(new THREE.Mesh(new THREE.BoxGeometry(1.0,pilH,W*0.8),stein),-len/2+len*(q-0.5)/np,pilY,0); const kp=kant(pil.geometry); kp.position.copy(pil.position); kp.rotation.copy(pil.rotation); g.add(kp); }
     // heiseverket: to stolper med tverrbjelke, og to vippebommer som peker skrått opp over broa
     if(br.vindebro && k===0){
       const PH=5.2, x0=-L/2+L*0.42;

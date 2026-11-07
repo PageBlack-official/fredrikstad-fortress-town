@@ -1,7 +1,10 @@
 import * as THREE from 'three';
 import { DATA, STIL, scene } from './00_oppsett.js';
 import { GL_SOL_F, GL_SOL_V, glSolVMain, sun } from './02_lys.js';
+import { BK, bakke } from './03_bakke-vann-grønt.js';
 import { KONTAKT_Y, kontaktMat } from './05_bygg.js';
+// treets bakke: målt bakke (BK, 07.11) der den finnes, ellers høyden i dataene (festningsterrenget, verktoy/bakke.py)
+const treBakke=p=>BK ? bakke(p[0],p[1]) : (p[3]||0);
 // ---- trær: posisjoner fra trykkfila; tegnet som i Messenger: stamme og greiner, krone av løvklaser med takket kant og 3 toner ----
 let seed=11; const rnd=()=>{seed=(seed*16807)%2147483647; return seed/2147483647;};
 // Kronene tegnes som løvklaser vendt mot kameraet: takket, buet silhuett og en kuleformet normal, så lys- og skyggetonene
@@ -87,14 +90,14 @@ const BARK=[[112,92,78],[100,84,74],[122,100,84]].map(c=>new THREE.Color(`rgb(${
 const TP = DATA.traer;
 const klaseData=[], skyggeData=[], stammeData=[];
 TP.forEach((p,i)=>{
-  const s=p[2]?p[2]:2.6+rnd()*2.8; const g0=p[3]||0; const col=GREENS[(rnd()*GREENS.length)|0];
+  const s=p[2]?p[2]:2.6+rnd()*2.8; const g0=treBakke(p); const col=GREENS[(rnd()*GREENS.length)|0];
   const delay=0.6+1.6*((p[0]+p[1]+500)/1000);
   const x=p[0], z=-p[1];
   const kj=(k)=>col.clone().offsetHSL((rnd()-.5)*0.02,0,(rnd()-.5)*0.05+k);
-  const legg=(liste,px,py,pz,r,sy,k)=>liste.push({pos:[px,py,pz],r,sy,rot:[rnd()*6.28,rnd()*6.28,rnd()*6.28],c:kj(k),delay});
+  const legg=(liste,px,py,pz,r,sy,k)=>liste.push({pos:[px,py,pz],r,sy,rot:[rnd()*6.28,rnd()*6.28,rnd()*6.28],c:kj(k),delay,b0:g0});
   // hovedklase, sideklaser, toppklase
   legg(klaseData, x, g0+s*1.30, z, s*0.74, 0.92, 0);
-  skyggeData.push({pos:[x,g0+s*1.35,z], r:s*0.95, sy:0.9, rot:[0,0,0], c:col, delay});
+  skyggeData.push({pos:[x,g0+s*1.35,z], r:s*0.95, sy:0.9, rot:[0,0,0], c:col, delay, b0:g0});
   const n=3+((rnd()*2)|0), a0=rnd()*6.28;
   for(let k=0;k<n;k++){ const a=a0+k*6.28/n+(rnd()-.5)*0.8, rr=s*(0.48+rnd()*0.18);
     legg(klaseData, x+Math.cos(a)*s*0.58, g0+s*(0.95+rnd()*0.55), z+Math.sin(a)*s*0.58, rr, 0.9, (rnd()-.5)*0.04); }
@@ -120,14 +123,14 @@ const stammer=lagInst(STAMME,stammeMat,stammeData); stammer.userData.stamme=true
   SKIVE.setAttribute('aAlfa', new THREE.BufferAttribute(al,1));
   const skiver=new THREE.InstancedMesh(SKIVE, kontaktMat, Math.max(1,TP.length)); skiver.count=TP.length; skiver.frustumCulled=false; skiver.renderOrder=1;
   const d=new THREE.Object3D();
-  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=pt[3]||0; d.position.set(pt[0], g0+KONTAKT_Y, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
+  TP.forEach((pt,i)=>{ const s=pt[2]||3.5, g0=treBakke(pt); d.position.set(pt[0], g0+KONTAKT_Y, -pt[1]); d.scale.setScalar(s*0.8); d.updateMatrix(); skiver.setMatrixAt(i,d.matrix); });
   scene.add(skiver); }
 const dummy=new THREE.Object3D();
 function setCrowns(t){
   trMesh.forEach(m=>{ const st=m.userData.stamme;
     m.userData.data.forEach((c,i)=>{ const k=t===null?1:THREE.MathUtils.clamp((t-c.delay)/0.7,0,1); const e=1-Math.pow(1-k,3);
       if(st){ dummy.position.set(c.pos[0],c.pos[1],c.pos[2]); dummy.rotation.set(c.rx,0,c.rz); dummy.scale.set(c.r*(0.3+0.7*e)+0.001, c.h*e+0.001, c.r*(0.3+0.7*e)+0.001); }
-      else { const g0=c.pos[1]; dummy.position.set(c.pos[0], g0*e, c.pos[2]); dummy.rotation.set(c.rot[0],c.rot[1],c.rot[2]); dummy.scale.set(c.r*e+0.001, c.r*c.sy*e+0.001, c.r*e+0.001); }
+      else { const b0=c.b0||0; dummy.position.set(c.pos[0], b0+(c.pos[1]-b0)*e, c.pos[2]); dummy.rotation.set(c.rot[0],c.rot[1],c.rot[2]); dummy.scale.set(c.r*e+0.001, c.r*c.sy*e+0.001, c.r*e+0.001); }
       dummy.updateMatrix(); m.setMatrixAt(i,dummy.matrix); });
     m.instanceMatrix.needsUpdate=true; });
 }
