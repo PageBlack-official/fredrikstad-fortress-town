@@ -239,6 +239,26 @@ def _oyekontroll():
     for f in filer: ok |= set(json.load(open(f, encoding='utf8')).get('godkjent', {}))
     return lambda i: i in ok
 
+
+def hjorne_inn(P, elementer):
+    """flytter elementer inn fra hjørnet langs veggen (tangenten e[3], e[4]); se patch 07.11 (regel 04)"""
+    ut = []; hjorne_inn.n = 0
+    for e in elementer:
+        e = list(e); q0 = np.array(e[:2], float); t_ = np.array([e[3], e[4]], float)
+        if VR.hjorne_ok(P, q0, e[7]): ut.append(e); continue
+        funnet = None
+        for s in [k * 0.05 for k in range(1, 13)]:
+            for r in (1, -1):
+                q = q0 + t_ * s * r
+                if VR.hjorne_ok(P, q, e[7]): funnet = q; break
+            if funnet is not None: break
+        while funnet is None and e[7] > 0.5:
+            e[7] = round(e[7] - 0.05, 2)
+            if VR.hjorne_ok(P, q0, e[7]): funnet = q0
+        if funnet is None: hjorne_inn.n += 1; continue
+        e[0], e[1] = round(float(funnet[0]), 2), round(float(funnet[1]), 2); hjorne_inn.n += 1; ut.append(e)
+    return ut
+
 def kjor(tørt=False):
     if not os.path.exists(KILDE):
         print('0 hus (ingen kilder/gate/avlesning.json)'); return
@@ -298,7 +318,7 @@ def kjor(tørt=False):
                     while b2 > 0.5 and not VR.hjorne_ok(P, np.array(e[:2], float), b2): b2 -= 0.05
                     e2 = list(e); e2[7] = round(b2, 2); e2[8] = round(bh, 2); sim.append(e2)
                 resten = sim; info['simulert'] = sum(1 for e in resten if e[9] == 0)
-            linjer += [('vind', resten + gate), ('fasade_kilde', 'gatevandring-maalt'),
+            linjer += [('vind', hjorne_inn(P, resten + gate)), ('fasade_kilde', 'gatevandring-maalt'),
                        ('fasade_sv', dict(kilde=kilde, vegg=[round(float(q), 2) for q in (w['a'] + w['c']) / 2],
                                           n=[round(float(q), 4) for q in w['n']], rader=[], dorer=info['dorer']))]
             info_ut = dict(maalt=info['maalt'], kantsjekk=info['kantsjekk'], kastet=info['kastet'], utenfor=info['utenfor'], kamera=info['kamera'], oye=info['oye'], simulert=info.get('simulert', 0))
