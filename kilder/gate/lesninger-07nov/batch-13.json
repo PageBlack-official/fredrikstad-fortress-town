@@ -1,0 +1,182 @@
+[
+{"bilde":"bnr-13397198-1","id":"bnr-13397198","del":1,"deler":2,"synlig":true,"vegg":"#7a3a3c","tak":"#8f4a35","takform":"sal","etasjer":"3","piper":"2","takvinduer":"1 takluke","dorfarge":"#c98a4a","karmfarge":"#8a8f96",
+ "hjorner":{"u_venstre":0.423,"u_hoyre":null},"v_bakke":0.625,
+ "maalt":[
+  {"type":"vindu","u0":0.435,"u1":0.447,"v0":0.393,"v1":0.425},
+  {"type":"vindu","u0":0.435,"u1":0.447,"v0":0.458,"v1":0.489},
+  {"type":"vindu","u0":0.435,"u1":0.447,"v0":0.525,"v1":0.556},
+  {"type":"vindu","u0":0.466,"u1":0.479,"v0":0.383,"v1":0.419},
+  {"type":"vindu","u0":0.466,"u1":0.479,"v0":0.453,"v1":0.488},
+  {"type":"vindu","u0":0.466,"u1":0.479,"v0":0.522,"v1":0.557},
+  {"type":"vindu","u0":0.500,"u1":0.520,"v0":0.414,"v1":0.447},
+  {"type":"vindu","u0":0.500,"u1":0.520,"v0":0.483,"v1":0.519},
+  {"type":"dor","u0":0.500,"u1":0.522,"v0":0.550,"v1":0.576},
+  {"type":"vindu","u0":0.540,"u1":0.557,"v0":0.364,"v1":0.403},
+  {"type":"vindu","u0":0.540,"u1":0.557,"v0":0.442,"v1":0.481},
+  {"type":"vindu","u0":0.540,"u1":0.557,"v0":0.521,"v1":0.560},
+  {"type":"vindu","u0":0.583,"u1":0.603,"v0":0.350,"v1":0.392},
+  {"type":"vindu","u0":0.583,"u1":0.603,"v0":0.435,"v1":0.476},
+  {"type":"vindu","u0":0.583,"u1":0.603,"v0":0.519,"v1":0.561},
+  {"type":"vindu","u0":0.637,"u1":0.659,"v0":0.333,"v1":0.379},
+  {"type":"vindu","u0":0.637,"u1":0.659,"v0":0.426,"v1":0.471},
+  {"type":"vindu","u0":0.637,"u1":0.659,"v0":0.518,"v1":0.564},
+  {"type":"vindu","u0":0.696,"u1":0.722,"v0":0.318,"v1":0.367},
+  {"type":"vindu","u0":0.696,"u1":0.722,"v0":0.417,"v1":0.465},
+  {"type":"vindu","u0":0.696,"u1":0.722,"v0":0.517,"v1":0.565},
+  {"type":"vindu","u0":0.756,"u1":0.811,"v0":0.349,"v1":0.406},
+  {"type":"vindu","u0":0.756,"u1":0.811,"v0":0.461,"v1":0.511},
+  {"type":"dor","u0":0.758,"u1":0.806,"v0":0.556,"v1":0.639},
+  {"type":"vindu","u0":0.849,"u1":0.888,"v0":0.269,"v1":0.333},
+  {"type":"vindu","u0":0.849,"u1":0.888,"v0":0.390,"v1":0.451},
+  {"type":"vindu","u0":0.849,"u1":0.888,"v0":0.508,"v1":0.567},
+  {"type":"vindu","u0":0.950,"u1":0.998,"v0":0.239,"v1":0.311},
+  {"type":"vindu","u0":0.950,"u1":0.998,"v0":0.372,"v1":0.439},
+  {"type":"vindu","u0":0.950,"u1":0.998,"v0":0.507,"v1":0.567}
+ ],
+ "merknad":"del 1 av 2, fasaden fortsetter ut av bildet til høyre; høyre del under v≈0.57 fra u≈0.81 er skjøtefeil i panoramaet; to oppganger i oransje felt med glassdør (13B nr. skilt ved høyre dør), liten skjermtak over dørene; små kjellervinduer i grå sokkel ikke tatt med; venstre del sett på skrå"},
+{"bilde":"bnr-13393524-0","id":"bnr-13393524","del":0,"deler":1,"synlig":false,"grunn":"fasaden dekket av thujaer, nedre halvdel av bildet er uskarp skjøtefeil i panoramaet"},
+{"bilde":"bnr-6276024-0","id":"bnr-6276024","del":0,"deler":1,"synlig":true,"vegg":"#f0f0ee","tak":"#8a5a40","takform":"valm","etasjer":"2","piper":"1","takvinduer":"0","karmfarge":"#f4f4f2",
+ "hjorner":{"u_venstre":0.388,"u_hoyre":0.703},"v_bakke":0.694,
+ "maalt":[
+  {"type":"vindu","u0":0.404,"u1":0.428,"v0":0.361,"v1":0.414},
+  {"type":"vindu","u0":0.432,"u1":0.457,"v0":0.356,"v1":0.406},
+  {"type":"vindu","u0":0.406,"u1":0.428,"v0":0.500,"v1":0.563},
+  {"type":"vindu","u0":0.489,"u1":0.538,"v0":0.481,"v1":0.574},
+  {"type":"vindu","u0":0.658,"u1":0.695,"v0":0.472,"v1":0.578}
+ ],
+ "merknad":"stor balkong med hvitt rekkverk over hele 2. etasje til høyre, vinduene bak rekkverket ikke tatt med; venstre del (u 0.39–0.48) er tilbaketrukket med veranda; gran dekker venstre hjørne; ingen dør synlig"},
+{"bilde":"bnr-6276547-0","id":"bnr-6276547","del":0,"deler":1,"synlig":false,"grunn":"høyre halvdel av huset og hele nedre del er uskarp skjøtefeil i panoramaet, i tillegg hekk og tre foran"},
+{"bilde":"bnr-13389616-0","id":"bnr-13389616","del":0,"deler":1,"synlig":false,"grunn":"tykk trestamme midt i bildet dekker det meste av fasaden"},
+{"bilde":"bnr-13393540-0","id":"bnr-13393540","del":0,"deler":1,"synlig":false,"grunn":"midt i bildet står skillet mellom et fjernt hvitt hus med rødt tak (u 0.36–0.52) og venstre hjørne av et stort hvitt hus (u 0.49–1.0); uklart hvilket bygg som er dette"},
+{"bilde":"bnr-6276032-0","id":"bnr-6276032","del":0,"deler":1,"synlig":false,"grunn":"fasaden dekket av thujaer, bare noen vinduer i høyre kant synlige"},
+{"bilde":"bnr-6276539-0","id":"bnr-6276539","del":0,"deler":1,"synlig":true,"vegg":"#a9b1b9","tak":"#3a3a3c","takform":"valm","etasjer":"1","piper":"1","takvinduer":"1 ark midt","karmfarge":"#f2f2ee",
+ "hjorner":{"u_venstre":0.391,"u_hoyre":0.619},"v_bakke":0.683,
+ "maalt":[
+  {"type":"vindu","u0":0.422,"u1":0.472,"v0":0.507,"v1":0.583},
+  {"type":"vindu","u0":0.529,"u1":0.582,"v0":0.508,"v1":0.588},
+  {"type":"vindu","u0":0.434,"u1":0.459,"v0":0.632,"v1":0.685},
+  {"type":"vindu","u0":0.543,"u1":0.568,"v0":0.635,"v1":0.686}
+ ],
+ "merknad":"bred ark midt på taket med lys trepanel og ett dobbelt vindu; høy sokkel med to kjellervinduer; lavere tilbygg med terrasse til venstre (ikke med); ingen dør mot gata"},
+{"bilde":"bnr-13384479-0","id":"bnr-13384479","del":0,"deler":1,"synlig":true,"vegg":"#c9cdc0","tak":"#2f3133","takform":"valm","etasjer":"1","piper":"1","takvinduer":"1 ark midt","karmfarge":"#f0f0ec",
+ "hjorner":{"u_venstre":0.380,"u_hoyre":0.625},"v_bakke":0.661,
+ "maalt":[
+  {"type":"vindu","u0":0.420,"u1":0.467,"v0":0.508,"v1":0.588},
+  {"type":"vindu","u0":0.534,"u1":0.582,"v0":0.507,"v1":0.588},
+  {"type":"vindu","u0":0.433,"u1":0.454,"v0":0.636,"v1":0.658},
+  {"type":"vindu","u0":0.495,"u1":0.506,"v0":0.636,"v1":0.658},
+  {"type":"vindu","u0":0.548,"u1":0.569,"v0":0.636,"v1":0.658}
+ ],
+ "merknad":"ark med gavl midt på taket, to vinduer; grå steinsokkel med tre små kjellervinduer; ingen dør mot gata; overskyet"},
+{"bilde":"bnr-6277071-0","id":"bnr-6277071","del":0,"deler":1,"synlig":true,"vegg":"#e6e3da","tak":"#4b4e50","takform":"sal","etasjer":"1","piper":"1","takvinduer":"0","karmfarge":"#3f5a48",
+ "hjorner":{"u_venstre":0.428,"u_hoyre":0.580},"v_bakke":0.608,
+ "maalt":[
+  {"type":"vindu","u0":0.471,"u1":0.496,"v0":0.442,"v1":0.479},
+  {"type":"vindu","u0":0.502,"u1":0.527,"v0":0.439,"v1":0.479},
+  {"type":"vindu","u0":0.451,"u1":0.475,"v0":0.528,"v1":0.567},
+  {"type":"vindu","u0":0.523,"u1":0.548,"v0":0.528,"v1":0.567}
+ ],
+ "merknad":"gavl mot kamera, loftsetasje med to vinduer i gavlen; grønne vindskier og karmer; glassveranda inntil venstre side (u 0.39–0.43, ikke med); tre uten løv foran; langt unna, overskyet"},
+{"bilde":"bnr-6277063-0","id":"bnr-6277063","del":0,"deler":1,"synlig":true,"vegg":"#e4e4e2","tak":"ikke synlig","takform":"sal","etasjer":"1","piper":"2","takvinduer":"0","karmfarge":"#f2f2f0",
+ "hjorner":{"u_venstre":0.139,"u_hoyre":0.613},"v_bakke":0.700,
+ "maalt":[
+  {"type":"vindu","u0":0.387,"u1":0.428,"v0":0.276,"v1":0.369},
+  {"type":"vindu","u0":0.444,"u1":0.488,"v0":0.265,"v1":0.358},
+  {"type":"vindu","u0":0.384,"u1":0.430,"v0":0.486,"v1":0.585},
+  {"type":"vindu","u0":0.500,"u1":0.555,"v0":0.482,"v1":0.593},
+  {"type":"vindu","u0":0.387,"u1":0.405,"v0":0.678,"v1":0.697,"farge":"#9a3a3a"},
+  {"type":"vindu","u0":0.414,"u1":0.434,"v0":0.678,"v1":0.700,"farge":"#9a3a3a"},
+  {"type":"vindu","u0":0.504,"u1":0.559,"v0":0.689,"v1":0.714,"farge":"#9a3a3a"}
+ ],
+ "merknad":"gavl mot kamera, loftsetasje med to vinduer i gavlen; lavere tilbygg med rødt tegltak og sort pipe til venstre (u 0.14–0.36) uten vinduer; kjellervinduer med røde karmer i grå sokkel; hovedtaket ses ikke (bare hvite vindskier); overskyet"},
+{"bilde":"bnr-6277055-0","id":"bnr-6277055","del":0,"deler":1,"synlig":true,"vegg":"#e6e6e2","tak":"ikke synlig","takform":"sal","etasjer":"1","piper":"0","takvinduer":"0","dorfarge":"#7c8a90","karmfarge":"#f2f2f0",
+ "hjorner":{"u_venstre":0.334,"u_hoyre":0.676},"v_bakke":0.667,
+ "maalt":[
+  {"type":"vindu","u0":0.450,"u1":0.466,"v0":0.253,"v1":0.289},
+  {"type":"vindu","u0":0.404,"u1":0.440,"v0":0.347,"v1":0.417},
+  {"type":"vindu","u0":0.473,"u1":0.515,"v0":0.340,"v1":0.413},
+  {"type":"vindu","u0":0.445,"u1":0.467,"v0":0.503,"v1":0.551},
+  {"type":"vindu","u0":0.509,"u1":0.559,"v0":0.500,"v1":0.574},
+  {"type":"vindu","u0":0.376,"u1":0.391,"v0":0.633,"v1":0.658},
+  {"type":"vindu","u0":0.548,"u1":0.565,"v0":0.646,"v1":0.671},
+  {"type":"dor","u0":0.612,"u1":0.645,"v0":0.503,"v1":0.628}
+ ],
+ "merknad":"gavl mot kamera, loftsetasje med to vinduer og et lite gavlvindu øverst; inngangsparti med eget rødt tegltak til høyre (u 0.602–0.676), grå dør med glassfelt, trapp foran; husnummer 4 på veggen; overskyet"},
+{"bilde":"bnr-193871119-0","id":"bnr-193871119","del":0,"deler":1,"synlig":true,"vegg":"#b9b5a3","tak":"#3c3f42","takform":"sal","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#f0f0ec",
+ "hjorner":{"u_venstre":0.397,"u_hoyre":0.642},"v_bakke":0.678,
+ "maalt":[
+  {"type":"port","u0":0.462,"u1":0.637,"v0":0.571,"v1":0.678,"farge":"#3a2e26"}
+ ],
+ "merknad":"uthus/carport, ikke bolighus: lukket bod til venstre, åpen carport til høyre (port = åpningen); epletre foran venstre del; samme bygg som i bnr-300165413"},
+{"bilde":"bnr-300165413-0","id":"bnr-300165413","del":0,"deler":1,"synlig":true,"vegg":"#b9b5a3","tak":"#3c3f42","takform":"sal","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#f0f0ec",
+ "hjorner":{"u_venstre":0.327,"u_hoyre":0.574},"v_bakke":0.681,
+ "maalt":[
+  {"type":"port","u0":0.393,"u1":0.569,"v0":0.572,"v1":0.681,"farge":"#3a2e26"}
+ ],
+ "merknad":"uthus/carport, ikke bolighus: lukket bod til venstre, åpen carport til høyre (port = åpningen); samme bygg som i bnr-193871119, usikkert om id-ene er samme bygg"},
+{"bilde":"bnr-6277047-0","id":"bnr-6277047","del":0,"deler":1,"synlig":true,"vegg":"#b9b1a0","tak":"#3a3c3c","takform":"sal","etasjer":"2","piper":"1","takvinduer":"0","karmfarge":"#eeeeea",
+ "hjorner":{"u_venstre":0.305,"u_hoyre":0.707},"v_bakke":0.688,
+ "maalt":[
+  {"type":"vindu","u0":0.365,"u1":0.436,"v0":0.390,"v1":0.431},
+  {"type":"vindu","u0":0.521,"u1":0.580,"v0":0.403,"v1":0.439},
+  {"type":"vindu","u0":0.646,"u1":0.690,"v0":0.431,"v1":0.457},
+  {"type":"vindu","u0":0.361,"u1":0.436,"v0":0.514,"v1":0.601},
+  {"type":"vindu","u0":0.520,"u1":0.584,"v0":0.514,"v1":0.593},
+  {"type":"vindu","u0":0.426,"u1":0.459,"v0":0.663,"v1":0.690},
+  {"type":"vindu","u0":0.492,"u1":0.522,"v0":0.658,"v1":0.683},
+  {"type":"vindu","u0":0.621,"u1":0.637,"v0":0.642,"v1":0.661},
+  {"type":"vindu","u0":0.643,"u1":0.668,"v0":0.640,"v1":0.660},
+  {"type":"vindu","u0":0.672,"u1":0.694,"v0":0.638,"v1":0.657}
+ ],
+ "merknad":"langside mot kamera; lavere del med eget tak til høyre (u 0.62–0.71); lave liggende vinduer i 2. etasje rett under takfoten; grå sokkel med kjellervinduer; ingen dør synlig; overskyet"},
+{"bilde":"pb-12-0","id":"pb-12","del":0,"deler":1,"synlig":false,"grunn":"midt i bildet står skillet mellom lekehus/garasje bak (u 0.30–0.50) og venstre hjørne av det store hvite huset (bnr-6276040, u 0.50–0.97); uklart hvilket bygg som er dette"},
+{"bilde":"bnr-6276040-0","id":"bnr-6276040","del":0,"deler":1,"synlig":true,"vegg":"#e3e3dc","tak":"#9c4a3b","takform":"sal","etasjer":"1","piper":"0","takvinduer":"1 takluke","karmfarge":"#f0f0ec",
+ "hjorner":{"u_venstre":0.352,"u_hoyre":0.647},"v_bakke":0.701,
+ "maalt":[
+  {"type":"vindu","u0":0.438,"u1":0.484,"v0":0.308,"v1":0.393},
+  {"type":"vindu","u0":0.495,"u1":0.543,"v0":0.306,"v1":0.386},
+  {"type":"vindu","u0":0.397,"u1":0.491,"v0":0.492,"v1":0.590},
+  {"type":"vindu","u0":0.402,"u1":0.463,"v0":0.664,"v1":0.686},
+  {"type":"vindu","u0":0.650,"u1":0.748,"v0":0.507,"v1":0.604}
+ ],
+ "merknad":"gavl mot kamera, loftsetasje med to vinduer i gavlen; tilbygg med rødt tegltak og takluke til høyre (u 0.65–0.80), glassvegg bak terrasse (siste vindu); hovedtaket ses ikke, takfargen er fra tilbygget; lekehus foran venstre hjørne; overskyet"},
+{"bilde":"bnr-300053567-0","id":"bnr-300053567","del":0,"deler":1,"synlig":false,"grunn":"midt i bildet står skillet mellom lekehus/garasje bak (u 0.30–0.50) og venstre hjørne av det store hvite huset (bnr-6276040, u 0.50–0.97); uklart hvilket bygg som er dette"},
+{"bilde":"bnr-24215326-0","id":"bnr-24215326","del":0,"deler":1,"synlig":true,"vegg":"#b7bfc6","tak":"#7a3a2e","takform":"vinkel","etasjer":"2","piper":"1","takvinduer":"1 takluke","dorfarge":"#f0f0ee","karmfarge":"#f2f2f0",
+ "hjorner":{"u_venstre":null,"u_hoyre":0.556},"v_bakke":0.700,
+ "maalt":[
+  {"type":"dor","u0":0.466,"u1":0.476,"v0":0.476,"v1":0.553},
+  {"type":"vindu","u0":0.492,"u1":0.534,"v0":0.476,"v1":0.513}
+ ],
+ "merknad":"hus sett på skrå; tverrgavl med veranda/terrasse i 1. etasje over åpen underetasje; venstre del av fasaden skjult bak busk/tre, vinduer der ikke tatt med; gavlvinduer på sideveggen ikke med; overskyet"},
+{"bilde":"bnr-24221342-0","id":"bnr-24221342","del":0,"deler":1,"synlig":true,"vegg":"#4a4a48","tak":"#3a3a3a","takform":"pult","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#4a4a48",
+ "hjorner":{"u_venstre":0.349,"u_hoyre":0.576},"v_bakke":0.674,
+ "maalt":[
+  {"type":"port","u0":0.469,"u1":0.555,"v0":0.556,"v1":0.674,"farge":"#e8e8e8"}
+ ],
+ "merknad":"garasje med mørk liggende kledning og pulttak; åpent vedskjul/carport til venstre (u 0.35–0.45); to biler foran dekker nedre del av porten"},
+{"bilde":"bnr-300006318-0","id":"bnr-300006318","del":0,"deler":1,"synlig":true,"vegg":"#e8e8e6","tak":"#b5603f","takform":"valm","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#e8e8e6",
+ "hjorner":{"u_venstre":0.447,"u_hoyre":0.504},"v_bakke":0.619,
+ "maalt":[
+  {"type":"port","u0":0.451,"u1":0.498,"v0":0.553,"v1":0.618,"farge":"#e6e6e4"}
+ ],
+ "merknad":"liten hvit garasje med rødt tegltak langt bak i innkjørselen, midt i bildet; usikkert om dette er riktig bygg: det store hvite huset nr. 12 starter rett til høyre (u 0.50)"},
+{"bilde":"bnr-193870120-0","id":"bnr-193870120","del":0,"deler":1,"synlig":true,"vegg":"#d8d2c4","tak":"#3c3c3e","takform":"sal","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#d8d2c4",
+ "hjorner":{"u_venstre":null,"u_hoyre":0.535},"v_bakke":0.619,
+ "maalt":[
+  {"type":"port","u0":0.506,"u1":0.534,"v0":0.556,"v1":0.618,"farge":"#4a3a30"}
+ ],
+ "merknad":"lite uthus/garasje langt bak midt i bildet, venstre del skjult bak thujabusk; usikkert om dette er riktig bygg (oransje uthus til venstre og grått hus nr. 18 til høyre)"},
+{"bilde":"bnr-193870139-0","id":"bnr-193870139","del":0,"deler":1,"synlig":true,"vegg":"#c9864a","tak":"#3a3c40","takform":"sal","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#3a3a3a",
+ "hjorner":{"u_venstre":0.444,"u_hoyre":0.551},"v_bakke":0.608,
+ "maalt":[
+  {"type":"vindu","u0":0.467,"u1":0.484,"v0":0.556,"v1":0.569},
+  {"type":"vindu","u0":0.516,"u1":0.531,"v0":0.556,"v1":0.569}
+ ],
+ "merknad":"lavt oransje uthus langt bak i hagen, midt i bildet; to små liggende vinduer; overskyet"},
+{"bilde":"bnr-300216650-0","id":"bnr-300216650","del":0,"deler":1,"synlig":true,"vegg":"#cfcac0","tak":"ikke synlig","takform":"flatt","etasjer":"1","piper":"0","takvinduer":"0","karmfarge":"#cfcac0",
+ "hjorner":{"u_venstre":0.398,"u_hoyre":0.569},"v_bakke":0.785,
+ "maalt":[
+  {"type":"port","u0":0.429,"u1":0.539,"v0":0.614,"v1":0.785,"farge":"#2a2d33"}
+ ],
+ "merknad":"pusset garasje med flatt tak og takkant med beslag; sort leddport; krans og lampe på hver side av porten; båt på henger foran venstre hjørne"}
+]

@@ -1,0 +1,76 @@
+[
+ {
+  "id": "_om",
+  "tekst": "Gatevandringen: hus lest fra gata (verktoy/gate_avlesning.py). Felt som i kilder/streetview/avlesning.json. Mangler et felt, endres det ikke."
+ },
+ {
+  "id": "bnr-193867855",
+  "adresse": "Torvgaten 67",
+  "standpunkt": "voldgaten-trauet",
+  "hvem": "Vegar",
+  "kilde": "Vegar 06.11 + Street View mai 2024",
+  "vegg": "hvit",
+  "etasjer": "2",
+  "vinduer_per_etasje": [
+   2,
+   2
+  ],
+  "dorer": "ikke synlig",
+  "piper": "2"
+ },
+ {
+  "id": "bnr-193867898",
+  "adresse": "Voldgaten 8",
+  "navn": "Gamlebyen modelljernbanesenter",
+  "standpunkt": "voldgaten-trauet",
+  "hvem": "Vegar",
+  "kilde": "Vegar 06.11 + Street View mai 2024",
+  "vegg": "duebla",
+  "tak": "rød tegl",
+  "etasjer": "2",
+  "vinduer_per_etasje": [
+   5,
+   6
+  ],
+  "dorer": "1 rød dør med steintrapp, midt-venstre",
+  "takvinduer": 0,
+  "piper": "2"
+ },
+ {
+  "id": "bnr-193867901",
+  "adresse": "Voldgaten 9",
+  "standpunkt": "voldgaten-trauet",
+  "hvem": "Vegar",
+  "kilde": "Vegar 06.11 + Street View mai 2024",
+  "vegg": "oransje",
+  "tak": "mørk brun tegl, mosegrodd (var rød)",
+  "etasjer": "2",
+  "vinduer_per_etasje": [
+   3,
+   4
+  ],
+  "dorer": "1 stor blå dobbel port, helt til venstre",
+  "takvinduer": 0,
+  "piper": "2",
+  "merknad": "blå vinduskarmer; porten helt til venstre, portstørrelse; ingenting på taket utenom 2 piper (Vegar 06.11)"
+ },
+ {
+  "id": "pb-66",
+  "adresse": "Voldportgaten 75 (fasaden mot plassen; modellhus uten eget omriss i kommunekartet, del av bnr-193867928)",
+  "standpunkt": "voldgaten-trauet",
+  "hvem": "Vegar",
+  "kilde": "Vegar 06.11 + Street View mai 2024",
+  "vegg": "beige",
+  "etasjer": "2",
+  "vinduer_per_etasje": [
+   5,
+   8
+  ],
+  "dorer": "1 butikkdør, midt",
+  "takvinduer": 0,
+  "piper": "3",
+  "merknad": "ett bygg sett fra plassen (Vegar 06.11); butikk i 1. etg (store vinduer), brune/burgunder karmer og lister",
+  "tak": "rød tegl",
+  "butikk_nederst": true
+ }
+]

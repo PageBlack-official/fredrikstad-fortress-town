@@ -1,0 +1,26 @@
+[
+ {
+  "navn": "voldgaten-trauet",
+  "pano": "7ImUX2pO3TaNq744wWH-ag",
+  "dato": "2024-05",
+  "lat": 59.2029732,
+  "lon": 10.9560839,
+  "heading": 285.23,
+  "pitch": 88.51,
+  "fov": 75,
+  "oye": 2.5,
+  "kilde": "Vegar 06.11: https://www.google.com/maps/@59.2029732,10.9560839,10a,75y,285.23h,88.51t (Street View mai 2024)"
+ },
+ {
+  "navn": "voldgaten-trauet-hoyre",
+  "pano": "7ImUX2pO3TaNq744wWH-ag",
+  "dato": "2024-05",
+  "lat": 59.2029732,
+  "lon": 10.9560839,
+  "heading": 315.0,
+  "pitch": 88.51,
+  "fov": 90,
+  "oye": 2.5,
+  "kilde": "kontrollbilde: samme punkt som voldgaten-trauet, dreid mot Voldportgaten 75 (bygg 4)"
+ }
+]

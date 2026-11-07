@@ -1,0 +1,13 @@
+[
+{"bilde":"bnr-13418268-1","id":"bnr-13418268","del":1,"deler":2,"synlig":false,"grunn":"Ikke hus i midten: en svart plankeport mellom gult hus (venstre) og grått hus nr. 24 (høyre)."},
+{"bilde":"pb-18-0","id":"pb-18","del":0,"deler":1,"synlig":false,"grunn":"Ikke hus i bildet: park med trær og vann; bare et rødt hus langt ute til venstre."},
+{"bilde":"pb-22-0","id":"pb-22","del":0,"deler":1,"synlig":false,"grunn":"Ikke hus i bildet: gråsteinsmur/voll med gress på toppen."},
+{"bilde":"bnr-193870201-0","id":"bnr-193870201","del":0,"deler":1,"synlig":true,"vegg":"#a8aeab","tak":"ikke synlig","takform":"ikke synlig","etasjer":"2","piper":"0","takvinduer":"0","dorfarge":"#2f3d36","karmfarge":"#f0f0ec","hjorner":{"u_venstre":0.359,"u_hoyre":null},"v_bakke":0.700,"maalt":[
+{"type":"vindu","u0":0.373,"u1":0.388,"v0":0.347,"v1":0.442},
+{"type":"vindu","u0":0.449,"u1":0.477,"v0":0.264,"v1":0.403},
+{"type":"vindu","u0":0.543,"u1":0.600,"v0":0.153,"v1":0.364},
+{"type":"vindu","u0":0.373,"u1":0.389,"v0":0.483,"v1":0.581},
+{"type":"vindu","u0":0.449,"u1":0.478,"v0":0.463,"v1":0.611},
+{"type":"port","u0":0.535,"u1":0.676,"v0":0.442,"v1":0.820}],
+"merknad":"Voldgaten 1 (nr. ved porten). Lysegrått stående panel, mørkegrønn dobbeltport med hvit innfatning. Fasaden ses på skrå mot venstre, sterkt motlys. Stort vindu øverst til høyre (u 0.75-0.93) går ut av bildet i toppen, ikke tatt med."}
+]

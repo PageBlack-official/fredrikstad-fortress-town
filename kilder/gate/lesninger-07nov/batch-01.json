@@ -1,0 +1,1327 @@
+[
+ {
+  "bilde": "bnr-193868061-1",
+  "id": "bnr-193868061",
+  "del": 1,
+  "deler": 3,
+  "synlig": false,
+  "grunn": "svart bilde: «Ingen Street View-bilder er tilgjengelige her»"
+ },
+ {
+  "bilde": "bnr-193868061-2",
+  "id": "bnr-193868061",
+  "del": 2,
+  "deler": 3,
+  "synlig": true,
+  "vegg": "#c98f7c",
+  "tak": "#b8664a",
+  "takform": "sal",
+  "etasjer": "2",
+  "piper": "3",
+  "takvinduer": "7 takluker",
+  "dorfarge": "#b5b89a",
+  "karmfarge": "#a89a5c",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": null
+  },
+  "v_bakke": 0.646,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.323,
+    "u1": 0.358,
+    "v0": 0.312,
+    "v1": 0.403
+   },
+   {
+    "type": "vindu",
+    "u0": 0.414,
+    "u1": 0.445,
+    "v0": 0.317,
+    "v1": 0.406
+   },
+   {
+    "type": "vindu",
+    "u0": 0.5,
+    "u1": 0.53,
+    "v0": 0.326,
+    "v1": 0.41
+   },
+   {
+    "type": "vindu",
+    "u0": 0.578,
+    "u1": 0.604,
+    "v0": 0.333,
+    "v1": 0.414
+   },
+   {
+    "type": "vindu",
+    "u0": 0.666,
+    "u1": 0.692,
+    "v0": 0.343,
+    "v1": 0.419
+   },
+   {
+    "type": "vindu",
+    "u0": 0.748,
+    "u1": 0.771,
+    "v0": 0.351,
+    "v1": 0.428
+   },
+   {
+    "type": "vindu",
+    "u0": 0.812,
+    "u1": 0.834,
+    "v0": 0.358,
+    "v1": 0.431
+   },
+   {
+    "type": "vindu",
+    "u0": 0.873,
+    "u1": 0.893,
+    "v0": 0.365,
+    "v1": 0.433
+   },
+   {
+    "type": "vindu",
+    "u0": 0.927,
+    "u1": 0.947,
+    "v0": 0.372,
+    "v1": 0.438
+   },
+   {
+    "type": "vindu",
+    "u0": 0.978,
+    "u1": 0.996,
+    "v0": 0.378,
+    "v1": 0.442
+   },
+   {
+    "type": "vindu",
+    "u0": 0.318,
+    "u1": 0.354,
+    "v0": 0.535,
+    "v1": 0.628
+   },
+   {
+    "type": "vindu",
+    "u0": 0.412,
+    "u1": 0.445,
+    "v0": 0.535,
+    "v1": 0.625
+   },
+   {
+    "type": "vindu",
+    "u0": 0.498,
+    "u1": 0.53,
+    "v0": 0.535,
+    "v1": 0.622
+   },
+   {
+    "type": "vindu",
+    "u0": 0.578,
+    "u1": 0.606,
+    "v0": 0.535,
+    "v1": 0.618
+   },
+   {
+    "type": "vindu",
+    "u0": 0.75,
+    "u1": 0.775,
+    "v0": 0.532,
+    "v1": 0.608
+   },
+   {
+    "type": "vindu",
+    "u0": 0.815,
+    "u1": 0.838,
+    "v0": 0.532,
+    "v1": 0.604
+   },
+   {
+    "type": "vindu",
+    "u0": 0.875,
+    "u1": 0.898,
+    "v0": 0.532,
+    "v1": 0.601
+   },
+   {
+    "type": "vindu",
+    "u0": 0.931,
+    "u1": 0.952,
+    "v0": 0.532,
+    "v1": 0.597
+   },
+   {
+    "type": "vindu",
+    "u0": 0.983,
+    "u1": 1.0,
+    "v0": 0.532,
+    "v1": 0.597
+   },
+   {
+    "type": "dor",
+    "u0": 0.664,
+    "u1": 0.699,
+    "v0": 0.535,
+    "v1": 0.632
+   }
+  ],
+  "merknad": "teglmur over gråsteinsfasade i 1. etasje, jernankre over vinduene; dør med overlys; bakken skjult bak gjerdet, v_bakke anslått; venstre ende bak tre, høyre utenfor bildet; vinduet lengst til høyre kuttet av bildekanten"
+ },
+ {
+  "bilde": "bnr-193869556-0",
+  "id": "bnr-193869556",
+  "del": 0,
+  "deler": 1,
+  "synlig": false,
+  "grunn": "svart bilde: «Ingen Street View-bilder er tilgjengelige her»"
+ },
+ {
+  "bilde": "bnr-193867502-0",
+  "id": "bnr-193867502",
+  "del": 0,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#e8e6df",
+  "tak": "#3a3d40",
+  "takform": "valm",
+  "etasjer": "2",
+  "piper": "2",
+  "takvinduer": "0",
+  "dorfarge": "#5c5440",
+  "karmfarge": "#6b6650",
+  "hjorner": {
+   "u_venstre": 0.19,
+   "u_hoyre": 0.691
+  },
+  "v_bakke": 0.639,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.224,
+    "u1": 0.243,
+    "v0": 0.389,
+    "v1": 0.442
+   },
+   {
+    "type": "vindu",
+    "u0": 0.322,
+    "u1": 0.344,
+    "v0": 0.378,
+    "v1": 0.435
+   },
+   {
+    "type": "vindu",
+    "u0": 0.437,
+    "u1": 0.462,
+    "v0": 0.371,
+    "v1": 0.431
+   },
+   {
+    "type": "vindu",
+    "u0": 0.556,
+    "u1": 0.586,
+    "v0": 0.361,
+    "v1": 0.426
+   },
+   {
+    "type": "vindu",
+    "u0": 0.221,
+    "u1": 0.24,
+    "v0": 0.493,
+    "v1": 0.547
+   },
+   {
+    "type": "vindu",
+    "u0": 0.435,
+    "u1": 0.462,
+    "v0": 0.492,
+    "v1": 0.554
+   },
+   {
+    "type": "vindu",
+    "u0": 0.555,
+    "u1": 0.586,
+    "v0": 0.489,
+    "v1": 0.558
+   },
+   {
+    "type": "dor",
+    "u0": 0.316,
+    "u1": 0.345,
+    "v0": 0.501,
+    "v1": 0.611
+   }
+  ],
+  "merknad": "hvitkalket mur, sett på skrå; lykt over døra; liten skilt til høyre; venstre hjørne der naboen dekker"
+ },
+ {
+  "bilde": "bnr-193867502-1",
+  "id": "bnr-193867502",
+  "del": 1,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#e6e4de",
+  "tak": "#4a4e52",
+  "takform": "ikke synlig",
+  "etasjer": "2",
+  "piper": "2",
+  "takvinduer": "0",
+  "dorfarge": "#6e6a52",
+  "karmfarge": "#6b6650",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.988
+  },
+  "v_bakke": 0.761,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.24,
+    "u1": 0.338,
+    "v0": 0.069,
+    "v1": 0.25
+   },
+   {
+    "type": "vindu",
+    "u0": 0.566,
+    "u1": 0.616,
+    "v0": 0.192,
+    "v1": 0.329
+   },
+   {
+    "type": "vindu",
+    "u0": 0.754,
+    "u1": 0.784,
+    "v0": 0.272,
+    "v1": 0.375
+   },
+   {
+    "type": "vindu",
+    "u0": 0.864,
+    "u1": 0.884,
+    "v0": 0.329,
+    "v1": 0.411
+   },
+   {
+    "type": "vindu",
+    "u0": 0.931,
+    "u1": 0.948,
+    "v0": 0.364,
+    "v1": 0.432
+   },
+   {
+    "type": "vindu",
+    "u0": 0.221,
+    "u1": 0.333,
+    "v0": 0.414,
+    "v1": 0.628
+   },
+   {
+    "type": "vindu",
+    "u0": 0.569,
+    "u1": 0.621,
+    "v0": 0.444,
+    "v1": 0.589
+   },
+   {
+    "type": "vindu",
+    "u0": 0.87,
+    "u1": 0.892,
+    "v0": 0.483,
+    "v1": 0.569
+   },
+   {
+    "type": "vindu",
+    "u0": 0.939,
+    "u1": 0.957,
+    "v0": 0.493,
+    "v1": 0.567
+   },
+   {
+    "type": "dor",
+    "u0": 0.758,
+    "u1": 0.793,
+    "v0": 0.486,
+    "v1": 0.683
+   }
+  ],
+  "merknad": "nærbilde, sterk perspektiv; dør med overlys og steintrapp med to trinn; lykt over døra; kjellerventiler i sokkelen ikke tatt med"
+ },
+ {
+  "bilde": "bnr-193867677-0",
+  "id": "bnr-193867677",
+  "del": 0,
+  "deler": 1,
+  "synlig": true,
+  "vegg": "#f2f1ec",
+  "tak": "#b04a3a",
+  "takform": "valm",
+  "etasjer": "2",
+  "piper": "2",
+  "takvinduer": "0",
+  "karmfarge": "#7a7466",
+  "hjorner": {
+   "u_venstre": 0.467,
+   "u_hoyre": 0.934
+  },
+  "v_bakke": 0.611,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.5,
+    "u1": 0.516,
+    "v0": 0.458,
+    "v1": 0.517
+   },
+   {
+    "type": "vindu",
+    "u0": 0.659,
+    "u1": 0.673,
+    "v0": 0.479,
+    "v1": 0.524
+   },
+   {
+    "type": "vindu",
+    "u0": 0.705,
+    "u1": 0.72,
+    "v0": 0.476,
+    "v1": 0.521
+   },
+   {
+    "type": "vindu",
+    "u0": 0.755,
+    "u1": 0.773,
+    "v0": 0.472,
+    "v1": 0.519
+   },
+   {
+    "type": "vindu",
+    "u0": 0.812,
+    "u1": 0.83,
+    "v0": 0.483,
+    "v1": 0.517
+   },
+   {
+    "type": "vindu",
+    "u0": 0.875,
+    "u1": 0.896,
+    "v0": 0.481,
+    "v1": 0.517
+   },
+   {
+    "type": "vindu",
+    "u0": 0.5,
+    "u1": 0.516,
+    "v0": 0.558,
+    "v1": 0.6
+   },
+   {
+    "type": "vindu",
+    "u0": 0.66,
+    "u1": 0.673,
+    "v0": 0.556,
+    "v1": 0.586
+   },
+   {
+    "type": "vindu",
+    "u0": 0.705,
+    "u1": 0.721,
+    "v0": 0.556,
+    "v1": 0.588
+   },
+   {
+    "type": "vindu",
+    "u0": 0.756,
+    "u1": 0.773,
+    "v0": 0.556,
+    "v1": 0.59
+   },
+   {
+    "type": "vindu",
+    "u0": 0.875,
+    "u1": 0.898,
+    "v0": 0.553,
+    "v1": 0.593
+   }
+  ],
+  "merknad": "huset står langt unna bak plen; trestamme og løv dekker fasaden mellom ca. u 0.51 og 0.66, vinduer der ikke tatt med; lite inngangstak ved u 0.62-0.65 (dør ikke synlig)"
+ },
+ {
+  "bilde": "bnr-193868568-0",
+  "id": "bnr-193868568",
+  "del": 0,
+  "deler": 1,
+  "synlig": true,
+  "vegg": "#b8574a",
+  "tak": "#8a5a48",
+  "takform": "ikke synlig",
+  "etasjer": "1",
+  "piper": "1",
+  "takvinduer": "0",
+  "dorfarge": "#f0eeea",
+  "karmfarge": "#f0eeea",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.594
+  },
+  "v_bakke": 0.632,
+  "maalt": [
+   {
+    "type": "dor",
+    "u0": 0.432,
+    "u1": 0.466,
+    "v0": 0.504,
+    "v1": 0.678
+   }
+  ],
+  "merknad": "lav teglbygning sett nesten langs gata, svært skrått; ingen vinduer, bare én hvit dør; lite skilt ved høyre ende"
+ },
+ {
+  "bilde": "bnr-193870295-0",
+  "id": "bnr-193870295",
+  "del": 0,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#c48a72",
+  "tak": "#8f6a55",
+  "takform": "sal",
+  "etasjer": "1",
+  "piper": "1",
+  "takvinduer": "2 takluker",
+  "dorfarge": "#d8d4a8",
+  "karmfarge": "#e6e2d6",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.641
+  },
+  "v_bakke": 0.632,
+  "maalt": [
+   {
+    "type": "dor",
+    "u0": 0.427,
+    "u1": 0.462,
+    "v0": 0.465,
+    "v1": 0.642
+   },
+   {
+    "type": "vindu",
+    "u0": 0.483,
+    "u1": 0.515,
+    "v0": 0.486,
+    "v1": 0.569
+   },
+   {
+    "type": "vindu",
+    "u0": 0.531,
+    "u1": 0.556,
+    "v0": 0.49,
+    "v1": 0.564
+   },
+   {
+    "type": "vindu",
+    "u0": 0.574,
+    "u1": 0.594,
+    "v0": 0.493,
+    "v1": 0.558
+   },
+   {
+    "type": "vindu",
+    "u0": 0.602,
+    "u1": 0.619,
+    "v0": 0.497,
+    "v1": 0.556
+   }
+  ],
+  "merknad": "teglbygg sett skrått; lykt og skilt ved døra, steintrinn foran; rød benk foran vinduene"
+ },
+ {
+  "bilde": "bnr-193870295-1",
+  "id": "bnr-193870295",
+  "del": 1,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#b8705e",
+  "tak": "#7d6858",
+  "takform": "sal",
+  "etasjer": "1",
+  "piper": "2",
+  "takvinduer": "2 takluker",
+  "dorfarge": "#8a8a72",
+  "karmfarge": "#8f8c70",
+  "hjorner": {
+   "u_venstre": 0.334,
+   "u_hoyre": null
+  },
+  "v_bakke": 0.642,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.383,
+    "u1": 0.404,
+    "v0": 0.483,
+    "v1": 0.553
+   },
+   {
+    "type": "vindu",
+    "u0": 0.475,
+    "u1": 0.509,
+    "v0": 0.472,
+    "v1": 0.558,
+    "farge": "#e8e4dc"
+   },
+   {
+    "type": "vindu",
+    "u0": 0.536,
+    "u1": 0.578,
+    "v0": 0.468,
+    "v1": 0.561,
+    "farge": "#e8e4dc"
+   },
+   {
+    "type": "dor",
+    "u0": 0.608,
+    "u1": 0.655,
+    "v0": 0.481,
+    "v1": 0.632
+   },
+   {
+    "type": "vindu",
+    "u0": 0.692,
+    "u1": 0.772,
+    "v0": 0.447,
+    "v1": 0.572
+   },
+   {
+    "type": "vindu",
+    "u0": 0.817,
+    "u1": 0.93,
+    "v0": 0.431,
+    "v1": 0.581
+   }
+  ],
+  "merknad": "steintrapp med tre trinn foran døra; skilt på døra; to vinduer midt med hvite karmer, resten grågrønne; lykt over døra"
+ },
+ {
+  "bilde": "bnr-193868053-0",
+  "id": "bnr-193868053",
+  "del": 0,
+  "deler": 1,
+  "synlig": true,
+  "vegg": "#b5584a",
+  "tak": "#6e5e52",
+  "takform": "sal",
+  "etasjer": "1",
+  "piper": "0",
+  "takvinduer": "0",
+  "karmfarge": "#6e6a66",
+  "hjorner": {
+   "u_venstre": 0.434,
+   "u_hoyre": null
+  },
+  "v_bakke": 0.819,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.453,
+    "u1": 0.489,
+    "v0": 0.544,
+    "v1": 0.708
+   }
+  ],
+  "merknad": "lite rødt trehus sett svært skrått langs gata; høyre del skjult bak gjerdet; usikkert om dette er gavl eller langvegg"
+ },
+ {
+  "bilde": "bnr-193867308-0",
+  "id": "bnr-193867308",
+  "del": 0,
+  "deler": 1,
+  "synlig": false,
+  "grunn": "feil retning: midt i bildet er sti, trær og voll; murhuset står ute til venstre (bilde fra 2010)"
+ },
+ {
+  "bilde": "bnr-193867634-0",
+  "id": "bnr-193867634",
+  "del": 0,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#e6e3dc",
+  "tak": "#a8664f",
+  "takform": "valm",
+  "etasjer": "1",
+  "piper": "3",
+  "takvinduer": "0",
+  "karmfarge": "#8a7a50",
+  "hjorner": {
+   "u_venstre": 0.129,
+   "u_hoyre": 0.682
+  },
+  "v_bakke": 0.642,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.148,
+    "u1": 0.169,
+    "v0": 0.508,
+    "v1": 0.581
+   },
+   {
+    "type": "vindu",
+    "u0": 0.202,
+    "u1": 0.224,
+    "v0": 0.508,
+    "v1": 0.583
+   },
+   {
+    "type": "vindu",
+    "u0": 0.26,
+    "u1": 0.284,
+    "v0": 0.507,
+    "v1": 0.586
+   },
+   {
+    "type": "vindu",
+    "u0": 0.324,
+    "u1": 0.349,
+    "v0": 0.504,
+    "v1": 0.588
+   },
+   {
+    "type": "vindu",
+    "u0": 0.394,
+    "u1": 0.422,
+    "v0": 0.503,
+    "v1": 0.59
+   },
+   {
+    "type": "vindu",
+    "u0": 0.469,
+    "u1": 0.501,
+    "v0": 0.5,
+    "v1": 0.593
+   },
+   {
+    "type": "vindu",
+    "u0": 0.554,
+    "u1": 0.589,
+    "v0": 0.497,
+    "v1": 0.596
+   }
+  ],
+  "merknad": "hvitkalket teglhus; ingen dør synlig på denne delen; skilt ved venstre ende; søppelbøtte/stolpe ved høyre hjørne"
+ },
+ {
+  "bilde": "bnr-193867634-1",
+  "id": "bnr-193867634",
+  "del": 1,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#ebe9e3",
+  "tak": "#b0654c",
+  "takform": "valm",
+  "etasjer": "1",
+  "piper": "3",
+  "takvinduer": "0",
+  "karmfarge": "#7d6e40",
+  "hjorner": {
+   "u_venstre": 0.391,
+   "u_hoyre": null
+  },
+  "v_bakke": 0.664,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.418,
+    "u1": 0.442,
+    "v0": 0.5,
+    "v1": 0.586
+   },
+   {
+    "type": "vindu",
+    "u0": 0.482,
+    "u1": 0.511,
+    "v0": 0.497,
+    "v1": 0.588
+   },
+   {
+    "type": "vindu",
+    "u0": 0.56,
+    "u1": 0.595,
+    "v0": 0.493,
+    "v1": 0.594
+   },
+   {
+    "type": "vindu",
+    "u0": 0.658,
+    "u1": 0.701,
+    "v0": 0.489,
+    "v1": 0.601
+   },
+   {
+    "type": "vindu",
+    "u0": 0.779,
+    "u1": 0.838,
+    "v0": 0.481,
+    "v1": 0.611
+   },
+   {
+    "type": "vindu",
+    "u0": 0.939,
+    "u1": 1.0,
+    "v0": 0.475,
+    "v1": 0.618
+   }
+  ],
+  "merknad": "varebil foran nedre del midt (u 0.38-0.57), vinduene over er synlige; vinduet lengst til høyre kuttet av bildekanten; slyngplante på veggen ved venstre ende"
+ },
+ {
+  "bilde": "bnr-193869548-0",
+  "id": "bnr-193869548",
+  "del": 0,
+  "deler": 1,
+  "synlig": false,
+  "grunn": "kameraet står inne i et portrom (tunnel med treport), ingen fasade å lese"
+ },
+ {
+  "bilde": "bnr-193868045-0",
+  "id": "bnr-193868045",
+  "del": 0,
+  "deler": 3,
+  "synlig": true,
+  "vegg": "#b04e4c",
+  "tak": "#b45a45",
+  "takform": "sal",
+  "etasjer": "1",
+  "piper": "0",
+  "takvinduer": "0",
+  "karmfarge": "#f0eeea",
+  "hjorner": {
+   "u_venstre": 0.117,
+   "u_hoyre": null
+  },
+  "v_bakke": 0.653,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.141,
+    "u1": 0.148,
+    "v0": 0.507,
+    "v1": 0.546
+   },
+   {
+    "type": "vindu",
+    "u0": 0.177,
+    "u1": 0.186,
+    "v0": 0.5,
+    "v1": 0.562
+   },
+   {
+    "type": "vindu",
+    "u0": 0.227,
+    "u1": 0.243,
+    "v0": 0.493,
+    "v1": 0.569
+   },
+   {
+    "type": "vindu",
+    "u0": 0.313,
+    "u1": 0.339,
+    "v0": 0.483,
+    "v1": 0.586
+   },
+   {
+    "type": "vindu",
+    "u0": 0.484,
+    "u1": 0.537,
+    "v0": 0.464,
+    "v1": 0.617
+   },
+   {
+    "type": "vindu",
+    "u0": 0.686,
+    "u1": 0.78,
+    "v0": 0.436,
+    "v1": 0.636
+   }
+  ],
+  "merknad": "venstre del rødmalt trepanel, fra u 0.541 teglmur (#c26a4f) under samme tak; biler foran sokkelen; skilt og pil på muren til høyre"
+ },
+ {
+  "bilde": "bnr-193868045-1",
+  "id": "bnr-193868045",
+  "del": 1,
+  "deler": 3,
+  "synlig": true,
+  "vegg": "#c4706e",
+  "tak": "#c26a50",
+  "takform": "sal",
+  "etasjer": "1",
+  "piper": "0",
+  "takvinduer": "0",
+  "karmfarge": "#f2f0ea",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.852
+  },
+  "v_bakke": 0.715,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.0,
+    "u1": 0.069,
+    "v0": 0.41,
+    "v1": 0.711
+   },
+   {
+    "type": "vindu",
+    "u0": 0.486,
+    "u1": 0.539,
+    "v0": 0.465,
+    "v1": 0.625
+   },
+   {
+    "type": "vindu",
+    "u0": 0.684,
+    "u1": 0.713,
+    "v0": 0.486,
+    "v1": 0.594
+   },
+   {
+    "type": "vindu",
+    "u0": 0.783,
+    "u1": 0.801,
+    "v0": 0.496,
+    "v1": 0.576
+   },
+   {
+    "type": "vindu",
+    "u0": 0.819,
+    "u1": 0.83,
+    "v0": 0.5,
+    "v1": 0.567
+   }
+  ],
+  "merknad": "rødmalt trepanel; vinduet til venstre kuttet av bildekanten; biler dekker sokkelen, v_bakke anslått; lykt og P-skilt ved høyre ende"
+ },
+ {
+  "bilde": "bnr-193868045-2",
+  "id": "bnr-193868045",
+  "del": 2,
+  "deler": 3,
+  "synlig": true,
+  "vegg": "#c46b68",
+  "tak": "#c26a50",
+  "takform": "sal",
+  "etasjer": "1",
+  "piper": "2",
+  "takvinduer": "0",
+  "karmfarge": "#f2f0ea",
+  "hjorner": {
+   "u_venstre": 0.285,
+   "u_hoyre": null
+  },
+  "v_bakke": 0.729,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.327,
+    "u1": 0.37,
+    "v0": 0.475,
+    "v1": 0.619
+   },
+   {
+    "type": "vindu",
+    "u0": 0.487,
+    "u1": 0.56,
+    "v0": 0.454,
+    "v1": 0.647
+   }
+  ],
+  "merknad": "rødmalt trepanel; bil dekker sokkelen midt, v_bakke anslått; lykt på veggen til høyre; den ene «pipa» er en pipe med hette"
+ },
+ {
+  "bilde": "bnr-193868460-0",
+  "id": "bnr-193868460",
+  "del": 0,
+  "deler": 1,
+  "synlig": true,
+  "vegg": "#ecebe6",
+  "tak": "#5c4a3e",
+  "takform": "ikke synlig",
+  "etasjer": "1",
+  "piper": "2",
+  "takvinduer": "0",
+  "karmfarge": "#8a8466",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.789
+  },
+  "v_bakke": 0.833,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.427,
+    "u1": 0.512,
+    "v0": 0.294,
+    "v1": 0.507
+   },
+   {
+    "type": "vindu",
+    "u0": 0.661,
+    "u1": 0.709,
+    "v0": 0.364,
+    "v1": 0.514
+   },
+   {
+    "type": "port",
+    "u0": 0.1,
+    "u1": 0.272,
+    "v0": 0.632,
+    "v1": 0.965,
+    "farge": "#7d7a48"
+   }
+  ],
+  "merknad": "nærbilde; hvitkalket tegl over sokkel av granitt; stor olivengrønn kjellerport med segmentbue; to små kjelleråpninger i sokkelen ikke tatt med; treskygger på veggen"
+ },
+ {
+  "bilde": "bnr-193867499-0",
+  "id": "bnr-193867499",
+  "del": 0,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#e8e6e0",
+  "tak": "#6e4e46",
+  "takform": "ikke synlig",
+  "etasjer": "1",
+  "piper": "1",
+  "takvinduer": "1 ark",
+  "dorfarge": "#2e2a26",
+  "karmfarge": "#6b6656",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.715
+  },
+  "v_bakke": 0.653,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.09,
+    "u1": 0.207,
+    "v0": 0.257,
+    "v1": 0.424
+   },
+   {
+    "type": "vindu",
+    "u0": 0.338,
+    "u1": 0.409,
+    "v0": 0.271,
+    "v1": 0.454
+   },
+   {
+    "type": "vindu",
+    "u0": 0.477,
+    "u1": 0.523,
+    "v0": 0.315,
+    "v1": 0.468
+   },
+   {
+    "type": "vindu",
+    "u0": 0.576,
+    "u1": 0.613,
+    "v0": 0.347,
+    "v1": 0.479
+   },
+   {
+    "type": "vindu",
+    "u0": 0.655,
+    "u1": 0.686,
+    "v0": 0.372,
+    "v1": 0.489
+   },
+   {
+    "type": "dor",
+    "u0": 0.076,
+    "u1": 0.191,
+    "v0": 0.556,
+    "v1": 0.761
+   }
+  ],
+  "merknad": "bilde fra 2010; hvitkalket over høy sokkel av gråstein og tegl; mørk jerndør i sokkelen; tre små rundbuede kjelleråpninger ikke tatt med; lykt ved høyre hjørne"
+ },
+ {
+  "bilde": "bnr-193867499-1",
+  "id": "bnr-193867499",
+  "del": 1,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#f0efea",
+  "tak": "#7a5546",
+  "takform": "ikke synlig",
+  "etasjer": "1",
+  "piper": "1",
+  "takvinduer": "2 arker",
+  "karmfarge": "#8a8650",
+  "dorfarge": "#8c857a",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.869
+  },
+  "v_bakke": 0.683,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.055,
+    "u1": 0.195,
+    "v0": 0.285,
+    "v1": 0.433
+   },
+   {
+    "type": "vindu",
+    "u0": 0.289,
+    "u1": 0.375,
+    "v0": 0.239,
+    "v1": 0.453
+   },
+   {
+    "type": "vindu",
+    "u0": 0.606,
+    "u1": 0.637,
+    "v0": 0.361,
+    "v1": 0.479
+   },
+   {
+    "type": "vindu",
+    "u0": 0.663,
+    "u1": 0.688,
+    "v0": 0.382,
+    "v1": 0.486
+   },
+   {
+    "type": "vindu",
+    "u0": 0.708,
+    "u1": 0.728,
+    "v0": 0.396,
+    "v1": 0.487
+   },
+   {
+    "type": "vindu",
+    "u0": 0.743,
+    "u1": 0.759,
+    "v0": 0.407,
+    "v1": 0.49
+   },
+   {
+    "type": "vindu",
+    "u0": 0.773,
+    "u1": 0.788,
+    "v0": 0.417,
+    "v1": 0.492
+   },
+   {
+    "type": "vindu",
+    "u0": 0.801,
+    "u1": 0.813,
+    "v0": 0.428,
+    "v1": 0.496
+   },
+   {
+    "type": "vindu",
+    "u0": 0.82,
+    "u1": 0.83,
+    "v0": 0.436,
+    "v1": 0.499
+   },
+   {
+    "type": "vindu",
+    "u0": 0.838,
+    "u1": 0.846,
+    "v0": 0.444,
+    "v1": 0.501
+   },
+   {
+    "type": "vindu",
+    "u0": 0.852,
+    "u1": 0.86,
+    "v0": 0.45,
+    "v1": 0.503
+   },
+   {
+    "type": "port",
+    "u0": 0.452,
+    "u1": 0.553,
+    "v0": 0.393,
+    "v1": 0.685
+   },
+   {
+    "type": "dor",
+    "u0": 0.779,
+    "u1": 0.791,
+    "v0": 0.535,
+    "v1": 0.6
+   }
+  ],
+  "merknad": "rundbuet treport med fiskebeinsmønster og innskrift «COMMANDANTGAARDEN» over; lykt over porten; granittsokkel; liten kjellerdør ved høyre ende; to kjelleråpninger ikke tatt med"
+ },
+ {
+  "bilde": "bnr-193870309-0",
+  "id": "bnr-193870309",
+  "del": 0,
+  "deler": 1,
+  "synlig": true,
+  "vegg": "#e4dcd0",
+  "tak": "#a85a46",
+  "takform": "valm",
+  "etasjer": "1",
+  "piper": "1",
+  "takvinduer": "0",
+  "dorfarge": "#6b7448",
+  "karmfarge": "#5e6a40",
+  "hjorner": {
+   "u_venstre": 0.383,
+   "u_hoyre": 0.596
+  },
+  "v_bakke": 0.778,
+  "maalt": [
+   {
+    "type": "dor",
+    "u0": 0.391,
+    "u1": 0.466,
+    "v0": 0.364,
+    "v1": 0.794
+   },
+   {
+    "type": "vindu",
+    "u0": 0.497,
+    "u1": 0.536,
+    "v0": 0.392,
+    "v1": 0.615
+   },
+   {
+    "type": "vindu",
+    "u0": 0.55,
+    "u1": 0.578,
+    "v0": 0.411,
+    "v1": 0.597
+   }
+  ],
+  "merknad": "bilde fra 2010; lite frittstående murhus, sett på hjørnet; dobbel dør med overlys og steintrapp med to trinn; liten tavle over døra; gavlveggen til venstre uten åpninger"
+ },
+ {
+  "bilde": "bnr-193867316-0",
+  "id": "bnr-193867316",
+  "del": 0,
+  "deler": 1,
+  "synlig": false,
+  "grunn": "lastebil med åpen kasse dekker fasaden midt i bildet (bilde fra 2010)"
+ },
+ {
+  "bilde": "bnr-193867510-0",
+  "id": "bnr-193867510",
+  "del": 0,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#c9a467",
+  "tak": "#6a4a44",
+  "takform": "ikke synlig",
+  "etasjer": "1",
+  "piper": "0",
+  "takvinduer": "0",
+  "karmfarge": "#f4f4f0",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.686
+  },
+  "v_bakke": 0.722,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.178,
+    "u1": 0.33,
+    "v0": 0.308,
+    "v1": 0.653
+   },
+   {
+    "type": "vindu",
+    "u0": 0.502,
+    "u1": 0.55,
+    "v0": 0.412,
+    "v1": 0.597
+   },
+   {
+    "type": "vindu",
+    "u0": 0.624,
+    "u1": 0.645,
+    "v0": 0.451,
+    "v1": 0.578
+   }
+  ],
+  "merknad": "bilde fra 2010; gult stående trepanel på sokkel av granitt"
+ },
+ {
+  "bilde": "bnr-193867510-1",
+  "id": "bnr-193867510",
+  "del": 1,
+  "deler": 2,
+  "synlig": true,
+  "vegg": "#b8843e",
+  "tak": "#6e4a40",
+  "takform": "ikke synlig",
+  "etasjer": "1",
+  "piper": "0",
+  "takvinduer": "0",
+  "dorfarge": "#d8d8d0",
+  "karmfarge": "#a8b0a0",
+  "hjorner": {
+   "u_venstre": null,
+   "u_hoyre": 0.691
+  },
+  "v_bakke": 0.722,
+  "maalt": [
+   {
+    "type": "vindu",
+    "u0": 0.424,
+    "u1": 0.485,
+    "v0": 0.372,
+    "v1": 0.621
+   },
+   {
+    "type": "vindu",
+    "u0": 0.568,
+    "u1": 0.588,
+    "v0": 0.442,
+    "v1": 0.574
+   },
+   {
+    "type": "vindu",
+    "u0": 0.655,
+    "u1": 0.66,
+    "v0": 0.483,
+    "v1": 0.553
+   },
+   {
+    "type": "vindu",
+    "u0": 0.67,
+    "u1": 0.675,
+    "v0": 0.49,
+    "v1": 0.547
+   },
+   {
+    "type": "vindu",
+    "u0": 0.682,
+    "u1": 0.686,
+    "v0": 0.494,
+    "v1": 0.542
+   },
+   {
+    "type": "dor",
+    "u0": 0.625,
+    "u1": 0.645,
+    "v0": 0.483,
+    "v1": 0.615
+   }
+  ],
+  "merknad": "okergult stående trepanel, svært skrått; dobbel lys dør med trinn; venstre del uten åpninger i bildet"
+ }
+]

@@ -1,0 +1,47 @@
+[
+{"bilde":"bnr-6246753-0","id":"bnr-6246753","del":0,"deler":1,"synlig":true,"vegg":"#d3d7d8","tak":"#425054","takform":"ikke synlig","etasjer":"1","piper":"1","takvinduer":"0","karmfarge":"#6e4a3a","hjorner":{"u_venstre":null,"u_hoyre":null},"v_bakke":0.800,"maalt":[
+{"type":"vindu","u0":0.223,"u1":0.332,"v0":0.285,"v1":0.600},
+{"type":"vindu","u0":0.441,"u1":0.530,"v0":0.317,"v1":0.594},
+{"type":"vindu","u0":0.612,"u1":0.685,"v0":0.340,"v1":0.590},
+{"type":"vindu","u0":0.752,"u1":0.810,"v0":0.361,"v1":0.583},
+{"type":"vindu","u0":0.865,"u1":0.914,"v0":0.375,"v1":0.578},
+{"type":"vindu","u0":0.959,"u1":0.998,"v0":0.389,"v1":0.572},
+{"type":"vindu","u0":0.629,"u1":0.680,"v0":0.701,"v1":0.778},
+{"type":"vindu","u0":0.762,"u1":0.805,"v0":0.699,"v1":0.750},
+{"type":"vindu","u0":0.873,"u1":0.910,"v0":0.688,"v1":0.743}],
+"merknad":"Kasernegaten 52. Hvitmalt tegl på granittsokkel, brune vinduskarmer. De tre nederste er kjellervinduer i teglinnfatning i sokkelen. Biler dekker sokkelen; v_bakke anslått. Venstre kant (brun dør/port ved u 0-0.07) uklart om tilhører huset. Fasaden fortsetter utenfor bildet til høyre."},
+{"bilde":"bnr-193971210-0","id":"bnr-193971210","del":0,"deler":1,"synlig":true,"vegg":"#b8b9a8","tak":"#5b473c","takform":"sal","etasjer":"1","piper":"0","takvinduer":"0","hjorner":{"u_venstre":0.050,"u_hoyre":0.552},"v_bakke":0.800,"maalt":[],
+"merknad":"Langt uthus/lager med stående panel på høy granittsokkel, ingen vinduer eller dører mot gata. Skygge fra tre. Til høyre for u 0.552 fortsetter et plankegjerde uten tak bort til hvitt hus. Lyktestolpe foran ved u 0.64."},
+{"bilde":"bnr-300498849-0","id":"bnr-300498849","del":0,"deler":1,"synlig":false,"grunn":"Feil retning: midt i bildet er vei, et grantre og en lyktestolpe; huset ses bare på skrå til venstre."},
+{"bilde":"bnr-193987699-0","id":"bnr-193987699","del":0,"deler":1,"synlig":true,"vegg":"#cdcdc9","tak":"#a5503a","takform":"sal","etasjer":"1","piper":"1","takvinduer":"2 arker, 2 takluker","karmfarge":"#f2f2f0","hjorner":{"u_venstre":0.428,"u_hoyre":0.828},"v_bakke":0.503,"maalt":[
+{"type":"vindu","u0":0.500,"u1":0.541,"v0":0.357,"v1":0.465},
+{"type":"vindu","u0":0.552,"u1":0.595,"v0":0.354,"v1":0.467},
+{"type":"vindu","u0":0.616,"u1":0.681,"v0":0.386,"v1":0.476}],
+"merknad":"Hvitt hus høyt i hagen bak beskåret tre og hekk. Treet dekker venstre del; vindu ved u 0.44-0.48 bak greinene ikke tatt med. Vindu ved u 0.74-0.80 bak hvitt levegg/terrasse ikke tatt med. Bakkelinja ved hekken anslått. Grått nabohus med gavl til høyre fra u 0.828."},
+{"bilde":"bnr-193971539-0","id":"bnr-193971539","del":0,"deler":1,"synlig":true,"vegg":"#eceeee","tak":"#1e2226","takform":"vinkel","etasjer":"2","piper":"0","takvinduer":"0","karmfarge":"#f4f4f2","hjorner":{"u_venstre":0.425,"u_hoyre":null},"v_bakke":0.910,"maalt":[
+{"type":"vindu","u0":0.766,"u1":0.914,"v0":0.104,"v1":0.340},
+{"type":"vindu","u0":0.516,"u1":0.600,"v0":0.535,"v1":0.750},
+{"type":"vindu","u0":0.660,"u1":0.762,"v0":0.535,"v1":0.761}],
+"merknad":"Bings gate 22 (nr.skilt ved døra-hjørnet). Hvitt stående panel, vinduer med dekorerte overstykker. Lav fløy til venstre med svart glasert takstein og snøfanger, høyere gavlfløy til høyre. Vindu ved høyre bildekant (u 0.94-) delvis utenfor, ikke tatt med. Hvit bod/uthus til venstre ikke tatt med."},
+{"bilde":"bnr-193820956-0","id":"bnr-193820956","del":0,"deler":1,"synlig":false,"grunn":"Kameraet står helt inntil veggen: bare et utsnitt av pusset vegg med villvin og ett vindu, verken hjørner, bakke eller tak synlig."},
+{"bilde":"bnr-193820824-0","id":"bnr-193820824","del":0,"deler":1,"synlig":false,"grunn":"Huset midt i bildet (lite okerfarget hus/uthus) er dekket av stor busk og høyt plankegjerde; bil i forgrunnen."},
+{"bilde":"bnr-193820530-0","id":"bnr-193820530","del":0,"deler":1,"synlig":false,"grunn":"Hele midten av bildet er dekket av tett busk og tre."},
+{"bilde":"bnr-193820557-0","id":"bnr-193820557","del":0,"deler":1,"synlig":false,"grunn":"Ikke hus i midten: hage, stakittgjerde, murvegg og et lite uthus/paviljong; bolighusene står i kantene."},
+{"bilde":"bnr-16293962-0","id":"bnr-16293962","del":0,"deler":1,"synlig":true,"vegg":"#eceae4","tak":"#5a5d64","takform":"valm","etasjer":"1","piper":"0","takvinduer":"1 ark (på gavlenden)","karmfarge":"#f2f2ee","hjorner":{"u_venstre":0.408,"u_hoyre":0.617},"v_bakke":0.665,"maalt":[
+{"type":"vindu","u0":0.424,"u1":0.439,"v0":0.489,"v1":0.576},
+{"type":"vindu","u0":0.460,"u1":0.477,"v0":0.479,"v1":0.579},
+{"type":"vindu","u0":0.559,"u1":0.584,"v0":0.469,"v1":0.583},
+{"type":"vindu","u0":0.461,"u1":0.477,"v0":0.628,"v1":0.644},
+{"type":"vindu","u0":0.559,"u1":0.584,"v0":0.650,"v1":0.675}],
+"merknad":"Fredrikstad Kunstforening (skilt på gavlenden). Langveggen ses på skrå. Vindu ved u 0.50-0.52 delvis bak trestamme, ikke tatt med. To nederste er kjellervinduer. Trær foran og sterkt motlys. Gavlenden til høyre (u 0.617-0.754) med ark, vindu og skilt er ikke tatt med."},
+{"bilde":"bnr-13416400-0","id":"bnr-13416400","del":0,"deler":1,"synlig":true,"vegg":"#d9d9db","tak":"ikke synlig","takform":"ikke synlig","etasjer":"2","piper":"0","takvinduer":"0","dorfarge":"#4e5a44","karmfarge":"#4a5a40","hjorner":{"u_venstre":null,"u_hoyre":null},"v_bakke":0.860,"maalt":[
+{"type":"vindu","u0":0.353,"u1":0.387,"v0":0.313,"v1":0.403},
+{"type":"vindu","u0":0.352,"u1":0.383,"v0":0.489,"v1":0.569},
+{"type":"vindu","u0":0.410,"u1":0.492,"v0":0.178,"v1":0.350},
+{"type":"vindu","u0":0.406,"u1":0.491,"v0":0.463,"v1":0.597},
+{"type":"vindu","u0":0.566,"u1":0.652,"v0":0.014,"v1":0.208},
+{"type":"vindu","u0":0.566,"u1":0.660,"v0":0.243,"v1":0.493},
+{"type":"dor","u0":0.569,"u1":0.664,"v0":0.563,"v1":0.958}],
+"merknad":"Hvitpusset bygård, svært nært og på skrå (vidvinkel). Grønn dør med betongbaldakin; vinduene over døra er trappehusvinduer i halvetasjer. Kjellervinduer/ventiler i sokkelen ikke tatt med. Stort vindu ved høyre bildekant (u 0.91-) delvis utenfor, ikke tatt med. Ingen hjørner synlige."},
+{"bilde":"bnr-13416265-1","id":"bnr-13416265","del":1,"deler":2,"synlig":false,"grunn":"Ikke hus i midten: kameraet ser inn i et smug/en gang mellom to bygg."}
+]

@@ -1,6 +1,7 @@
 #!/bin/sh
 # Legger kartet ut på GitHub Pages (grenen gh-pages). To veier, og ingen av dem kan bytte feil adresse:
 #   sh publiser.sh prove     -> bare /prove/ byttes (ett-fils-bygget). Forsiden og /backup/ står som de står på gh-pages.
+#   sh publiser.sh prove1    -> bare /prove1/ byttes (07.11, Vegar: nattens «the basics» på egen adresse ved siden av /prove/)
 #   sh publiser.sh forside   -> forsiden byttes (server-bygget) og /prove/ får samme bygg. Den gamle forsiden flyttes til
 #                               /backup/v<versjon>-<dato>/ og føres i lista. Krever Vegars ja og en grønn maskinsjekk (rapport/maskin.json)
 #                               fra hans Chrome mot akkurat denne kilden (verktoy/maskin-sjekk.js, LESMEG «Maskinsjekken»).
@@ -9,7 +10,8 @@ set -e
 export TZ=Europe/Oslo
 ROT=$(cd "$(dirname "$0")" && pwd)
 MODUS="$1"
-if [ "$MODUS" != "prove" ] && [ "$MODUS" != "forside" ]; then echo "bruk: sh publiser.sh prove | forside"; exit 1; fi
+if [ "$MODUS" != "prove" ] && [ "$MODUS" != "prove1" ] && [ "$MODUS" != "forside" ]; then echo "bruk: sh publiser.sh prove | prove1 | forside"; exit 1; fi
+PROVE=prove; [ "$MODUS" = "prove1" ] && PROVE=prove1
 # Sperre: ingen publisering uten fersk samlerapport kjørt mot akkurat denne kilden (regler/kjor.py). På /prove/ slipper røde regler
 # gjennom, men listes; forsiden stopper på røde regler utenom 09 (publisert versjon er alltid gammel rett før en ny publisering).
 HASH=$(git -C "$ROT" log -1 --format=%h -- src data regler bygg.py datalag.py assets); URETTET=$(git -C "$ROT" status --porcelain -- src data regler bygg.py datalag.py assets)
@@ -18,7 +20,7 @@ if [ -n "$URETTET" ]; then echo "STOPP: urettede endringer i kilden; commit før
 if ! grep -q "^Kilde: $HASH versjon $VERSJON " "$RAPP" 2>/dev/null; then echo "STOPP: rapport/rapport.md er ikke kjørt mot $HASH (kjør: PYTHONPATH=regler python3 regler/kjor.py)"; exit 1; fi
 RODE=$(grep "^- FEIL" "$RAPP" | grep -v " 09_publisert " || true)
 if [ -n "$RODE" ]; then
-  if [ "$MODUS" = "prove" ] || [ -n "$TILLAT_RODE" ]; then echo "røde regler går ut (${TILLAT_RODE:-prove}):"; echo "$RODE"; else echo "STOPP: røde regler (TILLAT_RODE='<Vegars ja>' når han har bestemt det):"; echo "$RODE"; exit 1; fi
+  if [ "$MODUS" != "forside" ] || [ -n "$TILLAT_RODE" ]; then echo "røde regler går ut (${TILLAT_RODE:-prove}):"; echo "$RODE"; else echo "STOPP: røde regler (TILLAT_RODE='<Vegars ja>' når han har bestemt det):"; echo "$RODE"; exit 1; fi
 fi
 if [ "$MODUS" = "forside" ]; then
   python3 - "$ROT/rapport/maskin.json" "$HASH" <<'PY' || exit 1
@@ -38,7 +40,7 @@ cd "$TMP"
 git checkout -q --orphan "$GREN"
 git rm -rfq . >/dev/null 2>&1 || true
 git -C "$ROT" archive origin/gh-pages | tar -x -C "$TMP"          # det som ligger ute nå
-mkdir -p prove; cp "$ROT/ut/enkel/index.html" prove/index.html
+mkdir -p "$PROVE"; cp "$ROT/ut/enkel/index.html" "$PROVE/index.html"
 if [ "$MODUS" = "forside" ]; then
   B="backup/v$VERSJON-$(date +%d%b | tr 'A-Z' 'a-z')"; [ -e "$B" ] && B="$B-$(date +%H%M)"; mkdir -p "$B"
   for f in $(ls -A | grep -v -x -e prove -e backup -e .nojekyll -e .git); do mv "$f" "$B/"; done
@@ -58,9 +60,9 @@ git push -f origin "$GREN:gh-pages"
 cd "$ROT"; git worktree remove --force "$TMP"; git branch -q -D "$GREN"
 git branch -q -D gh-pages 2>/dev/null || true
 # venter til /prove/ viser den nye kilden (23.10: publiseringen stoppet stille og Pages stod på en gammel versjon hele kvelden)
-URL="https://pageblack-official.github.io/fredrikstad-fortress-town/prove/"
+URL="https://pageblack-official.github.io/fredrikstad-fortress-town/$PROVE/"
 for i in $(seq 1 40); do
   curl -s -A sot-publiser "$URL?n=$i$$" | grep -q "name=\"kilde\" content=\"$HASH\"" && { echo "publisert gh-pages ($MODUS), versjon $VERSJON, kilde $HASH (sjekket ute etter $((i * 15)) s)"; exit 0; }
   sleep 15
 done
-echo "STOPP: pushet til gh-pages, men /prove/ viser ikke kilde $HASH etter 10 min (sjekk GitHub Pages)"; exit 1
+echo "STOPP: pushet til gh-pages, men /$PROVE/ viser ikke kilde $HASH etter 10 min (sjekk GitHub Pages)"; exit 1

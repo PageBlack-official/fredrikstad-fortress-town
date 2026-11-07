@@ -77,8 +77,18 @@
    -12,
    296
   ],
-  "sekunder": 4.4,
-  "om": "Introsveipet starter med kameraet over elva ved fergas bane (fra, modellkoordinater) og glir inn til hjemmevisningen mens det svinger (Vegar 03.11: «panorert lengre og kulere», ferga i sveipet). Sluttbildet er låst som før. Uten denne står kameraet stille over START hele sveipet."
+  "sekunder": 5.2,
+  "om": "Introsveipet starter med kameraet over elva ved fergas bane (fra, modellkoordinater) og glir inn til hjemmevisningen mens det svinger (Vegar 03.11: «panorert lengre og kulere», ferga i sveipet). Sluttbildet er låst som før. Uten denne står kameraet stille over START hele sveipet.",
+  "kran": {
+   "mot": [
+    -4,
+    205
+   ],
+   "faktor": 2.6,
+   "pitch": 72,
+   "bearing": 180,
+   "om": "Kranløftet 07.11: kameraet lavt over elva bak ferga, ser sørover mot vollen; ett løft til hjemmevisningen (src/15_loop.js)."
+  }
  },
  "entur": {
   "url": "https://api.entur.io/journey-planner/v3/graphql",

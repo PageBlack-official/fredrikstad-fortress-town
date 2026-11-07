@@ -8,15 +8,21 @@ import { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, flatGruppe, 
 import { buildings, bygKirke } from './06_kirka-bygget-etter-2017.js';
 // ---- vinduer, dører og porter: plassering og størrelse fra Vegars kvartaltegninger (etter/42_fasader.py); alt tegnes her ----
 const VIND_GEO=new THREE.PlaneGeometry(1,1); VIND_GEO.translate(0,0,0);
+// Fargepaletten for dører og karmer (07.11, gatevandringen): husets dor_farge/karm_farge og elementets egen farge (13. plass).
+const PAL_N=64, PAL=[], PAL_IX={};
+function palIx(hex){ if(!hex || typeof hex!=='string') return 0; const k=hex.toLowerCase(); if(PAL_IX[k]!==undefined) return PAL_IX[k];
+  if(PAL.length>=PAL_N) return 0; const c=new THREE.Color(k); PAL.push(new THREE.Vector3(c.r,c.g,c.b)); return (PAL_IX[k]=PAL.length); }
+(DATA.bygg||[]).forEach(b=>{ palIx(b.dor_farge); palIx(b.karm_farge); (b.vind||[]).forEach(v=>palIx(v[12])); });
+while(PAL.length<PAL_N) PAL.push(new THREE.Vector3());
 const vindMat=new THREE.ShaderMaterial({
   lights:true,
-  uniforms:Object.assign({tHus:U_HUS}, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+  uniforms:Object.assign({tHus:U_HUS, uPal:{value:PAL}}, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
   vertexShader:GL_SOL_V+GL_HUS_V+`attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
     void main(){ vUv=uv; vInfo=aInfo; vSz=vec2(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz));
       vN=normalize(mat3(modelMatrix)*aNorm);
       vec4 wp=modelMatrix*vec4(husPos((instanceMatrix*vec4(position,1.)).xyz),1.);
       gl_Position=projectionMatrix*viewMatrix*wp;`+glSolVMain('wp','vN')+`}`,
-  fragmentShader:GL_SOL_F+`varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+  fragmentShader:GL_SOL_F+`uniform vec3 uPal[64]; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
     void main(){
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
@@ -33,6 +39,8 @@ const vindMat=new THREE.ShaderMaterial({
       else if(typ<0.5 && bue>1.5){ float st=min(vSz.y*0.3,vSz.x*0.25), R=(vSz.x*vSz.x*0.25+st*st)/(2.*st); if(m.y>vSz.y-st) kant=min(kant, R-length(vec2(m.x-vSz.x*0.5,m.y-(vSz.y-R)))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
+      int pix=int(vInfo.w+0.5)-1; vec3 pf=pix>=0 ? uPal[pix] : vec3(0.);
+      if(pix>=0 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.62*KALD, pf*sf, lit);     // karmfarge lest fra gata
       vec3 c;
       if(typ<0.5 || typ>2.5){
         float ramme=0.08;
@@ -54,6 +62,7 @@ const vindMat=new THREE.ShaderMaterial({
       } else {
         vec3 dorf=mix(vec3(0.24,0.18,0.15), vec3(0.36,0.26,0.20)*sf, lit);
         if(typ>1.5) dorf=mix(vec3(0.14,0.13,0.13), vec3(0.22,0.20,0.19), lit);
+        if(pix>=0) dorf=mix(pf*0.62, pf*sf, lit);                                   // dørfarge lest fra gata
         c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
         c=mix(c, dorf*0.75, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.6);
         if(bue>1.5){   // grønn fløydør med overlys (bue=2, Kaserna etter ombyggingen)
@@ -73,7 +82,7 @@ const vindMat=new THREE.ShaderMaterial({
 });
 const _X=new THREE.Vector3(), _Y=new THREE.Vector3(0,1,0), _Z=new THREE.Vector3(), _M=new THREE.Matrix4();
 // vinduer for ett bygg: instansmatriser + info. aBygg = byggindeks + 1 (0 = ikke et bygg), så løft og vekst leses fra hus-teksturen
-function vindusData(V, i){
+function vindusData(V, i, b){
   const mats=[], info=new Float32Array(V.length*4), nrm=new Float32Array(V.length*3), bygg=new Float32Array(V.length).fill(i+1);
   V.forEach((v,k)=>{
     const [x,y,z,tx,ty,nx,ny,w,h,typ,bue,ant]=v;
@@ -81,7 +90,7 @@ function vindusData(V, i){
     _M.makeBasis(_X.clone().multiplyScalar(w), _Y.clone().multiplyScalar(h), _Z);
     _M.setPosition(x+nx*0.05, z, -(y+ny*0.05));
     mats.push(_M.clone());
-    info.set([typ,bue,ant,0],k*4); nrm.set([nx,0,-ny],k*3);
+    info.set([typ,bue,ant,palIx(v[12]) || palIx(b && (typ>0.5 && typ<2.5 ? b.dor_farge : b.karm_farge))],k*4); nrm.set([nx,0,-ny],k*3);
   });
   return {mats, info, nrm, bygg};
 }
@@ -404,7 +413,7 @@ DATA.bygg.forEach((b,i)=>{
         legg(new THREE.Mesh(g,mat(c,false))); });
     });
   }
-  if(b.vind && b.vind.length && !dim){ const vd=vindusData(b.vind, spesiell?-1:i); if(spesiell) grp.add(lagVinduer([vd])); else vinduSamling.push(vd); }
+  if(b.vind && b.vind.length && !dim){ const vd=vindusData(b.vind, spesiell?-1:i, b); if(spesiell) grp.add(lagVinduer([vd])); else vinduSamling.push(vd); }
   grp.userData={i, b, h, spesiell};
   if(spesiell){ flatGruppe(grp); city.add(grp); }
   buildings.push(grp);

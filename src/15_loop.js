@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { SENERE, TILSTAND, registrer } from './tilstand.js';
-import { AZ0_GRADER, BERORING, DATA, PITCH0, Q0, SOL_FAST, STIL, Z_HJEM, cam, kam, map, renderer, scene, tilLngLat, zoomFor } from './00_oppsett.js';
+import { AZ0_GRADER, BERORING, DATA, PITCH0, Q0, SOL_FAST, STIL, Z_HJEM, cam, kam, map, renderer, scene, tilLngLat, tilModell, zoomFor } from './00_oppsett.js';
 import { MAALT, post } from './01_etterbehandling.js';
 import { GRAD, U_SKRAVUR, U_SOL, _sd, kobleSol, lysFraVenstre, oppdaterSol, setSol } from './02_lys.js';
 import { KVAL, byttNivaaNaarStille, maalYtelse } from './kvalitet.js';
@@ -33,12 +33,35 @@ const hjemVisning=()=>({center: tilLngLat(START[0],START[1]), zoom: Z_HJEM, bear
 const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 
 // intro: starter høyere og nærmere, og svinger 110° inn mot plakatvinkelen mens byen vokser opp
+// Kranløftet (07.11, Claudes idé, valgt av Vegar): kameraet starter lavt over elva bak ferga og ser mot vollen; ett sammenhengende
+// løft opp langs vollen, byen avsløres bak vollkanten mens husene vokser. Ingen klipp, ingen flare. data/ferge.json intro.kran:
+// {mot: punktet kameraet ser mot (modell), faktor: zoomfaktor ved start, pitch, bearing}. ?kran=0 gir det forrige sveipet.
+const KRAN = (INTRO.kran && Q0.get('kran')!=='0') ? INTRO.kran : null;
+const REDUSERT = matchMedia('(prefers-reduced-motion: reduce)').matches;
 function startIntro(){
-  map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0}); introStartet=true; introKjort=true; SENERE.ferge.intro(SPIN*1000);
+  if(REDUSERT){ hoppOver(true); return; }
+  if(KRAN){ const m=KRAN.mot||INTRO_FRA; map.jumpTo({center: tilLngLat(m[0],m[1]), zoom: zoomFor(KRAN.faktor||2.4), bearing: KRAN.bearing!=null?KRAN.bearing:-(AZ0_GRADER+SVEIP), pitch: KRAN.pitch||72}); }
+  else map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
+  introStartet=true; introKjort=true; SENERE.ferge.intro(SPIN*1000); visHopp(true);
   map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
-  map.once('moveend', ()=>{ if(!TILSTAND.introDone){ TILSTAND.introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
+  map.once('moveend', ()=>{ visHopp(false); if(!TILSTAND.introDone){ TILSTAND.introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
-function overta(){ if(TILSTAND.introDone) return; TILSTAND.introDone=true; map.stop(); }
+function overta(){ visHopp(false); if(TILSTAND.introDone) return; TILSTAND.introDone=true; map.stop(); }
+// «Hopp over» (07.11): knappen står nede til høyre mens introen går. Hopper rett til hjemmevisningen med byen ferdig vokst og sola
+// på plass. Redusert bevegelse (systeminnstillingen) gjør det samme uten kamerabevegelse, og byen toner inn på 0,9 s.
+let hoppKnapp=null;
+function visHopp(paa){
+  if(paa && !hoppKnapp){ hoppKnapp=document.createElement('button'); hoppKnapp.id='hopp'; hoppKnapp.type='button'; hoppKnapp.textContent='Hopp over';
+    hoppKnapp.onclick=e=>{ e.stopPropagation(); hoppOver(false); }; document.body.appendChild(hoppKnapp); }
+  if(hoppKnapp) hoppKnapp.classList.toggle('synlig', !!paa);
+}
+function hoppOver(tone){
+  map.stop(); visHopp(false); introStartet=true; introKjort=true; TILSTAND.introDone=true; vokst=true;
+  buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null);
+  if(!solVei.ferdig) solTil(1);
+  map.jumpTo(hjemVisning());
+  if(tone){ const c=map.getCanvasContainer(); c.style.opacity='0'; c.style.transition='opacity .9s ease'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ c.style.opacity='1'; })); }
+}
 // introen om igjen (Vegar: «når man klikker på hele byen ønsker jeg at introen starter igjen»): samme løp som ved lasting,
 // husene vokser opp, sola finner byen, ferga krysser. Kortet lukkes og huset slippes først (16_interaksjon kaller hit).
 function introIgjen(){
@@ -163,6 +186,24 @@ map.on('load', ()=>{
 window.__skjerm=(x,z)=>{ const v=new THREE.Vector3(x,0,z).project(cam); return [(v.x+1)/2*innerWidth, (1-v.y)/2*innerHeight]; };
 window.__kam=()=>{ const v=vinkler(); let vs=null; if(SENERE.valgt){ const c=SENERE.husBoks(SENERE.valgt).getCenter(new THREE.Vector3()); vs=window.__skjerm(c.x,c.z); } return {x:kam.senter.x,z:kam.senter.z,zoom:kam.zoomfaktor,az:v.az,pol:v.pol,anim:map.isMoving(),valgt:vs,intro:!TILSTAND.introDone,t:clock.getElapsedTime(),oye:kam.oye.toArray(), naer:kam.naer, fjern:kam.fjern, fov:kam.fov, mpp:kam.mpp}; };
 window.__vis=(az,zoom,tx,ty)=>{ introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({center: tilLngLat(tx,ty), zoom: zoomFor(zoom), bearing: -az, pitch: PITCH0}); };
+
+// Gatekamera (06.11, verktoy/gatekamera.mjs): kartet fra øyehøyde på et Street View-punkt. Bare for testverktøy; brukeren når det aldri.
+// Street View-tallene går rett inn: heading = kompassretning, pitch 90 = vannrett, fov = vannrett synsvinkel. Bakken finnes med en stråle ned i scenen.
+const _gateStraale=new THREE.Raycaster();
+window.__gate=({lat,lon,heading,pitch=90,fov=75,oye=2.5})=>{
+  introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null);
+  const [x,y]=tilModell([lon,lat]);
+  _gateStraale.set(new THREE.Vector3(x,400,-y), new THREE.Vector3(0,-1,0));
+  const treff=_gateStraale.intersectObjects(scene.children,true).filter(t=>t.object.visible&&!t.object.isInstancedMesh);
+  const bakke=treff.length?treff[treff.length-1].point.y:0;   // laveste treff = bakken (ikke trekroner eller tak)
+  const vfov=2*Math.atan(Math.tan(fov*Math.PI/360)*innerHeight/innerWidth)*180/Math.PI;
+  map.setMaxBounds(null); map.setMinZoom(0); map.setMaxZoom(24); map.setMinPitch(0); map.setMaxPitch(110);   // uten grenser: et senterpunkt langt fram (nesten vannrett blikk) skal ikke flytte kameraet map.setVerticalFieldOfView(vfov);
+  map.jumpTo(map.calculateCameraOptionsFromCameraLngLatAltRotation({lng:lon,lat}, bakke+oye, heading, pitch));
+  return {x,y,bakke,hoyde:bakke+oye,vfov,treff:treff.length};
+};
+window.__gateKamera=()=>{ const c=map.getCenter(); return [c.lng.toFixed(7),c.lat.toFixed(7),map.getZoom().toFixed(3),map.getPitch().toFixed(2),map.getBearing().toFixed(2)]; };
+window.__gateHus=()=>DATA.bygg.map(b=>{ if(!b.p||b.skjul) return null; const n=b.p.length; const cx=b.p.reduce((a,q)=>a+q[0],0)/n, cy=b.p.reduce((a,q)=>a+q[1],0)/n;
+  const s=map.project(tilLngLat(cx,cy)); return (s.x>=0&&s.x<=innerWidth&&s.y>=0&&s.y<=innerHeight)?{id:b.id,navn:b.navn||null,skjerm:[Math.round(s.x),Math.round(s.y)]}:null; }).filter(Boolean);
 window.__kontakt=v=>{ kontaktMat.uniforms.styrke.value=v; map.triggerRepaint(); };   // regel 12: av/på i samme økt, samme kamera og skyggekart
 window.__scene=()=>({scene, city});
 window.__speil=()=>({styrke:waterMat.uniforms.reflStyrke.value, maal:TILSTAND.introDone?speilStyrke():0, alder:performance.now()-(speil.sist||0), synlig:SENERE.vannISyne()});   // flyt-test: speilet i fart   // feilsøk: tell objekter i scenen (verktoy/tell.mjs)

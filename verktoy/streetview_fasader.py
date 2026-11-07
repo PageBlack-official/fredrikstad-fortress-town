@@ -164,6 +164,13 @@ def les_dorer(t):
             continue
         if not re.search(DORORD, d) and not posisjoner(d):
             continue
+        if not re.search(DORORD, d) and dorer and dorer[-1][0] is None:
+            # «1 rød dør, midt-venstre»: plassen står etter kommaet og hører til døra foran (06.11: før dette ble den lest som en
+            # egen standarddør, kuttet bort av antallet, og døra havnet midt på veggen; Voldgaten 8 og 9)
+            m = re.search(r'(\d\.\d+)\s*[–-]\s*(\d\.\d+)', d) or re.search(r'ca\.?\s*(\d\.\d+)', d)
+            # «ca. 0.45–0.70 av synlig vegg»: tallet er mer presist enn ordet (høyre = 0,8)
+            dorer[-1][0] = (sum(float(g) for g in m.groups()) / len(m.groups())) if m else posisjoner(d)[0]
+            continue
         ps = posisjoner(re.sub(r'\(.*?\)', '', d)) or posisjoner(d) or [None]
         for p in (ps if (n and len(ps) > 1) or 'hjørne' in d or ' og ' in d else ps[:1]):
             dorer.append([p, *dorslag(d)])
@@ -379,8 +386,10 @@ def velg(N, k, lov, stotte):
     return c, rytme(c)
 
 
-def lag_fasade(x, w, P, rader, dorer, stor):
-    """Elementene på gateveggen w. Gir (vind, info)."""
+def lag_fasade(x, w, P, rader, dorer, stor, streng=False):
+    """Elementene på gateveggen w. Gir (vind, info).
+    streng (gatevandringen, 06.11): døra må stå på aksen nærmest plassen som er lest; går ikke det, prøves bredere kantmarg
+    (Voldgaten 9: porten «helt til venstre» havnet på akse 2 fordi akse 1 ved hjørnet var for trang for 2,4 m)."""
     h = x['h']; L = w['L']
     hoyder, dropp = radhoyder(rader, h, stor)
     rader = rader[:len(hoyder)]                 # kjellerraden står først; det som ikke får plass, faller fra toppen
@@ -418,6 +427,8 @@ def lag_fasade(x, w, P, rader, dorer, stor):
                         db2 = max(0.9, min(db, 2 * (cc - R['vb'] / 2 - 0.15))) if n > 1 else db
                         kand = sorted((abs(t - mal), i) for i, t in enumerate(ts) if i not in tatt and ledig(t, db2) and hj(t, db2))
                         if not kand:
+                            break
+                        if streng and kand[0][1] != min((abs(t - mal), i) for i, t in enumerate(ts) if i not in tatt)[1]:
                             break
                         i = kand[0][1]; tatt.add(i); dp.append((i, db2, min(dh, h - R['gesims'] - 0.1), typ))
                     if len(dp) == nd:
