@@ -33,6 +33,8 @@ def main(tørt):
     nye, logg = [], []
     dato = __import__('datetime').date.today().isoformat()
     for id_, rr in per_hus.items():
+        # hus med eget fasadeverktøy (datalag.EGNE_FASADER, f.eks. Kaserna) eies av det verktøyet (regel 37)
+        if id_ in datalag.EGNE_FASADER: logg.append(f'{id_}: eget verktøy ({datalag.EGNE_FASADER[id_]}), hoppet over'); continue
         x = B.get(id_)
         if x is None: logg.append(f'{id_}: finnes ikke'); continue
         P = np.array(x['p'], float); V = VG.vegger(x, omg, slaa_sammen=True)
@@ -42,6 +44,9 @@ def main(tørt):
             w = V[r['vegg']]; n = np.array(w['n'], float); lest.add(r['vegg'])
             for e in r['elementer']:
                 s0, s1, z0, z1 = (float(e[k]) for k in ('s0', 's1', 'z0', 'z1'))
+                # det rettede bildet slutter ved takfoten, så karmen kan leses helt opp til den; datalag fjerner vinduer
+                # som når over h - 0,1 (A13). Karmen kappes 0,15 m under takfoten (07.11: 2. etg forsvant på Kirkegata 26).
+                z1 = min(z1, float(x['h']) - 0.15)
                 if s1 - s0 < 0.25 or z1 - z0 < 0.25: continue
                 el = VR.element(P, a + u * (s0 + s1) / 2, round(s1 - s0, 2), n, round((z0 + z1) / 2, 2), round(s1 - s0, 2), round(z1 - z0, 2), TYP.get(e['type'], 0))
                 if e.get('bue'): el[10] = int(e['bue'])
