@@ -312,6 +312,11 @@ def kjor(tørt=False):
                 if vind0:
                     z0 = min(e[2] for e in vind0); bred = min(2.0, max(0.85, info.get('cc', 2.0) - 0.5))
                     gate = [list(e[:2]) + [1.55] + list(e[3:7]) + [round(bred, 2), 2.1] + list(e[9:]) if (e[9] == 0 and abs(e[2] - z0) < 0.01) else e for e in gate]
+                    # kantsjekk (Vegar 06.11: venstre butikkvindu i Voldportgaten 75 gikk inn i Voldgaten 9): smalere til hjørneklaringen holder
+                    for e in gate:
+                        if e[9] == 0 and abs(e[2] - 1.55) < 0.01 and abs(e[8] - 2.1) < 0.01:
+                            while e[7] > 0.6 and not VR.hjorne_ok(P, np.array(e[:2], float), e[7]):
+                                e[7] = round(e[7] - 0.05, 2)
                     info['butikkvinduer'] = sum(1 for e in vind0 if abs(e[2] - z0) < 0.01)
             resten = [e for e in (x.get('vind') or []) if VG.naermeste_vegg(V, np.array(e[:2]))[0] != wi]
             linjer += [('vind', resten + gate), ('fasade_kilde', 'gatevandring'),

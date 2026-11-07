@@ -37,13 +37,13 @@ const HOME={target:new THREE.Vector3(START[0],0,-START[1])};
 // løft opp langs vollen, byen avsløres bak vollkanten mens husene vokser. Ingen klipp, ingen flare. data/ferge.json intro.kran:
 // {mot: punktet kameraet ser mot (modell), faktor: zoomfaktor ved start, pitch, bearing}. ?kran=0 gir det forrige sveipet.
 const KRAN = (INTRO.kran && Q0.get('kran')!=='0') ? INTRO.kran : null;
-const REDUSERT = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const REDUSERT = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function startIntro(){
   if(REDUSERT){ hoppOver(true); return; }
   if(KRAN){ const m=KRAN.mot||INTRO_FRA; map.jumpTo({center: tilLngLat(m[0],m[1]), zoom: zoomFor(KRAN.faktor||2.4), bearing: KRAN.bearing!=null?KRAN.bearing:-(AZ0_GRADER+SVEIP), pitch: KRAN.pitch||72}); }
   else map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
   introStartet=true; introKjort=true; SENERE.ferge.intro(SPIN*1000); visHopp(true);
-  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
+  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: KRAN ? (t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ visHopp(false); if(!TILSTAND.introDone){ TILSTAND.introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ visHopp(false); if(TILSTAND.introDone) return; TILSTAND.introDone=true; map.stop(); }
