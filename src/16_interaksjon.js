@@ -24,9 +24,14 @@ function byggFraTreff(hit){
   for(const [i,deler] of husDeler){ for(const d of deler){ if(d.mesh===hit.object && f>=d.start && f<d.start+d.antall) return buildings.find(g=>g.userData.i===i); } }
   let g=hit.object; while(g.parent && g.parent!==city) g=g.parent; return g.parent===city && g.userData && g.userData.b ? g : null;
 }
-function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam);
+// city.updateMatrixWorld: egne grupper (kirka, porthus) står på husfoten via gruppa (07.11); uten tegning (?tegn=0, flyt-testen) blir
+// gruppenes verdensmatrise ellers aldri regnet, og strålen bommer
+function treffHus(x,y){ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam); city.updateMatrixWorld();
   const hit=ray.intersectObjects(city.children,true).find(h=>h.object.isMesh); if(!hit) return null;
   const g=byggFraTreff(hit); return g ? {g, p:hit.point} : null; }
+// testinngang (07.11): hva treffer et klikk i skjermpunktet (x, y)? Navn/id på de fem nærmeste treffene
+window.__treff=(x,y)=>{ ptr.set(x/innerWidth*2-1, -(y/innerHeight)*2+1); ray.setFromCamera(ptr,cam); city.updateMatrixWorld();
+  return ray.intersectObjects(city.children,true).filter(h=>h.object.isMesh).slice(0,5).map(h=>{ const g=byggFraTreff(h); return {obj:h.object.type+(h.object.isInstancedMesh?'I':''), y:+h.point.y.toFixed(2), d:+h.distance.toFixed(1), bygg:g&&g.userData.b?(g.userData.b.id||g.userData.b.navn):null}; }); };
 // bygget som boks (til kamera og kort): egne grupper måles, sammenslåtte bygg regnes ut fra grunnrisset og høyden
 function husBoks(g){ if(g.userData.spesiell || !g.userData.b || !g.userData.b.p) return new THREE.Box3().setFromObject(g);
   const bb=new THREE.Box3(); const f=g.userData.fot||0; g.userData.b.p.forEach(([x,y])=>{ bb.expandByPoint(new THREE.Vector3(x,f,-y)); bb.expandByPoint(new THREE.Vector3(x,f+g.userData.h+g.position.y,-y)); }); return bb; }
