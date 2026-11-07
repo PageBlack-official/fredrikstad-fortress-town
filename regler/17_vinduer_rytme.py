@@ -26,7 +26,9 @@ for i, x in gamleby(b):
     hus += 1; V = VG.vegger(x, omg, slaa_sammen=True); gi, _ = VG.gatesiden(V)
     svk = {VG.naermeste_vegg(V, np.array(q['vegg']))[0] for q in (x['fasade_sv'].get('sider') or [x['fasade_sv']])} if sv and x.get('fasade_sv') else set()
     per = {}
+    rett = set(x.get('fasade_rett') or [])   # vegger lest i meter fra rettet Street View (08.11): virkeligheten, ikke rytmeregelen
     for v in x['vind']:
+        if rett and VG.naermeste_vegg(V, np.array(v[:2]))[0] in rett: continue
         n_vind += v[9] == 0; n_dor += v[9] == 1
         q = np.array(v[:2]); k, t = VG.naermeste_vegg(V, q)
         if v[2] + v[8] / 2 > x['h'] - 0.3 + 1e-6:

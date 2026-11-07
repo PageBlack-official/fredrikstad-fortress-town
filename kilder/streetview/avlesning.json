@@ -685,6 +685,19 @@
     "bilde_dato": "apr. 2010",
     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2032954,10.9468324&heading=282&pitch=6&fov=90",
     "kilde": "overført fra den første avlesningen (samme bilde); felter som ikke ble lest da, står tomme"
+   },
+   {
+    "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193867448-2)",
+    "vegg_farge": "umalt tegl",
+    "vegg_rgb": [
+     65,
+     39,
+     40
+    ],
+    "lys": "skygge",
+    "bilde_dato": "apr. 2010",
+    "pano_url": "59.2031534, 10.9469124 h 326.9",
+    "kilde": "rettet fasade 07.11"
    }
   ]
  },
@@ -747,6 +760,19 @@
     "bilde_dato": "apr. 2010",
     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2032097,10.9462389&heading=169&pitch=6&fov=75",
     "kilde": "overført fra den første avlesningen (samme bilde); felter som ikke ble lest da, står tomme"
+   },
+   {
+    "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193867421-0)",
+    "vegg_farge": "grå",
+    "vegg_rgb": [
+     94,
+     95,
+     103
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2010",
+    "pano_url": "59.2031874, 10.9460673 h 109.6",
+    "kilde": "rettet fasade 07.11"
    }
   ]
  },
@@ -2402,6 +2428,19 @@
     "bilde_dato": "mai 2024",
     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2065654,10.9452405&heading=23&pitch=6&fov=90",
     "kilde": "overført fra den første avlesningen (samme bilde); felter som ikke ble lest da, står tomme"
+   },
+   {
+    "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-13416419-3)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     214,
+     216,
+     219
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2065654, 10.9452405 h 32.8",
+    "kilde": "rettet fasade 07.11"
    }
   ]
  },
@@ -2790,6 +2829,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-194006187_V.jpg",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2038755,10.9531746 h21"
+   },
+   {
+    "retning": "rettet fasade, vegg 1 (verktoy/rett, bnr-194006187-1)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     225,
+     225,
+     228
+    ],
+    "lys": "sol",
+    "bilde_dato": "aug. 2010",
+    "pano_url": "59.2038633, 10.9532568 h 55.1",
+    "kilde": "rettet fasade 07.11"
    }
   ]
  },
@@ -3310,6 +3362,19 @@
     "lys": "sol",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2044596, 10.9546581 h 187.7",
+    "kilde": "rettet fasade 07.11"
+   },
+   {
+    "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193868142-2)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     251,
+     249,
+     252
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2042815, 10.9545146 h 86",
     "kilde": "rettet fasade 07.11"
    }
   ]
@@ -6143,6 +6208,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-193870309_SO.jpg",
     "bilde_dato": "aug. 2010",
     "pano_url": "59.2017475,10.9500161 h285"
+   },
+   {
+    "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193870309-2)",
+    "vegg_farge": "hvitkalket",
+    "vegg_rgb": [
+     204,
+     209,
+     211
+    ],
+    "lys": "sol",
+    "bilde_dato": "aug. 2010",
+    "pano_url": "59.2017475, 10.9500161 h 337.4",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -9513,6 +9591,19 @@
      600,
      220
     ]
+   },
+   {
+    "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193867634-2)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     251,
+     250,
+     249
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2020172, 10.9547056 h 70.6",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -10324,6 +10415,32 @@
      700,
      165
     ]
+   },
+   {
+    "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193868576-0)",
+    "vegg_farge": "umalt tegl",
+    "vegg_rgb": [
+     203,
+     159,
+     138
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2019695, 10.9527304 h 333.2",
+    "kilde": "rettet fasade 07.11"
+   },
+   {
+    "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-193868576-3)",
+    "vegg_farge": "umalt tegl",
+    "vegg_rgb": [
+     90,
+     65,
+     55
+    ],
+    "lys": "skygge",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2020096, 10.9528797 h 303.8",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -13196,6 +13313,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-6276016_SO.jpg",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2012231,10.9584214 h223"
+   },
+   {
+    "retning": "rettet fasade, vegg 4 (verktoy/rett, bnr-6276016-4)",
+    "vegg_farge": "oksiderød",
+    "vegg_rgb": [
+     139,
+     81,
+     81
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.2013004, 10.9579847 h 169.6",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -14638,6 +14768,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-6276822_NO.jpg",
     "bilde_dato": "nov. 2024",
     "pano_url": "59.2001462,10.9553442 h205"
+   },
+   {
+    "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-6276822-3)",
+    "vegg_farge": "vinrød",
+    "vegg_rgb": [
+     100,
+     68,
+     75
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.2001786, 10.9551767 h 172.3",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -14912,6 +15055,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-13415897_S_O.jpg",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2062651,10.9456366 h278"
+   },
+   {
+    "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-13415897-3)",
+    "vegg_farge": "okerbrun",
+    "vegg_rgb": [
+     108,
+     76,
+     53
+    ],
+    "lys": "skygge",
+    "bilde_dato": "sep. 2023",
+    "pano_url": "59.2065111, 10.9457014 h 247",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -15287,6 +15443,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-13416370_N.jpg",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2065945,10.9448924 h187"
+   },
+   {
+    "retning": "rettet fasade, vegg 5 (verktoy/rett, bnr-13416370-5)",
+    "vegg_farge": "lys grå",
+    "vegg_rgb": [
+     140,
+     143,
+     156
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2065945, 10.9448924 h 193",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -16008,6 +16177,24 @@
     "lys": "sol",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2032587, 10.95596 h 324.7",
+    "kilde": "rettet fasade 07.11"
+   }
+  ]
+ },
+ "pb-69": {
+  "id": "pb-69",
+  "sider": [
+   {
+    "retning": "rettet fasade, vegg 4 (verktoy/rett, pb-69-4)",
+    "vegg_farge": "umalt tegl",
+    "vegg_rgb": [
+     106,
+     94,
+     93
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2012142, 10.9528547 h 303.6",
     "kilde": "rettet fasade 07.11"
    }
   ]

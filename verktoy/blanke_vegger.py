@@ -88,7 +88,9 @@ def beregn(d=None):
             continue
         V = VG.vegger(x, omg, slaa_sammen=True)
         blanke = []
-        for w in V:
+        rett = set(x.get('fasade_rett') or [])   # vegger lest fra rettet Street View (verktoy/fasade_rett.py): blank er lest, ikke glemt
+        for wi, w in enumerate(V):
+            if wi in rett: continue
             if w['felles'] >= 0.5 or w['L'] < MIN_L or vind_paa(x, w): continue
             kilde = blank_i_kilde(x, w, x['p'], M.get(x['id'], []))
             if kilde: continue
