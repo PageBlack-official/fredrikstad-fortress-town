@@ -1,0 +1,306 @@
+[
+ {
+  "id": "bnr-193868274",
+  "side": {
+   "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193868274-2)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    251,
+    249,
+    246
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2029653, 10.9542128 h 332.7",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193987370",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-193987370-3)",
+   "vegg_farge": "terrakotta",
+   "vegg_rgb": [
+    167,
+    106,
+    81
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2026513, 10.9524472 h 334.5",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867588",
+  "side": {
+   "retning": "rettet fasade, vegg 1 (verktoy/rett, bnr-193867588-1)",
+   "vegg_farge": "okergul",
+   "vegg_rgb": [
+    151,
+    118,
+    92
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2030664, 10.9527709 h 320.7",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868282",
+  "side": {
+   "retning": "rettet fasade, vegg 7 (verktoy/rett, bnr-193868282-7)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    254,
+    254,
+    254
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2036202, 10.9535222 h 63.5",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868355",
+  "side": {
+   "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193868355-2)",
+   "vegg_farge": "krem",
+   "vegg_rgb": [
+    229,
+    217,
+    201
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "aug. 2010",
+   "pano_url": "59.2031422, 10.9533987 h 326.6",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868142",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-193868142-3)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    238,
+    236,
+    233
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2044596, 10.9546581 h 187.7",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193972063",
+  "side": {
+   "retning": "rettet fasade, vegg 5 (verktoy/rett, bnr-193972063-5)",
+   "vegg_farge": "umalt tegl",
+   "vegg_rgb": [
+    200,
+    183,
+    179
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2016931, 10.9540848 h 347",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-6251218",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-6251218-3)",
+   "vegg_farge": "gråbeige",
+   "vegg_rgb": [
+    162,
+    155,
+    147
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2034976, 10.9550223 h 8.7",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867901",
+  "side": {
+   "retning": "rettet fasade, vegg 1 (verktoy/rett, bnr-193867901-1)",
+   "vegg_farge": "okerbrun",
+   "vegg_rgb": [
+    116,
+    89,
+    58
+   ],
+   "lys": "skygge",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2029743, 10.9557684 h 341",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868037",
+  "side": {
+   "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193868037-0)",
+   "vegg_farge": "umalt tegl",
+   "vegg_rgb": [
+    57,
+    51,
+    53
+   ],
+   "lys": "skygge",
+   "bilde_dato": "aug. 2010",
+   "pano_url": "59.2047091, 10.9553568 h 96.9",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193870201",
+  "side": {
+   "retning": "rettet fasade, vegg 4 (verktoy/rett, bnr-193870201-4)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    250,
+    250,
+    250
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2012142, 10.9528547 h 48",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867804",
+  "side": {
+   "retning": "rettet fasade, vegg 4 (verktoy/rett, bnr-193867804-4)",
+   "vegg_farge": "laks",
+   "vegg_rgb": [
+    253,
+    202,
+    176
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2023452, 10.9539171 h 70",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868207",
+  "side": {
+   "retning": "rettet fasade, vegg 6 (verktoy/rett, bnr-193868207-6)",
+   "vegg_farge": "gråbeige",
+   "vegg_rgb": [
+    195,
+    182,
+    175
+   ],
+   "lys": "sol",
+   "bilde_dato": "aug. 2010",
+   "pano_url": "59.2034475, 10.9548951 h 341",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867731",
+  "side": {
+   "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-193867731-2)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    225,
+    230,
+    237
+   ],
+   "lys": "skygge",
+   "bilde_dato": "aug. 2010",
+   "pano_url": "59.2024862, 10.9553502 h 294.8",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "pb-57",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, pb-57-3)",
+   "vegg_farge": "varm grå",
+   "vegg_rgb": [
+    127,
+    123,
+    116
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "aug. 2010",
+   "pano_url": "59.2027979, 10.9556514 h 260.2",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867596",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-193867596-3)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    250,
+    249,
+    251
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2029673, 10.9509207 h 85.8",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867758",
+  "side": {
+   "retning": "rettet fasade, vegg 8 (verktoy/rett, bnr-193867758-8)",
+   "vegg_farge": "lys grå",
+   "vegg_rgb": [
+    219,
+    220,
+    227
+   ],
+   "lys": "sol",
+   "bilde_dato": "aug. 2010",
+   "pano_url": "59.2026037, 10.9554709 h 297.8",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868029",
+  "side": {
+   "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193868029-0)",
+   "vegg_farge": "okerbrun",
+   "vegg_rgb": [
+    116,
+    95,
+    58
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2036747, 10.9563834 h 347.6",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "pb-59",
+  "side": {
+   "retning": "rettet fasade, vegg 2 (verktoy/rett, pb-59-2)",
+   "vegg_farge": "laks",
+   "vegg_rgb": [
+    240,
+    207,
+    186
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2032587, 10.95596 h 324.7",
+   "kilde": "rettet fasade 07.11"
+  }
+ }
+]
