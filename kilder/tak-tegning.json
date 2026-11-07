@@ -160,6 +160,18 @@
    "retning": 63,
    "tegning": "Kvartal13",
    "grunn": "Kommandantgården: tegningen viser saltak på fløyene. Med husets hovedretning (71°) og tre kropper ble vestfløya flat (th 0,2); DOM−DTM har møne ~10 m og takfot ~6 m der. Vestfløya går 63° (DOM-ryggen, sjekket 30.10): fire kropper i den retningen gir saltak, th 0,48 på vestfløya (rms 1,07 mot 1,57)"
+  },
+  "bnr-193868274": {
+   "form": "sal",
+   "mone": 159.9,
+   "maks_kropper": 1,
+   "grunn": "Street View 07.11 (Raadhusgaten 15, rettet fasade bnr-193868274-2): langsiden med 3 vinduer står mot gata og mønet går langs den; DOM-tilpasningen ga gavl mot gata"
+  },
+  "bnr-193987370": {
+   "form": "sal",
+   "mone": 57.9,
+   "maks_kropper": 1,
+   "grunn": "Street View 07.11 (Kasernegaten 47, rettet fasade bnr-193987370-3): langsiden med 4 vinduer og mønet langs den, gavl i enden; DOM-tilpasningen ga gavl på langsiden"
   }
  }
 }
