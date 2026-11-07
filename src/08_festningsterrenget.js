@@ -29,6 +29,12 @@ if (BK){
   const gress=(x,y)=>gammel(x,y) || FEST.some(P=>iPol(x,y,P)) ? 1 : 0;
   const pos=new Float32Array(nx*ny*3), gr=new Float32Array(nx*ny);
   for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const k=j*nx+i, X=BK.x0+i*G, Y=BK.y0+j*G; pos[k*3]=X; pos[k*3+1]=HV[k]+0.03; pos[k*3+2]=-Y; gr[k]=gress(X,Y); }
+  // gresset følger skråningen ned til vannet (07.11: vollgravens bredder fikk et lyst, tagget bånd mellom gresset og vannet):
+  // punkter under 1,5 m over vannflaten med gress ved siden av blir gress, fire runder (8 m)
+  for(let runde=0;runde<4;runde++){ const ny_=[];
+    for(let j=1;j<ny-1;j++) for(let i=1;i<nx-1;i++){ const k=j*nx+i; if(gr[k] || HV[k]>VANN_Y+1.5) continue;
+      if(gr[k-1]||gr[k+1]||gr[k-nx]||gr[k+nx]||gr[k-nx-1]||gr[k-nx+1]||gr[k+nx-1]||gr[k+nx+1]) ny_.push(k); }
+    ny_.forEach(k=>gr[k]=1); }
   // ruter helt under vannflaten tegnes ikke (vannet dekker dem)
   const idx=[], under=VANN_Y-0.05;
   for(let j=0;j<ny-1;j++) for(let i=0;i<nx-1;i++){ const a=j*nx+i, b=a+1, c=a+nx, d=c+1; if(HV[a]<under && HV[b]<under && HV[c]<under && HV[d]<under) continue; idx.push(a,b,c, b,d,c); }
@@ -44,7 +50,7 @@ if (BK){
       float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
       float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
       void main(){
-        if(harFelt>0.5 && wp.y<vannY+1.5){ float r=texture2D(tFelt, vec2((wp.x-felt.x)/felt.z, (-wp.z-felt.y)/felt.w)).r*maks; if(r>0.3) discard; }
+        if(harFelt>0.5 && wp.y<vannY+1.5){ float r=texture2D(tFelt, vec2((wp.x-felt.x)/felt.z, (-wp.z-felt.y)/felt.w)).r*maks; if(r>0.08) discard; }   // (07.11: 0,3 m lot trekantene som krysser strandkanten stikke ut som tagger)
         vec3 nn=normalize(vn); float d=dot(nn,solRetning()); float hell=1.-ny;
         // gress (vollene): to toner som tegningen, skråninger bort fra sola får skyggegrønt
         float k = (1.-smoothstep(0.437,0.443,d)) * smoothstep(0.108,0.112,hell);
@@ -145,6 +151,10 @@ function paaTerreng(deler, z, B, maks){
     const o0=B.p.length/3; P.forEach(q=>B.p.push(q[0],q[2],-q[1])); ut.forEach(t=>B.i.push(o0+t[0],o0+t[2],o0+t[1]));
   });
 }
+// ligger veibåndet på en av broene i data/broer.json (midtpunktet innenfor 6 m fra broas linje)?
+function paaBro(P){ const m=P[Math.floor(P.length/2)]; const q=P.length>1 ? [(P[0][0]+P[P.length-1][0])/2,(P[0][1]+P[P.length-1][1])/2] : m;
+  return (DATA.broer||[]).some(br=>br.p.some((a,k)=>{ if(k===0) return false; const b=br.p[k-1], dx=a[0]-b[0], dy=a[1]-b[1], L2=dx*dx+dy*dy||1;
+    return [m,q].some(p=>{ const t=Math.max(0,Math.min(1,((p[0]-b[0])*dx+(p[1]-b[1])*dy)/L2)); return Math.hypot(p[0]-b[0]-t*dx, p[1]-b[1]-t*dy) < 6; }); })); }
 // veiflatene (datalag.veiflater) på terrenget: terrenget + 6 cm som båndene (gangvei 3 cm)
 function veiflater(VF, buf){
   // brosteinen (B) er grunnen i byen, gatene og brosteinsflatene i én: 5 cm på flat mark, 2 cm over terrenget der det er høyere
@@ -163,6 +173,9 @@ function veiflater(VF, buf){
   if(VF) veiflater(VF, buf);
   (DATA.landskap?DATA.landskap.veier:[]).forEach(v=>{
     if(VF && !v.b && !v.p.some(q=>q[2]>0.5)) return;
+    // bruer som har egen bro (data/broer.json, src/11) tegnes ikke som veibånd i tillegg (07.11: Vindebroa fikk to dekk i hver sin høyde
+    // da broa ble lagt på terrenget)
+    if(BK && v.b && paaBro(v.p)) return;
     // båndet legges på terrenget (avvik A8): punktene i dataene står med opptil 30 m mellomrom, og en rett bit mellom dem
     // skar gjennom vollens terreng (terrenget stakk opp som takker som flimret). Biten deles opp til halve terrengrutenettet, og
     // hver kant løftes til minst terrenget + 6 cm.

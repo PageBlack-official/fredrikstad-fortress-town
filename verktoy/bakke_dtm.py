@@ -51,6 +51,9 @@ def main(tørt):
     vann0 = shapely.union_all([p.buffer(0) for p in vp])
     i0 = shapely.contains_xy(vann0, X.ravel(), Y.ravel()).reshape(h.shape)
     h = np.where(i0, np.minimum(h, w - 0.3), h)
+    # og land utenfor vannflatene aldri under vannet (5 cm over): ellers dukket bakken under vannflaten i en tagget kant langs
+    # rutenettet før vannflatens egen kant (Vegar 07.11, Vindebroa); nå er vannflatens omriss strandkanten
+    h = np.where(i0, h, np.maximum(h, w + 0.05))
     q = np.clip(np.round((h + OFF) / S), 0, 255).astype(np.uint8)
     print(f'bakke {nx} × {ny} punkter à {G} m, x {x0:.0f}…{x1:.0f} y {y0:.0f}…{y1:.0f}; høyde {h.min():.2f}…{h.max():.2f} m '
           f'(moh {h.min() + REF:.1f}…{h.max() + REF:.1f}); vannflaten {w:.2f} m ({w + REF:.2f} moh, {int(iv.sum())} punkter i vannet); '

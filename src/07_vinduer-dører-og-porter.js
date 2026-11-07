@@ -82,6 +82,29 @@ const vindMat=new THREE.ShaderMaterial({
 });
 const _X=new THREE.Vector3(), _Y=new THREE.Vector3(0,1,0), _Z=new THREE.Vector3(), _M=new THREE.Matrix4();
 // vinduer for ett bygg: instansmatriser + info. aBygg = byggindeks + 1 (0 = ikke et bygg), så løft og vekst leses fra hus-teksturen
+// gatene (landskap.veier) som punkter hver 2. meter i et rutenett på 10 m, til å finne veggen som vender mot gata
+const VEI_RUTE=new Map();
+((DATA.landskap&&DATA.landskap.veier)||[]).forEach(v=>{ const P=v.p; for(let k=1;k<P.length;k++){ const a=P[k-1], c=P[k], n=Math.max(1,Math.ceil(Math.hypot(c[0]-a[0],c[1]-a[1])/2));
+  for(let j=0;j<=n;j++){ const x=a[0]+(c[0]-a[0])*j/n, y=a[1]+(c[1]-a[1])*j/n, key=Math.floor(x/10)+','+Math.floor(y/10); if(!VEI_RUTE.has(key)) VEI_RUTE.set(key,[]); VEI_RUTE.get(key).push([x,y]); } } });
+function veiAvstand(x,y){ let m=Infinity; const i0=Math.floor(x/10), j0=Math.floor(y/10);
+  for(let i=i0-2;i<=i0+2;i++) for(let j=j0-2;j<=j0+2;j++){ const L=VEI_RUTE.get(i+','+j); if(L) for(const q of L) m=Math.min(m, Math.hypot(q[0]-x,q[1]-y)); } return m; }
+// husfoten ved gata: høyeste bakke langs veggene mot gata (vei innenfor 8 m), så ingen gatevegg synker; der gata faller langs huset,
+// fyller grunnmuren ned til bakken. Uten gatevegg innenfor 8 m: laveste bakke langs veggen nærmest en vei (innenfor 20 m); ellers medianen.
+function gateFot(pts){ if(!BK || !pts || pts.length<3) return bakkeFot(pts);
+  let best=null, gate=-Infinity;
+  for(let k=0;k<pts.length;k++){ const a=pts[k], c=pts[(k+1)%pts.length], L=Math.hypot(c[0]-a[0],c[1]-a[1]); if(L<2.5) continue;
+    const d=veiAvstand((a[0]+c[0])/2,(a[1]+c[1])/2);
+    if(d<=8){ const n=Math.max(1,Math.ceil(L/0.5)); for(let j=1;j<n;j++) gate=Math.max(gate, bakke(a[0]+(c[0]-a[0])*j/n, a[1]+(c[1]-a[1])*j/n)); }
+    if(d<20 && (!best || d<best.d)) best={d,a,c,L}; }
+  if(gate>-Infinity) return gate;
+  if(best){ let m=Infinity; const n=Math.max(1,Math.ceil(best.L/0.5)); for(let j=0;j<=n;j++) m=Math.min(m, bakke(best.a[0]+(best.c[0]-best.a[0])*j/n, best.a[1]+(best.c[1]-best.a[1])*j/n)); return m; }
+  const v=[]; for(let k=0;k<pts.length;k++){ const a=pts[k], c=pts[(k+1)%pts.length], n=Math.max(1,Math.ceil(Math.hypot(c[0]-a[0],c[1]-a[1]))); for(let j=0;j<n;j++) v.push(bakke(a[0]+(c[0]-a[0])*j/n, a[1]+(c[1]-a[1])*j/n)); }
+  v.sort((p,q)=>p-q); return v[v.length>>1]; }
+// testinngang (regel 48): hus som står under bakken langs en vegg mot gata (vei innenfor 8 m), mer enn grensa (m)
+window.__fotSjekk=(grense=0.3)=>{ const ut=[]; (DATA.bygg||[]).forEach((b,i)=>{ const P=b.p; if(!BK || b.skjul || !P || P.length<3) return; const f=gateFot(P);
+  for(let k=0;k<P.length;k++){ const a=P[k], c=P[(k+1)%P.length], L=Math.hypot(c[0]-a[0],c[1]-a[1]); if(L<2.5 || veiAvstand((a[0]+c[0])/2,(a[1]+c[1])/2)>8) continue;
+    let m=-Infinity; const n=Math.max(1,Math.ceil(L/0.5)); for(let j=1;j<n;j++) m=Math.max(m, bakke(a[0]+(c[0]-a[0])*j/n, a[1]+(c[1]-a[1])*j/n));
+    if(m-f>grense){ ut.push({id:b.id, i, under:+(m-f).toFixed(2), vegg:k}); break; } } }); return ut; };
 function vindusData(V, i, b, fot=0){
   const mats=[], info=new Float32Array(V.length*4), nrm=new Float32Array(V.length*3), bygg=new Float32Array(V.length).fill(i+1);
   V.forEach((v,k)=>{
@@ -248,15 +271,17 @@ DATA.bygg.forEach((b,i)=>{
   const roof = b.tak || (dim? [196,170,160] : [232,124,104]);
   const grp = new THREE.Group();
   const toppVindu = (b.vind&&b.vind.length)||b.gml ? 0 : Math.round(b.h*2)/2;
-  // husfoten (07.11): huset står på den laveste målte bakken langs omrisset. Egne grupper løftes som gruppe; i de sammenslåtte
-  // nettene er foten bakt inn i geometrien (så treff med musa stemmer), og teksturen kjenner den (vekst og tegnede vinduer regnes fra foten)
-  const fot = bakkeFot(pts), fotM = new THREE.Matrix4().makeTranslation(0, fot, 0);
+  // husfoten (07.11, rettet 17:30 etter Vegars skjermbilder): huset står på bakken ved gata (veggen nærmest en vei), ikke på det
+  // laveste punktet rundt det, så det aldri synker under gata. På den lave siden går veggen ned til bakken som grunnmur (grunn).
+  // Egne grupper løftes som gruppe; i de sammenslåtte nettene er foten bakt inn i geometrien (så treff med musa stemmer), og
+  // teksturen kjenner den (vekst og tegnede vinduer regnes fra foten)
+  const fot = gateFot(pts), grunn = Math.max(0, fot - bakkeFot(pts)), fotM = new THREE.Matrix4().makeTranslation(0, fot, 0);
   const legg = spesiell ? (o=>grp.add(o)) : (o=>samleObjekt(o, fotM, i, toppVindu));
   const shape = polyShape(pts);
   (b.ph||[]).forEach(r=>{ if(r.length>2) shape.holes.push(new THREE.Path(r.map(V))); });
   const h = b.kirke ? 0.01 : b.h;   // kirka: formen tegnes av bygKirke (src/06); h og tak2 i data er silhuetten kontrolløren registrerer mot
-  const eg = new THREE.ExtrudeGeometry(shape,{depth:h,bevelEnabled:false});
-  eg.rotateX(-Math.PI/2);
+  const eg = new THREE.ExtrudeGeometry(shape,{depth:h+grunn,bevelEnabled:false});
+  eg.rotateX(-Math.PI/2); if(grunn>0) eg.translate(0,-grunn,0);   // grunnmuren under foten (lp.y < 0: sokkeltonen i src/05)
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
