@@ -1,0 +1,1183 @@
+[
+{
+"bilde": "bnr-193870317-6",
+"id": "bnr-193870317",
+"vegg": 6,
+"venstre": [
+-164.59,
+-96.64
+],
+"hoyre": [
+-158.66,
+-89.34
+],
+"lengde": 9.405,
+"h": 6.0,
+"elementer": [
+{
+"type": "port",
+"s0": 2.68,
+"s1": 6.05,
+"z0": 0.0,
+"z1": 4.98
+}
+],
+"telling": "1. etg: 0 vinduer + 1 port (dobbel dør, venstre fløy åpen)",
+"godkjent": false
+},
+{
+"bilde": "bnr-6276822-3",
+"id": "bnr-6276822",
+"vegg": 3,
+"venstre": [
+142.64,
+-306.42
+],
+"hoyre": [
+138.64,
+-315.23
+],
+"lengde": 9.676,
+"h": 6.1,
+"elementer": [
+{
+"type": "dor",
+"s0": 2.2,
+"s1": 3.5,
+"z0": 0.08,
+"z1": 1.88,
+"farge": "#e8e8e4"
+},
+{
+"type": "vindu",
+"s0": 3.92,
+"s1": 4.52,
+"z0": 1.28,
+"z1": 2.72
+},
+{
+"type": "vindu",
+"s0": 6.98,
+"s1": 8.7,
+"z0": 1.38,
+"z1": 2.82
+},
+{
+"type": "vindu",
+"s0": 4.0,
+"s1": 4.58,
+"z0": 4.38,
+"z1": 5.7
+},
+{
+"type": "vindu",
+"s0": 7.0,
+"s1": 8.65,
+"z0": 4.32,
+"z1": 5.62
+}
+],
+"telling": "1. etg: 2 vinduer + 1 dør; 2. etg: 2 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-13416362-0",
+"id": "bnr-13416362",
+"vegg": 0,
+"venstre": [
+-423.8,
+408.68
+],
+"hoyre": [
+-436.82,
+410.58
+],
+"lengde": 13.158,
+"h": 4.6,
+"elementer": [
+{
+"type": "vindu",
+"s0": 0.85,
+"s1": 2.9,
+"z0": 1.05,
+"z1": 3.4,
+"farge": "#5092b9"
+},
+{
+"type": "vindu",
+"s0": 4.35,
+"s1": 5.68,
+"z0": 1.02,
+"z1": 3.4,
+"farge": "#5092b9"
+},
+{
+"type": "vindu",
+"s0": 6.32,
+"s1": 7.75,
+"z0": 1.05,
+"z1": 3.42,
+"farge": "#5092b9"
+},
+{
+"type": "vindu",
+"s0": 8.38,
+"s1": 9.85,
+"z0": 1.08,
+"z1": 3.5,
+"farge": "#5092b9"
+},
+{
+"type": "vindu",
+"s0": 10.55,
+"s1": 12.05,
+"z0": 1.1,
+"z1": 3.6,
+"farge": "#5092b9"
+}
+],
+"telling": "1. etg: 5 vinduer + 0 dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867405-3",
+"id": "bnr-193867405",
+"vegg": 3,
+"venstre": [
+-445.88,
+24.36
+],
+"hoyre": [
+-436.87,
+19.21
+],
+"lengde": 10.378,
+"h": 2.6,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.2,
+"s1": 2.5,
+"z0": 0.75,
+"z1": 1.98
+},
+{
+"type": "vindu",
+"s0": 7.38,
+"s1": 8.8,
+"z0": 0.9,
+"z1": 2.12
+}
+],
+"telling": "1. etg: 2 vinduer + 0 dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867782-8",
+"id": "bnr-193867782",
+"vegg": 8,
+"venstre": [
+69.48,
+-10.77
+],
+"hoyre": [
+78.65,
+-16.94
+],
+"lengde": 11.053,
+"h": 6.8,
+"elementer": [],
+"telling": "0 vinduer, 0 dører",
+"godkjent": false
+},
+{
+"bilde": "bnr-13416370-5",
+"id": "bnr-13416370",
+"vegg": 5,
+"venstre": [
+-444.52,
+411.56
+],
+"hoyre": [
+-453.56,
+412.7
+],
+"lengde": 9.112,
+"h": 2.7,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.57,
+"s1": 2.97,
+"z0": 1.02,
+"z1": 2.53
+},
+{
+"type": "vindu",
+"s0": 4.65,
+"s1": 5.93,
+"z0": 1.05,
+"z1": 2.55
+},
+{
+"type": "vindu",
+"s0": 6.27,
+"s1": 7.53,
+"z0": 1.09,
+"z1": 2.55
+}
+],
+"telling": "1. etg: 3 vinduer + 0 dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867421-0",
+"id": "bnr-193867421",
+"vegg": 0,
+"venstre": [
+-367.07,
+38.83
+],
+"hoyre": [
+-377.92,
+33.85
+],
+"lengde": 11.938,
+"h": 2.64,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.57,
+"s1": 3.87,
+"z0": 1.04,
+"z1": 2.0
+},
+{
+"type": "dor",
+"s0": 5.37,
+"s1": 6.6,
+"z0": 0.04,
+"z1": 2.07
+},
+{
+"type": "vindu",
+"s0": 8.35,
+"s1": 9.68,
+"z0": 1.04,
+"z1": 2.09
+}
+],
+"telling": "1. etg: 2 vinduer + 1 dør",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867472-1",
+"id": "bnr-193867472",
+"vegg": 1,
+"venstre": [
+-315.98,
+70.44
+],
+"hoyre": [
+-321.17,
+73.91
+],
+"lengde": 6.243,
+"h": 2.46,
+"elementer": [],
+"telling": "Ingen vinduer eller dører",
+"godkjent": false
+},
+{
+"bilde": "bnr-194006187-1",
+"id": "bnr-194006187",
+"vegg": 1,
+"venstre": [
+30.3,
+119.38
+],
+"hoyre": [
+38.09,
+116.57
+],
+"lengde": 8.281,
+"h": 5.4,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.47,
+"s1": 2.7,
+"z0": 2.35,
+"z1": 4.67
+},
+{
+"type": "vindu",
+"s0": 5.05,
+"s1": 6.61,
+"z0": 2.13,
+"z1": 4.71
+}
+],
+"telling": "1. etg (over høy steinsokkel): 2 vinduer + 0 dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-6276016-4",
+"id": "bnr-6276016",
+"vegg": 4,
+"venstre": [
+303.65,
+-177.65
+],
+"hoyre": [
+297.42,
+-184.73
+],
+"lengde": 9.431,
+"h": 5.0,
+"elementer": [
+{
+"type": "vindu",
+"s0": 0.72,
+"s1": 2.48,
+"z0": 1.17,
+"z1": 2.35
+},
+{
+"type": "vindu",
+"s0": 7.83,
+"s1": 9.03,
+"z0": 1.47,
+"z1": 2.53
+},
+{
+"type": "vindu",
+"s0": 0.83,
+"s1": 2.51,
+"z0": 3.63,
+"z1": 4.7
+},
+{
+"type": "vindu",
+"s0": 7.05,
+"s1": 8.7,
+"z0": 3.75,
+"z1": 4.75
+},
+{
+"type": "vindu",
+"s0": 5.73,
+"s1": 6.27,
+"z0": 0.13,
+"z1": 0.39
+},
+{
+"type": "vindu",
+"s0": 6.43,
+"s1": 7.0,
+"z0": 0.2,
+"z1": 0.41
+}
+],
+"telling": "Kjeller: 2 vinduer; 1. etg: 2 vinduer + 0 dører; 2. etg: 2 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-13416419-3",
+"id": "bnr-13416419",
+"vegg": 3,
+"venstre": [
+-429.07,
+421.24
+],
+"hoyre": [
+-419.75,
+419.61
+],
+"lengde": 9.461,
+"h": 4.6,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.1,
+"s1": 2.23,
+"z0": 1.33,
+"z1": 3.3
+},
+{
+"type": "vindu",
+"s0": 2.93,
+"s1": 4.07,
+"z0": 1.33,
+"z1": 3.3
+},
+{
+"type": "vindu",
+"s0": 5.77,
+"s1": 6.87,
+"z0": 1.37,
+"z1": 3.27
+},
+{
+"type": "vindu",
+"s0": 7.43,
+"s1": 8.5,
+"z0": 1.37,
+"z1": 3.27
+}
+],
+"telling": "1. etg: 4 vinduer; ingen dører; ingen kjellervinduer synlige",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867790-5",
+"id": "bnr-193867790",
+"vegg": 5,
+"venstre": [
+96.62,
+8.99
+],
+"hoyre": [
+88.09,
+11.82
+],
+"lengde": 8.987,
+"h": 6.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 0.95,
+"s1": 2.57,
+"z0": 1.53,
+"z1": 3.5
+},
+{
+"type": "vindu",
+"s0": 3.68,
+"s1": 5.23,
+"z0": 1.6,
+"z1": 3.5
+},
+{
+"type": "vindu",
+"s0": 6.28,
+"s1": 7.8,
+"z0": 1.63,
+"z1": 3.5
+},
+{
+"type": "vindu",
+"s0": 1.17,
+"s1": 2.83,
+"z0": 4.6,
+"z1": 6.7
+},
+{
+"type": "vindu",
+"s0": 3.85,
+"s1": 5.43,
+"z0": 4.57,
+"z1": 6.73
+},
+{
+"type": "vindu",
+"s0": 6.42,
+"s1": 7.92,
+"z0": 4.55,
+"z1": 6.7
+},
+{
+"type": "vindu",
+"s0": 3.8,
+"s1": 4.7,
+"z0": 0.13,
+"z1": 0.57
+},
+{
+"type": "vindu",
+"s0": 6.43,
+"s1": 7.3,
+"z0": 0.27,
+"z1": 0.67
+}
+],
+"telling": "Kjeller: 2 kjellervinduer; 1. etg: 3 vinduer; 2. etg: 3 vinduer; ingen dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-193874401-1",
+"id": "bnr-193874401",
+"vegg": 1,
+"venstre": [
+325.06,
+-190.2
+],
+"hoyre": [
+318.7,
+-184.73
+],
+"lengde": 8.389,
+"h": 2.34,
+"elementer": [
+{
+"type": "port",
+"s0": 0.95,
+"s1": 3.95,
+"z0": 0.0,
+"z1": 1.57
+},
+{
+"type": "port",
+"s0": 4.72,
+"s1": 7.9,
+"z0": 0.0,
+"z1": 1.55
+}
+],
+"telling": "1. etg: 2 porter; ingen vinduer eller dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-23730278-0",
+"id": "bnr-23730278",
+"vegg": 0,
+"venstre": [
+270.9,
+-187.29
+],
+"hoyre": [
+266.93,
+-188.53
+],
+"lengde": 4.159,
+"h": 2.3,
+"elementer": [
+{
+"type": "port",
+"s0": 0.28,
+"s1": 3.85,
+"z0": 0.0,
+"z1": 2.2
+}
+],
+"telling": "1. etg: 1 port",
+"godkjent": true
+},
+{
+"bilde": "bnr-193820417-0",
+"id": "bnr-193820417",
+"vegg": 0,
+"venstre": [
+-438.61,
+325.52
+],
+"hoyre": [
+-442.2,
+326.08
+],
+"lengde": 3.633,
+"h": 3.2,
+"elementer": [
+{
+"type": "port",
+"s0": 0.7,
+"s1": 2.88,
+"z0": 0.0,
+"z1": 2.3
+}
+],
+"telling": "1. etg: 0 vinduer + 1 port (garasjeport)",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867820-4",
+"id": "bnr-193867820",
+"vegg": 4,
+"venstre": [
+68.33,
+-29.31
+],
+"hoyre": [
+59.23,
+-24.99
+],
+"lengde": 10.073,
+"h": 6.1,
+"elementer": [],
+"telling": "Ingen vinduer eller dører (tett gavlvegg med stående panel)",
+"godkjent": true
+},
+{
+"bilde": "bnr-193868142-2",
+"id": "bnr-193868142",
+"vegg": 2,
+"venstre": [
+104.43,
+164.97
+],
+"hoyre": [
+118.14,
+158.54
+],
+"lengde": 15.143,
+"h": 7.1,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.65,
+"s1": 3.2,
+"z0": 1.85,
+"z1": 4.08
+},
+{
+"type": "vindu",
+"s0": 4.05,
+"s1": 5.6,
+"z0": 1.87,
+"z1": 4.08
+},
+{
+"type": "vindu",
+"s0": 7.14,
+"s1": 8.7,
+"z0": 1.86,
+"z1": 4.06
+},
+{
+"type": "vindu",
+"s0": 10.18,
+"s1": 11.75,
+"z0": 1.85,
+"z1": 4.0
+},
+{
+"type": "vindu",
+"s0": 12.47,
+"s1": 14.0,
+"z0": 1.85,
+"z1": 4.0
+},
+{
+"type": "vindu",
+"s0": 1.7,
+"s1": 3.22,
+"z0": 5.15,
+"z1": 6.98
+},
+{
+"type": "vindu",
+"s0": 4.1,
+"s1": 5.62,
+"z0": 5.15,
+"z1": 6.98
+},
+{
+"type": "vindu",
+"s0": 7.16,
+"s1": 8.64,
+"z0": 5.14,
+"z1": 6.94
+},
+{
+"type": "vindu",
+"s0": 10.1,
+"s1": 11.52,
+"z0": 5.08,
+"z1": 6.85
+},
+{
+"type": "vindu",
+"s0": 12.32,
+"s1": 13.75,
+"z0": 5.08,
+"z1": 6.8
+},
+{
+"type": "dor",
+"s0": 4.0,
+"s1": 5.2,
+"z0": 0.0,
+"z1": 0.85,
+"farge": "#8a6a4a"
+}
+],
+"telling": "Grunnmur: 1 dør (lav kjellerdør/luke); 1. etg: 5 vinduer; 2. etg: 5 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-193868576-0",
+"id": "bnr-193868576",
+"vegg": 0,
+"venstre": [
+-8.77,
+-88.59
+],
+"hoyre": [
+0.39,
+-90.82
+],
+"lengde": 9.428,
+"h": 4.3,
+"elementer": [
+{
+"type": "port",
+"s0": 3.03,
+"s1": 5.8,
+"z0": 0.0,
+"z1": 3.25,
+"bue": 1
+},
+{
+"type": "oksoye",
+"s0": 1.33,
+"s1": 1.65,
+"z0": 2.38,
+"z1": 2.57,
+"bue": 1
+},
+{
+"type": "oksoye",
+"s0": 7.33,
+"s1": 7.72,
+"z0": 2.22,
+"z1": 2.45,
+"bue": 1
+}
+],
+"telling": "1. etg: 0 vinduer + 1 port (rundbuet treport) + 2 små halvrunde åpninger",
+"godkjent": true
+},
+{
+"bilde": "bnr-300216650-1",
+"id": "bnr-300216650",
+"vegg": 1,
+"venstre": [
+162.49,
+-318.34
+],
+"hoyre": [
+158.39,
+-316.11
+],
+"lengde": 4.667,
+"h": 6.0,
+"elementer": [
+{
+"type": "port",
+"s0": 0.75,
+"s1": 3.75,
+"z0": 0.0,
+"z1": 5.0,
+"farge": "#2a2c33"
+}
+],
+"telling": "1. etg: 0 vinduer + 1 port",
+"godkjent": false
+},
+{
+"bilde": "pb-2-0",
+"id": "pb-2",
+"vegg": 0,
+"venstre": [
+-164.46,
+-96.34
+],
+"hoyre": [
+-158.39,
+-89.01
+],
+"lengde": 9.517,
+"h": 3.9,
+"elementer": [
+{
+"type": "port",
+"s0": 2.97,
+"s1": 6.4,
+"z0": 0.0,
+"z1": 3.18
+}
+],
+"telling": "1. etg: 0 vinduer + 1 port (dobbel port med glassdør i venstre fløy)",
+"godkjent": false
+},
+{
+"bilde": "pb-69-4",
+"id": "pb-69",
+"vegg": 4,
+"venstre": [
+-18.6,
+-173.66
+],
+"hoyre": [
+-14.56,
+-156.81
+],
+"lengde": 17.328,
+"h": 4.24,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.18,
+"s1": 3.6,
+"z0": 1.79,
+"z1": 3.74,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 5.48,
+"s1": 6.9,
+"z0": 1.76,
+"z1": 3.69,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 8.8,
+"s1": 10.1,
+"z0": 1.76,
+"z1": 3.64,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 11.85,
+"s1": 13.1,
+"z0": 1.76,
+"z1": 3.56,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 14.95,
+"s1": 16.18,
+"z0": 1.78,
+"z1": 3.56,
+"bue": 1
+}
+],
+"telling": "1. etg: 5 vinduer (rundbuede); ingen dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-13415889-0",
+"id": "bnr-13415889",
+"vegg": 0,
+"venstre": [
+-432.1,
+355.87
+],
+"hoyre": [
+-417.42,
+353.61
+],
+"lengde": 14.853,
+"h": 6.9,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.2,
+"s1": 3.55,
+"z0": 2.0,
+"z1": 5.0
+},
+{
+"type": "dor",
+"s0": 6.45,
+"s1": 8.95,
+"z0": 2.2,
+"z1": 4.95
+},
+{
+"type": "vindu",
+"s0": 11.9,
+"s1": 13.0,
+"z0": 2.05,
+"z1": 5.0
+}
+],
+"telling": "1. etg (hevet, z 2-5): 2 vinduer + 1 balkongdør; ingen synlige kjellervinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867448-2",
+"id": "bnr-193867448",
+"vegg": 2,
+"venstre": [
+-344.52,
+44.82
+],
+"hoyre": [
+-338.94,
+54.62
+],
+"lengde": 11.277,
+"h": 5.1,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.72,
+"s1": 3.1,
+"z0": 1.45,
+"z1": 3.47
+},
+{
+"type": "vindu",
+"s0": 6.25,
+"s1": 7.58,
+"z0": 1.45,
+"z1": 3.47
+},
+{
+"type": "dor",
+"s0": 9.5,
+"s1": 10.7,
+"z0": 0.72,
+"z1": 3.5,
+"farge": "#46607c"
+}
+],
+"telling": "1. etg: 2 vinduer + 1 dør",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867634-2",
+"id": "bnr-193867634",
+"vegg": 2,
+"venstre": [
+141.23,
+-73.1
+],
+"hoyre": [
+127.37,
+-93.12
+],
+"lengde": 24.35,
+"h": 3.7,
+"elementer": [
+{
+"type": "vindu",
+"s0": 0.99,
+"s1": 1.82,
+"z0": 1.51,
+"z1": 3.08
+},
+{
+"type": "vindu",
+"s0": 3.35,
+"s1": 4.32,
+"z0": 1.44,
+"z1": 3.06
+},
+{
+"type": "vindu",
+"s0": 6.01,
+"s1": 6.97,
+"z0": 1.35,
+"z1": 3.04
+},
+{
+"type": "vindu",
+"s0": 8.73,
+"s1": 9.83,
+"z0": 1.26,
+"z1": 3.04
+},
+{
+"type": "vindu",
+"s0": 11.76,
+"s1": 12.93,
+"z0": 1.22,
+"z1": 3.01
+},
+{
+"type": "vindu",
+"s0": 15.0,
+"s1": 16.35,
+"z0": 1.07,
+"z1": 2.98
+},
+{
+"type": "vindu",
+"s0": 18.5,
+"s1": 19.98,
+"z0": 1.0,
+"z1": 2.95
+}
+],
+"telling": "1. etg: 7 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-193868576-3",
+"id": "bnr-193868576",
+"vegg": 3,
+"venstre": [
+0.39,
+-90.82
+],
+"hoyre": [
+1.93,
+-84.22
+],
+"lengde": 6.777,
+"h": 4.3,
+"elementer": [],
+"telling": "Ingen vinduer eller dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-193870309-2",
+"id": "bnr-193870309",
+"vegg": 2,
+"venstre": [
+-159.16,
+-117.34
+],
+"hoyre": [
+-157.74,
+-110.74
+],
+"lengde": 6.751,
+"h": 3.12,
+"elementer": [
+{
+"type": "dor",
+"s0": 0.4,
+"s1": 2.0,
+"z0": 0.0,
+"z1": 2.77,
+"farge": "#757d65"
+},
+{
+"type": "vindu",
+"s0": 2.9,
+"s1": 4.19,
+"z0": 1.04,
+"z1": 2.8
+},
+{
+"type": "vindu",
+"s0": 4.72,
+"s1": 5.99,
+"z0": 1.12,
+"z1": 2.78
+}
+],
+"telling": "1. etg: 2 vinduer + 1 dør",
+"godkjent": true
+},
+{
+"bilde": "bnr-13415897-3",
+"id": "bnr-13415897",
+"vegg": 3,
+"venstre": [
+-408.79,
+404.56
+],
+"hoyre": [
+-410.67,
+406.9
+],
+"lengde": 3.002,
+"h": 5.9,
+"elementer": [
+{
+"type": "vindu",
+"s0": 0.67,
+"s1": 2.15,
+"z0": 1.57,
+"z1": 4.4
+}
+],
+"telling": "1. etg: 1 vindu",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867944-7",
+"id": "bnr-193867944",
+"vegg": 7,
+"venstre": [
+137.84,
+65.36
+],
+"hoyre": [
+128.72,
+68.95
+],
+"lengde": 9.801,
+"h": 4.3,
+"elementer": [
+{
+"type": "vindu",
+"s0": 3.19,
+"s1": 5.0,
+"z0": 1.0,
+"z1": 3.22,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 6.77,
+"s1": 8.47,
+"z0": 0.95,
+"z1": 3.09,
+"bue": 1
+}
+],
+"telling": "1. etg: 2 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-193868339-1",
+"id": "bnr-193868339",
+"vegg": 1,
+"venstre": [
+48.15,
+98.32
+],
+"hoyre": [
+47.63,
+101.66
+],
+"lengde": 3.38,
+"h": 4.7,
+"elementer": [
+{
+"type": "dor",
+"s0": 0.6,
+"s1": 2.3,
+"z0": 0.0,
+"z1": 3.4
+}
+],
+"telling": "1. etg: 1 dør",
+"godkjent": false
+},
+{
+"bilde": "bnr-193868673-6",
+"id": "bnr-193868673",
+"vegg": 6,
+"venstre": [
+183.12,
+163.93
+],
+"hoyre": [
+178.54,
+167.38
+],
+"lengde": 5.734,
+"h": 2.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 1.4,
+"s1": 2.77,
+"z0": 0.8,
+"z1": 2.37
+}
+],
+"telling": "1. etg: 1 vindu",
+"godkjent": true
+}
+]

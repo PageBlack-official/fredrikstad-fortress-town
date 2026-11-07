@@ -35,6 +35,9 @@ def main(ider):
         # siktlinja fra panoramaet til et punkt 0,5 m foran veggen krysser ingen hus
         ls = LineString([(float(P[0]), float(P[1])), (float(q[0]), float(q[1]))])
         return not any(polys[i].intersects(ls) for i in tre.query(ls))
+    # UNNTA (07.11 natt): JSON {"id-vegg": "ferdig" | [pano, ...]}: ferdig = veggen er godkjent lest; liste = panoramaer som er prøvd
+    # (hjørner skjult, fasaden bak mur/trær, uskarp) og ikke skal tas igjen. Neste runde får da neste beste vinkel.
+    unnta = json.load(open(os.environ['UNNTA'])) if os.environ.get('UNNTA') else {}
     ut, mangler = [], []
     for id_ in ider:
         x = B.get(id_)
@@ -44,8 +47,11 @@ def main(ider):
             a, c, n = np.array(w['a'], float), np.array(w['c'], float), np.array(w['n'], float)
             L = float(np.linalg.norm(c - a)); m = (a + c) / 2
             if L < 3 or not vei_naer(m + n * 3): continue
+            u_ = unnta.get(f'{id_}-{wi}')
+            if u_ == 'ferdig': continue
             beste = None
             for pid, P, v in PP:
+                if u_ and pid in u_: continue
                 dv = P - m; d = float(np.linalg.norm(dv))
                 if d < 4 or d > 40 or dv @ n < 2: continue
                 skraa = math.degrees(math.acos(max(-1, min(1, (dv @ n) / d))))
@@ -66,7 +72,7 @@ def main(ider):
             _, pid, P, v, hd, d, skraa = beste
             ut.append({'id': id_, 'del_': wi, 'deler': 1, 'vegg': wi, 'adresse': x.get('adr') or '', 'pano': pid, 'lat': v['lat'], 'lon': v['lon'],
                        'dato': v.get('dato'), 'heading': round((hd + 360) % 360, 1), 'fov': FOV, 'pitch': PITCH, 'avstand': round(d, 1), 'skraa': round(skraa)})
-    json.dump(ut, open(os.path.join(ROT, 'kilder', 'gate', 'sv_rett_skudd.json'), 'w'), ensure_ascii=False, indent=0)
+    json.dump(ut, open(os.environ.get('SV_UT') or os.path.join(ROT, 'kilder', 'gate', 'sv_rett_skudd.json'), 'w'), ensure_ascii=False, indent=0)
     print(f'{len(ut)} skudd, {len(mangler)} vegger uten panorama som ser hele veggen: ' + '; '.join(mangler[:12]))
 
 if __name__ == '__main__':

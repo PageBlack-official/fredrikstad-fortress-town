@@ -17,6 +17,8 @@ sys.path.insert(0, ROT); sys.path.insert(0, os.path.join(ROT, 'verktoy'))
 import datalag, vinduer_regler as VR, vegger as VG  # noqa: E402
 import gate_avlesning as GA  # noqa: E402
 GRUNN = 'Fasade fra rettet Street View-bilde (verktoy/fasade_rett.py)'
+# port: src/07 tegner typ 2 alltid med rundbue; en rett port (garasjeport, dobbel tredør) tegnes som bred dør (typ 1).
+# Bare port med «bue»: 1 blir typ 2 (08.11 natt: garasjeportene ble buede i modellen).
 TYP = {'vindu': 0, 'butikk': 0, 'dor': 1, 'port': 2, 'oksoye': 3}
 
 def main(tørt):
@@ -48,7 +50,7 @@ def main(tørt):
                 # som når over h - 0,1 (A13). Karmen kappes 0,15 m under takfoten (07.11: 2. etg forsvant på Kirkegata 26).
                 z1 = min(z1, float(x['h']) - 0.15)
                 if s1 - s0 < 0.25 or z1 - z0 < 0.25: continue
-                el = VR.element(P, a + u * (s0 + s1) / 2, round(s1 - s0, 2), n, round((z0 + z1) / 2, 2), round(s1 - s0, 2), round(z1 - z0, 2), TYP.get(e['type'], 0))
+                el = VR.element(P, a + u * (s0 + s1) / 2, round(s1 - s0, 2), n, round((z0 + z1) / 2, 2), round(s1 - s0, 2), round(z1 - z0, 2), (2 if e['type'] == 'port' and e.get('bue') else TYP.get(e['type'], 0) if e['type'] != 'port' else 1))
                 if e.get('bue'): el[10] = int(e['bue'])
                 if e.get('farge'): el.append(e['farge'])
                 ny.append(el)
