@@ -1,7 +1,6 @@
-# 39_kjeden_stabil: FEIL
+# 39_kjeden_stabil: OK
 
-1 objekter endres av en ny kjøring av kjeden
-FEIL bygg bnr-193867677: tak2 blir annerledes når kjeden kjøres
+0 objekter endres av en ny kjøring av kjeden
 
 OK   verktoy/id_flytt.py                      61 rettelser; nye id-er i registeret: []
 OK   verktoy/husdeling.py                       sammen: bnr-193868061, bnr-193869572 -> bnr-193868061
@@ -26,3 +25,4 @@ OK   verktoy/blanke_vegger.py                 23 hus fikk vinduer på 52 blanke 
 OK   verktoy/kaserna.py                       Kaserna: 210 vinduer, 5 dører, 23 takarker, 12 piper; 2 gårdsmurer med port, 1 vinterhage, 1 veranda
 OK   verktoy/register.py kort                 0 nye kort, 2 flyttet
 OK   verktoy/virksomheter_plassert.py         5 virksomheter plassert for hånd eller lagt til, 2 adresser lagt på fløyer
+OK   verktoy/gate_avlesning.py                4 hus fra gatevandringen

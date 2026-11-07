@@ -2373,7 +2373,7 @@
   "sikkerhet": "høy",
   "n_piksler": 72,
   "rest_m": 0.79,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "206": {
   "id": "bnr-193868525",
@@ -2661,7 +2661,7 @@
   "sikkerhet": "høy",
   "n_piksler": 117,
   "rest_m": 0.75,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "222": {
   "id": "bnr-6251218",
@@ -6137,7 +6137,7 @@
   "sikkerhet": "høy",
   "n_piksler": 43,
   "rest_m": 0.37,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "495": {
   "id": "pb-67",

@@ -10,7 +10,7 @@ import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { setCrowns } from './12_trær.js';
 import { kameraFraKartet, vinkler } from './13_kart.js';
 import { Q, START, clock, speil, speilStyrke } from './14_speilinger-i-vannet.js';
-import { BEV, GLID, fingerNede, glid, hjulZoom, myk, treghet } from './15_bevegelse.js';
+import { BEV, GLID, fingerNede, glid, hjulZoom, loft, myk, treghet } from './15_bevegelse.js';
 import { LENKE, lenkeStart } from './15_lenke.js';
 // ---- tegneløkka: MapLibre kaller lagets render() hvert bilde det tegner; vi ber om nye bilder når noe beveger seg ----
 lysFraVenstre();
@@ -43,7 +43,7 @@ function startIntro(){
   if(KRAN){ const m=KRAN.mot||INTRO_FRA; map.jumpTo({center: tilLngLat(m[0],m[1]), zoom: zoomFor(KRAN.faktor||2.4), bearing: KRAN.bearing!=null?KRAN.bearing:-(AZ0_GRADER+SVEIP), pitch: KRAN.pitch||72}); }
   else map.jumpTo({center: tilLngLat(INTRO_FRA[0],INTRO_FRA[1]), zoom: zoomFor(Z0), bearing: -(AZ0_GRADER+SVEIP), pitch: 90-EL0});
   introStartet=true; introKjort=true; SENERE.ferge.intro(SPIN*1000); visHopp(true);
-  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: KRAN ? (t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : GLID ? glid : (t=>1-Math.pow(1-t,4)), essential:true});
+  map.easeTo({...hjemVisning(), duration: SPIN*1000, easing: GLID ? (KRAN ? loft : glid) : (t=>1-Math.pow(1-t,4)), essential:true});
   map.once('moveend', ()=>{ visHopp(false); if(!TILSTAND.introDone){ TILSTAND.introDone=true; setTimeout(()=>document.getElementById('hint').style.opacity=1,300); setTimeout(()=>document.getElementById('hint').style.opacity=0,6000); } });
 }
 function overta(){ visHopp(false); if(TILSTAND.introDone) return; TILSTAND.introDone=true; map.stop(); }

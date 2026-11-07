@@ -2664,15 +2664,15 @@
   "navn": null,
   "adr": null,
   "for_": [
-   236,
+   242,
    240,
-   240
+   232
   ],
   "for_kilde": null,
   "vegg": [
-   236,
+   242,
    240,
-   240
+   232
   ],
   "kilde": "2019-trykket (dømt)",
   "aar": 2015,
@@ -3272,15 +3272,15 @@
   "navn": null,
   "adr": null,
   "for_": [
-   244,
-   244,
-   244
+   232,
+   140,
+   84
   ],
   "for_kilde": "2019-trykket (visuelt)",
   "vegg": [
-   244,
-   244,
-   244
+   232,
+   140,
+   84
   ],
   "kilde": "2019-trykket (dømt)",
   "aar": 2015,
@@ -3586,7 +3586,7 @@
    196,
    206
   ],
-  "kilde": "Street View 2024 (lys duebla/gråblå); tegningen har grå (2019-trykket (dømt))",
+  "kilde": "Street View 2024 (lys duebla/gråblå) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024,
   "byttet": false
  },
@@ -8307,18 +8307,18 @@
   "navn": null,
   "adr": null,
   "for_": [
-   204,
-   192,
-   198
+   214,
+   206,
+   190
   ],
   "for_kilde": "vegg: Street View 2024 (gråbeige/lys gråfiolett); tak: ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen Kvartal9 (IoU 0.65))",
   "vegg": [
-   204,
-   192,
-   198
+   249,
+   224,
+   204
   ],
-  "kilde": "Street View 2024 (gråbeige/lys gråfiolett)",
-  "aar": 2024,
+  "kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.59)",
+  "aar": 2015,
   "byttet": false
  }
 ]

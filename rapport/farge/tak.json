@@ -3427,9 +3427,9 @@
    "kvartaltegningen Kvartal9 (IoU 0.47)"
   ],
   "for_": [
-   244,
-   120,
-   104
+   96,
+   84,
+   76
   ],
   "farge": [
    246,
@@ -3996,21 +3996,21 @@
   "grunn": "",
   "tegning": [
    [
-    244,
-    120,
-    104
+    196,
+    92,
+    72
    ],
    "2019-trykket (dømt)"
   ],
   "for_": [
-   244,
-   120,
-   104
+   196,
+   92,
+   72
   ],
   "farge": [
-   244,
-   120,
-   104
+   196,
+   92,
+   72
   ],
   "kilde": "ortofoto 2024 (rød tegl) = 2019-trykket (dømt): tegningens farge",
   "aar": 2024

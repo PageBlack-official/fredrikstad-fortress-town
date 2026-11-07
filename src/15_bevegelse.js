@@ -10,6 +10,8 @@ import { Q0, map, tilLngLat } from './00_oppsett.js';
 // ?glid=0 gir de gamle kurvene til sammenligning.
 const GLID = Q0.get('glid')!=='0';
 const glid = t => !GLID ? (t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2) : t<=0 ? 0 : t>=1 ? 1 : t<0.5 ? Math.pow(2,20*t-10)/2 : (2-Math.pow(2,-20*t+10))/2;
+// kranløftet i introen (07.11): i bevegelse fra første bilde og lander mykt; glid står nesten stille det første kvarteret av et langt løft
+const loft = t => t<=0 ? 0 : t>=1 ? 1 : 1-Math.pow(1-t,3);
 const glidUt = t => !GLID ? 1-Math.pow(1-t,3) : t>=1 ? 1 : 1-Math.pow(2,-10*t);   // bare utglidning (når bevegelsen alt er i gang)
 const myk = t => t<=0 ? 0 : t>=1 ? 1 : t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;     // korte flytt: kubisk inn og ut
 const BEV = {
@@ -145,4 +147,4 @@ window.__tilLngLat=tilLngLat; window.__BEV=BEV;
 map.getCanvasContainer().addEventListener('pointerdown', ()=>hjulZoom.stopp(), {capture:true, passive:true});
 registrer({ fingerNede: () => fingerNede });   // brukes av tidligere moduler via SENERE (tilstand.js)
 
-export { BEV, GLID, SLIPP, fingerNede, glid, glidKamera, hjulZoom, myk, slippLogg, treghet };
+export { BEV, GLID, SLIPP, fingerNede, glid, glidKamera, hjulZoom, loft, myk, slippLogg, treghet };

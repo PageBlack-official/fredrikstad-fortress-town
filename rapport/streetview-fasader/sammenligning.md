@@ -121,7 +121,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867723 |  | [6, 7] | [4, 6] | 1 tofløyet beige fyllingsport med overlys og lykt, ca. 0.25–0.33 av fasaden | 1 | 0 | 0 | ikke synlig | 3 | ja |
 | bnr-193867758 |  | [6, 6] | [6, 6] | 0 på denne fasaden | 0 | 0 | 4 | 1 murt pipe | 1 |  |
 | bnr-193867758 |  | [4, 4] | [3, 3] | 1 brun/oker tofløyet fyllingsport med overlys og lykt (ca. 0.25) | 0 | 0 | 0 | 1 murt pipe | 1 | ja |
-| bnr-193867898 | Gamlebyen modelljernbanesenter | [6, 5] | [5, 5] | 1 rødbrun tofløyet fyllingsdør, ca. 0.33–0.40 av fasaden, med skilt og lykt | 1 | 0 | 0 | 1 murt teglpipe (bak mønet) | 4 | ja |
+| bnr-193867898 | Gamlebyen modelljernbanesenter | [6, 5] | [5, 6] | 1 rødbrun tofløyet fyllingsdør, ca. 0.33–0.40 av fasaden, med skilt og lykt | 1 | 0 | 0 | 1 murt teglpipe (bak mønet) | 2 | ja |
 | bnr-193867952 |  | [10, 9] | [8, 7] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 1 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
 | bnr-6247822 |  | [5, 4] | [4, 3] | 1 brun fyllingsdør med glass, ca. 0.42, i en nisje, med 5 steintrinn | 2 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-6251331 |  | [3, 3] | [1, 1] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 1 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
@@ -149,7 +149,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867863 |  | [4, 4] | [9, 10] | 1 brun fyllingsdør med glass i rundbuet åpning, venstre ende (ca. 0.05) | 2 | ikke synlig | 1 | ikke synlig | 1 | ja |
 | bnr-193867774 |  | [4, 5] | [4, 5] | 1 brun tofløyet fyllingsport med overlys, venstre ende (ca. 0.05–0.20), nr. '65' | 1 | 0 | 0 | 2 murte teglpiper | 1 |  |
 | bnr-193972489 | annen forretningsbygning | [1] | [] | ikke synlig | 0 | 0 | 0 | None | 1 | ja |
-| bnr-193867855 |  | [2] | [3] | 1 mørk grønn fyllingsdør med utskåret dekor, høyre (ca. 0.85) | 0 | 1 ark med hvite vinduer og blomsterkasser | 0 | 2 murte teglpiper | 1 | ja |
+| bnr-193867855 |  | [2] | [3] | 1 mørk grønn fyllingsdør med utskåret dekor, høyre (ca. 0.85) | 0 | 1 ark med hvite vinduer og blomsterkasser | 0 | 2 murte teglpiper | 2 | ja |
 | bnr-193868622 |  | [5, 4] | [5, 4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 1 | 0 | 0 | ikke synlig | 1 |  |
 | bnr-193867979 |  | [5, 6] | [7, 4, 7] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-16290424 | annen lagerbygning | [2, 3] | [2, 3] | 0 på gavlen | 0 | 0 | 0 | 0 | 0 |  |
