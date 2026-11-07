@@ -55,7 +55,8 @@ def main(tørt):
         resten = [e for e in (x.get('vind') or []) if VG.naermeste_vegg(V, np.array(e[:2]))[0] not in lest]
         vind = GA.hjorne_inn(P, resten + ny)
         nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': 'vind', 'verdi': vind, 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
-        nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': 'fasade_kilde', 'verdi': 'street view rettet', 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
+        # eget felt: fasade_kilde beskriver resten av huset (tegning/streetview/antatt) og styrer de andre verktøyene og regel 03
+        nye.append({'emne': 'bygg', 'id': id_, 'op': 'sett', 'felt': 'fasade_rett', 'verdi': sorted(lest), 'hvem': 'Claude', 'dato': dato, 'grunn': GRUNN})
         logg.append(f'{id_}: {len(ny)} elementer på {len(lest)} vegg(er), {len(resten)} på andre vegger')
     print('\n'.join(logg)); print(f'{len(per_hus)} hus med rettet fasade')
     if not tørt: datalag.skriv_rettelser(ret + nye)

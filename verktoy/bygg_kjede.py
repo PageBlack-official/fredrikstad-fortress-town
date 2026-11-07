@@ -14,8 +14,9 @@ STEG = [['verktoy/bakke_dtm.py'], ['verktoy/grunnmur.py'], ['verktoy/id_flytt.py
 # verktøy som bygger på resultatet av alle de andre (blanke_vegger.py leser vinduene de andre har satt), tas ut før kjeden går,
 # så de tidligere stegene ikke ser forrige kjørings linjer og kjeden gir det samme hver gang (regel 39, 02.11)
 sys.path.insert(0, ROT); sys.path.insert(0, os.path.join(ROT, 'verktoy'))
-import datalag, blanke_vegger  # noqa: E402
-datalag.skriv_rettelser([r for r in datalag.les('rettelser') if r.get('grunn') != blanke_vegger.GRUNN])
+import datalag, blanke_vegger, fasade_rett  # noqa: E402
+# fasade_rett.py (sist i kjeden, 07.11) setter vind på lest vegg; uten dette så streetview_fasader forrige kjørings vinduer (regel 39)
+datalag.skriv_rettelser([r for r in datalag.les('rettelser') if r.get('grunn') not in (blanke_vegger.GRUNN, fasade_rett.GRUNN)])
 for s in STEG:
     if s[0] == 'verktoy/grunnmur.py' and '--grunnmur' not in sys.argv:
         continue
