@@ -575,3 +575,37 @@ den er rettet ved kilden, bevist (før/etter-bilder i rapport/avvik/) og har en 
   datalag.sokkel_etasje hver gang. sokkel.py setter dem fra Street View-materialet («1. etg naturstein», «murt naturstein»). Regel 41.
 - Portaler (porter typ mur) uten dømt farge får grått puss (vegg_nye.py, PORTAL_PUSS). Regel 38.
 - Brostein tegnes ikke oppå brosteinsgrunnen (src/03 iBrostein; src/08 veier, src/17 flater): streken tegnet kanten som skjøt. Regel 45.
+
+
+## Arbeidsdeling: minien gjør jobben, metoden ligger her (08.11, Vegar)
+
+Kartet bygges på Mac minien (ekte GPU, synlig Chrome for Street View). All metode skal kunne kjøres herfra, steg for steg, av en agent
+uten forhistorie: det er grunnlaget for en skill som lager neste by raskere. Derfor:
+- Hvert steg er et skript i repoet. Ingen engangskode i en chat eller i skyen; trengs et steg som ikke finnes, legges det inn her først.
+- Lærdom skrives her samme dag (feller under), ikke bare i en samtale. Agenten på minien kjenner bare det som står i repoet.
+- Publisering skjer fra minien: `sh publiser.sh prove1` pusher med egen deploy-nøkkel (remote `pages`, ~/.ssh/sot_deploy), vanlig push, aldri force.
+- Før du melder en feil: sjekk kilden (status i Paperclip, prosessen med ps, loggen, siden ute). Et merke eller et notat er ikke en feil.
+
+## Rettede fasader fra Street View (07.–08.11)
+
+Vei: `verktoy/sv_rett_plan.py <id…>` (env UNNTA = prøvde panoramaer, SV_UT = skuddfil) → `node verktoy/sv_hent.mjs <skudd> <utmappe> d/3`
+(tre nettlesere, synlig Chromium) → `verktoy/vegg_for_skudd.py` + `verktoy/rett/anslag_u.py` → hjørner etter `verktoy/rett/HJORNER.md`
+→ `verktoy/rett/rett.py` → elementer i meter etter `verktoy/rett/ELEMENTER.md` → `verktoy/rett/overlegg.py` (kontaktark) → øyekontroll
+→ `verktoy/rett/konverter.py` → `kilder/gate/rett-*.json` → `verktoy/bygg_kjede.py` (fasade_rett.py sist) → kontroll → regler → publiser.
+Tall: runde 3: 281 skudd → 24 vegger; runde 4: 175 → 24; runde 5 (bare simulerte hus): 48 → 0 (alt bak trær, voll, mur).
+
+Feller (alle sett 07.–08.11):
+- Kontroll per vegg: antall elementer i datalag på veggen = antall lest (≥ 0,25 m). Tellingen fanger ikke alt: lag også før/etter-bilde
+  med gatekameraet fra samme standpunkt (git stash data + flytt rett-fila ut, bygg, render; legg tilbake).
+- Kirka har egen modell (bygg.kirke.vinduer i fasade_former, tegnes i src/06). Vind på kirka gir doble buevinduer. fasade_rett hopper over `x['kirke']`
+  og datalag.EGNE_FASADER (Kaserna).
+- Typ 2 (port) tegnes alltid med rundbue (src/07). Rett port = typ 1. Bue må leses («bue»: 1) for å få typ 2.
+- Vinduer som når over takfot − 0,1 m fjernes av datalag (A13). fasade_rett kapper karmen 0,15 m under takfot.
+- h = 6,0 er standardhøyde på umålte småbygg: rettingen strekkes feil. Avvis.
+- Samme Street View-bilde kan bli valgt for to hus (870317-6 / pb-2-0): avvis begge.
+- Veggfarger bare fra bilder 2016 og senere; vinduer og dører fra 2010-bilder er gyldige (Gamlebyen er fredet, de endres ikke).
+- Vegger publikum ikke ser (bakgård, inn mot nabo) simuleres etter reglene og holder ikke et hus åpent.
+- Regel 22 var rød 07.–08.11 uten feil i kartet: kortets CSS-overgang går på ekte tid, testens klokke er falsk. flyt-test.mjs venter nå til kortet står.
+- `publiser.sh` krever regelrapport kjørt mot siste kilde-commit: commit først, så reglene (~35 min), så publiser.
+- Python-heredoc inni osascript → ssh feiler stille. Skriv skriptet til fil og kjør fila.
+- Gatekameraet (`front_stand.py`) kan stå inne i et annet hus: les bildet før du bruker det som bevis.

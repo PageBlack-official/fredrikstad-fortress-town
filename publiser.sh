@@ -37,9 +37,8 @@ git -C "$ROT" fetch -q origin gh-pages
 TMP=$(mktemp -d); GREN="pages-$(date +%s)"
 git -C "$ROT" worktree add --detach "$TMP" >/dev/null
 cd "$TMP"
-git checkout -q --orphan "$GREN"
-git rm -rfq . >/dev/null 2>&1 || true
-git -C "$ROT" archive origin/gh-pages | tar -x -C "$TMP"          # det som ligger ute nå
+# (08.11) vanlig commit oppå det som ligger ute, ikke en foreldreløs gren: da holder en vanlig push (ingen force), og historikken står
+git checkout -q -b "$GREN" origin/gh-pages
 mkdir -p "$PROVE"; cp "$ROT/ut/enkel/index.html" "$PROVE/index.html"
 if [ "$MODUS" = "forside" ]; then
   B="backup/v$VERSJON-$(date +%d%b | tr 'A-Z' 'a-z')"; [ -e "$B" ] && B="$B-$(date +%H%M)"; mkdir -p "$B"
@@ -56,7 +55,9 @@ fi
 touch .nojekyll
 git add -A
 git commit -qm "Pages ($MODUS): versjon $VERSJON, kilde $HASH, $(date +%Y-%m-%d)"
-git push -f origin "$GREN:gh-pages"
+# (08.11) minien pusher selv med egen deploy-nøkkel (~/.ssh/sot_deploy, remote «pages» = git@github-sot:…); uten den: origin
+PUSH=origin; git -C "$ROT" remote get-url pages >/dev/null 2>&1 && PUSH=pages
+git push "$PUSH" "$GREN:gh-pages"
 cd "$ROT"; git worktree remove --force "$TMP"; git branch -q -D "$GREN"
 git branch -q -D gh-pages 2>/dev/null || true
 # venter til /prove/ viser den nye kilden (23.10: publiseringen stoppet stille og Pages stod på en gammel versjon hele kvelden)
