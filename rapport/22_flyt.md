@@ -15,7 +15,7 @@
 - ok   hjem: 1312 ms, topp 82.2 px/bilde, hopp 0, rykk 0.17 (<= 0.45), bråstopp 0.01 (<= 0,15)
 - ok   introen før avbrudd: topp 4.8 px/bilde, hopp 0, rykk 0.01 (målt til avbruddet, så bråstopp gjelder ikke)
 - ok   avbrutt intro: uskarpheten toner ut, hopper ikke: største endring per bilde 0 (<= 0,08), rundt avbruddet [0, 0, 0, 0, 0, 0], til slutt 0
-- ok   mobil: trykk på hus, kameraet glir inn: 912 ms, topp 66.6 px/bilde, hopp 0, rykk 0.22 (<= 0.45), bråstopp 0 (<= 0,15)
+- ok   mobil: trykk på hus, kameraet glir inn: 912 ms, topp 67.3 px/bilde, hopp 0, rykk 0.2 (<= 0.45), bråstopp 0 (<= 0,15)
 - ok   mobil: bunnark, huset over kortet: bunnark True, hus over kortet True, kort {'vis': True, 'top': 418, 'left': 16, 'bunn': 990, 'h': 266, 'w': 358, 'op': 1}
 - ok   mobil: dra kortet ned lukker det: kortet fulgte fingeren 126 px, lukket True
 - ok   mobil: tilbake (Android/nettleser) lukker kortet: historikk True, lukket True

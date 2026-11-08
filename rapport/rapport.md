@@ -1,6 +1,6 @@
 # Regelrapport
 
-Kilde: 625b93a+urettet versjon 34 kjørt 2026-11-08 03:14
+Kilde: b80b041 versjon 34 kjørt 2026-11-08 03:55
 
 - OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 2 skjult med grunn)
 - OK   02_hoyder_maalt  (202 hus står med Kartverkets målte høyde; 0 avviker; 142 hus uten sikker måling beholder tegning/OSM)
@@ -8,10 +8,10 @@ Kilde: 625b93a+urettet versjon 34 kjørt 2026-11-08 03:14
 - OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
 - OK   05_kvalitet_bare_kamera  (settSkala(KVAL.skalaStille) uavhengig av bevegelse)
 - OK   06_bygger_og_laster  (- bygd enkel -> /Users/vegarbakken/sot-maskin/gate/ut/enkel/index.html 3785 kB versjon 34)
-- OK   07_ingen_feil_i_bruk  (- intro: underveis az -2.92 zoom 1.30 → ferdig az -2.79 zoom 1.00 intro false)
+- OK   07_ingen_feil_i_bruk  (- intro: underveis az -2.92 zoom 1.28 → ferdig az -2.79 zoom 1.00 intro false)
 - OK   08_lint  (- ingen feil)
 - OK   09_publisert  (- forsiden: versjon 34 (ønsket 34), bygd før kilde-merket (05.11))
-- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19287 px, trinn 2: 18763 px)
+- OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19291 px, trinn 2: 18763 px)
 - OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)
 - OK   12_kontaktskygge  (- 3.8 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
 - OK   13_deler_staar_paa_topp  (- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok)

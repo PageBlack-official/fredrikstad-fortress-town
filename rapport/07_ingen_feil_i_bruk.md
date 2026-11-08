@@ -1,6 +1,6 @@
 # 07_ingen_feil_i_bruk: OK
 
-- intro: underveis az -2.92 zoom 1.30 → ferdig az -2.79 zoom 1.00 intro false
+- intro: underveis az -2.92 zoom 1.28 → ferdig az -2.79 zoom 1.00 intro false
 - klikk kirka: {"vis":true,"navn":"Kirken"}
 - esc → hjem: x 33.3 z 41.4 zoom 1.85 kort vis false
 - styreflate-dra: x 33.3 z 41.4 zoom 1.85
