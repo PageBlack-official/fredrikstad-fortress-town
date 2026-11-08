@@ -1,0 +1,252 @@
+[
+{
+"bilde": "bnr-193867529-1",
+"id": "bnr-193867529",
+"vegg": 1,
+"venstre": [
+-2.52,
+-53.22
+],
+"hoyre": [
+-1.55,
+-44.19
+],
+"lengde": 9.082,
+"h": 8.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.06,
+"s1": 3.36,
+"z0": 1.84,
+"z1": 6.46,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 5.34,
+"s1": 6.86,
+"z0": 1.84,
+"z1": 6.5,
+"bue": 1
+}
+],
+"telling": "1. etg: 2 vinduer (høye kirkevinduer)",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867529-11",
+"id": "bnr-193867529",
+"vegg": 11,
+"venstre": [
+-34.72,
+-51.84
+],
+"hoyre": [
+-35.79,
+-61.89
+],
+"lengde": 10.107,
+"h": 8.8,
+"elementer": [
+{
+"type": "dor",
+"s0": 4.0,
+"s1": 6.06,
+"z0": 0.0,
+"z1": 3.6,
+"bue": 1
+},
+{
+"type": "oksoye",
+"s0": 4.3,
+"s1": 5.96,
+"z0": 7.5,
+"z1": 8.5
+}
+],
+"telling": "1. etg: 0 vinduer + 1 dør; gavl: 1 ovalt vindu",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867529-5",
+"id": "bnr-193867529",
+"vegg": 5,
+"venstre": [
+-4.95,
+-76.07
+],
+"hoyre": [
+-4.02,
+-67.38
+],
+"lengde": 8.74,
+"h": 8.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.46,
+"s1": 3.9,
+"z0": 1.85,
+"z1": 6.44,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 5.66,
+"s1": 7.0,
+"z0": 1.85,
+"z1": 6.4,
+"bue": 1
+}
+],
+"telling": "1. etg: 2 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867529-7",
+"id": "bnr-193867529",
+"vegg": 7,
+"venstre": [
+-18.11,
+-65.87
+],
+"hoyre": [
+-19.04,
+-74.58
+],
+"lengde": 8.76,
+"h": 8.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.0,
+"s1": 3.36,
+"z0": 2.2,
+"z1": 6.44,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 5.34,
+"s1": 7.16,
+"z0": 2.2,
+"z1": 6.7,
+"bue": 1
+}
+],
+"telling": "1. etg: 2 vinduer",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867529-0",
+"id": "bnr-193867529",
+"vegg": 0,
+"venstre": [
+-1.55,
+-44.19
+],
+"hoyre": [
+-15.65,
+-42.69
+],
+"lengde": 14.18,
+"h": 8.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 4.84,
+"s1": 6.24,
+"z0": 3.26,
+"z1": 6.56,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 8.88,
+"s1": 10.32,
+"z0": 3.56,
+"z1": 6.86,
+"bue": 1
+},
+{
+"type": "dor",
+"s0": 6.4,
+"s1": 9.04,
+"z0": 0.0,
+"z1": 3.24,
+"bue": 1
+}
+],
+"telling": "1. etg: 2 vinduer + 1 dør",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867529-10",
+"id": "bnr-193867529",
+"vegg": 10,
+"venstre": [
+-35.79,
+-61.89
+],
+"hoyre": [
+-26.55,
+-62.88
+],
+"lengde": 9.293,
+"h": 8.8,
+"elementer": [
+{
+"type": "oksoye",
+"s0": 4.2,
+"s1": 6.1,
+"z0": 3.76,
+"z1": 5.1
+},
+{
+"type": "oksoye",
+"s0": 4.2,
+"s1": 6.0,
+"z0": 8.04,
+"z1": 8.8
+}
+],
+"telling": "2 oksøyer (rundvinduer) over hverandre, ingen dører",
+"godkjent": true
+},
+{
+"bilde": "bnr-193867529-2",
+"id": "bnr-193867529",
+"vegg": 2,
+"venstre": [
+6.39,
+-54.16
+],
+"hoyre": [
+-2.52,
+-53.22
+],
+"lengde": 8.959,
+"h": 8.8,
+"elementer": [
+{
+"type": "vindu",
+"s0": 2.16,
+"s1": 3.8,
+"z0": 1.6,
+"z1": 6.44,
+"bue": 1
+},
+{
+"type": "vindu",
+"s0": 5.84,
+"s1": 7.32,
+"z0": 1.76,
+"z1": 6.4,
+"bue": 1
+}
+],
+"telling": "1. etg: 2 vinduer (høye rundbuede kirkevinduer), ingen dører",
+"godkjent": true
+}
+]

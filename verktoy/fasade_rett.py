@@ -39,6 +39,9 @@ def main(tørt):
         if id_ in datalag.EGNE_FASADER: logg.append(f'{id_}: eget verktøy ({datalag.EGNE_FASADER[id_]}), hoppet over'); continue
         x = B.get(id_)
         if x is None: logg.append(f'{id_}: finnes ikke'); continue
+        # kirka har egen modell (bygg.kirke.vinduer fra fasade_former, tegnes i src/06): vind på den blir doble vinduer (08.11 natt:
+        # rettede kirkevegger la seg oppå buevinduene fra kirke.ai). Samme regel som EGNE_FASADER.
+        if x.get('kirke'): logg.append(f'{id_}: egen kirkemodell (fasade_former), hoppet over'); continue
         P = np.array(x['p'], float); V = VG.vegger(x, omg, slaa_sammen=True)
         lest = set(); ny = []
         for r in rr:
