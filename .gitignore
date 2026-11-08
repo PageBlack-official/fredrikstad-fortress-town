@@ -51,3 +51,10 @@ rapport/manglende/*.jpg
 
 # Google-bilder er arbeidsreferanse, aldri i repoet (Vegar 29.10)
 kilder/flyfoto-google-*.jpg
+
+# ferdig-28 (PAG-1467): tunge mellomrendere og sveip holdes utenfor; leveransen er <id>.jpg + RAPPORT.md + kilder/ferdig.json
+rapport/ferdig/renders/
+rapport/ferdig/renders_sv/
+rapport/ferdig/kal/sweep/
+rapport/ferdig/kal/bnr-193867634-2.png
+rapport/ferdig/regler.log

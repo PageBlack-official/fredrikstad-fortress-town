@@ -1,0 +1,251 @@
+{
+ "bnr-193867634": {
+  "status": "ferdig",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867634.jpg",
+  "avvik": [],
+  "adr": "Vollmesterboligen, 5 Voldgaten",
+  "note": "hvit 1-et., vindusrekke, pipe, tegltak – stemmer. Takfarge svakt lysere (tan) enn rødbrun tegl i SV, innenfor toleranse."
+ },
+ "bnr-6276822": {
+  "status": "ferdig",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-6276822.jpg",
+  "avvik": [],
+  "adr": "2 Lammers gate",
+  "note": "mørk vinrød 2-et., vinduer og dør stemmer."
+ },
+ "bnr-6276016": {
+  "status": "ferdig",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-6276016.jpg",
+  "avvik": [],
+  "adr": "30 General Ohmes vei / 30 Hultfeldts gate",
+  "note": "rød 2-et., mørkt tak, begge gatevegger (4,5) stemmer."
+ },
+ "bnr-193867723": {
+  "status": "ferdig",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867723.jpg",
+  "avvik": [],
+  "adr": "Gamlebyen (sandgul)",
+  "note": "sandgul 2-et., to vindusrekker og dør stemmer."
+ },
+ "bnr-6276512": {
+  "status": "ferdig",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-6276512.jpg",
+  "avvik": [],
+  "adr": "37 Heibergs gate",
+  "note": "blågrå, rødt valmtak, rød pipe, vinduer stemmer (fritt­liggende)."
+ },
+ "bnr-193971946": {
+  "status": "ferdig",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193971946.jpg",
+  "avvik": [],
+  "adr": "Gamlebyen (hvit puss)",
+  "note": "hvit puss 1-et., vindusrekke og rundbue-inngang stemmer (buen er RIKTIG her)."
+ },
+ "bnr-13415889": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-13415889.jpg",
+  "avvik": [
+   "vegg 0: modell mangler takarker (dormers) og har forenklet valmtak vs SV rødt mansardtak m/arker",
+   "vegg 3: modell lys grønn m/rødt tak vs SV mørk grå m/svart mansardtak – farge/tak stemmer ikke"
+  ],
+  "adr": "9/10 Ove Ramms gate"
+ },
+ "bnr-13416362": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-13416362.jpg",
+  "avvik": [
+   "vegg 0: vindusrekke usikker – modell viser bredere/flere åpninger enn SV. Farge (oker) og rødt tak stemmer."
+  ],
+  "adr": "24 Bings gate"
+ },
+ "bnr-193867626": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867626.jpg",
+  "avvik": [
+   "vegg 2 (laksrød langfasade) ser riktig ut i form/farge/vinduer",
+   "vegg 3 (gavl) ikke bekreftet mot SV i tett torvmiljø"
+  ],
+  "adr": "26/27 Kirkegaten"
+ },
+ "bnr-193868576": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193868576.jpg",
+  "avvik": [
+   "vegg 0: port tegnet med rundbue (typ 2), SV viser flat rektangulær tredør – fixbar (typ 1, fasade_rett)",
+   "vegg 3 (gavl) grovt ok"
+  ],
+  "adr": "41 Tøihusgaten / Rådhusgaten (umalt tegl)"
+ },
+ "bnr-193867855": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867855.jpg",
+  "avvik": [
+   "hvit 1,5-et.: farge/høyde/tak stemmer, men dør-/vindusdetaljer på gatevegg usikre (SV aug 2010)"
+  ],
+  "adr": "Gamlebyen (hvit)"
+ },
+ "bnr-193867901": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867901.jpg",
+  "avvik": [
+   "oransje 2-et.: farge/høyde/vinduer stemmer, dørplassering/-eksistens usikker mot SV"
+  ],
+  "adr": "8 Voldgaten"
+ },
+ "bnr-193867804": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867804.jpg",
+  "avvik": [
+   "salmon/laks 2-et.: farge/høyde stemmer, men SV viser bred rektangulær port på vegg 4; modell har smalere dør – porttype sjekkes"
+  ],
+  "adr": "51 Kasernegaten"
+ },
+ "bnr-6251331": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-6251331.jpg",
+  "avvik": [
+   "vegg 1: SV viser grønn garasjeport + grønn butikkfront; modell har brune dører og ingen butikkfront – element/farge-avvik"
+  ],
+  "adr": "21 Rådhusgaten (strågul)"
+ },
+ "bnr-193867898": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867898.jpg",
+  "avvik": [
+   "duebla 2-et.: identitet/vinduer/nabo stemmer, men port blå i SV vs brun dør i modell – fixbar farge"
+  ],
+  "adr": "9 Voldgaten (duebla)"
+ },
+ "bnr-194006187": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-194006187.jpg",
+  "avvik": [
+   "vegg 1: modell leser beige/grå m/mørke vindusrammer; SV hvit liggende panel – farge usikker. Grunnmur stemmer."
+  ],
+  "adr": "Gamlebyen (hvit liggende panel)"
+ },
+ "bnr-193868088": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193868088.jpg",
+  "avvik": [
+   "lys blågrå: farge/høyde/tak/nabo stemmer, vindustall usikkert (modell ser travlere ut enn SV)"
+  ],
+  "adr": "Gamlebyen (lys blågrå)"
+ },
+ "bnr-193867820": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867820.jpg",
+  "avvik": [
+   "vegg 3 (auto): render klipper inn i nabobygg over – gatevegg ikke lesbar. Må rendres på nytt fra vegg-4-standpunktet. SV viser laksrosa 2-et."
+  ],
+  "adr": "13 Rådhusgaten (laksrosa)"
+ },
+ "bnr-193971288": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193971288.jpg",
+  "avvik": [
+   "vegg 3: modell sentralt leser salviegrønn der SV viser hvitt hus – mulig fargefeil, mål-ID usikkert i gatebildet"
+  ],
+  "adr": "Gamlebyen (hvit)"
+ },
+ "bnr-13416419": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-13416419.jpg",
+  "avvik": [
+   "vegg 3: render mørk/utydelig; modell virker kremfarget m/færre/større vinduer vs SV hvitt m/sort tegltak – usikker"
+  ],
+  "adr": "22 Bings gate (hvit)"
+ },
+ "bnr-193972306": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193972306.jpg",
+  "avvik": [
+   "vegg 4: render klipper; modell virker okergul der SV viser grått umalt panel m/garasjeport – usikker/mulig fargefeil"
+  ],
+  "adr": "Gamlebyen (grå panel)"
+ },
+ "bnr-193971954": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193971954.jpg",
+  "avvik": [
+   "vegg 3 (auto): render klipper under tak – vinduer ikke lesbare. Farge rød stemmer."
+  ],
+  "adr": "Gamlebyen (rød)"
+ },
+ "bnr-193972292": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193972292.jpg",
+  "avvik": [
+   "vegg 2: modell har rundbue-porter der SV viser flat dør/vinduer – porttype-feil (typ2→typ1 fixbar). Farge/høyde/rødt tak stemmer."
+  ],
+  "adr": "79 Færgeportgaten (lys grå)"
+ },
+ "bnr-24218023": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-24218023.jpg",
+  "avvik": [
+   "vegg 0: SV-standpunktet viser FESTNINGSMUREN (stein), ikke en husfasade – kan ikke verifiseres. Modell viser gråbeige fasade m/vinduer+dører. 'Tegningen har ikke huset'. Kontrolleres manuelt (mulig feilplassert/feil SV-ref)."
+  ],
+  "adr": "Gamlebyen v/Tamburen (nov 2020)"
+ },
+ "bnr-6276504": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-6276504.jpg",
+  "avvik": [
+   "vegg 5: modell leser gul fasade sentralt der SV har hvitt liggende panel – mulig fargefeil; mål-ID usikkert i husrekka. Rødt tak stemmer."
+  ],
+  "adr": "35 Heibergs gate"
+ },
+ "bnr-193972276": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193972276.jpg",
+  "avvik": [
+   "vegg 3: SV-standpunktet viser festningsmuren, ikke husfasade – kan ikke verifiseres (samme klynge som bnr-24218023). 'Tegningen har ikke huset'."
+  ],
+  "adr": "Gamlebyen v/Tamburen (nov 2020)"
+ },
+ "bnr-193867952": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867952.jpg",
+  "avvik": [
+   "vegg 6 (lang terrakottafasade): farge/høyde/lengde stemmer, men vindustall ser høyere ut i modell og dørfarge brun vs hvit i SV – usikker"
+  ],
+  "adr": "10 Voldgaten (terrakotta)"
+ },
+ "bnr-193867480": {
+  "status": "åpen",
+  "dato": "2026-11-08",
+  "bevis": "rapport/ferdig/bnr-193867480.jpg",
+  "avvik": [
+   "vegg 0: modell-render viser ikke huset (kamera bom / huset v/Isegran ligger utenfor senterfeltet; mål ikke i synlige_hus). Kan ikke verifiseres nå. SV viser lite låverødt 1-et. hus m/teglstein."
+  ],
+  "adr": "v/Isegran fort (apr 2010)"
+ }
+}
