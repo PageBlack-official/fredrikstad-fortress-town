@@ -1,0 +1,920 @@
+[
+ {
+  "id": "bnr-193867634",
+  "adr": "Vollmesterboligen",
+  "h": 3.7,
+  "vegg_kilde": "Street View 2024 (hvit (kalket tegl)) = kvartaltegningen tell (skygge side, IoU 0.57): tegningens farge",
+  "gatevegger": [
+   2
+  ],
+  "leste_vegger": [
+   2
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867634-2",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193867634-2.jpg",
+    "kamera": {
+     "lat": 59.2020172,
+     "lon": 10.9547056,
+     "heading": 70.6,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-13415889",
+  "adr": "",
+  "h": 6.9,
+  "vegg_kilde": "Street View 2024 (hvit)",
+  "gatevegger": [
+   0,
+   3
+  ],
+  "leste_vegger": [
+   0
+  ],
+  "sv_auto_vegg": [
+   3
+  ],
+  "fasade_sv": {
+   "kilde": "Street View mai 2024",
+   "sikkerhet": "høy",
+   "side": "Ø (gatefasade mot Cicignongata)",
+   "vegg": [
+    -416.56,
+    359.15
+   ],
+   "n": [
+    0.9883,
+    -0.1524
+   ],
+   "kamera": [
+    -408.5,
+    361.6
+   ],
+   "heading": 278.0,
+   "rader": [
+    3,
+    2
+   ],
+   "dorer": 1
+  },
+  "bilder": [
+   {
+    "bilde": "bnr-13415889-0",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-13415889-0.jpg",
+    "kamera": {
+     "lat": 59.2059105,
+     "lon": 10.9452473,
+     "heading": 11.8,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-13416362",
+  "adr": "",
+  "h": 4.6,
+  "vegg_kilde": "Street View 2024 (lys oker/gulbeige stående panel)",
+  "gatevegger": [
+   0
+  ],
+  "leste_vegger": [
+   0
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-13416362-0",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-13416362-0.jpg",
+    "kamera": {
+     "lat": 59.2065819,
+     "lon": 10.9450697,
+     "heading": 136.4,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193867480",
+  "adr": "Widdingstua",
+  "h": 2.5,
+  "vegg_kilde": "Street View 2010 (rød (låverød)); eldre enn tegningen, men tegningen har ikke huset",
+  "gatevegger": [
+   0
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   0
+  ],
+  "fasade_sv": {
+   "kilde": "Street View apr. 2010",
+   "sikkerhet": "høy",
+   "side": "NV (langside) + SV (gavl), sett skrått på ~8 m",
+   "vegg": [
+    -312.91,
+    82.96
+   ],
+   "n": [
+    -0.6922,
+    0.7217
+   ],
+   "kamera": [
+    -320.6,
+    80.3
+   ],
+   "heading": 119.0,
+   "rader": [
+    3
+   ],
+   "dorer": 1
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-193867626",
+  "adr": "",
+  "h": 7.2,
+  "vegg_kilde": "Street View 2010 (laksrød/terrakotta); eldre enn tegningen, men tegningens flate på huset er liten og har en annen kulør (feil fasade, tak_farge.tegning_farger)",
+  "gatevegger": [
+   2,
+   3
+  ],
+  "leste_vegger": [
+   2,
+   3
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867626-2",
+    "sv_bilde": "rapport/gate/sv_rett/bnr-193867626-2.jpg",
+    "kamera": null
+   },
+   {
+    "bilde": "bnr-193867626-3",
+    "sv_bilde": "rapport/gate/sv_rett/bnr-193867626-3.jpg",
+    "kamera": null
+   }
+  ]
+ },
+ {
+  "id": "bnr-6276504",
+  "adr": "",
+  "h": 4.5,
+  "vegg_kilde": "Street View 2024 (hvit liggende panel)",
+  "gatevegger": [
+   5
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   5
+  ],
+  "fasade_sv": {
+   "kilde": "Street View nov. 2024",
+   "sikkerhet": "middels",
+   "side": "SØ (gatefasade, ~23 m)",
+   "vegg": [
+    285.6,
+    -249.29
+   ],
+   "n": [
+    0.7358,
+    -0.6772
+   ],
+   "kamera": [
+    291.0,
+    -271.5
+   ],
+   "heading": 312.0,
+   "rader": [
+    3
+   ],
+   "dorer": 1
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-6276512",
+  "adr": "",
+  "h": 4.7,
+  "vegg_kilde": "Street View 2024 (blågrå)",
+  "gatevegger": [
+   1
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   1
+  ],
+  "fasade_sv": {
+   "kilde": "Street View nov. 2024",
+   "sikkerhet": "middels",
+   "side": "SØ (gatefasade, ~20 m)",
+   "vegg": [
+    298.92,
+    -235.07
+   ],
+   "n": [
+    0.7479,
+    -0.6638
+   ],
+   "kamera": [
+    317.6,
+    -242.2
+   ],
+   "heading": 312.0,
+   "rader": [
+    2,
+    1
+   ],
+   "dorer": 1
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-6276016",
+  "adr": "",
+  "h": 5.0,
+  "vegg_kilde": "Street View 2024 (rød/rødbrun)",
+  "gatevegger": [
+   4,
+   5
+  ],
+  "leste_vegger": [
+   4,
+   5
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-6276016-4",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-6276016-4.jpg",
+    "kamera": {
+     "lat": 59.2013004,
+     "lon": 10.9579847,
+     "heading": 169.6,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "apr. 2024"
+    }
+   },
+   {
+    "bilde": "bnr-6276016-5",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-6276016-5.jpg",
+    "kamera": {
+     "lat": 59.2013618,
+     "lon": 10.9581415,
+     "heading": 182.4,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "apr. 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-6276822",
+  "adr": "",
+  "h": 6.1,
+  "vegg_kilde": "Street View 2024 (mørk vinrød)",
+  "gatevegger": [
+   0
+  ],
+  "leste_vegger": [
+   0,
+   3
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-6276822-3",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-6276822-3.jpg",
+    "kamera": {
+     "lat": 59.2001786,
+     "lon": 10.9551767,
+     "heading": 172.3,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "apr. 2024"
+    }
+   },
+   {
+    "bilde": "bnr-6276822-0",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-6276822-0.jpg",
+    "kamera": {
+     "lat": 59.2001093,
+     "lon": 10.9555049,
+     "heading": 239.5,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "apr. 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193971954",
+  "adr": "",
+  "h": 5.5,
+  "vegg_kilde": "Street View 2024 (rød (lys tradisjonell rød)) = kvartaltegningen Kvartal4BITMP (skygge side, IoU 0.54): tegningens farge",
+  "gatevegger": [
+   3
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   3
+  ],
+  "fasade_sv": {
+   "kilde": "Street View aug. 2010, lest 07.11; standpunkt sv-bnr-193971954-0 (aug. 2010)",
+   "vegg": [
+    23.75,
+    122.22
+   ],
+   "n": [
+    -0.3393,
+    -0.9407
+   ],
+   "rader": [],
+   "dorer": 1
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-193867855",
+  "adr": "",
+  "h": 5.0,
+  "vegg_kilde": "hvit (Vegar 06.11 + Street View mai 2024; standpunkt voldgaten-trauet (2024-05))",
+  "gatevegger": [
+   4,
+   5
+  ],
+  "leste_vegger": [
+   4,
+   5
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867855-4",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193867855-4.jpg",
+    "kamera": {
+     "lat": 59.2029386,
+     "lon": 10.9557705,
+     "heading": 238.2,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   },
+   {
+    "bilde": "bnr-193867855-5",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193867855-5.jpg",
+    "kamera": {
+     "lat": 59.2026657,
+     "lon": 10.9555339,
+     "heading": 333.8,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193868088",
+  "adr": "",
+  "h": 4.5,
+  "vegg_kilde": "Street View 2024 (lys blågrå stående panel); tegningen har oransje (kvartaltegningen Kvartal2BITMP (skygge side, IoU 0.64))",
+  "gatevegger": [
+   1
+  ],
+  "leste_vegger": [
+   1
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193868088-1",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193868088-1.jpg",
+    "kamera": {
+     "lat": 59.2041708,
+     "lon": 10.955912,
+     "heading": 270.4,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193972276",
+  "adr": "",
+  "h": 7.9,
+  "vegg_kilde": "Street View 2010 (sennepsgul/okergul stående panel); eldre enn tegningen, men tegningen har ikke huset",
+  "gatevegger": [
+   3
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   3
+  ],
+  "fasade_sv": {
+   "kilde": "Street View mai 2024, lest 07.11; standpunkt sv-bnr-193972276-0 (mai 2024)",
+   "vegg": [
+    72.12,
+    228.07
+   ],
+   "n": [
+    -0.7678,
+    0.6407
+   ],
+   "rader": [],
+   "dorer": 0
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-193972292",
+  "adr": "",
+  "h": 4.5,
+  "vegg_kilde": "Street View 2024 (lys grå stående panel (mai 2024); mørk grønn i aug. 2010)",
+  "gatevegger": [
+   2
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   2
+  ],
+  "fasade_sv": {
+   "kilde": "Street View mai 2024, lest 07.11; standpunkt sv-bnr-193972292-0 (mai 2024)",
+   "vegg": [
+    142.22,
+    146.97
+   ],
+   "n": [
+    -0.4076,
+    -0.9132
+   ],
+   "rader": [],
+   "dorer": 2
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-24218023",
+  "adr": "",
+  "h": 7.1,
+  "vegg_kilde": "Street View 2010 (lys grå/gråbeige stående panel); eldre enn tegningen, men tegningen har ikke huset",
+  "gatevegger": [
+   0
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   0
+  ],
+  "fasade_sv": {
+   "kilde": "Street View aug. 2010",
+   "sikkerhet": "høy",
+   "side": "NV (fasaden som vender mot panoramaet; kamera så mot 132°)",
+   "vegg": [
+    65.25,
+    220.03
+   ],
+   "n": [
+    -0.7507,
+    0.6606
+   ],
+   "kamera": [
+    63.7,
+    222.4
+   ],
+   "heading": 132.0,
+   "rader": [
+    3,
+    4,
+    5
+   ],
+   "dorer": 2
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-193867901",
+  "adr": "",
+  "h": 6.2,
+  "vegg_kilde": "oransje (Vegar 06.11 + Street View mai 2024; standpunkt voldgaten-trauet (2024-05))",
+  "gatevegger": [
+   1
+  ],
+  "leste_vegger": [
+   1
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867901-1",
+    "sv_bilde": "rapport/gate/sv_rett2/bnr-193867901-1.jpg",
+    "kamera": {
+     "lat": 59.2029743,
+     "lon": 10.9557684,
+     "heading": 341.0,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-6251331",
+  "adr": "",
+  "h": 6.3,
+  "vegg_kilde": "Street View 2024 (lys gul/strågul) = kvartaltegningen kvartal5 (skygge side, IoU 0.65): tegningens farge",
+  "gatevegger": [
+   1
+  ],
+  "leste_vegger": [
+   1
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-6251331-1",
+    "sv_bilde": "rapport/gate/sv_rett2/bnr-6251331-1.jpg",
+    "kamera": {
+     "lat": 59.2038705,
+     "lon": 10.9554564,
+     "heading": 282.0,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193971946",
+  "adr": "",
+  "h": 4.8,
+  "vegg_kilde": "Street View 2024 (hvit puss) = 2019-trykket (dømt): tegningens farge",
+  "gatevegger": [
+   0
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   0
+  ],
+  "fasade_sv": {
+   "kilde": "Street View aug. 2010, lest 07.11; standpunkt sv-bnr-193971946-0 (aug. 2010)",
+   "vegg": [
+    23.13,
+    111.65
+   ],
+   "n": [
+    0.382,
+    0.9241
+   ],
+   "rader": [],
+   "dorer": 2
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-193867952",
+  "adr": "",
+  "h": 8.5,
+  "vegg_kilde": "Street View 2024 (rødbrun/terrakotta); tegningen har oransje (kvartaltegningen kvartal6 (skygge side, IoU 0.74))",
+  "gatevegger": [
+   6
+  ],
+  "leste_vegger": [],
+  "sv_auto_vegg": [
+   6
+  ],
+  "fasade_sv": {
+   "kilde": "Street View mai 2024, lest 07.11; standpunkt sv-bnr-193867952-1 (mai 2024)",
+   "vegg": [
+    190.94,
+    70.72
+   ],
+   "n": [
+    0.8953,
+    -0.4455
+   ],
+   "rader": [],
+   "dorer": 2
+  },
+  "bilder": []
+ },
+ {
+  "id": "bnr-193867898",
+  "adr": "Gamlebyen modelljernbanesenter",
+  "h": 6.7,
+  "vegg_kilde": "duebla (Vegar 06.11 + Street View mai 2024; standpunkt voldgaten-trauet (2024-05))",
+  "gatevegger": [
+   2
+  ],
+  "leste_vegger": [
+   2
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867898-2",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193867898-2.jpg",
+    "kamera": {
+     "lat": 59.2029386,
+     "lon": 10.9557705,
+     "heading": 286.1,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193867820",
+  "adr": "",
+  "h": 6.1,
+  "vegg_kilde": "Street View 2024 (lys rosa/laksrosa); tegningen har grå (2019-trykket (dømt))",
+  "gatevegger": [
+   3
+  ],
+  "leste_vegger": [
+   4
+  ],
+  "sv_auto_vegg": [
+   3
+  ],
+  "fasade_sv": {
+   "kilde": "Street View mai 2024",
+   "sikkerhet": "høy",
+   "side": "NV (gatefasade)",
+   "vegg": [
+    56.09,
+    -29.2
+   ],
+   "n": [
+    -0.8024,
+    0.5968
+   ],
+   "kamera": [
+    54.6,
+    -26.5
+   ],
+   "heading": 125.0,
+   "rader": [
+    4,
+    3
+   ],
+   "dorer": 1
+  },
+  "bilder": [
+   {
+    "bilde": "bnr-193867820-4",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193867820-4.jpg",
+    "kamera": {
+     "lat": 59.20267,
+     "lon": 10.9538015,
+     "heading": 157.9,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193867804",
+  "adr": "",
+  "h": 7.0,
+  "vegg_kilde": "Street View 2024 (laks); tegningen har grå (2019-trykket (dømt))",
+  "gatevegger": [
+   4
+  ],
+  "leste_vegger": [
+   4
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867804-4",
+    "sv_bilde": "rapport/gate/sv_rett2/bnr-193867804-4.jpg",
+    "kamera": {
+     "lat": 59.2023452,
+     "lon": 10.9539171,
+     "heading": 70.0,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193867723",
+  "adr": "",
+  "h": 7.3,
+  "vegg_kilde": "Street View 2024 (sandgul/lys okerbeige) = kvartaltegningen Kvartal12 (skygge side, IoU 0.51): tegningens farge",
+  "gatevegger": [
+   1
+  ],
+  "leste_vegger": [
+   1
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193867723-1",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193867723-1.jpg",
+    "kamera": {
+     "lat": 59.2024862,
+     "lon": 10.9553502,
+     "heading": 236.4,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-194006187",
+  "adr": "",
+  "h": 5.4,
+  "vegg_kilde": "Street View 2024 (hvit liggende panel) = 2019-trykket (dømt): tegningens farge",
+  "gatevegger": [
+   1
+  ],
+  "leste_vegger": [
+   1
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-194006187-1",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-194006187-1.jpg",
+    "kamera": {
+     "lat": 59.2038138,
+     "lon": 10.9534803,
+     "heading": 319.4,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193972306",
+  "adr": "",
+  "h": 4.7,
+  "vegg_kilde": "Street View 2010 (grå (ubehandlet/gråbeiset) stående panel); eldre enn tegningen, men tegningen har ikke huset",
+  "gatevegger": [
+   4
+  ],
+  "leste_vegger": [
+   4
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193972306-4",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193972306-4.jpg",
+    "kamera": {
+     "lat": 59.2045421,
+     "lon": 10.9556519,
+     "heading": 275.5,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193971288",
+  "adr": "",
+  "h": 6.3,
+  "vegg_kilde": "Street View 2024 (hvit)",
+  "gatevegger": [
+   3
+  ],
+  "leste_vegger": [
+   3
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193971288-3",
+    "sv_bilde": "rapport/gate/sv_rett2/bnr-193971288-3.jpg",
+    "kamera": {
+     "lat": 59.2035603,
+     "lon": 10.954742,
+     "heading": 271.0,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "aug. 2010"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-13416419",
+  "adr": "",
+  "h": 4.6,
+  "vegg_kilde": "Street View 2024 (hvit stående panel)",
+  "gatevegger": [
+   3
+  ],
+  "leste_vegger": [
+   3
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-13416419-3",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-13416419-3.jpg",
+    "kamera": {
+     "lat": 59.2065654,
+     "lon": 10.9452405,
+     "heading": 32.8,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ },
+ {
+  "id": "bnr-193868576",
+  "adr": "",
+  "h": 4.3,
+  "vegg_kilde": "Street View 2024 (umalt tegl)",
+  "gatevegger": [
+   0,
+   3
+  ],
+  "leste_vegger": [
+   0,
+   3
+  ],
+  "sv_auto_vegg": [],
+  "fasade_sv": null,
+  "bilder": [
+   {
+    "bilde": "bnr-193868576-0",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193868576-0.jpg",
+    "kamera": {
+     "lat": 59.2019695,
+     "lon": 10.9527304,
+     "heading": 333.2,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   },
+   {
+    "bilde": "bnr-193868576-3",
+    "sv_bilde": "rapport/gate/sv_rett3/bnr-193868576-3.jpg",
+    "kamera": {
+     "lat": 59.2020096,
+     "lon": 10.9528797,
+     "heading": 303.8,
+     "pitch": 97.0,
+     "fov": 75.0,
+     "dato": "mai 2024"
+    }
+   }
+  ]
+ }
+]
