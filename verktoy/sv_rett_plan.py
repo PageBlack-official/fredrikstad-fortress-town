@@ -7,7 +7,8 @@ takfoten. Her velges for hver gatevegg det panoramaet (kilder/gate/sv_lager.json
   - takfoten under bildets overkant og bakken over underkanten (pitch 97t: 7° opp),
   - skrått høyst 60° fra veggens normal (ellers blir oppløsningen for dårlig i den fjerne enden),
   - nyeste år først, så nærmest.
-    python3 verktoy/sv_rett_plan.py id id ...  → kilder/gate/sv_rett_skudd.json (samme felt som sv_skudd.json, pluss vegg og pitch)"""
+    python3 verktoy/sv_rett_plan.py id id ...  → kilder/gate/sv_rett_skudd.json (samme felt som sv_skudd.json, pluss vegg og pitch)
+Env: UNNTA (verktoy/rett/unnta.py), SV_UT (skuddfil), MIN_AAR (bare panoramaer fra det året eller senere: veggfarger krever 2016+)."""
 import json, math, os, sys
 import numpy as np
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +39,7 @@ def main(ider):
     # UNNTA (07.11 natt): JSON {"id-vegg": "ferdig" | [pano, ...]}: ferdig = veggen er godkjent lest; liste = panoramaer som er prøvd
     # (hjørner skjult, fasaden bak mur/trær, uskarp) og ikke skal tas igjen. Neste runde får da neste beste vinkel.
     unnta = json.load(open(os.environ['UNNTA'])) if os.environ.get('UNNTA') else {}
+    min_aar = int(os.environ.get('MIN_AAR') or 0)
     ut, mangler = [], []
     for id_ in ider:
         x = B.get(id_)
@@ -52,6 +54,7 @@ def main(ider):
             beste = None
             for pid, P, v in PP:
                 if u_ and pid in u_: continue
+                if v.get('aar', 0) < min_aar: continue
                 dv = P - m; d = float(np.linalg.norm(dv))
                 if d < 4 or d > 40 or dv @ n < 2: continue
                 skraa = math.degrees(math.acos(max(-1, min(1, (dv @ n) / d))))

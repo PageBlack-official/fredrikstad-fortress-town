@@ -1,0 +1,178 @@
+[
+ {
+  "id": "bnr-193868371",
+  "side": {
+   "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193868371-0)",
+   "vegg_farge": "laks",
+   "vegg_rgb": [
+    224,
+    171,
+    158
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2041629, 10.9525133 h 127",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867944",
+  "side": {
+   "retning": "rettet fasade, vegg 1 (verktoy/rett, bnr-193867944-1)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    249,
+    246,
+    248
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2035341, 10.9548237 h 167.6",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868398",
+  "side": {
+   "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193868398-0)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    228,
+    224,
+    217
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2042454, 10.9526268 h 77.1",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868398",
+  "side": {
+   "retning": "rettet fasade, vegg 4 (verktoy/rett, bnr-193868398-4)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    225,
+    221,
+    214
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2042454, 10.9526268 h 77.3",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868398",
+  "side": {
+   "retning": "rettet fasade, vegg 4 (verktoy/rett, bnr-193868398-4)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    250,
+    245,
+    238
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2041629, 10.9525133 h 64.4",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867499",
+  "side": {
+   "retning": "rettet fasade, vegg 1 (verktoy/rett, bnr-193867499-1)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    231,
+    227,
+    216
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2025982, 10.9504214 h 141.5",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867510",
+  "side": {
+   "retning": "rettet fasade, vegg 1 (verktoy/rett, bnr-193867510-1)",
+   "vegg_farge": "okerbrun",
+   "vegg_rgb": [
+    140,
+    107,
+    70
+   ],
+   "lys": "skygge",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2021914, 10.9516648 h 351",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867510",
+  "side": {
+   "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193867510-0)",
+   "vegg_farge": "okerbrun",
+   "vegg_rgb": [
+    146,
+    109,
+    68
+   ],
+   "lys": "overskyet",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2020555, 10.9521471 h 319.6",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193867324",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-193867324-3)",
+   "vegg_farge": "beige",
+   "vegg_rgb": [
+    242,
+    223,
+    205
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2047465, 10.9550663 h 17.8",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193868231",
+  "side": {
+   "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-193868231-0)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    212,
+    212,
+    209
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2043641, 10.9541897 h 154.6",
+   "kilde": "rettet fasade 07.11"
+  }
+ },
+ {
+  "id": "bnr-193869548",
+  "side": {
+   "retning": "rettet fasade, vegg 3 (verktoy/rett, bnr-193869548-3)",
+   "vegg_farge": "hvit",
+   "vegg_rgb": [
+    248,
+    243,
+    235
+   ],
+   "lys": "sol",
+   "bilde_dato": "mai 2024",
+   "pano_url": "59.2032587, 10.95596 h 99.5",
+   "kilde": "rettet fasade 07.11"
+  }
+ }
+]

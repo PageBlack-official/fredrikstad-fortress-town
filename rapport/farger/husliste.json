@@ -1,0 +1,2935 @@
+{
+ "hus": [
+  {
+   "id": "bnr-193867324",
+   "adresse": "Artillerismien",
+   "vegg_kilde": "kvartaltegningen Kvartal3 (lys side, IoU 0.53)",
+   "bilder": [
+    {
+     "bilde": "bnr-193867324-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "AlBC1f7kJd3wgXaUiGsQaw"
+    },
+    {
+     "bilde": "bnr-193867324-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "KVXYZGVj-lEwWzAH5lByiQ"
+    },
+    {
+     "bilde": "bnr-193867324-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "RtPz90b_mj5vmCYIgcve5A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870295",
+   "adresse": "Bakeriet",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870295-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "EHfkyOFvVDYGQm8_sxE7AA"
+    },
+    {
+     "bilde": "bnr-193870295-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "g2Woxjugjf38LcGUfrGPEQ"
+    },
+    {
+     "bilde": "bnr-193870295-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "qaf9ZSq586N-ZnHdf_g2Dg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868231",
+   "adresse": "Balaklava",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868231-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "uiIzf1d-JUzDgKYrHVn6OQ"
+    },
+    {
+     "bilde": "bnr-193868231-7",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "KiAzWlop8TNJKWCIUqUr4w"
+    },
+    {
+     "bilde": "bnr-193868231-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "uiIzf1d-JUzDgKYrHVn6OQ"
+    }
+   ]
+  },
+  {
+   "id": "pb-1",
+   "adresse": "Brannbatteriet",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "pb-1-0",
+     "mappe": "sv",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgICMirChXg"
+    },
+    {
+     "bilde": "pb-1-1",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgICMitCQjAE"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868568",
+   "adresse": "Brannstasjon - uthus til Infanterikasernen",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868568-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "eTkVjQ-_ebsIUgea7W7Cbw"
+    },
+    {
+     "bilde": "bnr-193868568-2",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "8LgD_OCClzDf3UrnhRm6lA"
+    },
+    {
+     "bilde": "bnr-193868568-3",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "8LgD_OCClzDf3UrnhRm6lA"
+    },
+    {
+     "bilde": "bnr-193868568-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "8LgD_OCClzDf3UrnhRm6lA"
+    },
+    {
+     "bilde": "bnr-193868568-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "8LgD_OCClzDf3UrnhRm6lA"
+    },
+    {
+     "bilde": "bnr-193868568-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "SpVSDGsCtOlGaKd8UHyGPQ"
+    },
+    {
+     "bilde": "bnr-193868568-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "C8QPHHXjJ8MicPKT-jHdWQ"
+    },
+    {
+     "bilde": "bnr-193868568-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "Cdr8HK6QzCto0YD-D15rdw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868355",
+   "adresse": "Det gamle raadhus",
+   "vegg_kilde": "kvartaltegningen kvartal7 (lys side, IoU 0.65)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868355-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "JGsnabAmUS5wOhAwpV208A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870317",
+   "adresse": "Det grundmurede provianthus",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870317-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "g2Woxjugjf38LcGUfrGPEQ"
+    },
+    {
+     "bilde": "bnr-193870317-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "g2Woxjugjf38LcGUfrGPEQ"
+    },
+    {
+     "bilde": "bnr-193870317-9",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgICMitCQjAE"
+    },
+    {
+     "bilde": "bnr-193870317-1",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "GrWgv1wiYwkCJA_NT791TQ"
+    },
+    {
+     "bilde": "bnr-193870317-6",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "EHfkyOFvVDYGQm8_sxE7AA"
+    },
+    {
+     "bilde": "bnr-193870317-6",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "ihcpagm-DczlwzSvGTXNsw"
+    },
+    {
+     "bilde": "bnr-193870317-6",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "g2Woxjugjf38LcGUfrGPEQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867510",
+   "adresse": "Ekserserhuset",
+   "vegg_kilde": "kvartaltegningen Kvartal13 (skygge side, IoU 0.90)",
+   "bilder": [
+    {
+     "bilde": "bnr-193867510-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "UDyBzaGXfypdUlUlPhJqFg"
+    },
+    {
+     "bilde": "bnr-193867510-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "__Lc7c7Q9No8i97TGZPe-w"
+    },
+    {
+     "bilde": "bnr-193867510-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "rYdPR173ONX4sqYa_sGTow"
+    },
+    {
+     "bilde": "bnr-193867510-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "DYUZNuJau3aeK8NOTNpe5A"
+    },
+    {
+     "bilde": "bnr-193867510-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "bu8RfbMRmCt0EtqwzpFm_Q"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972314",
+   "adresse": "Feiergården",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972314-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "KVXYZGVj-lEwWzAH5lByiQ"
+    }
+   ]
+  },
+  {
+   "id": "pb-9",
+   "adresse": "Færgeporten",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "pb-9-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "Y3BRmeIrcURK26S4CtZkXQ"
+    },
+    {
+     "bilde": "pb-9-1",
+     "mappe": "sv_rett3",
+     "dato": "nov. 2020",
+     "pano": "4-HHTsZzK3njeAI3Cp4VYw"
+    },
+    {
+     "bilde": "pb-9-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Y3BRmeIrcURK26S4CtZkXQ"
+    },
+    {
+     "bilde": "pb-9-0",
+     "mappe": "sv_rett3",
+     "dato": "nov. 2020",
+     "pano": "4-HHTsZzK3njeAI3Cp4VYw"
+    },
+    {
+     "bilde": "pb-9-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "GCQJVLSTo7oqsXp3dYa1aA"
+    },
+    {
+     "bilde": "pb-9-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "RT_QL_THRimlaCuYIPoqRg"
+    },
+    {
+     "bilde": "pb-9-1",
+     "mappe": "sv_rett4",
+     "dato": "nov. 2020",
+     "pano": "CYzO0Q1nC6iV7RWhB_cIAw"
+    },
+    {
+     "bilde": "pb-9-1",
+     "mappe": "sv_rett5",
+     "dato": "nov. 2020",
+     "pano": "cazPCEm0sm3bdPQOpdVXFQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870325",
+   "adresse": "Hovedvakten – det gamle slaveri",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870325-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "qaf9ZSq586N-ZnHdf_g2Dg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867499",
+   "adresse": "Kommandantgården",
+   "vegg_kilde": "kvartaltegningen Kvartal13 (lys side, IoU 0.74)",
+   "bilder": [
+    {
+     "bilde": "bnr-193867499-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "QU8GN4aJKq__1aDTFn5Drw"
+    }
+   ]
+  },
+  {
+   "id": "pb-10",
+   "adresse": "Kongeporten",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "pb-10-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "GrWgv1wiYwkCJA_NT791TQ"
+    },
+    {
+     "bilde": "pb-10-3",
+     "mappe": "sv_rett3",
+     "dato": "juli 2017",
+     "pano": "xQzAyGgOS2yxTC6Oz2gqZw"
+    },
+    {
+     "bilde": "pb-10-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "8eHNL1OmDFk61Myl_cP--w"
+    },
+    {
+     "bilde": "pb-10-2",
+     "mappe": "sv_rett5",
+     "dato": "juli 2017",
+     "pano": "xQzAyGgOS2yxTC6Oz2gqZw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193869556",
+   "adresse": "Krutthuset",
+   "vegg_kilde": "kvartaltegningen Kvartal3 (lys side, IoU 0.84)",
+   "bilder": []
+  },
+  {
+   "id": "pb-22",
+   "adresse": "Kruttmagasinet",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "bnr-193870198",
+   "adresse": "Labratoriet",
+   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.74)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870198-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "QKEygKRnLCsuBYGGLKGugA"
+    },
+    {
+     "bilde": "bnr-193870198-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "NOSUaLap8gpuzE6fTCbtiQ"
+    },
+    {
+     "bilde": "bnr-193870198-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "QKEygKRnLCsuBYGGLKGugA"
+    },
+    {
+     "bilde": "bnr-193870198-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "86IIm0aJMI6NpjR7KVSIpQ"
+    },
+    {
+     "bilde": "bnr-193870198-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Id6k5aS3N4TzwOrZnKHdQA"
+    },
+    {
+     "bilde": "bnr-193870198-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "G0nwyQeiQZz4ptJUydnsWg"
+    }
+   ]
+  },
+  {
+   "id": "pb-11",
+   "adresse": "Mellomporten",
+   "vegg_kilde": "portal uten dømt kilde: grått puss (verktoy/vegg_nye.py, avvik A14)",
+   "bilder": [
+    {
+     "bilde": "pb-11-0",
+     "mappe": "sv",
+     "dato": "mars 2019",
+     "pano": "CIHM0ogKEICAgIDqva265gE"
+    },
+    {
+     "bilde": "pb-11-1",
+     "mappe": "sv_rett3",
+     "dato": "mars 2019",
+     "pano": "CIHM0ogKEICAgIDqva265gE"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868223",
+   "adresse": "Muldvadgården",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868223-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "BsZmkH6HKXfqVnUwOFg1NA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870309",
+   "adresse": "Offisersvakten",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870309-1",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "EHfkyOFvVDYGQm8_sxE7AA"
+    },
+    {
+     "bilde": "bnr-193870309-1",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "ihcpagm-DczlwzSvGTXNsw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868312",
+   "adresse": "Rosinggården",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868312-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "N5n_6fMzUma1tWs5BHnXRA"
+    },
+    {
+     "bilde": "bnr-193868312-7",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "xNblTuyVw0nN1OA7BqwE3A"
+    },
+    {
+     "bilde": "bnr-193868312-7",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "xNblTuyVw0nN1OA7BqwE3A"
+    },
+    {
+     "bilde": "bnr-193868312-7",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "f6vFKMoVpOAEPqGibjXDZw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868150",
+   "adresse": "Salamandergården",
+   "vegg_kilde": "kvartaltegningen Kvartal2BITMP (lys side, IoU 0.72)",
+   "bilder": []
+  },
+  {
+   "id": "pb-2",
+   "adresse": "Sprøytehuset / Proviantboden",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "pb-2-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "EHfkyOFvVDYGQm8_sxE7AA"
+    },
+    {
+     "bilde": "pb-2-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "EHfkyOFvVDYGQm8_sxE7AA"
+    },
+    {
+     "bilde": "pb-2-4",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "ihcpagm-DczlwzSvGTXNsw"
+    },
+    {
+     "bilde": "pb-2-4",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "GrWgv1wiYwkCJA_NT791TQ"
+    },
+    {
+     "bilde": "pb-2-0",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "ihcpagm-DczlwzSvGTXNsw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867316",
+   "adresse": "Tennishuset",
+   "vegg_kilde": "nabohuset bnr-193867308 (Artillerismiens uthus, 1.5 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193869548",
+   "adresse": "Voldporten med vaktstuen",
+   "vegg_kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.35)",
+   "bilder": [
+    {
+     "bilde": "bnr-193869548-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "9-Azqxw5tP8YTeNHcKcYkg"
+    },
+    {
+     "bilde": "bnr-193869548-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "XIkNoV5lU9C_rLTTL9mY8A"
+    },
+    {
+     "bilde": "bnr-193869548-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "GXiKchVVCpYZzF7vnBSslA"
+    },
+    {
+     "bilde": "bnr-193869548-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "GHxXugDW-rMv5h61jNNk_w"
+    },
+    {
+     "bilde": "bnr-193869548-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "AbWj05bF5yazXsmeCVI-eg"
+    },
+    {
+     "bilde": "bnr-193869548-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "QwfU_FvBrXC5tLRpydtgFg"
+    },
+    {
+     "bilde": "bnr-193869548-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "e4KapX1Q0X1nbTTxypHS5w"
+    },
+    {
+     "bilde": "bnr-193869548-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "zN7A7VRBGufnLeN8YUYcLQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193869580",
+   "adresse": "Voldportravelinet",
+   "vegg_kilde": "kvartaltegningen Glasshytta (lys side, IoU 0.76)",
+   "bilder": [
+    {
+     "bilde": "bnr-193869580-11",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "cew0O-AUSaaUz25v_18pFA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-13384460",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-13384460-0",
+     "mappe": "sv",
+     "dato": "apr. 2024",
+     "pano": "49hV4vkZBUYqOXWNpmtPCg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-13414904",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-13414904-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "MO6LH42wM-SCDAo8uZ9gSQ"
+    },
+    {
+     "bilde": "bnr-13414904-3",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "xNblTuyVw0nN1OA7BqwE3A"
+    },
+    {
+     "bilde": "bnr-13414904-5",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "JGsnabAmUS5wOhAwpV208A"
+    },
+    {
+     "bilde": "bnr-13414904-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "f6vFKMoVpOAEPqGibjXDZw"
+    },
+    {
+     "bilde": "bnr-13414904-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "k6oKczODq-V_Lkjf-3kSPw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-16308102",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-16312916",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-16312916-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "T2xNHzZMcR3yAsj9AhArKw"
+    },
+    {
+     "bilde": "bnr-16312916-5",
+     "mappe": "sv_rett3",
+     "dato": "nov. 2020",
+     "pano": "CYzO0Q1nC6iV7RWhB_cIAw"
+    },
+    {
+     "bilde": "bnr-16312916-5",
+     "mappe": "sv_rett4",
+     "dato": "nov. 2020",
+     "pano": "cazPCEm0sm3bdPQOpdVXFQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-16313173",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-16313173-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193820417",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-193820417-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "JuJJOizC2FLDrYu_g52DJA"
+    },
+    {
+     "bilde": "bnr-193820417-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "mmTm7XQ8iDCUNjzJvyPkKQ"
+    },
+    {
+     "bilde": "bnr-193820417-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "65VfFvYlxv5_YW_CSXskuA"
+    },
+    {
+     "bilde": "bnr-193820417-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "kfPwce2Y6zx_l-smaOcg9A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193820565",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193820557 (garage, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193820832",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-193820832-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "E2jzpwTGtZS_ZQYG2YejyA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193820883",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-193820883-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "glVVA29HHd0-FQL3DOWN7g"
+    },
+    {
+     "bilde": "bnr-193820883-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "2TwTvKGLWpDMJ467fL5kTw"
+    },
+    {
+     "bilde": "bnr-193820883-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "ozgf6JGeTM9aokB_Ol9kuA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867405",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867553",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867685",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen tell (lys side, IoU 0.61)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867731",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.48)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867758",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.58)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867766",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.61)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867790",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193867790-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "xNblTuyVw0nN1OA7BqwE3A"
+    },
+    {
+     "bilde": "bnr-193867790-4",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "f6vFKMoVpOAEPqGibjXDZw"
+    },
+    {
+     "bilde": "bnr-193867790-5",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "a9D8stlKJ821fxv7HNl1Dg"
+    },
+    {
+     "bilde": "bnr-193867790-4",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "17vSbsHR4jR69aszJSGTmQ"
+    },
+    {
+     "bilde": "bnr-193867790-4",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "xNblTuyVw0nN1OA7BqwE3A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867812",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193867944",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.62)",
+   "bilder": [
+    {
+     "bilde": "bnr-193867944-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "dURLTjSK8TIk53k37NgLMg"
+    },
+    {
+     "bilde": "bnr-193867944-7",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "5YXEHsoERsCPNZke6SdssA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193867995",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868010",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868010-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "XbDXIAieJcstFiBjjn4HAg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868118",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal2BITMP (skygge side, IoU 0.57)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868118-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "6puL-qKKgN4dSFI27bZRww"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868126",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868126-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "qPNCsMJAaPPAEzAILxQf8A"
+    },
+    {
+     "bilde": "bnr-193868126-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "qPNCsMJAaPPAEzAILxQf8A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868207",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal5 (lys side, IoU 0.73)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868207-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "dURLTjSK8TIk53k37NgLMg"
+    },
+    {
+     "bilde": "bnr-193868207-4",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "5YXEHsoERsCPNZke6SdssA"
+    },
+    {
+     "bilde": "bnr-193868207-8",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868215",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal5 (skygge side, IoU 0.64)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868215-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "z2nuwpFJjRiU1saJktpg5A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868266",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (skygge side, IoU 0.78)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868290",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.76)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868290-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "N5n_6fMzUma1tWs5BHnXRA"
+    },
+    {
+     "bilde": "bnr-193868290-4",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "igwQ3ifijqy2VJA41nt9IQ"
+    },
+    {
+     "bilde": "bnr-193868290-4",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "igwQ3ifijqy2VJA41nt9IQ"
+    },
+    {
+     "bilde": "bnr-193868290-4",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "BsZmkH6HKXfqVnUwOFg1NA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868339",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal4BITMP (lys side, IoU 0.80)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868347",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868347-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "EukcoN02cg_mkHeqVtp-2A"
+    },
+    {
+     "bilde": "bnr-193868347-6",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "N5n_6fMzUma1tWs5BHnXRA"
+    },
+    {
+     "bilde": "bnr-193868347-6",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "N5n_6fMzUma1tWs5BHnXRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868371",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868371-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "4q6rxp1umD3upYxwZzMjVw"
+    },
+    {
+     "bilde": "bnr-193868371-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "AqJNQoZIkys-cH_sumre7A"
+    },
+    {
+     "bilde": "bnr-193868371-6",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "AqJNQoZIkys-cH_sumre7A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868398",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868398-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "AqJNQoZIkys-cH_sumre7A"
+    },
+    {
+     "bilde": "bnr-193868398-5",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "RT_QL_THRimlaCuYIPoqRg"
+    },
+    {
+     "bilde": "bnr-193868398-4",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "AqJNQoZIkys-cH_sumre7A"
+    },
+    {
+     "bilde": "bnr-193868398-4",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "4q6rxp1umD3upYxwZzMjVw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868401",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868401-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "KE157dgmne_Bii1FQUWY-g"
+    },
+    {
+     "bilde": "bnr-193868401-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "uiIzf1d-JUzDgKYrHVn6OQ"
+    },
+    {
+     "bilde": "bnr-193868401-1",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "YjGoXiA3lxm6lhXwnI0QIw"
+    },
+    {
+     "bilde": "bnr-193868401-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "YjGoXiA3lxm6lhXwnI0QIw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868444",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868444-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "L3eJe00Sbrk0NB96TdYCRQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868452",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868452-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "GCQJVLSTo7oqsXp3dYa1aA"
+    },
+    {
+     "bilde": "bnr-193868452-8",
+     "mappe": "sv_rett3",
+     "dato": "nov. 2020",
+     "pano": "CYzO0Q1nC6iV7RWhB_cIAw"
+    },
+    {
+     "bilde": "bnr-193868452-8",
+     "mappe": "sv_rett4",
+     "dato": "nov. 2020",
+     "pano": "4-HHTsZzK3njeAI3Cp4VYw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868479",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.69)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868495",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868495-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "0UxeEgRxvgtPxC6PucY9-w"
+    },
+    {
+     "bilde": "bnr-193868495-4",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "0UxeEgRxvgtPxC6PucY9-w"
+    },
+    {
+     "bilde": "bnr-193868495-4",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "0UxeEgRxvgtPxC6PucY9-w"
+    },
+    {
+     "bilde": "bnr-193868495-4",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "XUTsg07CXlrrdhx0PmVKwA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868517",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868517-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "yNISg6zR1siWXvtUhzEXYg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868525",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal4BITMP (lys side, IoU 0.59)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868533",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868584",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868592",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868606",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868606-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "a9D8stlKJ821fxv7HNl1Dg"
+    },
+    {
+     "bilde": "bnr-193868606-6",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "SpVSDGsCtOlGaKd8UHyGPQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868614",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868630",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868630-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "jI8KdnvkLNWLezA4g0i0Ag"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868649",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193971296 (garage, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868657",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193868681",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868681-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "6puL-qKKgN4dSFI27bZRww"
+    },
+    {
+     "bilde": "bnr-193868681-1",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "HePFlWzf1rALp2HnGv2TJg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868703",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193868703-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "z2nuwpFJjRiU1saJktpg5A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870163",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-193870163-0",
+     "mappe": "sv",
+     "dato": "apr. 2024",
+     "pano": "MSecf5dWdBh3tTg4q_jmqQ"
+    },
+    {
+     "bilde": "bnr-193870163-1",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "Aulg7e_j8utXdEHnSoMDXA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870236",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.70)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870236-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "uPXLiDR95TI4g3sASCAsug"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870244",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870244-1",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Fvv4OKsdMydfPctgH4bqhA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193870252",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen sistekvartal (skygge side, IoU 0.60)",
+   "bilder": [
+    {
+     "bilde": "bnr-193870252-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "2Iq61ZouHP0ECM1i3FJgvA"
+    },
+    {
+     "bilde": "bnr-193870252-1",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "NRXn_fCRUttOvXh4lt6RIw"
+    },
+    {
+     "bilde": "bnr-193870252-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "NKEb0xuLUNTxRlEJwnLEEQ"
+    },
+    {
+     "bilde": "bnr-193870252-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "_A4T5PoNhxkcZa-rcSgLIg"
+    },
+    {
+     "bilde": "bnr-193870252-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "lk_jLaZeNi-kxvuxb9r3Fg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193874371",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "bnr-193874398",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-13384460 (house, 2.9 m unna)",
+   "bilder": [
+    {
+     "bilde": "bnr-193874398-0",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "1-BANwlNCob1nHdOUm-5JQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193874428",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-6276016 (house, 0.0 m unna)",
+   "bilder": [
+    {
+     "bilde": "bnr-193874428-0",
+     "mappe": "sv",
+     "dato": "apr. 2024",
+     "pano": "NLv4WmJZhBmxGSUDoYlIlw"
+    },
+    {
+     "bilde": "bnr-193874428-1",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "1rSni9QFd6_cyNAZt-l4Nw"
+    },
+    {
+     "bilde": "bnr-193874428-1",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "afFSmnOOrjtUMs9b5prISQ"
+    },
+    {
+     "bilde": "bnr-193874428-1",
+     "mappe": "sv_rett5",
+     "dato": "apr. 2024",
+     "pano": "xBL1wFDDRkVtAsCsYDYjag"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193874525",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "bnr-193874533",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-193874533-0",
+     "mappe": "sv",
+     "dato": "apr. 2024",
+     "pano": "tap1Pu3-IAXBbM4ZIaIiJQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193918247",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193918247-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "KoD2jhZX-ADWFZH5paitdg"
+    },
+    {
+     "bilde": "bnr-193918247-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "FTEKxwemuScNk8Ktw5uPWQ"
+    },
+    {
+     "bilde": "bnr-193918247-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "X2txkZd-1dCv1XTbJ6kA_Q"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193967132",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193967132-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "XBsi4AcVMrN51uCvzTzg7Q"
+    },
+    {
+     "bilde": "bnr-193967132-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "XBsi4AcVMrN51uCvzTzg7Q"
+    },
+    {
+     "bilde": "bnr-193967132-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "FHAgqA-3MqxGD0AXgaVeow"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971199",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971199-0",
+     "mappe": "sv",
+     "dato": "nov. 2020",
+     "pano": "B83jjrIw6ypu739_gNVJZw"
+    },
+    {
+     "bilde": "bnr-193971199-3",
+     "mappe": "sv_rett3",
+     "dato": "nov. 2020",
+     "pano": "B83jjrIw6ypu739_gNVJZw"
+    },
+    {
+     "bilde": "bnr-193971199-2",
+     "mappe": "sv_rett3",
+     "dato": "nov. 2020",
+     "pano": "B83jjrIw6ypu739_gNVJZw"
+    },
+    {
+     "bilde": "bnr-193971199-2",
+     "mappe": "sv_rett4",
+     "dato": "nov. 2020",
+     "pano": "4tDYrWyRbmRiwKxhG6S7Aw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971202",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971210",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971210-6",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "uiIzf1d-JUzDgKYrHVn6OQ"
+    },
+    {
+     "bilde": "bnr-193971210-4",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Y3BRmeIrcURK26S4CtZkXQ"
+    },
+    {
+     "bilde": "bnr-193971210-6",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "KE157dgmne_Bii1FQUWY-g"
+    },
+    {
+     "bilde": "bnr-193971210-6",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "YjGoXiA3lxm6lhXwnI0QIw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971229",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971253",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971261",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.37)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971261-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "17vSbsHR4jR69aszJSGTmQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971296",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971318",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971334",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971334-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "IYye1NFf30u6KCbsHDIRQQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971342",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971350",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971350-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "6puL-qKKgN4dSFI27bZRww"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971369",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal7 (lys side, IoU 0.63)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971369-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "N_lnDeXMdGBiS9dmx8kVxg"
+    },
+    {
+     "bilde": "bnr-193971369-1",
+     "mappe": "sv",
+     "dato": "mars 2019",
+     "pano": "CIHM0ogKEICAgIDqva265gE"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971377",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971385",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971539",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-193971539-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "LMwHOUDH8YAxLvkEku0wmg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971873",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971873-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "NSuxyLDmThYGdbpGCiVvQQ"
+    },
+    {
+     "bilde": "bnr-193971873-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "NEi_29JsVUo7_VkRigAskw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971903",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971911",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal10 (skygge side, IoU 0.64)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971911-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "NEi_29JsVUo7_VkRigAskw"
+    },
+    {
+     "bilde": "bnr-193971911-2",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "bIkSL0QpfMT08jL8BXDNzA"
+    },
+    {
+     "bilde": "bnr-193971911-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "bIkSL0QpfMT08jL8BXDNzA"
+    },
+    {
+     "bilde": "bnr-193971911-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "U_gcOZ92PG0f97PPv3KiJg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971938",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971938-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "KEhDeIwAiv-RBfcEQo69cQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193971962",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193971970",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193971970-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "TDkLVEU2ydeSsEiJheSPOw"
+    },
+    {
+     "bilde": "bnr-193971970-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "uiIzf1d-JUzDgKYrHVn6OQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972004",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972004-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "RScme_1Pai7ZE-R9fBLsRA"
+    },
+    {
+     "bilde": "bnr-193972004-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "C8QPHHXjJ8MicPKT-jHdWQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972039",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972039-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "Tf_qz3W0UHsvhqG8OHfJyg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972047",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal14 (skygge side, IoU 0.46)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972047-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Tf_qz3W0UHsvhqG8OHfJyg"
+    },
+    {
+     "bilde": "bnr-193972047-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Tf_qz3W0UHsvhqG8OHfJyg"
+    },
+    {
+     "bilde": "bnr-193972047-0",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "C8QPHHXjJ8MicPKT-jHdWQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972055",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972055-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "_A4T5PoNhxkcZa-rcSgLIg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972071",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972071-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "NKEb0xuLUNTxRlEJwnLEEQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972098",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972101",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal12 (skygge side, IoU 0.60)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972101-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "17vSbsHR4jR69aszJSGTmQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972128",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972128-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "a9D8stlKJ821fxv7HNl1Dg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972136",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972136-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "N5n_6fMzUma1tWs5BHnXRA"
+    },
+    {
+     "bilde": "bnr-193972136-0",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "igwQ3ifijqy2VJA41nt9IQ"
+    },
+    {
+     "bilde": "bnr-193972136-1",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "igwQ3ifijqy2VJA41nt9IQ"
+    },
+    {
+     "bilde": "bnr-193972136-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "igwQ3ifijqy2VJA41nt9IQ"
+    },
+    {
+     "bilde": "bnr-193972136-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "igwQ3ifijqy2VJA41nt9IQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972144",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972152",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal8BITMAP (lys side, IoU 0.46)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972152-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972160",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972179",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972179-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "XbDXIAieJcstFiBjjn4HAg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972187",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972187-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    },
+    {
+     "bilde": "bnr-193972187-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972209",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972217",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193972209 (garage, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972225",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972225-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972349",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972365",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972365-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "z2nuwpFJjRiU1saJktpg5A"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972381",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972381-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "MiRAXhS0vLacAeabSOsK_A"
+    },
+    {
+     "bilde": "bnr-193972381-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "Fvv4OKsdMydfPctgH4bqhA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972438",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972438-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "RScme_1Pai7ZE-R9fBLsRA"
+    },
+    {
+     "bilde": "bnr-193972438-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "Cdr8HK6QzCto0YD-D15rdw"
+    },
+    {
+     "bilde": "bnr-193972438-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "SpVSDGsCtOlGaKd8UHyGPQ"
+    },
+    {
+     "bilde": "bnr-193972438-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Cdr8HK6QzCto0YD-D15rdw"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972446",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972446-5",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "SpVSDGsCtOlGaKd8UHyGPQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972454",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972454-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "Cdr8HK6QzCto0YD-D15rdw"
+    },
+    {
+     "bilde": "bnr-193972454-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "SpVSDGsCtOlGaKd8UHyGPQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972462",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.64)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972489",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972497",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972519",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972519-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "jI8KdnvkLNWLezA4g0i0Ag"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193972535",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972543",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972578",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972594",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972608",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972616",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972624",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972632",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193972772",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-193972772-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "Tf_qz3W0UHsvhqG8OHfJyg"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193974767",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-193987397",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal5 (skygge side, IoU 0.59)",
+   "bilder": [
+    {
+     "bilde": "bnr-193987397-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-193991718",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-300002508",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193868495 (office, 0.2 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-300279164",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-300279164-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "17vSbsHR4jR69aszJSGTmQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-300399132",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-300506942",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "bnr-6246729",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-6276539 (house, 3.3 m unna)",
+   "bilder": [
+    {
+     "bilde": "bnr-6246729-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "feL-CR-0arCvxl-k7Tas9w"
+    }
+   ]
+  },
+  {
+   "id": "bnr-6246753",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-6251323",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal5 (skygge side, IoU 0.81)",
+   "bilder": [
+    {
+     "bilde": "bnr-6251323-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "IYye1NFf30u6KCbsHDIRQQ"
+    }
+   ]
+  },
+  {
+   "id": "bnr-6251765",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "bnr-6254179",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": [
+    {
+     "bilde": "bnr-6254179-2",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "k4zHmwfeADNOFnVp6muX4g"
+    },
+    {
+     "bilde": "bnr-6254179-2",
+     "mappe": "sv_rett4",
+     "dato": "apr. 2024",
+     "pano": "C5fnOZEtwXcwPRUgh_7YIA"
+    }
+   ]
+  },
+  {
+   "id": "bnr-6275109",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "bnr-6275109-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "EukcoN02cg_mkHeqVtp-2A"
+    }
+   ]
+  },
+  {
+   "id": "pb-13",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "pb-14",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "pb-14-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "jI8KdnvkLNWLezA4g0i0Ag"
+    }
+   ]
+  },
+  {
+   "id": "pb-17",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "pb-18",
+   "adresse": "",
+   "vegg_kilde": null,
+   "bilder": []
+  },
+  {
+   "id": "pb-23",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193867936 (residential, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-24",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193874568 (garage, 0.9 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-25",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-24218023 (apartments, 25.4 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-25-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "hfPvTxfVq1TS5uIcJvlDlg"
+    },
+    {
+     "bilde": "pb-25-2",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgIDU0cyaAQ"
+    },
+    {
+     "bilde": "pb-25-0",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "7XeejT-h2vn-QkG3IfrMpw"
+    }
+   ]
+  },
+  {
+   "id": "pb-26",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193868622 (retail, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-27",
+   "adresse": "",
+   "vegg_kilde": "nabohuset pb-25 (yes, 2.4 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-27-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "hfPvTxfVq1TS5uIcJvlDlg"
+    },
+    {
+     "bilde": "pb-27-0",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgIDU0cyaAQ"
+    },
+    {
+     "bilde": "pb-27-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "7XeejT-h2vn-QkG3IfrMpw"
+    },
+    {
+     "bilde": "pb-27-2",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "6ihXuSZfn8oEi3l2ufap8g"
+    }
+   ]
+  },
+  {
+   "id": "pb-28",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193991718 (garages, 0.4 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-29",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193869556 (Krutthuset, 2.6 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-30",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193869556 (Krutthuset, 10.7 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-31",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193870317 (Det grundmurede provianthus, 0.2 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-32",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-300498849 (garage, 1.5 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-32-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "afFSmnOOrjtUMs9b5prISQ"
+    },
+    {
+     "bilde": "pb-32-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "feL-CR-0arCvxl-k7Tas9w"
+    },
+    {
+     "bilde": "pb-32-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "ysVj55qKKQPnA19pDtNwUg"
+    },
+    {
+     "bilde": "pb-32-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "feL-CR-0arCvxl-k7Tas9w"
+    },
+    {
+     "bilde": "pb-32-3",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "ysVj55qKKQPnA19pDtNwUg"
+    }
+   ]
+  },
+  {
+   "id": "pb-34",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193972403 (garage, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-35",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-6251765 (garage, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-36",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-6275990 (apartments, 2.6 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-36-0",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "4sVLKKtmjlro4d4EpuxIxg"
+    },
+    {
+     "bilde": "pb-36-3",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "97xra_12Lq9L3usenU8ohg"
+    },
+    {
+     "bilde": "pb-36-0",
+     "mappe": "sv_rett4",
+     "dato": "apr. 2024",
+     "pano": "UcaPQWWze0TWtUT9YEkgRw"
+    }
+   ]
+  },
+  {
+   "id": "pb-37",
+   "adresse": "",
+   "vegg_kilde": "nabohuset pb-27 (yes, 2.4 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-37-1",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgIDU0cyaAQ"
+    },
+    {
+     "bilde": "pb-37-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "7XeejT-h2vn-QkG3IfrMpw"
+    },
+    {
+     "bilde": "pb-37-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "6ihXuSZfn8oEi3l2ufap8g"
+    },
+    {
+     "bilde": "pb-37-3",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "hfPvTxfVq1TS5uIcJvlDlg"
+    }
+   ]
+  },
+  {
+   "id": "pb-38",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193874401 (garage, 0.2 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-39",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-13384401 (house, 1.9 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-4",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": []
+  },
+  {
+   "id": "pb-40",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193870317 (Det grundmurede provianthus, 0.0 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-40-2",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgICMirChXg"
+    },
+    {
+     "bilde": "pb-40-1",
+     "mappe": "sv_rett3",
+     "dato": "aug. 2019",
+     "pano": "CIHM0ogKEICAgICMirChXg"
+    }
+   ]
+  },
+  {
+   "id": "pb-41",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193992765 (transportation, 4.3 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-41-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "RSFBZBF7D74AINv7IZiCXg"
+    },
+    {
+     "bilde": "pb-41-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "baEIWWjlmiyZbfIEZG4Jdw"
+    },
+    {
+     "bilde": "pb-41-3",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "hpqCzkCpOcNcEOKmszFXPQ"
+    }
+   ]
+  },
+  {
+   "id": "pb-42",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193867332 (garage, 2.5 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-43",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193972276 (university, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-44",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-6276520 (house, 2.8 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-44-2",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "tap1Pu3-IAXBbM4ZIaIiJQ"
+    },
+    {
+     "bilde": "pb-44-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "feL-CR-0arCvxl-k7Tas9w"
+    },
+    {
+     "bilde": "pb-44-0",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "afFSmnOOrjtUMs9b5prISQ"
+    },
+    {
+     "bilde": "pb-44-0",
+     "mappe": "sv_rett5",
+     "dato": "mai 2024",
+     "pano": "1rSni9QFd6_cyNAZt-l4Nw"
+    }
+   ]
+  },
+  {
+   "id": "pb-46",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193867782 (house, 9.9 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-46-2",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "SpVSDGsCtOlGaKd8UHyGPQ"
+    },
+    {
+     "bilde": "pb-46-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "Cdr8HK6QzCto0YD-D15rdw"
+    },
+    {
+     "bilde": "pb-46-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "8LgD_OCClzDf3UrnhRm6lA"
+    }
+   ]
+  },
+  {
+   "id": "pb-47",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193971369 (retail, 0.6 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-48",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193868371 (residential, 2.8 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-49",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193867596 (Vennehaabet, 1.5 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-49-2",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "bIkSL0QpfMT08jL8BXDNzA"
+    },
+    {
+     "bilde": "pb-49-3",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "U_gcOZ92PG0f97PPv3KiJg"
+    },
+    {
+     "bilde": "pb-49-2",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "NEi_29JsVUo7_VkRigAskw"
+    },
+    {
+     "bilde": "pb-49-3",
+     "mappe": "sv_rett4",
+     "dato": "mai 2024",
+     "pano": "bIkSL0QpfMT08jL8BXDNzA"
+    }
+   ]
+  },
+  {
+   "id": "pb-5",
+   "adresse": "",
+   "vegg_kilde": "2015-trykkfila (ikke dømt)",
+   "bilder": [
+    {
+     "bilde": "pb-5-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "p2rDOyP-FAMV_Y0YZwZeRA"
+    },
+    {
+     "bilde": "pb-5-4",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "EukcoN02cg_mkHeqVtp-2A"
+    },
+    {
+     "bilde": "pb-5-4",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "EukcoN02cg_mkHeqVtp-2A"
+    }
+   ]
+  },
+  {
+   "id": "pb-50",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193972322 (garage, 0.5 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-51",
+   "adresse": "",
+   "vegg_kilde": "portal uten dømt kilde: grått puss (verktoy/vegg_nye.py, avvik A14)",
+   "bilder": [
+    {
+     "bilde": "pb-51-3",
+     "mappe": "sv_rett",
+     "dato": "mai 2024",
+     "pano": "eTkVjQ-_ebsIUgea7W7Cbw"
+    },
+    {
+     "bilde": "pb-51-3",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "eTkVjQ-_ebsIUgea7W7Cbw"
+    }
+   ]
+  },
+  {
+   "id": "pb-52",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193972411 (Sindinggården, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-53",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193867693 (apartments, 0.0 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-54",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193971350 (warehouse, 0.1 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-55",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-6276474 (house, 3.9 m unna)",
+   "bilder": [
+    {
+     "bilde": "pb-55-3",
+     "mappe": "sv_rett3",
+     "dato": "apr. 2024",
+     "pano": "tap1Pu3-IAXBbM4ZIaIiJQ"
+    }
+   ]
+  },
+  {
+   "id": "pb-56",
+   "adresse": "",
+   "vegg_kilde": "nabohuset bnr-193867545 (Arnesgården, 0.1 m unna)",
+   "bilder": []
+  },
+  {
+   "id": "pb-57",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.58)",
+   "bilder": [
+    {
+     "bilde": "pb-57-2",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "CYUBGsleniYZK69WyHIsuw"
+    }
+   ]
+  },
+  {
+   "id": "pb-58",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": []
+  },
+  {
+   "id": "pb-60",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal5 (lys side, IoU 0.71)",
+   "bilder": [
+    {
+     "bilde": "pb-60-1",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "uiIzf1d-JUzDgKYrHVn6OQ"
+    }
+   ]
+  },
+  {
+   "id": "pb-65",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen kvartal7 (lys side, IoU 0.44)",
+   "bilder": []
+  },
+  {
+   "id": "pb-7",
+   "adresse": "",
+   "vegg_kilde": "2019-trykket (dømt)",
+   "bilder": [
+    {
+     "bilde": "pb-7-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "lk_jLaZeNi-kxvuxb9r3Fg"
+    },
+    {
+     "bilde": "pb-7-0",
+     "mappe": "sv_rett2",
+     "dato": "mai 2024",
+     "pano": "lk_jLaZeNi-kxvuxb9r3Fg"
+    },
+    {
+     "bilde": "pb-7-0",
+     "mappe": "sv_rett3",
+     "dato": "mai 2024",
+     "pano": "x_Cl-FhOlI5C5SkRfN23pg"
+    }
+   ]
+  },
+  {
+   "id": "pb-8",
+   "adresse": "",
+   "vegg_kilde": "kvartaltegningen Kvartal14 (lys side, IoU 0.68)",
+   "bilder": [
+    {
+     "bilde": "pb-8-0",
+     "mappe": "sv",
+     "dato": "mai 2024",
+     "pano": "MiRAXhS0vLacAeabSOsK_A"
+    }
+   ]
+  }
+ ]
+}

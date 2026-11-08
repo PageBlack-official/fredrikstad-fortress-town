@@ -4,7 +4,7 @@
 import json, os, glob
 ROT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ut = {}
-for f in glob.glob(os.path.join(ROT, 'rapport', 'gate', 'sv_rett*', 'hent-*.json')):
+for f in glob.glob(os.path.join(os.environ.get('SV_ROT') or os.path.join(ROT, 'rapport', 'gate'), 'sv_rett*', 'hent-*.json')):
     for k, v in json.load(open(f, encoding='utf8')).items():
         if v.get('pano'): ut.setdefault(k, []).append(v['pano'])
 for f in glob.glob(os.path.join(ROT, 'kilder', 'gate', 'rett-*.json')):

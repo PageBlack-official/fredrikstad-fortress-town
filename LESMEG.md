@@ -616,3 +616,15 @@ PAG-1467 kontrollerte 28 hus, lukket 6, rettet ingen og ble satt til done, og sk
 - «Usikker» og «åpen» er ikke sluttstatus. Er noe usikkert, skaff bedre bilde eller les det i meter (metoden over). «Aldri gjett» betyr «les det», ikke «la det ligge».
 - `verktoy/rett/ferdig_sjekk.py` skal gi exit 0 før oppgaven settes til done. `trenger_vegar` krever spørsmål og hva som er prøvd.
 - Meld antall lukket av antall bestilt, ikke at en oppgave er «done».
+## Veggfarger fra Street View (08.11)
+
+Oppgaven står i `rapport/farger/OPPGAVE.md`. Vei: `verktoy/rett/farge_liste.py` → `farge_kandidater.py` (filter) → kontaktark og øyet → `--flett` → `farger_inn.py` → `bygg_kjede.py` → `farge_kontroll.py` → regler → publiser.
+Ordene står i `verktoy/rett/FARGER.md`.
+
+Feller:
+- `farge_kandidater.py` er et filter, ikke en dom. Fasit (28 bilder) ga 0 feil kulør, men uavhengig kontroll mot lesninger for hånd ga 7 avvik på 31 hus: nabohus (Googles posisjon 3–5 m feil), hvit i sol som egentlig er lys beige (bildet er utbrent), tegl med hvite bånd. Ingen lesning inn uten øyet.
+- `farger_inn.py` bytter ut ALLE sider merket «rettet fasade 07.11». Gi den alltid hele `kilder/gate/farger-rett.json` (bruk `--flett`), ellers forsvinner de gamle.
+- Grå i bildet kan være blågrå, rosa eller hvit i skygge. Grønn og blå er det samme som løv og himmel i tallene. Disse blir aldri kandidater fra skriptet.
+- `sv_rett_plan.py` krever at hele veggen er i bildet; det er strengere enn farge trenger. Med `MIN_AAR=2016` og UNNTA er det få skudd igjen: panoramaene fra 2024 er stort sett hentet allerede, og de som mangler ser ikke hele veggen.
+- Google-bilder skal ikke i git: ny hentemappe får egen `.gitignore` med `*`, kontaktark i `rapport/farger/ark/`.
+- `verktoy/rett/FARGER.md` lå bare i skyen til 08.11 (LESMEG-regelen: alt skal ligge her).
