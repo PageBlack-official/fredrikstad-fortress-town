@@ -609,3 +609,16 @@ Feller (alle sett 07.–08.11):
 - `publiser.sh` krever regelrapport kjørt mot siste kilde-commit: commit først, så reglene (~35 min), så publiser.
 - Python-heredoc inni osascript → ssh feiler stille. Skriv skriptet til fil og kjør fila.
 - Gatekameraet (`front_stand.py`) kan stå inne i et annet hus: les bildet før du bruker det som bevis.
+
+## Veggfarger fra Street View (08.11)
+
+Oppgaven står i `rapport/farger/OPPGAVE.md`. Vei: `verktoy/rett/farge_liste.py` → `farge_kandidater.py` (filter) → kontaktark og øyet → `--flett` → `farger_inn.py` → `bygg_kjede.py` → `farge_kontroll.py` → regler → publiser.
+Ordene står i `verktoy/rett/FARGER.md`.
+
+Feller:
+- `farge_kandidater.py` er et filter, ikke en dom. Fasit (28 bilder) ga 0 feil kulør, men uavhengig kontroll mot lesninger for hånd ga 7 avvik på 31 hus: nabohus (Googles posisjon 3–5 m feil), hvit i sol som egentlig er lys beige (bildet er utbrent), tegl med hvite bånd. Ingen lesning inn uten øyet.
+- `farger_inn.py` bytter ut ALLE sider merket «rettet fasade 07.11». Gi den alltid hele `kilder/gate/farger-rett.json` (bruk `--flett`), ellers forsvinner de gamle.
+- Grå i bildet kan være blågrå, rosa eller hvit i skygge. Grønn og blå er det samme som løv og himmel i tallene. Disse blir aldri kandidater fra skriptet.
+- `sv_rett_plan.py` krever at hele veggen er i bildet; det er strengere enn farge trenger. Med `MIN_AAR=2016` og UNNTA er det få skudd igjen: panoramaene fra 2024 er stort sett hentet allerede, og de som mangler ser ikke hele veggen.
+- Google-bilder skal ikke i git: ny hentemappe får egen `.gitignore` med `*`, kontaktark i `rapport/farger/ark/`.
+- `verktoy/rett/FARGER.md` lå bare i skyen til 08.11 (LESMEG-regelen: alt skal ligge her).

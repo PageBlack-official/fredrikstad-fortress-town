@@ -1,0 +1,1940 @@
+{
+ "fargelegges": [
+  "bnr-193867324",
+  "bnr-193867499",
+  "bnr-193867510",
+  "bnr-193867944",
+  "bnr-193868231",
+  "bnr-193868371",
+  "bnr-193868398",
+  "bnr-193869548"
+ ],
+ "endrer_kulor": [
+  "bnr-193868398"
+ ],
+ "uten_sikker": {
+  "bnr-13384460": [
+   {
+    "bilde": "sv/bnr-13384460-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (18 av 135 felt)"
+   }
+  ],
+  "bnr-13414904": [
+   {
+    "bilde": "sv/bnr-13414904-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (38 av 335 felt)"
+   },
+   {
+    "bilde": "sv_rett/bnr-13414904-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett/bnr-13414904-5",
+    "dato": "mai 2024",
+    "les": "hvit",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett3/bnr-13414904-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-13414904-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-16308102": [],
+  "bnr-16312916": [
+   {
+    "bilde": "sv/bnr-16312916-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (11 av 176 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-16312916-5",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-16312916-5",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-16313173": [
+   {
+    "bilde": "sv/bnr-16313173-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193820417": [
+   {
+    "bilde": "sv/bnr-193820417-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (1 av 40 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193820417-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "veggen er nesten utenfor bildet (24 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193820417-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193820417-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193820565": [],
+  "bnr-193820832": [
+   {
+    "bilde": "sv/bnr-193820832-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (13 av 39 felt)"
+   }
+  ],
+  "bnr-193820883": [
+   {
+    "bilde": "sv/bnr-193820883-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193820883-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (50%)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193820883-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193867316": [],
+  "bnr-193867405": [],
+  "bnr-193867553": [],
+  "bnr-193867685": [],
+  "bnr-193867731": [],
+  "bnr-193867758": [],
+  "bnr-193867766": [],
+  "bnr-193867790": [
+   {
+    "bilde": "sv/bnr-193867790-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193867790-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (15 av 78 felt)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193867790-5",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193867790-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193867790-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (5 av 78 felt)"
+   }
+  ],
+  "bnr-193867812": [],
+  "bnr-193867995": [],
+  "bnr-193868010": [
+   {
+    "bilde": "sv/bnr-193868010-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193868118": [
+   {
+    "bilde": "sv/bnr-193868118-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193868126": [
+   {
+    "bilde": "sv/bnr-193868126-0",
+    "dato": "mai 2024",
+    "les": "beige",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868126-0",
+    "dato": "mai 2024",
+    "les": "beige",
+    "grunn": "endrer kulør, bare ett panorama"
+   }
+  ],
+  "bnr-193868150": [],
+  "bnr-193868207": [
+   {
+    "bilde": "sv/bnr-193868207-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (3 av 140 felt)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868207-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (14 av 84 felt)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868207-8",
+    "dato": "mai 2024",
+    "les": "hvit",
+    "grunn": "endrer kulør, bare ett panorama"
+   }
+  ],
+  "bnr-193868215": [
+   {
+    "bilde": "sv/bnr-193868215-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868223": [
+   {
+    "bilde": "sv/bnr-193868223-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193868266": [],
+  "bnr-193868290": [
+   {
+    "bilde": "sv/bnr-193868290-0",
+    "dato": "mai 2024",
+    "les": "krem",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett/bnr-193868290-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (54%)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868290-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (54%)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868290-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868312": [
+   {
+    "bilde": "sv/bnr-193868312-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett/bnr-193868312-7",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868312-7",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868312-7",
+    "dato": "mai 2024",
+    "les": "beige",
+    "grunn": "endrer kulør, bare ett panorama"
+   }
+  ],
+  "bnr-193868339": [],
+  "bnr-193868347": [
+   {
+    "bilde": "sv/bnr-193868347-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett/bnr-193868347-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868347-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868355": [
+   {
+    "bilde": "sv/bnr-193868355-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868401": [
+   {
+    "bilde": "sv_rett2/bnr-193868401-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868401-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868401-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868401-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868444": [
+   {
+    "bilde": "sv/bnr-193868444-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868452": [
+   {
+    "bilde": "sv/bnr-193868452-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868452-8",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193868452-8",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868479": [],
+  "bnr-193868495": [
+   {
+    "bilde": "sv/bnr-193868495-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (25 av 189 felt)"
+   },
+   {
+    "bilde": "sv_rett/bnr-193868495-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (40 av 210 felt)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868495-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (40 av 210 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868495-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (11 av 210 felt)"
+   }
+  ],
+  "bnr-193868517": [
+   {
+    "bilde": "sv/bnr-193868517-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193868525": [],
+  "bnr-193868533": [],
+  "bnr-193868568": [
+   {
+    "bilde": "sv/bnr-193868568-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (20.7 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett/bnr-193868568-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.8 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett/bnr-193868568-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (13.3 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868568-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (13.3 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868568-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.8 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868568-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.8 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868568-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (13.3 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193868568-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.8 m × 2.5 m)"
+   }
+  ],
+  "bnr-193868584": [],
+  "bnr-193868592": [],
+  "bnr-193868606": [
+   {
+    "bilde": "sv/bnr-193868606-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193868606-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (40%)"
+   }
+  ],
+  "bnr-193868614": [],
+  "bnr-193868630": [
+   {
+    "bilde": "sv/bnr-193868630-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193868649": [],
+  "bnr-193868657": [],
+  "bnr-193868681": [
+   {
+    "bilde": "sv_rett2/bnr-193868681-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193868681-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193868703": [
+   {
+    "bilde": "sv/bnr-193868703-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193869556": [],
+  "bnr-193869580": [
+   {
+    "bilde": "sv_rett2/bnr-193869580-11",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (10.8 m × 2.8 m)"
+   }
+  ],
+  "bnr-193870163": [
+   {
+    "bilde": "sv/bnr-193870163-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (16 av 36 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870163-1",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (15 av 36 felt)"
+   }
+  ],
+  "bnr-193870198": [
+   {
+    "bilde": "sv/bnr-193870198-1",
+    "dato": "mai 2024",
+    "les": "okerbrun",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv/bnr-193870198-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (11 av 79 felt)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193870198-3",
+    "dato": "mai 2024",
+    "les": "okerbrun",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193870198-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870198-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193870198-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (17 av 164 felt)"
+   }
+  ],
+  "bnr-193870236": [
+   {
+    "bilde": "sv/bnr-193870236-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193870244": [
+   {
+    "bilde": "sv_rett3/bnr-193870244-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (16 av 125 felt)"
+   }
+  ],
+  "bnr-193870252": [
+   {
+    "bilde": "sv/bnr-193870252-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv/bnr-193870252-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193870252-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193870252-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (5 av 63 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870252-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193870295": [
+   {
+    "bilde": "sv/bnr-193870295-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (11 av 108 felt)"
+   },
+   {
+    "bilde": "sv/bnr-193870295-0",
+    "dato": "mai 2024",
+    "les": "krem",
+    "grunn": null
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870295-3",
+    "dato": "mai 2024",
+    "les": "okergul",
+    "grunn": null
+   }
+  ],
+  "bnr-193870309": [
+   {
+    "bilde": "sv_rett3/bnr-193870309-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "veggen er nesten utenfor bildet (21 felt)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193870309-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "veggen er nesten utenfor bildet (21 felt)"
+   }
+  ],
+  "bnr-193870317": [
+   {
+    "bilde": "sv/bnr-193870317-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv/bnr-193870317-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870317-9",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for lite ren vegg (0 av 300 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870317-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193870317-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193870317-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett5/bnr-193870317-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193870325": [
+   {
+    "bilde": "sv/bnr-193870325-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193874371": [],
+  "bnr-193874398": [
+   {
+    "bilde": "sv_rett3/bnr-193874398-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.2 m × 2.3 m)"
+   }
+  ],
+  "bnr-193874428": [
+   {
+    "bilde": "sv/bnr-193874428-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.5 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193874428-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.8 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193874428-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.8 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett5/bnr-193874428-1",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.8 m × 2.3 m)"
+   }
+  ],
+  "bnr-193874525": [],
+  "bnr-193874533": [
+   {
+    "bilde": "sv/bnr-193874533-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (12 av 32 felt)"
+   }
+  ],
+  "bnr-193918247": [
+   {
+    "bilde": "sv/bnr-193918247-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (5 av 75 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193918247-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (58%)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193918247-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193967132": [
+   {
+    "bilde": "sv/bnr-193967132-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.1 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193967132-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.2 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193967132-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.2 m × 2.3 m)"
+   }
+  ],
+  "bnr-193971199": [
+   {
+    "bilde": "sv/bnr-193971199-0",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "for lite ren vegg (13 av 40 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193971199-3",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "for lite ren vegg (15 av 36 felt)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193971199-2",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193971199-2",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193971202": [],
+  "bnr-193971210": [
+   {
+    "bilde": "sv_rett3/bnr-193971210-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193971210-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "veggen er nesten utenfor bildet (18 felt)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193971210-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett5/bnr-193971210-6",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193971229": [],
+  "bnr-193971253": [],
+  "bnr-193971261": [
+   {
+    "bilde": "sv/bnr-193971261-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193971296": [],
+  "bnr-193971318": [],
+  "bnr-193971334": [
+   {
+    "bilde": "sv/bnr-193971334-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (15 av 231 felt)"
+   }
+  ],
+  "bnr-193971342": [],
+  "bnr-193971350": [
+   {
+    "bilde": "sv/bnr-193971350-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.5 m × 2.3 m)"
+   }
+  ],
+  "bnr-193971369": [
+   {
+    "bilde": "sv/bnr-193971369-0",
+    "dato": "mai 2024",
+    "les": "okergul",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv/bnr-193971369-1",
+    "dato": "mars 2019",
+    "les": null,
+    "grunn": "for lite ren vegg (0 av 210 felt)"
+   }
+  ],
+  "bnr-193971377": [],
+  "bnr-193971385": [],
+  "bnr-193971539": [
+   {
+    "bilde": "sv/bnr-193971539-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193971873": [
+   {
+    "bilde": "sv/bnr-193971873-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193971873-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (14 av 36 felt)"
+   }
+  ],
+  "bnr-193971903": [],
+  "bnr-193971911": [
+   {
+    "bilde": "sv/bnr-193971911-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.3 m × 2.8 m)"
+   },
+   {
+    "bilde": "sv_rett/bnr-193971911-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.2 m × 2.8 m)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193971911-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.2 m × 2.8 m)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193971911-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.2 m × 2.8 m)"
+   }
+  ],
+  "bnr-193971938": [
+   {
+    "bilde": "sv/bnr-193971938-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193971962": [],
+  "bnr-193971970": [
+   {
+    "bilde": "sv/bnr-193971970-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193971970-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193972004": [
+   {
+    "bilde": "sv/bnr-193972004-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193972004-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193972039": [
+   {
+    "bilde": "sv_rett2/bnr-193972039-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193972047": [
+   {
+    "bilde": "sv_rett3/bnr-193972047-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193972047-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193972047-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193972055": [
+   {
+    "bilde": "sv/bnr-193972055-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193972071": [
+   {
+    "bilde": "sv/bnr-193972071-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193972098": [],
+  "bnr-193972101": [
+   {
+    "bilde": "sv/bnr-193972101-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193972128": [
+   {
+    "bilde": "sv/bnr-193972128-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "veggen er nesten utenfor bildet (21 felt)"
+   }
+  ],
+  "bnr-193972136": [
+   {
+    "bilde": "sv/bnr-193972136-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett/bnr-193972136-0",
+    "dato": "mai 2024",
+    "les": "laks",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett/bnr-193972136-1",
+    "dato": "mai 2024",
+    "les": "umalt tegl",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193972136-1",
+    "dato": "mai 2024",
+    "les": "umalt tegl",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193972136-0",
+    "dato": "mai 2024",
+    "les": "laks",
+    "grunn": "endrer kulør, bare ett panorama"
+   }
+  ],
+  "bnr-193972144": [],
+  "bnr-193972152": [
+   {
+    "bilde": "sv/bnr-193972152-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (8.1 m × 2.8 m)"
+   }
+  ],
+  "bnr-193972160": [],
+  "bnr-193972179": [
+   {
+    "bilde": "sv/bnr-193972179-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193972187": [
+   {
+    "bilde": "sv/bnr-193972187-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (11 av 45 felt)"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193972187-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for lite ren vegg (5 av 45 felt)"
+   }
+  ],
+  "bnr-193972209": [],
+  "bnr-193972217": [],
+  "bnr-193972225": [
+   {
+    "bilde": "sv/bnr-193972225-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (7.2 m × 3.0 m)"
+   }
+  ],
+  "bnr-193972314": [
+   {
+    "bilde": "sv/bnr-193972314-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.3 m × 2.5 m)"
+   }
+  ],
+  "bnr-193972349": [],
+  "bnr-193972365": [
+   {
+    "bilde": "sv/bnr-193972365-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193972381": [
+   {
+    "bilde": "sv_rett3/bnr-193972381-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.3 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett4/bnr-193972381-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.3 m × 2.5 m)"
+   }
+  ],
+  "bnr-193972438": [
+   {
+    "bilde": "sv/bnr-193972438-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193972438-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett2/bnr-193972438-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (60%)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193972438-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (55%)"
+   }
+  ],
+  "bnr-193972446": [
+   {
+    "bilde": "sv_rett2/bnr-193972446-5",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-193972454": [
+   {
+    "bilde": "sv_rett2/bnr-193972454-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (8.1 m × 3.0 m)"
+   },
+   {
+    "bilde": "sv_rett3/bnr-193972454-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (8.1 m × 3.0 m)"
+   }
+  ],
+  "bnr-193972462": [],
+  "bnr-193972489": [],
+  "bnr-193972497": [],
+  "bnr-193972519": [
+   {
+    "bilde": "sv/bnr-193972519-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193972535": [],
+  "bnr-193972543": [],
+  "bnr-193972578": [],
+  "bnr-193972594": [],
+  "bnr-193972608": [],
+  "bnr-193972616": [],
+  "bnr-193972624": [],
+  "bnr-193972632": [],
+  "bnr-193972772": [
+   {
+    "bilde": "sv/bnr-193972772-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193974767": [],
+  "bnr-193987397": [
+   {
+    "bilde": "sv/bnr-193987397-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-193991718": [],
+  "bnr-300002508": [],
+  "bnr-300279164": [
+   {
+    "bilde": "sv/bnr-300279164-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "bnr-300399132": [],
+  "bnr-300506942": [],
+  "bnr-6246729": [
+   {
+    "bilde": "sv_rett3/bnr-6246729-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.9 m × 2.6 m)"
+   }
+  ],
+  "bnr-6246753": [],
+  "bnr-6251323": [
+   {
+    "bilde": "sv/bnr-6251323-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "ingen farge dominerer (53%)"
+   }
+  ],
+  "bnr-6251765": [],
+  "bnr-6254179": [
+   {
+    "bilde": "sv_rett3/bnr-6254179-2",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/bnr-6254179-2",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "bnr-6275109": [
+   {
+    "bilde": "sv/bnr-6275109-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "pb-1": [
+   {
+    "bilde": "sv/pb-1-0",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for lite ren vegg (0 av 290 felt)"
+   },
+   {
+    "bilde": "sv_rett3/pb-1-1",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for lite ren vegg (0 av 300 felt)"
+   }
+  ],
+  "pb-10": [
+   {
+    "bilde": "sv_rett3/pb-10-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/pb-10-3",
+    "dato": "juli 2017",
+    "les": null,
+    "grunn": "veggen er nesten utenfor bildet (24 felt)"
+   },
+   {
+    "bilde": "sv_rett4/pb-10-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett5/pb-10-2",
+    "dato": "juli 2017",
+    "les": null,
+    "grunn": "for lite ren vegg (17 av 32 felt)"
+   }
+  ],
+  "pb-11": [
+   {
+    "bilde": "sv/pb-11-0",
+    "dato": "mars 2019",
+    "les": null,
+    "grunn": "for lite ren vegg (0 av 40 felt)"
+   },
+   {
+    "bilde": "sv_rett3/pb-11-1",
+    "dato": "mars 2019",
+    "les": null,
+    "grunn": "for lite ren vegg (0 av 40 felt)"
+   }
+  ],
+  "pb-13": [],
+  "pb-14": [
+   {
+    "bilde": "sv/pb-14-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   }
+  ],
+  "pb-17": [],
+  "pb-18": [],
+  "pb-2": [
+   {
+    "bilde": "sv/pb-2-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/pb-2-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett3/pb-2-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/pb-2-4",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   },
+   {
+    "bilde": "sv_rett4/pb-2-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "pb-22": [],
+  "pb-23": [],
+  "pb-24": [],
+  "pb-25": [
+   {
+    "bilde": "sv_rett3/pb-25-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (9.1 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-25-2",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for liten vegg (9.3 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-25-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (9.1 m × 2.2 m)"
+   }
+  ],
+  "pb-26": [],
+  "pb-27": [
+   {
+    "bilde": "sv_rett3/pb-27-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (10.9 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-27-0",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for liten vegg (11.3 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-27-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (10.9 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett5/pb-27-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (10.9 m × 2.2 m)"
+   }
+  ],
+  "pb-28": [],
+  "pb-29": [],
+  "pb-30": [],
+  "pb-31": [],
+  "pb-32": [
+   {
+    "bilde": "sv_rett3/pb-32-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.7 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-32-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.7 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-32-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.7 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-32-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.7 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett5/pb-32-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (4.7 m × 2.3 m)"
+   }
+  ],
+  "pb-34": [],
+  "pb-35": [],
+  "pb-36": [
+   {
+    "bilde": "sv_rett3/pb-36-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.4 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-36-3",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.1 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-36-0",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.4 m × 2.2 m)"
+   }
+  ],
+  "pb-37": [
+   {
+    "bilde": "sv_rett3/pb-37-1",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for liten vegg (7.7 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-37-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.9 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-37-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.9 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett5/pb-37-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.9 m × 2.2 m)"
+   }
+  ],
+  "pb-38": [],
+  "pb-39": [],
+  "pb-4": [],
+  "pb-40": [
+   {
+    "bilde": "sv_rett3/pb-40-2",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for liten vegg (3.2 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-40-1",
+    "dato": "aug. 2019",
+    "les": null,
+    "grunn": "for liten vegg (3.7 m × 2.2 m)"
+   }
+  ],
+  "pb-41": [
+   {
+    "bilde": "sv_rett3/pb-41-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.1 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-41-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.1 m × 2.3 m)"
+   },
+   {
+    "bilde": "sv_rett5/pb-41-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (6.1 m × 2.3 m)"
+   }
+  ],
+  "pb-42": [],
+  "pb-43": [],
+  "pb-44": [
+   {
+    "bilde": "sv_rett3/pb-44-2",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.4 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-44-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.8 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-44-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.8 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett5/pb-44-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.8 m × 2.2 m)"
+   }
+  ],
+  "pb-46": [
+   {
+    "bilde": "sv_rett/pb-46-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.2 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-46-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.2 m × 2.5 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-46-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.2 m × 2.5 m)"
+   }
+  ],
+  "pb-47": [],
+  "pb-48": [],
+  "pb-49": [
+   {
+    "bilde": "sv_rett3/pb-49-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.6 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-49-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.0 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-49-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.6 m × 2.2 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-49-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.0 m × 2.2 m)"
+   }
+  ],
+  "pb-5": [
+   {
+    "bilde": "sv/pb-5-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "et annet hus står foran i kartet"
+   },
+   {
+    "bilde": "sv_rett/pb-5-4",
+    "dato": "mai 2024",
+    "les": "laks",
+    "grunn": "endrer kulør, bare ett panorama"
+   },
+   {
+    "bilde": "sv_rett2/pb-5-4",
+    "dato": "mai 2024",
+    "les": "laks",
+    "grunn": "endrer kulør, bare ett panorama"
+   }
+  ],
+  "pb-50": [],
+  "pb-51": [
+   {
+    "bilde": "sv_rett/pb-51-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.1 m × 2.4 m)"
+   },
+   {
+    "bilde": "sv_rett2/pb-51-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (5.1 m × 2.4 m)"
+   }
+  ],
+  "pb-52": [],
+  "pb-53": [],
+  "pb-54": [],
+  "pb-55": [
+   {
+    "bilde": "sv_rett3/pb-55-3",
+    "dato": "apr. 2024",
+    "les": null,
+    "grunn": "for liten vegg (3.0 m × 2.2 m)"
+   }
+  ],
+  "pb-56": [],
+  "pb-57": [
+   {
+    "bilde": "sv_rett2/pb-57-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "pb-58": [],
+  "pb-60": [
+   {
+    "bilde": "sv_rett2/pb-60-1",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "tallene avgjør ikke ordet"
+   }
+  ],
+  "pb-65": [],
+  "pb-7": [],
+  "pb-8": [],
+  "pb-9": [
+   {
+    "bilde": "sv/pb-9-0",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (7.2 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-9-1",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "for liten vegg (10.8 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-9-2",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (7.2 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-9-0",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "for liten vegg (7.2 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett3/pb-9-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (10.8 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-9-3",
+    "dato": "mai 2024",
+    "les": null,
+    "grunn": "for liten vegg (10.8 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett4/pb-9-1",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "for liten vegg (10.8 m × 2.6 m)"
+   },
+   {
+    "bilde": "sv_rett5/pb-9-1",
+    "dato": "nov. 2020",
+    "les": null,
+    "grunn": "for liten vegg (10.8 m × 2.6 m)"
+   }
+  ]
+ },
+ "med_skudd": [
+  "bnr-16312916",
+  "bnr-193868452",
+  "bnr-193868568",
+  "bnr-193870198",
+  "bnr-193874428",
+  "bnr-193972047",
+  "pb-2"
+ ],
+ "uten_skudd": [
+  "bnr-13384460",
+  "bnr-13414904",
+  "bnr-16308102",
+  "bnr-16313173",
+  "bnr-193820417",
+  "bnr-193820565",
+  "bnr-193820832",
+  "bnr-193820883",
+  "bnr-193867316",
+  "bnr-193867405",
+  "bnr-193867553",
+  "bnr-193867685",
+  "bnr-193867731",
+  "bnr-193867758",
+  "bnr-193867766",
+  "bnr-193867790",
+  "bnr-193867812",
+  "bnr-193867995",
+  "bnr-193868010",
+  "bnr-193868118",
+  "bnr-193868126",
+  "bnr-193868150",
+  "bnr-193868207",
+  "bnr-193868215",
+  "bnr-193868223",
+  "bnr-193868266",
+  "bnr-193868290",
+  "bnr-193868312",
+  "bnr-193868339",
+  "bnr-193868347",
+  "bnr-193868355",
+  "bnr-193868401",
+  "bnr-193868444",
+  "bnr-193868479",
+  "bnr-193868495",
+  "bnr-193868517",
+  "bnr-193868525",
+  "bnr-193868533",
+  "bnr-193868584",
+  "bnr-193868592",
+  "bnr-193868606",
+  "bnr-193868614",
+  "bnr-193868630",
+  "bnr-193868649",
+  "bnr-193868657",
+  "bnr-193868681",
+  "bnr-193868703",
+  "bnr-193869556",
+  "bnr-193869580",
+  "bnr-193870163",
+  "bnr-193870236",
+  "bnr-193870244",
+  "bnr-193870252",
+  "bnr-193870295",
+  "bnr-193870309",
+  "bnr-193870317",
+  "bnr-193870325",
+  "bnr-193874371",
+  "bnr-193874398",
+  "bnr-193874525",
+  "bnr-193874533",
+  "bnr-193918247",
+  "bnr-193967132",
+  "bnr-193971199",
+  "bnr-193971202",
+  "bnr-193971210",
+  "bnr-193971229",
+  "bnr-193971253",
+  "bnr-193971261",
+  "bnr-193971296",
+  "bnr-193971318",
+  "bnr-193971334",
+  "bnr-193971342",
+  "bnr-193971350",
+  "bnr-193971369",
+  "bnr-193971377",
+  "bnr-193971385",
+  "bnr-193971539",
+  "bnr-193971873",
+  "bnr-193971903",
+  "bnr-193971911",
+  "bnr-193971938",
+  "bnr-193971962",
+  "bnr-193971970",
+  "bnr-193972004",
+  "bnr-193972039",
+  "bnr-193972055",
+  "bnr-193972071",
+  "bnr-193972098",
+  "bnr-193972101",
+  "bnr-193972128",
+  "bnr-193972136",
+  "bnr-193972144",
+  "bnr-193972152",
+  "bnr-193972160",
+  "bnr-193972179",
+  "bnr-193972187",
+  "bnr-193972209",
+  "bnr-193972217",
+  "bnr-193972225",
+  "bnr-193972314",
+  "bnr-193972349",
+  "bnr-193972365",
+  "bnr-193972381",
+  "bnr-193972438",
+  "bnr-193972446",
+  "bnr-193972454",
+  "bnr-193972462",
+  "bnr-193972489",
+  "bnr-193972497",
+  "bnr-193972519",
+  "bnr-193972535",
+  "bnr-193972543",
+  "bnr-193972578",
+  "bnr-193972594",
+  "bnr-193972608",
+  "bnr-193972616",
+  "bnr-193972624",
+  "bnr-193972632",
+  "bnr-193972772",
+  "bnr-193974767",
+  "bnr-193987397",
+  "bnr-193991718",
+  "bnr-300002508",
+  "bnr-300279164",
+  "bnr-300399132",
+  "bnr-300506942",
+  "bnr-6246729",
+  "bnr-6246753",
+  "bnr-6251323",
+  "bnr-6251765",
+  "bnr-6254179",
+  "bnr-6275109",
+  "pb-1",
+  "pb-10",
+  "pb-11",
+  "pb-13",
+  "pb-14",
+  "pb-17",
+  "pb-18",
+  "pb-22",
+  "pb-23",
+  "pb-24",
+  "pb-25",
+  "pb-26",
+  "pb-27",
+  "pb-28",
+  "pb-29",
+  "pb-30",
+  "pb-31",
+  "pb-32",
+  "pb-34",
+  "pb-35",
+  "pb-36",
+  "pb-37",
+  "pb-38",
+  "pb-39",
+  "pb-4",
+  "pb-40",
+  "pb-41",
+  "pb-42",
+  "pb-43",
+  "pb-44",
+  "pb-46",
+  "pb-47",
+  "pb-48",
+  "pb-49",
+  "pb-5",
+  "pb-50",
+  "pb-51",
+  "pb-52",
+  "pb-53",
+  "pb-54",
+  "pb-55",
+  "pb-56",
+  "pb-57",
+  "pb-58",
+  "pb-60",
+  "pb-65",
+  "pb-7",
+  "pb-8",
+  "pb-9"
+ ]
+}
