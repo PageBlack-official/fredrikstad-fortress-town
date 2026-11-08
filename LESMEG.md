@@ -609,3 +609,10 @@ Feller (alle sett 07.–08.11):
 - `publiser.sh` krever regelrapport kjørt mot siste kilde-commit: commit først, så reglene (~35 min), så publiser.
 - Python-heredoc inni osascript → ssh feiler stille. Skriv skriptet til fil og kjør fila.
 - Gatekameraet (`front_stand.py`) kan stå inne i et annet hus: les bildet før du bruker det som bevis.
+
+## En oppgave på N hus er N hus (08.11, Vegar: «Jobben var 28 hus»)
+
+PAG-1467 kontrollerte 28 hus, lukket 6, rettet ingen og ble satt til done, og skyøkta meldte det videre som ferdig. Regel:
+- «Usikker» og «åpen» er ikke sluttstatus. Er noe usikkert, skaff bedre bilde eller les det i meter (metoden over). «Aldri gjett» betyr «les det», ikke «la det ligge».
+- `verktoy/rett/ferdig_sjekk.py` skal gi exit 0 før oppgaven settes til done. `trenger_vegar` krever spørsmål og hva som er prøvd.
+- Meld antall lukket av antall bestilt, ikke at en oppgave er «done».
