@@ -961,6 +961,32 @@
     "bilde_dato": "apr. 2024",
     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.1999142,10.9560891&heading=198&pitch=6&fov=75",
     "kilde": "overført fra den første avlesningen (samme bilde); felter som ikke ble lest da, står tomme"
+   },
+   {
+    "retning": "rettet fasade, vegg 5 (verktoy/rett, bnr-6276482-5)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     182,
+     186,
+     190
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.2000176, 10.9558044 h 155.4",
+    "kilde": "rettet fasade 07.11"
+   },
+   {
+    "retning": "rettet fasade, vegg 6 (verktoy/rett, bnr-6276482-6)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     186,
+     189,
+     193
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.1999142, 10.9560891 h 188.2",
+    "kilde": "rettet fasade 07.11"
    }
   ]
  },
@@ -5218,6 +5244,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-193868436_NV.jpg",
     "bilde_dato": "aug. 2010",
     "pano_url": "59.2044094,10.9539654 h10"
+   },
+   {
+    "retning": "rettet fasade, vegg 9 (verktoy/rett, bnr-193868436-9)",
+    "vegg_farge": "hvit",
+    "vegg_rgb": [
+     254,
+     255,
+     254
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2041234, 10.9541988 h 3.0",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -13326,6 +13365,19 @@
     "bilde_dato": "apr. 2024",
     "pano_url": "59.2013004, 10.9579847 h 169.6",
     "kilde": "rettet fasade 07.11"
+   },
+   {
+    "retning": "rettet fasade, vegg 5 (verktoy/rett, bnr-6276016-5)",
+    "vegg_farge": "oksiderød",
+    "vegg_rgb": [
+     121,
+     68,
+     71
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.2013618, 10.9581415 h 182.4",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -13530,6 +13582,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-6275990_NO.jpg",
     "bilde_dato": "nov. 2024",
     "pano_url": "59.2012048,10.9572934 h234"
+   },
+   {
+    "retning": "rettet fasade, vegg 8 (verktoy/rett, bnr-6275990-8)",
+    "vegg_farge": "oksiderød",
+    "vegg_rgb": [
+     126,
+     69,
+     67
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.2012048, 10.9572934 h 209.5",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -14781,6 +14846,19 @@
     "bilde_dato": "apr. 2024",
     "pano_url": "59.2001786, 10.9551767 h 172.3",
     "kilde": "rettet fasade 07.11"
+   },
+   {
+    "retning": "rettet fasade, vegg 0 (verktoy/rett, bnr-6276822-0)",
+    "vegg_farge": "vinrød",
+    "vegg_rgb": [
+     128,
+     99,
+     105
+    ],
+    "lys": "overskyet",
+    "bilde_dato": "apr. 2024",
+    "pano_url": "59.2001093, 10.9555049 h 239.5",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {
@@ -15329,6 +15407,19 @@
     "bilde": "/home/claude/streetview/bilder/bnr-13416559_N.jpg",
     "bilde_dato": "mai 2024",
     "pano_url": "59.2061756,10.9456056 h105"
+   },
+   {
+    "retning": "rettet fasade, vegg 2 (verktoy/rett, bnr-13416559-2)",
+    "vegg_farge": "grå",
+    "vegg_rgb": [
+     174,
+     174,
+     169
+    ],
+    "lys": "sol",
+    "bilde_dato": "mai 2024",
+    "pano_url": "59.2058738, 10.9456972 h 32.0",
+    "kilde": "rettet fasade 07.11"
    }
   ],
   "tak": {

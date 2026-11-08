@@ -2,15 +2,27 @@
 
 343 hus i kommunekartet innenfor Gamlebyen.
 
-- simulert etter regler: 131
-- Vegars kvartaltegning (2015): 112
-- Street View, automatisk lest: 48
-- Street View rettet: 32
-- Street View, øyekontrollert 07.11: 17
+- simulert etter regler: 127
+- Vegars kvartaltegning (2015): 108
+- Street View rettet: 54
+- Street View, automatisk lest: 35
+- Street View, øyekontrollert 07.11: 16
 - gatevandring: 3
 
 | Adresse | Bygg | Fasaden er |
 |---|---|---|
+|  | bnr-13415889 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-13416370 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-13416362 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-193867448 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-193867421 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-193867405 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-193874401 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-6276016 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-6276822 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-193867820 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-23730278 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
+|  | bnr-13416419 | Street View rettet og lest i meter (1 vegg), resten: Street View, automatisk lest |
 |  | bnr-193868037 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193867324 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193868355 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
@@ -22,8 +34,8 @@
 |  | bnr-193868282 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-13414904 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193868207 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
-|  | bnr-193868142 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-6251331 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
+|  | bnr-193867944 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-6251218 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193867588 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193987370 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
@@ -34,42 +46,43 @@
 |  | bnr-193867839 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193972063 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193867545 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
+|  | bnr-194006187 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193971288 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193870201 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
+|  | bnr-193868673 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | pb-59 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | pb-61 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
+|  | pb-69 | Street View rettet og lest i meter (1 vegg), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193867901 | Street View rettet og lest i meter (1 vegg), resten: gatevandring |
+|  | bnr-193867634 | Street View rettet og lest i meter (1 vegg), resten: gatevandring-maalt |
 |  | bnr-193867731 | Street View rettet og lest i meter (1 vegg), resten: gatevandring-maalt |
+|  | bnr-193870309 | Street View rettet og lest i meter (1 vegg), resten: simulert etter regler |
+|  | bnr-193820417 | Street View rettet og lest i meter (1 vegg), resten: simulert etter regler |
+|  | bnr-13415897 | Street View rettet og lest i meter (1 vegg), resten: simulert etter regler |
+|  | bnr-193867790 | Street View rettet og lest i meter (1 vegg), resten: simulert etter regler |
+|  | bnr-193868576 | Street View rettet og lest i meter (2 vegger), resten: Street View, automatisk lest |
 |  | bnr-193867626 | Street View rettet og lest i meter (2 vegger), resten: Vegars kvartaltegning (2015) |
+|  | bnr-193868142 | Street View rettet og lest i meter (2 vegger), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193867715 | Street View rettet og lest i meter (2 vegger), resten: Vegars kvartaltegning (2015) |
 |  | pb-57 | Street View rettet og lest i meter (2 vegger), resten: Vegars kvartaltegning (2015) |
 |  | bnr-193870333 | Street View, automatisk lest |
 |  | pb-2 | Street View, automatisk lest |
-|  | bnr-13415889 | Street View, automatisk lest |
 |  | bnr-13416575 | Street View, automatisk lest |
-|  | bnr-13416370 | Street View, automatisk lest |
-|  | bnr-13416362 | Street View, automatisk lest |
 |  | bnr-13418292 | Street View, automatisk lest |
 |  | bnr-13416427 | Street View, automatisk lest |
 |  | bnr-193820573 | Street View, automatisk lest |
 |  | bnr-193820409 | Street View, automatisk lest |
 |  | pb-3 | Street View, automatisk lest |
-|  | bnr-193867448 | Street View, automatisk lest |
 |  | bnr-193867464 | Street View, automatisk lest |
 |  | bnr-193867472 | Street View, automatisk lest |
 |  | bnr-193867480 | Street View, automatisk lest |
-|  | bnr-193867421 | Street View, automatisk lest |
-|  | bnr-193867405 | Street View, automatisk lest |
 |  | bnr-6276504 | Street View, automatisk lest |
 |  | bnr-6276512 | Street View, automatisk lest |
-|  | bnr-193874401 | Street View, automatisk lest |
 |  | bnr-6275990 | Street View, automatisk lest |
-|  | bnr-6276016 | Street View, automatisk lest |
 |  | bnr-13384452 | Street View, automatisk lest |
 |  | bnr-6276008 | Street View, automatisk lest |
 |  | bnr-6276520 | Street View, automatisk lest |
 |  | bnr-6276482 | Street View, automatisk lest |
-|  | bnr-6276822 | Street View, automatisk lest |
 |  | bnr-6276415 | Street View, automatisk lest |
 |  | bnr-6276393 | Street View, automatisk lest |
 |  | bnr-13384444 | Street View, automatisk lest |
@@ -80,18 +93,13 @@
 |  | pb-6 | Street View, automatisk lest |
 |  | bnr-24218023 | Street View, automatisk lest |
 |  | bnr-193971318 | Street View, automatisk lest |
-|  | bnr-193867820 | Street View, automatisk lest |
 |  | bnr-193867847 | Street View, automatisk lest |
 |  | bnr-6276539 | Street View, automatisk lest |
 |  | bnr-300216650 | Street View, automatisk lest |
 |  | bnr-6276830 | Street View, automatisk lest |
 |  | bnr-193974767 | Street View, automatisk lest |
 |  | bnr-193868665 | Street View, automatisk lest |
-|  | bnr-23730278 | Street View, automatisk lest |
-|  | bnr-13416419 | Street View, automatisk lest |
 |  | bnr-13418268 | Street View, automatisk lest |
-|  | bnr-193868576 | Street View, automatisk lest |
-|  | bnr-193867634 | Street View, øyekontrollert 07.11 |
 |  | bnr-193868045 | Street View, øyekontrollert 07.11 |
 |  | bnr-193972489 | Street View, øyekontrollert 07.11 |
 |  | bnr-193971954 | Street View, øyekontrollert 07.11 |
@@ -154,7 +162,6 @@
 |  | bnr-193868096 | Vegars kvartaltegning (2015) |
 |  | bnr-193868002 | Vegars kvartaltegning (2015) |
 |  | bnr-6251765 | Vegars kvartaltegning (2015) |
-|  | bnr-193867944 | Vegars kvartaltegning (2015) |
 |  | bnr-193972136 | Vegars kvartaltegning (2015) |
 |  | bnr-300279164 | Vegars kvartaltegning (2015) |
 |  | bnr-193867928 | Vegars kvartaltegning (2015) |
@@ -180,7 +187,6 @@
 |  | bnr-193972462 | Vegars kvartaltegning (2015) |
 |  | bnr-193870252 | Vegars kvartaltegning (2015) |
 |  | bnr-193868533 | Vegars kvartaltegning (2015) |
-|  | bnr-194006187 | Vegars kvartaltegning (2015) |
 |  | bnr-193972071 | Vegars kvartaltegning (2015) |
 |  | bnr-193972195 | Vegars kvartaltegning (2015) |
 |  | bnr-193972187 | Vegars kvartaltegning (2015) |
@@ -210,7 +216,6 @@
 |  | bnr-16313173 | Vegars kvartaltegning (2015) |
 |  | bnr-193870228 | Vegars kvartaltegning (2015) |
 |  | bnr-193972047 | Vegars kvartaltegning (2015) |
-|  | bnr-193868673 | Vegars kvartaltegning (2015) |
 |  | pb-33 | Vegars kvartaltegning (2015) |
 |  | pb-60 | Vegars kvartaltegning (2015) |
 |  | pb-62 | Vegars kvartaltegning (2015) |
@@ -219,7 +224,6 @@
 |  | pb-65 | Vegars kvartaltegning (2015) |
 |  | pb-67 | Vegars kvartaltegning (2015) |
 |  | pb-68 | Vegars kvartaltegning (2015) |
-|  | pb-69 | Vegars kvartaltegning (2015) |
 |  | bnr-193867855 | gatevandring |
 |  | bnr-193867898 | gatevandring |
 |  | pb-66 | gatevandring |
@@ -228,11 +232,8 @@
 |  | bnr-193867529 | simulert etter regler |
 |  | pb-1 | simulert etter regler |
 |  | bnr-193870295 | simulert etter regler |
-|  | bnr-193870309 | simulert etter regler |
 |  | bnr-193867316 | simulert etter regler |
-|  | bnr-193820417 | simulert etter regler |
 |  | bnr-193820883 | simulert etter regler |
-|  | bnr-13415897 | simulert etter regler |
 |  | bnr-193820832 | simulert etter regler |
 |  | bnr-13416559 | simulert etter regler |
 |  | pb-4 | simulert etter regler |
@@ -256,7 +257,6 @@
 |  | bnr-193972179 | simulert etter regler |
 |  | bnr-193972039 | simulert etter regler |
 |  | bnr-193972594 | simulert etter regler |
-|  | bnr-193867790 | simulert etter regler |
 |  | bnr-193972446 | simulert etter regler |
 |  | pb-9 | simulert etter regler |
 |  | pb-10 | simulert etter regler |

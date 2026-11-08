@@ -224,20 +224,6 @@
 "uthus": false
 },
 {
-"id": "bnr-16312916",
-"navn": null,
-"type": "apartments",
-"h": 5.1,
-"foer": 10,
-"etter": 10,
-"vinduer": 9,
-"dorer": 1,
-"gate": "gate",
-"etasjer": 1,
-"dor": true,
-"uthus": false
-},
-{
 "id": "bnr-193868541",
 "navn": null,
 "type": "garage",

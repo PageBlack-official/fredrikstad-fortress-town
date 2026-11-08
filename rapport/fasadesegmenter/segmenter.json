@@ -133,12 +133,12 @@
      "fra_m": 3.85,
      "til_m": 11.29,
      "vegg": [
-      243,
-      149,
-      74
+      226,
+      170,
+      160
      ],
-     "kilde": "kvartaltegningen Kvartal12",
-     "aar": 2015
+     "kilde": "Street View 2024 (laks); tegningen har oransje",
+     "aar": 2024
     }
    ]
   }

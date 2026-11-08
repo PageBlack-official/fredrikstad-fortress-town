@@ -61,7 +61,7 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    7
+    6
    ],
    "dorer": 0,
    "arker": 0,
@@ -385,6 +385,13 @@
   }
  },
  {
+  "id": "bnr-193867448",
+  "navn": "Annekset",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193867448-2))"
+ },
+ {
   "id": "bnr-193867421",
   "navn": "Kabelmagasinet",
   "sikkerhet": "høy",
@@ -432,6 +439,13 @@
     2
    ]
   }
+ },
+ {
+  "id": "bnr-193867421",
+  "navn": "Kabelmagasinet",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 0 (verktoy/rett, bnr-193867421-0))"
  },
  {
   "id": "bnr-6276504",
@@ -541,6 +555,20 @@
   }
  },
  {
+  "id": "bnr-6276482",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 5 (verktoy/rett, bnr-6276482-5))"
+ },
+ {
+  "id": "bnr-6276482",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 6 (verktoy/rett, bnr-6276482-6))"
+ },
+ {
   "id": "bnr-6276458",
   "navn": null,
   "sikkerhet": "middels",
@@ -642,12 +670,12 @@
     3,
     1
    ],
-   "dorer": 0,
+   "dorer": 1,
    "arker": 1,
    "piper": 2
   },
   "avvik": false,
-  "dorer_avvik": false
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193972322",
@@ -1239,6 +1267,13 @@
   }
  },
  {
+  "id": "bnr-13416419",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-13416419-3))"
+ },
+ {
   "id": "bnr-193874568",
   "navn": null,
   "sikkerhet": "lav",
@@ -1391,6 +1426,13 @@
   },
   "avvik": true,
   "dorer_avvik": true
+ },
+ {
+  "id": "bnr-194006187",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 1 (verktoy/rett, bnr-194006187-1))"
  },
  {
   "id": "bnr-193868363",
@@ -1627,6 +1669,20 @@
   "dorer_avvik": true
  },
  {
+  "id": "bnr-193868142",
+  "navn": "Prestegården",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-193868142-3))"
+ },
+ {
+  "id": "bnr-193868142",
+  "navn": "Prestegården",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193868142-2))"
+ },
+ {
   "id": "bnr-193868681",
   "navn": null,
   "sikkerhet": "lav",
@@ -1669,6 +1725,13 @@
   },
   "avvik": true,
   "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193868037",
+  "navn": "Marketenteriet",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 0 (verktoy/rett, bnr-193868037-0))"
  },
  {
   "id": "bnr-193868134",
@@ -1984,15 +2047,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    3,
-    2
+    4,
+    5
    ],
-   "dorer": 3,
+   "dorer": 2,
    "arker": 0,
    "piper": 0
   },
-  "avvik": true,
-  "dorer_avvik": true
+  "avvik": false,
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193868703",
@@ -2037,13 +2100,13 @@
   "modell": {
    "rader": [
     5,
-    8
+    5
    ],
    "dorer": 1,
    "arker": 0,
    "piper": 2
   },
-  "avvik": false,
+  "avvik": true,
   "dorer_avvik": false
  },
  {
@@ -2074,17 +2137,30 @@
    "piper": "ikke synlig"
   },
   "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
+  "arker": 1,
+  "status": "endret",
+  "info": {
+   "droppet_rader": 0,
+   "akser_onsket": 4,
+   "akser": 4,
+   "cc": 4.39,
+   "akser_t": [
+    0.85,
+    5.24,
+    9.63,
+    14.02
+   ],
    "rader": [
     3
    ],
    "dorer": 1,
-   "arker": 0,
-   "piper": 1
-  },
-  "avvik": false,
-  "dorer_avvik": false
+   "rytme_ok": true,
+   "topp_akser": [
+    0,
+    1,
+    2
+   ]
+  }
  },
  {
   "id": "bnr-193867324",
@@ -2129,6 +2205,13 @@
   },
   "avvik": true,
   "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193868029",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 0 (verktoy/rett, bnr-193868029-0))"
  },
  {
   "id": "bnr-193868665",
@@ -2385,6 +2468,13 @@
   }
  },
  {
+  "id": "bnr-193868436",
+  "navn": "Skolebygningen",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 9 (verktoy/rett, bnr-193868436-9))"
+ },
+ {
   "id": "bnr-193868010",
   "navn": null,
   "sikkerhet": "ikke synlig",
@@ -2633,6 +2723,13 @@
   "dorer_avvik": false
  },
  {
+  "id": "bnr-193867596",
+  "navn": "Vennehaabet",
+  "sikkerhet": "middels",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-193867596-3))"
+ },
+ {
   "id": "bnr-193867502",
   "navn": "Kiørboegården",
   "sikkerhet": "høy",
@@ -2832,6 +2929,13 @@
   "dorer_avvik": false
  },
  {
+  "id": "bnr-193870309",
+  "navn": "Offisersvakten",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193870309-2))"
+ },
+ {
   "id": "bnr-193870333",
   "navn": "Kruttårnet",
   "sikkerhet": "middels",
@@ -2927,6 +3031,13 @@
   "dorer_avvik": false
  },
  {
+  "id": "bnr-193870201",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 4 (verktoy/rett, bnr-193870201-4))"
+ },
+ {
   "id": "bnr-193870228",
   "navn": null,
   "sikkerhet": "høy",
@@ -3009,6 +3120,13 @@
   },
   "avvik": true,
   "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193972063",
+  "navn": "mediebygning",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 5 (verktoy/rett, bnr-193972063-5))"
  },
  {
   "id": "bnr-193870260",
@@ -3154,8 +3272,9 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    4,
-    6
+    5,
+    5,
+    2
    ],
    "dorer": 1,
    "arker": 0,
@@ -3163,6 +3282,13 @@
   },
   "avvik": true,
   "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193867731",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193867731-2))"
  },
  {
   "id": "bnr-193867758",
@@ -3241,6 +3367,13 @@
   "dorer_avvik": true
  },
  {
+  "id": "bnr-193867758",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 8 (verktoy/rett, bnr-193867758-8))"
+ },
+ {
   "id": "bnr-193868584",
   "navn": null,
   "sikkerhet": "ikke synlig",
@@ -3286,6 +3419,13 @@
   "dorer_avvik": false
  },
  {
+  "id": "bnr-193867901",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 1 (verktoy/rett, bnr-193867901-1))"
+ },
+ {
   "id": "bnr-193867952",
   "navn": null,
   "sikkerhet": "høy",
@@ -3313,10 +3453,11 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
+    3,
     8,
-    7
+    1
    ],
-   "dorer": 1,
+   "dorer": 6,
    "arker": 5,
    "piper": 1
   },
@@ -3513,11 +3654,25 @@
   "dorer_avvik": true
  },
  {
+  "id": "bnr-6251218",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-6251218-3))"
+ },
+ {
   "id": "bnr-193868207",
   "navn": null,
   "sikkerhet": "middels",
   "status": "hoppet over",
   "grunn": "siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren (NØ (sett skrått, venstre i bildet))"
+ },
+ {
+  "id": "bnr-193868207",
+  "navn": null,
+  "sikkerhet": "middels",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 6 (verktoy/rett, bnr-193868207-6))"
  },
  {
   "id": "bnr-193971318",
@@ -3775,6 +3930,13 @@
   },
   "avvik": true,
   "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193868274",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193868274-2))"
  },
  {
   "id": "bnr-193867782",
@@ -4036,17 +4198,45 @@
    "piper": "3 (2 murte tegl, 1 hvit)"
   },
   "notat": "",
-  "status": "fasit, bare sammenlignet",
-  "modell": {
+  "arker": 0,
+  "piper": 3,
+  "status": "endret",
+  "info": {
+   "droppet_rader": 0,
+   "akser_onsket": 7,
+   "akser": 7,
+   "cc": 3.77,
+   "akser_t": [
+    0.85,
+    4.62,
+    8.4,
+    12.17,
+    15.95,
+    19.72,
+    23.5
+   ],
    "rader": [
     7
    ],
    "dorer": 0,
-   "arker": 0,
-   "piper": 3
-  },
-  "avvik": false,
-  "dorer_avvik": false
+   "rytme_ok": true,
+   "topp_akser": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  }
+ },
+ {
+  "id": "bnr-193867634",
+  "navn": "Vollmesterboligen",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193867634-2))"
  },
  {
   "id": "bnr-193867715",
@@ -4153,6 +4343,13 @@
   },
   "avvik": true,
   "dorer_avvik": true
+ },
+ {
+  "id": "bnr-193867804",
+  "navn": null,
+  "sikkerhet": "middels",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 4 (verktoy/rett, bnr-193867804-4))"
  },
  {
   "id": "bnr-193867847",
@@ -4321,6 +4518,13 @@
   "dorer_avvik": false
  },
  {
+  "id": "bnr-193987370",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-193987370-3))"
+ },
+ {
   "id": "bnr-193868576",
   "navn": "annen lagerbygning",
   "sikkerhet": "høy",
@@ -4359,6 +4563,20 @@
    "rytme_ok": true,
    "topp_akser": []
   }
+ },
+ {
+  "id": "bnr-193868576",
+  "navn": "annen lagerbygning",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 0 (verktoy/rett, bnr-193868576-0))"
+ },
+ {
+  "id": "bnr-193868576",
+  "navn": "annen lagerbygning",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-193868576-3))"
  },
  {
   "id": "bnr-193971911",
@@ -4509,6 +4727,13 @@
   },
   "avvik": false,
   "dorer_avvik": false
+ },
+ {
+  "id": "bnr-193867588",
+  "navn": "Dunkejongården",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 1 (verktoy/rett, bnr-193867588-1))"
  },
  {
   "id": "bnr-13394024",
@@ -5153,6 +5378,13 @@
   "dorer_avvik": false
  },
  {
+  "id": "bnr-193868282",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 7 (verktoy/rett, bnr-193868282-7))"
+ },
+ {
   "id": "bnr-193868290",
   "navn": null,
   "sikkerhet": "høy",
@@ -5226,6 +5458,13 @@
   },
   "avvik": false,
   "dorer_avvik": true
+ },
+ {
+  "id": "bnr-193868355",
+  "navn": "Det gamle raadhus",
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193868355-2))"
  },
  {
   "id": "bnr-193868347",
@@ -5482,6 +5721,20 @@
   }
  },
  {
+  "id": "bnr-6276016",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 4 (verktoy/rett, bnr-6276016-4))"
+ },
+ {
+  "id": "bnr-6276016",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 5 (verktoy/rett, bnr-6276016-5))"
+ },
+ {
   "id": "bnr-6276008",
   "navn": null,
   "sikkerhet": "høy",
@@ -5641,6 +5894,13 @@
     3
    ]
   }
+ },
+ {
+  "id": "bnr-6275990",
+  "navn": null,
+  "sikkerhet": "middels",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 8 (verktoy/rett, bnr-6275990-8))"
  },
  {
   "id": "bnr-23730278",
@@ -6433,6 +6693,20 @@
   }
  },
  {
+  "id": "bnr-6276822",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-6276822-3))"
+ },
+ {
+  "id": "bnr-6276822",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 0 (verktoy/rett, bnr-6276822-0))"
+ },
+ {
   "id": "bnr-193870147",
   "navn": null,
   "sikkerhet": "lav",
@@ -6505,6 +6779,13 @@
   }
  },
  {
+  "id": "bnr-13415897",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, bnr-13415897-3))"
+ },
+ {
   "id": "bnr-13416060",
   "navn": null,
   "sikkerhet": "høy",
@@ -6571,6 +6852,13 @@
   "sikkerhet": "lav",
   "status": "hoppet over",
   "grunn": "ingen vindustall (V (bak garasjen, ~16 m))"
+ },
+ {
+  "id": "bnr-13416559",
+  "navn": null,
+  "sikkerhet": "middels",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-13416559-2))"
  },
  {
   "id": "bnr-13418292",
@@ -6665,6 +6953,13 @@
     3
    ]
   }
+ },
+ {
+  "id": "bnr-13416370",
+  "navn": null,
+  "sikkerhet": "høy",
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 5 (verktoy/rett, bnr-13416370-5))"
  },
  {
   "id": "pb-3",
@@ -7077,5 +7372,26 @@
   "sikkerhet": "ikke synlig",
   "status": "hoppet over",
   "grunn": "ikke synlig fra gata"
+ },
+ {
+  "id": "pb-57",
+  "navn": null,
+  "sikkerhet": null,
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 3 (verktoy/rett, pb-57-3))"
+ },
+ {
+  "id": "pb-59",
+  "navn": null,
+  "sikkerhet": null,
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, pb-59-2))"
+ },
+ {
+  "id": "pb-69",
+  "navn": "Tøihuset, sørfløya",
+  "sikkerhet": null,
+  "status": "hoppet over",
+  "grunn": "ingen vindustall (rettet fasade, vegg 4 (verktoy/rett, pb-69-4))"
  }
 ]

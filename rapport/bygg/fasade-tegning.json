@@ -2753,21 +2753,11 @@
     "rader": [],
     "dorer": 0,
     "notat": []
-   },
-   "0": {
-    "tegning": "Street View",
-    "rader": [
-     3
-    ],
-    "dorer": 1,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 0,
-  "regler": 1,
-  "streetview": 4
+  "regler": 6,
+  "streetview": 0
  },
  {
   "id": "bnr-193870201",
@@ -3322,21 +3312,11 @@
     "dorer": 0,
     "notat": [],
     "kobling": "kontroll"
-   },
-   "2": {
-    "tegning": "Street View",
-    "rader": [
-     7
-    ],
-    "dorer": 0,
-    "notat": [
-     "Street View mai 2024"
-    ]
    }
   },
   "tegnet": 1,
-  "regler": 6,
-  "streetview": 7
+  "regler": 15,
+  "streetview": 0
  },
  {
   "id": "bnr-193867685",

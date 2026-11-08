@@ -339,7 +339,7 @@
   "sikkerhet": "høy",
   "n_piksler": 205,
   "rest_m": 0.16,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "20": {
   "id": "bnr-193868460",
@@ -1455,7 +1455,7 @@
   "sikkerhet": "middels",
   "n_piksler": 31,
   "rest_m": 0.46,
-  "merknad": "31 piksler; kalibreringshus"
+  "merknad": "31 piksler"
  },
  "155": {
   "id": "bnr-193868258",
@@ -1527,7 +1527,7 @@
   "sikkerhet": "middels",
   "n_piksler": 112,
   "rest_m": 0.8,
-  "merknad": "rest 0.8 m; kalibreringshus"
+  "merknad": "rest 0.8 m"
  },
  "159": {
   "id": "bnr-193868436",
@@ -1887,7 +1887,7 @@
   "sikkerhet": "høy",
   "n_piksler": 81,
   "rest_m": 0.23,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "179": {
   "id": "bnr-193868266",
@@ -2391,7 +2391,7 @@
   "sikkerhet": "lav",
   "n_piksler": 170,
   "rest_m": 2.1,
-  "merknad": "stor rest etter tilpasning (2.1 m): takform, trær eller nabobygg i omrisset; kalibreringshus"
+  "merknad": "stor rest etter tilpasning (2.1 m): takform, trær eller nabobygg i omrisset"
  },
  "207": {
   "id": "bnr-6251331",
@@ -2481,7 +2481,7 @@
   "sikkerhet": "høy",
   "n_piksler": 88,
   "rest_m": 0.62,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "212": {
   "id": "bnr-193972519",
@@ -2643,7 +2643,7 @@
   "sikkerhet": "middels",
   "n_piksler": 297,
   "rest_m": 0.99,
-  "merknad": "rest 1.0 m; kalibreringshus"
+  "merknad": "rest 1.0 m"
  },
  "221": {
   "id": "bnr-193867898",
@@ -2895,7 +2895,7 @@
   "sikkerhet": "høy",
   "n_piksler": 98,
   "rest_m": 0.4,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "235": {
   "id": "pb-7",
@@ -3165,7 +3165,7 @@
   "sikkerhet": "middels",
   "n_piksler": 126,
   "rest_m": 0.95,
-  "merknad": "rest 0.9 m; kalibreringshus"
+  "merknad": "rest 0.9 m"
  },
  "250": {
   "id": "bnr-16308102",
@@ -3273,7 +3273,7 @@
   "sikkerhet": "lav",
   "n_piksler": 108,
   "rest_m": 1.73,
-  "merknad": "stor rest etter tilpasning (1.7 m): takform, trær eller nabobygg i omrisset; kalibreringshus"
+  "merknad": "stor rest etter tilpasning (1.7 m): takform, trær eller nabobygg i omrisset"
  },
  "256": {
   "id": "bnr-193867839",
@@ -3669,7 +3669,7 @@
   "sikkerhet": "høy",
   "n_piksler": 51,
   "rest_m": 0.4,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "325": {
   "id": "bnr-193972306",

@@ -157,6 +157,13 @@ if (['mtrykk', 'klyp', 'vri', 'mdobbel', 'ark'].some(ok)) {
     res.scenarier.mtrykk = { inn: maal(logg), kortVis: k1.kort.vis, kortRamme: k1.kort, bunnark: k1.kort.vis && k1.kort.bunn > vp.height - 40 && k1.kort.w > vp.width * 0.8, husOverKortet: k1.kort.vis && hus[1] < k1.kort.top && hus[1] > 0, kortInn: await kortLogg(page),
       historikk: await page.evaluate(() => !!(history.state && history.state.kort)) };
     if (ok('ark') && k1.kort.vis) {   // dra kortet ned med fingeren: det følger fingeren og lukkes
+      // (08.11) kortets CSS-overgang går på ekte tid, ikke på testens falske klokke: på en treg maskin (terrenget, 07.11) stod kortet
+      // ennå under skjermkanten (top 724 i et 700 px vindu) da fingeren ble satt ned, så draget traff ingenting. Vent til kortet står.
+      let forr = null;
+      for (let i = 0; i < 200; i++) { const r = await page.evaluate(() => { const k = document.getElementById('kort').getBoundingClientRect(); return [k.top, k.bottom]; });
+        if (r[1] <= vp.height + 1 && forr !== null && Math.abs(r[0] - forr) < 0.5) break; forr = r[0];
+        await page.waitForTimeout(50); await kjor(page, BILDE); }
+      k1.kort.top = await page.evaluate(() => document.getElementById('kort').getBoundingClientRect().top);
       const x = vp.width / 2, y0 = k1.kort.top + 14; const spor = [];
       await touch('touchStart', [[x, y0]]); await kjor(page, BILDE);
       for (let i = 1; i <= 8; i++) { await touch('touchMove', [[x, y0 + i * 18]]); await kjor(page, BILDE); spor.push(await page.evaluate(() => document.getElementById('kort').getBoundingClientRect().top)); }
