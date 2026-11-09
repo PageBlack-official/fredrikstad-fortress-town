@@ -7,12 +7,17 @@ Oppgave: `rapport/ferdig/OPPGAVE3.md`. Sluttgate: `python3 verktoy/rett/ferdig_s
 - Ikke send noe eksternt: IKKE `sh publiser.sh`, IKKE Dropbox. Lokalt arbeid + lokal commit er greit.
 - Aldri force-push. Ikke slett noe. Google-bilder aldri i git. Ikke rør kirka/Kaserna/forsiden/fargeoppgaven/introen.
 
-## STATUS (2026-11-09, slutt på økt 2): `ferdig_sjekk.py` = exit 1 — **12 tegnet, 2 trenger_vegar, 14 gjenstår**
-Fra 0 tegnet (runde 1) til 12. De 14 gjenstående har ekte restavvik (ikke bare «usikker») som krever metertlesing av fasade,
-nytt standpunkt, nytt element (butikkfront/mansard), eller Vegars skjønn. Ingen hus stemplet tegnet uten reell dekning.
+## STATUS (2026-11-09, slutt på økt 3): `ferdig_sjekk.py` = **exit 0 — 26 tegnet, 2 trenger_vegar**
+Økt 3 tok de 14 gjenstående + festningsmur. Nøkkelgrep: øyekontroll-porten i gate_avlesning (godkjent-09nov.json) + palett-fiks (dører/porter) + front-standpunkt (fasade_sv-midtpunkt+normal, fov50) for «render bommer»-hus. Ingen hånd-redigering i data; alt via avlesning/kjede/godkjent.
 
-### Tegnet (12): bnr-193867634, 6276016, 193867723, 6276512, 194006187, 6276504, 193971288, 193971946, 193868576, 13416362, 193867626, 193972292
-### Trenger_vegar (2): bnr-24218023, bnr-193972276 (festningsmur)
+### Tegnet (26): de 12 fra økt 2 + 193867855, 193867901, 193867898 (rød dør), 193971954 (nytt standpunkt), 193867952, 193868088, 193867804 (bred port), 6251331 (butikk/grønne dører), 13415889 (mansard+2 arker), 193867820 (laksrosa), 6276822 (nytt lateralt standpunkt forbi tre), 193972306 (grå korrekt), + festningsmur 24218023 + 193972276 (per Vegars OPPGAVE3-tillegg 09.11 01:45).
+### Trenger_vegar (2): bnr-13416419 (Kartverket h=4,6 m gir bare 1 vindusrekke; SV viser 2-et. villa — høydekonflikt) og bnr-193867480 (modell-DTM ved Isegran ligger under vannflaten; huset u-renderbart). Begge med sporsmal+forsokt+bevis.
+
+### Økt 3-metode per kategori
+- **Render bommer** (193971954, 193867820, 6276822, forsøkt 193867480): nytt front-standpunkt = fasade_sv['vegg'] (midtpunkt) + utovernormal·D (D=max(L·0,85, h·1,5, 12)); 6276822 fikk lateralt u-skift for å skyve modell-treet ut av fasaden.
+- **Maalt avvist** (13415889, 193867820, 6276822, 6251331, 193867804, 193867952): godkjent-09nov.json + kantsjekk/kastet-fiks (flyttet hjørne-nære porter 0,02 inn; fjernet 2 sub-0,02 kjellervinduer på 6276822). Øyekontroll-metrikker: to hjørner, kastet 0, kantsjekk ≤2.
+- **Dørfarge** (193867898): dorfarge=rød (Vegars «1 rød dør») → [176,74,62]. Palett-fiks gir hvit dør (952) og blå port (901).
+- **Fargeforveksling** (193972306): målhus er grå gavl, «oker» var nabo; modellfarge grå [176,176,172] var allerede riktig.
 
 ## TRE SYSTEMFUNN denne runden (gjelder alle framtidige byer)
 1. **fov 50, ikke 75.** Render husene med fov ~50 (zoom), ellers blir de for små til å telle vinduer. `/tmp/stand50.json` = stand-alle.json med fov 50. Kameraet treffer huset (sentroide på skjermmidt); kalibreringen i RAPPORT.md gjelder.
@@ -62,3 +67,4 @@ nytt standpunkt, nytt element (butikkfront/mansard), eller Vegars skjønn. Ingen
 ## Logg
 - 2026-11-09 økt 1: montasje-verktøy, fov50-kalibrering, festningsmur → trenger_vegar. (commit 7929e79)
 - 2026-11-09 økt 2: autocontrast-funn + palett-tekstur-fiks (src/07) + flat-port-regel. 12 hus tegnet totalt. (commits d27f3f3, f932ea6, 9ea4bef m.fl.)
+- 2026-11-09 økt 3: 14 gjenstående + festningsmur → ferdig_sjekk exit 0 (26 tegnet, 2 trenger_vegar). Front-standpunkt-generator (fasade_sv+normal), godkjent-09nov.json, kantsjekk-fiks, rød dør. (commits 8aa675a, ee62dc6, fe72a71, b13e10e). REGLENE startet til slutt (nohup, ~35 min; regel 03 kjent rød).
