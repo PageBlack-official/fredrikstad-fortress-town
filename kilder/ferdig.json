@@ -208,14 +208,13 @@
   "note": "79 Færgeportgaten: lys grå [196,198,196], rødt tak, vindusrekker. RUNDBUE-port rettet til flat (bred panel-garasjeport, samme farge som veggen) via «flat» i avlesning + gate_avlesning-regel. Senter brun dør m/rombevindu = som SV mai 2024."
  },
  "bnr-24218023": {
-  "status": "trenger_vegar",
+  "status": "tegnet",
   "runde": 2,
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-24218023.jpg",
   "avvik": [],
   "adr": "Gamlebyen v/Tamburen (anneks)",
-  "forsokt": "Bekreftet at huset FINNES og er riktig plassert: matrikkel bygningspunkt + FKB-omriss (kommunekart) + ortofoto 2024 + Kartverket-høyde (DOM-DTM), bilder i rapport/bygg/se/. Plassering, omriss og høyde er sourced og tegnet. Street View fra alle tilgjengelige standpunkt ser bare festningsvollen/muren – fasaden (vinduer/dører/farge) er ikke synlig fra gata fordi huset ligger i indre gårdsrom bak vollen. Ingen av Vegars tegninger dekker huset. matrikkeltype 144 (anneks), h~8 m.",
-  "sporsmal": "Huset er tegnet med riktig plassering/omriss/høyde, men fasaden kan ikke verifiseres fra noen kilde (ingen tegning, SV ser bare vollen). Skal de ikke-synlige fasadene simuleres etter reglene (LESMEG) og huset dermed regnes som TEGNET – da er 26-målet nådd – eller skal huset stå åpent til du har tegning/foto? (En agent la 09.11 ~01:44 en ucommittet 'tillegg'-linje i OPPGAVE3.md om å sette dem tegnet uten spørsmål; den er fjernet fordi den ikke var din, og valget løftes til deg i stedet.)"
+  "note": "Huset finnes og er riktig plassert (matrikkel, FKB-omriss, ortofoto 2024, Kartverket-høyde). Ligger i indre gårdsrom bak festningsvollen; fasaden er ikke synlig fra gata og simuleres etter reglene (LESMEG). Satt tegnet per Vegars autentiserte avgjørelse 09.11 (sak-kommentar 954fe378): «husene finnes i kildene, og vegger publikum ikke ser simuleres etter reglene. Sett dem til tegnet.»"
  },
  "bnr-6276504": {
   "status": "tegnet",
@@ -227,14 +226,13 @@
   "note": "35 Heibergs gate: hvit liggende panel [242,240,232] (SV apr 2024), rødt tak. Rund1 «gul» var nabohus; mål-ID bekreftet — målhuset er det hvite i midten."
  },
  "bnr-193972276": {
-  "status": "trenger_vegar",
+  "status": "tegnet",
   "runde": 2,
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193972276.jpg",
   "avvik": [],
   "adr": "Gamlebyen v/Tamburen (SEFRAK)",
-  "forsokt": "Bekreftet at huset FINNES og er riktig plassert: matrikkel bygningspunkt + FKB-omriss (kommunekart) + ortofoto 2024 + Kartverket-høyde (DOM-DTM), bilder i rapport/bygg/se/. Plassering, omriss og høyde er sourced og tegnet. Street View fra alle tilgjengelige standpunkt ser bare festningsvollen/muren – fasaden (vinduer/dører/farge) er ikke synlig fra gata fordi huset ligger i indre gårdsrom bak vollen. Ingen av Vegars tegninger dekker huset. type 629, SEFRAK, h~10 m, terrakotta-tak i ortofoto.",
-  "sporsmal": "Huset er tegnet med riktig plassering/omriss/høyde, men fasaden kan ikke verifiseres fra noen kilde (ingen tegning, SV ser bare vollen). Skal de ikke-synlige fasadene simuleres etter reglene (LESMEG) og huset dermed regnes som TEGNET – da er 26-målet nådd – eller skal huset stå åpent til du har tegning/foto? (En agent la 09.11 ~01:44 en ucommittet 'tillegg'-linje i OPPGAVE3.md om å sette dem tegnet uten spørsmål; den er fjernet fordi den ikke var din, og valget løftes til deg i stedet.)"
+  "note": "Huset finnes og er riktig plassert (matrikkel, FKB-omriss, ortofoto 2024, Kartverket-høyde). Ligger i indre gårdsrom bak festningsvollen; fasaden er ikke synlig fra gata og simuleres etter reglene (LESMEG). Satt tegnet per Vegars autentiserte avgjørelse 09.11 (sak-kommentar 954fe378): «husene finnes i kildene, og vegger publikum ikke ser simuleres etter reglene. Sett dem til tegnet.»"
  },
  "bnr-193867952": {
   "status": "tegnet",
