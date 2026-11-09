@@ -2,6 +2,8 @@
  "_om": "Øyekontroll 09.11 (Claude, runde 2 forts.): nytt front-standpunkt (fasade_sv-midtpunkt + utovernormal, fov 50). Godkjent der etter-render viser lest fasade som matcher Street View. Maalt-lesning med rene metrikker (to hjørner, kastet 0, kantsjekk ≤2).",
  "godkjent": {
   "bnr-13415889": "bnr-13415889-0",
-  "bnr-193867820": "bnr-193867820-3"
+  "bnr-193867820": "bnr-193867820-3",
+  "bnr-193867804": "bnr-193867804-4",
+  "bnr-6251331": "bnr-6251331-1"
  }
 }

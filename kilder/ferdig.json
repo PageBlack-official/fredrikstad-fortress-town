@@ -53,14 +53,13 @@
   "runde": 2
  },
  "bnr-13415889": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-13415889.jpg",
-  "avvik": [
-   "vegg 0: modell mangler takarker (dormers) og har forenklet valmtak vs SV rødt mansardtak m/arker",
-   "vegg 3: modell lys grønn m/rødt tak vs SV mørk grå m/svart mansardtak – farge/tak stemmer ikke"
-  ],
-  "adr": "9/10 Ove Ramms gate"
+  "avvik": [],
+  "adr": "9/10 Ove Ramms gate",
+  "runde": 2,
+  "note": "Herskapsvilla, SV mai 2024. Maalt godkjent (øyekontroll, to hjørner). Mansardtak med 2 takarker (dormere) + rødt tak rendrer nå og matcher SV-silhuetten; hvite vegger [242,240,232]. Forenklet: balkong ikke modellert, vindustall tilnærmet. Vegg 3 simulert (ikke fri gatesikt)."
  },
  "bnr-13416362": {
   "status": "tegnet",
@@ -108,22 +107,22 @@
   "note": "Vegar-lest: oransje [232,140,84], rader [3,4], stor blå dobbel port til venstre, 2 piper. Blå port rendrer nå riktig (palett-fiks) og matcher SV mai 2024. Mørk mosegrodd tegltak."
  },
  "bnr-193867804": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867804.jpg",
-  "avvik": [
-   "salmon/laks 2-et.: farge/høyde stemmer, men SV viser bred rektangulær port på vegg 4; modell har smalere dør – porttype sjekkes"
-  ],
-  "adr": "51 Kasernegaten"
+  "avvik": [],
+  "adr": "51 Kasernegaten (laks)",
+  "runde": 2,
+  "note": "Laks [226,170,160] 2-et., rødt tak, SV mai 2024. Maalt-lesning godkjent (øyekontroll, kantsjekk 0 etter at hjørne-nær port ble flyttet inn). BRED brun ornamentert rektangulær carriageport på vegg 4 + vindusrekker matcher SV. Rund1s «ark» var nabo (6251331s rundbue)."
  },
  "bnr-6251331": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-6251331.jpg",
-  "avvik": [
-   "vegg 1: SV viser grønn garasjeport + grønn butikkfront; modell har brune dører og ingen butikkfront – element/farge-avvik"
-  ],
-  "adr": "21 Rådhusgaten (strågul)"
+  "avvik": [],
+  "adr": "21 Raadhusgaten (strågul)",
+  "runde": 2,
+  "note": "Pale strågul [249,224,204] (kvartaltegning kvartal5) 2-et., SV mai 2024. Maalt godkjent (øyekontroll). Grønne dører (garasjeport+inngangsdør, dorfarge #2f5a3e) rendrer nå riktig (palett-fiks). Butikkfront lest som store vinduer i 1.etg. Øvre vindusrekke matcher."
  },
  "bnr-193867898": {
   "status": "tegnet",
@@ -153,13 +152,13 @@
   "note": "Lys blågrå [178,196,206] stående panel, 2 et., rødt tegltak, SV aug 2010. Vegg/tak/form/nabo og vindusrekker (øvre ~2+2+1, nedre rekke) matcher SV ved fov50 — rund1s «for blå» var autocontrast-artefakt. Kontrollert samme kamera."
  },
  "bnr-193867820": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867820.jpg",
-  "avvik": [
-   "vegg 3 (auto): render klipper inn i nabobygg over – gatevegg ikke lesbar. Må rendres på nytt fra vegg-4-standpunktet. SV viser laksrosa 2-et."
-  ],
-  "adr": "13 Rådhusgaten (laksrosa)"
+  "avvik": [],
+  "adr": "13 Rådhusgaten (laksrosa)",
+  "runde": 2,
+  "note": "Laksrosa [226,170,160] 2-et., rødt tak, SV mai 2024. Maalt godkjent (øyekontroll, rader [4,3]). Nytt front-standpunkt (fasade_sv-midtpunkt+normal, fov50, D22). Gavlfasaden mot P-gården; nedre del delvis bak en terreng-/forstøtningsmur i gårdsrommet (samme som SVs åpne plass)."
  },
  "bnr-193971288": {
   "status": "tegnet",
