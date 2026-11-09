@@ -2409,7 +2409,7 @@
   "sikkerhet": "middels",
   "n_piksler": 73,
   "rest_m": 1.26,
-  "merknad": "rest 1.3 m; kalibreringshus"
+  "merknad": "rest 1.3 m"
  },
  "208": {
   "id": "bnr-6251765",
@@ -3111,7 +3111,7 @@
   "sikkerhet": "høy",
   "n_piksler": 83,
   "rest_m": 0.39,
-  "merknad": "kalibreringshus"
+  "merknad": ""
  },
  "247": {
   "id": "pb-8",

@@ -3572,15 +3572,14 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    1,
-    1
+    3
    ],
-   "dorer": 1,
+   "dorer": 4,
    "arker": 1,
    "piper": 0
   },
   "avvik": true,
-  "dorer_avvik": false
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193868673",

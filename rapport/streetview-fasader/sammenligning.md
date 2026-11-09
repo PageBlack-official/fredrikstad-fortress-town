@@ -125,7 +125,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867898 | Gamlebyen modelljernbanesenter | [6, 5] | [5, 6] | 1 rødbrun tofløyet fyllingsdør, ca. 0.33–0.40 av fasaden, med skilt og lykt | 1 | 0 | 0 | 1 murt teglpipe (bak mønet) | 2 | ja |
 | bnr-193867952 |  | [10, 9] | [3, 8, 1] | 2 hvite glassdører med overlys: ca. 0.55 (med steintrapp) og ca. 0.90 (med svart rekkverk) | 6 | 5+ brede arker i mørk grå sink/skifer med takterrasse og sort rekkverk langs takfoten | 5 | ikke synlig | 1 | ja |
 | bnr-6247822 |  | [5, 4] | [4, 3] | 1 brun fyllingsdør med glass, ca. 0.42, i en nisje, med 5 steintrinn | 2 | ikke synlig | 0 | ikke synlig | 2 | ja |
-| bnr-6251331 |  | [3, 3] | [1, 1] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 1 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
+| bnr-6251331 |  | [3, 3] | [3] | 1 grønn dør med glass ca. 0.47 av fasaden (butikk), 2 utstillingsvinduer på hver side; 1 grønn tofløyet garasjeport til venstre (ca. 0.05–0.30) | 4 | ikke synlig | 1 | 1 rød teglpipe | 0 | ja |
 | bnr-193868673 |  | [1] | [1] | ikke synlig | 0 | 0 | 0 | None | 0 |  |
 | bnr-6251218 |  | [4, 6] | [4, 4] | 1 grå/olivengrå tofløyet fyllingsdør med overlys ca. 0.40; 1 grå tofløyet port med overlys til venstre (ca. 0.05–0.25) | 2 | 0 | 0 | 1 murt teglpipe | 1 | ja |
 | bnr-193868266 |  | [3, 3] | [4, 5] | 1 tofløyet port, rød med grønne fyllinger, ca. 0.65–0.90 av synlig vegg | 0 | 0 | 0 | 1 murt teglpipe | 2 | ja |
