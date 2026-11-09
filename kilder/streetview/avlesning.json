@@ -3068,13 +3068,14 @@
   "navn": "",
   "adresse": "Raadhusgaten 22",
   "vegg": {
-   "farge": "lys blågrå stående panel",
+   "farge": "lys grå",
    "rgb": [
     117,
     126,
     142
    ],
-   "lys": "skygge/motlys (sola bak huset)"
+   "lys": "skygge/motlys (sola bak huset)",
+   "merknad": "Vegars dom 09.11.2026: grått, sto blått"
   },
   "list": "brun/mørk gråbrun vindusomramming, hvite rammer",
   "tak": {
@@ -3104,7 +3105,7 @@
   "sider": [
    {
     "retning": "Ø (fasaden som vender mot panoramaet; kamera så mot 290°)",
-    "vegg_farge": "lys blågrå stående panel",
+    "vegg_farge": "lys grå",
     "vegg_rgb": [
      117,
      126,
@@ -3126,7 +3127,8 @@
     "bilde": "/home/claude/streetview/bilder/bnr-193868088.jpg",
     "bilde_dato": "mai 2024",
     "pano_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=59.2041450,10.9558140&heading=290&pitch=6&fov=90",
-    "kilde": "overført fra den første avlesningen (samme bilde); felter som ikke ble lest da, står tomme"
+    "kilde": "overført fra den første avlesningen (samme bilde); felter som ikke ble lest da, står tomme",
+    "vegg_kilde_merknad": "Vegars dom 09.11.2026: huset er grått, sto blått"
    }
   ]
  },
@@ -14076,7 +14078,7 @@
   "sider": [
    {
     "retning": "SØ (gatefasade, ~20 m)",
-    "vegg_farge": "blågrå",
+    "vegg_farge": "grå",
     "vegg_materiale": "liggende panel",
     "list_farge": "hvit",
     "vindusramme_farge": "hvit",
@@ -14096,7 +14098,8 @@
     "gjerde_mur_foran": "hekk, brosteinsinnkjørsel",
     "bilde": "/home/claude/streetview/bilder/bnr-6276512_SO.jpg",
     "bilde_dato": "nov. 2024",
-    "pano_url": "59.200659,10.9583166 h312"
+    "pano_url": "59.200659,10.9583166 h312",
+    "vegg_kilde_merknad": "Vegars dom 09.11.2026: huset er grått, sto blått"
    }
   ],
   "tak": {
@@ -14107,9 +14110,10 @@
   "navn": "",
   "adresse": "Heibergs gate 37",
   "vegg": {
-   "farge": "blågrå",
+   "farge": "grå",
    "rgb": null,
-   "lys": null
+   "lys": null,
+   "merknad": "Vegars dom 09.11.2026: grått, sto blått"
   },
   "list": "hvit",
   "materiale": "liggende panel",
