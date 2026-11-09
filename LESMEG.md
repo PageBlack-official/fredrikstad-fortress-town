@@ -628,3 +628,6 @@ Feller:
 - `sv_rett_plan.py` krever at hele veggen er i bildet; det er strengere enn farge trenger. Med `MIN_AAR=2016` og UNNTA er det få skudd igjen: panoramaene fra 2024 er stort sett hentet allerede, og de som mangler ser ikke hele veggen.
 - Google-bilder skal ikke i git: ny hentemappe får egen `.gitignore` med `*`, kontaktark i `rapport/farger/ark/`.
 - `verktoy/rett/FARGER.md` lå bare i skyen til 08.11 (LESMEG-regelen: alt skal ligge her).
+
+## 09.11 Dom-ark
+ferdig_sjekk exit 0 betyr bare at feltene er fylt. Ved oyekontroll av 26 tegnet holdt 13 (farge, kamera, utbrent bevis). Kilder: status/sot-tegnet-28.md. Regel: farge vurderes som riktig kulor (gront hus gront), ikke noyaktig tone. Oversiktsbilde med skjermpunkt: verktoy/oversikt_ring.mjs.
