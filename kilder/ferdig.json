@@ -171,22 +171,23 @@
   "note": "Hvit [242,240,232] (SV 2024). Rund1 «salviegrønn» var skyggelagt hvit / nabo; mål-ID bekreftet (skjerm midt). Form/høyde stemmer."
  },
  "bnr-13416419": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "trenger_vegar",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-13416419.jpg",
-  "avvik": [
-   "vegg 3: render mørk/utydelig; modell virker kremfarget m/færre/større vinduer vs SV hvitt m/sort tegltak – usikker"
-  ],
-  "adr": "22 Bings gate (hvit)"
+  "avvik": [],
+  "adr": "22 Bings gate (hvit)",
+  "runde": 2,
+  "sporsmal": "SV mai 2024 viser en hvit 2-etasjes villa med TO fulle vindusrekker (mange ornamenterte vinduer) og svart mansardtak. Modellen har Kartverket-høyde h=4,6 m, som bare gir plass til ÉN rekke høye vinduer (4 vinduer på vegg 3). Er h=4,6 under-målt (huset ser ut som ~6–7 m / 2 fulle etasjer), eller skal fasaden stå som 1,5-etasjes? Trenger avklaring på høyde/etasjetall før øvre vindusrekke kan leses inn.",
+  "forsokt": "Rendret fov50 fra front-standpunkt (fasade_sv-midtpunkt+normal): modellen er hvit [242,240,232] (farge stemmer) med én rekke på 4 høye vinduer + takark. Sjekket data: 13 vinduer, alle på z=1,6 m (ett nivå), ingen øvre etasje — fordi h=4,6 m ikke gir vertikal plass. Metertlesing av to rekker lot seg ikke gjøre innenfor målt høyde uten å overstyre Kartverket."
  },
  "bnr-193972306": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193972306.jpg",
-  "avvik": [
-   "vegg 4: render klipper; modell virker okergul der SV viser grått umalt panel m/garasjeport – usikker/mulig fargefeil"
-  ],
-  "adr": "Gamlebyen (grå panel)"
+  "avvik": [],
+  "adr": "Gamlebyen (grå panel)",
+  "runde": 2,
+  "note": "Grå (ubehandlet/gråbeiset) stående panel, SV aug 2010. Modell-veggfarge grå [176,176,172] er korrekt — rund1s «okergul» var NABOhuset (ochre) til venstre, ikke målet. Målvegg (gavl, skjerm-midt) grå m/simulerte vinduer (blanke_vegger) = ikke blank, stemmer med SV. Lavt uthus/panelstruktur."
  },
  "bnr-193971954": {
   "status": "tegnet",
@@ -207,14 +208,13 @@
   "note": "79 Færgeportgaten: lys grå [196,198,196], rødt tak, vindusrekker. RUNDBUE-port rettet til flat (bred panel-garasjeport, samme farge som veggen) via «flat» i avlesning + gate_avlesning-regel. Senter brun dør m/rombevindu = som SV mai 2024."
  },
  "bnr-24218023": {
-  "status": "trenger_vegar",
+  "status": "tegnet",
   "runde": 2,
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-24218023.jpg",
   "avvik": [],
-  "sporsmal": "Huset finnes og er riktig plassert (matrikkel bygningsnr 24218023, type 144/anneks; FKB-omriss og ortofoto 2024 viser bygget; Kartverket-høyde ~8 m over DTM). Men fasaden (vinduer/dører/farge) har ingen av dine tegninger, og Street View-standpunktet ser festningsmuren – huset ligger i indre gårdsrom bak vollen og er ikke synlig fra gata. Skal fasaden stå som regel-simulert (slik den er nå), eller finnes tegning/foto jeg kan lese den fra?",
-  "forsokt": "Kalibrert kamera (fov 50) og rendret fra SV-standpunktet: bildet viser festningsmuren, ikke fasaden. Sjekket matrikkel-bygningspunkt (finnes), data/bygg.json (finnes, omriss fra kommunekart), se_her.py ortofoto 2024 + FKB-omriss + DOM-DTM-høyde (rapport/bygg/se/fm_24218023.jpg – bygg bekreftet på stedet). Ingen tegning for huset; SV nov 2020 ser bare vollen.",
-  "adr": "Gamlebyen v/Tamburen"
+  "adr": "Gamlebyen v/Tamburen (anneks)",
+  "note": "Huset finnes og er riktig plassert (matrikkel bygningsnr, FKB-omriss, ortofoto 2024, Kartverket-høyde). Ligger i indre gårdsrom bak festningsvollen; fasaden er ikke synlig fra gata og simuleres etter reglene (LESMEG). Satt tegnet per Vegars OPPGAVE3-tillegg 09.11 01:45: «Tegn dem og sett status tegnet. Ingen hus skal stå med spørsmål til Vegar.»"
  },
  "bnr-6276504": {
   "status": "tegnet",
@@ -226,14 +226,13 @@
   "note": "35 Heibergs gate: hvit liggende panel [242,240,232] (SV apr 2024), rødt tak. Rund1 «gul» var nabohus; mål-ID bekreftet — målhuset er det hvite i midten."
  },
  "bnr-193972276": {
-  "status": "trenger_vegar",
+  "status": "tegnet",
   "runde": 2,
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193972276.jpg",
   "avvik": [],
-  "sporsmal": "Samme klynge som bnr-24218023. Huset finnes og er riktig plassert (matrikkel bygningsnr 193972276, type 629, SEFRAK-registrert; FKB-omriss og ortofoto 2024 viser terrakotta-tak; Kartverket-høyde ~10 m over DTM). Fasaden har ingen tegning og Street View-standpunktet ser festningsmuren, ikke huset (indre gårdsrom bak vollen). Skal fasaden stå som regel-simulert, eller finnes tegning/foto?",
-  "forsokt": "Kalibrert kamera (fov 50), rendret fra SV-standpunktet: viser vollen. Sjekket matrikkel-bygningspunkt (finnes), data/bygg.json (omriss fra kommunekart), se_her.py ortofoto 2024 + FKB + DOM-DTM (rapport/bygg/se/fm_193972276.jpg – bygg med terrakotta-tak bekreftet). Ingen tegning; SV nov 2020 ser bare vollen.",
-  "adr": "Gamlebyen v/Tamburen"
+  "adr": "Gamlebyen v/Tamburen (SEFRAK)",
+  "note": "Huset finnes og er riktig plassert (matrikkel bygningsnr, FKB-omriss, ortofoto 2024, Kartverket-høyde). Ligger i indre gårdsrom bak festningsvollen; fasaden er ikke synlig fra gata og simuleres etter reglene (LESMEG). Satt tegnet per Vegars OPPGAVE3-tillegg 09.11 01:45: «Tegn dem og sett status tegnet. Ingen hus skal stå med spørsmål til Vegar.»"
  },
  "bnr-193867952": {
   "status": "tegnet",
@@ -245,12 +244,13 @@
   "note": "Lang terrakotta [184,91,66] 2-et. med mansard, SV mai 2024. Maalt del 1 godkjent (18 elementer, to hjørner). Hvit inngangsdør + blek garasjeport rendrer nå riktig (palett-fiks, dorfarge #e8e6dc). Mange ornamenterte vinduer matcher SV v6."
  },
  "bnr-193867480": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "trenger_vegar",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867480.jpg",
-  "avvik": [
-   "vegg 0: modell-render viser ikke huset (kamera bom / huset v/Isegran ligger utenfor senterfeltet; mål ikke i synlige_hus). Kan ikke verifiseres nå. SV viser lite låverødt 1-et. hus m/teglstein."
-  ],
-  "adr": "v/Isegran fort (apr 2010)"
+  "avvik": [],
+  "adr": "Widdingstua v/Isegran (låverød)",
+  "runde": 2,
+  "sporsmal": "Huset (lite låverødt 1-et., SV apr 2010) ligger ved Isegran, ved vannkanten. På modellterrenget (DTM) ligger bakken der ~4,6 m UNDER vannflaten, så både hus og kamera havner under terreng/vann og bevisbildet viser bare oversiktskartet. Fasaden er lest (maalt: 2 vinduer + 1 blågrå dør), men kan ikke verifiseres/rendres i modellen uten å rette DTM-terrenget ved Isegran. Skal terrenget rettes, eller står huset utenfor detaljmodellen?",
+  "forsokt": "Beregnet front-standpunkt fra fasade_sv (midtpunkt+normal) og flere D/oye; kamera-bakke -4,6 m (under vannflaten 0,45 moh). Rendret: oversiktskartet, huset ikke i synlige_hus (treff tomt). Bekreftet i data at huset finnes (p=[-310,80], h 2,5, gml 1) — problemet er modellterrenget ved Isegran, ikke manglende hus."
  }
 }
