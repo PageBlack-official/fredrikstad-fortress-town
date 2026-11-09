@@ -35,12 +35,13 @@
   "runde": 2
  },
  "bnr-6276512": {
-  "status": "ferdig",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-6276512.jpg",
   "avvik": [],
   "adr": "37 Heibergs gate",
-  "note": "blågrå, rødt valmtak, rød pipe, vinduer stemmer (fritt­liggende)."
+  "note": "37 Heibergs gate: blågrå [178,196,206] (SV 2024), rødt valmtak m/ark, pipe, vindusrekker. Kontrollert fov50 — rund1 «for blå» var autocontrast-artefakt.",
+  "runde": 2
  },
  "bnr-193971946": {
   "status": "ferdig",
@@ -135,13 +136,13 @@
   "adr": "9 Voldgaten (duebla)"
  },
  "bnr-194006187": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-194006187.jpg",
-  "avvik": [
-   "vegg 1: modell leser beige/grå m/mørke vindusrammer; SV hvit liggende panel – farge usikker. Grunnmur stemmer."
-  ],
-  "adr": "Gamlebyen (hvit liggende panel)"
+  "avvik": [],
+  "adr": "Gamlebyen (hvit liggende panel)",
+  "runde": 2,
+  "note": "Hvit liggende panel [236,240,240] (SV 2024, 2019-trykket dømt). Rund1 «beige/grå» var skyggelagt hvit; mål-ID bekreftet (skjerm midt). Grunnmur stemmer."
  },
  "bnr-193868088": {
   "status": "åpen",
@@ -162,13 +163,13 @@
   "adr": "13 Rådhusgaten (laksrosa)"
  },
  "bnr-193971288": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193971288.jpg",
-  "avvik": [
-   "vegg 3: modell sentralt leser salviegrønn der SV viser hvitt hus – mulig fargefeil, mål-ID usikkert i gatebildet"
-  ],
-  "adr": "Gamlebyen (hvit)"
+  "avvik": [],
+  "adr": "Gamlebyen (hvit)",
+  "runde": 2,
+  "note": "Hvit [242,240,232] (SV 2024). Rund1 «salviegrønn» var skyggelagt hvit / nabo; mål-ID bekreftet (skjerm midt). Form/høyde stemmer."
  },
  "bnr-13416419": {
   "status": "åpen",
@@ -217,13 +218,13 @@
   "adr": "Gamlebyen v/Tamburen"
  },
  "bnr-6276504": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-6276504.jpg",
-  "avvik": [
-   "vegg 5: modell leser gul fasade sentralt der SV har hvitt liggende panel – mulig fargefeil; mål-ID usikkert i husrekka. Rødt tak stemmer."
-  ],
-  "adr": "35 Heibergs gate"
+  "avvik": [],
+  "adr": "35 Heibergs gate",
+  "runde": 2,
+  "note": "35 Heibergs gate: hvit liggende panel [242,240,232] (SV apr 2024), rødt tak. Rund1 «gul» var nabohus; mål-ID bekreftet — målhuset er det hvite i midten."
  },
  "bnr-193972276": {
   "status": "trenger_vegar",

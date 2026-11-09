@@ -22,6 +22,7 @@ etter_dir = arg('--etter', os.path.join(ROT, 'rapport', 'ferdig', 'renders_r2'))
 for_dir = arg('--for')
 ut_dir = arg('--ut', os.path.join(ROT, 'rapport', 'ferdig'))
 flagg = {'--etter', '--for', '--ut'}
+STREKK = '--strekk' in sys.argv   # autocontrast på modell-rendrene: bare når fasaden er utbrent. Av som standard (strekk forvrenger bleke kulører: lys blågrå ble mettet blå).
 ids = [a for a in sys.argv[1:] if not a.startswith('--') and sys.argv[sys.argv.index(a) - 1] not in flagg]
 
 RADH = 360   # høyde per bilde i montasjen
@@ -58,9 +59,9 @@ for hid in mål:
         if os.path.exists(svp): kol.append(merk(last(svp), f"SV v{e['wall']}"))
         if for_dir:
             fp = os.path.join(for_dir if os.path.isabs(for_dir) else os.path.join(ROT, for_dir), e['navn'] + '.png')
-            if os.path.exists(fp): kol.append(merk(last(fp, True), 'for'))
+            if os.path.exists(fp): kol.append(merk(last(fp, STREKK), 'for'))
         ep = os.path.join(etter_dir if os.path.isabs(etter_dir) else os.path.join(ROT, etter_dir), e['navn'] + '.png')
-        if os.path.exists(ep): kol.append(merk(last(ep, True), 'etter'))
+        if os.path.exists(ep): kol.append(merk(last(ep, STREKK), 'etter'))
         if not kol: continue
         bredde = sum(k.width for k in kol) + 6 * (len(kol) - 1)
         rad = Image.new('RGB', (bredde, RADH), (255, 255, 255))
