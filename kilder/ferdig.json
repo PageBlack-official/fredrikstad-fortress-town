@@ -204,13 +204,14 @@
   "adr": "79 Færgeportgaten (lys grå)"
  },
  "bnr-24218023": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "trenger_vegar",
+  "runde": 2,
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-24218023.jpg",
-  "avvik": [
-   "vegg 0: SV-standpunktet viser FESTNINGSMUREN (stein), ikke en husfasade – kan ikke verifiseres. Modell viser gråbeige fasade m/vinduer+dører. 'Tegningen har ikke huset'. Kontrolleres manuelt (mulig feilplassert/feil SV-ref)."
-  ],
-  "adr": "Gamlebyen v/Tamburen (nov 2020)"
+  "avvik": [],
+  "sporsmal": "Huset finnes og er riktig plassert (matrikkel bygningsnr 24218023, type 144/anneks; FKB-omriss og ortofoto 2024 viser bygget; Kartverket-høyde ~8 m over DTM). Men fasaden (vinduer/dører/farge) har ingen av dine tegninger, og Street View-standpunktet ser festningsmuren – huset ligger i indre gårdsrom bak vollen og er ikke synlig fra gata. Skal fasaden stå som regel-simulert (slik den er nå), eller finnes tegning/foto jeg kan lese den fra?",
+  "forsokt": "Kalibrert kamera (fov 50) og rendret fra SV-standpunktet: bildet viser festningsmuren, ikke fasaden. Sjekket matrikkel-bygningspunkt (finnes), data/bygg.json (finnes, omriss fra kommunekart), se_her.py ortofoto 2024 + FKB-omriss + DOM-DTM-høyde (rapport/bygg/se/fm_24218023.jpg – bygg bekreftet på stedet). Ingen tegning for huset; SV nov 2020 ser bare vollen.",
+  "adr": "Gamlebyen v/Tamburen"
  },
  "bnr-6276504": {
   "status": "åpen",
@@ -222,13 +223,14 @@
   "adr": "35 Heibergs gate"
  },
  "bnr-193972276": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "trenger_vegar",
+  "runde": 2,
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193972276.jpg",
-  "avvik": [
-   "vegg 3: SV-standpunktet viser festningsmuren, ikke husfasade – kan ikke verifiseres (samme klynge som bnr-24218023). 'Tegningen har ikke huset'."
-  ],
-  "adr": "Gamlebyen v/Tamburen (nov 2020)"
+  "avvik": [],
+  "sporsmal": "Samme klynge som bnr-24218023. Huset finnes og er riktig plassert (matrikkel bygningsnr 193972276, type 629, SEFRAK-registrert; FKB-omriss og ortofoto 2024 viser terrakotta-tak; Kartverket-høyde ~10 m over DTM). Fasaden har ingen tegning og Street View-standpunktet ser festningsmuren, ikke huset (indre gårdsrom bak vollen). Skal fasaden stå som regel-simulert, eller finnes tegning/foto?",
+  "forsokt": "Kalibrert kamera (fov 50), rendret fra SV-standpunktet: viser vollen. Sjekket matrikkel-bygningspunkt (finnes), data/bygg.json (omriss fra kommunekart), se_her.py ortofoto 2024 + FKB + DOM-DTM (rapport/bygg/se/fm_193972276.jpg – bygg med terrakotta-tak bekreftet). Ingen tegning; SV nov 2020 ser bare vollen.",
+  "adr": "Gamlebyen v/Tamburen"
  },
  "bnr-193867952": {
   "status": "åpen",
