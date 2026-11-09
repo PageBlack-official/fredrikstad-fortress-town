@@ -45,12 +45,29 @@ Del A: **holder** (byte for byte mot frysen).
 
 ## WORKLISTE runde 3 — rekkefølge (Del D FØRST, per oppgaven)
 
-### Del D (må fikses først, ødelegger ellers dommen)
-1. **Utbrent hvitt.** Vegar så ingenting på nr 14; 24 Bings gate (bnr-13416362) også utbrent. Finn om det bare
-   er i kontrollbildet eller også i kartet Vegar ser, og rett ÅRSAKEN (ikke autokontrast). Sjekk med ekte
-   skjermkort: `PW_GPU=1`. (Se `rapport/ferdig/renders_r2/bnr-13416362-*.png` — artefakter fra forrige run, verifiser selv.)
+### Del D — DIAGNOSE FERDIG (økt 2), fiks gjenstår
+1. **Utbrent hvitt — rotårsak funnet og bevist (ikke lenger en gjetning):**
+   - **IKKE autokontrast.** `montasje.py --strekk` er av som standard (RAPPORT3 systemfunn 2); de utbrente
+     rendrene er rå.
+   - **IKKE SwiftShader/skjermkort.** `gatekamera.mjs` importerer chromium fra `pw.mjs`, så `PW_GPU=1` bytter
+     faktisk til Metal (bevist: GPU-render 6× raskere, 2978 ms vs 19187 ms). Metal-render av nr 14 er **pixel-likt**
+     det programvare-rendrede — altså ikke en GL-artefakt.
+   - **Rotårsak:** husene tegnes med den egne shaderen i `src/05_bygg.js` (ikke three-lysene `hemi`/`sun` — å
+     dempe dem i `__gate` ga null effekt, verifisert og rullet tilbake). En hvit vegg `[242,240,232]` tegnes
+     *tro mot kilden*, men har nær null tonal avstand til den kremfargede scenebakgrunnen (`0xe2e1d6`, src/15_loop)
+     OG til sine egne nær-hvite vinduskarmer. Et flatt frontalt bevis av et hvitt hus blir derfor «blass, ser
+     ingenting». Det er et **kontrast-/innrammingsproblem, ikke HDR-klipp.** Rammer prinsipielt «kartet han ser»
+     også, men bare synlig ved bevis-kameraets flate, nære fov50 — i vanlig skrå kartvisning leser husene.
+   - **Riktig fiks (erstatter «tonekartlegg/relys»-ideen — en global render-/lysendring er FEIL, den ville rørt
+     forsiden/introen/`/prove`):** (a) **mørke vinduskarmer** (`karm_farge`) på de hvite/bleke husene, så vinduer
+     og sprosser leser mot den hvite veggen — Vegar-kildet: eksplisitt for bnr-193971946 («Vinduskarmene skal
+     være mørke»), implisitt for nr 14 («fire vinduer med sprosser» forutsetter at sprossene synes). (b) Bevis-
+     innramming (punkt 2 under) som tar med det røde taket / himmelkanten for silhuett-kontrast.
 2. **Bevisbildene.** Samme kamera i Street View og modell, huset midt i bildet, ingen nabovegg/mur/tre foran.
-   Går det ikke fra standpunktet: flytt kameraet i begge. (fov ~50, ikke 75 — RAPPORT3 systemfunn 1.)
+   Går det ikke fra standpunktet: flytt kameraet i begge (skrå/hevet så fasaden sidelyses og huset leser mot tak/
+   himmel). fov ~50, ikke 75 (RAPPORT3 systemfunn 1). `__gate` kjøres ALDRI i kartet brukeren ser, så en
+   bevis-scoped innrammings-/lysjustering der er trygg mot forsiden/introen — men lys-demping alene hjelper ikke
+   (se over); det er karmene + innrammingen som gjør huset lesbart.
 
 ### Del B — tellbare (gate-krav), sourced i kjeden, ALDRI hånd-redigert i data
 Per hus: les fasaden mot Street View (HJORNER→rett→ELEMENTER→konverter→kjede), bygg, render, montér bevis,
@@ -111,3 +128,9 @@ spørsmål + bilde (ikke merk det klart).
 - 2026-11-09 økt 1: `dom_sjekk.py` + `del_a_frys.json` skrevet og validert (Del A holder, 8 tellbare geometrihull
   står). Funn: committet by.json-blob utdatert mot kilde (frys forankret til kildebygg, flagges Vegar). Ingen
   husgeometri rørt ennå. Oppgaven står `in_progress`; fortsett fra «WORKLISTE runde 3».
+- 2026-11-09 økt 2: Del D item 1 **rotårsak funnet og bevist** — ikke autokontrast, ikke SwiftShader/GPU (Metal-
+  render pixel-likt, bevist), men lav kontrast mellom hvit vegg + krembakgrunn + hvite karmer i den egne
+  src/05-shaderen. Riktig fiks = mørke karmer (Vegar-kildet) + bevis-innramming, IKKE global render-/lysendring.
+  Testet og rullet tilbake en virkningsløs lys-demping i `__gate` (src rent igjen). Ingen husgeometri rørt.
+  Neste: start Del B/C per hus (nr 14 trenger 2 rekker + mørke karmer; samme karm-grep på bnr-193971946), bygg →
+  render (fov50, PW_GPU=1) → bevis → dom_sjekk. Oppgaven står `in_progress`.
