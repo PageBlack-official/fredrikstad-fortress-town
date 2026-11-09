@@ -6,6 +6,54 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-09, økt 3 — GATEN GRØNN + PUBLISERT LIVE på /prove1)
+
+**Publisert og verifisert live:** `sh publiser.sh prove1` pushet `a0d4c7e..b0b0387` til gh-pages,
+og /prove1 svarte med kilde `3876921` etter 120 s.
+https://pageblack-official.github.io/fredrikstad-fortress-town/prove1/
+
+**OBS regel 39 (`kjeden_stabil`) er RØD:** «2 objekter endres av en ny kjøring av kjeden». Årsak: pipe/
+takvindu-rettelsene for nr 7/nr 8 ble lagt som direkte `sett`-rettelser ETTER kjeden (grunn «Vegars dom»),
+så en full kjede-kjøring ville regenerere/omordne dem. /prove1 slipper røde regler gjennom, så versjonen er
+ute, men dette bør ryddes neste økt: enten flytte pipe/takvindu inn i et kjede-steg, eller markere grunnene
+så kjeden bevarer dem (som `blanke_vegger`/`fasade_rett` gjør via egne GRUNN-filtre i `bygg_kjede.py`).
+
+
+
+Alle fem tellbare husene i Vegars dom er rettet, sourcet til ordene hans, gjennom kjeden (ikke hånd-
+redigert i by.json). Del A står byte for byte mot frysen. Commit `3876921` på `gate/kamera`.
+
+- **nr 1 (bnr-193867952, 10 Voldgaten):** ny rett-lesning på gatefasaden (vegg 6, bekreftet av
+  `VG.gatesiden` → «gate»), `kilder/gate/rett-dom-nr1.json`. 1. etg **V V D V V D V P**, 2. etg 3+3+1 +
+  dobbeltvindu ytterst over port-døren. Retningen (venstre→høyre) stemte på første forsøk.
+- **nr 6 (bnr-193867855, Torvgaten 67):** `rett-runde4` vegg 4 lagt om til 2 vinduer nede + 2 oppe + rød
+  port; vegg 5 (feillesningen Vegar påpekte) ryddet (tom godkjent lesning → fjernet). hovedfasade = vegg 4.
+- **nr 7 (bnr-193867626):** piper 1→2.
+- **nr 8 (bnr-193867634):** 7 vinduer (uendret), piper 3→2, +1 takvindu på kortveggen.
+- **nr 14 (bnr-13416419, 22 Bings gate):** `rett-runde3` vegg 3 lagt om til to rekker à 4 vinduer, de to
+  midterste doble. Høyde-unntak **h=5,8 m** skrevet i `kilder/hoyde-unntak.json` med Vegars begrunnelse
+  (bildet vinner over Kartverkets 4,6 m), ikke hardkoding.
+
+**Systemfunn (viktig for dom_sjekk):** en «port» uten `bue` blir **typ 1 (dør)** i `fasade_rett.py`, ikke
+typ 2 (port). `dom_sjekk` teller bare typ 2 som port. Derfor fikk portene på nr 1 og nr 6 `"bue": 1` — ellers
+sto «den røde porten skal stå» rødt selv med port i lesningen. Dette var rotårsaken til baseline-avviket på nr 6.
+Portene tegnes dermed med rundbue i modellen; om Vegar vil ha rett overligger er det en senere justering (notert).
+
+### GJENSTÅR til neste kjøring (Del C + bevis), ber om ny kjøring på saken
+`dom_sjekk` dekker bare det tellbare (Del B). Del C (12 hus) dømmes på bevisbilde, ikke i gaten, og er
+ikke rørt ennå. Rekkefølge neste økt:
+- **Rene fargefiks (sourcet, lav risiko, men må ses i kartet — blågrå leses blå):** bnr-6276822 (tak rødt→mørkt),
+  bnr-6251331 (beige→gult, «strågul»), bnr-193868088 + bnr-6276512 (blått→grått, finn verdi som *leses* grå —
+  `verktoy/rett/farge_kandidater.py`), bnr-193971946 (mørke vinduskarmer).
+- **Struktur:** bnr-13415889 (villa for enkel: 3. takark, balkong, grå side står hvit).
+- **Standpunkt/okklusjon (bevis-kamera, ikke data):** bnr-193867820 (kamera bak mur), bnr-6276504 (trær + svart
+  kloss, samme kloss som nr 8 — finn og rett årsaken), bnr-193972306 (bildet viser annen vegg), bnr-193971288
+  (usikkert hus), bnr-13416362 (utbrent, se Del D).
+- **Terreng:** bnr-193867480 Widdingstua (bakke_dtm under vann).
+- **Del B ikke-tellbare (bevis):** nr 3 (dør på gateplan), nr 4 (slå sammen rosa+beige, hele rosa), nr 5
+  (vinduer ned på gatenivå, lik størrelse), nr 10 (teglmur, brun port), nr 11 (mål pipa).
+- **Del D item 2 (bevis-innramming) + bevisbilder fov50 for alle Del B/C → kontaktark til Dropbox.**
+
 ## STATUS (2026-11-09, økt 1 — gate + baseline, ingen husgeometri rørt ennå)
 
 Levert og committet denne økta:
