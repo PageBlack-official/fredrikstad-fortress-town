@@ -9977,5 +9977,6 @@
 {"emne":"bygg","id":"bnr-193867626","op":"sett","felt":"piper","verdi":[[-4.14,65.27,12.52,-113.1],[-2.5,70.5,12.52,-113.1]],"hvem":"Claude","dato":"2026-11-09","grunn":"Vegars dom 09.11.2026 (nr 7, 26/27 Kirkegaten): «Taket skal ha to piper»"},
 {"emne":"bygg","id":"bnr-193867634","op":"sett","felt":"piper","verdi":[[141.3,-80.55,9.45,55.3],[134.37,-90.56,9.56,55.3]],"hvem":"Claude","dato":"2026-11-09","grunn":"Vegars dom 09.11.2026 (nr 8, Vollmesterboligen): «to piper paa det bygget» (var tre)"},
 {"emne":"bygg","id":"bnr-193867634","op":"sett","felt":"takvinduer","verdi":[[142.5,-78.5,0.9,0.9]],"hvem":"Claude","dato":"2026-11-09","grunn":"Vegars dom 09.11.2026 (nr 8, Vollmesterboligen): «et takvindu paa kortveggen»"},
-{"emne":"bygg","id":"bnr-6276822","op":"sett","felt":"tak","verdi":[70,70,72],"hvem":"Claude","dato":"2026-11-09","grunn":"Vegars dom 09.11.2026 (2 Lammers gate): taket er rødt, skal være mørkt"}
+{"emne":"bygg","id":"bnr-6276822","op":"sett","felt":"tak","verdi":[70,70,72],"hvem":"Claude","dato":"2026-11-09","grunn":"Vegars dom 09.11.2026 (2 Lammers gate): taket er rødt, skal være mørkt"},
+{"emne":"bygg","id":"bnr-13416419","op":"sett","felt":"karm_farge","verdi":"#3a3028","hvem":"Claude","dato":"2026-11-09","grunn":"Vegars dom 09.11.2026 (nr 14, 22 Bings gate): fire vinduer med sprosser skal lese mot den hvite veggen — mørke vinduskarmer (Del D: utbrent hvitt er kontrast-/innrammingsproblem)"}
 ]
