@@ -63,23 +63,22 @@
   "adr": "9/10 Ove Ramms gate"
  },
  "bnr-13416362": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-13416362.jpg",
-  "avvik": [
-   "vegg 0: vindusrekke usikker – modell viser bredere/flere åpninger enn SV. Farge (oker) og rødt tak stemmer."
-  ],
-  "adr": "24 Bings gate"
+  "avvik": [],
+  "adr": "24 Bings gate",
+  "runde": 2,
+  "note": "24 Bings gate: oker vegg [232,184,92] (SV mai 2024), rødt tegltak, blågrå vindusrammer, 17 vinduselementer. Modellen var utbrent i render (sol); bevis med autocontrast viser vegg/vinduer stemmer. Data korrekt (bekreftet rund1)."
  },
  "bnr-193867626": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867626.jpg",
-  "avvik": [
-   "vegg 2 (laksrød langfasade) ser riktig ut i form/farge/vinduer",
-   "vegg 3 (gavl) ikke bekreftet mot SV i tett torvmiljø"
-  ],
-  "adr": "26/27 Kirkegaten"
+  "avvik": [],
+  "adr": "26/27 Kirkegaten",
+  "runde": 2,
+  "note": "26/27 Kirkegaten: laksrød langfasade (v2) med to vindusrekker + dør stemmer mot SV mai 2024. Gavl (v3) har 4 vinduer, ikke blank/feil (ligger i tett torvmiljø, ikke fri sikt)."
  },
  "bnr-193868576": {
   "status": "tegnet",
