@@ -75,6 +75,20 @@ kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
 - **Til slutt:** full `bygg_kjede.py` → `bygg.py enkel` → bevisbilder fov50 for alle Del B/C → regler → `publiser.sh prove1`
   → kontaktark `status/sot-dom-runde3.jpg` (SV | etter) + `status/sot-tegnet-runde3.md` + pekerlinje i `smart-old-town.md`.
 
+### BEVIS-ARK bygget (økt 4) — funn fra `rapport/ferdig/sot-dom-runde3.jpg` (3160×2250, 28 hus)
+Rendret alle 33 standpunkt fra ny modell, SV|etter montert, kontaktark skrevet. Verifisert på arket:
+- Grå-fiks (bnr-193868088/6276512), mørkt tak (6276822 vinrød), brun port + tegl (nr 10), gate-5 — leser riktig.
+- **nr 5 normalisert** (commit `904af4c`), **nr 10 brun port** (`62ac5eb`), **nr 14 mørke karmer** (`e25a961`) — committet.
+- **nr 14 (22 Bings) er fremdeles utbrent på arket.** Rotårsak bekreftet: bevis-standpunktet `bnr-13416419-3`
+  (bakke −1,25 m = under bakken, ekstrem nærfront) brenner ut uansett; karm_farge er korrekt wired (src/07 l.119)
+  men hjelper ikke fra dét standpunktet. **Fiks = bedre standpunkt (Del D item 2): skrå/hevet kamera som viser
+  huset mot tak/himmel.** Samme klasse som standpunkt-husene under.
+- Widdingstua (bnr-193867480) står «til Vegar» på arket (terreng under vann).
+
+### STANDPUNKT-JOBBEN (neste økt, samlet klasse): nr 14 + bnr-193867820 + bnr-193972306 + bnr-193971288 + bnr-13416362
+Finn/forfatt bedre bevis-standpunkt per hus (skrå, huset mot tak/himmel, ingen mur/tre foran), re-render, montér.
+302 standpunkt i `kilder/gate/standpunkter.json` — se om et bedre finnes per hus før du forfatter nytt.
+
 ### GJENSTÅR til neste kjøring (Del C + bevis), ber om ny kjøring på saken
 `dom_sjekk` dekker bare det tellbare (Del B). Del C (12 hus) dømmes på bevisbilde, ikke i gaten, og er
 ikke rørt ennå. Rekkefølge neste økt:
