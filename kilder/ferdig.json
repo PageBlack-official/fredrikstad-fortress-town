@@ -1,12 +1,12 @@
 {
  "bnr-193867634": {
-  "status": "tegnet",
+  "status": "klar_til_dom",
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867634.jpg",
   "avvik": [],
   "adr": "Vollmesterboligen, 5 Voldgaten",
-  "note": "Vollmesterboligen, 5 Voldgaten: hvit 1-et., brunt saltak, vindusrekke, 3 piper (SV mai 2024: 2 murte tegl + 1 hvit). Kontrollert fov50 samme kamera.",
-  "runde": 2
+  "note": "nr 8, Vollmesterboligen: 7 vinduer, 2 piper, 1 takvindu på kortveggen (Vegars dom 09.11)",
+  "runde": 3
  },
  "bnr-6276822": {
   "status": "tegnet",
@@ -72,13 +72,13 @@
   "note": "24 Bings gate: oker vegg [232,184,92] (SV mai 2024), rødt tegltak, blågrå vindusrammer, 17 vinduselementer. Modellen var utbrent i render (sol); bevis med autocontrast viser vegg/vinduer stemmer. Data korrekt (bekreftet rund1)."
  },
  "bnr-193867626": {
-  "status": "tegnet",
+  "status": "klar_til_dom",
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867626.jpg",
   "avvik": [],
   "adr": "26/27 Kirkegaten",
-  "runde": 2,
-  "note": "26/27 Kirkegaten: laksrød langfasade (v2) med to vindusrekker + dør stemmer mot SV mai 2024. Gavl (v3) har 4 vinduer, ikke blank/feil (ligger i tett torvmiljø, ikke fri sikt)."
+  "runde": 3,
+  "note": "nr 7, 26/27 Kirkegaten: to piper (Vegars dom 09.11)"
  },
  "bnr-193868576": {
   "status": "tegnet",
@@ -90,13 +90,13 @@
   "note": "41 Tøihusgaten: umalt tegl [184,98,78] (SV 2024), brunt tegltak (ortofoto 2024), stor RUNDBUE tofløyet plankeport = RIKTIG (rund1s «flat port» var feillesing — SV mai 2024 viser tydelig teglbue/stikk over porten). Gavl (v3) blank tegl = som SV."
  },
  "bnr-193867855": {
-  "status": "tegnet",
+  "status": "klar_til_dom",
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867855.jpg",
   "avvik": [],
   "adr": "Torvgaten 67 (hvit 1,5-et.)",
-  "runde": 2,
-  "note": "Vegar-lest: hvit [242,240,232], 2 etasjer, vinduer_per_etasje [2,2], 2 piper. Gavl (v4) 2+2 vinduer + rød portdør; langside (v5) vindusrekke + grønn dør under markise = som SV mai 2024/aug 2010. Kontrollert fov50."
+  "runde": 3,
+  "note": "nr 6, Torvgaten 67: hvitt hus 2 vinduer nede + 2 oppe + rød port (Vegars dom 09.11)"
  },
  "bnr-193867901": {
   "status": "tegnet",
@@ -171,14 +171,15 @@
   "note": "Hvit [242,240,232] (SV 2024). Rund1 «salviegrønn» var skyggelagt hvit / nabo; mål-ID bekreftet (skjerm midt). Form/høyde stemmer."
  },
  "bnr-13416419": {
-  "status": "trenger_vegar",
+  "status": "klar_til_dom",
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-13416419.jpg",
   "avvik": [],
   "adr": "22 Bings gate (hvit)",
-  "runde": 2,
+  "runde": 3,
   "sporsmal": "SV mai 2024 viser en hvit 2-etasjes villa med TO fulle vindusrekker (mange ornamenterte vinduer) og svart mansardtak. Modellen har Kartverket-høyde h=4,6 m, som bare gir plass til ÉN rekke høye vinduer (4 vinduer på vegg 3). Er h=4,6 under-målt (huset ser ut som ~6–7 m / 2 fulle etasjer), eller skal fasaden stå som 1,5-etasjes? Trenger avklaring på høyde/etasjetall før øvre vindusrekke kan leses inn.",
-  "forsokt": "Rendret fov50 fra front-standpunkt (fasade_sv-midtpunkt+normal): modellen er hvit [242,240,232] (farge stemmer) med én rekke på 4 høye vinduer + takark. Sjekket data: 13 vinduer, alle på z=1,6 m (ett nivå), ingen øvre etasje — fordi h=4,6 m ikke gir vertikal plass. Metertlesing av to rekker lot seg ikke gjøre innenfor målt høyde uten å overstyre Kartverket."
+  "forsokt": "Rendret fov50 fra front-standpunkt (fasade_sv-midtpunkt+normal): modellen er hvit [242,240,232] (farge stemmer) med én rekke på 4 høye vinduer + takark. Sjekket data: 13 vinduer, alle på z=1,6 m (ett nivå), ingen øvre etasje — fordi h=4,6 m ikke gir vertikal plass. Metertlesing av to rekker lot seg ikke gjøre innenfor målt høyde uten å overstyre Kartverket.",
+  "note": "nr 14, 22 Bings gate: to etasjer à 4 vinduer, de to midterste doble; h-unntak 5,8 m (Vegars dom 09.11)"
  },
  "bnr-193972306": {
   "status": "tegnet",
@@ -235,13 +236,13 @@
   "note": "Huset finnes og er riktig plassert (matrikkel, FKB-omriss, ortofoto 2024, Kartverket-høyde). Ligger i indre gårdsrom bak festningsvollen; fasaden er ikke synlig fra gata og simuleres etter reglene (LESMEG). Satt tegnet per Vegars autentiserte avgjørelse 09.11 (sak-kommentar 954fe378): «husene finnes i kildene, og vegger publikum ikke ser simuleres etter reglene. Sett dem til tegnet.»"
  },
  "bnr-193867952": {
-  "status": "tegnet",
+  "status": "klar_til_dom",
   "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867952.jpg",
   "avvik": [],
   "adr": "10 Voldgaten (terrakotta)",
-  "runde": 2,
-  "note": "Lang terrakotta [184,91,66] 2-et. med mansard, SV mai 2024. Maalt del 1 godkjent (18 elementer, to hjørner). Hvit inngangsdør + blek garasjeport rendrer nå riktig (palett-fiks, dorfarge #e8e6dc). Mange ornamenterte vinduer matcher SV v6."
+  "runde": 3,
+  "note": "nr 1, 10 Voldgaten: 1.etg V V D V V D V P, 2.etg 3+3+1 + dobbeltvindu over port (Vegars dom 09.11)"
  },
  "bnr-193867480": {
   "status": "trenger_vegar",

@@ -49,17 +49,17 @@
 "elementer": [
 {
 "type": "vindu",
-"s0": 1.4,
-"s1": 2.8,
-"z0": 2.05,
-"z1": 4.95
+"s0": 1.2,
+"s1": 2.5,
+"z0": 0.7,
+"z1": 2.3
 },
 {
 "type": "vindu",
-"s0": 4.4,
-"s1": 5.8,
-"z0": 2.1,
-"z1": 4.95
+"s0": 3.8,
+"s1": 5.1,
+"z0": 0.7,
+"z1": 2.3
 },
 {
 "type": "port",
@@ -67,10 +67,25 @@
 "s1": 10.1,
 "z0": 0.0,
 "z1": 4.75,
+"bue": 1,
 "farge": "#9b4a35"
+},
+{
+"type": "vindu",
+"s0": 1.2,
+"s1": 2.5,
+"z0": 2.9,
+"z1": 4.5
+},
+{
+"type": "vindu",
+"s0": 3.8,
+"s1": 5.1,
+"z0": 2.9,
+"z1": 4.5
 }
 ],
-"telling": "1. etg: 2 vinduer + 1 port",
+"telling": "Vegars dom: det hvite huset har to vinduer nede og to i 2. etg, rød port riktig plassert",
 "godkjent": true
 },
 {
@@ -197,45 +212,8 @@
 ],
 "lengde": 13.183,
 "h": 5.0,
-"elementer": [
-{
-"type": "vindu",
-"s0": 0.75,
-"s1": 1.92,
-"z0": 2.28,
-"z1": 4.8
-},
-{
-"type": "vindu",
-"s0": 3.1,
-"s1": 4.35,
-"z0": 2.27,
-"z1": 4.88
-},
-{
-"type": "dor",
-"s0": 6.0,
-"s1": 7.25,
-"z0": 0.75,
-"z1": 4.92,
-"farge": "#2f7a4a"
-},
-{
-"type": "vindu",
-"s0": 8.75,
-"s1": 10.25,
-"z0": 2.22,
-"z1": 4.98
-},
-{
-"type": "vindu",
-"s0": 11.82,
-"s1": 13.18,
-"z0": 2.22,
-"z1": 4.98
-}
-],
-"telling": "1. etg: 4 vinduer + 1 dør",
+"elementer": [],
+"telling": "Vegars dom: lest bygget feil — denne veggen hadde feillesning, ryddet",
 "godkjent": true
 },
 {

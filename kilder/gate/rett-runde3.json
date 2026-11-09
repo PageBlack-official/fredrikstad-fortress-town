@@ -399,34 +399,62 @@
 "elementer": [
 {
 "type": "vindu",
-"s0": 1.1,
-"s1": 2.23,
-"z0": 1.33,
-"z1": 3.3
+"s0": 0.8,
+"s1": 1.7,
+"z0": 0.6,
+"z1": 2.5
 },
 {
 "type": "vindu",
-"s0": 2.93,
-"s1": 4.07,
-"z0": 1.33,
-"z1": 3.3
+"s0": 2.6,
+"s1": 4.4,
+"z0": 0.6,
+"z1": 2.5
 },
 {
 "type": "vindu",
-"s0": 5.77,
-"s1": 6.87,
-"z0": 1.37,
-"z1": 3.27
+"s0": 5.0,
+"s1": 6.8,
+"z0": 0.6,
+"z1": 2.5
 },
 {
 "type": "vindu",
-"s0": 7.43,
-"s1": 8.5,
-"z0": 1.37,
-"z1": 3.27
+"s0": 7.7,
+"s1": 8.6,
+"z0": 0.6,
+"z1": 2.5
+},
+{
+"type": "vindu",
+"s0": 0.8,
+"s1": 1.7,
+"z0": 3.3,
+"z1": 5.2
+},
+{
+"type": "vindu",
+"s0": 2.6,
+"s1": 4.4,
+"z0": 3.3,
+"z1": 5.2
+},
+{
+"type": "vindu",
+"s0": 5.0,
+"s1": 6.8,
+"z0": 3.3,
+"z1": 5.2
+},
+{
+"type": "vindu",
+"s0": 7.7,
+"s1": 8.6,
+"z0": 3.3,
+"z1": 5.2
 }
 ],
-"telling": "1. etg: 4 vinduer; ingen dører; ingen kjellervinduer synlige",
+"telling": "Vegars dom: fire vinduer per rad, de to midterste doble, to etasjer",
 "godkjent": true
 },
 {
