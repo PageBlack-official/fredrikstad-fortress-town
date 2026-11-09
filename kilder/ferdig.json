@@ -9,12 +9,13 @@
   "runde": 2
  },
  "bnr-6276822": {
-  "status": "ferdig",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-6276822.jpg",
   "avvik": [],
-  "adr": "2 Lammers gate",
-  "note": "mørk vinrød 2-et., vinduer og dør stemmer."
+  "adr": "2 Lammers gate (vinrød)",
+  "note": "Vinrød [110,42,50] 2-et., mørkt saltak, SV apr 2024. Maalt godkjent (øyekontroll, kastet 0 etter at 2 bittesmå kjellervinduer ble tatt ut). Vinduer + oransje inngangsdør (dorfarge #b7782f) + balkongdør i 2.etg. Nytt standpunkt (front -4,5 m lateralt) skyver modell-treet til siden så fasaden er fri.",
+  "runde": 2
  },
  "bnr-6276016": {
   "status": "tegnet",

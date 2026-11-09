@@ -8131,13 +8131,6 @@
   "maalt": [
    {
     "type": "vindu",
-    "u0": 0.466,
-    "u1": 0.485,
-    "v0": 0.389,
-    "v1": 0.431
-   },
-   {
-    "type": "vindu",
     "u0": 0.517,
     "u1": 0.556,
     "v0": 0.372,
@@ -8160,13 +8153,6 @@
    },
    {
     "type": "vindu",
-    "u0": 0.466,
-    "u1": 0.485,
-    "v0": 0.511,
-    "v1": 0.553
-   },
-   {
-    "type": "vindu",
     "u0": 0.516,
     "u1": 0.557,
     "v0": 0.51,
@@ -8185,20 +8171,6 @@
     "u1": 0.636,
     "v0": 0.504,
     "v1": 0.581
-   },
-   {
-    "type": "vindu",
-    "u0": 0.421,
-    "u1": 0.438,
-    "v0": 0.607,
-    "v1": 0.625
-   },
-   {
-    "type": "vindu",
-    "u0": 0.466,
-    "u1": 0.486,
-    "v0": 0.613,
-    "v1": 0.633
    }
   ],
   "merknad": "inngangsdør i treverk med smale glassfelt og trapp av granitt; balkongdør med svart smijernsrekkverk over inngangen; stort furutre foran venstre hjørne"
