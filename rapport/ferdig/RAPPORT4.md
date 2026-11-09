@@ -57,9 +57,16 @@ kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
 - **bnr-6251331 (gult, sto beige):** blokkert av tegning-forlik i `streetview_farger` — kvartaltegningens tone
   [249,224,204] regnes «samme kulør» som gul og vinner. Må rettes i tegningens farge (ikke et ord-triks). UTSATT.
 - **bnr-13415889:** villa for enkel (3. takark, balkong, grå side står hvit) — strukturelt.
-- **nr 10 (bnr-193868576):** vegg/tegl + sokkel ALLEREDE ok; gjenstår **brun port** — legg `"farge"` på port-elementet
-  i `rett-runde3.json` og kjør HELE kjeden (ikke fasade_rett alene).
-- **nr 3 (dør på gateplan), nr 4 (slå sammen rosa+beige, hele rosa), nr 5 (vinduer ned + lik størrelse):** rett-lesning/husdeling.
+- **nr 10 (bnr-193868576): FERDIG** — vegg/tegl + sokkel var ok; **brun port** lagt på port-elementet in-place
+  (`#6b4a2e`, commit `62ac5eb`). dom_sjekk exit 0.
+- **nr 3 (bnr-193867898): trolig allerede ok** — døren står på sill z0=0,1 (gateplan) i bygde data. Vegars klage var
+  mot en eldre versjon; bekreft på bevisbildet før evt. endring (ikke rør blindt).
+- **nr 4 (slå sammen rosa+beige, hele rosa), nr 5 (vinduer ned + lik størrelse):** rett-lesning/husdeling — gjenstår.
+  Patch helst `sett vind`-elementene **in-place** (som nr 10s port), ikke kjør fasade_rett alene (reordering).
+- **BEVIS-ARK bygges nå (økt 4):** `attic/_bevis_okt4.sh` (detached) rendrer alle 33 standpunkt fra ny modell →
+  `montasje.py` SV|etter → `kontaktark_28.py` → `rapport/ferdig/sot-dom-runde3.jpg`. Pipeline verifisert (render 3 s/bilde,
+  GPU; SV-croppene i `rapport/gate/sv_rett3-5/` finnes; `../sv` er tom men brukes ikke). Arket git-ignoreres (SV i det);
+  kopieres til Dropbox `teknisk-veikart/status/sot-dom-runde3.jpg` for hånd/konnektor.
 - **nr 11 (bnr-193971954) pipe:** Vegar usikker; rett BARE om SV/flyfoto viser feil størrelse — ingen kilde her nå, UTSATT.
 - **svart kloss (nr 8 + bnr-6276504):** finn elementet og fjern + rett årsak.
 - **bnr-193867480 Widdingstua:** terreng under vann → `bakke_dtm`.
