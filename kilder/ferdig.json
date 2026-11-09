@@ -1,11 +1,12 @@
 {
  "bnr-193867634": {
-  "status": "ferdig",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867634.jpg",
   "avvik": [],
   "adr": "Vollmesterboligen, 5 Voldgaten",
-  "note": "hvit 1-et., vindusrekke, pipe, tegltak – stemmer. Takfarge svakt lysere (tan) enn rødbrun tegl i SV, innenfor toleranse."
+  "note": "Vollmesterboligen, 5 Voldgaten: hvit 1-et., brunt saltak, vindusrekke, 3 piper (SV mai 2024: 2 murte tegl + 1 hvit). Kontrollert fov50 samme kamera.",
+  "runde": 2
  },
  "bnr-6276822": {
   "status": "ferdig",
@@ -16,20 +17,22 @@
   "note": "mørk vinrød 2-et., vinduer og dør stemmer."
  },
  "bnr-6276016": {
-  "status": "ferdig",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-6276016.jpg",
   "avvik": [],
   "adr": "30 General Ohmes vei / 30 Hultfeldts gate",
-  "note": "rød 2-et., mørkt tak, begge gatevegger (4,5) stemmer."
+  "note": "30 General Ohmes vei/Hultfeldts gate: rød 2-et., mørkt tak, vinduer+dør på begge gatevegger (4,5) stemmer. Kontrollert fov50.",
+  "runde": 2
  },
  "bnr-193867723": {
-  "status": "ferdig",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867723.jpg",
   "avvik": [],
   "adr": "Gamlebyen (sandgul)",
-  "note": "sandgul 2-et., to vindusrekker og dør stemmer."
+  "note": "Sandgul 2-et.: to vindusrekker + dør stemmer, rødt tak, 3 piper. Kontrollert fov50 samme kamera.",
+  "runde": 2
  },
  "bnr-6276512": {
   "status": "ferdig",

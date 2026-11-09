@@ -178,6 +178,8 @@ def lag_fasade_maalt(x, w, P, maalt, C=None, bilde=None, deler=(0, 1), les=None)
         C, oye, hvordan = kamera_fra_hjorner(w, C, bilde, les)
     for e in maalt:
         typ = TYPER.get(str(e.get('type', 'vindu')).lower(), 0)
+        if typ == 2 and e.get('flat'):
+            typ = 1   # lest flat port (bred dør/garasjeport i panel) = typ 1; src/07 arker ellers all typ 2 (rundbue er standard for port).
         if 'u0' in e and C is not None and bilde:
             m = fra_bilde(w, C, bilde, e, oye)
             if m is None:
@@ -208,6 +210,7 @@ def lag_fasade_maalt(x, w, P, maalt, C=None, bilde=None, deler=(0, 1), les=None)
             kastet += 1; continue
         tm = (t0 + t1) / 2; t0, t1 = tm - b / 2, tm + b / 2
         el = VR.element(P, w['a'] + w['u'] * tm, round(b, 2), w['n'], round((z0 + z1) / 2, 2), round(b, 2), round(z1 - z0, 2), typ)
+        if typ == 2 and e.get('bue'): el[10] = int(e['bue'])   # rundbue bare når den er lest
         f = hexfarge(e.get('farge'))
         if f: el = el + [f]
         ut.append(el); plass.append((t0, t1, z0, z1))
