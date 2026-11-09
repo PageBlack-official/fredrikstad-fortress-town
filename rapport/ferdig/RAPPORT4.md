@@ -39,6 +39,35 @@ typ 2 (port). `dom_sjekk` teller bare typ 2 som port. Derfor fikk portene på nr
 sto «den røde porten skal stå» rødt selv med port i lesningen. Dette var rotårsaken til baseline-avviket på nr 6.
 Portene tegnes dermed med rundbue i modellen; om Vegar vil ha rett overligger er det en senere justering (notert).
 
+### Del C-FREMDRIFT (økt 4, 2026-11-09 kl. ~17:20, Vegar: «fortsett uten å vente»)
+Rettet og committet (dom_sjekk exit 0 hele veien, Del A urørt):
+- **bnr-193868088 + bnr-6276512 (grått, sto blått):** topp `vegg.farge` i `kilder/streetview/avlesning.json`
+  satt til «lys grå»/«grå»; veggverdien ([196,198,196]/[176,176,172]) **patchet in-place** i rettelseslaget.
+  Commit `f64d85f`.
+- **bnr-6276822 (2 Lammers, tak rødt→mørkt):** `sett tak=[70,70,72]`. Commit `f979d3f`.
+- **bnr-193971946 (karmer mørke):** ALLEREDE oppfylt — `karm_farge` er `#4a2e24`. Ingen endring nødvendig.
+
+**LÆRDOM (viktig):** kjør ALDRI et kjede-steg (`streetview_farger.py`, `fasade_rett.py` …) frittstående for en
+enkeltrettelse — det flytter stegets linjer bakerst og kan havne FORAN manuelle Vegar-overstyringer (nr 2s
+`vegg_kilde` «Vegar 06.11» ble overskrevet → Del A-frysen brøt). Enten patch den eksisterende rettelsen **in-place**
+(bevarer rekkefølgen), eller kjør HELE `bygg_kjede.py`. Kildeendringen i `avlesning.json` ligger klar for en full
+kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
+
+### Del C/B GJENSTÅR (fortsett herfra, hold saken in_progress — Vegar vil ikke ha den parkert)
+- **bnr-6251331 (gult, sto beige):** blokkert av tegning-forlik i `streetview_farger` — kvartaltegningens tone
+  [249,224,204] regnes «samme kulør» som gul og vinner. Må rettes i tegningens farge (ikke et ord-triks). UTSATT.
+- **bnr-13415889:** villa for enkel (3. takark, balkong, grå side står hvit) — strukturelt.
+- **nr 10 (bnr-193868576):** vegg/tegl + sokkel ALLEREDE ok; gjenstår **brun port** — legg `"farge"` på port-elementet
+  i `rett-runde3.json` og kjør HELE kjeden (ikke fasade_rett alene).
+- **nr 3 (dør på gateplan), nr 4 (slå sammen rosa+beige, hele rosa), nr 5 (vinduer ned + lik størrelse):** rett-lesning/husdeling.
+- **nr 11 (bnr-193971954) pipe:** Vegar usikker; rett BARE om SV/flyfoto viser feil størrelse — ingen kilde her nå, UTSATT.
+- **svart kloss (nr 8 + bnr-6276504):** finn elementet og fjern + rett årsak.
+- **bnr-193867480 Widdingstua:** terreng under vann → `bakke_dtm`.
+- **Standpunkt (bevis-kamera, ikke kartdata):** bnr-193867820 (bak mur), bnr-193972306 (annen vegg), bnr-193971288 (usikkert hus), bnr-13416362 (utbrent, Del D).
+- **regel 39-opprydding:** rut pipe/takvindu/tak-overstyringene gjennom kjedekildene så en full kjede-kjøring er stabil.
+- **Til slutt:** full `bygg_kjede.py` → `bygg.py enkel` → bevisbilder fov50 for alle Del B/C → regler → `publiser.sh prove1`
+  → kontaktark `status/sot-dom-runde3.jpg` (SV | etter) + `status/sot-tegnet-runde3.md` + pekerlinje i `smart-old-town.md`.
+
 ### GJENSTÅR til neste kjøring (Del C + bevis), ber om ny kjøring på saken
 `dom_sjekk` dekker bare det tellbare (Del B). Del C (12 hus) dømmes på bevisbilde, ikke i gaten, og er
 ikke rørt ennå. Rekkefølge neste økt:
