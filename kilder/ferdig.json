@@ -90,22 +90,22 @@
   "note": "41 Tøihusgaten: umalt tegl [184,98,78] (SV 2024), brunt tegltak (ortofoto 2024), stor RUNDBUE tofløyet plankeport = RIKTIG (rund1s «flat port» var feillesing — SV mai 2024 viser tydelig teglbue/stikk over porten). Gavl (v3) blank tegl = som SV."
  },
  "bnr-193867855": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867855.jpg",
-  "avvik": [
-   "hvit 1,5-et.: farge/høyde/tak stemmer, men dør-/vindusdetaljer på gatevegg usikre (SV aug 2010)"
-  ],
-  "adr": "Gamlebyen (hvit)"
+  "avvik": [],
+  "adr": "Torvgaten 67 (hvit 1,5-et.)",
+  "runde": 2,
+  "note": "Vegar-lest: hvit [242,240,232], 2 etasjer, vinduer_per_etasje [2,2], 2 piper. Gavl (v4) 2+2 vinduer + rød portdør; langside (v5) vindusrekke + grønn dør under markise = som SV mai 2024/aug 2010. Kontrollert fov50."
  },
  "bnr-193867901": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867901.jpg",
-  "avvik": [
-   "oransje 2-et.: farge/høyde/vinduer stemmer, dørplassering/-eksistens usikker mot SV"
-  ],
-  "adr": "8 Voldgaten"
+  "avvik": [],
+  "adr": "8 Voldgaten (oransje)",
+  "runde": 2,
+  "note": "Vegar-lest: oransje [232,140,84], rader [3,4], stor blå dobbel port til venstre, 2 piper. Blå port rendrer nå riktig (palett-fiks) og matcher SV mai 2024. Mørk mosegrodd tegltak."
  },
  "bnr-193867804": {
   "status": "åpen",
@@ -126,13 +126,13 @@
   "adr": "21 Rådhusgaten (strågul)"
  },
  "bnr-193867898": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867898.jpg",
-  "avvik": [
-   "duebla 2-et.: identitet/vinduer/nabo stemmer, men port blå i SV vs brun dør i modell – fixbar farge"
-  ],
-  "adr": "9 Voldgaten (duebla)"
+  "avvik": [],
+  "adr": "9 Voldgaten (duebla)",
+  "runde": 2,
+  "note": "Vegar-lest: duebla [178,196,206], rader [5,6], rødt tegltak, 2 piper. Dør satt til rød (Vegars lesning «1 rød dør med steintrapp, midt-venstre»; dorfarge=rød -> [176,74,62]) via gate_avlesning, rendrer nå rød. Matcher SV."
  },
  "bnr-194006187": {
   "status": "tegnet",
@@ -144,13 +144,13 @@
   "note": "Hvit liggende panel [236,240,240] (SV 2024, 2019-trykket dømt). Rund1 «beige/grå» var skyggelagt hvit; mål-ID bekreftet (skjerm midt). Grunnmur stemmer."
  },
  "bnr-193868088": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193868088.jpg",
-  "avvik": [
-   "lys blågrå: farge/høyde/tak/nabo stemmer, vindustall usikkert (modell ser travlere ut enn SV)"
-  ],
-  "adr": "Gamlebyen (lys blågrå)"
+  "avvik": [],
+  "adr": "Gamlebyen (lys blågrå)",
+  "runde": 2,
+  "note": "Lys blågrå [178,196,206] stående panel, 2 et., rødt tegltak, SV aug 2010. Vegg/tak/form/nabo og vindusrekker (øvre ~2+2+1, nedre rekke) matcher SV ved fov50 — rund1s «for blå» var autocontrast-artefakt. Kontrollert samme kamera."
  },
  "bnr-193867820": {
   "status": "åpen",
@@ -189,13 +189,13 @@
   "adr": "Gamlebyen (grå panel)"
  },
  "bnr-193971954": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193971954.jpg",
-  "avvik": [
-   "vegg 3 (auto): render klipper under tak – vinduer ikke lesbare. Farge rød stemmer."
-  ],
-  "adr": "Gamlebyen (rød)"
+  "avvik": [],
+  "adr": "Gamlebyen (rød butikkgård)",
+  "runde": 2,
+  "note": "Rød [168,57,47] butikkgård m/gavl, SV aug 2010. Nytt front-standpunkt (fasade_sv-midtpunkt + utovernormal, fov50): render viser rødt hus, rød gavl, hvit dør + butikkfront (store utstillingsvinduer) + øvre vindu = matcher SV. Maalt-lesning godkjent (øyekontroll)."
  },
  "bnr-193972292": {
   "status": "tegnet",
@@ -236,13 +236,13 @@
   "adr": "Gamlebyen v/Tamburen"
  },
  "bnr-193867952": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193867952.jpg",
-  "avvik": [
-   "vegg 6 (lang terrakottafasade): farge/høyde/lengde stemmer, men vindustall ser høyere ut i modell og dørfarge brun vs hvit i SV – usikker"
-  ],
-  "adr": "10 Voldgaten (terrakotta)"
+  "avvik": [],
+  "adr": "10 Voldgaten (terrakotta)",
+  "runde": 2,
+  "note": "Lang terrakotta [184,91,66] 2-et. med mansard, SV mai 2024. Maalt del 1 godkjent (18 elementer, to hjørner). Hvit inngangsdør + blek garasjeport rendrer nå riktig (palett-fiks, dorfarge #e8e6dc). Mange ornamenterte vinduer matcher SV v6."
  },
  "bnr-193867480": {
   "status": "åpen",
