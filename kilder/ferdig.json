@@ -198,13 +198,13 @@
   "adr": "Gamlebyen (rød)"
  },
  "bnr-193972292": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193972292.jpg",
-  "avvik": [
-   "vegg 2: modell har rundbue-porter der SV viser flat dør/vinduer – porttype-feil (typ2→typ1 fixbar). Farge/høyde/rødt tak stemmer."
-  ],
-  "adr": "79 Færgeportgaten (lys grå)"
+  "avvik": [],
+  "adr": "79 Færgeportgaten (lys grå)",
+  "runde": 2,
+  "note": "79 Færgeportgaten: lys grå [196,198,196], rødt tak, vindusrekker. RUNDBUE-port rettet til flat (bred panel-garasjeport, samme farge som veggen) via «flat» i avlesning + gate_avlesning-regel. Senter brun dør m/rombevindu = som SV mai 2024."
  },
  "bnr-24218023": {
   "status": "trenger_vegar",

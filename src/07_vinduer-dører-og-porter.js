@@ -9,20 +9,23 @@ import { buildings, bygKirke } from './06_kirka-bygget-etter-2017.js';
 // ---- vinduer, dører og porter: plassering og størrelse fra Vegars kvartaltegninger (etter/42_fasader.py); alt tegnes her ----
 const VIND_GEO=new THREE.PlaneGeometry(1,1); VIND_GEO.translate(0,0,0);
 // Fargepaletten for dører og karmer (07.11, gatevandringen): husets dor_farge/karm_farge og elementets egen farge (13. plass).
-const PAL_N=64, PAL=[], PAL_IX={};
+const PAL=[], PAL_IX={};   // 09.11: var vec3 uPal[64] og mistet farge nr. 65+ (229 distinkte dør/karm/element-farger) -> dørfarger falt til brun standard. Nå flyttekstur: ingen grense, ingen uniform-budsjett (trygt på alle GPU-er).
 function palIx(hex){ if(!hex || typeof hex!=='string') return 0; const k=hex.toLowerCase(); if(PAL_IX[k]!==undefined) return PAL_IX[k];
-  if(PAL.length>=PAL_N) return 0; const c=new THREE.Color(k); PAL.push(new THREE.Vector3(c.r,c.g,c.b)); return (PAL_IX[k]=PAL.length); }
+  const c=new THREE.Color(k); PAL.push(c); return (PAL_IX[k]=PAL.length); }
 (DATA.bygg||[]).forEach(b=>{ palIx(b.dor_farge); palIx(b.karm_farge); (b.vind||[]).forEach(v=>palIx(v[12])); });
-while(PAL.length<PAL_N) PAL.push(new THREE.Vector3());
+const PAL_N=Math.max(1, PAL.length), palData=new Float32Array(PAL_N*4);
+PAL.forEach((c,i)=>{ palData[i*4]=c.r; palData[i*4+1]=c.g; palData[i*4+2]=c.b; palData[i*4+3]=1.; });
+const palTex=new THREE.DataTexture(palData, PAL_N, 1, THREE.RGBAFormat, THREE.FloatType);
+palTex.minFilter=palTex.magFilter=THREE.NearestFilter; palTex.needsUpdate=true;
 const vindMat=new THREE.ShaderMaterial({
   lights:true,
-  uniforms:Object.assign({tHus:U_HUS, uPal:{value:PAL}}, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
+  uniforms:Object.assign({tHus:U_HUS, uPalTex:{value:palTex}, uPalN:{value:PAL_N}}, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
   vertexShader:GL_SOL_V+GL_HUS_V+`attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
     void main(){ vUv=uv; vInfo=aInfo; vSz=vec2(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz));
       vN=normalize(mat3(modelMatrix)*aNorm);
       vec4 wp=modelMatrix*vec4(husPos((instanceMatrix*vec4(position,1.)).xyz),1.);
       gl_Position=projectionMatrix*viewMatrix*wp;`+glSolVMain('wp','vN')+`}`,
-  fragmentShader:GL_SOL_F+`uniform vec3 uPal[64]; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+  fragmentShader:GL_SOL_F+`uniform sampler2D uPalTex; uniform float uPalN; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
     void main(){
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
@@ -39,7 +42,7 @@ const vindMat=new THREE.ShaderMaterial({
       else if(typ<0.5 && bue>1.5){ float st=min(vSz.y*0.3,vSz.x*0.25), R=(vSz.x*vSz.x*0.25+st*st)/(2.*st); if(m.y>vSz.y-st) kant=min(kant, R-length(vec2(m.x-vSz.x*0.5,m.y-(vSz.y-R)))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
-      int pix=int(vInfo.w+0.5)-1; vec3 pf=pix>=0 ? uPal[pix] : vec3(0.);
+      int pix=int(vInfo.w+0.5)-1; vec3 pf=pix>=0 ? texture2D(uPalTex, vec2((float(pix)+0.5)/uPalN, 0.5)).rgb : vec3(0.);
       if(pix>=0 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.62*KALD, pf*sf, lit);     // karmfarge lest fra gata
       vec3 c;
       if(typ<0.5 || typ>2.5){
