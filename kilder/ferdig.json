@@ -44,12 +44,13 @@
   "runde": 2
  },
  "bnr-193971946": {
-  "status": "ferdig",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193971946.jpg",
   "avvik": [],
   "adr": "Gamlebyen (hvit puss)",
-  "note": "hvit puss 1-et., vindusrekke og rundbue-inngang stemmer (buen er RIKTIG her)."
+  "note": "Hvit puss [236,240,240] (Vegar-dømt, 2019-trykket), rundbue-inngang RIKTIG, vindusrekke, tak brungrå [132,122,112] fra ortofoto 2024 (autoritativ for tak). Form stemmer.",
+  "runde": 2
  },
  "bnr-13415889": {
   "status": "åpen",
@@ -81,14 +82,13 @@
   "adr": "26/27 Kirkegaten"
  },
  "bnr-193868576": {
-  "status": "åpen",
-  "dato": "2026-11-08",
+  "status": "tegnet",
+  "dato": "2026-11-09",
   "bevis": "rapport/ferdig/bnr-193868576.jpg",
-  "avvik": [
-   "vegg 0: port tegnet med rundbue (typ 2), SV viser flat rektangulær tredør – fixbar (typ 1, fasade_rett)",
-   "vegg 3 (gavl) grovt ok"
-  ],
-  "adr": "41 Tøihusgaten / Rådhusgaten (umalt tegl)"
+  "avvik": [],
+  "adr": "41 Tøihusgaten / Rådhusgaten (umalt tegl)",
+  "runde": 2,
+  "note": "41 Tøihusgaten: umalt tegl [184,98,78] (SV 2024), brunt tegltak (ortofoto 2024), stor RUNDBUE tofløyet plankeport = RIKTIG (rund1s «flat port» var feillesing — SV mai 2024 viser tydelig teglbue/stikk over porten). Gavl (v3) blank tegl = som SV."
  },
  "bnr-193867855": {
   "status": "åpen",
