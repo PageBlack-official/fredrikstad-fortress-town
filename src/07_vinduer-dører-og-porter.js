@@ -20,12 +20,13 @@ palTex.minFilter=palTex.magFilter=THREE.NearestFilter; palTex.needsUpdate=true;
 const vindMat=new THREE.ShaderMaterial({
   lights:true,
   uniforms:Object.assign({tHus:U_HUS, uPalTex:{value:palTex}, uPalN:{value:PAL_N}}, THREE.UniformsUtils.clone(THREE.UniformsLib.lights)),
-  vertexShader:GL_SOL_V+GL_HUS_V+`attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+  vertexShader:GL_SOL_V+GL_HUS_V+`attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN; varying float vPaa;
     void main(){ vUv=uv; vInfo=aInfo; vSz=vec2(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz));
+      vPaa=step(0.34, fract(sin(dot(floor(instanceMatrix[3].xz*2.)+floor(instanceMatrix[3].y*2.), vec2(12.9898,78.233)))*43758.5453));   // nattlys per vindu (helt lyst/helt mørkt), ikke per rutenett-piksel (PAG-1496)
       vN=normalize(mat3(modelMatrix)*aNorm);
       vec4 wp=modelMatrix*vec4(husPos((instanceMatrix*vec4(position,1.)).xyz),1.);
       gl_Position=projectionMatrix*viewMatrix*wp;`+glSolVMain('wp','vN')+`}`,
-  fragmentShader:GL_SOL_F+`uniform sampler2D uPalTex; uniform float uPalN; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+  fragmentShader:GL_SOL_F+`uniform sampler2D uPalTex; uniform float uPalN; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN; varying float vPaa;
     void main(){
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
@@ -76,7 +77,7 @@ const vindMat=new THREE.ShaderMaterial({
         }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
-      { float paa=step(0.34, fract(sin(dot(floor(vWq.xz*0.7)+floor(vWq.y*0.4), vec2(12.9898,78.233)))*43758.5453));   // to av tre vinduer har lys inne om kvelden
+      { float paa=vPaa;   // to av tre vinduer har lys inne om kvelden (per vindu, satt i vertex – PAG-1496)
         float glass=1.-smoothstep(0.30,0.42,max(c.r,max(c.g,c.b)));   // bare de mørke glassflatene, ikke ramme og sprosser
         c=kveld(c); c=mix(c, vec3(1.0,0.80,0.46)*1.15, natt*paa*glass*(typ<1.5||typ>2.5?1.:0.)); }
       gl_FragColor=vec4(c,1.);

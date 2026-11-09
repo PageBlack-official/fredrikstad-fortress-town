@@ -18,6 +18,9 @@ HASH=$(git -C "$ROT" log -1 --format=%h -- src data regler bygg.py datalag.py as
 RAPP="$ROT/rapport/rapport.md"; VERSJON=$(cat "$ROT/VERSJON")
 if [ -n "$URETTET" ]; then echo "STOPP: urettede endringer i kilden; commit først, så regler/kjor.py"; exit 1; fi
 if ! grep -q "^Kilde: $HASH versjon $VERSJON " "$RAPP" 2>/dev/null; then echo "STOPP: rapport/rapport.md er ikke kjørt mot $HASH (kjør: PYTHONPATH=regler python3 regler/kjor.py)"; exit 1; fi
+# Regel 48 (PAG-1496): vinduer som ligger oppå hverandre (over 5 % overlapp i bygg[].vind) stopper ALL publisering,
+# også /prove og /prove1 der andre røde regler ellers slipper gjennom. Rød = stopp, uansett modus.
+if grep -q "^- FEIL 48_" "$RAPP"; then echo "STOPP: regel 48 er rød — vinduer ligger oppå hverandre (PAG-1496):"; grep "^- FEIL 48_" "$RAPP"; exit 1; fi
 RODE=$(grep "^- FEIL" "$RAPP" | grep -v " 09_publisert " || true)
 if [ -n "$RODE" ]; then
   if [ "$MODUS" != "forside" ] || [ -n "$TILLAT_RODE" ]; then echo "røde regler går ut (${TILLAT_RODE:-prove}):"; echo "$RODE"; else echo "STOPP: røde regler (TILLAT_RODE='<Vegars ja>' når han har bestemt det):"; echo "$RODE"; exit 1; fi
