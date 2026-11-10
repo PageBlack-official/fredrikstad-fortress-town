@@ -18,6 +18,9 @@ ROT = pathlib.Path(__file__).resolve().parent.parent
 KILDE = ROT / 'kilder/streetview/avlesning.json'
 RETT = ROT / 'data/rettelser.json'
 GRUNN = 'Street View (Vegars Chrome 29.10.2026), ordet foran RGB'
+# Hus der Street View-fargen vinner over tegningsforliket (samme_kulor er for romslig for enkelte toner).
+# Vegar overstyrer per bygg på bevisbilde; kildebasert liste (ikke rapport/farger/).
+OVERSTYR_SV = {'bnr-6251331'}   # Raadhusgaten 21: gult, ikke tegningens bleke tone (Vegars dom 10.11.2026)
 
 # Ordbok: første treff vinner, så det spesifikke står øverst. Kartfarger, lyse og flate som i trykket.
 VEGG = [
@@ -109,7 +112,7 @@ def main():
             # umalt tegl males ikke om: tegningen (2015) så den samme mursteinen, og Vegars farge for den (lys tegl/fersken på
             # Kongens magasin og Tøihuset, rødlig på kasernen) gjelder. Ellers blir tegl-vegg og teglstak samme rødfarge.
             farge, kilde = list(tegn[0]), f"Street View {aar} ({v.get('farge')}): umalt tegl = {tegn[1]}: tegningens farge"
-        elif tegn and T.samme_kulor(tegn[0], vegg):
+        elif tegn and T.samme_kulor(tegn[0], vegg) and id_ not in OVERSTYR_SV:
             farge, kilde = list(tegn[0]), f"Street View {aar} ({v.get('farge')}) = {tegn[1]}: tegningens farge"
         else:
             farge, kilde = vegg, f"Street View {aar} ({v.get('farge')})" + (f"; tegningen har {T.familie(tegn[0])} ({tegn[1]})" if tegn else '')

@@ -15034,9 +15034,10 @@
   "navn": "",
   "adresse": "Cicignongata 5",
   "vegg": {
-   "farge": "hvit",
+   "farge": "gråbeige",
    "rgb": null,
-   "lys": null
+   "lys": null,
+   "merknad": "Vegars dom 10.11.2026: forsida (SV v0) er gråbeige puss, ikke hvit"
   },
   "list": "hvit (gesims, vindusomramming)",
   "materiale": "puss",
