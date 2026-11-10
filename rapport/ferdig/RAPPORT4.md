@@ -17,6 +17,19 @@ Vegar svarte 08:10 på skjønnspunktene. Utført (commits `7c7cea1`, `b56a916`),
   (samme_kulor var for romslig; tegningsforliket vant). Bare dette bygget → [246,222,160].
 - `attic/_publish_okt6.sh` kjører: render → kontaktark → Dropbox → regler → publiser prove1 → melder.
 
+**STANDPUNKT-FUNN (økt 12, render-testet):** sv_plan-standpunkt + skrå/hevet variant (pitch 84, oye 6, fov 55)
+rendret nr 14 — viser nå hele huset mot tak (rødt)/himmel, 2 etg à 4 vinduer + sentral gavl (geometrien er RIKTIG).
+MEN den hvite veggen brenner fortsatt ut (hvit [242,240,232] på krembakgrunn + shader-lyset). Mørke karmer vises bare
+svakt (lyset lysner dem). **Todeling:**
+- **Ikke-hvite standpunkt-hus** (bnr-193867820 bak mur, bnr-193972306 feil vegg, bnr-193971288 usikkert): LØSES av
+  et korrekt sv_plan-standpunkt (skrå) — de er ikke hvite, så de leser. Dette utfører jeg (ny standpunkt-fil →
+  re-render → bevis) når hashen er fri.
+- **Hvite utbrente hus** (nr 14, bnr-13416362): geometrien er riktig og verifiserbar, men bevis-renderet er blekt.
+  Autokontrast er forbudt (Vegar). Global lysendring er forbudt (rører forsiden/intro). ENESTE trygge fiks er en
+  **bevis-scoped eksponerings-/kontrast-justering i `__gate`** (kjøres ALDRI i kartet brukeren ser → trygt mot
+  forside/intro/prove). **Dette er Vegars valg** (han sa «autokontrast er ikke løsning» — men __gate-render-eksponering
+  er noe annet enn autokontrast på utbildet): godta det bleke, eller godkjenn en __gate-scoped eksponering. Flagget.
+
 **UTREDET (økt 11, mens publisering kjører) — plan for villa-struktur + standpunkt:**
 - **Standpunkt-husene: LØSBART via `kilder/gate/sv_plan.json`.** Hvert problem-hus har én sv_plan-post med
   lat/lon/heading/fov/avstand (SV-kameraet Vegar ba om): nr 14 (h 6.8,fov103,6m), bnr-193867820 (124.5,110,3.4m),
