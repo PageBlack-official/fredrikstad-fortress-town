@@ -205,7 +205,9 @@ def main(tørt=False):
         keep = ids[0]; gr = S.get('grunn', '')
         r(keep, 'p', _rund(G), gr); r(keep, 'ph', [], gr)
         rr, rf = GM.rekt(G); r(keep, 'r', rr, gr); r(keep, 'rf', rf, gr); r(keep, 'tk', [rr], gr)
-        for felt in ('vind', 'piper', 'arker'):
+        # ikke_piper: behold bare keep sin pipe (en kombinert pipe fra den andre delen flytter seg når det felles taket
+        # regnes på nytt -> ikke idempotent, regel 39). Settes på merger der pipene ikke skal slås sammen (nr 4, 10.11).
+        for felt in (('vind', 'arker') if S.get('ikke_piper') else ('vind', 'piper', 'arker')):
             v = []
             for i in ids:
                 q = BY[i].get(felt)
