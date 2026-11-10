@@ -88,8 +88,11 @@ const skyggeMat=new THREE.MeshBasicMaterial({colorWrite:false, depthWrite:false}
 const GREENS=[[96,148,104],[86,140,98],[104,156,106],[90,136,104],[110,160,100],[80,130,96]].map(c=>new THREE.Color(`rgb(${c[0]},${c[1]},${c[2]})`));
 const BARK=[[112,92,78],[100,84,74],[122,100,84]].map(c=>new THREE.Color(`rgb(${c[0]},${c[1]},${c[2]})`));
 const TP = DATA.traer;
+// ingen trær inni sirkelfortet (Isegran): der er det gress, ikke skog (Vegar 10.11)
+const FORTSONER = (DATA.bygg||[]).filter(b=>b && b.fort).map(b=>({x:b.fort.cx, y:b.fort.cy, r:(b.fort.ro||16)+2}));
 const klaseData=[], skyggeData=[], stammeData=[];
 TP.forEach((p,i)=>{
+  if(FORTSONER.some(f=>Math.hypot(p[0]-f.x, p[1]-f.y) < f.r)) return;
   const s=p[2]?p[2]:2.6+rnd()*2.8; const g0=treBakke(p); const col=GREENS[(rnd()*GREENS.length)|0];
   const delay=0.6+1.6*((p[0]+p[1]+500)/1000);
   const x=p[0], z=-p[1];
