@@ -17,7 +17,22 @@ Vegar svarte 08:10 på skjønnspunktene. Utført (commits `7c7cea1`, `b56a916`),
   (samme_kulor var for romslig; tegningsforliket vant). Bare dette bygget → [246,222,160].
 - `attic/_publish_okt6.sh` kjører: render → kontaktark → Dropbox → regler → publiser prove1 → melder.
 
-**GJENSTÅR på villaen (strukturelt, Vegars svar 2) + standpunkt:**
+**UTREDET (økt 11, mens publisering kjører) — plan for villa-struktur + standpunkt:**
+- **Standpunkt-husene: LØSBART via `kilder/gate/sv_plan.json`.** Hvert problem-hus har én sv_plan-post med
+  lat/lon/heading/fov/avstand (SV-kameraet Vegar ba om): nr 14 (h 6.8,fov103,6m), bnr-193867820 (124.5,110,3.4m),
+  bnr-193972306 (229.3,87,4.1m), bnr-193971288 (201.6,79,5.8m), bnr-13416362 (186.8,110,5.4m), Widdingstua
+  (118.6,110,6.1m). PLAN: bygg standpunkt {lat,lon,heading,fov,pitch 88.5,oye 2.5} per hus → render → verifiser at
+  huset leser (mot tak/himmel) → bruk i bevis. SV-crop-matching: sjekk sv_rett-croppene; ellers etter-render med
+  sv_plan-kamera + note. Gjøres når hashen er fri.
+- **Villa 3. ark = «gavl med vindu midt på taket»:** `arker` er dormere (`[x,y,z,nx,ny,bw,hb]`), ikke en sentral gavl.
+  Nærmeste: legg en sentral, høyere ark midt på gatefasadens tak, eller en `gavl2`-trekant (villaen har gavl2=False).
+  Approksimasjon mulig; Vegar dømmer på bevis.
+- **Villa balkong «midt foran, nede»: INGEN modellstøtte.** Ingen bygg har `balkong`/`veranda`-felt; `terrasser`/
+  `vinterhager` er komplekse bakke-objekter (uteservering), ikke husbalkonger. En balkong krever en liten NY
+  render-primitiv i `src/07` (horisontal plate + rekkverk ved fasaden). Bounded kode-oppgave (~15 linjer) — bygges
+  når hashen er fri, ELLER flagges som kost til Vegar (ny feature for ett hus). Fargen (gråbeige) er allerede gjort.
+
+**OPPRINNELIG (Vegars svar 2) + standpunkt:**
 - villa `13415889`: **3. ark = gavl med vindu midt på taket** + **balkong/veranda midt foran, nede**. Strukturelt;
   avlesning-arker lager dormer, ikke sentral gavl; balkong-støtte i modellen må sjekkes. Ikke gjort ennå.
 - **standpunkt-husene** (nr 14 + bnr-193867820/193972306/193971288/13416362 + Widdingstua): Vegar sa «finn
