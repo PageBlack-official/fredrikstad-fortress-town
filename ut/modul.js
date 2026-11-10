@@ -1,5 +1,5 @@
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/tilstand.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/tilstand.js
 var TILSTAND = {
   skyggeSkitten: true,
   // skyggekartet må tegnes på nytt (sola, husene eller introen har endret seg)
@@ -23,7 +23,7 @@ function registrer(navn) {
   for (const [k, f] of Object.entries(navn)) Object.defineProperty(SENERE, k, { get: f, enumerable: true });
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/00_oppsett.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/00_oppsett.js
 import * as THREE from "three";
 import * as maplibregl from "maplibre-gl";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
@@ -115,7 +115,7 @@ var cam = new THREE.PerspectiveCamera(60, 1, 1, 1e4);
 cam.matrixAutoUpdate = false;
 var kam = { zoomfaktor: 1, mpp: 1, pitch: PITCH0, bearing: -AZ0_GRADER, naer: 1, fjern: 1e4 };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/01_etterbehandling.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/01_etterbehandling.js
 import * as THREE2 from "three";
 import { FXAAShader as FXAAShader2 } from "three/addons/shaders/FXAAShader.js";
 var MAALT = { oppdater: 0, speil: 0, skygge: 0 };
@@ -403,7 +403,7 @@ function fit() {
 }
 map.on("resize", fit);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/02_lys.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/02_lys.js
 import * as THREE3 from "three";
 var hemi = new THREE3.HemisphereLight(16777215, 15131350, 1);
 scene.add(hemi);
@@ -631,7 +631,7 @@ function medSkygge(m) {
 }
 registrer({ sun: () => sun });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/kvalitet.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/kvalitet.js
 import * as THREE4 from "three";
 var KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get("noadapt") ? 9 : 0, onsket: 0 };
 var MAAL_PAA = !!Q0.get("adapt");
@@ -682,7 +682,7 @@ function feilsokTast(t) {
 if (Q0.get("nivaa")) settNivaa(+Q0.get("nivaa"));
 registrer({ beregnSkala: () => beregnSkala });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/03_bakke-vann-grønt.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/03_bakke-vann-grønt.js
 import * as THREE5 from "three";
 var BK = DATA.bakke || null;
 var VANN_Y = BK ? BK.vann : 0.15;
@@ -872,7 +872,7 @@ DATA.vann.forEach((w) => {
 });
 registrer({ waterMat: () => waterMat });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/04_brostein-i-hele-gamlebyen.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/04_brostein-i-hele-gamlebyen.js
 import * as THREE6 from "three";
 var stoneMat = new THREE6.ShaderMaterial({
   uniforms: { base: { value: new THREE6.Color("rgb(146,140,132)") }, fuge: { value: new THREE6.Color("rgb(96,92,88)") }, ang: { value: THREE6.MathUtils.degToRad(DATA.gatevinkel || 0) } },
@@ -919,7 +919,7 @@ var plenMat = new THREE6.ShaderMaterial({
 medSkygge(plenMat);
 bakkelag(plenMat, BAKKELAG.gress);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/05_bygg.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/05_bygg.js
 import * as THREE7 from "three";
 import { mergeGeometries as mergeGeometries2 } from "three/addons/utils/BufferGeometryUtils.js";
 var city = new THREE7.Group();
@@ -1199,7 +1199,7 @@ function mat(rgb, dim, sk, opt = {}) {
   return mats.get(key);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/06_kirka-bygget-etter-2017.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/06_kirka-bygget-etter-2017.js
 import * as THREE8 from "three";
 var KIRKE_ENDE = "valm";
 function sentr(p) {
@@ -1491,7 +1491,7 @@ function bygKirke(k, grp) {
 }
 var buildings = [];
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/07_vinduer-dører-og-porter.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/07_vinduer-dører-og-porter.js
 import * as THREE9 from "three";
 import { mergeGeometries as mergeGeometries3 } from "three/addons/utils/BufferGeometryUtils.js";
 var VIND_GEO = new THREE9.PlaneGeometry(1, 1);
@@ -1525,12 +1525,13 @@ palTex.needsUpdate = true;
 var vindMat = new THREE9.ShaderMaterial({
   lights: true,
   uniforms: Object.assign({ tHus: U_HUS, uPalTex: { value: palTex }, uPalN: { value: PAL_N } }, THREE9.UniformsUtils.clone(THREE9.UniformsLib.lights)),
-  vertexShader: GL_SOL_V + GL_HUS_V + `attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+  vertexShader: GL_SOL_V + GL_HUS_V + `attribute vec4 aInfo; attribute vec3 aNorm; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN; varying float vPaa;
     void main(){ vUv=uv; vInfo=aInfo; vSz=vec2(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz));
+      vPaa=step(0.34, fract(sin(dot(floor(instanceMatrix[3].xz*2.)+floor(instanceMatrix[3].y*2.), vec2(12.9898,78.233)))*43758.5453));   // nattlys per vindu (helt lyst/helt mørkt), ikke per rutenett-piksel (PAG-1496)
       vN=normalize(mat3(modelMatrix)*aNorm);
       vec4 wp=modelMatrix*vec4(husPos((instanceMatrix*vec4(position,1.)).xyz),1.);
       gl_Position=projectionMatrix*viewMatrix*wp;` + glSolVMain("wp", "vN") + `}`,
-  fragmentShader: GL_SOL_F + `uniform sampler2D uPalTex; uniform float uPalN; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN;
+  fragmentShader: GL_SOL_F + `uniform sampler2D uPalTex; uniform float uPalN; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN; varying float vPaa;
     void main(){
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
@@ -1581,7 +1582,7 @@ var vindMat = new THREE9.ShaderMaterial({
         }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
-      { float paa=step(0.34, fract(sin(dot(floor(vWq.xz*0.7)+floor(vWq.y*0.4), vec2(12.9898,78.233)))*43758.5453));   // to av tre vinduer har lys inne om kvelden
+      { float paa=vPaa;   // to av tre vinduer har lys inne om kvelden (per vindu, satt i vertex – PAG-1496)
         float glass=1.-smoothstep(0.30,0.42,max(c.r,max(c.g,c.b)));   // bare de mørke glassflatene, ikke ramme og sprosser
         c=kveld(c); c=mix(c, vec3(1.0,0.80,0.46)*1.15, natt*paa*glass*(typ<1.5||typ>2.5?1.:0.)); }
       gl_FragColor=vec4(c,1.);
@@ -2364,7 +2365,7 @@ samler.clear();
   city.add(m);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/08_festningsterrenget.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/08_festningsterrenget.js
 import * as THREE10 from "three";
 var TER0 = DATA.landskap && DATA.landskap.terreng;
 var TER = BK ? { x0: BK.x0, y0: BK.y0, g: BK.g, nx: BK.nx, ny: BK.ny, off: 0 } : TER0;
@@ -2695,7 +2696,7 @@ function veiflater(VF2, buf) {
   }
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/09_murer-plankegjerder-og-voller.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/09_murer-plankegjerder-og-voller.js
 import * as THREE11 from "three";
 var murer = new THREE11.Group();
 scene.add(murer);
@@ -2735,7 +2736,7 @@ var _iMur = (q) => (DATA.teglmurer || []).some((m) => {
 });
 flatGruppe(murer);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/10_porter.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/10_porter.js
 import * as THREE12 from "three";
 (DATA.porter || []).forEach((pt) => {
   const grp = buildings.find((g) => g.userData.i === pt.bygg);
@@ -2800,7 +2801,7 @@ import * as THREE12 from "three";
   });
 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/11_broer.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/11_broer.js
 import * as THREE13 from "three";
 (DATA.broer || []).forEach((br, bi) => {
   const g = new THREE13.Group();
@@ -2886,7 +2887,7 @@ import * as THREE13 from "three";
   city.add(g);
 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/12_trær.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/12_trær.js
 import * as THREE14 from "three";
 var treBakke = (p) => BK ? bakke(p[0], p[1]) : p[3] || 0;
 var seed = 11;
@@ -3075,7 +3076,7 @@ crowns[0].onBeforeRender = (r, sc_, c) => {
 };
 setCrowns(0);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/13_kart.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/13_kart.js
 import * as THREE15 from "three";
 import * as maplibregl2 from "maplibre-gl";
 var _merc = maplibregl2.MercatorCoordinate.fromLngLat([ORIGO.lon, ORIGO.lat], 0);
@@ -3120,7 +3121,7 @@ function vinkler() {
 var GRENSE = 560;
 map.setMaxBounds([tilLngLat(-GRENSE - 300, -GRENSE - 300), tilLngLat(GRENSE + 300, GRENSE + 300)]);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/14_speilinger-i-vannet.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/14_speilinger-i-vannet.js
 import * as THREE16 from "three";
 var speil = (() => {
   const Y = VANN_Y, LAG = 1;
@@ -3205,7 +3206,7 @@ function speilStyrke() {
 var _sisteKam = new THREE16.Matrix4();
 map.on("resize", () => speil.size());
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/15_bevegelse.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/15_bevegelse.js
 import * as maplibregl3 from "maplibre-gl";
 var GLID = Q0.get("glid") !== "0";
 var glid = (t) => !GLID ? t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 : t <= 0 ? 0 : t >= 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
@@ -3485,7 +3486,7 @@ window.__BEV = BEV;
 map.getCanvasContainer().addEventListener("pointerdown", () => hjulZoom.stopp(), { capture: true, passive: true });
 registrer({ fingerNede: () => fingerNede });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/15_lenke.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/15_lenke.js
 var LENKE = (() => {
   let h = "";
   try {
@@ -3588,7 +3589,7 @@ async function lenkeDel(knapp4) {
   if (knapp4) knapp4.addEventListener("click", () => lenkeDel(knapp4));
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/15_loop.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/15_loop.js
 import * as THREE17 from "three";
 lysFraVenstre();
 var order = buildings.map((g) => {
@@ -4003,7 +4004,7 @@ window.__skjerm3 = (x, y, z) => {
 };
 registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/16_interaksjon.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/16_interaksjon.js
 import * as THREE18 from "three";
 var ray = new THREE18.Raycaster();
 var ptr = new THREE18.Vector2();
@@ -4457,7 +4458,7 @@ if (Q0.get("d")) {
 }
 registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/17_bakkeflater-og-parkering.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/17_bakkeflater-og-parkering.js
 import * as THREE19 from "three";
 {
   const flateMat = (rgb) => medSkygge(new THREE19.ShaderMaterial({
@@ -4578,7 +4579,7 @@ import * as THREE19 from "three";
   });
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/18_brygger.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/18_brygger.js
 import * as THREE20 from "three";
 {
   const PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
@@ -4659,7 +4660,7 @@ import * as THREE20 from "three";
   g.traverse((c) => c.layers.enable(1));
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/19_gardsmurer-og-vinterhager.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/19_gardsmurer-og-vinterhager.js
 import * as THREE21 from "three";
 {
   const anlegg = new THREE21.Group();
@@ -4895,7 +4896,7 @@ import * as THREE21 from "three";
   flatGruppe(anlegg);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/20_statuen-paa-torvet.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/20_statuen-paa-torvet.js
 import * as THREE22 from "three";
 (() => {
   const STEINFARGE = { "mørk": [[66, 68, 72], [40, 41, 44]], lys: [[178, 176, 170], [124, 122, 118]], trinn: [[104, 106, 110], [66, 67, 70]], bronse: [[120, 160, 138], [70, 98, 86]] };
@@ -5074,7 +5075,7 @@ import * as THREE22 from "three";
   });
 })();
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/21_flyt.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/21_flyt.js
 import * as THREE23 from "three";
 import { mergeGeometries as mergeGeometries4 } from "three/addons/utils/BufferGeometryUtils.js";
 var vannRute = (() => {
@@ -5195,7 +5196,7 @@ var flaterSammen = (() => {
 window.__flytInfo = () => ({ flaterFor: flaterSammen.for, flaterEtter: flaterSammen.etter, vann: vannISyne() });
 registrer({ vannISyne: () => vannISyne });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/22_byferga.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/22_byferga.js
 import * as THREE24 from "three";
 var ferge = (() => {
   const F = DATA.ferge;
@@ -5540,7 +5541,7 @@ var ferge = (() => {
 })();
 registrer({ ferge: () => ferge });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/23_vaer.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/23_vaer.js
 import * as THREE25 from "three";
 var PUNKT = { lat: 59.2055, lon: 10.9545 };
 var TEST = !!navigator.webdriver;
@@ -5875,7 +5876,7 @@ document.addEventListener("visibilitychange", () => {
 });
 window.__vaer = () => ({ natt: U_SOL.natt.value, naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt: valgt2 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/24_sok.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/24_sok.js
 import * as maplibregl4 from "maplibre-gl";
 var S = DATA.steder || { kategorier: [], steder: [] };
 var GJEST = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
@@ -6083,7 +6084,7 @@ window.__sok = { velgSted: (id) => {
   return naaler.size;
 }, antall: () => S.steder.length };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/25_her.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/25_her.js
 import * as maplibregl5 from "maplibre-gl";
 var RADIUS = 1400;
 var vakt = null;
@@ -6173,7 +6174,7 @@ function stopp() {
   knapp2.b.setAttribute("aria-pressed", "false");
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/26_turer.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/26_turer.js
 var TURER = DATA.turer || [];
 var LEGENDE = new Map((DATA.legende || []).map((l) => [l.nr, l]));
 var tur = null;
@@ -6273,7 +6274,7 @@ if (panel2 && TURER.length) {
 }
 window.__tur = { start: start2, gaa, slutt, naa: () => tur && { id: tur.id, i } };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/27_festival.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/27_festival.js
 import * as THREE26 from "three";
 import { mergeGeometries as mergeGeometries5 } from "three/addons/utils/BufferGeometryUtils.js";
 var ARR = DATA.arrangementer || [];
@@ -6422,7 +6423,7 @@ if (anim2) {
 window.__festival = () => anim2 ? { id: anim2.a.id, navn: anim2.a.navn, straler: anim2.straler.length } : null;
 window.__festivalDatoer = (aar) => ARR.map((a) => ({ id: a.id, d: (datoer(a, aar) || []).map((x) => x.toISOString()) }));
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/28_start.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/28_start.js
 var laster = document.getElementById("laster");
 if (laster) {
   const se = () => {
@@ -6434,7 +6435,7 @@ if (laster) {
   requestAnimationFrame(se);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/29_postkort.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/29_postkort.js
 var MND2 = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
 var knapp3 = document.createElement("button");
 knapp3.id = "postkort";
@@ -6502,7 +6503,7 @@ async function lag() {
 knapp3.addEventListener("click", lag);
 window.__postkort = lag;
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1492-ff82e37a-f0e-oEMoFD/tmpaxhj9jm7/30_gjest.js
+// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1496-7c62e769-6eb-8m9Tn4/tmpjxmxry36/30_gjest.js
 var P = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
 if (P) {
   document.documentElement.style.setProperty("--gjest", P.farge || "#2b2420");
