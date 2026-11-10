@@ -6,6 +6,21 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-10, økt 6 — REGEL 39 GRØNN (rett årsaken) + publiser+Dropbox kjører)
+
+Vegar ba om å rette årsaken til regel 39 (2 objekter endres ved ny kjøring). **Gjort — commit `1130c24`:**
+- Rotårsak: targeted setts (nr 8 piper/arker, nr 5 fasade_rett) ble regenerert av kjeden ETTER mine linjer, så
+  en fersk kjede ga andre verdier → committet ≠ fersk.
+- Fiks: gjort dem kilde-baserte (nr 8 piper via `avlesning.json` piper=2; nr 5 via `rett-dom-nr5.json`), fjernet
+  de redundante targeted settene, kjørt full `bygg_kjede`. nr 8 takvindu: `avlesning takvinduer_arker->0` (unngå
+  spuriøs ark fra kjeden) + ett targeted `sett takvinduer` (kjeden rører ikke feltet → stabilt, som nr 7 piper).
+- **Verifisert: `regel 39 = 0 objekter endres` (grønn).** dom_sjekk exit 0, Del A urørt. Nå er bare 03 rød.
+- **Lærdom:** targeted sett er bare stabilt hvis INGEN kjede-steg skriver samme felt. Felt kjeden regenererer
+  (vind, piper fra avlesning, vegg fra avlesning) MÅ fikses i kilden; felt kjeden ikke rører (takvinduer, karm_farge,
+  tak-override) kan settes targeted.
+- `attic/_publish_okt6.sh` kjører detached: render → kontaktark → **kopi til Dropbox** teknisk-veikart/status/ →
+  regler → `publiser.sh prove1` (bare 03 rød) → melder.
+
 ## STATUS (2026-11-10, økt 5b — svart kloss + nr 5 durabelt; publiser kjører detached)
 
 - **Svart kloss FJERNET** (commit `a2df5d0`): bekreftet med render at boksen var det mørke smijern-gjerdet
