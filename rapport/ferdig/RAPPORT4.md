@@ -446,3 +446,12 @@ kameraene i renders_r2 i stedet (det publiser.sh leser for bevis-arket).
 som bygTaarn, med åpning mot land, flat kappe ~4,5 m) + gressvoll bak med teglbue (hvelvet inngang) + brosteinsplass +
 lave murrester + gangbane m/ rekkverk + trebjelker over murkronen mot elva. Kildebasert (egen fil, ikke in-place).
 Bevis: render fra samme vinkel som dronebildet, ved siden av bildet. Legg ut på /rask.
+
+## ØKT 15 — Isegran-fort v3 (ringmur + voll + teglbue + trebjelker)
+Fortet bygget ut og ute på /rask (`d280c43`). Elevert SW-render matcher dronebildet i hovedtrekk:
+- Ringmur grå naturstein, flat kappe, åpning mot land (SW) — tegnet i src/07 `b.fort`-primitiv.
+- Gress inni (trær ryddet, src/12 fort-sone). Husboks/pipe/kontaktskygge skjult for b.fort.
+- Gressvoll bakerst m/ teglbue (rød tegl, naturstein rundt, hvelvet mørk åpning).
+- Trebjelker med jevn avstand over murkronen på elvesiden.
+- Bevis-standpunkt lagret (renders_r2/pb-4-fort.json); side-ved-side-bevis `isegran-fort-bevis.jpg` i Dropbox status/ + rapport/ferdig/.
+Gjenstår (finjustering, lav risiko): tydeligere teglbue, brosteinsplass + lave murrester foran vollen, rekkverk langs gangbanen, og en liten lys terrengflekk (pb-4-fotavtrykk) inni gresset. dom_sjekk exit 0, regel 39 grønn (kun src-endringer siden sist grønn).
