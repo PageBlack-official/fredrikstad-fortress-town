@@ -6,6 +6,23 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-10, økt 10 — Vegars svar utført: nr 4 + villa-farge + gul; publiser kjører)
+
+Vegar svarte 08:10 på skjønnspunktene. Utført (commits `7c7cea1`, `b56a916`), regel 39 grønn, dom_sjekk exit 0:
+- **nr 4 (51 Kasernegaten):** slått sammen bnr-193867804 + **bnr-193972462** (den smale beige delen til høyre,
+  identifisert via skjermpunkt i render, 0 m nabo) via `husdeling.sammen`; hele bygget rosa. Merge fikk
+  **`ikke_piper`-flagg** (kombinert pipe flyttet seg på felles tak → regel 39 rød; nå beholdes bare nr 4s egen pipe).
+- **villa bnr-13415889:** forsida gråbeige puss [214,206,190] (avlesning vegg.farge «gråbeige», fra SV v0).
+- **bnr-6251331 gul:** ny kildebasert overstyring `OVERSTYR_SV={'bnr-6251331'}` i `streetview_farger.py`
+  (samme_kulor var for romslig; tegningsforliket vant). Bare dette bygget → [246,222,160].
+- `attic/_publish_okt6.sh` kjører: render → kontaktark → Dropbox → regler → publiser prove1 → melder.
+
+**GJENSTÅR på villaen (strukturelt, Vegars svar 2) + standpunkt:**
+- villa `13415889`: **3. ark = gavl med vindu midt på taket** + **balkong/veranda midt foran, nede**. Strukturelt;
+  avlesning-arker lager dormer, ikke sentral gavl; balkong-støtte i modellen må sjekkes. Ikke gjort ennå.
+- **standpunkt-husene** (nr 14 + bnr-193867820/193972306/193971288/13416362 + Widdingstua): Vegar sa «finn
+  SV-matchede skrå standpunkt selv» — SV-infra-delarbeid (sv_lager/sv_plan), ikke gjort ennå.
+
 ## STATUS (2026-11-10, økt 9 — Widdingstua-terreng rettet; hard-tail trenger Vegars øye)
 
 - **Widdingstua (bnr-193867480) ikke under vann lenger** — commit `76de60e`. Rotårsak rettet i `bakke_dtm.py`:
