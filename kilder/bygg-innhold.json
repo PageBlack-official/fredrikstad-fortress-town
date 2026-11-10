@@ -648,22 +648,51 @@
    "bygningsnummer": 193868355,
    "kategori": "bolig",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Det gamle rådhus",
+    "kilder": [
+     {
+      "adresse": "Matrikkelen/Kartverket (navn i datasettet)",
+      "dato": "2026-11-10",
+      "note": "bygningsnummer 193868355, Kirkegaten 27"
+     },
+     {
+      "adresse": "https://lokalhistoriewiki.no/Det_gamle_rådhus_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "artikkeltittel"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1784",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Det_gamle_rådhus_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "sto ferdig 1784, oppført etter bybrannen 1764"
+     },
+     {
+      "adresse": "https://digitaltmuseum.no/011015154441 (Østfold fylkes billedarkiv)",
+      "dato": "2026-11-10",
+      "note": "oppført etter bybrannen 1764, sto ferdig 1784, rådhus til 1864"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført etter bybrannen i 1764 og sto ferdig i 1784. Rådhus for Fredrikstad til 1864, med arrestceller der blant andre Hans Nielsen Hauge satt fengslet. Skadet i brannen i 1830 og bygd opp igjen. Kommunen solgte gården i 1864, og Fredriksstad Sparebank overtok; banken hadde filial her til 1990-tallet. Første etasje har yttervegger i granitt, andre etasje i pusset tegl.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Det_gamle_rådhus_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
-    "kilder": []
+    "kilder": [],
+    "note": "Ingen verifisert 2026-kilde. Siste kjente (lokalhistoriewiki, 2008): mediebedriften Zwart Arbeid med kontorer; for gammelt til å stå som «i dag». Krever Brønnøysund på adressen eller befaring."
    },
-   "status": "tom"
+   "status": "delvis"
   },
   "bnr-193972039": {
    "bygningsnummer": 193972039,

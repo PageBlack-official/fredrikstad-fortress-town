@@ -20,6 +20,17 @@ Vegar overstyrte køporten 10.11 kl. 06:37: start OPPGAVE5 nå, PAG-1492 røres 
 
 3. **Datakilden `kilder/bygg-innhold.json` (skjema, tom).** Alle 185 hus-noder lagt inn, keyet på bygg-ID (= bygningsnummer i Matrikkelen). Hvert hus har feltene `navn`, `byggeaar`, `historie`, `bruk_i_dag`, hver som `{verdi, kilder:[]}`. **Alle verdier er `null` — ingen tekst er gjettet.** `_skjema` holder kilderekkefølgen og regelen. Kartet skal lese dette gjennom kjeden (ikke hardkodet) — leserveien bygges i fabrikk-økta.
 
+## Bevis-hus (økt 2): Det gamle rådhus, bnr-193868355 — kildefestet
+
+Første verifiserte hus før batch. Identitet bekreftet: datasettets `bnr-193868355` har adresse «Kirkegaten 27» = lokalhistoriewikis «Det gamle rådhus i Fredrikstad» (ikke gjettet).
+
+- **navn:** «Det gamle rådhus» — Matrikkelen + lokalhistoriewiki (lest 2026-11-10).
+- **byggeår:** 1784 (oppført etter bybrannen 1764) — lokalhistoriewiki + DigitaltMuseum/Østfold fylkes billedarkiv (lest 2026-11-10).
+- **historie:** rådhus til 1864 (arrestceller, bl.a. Hans Nielsen Hauge), skadet i brannen 1830 og gjenoppbygd, solgt 1864 til Fredriksstad Sparebank, bankfilial til 1990-tallet, granitt 1. etg / pusset tegl 2. etg — lokalhistoriewiki, egne ord. **Gjennom `ki-sensur.py`: 0 treff** (ingen AI-tegn).
+- **bruk i dag:** står **tomt** med vilje. Eneste kjente kilde (lokalhistoriewiki) peker på 2008 (Zwart Arbeid) — for gammelt til å stå som «i dag». Krever fersk kilde (Brønnøysund på adressen eller befaring). Dette er «aldri gjett» i praksis: feltet står tomt framfor å gjenbruke en gammel verdi.
+
+Status i `kilder/bygg-innhold.json`: `delvis` (3 av 4 felt fylt, kildefestet).
+
 ## Avklaringer og obs
 
 - «Kaserna» i stopp-listen gjelder byggets **geometri/fasademodell** (EGNE_FASADER). Innholdstekst om Infanterikasernen (navn/byggeår/historie/bruk) er innhold, ikke modell, og er lov — men selve bygget tegnes aldri om her.
