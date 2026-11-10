@@ -283,7 +283,7 @@ DATA.bygg.forEach((b,i)=>{
   const legg = spesiell ? (o=>grp.add(o)) : (o=>samleObjekt(o, fotM, i, toppVindu));
   const shape = polyShape(pts);
   (b.ph||[]).forEach(r=>{ if(r.length>2) shape.holes.push(new THREE.Path(r.map(V))); });
-  const h = b.kirke ? 0.01 : b.h;   // kirka: formen tegnes av bygKirke (src/06); h og tak2 i data er silhuetten kontrolløren registrerer mot
+  const h = (b.kirke || b.fort) ? 0.01 : b.h;   // kirka: formen tegnes av bygKirke (src/06); fort: ringmuren tegnes under (Isegran); h/tak2 er silhuetten kontrolløren registrerer mot
   const eg = new THREE.ExtrudeGeometry(shape,{depth:h+grunn,bevelEnabled:false});
   eg.rotateX(-Math.PI/2); if(grunn>0) eg.translate(0,-grunn,0);   // grunnmuren under foten (lp.y < 0: sokkeltonen i src/05)
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
@@ -303,7 +303,7 @@ DATA.bygg.forEach((b,i)=>{
     const gm=new THREE.Mesh(gg,[mat(G.farge,dim,G.skygge),mat(G.farge,dim,G.skygge)]); gm.castShadow=true; gm.receiveShadow=true; legg(gm);
   }
   // tak: én saltak-prisme per rektangel i bygget (L, T og U får riktige møner)
-  if (b.tak2 && !b.kirke){
+  if (b.tak2 && !b.kirke && !b.fort){
     // felles tak for husrekka (beregnet i etter/10_tak.py): flater + gavler/brannmurer
     const SLOPE=b.th||0.82; const pos=[];   // takhelning per hus (th) fra Kartverkets høydemodell der den er målt 
     b.tak2.forEach(f0=>{
@@ -413,6 +413,29 @@ DATA.bygg.forEach((b,i)=>{
     const front=new THREE.Mesh(new THREE.BoxGeometry(rt,RH,bredde), mr); front.position.set(dyp,RH/2,0); front.castShadow=true; g.add(front);
     [-1,1].forEach(s=>{ const side=new THREE.Mesh(new THREE.BoxGeometry(dyp,RH,rt), mr); side.position.set(dyp/2,RH/2,s*bredde/2); side.castShadow=true; g.add(side); });
     legg(g);
+  }
+  // Isegran sirkelfort (Vegar 10.11): ringmur av grå naturstein med én åpning mot land og flat kappe. Erstatter et feiltegnet «hus».
+  // b.fort = {cx, cy, ro (ytre radius), ri (indre), h, aapning (grader, retning for åpningens midt), aapning_bredde (grader)}
+  if(b.fort && !dim){
+    const F=b.fort, N=80, H=F.h||4.5, ro=F.ro, ri=F.ri, cx=F.cx, cy=F.cy;
+    const g0=THREE.MathUtils.degToRad(F.aapning||200), gw=THREE.MathUtils.degToRad(F.aapning_bredde||26);
+    const P=(r,a,z)=>[cx+r*Math.cos(a), z, -(cy+r*Math.sin(a))];
+    const gap=a=>Math.abs(Math.atan2(Math.sin(a-g0),Math.cos(a-g0)))<gw/2;
+    const pos=[];
+    for(let i=0;i<N;i++){
+      const a0=i*2*Math.PI/N, a1=(i+1)*2*Math.PI/N; if(gap((a0+a1)/2)) continue;
+      const Oo0=P(ro,a0,0),Oo1=P(ro,a1,0),Ot0=P(ro,a0,H),Ot1=P(ro,a1,H);
+      const Io0=P(ri,a0,0),Io1=P(ri,a1,0),It0=P(ri,a0,H),It1=P(ri,a1,H);
+      pos.push(...Oo0,...Oo1,...Ot1, ...Oo0,...Ot1,...Ot0);     // ytre flate
+      pos.push(...Io1,...Io0,...It0, ...Io1,...It0,...It1);     // indre flate
+      pos.push(...Ot0,...Ot1,...It1, ...Ot0,...It1,...It0);     // flat kappe på toppen
+    }
+    [g0-gw/2, g0+gw/2].forEach((a,k)=>{                         // åpningens murte vanger (endeflater der muren er kuttet)
+      const Oo=P(ro,a,0),Io=P(ri,a,0),Ot=P(ro,a,H),It=P(ri,a,H);
+      pos.push(...(k?[Oo,It,Io]:[Oo,Io,It]).flat(), ...(k?[Oo,Ot,It]:[Oo,It,Ot]).flat());
+    });
+    const fg=new THREE.BufferGeometry(); fg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); fg.computeVertexNormals();
+    const fm=new THREE.Mesh(fg, mat([150,146,138],dim,[98,96,92],{stein:true})); fm.castShadow=fm.receiveShadow=true; legg(fm);
   }
   // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)
   if(b.veggfelt && !dim){
