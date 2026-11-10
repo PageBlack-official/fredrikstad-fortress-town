@@ -6,6 +6,26 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-10, økt 9 — Widdingstua-terreng rettet; hard-tail trenger Vegars øye)
+
+- **Widdingstua (bnr-193867480) ikke under vann lenger** — commit `76de60e`. Rotårsak rettet i `bakke_dtm.py`:
+  husomriss trekkes ut av vannflaten (generelt), så bakken under hus holder DTM-høyden. bakke -6,85 → -4,65 m
+  (over vannlinja -6,55). Kode-endring = durabel/idempotent. dom_sjekk exit 0.
+
+**HARD-TAIL (trenger Vegars øye / blokkert — ikke gjett, jf. «sourced funn er jury»):**
+- **nr 4 (bnr-193867804):** hvilken konkret bygning er «den beige delen til høyre med 2+2 vinduer»? De tre naboene
+  (bnr-193972772 3 vind, bnr-193972438 20 vind, bnr-193867812 6 vind) er ALLE nær-hvite i data ([244,244,244]/
+  [236,240,240]) — ingen er «beige/oransje» slik bevis-montasjen antydet, og standpunktene viser ikke delen til
+  høyre rent. Trenger Vegars peiling på bnr før husdeling-`sammen`. Feil merge = feil hus slått sammen (dyrt).
+- **villa bnr-13415889:** «tredje takark, balkong, grå side står hvit». Strukturelt: hvilken vegg er grå (alle
+  naboer nær-hvite; avlesningen har bare gatefasaden «hvit»), hvor skal 3. ark + balkong? Trenger SV av de andre
+  veggene / Vegars peiling.
+- **bnr-6251331 gul:** blokkert av tegning-forlik i `streetview_farger` (kvartaltegningens tone [249,224,204]
+  regnes «samme kulør» som gul → vinner). Rett krever å korrigere tegningens/trykkets farge — grenser mot
+  fargeoppgaven (off-limits `rapport/farger/`). Trenger avklaring: korriger trykk-fargen for dette huset, eller la stå.
+- **standpunkt-husene** (nr 14, bnr-193867820/193972306/193971288/13416362 + Widdingstua-standpunktet): bevis-kamera
+  under bakken/bak mur/feil vegg — trenger SV-matchede skrå standpunkt (eget delarbeid).
+
 ## STATUS (2026-11-10, økt 6 — REGEL 39 GRØNN (rett årsaken) + publiser+Dropbox kjører)
 
 Vegar ba om å rette årsaken til regel 39 (2 objekter endres ved ny kjøring). **Gjort — commit `1130c24`:**
