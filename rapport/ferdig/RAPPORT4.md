@@ -6,6 +6,24 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-10, økt 5 — REBASERT PÅ c024f1d etter PAG-1496, gaten grønn igjen)
+
+PAG-1496 (+OPPGAVE5) committet oppå mine OPPGAVE4-commits (HEAD=c024f1d). Den kjørte HELE kjeden, som:
+- **reverterte mine in-place-patcher** (nr 8 piper tilbake til 3, nr 10 portfarge borte, nr 5-normaliseringen borte) — bekreftet at in-place-patcher IKKE overlever en annen agents kjede-kjøring.
+- **de-doblet to Del A-hus** via nytt `avdobling.py`-steg (nr 12 bnr-6276016 dør flyttet, nr 13 bnr-194006187 12→6 vinduer = «ekte duplikater»). Legitimt (Vegar: bygg videre på c024f1d).
+
+**Gjenoppretting (commit `84016ac`):**
+- Durable kilder: `avlesning.json` nr 8 piper=2 + takvindu=1; `rett-runde3.json` nr 10 port-farge `#6b4a2e`.
+- For GJELDENDE bygg: targeted `sett` på c024f1d-laget (ikke kjør full kjede selv — den DRIFTER ~10 urelaterte hus
+  pga regel 39-ustabilitet). nr 7/nr 8 piper=2, nr 8 takvindu=1, nr 10 brun port.
+- **Del A re-frosset til c024f1d** (Vegars aksepterte base).
+- Grå (bnr-193868088/6276512), mørkt tak (6276822), nr 14 karm holdt (de var kilde-/sett-baserte, ikke in-place).
+- dom_sjekk **exit 0**.
+
+**MERK committet by.json i c024f1d var stale** (samme funn som økt 1): fersk bygg av c024f1d-rettelsene gir 16
+andre hus enn den committede blobben — men `publiser.sh` bygger ferskt, så /prove1 viser fersk-staten. Mitt
+bygg matcher /prove1. Ikke en regresjon.
+
 ## STATUS (2026-11-09, økt 3 — GATEN GRØNN + PUBLISERT LIVE på /prove1)
 
 **Publisert og verifisert live:** `sh publiser.sh prove1` pushet `a0d4c7e..b0b0387` til gh-pages,
