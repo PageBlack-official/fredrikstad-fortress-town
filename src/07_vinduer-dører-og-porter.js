@@ -441,19 +441,28 @@ DATA.bygg.forEach((b,i)=>{
     // gressvoll bakerst (motsatt åpningen) med teglbue (hvelvet inngang) i rød tegl, naturstein rundt (Vegars dom)
     { const ba=g0+Math.PI, ang=Math.atan2(-Math.sin(ba),-Math.cos(ba));   // lokal +x = innover mot midten
       const gv=new THREE.Group(); gv.position.set(cx+ri*Math.cos(ba), 0, -(cy+ri*Math.sin(ba))); gv.rotation.y=ang;
-      const mg=mat([102,150,94],dim), mt=mat([150,70,56],dim), mm=mat([150,146,138],dim,[98,96,92],{stein:true}), md=mat([34,30,28],false);
-      const voll=new THREE.Mesh(new THREE.BoxGeometry(2.8,1.9,6.5), mg); voll.position.set(1.4,0.95,0); voll.castShadow=voll.receiveShadow=true; gv.add(voll);
-      const ramme=new THREE.Mesh(new THREE.BoxGeometry(0.6,2.3,2.3), mm); ramme.position.set(0.25,1.15,0); ramme.castShadow=true; gv.add(ramme);
-      const tegl=new THREE.Mesh(new THREE.BoxGeometry(0.35,1.8,1.4), mt); tegl.position.set(0.5,1.05,0); gv.add(tegl);
-      const aap=new THREE.Mesh(new THREE.BoxGeometry(0.5,1.15,0.85), md); aap.position.set(0.72,0.8,0); gv.add(aap);
-      const bue=new THREE.Mesh(new THREE.CylinderGeometry(0.43,0.43,0.5,14,1,false,0,Math.PI), md); bue.rotation.z=Math.PI/2; bue.position.set(0.72,1.38,0); gv.add(bue);
+      const mg=mat([102,150,94],dim), mt=mat([150,70,56],dim), mm=mat([150,146,138],dim,[98,96,92],{stein:true}), md=mat([30,26,24],false);
+      const voll=new THREE.Mesh(new THREE.BoxGeometry(3.0,2.1,6.8), mg); voll.position.set(1.5,1.05,0); voll.castShadow=voll.receiveShadow=true; gv.add(voll);
+      const ramme=new THREE.Mesh(new THREE.BoxGeometry(0.7,2.7,2.9), mm); ramme.position.set(0.2,1.35,0); ramme.castShadow=true; gv.add(ramme);
+      const tegl=new THREE.Mesh(new THREE.BoxGeometry(0.42,2.2,2.1), mt); tegl.position.set(0.45,1.25,0); gv.add(tegl);
+      const aap=new THREE.Mesh(new THREE.BoxGeometry(0.6,1.5,1.2), md); aap.position.set(0.72,0.9,0); gv.add(aap);
+      const bue=new THREE.Mesh(new THREE.CylinderGeometry(0.62,0.62,0.62,16,1,false,0,Math.PI), md); bue.rotation.z=Math.PI/2; bue.position.set(0.72,1.62,0); gv.add(bue);
       legg(gv);
     }
-    // trebjelker med jevn avstand over murkronen på elvesiden (Vegar: «trebjelker over murkronen»)
-    { const mtre=mat([122,98,72],dim), river=g0+Math.PI;
+    // brosteinsplass + lave murrester (fundamenter i stein) foran gressvollen (Vegars dom)
+    { const mbro=mat([150,142,130],dim,[108,102,94],{stein:true}), mm2=mat([150,146,138],dim,[98,96,92],{stein:true}), ba=g0+Math.PI;
+      const px=cx+(ri-4.8)*Math.cos(ba), py=cy+(ri-4.8)*Math.sin(ba);
+      const bro=new THREE.Mesh(new THREE.CylinderGeometry(3.2,3.2,0.12,24), mbro); bro.position.set(px,0.06,-py); bro.receiveShadow=true; legg(bro);
+      for(let k=0;k<3;k++){ const a=ba+(k-1)*0.42, rr=ri-3.3;
+        const mr=new THREE.Mesh(new THREE.BoxGeometry(1.5,0.55,0.6), mm2); mr.position.set(cx+rr*Math.cos(a),0.28,-(cy+rr*Math.sin(a))); mr.rotation.y=-a; mr.castShadow=true; legg(mr); }
+    }
+    // trebjelker + rekkverk langs gangbanen over murkronen på elvesiden (Vegar: «gangbane med rekkverk, trebjelker»)
+    { const mtre=mat([122,98,72],dim), mrk=mat([152,148,140],dim), river=g0+Math.PI;
       for(let k=-5;k<=5;k++){ const a=river+k*(Math.PI/20);
         const bj=new THREE.Mesh(new THREE.BoxGeometry((ro-ri)+0.6,0.14,0.22), mtre);
         bj.position.set(cx+(ri+ro)/2*Math.cos(a), H+0.08, -(cy+(ri+ro)/2*Math.sin(a))); bj.rotation.y=-a; bj.castShadow=true; legg(bj); }
+      for(let k=-6;k<=6;k++){ const a=river+k*(Math.PI/24), rr=ri+0.18;      // rekkverksstolper langs innerkanten
+        const post=new THREE.Mesh(new THREE.BoxGeometry(0.09,0.95,0.09), mrk); post.position.set(cx+rr*Math.cos(a),H+0.47,-(cy+rr*Math.sin(a))); post.castShadow=true; legg(post); }
     }
   }
   // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)
