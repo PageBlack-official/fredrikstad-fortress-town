@@ -1,6 +1,4 @@
 {
-  "_kommentar": "Bygg som er re-lest fra Street View (ikke flikkes). bnr-193868452 re-lest fra aug 2010-vinkelen (PAG-1496). bnr-193972276 hadde ingen brukbar vinkel -> Vegar valgte 09.11 at avdobling skiller radene i stedet.",
-  "ids": [
-    "bnr-193868452"
-  ]
+  "_kommentar": "Bygg som re-leses fra Street View og ikke skal røres av avdobling. Tom nå: bnr-193868452 er re-lest (ren vegg 7), bnr-193972276 skilles av avdobling (Vegar 09.11). Avdobling rydder generert overlapp (blanke_vegger-fyll m.m.) også paa disse.",
+  "ids": []
 }

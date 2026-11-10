@@ -73,6 +73,32 @@ def rytme(x):
     return b, hh, [round(z, 2) for z in rader] or [b_ + VR.R['vh'] / 2 for b_ in VR.rader(x['h'])]
 
 
+def dekket_av_nabo(bid, w, rute):
+    """True når et NABOBYGG har vinduer som dekker denne veggen: minst 3 fremmede vinduer med samme normal (dot>0.9)
+    innen 0,6 m vinkelrett på veggplanet og innenfor veggens lengde. Da er veggen mot nabohuset, ikke en blank fri vegg
+    (pb-1 Brannbatteriet ligger mot Provianthusets lange vegg: samme fasade antatt to ganger). Rekkefølge-uavhengig:
+    sjekker vinduene slik de står i dataene som sendes inn (regel 44 kjører på sluttdataene, der nabohusene er fylt)."""
+    a, n, u, L = w['a'], w['n'], w['u'], w['L']
+    cx, cy = a[0] + u[0] * L / 2, a[1] + u[1] * L / 2
+    treff = 0
+    for dx in range(-int(L / 2 / RUTE_N) - 2, int(L / 2 / RUTE_N) + 3):
+        for dy in (-1, 0, 1):
+            for (yb, v) in rute.get((math.floor(cx / RUTE_N) + dx, math.floor(cy / RUTE_N) + dy), ()):
+                if yb == bid:
+                    continue
+                if v[5] * n[0] + v[6] * n[1] < 0.9:
+                    continue
+                if abs((v[0] - a[0]) * n[0] + (v[1] - a[1]) * n[1]) > 0.6:
+                    continue
+                s = (v[0] - a[0]) * u[0] + (v[1] - a[1]) * u[1]
+                if -0.3 < s < L + 0.3:
+                    treff += 1
+    return treff >= 3
+
+
+RUTE_N = 4.0
+
+
 def beregn(d=None):
     d = d or datalag.alle()
     omg = VG.Omgivelser(d['bygg'], d['veier'], d['gardsrom'])
@@ -80,6 +106,13 @@ def beregn(d=None):
     M = {}
     for m in json.load(open(os.path.join(ROT, 'kilder', 'bygg-merknader.json'), encoding='utf8'))['hus']:
         M.setdefault(m['id'], []).extend(m.get('vegg') or [])
+    # alle vinduer i et romlig rutenett, til å se om et nabobygg dekker en ellers «blank» vegg
+    vindu_rute = {}
+    for b in d['bygg']:
+        if b.get('skjul'):
+            continue
+        for v in (b.get('vind') or []):
+            vindu_rute.setdefault((math.floor(v[0] / RUTE_N), math.floor(v[1] / RUTE_N)), []).append((b['id'], v))
     nye, logg = {}, []
     for x in d['bygg']:
         if x.get('skjul') or not x.get('gml') or x.get('kirke') or x['id'] in datalag.EGNE_FASADER or x['id'] in porter:
@@ -92,6 +125,7 @@ def beregn(d=None):
         for wi, w in enumerate(V):
             if wi in rett: continue
             if w['felles'] >= 0.5 or w['L'] < MIN_L or vind_paa(x, w): continue
+            if dekket_av_nabo(x['id'], w, vindu_rute): continue   # veggen ligger mot et nabohus som har vinduer der (ikke fri/blank)
             kilde = blank_i_kilde(x, w, x['p'], M.get(x['id'], []))
             if kilde: continue
             blanke.append(w)

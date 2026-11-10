@@ -11,8 +11,9 @@ Resolusjon for et par (A,B) over 5 %:
   - Ekte duplikat (brøk ≥ 0.60 ELLER (|along|<0.25 og |B.z−A.z|<0.25)): DROPP den ene. Innad i samme bygg: den med
     høyest indeks. Mellom to hus: vinduet fra bygget hvis id sorterer sist leksikografisk. (A er alltid den med minst
     (id, indeks), B den største, så B droppes i begge tilfellene.)
-  - Ellers skyv fra hverandre: ox ≤ oz → flytt B langs tangenten bort fra A med (ox+0.08). Ellers → løft det øverste
-    vinduet (størst z) med (oz+0.08). Bare det ene vinduet flyttes.
+  - Ellers KRYMP begge likt, sentrene står: ox ≤ oz → begge bredder −(ox+0.08); ellers → begge høyder −(oz+0.08).
+    Sentrene flyttes ikke, så rytmen (regel 17), hjørneklaringen (regel 04) og «ingen blanke vegger» (regel 44) holder.
+    Krymper et vindu smalere/lavere enn 0,4 m, droppes det i stedet. (Tidligere skjøv vi vinduene; det brøt 04/17/44.)
   - Opptil 6 pass over alle par til ingen par > 5 % igjen.
 
 Bygg i kilder/avdobling-unnta.json hoppes HELT over (verken dropp eller skyv) — de re-leses fra Street View i stedet.
@@ -37,7 +38,8 @@ VINKELRETT_M = 0.6      # sentrene innenfor 0,6 m vinkelrett på veggen
 TERSKEL = 0.05          # overlapp over 5 % av minste vindu er feil
 RUTE = 3.0              # romlig rutenett for å slippe O(n^2)
 DUP = 0.60              # brøk ≥ 60 % (eller nær-identiske sentre) = ekte duplikat, droppes
-LUFT = 0.08             # luft mellom vinduer etter skyv/løft
+LUFT = 0.08             # luft mellom vinduer etter krymp
+MIN_EL = 0.4            # krymper et vindu smalere/lavere enn dette, dropp det i stedet
 MAKS_PASS = 6
 
 
@@ -110,16 +112,22 @@ def resolv(V, maks=MAKS_PASS):
                 dropp.add(bkey)
                 droppet[bkey[0]] += 1
             elif ox <= oz:
-                # skyv B langs tangenten bort fra A
-                s = 1.0 if along >= 0 else -1.0
-                B[0] += A[3] * s * (ox + LUFT)
-                B[1] += A[4] * s * (ox + LUFT)
-                skjovet[bkey[0]] += 1
+                # delvis overlapp vannrett: krymp BEGGE bredder likt, sentrene står (ingen rytme-/hjørne-/blank-brudd).
+                # Hvert vindu −(ox+LUFT) gir luft LUFT mellom dem. Blir noe for smalt, dropp B i stedet.
+                d = ox + LUFT
+                if min(A[7], B[7]) - d < MIN_EL:
+                    dropp.add(bkey); droppet[bkey[0]] += 1
+                else:
+                    A[7] = round(A[7] - d, 3); B[7] = round(B[7] - d, 3)
+                    skjovet[akey[0]] += 1; skjovet[bkey[0]] += 1
             else:
-                # løft det øverste vinduet (størst z)
-                topp, tbid = (A, akey[0]) if A[2] >= B[2] else (B, bkey[0])
-                topp[2] += oz + LUFT
-                skjovet[tbid] += 1
+                # delvis overlapp loddrett: krymp BEGGE høyder likt, z-sentrene står
+                d = oz + LUFT
+                if min(A[8], B[8]) - d < MIN_EL:
+                    dropp.add(bkey); droppet[bkey[0]] += 1
+                else:
+                    A[8] = round(A[8] - d, 3); B[8] = round(B[8] - d, 3)
+                    skjovet[akey[0]] += 1; skjovet[bkey[0]] += 1
             rørt.add(akey)
             rørt.add(bkey)
         for bid, idx in sorted(dropp, key=lambda t: (t[0], -t[1])):
