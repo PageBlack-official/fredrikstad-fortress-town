@@ -49,6 +49,12 @@ def main(tørt):
     # i vannflatene ligger DTM-overflaten opptil en meter over vannet (støy, bredden): bakken trykkes 0,3 m under vannflaten der,
     # så vannet aldri dekkes av bakken; strandkanten går da ned til vannet ved vannflatens kant
     vann0 = shapely.union_all([p.buffer(0) for p in vp])
+    # hus skal aldri stå under vann: Widdingstua på Isegran (bnr-193867480) lå inni vannflaten, så bakken under den ble
+    # trykket under vannlinja. Trekk husomrissene (+0,3 m) ut av vannflaten, så bakken under hus holder DTM-høyden (over vann).
+    import datalag as _dl
+    _hus = [Polygon(b['p']) for b in _dl.alle(raa=True)['bygg'] if len(b.get('p', [])) > 2]
+    if _hus:
+        vann0 = vann0.difference(shapely.union_all([p.buffer(0.3) for p in _hus]).buffer(0))
     i0 = shapely.contains_xy(vann0, X.ravel(), Y.ravel()).reshape(h.shape)
     h = np.where(i0, np.minimum(h, w - 0.3), h)
     # og land utenfor vannflatene aldri under vannet (5 cm over): ellers dukket bakken under vannflaten i en tagget kant langs
