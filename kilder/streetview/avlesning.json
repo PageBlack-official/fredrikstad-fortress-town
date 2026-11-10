@@ -9612,7 +9612,7 @@
     "porter": "0",
     "balkonger": "0",
     "trapper": "0",
-    "takvinduer_arker": 1,
+    "takvinduer_arker": 0,
     "piper": "2 (murte tegl)",
     "sprosser": "ja, 2x3",
     "kjeller_sokkel": "hvit, lav",
@@ -9675,7 +9675,7 @@
    7
   ],
   "dorer": "0 synlig på langfasaden",
-  "takvinduer": 1,
+  "takvinduer": 0,
   "piper": "2 (murte tegl)",
   "sprosser": "ja, 2x3",
   "gjerde_mur": "plen foran; svart smijernsport og hvit portstolpe til venstre",
@@ -9684,7 +9684,7 @@
   "bilde": "/home/claude/streetview/bilder/bnr-193867634_NV.jpg",
   "sikkerhet": "høy",
   "merknad": "Rett forfra på ~11 m (mai 2024). Skilt ved porten.",
-  "merknad_dom": "Vegars dom 09.11.2026: to piper og ett takvindu paa kortveggen (den «hvite pipa» var takvinduet)"
+  "merknad_dom": "Vegars dom 09.11.2026: to piper; takvindu (ikke ark) settes som eget takvinduer-felt"
  },
  "bnr-193867715": {
   "id": "bnr-193867715",
