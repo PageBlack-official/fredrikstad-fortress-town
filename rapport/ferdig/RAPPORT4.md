@@ -91,8 +91,14 @@ kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
   (`#6b4a2e`, commit `62ac5eb`). dom_sjekk exit 0.
 - **nr 3 (bnr-193867898): trolig allerede ok** — døren står på sill z0=0,1 (gateplan) i bygde data. Vegars klage var
   mot en eldre versjon; bekreft på bevisbildet før evt. endring (ikke rør blindt).
-- **nr 4 (slå sammen rosa+beige, hele rosa), nr 5 (vinduer ned + lik størrelse):** rett-lesning/husdeling — gjenstår.
-  Patch helst `sett vind`-elementene **in-place** (som nr 10s port), ikke kjør fasade_rett alene (reordering).
+- **nr 5 FERDIG** (durabelt, commit `0c8fc73`): `rett-dom-nr5.json`.
+- **nr 4 (bnr-193867804, 51 Kasernegaten, laks [226,170,160]): UTREDET, gjenstår.** Vegar: slå sammen rosa + beige
+  del til høyre (2 vinduer nede+oppe), hele bygget rosa, behold begge ID-ene. Mekanisme: legg `{"ids":["bnr-193867804",
+  "<nabo>"], "tegning":..., "grunn": Vegars dom}` i `kilder/husdeling.json` under `sammen` (husdeling.py: første id beholder
+  id + får hele omrisset, resten skjules + `slaatt_sammen`). ER et KJEDE-STEG (husdeling.py tidlig i bygg_kjede) — krever
+  altså full kjede-kjøring (drifter ~10 hus, regel 39). Naboer: bnr-193972772 (dx,dy −9.7,+6.9, 3 vind, near-white),
+  bnr-193972438 (+3,+6.5, 20 vind), bnr-193867812 (−6.3,+8.7, 6 vind). «2+2 vinduer»+«til høyre» peker mot bnr-193972772,
+  men BEKREFT mot bevisbildet før merge (feil nabo = feil hus slått sammen). Deretter sett hele rosa (vegg).
 - **BEVIS-ARK bygges nå (økt 4):** `attic/_bevis_okt4.sh` (detached) rendrer alle 33 standpunkt fra ny modell →
   `montasje.py` SV|etter → `kontaktark_28.py` → `rapport/ferdig/sot-dom-runde3.jpg`. Pipeline verifisert (render 3 s/bilde,
   GPU; SV-croppene i `rapport/gate/sv_rett3-5/` finnes; `../sv` er tom men brukes ikke). Arket git-ignoreres (SV i det);
