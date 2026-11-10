@@ -1,0 +1,58 @@
+# Balaklava i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Balaklava_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Balaklava
+| bilde     = Balaklava.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1783]]
+| eier1     = [[Peter Bull]]
+| eier2     = [[Andreas Bull]]
+| arkitekt  = 
+| materiale = tømmer
+| endringer = 
+| formål    = bolig
+| adresse   = Færgeportgaten 39b
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = Har tjent som apotek
+|}}
+<onlyinclude>'''[[Balaklava i Fredrikstad|Balaklava]]''' er en bygård som ligger i [[Færgeportgaten]] 39b</onlyinclude> i det [[fjortende kvartal i Gamlebyen|fjortende kvartalet]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Huset ble oppført av kjøpmann [[Peter Bull]] i 1783 som bolig for sønnen Andreas og hans familie. Gården tjente som kjøpmannsgård frem til 1875 da det ble omgjort til hotell. Det fikk navnet «Balaklava», et navn som senere har blitt hengende igjen på gården.</onlyinclude>
+
+På begynnelsen av 1900-tallet ble gården innredet til apotek, da Svaneapoteket flyttet fra lokalene i [[Toldbodgaten (Fredrikstad)|Toldbodgaten]]. Apoteket lå her helt til nedleggelsen i 1971. Etter restaurering overtok [[Kulturselskapet Balaklava]] gården. Det ble holdt utstillinger i gården, og senere ble det innredet rom for utleie, «Balaklava Gjesteværelser». Bygningen er en en-etasjes trebygning med et høyt [[mansardtak]], typisk for 1700-tallet. Vinduene stammer fra 1870-tallet. De opprinnelige vinduene var smårutete. 
+
+==Folklore==
+<onlyinclude>Balaklava er et hus med en spesiell historie, men er også et hus med mange rare historier. Spøkelser og rømte fanger hører til folkloren her.</onlyinclude>
+
+Navnet Balaklava kan synes merkelig i Gamlebyen. Stedet Balaklava ligger på [[Krim-halvøya]] og var åsted for et berømt slag under [[Krimkrigen]] i [[1854]]. En historie vil ha det til at navnet Balaklava har sin opprinnelse fra den gang det var skikkelig slagsmål utenfor. Noen soldater som hadde vært i krigen på Krim sa at det var som å se slaget ved Balaklava. Siden har huset hatt navnet.
+
+Det sies at det spøker på Balaklava, uten at vi vet sikkert hvem som går igjen på loftene (det er loft i to etasjer). På topploftet er det en stor mørk flekk på gulvet. Den kom dit da apotekeren Møldrup hengte seg der, og det sies at han går igjen, særlig om høsten kan man høre ham.
+
+Det går også en historie om en morder og en snill hushjelp: En fange hadde rømt fra [[Slaveriet i Fredrikstad|Slaveriet]] (fengselet) i byen.  Mannen, som angivelig var en morder hadde tatt seg inn i huset og gjemt seg på et av loftene (huset har to etasjer med loft). Alle visste om denne rømte fangen, men han ble ikke fakket denne dagen. En hushjelp som hadde gått på loftet fikk fingrene borti det strie, buskete håret.  Hun forsto nok straks hva dette var, for hun utbrøt: «Ja her ligger der masse garn. Her må jeg se å få ryddet en dag.» Om natten rømte fangen videre. 
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad,_Toldbodgaten_i_Gamlebyen.jpg|Balaklava helt til venstre, rundt 1900.
+Fil:Balaklava - no-nb digifoto 20140328 00172 bldsa PK12918.jpg|Fra Færgeportgaten i 1910-1915.
+Fil:Fredrikstad, Toldbodgaten i Gamlebyen - no-nb digifoto 20150807 00228 bldsa PK06238.jpg|Fra Toldbodgaten i 1920-1930.
+Fil:Fredrikstad, Færgeportgaten i Gamlebyen - no-nb digifoto 20160511 00102 NB NKF P 01 A 013.jpg|Fra Færgeportgaten i 1966.
+</gallery>
+
+==Kilder==
+*Fredrikstad byleksikon
+*Bevaringsplan 1969
+
+{{artikkelkoord|59.20456|N|10.95375|Ø}}
+[[Kategori:Kjøpmannsgårder]]
+[[Kategori:Overnattingssteder]]
+[[Kategori:Apotek]]
+[[Kategori:Bygninger fra 1780-åra]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fjortende kvartal i Fredrikstad]]
+{{F1}}
+{{bm}}

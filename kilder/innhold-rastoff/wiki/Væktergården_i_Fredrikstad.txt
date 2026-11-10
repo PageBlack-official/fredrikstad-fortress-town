@@ -1,0 +1,37 @@
+# Væktergården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/V%C3%A6kterg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Væktetgården
+| bilde     = vaektergaarden.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1970-tallet]]
+| eier1     = 
+| eier2     = 
+| arkitekt  = 
+| materiale = tømmer og mur
+| endringer = 
+| formål    = næringslokaler og boliger
+| adresse   = Voldgaten 10
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Væktergården i Fredrikstad|Væktergården]]''', Voldgaten 10, ligger i [[Trettende kvartal i Gamlebyen|trettende kvartal]] i [[Gamlebyen i Fredrikstad|Gamlebyen]]. Bygningen er oppført i 1970-årene etter at den gamle gården, en to-etasjes tømmerbygning brant ned. Denne var oppført etter [[bybrannen i Fredrikstad 1830|brannen i 1830]].</onlyinclude>
+
+== Tidligere eierforhold ==
+
+
+== Kilder ==
+* Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+[[Kategori:Bygårder]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Bygninger fra 1970-åra]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Trettende kvartal i Fredrikstad]]
+{{artikkelkoord|59.20349|N|10.956|Ø}}
+{{bm}}

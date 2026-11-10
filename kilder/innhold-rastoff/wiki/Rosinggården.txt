@@ -1,0 +1,39 @@
+# Rosinggården
+# kilde: https://lokalhistoriewiki.no/Rosingg%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Rosinggården
+| bilde     = Rosing2.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = ca. 1830
+| eier1     = [[Christen Wilhelm Rosing]]
+| eier2     = 
+| arkitekt  = [[Christian Heinrich Grosch]] (trolig)
+| materiale = mur
+| endringer = 
+| formål    = bolig
+| adresse   = Kirkegaten 29a
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Rosinggården]]''', Kirkegaten 29a, i</onlyinclude> [[Niende kvartal i Gamlebyen|niende kvartal]] i<onlyinclude> [[Gamlebyen i Fredrikstad]] er oppført etter [[bybrannen i Fredrikstad 1830|bybrannen i 1830]] av kjøpmann og skipskaptein [[Christen Wilhelm Rosing]]. Gården ble oppført på tomten etter Rosings tidligere gård, en to-etasjes tømmerbygning, som Rosing hadde eid siden 1815. Denne gården hadde blant annet 18 vindusfag. I bakgården lå uthus i bindingsverk.</onlyinclude>
+
+Rosinggården er oppført i empirestil og har en enkel og symmetrisk komposisjon. Det mest iøyenfallende er det elegante inngangspartiet med to doriske søyler som flankerer inngangsdøren. Arkitekten er ikke kjent, men det er sannsynlig at det kan være den kjente arkitekten [[Christian Heinrich Grosch]], som også kan stå bak [[Kommisjonsgården]].
+
+== Kilder ==
+*Hals, Harald: «Gater og hus», i ''Fredrikstad. Gamlebyen og festningen'', utg. Riksantikvariatet, Oslo 1934
+
+
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Niende kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Empirestil]]
+{{artikkelkoord|59.20367|N|10.95394|Ø}}
+{{F1}}
+{{bm}}

@@ -1,0 +1,43 @@
+# Ingeniørgården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Ingeni%C3%B8rg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Ingeniørgården
+| bilde     = Ingenioergaarden_Fredrikstad.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1868
+| eier1     = [[Fredrikstad festning]]
+| eier2     = 
+| eier3     = 
+| arkitekt  = 
+| materiale = Teglstein
+| endringer = 
+| formål    = Lokaler for festningsingeniøren
+| adresse   = 
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Ingeniørgården i Fredrikstad]]''' i [[Gamlebyen i Fredrikstad|Gamlebyen]] ble oppført på [[Prins Fredriks bastion]] i 1868 som lokaler for festningsingeniøren. På bastionen hadde tidligere ligget Materialgården, et bygningskompleks bestående av en toetasjers murbygning mot [[Voldgaten (Fredrikstad)|Voldgaten]], en toetasjers sidefløy i vinkel mot nord, en fløy med staller og fjøs mot sør og dessuten lagerbygninger. Rett sør for hovedbygningen mot gaten lå et magasinhus i tegl. Alle disse bygningene brant ned i 1868. På restene av den ene vinkelbygningen og magasinhuset mot gaten ble Ingeniørgården og Vollmesterboligen bygget i årene frem mot 1874. </onlyinclude>
+
+I Ingeniørgården ble det innredet kontorer for festningsingeniøren, senere bolig for denne, før bygningen på 1900-tallet ble offisersmesse for artilleristene. I 1988-1989 ble bygningen totalrenovert innvendig og istandsatt som kontorer for [[Artilleriregiment nr 1]]. Bygningen brukes i dag som kontorbygning.
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Artillerimessen i Gamlebyen - no-nb digifoto 20151028 00203 bldsa PK06611.jpg|Artillerimessen i 1905-10.
+</gallery> 
+
+== Kilde ==
+*[http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=96605&a=6 ''Verneplan. Fredrikstad festning'', 2006]
+
+
+[[Kategori:Militære bygninger]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.202163|N|10.955696|Ø}}
+{{bm}}

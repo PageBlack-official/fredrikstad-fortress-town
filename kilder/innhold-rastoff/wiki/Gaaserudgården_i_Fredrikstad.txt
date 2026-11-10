@@ -1,0 +1,47 @@
+# Gaaserudgården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Gaaserudg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Gaaserudgården
+| bilde     = Gaaserud.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = ca. [[1830]]
+| eier1     = Christian Mørch
+| eier2     = Herman Larsen
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = bolig 
+| adresse   = Torvgaten 57
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Viken
+| diverse   = 
+|}}
+<onlyinclude>'''[[Gaaserudgården i Fredrikstad|Gaaserudgården]]''', [[Torvgaten (Fredrikstad)|Torvgaten]] 57A med fasade mot [[Toldbodgaten (Fredrikstad)|Toldbodgaten]], ligger i</onlyinclude> [[Åttende kvartal i Gamlebyen|åttende kvartal]] i<onlyinclude> [[Gamlebyen i Fredrikstad|Gamlebyen]] i [[Fredrikstad]]. Bygningen er oppført etter [[Bybrannen i Fredrikstad 1830|bybrannen i 1830]]. Gården som brant i 1830 var oppført etter [[Bybrannen i Fredrikstad 1764|brannen i 1764]], og den nye gården ble reist på restene av denne. Bygningen ble gjenoppført av grosserer [[Christian Mørch]]. Gaasrudgården er en stor to-etasjes murbygning i [[empirestil]]. Hovedfasaden mot elva er symmetrisk oppbygget, og har et markert midtparti. Vinduene i midtpartiet har en mer dekorert innramning enn vinduene ellers i gården. Mot Torvgaten har bygningen et halvvalmet tak.</onlyinclude>
+
+Etter Christian Mørchs død i 1841 eide enken hans gården til 1860, da den ble overtatt av kapteinvaktmester Herman Larsen. Gården hadde flere eiere før [[Christian Gaaserud]], teglverkseier og direktør i Fredriksstad Sparebank, overtok gården i 1900. Den ble i slektens eie frem til 1948. Idag (2008) er det leiligheter i gården, mens Peppes Pizza holder til i de hvelvede kjellerne. 
+
+== Tidligere eierforhold ==
+I 1758 var gården eid av kjøpmann og vinhandler [[Lorentz Christian Koch|Lorentz Koch]], den rikeste borger i Fredrikstad i 1760-årene. Vinhandler Kochs gård skal ha vært en en-etasjes tømmerbygning i god stand. Denne brant ned under [[Bybrannen i Fredrikstad 1764|1764]]. Gården som ble reist på tomten, var eid av sogneprest [[Poul Rønn]]. Den ble siden overtatt av [[Søren Lange]], før den i 1792 ble solgt på auksjon
+
+Mannen som kjøpte gården i 1792 var krigsråd [[Hans Siewers]]. Han flyttet noen år senere ut til [[Nes herregård]] i Torsnes, men beholdt bygården. I folketellingen i 1801 bodde en fullmektig, en husjomfru og en tjenestepike i gården. Etter at Siewers i 1803 flyttet til [[Trosvik hovedgård]], leide han ut gården i Gamlebyen, og i 1810 solgte han den. Det var grosserer [[Christian Mørch]] som kjøpte den for 9000 [[riksdaler]]. At gården var en av de staseligste i Fredrikstad, viser det faktum at det var her festmiddagen for kong [[Karl Johan]] ble avholdt 28. april 1828. 
+
+Et kart tegnet i 1803 av krigsråd Siewers gård viser gården slik den så ut før brannen i 1830. Den hadde hovedinngangen midt på fasaden mot Toldbodgaten, en stor sal og andre mindre rom ut mot elven. Den var i to etasjer med en hvelvet kjeller (hvor [[Peppes Pizza]] holder til idag). Taket er beskrevet å ha vært i ''italiensk façon''.
+
+== Kilder ==
+* Dahle, Erik: ''Verneplan for festningsbyen'', 1969
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1 og 2, 1960/1964
+* Weidling, Tor: «Trosvik i fortid og nåtid. Herregården som ble bygrunn», ''MindreAlv'' XI, 2005
+
+
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Åttende kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{F1}}
+{{bm}}
+{{artikkelkoord|59.20358|N|10.95186|Ø}}

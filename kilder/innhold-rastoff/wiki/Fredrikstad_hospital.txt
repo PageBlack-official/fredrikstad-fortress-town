@@ -1,0 +1,55 @@
+# Fredrikstad hospital
+# kilde: https://lokalhistoriewiki.no/Fredrikstad_hospital
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Fredrikstad hospital
+| bilde     = hospitalet.JPG
+| dato      = 
+| byline    = 
+| annetnavn = Hospitalet
+| byggeår   = [[1861]]
+| eier1     = 
+| arkitekt  = [[Emil Victor Langlet]]
+| materiale = mur
+| endringer = 
+| formål    = hospital, gamlehjem
+| adresse   = Voldgaten 4
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Fredrikstad hospital]]''' finnner vi i [[Voldgaten (Fredrikstad)|Voldgaten 4]] i</onlyinclude> [[fjerde kvartal i Gamlebyen|fjerde kvartal]] i<onlyinclude> [[Gamlebyen i Fredrikstad]]. Fredrikstad hospital eller Kongens hospital ble grunnlagt i [[1641]], opprinnelig som en stiftelse med det mål for øye å ta seg av fattige, syke og gamle i byen. Hospitalet bestod opprinnelig av en en-etasjes grunnmurt stenbygning oppført i [[1678]], i tillegg til en egen kirkegård. Denne stod frem til 1858 da den ble ødelagt av brann og erstattet med bygningen som står der i dag. Bygningen huser siden [[1982]] [[NRK Østfold]].</onlyinclude> 
+
+==Hospitalet av 1641==
+Stifteren var adelsmannen Sten Villumsen på [[Thorsø herregård]]. Han donerte i 1641 en sum av 914 1/4 riksdaler til opprettelsen av et hospital i Fredrikstad. En tidligere bygning må ha gått med i [[Bybrannen_i_Fredrikstad_1672|bybrannen i 1672]]. Den opprinnelige bygningen lå på hjørnet av Tøihusgaten og en nå forsvunnet gatestump som gikk nordover fra den. Dette gateløpet er tydelig på gamle kart over byen og stammet trolig fra langt eldre gateløp i byen som hadde blitt regulert bort som følge av anleggelsen av festningen i 1660-årene. Dette første hospitalet ble i byen kort og godt kun navngitt som ''Hospitalet''.
+
+==Hospitalet av 1678==
+Borgermester [[Anders Olufsen]] donerte i 1660 en stenbygning liggende mot volden i østkanten av byen til hospitalsbygg. Grunnet et arveoppgjør ble ikke denne tatt i bruk før i 1678. Selv om bygningen ble rammet av brann flere ganger, ble den bygd opp igjen på de gamle murene. 
+
+Så, 28. juli 1858, brant hele [[Fjerde kvartal i Gamlebyen|fjerde kvartal]] ned til grunnen. Som et resultat av det besluttet man å rive den gamle bygningen fra 1678 og oppføre en helt ny bygning tilpasset en ny tids krav. Den nye hospitalsbygningen ble tegnet av arkitekt [[Emil Victor Langlet]] og ble oppført på tomten til det gamle hospitalet. Bygningen stod delvis ferdig i 1861. Den nye bygningen inngikk i bygningskomplekset Langlet tegnet langs Tøihusgaten som innbefattet [[Det nye rådhuset]] med fengsel, sykehus og hospital. Det nye bygget var i to etasjer med rom i første etasje og 13 i andre. Fredrikstad hospital holdt til her helt frem til 1960. I 1982 ble bygningen solgt til NRK som holder til der fremdeles. 
+
+==Hospitalskirkegården== 
+I forbindelse med graving i 1997 støtte man på den gamle hospitalskirkegården. Deler av den ble utgravd og mye interessant materiale kom frem i dagen. I alt ble 32 kister funnet i det utgravde området. Kistene var enkle og bar preg av at det var fattige mennesker som var blitt begravd her. Kirkegården ble ikke bare brukt av hospitalet, men også av garnisonen og som gravplass for andre fattige i byen. Mange av skjelettene stammet fra unge menn som må ha vært soldater.
+
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Tøihusgaten i Gamlebyen, fjerde kvartal - no-nb digifoto 20140411 00010 bldsa PK12897.jpg|Sykehuset foran, rådhuset bak, 1910-15. 
+Fil:Fredrikstad, Tøihusgaten i Gamlebyen, fjerde kvartal - no-nb digifoto 20140509 00003 bldsa PK13065.jpg|Sykehuset til høyre i bildet, 1915-30.
+</gallery>
+
+==Kilder== 
+* [[Dehli, Martin]]: ''Fredrikstad bys historie'', bind 1 og 2, 1960/1964
+* ''Liv og død på hospitalet, Fredrikstad museums småskrift'' 6, Fredrikstad 1997
+
+{{F1}}
+
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Bygninger fra 1860-åra]]
+[[Kategori:Sjukehus]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Fjerde kvartal i Fredrikstad]]
+{{artikkelkoord|59.20185|N|10.95413|Ø}}
+{{bm}}

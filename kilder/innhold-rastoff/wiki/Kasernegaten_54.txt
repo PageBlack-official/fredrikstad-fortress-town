@@ -1,0 +1,31 @@
+# Kasernegaten 54
+# kilde: https://lokalhistoriewiki.no/Kasernegaten_54
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Kasernegaten 54
+| bilde     = 
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1990-tallet
+| eier1     = 
+| arkitekt  = 
+| materiale = 
+| endringer = 
+| formål    = 
+| adresse   = Kasernegaten 54
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Kasernegaten 54]]''' i </onlyinclude>[[Fjerde kvartal i Gamlebyen|fjerde kvartal]] i <onlyinclude>[[Gamlebyen i Fredrikstad]] huser i dag (2008) kontorer for [[NRK Østfold]]. Gården ble oppført på slutten av 1990-tallet, etter kopi av en eldre gård fra 1890-årene. I kjelleren her fant man rester etter den gamle [[Fredrikstad hospital|hospitalskirkegården]] fra 1600-tallet.</onlyinclude>
+
+[[Kategori:Fjerde kvartal i Fredrikstad]]
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{bm}}
+{{spire}}
+{{artikkelkoord|59.20223|N|10.95428|Ø}}

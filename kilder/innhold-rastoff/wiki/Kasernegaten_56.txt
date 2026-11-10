@@ -1,0 +1,37 @@
+# Kasernegaten 56
+# kilde: https://lokalhistoriewiki.no/Kasernegaten_56
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Salen
+| bilde     = 
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = Ant. 1899
+| eier1     = 
+| eier2     = Godtemplarlogen "Frem til Seier"
+| eier3     = Menigheten "Salen"
+| arkitekt  = 
+| materiale = 
+| endringer = 
+| formål    = 
+| adresse   = Kasernegaten 56
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Kasernegaten 56]]''' eller '''Salen''', som befinner seg på hjørnet Kasernegaten/Voldgaten i </onlyinclude>[[Fjerde kvartal i Gamlebyen|fjerde kvartal]] i <onlyinclude>[[Gamlebyen i Fredrikstad]], ble trolig bygget i 1899. Fra 1900 til 1944 huset bygningen godtemplarlosjen [[«Frem til seier»]]. Gården ble siden overtatt av menighetssamfunnet [[«Salen»]] og den bærer fremdeles menighetens navn. Senere holdt [[Tanum Tekstilutsalg]] i mange år til i 1. etasje, mens et tekstilverksted i flere år hadde tilhold i bygningens 2. etasje.</onlyinclude>
+
+[[Bilde:kasernegaten_gammelt.jpg|thumb|left|150px|"Salen" til venstre på et bilde fra tidlig 1900-tall. Merk flaggstangen ved porten.]]
+
+== Kilde ==
+*Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', 1969
+
+[[Kategori:Fjerde kvartal i Fredrikstad]]
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{artikkelkoord|59.20218|N|10.95455|Ø}}
+{{bm}}

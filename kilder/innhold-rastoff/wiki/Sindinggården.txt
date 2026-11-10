@@ -1,0 +1,37 @@
+# Sindinggården
+# kilde: https://lokalhistoriewiki.no/Sindingg%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Sindinggården
+| bilde     = Sinding.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1771]]
+| eier1     = [[Holger Ferslew Sinding (1741–1789)|Holger Ferslew Sinding]]
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = bolig og apotek (1771-1888)
+| adresse   = Torvgaten 36a
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Sindinggården]]''', [[Torvgaten (Fredrikstad)|Torvgaten]] 36a, ligger</onlyinclude> i [[femte kvartal i Gamlebyen|femte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad|Gamlebyen]]. Gården er oppført i etter at den forrige bygningen på tomten ble ødelagt i [[Bybrannen i Fredrikstad 1764|brannen i 1764]]. Den stod ferdig i 1771 og var oppført av apoteker [[Holger Ferslew Sinding (1741–1789)|Holger Ferslew Sinding]] (1741–1789), som den har navn etter. Det er en to-etasjes murgård. Sidebygningen, en to-etasjes tømmerbygning, ble også oppført etter brannen, og stod ferdig i 1767.</onlyinclude> 
+
+Bygningen huset i mange år [[Kong Salomos Apotek]], som Holger Sinding overtok driften av i 1766. Apoteket holdt til her helt frem til 1888. Gården var i familien [[Sinding]]s eie til 1908. Idag (2008) er det leiligheter i gården.
+
+== Kilder ==
+*Verneplan 1969
+*Fredrikstad byleksikon
+
+[[Kategori:Apotek]]
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Femte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{artikkelkoord|59.20326|N|10.95163|Ø}}
+{{bm}}

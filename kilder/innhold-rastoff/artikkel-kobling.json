@@ -1,0 +1,943 @@
+[
+ {
+  "artikkel": "Balaklava i Fredrikstad",
+  "wiki_adresse": "Færgeportgaten 39b",
+  "byggeaar": "[[1783]]",
+  "materiale": "tømmer",
+  "formaal": "bolig",
+  "husnavn": "Balaklava",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   1.4,
+   "bnr-193868452",
+   null,
+   [
+    "Toldbodgaten 39B"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Binggården",
+  "wiki_adresse": "Kirkegaten 31",
+  "byggeaar": "1830-årene",
+  "materiale": "tømmer",
+  "formaal": "bolig",
+  "husnavn": "Binggården",
+  "adr_treff": [
+   "bnr-193868363"
+  ],
+  "adr_treff_navn": [
+   "Binggården"
+  ],
+  "koord_naermeste": [
+   6.1,
+   "bnr-193868363",
+   "Binggården",
+   [
+    "Kirkegaten 31"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Bramergården i Fredrikstad",
+  "wiki_adresse": "Færgeportgaten 85",
+  "byggeaar": "ca. [[1831 eller 1832]]",
+  "materiale": "tømmer",
+  "formaal": "bolig",
+  "husnavn": "Bramergården",
+  "adr_treff": [
+   "bnr-193868029"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   0.5,
+   "bnr-193868029",
+   null,
+   [
+    "Færgeportgaten 85"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Bullgården i Fredrikstad",
+  "wiki_adresse": "Toldbodgaten 37",
+  "byggeaar": "1767",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Bullgården",
+  "adr_treff": [
+   "bnr-193868320"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   5.2,
+   "bnr-193868320",
+   null,
+   [
+    "Toldbodgaten 37"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Bøckmanngården",
+  "wiki_adresse": "Færgeportgaten 82",
+  "byggeaar": "1986",
+  "materiale": "| endringer =",
+  "formaal": "bolig",
+  "husnavn": "Bøckmanngården",
+  "adr_treff": [
+   "bnr-6242812"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   3.2,
+   "bnr-6242812",
+   null,
+   [
+    "Færgeportgaten 82"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Det gamle rådhus i Fredrikstad",
+  "wiki_adresse": "Kirkegaten 27",
+  "byggeaar": "1784",
+  "materiale": "mur",
+  "formaal": "byens rådhus, senere bank og kontorer",
+  "husnavn": "Det gamle rådhus",
+  "adr_treff": [
+   "bnr-193868355",
+   "bnr-193868517"
+  ],
+  "adr_treff_navn": [
+   "Det gamle raadhus",
+   null
+  ],
+  "koord_naermeste": [
+   6.7,
+   "bnr-193868355",
+   "Det gamle raadhus",
+   [
+    "Kirkegaten 27"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Dunkejongården",
+  "wiki_adresse": "| by        = Gamle Fredrikstad",
+  "byggeaar": "[[1784]]",
+  "materiale": "tre",
+  "formaal": "bolig",
+  "husnavn": "Dunkejongården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   5.8,
+   "bnr-193867588",
+   "Dunkejongården",
+   [
+    "Torvgaten 60"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Ekserserhuset i Fredrikstad",
+  "wiki_adresse": "Kirkegaten 24",
+  "byggeaar": "[[1808]]",
+  "materiale": "panelt bindingsverk",
+  "formaal": "ekserser- og ridehus",
+  "husnavn": "Ekserserhuset",
+  "adr_treff": [
+   "bnr-193867510"
+  ],
+  "adr_treff_navn": [
+   "Ekserserhuset"
+  ],
+  "koord_naermeste": [
+   0.5,
+   "bnr-193867510",
+   "Ekserserhuset",
+   [
+    "Kirkegaten 24"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Enigheden i Fredrikstad",
+  "wiki_adresse": "Færgeportgaten 84",
+  "byggeaar": "1838",
+  "materiale": "tre",
+  "formaal": "bolig",
+  "husnavn": "Enigheden",
+  "adr_treff": [
+   "bnr-193868010"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   4.8,
+   "bnr-193868010",
+   null,
+   [
+    "Færgeportgaten 84"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Feiergården i Fredrikstad",
+  "wiki_adresse": "Smedjegaten 86",
+  "byggeaar": "ca. 1785",
+  "materiale": "tre",
+  "formaal": "bolig",
+  "husnavn": "Feiergården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   43.0,
+   "bnr-193868142",
+   "Prestegården",
+   [
+    "Kirkegaten 32"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Fredrikstad hospital",
+  "wiki_adresse": "Voldgaten 4",
+  "byggeaar": "[[1861]]",
+  "materiale": "mur",
+  "formaal": "hospital, gamlehjem",
+  "husnavn": "Fredrikstad hospital",
+  "adr_treff": [
+   "bnr-193870260"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   1.3,
+   "bnr-193972063",
+   null,
+   []
+  ]
+ },
+ {
+  "artikkel": "Færgeporten i Fredrikstad",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   20.8,
+   "bnr-193868428",
+   "Kommisjonsgården",
+   [
+    "Færgeportgaten 76"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Færgeportgaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   16.5,
+   "bnr-193868428",
+   "Kommisjonsgården",
+   [
+    "Færgeportgaten 76"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Gaaserudgården i Fredrikstad",
+  "wiki_adresse": "Torvgaten 57",
+  "byggeaar": "ca. [[1830]]",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Gaaserudgården",
+  "adr_treff": [
+   "bnr-193867618"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   7.8,
+   "bnr-193867618",
+   null,
+   [
+    "Torvgaten 57",
+    "Torvgaten 57A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Gamlebyen i Fredrikstad",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   26.2,
+   "bnr-193867626",
+   null,
+   [
+    "Torvgaten 59A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Gamlebyen skole (Fredrikstad)",
+  "wiki_adresse": "Færgeportgaten 77",
+  "byggeaar": "[[1784]]",
+  "materiale": "mur/tre",
+  "formaal": "skole",
+  "husnavn": "Gamlebyen skole",
+  "adr_treff": [
+   "bnr-193868436"
+  ],
+  "adr_treff_navn": [
+   "Skolebygningen"
+  ],
+  "koord_naermeste": [
+   6.8,
+   "bnr-193868436",
+   "Skolebygningen",
+   [
+    "Færgeportgaten 77"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Holtsmarkgården i Fredrikstad",
+  "wiki_adresse": "Torvgaten 59",
+  "byggeaar": "1830-årene",
+  "materiale": "tømmer",
+  "formaal": "bolig",
+  "husnavn": "Holtsmarkgården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   3.6,
+   "bnr-193867626",
+   null,
+   [
+    "Torvgaten 59A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Infanterikasernen i Fredrikstad",
+  "wiki_adresse": "| by        = Gamle Fredrikstad",
+  "byggeaar": "[[1783]]-1787",
+  "materiale": "mur",
+  "formaal": "kaserne",
+  "husnavn": "Infanterikasernen",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   18.0,
+   "bnr-193867537",
+   "Infanterikasernen",
+   [
+    "Kasernegaten 47"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Ingeniørgården i Fredrikstad",
+  "wiki_adresse": "| by        = Gamle Fredrikstad",
+  "byggeaar": "1868",
+  "materiale": "Teglstein",
+  "formaal": "Lokaler for festningsingeniøren",
+  "husnavn": "Ingeniørgården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   10.2,
+   "bnr-193867677",
+   "Ingeniørgården",
+   [
+    "Voldgaten 97"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kasernegaten 54",
+  "wiki_adresse": "Kasernegaten 54",
+  "byggeaar": "1990-tallet",
+  "materiale": "| endringer =",
+  "formaal": "| adresse   = Kasernegaten 54",
+  "husnavn": "Kasernegaten 54",
+  "adr_treff": [
+   "bnr-16308102"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   11.9,
+   "bnr-16308102",
+   null,
+   [
+    "Kasernegaten 53",
+    "Kasernegaten 54"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kasernegaten 56",
+  "wiki_adresse": "Kasernegaten 56",
+  "byggeaar": "Ant. 1899",
+  "materiale": "| endringer =",
+  "formaal": "| adresse   = Kasernegaten 56",
+  "husnavn": "Salen",
+  "adr_treff": [
+   "bnr-193867707"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   4.5,
+   "bnr-193867707",
+   null,
+   [
+    "Kasernegaten 56"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kasernegaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   18.5,
+   "bnr-193867502",
+   "Kiørboegården",
+   [
+    "Toldbodgaten 35"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kirkegaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   15.4,
+   "bnr-193867510",
+   "Ekserserhuset",
+   [
+    "Kirkegaten 24"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kjørboegården i Fredrikstad",
+  "wiki_adresse": "Tolbodgaten 35",
+  "byggeaar": "[[1767]]",
+  "materiale": "mur",
+  "formaal": "bolig senere kornmagasin og kontorer",
+  "husnavn": "Kjørboegården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   2.8,
+   "bnr-193867502",
+   "Kiørboegården",
+   [
+    "Toldbodgaten 35"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kommandantgården i Fredrikstad",
+  "wiki_adresse": "[[Toldbodgaten (Fredrikstad)|Toldbodgaten]] 34",
+  "byggeaar": "[[1768]]",
+  "materiale": "Mur",
+  "formaal": "Bolig",
+  "husnavn": "Kommandantgården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   8.4,
+   "bnr-193867499",
+   "Kommandantgården",
+   [
+    "Toldbodgaten 34"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kommandantporten i Fredrikstad",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   35.7,
+   "bnr-193867499",
+   "Kommandantgården",
+   [
+    "Toldbodgaten 34"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Kommisjonsgården",
+  "wiki_adresse": "Færgeportgaten 76",
+  "byggeaar": "[[1834]]",
+  "materiale": "mur",
+  "formaal": "militært rettslokale",
+  "husnavn": "Kommisjonsgården",
+  "adr_treff": [
+   "bnr-193868428"
+  ],
+  "adr_treff_navn": [
+   "Kommisjonsgården"
+  ],
+  "koord_naermeste": [
+   2.3,
+   "bnr-193868428",
+   "Kommisjonsgården",
+   [
+    "Færgeportgaten 76"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Mellomporten i Fredrikstad",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   17.8,
+   "bnr-193868711",
+   null,
+   [
+    "Toldbodgaten 36A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Mulvadgården",
+  "wiki_adresse": "Kirkegaten 30",
+  "byggeaar": "1830-årene",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Mulvadgården",
+  "adr_treff": [
+   "bnr-193868223",
+   "bnr-193868231"
+  ],
+  "adr_treff_navn": [
+   "Muldvadgården",
+   "Balaklava"
+  ],
+  "koord_naermeste": [
+   1.3,
+   "bnr-193868223",
+   "Muldvadgården",
+   [
+    "Kirkegaten 30"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Prestegården i Fredrikstad",
+  "wiki_adresse": "Voldportgaten 69",
+  "byggeaar": "etter 1830",
+  "materiale": "laftet tømmer",
+  "formaal": "bolig",
+  "husnavn": "Prestegården",
+  "adr_treff": [
+   "bnr-193918239"
+  ],
+  "adr_treff_navn": [
+   "Bullgården"
+  ],
+  "koord_naermeste": [
+   5.8,
+   "bnr-193918239",
+   "Bullgården",
+   [
+    "Voldportgaten 69"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Rokkes hotell",
+  "wiki_adresse": "Voldportgaten 74",
+  "byggeaar": "ca. [[1830]]",
+  "materiale": "| endringer =",
+  "formaal": "bolig",
+  "husnavn": "Rokkes hotell",
+  "adr_treff": [
+   "bnr-193867979"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   6.2,
+   "bnr-193867979",
+   null,
+   [
+    "Voldportgaten 74"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Rosinggården",
+  "wiki_adresse": "Kirkegaten 29a",
+  "byggeaar": "ca. 1830",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Rosinggården",
+  "adr_treff": [
+   "bnr-193868282"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   5.9,
+   "bnr-193868282",
+   null,
+   [
+    "Kirkegaten 29A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Rådhuset i Fredrikstad",
+  "wiki_adresse": "Tøihusgaten 42",
+  "byggeaar": "[[1861]]-1864",
+  "materiale": "mur",
+  "formaal": "| adresse   = Tøihusgaten 42",
+  "husnavn": "Rådhuset i Fredrikstad",
+  "adr_treff": [
+   "bnr-193972012"
+  ],
+  "adr_treff_navn": [
+   "Det nye rådhus"
+  ],
+  "koord_naermeste": [
+   6.1,
+   "bnr-193972012",
+   "Det nye rådhus",
+   [
+    "Tøihusgaten 42"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Salamandergaarden",
+  "wiki_adresse": "Færgeportgaten 79",
+  "byggeaar": "| eier1     = [[Giermund Bruun]] (-1799)",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Salamandergården",
+  "adr_treff": [
+   "bnr-193868150"
+  ],
+  "adr_treff_navn": [
+   "Salamandergården"
+  ],
+  "koord_naermeste": [
+   4.9,
+   "bnr-193868150",
+   "Salamandergården",
+   [
+    "Færgeportgaten 79"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Sindinggården",
+  "wiki_adresse": "Torvgaten 36a",
+  "byggeaar": "[[1771]]",
+  "materiale": "mur",
+  "formaal": "bolig og apotek (1771-1888)",
+  "husnavn": "Sindinggården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   8.6,
+   "bnr-193868711",
+   null,
+   [
+    "Toldbodgaten 36A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Thiisgården",
+  "wiki_adresse": "Voldportgaten 70",
+  "byggeaar": "1830-årene",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Thiisgården",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   8.0,
+   "bnr-193868371",
+   null,
+   [
+    "Voldportgaten 70A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Toldbodgaten 38 i Fredrikstad",
+  "wiki_adresse": "Toldbodgaten 38",
+  "byggeaar": "1830-årene",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Toldbodgaten 38",
+  "adr_treff": [
+   "bnr-193868398"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   8.5,
+   "bnr-193971962",
+   null,
+   []
+  ]
+ },
+ {
+  "artikkel": "Toldbodgaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   110.2,
+   "bnr-193867499",
+   "Kommandantgården",
+   [
+    "Toldbodgaten 34"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Torvgaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   13.9,
+   "bnr-193868711",
+   null,
+   [
+    "Toldbodgaten 36A"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Tøihuset i Fredrikstad",
+  "wiki_adresse": "Tøihusgaten 41",
+  "byggeaar": "[[1773]]-1775",
+  "materiale": "mur",
+  "formaal": "lager for militært materiell",
+  "husnavn": "Tøihuset",
+  "adr_treff": [
+   "bnr-193870279"
+  ],
+  "adr_treff_navn": [
+   "Tøihuset"
+  ],
+  "koord_naermeste": [
+   27.4,
+   "bnr-193870279",
+   "Tøihuset",
+   [
+    "Tøihusgaten 41"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Tøihusgaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   26.1,
+   "bnr-193867499",
+   "Kommandantgården",
+   [
+    "Toldbodgaten 34"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Vennehaabet i Fredrikstad",
+  "wiki_adresse": "Kasernegaten 46",
+  "byggeaar": "[[1796]]",
+  "materiale": "tre",
+  "formaal": "forsamlingslokale",
+  "husnavn": "Vennehaabet",
+  "adr_treff": [
+   "bnr-193987370"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   7.5,
+   "bnr-193987370",
+   null,
+   [
+    "Kasernegaten 46"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Voldgaten 12 i Fredrikstad",
+  "wiki_adresse": "| by        = Gamle Fredrikstad",
+  "byggeaar": "[[1801]]",
+  "materiale": "mur",
+  "formaal": "bolig",
+  "husnavn": "Voldgaten 12",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   4.8,
+   "bnr-6247822",
+   null,
+   [
+    "Voldgaten 12"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Voldgaten (Fredrikstad)",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   32.9,
+   "bnr-193870201",
+   null,
+   [
+    "Voldgaten 1"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Voldporten i Fredrikstad",
+  "wiki_adresse": "",
+  "byggeaar": "",
+  "materiale": "",
+  "formaal": "",
+  "husnavn": "",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   0.8,
+   "bnr-193869548",
+   "Voldporten med vaktstuen",
+   [
+    "Voldgaten 98"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Vollmesterboligen i Fredrikstad",
+  "wiki_adresse": "[[Voldgaten (Fredrikstad)|Voldgaten]] 97",
+  "byggeaar": "1869",
+  "materiale": "Teglstein",
+  "formaal": "Bolig for vollmesteren",
+  "husnavn": "Vollmesterboligen",
+  "adr_treff": [],
+  "adr_treff_navn": [],
+  "koord_naermeste": [
+   2.3,
+   "bnr-193867634",
+   "Vollmesterboligen",
+   [
+    "Voldgaten 97"
+   ]
+  ]
+ },
+ {
+  "artikkel": "Væktergården i Fredrikstad",
+  "wiki_adresse": "Voldgaten 10",
+  "byggeaar": "[[1970-tallet]]",
+  "materiale": "tømmer og mur",
+  "formaal": "næringslokaler og boliger",
+  "husnavn": "Væktetgården",
+  "adr_treff": [
+   "bnr-193867952"
+  ],
+  "adr_treff_navn": [
+   null
+  ],
+  "koord_naermeste": [
+   2.2,
+   "bnr-193867952",
+   null,
+   [
+    "Voldgaten 10",
+    "Voldgaten 11"
+   ]
+  ]
+ }
+]

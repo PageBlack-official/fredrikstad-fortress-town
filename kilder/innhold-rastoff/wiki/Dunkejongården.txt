@@ -1,0 +1,44 @@
+# Dunkejongården
+# kilde: https://lokalhistoriewiki.no/Dunkejong%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Dunkejongården 
+| bilde     = Donkejon2.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1784]]
+| eier1     = Søren Thygesen
+| eier2     = Brigadelege Abraham Falch Siemers (1807-1837)
+| arkitekt  = 
+| materiale = tre
+| endringer = 
+| formål    = bolig
+| adresse   = 
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Dunkejongården]]''' ved [[Kongens torv i Fredrikstad|Kongens Torv]] i [[Gamlebyen i Fredrikstad]] er en trebygning fra [[1784]] som ble bygget av kjøpmann Søren Thygesen. Bygningens fasader er symmetriske, og den har markerte stolper som strekker seg over begge etasjene.</onlyinclude> Dunkejongården befinner seg i Gamlebyens [[Femte kvartal i Gamlebyen|femte kvartal]].
+
+<onlyinclude>I årene fra 1807 til 1837 eide brigadelege [[Abraham Falch Siemers]] huset. Han bodde her med sin familie. Gården fikk sitt navn etter [[handelsborger]] John Larsen som eide den på 1860-tallet. Han var [[høker]] og solgte brennevin fra dunk i kjelleren. Larsen hadde dessuten tre store familier som leieboere i gården. </onlyinclude>
+
+Det har også i senere tid vært drevet kafé i bygningen, ''Østsiden kafé''. I 1959 overtok Forsvarsdepartementet Dunkejongården gjennom foreningen [[Foreningen Gamle Fredrikstad]]. Idag (2008) huser gården lokaler for flere organisasjoner og bedrifter, blant annet Foreningen Gamle Fredrikstad, Gamlebyen Gaardeierforening, Fredrikstad Rotary og flere mindre mediebedrifter. 
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Torvet i Gamlebyen, vestlige del - no-nb digifoto 20150206 00099 NB MIT FNR 19083.jpg|Bygningen (helt til venstre) i 1959.
+</gallery>
+
+== Kilder ==
+*Dahle, Erik: ''Bevaringsplan for Gamle Fredrikstad'', 1969
+*[http://www.Festningsbyen.no Festningsbyen.no]
+[[Kategori:Bygninger fra 1700-tallet]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Femte kvartal i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+{{F1}}
+{{artikkelkoord|59.20327|N|10.952425|Ø}}
+{{bm}}

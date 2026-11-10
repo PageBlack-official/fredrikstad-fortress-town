@@ -1,0 +1,4127 @@
+{
+ "kilde": "https://data.brreg.no/enhetsregisteret/api/enheter?forretningsadresse.postnummer=1632",
+ "lest": "2026-11-10",
+ "lisens": "NLOD (Enhetsregisteret)",
+ "enheter": [
+  {
+   "orgnr": "937583702",
+   "navn": "2026 FOTEN VANN",
+   "adresse": "Spinnerikroken 4",
+   "form": "FLI",
+   "naering": "Uttak fra kilde, rensing og distribusjon av vann",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "985942528",
+   "navn": "3 KERAMIKERE I DET GRUNNMUREDE PROVIANTHUS Vedvik",
+   "adresse": "Toldbodgaten 106",
+   "form": "ENK",
+   "naering": "Produksjon av keramiske husholdningsartikler og dekorasjonsgjenstander",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915947204",
+   "navn": "AGMO HOLDING AS",
+   "adresse": "c/o Morten Svendsen Spinnerikroken 1",
+   "form": "AS",
+   "naering": "Engroshandel med maskiner og utstyr ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "976264746",
+   "navn": "AKINOM AS",
+   "adresse": "Spinnerikroken 9",
+   "form": "AS",
+   "naering": "Annen forretningsmessig tjenesteyting ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "975336700",
+   "navn": "AKTIV RESSURS AS",
+   "adresse": "Spinnerikroken 5",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981829581",
+   "navn": "AKUPUNKTUR/NFKA Marianne Ovidie Hoel",
+   "adresse": "Spinneriveien 11",
+   "form": "ENK",
+   "naering": "Aktiviteter innenfor tradisjonell, komplementær og alternativ medisin",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936738354",
+   "navn": "ALI Y TAXI",
+   "adresse": "Gudevoldveien 7",
+   "form": "ENK",
+   "naering": "Passasjertransport på forespørsel utført av fører med kjøretøy",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933664058",
+   "navn": "ALUGLASS CONSULTING AS",
+   "adresse": "Nabbetorpveien 29A",
+   "form": "AS",
+   "naering": "Byggeteknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937753306",
+   "navn": "AMUNDSEN CIRKADISK POLYRYTME",
+   "adresse": "Færgeportgaten 84B",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921372841",
+   "navn": "ANETTE GJONE",
+   "adresse": "Toldbodgaten 36A",
+   "form": "ENK",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930080675",
+   "navn": "ANONSEN EIENDOM AS",
+   "adresse": "Torvgaten 68",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "918478620",
+   "navn": "ARKITEKT ERLING BERG",
+   "adresse": "Voldportgaten 74",
+   "form": "ENK",
+   "naering": "Arkitektvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "895777102",
+   "navn": "ARNE EILIV DVERGSDAL",
+   "adresse": "Kirkegaten 26",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor litteratur",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929516613",
+   "navn": "ARNES EIENDOM AS",
+   "adresse": "Voldgaten 8",
+   "form": "AS",
+   "naering": "Kysttrafikk med passasjerer ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937858221",
+   "navn": "ART BY LIZ AINA KJELLAND",
+   "adresse": "Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915523641",
+   "navn": "ARTEMIS SONETERAPI OG ØREAKUPUNKTUR BENTE ENGER",
+   "adresse": "Spinnerikroken 4",
+   "form": "ENK",
+   "naering": "Aktiviteter innenfor tradisjonell, komplementær og alternativ medisin",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929707575",
+   "navn": "AS BJØRNEGÅRDEN",
+   "adresse": "Torvgaten 57",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "898494322",
+   "navn": "ASTRID HARAM",
+   "adresse": "Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Andre helsetjenester ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926477331",
+   "navn": "ATELIER BLOMQUIST - DESIGN OG GULLSMEDHÅNDVERK",
+   "adresse": "Artillerigården, rom 201 Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Produksjon av smykker og lignende artikler",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "877086402",
+   "navn": "ATELIER STAHL",
+   "adresse": "Kirkegaten 27",
+   "form": "ENK",
+   "naering": "Detaljhandel med kulturvarer ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "922696535",
+   "navn": "AURORA MAI MASSASJE PATHAN",
+   "adresse": "Voldgaten 97",
+   "form": "ENK",
+   "naering": "Aktiviteter i dagspa, badstue og dampbad",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912746313",
+   "navn": "AVITEL EIENDOM AS",
+   "adresse": "Voldportgaten 69",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "913944518",
+   "navn": "AXEL VON BERGEN FYSIOTERAPEUT",
+   "adresse": "Nabbetorpveien 12",
+   "form": "ENK",
+   "naering": "Fysioterapi- og ergoterapitjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "995337452",
+   "navn": "B-KS AS",
+   "adresse": "Gudeberg allé 9",
+   "form": "AS",
+   "naering": "Annen teknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 8
+  },
+  {
+   "orgnr": "994069659",
+   "navn": "BACKSTAGE KOMMUNIKASJON KARL-ERIK DISKERUD",
+   "adresse": "Voldgaten 97",
+   "form": "ENK",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "967647764",
+   "navn": "BALAKLAVA EIENDOM AS",
+   "adresse": "Færgeportgaten 78B",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "989096540",
+   "navn": "BALAR INVEST AS",
+   "adresse": "Færgeportgaten 83",
+   "form": "AS",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938137447",
+   "navn": "BAMROAT NALOOS NOR SIGNATURE",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Frisering og barbering",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993326887",
+   "navn": "BASTION 5, KUNST OG HÅNDVERKSENTER",
+   "adresse": "Toldbodgaten 105,106,107",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "984702922",
+   "navn": "BENEDIKTE Bendedikte Løkhaug",
+   "adresse": "Grunnmurede Provianthus Toldbodgaten 106",
+   "form": "ENK",
+   "naering": "Produksjon av keramiske husholdningsartikler og dekorasjonsgjenstander",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983862098",
+   "navn": "BIRTHE MARIE LØVEID",
+   "adresse": "Smedjegaten 91",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983045820",
+   "navn": "BJARNE OG JON-ANDERS LARSEN EIENDOM DA",
+   "adresse": "Toldbodgaten 38",
+   "form": "DA",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938411085",
+   "navn": "BJØRDAL TECH",
+   "adresse": "Kirkegaten 29B",
+   "form": "ENK",
+   "naering": "Industri-, produkt- og motedesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "987122013",
+   "navn": "BJØRNEGÅRDEN SAMEIE",
+   "adresse": "Jon Pettersen Torvgaten 57",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "980819140",
+   "navn": "BLOOM INK",
+   "adresse": "Prestelandet 4",
+   "form": "ENK",
+   "naering": "Ferdiggjøring før trykking og publisering",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927162393",
+   "navn": "BOLIGSAMEIET TORVGATEN 61",
+   "adresse": "c/o Jørgen Henrik Walther Torvgaten 61",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925207829",
+   "navn": "BOLIGSAMEIET VOLDGATEN 5",
+   "adresse": "Voldgaten 5",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "916093853",
+   "navn": "BORG BYGG OG TAKST AS",
+   "adresse": "Nabbetorpveien 16",
+   "form": "AS",
+   "naering": "Oppføring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "996035611",
+   "navn": "BORGE JEGER- OG FISKERFORENING",
+   "adresse": "Restaurant Major-Stuen AS c/o Markus Nagele Voldportgaten 73",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993539198",
+   "navn": "BPT HOLDING AS",
+   "adresse": "Spinnerikroken 11",
+   "form": "AS",
+   "naering": "Godstransport på vei",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917237123",
+   "navn": "BREVIKS HJEMMELAGDE",
+   "adresse": "Kirkegaten 29A",
+   "form": "ENK",
+   "naering": "Produksjon av yttertøy",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914156165",
+   "navn": "BRICKS BEVERAGES AS",
+   "adresse": "Torvgaten 57A",
+   "form": "AS",
+   "naering": "Engroshandel med drikkevarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "945558288",
+   "navn": "BROHUSET AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926278576",
+   "navn": "BROSTEIN EIENDOM AS",
+   "adresse": "Voldgaten 2",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "913001087",
+   "navn": "BRØDR. BØCKMANN AS",
+   "adresse": "Færgeportgaten 82",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 16
+  },
+  {
+   "orgnr": "991538186",
+   "navn": "BURNING DESIRE MEDIA Jan Eduard Boccia Saxegaard",
+   "adresse": "Gudeberg allé 20",
+   "form": "ENK",
+   "naering": "Aktiviteter utført av utflukts- og eventarrangører",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930624829",
+   "navn": "BY OLIVIA - T. OLIVIA SANDBRAATEN",
+   "adresse": "c/o Trine Olivia Sandbraaten Prestelandet 1C",
+   "form": "ENK",
+   "naering": "Andre helsetjenester ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "838454682",
+   "navn": "BYGGMESTER HANS PETTER HOVELSEN AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "932015064",
+   "navn": "BYGGMESTER TANGEN TAKST AS",
+   "adresse": "Prestelandet 25A",
+   "form": "AS",
+   "naering": "Eiendomsforvaltning på oppdrag",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "881955962",
+   "navn": "BØRSEN HOLDING AS",
+   "adresse": "Spinneriveien 7",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "987005343",
+   "navn": "CAB CONSULTING Christian-Andreas Berg",
+   "adresse": "Voldgaten 2",
+   "form": "ENK",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914881439",
+   "navn": "CAFETEATRET FREDRIKSTAD",
+   "adresse": "c/o Truls Korsgaard Toldbodgaten 36A",
+   "form": "FLI",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925780030",
+   "navn": "CAMILLA AMALIE VOGT",
+   "adresse": "Toldbodgaten 39C",
+   "form": "ENK",
+   "naering": "Undervisning innenfor idrett og rekreasjon",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925726699",
+   "navn": "CAMINO FORLAG AS",
+   "adresse": "Smedjegaten 88",
+   "form": "AS",
+   "naering": "Utgivelsesvirksomhet ellers, unntatt utgivelse av programvare",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921790074",
+   "navn": "CARLOS ROLLAN USERO",
+   "adresse": "Kasernegaten 55",
+   "form": "ENK",
+   "naering": "Grafisk design og visuell kommunikasjonsdesign",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917069778",
+   "navn": "CARMEN NEAGU HÅR & NEGLER",
+   "adresse": "Spinneriveien 3",
+   "form": "ENK",
+   "naering": "Skjønnhetspleie",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "924853433",
+   "navn": "CEMANI AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "985402272",
+   "navn": "CHRISTOPHER FASTING",
+   "adresse": "Torvgaten 61",
+   "form": "ENK",
+   "naering": "Produksjon av andre bygningsartikler",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934523040",
+   "navn": "CITYKVARTALET AS",
+   "adresse": "Færgeportgaten 82",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933146669",
+   "navn": "CLASSICA AS",
+   "adresse": "Spinneriveien 14",
+   "form": "AS",
+   "naering": "Interiørdesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "970953515",
+   "navn": "CLOKE AS",
+   "adresse": "Voldgaten 9",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926905619",
+   "navn": "COI - INGRID ANDERSEN",
+   "adresse": "Kasernegaten 55",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "829038412",
+   "navn": "CORE UTLEIE AS",
+   "adresse": "Voldgaten 10",
+   "form": "AS",
+   "naering": "Utleie av arbeidskraft og andre personaladministrative tjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928147819",
+   "navn": "CULASSE AS",
+   "adresse": "Raadhusgaten 18B",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936878660",
+   "navn": "DANSEGLEDE I GAMLEBYEN FREDRIKSTAD",
+   "adresse": "c/o Stedsans Studio Smedjegaten 88",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914530067",
+   "navn": "DEN GAMLE BOKBYEN",
+   "adresse": "Toldbodgaten 37",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937355610",
+   "navn": "DEN LILLE KERAMIKKFABRIKKEN AS",
+   "adresse": "Torvgaten 57A",
+   "form": "AS",
+   "naering": "Detaljhandel med kulturvarer ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "880715542",
+   "navn": "DET GODE SELSKAB ANITA FON MATHISEN SIDSEL LUNDIN ANS",
+   "adresse": "Voldportgaten 74",
+   "form": "ANS",
+   "naering": "Detaljhandel med kjæledyr og varer til kjæledyr",
+   "konkurs": false,
+   "avvikling": true,
+   "ansatte": null
+  },
+  {
+   "orgnr": "935954134",
+   "navn": "DIESELSKADE NORGE",
+   "adresse": "Kirkegaten 31A",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "985837104",
+   "navn": "DIN REGNSKAPSPARTNER LISE HOFF JOHANNESSEN",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Regnskapsføring og bokføring",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "984084463",
+   "navn": "E&K HOLDING AS",
+   "adresse": "Nabbetorpveien 6",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "838644872",
+   "navn": "EDELVÆRK UNGDOMSBEDRIFT",
+   "adresse": "Plus-Skolen AS Færgeportgaten 77",
+   "form": "ANNA",
+   "naering": null,
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "970940111",
+   "navn": "EDVARDSEN ROAR STEN",
+   "adresse": "Smedjegaten 86",
+   "form": "ENK",
+   "naering": "Godstransport på vei",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981230426",
+   "navn": "EIR FILM Handegard",
+   "adresse": "Toldbodgaten 38",
+   "form": "ENK",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921489471",
+   "navn": "ELIN GRUNDSTAD RENHOLD",
+   "adresse": "Spinnerikroken 8",
+   "form": "ENK",
+   "naering": "Rengjøring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "886244592",
+   "navn": "ELISABETH FUNDINGSRUD",
+   "adresse": "Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Andre helsetjenester ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927686228",
+   "navn": "EMM K. AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Detaljhandel med klær",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 7
+  },
+  {
+   "orgnr": "912411818",
+   "navn": "ENERGEA AS",
+   "adresse": "Voldgaten 98",
+   "form": "AS",
+   "naering": "Annen teknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936988725",
+   "navn": "EQGRID AS",
+   "adresse": "Voldgaten 98",
+   "form": "AS",
+   "naering": "Dataprogrammeringstjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "984050178",
+   "navn": "ERIK-KRISTIAN ZAHL-PETTERSEN",
+   "adresse": "Kasernegaten 47",
+   "form": "ENK",
+   "naering": "Psykolog- og psykoterapitjenester, unntatt legetjenester innenfor psykiatri",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937849966",
+   "navn": "ESPEN ARNTZEN",
+   "adresse": "Nabbetorpveien 6",
+   "form": "ENK",
+   "naering": "Forebyggende helsearbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "984775393",
+   "navn": "ESPEN CHRISTOFFERSEN MUSIKK",
+   "adresse": "Nabbetorpveien 35A",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "989446592",
+   "navn": "ESTAR AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914725372",
+   "navn": "ESTAR NÆRING AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "992228172",
+   "navn": "EVA MALMSTRØM",
+   "adresse": "Bakeribygningen Toldbodgaten 107",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "991932569",
+   "navn": "EVA WÆRNESS - GRØNT GRESS",
+   "adresse": "Voldportgaten 75",
+   "form": "ENK",
+   "naering": "Detaljhandel med klær",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993020753",
+   "navn": "EVAS RENHOLD SERVICE Ewa Krawczyk",
+   "adresse": "Gudeberg allé 2",
+   "form": "ENK",
+   "naering": "Rengjøring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917692823",
+   "navn": "FAMILIETERAPEUT JETTE LISETH",
+   "adresse": "Artillerigården Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Familieverntjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912183734",
+   "navn": "FARGEFABRIKKEN AS",
+   "adresse": "Smedjegaten 88",
+   "form": "AS",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998751136",
+   "navn": "FESTNINGSBYEN AS",
+   "adresse": "Torvgaten 60",
+   "form": "AS",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930721514",
+   "navn": "FIN&LEAN - FITNESS MED SYNNES",
+   "adresse": "Voldportgaten 73",
+   "form": "ENK",
+   "naering": "Undervisning innenfor idrett og rekreasjon",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933627691",
+   "navn": "FOLKE-OLSEN KOMMUNIKASJON OG KUNST",
+   "adresse": "c/o Randi Folke-Olsen Nabbetorpveien 22",
+   "form": "ENK",
+   "naering": "Pr og kommunikasjonstjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "942419333",
+   "navn": "FOND FOR ARNE STANGEBYES SAMLINGER STI",
+   "adresse": "Tøihusgaten 41",
+   "form": "STI",
+   "naering": "Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "975472035",
+   "navn": "FORENINGEN GAMLE FREDRIKSTAD",
+   "adresse": "Torvgaten 60",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "923820493",
+   "navn": "FORENINGEN NORDEN FREDRIKSTAD",
+   "adresse": "Dunkejongaarden Torvgaten 60",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917044066",
+   "navn": "FORUM FOR NATUR OG FRILUFTSLIV ØSTFOLD",
+   "adresse": "Kirkegaten 31B",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990181918",
+   "navn": "FOTOGRAF KAROLINE BJØNNES PEDERSEN",
+   "adresse": "Prestelandet 22",
+   "form": "ENK",
+   "naering": "Fotografvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926933248",
+   "navn": "FRA ØVERSTE HYLLE FILMDISTRIBUSJON AS",
+   "adresse": "Smedjegaten 88",
+   "form": "AS",
+   "naering": "Distribusjon av film og video",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "970998489",
+   "navn": "FREDRIKSTAD ANTIKVARIAT Øyvind Larsen",
+   "adresse": "Torvgaten 64",
+   "form": "ENK",
+   "naering": "Detaljhandel med brukte varer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "995834588",
+   "navn": "FREDRIKSTAD BRIDGE KLUBB",
+   "adresse": "c/o fred øystein hansen Herlof Steens gate 13",
+   "form": "FLI",
+   "naering": "Aktiviteter i idrettslag og -klubber",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "958123078",
+   "navn": "FREDRIKSTAD CHARTERREISER Arne Børresen",
+   "adresse": "Voldgaten 8",
+   "form": "ENK",
+   "naering": "Kysttrafikk med passasjerer ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "885803342",
+   "navn": "FREDRIKSTAD MUSEUM STI",
+   "adresse": "Tøihusgaten 41",
+   "form": "STI",
+   "naering": "Drift av kulturhistoriske museer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983992897",
+   "navn": "FREDRIKSTAD PAINTBALL ARENA",
+   "adresse": "c/o Terje Voll Johan Korens gate 1",
+   "form": "FLI",
+   "naering": "Aktiviteter i idrettslag og -klubber",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "935155711",
+   "navn": "FRIMURERNES SANGFORENING, FREDRIKSTAD",
+   "adresse": "Kasernegaten 46",
+   "form": "FLI",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930111546",
+   "navn": "FRITZ LAAMIRI SERVICE",
+   "adresse": "c/o Britt Fritzman Bolignummer H0201 Johan Korens gate 6",
+   "form": "ENK",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934145593",
+   "navn": "FRO EIENDOM AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921548826",
+   "navn": "FRONTKOM AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 38
+  },
+  {
+   "orgnr": "928977455",
+   "navn": "FRONTKOM GROUP AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928867226",
+   "navn": "FRONTKOM INVEST AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981884701",
+   "navn": "FURRYTALES SIW AMINA BECH",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Detaljhandel med kjæledyr og varer til kjæledyr",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "971348038",
+   "navn": "FØDSEL I FOKUS",
+   "adresse": "Prestelandet 12A",
+   "form": "FLI",
+   "naering": "Andre sosialtjenester uten botilbud ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "980857395",
+   "navn": "G E HOLDING AS",
+   "adresse": "Voldportgaten 75",
+   "form": "AS",
+   "naering": "Elektrisk installasjonsarbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "916932812",
+   "navn": "GAIA TEXTILES AS",
+   "adresse": "Kirkegaten 28B",
+   "form": "AS",
+   "naering": "Engroshandel med tekstiler og utstyrsvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "998361184",
+   "navn": "GALLERI GUNNE AS",
+   "adresse": "Toldbodgaten 107",
+   "form": "AS",
+   "naering": "Produksjon av emballasje og husholdningsartikler av glass og krystall",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "996452131",
+   "navn": "GALLERI INNBLIKK, KARI ANDRINE FRØNSDAL",
+   "adresse": "Torvgaten 59B",
+   "form": "ENK",
+   "naering": "Detaljhandel med kulturvarer ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925360856",
+   "navn": "GALLERIET VINBAR AS",
+   "adresse": "Torvgaten 61",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 15
+  },
+  {
+   "orgnr": "926672398",
+   "navn": "GAMLE FREDRIKSTAD CARPET BOWLS KLUBB",
+   "adresse": "c/o Rolf Birger Stordahl Prestelandet 8A",
+   "form": "FLI",
+   "naering": "Aktiviteter i idrettslag og -klubber",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936901433",
+   "navn": "GAMLE FREDRIKSTAD FORTELLERFORENING",
+   "adresse": "Nabbetorpveien 25A",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937014589",
+   "navn": "GAMLE FREDRIKSTAD HAGEFESTFORENING",
+   "adresse": "Nabbetorpveien 25A",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "920231756",
+   "navn": "GAMLE KONGEVEI 21 AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927656132",
+   "navn": "GAMLEBYEN ARKITEKTER AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Byggeteknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "814308952",
+   "navn": "GAMLEBYEN ELEKTRISKE AS",
+   "adresse": "Voldportgaten 75",
+   "form": "AS",
+   "naering": "Elektrisk installasjonsarbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 8
+  },
+  {
+   "orgnr": "933712559",
+   "navn": "GAMLEBYEN FENGSEL",
+   "adresse": "Tøihusgaten 42",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998032997",
+   "navn": "GAMLEBYEN FESTIVALDRIFT AS",
+   "adresse": "Kirkegaten 24",
+   "form": "AS",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990800626",
+   "navn": "GAMLEBYEN FREDRIKSTAD ROTARYKLUBB",
+   "adresse": "Donkejongården Torvgaten 60",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "977213363",
+   "navn": "GAMLEBYEN FRUKT OG TOBAKK Haakon Viken",
+   "adresse": "Færgeportgaten 81",
+   "form": "ENK",
+   "naering": "Detaljhandel med bredt vareutvalg med hovedvekt på nærings- og nytelsesmidler",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 6
+  },
+  {
+   "orgnr": "897615932",
+   "navn": "GAMLEBYEN GEITEAVLSLAG",
+   "adresse": "Voldgaten 9",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "994048880",
+   "navn": "GAMLEBYEN GAARDEIERFORENING",
+   "adresse": "c/o Cathrine Schei Torvgaten 62",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "988393401",
+   "navn": "GAMLEBYEN HANDELSFORENING",
+   "adresse": "Toldbodgaten 105",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915353673",
+   "navn": "GAMLEBYEN HOTELL FREDRIKSTAD AS",
+   "adresse": "Voldportgaten 72",
+   "form": "AS",
+   "naering": "Drift av hoteller",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 12
+  },
+  {
+   "orgnr": "822634222",
+   "navn": "GAMLEBYEN KULTUR AS",
+   "adresse": "Voldgaten 2",
+   "form": "AS",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983560083",
+   "navn": "GAMLEBYEN KULTURHUS",
+   "adresse": "Kirkegaten 24",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937759126",
+   "navn": "GAMLEBYEN LOKALSAMFUNNSUTVALG",
+   "adresse": "c/o Nina Molven Kirkegaten 32",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "911696673",
+   "navn": "GAMLEBYEN MODELLJERNBANESENTER AS",
+   "adresse": "Voldgaten 8",
+   "form": "AS",
+   "naering": "Drift av naturhistoriske, teknologiske og vitenskapshistoriske museer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 24
+  },
+  {
+   "orgnr": "937514395",
+   "navn": "GAMLEBYEN OPERA- OG MUSIKKTEATER",
+   "adresse": "Færgeportgaten 78B",
+   "form": "FLI",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915654452",
+   "navn": "GAMLEBYEN SNEKKERI, SVEN PERSON",
+   "adresse": "Toldbodgaten 39C",
+   "form": "ENK",
+   "naering": "Oppføring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917293996",
+   "navn": "GAMLEBYEN VOKAL",
+   "adresse": "Toldbodgaten 37",
+   "form": "FLI",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "815724712",
+   "navn": "GARM LOGOPEDIA",
+   "adresse": "Kasernegaten 56",
+   "form": "ENK",
+   "naering": "Andre helsetjenester ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "918462074",
+   "navn": "GAUPEFARET AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914309026",
+   "navn": "GE EIENDOM AS",
+   "adresse": "Voldportgaten 75",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936292186",
+   "navn": "GESTALTTERAPEUT & VEILEDER MNGF - SIV JOHANNE HANSTEEN",
+   "adresse": "Torvgaten 63",
+   "form": "ENK",
+   "naering": "Andre helsetjenester ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929698525",
+   "navn": "GJERMUNDSEN COACHING",
+   "adresse": "Prestelandet 27B",
+   "form": "ENK",
+   "naering": "Undervisning innenfor idrett og rekreasjon",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "957879101",
+   "navn": "GLASSHYTTA AS",
+   "adresse": "Torsnesveien 1",
+   "form": "AS",
+   "naering": "Produksjon av emballasje og husholdningsartikler av glass og krystall",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934929667",
+   "navn": "GLOMMA ELEKTRISKE AS",
+   "adresse": "Spinneriveien 9",
+   "form": "AS",
+   "naering": "Elektrisk installasjonsarbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981796136",
+   "navn": "GOLTEN MORTEN",
+   "adresse": "Kirkegaten 29B",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934968786",
+   "navn": "GRAN FORVALTNING AS",
+   "adresse": "Voldportgaten 69",
+   "form": "AS",
+   "naering": "Engroshandel med fisk, skalldyr og bløtdyr",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "931501690",
+   "navn": "GRANDCRUTOURS AS",
+   "adresse": "Raadhusgaten 18B",
+   "form": "AS",
+   "naering": "Utgivelse av bøker",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925780766",
+   "navn": "GRANLI SKOMAKERI AS",
+   "adresse": "c/o Skomakerne i Gamlebyen Smedjegaten 88",
+   "form": "AS",
+   "naering": "Reparasjon og vedlikehold av skotøy og lærvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "931508709",
+   "navn": "GRENDAL FILM",
+   "adresse": "Kasernegaten 56",
+   "form": "ENK",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "837177472",
+   "navn": "GROOT EXPECTATIONS",
+   "adresse": "Torvgaten 62",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917072868",
+   "navn": "GRUNDSTEINEN AS",
+   "adresse": "Raadhusgaten 17A",
+   "form": "AS",
+   "naering": "Andre egeninvesteringsselskaper",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934295293",
+   "navn": "GRÆSDAL & PAADRIVERNE",
+   "adresse": "Spinnerikroken 7",
+   "form": "ENK",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937206941",
+   "navn": "GRØNN LOTUS HELSE AS",
+   "adresse": "Smedjegaten 89",
+   "form": "AS",
+   "naering": "Undervisning innenfor idrett og rekreasjon",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930377066",
+   "navn": "GUDEVOLD BARNEHAGE AS",
+   "adresse": "Gudevoldveien 8",
+   "form": "AS",
+   "naering": "Førskoleundervisning og drift av barnehager",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 28
+  },
+  {
+   "orgnr": "915230520",
+   "navn": "GULLSMED KARIN KENT",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Produksjon av smykker og lignende artikler",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "985194165",
+   "navn": "GYLLENSTENS ATELIER Elisabeth Gyllensten",
+   "adresse": "Kirkegaten 27",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933310450",
+   "navn": "GAASLAND OMSORGSTJENESTER",
+   "adresse": "Prestelandet 1B",
+   "form": "ENK",
+   "naering": "Andre sosialtjenester uten botilbud ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "819694052",
+   "navn": "H.P.H HOLDING AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "919898410",
+   "navn": "H.P.H INVEST AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Utvikling og salg av byggeprosjekter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928241335",
+   "navn": "HANNE ÅMLI",
+   "adresse": "Torvgaten 61",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "883862112",
+   "navn": "HANS-OVE STURE GRANATH",
+   "adresse": "Smedjegaten 91",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912763641",
+   "navn": "HAUG INVENTION",
+   "adresse": "Nabbetorpveien 26",
+   "form": "ENK",
+   "naering": "Annen teknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "923832343",
+   "navn": "HEALER SØLVI AURORA KJENSLI",
+   "adresse": "Toldbodgaten 35",
+   "form": "ENK",
+   "naering": "Andre personlige tjenester ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "986963995",
+   "navn": "HEGE LISETH",
+   "adresse": "Voldgaten 12",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "979887140",
+   "navn": "HEIDENSTRØM AS",
+   "adresse": "Spinneriveien 1",
+   "form": "AS",
+   "naering": "Engroshandel med parfyme og kosmetikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 8
+  },
+  {
+   "orgnr": "928797880",
+   "navn": "HELGESENS HMS SERVICE",
+   "adresse": "Spinnerikroken 1",
+   "form": "ENK",
+   "naering": "Forebyggende helsearbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937364385",
+   "navn": "HELT KONGE AS",
+   "adresse": "Kirkegaten 28B",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": true,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937978812",
+   "navn": "HELT KONGE AS KONKURSBO",
+   "adresse": "Kirkegaten 28B",
+   "form": "KBO",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "984228384",
+   "navn": "HERMOD KARLSEN",
+   "adresse": "Kasernegaten 47",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "825639152",
+   "navn": "HEY KIDDO AS",
+   "adresse": "Raadhusgaten 16",
+   "form": "AS",
+   "naering": "Detaljhandel med klær",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 6
+  },
+  {
+   "orgnr": "913456017",
+   "navn": "HH-REISER ERIK HÆREN",
+   "adresse": "Mossins gate 2",
+   "form": "ENK",
+   "naering": "Reisearrangørvirksomhet ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927067013",
+   "navn": "HIP HOP PÅ MÅNEN",
+   "adresse": "Kirkegaten 24",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921689128",
+   "navn": "HOLMENKVARTALET AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921399219",
+   "navn": "HPH BYGGENTREPRENØR AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Oppføring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 20
+  },
+  {
+   "orgnr": "927149885",
+   "navn": "HPH UTVIKLING AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Utvikling og salg av byggeprosjekter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "989976060",
+   "navn": "HPHEI AS",
+   "adresse": "Spinneriveien 1",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937000979",
+   "navn": "HSV7 HOLDING AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925635219",
+   "navn": "HUGO LISSNER",
+   "adresse": "H0203 Prestelandet 18",
+   "form": "ENK",
+   "naering": "Formidlingstjenester tilknyttet detaljhandel med spesialisert vareutvalg",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "995215853",
+   "navn": "HUNDERI HOLDING AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Treningssentervirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914813689",
+   "navn": "HUS & EIENDOM AS",
+   "adresse": "Voldportgaten 69A",
+   "form": "AS",
+   "naering": "All annen faglig, vitenskapelig og teknisk virksomhet ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927062097",
+   "navn": "HAAKENSEN.FILM STEFFEN HÅKENSEN",
+   "adresse": "Prestelandet 2",
+   "form": "ENK",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "919226668",
+   "navn": "ID. INTERIØRARKITEKTUR VED VICTORIA SKAUEN",
+   "adresse": "Kasernegaten 55",
+   "form": "ENK",
+   "naering": "Interiørdesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915208916",
+   "navn": "INGENIØR DYPVIK AS",
+   "adresse": "Voldgaten 98",
+   "form": "AS",
+   "naering": "Annen teknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "991800050",
+   "navn": "INGER KRISTIN TVETE",
+   "adresse": "Kasernegaten 49",
+   "form": "ENK",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "918962530",
+   "navn": "INGRID ANDERSEN AS",
+   "adresse": "Kasernegaten 55",
+   "form": "AS",
+   "naering": "Grafisk design og visuell kommunikasjonsdesign",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936427871",
+   "navn": "INWIVO INVEST AS",
+   "adresse": "Spinnerikroken 1",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993520721",
+   "navn": "JOACHIM SCHRADER",
+   "adresse": "Mossins gate 3",
+   "form": "ENK",
+   "naering": "Konsulentvirksomhet tilknyttet informasjonsteknologi og forvaltning og drift av it-systemer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "832877212",
+   "navn": "JOHANNESSEN KONSULENT",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938618402",
+   "navn": "JULEMARKED PLUS 26 UNGDOMSBEDRIFT",
+   "adresse": "Plus-skolen AS Færgeportgaten 77",
+   "form": "ANNA",
+   "naering": null,
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "999340687",
+   "navn": "KASERNEN HOTELLDRIFT AS",
+   "adresse": "Kasernegaten 47",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983751679",
+   "navn": "KID-A Arild Dyrkorn",
+   "adresse": "Prestelandet 20",
+   "form": "ENK",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "919516496",
+   "navn": "KILDE MØBELSNEKKERI",
+   "adresse": "Gudeberg allé 2",
+   "form": "ENK",
+   "naering": "Snekkerarbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937024126",
+   "navn": "KIRA HELENE NILSEN MEDIA",
+   "adresse": "Gudeberg allé 37",
+   "form": "ENK",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912301397",
+   "navn": "KIRKEGATEN 29A AS",
+   "adresse": "Kirkegaten 29A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926829890",
+   "navn": "KNITBY AS",
+   "adresse": "Kirkegaten 29A",
+   "form": "AS",
+   "naering": "Detaljhandel med tekstiler og utstyrsvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "923055177",
+   "navn": "KOKOSBOLLEN FREDRIKSTAD ERIKSEN",
+   "adresse": "Mossins gate 9",
+   "form": "ENK",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937427727",
+   "navn": "KONGENSGATE 38 AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993050318",
+   "navn": "KOSTYMELOFTET",
+   "adresse": "Tøihusgaten 41",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938136173",
+   "navn": "KOVAC CONSULTING AS KONKURSBO",
+   "adresse": "Voldgaten 9",
+   "form": "KBO",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927608383",
+   "navn": "KPH DRIFT AS",
+   "adresse": "Torvgaten 57",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 10
+  },
+  {
+   "orgnr": "927113759",
+   "navn": "KRABBERØD ILLUSTRASJON",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Grafisk design og visuell kommunikasjonsdesign",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983906656",
+   "navn": "KRISTIN SCHEELE",
+   "adresse": "Voldportgaten 74",
+   "form": "ENK",
+   "naering": "Spesialiserte legetjenester, unntatt psykiatriske legetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930352330",
+   "navn": "KROGH ENTERTAINMENT",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Oversettelses- og tolkevirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936941141",
+   "navn": "KROGH MEDIA",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "994244078",
+   "navn": "KROHN AS",
+   "adresse": "Voldgaten 8",
+   "form": "AS",
+   "naering": "Detaljhandel med klær",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "986243798",
+   "navn": "KURDISK KVINNEFORENING",
+   "adresse": "Kirkegaten 28",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993623741",
+   "navn": "KYUJA BAE COMPANY",
+   "adresse": "Prestelandet 25A",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "985144850",
+   "navn": "KÅRE JOHANNESSEN",
+   "adresse": "Prestelandet 4",
+   "form": "ENK",
+   "naering": "Agenturhandel med spesialisert vareutvalg ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983155383",
+   "navn": "LANGE LINJER",
+   "adresse": "c/o Odd Roar Lange Voldgaten 5",
+   "form": "ENK",
+   "naering": "Annen forretningsmessig tjenesteyting ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "991537902",
+   "navn": "LARS LERBERG",
+   "adresse": "Nabbetorpveien 4",
+   "form": "ENK",
+   "naering": "Dyrking av korn, unntatt ris, belgvekster og oljeholdige vekster",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928118150",
+   "navn": "LARSEN EIENDOMSFORVALTNING",
+   "adresse": "Toldbodgaten 38",
+   "form": "ENK",
+   "naering": "Eiendomsforvaltning på oppdrag",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981853474",
+   "navn": "LASSE SAGEN",
+   "adresse": "Torvgaten 58",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933778460",
+   "navn": "LAZARO TRANSPORT LAZAR",
+   "adresse": "Nabbetorpveien 6",
+   "form": "ENK",
+   "naering": "Godstransport på vei",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "935765439",
+   "navn": "LCS HÅNDVERK AS",
+   "adresse": "Raadhusgaten 18B",
+   "form": "AS",
+   "naering": "Kombinerte tjenester tilknyttet eiendomsdrift",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "971470194",
+   "navn": "LEGE IVAR-HENRIK UDNÆS",
+   "adresse": "Laboratoriegaten 100",
+   "form": "ENK",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937427697",
+   "navn": "LOBO AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930386731",
+   "navn": "LOBO EIENDOM AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "996630676",
+   "navn": "LOSJE ST OLAV NR V ORDENEN RIDDERE AV DET HVITE KORS",
+   "adresse": "Kasernegaten 46",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "918058788",
+   "navn": "LUNA SMED FILIP MICHALIK",
+   "adresse": "Kirkegaten 29A",
+   "form": "ENK",
+   "naering": "Bearbeiding av metaller",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930915904",
+   "navn": "LUNDER IT",
+   "adresse": "c/o Johnny Lunder Raadhusgaten 18B",
+   "form": "ENK",
+   "naering": "Detaljhandel med spill og leker",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "831030992",
+   "navn": "LYSKONSULENT SANDBERG",
+   "adresse": "Gudeberg allé 7",
+   "form": "ENK",
+   "naering": "Byggeteknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983629881",
+   "navn": "LÆGENE I GAMLEBYEN ANS",
+   "adresse": "Laboratoriegaten 100",
+   "form": "ANS",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "856751252",
+   "navn": "MAJOR - STUEN AS",
+   "adresse": "Voldportgaten 73",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 27
+  },
+  {
+   "orgnr": "980826090",
+   "navn": "MARBEL ART Morten Lønning",
+   "adresse": "Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "825850562",
+   "navn": "MARGAUX.NO AS",
+   "adresse": "Raadhusgaten 18B",
+   "form": "AS",
+   "naering": "Engroshandel med sukker, sjokolade og sukkervarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "896554182",
+   "navn": "MARIA-LOGE NR. 20 A. P. FREDRIKSTAD",
+   "adresse": "Kasernegaten 46",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930652725",
+   "navn": "MARIANNE LERBERG",
+   "adresse": "Nabbetorpveien 4",
+   "form": "ENK",
+   "naering": "Andre sosialtjenester uten botilbud ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912273369",
+   "navn": "MARKUS BYGG MAREK KWOKA",
+   "adresse": "Voldgaten 1",
+   "form": "ENK",
+   "naering": "Oppføring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937938055",
+   "navn": "MARTINSEN FIKSIT",
+   "adresse": "Herlof Steens gate 12",
+   "form": "ENK",
+   "naering": "Konsulentvirksomhet tilknyttet informasjonsteknologi og forvaltning og drift av it-systemer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926453181",
+   "navn": "MASER ARKADIUSZ MARKIEWICZ",
+   "adresse": "Torvgaten 57",
+   "form": "ENK",
+   "naering": "Snekkerarbeid",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933303306",
+   "navn": "MC TRAVEL AS",
+   "adresse": "Smedjegaten 89",
+   "form": "AS",
+   "naering": "Reisearrangørvirksomhet ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983877745",
+   "navn": "MEDIALABBEN Thomas Roaldsnes",
+   "adresse": "Voldgaten 12",
+   "form": "ENK",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "950969709",
+   "navn": "MEDITEK AS",
+   "adresse": "Kirkegaten 31B",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 40
+  },
+  {
+   "orgnr": "925265071",
+   "navn": "MEDIYOGA MED JEANETT BAKKE",
+   "adresse": "Toldbodgaten 35",
+   "form": "ENK",
+   "naering": "Undervisning innenfor idrett og rekreasjon",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934327853",
+   "navn": "MENTAL STYRKE STUDIO - NIBEA BIJEDIC",
+   "adresse": "Smedjegaten 88",
+   "form": "ENK",
+   "naering": "Annen undervisning ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "923432647",
+   "navn": "MENTOR FEJZULAI ORTOKIRURGI & ALLMENNMEDISIN",
+   "adresse": "Spinneriveien 3",
+   "form": "ENK",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "837091632",
+   "navn": "MENTOR HELSE AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "922105855",
+   "navn": "MERCUR CONSULTING AS",
+   "adresse": "Spinnerikroken 10",
+   "form": "AS",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929447549",
+   "navn": "MERETHE KARLSEN AUTORISERT FOTTERAPEUT.",
+   "adresse": "Nabbetorpveien 20",
+   "form": "ENK",
+   "naering": "Ortopedi- og fotterapitjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983152317",
+   "navn": "METER - ARKITEKTUR AS",
+   "adresse": "Færgeportgaten 78",
+   "form": "AS",
+   "naering": "Arkitektvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "984608772",
+   "navn": "MICRO IMPORT Hui Ying Yang",
+   "adresse": "Gudeberg allé 25",
+   "form": "ENK",
+   "naering": "Agenturhandel med bredt vareutvalg",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925689823",
+   "navn": "MIDDAGSSELSKAPET",
+   "adresse": "c/o Dunkejongaarden Torvgaten 60",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934909771",
+   "navn": "MILIS ART SELIMOVIC",
+   "adresse": "Voldportgaten 75",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "997940849",
+   "navn": "MONTESO IMPORT MEXICO GEORGE MONTES DE OCA",
+   "adresse": "Raadhusgaten 18B",
+   "form": "ENK",
+   "naering": "Engroshandel med tekstiler og utstyrsvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "994334603",
+   "navn": "MORMORS CAFÉ AS",
+   "adresse": "Raadhusgaten 18A",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 24
+  },
+  {
+   "orgnr": "932219352",
+   "navn": "MOTVIN(D) AS",
+   "adresse": "Toldbodgaten 38",
+   "form": "AS",
+   "naering": "Utgivelse av bøker",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "971587253",
+   "navn": "MYE ARBEID AS",
+   "adresse": "Smedjegaten 88",
+   "form": "AS",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927211696",
+   "navn": "N3C CAPITAL AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "935052378",
+   "navn": "NABBETORPVEIEN 20 SAMEIE",
+   "adresse": "Nabbetorpveien 20",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "994706845",
+   "navn": "NATURVERNFORBUNDET FREDRIKSTAD OG HVALER",
+   "adresse": "Kirkegaten 31B",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "971248149",
+   "navn": "NATURVERNFORBUNDET I ØSTFOLD",
+   "adresse": "Kirkegaten 31B",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "931434322",
+   "navn": "NILSEN RESTAURANT DRIFT",
+   "adresse": "Gudeberg allé 13",
+   "form": "ENK",
+   "naering": "Catering for arrangementer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927768828",
+   "navn": "NILSENS NORDLYSHEALING",
+   "adresse": "Voldgaten 97",
+   "form": "ENK",
+   "naering": "Andre personlige tjenester ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937099738",
+   "navn": "NORDIC STEALTH GEAR AS",
+   "adresse": "Nabbetorpveien 26",
+   "form": "AS",
+   "naering": "Industri-, produkt- og motedesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917968918",
+   "navn": "NORSKE TWEED-SYKLISTERS FORENING",
+   "adresse": "c/o Dunkejongaarden Torvgaten 60",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914068169",
+   "navn": "NOVUS DENTAL AS",
+   "adresse": "Spinneriveien 9",
+   "form": "AS",
+   "naering": "Agenturhandel med spesialisert vareutvalg ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 7
+  },
+  {
+   "orgnr": "917849765",
+   "navn": "NRKJ ØSTFOLD",
+   "adresse": "Tøihusgaten 42",
+   "form": "FLI",
+   "naering": "Aktiviteter i arbeidstakerorganisasjoner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929209524",
+   "navn": "NYGAARDSGATA 3 UTVIKLING AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Utvikling og salg av byggeprosjekter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936272517",
+   "navn": "NÄSLUND ENTERPISE",
+   "adresse": "Gudeberg allé 14",
+   "form": "ENK",
+   "naering": "Frisering og barbering",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917905142",
+   "navn": "NØRDALEN HOLDING AS",
+   "adresse": "Spinnerikroken 12",
+   "form": "AS",
+   "naering": "Andre egeninvesteringsselskaper",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998471435",
+   "navn": "OANA CRISTINA PAVEL",
+   "adresse": "Spinneriveien 3",
+   "form": "ENK",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "982132398",
+   "navn": "ODD IGLEBÆK",
+   "adresse": "Voldgaten 5",
+   "form": "ENK",
+   "naering": "Arkitektvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "916034385",
+   "navn": "OIKOS ØSTFOLD",
+   "adresse": "c/o Torill Frydenlund Færgeportgaten 76",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "931111701",
+   "navn": "OLAVSHALL SA",
+   "adresse": "c/o St Johanneslogen St Magnus Kasernegaten 46",
+   "form": "SA",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "880298542",
+   "navn": "OLE PETTER HANSEN",
+   "adresse": "Gudeberg allé 6",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930640441",
+   "navn": "OLSEN EIENDOM",
+   "adresse": "Kirkegaten 28B",
+   "form": "ENK",
+   "naering": "Byggeteknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "997067533",
+   "navn": "OPES AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utvikling og salg av byggeprosjekter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 6
+  },
+  {
+   "orgnr": "832986232",
+   "navn": "OPTIMA HOLDING AS",
+   "adresse": "Toldbodgaten 38",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "982397804",
+   "navn": "ORGANISASJONEN PLUS",
+   "adresse": "Færgeportgaten 77",
+   "form": "FLI",
+   "naering": "Undervisning innenfor kort høyere yrkesfaglig utdanning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "984192797",
+   "navn": "ORVAL AS",
+   "adresse": "Voldportgaten 69",
+   "form": "AS",
+   "naering": "Eiendomsforvaltning på oppdrag",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "924990767",
+   "navn": "OUTCALL SOLUTIONS HAMSA ABDUL KADIR ISLOW",
+   "adresse": "Torvgaten 57",
+   "form": "ENK",
+   "naering": "Telefonvakttjenester og telefonsalg",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "997830598",
+   "navn": "P S VAKTMESTERSERVICE AS",
+   "adresse": "Voldgaten 1",
+   "form": "AS",
+   "naering": "Oppføring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 9
+  },
+  {
+   "orgnr": "835821552",
+   "navn": "PEISFOKUS AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Engroshandel med jernvarer, rørleggerartikler og oppvarmingsutstyr",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "920659292",
+   "navn": "PENINSULA CAPITAL AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Treningssentervirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "970950796",
+   "navn": "PER ARNE JOHANSEN",
+   "adresse": "Gudeberg allé 1",
+   "form": "ENK",
+   "naering": "Fiske og fangst i sjø",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "987563346",
+   "navn": "PER ROAR HOLEN",
+   "adresse": "Kasernegaten 47",
+   "form": "ENK",
+   "naering": "Psykolog- og psykoterapitjenester, unntatt legetjenester innenfor psykiatri",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "992863943",
+   "navn": "PERS UTLEIESERVICE AS",
+   "adresse": "Spinneriveien 14",
+   "form": "AS",
+   "naering": "Utleie og leasing av biler og andre lette motorvogner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915057845",
+   "navn": "PJZ JESPER ZAKRISSON",
+   "adresse": "c/o Tannlegene i Vaegtergaarden Voldgaten 10",
+   "form": "ENK",
+   "naering": "Tannlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "926603779",
+   "navn": "PK CONSULT AS",
+   "adresse": "Spinnerikroken 10",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993391867",
+   "navn": "PLANKESTREDET AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938554587",
+   "navn": "PLUS KALENDER 2027 UNGDOMSBEDRIFT",
+   "adresse": "Plus-skolen AS Færgeportgaten 77",
+   "form": "ANNA",
+   "naering": null,
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912155528",
+   "navn": "PLUS-SKOLEN AS",
+   "adresse": "Færgeportgata 77",
+   "form": "AS",
+   "naering": "Videregående opplæring innenfor yrkesfaglige utdanningsprogram",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 16
+  },
+  {
+   "orgnr": "932087723",
+   "navn": "PLUS-SKOLEN EIENDOM AS",
+   "adresse": "Færgeportgaten 77",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "988787450",
+   "navn": "POSTGÅRDEN  FREDRIKSTAD SAMEIE",
+   "adresse": "Toldbodgaten 37",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990170150",
+   "navn": "PSYKOLOG EINAR STEENERSEN",
+   "adresse": "Kirkegaten 32",
+   "form": "ENK",
+   "naering": "Psykolog- og psykoterapitjenester, unntatt legetjenester innenfor psykiatri",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981857305",
+   "navn": "PSYKOLOG JAN S BERGLAND",
+   "adresse": "Gamlebyen Voldgaten 97",
+   "form": "ENK",
+   "naering": "Psykolog- og psykoterapitjenester, unntatt legetjenester innenfor psykiatri",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938348103",
+   "navn": "RALTO AS",
+   "adresse": "Laboratoriegaten 100",
+   "form": "AS",
+   "naering": "Dataprogrammeringstjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "920820182",
+   "navn": "RAMO EL-ENGROS AS",
+   "adresse": "c/o Morten Svendsen Spinnerikroken 1",
+   "form": "AS",
+   "naering": "Engroshandel med maskiner og utstyr ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914759706",
+   "navn": "RAMPESTREKER HOLDING AS",
+   "adresse": "Nabbetorpveien 26",
+   "form": "AS",
+   "naering": "Industri-, produkt- og motedesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "822293492",
+   "navn": "REISEAKADEMIET AS",
+   "adresse": "Smedjegaten 89",
+   "form": "AS",
+   "naering": "Reisearrangørvirksomhet ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "934630130",
+   "navn": "RESTAURANT KONG-FREDERIK AS",
+   "adresse": "Kirkegaten 28B",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "932153882",
+   "navn": "RINO MOSSIK",
+   "adresse": "Prestelandet 3B",
+   "form": "ENK",
+   "naering": "Produksjon og utgivelse av musikk- og lydopptak",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "971248424",
+   "navn": "RISIKORET",
+   "adresse": "c/o Kari Elisabeth Spæren Sand Nabbetorpveien 33",
+   "form": "FLI",
+   "naering": "Annen utøvende kunstnerisk virksomhet og underholdningsvirksomhet ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "986028242",
+   "navn": "RITA TRONDSEN WALTER",
+   "adresse": "Voldgaten 12",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "925762261",
+   "navn": "ROALD AMUNDSEN FØDESTED STI",
+   "adresse": "c/o Viggo R. Andersen Toldbodgaten 37",
+   "form": "STI",
+   "naering": "Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998855195",
+   "navn": "ROYAL THAI TAKE AWAY AS",
+   "adresse": "Mossins gate 9",
+   "form": "AS",
+   "naering": "Catering for arrangementer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "917107688",
+   "navn": "RØDT FREDRIKSTAD OG HVALER",
+   "adresse": "Voldgaten 97",
+   "form": "FLI",
+   "naering": "Aktiviteter i partipolitiske organisasjoner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936671101",
+   "navn": "RØMER INVEST AS",
+   "adresse": "Gudeberg allé 7",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "924567376",
+   "navn": "RAADHUSHAGEN BOLIGSAMEIE",
+   "adresse": "Raadhusgaten 17A",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933198324",
+   "navn": "SAINT-RÉAL INVEST AS",
+   "adresse": "Toldbodgaten 38",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912672964",
+   "navn": "SALAMANDER HOLDING AS",
+   "adresse": "Færgeportgaten 79",
+   "form": "AS",
+   "naering": "Andre egeninvesteringsselskaper",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "996541932",
+   "navn": "SAMEIET KASERNEGATEN 51",
+   "adresse": "Kasernegaten 51",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "994872141",
+   "navn": "SAMEIET KASERNEGATEN 55",
+   "adresse": "Kasernegaten 55",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "994818511",
+   "navn": "SAMEIET KASERNEGATEN 56",
+   "adresse": "Kasernegaten 56",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "918178708",
+   "navn": "SAMEIET MOSSINS GT 7",
+   "adresse": "Mossins gate 7",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990653801",
+   "navn": "SAMEIET STORGATA 21 FREDRIKSTAD",
+   "adresse": "Færgeportgaten 82",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "975720535",
+   "navn": "SAMEIET VOLDGATEN 10/11",
+   "adresse": "Voldgaten 12",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "911684365",
+   "navn": "SAMMEN FOR ØSTFOLD",
+   "adresse": "Nabbetorpveien 8",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "919172576",
+   "navn": "SAMSPILLE AS",
+   "adresse": "Nabbetorpveien 27A",
+   "form": "AS",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "923225358",
+   "navn": "SAND CASTING AS",
+   "adresse": "Laboratoriegaten 100",
+   "form": "AS",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "984373937",
+   "navn": "SANDHAUG CONSULTING",
+   "adresse": "Nabbetorpveien 27A",
+   "form": "ENK",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930151866",
+   "navn": "SANDKASSA HOLDING AS",
+   "adresse": "Laboratoriegaten 100",
+   "form": "AS",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "983568939",
+   "navn": "SAUGSTAD HEGE",
+   "adresse": "Raadhusgaten 18A",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998686334",
+   "navn": "SCENEKUNST ISAKSEN",
+   "adresse": "Raadhusgaten 17B",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "978681948",
+   "navn": "SCHEELE TRADING",
+   "adresse": "Torvgaten 64",
+   "form": "ENK",
+   "naering": "Uspesifisert engroshandel",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "979550677",
+   "navn": "SILVERTONE STUDIO Rune Jørgensen",
+   "adresse": "Kirkegaten 31",
+   "form": "ENK",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "987978120",
+   "navn": "SINDINGGAARDEN SAMEIE",
+   "adresse": "Toldbodgaten 36A",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "825168532",
+   "navn": "SIVILINGENIØR JON-ERLING JOHANNESSEN",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Byggeteknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938465363",
+   "navn": "SKINNOGLEST.UNGDOMSBEDRIFT",
+   "adresse": "Plus skolen AS Færgeportgaten 77",
+   "form": "ANNA",
+   "naering": null,
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998247640",
+   "navn": "SKJÆRHALDEN SJØBUER SERVICEBYGGET AS",
+   "adresse": "Spinnerikroken 5",
+   "form": "AS",
+   "naering": "Drift av vandrerhjem og ferieleiligheter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "911956527",
+   "navn": "SKY FITNESS AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Treningssentervirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "926490583",
+   "navn": "SKY FITNESS BERGEN AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Treningssentervirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "921021259",
+   "navn": "SKY FITNESS EIENDOM AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "820203062",
+   "navn": "SLASK IL",
+   "adresse": "c/o Martin Karlsen Prestelandet 2",
+   "form": "FLI",
+   "naering": "Aktiviteter i idrettslag og -klubber",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "836979532",
+   "navn": "SMI3D AS",
+   "adresse": "Spinneriveien 3",
+   "form": "AS",
+   "naering": "Byggeteknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "887382352",
+   "navn": "SOLBJØRN EIENDOM AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938110026",
+   "navn": "SOLGAARD - IMPORT",
+   "adresse": "Litles gate 14",
+   "form": "ENK",
+   "naering": "Engroshandel med andre husholdningsvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "917295344",
+   "navn": "SOLOMON AUTO AS",
+   "adresse": "Prestelandet 18",
+   "form": "AS",
+   "naering": "Detaljhandel med motorvogner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "818688962",
+   "navn": "SOLVEIGS SAMTALEROM - GESTALTTERAPEUT SOLVEIG B. OSVOLD",
+   "adresse": "Inngang Kasernegaten Toldbodgaten 35",
+   "form": "ENK",
+   "naering": "Psykolog- og psykoterapitjenester, unntatt legetjenester innenfor psykiatri",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "935981271",
+   "navn": "SPECIFY EVENTS DA",
+   "adresse": "Johan Korens gate 6",
+   "form": "DA",
+   "naering": "Utleie og leasing av andre maskiner og annet utstyr og materiell ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "875967312",
+   "navn": "SPEILE JAN GEBHARDT",
+   "adresse": "Nabbetorpveien 25A",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928447170",
+   "navn": "SPINNERIVEIEN 11 EIENDOM AS",
+   "adresse": "Spinneriveien 11",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938633568",
+   "navn": "SPÆREN MUSIKK",
+   "adresse": "Nabbetorpveien 33",
+   "form": "ENK",
+   "naering": null,
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "982355079",
+   "navn": "ST JOHANNESLOGEN ST MAGNUS",
+   "adresse": "Kasernegaten 46",
+   "form": "FLI",
+   "naering": "Aktiviteter i religiøse organisasjoner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937058225",
+   "navn": "STEELMAN AND ASSOCIATES MUSIC",
+   "adresse": "Torvgaten 58",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933471705",
+   "navn": "STENBOCK HOLDING AS",
+   "adresse": "Nabbetorpveien 2",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "982097053",
+   "navn": "STENSENG GULBRANDSEN",
+   "adresse": "Kirkegaten 32",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor litteratur",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "922137110",
+   "navn": "STEPHANIE POKORRA",
+   "adresse": "Spinnerikroken 1",
+   "form": "ENK",
+   "naering": "Andre personlige tjenester ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990110808",
+   "navn": "STIFTELSEN SLEPEBÅTEN FIX",
+   "adresse": "c/o Fredrikstad museum Tøihusgaten 41",
+   "form": "STI",
+   "naering": "Drift av historiske steder og monumenter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "919454296",
+   "navn": "STORENGEN BUNADSTUE OG VELVÆRE",
+   "adresse": "Torvgaten 68",
+   "form": "ENK",
+   "naering": "Produksjon av yttertøy",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "811837172",
+   "navn": "STRATEGIC PROPERTY AS",
+   "adresse": "Voldportgaten 69",
+   "form": "AS",
+   "naering": "Utvikling og salg av byggeprosjekter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "919353104",
+   "navn": "STUDIO GRAN INTERIØRARKITEKTER AS",
+   "adresse": "Voldportgaten 69",
+   "form": "AS",
+   "naering": "Interiørdesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "922658323",
+   "navn": "STUDIO INGRID ANDERSEN",
+   "adresse": "Kasernegaten 55",
+   "form": "ENK",
+   "naering": "Grafisk design og visuell kommunikasjonsdesign",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "938019991",
+   "navn": "STUDIO MOYO AS",
+   "adresse": "Kirkegaten 29A",
+   "form": "AS",
+   "naering": "Detaljhandel med tekstiler og utstyrsvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "876274612",
+   "navn": "SVEIN-ERIK SCHEELE",
+   "adresse": "Voldportgaten 74",
+   "form": "ENK",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929413547",
+   "navn": "SYSTUA, KAROLINE VINJE",
+   "adresse": "Johan Korens gate 5",
+   "form": "ENK",
+   "naering": "Produksjon av yttertøy",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927014513",
+   "navn": "SØRLIE ACTING",
+   "adresse": "Kasernegaten 50",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912547531",
+   "navn": "TAMBUREN AS",
+   "adresse": "Færgeportgaten 78B",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 8
+  },
+  {
+   "orgnr": "917642559",
+   "navn": "TANNLEGE HELENE MARYANN JOSEFSEN",
+   "adresse": "Voldgaten 10/11",
+   "form": "ENK",
+   "naering": "Tannlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990862311",
+   "navn": "TANNLEGENE I VÆKTERGAARDEN AS",
+   "adresse": "Voldgata 10/11",
+   "form": "AS",
+   "naering": "Tannlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998597749",
+   "navn": "TANNPLEIER SHOKH HIWA JALAL",
+   "adresse": "Voldgaten 10",
+   "form": "ENK",
+   "naering": "Tannlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930210110",
+   "navn": "TAXI FAYEZ",
+   "adresse": "Gudeberg allé 33",
+   "form": "ENK",
+   "naering": "Passasjertransport på forespørsel utført av fører med kjøretøy",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "981337859",
+   "navn": "TBG AS",
+   "adresse": "Voldgaten 7",
+   "form": "AS",
+   "naering": "Aktiviteter innenfor tradisjonell, komplementær og alternativ medisin",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "876645092",
+   "navn": "TEKSTILDESIGNER JON Å PETTERSEN",
+   "adresse": "Torvgaten 57",
+   "form": "ENK",
+   "naering": "Industri-, produkt- og motedesignvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "982339359",
+   "navn": "TERJE BREVIK",
+   "adresse": "Gudeberg allé 16",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "996532305",
+   "navn": "TERJE HANSEN MUSIKK",
+   "adresse": "Prestelandet 2",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "989087134",
+   "navn": "TERJE HARSEM AS",
+   "adresse": "Spinnerikroken 11",
+   "form": "AS",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "931671790",
+   "navn": "TG-VEDELER AS",
+   "adresse": "Spinneriveien 11",
+   "form": "AS",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 5
+  },
+  {
+   "orgnr": "930564389",
+   "navn": "TG-VEDELER HOLDING AS",
+   "adresse": "Spinneriveien 11",
+   "form": "AS",
+   "naering": "Allmennlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "996351203",
+   "navn": "THERESE MARIE NILSEN",
+   "adresse": "Voldportgaten 73",
+   "form": "ENK",
+   "naering": "Detaljhandel med klær",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998392799",
+   "navn": "THG THORA GUDBJARTSDOTTIR",
+   "adresse": "Prestelandet 16A",
+   "form": "ENK",
+   "naering": "Annen undervisning ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "913310586",
+   "navn": "THOR BØCKMANN AS",
+   "adresse": "c/o Bøckmann Holding AS Færgeportgaten 82",
+   "form": "AS",
+   "naering": "Aktiviteter innenfor tradisjonell, komplementær og alternativ medisin",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "924592826",
+   "navn": "THOR GUNNAR RYEN AS",
+   "adresse": "Torvgaten 59A",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "985011796",
+   "navn": "THOR HAUKELAND",
+   "adresse": "Prestelandet 15",
+   "form": "ENK",
+   "naering": "Spesialiserte legetjenester, unntatt psykiatriske legetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928867277",
+   "navn": "TINDRE AI AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Konsulentvirksomhet tilknyttet informasjonsteknologi og forvaltning og drift av it-systemer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "912497658",
+   "navn": "TONE CATHRINE WESTERN HAUGEN",
+   "adresse": "Raadhusgaten 13",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "998374243",
+   "navn": "TORPEGATA 8 A EIENDOM AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "830742212",
+   "navn": "TORVGATEN 57A AS",
+   "adresse": "Torvgaten 57",
+   "form": "AS",
+   "naering": "Kjøp og salg av egen fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "931471880",
+   "navn": "TORVGATEN 58",
+   "adresse": "c/o Anette Marie Borgen Steelman Torvgaten 58",
+   "form": "ESEK",
+   "naering": "Aktiviteter i borettslag og boligsameier",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "827684082",
+   "navn": "TRUBADURENE I FREDRIKSTAD",
+   "adresse": "c/o Terje Hansen Prestelandet 2",
+   "form": "FLI",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor musikk",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936963587",
+   "navn": "TRUDE ISAKSEN FOREVER LIVING",
+   "adresse": "Spinnerikroken 8",
+   "form": "ENK",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "924282517",
+   "navn": "TS-CONSULT CLAUDIUS",
+   "adresse": "Spinnerikroken 10",
+   "form": "ENK",
+   "naering": "Annen undervisning ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936866867",
+   "navn": "TVETE-BERGER RÅD",
+   "adresse": "Prestelandet 14B",
+   "form": "ENK",
+   "naering": "All annen faglig, vitenskapelig og teknisk virksomhet ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "997058461",
+   "navn": "TWEEDS & CO. KNUT THOMAS HAREIDE-LARSEN",
+   "adresse": "Dunkejongaarden Torvgaten 60",
+   "form": "ENK",
+   "naering": "Andre personlige tjenester ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "916087616",
+   "navn": "TWEEDS KULTURFEST",
+   "adresse": "Dunkejongaarden Torvgaten 60",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "924969954",
+   "navn": "TØMRER EMIL JOSDAL",
+   "adresse": "Nabbetorpveien 6",
+   "form": "ENK",
+   "naering": "Oppføring av bygninger",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "911733994",
+   "navn": "VABENKEN 17 AS",
+   "adresse": "Smedjegaten 86",
+   "form": "AS",
+   "naering": "Eiendomsforvaltning på oppdrag",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "936569439",
+   "navn": "VALUE LABS AS",
+   "adresse": "Nabbetorpveien 6",
+   "form": "AS",
+   "naering": "Uoppgitt",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "937804431",
+   "navn": "VANJAS AS TVANGSAVVIKLINGSBO",
+   "adresse": "Smedjegaten 88",
+   "form": "KBO",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "990896801",
+   "navn": "VEGARD HANVE",
+   "adresse": "Voldportgaten 69A",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "885408362",
+   "navn": "VERGEHJELPEN - SILVANA RAAE",
+   "adresse": "Kasernegaten 56",
+   "form": "ENK",
+   "naering": "Andre personlige tjenester ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "979823460",
+   "navn": "VIBECKE DIXON CONSULTING",
+   "adresse": "Kasernegaten 55",
+   "form": "ENK",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "933528057",
+   "navn": "VIDAR KRISTIANSEN LYD",
+   "adresse": "Johan Korens gate 5",
+   "form": "ENK",
+   "naering": "Andre tjenester tilknyttet kunstnerisk virksomhet og underholdningsvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927089912",
+   "navn": "VIEDU AS",
+   "adresse": "Torvgaten 64",
+   "form": "AS",
+   "naering": "Reklamebyråvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 9
+  },
+  {
+   "orgnr": "936063233",
+   "navn": "VIGDIS VELGAARD",
+   "adresse": "Torvgaten 60",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "894471492",
+   "navn": "VITOCONSULT NIELSEN",
+   "adresse": "Johan Korens gate 2",
+   "form": "ENK",
+   "naering": "Annen teknisk konsulentvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "989196693",
+   "navn": "VITORIA HOLDING AS",
+   "adresse": "Tøihusgaten 45",
+   "form": "AS",
+   "naering": "Engroshandel med klær og skotøy",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "858910722",
+   "navn": "VOLDPORTGATEN 73-1 AS",
+   "adresse": "Voldportgaten 73",
+   "form": "AS",
+   "naering": "Utleie av egen eller leid fast eiendom",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "929529022",
+   "navn": "VOLDPORTGATEN HOLDING AS",
+   "adresse": "c/o Major-Stuen AS Voldportgaten 73",
+   "form": "AS",
+   "naering": "Bedriftsrådgivning og annen administrativ rådgivning",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "955653246",
+   "navn": "VOLDPORTKJELLEREN SIGURD BERG",
+   "adresse": "Voldportgaten 74",
+   "form": "ENK",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "995638762",
+   "navn": "VOLLAWOOD FILM AS",
+   "adresse": "Færgeportgaten 83",
+   "form": "AS",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "968132318",
+   "navn": "VOLLAWOOD FILM Larsen",
+   "adresse": "Toldbodgaten 38",
+   "form": "ENK",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "915892167",
+   "navn": "VOLLAWOOD FILMPRODUKSJON AS",
+   "adresse": "Færgeportgaten 83",
+   "form": "AS",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "920708366",
+   "navn": "VÆRK AS",
+   "adresse": "Færgeportgaten 78B",
+   "form": "AS",
+   "naering": "Drift av restauranter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": 21
+  },
+  {
+   "orgnr": "990164010",
+   "navn": "VÅR - UTVIKLING INGER JOHANNE JENSEN",
+   "adresse": "Prestelandet 13A",
+   "form": "ENK",
+   "naering": "Annen undervisning ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "988844349",
+   "navn": "WIGGO ANDERSEN HOLDING AS",
+   "adresse": "Toldbodgaten 37",
+   "form": "AS",
+   "naering": "Reisearrangørvirksomhet ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "922851875",
+   "navn": "WORK AT HEIGHTS IVAN SOSKA",
+   "adresse": "Toldbodgaten 35",
+   "form": "ENK",
+   "naering": "Annen spesialisert bygge- og anleggsvirksomhet ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "821893542",
+   "navn": "WORLD FITNESS AS",
+   "adresse": "Kirkegaten 28A",
+   "form": "AS",
+   "naering": "Engroshandel med andre husholdningsvarer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "930159581",
+   "navn": "YETTA LETTENSTRØM",
+   "adresse": "c/o Kunst med puls Raadhusgaten 21",
+   "form": "ENK",
+   "naering": "Skapende kunstnerisk virksomhet innenfor visuell kunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "927461951",
+   "navn": "YTF AVD. 696 LOGISTIKK ØSTFOLD OG FOLLO",
+   "adresse": "Johan Korens gate 1",
+   "form": "FLI",
+   "naering": "Aktiviteter i arbeidstakerorganisasjoner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "991732071",
+   "navn": "ZAIRA Mariana Dias Lacerda Ferreira",
+   "adresse": "Gudeberg allé 15",
+   "form": "ENK",
+   "naering": "Utøvende kunstnerisk virksomhet og underholdningsvirksomhet innenfor scenekunst",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "988813672",
+   "navn": "ZEN FREDRIKSTAD",
+   "adresse": "Kirkegaten 31B",
+   "form": "FLI",
+   "naering": "Annen undervisning ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "916570309",
+   "navn": "ZWART ARBEID AS",
+   "adresse": "Smedjegaten 88",
+   "form": "AS",
+   "naering": "Produksjon av film, video og fjernsynsprogrammer",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "914724996",
+   "navn": "ZWART EIENDOM AS",
+   "adresse": "Smedjegaten 88",
+   "form": "AS",
+   "naering": "Utvikling og salg av byggeprosjekter",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "999323650",
+   "navn": "ØRA INVEST AS",
+   "adresse": "Spinnerikroken 5",
+   "form": "AS",
+   "naering": "Andre egeninvesteringsselskaper",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "991344691",
+   "navn": "ØSTFOLD PAINTBALL KRETS",
+   "adresse": "Johan Korens gate 1",
+   "form": "FLI",
+   "naering": "Aktiviteter i idrettslag og -klubber",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "993320056",
+   "navn": "ØSTFOLD SANGERFORUM",
+   "adresse": "Nabbetorpveien 33",
+   "form": "FLI",
+   "naering": "Aktiviteter i andre medlemsorganisasjoner ellers",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "987627883",
+   "navn": "ØSTRE FREDRIKSTAD ARBEIDERPARTILAG",
+   "adresse": "c/o Hanne Ellingsen Gudeberg allé 4",
+   "form": "FLI",
+   "naering": "Aktiviteter i partipolitiske organisasjoner",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "986517332",
+   "navn": "ØYSTEIN JÜRGEN ANDRESEN",
+   "adresse": "Voldgata 10/11",
+   "form": "ENK",
+   "naering": "Tannlegetjenester",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "819928142",
+   "navn": "ÅMLI FOTO",
+   "adresse": "Toldbodgaten 106",
+   "form": "ENK",
+   "naering": "Fotografvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "928674584",
+   "navn": "ÅSA EKER CHRISTOFFERSEN",
+   "adresse": "Voldportgaten 72A",
+   "form": "ENK",
+   "naering": "Detaljhandel med kulturvarer ikke nevnt annet sted",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  },
+  {
+   "orgnr": "986440615",
+   "navn": "ÅSMUND KVÆRNSTRØM",
+   "adresse": "Kasernegaten 55",
+   "form": "ENK",
+   "naering": "Fotografvirksomhet",
+   "konkurs": false,
+   "avvikling": false,
+   "ansatte": null
+  }
+ ]
+}

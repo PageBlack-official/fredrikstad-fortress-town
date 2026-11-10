@@ -1,0 +1,37 @@
+# Fjerde kvartal i Gamlebyen
+# kilde: https://lokalhistoriewiki.no/Fjerde_kvartal_i_Gamlebyen
+# lest: 2026-11-10
+
+{{Kvartal 4 i Gamlebyen}}
+<onlyinclude>'''[[Fjerde kvartal i Gamlebyen|Fjerde kvartal]]''' i [[Gamlebyen i Fredrikstad]] avgrenses av [[Raadhusgaten (Fredrikstad)|Raadhusgaten]] i vest, [[Kasernegaten (Fredrikstad)|Kasernegaten]] i nord, [[Voldgaten (Fredrikstad)|Voldgaten]] i øst og [[Tøihusgaten (Fredrikstad)|Tøihusgaten]] i sør. Her finner vi både prangende offentlige, kommunale bygninger, og mer beskjedne leiegårder. Dette er et kvartal som har vært rammet av brann utallige ganger, og bebyggelsen her er av den yngre i Gamlebyen.<onlyinclude>
+
+Fremtredende bygninger er rekken av kommunale bygninger med front mot Tøihusgaten som ble oppført i 1860-årene. De ble tegnet av arkitekten [[Emil Victor Langlet]]. Her ligger både [[Det nye rådhuset]], [[Fredrikstad hospital|Hospitalet]] og sykehuset. Mot Voldgaten og Kasernegaten finner vi leiegårder fra slutten av 1800-tallet med en tidstypisk bygårdsarkitektur. 
+
+== Fjerde kvartal før de mange brannene ==
+Fjerde kvartal er av de kvartal i Gamlebyen som har brent flest ganger. En grunn til det er at det har vært et av byens fattigere kvartal, og bebyggelsen har bestått av trehus bygd tett i tett. Bare siden [[bybrannen i Fredrikstad 1764|bybrannen i 1764]] har kvartalet, eller deler av det brent tre ganger. Det er derfor ingen hus eldre enn 1860-årene bevart. Den gamle hospitalbygningen fra 1670-årene ble revet etter brannen i 1858 og erstattet av dagens bygning fra 1861.  
+
+{| class="wikitable"
+|-
+! Kvartalets bygninger
+|-
+| {{:Kasernegaten 54}}
+|-
+| {{:Kasernegaten 56}}
+|-
+| {{thumb|Det_nye_radhus.jpg|align=left|bredde=150px|Det nye rådhus fra 1864}}{{:Rådhuset i Fredrikstad}}
+|-
+| {{thumb|hospitalet.JPG|align=left|bredde=150px|Hospitalsbygningen fra 1861}}{{:Fredrikstad hospital}}
+|}
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Tøihusgaten i Gamlebyen, fjerde kvartal - no-nb digifoto 20140411 00010 bldsa PK12897.jpg|Fra krysset med Voldgaten i 1910-15. 
+Fil:Fredrikstad, Tøihusgaten i Gamlebyen, fjerde kvartal - no-nb digifoto 20140509 00003 bldsa PK13065.jpg|Fasade mot Tøihusgaten i 1915-30.
+</gallery>
+
+{{Gamlebyens kvartaler}}
+{{Trenger kilder}}
+[[Kategori:Fjerde kvartal i Fredrikstad|  ]]
+[[Kategori:Gamlebyen i Fredrikstad|#04]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20206|N|10.95383|Ø}}
+{{bm}}

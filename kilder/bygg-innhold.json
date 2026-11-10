@@ -22,18 +22,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1783–1787",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Infanterikasernen_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1783-1787; oppført etter tegninger av Hans Christopher Gedde"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført som kaserne for garnisonen i 1783–1787 etter tegninger av Hans Christopher Gedde, med Christian Ludvig Clementz som byggmester. Teglet kom fra det militære teglverket på Nabbetorp. Bygget har to etasjer og loft over en hvelvet kjeller, og dekker hele sjette kvartal. Kasernen var i bruk til 2002, da garnisonen i Fredrikstad ble lagt ned. Den kalles også Torvkasernen.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Infanterikasernen_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Infanterikasernen",
+   "adresse": [
+    "Kasernegaten 47"
+   ],
+   "merknad": "Bruk i dag står tomt: Kasernen Hotelldrift AS er registrert på Kasernegaten 47 i Enhetsregisteret, men hotellet åpner i 2027 og bygget skal ikke framstå som åpent."
   },
   "bnr-193868568": {
    "bygningsnummer": 193868568,
@@ -421,18 +438,45 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1784",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Dunkejong%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1784"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Trebygning fra 1784, bygd av kjøpmann Søren Thygesen, med symmetriske fasader og markerte stolper over begge etasjene. Brigadelege Abraham Falch Siemers bodde her med familien fra 1807 til 1837. Navnet kom etter høkeren John Larsen, som eide gården på 1860-tallet og solgte brennevin fra dunk i kjelleren. Forsvarsdepartementet overtok gården i 1959.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Dunkejong%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Foreningen Gamle Fredrikstad",
+    "kilder": [
+     {
+      "adresse": "https://data.brreg.no/enhetsregisteret/api/enheter?forretningsadresse.postnummer=1632",
+      "dato": "2026-11-10",
+      "note": "Foreningen Gamle Fredrikstad (FLI) registrert (forretningsadresse Torvgaten 60)"
+     },
+     {
+      "adresse": "https://lokalhistoriewiki.no/Dunkejong%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "artikkelen oppgir samme forening, men uten årstall nyere enn 2008"
+     }
+    ]
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": "Dunkejongården",
+   "adresse": [
+    "Torvgaten 60"
+   ]
   },
   "bnr-193972128": {
    "bygningsnummer": 193972128,
@@ -692,7 +736,11 @@
     "kilder": [],
     "note": "Ingen verifisert 2026-kilde. Siste kjente (lokalhistoriewiki, 2008): mediebedriften Zwart Arbeid med kontorer; for gammelt til å stå som «i dag». Krever Brønnøysund på adressen eller befaring."
    },
-   "status": "delvis"
+   "status": "delvis",
+   "kartnavn": "Det gamle raadhus",
+   "adresse": [
+    "Kirkegaten 27"
+   ]
   },
   "bnr-193972039": {
    "bygningsnummer": 193972039,
@@ -1017,18 +1065,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1861–1864",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/R%C3%A5dhuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1861-1864"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bygd i 1861–1864 etter tegninger av den svenske arkitekten Emil Victor Langlet, som også tegnet Stortinget, i importert gul teglstein. Teglet tålte været dårlig, og stein begynte å falle ut av tårnet. Riving ble vedtatt i 1870, men tårnet ble reparert med ny rød teglstein, og det er grunnen til fargene i dag. Opprinnelig var det rettssal og politilokaler med arrest i bygningen, og bystyresal i andre etasje.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/R%C3%A5dhuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Det nye rådhus",
+   "adresse": [
+    "Tøihusgaten 42"
+   ],
+   "merknad": "Bruk i dag står tomt: artikkelen oppgir Fredrikstad fengsel og bystyresalen uten årstall. Enhetsregisteret har en forening ved navn «Gamlebyen fengsel» på adressen; det er ikke bevis for hvem som bruker lokalene nå."
   },
   "bnr-193867863": {
    "bygningsnummer": 193867863,
@@ -1227,18 +1292,36 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "slutten av 1990-tallet",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kasernegaten_54",
+      "dato": "2026-11-10",
+      "note": "oppført på slutten av 1990-tallet etter kopi av en eldre gård fra 1890-årene"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført på slutten av 1990-tallet som kopi av en eldre gård fra 1890-årene. I kjelleren ble det funnet rester etter hospitalskirkegården fra 1600-tallet.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kasernegaten_54",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": null,
+   "adresse": [
+    "Kasernegaten 53",
+    "Kasernegaten 54"
+   ],
+   "merknad": "Bygget har to adresser i datasettet, Kasernegaten 53 og 54. Artikkelen gjelder Kasernegaten 54."
   },
   "bnr-193868533": {
    "bygningsnummer": 193868533,
@@ -1748,22 +1831,44 @@
    "bygningsnummer": 193867707,
    "kategori": "bolig",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Salen",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kasernegaten_56",
+      "dato": "2026-11-10",
+      "note": "infoboks husnavn Salen, adresse Kasernegaten 56"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "trolig 1899",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kasernegaten_56",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår ant. 1899"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Trolig bygd i 1899. Fra 1900 til 1944 holdt godtemplarlosjen «Frem til seier» til her. Deretter overtok menighetssamfunnet «Salen», og bygget bærer fremdeles menighetens navn. Senere hadde Tanum Tekstilutsalg lokaler i første etasje i mange år.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kasernegaten_56",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Kasernegaten 56"
+   ]
   },
   "bnr-193972411": {
    "bygningsnummer": 193972411,
@@ -1958,22 +2063,46 @@
    "bygningsnummer": 193867618,
    "kategori": "bolig",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Gaaserudgården",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Gaaserudg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, adresse Torvgaten 57A med fasade mot Toldbodgaten"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "ca. 1830",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Gaaserudg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår ca. 1830"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Reist etter bybrannen i 1830 av grosserer Christian Mørch, på restene av gården som brant. Stor toetasjes murbygning i empirestil, med symmetrisk hovedfasade mot elva og markert midtparti. Forgjengeren på tomten var en av byens staseligste gårder, og festmiddagen for kong Karl Johan ble holdt der 28. april 1828. Teglverkseier Christian Gaaserud overtok i 1900, og gården var i slektens eie til 1948.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Gaaserudg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Torvgaten 57",
+    "Torvgaten 57A"
+   ],
+   "merknad": "Bygget har to adresser i datasettet, Torvgaten 57 og 57A."
   },
   "bnr-193971873": {
    "bygningsnummer": 193971873,
@@ -2046,18 +2175,40 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1808",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Ekserserhuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1808"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført i 1808 som ekserser- og ridehus for festningen, og et av de få militære byggene i Gamlebyen som er reist i tre. Enetasjes bindingsverk med bordkledning og halvvalmet tak. Den store salen ble brukt til eksersis innendørs, senere også til innkvartering og til teater.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Ekserserhuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Gamlebyen Kulturhus",
+    "kilder": [
+     {
+      "adresse": "https://data.brreg.no/enhetsregisteret/api/enheter?forretningsadresse.postnummer=1632",
+      "dato": "2026-11-10",
+      "note": "Gamlebyen Kulturhus (FLI) og Gamlebyen Festivaldrift AS registrert (forretningsadresse Kirkegaten 24)"
+     }
+    ]
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": "Ekserserhuset",
+   "adresse": [
+    "Kirkegaten 24"
+   ]
   },
   "bnr-193868525": {
    "bygningsnummer": 193868525,
@@ -2193,18 +2344,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1830-årene",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Mulvadg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1830-årene"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført av Andreas Martin Seip etter bybrannen i 1830, som ødela hele kvartalet. Navnet kom etter konsul Hans Christian Mulvad, som overtok gården i 1846. Enkel empirestil med halvvalmet tak og få dekorative detaljer. Det ble drevet meieri i gården fram til 1942.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Mulvadg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Muldvadgården",
+   "adresse": [
+    "Kirkegaten 30"
+   ],
+   "merknad": "Artikkelen skriver navnet «Mulvadgården»; kartdatasettet skriver «Muldvadgården». Adresse (Kirkegaten 30) og artikkelkoordinat (1,3 m) peker på samme bygg."
   },
   "bnr-193868320": {
    "bygningsnummer": 193868320,
@@ -2298,18 +2466,34 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1830-årene",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Bingg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1830-årene"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Toetasjes tømmerbygning i enkel empirestil, trolig oppført for oberstløytnant Magnus Christian Fritzner. Byfogd Just Johan Bing eide gården fra 1835 til 1859, og den bærer navnet hans. Fra 1859 var den i familien Rings eie til 1952, og kalles også Ring-gården. Malerinnen Helga Ring Reusch ble født her i 1865.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Bingg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Binggården",
+   "adresse": [
+    "Kirkegaten 31"
+   ]
   },
   "bnr-193972187": {
    "bygningsnummer": 193972187,
@@ -2508,18 +2692,33 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1727",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Mellomporten_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "oppført i gråstein og klinkermur i 1727"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Reist i gråstein og klinkermur i 1727, som den midtre av festningens tre porter mot Glomma. Den eldste porten på stedet er nevnt ved bybrannen i 1690, da som treport i et palisadeverk. Alt treverket i porten brant i 1764, og pilastrene og arkitraven er trolig fra tiden etter den brannen.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Mellomporten_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Mellomporten",
+   "adresse": [],
+   "merknad": "Porten er tegnet for hånd i kartdatasettet (pb-11) og har ikke bygningspunkt i Matrikkelen. Koblingen er gjort på navn, ikke på koordinat."
   },
   "bnr-193972519": {
    "bygningsnummer": 193972519,
@@ -2550,18 +2749,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1767",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kj%C3%B8rboeg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1767"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bygd i 1767 for kjøpmann Hans Kjørboe, og den mest påkostede gården som ble reist etter bybrannen i 1764. Gården er to bygninger i tegl, en toetasjes langs Kasernegaten og en enetasjes sidefløy mot Toldbodgaten. Kjørboe gikk fallitt i 1771, og militæretaten kjøpte gården i 1776 for 5 000 riksdaler. Den ble kornmagasin og kaserne, fra 1935 militære kontorer, og den funksjonen holdt til 2002.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kj%C3%B8rboeg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Kiørboegården",
+   "adresse": [
+    "Toldbodgaten 35"
+   ],
+   "merknad": "Artikkelen skriver adressen «Tolbodgaten 35»; datasettet har Toldbodgaten 35 på samme bygg, og artikkelkoordinaten ligger 2,8 m fra bygningspunktet."
   },
   "bnr-193971377": {
    "bygningsnummer": 193971377,
@@ -2739,18 +2955,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1869",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Vollmesterboligen_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1869"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Reist på Prins Fredriks bastion i 1869 som bolig for festningens vollmester, på restene av Materialgårdens magasinhus. Hele Materialgården brant i 1868. I bygget var det også snekker- og malerverksted, og det ble lenge kalt Materialgårdens verkstedbygning. På 1980-tallet ble det satt i stand til kontorer.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Vollmesterboligen_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Vollmesterboligen",
+   "adresse": [
+    "Voldgaten 97"
+   ],
+   "merknad": "Bruk i dag står tomt: artikkelen oppgir Fredrikstad kommunes park- og idrettsavdeling uten årstall, og Enhetsregisteret viser andre virksomheter på Voldgaten 97. Ingen av dem er bekreftet som bruker av bygget."
   },
   "bnr-193971989": {
    "bygningsnummer": 193971989,
@@ -2777,22 +3010,45 @@
    "bygningsnummer": 193868371,
    "kategori": "annet",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Thiisgården",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Thiisg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, også kalt Villa Glommen; adresse Voldportgaten 70"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1830-årene",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Thiisg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1830-årene"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført etter brannen i 1830, i pusset teglstein på en kraftig og langt eldre gråsteinskjeller, i klassisistisk stil. Opprinnelig hadde huset bare én etasje; takarken kom senere, trolig tidlig på 1900-tallet. Gården er oppkalt etter konsul og trelastagent Carsten Thiis, som overtok i 1877. I enkefru Elisabeth Jones' tid var den kjent som Villa Glommen.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Thiisg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Voldportgaten 70A"
+   ],
+   "merknad": "Artikkelen oppgir Voldportgaten 70; datasettet har Voldportgaten 70A på dette bygget. Artikkelkoordinaten ligger 8,0 m fra bygningspunktet."
   },
   "bnr-193867987": {
    "bygningsnummer": 193867987,
@@ -2945,22 +3201,44 @@
    "bygningsnummer": 193867979,
    "kategori": "bolig",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Rokkes hotell",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Rokkes_hotell",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, adresse Voldportgaten 74"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "ca. 1830",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Rokkes_hotell",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår ca. 1830; oppført like etter bybrannen i 1830"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Toetasjes bindingsverksbygning i enkel klassisistisk stil, kledd med liggende panel, reist like etter bybrannen i 1830 av kapteinvaktmester Friedrich Dietrichson, på tomten etter hans eget hus. Hvor navnet kommer fra er ukjent. Ingen eier het Rokke, og det kan ha vært en leieboer som ga huset navnet.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Rokkes_hotell",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Voldportgaten 74"
+   ]
   },
   "bnr-193867499": {
    "bygningsnummer": 193867499,
@@ -2970,18 +3248,34 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1768",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kommandantg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1768"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bygd i 1768 som privatbolig, i tegl på gråsteinsgrunnmur, med to fløyer mot Toldbodgaten og Tøihusgaten. Militæretaten kjøpte gården i 1796 til bolig for kommandanten på Fredrikstad festning. I 1800 var den takstert til 4 000 riksdaler, høyere enn noen annen privat gård i Fredrikstad. Den siste kommandanten flyttet ut i 2002.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kommandantg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Kommandantgården",
+   "adresse": [
+    "Toldbodgaten 34"
+   ]
   },
   "bnr-193971970": {
    "bygningsnummer": 193971970,
@@ -3180,18 +3474,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1830-årene",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Toldbodgaten_38_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1830-årene"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Enetasjes murbygning oppført etter bybrannen i 1830, på en eldre kjeller. Før brannen eide oberst Carl Ludvig Roepstorff gården. Eieren før brannen i 1764 var kjøpmann Hans Kjørboe, som senere lot Kjørboegården bygge.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Toldbodgaten_38_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": null,
+   "adresse": [
+    "Toldbodgaten 38"
+   ],
+   "merknad": "Koblingen er gjort på adresse (Toldbodgaten 38). Artikkelkoordinaten ligger nærmere et nabobygg uten adresse (8,5 m), så identiteten bør bekreftes med et bilde før publisering."
   },
   "bnr-193867677": {
    "bygningsnummer": 193867677,
@@ -3201,18 +3512,35 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1868",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Ingeni%C3%B8rg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1868"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Reist på Prins Fredriks bastion i 1868 som lokaler for festningsingeniøren, på restene av Materialgården, som brant samme år. Senere ble det bolig for ingeniøren, og på 1900-tallet offisersmesse for artilleristene. Bygningen ble totalrenovert innvendig i 1988–1989 og innredet til kontorer.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Ingeni%C3%B8rg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Ingeniørgården",
+   "adresse": [
+    "Voldgaten 97"
+   ],
+   "merknad": "Artikkelen oppgir 1868 i infoboksen og skriver samtidig at arbeidet med Ingeniørgården og Vollmesterboligen gikk fram mot 1874. Ingeniørgården og Vollmesterboligen har samme adresse (Voldgaten 97) i datasettet; artikkelen om Ingeniørgården oppgir ingen adresse, så koblingen hviler på kartets navn og artikkelkoordinaten (10,2 m)."
   },
   "bnr-193870279": {
    "bygningsnummer": 193870279,
@@ -3222,18 +3550,45 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1773–1775",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/T%C3%B8ihuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1773-1775"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bygd i 1773–1775 som lager for militært materiell, på rundt 4 000 kvadratmeter, og var i sin tid landets største bygning. Det ble reist i bordkledd bindingsverk; murforblendingen kom først i 1803–1809. Porten i marmor mot Kirkegaten bærer Christian VIIs monogram og årstallet 1775. Mansardtaket ble lagt om til valmtak i 1873. Bygget står på tomtene etter den gamle kommandantgården, byens skole og det gamle rådhuset, som alle brant i 1764.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/T%C3%B8ihuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Fredrikstad Museum",
+    "kilder": [
+     {
+      "adresse": "https://data.brreg.no/enhetsregisteret/api/enheter?forretningsadresse.postnummer=1632",
+      "dato": "2026-11-10",
+      "note": "Fredrikstad Museum (STI) registrert (forretningsadresse Tøihusgaten 41)"
+     },
+     {
+      "adresse": "https://lokalhistoriewiki.no/T%C3%B8ihuset_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "artikkelen oppgir museet som største leietaker, uten årstall"
+     }
+    ]
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": "Tøihuset",
+   "adresse": [
+    "Tøihusgaten 41"
+   ]
   },
   "bnr-193868630": {
    "bygningsnummer": 193868630,
@@ -3344,22 +3699,46 @@
    "bygningsnummer": 193867952,
    "kategori": "annet",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Væktergården",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/V%C3%A6kterg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, adresse Voldgaten 10"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1970-årene",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/V%C3%A6kterg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1970-tallet"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Reist i 1970-årene, etter at den gamle gården brant. Den var en toetasjes tømmerbygning, oppført etter brannen i 1830.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/V%C3%A6kterg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Voldgaten 10",
+    "Voldgaten 11"
+   ],
+   "merknad": "Bygget har to adresser i datasettet, Voldgaten 10 og 11."
   },
   "bnr-193870201": {
    "bygningsnummer": 193870201,
@@ -3449,22 +3828,44 @@
    "bygningsnummer": 6242812,
    "kategori": "næring",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bøckmanngården",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/B%C3%B8ckmanng%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, adresse Færgeportgaten 82"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1986",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/B%C3%B8ckmanng%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1986"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Gården som sto her brant i februar 1986, sammen med tre gårder i Raadhusgaten. Den ble gjenoppført som kopi av bygningen fra 1830-årene, med to fulle etasjer, en høy tredje etasje under mansardtak og bred endegavl mot Færgeportgaten. Den opprinnelige gården ble reist for urmaker Ole Nielsen Bergsland rett etter brannen i 1830.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/B%C3%B8ckmanng%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Færgeportgaten 82"
+   ]
   },
   "bnr-193868657": {
    "bygningsnummer": 193868657,
@@ -3495,18 +3896,34 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1834",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kommisjonsg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1834"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bygd som militært rettslokale og sto ferdig i 1834, trolig etter tegninger av Christian Heinrich Grosch. Enetasjes murbygning i empirestil, med strengt symmetrisk hovedfasade og rundbuede vinduer i midtpartiet. Kjelleren er eldre og stammer fra De grundmurede infanteribaraquer, som brant i 1830.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Kommisjonsg%C3%A5rden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Kommisjonsgården",
+   "adresse": [
+    "Færgeportgaten 76"
+   ]
   },
   "bnr-193868002": {
    "bygningsnummer": 193868002,
@@ -3579,39 +3996,77 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1695",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Voldporten_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "grunnvollen lagt 1664, porten oppført 1695"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Grunnvollen ble lagt i 1664, og porten slik den står ble bygd i 1695, etter at kongen ga tillatelse til stein framfor tre. Dette er festningens hovedinngang fra landsiden, gjennom vollen ved Gyldenløves bastion, med vaktbygning over porten. Treporten i østre portbue bærer Christian Vs monogram og valgspråket «Pietate et justitia». Fra tappenstrek til revelje var porten stengt og broklaffene åpnet, og byen var nærmest avstengt over land.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Voldporten_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Voldporten med vaktstuen",
+   "adresse": [
+    "Voldgaten 98"
+   ]
   },
   "bnr-193868010": {
    "bygningsnummer": 193868010,
    "kategori": "bolig",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Enigheden",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Enigheden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, adresse Færgeportgaten 84"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1838",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Enigheden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1838"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført i 1838, etter at den forrige gården brant i 1835, av hjulmaker H. Henriksen. Enkel klassisistisk stil med høyt mansardtak. AS Enigheden overtok gården på 1960-tallet og har eid den siden.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Enigheden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Færgeportgaten 84"
+   ]
   },
   "bnr-6247822": {
    "bygningsnummer": 6247822,
@@ -3625,14 +4080,25 @@
     "kilder": []
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Byggeåret er ukjent, men huset ble skadet i bybrannen i 1830 og gjenreist samme år med to fulle etasjer. Det står på granittmur, opptil tre meter tykk. Fredrikstads første bank skal ha ligget her, og dokumenter funnet under siste restaurering underbygger det. Banktransaksjonene i byen ble utført i huset fram til 1859. I folketellingen i 1900 bodde 28 mennesker i huset.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Voldgaten_12_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": null,
+   "adresse": [
+    "Voldgaten 12"
+   ],
+   "merknad": "Byggeår står tomt: artikkelen sier at byggeåret er ukjent. Infoboksen oppgir kaptein F.W. Lützow som eier fra 1801, så huset sto da."
   },
   "bnr-193868142": {
    "bygningsnummer": 193868142,
@@ -3688,14 +4154,25 @@
     "kilder": []
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Oppført like etter bybrannen i 1764, i tegl, slik kongen påla for brannsikkerhetens skyld. Funn på loftet viser at gården har hatt salmakerverksted og skredderverksted. Den tidligst kjente eieren er Giermund Bruun, som kom til byen som fallent og fikk asyl innenfor vollene. Navnet kommer av den gamle troen på at salamanderen var en ildånd som kunne slukke brann.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Salamandergaarden",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Salamandergården",
+   "adresse": [
+    "Færgeportgaten 79"
+   ],
+   "merknad": "Byggeår står tomt: artikkelen oppgir ikke årstall, bare «like etter bybrannen i 1764»."
   },
   "pb-6": {
    "bygningsnummer": null,
@@ -3789,39 +4266,77 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1727",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/F%C3%A6rgeporten_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "oppført i gråstein og klinkermur i 1727"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Reist i gråstein og klinkermur i 1727, som den nordligste av festningens tre porter mot Glomma, og den fjerde porten på stedet. Murmester Düring bygde den og Mellomporten etter samme tegning, med blåstein fra Frederikshald. Blåsteinene er hugget med Frederik IVs siffer og krone av mesteren selv. Forsvaret ville flytte porten i 1696, men borgerskapet klaget til kongen, og porten ble liggende.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/F%C3%A6rgeporten_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "delvis",
+   "kartnavn": "Færgeporten",
+   "adresse": [],
+   "merknad": "Porten er tegnet for hånd i kartdatasettet (pb-9) og har ikke bygningspunkt i Matrikkelen. Koblingen er gjort på navn, ikke på koordinat."
   },
   "bnr-193868029": {
    "bygningsnummer": 193868029,
    "kategori": "bolig",
    "navn": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Bramergården",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Bramerg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "artikkelnavn, adresse Færgeportgaten 85"
+     }
+    ]
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "ca. 1831–1832",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Bramerg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår ca. 1831 eller 1832"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Toetasjes tømmerbygning, oppført etter bybrannen i 1830.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Bramerg%C3%A5rden_i_Fredrikstad",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
     "verdi": null,
     "kilder": []
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": null,
+   "adresse": [
+    "Færgeportgaten 85"
+   ],
+   "merknad": "Artikkelen oppgir ikke hvem gården er oppkalt etter."
   },
   "bnr-193868703": {
    "bygningsnummer": 193868703,
@@ -3915,18 +4430,41 @@
     "kilder": []
    },
    "byggeaar": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "1784",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Gamlebyen_skole_%28Fredrikstad%29",
+      "dato": "2026-11-10",
+      "note": "infoboks byggeår 1784; første etasje etter brannen i 1784, kjeller fra 1722"
+     }
+    ]
    },
    "historie": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Første etasje er oppført etter brannen i 1784, på en kjeller fra 1722. Byen kjøpte gården til skole i 1811, av oberst Roepsdorff, og andre etasje ble påbygd i 1892. Gamlebyen skole var i drift til 1989.",
+    "kilder": [
+     {
+      "adresse": "https://lokalhistoriewiki.no/Gamlebyen_skole_%28Fredrikstad%29",
+      "dato": "2026-11-10",
+      "note": "egne ord, ikke avskrift"
+     }
+    ]
    },
    "bruk_i_dag": {
-    "verdi": null,
-    "kilder": []
+    "verdi": "Plus-skolen",
+    "kilder": [
+     {
+      "adresse": "https://data.brreg.no/enhetsregisteret/api/enheter?forretningsadresse.postnummer=1632",
+      "dato": "2026-11-10",
+      "note": "Organisasjonen Plus (undervisning, kort høyere yrkesfaglig utdanning) og Plus-skolen Eiendom AS registrert (forretningsadresse Færgeportgaten 77)"
+     }
+    ]
    },
-   "status": "tom"
+   "status": "fylt",
+   "kartnavn": "Skolebygningen",
+   "adresse": [
+    "Færgeportgaten 77"
+   ],
+   "merknad": "Lokalhistoriewiki oppgir Akademi for scenekunst i bygget, uten årstall. Enhetsregisteret er den ferske kilden, og den peker på Plus-skolen."
   }
  }
 }

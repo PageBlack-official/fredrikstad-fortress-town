@@ -1,0 +1,40 @@
+# Rokkes hotell
+# kilde: https://lokalhistoriewiki.no/Rokkes_hotell
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Rokkes hotell
+| bilde     = rokkes hotell.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = ca. [[1830]]
+| eier1     = Friedrich Dietrichson (ca. 1830-1847)
+| eier2     = Johan Ludvig Larsen (1886-1911)
+| eier3     = Birger Rønning (1918-1942)
+| arkitekt  = 
+| materiale = 
+| endringer = 
+| formål    = bolig
+| adresse   = Voldportgaten 74
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Rokkes hotell]]''', [[Voldportgaten (Fredrikstad)|Voldportgaten]] 74, ligger i [[Trettende kvartal i Gamlebyen|trettende kvartal]] i [[Gamlebyen i Fredrikstad]]. Bygningen er oppført like etter 1830. Det er en to-etasjes [[bindingsverk|bindingsverksbygning]] i en enkel klassisistisk stil, kledt med liggende panel. Opprinnelsen til navnet ''Rokkes hotell'' er ukjent. Det er ikke kjent noen eier ved navn Rokke. Det kan ha vært en leieboer som har gitt navnet til huset.</onlyinclude>
+
+Bygningen ble oppført like etter den store [[Bybrannen i Fredrikstad 1830|bybrannen i 1830]] av kapteinvaktmester [[Friedrich Dietrichson]] på tomten etter hans hus som ble ødelagt i brannen. Dietrichson hadde bodd og tjenestegjort i Fredrikstad siden 1812. I 1847 solgte han gården og flyttet til [[Moss]] der han ble [[krigskommisær]]. 
+
+Senere eiere har vært teglverkseier Johan Ludvig Larsen (eier 1886-1911) og overrettssakfører Birger Rønning (eier 1918-1942). Idag (2008) er det leiligheter i bygningen, mens det er forretninger i kjelleretasjen.
+
+== Kilder ==
+*Dahle, Erik: ''Bevaringsplan for Gamlebyen'', 1969.
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 2, 1973.
+
+[[Kategori:Overnattingssteder]]
+[[Kategori:Bygninger fra 1830-åra]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{bm}}
+{{artikkelkoord|59.20343|N|10.95549|Ø}}

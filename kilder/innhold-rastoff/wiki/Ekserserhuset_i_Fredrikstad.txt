@@ -1,0 +1,44 @@
+# Ekserserhuset i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Ekserserhuset_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Ekserserhuset
+| bilde     = ekserserhuset.JPG
+| dato      = 
+| byline    = 
+| annetnavn = Ridehuset
+| byggeår   = [[1808]]
+| eier1     = Militæretaten
+| eier2     = 
+| eier3     = 
+| arkitekt  = 
+| materiale = panelt bindingsverk
+| endringer = 
+| formål    = ekserser- og ridehus
+| adresse   = Kirkegaten 24
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Ekserserhuset i Fredrikstad|Ekserserhuset]]''' eller '''Ridehuset''' i [[Gamlebyen i Fredrikstad]] ligger i [[tredje kvartal i Gamlebyen|tredje kvartal]]. Det er oppført i 1808 som ekserser- og ridehus for [[Fredrikstad festning]]. Det er en en-etasjes bindingsverksbygning bygget i enkel klassisitisk stil. Den har en ytre bordkledning og har halvvalmet tak. Bygningen huser i dag øvingssal for [[Akademi for scenekunst]].</onlyinclude> 
+
+Ekserserhuset eller Ridehuset er en av de få militære bygninger i Gamlebyen som er oppført i tre. Det ble bygd på tomten hvor sogneprest [[Hans Frederik Thambs]]' gård hadde stått før [[bybrannen i Fredrikstad 1764|bybrannen i 1764]]. Trolig ha tomten ligget utbebygd frem til 1808. Huset ble brukt til innedørs eksersis for garnisonen, men ble senere også benyttet til innkvartering. 
+
+Siden bygget hadde en så romslig sal ble det ofte benyttet til teaterforestillinger. Blant annet ble byoperetten, ''Det hendte i den Gamle by'' satt opp her i 1967.
+
+== Kilder ==
+* [http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=96175&a=6 ''Verneplan for Fredrikstad festning'' 2006]
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1, 1960
+
+
+
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Bygninger fra 1810-åra]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Tredje kvartal i Fredrikstad]]
+[[Kategori:Fredrikstad festning]]
+{{F1}}
+{{artikkelkoord|59.20231|N|10.95161|Ø}}
+{{bm}}

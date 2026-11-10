@@ -1,0 +1,37 @@
+# Bøckmanngården
+# kilde: https://lokalhistoriewiki.no/B%C3%B8ckmanng%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Bøckmanngården
+| bilde     = boeckmanngaarden.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1986 
+| eier1     = 
+| eier2     = 
+| arkitekt  = 
+| materiale = 
+| endringer = 
+| formål    = bolig
+| adresse   = Færgeportgaten 82
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}<onlyinclude>'''[[Bøckmanngården]]''', [[Færgeportgaten (Fredrikstad)|Færgeportgaten]] 82, ligger</onlyinclude> i [[tolvte kvartal i Gamlebyen|tolvte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Gården er oppført etter brannen i februar 1986 som totalskadde denne og tre gårder i [[Raadhusgaten (Fredrikstad)|Raadhusgaten]]. Bøckmanngården ble gjenoppført som en kopi av den ødelagte bygningen fra 1830-årene.</onlyinclude>
+
+Gården som brant i 1986 ble oppført for urmaker Ole Nielsen Bergsland rett etter den store [[bybrannen i Fredrikstad 1830|brannen i 1830]] som ødela hele kvartalet. Huset hadde to fulle etasjer samt en høy tredje etasje under et [[mansardtak]] og en bred endegavl mot Færgeportgaten. Bygningen var i en enkel klassisistisk stil med hovedinngang fra Raadhusgaten. Den rekonstruerte gården fra 1980-tallet har bevart disse detaljene.
+
+Gården har hatt mange eiere, blant annet handelsborger [[Theodor Julius Moum]], eier fra 1866-1889, Petter Tveter som eide den fra 1897-1917 og frøken Helga Olsen som var eier i 1938-1963. Etter henne overtok Aashild Bøckmann. 
+ 
+== Kilder ==
+*Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', 1969.
+{{bm}}
+{{artikkelkoord|59.20398|N|10.95532|Ø}}
+
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Tolvte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]

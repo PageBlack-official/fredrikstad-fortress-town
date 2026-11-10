@@ -1,0 +1,45 @@
+# Prestegården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Presteg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Prestegården 
+| bilde     = Prestegaard,_Gamlebyen_i_Frstad.jpg 
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = etter 1830
+| eier1     = P.J. Kjerulf (1835-42)
+| eier2     = Jens Lemmich Dahl (1842-55)
+| eier3     = Fredrikstad by
+| arkitekt  = 
+| materiale = laftet tømmer
+| endringer = 
+| formål    = bolig
+| adresse   = Voldportgaten 69
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Prestegården i Fredrikstad|Prestegården]]''', [[Voldportgaten (Fredrikstad)|Voldportgaten]] 69, ligger i</onlyinclude> [[åttende kvartal i Gamlebyen|åttende kvartal]] i<onlyinclude> [[Gamlebyen i Fredrikstad]]. Bygningen er oppført etter [[bybrannen i Fredrikstad i 1830|bybrannen i 1830]], trolig for P.J. Kjerulf som eide gården fra 1835 til 1842. Kapteinvagtmester Jens Lemmich Dahl eide gården fra 1842 til 1855 da [[Fredrikstad kommune|Fredrikstad by]] kjøpte den som ny bolig for sognepresten. Den erstattet [[Tamburen i Fredrikstad|Tamburgården]] i [[Færgeportgaten (Fredrikstad)|Færgeportgaten]], som hadde tjent som byens sogneprestbolig fra den var oppført.</onlyinclude> 
+
+[[Bilde:Fredrikstad, Toldbodgaten i Gamlebyen.jpg|thumb|left|150px|Parti fra Toldbodgaten. Prestegården bygning nr. to fra høyre, før takarken ble påbygd]] 
+Huset har halvannen etasje, det er oppført i laftet tømmer og kledt med liggende panel. Det har [[valmtak|valmet tak]] mot Voldportgaten, og har en stor [[takark]] som ble oppført trolig en gang rundt 1910. Denne har preg av [[jugendstil]] mens bygningen ellers har et enkelt klassisistisk preg.
+
+== Tidligere eiendomsforhold ==
+Gården var i kjøpmann [[Peter Bull]]s eie på slutten av 1700-tallet. Det var her [[Bybrannen i Fredrikstad i 1830|bybrannen i 1830]] tok til natten mellom 15. og 16. februar. I 1758 var eiendommen eid av enken etter John Spilman, en engelsk kjøpmann i byen. Dette huset gikk med i [[Bybrannen i Fredrikstad 1764|brannen i 1764]]. 
+
+* Se også: [[Prestegårder i Norge]]
+
+== Kilder ==
+* Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+* [[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1, Fredrikstad 1960
+
+[[Kategori:Prestegarder]]
+[[Kategori:Åttende kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+{{F1}}
+{{artikkelkoord|59.20391|N|10.95241|Ø}}
+{{bm}}

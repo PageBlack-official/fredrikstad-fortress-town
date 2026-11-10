@@ -1,0 +1,46 @@
+# Kjørboegården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Kj%C3%B8rboeg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Kjørboegården
+| bilde     = Kjørboegården.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1767]]
+| eier1     = Hans Kjørboe
+| eier2     = Handelshus i København
+| eier3     = Militæreetaten
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = bolig senere kornmagasin og kontorer
+| adresse   = Tolbodgaten 35
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Kjørboegården i Fredrikstad|Kjørboegården]]''', [[Toldbodgaten (Fredrikstad)|Toldbodgaten]] 35, ligger i</onlyinclude> [[Tredje kvartal i Gamlebyen|tredje kvartal]] i<onlyinclude> [[Gamlebyen i Fredrikstad|Gamlebyen]]. I 1767 ble den oppført for kjøpmann [[Hans Kjørboe]]. Gården består av to bygninger, en to-etasjes bygning langs Kasernegaten og en en-etasjes sidefløy mot Toldbodgaten som begge er oppført i teglsten. Kjørboegården var den mest påkostede bygningen som ble reist etter [[Bybrannen i Fredrikstad 1764|bybrannen i 1764]]. </onlyinclude> Før brannen tilhørte eiendommen en viss krigsråd Røhmer. Den var også da en staselig murbygning som skal ha vært ganske ny. 
+
+[[Bilde:Kiorboe_gaarddsrom_1.JPG|thumb|left|150px|Fra gårdsrommet i Kjørboegården]]Kjørboegården var opprinnelig oppført som privatbolig for [[Hans Kjørboe]]. Han var en av byens mest velstående kjøpmenn, og hadde slått seg opp på vinhandel. I 1771 gikk han fallitt, og gården ble i 1774 overtatt av et [[København]]sfirma. To år senere ble den oppkjøpt for 5000 [[riksdaler]] av militæretaten, som ønsket å innrede den som kommandantbolig. Den ble funnet lite egnet til det, og nabogården, den senere [[Kommandantgården]], ble overtatt til det formålet noen år etter. Kjørboegården ble i stedet omgjort til kornmagasin. 
+
+I 1825 besto gården av hele fire bygninger, de to som fremdeles utgjør gården, i tillegg til en en-etasjes murbygning, og en to-etasjes, tre-fløyet tømmerbygning som strakte seg langs Kasernegaten og bak den nåværende gårdsplassen. Utover 1800-tallet ble Kjørboegården fredeles benyttet som kornmagasin, men også som kaserne. I 1869 var det kun to murbygninger igjen, den tømrede bygningen var nå revet. 
+
+I 1935-37 ble gården omgjort til kontor for ulike militære formål, en funksjon gården hadde helt frem til 2002. Idag (2008) huser Kjørboegården kontorer for forskjellige kulturbedrifter, blant disse er Østfold kulturproduksjon og Fredrikstad Animation Festival.
+
+== Kilder ==
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1 og 2, 1960/1964
+* [http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=96374&a=6 ''Verneplan Fredrikstad festning'', 2006]
+
+
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Bygninger fra 1700-tallet]]
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Tredje kvartal i Fredrikstad]]
+{{artikkelkoord|59.2028|N|10.95116|Ø}}
+{{F1}}
+{{bm}}

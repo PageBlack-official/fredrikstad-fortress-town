@@ -1,0 +1,31 @@
+# Femte kvartal i Gamlebyen
+# kilde: https://lokalhistoriewiki.no/Femte_kvartal_i_Gamlebyen
+# lest: 2026-11-10
+
+<onlyinclude>'''[[Femte kvartal i Gamlebyen|Femte kvartal]]''' i [[Gamlebyen i Fredrikstad]] avgrenses av [[Toldbodgaten (Fredrikstad)|Toldbodgaten]] i vest, [[Torvgaten (Fredrikstad)|Torvgaten]] i nord, [[Kirkegaten (Fredrikstad)|Kirkegaten]] i øst og [[Kasernegaten (Fredrikstad)|Kasernegaten]] i sør. Her finner vi de eldste private gårdene i Gamlebyen, fra slutten av 1700-tallet. Som det eneste kvartalet med privat bebyggelse i byen, har det ikke vært rammet av brann siden [[Bybrannen i Fredrikstad 1764|bybrannen i 1764]]</onlyinclude>.
+
+Av de mest fremtredende bygningene i kvartalet er [[Sindinggården]] fra 1771, [[Vennehaabet]] fra 1779 og [[Dunkejongården]] fra 1784. Kun Sindinggården er bygget i mur, ellers er bygningene i oppført i tre. Foruten disse er det et par mindre tregårder og en del uthusbygninger. 
+ 
+== Femte kvartal før bybrannen i 1764 ==
+Et kvartalskart fra 1758 gir oss innblikk i eierforholdene før den katastrofale brannen i 1764. Femte kvartal gir inntrykk av å ha vært av de mer velstående i byen. Her bodde blant andre enken etter sogneprest Goltz, sogneprest [[Hans Frederik Thambs]] forgjenger. Hennes gård lå i Kirkegaten på hjørnet mot torget. Ut mot Kirkegaten, der hvor Vennehaabet ligger idag, lå også gården til enken etter prost Kinck. Hennes nabo var kjøpmann og postmester Niels Hansen Tyrholm. Han var sønn av storkjøpmannen Hans Larsen Tyrholm, men Niels, i likhet med hans tre andre brødre, måtte se formuen svinne hen. Han prøvde seg som skipsreder i 1741, men skuten forliste etter et par år uten å være forsikret. Han ble nærmest ruinert. Stillingen som postmester og giftemålet med datteren til den velstående tolleren Jens Holm (som hadde innehatt stillingen i 41 år - fra 1707 til sin død i 1748!) reddet ham, men gjeld skulle han slite med resten av livet. 
+
+I nordvest lå apoteker Walters gård. Her skulle apotekeren [[Holger Ferslev Sinding]] bygge en flott to-etasjes murgård etter brannen. [[Sindinggården]] stod ferdig i 1771. I øst, hvor Dunkejongården ligger idag, lå en leiegård eid av kjøpmann og skipsreder [[Iver Henriksen Stabel]]. Han var sønn av rådmann Henrik Børgesen, og hadde slått seg opp i 1730-årene til å bli Fredrikstads største trelasthandler. Dette var byens høyeste gård som raget 29 [[fot]] over brostenene. 
+
+I det sørvestre hjørnet av kvartalet lå lenge en stor ubebygd tomt. Den hadde vært ubebygd før brannen i 1764 og ble ikke bebygd før på slutten av 1800-tallet, da den nåværende to-etasjes trebygningen ble reist. Tomten var i 1764 eid av sogneprest Thambs (sogneprest fra 1747-1766). Han bodde selv i [[tredje kvartal i Gamlebyen|tredje kvartal]], der hvor [[Ekserserhuset i Fredrikstad|Ridehuset]] ligger idag. Sogneprest Thams var en uheldig mann. Gården hans brant ned også i 1761, en gård som oppgis å ha vært relativt nybygd i 1758.
+
+== Kvartalets bygninger ==
+[[Bilde:Donkejon2.jpg|thumb|right|150px|Donkejongården fra 1784]]{{:Dunkejongården}}<br>
+<br>[[Bilde:Vennehaabet.JPG|thumb|left|150px|Vennehaabet fra 1779]]{{:Vennehaabet i Fredrikstad}}<br>
+<br>[[Bilde:Sinding.jpg|thumb|150px|right|Sindinggården fra 1771]]{{:Sindinggården}}
+
+== Kilder ==
+*Dahle, Erik: ''Bevaringsplan for Gamlebyen'', 1969
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1 og 2
+
+{{Gamlebyens kvartaler}}
+[[Kategori:Femte kvartal i Fredrikstad|  ]]
+[[Kategori:Gamlebyen i Fredrikstad|#05]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20307|N|10.95191|Ø}}
+{{F1}}
+{{bm}}

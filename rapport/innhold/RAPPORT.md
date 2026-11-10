@@ -1,60 +1,107 @@
 # RAPPORT — OPPGAVE5: innhold per hus + Hotell Kasernen-versjon
 
-Status: **påbegynt, grunnarbeid lagt. Ikke ferdig.** Bare Vegar kan si ferdig.
-Sist oppdatert: 2026-11-10 (økt 1, CEO).
+Status: **Del 1 har 29 kildefestede hus, klar til gjennomsyn hos CEO. Del 2 er ikke startet.** Bare Vegar kan si ferdig.
+Sist oppdatert: 2026-11-10 (økt 3, Skriver). Økt 1 og 2 var CEO.
+Gren `gate/innhold` i worktreet `~/sot-maskin/gate-innhold`, ut fra `76de60e`. `~/sot-maskin/gate` (OPPGAVE4, PAG-1492) er ikke rørt. /prove, forsiden, kirken, Kaserna, fargeoppgaven og introen er ikke rørt.
 
 ## Hvor jeg står
 
-Vegar overstyrte køporten 10.11 kl. 06:37: start OPPGAVE5 nå, PAG-1492 røres ikke (venter på hans øye), baseline for /prove1 er `76de60e`.
+Vegar flyttet saken fra CEO til Skriver 10.11 kl. 08:28: innhold per hus er tekst, og det skal gjennom stemmefila og `ki-sensur.py`. Denne økta er den første med tekst i mengde.
 
-Økt 1 er **grunnarbeid, ingen kildefestet tekst ennå**:
+**29 av 185 hus har innhold.** Felt med verdi: historie 29, byggeår 27, navn 9, bruk i dag 4. Alt annet står tomt, og det er med vilje: finnes det ikke kilde, står feltet tomt.
 
-1. **Isolert arbeidstre.** OPPGAVE5 kjører i eget git-worktree `~/sot-maskin/gate-innhold` på gren `gate/innhold`, ut fra `76de60e`. Hovedtreet `~/sot-maskin/gate` (gren `gate/kamera`, HEAD `15dcfa1`) har OPPGAVE4s ucommittede endringer og er **ikke rørt** — samme mønster som `gate-farger` bruker. Rører ikke /prove, forsiden, kirken, Kaserna, fargeoppgaven eller introen.
+- `kilder/bygg-innhold.json` — datakilden. Hvert faktum er `{verdi, kilder[]}` med adresse og lesedato per kilde. 185 hus ligger inne, 156 er tomme.
+- `rapport/innhold/sensur-tekst.md` — all tekst i én fil, slik sensuren leste den.
+- `rapport/innhold/sensur-stempel.json` — `ki-sensur.py` på teksten: **0 treff, STOPP ingen**. To treff ble rettet først (kolon-avsløring i Kiørboegården, tre-på-rad i Det nye rådhus).
+- `rapport/innhold/stikkprover.json` — ti tilfeldige hus, kilden hentet på nytt og byggeårets tall sjekket mot artikkelteksten: **10 av 10 stemmer**.
+- `rapport/innhold/navnekonflikter.md` — åtte steder der kartets navn ikke stemmer med kildene. Ikke rettet, og innholdet er holdt tilbake der.
+- `rapport/innhold/scope.json` — husutvalget innenfor 200 m (fra økt 1).
 
-2. **Husutvalget innenfor 200 m (`rapport/innhold/scope.json`).** Avstand er euklidsk fra Infanterikasernens sentroide (bnr-193867537) — en bevisst **superset** av gangavstand (gangavstand ≥ luftlinje, så ingen hus faller ut feil). Gangavstand langs gatene regnes i Del 2.
-   - **185 bygg** innenfor 200 m. Fordelt (grov kategori fra Matrikkel-bygningstype, kun planleggingshjelp):
-     - bolig 55 · uthus/garasje 55 · næring 38 · offentlig/kultur 10 · hotell/servering/off 9 · ukjent 10 · annet 8
-     - SEFRAK-merket: **164** · i Riksantikvarens kulturminnesøk (Askeladden): **13**
-   - **30 navngitte bygg** (de rikeste innholdskandidatene): Infanterikasernen (= hotellbygget/Kaserna), Arnesgården, Dunkejongården, Det gamle rådhus, Det nye rådhus, Kommandantgården, Kiørboegården, Tøihuset, Ekserserhuset, Vollmesterboligen, Prestegården, Kommisjonsgården, Salamandergården, Vennehaabet, Bullgården, Binggården, Muldvadgården, Balaklava, Ingeniørgården, Sindinggården, Rosinggården, Gamlebyen modelljernbanesenter, Skolebygningen, m.fl. (full liste i scope.json).
-   - **55 uthus/garasje** får normalt ingenting, eventuelt bare «bruk i dag» — de skal se tomme og ferdige ut, ikke fylles med gjetning.
+## Slik er identiteten bekreftet
 
-3. **Datakilden `kilder/bygg-innhold.json` (skjema, tom).** Alle 185 hus-noder lagt inn, keyet på bygg-ID (= bygningsnummer i Matrikkelen). Hvert hus har feltene `navn`, `byggeaar`, `historie`, `bruk_i_dag`, hver som `{verdi, kilder:[]}`. **Alle verdier er `null` — ingen tekst er gjettet.** `_skjema` holder kilderekkefølgen og regelen. Kartet skal lese dette gjennom kjeden (ikke hardkodet) — leserveien bygges i fabrikk-økta.
+Et faktum er verdiløst på feil hus. Hvert hus er derfor koblet på to uavhengige ting:
 
-## Bevis-hus (økt 2): Det gamle rådhus, bnr-193868355 — kildefestet
+1. **Adressen.** `adresseid` i `kilder/register/adresser-omraade.json` koblet mot `matrikkel.adresser` i `data/bygg.json`. 101 av de 185 husene har adressetekst; resten er uthus og garasjer uten adresse.
+2. **Artikkelkoordinaten.** `{{artikkelkoord}}` i lokalhistoriewiki målt mot bygningspunktet i Matrikkelen (`kilder/innhold-rastoff/koordkobling.json`).
 
-Første verifiserte hus før batch. Identitet bekreftet: datasettets `bnr-193868355` har adresse «Kirkegaten 27» = lokalhistoriewikis «Det gamle rådhus i Fredrikstad» (ikke gjettet).
+Begge står i `kilder/innhold-rastoff/artikkel-kobling.json`. Der de to peker på samme bygg, er huset fylt. Der de spriker, eller der kartets navn sier noe annet, står huset tomt og konflikten er skrevet ned.
 
-- **navn:** «Det gamle rådhus» — Matrikkelen + lokalhistoriewiki (lest 2026-11-10).
-- **byggeår:** 1784 (oppført etter bybrannen 1764) — lokalhistoriewiki + DigitaltMuseum/Østfold fylkes billedarkiv (lest 2026-11-10).
-- **historie:** rådhus til 1864 (arrestceller, bl.a. Hans Nielsen Hauge), skadet i brannen 1830 og gjenoppbygd, solgt 1864 til Fredriksstad Sparebank, bankfilial til 1990-tallet, granitt 1. etg / pusset tegl 2. etg — lokalhistoriewiki, egne ord. **Gjennom `ki-sensur.py`: 0 treff** (ingen AI-tegn).
-- **bruk i dag:** står **tomt** med vilje. Eneste kjente kilde (lokalhistoriewiki) peker på 2008 (Zwart Arbeid) — for gammelt til å stå som «i dag». Krever fersk kilde (Brønnøysund på adressen eller befaring). Dette er «aldri gjett» i praksis: feltet står tomt framfor å gjenbruke en gammel verdi.
+## Kilder brukt
 
-Status i `kilder/bygg-innhold.json`: `delvis` (3 av 4 felt fylt, kildefestet).
+- **Matrikkelen/Kartverket** — bygningsnummer, adresse, SEFRAK- og kulturminnemerke, bygningspunkt (`kilder/matrikkel-bygningspunkt.json`, hentet 26.10.2026).
+- **Lokalhistoriewiki** — 61 artikler hentet rått 10.11.2026 og lagret i `kilder/innhold-rastoff/wiki/` med kildelenke og lesedato i hver fil. Dette er kilden til byggeår og historie. Artiklene oppgir selv Verneplan for Fredrikstad festning (2006), Bevaringsplan for festningsbyen Fredrikstad (1969) og Fredrikstad bys historie som sine kilder.
+- **Enhetsregisteret (Brønnøysund)** — 412 aktive enheter med forretningsadresse i postnummer 1632, hentet 10.11.2026 (`kilder/innhold-rastoff/brreg-1632.json`, NLOD). Brukt til bruk i dag, og bare der treffet er entydig og institusjonelt.
 
-## Avklaringer og obs
+Riksantikvarens kulturminnesøk svarte ikke på API-kall denne økta. Kulturminneplanen fra Fredrikstad kommune (`kilder/kulturminner.json`) dekker Sentrum, ikke Gamlebyen, og ga ingenting her.
 
-- «Kaserna» i stopp-listen gjelder byggets **geometri/fasademodell** (EGNE_FASADER). Innholdstekst om Infanterikasernen (navn/byggeår/historie/bruk) er innhold, ikke modell, og er lov — men selve bygget tegnes aldri om her.
-- Del 2: `data/partnere.json` har i dag `navn: "Hotel Kasernen"`. Oppgaven ber om teksten **«Hotell Kasernen»** (dobbel l). Rettes i partnerdata i Del 2 (badge-teksten leser `P.navn`). Ingen logo/profil brukes; hotellet åpner 2027 og skal ikke se åpent ut.
-- Kategori-heuristikken er grov (f.eks. type 519 «Brannstasjon – uthus» havnet i «hotell/servering/off»). Den styrer bare hvor jeg legger innsatsen, aldri innholdet. Den endelige dommen per hus er på det faktiske bygget.
-- Adresser som peker på flere bygg / bygg med flere matrikkelenheter er merket `flere_bygg_paa_mk` i scope.json og skal nevnes eksplisitt når de fylles.
+## Bruk i dag — fire hus, og hvorfor ikke flere
 
-## Plan videre (iterativt — hver økt ender med gyldig avslutning)
+«I dag» krever en fersk kilde. Lokalhistoriewiki skriver «idag (2008)» i artikkel etter artikkel, og det er for gammelt. Feltet er derfor fylt bare der Enhetsregisteret bekrefter noe entydig i dag:
 
-**Del 1 — innhold:**
-- Økt 2: **bevis-hus før fabrikk.** Ett hus kildefestet helt igjennom (foreslått: `bnr-193868355` Det gamle rådhus — godt dokumentert, i Askeladden, klart et «hus», ikke Kaserna/kirka). Hent navn/byggeår/historie/bruk fra kilderekkefølgen, hvert faktum med adresse + lesedato, tekst med egne ord gjennom `vegars-stemme` + `ki-sensur.py`. Bygg leservei så kortet viser det gjennom kjeden. Verifiser på ekte skjermkort.
-- Deretter: batch over de navngitte + bolig, kilde for kilde. Uthus/garasje sist, kun «bruk» der det finnes.
+| Hus | Bruk i dag | Grunnlag |
+|---|---|---|
+| Tøihuset | Fredrikstad Museum | Enhetsregisteret (STI på Tøihusgaten 41) + artikkelen |
+| Dunkejongården | Foreningen Gamle Fredrikstad | Enhetsregisteret (FLI på Torvgaten 60) + artikkelen |
+| Ekserserhuset | Gamlebyen Kulturhus | Enhetsregisteret (FLI på Kirkegaten 24) |
+| Skolebygningen | Plus-skolen | Enhetsregisteret (Organisasjonen Plus på Færgeportgaten 77). Artikkelen sier Akademi for scenekunst, uten årstall. Den ferske kilden vinner. |
 
-**Del 2 — Hotell Kasernen-versjon** (`src/30_gjest.js`, `data/partnere.json`):
-- Åpne med hotellet sentrert og tydelig merket (i dag velges bare kortet etter intro).
-- Spisesteder, parkering, turer med **gangtid langs gatene** fra hotellet. Hard delkomponent: trenger et gå-nettverk langs gatene (vurder `data/turer.json`/`steder.json`/gatelinjer). Utredes i egen økt.
-- Alt styrt av partnerdata (så et annet hotell får sin versjon uten kodeendring). Rett `navn` til «Hotell Kasernen». Vanlig kart uten `?gjest=` skal være uendret.
-- Mobil/nettbrett/pc, sjekk på ekte skjermkort (PW_GPU=1), smal og bred.
+De andre står tomme. En adresse i Enhetsregisteret er ikke bevis på at virksomheten bruker bygget; Kirkegaten 28A har 20 enheter registrert. Der artikkelen og registeret spriker, eller der registeret bare viser enkeltpersonforetak, er feltet tomt og grunnen skrevet i `merknad` på huset.
 
-**Sluttkontroll:**
-- Ny regel i `regler/` (49): hvert faktum i `kilder/bygg-innhold.json` med verdi må ha kilde + dato; rød stopper publisering.
-- Ti tilfeldige hus: åpne kilden på nytt, sjekk at det stemmer; skriv resultatet her.
-- Commit → regler (regel 03 kjent rød) → `sh publiser.sh prove1`. Aldri force-push. Forsiden og /prove røres ikke.
+## Husene som er fylt
 
-## Kostnad (ærlig, til Vegar)
+| Hus | Bygg-ID | Adresse | Byggeår |
+|---|---|---|---|
+| Infanterikasernen | bnr-193867537 | Kasernegaten 47 | 1783–1787 |
+| Kiørboegården | bnr-193867502 | Toldbodgaten 35 | 1767 |
+| Kommandantgården | bnr-193867499 | Toldbodgaten 34 | 1768 |
+| Ekserserhuset | bnr-193867510 | Kirkegaten 24 | 1808 |
+| Dunkejongården | bnr-193867588 | Torvgaten 60 | 1784 |
+| Det gamle rådhus | bnr-193868355 | Kirkegaten 27 | 1784 |
+| Binggården | bnr-193868363 | Kirkegaten 31 | 1830-årene |
+| Muldvadgården | bnr-193868223 | Kirkegaten 30 | 1830-årene |
+| Kommisjonsgården | bnr-193868428 | Færgeportgaten 76 | 1834 |
+| Salamandergården | bnr-193868150 | Færgeportgaten 79 | (tomt, se merknad) |
+| Tøihuset | bnr-193870279 | Tøihusgaten 41 | 1773–1775 |
+| Vollmesterboligen | bnr-193867634 | Voldgaten 97 | 1869 |
+| Ingeniørgården | bnr-193867677 | Voldgaten 97 | 1868 |
+| Voldporten med vaktstuen | bnr-193869548 | Voldgaten 98 | 1695 |
+| Det nye rådhus | bnr-193972012 | Tøihusgaten 42 | 1861–1864 |
+| Skolebygningen | bnr-193868436 | Færgeportgaten 77 | 1784 |
+| Bramergården | bnr-193868029 | Færgeportgaten 85 | ca. 1831–1832 |
+| Bøckmanngården | bnr-6242812 | Færgeportgaten 82 | 1986 |
+| Enigheden | bnr-193868010 | Færgeportgaten 84 | 1838 |
+| Gaaserudgården | bnr-193867618 | Torvgaten 57 og 57A | ca. 1830 |
+| Rokkes hotell | bnr-193867979 | Voldportgaten 74 | ca. 1830 |
+| Thiisgården | bnr-193868371 | Voldportgaten 70A | 1830-årene |
+| Væktergården | bnr-193867952 | Voldgaten 10 og 11 | 1970-årene |
+| Salen | bnr-193867707 | Kasernegaten 56 | trolig 1899 |
+| (uten navn) | bnr-16308102 | Kasernegaten 53 og 54 | slutten av 1990-tallet |
+| (uten navn) | bnr-193868398 | Toldbodgaten 38 | 1830-årene |
+| (uten navn) | bnr-6247822 | Voldgaten 12 | (tomt, se merknad) |
+| Færgeporten | pb-9 | — | 1727 |
+| Mellomporten | pb-11 | — | 1727 |
 
-Dette er en stor, iterativ jobb. Grovestimat for Del 1 full batch: ~30 navngitte + ~55 bolig = ~85 hus som skal kildefestes, hvert over inntil 7 kilder, hvert faktum med primærkilde + lesedato, hver tekst gjennom stemme + sensur. Realistisk mange økter. Vegar har bevisst avgrenset til 200 m som en prøve («vi ser om innholdet holder før vi tar hele byen») — bevis-huset i økt 2 er den første ekte kostnads- og kvalitetsprøven. Jeg melder tall per økt og stopper for Vegars dom før en eventuell utvidelse til hele byen.
+Navn er fylt bare der kartet mangler navn. Der kartet har navnet, er feltet tomt, så kortet ikke viser to varianter av samme navn. Kirken er ikke rørt, etter stopp-listen.
+
+## Hus som står tomme med vilje
+
+- **156 hus** uten innhold. De 55 uthusene og garasjene har ingen kilde og skal se tomme og ferdige ut.
+- **Åtte hus** er holdt tilbake på grunn av navnekonflikt eller uklar identitet. Alle står i `navnekonflikter.md`: Bullgården, Prestegården og Toldbodgaten 37; Rosinggården; Vennehaabet; Balaklava; Kongeporten (pb-10); Fredrikstad hospital; Kjørbogårdens sidebygning.
+- **Brannstasjon – uthus til Infanterikasernen** (bnr-193868568): ingen artikkel, ingen kilde.
+- **Gamlebyen modelljernbanesenter** (bnr-193867898): ingen artikkel, og ingen entydig adresse å slå opp i Enhetsregisteret.
+
+## Det som gjenstår
+
+1. **Leseveien.** Ingenting i `verktoy/`, `src/` eller `regler/` leser `kilder/bygg-innhold.json` i dag. Innholdet er derfor ikke synlig i kartet ennå. Oppgaven sier at kartet skal lese dette gjennom kjeden, ikke hardkodet. Dette er kode i byggekjeden, og det ligger hos Studio eller CEO, ikke hos Skriver.
+2. **Ny regel 49:** hvert faktum med verdi i `kilder/bygg-innhold.json` må ha kilde og dato; rød stopper publisering. Skrevet som krav her, ikke som kode, av samme grunn.
+3. **Navnekonfliktene** må avgjøres av Vegar eller Studio før de åtte husene kan fylles.
+4. **Del 2, Hotell Kasernen-versjonen.** Ikke startet. Den er kode og layout i `src/30_gjest`, `data/partnere.json` og et gå-nettverk for gangtid langs gatene. Ett funn fra denne økta hører hjemme der: Enhetsregisteret har **Kasernen Hotelldrift AS** registrert på Kasernegaten 47. Hotellet åpner i 2027, så kartet skal ikke framstille det som åpent, og `data/partnere.json` skriver i dag «Hotel Kasernen» der oppgaven ber om «Hotell Kasernen». Ingen logo, ingen profil.
+5. **Kontaktark** til Dropbox (`status/sot-kasernen-innhold.jpg`) venter på at leseveien finnes, siden arket skal vise kort for ti hus.
+
+## Kostnad
+
+Økt 3 tok under to timer fra start til sensurstempel. 29 hus er kildefestet; de resterende navngitte er enten konfliktbefengte eller uten artikkel. Skal flere av de 156 fylles, må kilden være en annen enn lokalhistoriewiki, for den er nå gjennomgått for Gamlebyen. Neste kilde i rekken er Riksantikvarens kulturminnesøk, som ikke svarte i dag, og SEFRAK-registreringene. Det er en egen økt, og den bør vente til leseveien finnes og Vegar har sett de 29 første på et kort.
+
+## Økt 1 og 2 (CEO, 10.11)
+
+Økt 1 la grunnarbeidet: isolert worktree, husutvalget innenfor 200 m fra Infanterikasernen (185 bygg, euklidsk avstand som superset av gangavstand), og skjemaet i `kilder/bygg-innhold.json` med alle 185 hus og alle verdier `null`. Økt 2 kildefestet bevis-huset Det gamle rådhus (bnr-193868355) og lot bruk i dag stå tomt fordi eneste kilde pekte på 2008.

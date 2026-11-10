@@ -1,0 +1,58 @@
+# Infanterikasernen i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Infanterikasernen_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Infanterikasernen
+| bilde     = fredrik og kaserna.jpg
+| dato      = 
+| byline    = 
+| annetnavn = Torvkasernen
+| byggeår   = [[1783]]-1787
+| eier1     = Fredrikstad festning
+| arkitekt  = [[Hans Christopher Gedde]]
+| materiale = mur
+| endringer = 
+| formål    = kaserne
+| adresse   = 
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>{{thumb|align=none|fredrik og kaserna.jpg}}'''[[Infanterikasernen i Fredrikstad|Infanterikasernen]]''' eller '''Torvkasernen''' dekker hele [[sjette kvartal i Gamlebyen|sjette kvartal]] i [[Gamlebyen i Fredrikstad]]. Oppført som kaserne for garnisonen i [[Fredrikstad festning|Fredrikstad]] i årene [[1783]]-1787 etter tegninger av [[Hans Christopher Gedde]]. Byggmester var [[Christian Ludvig Clementz]]. Kasernen er oppført i tegl fra det militære [[teglverket på Nabbetorp]]. Bygningen i to etasjer og loft er oppført på en hvelvet kjeller. Opprinnelig hadde kasernen 28 hvelvede rom i kjelleren, 25 rom i første etasje og 23 rom i andre. Den er viktig stilhistorisk som en representant for den såkalte harsdorffske klassisisme (oppkalt etter [[Caspar Frederik Harsdorff (1735–1799)|Caspar Frederik Harsdorff]] (1735–1799) ved [[Det Kongelige Danske Kunstakademi]] i [[København]]).</onlyinclude>
+
+Noen bygningsmessige endringer har skjedd, blant annet en omfattende ominnredning på 1980-tallet. Kasernen beholdt sin opprinnelige funksjon helt frem til 2002 da Fredrikstad ble nedlagt som garnison. Idag huser bygningen kontorer og småbedrifter samt Fredrikstad internasjonale skole. 
+
+Det heter seg at bygningen skal være oppført etter et såkalt «kalendarisk system», dvs. at bygningsdeler som f.eks. piper, dører, vinduer skal representere eksempelvis årstider, måneder i året eller timer i døgnet. Dette er lite trolig. Selv om bygningen har gjennomgått noen endringer opp gjennom årene, har det påståtte systemet aldri stemt over ens med bygningen, selv ikke da den stod ferdig i 1787.
+
+== Kaserner i Festningsbyen==
+Tradisjonelt hadde garnisonen i Fredrikstad helt siden det militære nærvær i byen begynte midt på 1600-tallet blitt innkvartert i borgernes hjem. Dette førte til store konflikter mellom de militære og den sivile bybefolkningen. Etter [[bybrannen i Fredrikstad 1690|bybrannen i 1690]] ble det oppført noen provisoriske barakker langs vollen. I 1698 stod en bindingsverksbarakke klar ved [[Søndre kurtine i Fredrikstad|søndre kurtine]] - da hadde man brukt åtte år på å ferdigstille den. Det er usikkert når denne ble revet, men trolig i forbindelse med oppføringen av [[Tøihuset i Fredrikstad|Tøihuset]] i 1773-75. 
+
+[[De grundmurede infanteribaraquer]] ble oppført i 1700 som en en-etasjes murbygning ved [[Færgeporten]], mellom [[Toldbodgaten (Fredrikstad)|Toldbodgaten]] og [[Kirkegaten (Fredrikstad)|Kirkegaten]], der hvor [[Kommisjonsgården]] ligger i dag. Den ble ødelagt av brann for første gang i 1712; da ble den gjennoppført i samme form. Etter brannen i 1764 ble den derimot erstattet av et nytt to-etasjes kasernebygg på samme tomt. Da det brant ned til grunnen i 1830, ble det ikke gjenoppført, og sten herfra ble bragt til [[Akershus festning]] som masse til Arméens depot, som da var under oppføring. I forbindelse med de store utvidelsesplanene for [[Fredrikstad festning]] midt på 1700-tallet var spørsmålet om permanente kaserner for garnisonen svært viktig. Militæretaten sikret seg derfor tomten ved torvet etter [[Bybrannen i Fredrikstad 1764|bybrannen i 1764]], slik at en ny kaserne kunne oppføres her. Den stod altså ferdig i 1787 og står fremdeles som en av festningsbyens flotteste og mest dominerende bygninger.
+
+==Galleri==
+
+<gallery>
+Fil:Fredrikstad, Gamlebyen - skilt på kasernen.JPG|Skilt med forklaring av det kalendariske system, ved Kirkegaten.
+Fil:kaserne bakgård.jpg|Infanterikasernen sett mot bakgården.
+Fil:Fredrikstad, Infanterikasernen i Gamlebyen - No-nb digibok 2008040904010 0027 1.jpg|Kasernen sett fra det nordvestre hjørnet av torvet før 1914.
+Fil:Fredrikstad, Torvet i Gamlebyen - no-nb digifoto 20140606 00001 bldsa PK13010.jpg|Sett fra Torvgaten i 1920.
+Fil:Fredrikstad, torvet og Kirkegaten - no-nb digifoto 20140425 00010 bldsa PK13009.jpg|Sett fra det nordvestre hjørnet av torvet i 1920-25.
+Fil:Fredrikstad, Infanterikasernen i Gamlebyen - no-nb digifoto 20151009 00282 bldsa PK06483.jpg|Sett fra det nordvestre hjørnet av torvet i 1920-30.
+Fil:Fredrikstad, Infanterikasernen i Gamlebyen - no-nb digifoto 20140523 00086 bldsa PK13188.jpg|Postkort av Infanterikasernen, omkr. 1930–1935.
+Fil:Fredrikstad, Kirkegaten i Gamlebyen - no-nb digifoto 20150911 00086 bldsa PK06253.jpg|Til h. kasernen med skilderhus før 1917.
+</gallery>
+
+== Kilder ==
+* [http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=97123&a=6 ''Verneplan for Fredrikstad festning'' 2006]
+* [[Clare Sewell Widerberg (1868–1957)|Widerberg, C.S.]]: «Festningen» i ''Fredrikstad. Gamlebyen og festningen'', utg. Riksantikvariatet, Oslo 1934.
+{{F1}}
+{{artikkelkoord|59.20274|N|10.95337|Ø}}
+{{bm}}
+
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Bygninger fra 1700-tallet]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Sjette kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
