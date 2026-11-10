@@ -6,6 +6,18 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-10, økt 5b — svart kloss + nr 5 durabelt; publiser kjører detached)
+
+- **Svart kloss FJERNET** (commit `a2df5d0`): bekreftet med render at boksen var det mørke smijern-gjerdet
+  (`src/09` FG.smijern=[52,54,56]); skjult antatt-plasseringene `gj-422` (nr 8) + `gj-405` (bnr-6276504).
+  Render av nr 8 er nå ren (hvit, 2 piper, takvindu, 7 vinduer, ingen boks). Skjul-rettelser er durable.
+- **nr 5 durabelt** (commit `0c8fc73`): `kilder/gate/rett-dom-nr5.json` (uniforme vinduer på gatenivå) +
+  matchende targeted vind. fasade_rett overstyrer gate_avlesning → overlever kjede.
+- **`attic/_publish_okt5.sh` kjører detached** (pid): bygg enkel → render 33 → montasje SV|etter → kontaktark
+  `rapport/ferdig/sot-dom-runde3.jpg` → regler (06/07 omkjøring ved rødt) → `publiser.sh prove1` → melder på saken.
+  **MERK: ikke commit ny kilde før den er ferdig** — publiser.sh krever at rapport.md er kjørt mot samme sperre-hash
+  (`git log -1 -- src data regler bygg.py datalag.py assets`); en ny commit flytter hashen og stopper publiseringen.
+
 ## STATUS (2026-11-10, økt 5 — REBASERT PÅ c024f1d etter PAG-1496, gaten grønn igjen)
 
 PAG-1496 (+OPPGAVE5) committet oppå mine OPPGAVE4-commits (HEAD=c024f1d). Den kjørte HELE kjeden, som:
