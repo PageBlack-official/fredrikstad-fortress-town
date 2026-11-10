@@ -114,6 +114,11 @@ kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
   altså full kjede-kjøring (drifter ~10 hus, regel 39). Naboer: bnr-193972772 (dx,dy −9.7,+6.9, 3 vind, near-white),
   bnr-193972438 (+3,+6.5, 20 vind), bnr-193867812 (−6.3,+8.7, 6 vind). «2+2 vinduer»+«til høyre» peker mot bnr-193972772,
   men BEKREFT mot bevisbildet før merge (feil nabo = feil hus slått sammen). Deretter sett hele rosa (vegg).
+  **Bevis sett (økt 7):** `bnr-193867804.jpg` viser rosa/laks-hus med brun dør; til høyre en lysere/beige bygning.
+  Vindustall: bnr-193972438 har 20 vind (FOR STORT til «2 nede + 2 oppe» → neppe riktig), bnr-193972772 har 3 vind
+  (best match på «liten beige del, 2+2»), bnr-193867812 har 6. **Kandidat: bnr-193972772**, men sentroiden ligger
+  mot VEST (dx −9,7) mens Vegar sa «til høyre» — så BEKREFT med en render der hver kandidat er markert FØR merge.
+  Alle tre deler hjørne med nr4 (tett rekke), så naboskap alene skiller dem ikke. Merge = `sammen` i husdeling + full kjede.
 - **BEVIS-ARK bygges nå (økt 4):** `attic/_bevis_okt4.sh` (detached) rendrer alle 33 standpunkt fra ny modell →
   `montasje.py` SV|etter → `kontaktark_28.py` → `rapport/ferdig/sot-dom-runde3.jpg`. Pipeline verifisert (render 3 s/bilde,
   GPU; SV-croppene i `rapport/gate/sv_rett3-5/` finnes; `../sv` er tom men brukes ikke). Arket git-ignoreres (SV i det);
