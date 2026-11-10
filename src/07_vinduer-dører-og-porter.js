@@ -284,11 +284,13 @@ DATA.bygg.forEach((b,i)=>{
   const shape = polyShape(pts);
   (b.ph||[]).forEach(r=>{ if(r.length>2) shape.holes.push(new THREE.Path(r.map(V))); });
   const h = (b.kirke || b.fort) ? 0.01 : b.h;   // kirka: formen tegnes av bygKirke (src/06); fort: ringmuren tegnes under (Isegran); h/tak2 er silhuetten kontrolløren registrerer mot
+  if(!b.fort){            // fort (Isegran): ingen husboks/grunnmur — ringmuren under tegner hele bygget
   const eg = new THREE.ExtrudeGeometry(shape,{depth:h+grunn,bevelEnabled:false});
   eg.rotateX(-Math.PI/2); if(grunn>0) eg.translate(0,-grunn,0);   // grunnmuren under foten (lp.y < 0: sokkeltonen i src/05)
   const walls = new THREE.Mesh(eg,[mat(roof,dim,b.taks),mat(wall,dim,b.veggs)]); // [tak/topp, sider]; tegnede vinduer styres av aTopp
   if(spesiell){ const k=eg.getAttribute('position').count; eg.setAttribute('aTopp', new THREE.BufferAttribute(new Float32Array(k).fill(toppVindu),1)); }   // egne grupper: tegnede vinduer via attributt, løft via gruppa (aBygg=0)
   walls.castShadow=true; walls.receiveShadow=true; legg(walls);
+  }
   // sokkel / natursteinsetasje i egen farge (tegningen og Street View viser «rød tegl over grå natursteinsetasje»); type naturstein
   // gir steinmønster (src/05, avvik A10). Sokkelen står 3 cm ut og vinduene 5 cm, så vinduene i sokkelen synes; den løftes med huset.
   if(b.sokkel && b.sokkel.h>0.2 && !dim){
@@ -373,7 +375,7 @@ DATA.bygg.forEach((b,i)=>{
     }
   });
   // piper på mønet (posisjoner fra etter/40_detaljer_piper.py)
-  if(b.piper && !dim){ b.piper.forEach(([x,y,z,ang])=>{
+  if(b.piper && !dim && !b.fort){ b.piper.forEach(([x,y,z,ang])=>{
     const r=THREE.MathUtils.degToRad(ang);
     const pm=new THREE.Mesh(PIPE_GEO, mat([204,98,82],false,[150,76,64])); pm.position.set(x,z-0.3,-y); pm.rotation.y=r; pm.castShadow=true; legg(pm);
     const ck=new THREE.Mesh(KAPP_GEO, mat([74,68,66],false)); ck.position.set(x,z+1.48,-y); ck.rotation.y=r; legg(ck);
@@ -436,6 +438,23 @@ DATA.bygg.forEach((b,i)=>{
     });
     const fg=new THREE.BufferGeometry(); fg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); fg.computeVertexNormals();
     const fm=new THREE.Mesh(fg, mat([150,146,138],dim,[98,96,92],{stein:true})); fm.castShadow=fm.receiveShadow=true; legg(fm);
+    // gressvoll bakerst (motsatt åpningen) med teglbue (hvelvet inngang) i rød tegl, naturstein rundt (Vegars dom)
+    { const ba=g0+Math.PI, ang=Math.atan2(-Math.sin(ba),-Math.cos(ba));   // lokal +x = innover mot midten
+      const gv=new THREE.Group(); gv.position.set(cx+ri*Math.cos(ba), 0, -(cy+ri*Math.sin(ba))); gv.rotation.y=ang;
+      const mg=mat([102,150,94],dim), mt=mat([150,70,56],dim), mm=mat([150,146,138],dim,[98,96,92],{stein:true}), md=mat([34,30,28],false);
+      const voll=new THREE.Mesh(new THREE.BoxGeometry(2.8,1.9,6.5), mg); voll.position.set(1.4,0.95,0); voll.castShadow=voll.receiveShadow=true; gv.add(voll);
+      const ramme=new THREE.Mesh(new THREE.BoxGeometry(0.6,2.3,2.3), mm); ramme.position.set(0.25,1.15,0); ramme.castShadow=true; gv.add(ramme);
+      const tegl=new THREE.Mesh(new THREE.BoxGeometry(0.35,1.8,1.4), mt); tegl.position.set(0.5,1.05,0); gv.add(tegl);
+      const aap=new THREE.Mesh(new THREE.BoxGeometry(0.5,1.15,0.85), md); aap.position.set(0.72,0.8,0); gv.add(aap);
+      const bue=new THREE.Mesh(new THREE.CylinderGeometry(0.43,0.43,0.5,14,1,false,0,Math.PI), md); bue.rotation.z=Math.PI/2; bue.position.set(0.72,1.38,0); gv.add(bue);
+      legg(gv);
+    }
+    // trebjelker med jevn avstand over murkronen på elvesiden (Vegar: «trebjelker over murkronen»)
+    { const mtre=mat([122,98,72],dim), river=g0+Math.PI;
+      for(let k=-5;k<=5;k++){ const a=river+k*(Math.PI/20);
+        const bj=new THREE.Mesh(new THREE.BoxGeometry((ro-ri)+0.6,0.14,0.22), mtre);
+        bj.position.set(cx+(ri+ro)/2*Math.cos(a), H+0.08, -(cy+(ri+ro)/2*Math.sin(a))); bj.rotation.y=-a; bj.castShadow=true; legg(bj); }
+    }
   }
   // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)
   if(b.veggfelt && !dim){
@@ -507,7 +526,7 @@ if(vinduSamling.length) city.add(lagVinduer(vinduSamling));
 samler.clear();
 // kontaktskygge rundt alle husføtter: ett nett for hele byen
 { const pos=[], alfa=[];
-  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul) return; const f=fotBaand(b.p, KONTAKT_BREDDE, BK ? (x,y)=>bakke(x,y)+KONTAKT_Y : KONTAKT_Y); pos.push(...f.pos); alfa.push(...f.alfa); });
+  DATA.bygg.forEach(b=>{ if(!b.p || b.p.length<3 || b.skjul || b.fort) return; const f=fotBaand(b.p, KONTAKT_BREDDE, BK ? (x,y)=>bakke(x,y)+KONTAKT_Y : KONTAKT_Y); pos.push(...f.pos); alfa.push(...f.alfa); });
   const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setAttribute('aAlfa', new THREE.Float32BufferAttribute(alfa,1));
   const m=new THREE.Mesh(g, kontaktMat); m.frustumCulled=false; m.renderOrder=1; city.add(m); }
 
