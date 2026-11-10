@@ -4,8 +4,8 @@
  "verktoy": "verktoy/sv_kobling.py",
  "tall": {
   "observasjoner": 372,
-  "peker_ikke_paa_huset": 78,
-  "hus": 48
+  "peker_ikke_paa_huset": 76,
+  "hus": 47
  },
  "dom": {
   "bnr-193868045": {
@@ -2876,13 +2876,13 @@
   },
   "bnr-193867804": {
    "hoved": {
-    "ok": false,
-    "andel": 0.0,
+    "ok": true,
+    "andel": 1.0,
     "sektor": [
      -20,
      20
     ],
-    "ser": "bnr-193972462",
+    "ser": null,
     "kamera": [
      86.9,
      -61.0,
@@ -2890,13 +2890,13 @@
     ]
    },
    "side0": {
-    "ok": false,
-    "andel": 0.0,
+    "ok": true,
+    "andel": 1.0,
     "sektor": [
      -45,
      0
     ],
-    "ser": "bnr-193972462",
+    "ser": null,
     "kamera": [
      86.9,
      -61.0,
@@ -2905,7 +2905,7 @@
    },
    "side1": {
     "ok": true,
-    "andel": 0.86,
+    "andel": 1.0,
     "sektor": [
      -20,
      20
