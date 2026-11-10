@@ -392,6 +392,28 @@ DATA.bygg.forEach((b,i)=>{
     g.add(new THREE.Mesh(gv, mat(wall,dim,b.veggs,{ds:true})));
     legg(g);
   });
+  // gavlvindu i gavl-arker (bw>=2.0 && hb>=1.5): bare villa bnr-13415889s midtgavl treffer (de andre vide arkene har hb<=1.17).
+  // render-only, rører ikke data/regel 39. Vegar 10.11: «3. ark = gavl med vindu midt på taket».
+  if(b.arker && !dim) b.arker.forEach(([x,y,z,nx,ny,bw,hb])=>{
+    if(bw<2.0 || hb<1.5) return;
+    const ang=Math.atan2(ny,nx), H=hb+0.25;
+    const g=new THREE.Group(); g.position.set(x,z-0.25,-y); g.rotation.y=ang;
+    const vg=new THREE.Mesh(new THREE.PlaneGeometry(0.62,0.82), mat([58,64,74],false));
+    vg.position.set(0.06, H+0.45, 0); vg.rotation.y=Math.PI/2; g.add(vg);   // gavltrekantens front (lokal x=0), vendt utover
+    legg(g);
+  });
+  // balkong/veranda (additiv, gated på b.balkong — ingen kjede-steg skriver feltet): dekke + rekkverk, midt foran nede.
+  // Vegar 10.11: «balkong/veranda midt foran, nede». Villa-scoped (bare bnr-13415889 har feltet).
+  if(b.balkong && !dim){
+    const {x,y,z,nx,ny,bredde,dyp}=b.balkong; const ang=Math.atan2(ny,nx);
+    const g=new THREE.Group(); g.position.set(x,z,-y); g.rotation.y=ang;
+    const mv=mat(wall,dim,b.veggs), mr=mat([236,232,224],dim);     // dekke i veggfarge, hvitt rekkverk
+    const dekke=new THREE.Mesh(new THREE.BoxGeometry(dyp,0.18,bredde), mv); dekke.position.set(dyp/2,-0.09,0); dekke.castShadow=dekke.receiveShadow=true; g.add(dekke);
+    const RH=1.0, rt=0.07;
+    const front=new THREE.Mesh(new THREE.BoxGeometry(rt,RH,bredde), mr); front.position.set(dyp,RH/2,0); front.castShadow=true; g.add(front);
+    [-1,1].forEach(s=>{ const side=new THREE.Mesh(new THREE.BoxGeometry(dyp,RH,rt), mr); side.position.set(dyp/2,RH/2,s*bredde/2); side.castShadow=true; g.add(side); });
+    legg(g);
+  }
   // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)
   if(b.veggfelt && !dim){
     b.veggfelt.forEach(([x1,y1,x2,y2,r,g,bb])=>{
