@@ -364,3 +364,85 @@ spørsmål + bilde (ikke merk det klart).
   Testet og rullet tilbake en virkningsløs lys-demping i `__gate` (src rent igjen). Ingen husgeometri rørt.
   Neste: start Del B/C per hus (nr 14 trenger 2 rekker + mørke karmer; samme karm-grep på bnr-193971946), bygg →
   render (fov50, PW_GPU=1) → bevis → dom_sjekk. Oppgaven står `in_progress`.
+
+## ØKT 13 — KJØREPLAN (Studio, etter ny fordeling Vegar 10.11 08:28)
+**Ny ferdig-definisjon:** `dom_sjekk.py` exit 0 + bare regel 03 rød → saken **in_review til CEO**. CEO kjører regler
+og publiserer /prove1. Studio publiserer IKKE selv. Hvite utbrente (nr 14, bnr-13416362): HOPP OVER (rør ikke
+eksponering/lys før Vegar svarer). Vent på at `pgrep -f _publish_okt6` er tom før kilde-commit/rebuild.
+
+**Gjenstår = kun 2 poster (begge sourcet/durable, kjede-idempotent (regel 39 grønn) må holdes):**
+
+### 1. Villa `bnr-13415889` (Cicignongata 5) — struktur
+Durabel kildeplass: `data/rettelser.json`. Villaen eies IKKE av EGNE_FASADER; dens `arker`/`vind` settes der.
+Nåtilstand (bygd): vegg=[214,206,190] (gråbeige ✓ gjort), gavl2=[], arker=2 dormere
+`[-416.92,360.82,...,1.25,1.35]` og `[-417.4,357.68,...,1.25,1.35]` (format `[x,y,z_topp,nx,ny,bw,hb]`),
+h=6.9, th=0.85, gatefasade=vegg 0, n=[0.9883,-0.1524], dør på wall-0 ved s≈6.45–8.95 (sv_plan villa-elementer).
+- **3. ark = «gavl med vindu midt på taket»:** legg til en TREDJE, sentral, høyere ark midt på gatefasadens tak
+  (mellom de to dormerene, ~[-417.16,359.25]), f.eks. `bw≈1.6, hb≈2.4` (høyere enn dormerene 1.35 → leser som
+  gavl, ikke dormer). Legg samtidig et vindu i arken: en ny `vind`-oppføring sentrert på ark-x/y, hevet
+  (z≈5.5–6.5), slik at datalag.py (linje ~270: «vinduer innen 1,5 m fra en ark står over gesimsen») lar det stå
+  i gavlen. Metode: ny `sett arker` (3 elementer) + utvidet `sett vind` i rettelser.json (dato 2026-11-10, grunn
+  «Vegar 10.11 08:10: 3. ark = gavl med vindu midt på taket»).
+- **Balkong/veranda «midt foran, nede»:** INGEN modellstøtte i dag. Plan (additiv, rører ingen andre hus):
+  (a) nytt felt `balkong` på villaen i rettelser.json, f.eks. `{"s":7.7,"b":2.6,"z":2.0,"dyp":1.1}` (s = senter
+  langs wall 0 = foran døren 6.45–8.95; z≈2.0 = hevet 1. etg-gulv; dyp = utspring). (b) liten ny render-primitiv
+  i `src/07` som tegner balkongen når `b.balkong` finnes: horisontal plate + tynt rekkverk via eksisterende
+  `prisme(P,z0,z1,mTopp,mSide)` og `mat()`. Plassér plata i wall-0-planet forskjøvet `dyp` langs n. ~15–20 linjer,
+  gated på feltet (ingen eksisterende bygg har `balkong` → null effekt andre steder, trygt mot forside/intro/prove).
+
+### 2. Standpunkt for de IKKE-HVITE problem-husene (Del C/D item 2)
+Kilde: `kilder/gate/sv_plan.json` (per-hus SV-kamera). Mal fra `front_stand.py` (bygger standpunkt foran rettet
+fasade). For hvert hus: bygg standpunkt `{lat,lon,heading,fov,pitch≈88.4,oye≈2.5}` fra sv_plan-posten → render via
+`node verktoy/gatekamera.mjs ut/enkel/index.html <stand>.json <ut>` (PW_GPU=1, fov≈50–55) → verifiser at huset
+leser mot tak/himmel → monter bevis (`montasje.py SV|etter`). sv_plan-poster:
+- `bnr-193867820` (13 Rådhusgaten, kamera bak mur): heading 124.5, fov 110, avstand 3.4, lat 59.2025891 lon 10.9536795
+- `bnr-193972306` (grått panelhus, feil vegg):      heading 229.3, fov 87,  avstand 4.1, lat 59.204574  lon 10.9555664
+- `bnr-193971288` (hvitt hus, usikkert):             heading 201.6, fov 79,  avstand 5.8, lat 59.2036119 lon 10.9545101
+Disse er ikke hvite → de leser fra et korrekt skrått standpunkt (jf. økt 12-funnet). Widdingstua har også en
+sv_plan-post (heading 118.6/110/6.1) om bevisbildet trenger nytt standpunkt etter terreng-fiksen.
+
+### Rekkefølge når hashen er fri
+1. Rediger `data/rettelser.json` (villa 3. ark + vind + balkong-felt) + `src/07` (balkong-primitiv).
+2. `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`; full kjede `python3 bygg.py server` +
+   `python3 bygg.py enkel`. Verifiser **regel 39 grønn** (kjede idempotent — targeted sett må ikke skrives av et
+   senere kjede-steg; ellers i kilden). `dom_sjekk.py` exit 0, Del A urørt (byte-for-byte mot frysen).
+3. Standpunkt-husene: bygg stand-filer fra sv_plan → render → bevis. (Hvite utbrente hoppes over.)
+4. Commit (norsk) på `gate/kamera`. IKKE publiser, IKKE kjør full regelsuite selv.
+5. Oppdater denne RAPPORT4 + sett saken **in_review** til CEO (tag `[@CEO](agent://c5c0b78d-2ba5-4963-8404-59534f054513)`
+   i avslutningskommentaren). CEO kjører regler + publiserer /prove1.
+
+## Logg (forts.)
+- 2026-11-10 økt 13 (Studio overtok): kvittert ny fordeling. `_publish_okt6` (pid 43111, regler fra 08:42) kjørte
+  fortsatt → rørte ikke kilde (ville flyttet sperre-hashen). Read-only research fullført: balkong-primitiv i src/07
+  er gjennomførbar (`prisme`+`mat`, gated på nytt `balkong`-felt); villa-arker durabel plass funnet
+  (`data/rettelser.json` [5111]); standpunkt-kameraer hentet fra `sv_plan.json`. KJØREPLAN over skrevet.
+  Bakgrunnsvakt venter på at pid 43111 avslutter, så fortsetter kilde-arbeidet. Saken `in_progress`.
+
+## ØKT 14 (Studio, 10.11 ettermiddag) — villa levert + Isegran-fort utredet
+
+**Villa bnr-13415889 FERDIG og committet** (`ebbe55c`, bygger på `e934650`/`c4ba5b7`): 3. ark = sentral midtgavl
+(2.4×1.6) via `takvinduer_arker` i avlesningen (durabelt, kjede-eid); gavlvindu tegnet render-side i src/07
+(gated bw≥2.0 && hb≥1.5 — bare villaens gavl treffer); balkong/veranda = ny `b.balkong`-primitiv i src/07 + `sett balkong`
+(midt foran gatefasaden, z 0,5, 3,0×1,3 m). **dom_sjekk exit 0, regel 39 GRØNN** (verifisert etter revert).
+
+**3 bevis-kameraer rettet** (renders_r2/*.json .standpunkt — bevis-only, IKKE standpunkter.json som er kjede-koblet):
+193867820 (oye 4.5 over mur, h124.5), 193972306 (247.85→229.3, rett vegg), 193971288 (259.65→201.6).
+VIKTIG funn: `kilder/gate/standpunkter.json` leses av `gate_avlesning.py` i kjeden — å repointe et standpunkt der
+endrer husets vind og BRØT regel 39 (bnr-193867820 driftet). Derfor reverterte jeg standpunkter.json og la bevis-
+kameraene i renders_r2 i stedet (det publiser.sh leser for bevis-arket).
+
+**ISEGRAN-FORT (Vegar 15:44) — lokalisert og målt, MEN mål-bygg avviker fra Vegars gjetning:**
+- Ortofoto-flisene heter `flis_<x0>_<y0>` med y0 = SØR-kant (ikke nord). Rettet.
+- Det reelle sirkelfortet (ringmur, gress inni, på odde i elva — matcher dronebildet) ligger i `flis_-448_-192`,
+  **modell-senter ca. (-296, 8)**, **ytre diameter ~33,5 m** (indre gressflate ~28,5 m, murtykkelse ~2,5 m). Målt i ortofoto.
+- Ved (-296,8) står i modellen **`pb-4`** (grå, h 2,3, 0 vinduer, flat — «ser ut som en liten tunnelinngang», matcher
+  Vegars ord). Det er trolig fortet-som-feiltegnet.
+- **Bygget Vegar NAVNGA, `bnr-193867421`** (rødt tak, 20 vinduer), ligger på modell (-369,30) — det er et ekte
+  museumsbygg (Magasinet/bebyggelsen på Isegran), **76 m fra det reelle fortet** og 23 m fra steder-PUNKTET (-386,14.8).
+  Å erstatte det ville slette et legitimt hus OG ikke fikse fortet. → mål-bygget er trolig `pb-4`, ikke bnr-193867421.
+- Dronefoto hentet: `kilder/gate/isegran-fort-vegar-10nov.jpg` (fasit).
+
+**BYGGEPLAN fort (gjenstår):** skjul mål-bygget (pb-4) → ny render-primitiv (ringmur av naturstein via `ring()`+`prisme()`
+som bygTaarn, med åpning mot land, flat kappe ~4,5 m) + gressvoll bak med teglbue (hvelvet inngang) + brosteinsplass +
+lave murrester + gangbane m/ rekkverk + trebjelker over murkronen mot elva. Kildebasert (egen fil, ikke in-place).
+Bevis: render fra samme vinkel som dronebildet, ved siden av bildet. Legg ut på /rask.
