@@ -21,6 +21,9 @@ if ! grep -q "^Kilde: $HASH versjon $VERSJON " "$RAPP" 2>/dev/null; then echo "S
 # Regel 48 (PAG-1496): vinduer som ligger oppå hverandre (over 5 % overlapp i bygg[].vind) stopper ALL publisering,
 # også /prove og /prove1 der andre røde regler ellers slipper gjennom. Rød = stopp, uansett modus.
 if grep -q "^- FEIL 48_" "$RAPP"; then echo "STOPP: regel 48 er rød — vinduer ligger oppå hverandre (PAG-1496):"; grep "^- FEIL 48_" "$RAPP"; exit 1; fi
+# Regel 49 (OPPGAVE5): et faktum på huskortet (navn/byggeår/historie/bruk i dag) uten kilde + dato stopper ALL publisering,
+# også /prove og /prove1. Innhold skal kunne føres tilbake til en lest kilde; ellers er det gjetning. Rød = stopp, uansett modus.
+if grep -q "^- FEIL 49_" "$RAPP"; then echo "STOPP: regel 49 er rød — hus-innhold uten kilde + dato (OPPGAVE5):"; grep "^- FEIL 49_" "$RAPP"; exit 1; fi
 RODE=$(grep "^- FEIL" "$RAPP" | grep -v " 09_publisert " || true)
 if [ -n "$RODE" ]; then
   if [ "$MODUS" != "forside" ] || [ -n "$TILLAT_RODE" ]; then echo "røde regler går ut (${TILLAT_RODE:-prove}):"; echo "$RODE"; else echo "STOPP: røde regler (TILLAT_RODE='<Vegars ja>' når han har bestemt det):"; echo "$RODE"; exit 1; fi

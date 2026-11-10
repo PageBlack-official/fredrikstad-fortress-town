@@ -292,6 +292,37 @@ def koble_til_plass(data):
             if bid not in plass:
                 raise SystemExit(f"{emne} peker på bygg som ikke finnes: {bid}")
             x['bygg'] = plass[bid]
+    legg_paa_innhold(data)
+    return data
+
+
+# Innhold per hus (OPPGAVE5): navn, byggeår, historie, bruk i dag. Skrivers kildefestede tekst, redigert i
+# kilder/bygg-innhold.json (utenfor data/, så reglenes rettelseslag ikke rører den). Leservei: datalaget leser fila og
+# legger innhold på bygget her, nøklet på id — kartet får det gjennom byggekjeden, ikke hardkodet i data/bygg.json.
+INNHOLD_FELT = ('navn', 'byggeaar', 'historie', 'bruk_i_dag')
+
+
+def innhold_hus():
+    """{id: {felt: {verdi, kilder[]}}} fra kilder/bygg-innhold.json. Regel 49 leser samme fil herfra, så leservei og
+    kildesjekk bruker ett sted. Tom hvis fila ikke finnes (byggekjeden skal gå uten innhold også)."""
+    p = os.path.join(ROT, 'kilder', 'bygg-innhold.json')
+    if not os.path.exists(p):
+        return {}
+    return json.load(open(p, encoding='utf8')).get('hus', {})
+
+
+def legg_paa_innhold(data):
+    """Legger innhold per hus på bygget det hører til (id). Bare felt med verdi tas med — tomme felt vises ikke, så
+    kortet ser ferdig ut med bare det som finnes. Kildene (kilder[]) følger ikke med til kartet; de leses av regel 49."""
+    ind = indeks(data['bygg'])
+    for id_, h in innhold_hus().items():
+        i = ind.get(id_)
+        if i is None:
+            continue
+        felt = {k: h[k]['verdi'] for k in INNHOLD_FELT
+                if isinstance(h.get(k), dict) and h[k].get('verdi')}
+        if felt:
+            data['bygg'][i]['innhold'] = felt
     return data
 
 
