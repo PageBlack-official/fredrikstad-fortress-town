@@ -86,7 +86,13 @@ kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
   GPU; SV-croppene i `rapport/gate/sv_rett3-5/` finnes; `../sv` er tom men brukes ikke). Arket git-ignoreres (SV i det);
   kopieres til Dropbox `teknisk-veikart/status/sot-dom-runde3.jpg` for hånd/konnektor.
 - **nr 11 (bnr-193971954) pipe:** Vegar usikker; rett BARE om SV/flyfoto viser feil størrelse — ingen kilde her nå, UTSATT.
-- **svart kloss (nr 8 + bnr-6276504):** finn elementet og fjern + rett årsak.
+- **svart kloss (nr 8 + bnr-6276504): BEKREFTET visuelt** — render av nr 8 (bnr-193867634-2) viser en svart,
+  flattoppet boks (~2 m) øst for huset, på grønt. Den er IKKE et nabobygg (bare bnr-193867685 office innen 30 m,
+  lys vegg), IKKE gavl2 (den tegnes i veggfarge = hvit her). Nærmeste ikke-bygg-objekt: `flater fl-206` @ [156,-80]
+  (typ ukjent) — men en flate er 2D, så boksen er trolig et hevet render-artefakt. Begge husene er `takform_lest:
+  "valm"`. NESTE: identifiser hva som tegnes hevet+svart der (sjekk `flater`-typ fl-206 + src-rendering av flater/valm-ende),
+  fjern + rett årsak. Positivt funn: nr 8 render bekrefter 2 piper + takvindu + 7 vinduer riktig.
+- **svart kloss (nr 8 + bnr-6276504):** (over)
 - **bnr-193867480 Widdingstua:** terreng under vann → `bakke_dtm`.
 - **Standpunkt (bevis-kamera, ikke kartdata):** bnr-193867820 (bak mur), bnr-193972306 (annen vegg), bnr-193971288 (usikkert hus), bnr-13416362 (utbrent, Del D).
 - **regel 39-opprydding:** rut pipe/takvindu/tak-overstyringene gjennom kjedekildene så en full kjede-kjøring er stabil.
