@@ -349,6 +349,22 @@ Publisering (publiser.sh, lagt om 05.11 etter at forsiden ble byttet uten ja to 
 - `sh publiser.sh forside` bytter forsiden (og /prove/ til samme bygg). Den gamle forsiden flyttes til /backup/v<versjon>-<dato>/ og føres
   i lista. Krever Vegars ja, grønne regler (eller `TILLAT_RODE='<hans ja>'`) og grønn maskinsjekk mot samme kilde.
 
+## Hurtigsporet: /rask (10.11, PAG-1504, Vegar: «Hurtigspor først»)
+Vegar skal kunne dømme et hus, få det rettet og se endringen på sekunder, ikke vente timer på full kjede + ~45 regler. Flyten er:
+**Vegar dømmer hus → agent retter i kilden → commit → `sh rask.sh` → lenke til huset i saken.**
+- `sh rask.sh` (egen fil, gren gate/rask) legger kildens **committede** tilstand ut på
+  `pageblack-official.github.io/fredrikstad-fortress-town/rask/` på under 10 min fra commit (målt 61–174 s, 3 forsøk 10.11).
+- Det **bygger enkelt** (ett samlet artefakt, ~3–4 s) og kjører **bare de raske vaktreglene** som stopper et ødelagt kart:
+  bygger og laster + ingen JS-feil (`verktoy/last-test.mjs`) og regel 48 (vinduer ikke oppå hverandre). Resten av reglene hører
+  fortsatt til /prove1 og /prove (publiser.sh), ikke hit. En diff mot forrige /rask-bygg sier hvilke **hus (bnr)** som endret seg
+  (fra `data/bygg.json`); ett samlet artefakt kan ikke bygges per hus, så diffen brukes til lenka og rapporten.
+- Det rører **bare mappa rask/** på gh-pages. /prove, /prove1, /backup og forsiden står urørt. Vanlig commit oppå gh-pages,
+  **aldri force-push** (ved avvist push hentes gh-pages på nytt og rask/ legges oppå igjen). Samme deploy-nøkkel som publiser.sh (remote `pages`, alias github-sot).
+- Siden viser **kilde-commit + tidspunkt** i et hjørnestempel nederst til høyre (`#raskmerke`), så Vegar ser at det er den nye.
+- **Lenke per hus:** `rask/?hus=<bnr>` (bnr = bygningsnummer, f.eks. `?hus=193870325` = Hovedvakten). Et lite inline-skript gjør
+  `?hus=<bnr>` om til den eksisterende delings-lenka `#hus=bnr-<bnr>` (15_lenke.js) som løfter huset og glir kameraet dit (gjenbruk av __gate/standpunkt-mekanikken i bevis-arkene). Lenka limes rett i saken der huset dømmes.
+- Full dom i fart er fortsatt Vegars, på /prove/ med ekte skjermkort (maskinsjekken). /rask er det raske blikket mellom dommene.
+
 ## Brukeropplevelsen (05.11, Vegar: «kjør dette»)
 - **Været** (src/23_vaer.js): MET Norway nå. Skyet = gråvær uten kastskygger (U_SOL.sky i solHer), regn/sludd/snø på eget lerret,
   tåkeslør, snø på tak/bakke/kroner (U_SOL.sno), årstidsfarge på grønt (U_SOL.aarstid). Merket oppe til venstre: temperatur og vær,
