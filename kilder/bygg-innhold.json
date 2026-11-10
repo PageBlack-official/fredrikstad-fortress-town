@@ -1,0 +1,3903 @@
+{
+ "_skjema": {
+  "versjon": 1,
+  "om": "Innhold per hus for Smart Old Town (/prove1). Hus-ID = bygningsnummer i Matrikkelen. Hvert faktum: verdi + kilder[]. Tomt felt = ingen kilde funnet (aldri gjett). Hver kilde: {adresse, dato (lesedato ISO), note}. Tekst skrevet med egne ord gjennom vegars-stemme + ki-sensur.py.",
+  "kilderekkefolge": [
+   "Matrikkelen/Kartverket",
+   "Riksantikvaren kulturminnesok (Askeladden)",
+   "SEFRAK (matrikkel)",
+   "Fredrikstad kommune kulturminneplan",
+   "Bronnoysundregistrene",
+   "virksomhetens egen side",
+   "lokalhistoriewiki"
+  ],
+  "regel": "Tall og datoer skal ha primaerkilde. Ingen private opplysninger om beboere; privatbolig far bare det som gjelder bygningen."
+ },
+ "hus": {
+  "bnr-193867537": {
+   "bygningsnummer": 193867537,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868568": {
+   "bygningsnummer": 193868568,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867820": {
+   "bygningsnummer": 193867820,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-13414904": {
+   "bygningsnummer": 13414904,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867782": {
+   "bygningsnummer": 193867782,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867839": {
+   "bygningsnummer": 193867839,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972772": {
+   "bygningsnummer": 193972772,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867812": {
+   "bygningsnummer": 193867812,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867790": {
+   "bygningsnummer": 193867790,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867545": {
+   "bygningsnummer": 193867545,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868274": {
+   "bygningsnummer": 193868274,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868495": {
+   "bygningsnummer": 193868495,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972438": {
+   "bygningsnummer": 193972438,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868541": {
+   "bygningsnummer": 193868541,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971253": {
+   "bygningsnummer": 193971253,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868312": {
+   "bygningsnummer": 193868312,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867804": {
+   "bygningsnummer": 193867804,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868290": {
+   "bygningsnummer": 193868290,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868606": {
+   "bygningsnummer": 193868606,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867588": {
+   "bygningsnummer": 193867588,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972128": {
+   "bygningsnummer": 193972128,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971261": {
+   "bygningsnummer": 193971261,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972136": {
+   "bygningsnummer": 193972136,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193987370": {
+   "bygningsnummer": 193987370,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-300279164": {
+   "bygningsnummer": 300279164,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972101": {
+   "bygningsnummer": 193972101,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972454": {
+   "bygningsnummer": 193972454,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867553": {
+   "bygningsnummer": 193867553,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867626": {
+   "bygningsnummer": 193867626,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868479": {
+   "bygningsnummer": 193868479,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868355": {
+   "bygningsnummer": 193868355,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972039": {
+   "bygningsnummer": 193972039,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-16313173": {
+   "bygningsnummer": 16313173,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867936": {
+   "bygningsnummer": 193867936,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867529": {
+   "bygningsnummer": 193867529,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867847": {
+   "bygningsnummer": 193867847,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-5": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868592": {
+   "bygningsnummer": 193868592,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972446": {
+   "bygningsnummer": 193972446,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868347": {
+   "bygningsnummer": 193868347,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972004": {
+   "bygningsnummer": 193972004,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868266": {
+   "bygningsnummer": 193868266,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867774": {
+   "bygningsnummer": 193867774,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193991718": {
+   "bygningsnummer": 193991718,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6246753": {
+   "bygningsnummer": 6246753,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868517": {
+   "bygningsnummer": 193868517,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972012": {
+   "bygningsnummer": 193972012,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867863": {
+   "bygningsnummer": 193867863,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971229": {
+   "bygningsnummer": 193971229,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972152": {
+   "bygningsnummer": 193972152,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972608": {
+   "bygningsnummer": 193972608,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-13394024": {
+   "bygningsnummer": 13394024,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6251765": {
+   "bygningsnummer": 6251765,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6275109": {
+   "bygningsnummer": 6275109,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868282": {
+   "bygningsnummer": 193868282,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972144": {
+   "bygningsnummer": 193972144,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-16308102": {
+   "bygningsnummer": 16308102,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868533": {
+   "bygningsnummer": 193868533,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972462": {
+   "bygningsnummer": 193972462,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972071": {
+   "bygningsnummer": 193972071,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868614": {
+   "bygningsnummer": 193868614,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971911": {
+   "bygningsnummer": 193971911,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972594": {
+   "bygningsnummer": 193972594,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867766": {
+   "bygningsnummer": 193867766,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-13": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-8": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971938": {
+   "bygningsnummer": 193971938,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971369": {
+   "bygningsnummer": 193971369,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868258": {
+   "bygningsnummer": 193868258,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868339": {
+   "bygningsnummer": 193868339,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972578": {
+   "bygningsnummer": 193972578,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972098": {
+   "bygningsnummer": 193972098,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972543": {
+   "bygningsnummer": 193972543,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971288": {
+   "bygningsnummer": 193971288,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972535": {
+   "bygningsnummer": 193972535,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971202": {
+   "bygningsnummer": 193971202,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868584": {
+   "bygningsnummer": 193868584,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870260": {
+   "bygningsnummer": 193870260,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867731": {
+   "bygningsnummer": 193867731,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972489": {
+   "bygningsnummer": 193972489,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972055": {
+   "bygningsnummer": 193972055,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867707": {
+   "bygningsnummer": 193867707,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972411": {
+   "bygningsnummer": 193972411,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867723": {
+   "bygningsnummer": 193867723,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867715": {
+   "bygningsnummer": 193867715,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971946": {
+   "bygningsnummer": 193971946,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867758": {
+   "bygningsnummer": 193867758,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868711": {
+   "bygningsnummer": 193868711,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867693": {
+   "bygningsnummer": 193867693,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867944": {
+   "bygningsnummer": 193867944,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972632": {
+   "bygningsnummer": 193972632,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867618": {
+   "bygningsnummer": 193867618,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971873": {
+   "bygningsnummer": 193971873,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971385": {
+   "bygningsnummer": 193971385,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972497": {
+   "bygningsnummer": 193972497,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867510": {
+   "bygningsnummer": 193867510,
+   "kategori": "offentlig/kultur",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868525": {
+   "bygningsnummer": 193868525,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-7": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868622": {
+   "bygningsnummer": 193868622,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972063": {
+   "bygningsnummer": 193972063,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972616": {
+   "bygningsnummer": 193972616,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-14": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868223": {
+   "bygningsnummer": 193868223,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868320": {
+   "bygningsnummer": 193868320,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971903": {
+   "bygningsnummer": 193971903,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-16290424": {
+   "bygningsnummer": 16290424,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972624": {
+   "bygningsnummer": 193972624,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868363": {
+   "bygningsnummer": 193868363,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972187": {
+   "bygningsnummer": 193972187,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867855": {
+   "bygningsnummer": 193867855,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972403": {
+   "bygningsnummer": 193972403,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-194006187": {
+   "bygningsnummer": 194006187,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868207": {
+   "bygningsnummer": 193868207,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867596": {
+   "bygningsnummer": 193867596,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193918239": {
+   "bygningsnummer": 193918239,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867898": {
+   "bygningsnummer": 193867898,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972195": {
+   "bygningsnummer": 193972195,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-11": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972519": {
+   "bygningsnummer": 193972519,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867502": {
+   "bygningsnummer": 193867502,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971377": {
+   "bygningsnummer": 193971377,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972225": {
+   "bygningsnummer": 193972225,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867901": {
+   "bygningsnummer": 193867901,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870252": {
+   "bygningsnummer": 193870252,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971954": {
+   "bygningsnummer": 193971954,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867928": {
+   "bygningsnummer": 193867928,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972381": {
+   "bygningsnummer": 193972381,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6251218": {
+   "bygningsnummer": 6251218,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867634": {
+   "bygningsnummer": 193867634,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971989": {
+   "bygningsnummer": 193971989,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868371": {
+   "bygningsnummer": 193868371,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867987": {
+   "bygningsnummer": 193867987,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193987397": {
+   "bygningsnummer": 193987397,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971199": {
+   "bygningsnummer": 193971199,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870244": {
+   "bygningsnummer": 193870244,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971342": {
+   "bygningsnummer": 193971342,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971318": {
+   "bygningsnummer": 193971318,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868401": {
+   "bygningsnummer": 193868401,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867979": {
+   "bygningsnummer": 193867979,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867499": {
+   "bygningsnummer": 193867499,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971970": {
+   "bygningsnummer": 193971970,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868231": {
+   "bygningsnummer": 193868231,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870236": {
+   "bygningsnummer": 193870236,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868460": {
+   "bygningsnummer": 193868460,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193918247": {
+   "bygningsnummer": 193918247,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6251323": {
+   "bygningsnummer": 6251323,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971962": {
+   "bygningsnummer": 193971962,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870228": {
+   "bygningsnummer": 193870228,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972209": {
+   "bygningsnummer": 193972209,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868398": {
+   "bygningsnummer": 193868398,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867677": {
+   "bygningsnummer": 193867677,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870279": {
+   "bygningsnummer": 193870279,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868630": {
+   "bygningsnummer": 193868630,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868215": {
+   "bygningsnummer": 193868215,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867685": {
+   "bygningsnummer": 193867685,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6251331": {
+   "bygningsnummer": 6251331,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971334": {
+   "bygningsnummer": 193971334,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867952": {
+   "bygningsnummer": 193867952,
+   "kategori": "annet",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193870201": {
+   "bygningsnummer": 193870201,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-15": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193867995": {
+   "bygningsnummer": 193867995,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971210": {
+   "bygningsnummer": 193971210,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6242812": {
+   "bygningsnummer": 6242812,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868657": {
+   "bygningsnummer": 193868657,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868428": {
+   "bygningsnummer": 193868428,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868002": {
+   "bygningsnummer": 193868002,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972179": {
+   "bygningsnummer": 193972179,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193971296": {
+   "bygningsnummer": 193971296,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193869548": {
+   "bygningsnummer": 193869548,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868010": {
+   "bygningsnummer": 193868010,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-6247822": {
+   "bygningsnummer": 6247822,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868142": {
+   "bygningsnummer": 193868142,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972292": {
+   "bygningsnummer": 193972292,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868150": {
+   "bygningsnummer": 193868150,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-6": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868665": {
+   "bygningsnummer": 193868665,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868096": {
+   "bygningsnummer": 193868096,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-10": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "pb-9": {
+   "bygningsnummer": null,
+   "kategori": "ukjent",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868029": {
+   "bygningsnummer": 193868029,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868703": {
+   "bygningsnummer": 193868703,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868452": {
+   "bygningsnummer": 193868452,
+   "kategori": "bolig",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972349": {
+   "bygningsnummer": 193972349,
+   "kategori": "uthus/garasje",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193972365": {
+   "bygningsnummer": 193972365,
+   "kategori": "næring",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  },
+  "bnr-193868436": {
+   "bygningsnummer": 193868436,
+   "kategori": "hotell/servering/off",
+   "navn": {
+    "verdi": null,
+    "kilder": []
+   },
+   "byggeaar": {
+    "verdi": null,
+    "kilder": []
+   },
+   "historie": {
+    "verdi": null,
+    "kilder": []
+   },
+   "bruk_i_dag": {
+    "verdi": null,
+    "kilder": []
+   },
+   "status": "tom"
+  }
+ }
+}

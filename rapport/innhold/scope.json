@@ -1,0 +1,2428 @@
+[
+ {
+  "id": "bnr-193867537",
+  "bygningsnummer": 193867537,
+  "navn_datasett": "Infanterikasernen",
+  "type": 159,
+  "kategori": "bolig",
+  "dist_m": 0.0,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862510"
+  ]
+ },
+ {
+  "id": "bnr-193868568",
+  "bygningsnummer": 193868568,
+  "navn_datasett": "Brannstasjon - uthus til Infanterikasernen",
+  "type": 519,
+  "kategori": "hotell/servering/off",
+  "dist_m": 30.0,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867820",
+  "bygningsnummer": 193867820,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 42.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17869633"
+  ]
+ },
+ {
+  "id": "bnr-13414904",
+  "bygningsnummer": 13414904,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 47.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874505"
+  ]
+ },
+ {
+  "id": "bnr-193867782",
+  "bygningsnummer": 193867782,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 49.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17869634"
+  ]
+ },
+ {
+  "id": "bnr-193867839",
+  "bygningsnummer": 193867839,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 49.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862511"
+  ]
+ },
+ {
+  "id": "bnr-193972772",
+  "bygningsnummer": 193972772,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 53.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867812",
+  "bygningsnummer": 193867812,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 53.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867790",
+  "bygningsnummer": 193867790,
+  "navn_datasett": null,
+  "type": 145,
+  "kategori": "bolig",
+  "dist_m": 54.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874508"
+  ]
+ },
+ {
+  "id": "bnr-193867545",
+  "bygningsnummer": 193867545,
+  "navn_datasett": "Arnesgården",
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 54.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17923045"
+  ]
+ },
+ {
+  "id": "bnr-193868274",
+  "bygningsnummer": 193868274,
+  "navn_datasett": null,
+  "type": 112,
+  "kategori": "bolig",
+  "dist_m": 57.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874506"
+  ]
+ },
+ {
+  "id": "bnr-193868495",
+  "bygningsnummer": 193868495,
+  "navn_datasett": null,
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 58.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972438",
+  "bygningsnummer": 193972438,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 61.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868541",
+  "bygningsnummer": 193868541,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 62.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971253",
+  "bygningsnummer": 193971253,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 62.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868312",
+  "bygningsnummer": 193868312,
+  "navn_datasett": "Rosinggården",
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 63.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867804",
+  "bygningsnummer": 193867804,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 63.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862512"
+  ]
+ },
+ {
+  "id": "bnr-193868290",
+  "bygningsnummer": 193868290,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 66.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862543"
+  ]
+ },
+ {
+  "id": "bnr-193868606",
+  "bygningsnummer": 193868606,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 67.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867588",
+  "bygningsnummer": 193867588,
+  "navn_datasett": "Dunkejongården",
+  "type": 121,
+  "kategori": "bolig",
+  "dist_m": 67.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874504"
+  ]
+ },
+ {
+  "id": "bnr-193972128",
+  "bygningsnummer": 193972128,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 67.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971261",
+  "bygningsnummer": 193971261,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 68.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972136",
+  "bygningsnummer": 193972136,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 69.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193987370",
+  "bygningsnummer": 193987370,
+  "navn_datasett": null,
+  "type": 669,
+  "kategori": "offentlig/kultur",
+  "dist_m": 71.0,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862509"
+  ]
+ },
+ {
+  "id": "bnr-300279164",
+  "bygningsnummer": 300279164,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 71.5,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "407089230"
+  ]
+ },
+ {
+  "id": "bnr-193972101",
+  "bygningsnummer": 193972101,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 71.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972454",
+  "bygningsnummer": 193972454,
+  "navn_datasett": null,
+  "type": 672,
+  "kategori": "offentlig/kultur",
+  "dist_m": 71.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867553",
+  "bygningsnummer": 193867553,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 72.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867626",
+  "bygningsnummer": 193867626,
+  "navn_datasett": null,
+  "type": 329,
+  "kategori": "næring",
+  "dist_m": 73.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17930652"
+  ]
+ },
+ {
+  "id": "bnr-193868479",
+  "bygningsnummer": 193868479,
+  "navn_datasett": null,
+  "type": 533,
+  "kategori": "hotell/servering/off",
+  "dist_m": 73.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868355",
+  "bygningsnummer": 193868355,
+  "navn_datasett": "Det gamle raadhus",
+  "type": 142,
+  "kategori": "bolig",
+  "dist_m": 74.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862539"
+  ]
+ },
+ {
+  "id": "bnr-193972039",
+  "bygningsnummer": 193972039,
+  "navn_datasett": null,
+  "type": 999,
+  "kategori": "annet",
+  "dist_m": 74.6,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-16313173",
+  "bygningsnummer": 16313173,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 75.4,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17931227"
+  ]
+ },
+ {
+  "id": "bnr-193867936",
+  "bygningsnummer": 193867936,
+  "navn_datasett": null,
+  "type": 199,
+  "kategori": "annet",
+  "dist_m": 76.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17869635"
+  ]
+ },
+ {
+  "id": "bnr-193867529",
+  "bygningsnummer": 193867529,
+  "navn_datasett": "Kirken",
+  "type": 671,
+  "kategori": "offentlig/kultur",
+  "dist_m": 76.7,
+  "sefrak": false,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862538"
+  ]
+ },
+ {
+  "id": "bnr-193867847",
+  "bygningsnummer": 193867847,
+  "navn_datasett": null,
+  "type": 145,
+  "kategori": "bolig",
+  "dist_m": 76.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862513"
+  ]
+ },
+ {
+  "id": "pb-5",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 78.8,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868592",
+  "bygningsnummer": 193868592,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 79.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972446",
+  "bygningsnummer": 193972446,
+  "navn_datasett": null,
+  "type": 672,
+  "kategori": "offentlig/kultur",
+  "dist_m": 80.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868347",
+  "bygningsnummer": 193868347,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 81.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862541"
+  ]
+ },
+ {
+  "id": "bnr-193972004",
+  "bygningsnummer": 193972004,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 81.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868266",
+  "bygningsnummer": 193868266,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 81.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17931226"
+  ]
+ },
+ {
+  "id": "bnr-193867774",
+  "bygningsnummer": 193867774,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 82.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874510"
+  ]
+ },
+ {
+  "id": "bnr-193991718",
+  "bygningsnummer": 193991718,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 83.2,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17930651"
+  ]
+ },
+ {
+  "id": "bnr-6246753",
+  "bygningsnummer": 6246753,
+  "navn_datasett": null,
+  "type": 672,
+  "kategori": "offentlig/kultur",
+  "dist_m": 83.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862514"
+  ]
+ },
+ {
+  "id": "bnr-193868517",
+  "bygningsnummer": 193868517,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 83.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862539"
+  ]
+ },
+ {
+  "id": "bnr-193972012",
+  "bygningsnummer": 193972012,
+  "navn_datasett": "Det nye rådhus",
+  "type": 999,
+  "kategori": "annet",
+  "dist_m": 85.7,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17875248"
+  ]
+ },
+ {
+  "id": "bnr-193867863",
+  "bygningsnummer": 193867863,
+  "navn_datasett": null,
+  "type": 199,
+  "kategori": "annet",
+  "dist_m": 86.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874509"
+  ]
+ },
+ {
+  "id": "bnr-193971229",
+  "bygningsnummer": 193971229,
+  "navn_datasett": null,
+  "type": 313,
+  "kategori": "næring",
+  "dist_m": 86.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972152",
+  "bygningsnummer": 193972152,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 87.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972608",
+  "bygningsnummer": 193972608,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 87.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-13394024",
+  "bygningsnummer": 13394024,
+  "navn_datasett": null,
+  "type": 144,
+  "kategori": "bolig",
+  "dist_m": 87.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874503"
+  ]
+ },
+ {
+  "id": "bnr-6251765",
+  "bygningsnummer": 6251765,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 89.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-6275109",
+  "bygningsnummer": 6275109,
+  "navn_datasett": null,
+  "type": 239,
+  "kategori": "næring",
+  "dist_m": 89.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862540"
+  ]
+ },
+ {
+  "id": "bnr-193868282",
+  "bygningsnummer": 193868282,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 89.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862542"
+  ]
+ },
+ {
+  "id": "bnr-193972144",
+  "bygningsnummer": 193972144,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 89.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-16308102",
+  "bygningsnummer": 16308102,
+  "navn_datasett": null,
+  "type": 999,
+  "kategori": "annet",
+  "dist_m": 89.5,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862515",
+   "17862516"
+  ]
+ },
+ {
+  "id": "bnr-193868533",
+  "bygningsnummer": 193868533,
+  "navn_datasett": null,
+  "type": 239,
+  "kategori": "næring",
+  "dist_m": 92.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972462",
+  "bygningsnummer": 193972462,
+  "navn_datasett": null,
+  "type": 672,
+  "kategori": "offentlig/kultur",
+  "dist_m": 92.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972071",
+  "bygningsnummer": 193972071,
+  "navn_datasett": null,
+  "type": 313,
+  "kategori": "næring",
+  "dist_m": 93.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868614",
+  "bygningsnummer": 193868614,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 93.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971911",
+  "bygningsnummer": 193971911,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 93.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972594",
+  "bygningsnummer": 193972594,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 93.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867766",
+  "bygningsnummer": 193867766,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 93.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874511"
+  ]
+ },
+ {
+  "id": "pb-13",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 93.6,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "pb-8",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 94.3,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971938",
+  "bygningsnummer": 193971938,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 95.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971369",
+  "bygningsnummer": 193971369,
+  "navn_datasett": null,
+  "type": 531,
+  "kategori": "hotell/servering/off",
+  "dist_m": 96.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868258",
+  "bygningsnummer": 193868258,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 97.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876053"
+  ]
+ },
+ {
+  "id": "bnr-193868339",
+  "bygningsnummer": 193868339,
+  "navn_datasett": null,
+  "type": 619,
+  "kategori": "offentlig/kultur",
+  "dist_m": 97.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862540"
+  ]
+ },
+ {
+  "id": "bnr-193972578",
+  "bygningsnummer": 193972578,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 97.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972098",
+  "bygningsnummer": 193972098,
+  "navn_datasett": null,
+  "type": 313,
+  "kategori": "næring",
+  "dist_m": 99.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972543",
+  "bygningsnummer": 193972543,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 99.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971288",
+  "bygningsnummer": 193971288,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 100.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972535",
+  "bygningsnummer": 193972535,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 100.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971202",
+  "bygningsnummer": 193971202,
+  "navn_datasett": null,
+  "type": 629,
+  "kategori": "offentlig/kultur",
+  "dist_m": 100.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868584",
+  "bygningsnummer": 193868584,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 101.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193870260",
+  "bygningsnummer": 193870260,
+  "navn_datasett": null,
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 102.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876039"
+  ]
+ },
+ {
+  "id": "bnr-193867731",
+  "bygningsnummer": 193867731,
+  "navn_datasett": null,
+  "type": 144,
+  "kategori": "bolig",
+  "dist_m": 103.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876042"
+  ]
+ },
+ {
+  "id": "bnr-193972489",
+  "bygningsnummer": 193972489,
+  "navn_datasett": null,
+  "type": 329,
+  "kategori": "næring",
+  "dist_m": 104.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972055",
+  "bygningsnummer": 193972055,
+  "navn_datasett": null,
+  "type": 313,
+  "kategori": "næring",
+  "dist_m": 104.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867707",
+  "bygningsnummer": 193867707,
+  "navn_datasett": null,
+  "type": 144,
+  "kategori": "bolig",
+  "dist_m": 104.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862518"
+  ]
+ },
+ {
+  "id": "bnr-193972411",
+  "bygningsnummer": 193972411,
+  "navn_datasett": "Sindinggården",
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 105.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867723",
+  "bygningsnummer": 193867723,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 105.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876041"
+  ]
+ },
+ {
+  "id": "bnr-193867715",
+  "bygningsnummer": 193867715,
+  "navn_datasett": null,
+  "type": 145,
+  "kategori": "bolig",
+  "dist_m": 105.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862517"
+  ]
+ },
+ {
+  "id": "bnr-193971946",
+  "bygningsnummer": 193971946,
+  "navn_datasett": null,
+  "type": 621,
+  "kategori": "offentlig/kultur",
+  "dist_m": 106.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867758",
+  "bygningsnummer": 193867758,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 107.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874513"
+  ]
+ },
+ {
+  "id": "bnr-193868711",
+  "bygningsnummer": 193868711,
+  "navn_datasett": null,
+  "type": 144,
+  "kategori": "bolig",
+  "dist_m": 107.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874397"
+  ]
+ },
+ {
+  "id": "bnr-193867693",
+  "bygningsnummer": 193867693,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 108.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876040"
+  ]
+ },
+ {
+  "id": "bnr-193867944",
+  "bygningsnummer": 193867944,
+  "navn_datasett": null,
+  "type": 531,
+  "kategori": "hotell/servering/off",
+  "dist_m": 109.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876056"
+  ]
+ },
+ {
+  "id": "bnr-193972632",
+  "bygningsnummer": 193972632,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 109.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867618",
+  "bygningsnummer": 193867618,
+  "navn_datasett": null,
+  "type": 145,
+  "kategori": "bolig",
+  "dist_m": 109.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874502",
+   "17927978"
+  ]
+ },
+ {
+  "id": "bnr-193971873",
+  "bygningsnummer": 193971873,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 110.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971385",
+  "bygningsnummer": 193971385,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 110.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972497",
+  "bygningsnummer": 193972497,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 111.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867510",
+  "bygningsnummer": 193867510,
+  "navn_datasett": "Ekserserhuset",
+  "type": 659,
+  "kategori": "offentlig/kultur",
+  "dist_m": 112.5,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862537"
+  ]
+ },
+ {
+  "id": "bnr-193868525",
+  "bygningsnummer": 193868525,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 114.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876051"
+  ]
+ },
+ {
+  "id": "pb-7",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 114.2,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868622",
+  "bygningsnummer": 193868622,
+  "navn_datasett": null,
+  "type": 531,
+  "kategori": "hotell/servering/off",
+  "dist_m": 114.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876056"
+  ]
+ },
+ {
+  "id": "bnr-193972063",
+  "bygningsnummer": 193972063,
+  "navn_datasett": null,
+  "type": 313,
+  "kategori": "næring",
+  "dist_m": 114.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972616",
+  "bygningsnummer": 193972616,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 115.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "pb-14",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 115.5,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868223",
+  "bygningsnummer": 193868223,
+  "navn_datasett": "Muldvadgården",
+  "type": 531,
+  "kategori": "hotell/servering/off",
+  "dist_m": 115.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862544"
+  ]
+ },
+ {
+  "id": "bnr-193868320",
+  "bygningsnummer": 193868320,
+  "navn_datasett": null,
+  "type": 142,
+  "kategori": "bolig",
+  "dist_m": 116.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874399"
+  ]
+ },
+ {
+  "id": "bnr-193971903",
+  "bygningsnummer": 193971903,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 117.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-16290424",
+  "bygningsnummer": 16290424,
+  "navn_datasett": null,
+  "type": 239,
+  "kategori": "næring",
+  "dist_m": 117.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876054"
+  ]
+ },
+ {
+  "id": "bnr-193972624",
+  "bygningsnummer": 193972624,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 118.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868363",
+  "bygningsnummer": 193868363,
+  "navn_datasett": "Binggården",
+  "type": 319,
+  "kategori": "næring",
+  "dist_m": 118.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17931262"
+  ]
+ },
+ {
+  "id": "bnr-193972187",
+  "bygningsnummer": 193972187,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 118.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876055"
+  ]
+ },
+ {
+  "id": "bnr-193867855",
+  "bygningsnummer": 193867855,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 120.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874512"
+  ]
+ },
+ {
+  "id": "bnr-193972403",
+  "bygningsnummer": 193972403,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 121.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-194006187",
+  "bygningsnummer": 194006187,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 122.1,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17922351"
+  ]
+ },
+ {
+  "id": "bnr-193868207",
+  "bygningsnummer": 193868207,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 122.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876054"
+  ]
+ },
+ {
+  "id": "bnr-193867596",
+  "bygningsnummer": 193867596,
+  "navn_datasett": "Vennehaabet",
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 122.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874398"
+  ]
+ },
+ {
+  "id": "bnr-193918239",
+  "bygningsnummer": 193918239,
+  "navn_datasett": "Bullgården",
+  "type": 121,
+  "kategori": "bolig",
+  "dist_m": 122.7,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876050"
+  ]
+ },
+ {
+  "id": "bnr-193867898",
+  "bygningsnummer": 193867898,
+  "navn_datasett": "Gamlebyen modelljernbanesenter",
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 123.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876043"
+  ]
+ },
+ {
+  "id": "bnr-193972195",
+  "bygningsnummer": 193972195,
+  "navn_datasett": null,
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 124.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "pb-11",
+  "bygningsnummer": null,
+  "navn_datasett": "Mellomporten",
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 124.8,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972519",
+  "bygningsnummer": 193972519,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 125.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876058"
+  ]
+ },
+ {
+  "id": "bnr-193867502",
+  "bygningsnummer": 193867502,
+  "navn_datasett": "Kiørboegården",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 128.3,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874396"
+  ]
+ },
+ {
+  "id": "bnr-193971377",
+  "bygningsnummer": 193971377,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 128.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876058"
+  ]
+ },
+ {
+  "id": "bnr-193972225",
+  "bygningsnummer": 193972225,
+  "navn_datasett": null,
+  "type": 319,
+  "kategori": "næring",
+  "dist_m": 129.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867901",
+  "bygningsnummer": 193867901,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 132.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876044"
+  ]
+ },
+ {
+  "id": "bnr-193870252",
+  "bygningsnummer": 193870252,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 132.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17875249"
+  ]
+ },
+ {
+  "id": "bnr-193971954",
+  "bygningsnummer": 193971954,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 132.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17925028"
+  ]
+ },
+ {
+  "id": "bnr-193867928",
+  "bygningsnummer": 193867928,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 133.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876058"
+  ]
+ },
+ {
+  "id": "bnr-193972381",
+  "bygningsnummer": 193972381,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 133.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-6251218",
+  "bygningsnummer": 6251218,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 134.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17869636"
+  ]
+ },
+ {
+  "id": "bnr-193867634",
+  "bygningsnummer": 193867634,
+  "navn_datasett": "Vollmesterboligen",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 135.5,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876048"
+  ]
+ },
+ {
+  "id": "bnr-193971989",
+  "bygningsnummer": 193971989,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 136.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868371",
+  "bygningsnummer": 193868371,
+  "navn_datasett": null,
+  "type": 199,
+  "kategori": "annet",
+  "dist_m": 137.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17925027"
+  ]
+ },
+ {
+  "id": "bnr-193867987",
+  "bygningsnummer": 193867987,
+  "navn_datasett": null,
+  "type": 531,
+  "kategori": "hotell/servering/off",
+  "dist_m": 137.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17929212"
+  ]
+ },
+ {
+  "id": "bnr-193987397",
+  "bygningsnummer": 193987397,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 137.8,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17930665"
+  ]
+ },
+ {
+  "id": "bnr-193971199",
+  "bygningsnummer": 193971199,
+  "navn_datasett": null,
+  "type": 840,
+  "kategori": "annet",
+  "dist_m": 138.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193870244",
+  "bygningsnummer": 193870244,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 140.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971342",
+  "bygningsnummer": 193971342,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 141.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971318",
+  "bygningsnummer": 193971318,
+  "navn_datasett": null,
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 142.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868401",
+  "bygningsnummer": 193868401,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 142.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862545"
+  ]
+ },
+ {
+  "id": "bnr-193867979",
+  "bygningsnummer": 193867979,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 145.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876057"
+  ]
+ },
+ {
+  "id": "bnr-193867499",
+  "bygningsnummer": 193867499,
+  "navn_datasett": "Kommandantgården",
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 145.4,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17873938"
+  ]
+ },
+ {
+  "id": "bnr-193971970",
+  "bygningsnummer": 193971970,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 145.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868231",
+  "bygningsnummer": 193868231,
+  "navn_datasett": "Balaklava",
+  "type": 531,
+  "kategori": "hotell/servering/off",
+  "dist_m": 146.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858425",
+   "17862544"
+  ]
+ },
+ {
+  "id": "bnr-193870236",
+  "bygningsnummer": 193870236,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 146.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876038"
+  ]
+ },
+ {
+  "id": "bnr-193868460",
+  "bygningsnummer": 193868460,
+  "navn_datasett": "Kjørbogårdens sidebygning",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 147.1,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874396"
+  ]
+ },
+ {
+  "id": "bnr-193918247",
+  "bygningsnummer": 193918247,
+  "navn_datasett": null,
+  "type": 239,
+  "kategori": "næring",
+  "dist_m": 147.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-6251323",
+  "bygningsnummer": 6251323,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 147.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17930666"
+  ]
+ },
+ {
+  "id": "bnr-193971962",
+  "bygningsnummer": 193971962,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 153.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193870228",
+  "bygningsnummer": 193870228,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 155.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876037"
+  ]
+ },
+ {
+  "id": "bnr-193972209",
+  "bygningsnummer": 193972209,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 155.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868398",
+  "bygningsnummer": 193868398,
+  "navn_datasett": null,
+  "type": 121,
+  "kategori": "bolig",
+  "dist_m": 156.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874400"
+  ]
+ },
+ {
+  "id": "bnr-193867677",
+  "bygningsnummer": 193867677,
+  "navn_datasett": "Ingeniørgården",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 157.5,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876048"
+  ]
+ },
+ {
+  "id": "bnr-193870279",
+  "bygningsnummer": 193870279,
+  "navn_datasett": "Tøihuset",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 157.8,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17875247"
+  ]
+ },
+ {
+  "id": "bnr-193868630",
+  "bygningsnummer": 193868630,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 157.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868215",
+  "bygningsnummer": 193868215,
+  "navn_datasett": null,
+  "type": 319,
+  "kategori": "næring",
+  "dist_m": 157.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858424"
+  ]
+ },
+ {
+  "id": "bnr-193867685",
+  "bygningsnummer": 193867685,
+  "navn_datasett": null,
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 160.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876048"
+  ]
+ },
+ {
+  "id": "bnr-6251331",
+  "bygningsnummer": 6251331,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 160.6,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17869637"
+  ]
+ },
+ {
+  "id": "bnr-193971334",
+  "bygningsnummer": 193971334,
+  "navn_datasett": null,
+  "type": 239,
+  "kategori": "næring",
+  "dist_m": 161.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17929213"
+  ]
+ },
+ {
+  "id": "bnr-193867952",
+  "bygningsnummer": 193867952,
+  "navn_datasett": null,
+  "type": 199,
+  "kategori": "annet",
+  "dist_m": 164.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876045",
+   "17876046"
+  ]
+ },
+ {
+  "id": "bnr-193870201",
+  "bygningsnummer": 193870201,
+  "navn_datasett": null,
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 165.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876036"
+  ]
+ },
+ {
+  "id": "pb-15",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 166.4,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193867995",
+  "bygningsnummer": 193867995,
+  "navn_datasett": null,
+  "type": 329,
+  "kategori": "næring",
+  "dist_m": 168.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193971210",
+  "bygningsnummer": 193971210,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 168.6,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-6242812",
+  "bygningsnummer": 6242812,
+  "navn_datasett": null,
+  "type": 329,
+  "kategori": "næring",
+  "dist_m": 169.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858429"
+  ]
+ },
+ {
+  "id": "bnr-193868657",
+  "bygningsnummer": 193868657,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 171.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868428",
+  "bygningsnummer": 193868428,
+  "navn_datasett": "Kommisjonsgården",
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 171.9,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858422"
+  ]
+ },
+ {
+  "id": "bnr-193868002",
+  "bygningsnummer": 193868002,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 176.5,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858430"
+  ]
+ },
+ {
+  "id": "bnr-193972179",
+  "bygningsnummer": 193972179,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 178.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17930638"
+  ]
+ },
+ {
+  "id": "bnr-193971296",
+  "bygningsnummer": 193971296,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 179.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193869548",
+  "bygningsnummer": 193869548,
+  "navn_datasett": "Voldporten med vaktstuen",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 181.1,
+  "sefrak": true,
+  "kulturminne": true,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876049"
+  ]
+ },
+ {
+  "id": "bnr-193868010",
+  "bygningsnummer": 193868010,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 183.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": true,
+  "adresse_uuid": [
+   "17858431"
+  ]
+ },
+ {
+  "id": "bnr-6247822",
+  "bygningsnummer": 6247822,
+  "navn_datasett": null,
+  "type": 136,
+  "kategori": "bolig",
+  "dist_m": 184.1,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17876047"
+  ]
+ },
+ {
+  "id": "bnr-193868142",
+  "bygningsnummer": 193868142,
+  "navn_datasett": "Prestegården",
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 184.3,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17862546"
+  ]
+ },
+ {
+  "id": "bnr-193972292",
+  "bygningsnummer": 193972292,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 185.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858427"
+  ]
+ },
+ {
+  "id": "bnr-193868150",
+  "bygningsnummer": 193868150,
+  "navn_datasett": "Salamandergården",
+  "type": 122,
+  "kategori": "bolig",
+  "dist_m": 187.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858426"
+  ]
+ },
+ {
+  "id": "pb-6",
+  "bygningsnummer": null,
+  "navn_datasett": null,
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 189.0,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868665",
+  "bygningsnummer": 193868665,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 191.7,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868096",
+  "bygningsnummer": 193868096,
+  "navn_datasett": null,
+  "type": 322,
+  "kategori": "næring",
+  "dist_m": 193.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858428"
+  ]
+ },
+ {
+  "id": "pb-10",
+  "bygningsnummer": null,
+  "navn_datasett": "Kongeporten",
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 194.4,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "pb-9",
+  "bygningsnummer": null,
+  "navn_datasett": "Færgeporten",
+  "type": null,
+  "kategori": "ukjent",
+  "dist_m": 194.9,
+  "sefrak": false,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868029",
+  "bygningsnummer": 193868029,
+  "navn_datasett": null,
+  "type": 111,
+  "kategori": "bolig",
+  "dist_m": 195.0,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858432"
+  ]
+ },
+ {
+  "id": "bnr-193868703",
+  "bygningsnummer": 193868703,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 196.4,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868452",
+  "bygningsnummer": 193868452,
+  "navn_datasett": null,
+  "type": 144,
+  "kategori": "bolig",
+  "dist_m": 196.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17874402"
+  ]
+ },
+ {
+  "id": "bnr-193972349",
+  "bygningsnummer": 193972349,
+  "navn_datasett": null,
+  "type": 181,
+  "kategori": "uthus/garasje",
+  "dist_m": 197.8,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193972365",
+  "bygningsnummer": 193972365,
+  "navn_datasett": null,
+  "type": 311,
+  "kategori": "næring",
+  "dist_m": 199.2,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": []
+ },
+ {
+  "id": "bnr-193868436",
+  "bygningsnummer": 193868436,
+  "navn_datasett": "Skolebygningen",
+  "type": 519,
+  "kategori": "hotell/servering/off",
+  "dist_m": 199.9,
+  "sefrak": true,
+  "kulturminne": false,
+  "flere_bygg_paa_mk": false,
+  "adresse_uuid": [
+   "17858423"
+  ]
+ }
+]
