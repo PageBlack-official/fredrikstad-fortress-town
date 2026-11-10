@@ -119,6 +119,11 @@ kjede-kjøring; in-place-patchen holder bygget riktig i mellomtiden.
   (best match på «liten beige del, 2+2»), bnr-193867812 har 6. **Kandidat: bnr-193972772**, men sentroiden ligger
   mot VEST (dx −9,7) mens Vegar sa «til høyre» — så BEKREFT med en render der hver kandidat er markert FØR merge.
   Alle tre deler hjørne med nr4 (tett rekke), så naboskap alene skiller dem ikke. Merge = `sammen` i husdeling + full kjede.
+  **Render-sjekk (økt 8) bnr-193867804-4:** nr4 på skjerm-x=790; bnr-193972438 (20 vind) rett til venstre (x=677),
+  bnr-193867812 lengst til venstre (x=197), bnr-193972772 IKKE synlig fra dette standpunktet. Dvs. dette kameraet viser
+  ikke «beige del til høyre» rent. NESTE: velg/lag et standpunkt som viser nr4 + delen til høyre tydelig (eller spør
+  Vegar om hvilken bnr), FØR merge. Ikke gjett — feil merge er dyrt. Dette er et skjønnspunkt som egentlig trenger
+  Vegars øye (hvilken konkret bygning), jf. kundeleser/«sourced funn er jury».
 - **BEVIS-ARK bygges nå (økt 4):** `attic/_bevis_okt4.sh` (detached) rendrer alle 33 standpunkt fra ny modell →
   `montasje.py` SV|etter → `kontaktark_28.py` → `rapport/ferdig/sot-dom-runde3.jpg`. Pipeline verifisert (render 3 s/bilde,
   GPU; SV-croppene i `rapport/gate/sv_rett3-5/` finnes; `../sv` er tom men brukes ikke). Arket git-ignoreres (SV i det);
