@@ -6,6 +6,38 @@ mot det **bygde** datasettet (`ut/server/data/by.json`), ikke `ferdig_sjekk.py`.
 
 Miljø: `export PATH=$HOME/sot-maskin/py/bin:$HOME/sot-maskin/node/bin:$PATH`. Repo `~/sot-maskin/gate`, gren `gate/kamera`.
 
+## STATUS (2026-11-11, økt 16 — Studio, Vegars nattordre 01:05: DEL D UTBRENT HVITT LØST med innramming)
+
+Vegar 01:05 (kommentar 00:06Z): «jobb gjennom natta ... først Del D (utbrent hvitt) ... publiser til /prove1 når
+det er grønt ... Ikke stopp for å spørre. Når 1492 er ferdig, gå videre til PAG-1503.» Saken låst opp etter
+auto-stoppen. HEAD `486a7d9` (CEO publiserte /prove1 16:49). Fersk bygg: `bygg.py server`+`enkel` exit 0,
+**dom_sjekk exit 0, Del A urørt**.
+
+**Del D item 1 (utbrent hvitt) — LØST, og det var innrammingen, ikke eksponeringen (per Vegars egne ord: «flytt
+kameraet ... skrå/hevet så huset leser mot tak/himmel»):**
+- Rotårsak bekreftet på nytt ved å se bevis-renderet: det gamle bevis-standpunktet for nr 14 (`renders_r2/
+  bnr-13416419-3.json`: fov 50, oye 2,5, bakke −1,25 = under bakken, flat nærfront) viste BARE hvit vegg + hvite
+  karmer på krembakgrunn → alt smelter sammen. Geometrien var hele tiden riktig (2 etg à 4 vinduer, de to midterste
+  doble, sentral gavl — synlig når man først ser huset).
+- **Fiks = `front_stand.py`-standpunkt** (trukket tilbake til D≥10 m, oye ~2,3, pitch 88,4, fov 75). Det viser hele
+  huset mot **rødt tak + himmel**, så silhuetten og vindusrekkene leser. Ingen autokontrast, ingen `--strekk`, ingen
+  `__gate`-eksponering, ingen endring i kartet brukeren ser (bevis-only). Respekterer alle Vegars grenser.
+- Gjort for **begge** utbrente: nr 14 (`bnr-13416419-3`) og 24 Bings (`bnr-13416362-0`). Byttet standpunktene i
+  `renders_r2/*.json` → re-rendret `renders_r3` → `montasje.py --etter` **uten `--strekk`** → `kontaktark_28.py`.
+  (CEO hadde brukt `--strekk bnr-13416362` = autokontrast, som Vegar forbød — fjernet.)
+- **Verifisert ved å se bildene:** nr 14 leser nå klart (hus mot himmel, 4+4 vinduer m/ sprosser, midtgavl). 24 Bings
+  er ikke lenger en hvit flekk — hele rekka + det okergule målhuset (data `vegg=[232,184,92]`, karm `#4a7a80`,
+  rødt tak — stemmer med SV mai 2024) leser. «Kontrollbildet er utbrent» er dermed løst for begge.
+- **Durabilitet:** standpunktene er reproduserbare fra kilde via `front_stand.py` (leser committede `rett-*.json`).
+  `renders_r2/*.json` er git-ignorert (SV i arket), men ligger på disk mellom kjøringer. Neste økt: kjør
+  `front_stand.py` for disse to om `renders_r2` mangler.
+- Oppdatert kontaktark kopiert til Dropbox `teknisk-veikart/status/sot-dom-runde3.jpg`.
+
+**Rest/merk:** SV-siden og modell-siden står ikke på nøyaktig samme kamera for nr 14 (det SV-matchede flate
+standpunktet brenner fortsatt ut, jf. økt 12; det trukne skrå standpunktet leser). Prioritet var legbarhet (Vegars
+«først utbrent hvitt»); eksakt SV-match er en finjustering. Kartet (/prove1) er uendret fra `486a7d9` og allerede
+grønt+live — Del D var en BEVIS-fiks, ikke en kartdata-endring.
+
 ## STATUS (2026-11-10, økt 10 — Vegars svar utført: nr 4 + villa-farge + gul; publiser kjører)
 
 Vegar svarte 08:10 på skjønnspunktene. Utført (commits `7c7cea1`, `b56a916`), regel 39 grønn, dom_sjekk exit 0:
