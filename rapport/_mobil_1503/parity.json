@@ -1,0 +1,39 @@
+{
+ "vindu": {
+  "W": 520,
+  "H": 520,
+  "DPR": 1
+ },
+ "syn": {
+  "zoom5": {
+   "w": 520,
+   "h": 520,
+   "piksler": 270400,
+   "maksAvvik": 0,
+   "over8": 0,
+   "over30": 0,
+   "pst8": 0,
+   "pst30": 0
+  },
+  "zoom4-innerby": {
+   "w": 520,
+   "h": 520,
+   "piksler": 270400,
+   "maksAvvik": 0,
+   "over8": 0,
+   "over30": 0,
+   "pst8": 0,
+   "pst30": 0
+  },
+  "hjem": {
+   "w": 520,
+   "h": 520,
+   "piksler": 270400,
+   "maksAvvik": 54,
+   "over8": 17,
+   "over30": 2,
+   "pst8": 0.0063,
+   "pst30": 0.0007
+  }
+ }
+}

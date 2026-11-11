@@ -210,6 +210,24 @@ function dbgVeksle(){ dbg.paa=!dbg.paa; if(!dbg.el){ dbg.el=document.createEleme
 addEventListener('keydown',e=>{ if(e.key==='d'&&!e.metaKey&&!e.ctrlKey) dbgVeksle(); });
 // mobil: ?d=1 slår ruta på fra start (ingen tastatur), større skrift, og glen-feil + nær/fjern tas med
 if(Q0.get('d')){ dbgVeksle(); dbg.el.style.font='13px/1.3 ui-monospace,monospace'; dbg.el.style.maxWidth='96vw'; dbg.el.style.whiteSpace='pre-wrap'; }
-registrer({ dbgTegn: () => dbgTegn, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });   // brukes av tidligere moduler via SENERE (tilstand.js)
+// ?maal=1 (PAG-1503): liten rute nede i hjørnet med bilder/s og ms per bilde (snitt + verste) under siste gest, så Vegar kan ta et
+// skjermbilde på telefonen. Mye mindre enn ?d=1: bare det som sier om fingeren henger. «verst» er det lengste spranget mellom to bilder
+// i gesten — det er det som leses som et hakk. Under gesten oppdateres tallet levende; etter slipp står siste gest igjen.
+const MAAL = Q0.get('maal');
+let maalEl=null; const maalVin=[], fartM={i:false,t0:0,n:0,verst:0,forrige:0}; let maalSist='—';
+function maalHud(naa){
+  if(!MAAL) return;
+  if(!maalEl){ maalEl=document.createElement('div'); maalEl.id='maal'; maalEl.style.cssText='position:fixed;right:8px;bottom:8px;z-index:9;padding:5px 8px;font:12px/1.35 ui-monospace,monospace;background:rgba(20,20,20,.82);color:#fff;border-radius:6px;pointer-events:none;white-space:pre;letter-spacing:.2px'; document.body.appendChild(maalEl); }
+  const pt=window.__pt||{};
+  maalVin.push(naa); while(maalVin.length>1 && naa-maalVin[0]>1200) maalVin.shift();
+  if(map.isMoving()){ if(!fartM.i){ fartM.i=true; fartM.t0=naa; fartM.n=0; fartM.verst=0; fartM.forrige=naa; }
+    fartM.n++; if(fartM.n>1) fartM.verst=Math.max(fartM.verst, naa-fartM.forrige); fartM.forrige=naa; }
+  else if(fartM.i){ fartM.i=false; const ms=naa-fartM.t0; if(ms>150 && fartM.n>1){ const fps=fartM.n*1000/ms, snitt=ms/(fartM.n-1); maalSist=`${fps.toFixed(0)}/s · snitt ${snitt.toFixed(0)} ms · verst ${fartM.verst.toFixed(0)} ms`; } }
+  let linje;
+  if(fartM.i){ const span=(naa-maalVin[0])||1, fps=(maalVin.length-1)*1000/span; linje=`${fps.toFixed(0)}/s · verst ${fartM.verst.toFixed(0)} ms …`; }
+  else linje=maalSist;
+  maalEl.textContent=`gest: ${linje}\ndraw ${pt.kall||0} · ${innerWidth}×${innerHeight}·dpr${devicePixelRatio} · n${KVAL.nivaa}`;
+}
+registrer({ dbgTegn: () => dbgTegn, maalHud: () => maalHud, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });   // brukes av tidligere moduler via SENERE (tilstand.js)
 
 export { velgHus, BYGG_ID, fyllFergeKort, kort, kortInnhold, kort_, lukkKort, velgPunkt };

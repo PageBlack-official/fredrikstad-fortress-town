@@ -1,5 +1,10 @@
 # Endringslogg
 
+## Uten versjon (11.11.2026, grenen gate/mobil, PAG-1503) – mobilen følger fingeren
+- **Frustum-kutting på igjen for byggene** (src/21_flyt.js, «synsrand»): ~360 egne byggnett sto med `frustumCulled=false` og ble sendt til GPU-en hvert bilde, også langt utenfor skjermkanten. Målt på iPhone-profil med CPU-struping 4× og ekte fingergester: 3D-passet er ~90 % av bilde-tida, og det er bundet av CPU-en som sender tegnekallene, ikke av oppløsningen (tvunget `?nivaa=2` ga tregere bilde, ikke raskere — derfor hull 3, ikke hull 1). Kutting på igjen for de vanlige nettene (InstancedMesh og bysbredde-nett røres ikke), kula blåst opp 30 m så ingenting som berører bildet eller skyggekartet kuttes. Panorering 80→22 ms/bilde, klyp-zoom 64→20 ms, verste bilde mer enn halvert. Bildet er pikselidentisk (verktoy/synsrand_parity.mjs: zoom 0 avvik, hjem 2 kantpiksler fra FXAA). `?synsrand=0` slår av. Tabell: rapport/_mobil_1503/README.md.
+- **`?maal=1`**: liten hjørnerute med bilder/s og ms per bilde (snitt + verste) under gest, til skjermbilde på telefon (src/16_interaksjon.js, 15_loop.js). Mye mindre enn `?d=1`.
+- Måleverktøy: verktoy/mobil_maal.mjs (Playwright + CDP, iPhone-profil, CPU-struping, ekte touch-gester, 4G-last).
+
 ## Uten versjon (29.10.2026, grenen natt/flyt, ikke publisert) – overganger og flyt
 - **Én bevegelsesmodul** (src/15_bevegelse.js, BEV): alle varigheter og kurver på ett sted; stil.css leser dem som CSS-variabler. Kameraet glir fortsatt med glid (v32); knappene +/− får en kort kubisk kurve, kompasset glid.
 - **Huskortet:** bunnark fra bunnen på smal skjerm (dra-håndtak: kortet følger fingeren og lukkes med farten den slipper med), sidepanel fra venstre på bred skjerm. Inn 380 ms som bremser, ut 240 ms som akselererer (Material). Bytte av hus i åpent kort toner innholdet i stedet for å bytte tekst på ett bilde.
