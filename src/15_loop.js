@@ -161,7 +161,7 @@ function oppdater(){
   byttNivaaNaarStille(stille, fingerNede);   // kvalitetstrinnet byttes bare når kartet står: midt i et dra kjentes det som at kartet «hentet seg inn»
   waterMat.uniforms.reflStyrke.value=speilStyrke()*TILSTAND.speilInn;
   TILSTAND.sistTegnet=naa; TILSTAND.fullTegnet=stille && !husBeveger;
-  SENERE.dbgTegn(naa);
+  SENERE.dbgTegn(naa); SENERE.maalHud(naa);
 }
 // laget: kartet tegner byen gjennom dette. ?tegn=0 (bare flyt-test): kameraet og tilstanden oppdateres hvert bilde, men byen tegnes ikke,
 // så kamerabanen kan måles bilde for bilde uten å vente på programvare-GPU-en

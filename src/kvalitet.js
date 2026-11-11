@@ -5,6 +5,8 @@ import { sun } from './02_lys.js';
 // Kvaliteten: denne modulen eier alle beslutninger om oppløsning, strek (ss), skyggelegging (ao) og trinn. Ingen andre filer skriver dem.
 // Regelen: kvaliteten trappes aldri ned av seg selv (Vegar: «akkurat det jeg har ønsket», se CHANGELOG). Oppløsningen settes av pikselbudsjettet (PIX) og skjermen.
 // ?adapt=1 slår ytelsesmåleren på (test), ?nivaa=1|2 tvinger et trinn, ?noadapt=1 er beholdt for gamle lenker.
+// (PAG-1503: målte at trinnene 1/2 ikke hjelper på mobil — 3D-passet er bundet av CPU-en som sender tegnekallene, ikke av oppløsningen;
+//  et tvunget nivaa 2 ga samme eller verre bilde-tid. Flaskehalsen rettes i 21_flyt (frustum-kutting), ikke her. Måleren står som før.)
 export const KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get('noadapt') ? 9 : 0, onsket: 0 };
 const MAAL_PAA = !!Q0.get('adapt');
 let perfN = 0, perfSum = 0;

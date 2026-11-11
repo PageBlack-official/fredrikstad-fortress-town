@@ -1,0 +1,17 @@
+{
+ "_note": "Baseline (gate/kamera, FØR frustum-kuttingen). Målt med verktoy/mobil_maal.mjs, PW_GPU=1 CPU=4 RUNDER=2, iPhone 390x844 DPR3. Tallene er fra kjøringen 10.11 ~08:50 (run 4c8938ab); scratch-mappa ble ryddet ved handoff, så de er ført inn manuelt fra kjøreloggen.",
+ "profil": { "W": 390, "H": 844, "DPR": 3, "cpu": 4 },
+ "median": {
+  "foer": {
+   "pan":   { "perSek": 10.0, "ramme_snitt": 80.2, "ramme_verst": 178.7, "oppdater": 3.17, "scene": 72.20, "blekk": 1.49, "fxaa": 0.57, "speil": 3.10, "skygge": 0, "kall_snitt": 392, "kall_maks": 413 },
+   "pinch": { "perSek": 11.1, "ramme_snitt": 63.7, "ramme_verst": 155.4, "oppdater": 2.56, "scene": 57.21, "blekk": 1.02, "fxaa": 0.44, "speil": 2.37, "skygge": 2.48, "kall_snitt": 331, "kall_maks": 369 },
+   "ro":    { "perSek": 11.0, "ramme_snitt": 48.9, "ramme_verst": 93.4,  "oppdater": 2.46, "scene": 45.07, "blekk": 1.18, "fxaa": 0.69, "speil": 0,    "skygge": 0,    "kall_snitt": 402, "kall_maks": 402 }
+  }
+ },
+ "last": { "foer": { "tidForsteBilde": 38313, "domKlar": 1439 } },
+ "kontroll_nivaa2": {
+  "_note": "Tvunget ?nivaa=2 (0.6x oppløsning + færre AO-prøver + mindre skyggekart) på samme baseline, 1 runde — for å teste om oppløsnings-nedtrinnet (hull 1) hjelper. Det gjorde IKKE det: 3D-passet gikk OPP, ikke ned. 3D-passet er CPU-/tegnekall-bundet, ikke fyllrate-bundet.",
+  "pan":   { "perSek": 6.9, "ramme_snitt": 102.3, "scene": 89.36, "kall_snitt": 379 },
+  "pinch": { "perSek": 7.5, "ramme_snitt": 88.8,  "scene": 79.48, "kall_snitt": 330 }
+ }
+}

@@ -3,6 +3,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { registrer } from './tilstand.js';
 import { cam, scene } from './00_oppsett.js';
 import { waterLayer } from './03_bakke-vann-grønt.js';
+import { city } from './05_bygg.js';
 // ---- flyt uten lavere oppløsning (Vegar: «ikke dårligere oppløsning, heller motsatt») ----
 // To ting som sparer arbeid per bilde uten å endre bildet:
 // 1) Vannet i bildet: et grovt rutenett over vannflatene (8 m), så tegneløkka vet om vann er i bildet. Står kartet stille uten vann i bildet,
@@ -57,5 +58,28 @@ const flaterSammen=(()=>{
     liste.forEach(o=>{ scene.remove(o); o.geometry.dispose(); }); scene.add(m); ut.push(m); etter++; });
   return {for:for_, etter};
 })();
-window.__flytInfo=()=>({flaterFor:flaterSammen.for, flaterEtter:flaterSammen.etter, vann:vannISyne()});
+// ---- synsrand: frustum-kutting på igjen for byggene (PAG-1503, 10.11) ----
+// Byggene, murene og gjerdene ligger som ~280 egne nett under city — alle satt til frustumCulled=false. Da sender three.js hvert eneste
+// nett til GPU-en hvert bilde, også de som er langt utenfor skjermkanten. På mobil er 3D-passet ~90 % av bilde-tida, og det er bundet
+// av CPU-en som sender tegnekallene, ikke av oppløsningen (målt: et tvunget lavere oppløsningstrinn ga samme/verre bilde-tid, færre
+// tegnekall gjør kartet lettere). Vi slår kutting på igjen for de VANLIGE nettene: ett bygg = én kule three.js kaster når den er helt
+// utenfor bildet. Bildet blir identisk — en kule helt utenfor synsranden har ingen piksler inne. InstancedMesh (vinduer/trær) røres IKKE:
+// der er frustum-kula det lokale grunn-nettet (ikke alle instansene), så three.js ville kastet hele skogen når origo gikk ut av bildet
+// (nettopp derfor stod de på false). De bysbredt sammenslåtte husnettene får også kutting, men kula deres dekker byen, så de kuttes i
+// praksis aldri — ingen endring der; gevinsten er byggene ute i kantene under klyp-zoom og panorering, der halve byen er utenfor rammen.
+// Kula blåses opp 30 m (MARGIN) før kutting: three.js kutter et nett først når HELE kula er utenfor en frustum-flate. Et bygg som
+// ligger akkurat i skjermkanten (eller kaster skygge inn i bildet) har senter utenfor, men geometrien klipper kanten — uten margin ble
+// ~5 kantpiksler i hjemmevisningen borte (målt). 30 m er større enn et byggs halve utstrekning, så ingenting som berører bildet eller
+// skyggekartet kuttes; bygg lenger ute enn det (gevinsten) kuttes fortsatt. Med margin er bildet pikselidentisk i alle tre prøvene.
+const MARGIN=30;
+const synsrand=(()=>{ let paa=0, instHoppet=0;                                  // ?synsrand=0 slår det av (A/B og feilsøk)
+  if(new URLSearchParams(location.search).get('synsrand')==='0') return {paa:0, instHoppet:0, av:true};
+  city.traverse(o=>{ if(!o.isMesh) return; if(o.isInstancedMesh){ instHoppet++; return; }
+    if(!o.geometry.boundingSphere) o.geometry.computeBoundingSphere();
+    if(o.geometry.boundingSphere) o.geometry.boundingSphere.radius += MARGIN;   // blås opp én gang, før første tegning
+    o.frustumCulled=true; paa++; });
+  return {paa, instHoppet};
+})();
+window.__synsrand=()=>synsrand;
+window.__flytInfo=()=>({flaterFor:flaterSammen.for, flaterEtter:flaterSammen.etter, synsrand, vann:vannISyne()});
 registrer({ vannISyne: () => vannISyne });   // brukes av tidligere moduler via SENERE (tilstand.js)

@@ -1,0 +1,9 @@
+runde 1 etter (coarse=true nivaa=0): pan 16.2/s 22.2ms kall 312 | pinch 18.3/s 20ms kall 207 | ro 4.3/s 14.7ms kall 335
+runde 2 etter (coarse=true nivaa=0): pan 14.3/s 20.9ms kall 313 | pinch 15.5/s 18.1ms kall 205 | ro 3.7/s 13.6ms kall 335
+4G etter: første bilde 16340 ms
+
+=== median (CPU 4×, iPhone 390×844 DPR 3) ===
+pan    etter     16.2/s  bilde  22.2 ms (verst 52.7)  oppd 1.03 3D 20.12 blekk 0.63 fxaa 0.16 speil 0.88 skygge 0  draw 313 (maks 335)
+pinch  etter     18.3/s  bilde    20 ms (verst 56.3)  oppd 1.31 3D 17.38 blekk 0.48 fxaa 0.1 speil 0.71 skygge 1.93  draw 207 (maks 277)
+ro     etter      4.3/s  bilde  14.7 ms (verst 21.2)  oppd 0.98 3D 12.81 blekk 0.73 fxaa 0.22 speil 0 skygge 0  draw 335 (maks 335)
+4G     etter    første bilde 16340 ms (DOM 921 ms)

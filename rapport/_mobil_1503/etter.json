@@ -1,0 +1,212 @@
+{
+ "profil": {
+  "W": 390,
+  "H": 844,
+  "DPR": 3,
+  "cpu": 4
+ },
+ "runder": 2,
+ "scen": [
+  "pan",
+  "pinch",
+  "ro"
+ ],
+ "varianter": [
+  "etter"
+ ],
+ "maal": {
+  "etter": [
+   {
+    "_berøring": {
+     "coarse": true,
+     "dpr": 3,
+     "nivaa": 0,
+     "kall": 335
+    },
+    "_nivaaEtterVarm": 0,
+    "ro": {
+     "ms": 3005,
+     "bilder": 13,
+     "perSek": 4.3,
+     "ramme_snitt": 14.7,
+     "ramme_verst": 21.2,
+     "ramme_maks": 21.2,
+     "oppdater": 0.6,
+     "speil": 0,
+     "skygge": 0,
+     "scene": 12.81,
+     "blekk": 0.73,
+     "fxaa": 0.22,
+     "kall_snitt": 335,
+     "kall_maks": 335,
+     "speilBilder": 0,
+     "skyggeBilder": 0
+    },
+    "pan": {
+     "ms": 5122,
+     "bilder": 83,
+     "perSek": 16.2,
+     "ramme_snitt": 22.2,
+     "ramme_verst": 37.2,
+     "ramme_maks": 189,
+     "oppdater": 1.03,
+     "speil": 0.49,
+     "skygge": 0,
+     "scene": 20.12,
+     "blekk": 0.42,
+     "fxaa": 0.16,
+     "kall_snitt": 312,
+     "kall_maks": 335,
+     "speilBilder": 2,
+     "skyggeBilder": 0
+    },
+    "pinch": {
+     "ms": 5310,
+     "bilder": 97,
+     "perSek": 18.3,
+     "ramme_snitt": 20,
+     "ramme_verst": 56.3,
+     "ramme_maks": 136.4,
+     "oppdater": 1.31,
+     "speil": 0.71,
+     "skygge": 0.99,
+     "scene": 17.38,
+     "blekk": 0.48,
+     "fxaa": 0.09,
+     "kall_snitt": 207,
+     "kall_maks": 277,
+     "speilBilder": 2,
+     "skyggeBilder": 3
+    }
+   },
+   {
+    "_berøring": {
+     "coarse": true,
+     "dpr": 3,
+     "nivaa": 0,
+     "kall": 335
+    },
+    "_nivaaEtterVarm": 0,
+    "ro": {
+     "ms": 3002,
+     "bilder": 11,
+     "perSek": 3.7,
+     "ramme_snitt": 13.6,
+     "ramme_verst": 19,
+     "ramme_maks": 19,
+     "oppdater": 0.98,
+     "speil": 0,
+     "skygge": 0,
+     "scene": 12.31,
+     "blekk": 0.21,
+     "fxaa": 0.05,
+     "kall_snitt": 335,
+     "kall_maks": 335,
+     "speilBilder": 0,
+     "skyggeBilder": 0
+    },
+    "pan": {
+     "ms": 5508,
+     "bilder": 79,
+     "perSek": 14.3,
+     "ramme_snitt": 20.9,
+     "ramme_verst": 52.7,
+     "ramme_maks": 84.9,
+     "oppdater": 0.87,
+     "speil": 0.88,
+     "skygge": 0,
+     "scene": 18.36,
+     "blekk": 0.63,
+     "fxaa": 0.08,
+     "kall_snitt": 313,
+     "kall_maks": 335,
+     "speilBilder": 2,
+     "skyggeBilder": 0
+    },
+    "pinch": {
+     "ms": 5741,
+     "bilder": 89,
+     "perSek": 15.5,
+     "ramme_snitt": 18.1,
+     "ramme_verst": 44.4,
+     "ramme_maks": 160.6,
+     "oppdater": 0.98,
+     "speil": 0.51,
+     "skygge": 1.93,
+     "scene": 16.03,
+     "blekk": 0.46,
+     "fxaa": 0.1,
+     "kall_snitt": 205,
+     "kall_maks": 277,
+     "speilBilder": 2,
+     "skyggeBilder": 3
+    }
+   }
+  ]
+ },
+ "last": {
+  "etter": {
+   "tidForsteBilde": 16340,
+   "domKlar": 921
+  }
+ },
+ "feil": [],
+ "median": {
+  "etter": {
+   "pan": {
+    "ms": 5508,
+    "bilder": 83,
+    "perSek": 16.2,
+    "ramme_snitt": 22.2,
+    "ramme_verst": 52.7,
+    "ramme_maks": 189,
+    "oppdater": 1.03,
+    "speil": 0.88,
+    "skygge": 0,
+    "scene": 20.12,
+    "blekk": 0.63,
+    "fxaa": 0.16,
+    "kall_snitt": 313,
+    "kall_maks": 335,
+    "speilBilder": 2,
+    "skyggeBilder": 0
+   },
+   "pinch": {
+    "ms": 5741,
+    "bilder": 97,
+    "perSek": 18.3,
+    "ramme_snitt": 20,
+    "ramme_verst": 56.3,
+    "ramme_maks": 160.6,
+    "oppdater": 1.31,
+    "speil": 0.71,
+    "skygge": 1.93,
+    "scene": 17.38,
+    "blekk": 0.48,
+    "fxaa": 0.1,
+    "kall_snitt": 207,
+    "kall_maks": 277,
+    "speilBilder": 2,
+    "skyggeBilder": 3
+   },
+   "ro": {
+    "ms": 3005,
+    "bilder": 13,
+    "perSek": 4.3,
+    "ramme_snitt": 14.7,
+    "ramme_verst": 21.2,
+    "ramme_maks": 21.2,
+    "oppdater": 0.98,
+    "speil": 0,
+    "skygge": 0,
+    "scene": 12.81,
+    "blekk": 0.73,
+    "fxaa": 0.22,
+    "kall_snitt": 335,
+    "kall_maks": 335,
+    "speilBilder": 0,
+    "skyggeBilder": 0
+   }
+  }
+ }
+}
