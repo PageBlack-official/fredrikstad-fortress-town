@@ -27,6 +27,7 @@ import './20_statuen-paa-torvet.js';
 import './21_flyt.js';
 import './22_byferga.js';
 import './23_vaer.js';
+import './gange.js';
 import './24_sok.js';
 import './25_her.js';
 import './26_turer.js';

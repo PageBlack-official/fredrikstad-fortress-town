@@ -2,6 +2,7 @@ import * as maplibregl from 'maplibre-gl';
 import { DATA, Q0, map, tilLngLat } from './00_oppsett.js';
 import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { BYGG_ID, kort, kort_, velgHus, velgPunkt } from './16_interaksjon.js';
+import { GANGE } from './gange.js';
 // ---- søk og kategorier (Vegar: «parkering, finne steder å spise, kultur»): finn et sted, fly dit, les kortet ----
 // Stedene står i data/steder.json (verktoy/steder.py: OpenStreetMap, kommunens parkering, kartbrosjyren). Et sted i et bygg løfter bygget
 // og viser stedet i kortet; et sted ute (parkering, toalett, statue) får en nål og kortet. En kategori viser nåler for alle stedene i den.
@@ -46,6 +47,9 @@ function fyllSted(s, b, p = s){
   kort.querySelector('.a').textContent = [p.type ?? s.type, s.adresse || (bygg && bygg !== s.navn ? bygg : '')].filter(Boolean).join(' · ');
   { const m = p.merknad ?? s.merknad ?? ''; kort.querySelector('.b').textContent = m && m[0].toUpperCase() + m.slice(1); }   // kommunens tekst kan starte med liten bokstav
   const linjer = [];
+  // gjesteversjonen (?gjest, gange.js): gangtid langs gatene fra hotellet, øverst – ikke for hotellets eget bygg
+  if (GANGE.aktiv && !GANGE.eier(p.bygg_id ?? s.bygg_id)) { const g = GANGE.tekst(p.x, p.y);
+    if (g) linjer.push(`<li class="gang">${GANGE.IKON}<span>${esc(g)} <small>fra ${esc(GANGE.gjest.navn)}</small></span></li>`); }
   if (s.aapent) linjer.push(`<li>${esc(aapent(s.aapent))}</li>`);
   if (s.mat) linjer.push(`<li>${esc(s.mat[0].toUpperCase() + s.mat.slice(1))}</li>`);
   if (s.easypark) linjer.push(`<li>EasyPark-sone ${esc(s.easypark)}</li>`);
@@ -57,6 +61,7 @@ function fyllSted(s, b, p = s){
   linjer.push(`<li class="vei"><a href="${vei}" target="_blank" rel="noopener">Veibeskrivelse</a></li>`);
   kort.querySelector('.her').innerHTML = linjer.join('');
   kort.querySelector('.ogsa').innerHTML = ''; kort.querySelector('.ogsa-t').textContent = ''; kort.querySelector('.farge').innerHTML = '';
+  kort.querySelector('.aar').textContent = ''; kort.querySelector('.hist').textContent = ''; kort.querySelector('.naa').textContent = '';   // hus-innhold hører ikke til et sted
   kort.querySelector('.id').textContent = s.kilde === 'OpenStreetMap' ? '© OpenStreetMap-bidragsytere' : (s.kilde || '');
 }
 let valgtSted = null;
@@ -106,7 +111,8 @@ function treff(){
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every(o => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
   const vis = (q || aktivKat) ? r.slice(0, 60) : [];
-  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span class="tekst"><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? '' : s.type, s.punkter ? `${s.punkter.length} plasser` : '', s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
+  const gang = s => { if (!GANGE.aktiv || GANGE.eier(s.bygg_id)) return ''; const n = GANGE.minutter(s.x, s.y); return n ? `${n} min å gå` : ''; };
+  liste.innerHTML = vis.map(({ s }, i) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i === 0 ? 'aria-selected="true"' : ''}>${merke(s.kategori, 28)}<span class="tekst"><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? '' : s.type, s.punkter ? `${s.punkter.length} plasser` : '', gang(s), s.aapent ? aapent(s.aapent).split(' · ')[0] : ''].filter(Boolean).join(' · '))}</small></span></li>`).join('')
     || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : '');
 }
 function apne(){ panel.hidden = false; knapp.setAttribute('aria-expanded', 'true'); treff(); setTimeout(() => inn.focus({ preventScroll: true }), 30); }

@@ -1,6 +1,7 @@
 import { DATA } from './00_oppsett.js';
 import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { BYGG_ID, kort, kortInnhold, kort_, velgHus, velgPunkt } from './16_interaksjon.js';
+import { GANGE } from './gange.js';
 // ---- turer: kameraet tar deg fra stopp til stopp, kortet forteller (Vegar: «turer med kamerabaner») ----
 // Turene står i data/turer.json som lister med numrene fra kartbrosjyren (data/legende.json). Teksten på hvert stopp er brosjyrens egen
 // (Visit Fredrikstad 2015, lagt inn på bygget som «tekst»), ikke skrevet på nytt. Stopp uten tekst viser navnet og plassen.
@@ -44,7 +45,9 @@ addEventListener('keydown', e => { if (!tur || e.target.closest('input,textarea'
 const panel = document.getElementById('sokpanel');
 if (panel && TURER.length) {
   const rad = document.createElement('div'); rad.className = 'turer'; rad.setAttribute('role', 'group'); rad.setAttribute('aria-label', 'Turer');
-  rad.innerHTML = '<p class="t">Turer</p>' + TURER.map(t => `<button type="button" data-tur="${t.id}"><b>${t.navn}</b><small>${t.om}</small></button>`).join('');
+  // gjesteversjonen (?gjest, gange.js): hvor langt det er å gå til turens første stopp
+  const turGang = t => { if (!GANGE.aktiv) return ''; const s = stoppData(t.stopp[0]); if (!s) return ''; const n = GANGE.minutter(s.x, s.y); return n ? ` · starten ${n} min unna` : ''; };
+  rad.innerHTML = '<p class="t">Turer</p>' + TURER.map(t => `<button type="button" data-tur="${t.id}"><b>${t.navn}</b><small>${t.om}${turGang(t)}</small></button>`).join('');
   panel.querySelector('.kat').before(rad);
   rad.addEventListener('click', e => { const b = e.target.closest('[data-tur]'); if (!b) return; panel.hidden = true; start(b.dataset.tur); });
 }
