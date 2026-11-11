@@ -1,0 +1,49 @@
+# Gamlebyen skole (Fredrikstad)
+# kilde: https://lokalhistoriewiki.no/Gamlebyen_skole_%28Fredrikstad%29
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Gamlebyen skole
+| bilde     = gamlebyen skole.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1784]]
+| eier1     = Oberst Roepsdorff
+| eier2     = [[Fredrikstad kommune|Fredrikstad by]]
+| arkitekt  = 
+| materiale = mur/tre
+| endringer = 
+| formål    = skole
+| adresse   = Færgeportgaten 77
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = Annen etasje påbygd i 1892
+|}}
+<onlyinclude>'''[[Gamlebyen skole (Fredrikstad)|Gamlebyen skole]]''', [[Færgeportgaten (Fredrikstad)|Færgeportgaten]] 77, ligger</onlyinclude> i [[fjortende kvartal i Gamlebyen|fjortende kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Første etasje i dagens bygning er oppført etter [[bybrannen i Fredrikstad 1784|brannen i 1784]] som ødela et par kvartal i nordre del av byen. Den nye bygningen ble oppført på en kjeller fra 1722. I 1811 ble bygningen kjøpt som byens skole. Annen etasje ble påbygd i 1892. Skolen var i drift helt frem til 1989. Skolebygningen huser i dag [[Akademi for scenekunst]] som ligger under Høgskolen i Øsfold.</onlyinclude>
+
+== Skoler  og skolebygninger i festningsbyen ==
+Allerede fra bygrunnleggelsen i 1567 var det skole i byen, latinskolen. Den fulgte med fra Sarpsborg. Den første tiden lå den i nærheten av [[Østre Fredrikstad kirke|kirken]], ved byens torg (hvor [[Tøihuset]] ligger i dag). Etter [http://www.lokalhistoriewiki.no/index.php/Leksikon:Kirkeordinans| kirkeordinansen av 1537] skulle enhver [[kjøpstad]] ha en latinskole hvor det ble undervist i kristendomskunnskap og latin, senere også regning. I tillegg skulle elevene synge ved viktige kirkelige handliger. Skolen hadde to klasser og var ledet av en skolemester. Skolen i Fredrikstad led av pengemangel, og utførte bare det den absolutt var pålagt. Den var helt avhengig av private gaver for å fungere. Mange av elevene gikk senere videre til geistlige embeter og noen dro til København for å studere ved universitetet. Den kjente oppdagelsesreisende [http://no.wikipedia.org/wiki/Jens_Munk Jens Munk] gikk her fra 1586-1588. 
+
+Fra 1660-årene fikk Fredrikstad også en såkalt 'dansk skole'. Her utdannet man elever til det praktiske liv. Etter lov ble alle latinskoler i småbyene avskaffet i 1739. Det var heretter bare i [[stiftsby]]ene det skulle være latinskoler. Undervisningsfagene ble nå kristendomskunnskap, regning og skriving. I 1740 ble det opprettet to skoler, en for byens barn og en for garnisonens barn. 
+
+Den gamle skolebygningen, som lå i første kvartal, brant ned i [[bybrannen i Fredrikstad 1764|brannen i 1764]]. Den nye bygningen ble reist litt lenger øst, i [[Andre kvartal i Gamlebyen|andre kvartal]], og sto ferdig omkring 1768. Dette var en en-etasjes murbygning som lå rett inntil det nybygde sykehuset i byen. Disse bygningene sto helt til [[bybrannen i Fredrikstad 1868|en brann i 1868]], da de brant og aldri ble gjenreist. I årene etter brannen slet skolen økonomisk, men ble støttet av sognepresten [[Poul Rønn]]. 
+
+Skolebygningen fra 1768 ble etter hvert for liten, og i 1811 kjøpte byen oberst Roepsdorffs gård i Færgeportgaten. Man fikk lite for den gamle bygningen, og skolen slet i mange år med svært dårlig økonomi.
+
+== Galleri ==
+<gallery>
+Fredrikstad, Færgeportgaten i Gamlebyen - no-nb digifoto 20140523 00076 bldsa PK13178.jpg|Skolen til høyre i 1920-30.
+</gallery>
+
+== Kilder ==
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1 og 2, Fredrikstad 1960/1964.
+
+[[Kategori:Latinskole]]
+[[Kategori:Fjortende kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20445|N|10.95434|Ø}}
+{{F1}}
+{{bm}}

@@ -1,0 +1,40 @@
+# Salamandergaarden
+# kilde: https://lokalhistoriewiki.no/Salamandergaarden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Salamandergården
+| bilde     = 
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 
+| eier1     = [[Giermund Bruun]] (-1799)
+| eier2     = 
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = bolig
+| adresse   = Færgeportgaten 79
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Salamandergaarden]]''' i [[Færgeportgaten (Fredrikstad)|Færgeportgaten]] 79 i [[Gamlebyen i Fredrikstad|Gamlebyen]] er oppført like etter [[bybrannen i 1764]] og ble, som det var pålagt av kongen, bygget i tegl for brannsikkerhetens skyld. Funn på loftet forteller at gården har inneholdt [[salmakerverksted]] og [[skredderverksted]].</onlyinclude> I uthusbygningen var det kyr, hest, [[utedo]], [[bryggerhus]] og et værelse. 
+
+Den tidligst registrerte eieren er [[Giermund Bruun]] (-1799) som kom til byen som fallent og fikk [[asyl]] innenfor vollene. Historien forteller at han ble en holden mann og [[borgermester]]ens rådgiver.
+
+Gårdens navn kan føres tilbake til en gammel tro på at salamanderne var ildånder som kunne beskytte mot brann. Man mente at om man kastet en salamander på ilden ville den slukke. Liknende historier finner man også i andre kulturers mytologi. Salamanderne vokter fremdeles eiendommen og overvintrer i gjemmesteder langs uthusveggen. Dermed har huset ifølge mytene en brannforsikring.
+
+==Kilder og litteratur==
+
+* ''Festningsbyen Fredrikstad''. Utg. Reisetrafikkforeningen i Fredrikstad. 2005. {{nb.no|NBN:no-nb_digibok_2014062548136}}.
+* ''Fredriksstad Blad 1967.10.13''. {{nb.no|NBN:no-nb_digavis_fredriksstadblad_null_null_19671013_79_237_1}}.
+
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Bygninger fra 1700-tallet]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20423|N|10.95492|Ø}}
+{{F1}}
+{{bm}}

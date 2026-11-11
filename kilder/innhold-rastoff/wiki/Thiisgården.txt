@@ -1,0 +1,43 @@
+# Thiisgården
+# kilde: https://lokalhistoriewiki.no/Thiisg%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Thiisgården
+| bilde     = villaglommen.JPG
+| dato      = 
+| byline    = 
+| annetnavn = Villa Glommen
+| byggeår   = 1830-årene
+| eier1     = 
+| eier2     = Carl Martin Olsen
+| arkitekt  = ukjent
+| materiale = mur
+| endringer = [[takark]] tilføyd senere
+| formål    = bolig
+| adresse   = Voldportgaten 70
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Thiisgården]]''' eller '''Villa Glommen''', [[Voldportgaten (Fredrikstad)|Voldportgaten]] 70, ligger</onlyinclude> i [[ellevte kvartal i Gamlebyen|ellevte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Gården er oppført etter [[bybrannen i Fredrikstad 1830|brannen i 1830]] av pusset teglsten på en kraftig, og langt eldre gråstenskjeller, i klassisistisk stil. Før brannen stod det et tømmerhus her.</onlyinclude> Den har et markert midtparti og markerte hjørnekadere, med et [[Valmtak|valmet tak]]. Opprinnelig hadde huset bare en etasje. Takarken er oppført senere, trolig tidlig i 1900-årene (som tilsvarende takark på [[Prestegården i Fredrikstad|Den gamle prestegården]] tvers over gaten).  Ved brannen hadde den matrikkelnummer 94, og senere ble dette endret til 70, som i 2016 er 302/127.
+
+[[Bilde:Fredrikstad, Toldbodgaten i Gamlebyen.jpg|thumb|left|300px|Thiisgården uten takarken sees midt på dette bildet fra 1800-tallet. {{byline|Stangebyesamlingen / Fredrikstad Museum}}]]
+Gården er oppkalt etter konsul og trelastagent [[Carsten Thiis]] som overtok gården i 1877.<!--finner ham registrert på Vestsiden ved ft1875, endrer fra 1870 --> Ved brannen var den eid av [[Carl Ludvig Roepstorff (1786&ndash;1864)|oberst Roepstorff]], og om han eller [[Johannes Georg Bodom|kaptein Bodom]] lot den oppføre er uklart. I 1850 overtok kompanikirurg [[Carl Martin Olsen]] huset. Olsen  var gift med Bodoms nest yngste barn, datteren Elisabeth Petrovna. Konsul Carsten Thiis fra Risør overtok i 1877, og en periode var hans svigermor enkefru Elisabeth Jones, Memie Thiis' mor, bosatt her. I hennes tid var gården kjent som ''Villa Glommen''. Dette bekreftes i hennes dødsannonse i ''[[Fredriksstad Tilskuer]]'' i 1907.
+
+== Kilder ==
+*Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', 1969
+*Dehli, Martin: ''Fredrikstad bys historie. 2 : Fra festningsby til trelastsentrum : 1767-1860'', {{Nb.no|NBN:no-nb_digibok_2012071308019#503}}
+*[https://www.digitalarkivet.no/gf01037981001333 Voldportgaten 70 i folketellingen 1865 for Fredriksstad kjøbstad]
+*[https://www.digitalarkivet.no/pf01036995010718 Voldportgaten 75][Sic!] i folketellingen 1865 for Fredriksstad kjøbstad
+*Riksantikvaren: ''Fredrikstad : Gamlebyen og festningen'', 1934, s. 270 og 279, {{Nb.no|NBN:no-nb_digibok_2012101006014}}
+
+[[Kategori:Bygårder]]
+[[Kategori:Bygninger fra 1830-åra]]
+[[Kategori:Ellevte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20412|N|10.95282|Ø}}
+
+{{bm}}

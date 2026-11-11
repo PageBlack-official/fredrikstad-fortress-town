@@ -1,0 +1,27 @@
+# Første kvartal i Gamlebyen
+# kilde: https://lokalhistoriewiki.no/F%C3%B8rste_kvartal_i_Gamlebyen
+# lest: 2026-11-10
+
+<onlyinclude>{{thumb|toihus port.JPG|Tøihuset, portalen mot Kirkegaten.}}
+'''[[Første kvartal i Gamlebyen|Første kvartal]]''' i [[Gamlebyen i Fredrikstad]] avgrenses av [[Kirkegaten (Fredrikstad)|Kirkegaten]] som forlenges gjennom Tøihuset i vest, [[Tøihusgaten (Fredrikstad)|Tøihusgaten]] i nord, [[Raadhusgaten (Fredrikstad)|Raadhusgaten]] i øst og [[Laboratoriegaten (Fredrikstad)|Laboratoriegaten]] i sør. Kvartalet domineres fullstendig av Tøihusplassen og det store [[Tøihuset i Fredrikstad|Tøihuset]] fra 1775. Det ble oppført i etterkant [[bybrannen i Fredrikstad 1764|bybrannen i 1764]] som ødela hele den tidligere sivile bebyggelsen som hadde ligget i kvartalet. I første kvartal, sør for [[Østre Fredrikstad kirke|kirken]], lå det opprinnelige torvet i [[Gamlebyen i Fredrikstad|byen]], og var det eneste torvet frem til [[Kongens torv i Fredrikstad|Kongens torv]] ble anlagt i etterkant av [[bybrannen i Fredrikstad 1672|brannen i 1672]].</onlyinclude>
+
+== Tidligere bebyggelse i første kvartal == 
+Frem til den katastrofale brannen i 1764 lå to av byens viktigste offentlige bygninger i første kvartal, [[Rådhuset i Fredrikstad|rådhuset]] og [[Gamlebyen skole i Fredrikstad|skolen]]. I 1745 hadde gården etter krigskommissær Lindholz blitt kjøpt av byen for å tjene som rådhus. Denne gården lå helt sør i kvartalet, på hjørnet av Kirkegaten og det som i dag er Laboratoriegaten, tvers overfor [[Münsterhuset]]. I det nordøstre hjørne av kvartalet lå skolebygningen. De andre bygningene i kvartalet før brannen var mindre privathus.
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Gamlebyen - tilhøire Slaveriet - no-nb digifoto 20150916 00061 bldsa PK06361.jpg|Tøihuset til venstre for seilbåten, sett fra Isegran, 1920-30. {{byline|Carl Normann}}
+</gallery>
+
+== Kilder ==
+* Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+* [[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 1 og 2, Fredrikstad 1960 og 1964
+* [http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=95187&a=6 ''Verneplan for Fredrikstad festning'' 2006]
+
+{{Gamlebyens kvartaler}}
+[[Kategori:Første kvartal i Fredrikstad|  ]]
+[[Kategori:Gamlebyen i Fredrikstad|#01]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20169|N|10.95191|Ø}}
+{{F1}}
+{{bm}}

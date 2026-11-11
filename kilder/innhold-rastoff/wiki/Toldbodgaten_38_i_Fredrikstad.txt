@@ -1,0 +1,42 @@
+# Toldbodgaten 38 i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Toldbodgaten_38_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Toldbodgaten 38
+| bilde     = toldbodgaten38.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1830-årene
+| eier1     = Oberst Carl Ludvig Roepstorff
+| eier2     = 
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = bolig
+| adresse   = Toldbodgaten 38
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Toldbodgaten 38 i Fredrikstad|Toldbodgaten 38]]''' er en et-etasjes murbygning i [[ellevte kvartal i Gamlebyen|ellevte kvartal]] i [[Gamlebyen i Fredrikstad]]. Gården ble oppført etter [[bybrannen i Fredrikstad 1830|bybrannen i 1830]], men hviler på en eldre kjeller.</onlyinclude>
+
+Før brannen i 1830 var gården eid av [[Carl Ludvig Roepstorff|oberst Roepstorff]]. Eieren før brannen i 1764 var kjøpmann [[Hans Kjørboe]] som senere lot oppføre [[Kjørboegården]]. 
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Toldbodgaten i Gamlebyen.jpg|Nr. 38 er tredje hus fra venstre. {{byline|Stangebyesamlingen / Fredrikstad Museum|ca 1900}}
+</gallery>
+
+== Kilder ==
+*Dahle, Erik, ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+*[[Dehli, Martin]], ''Fredrikstad bys historie'', bd. 1 og 2, Fredrikstad 1960/1964
+
+[[Kategori:Bygninger fra 1830-åra]]
+[[Kategori:Ellevte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.2042|N|10.95336|Ø}}
+{{bm}}

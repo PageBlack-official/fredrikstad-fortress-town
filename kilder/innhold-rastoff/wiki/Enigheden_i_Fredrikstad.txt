@@ -1,0 +1,37 @@
+# Enigheden i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Enigheden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Enigheden
+| bilde     = Enigheden.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1838
+| eier1     = Hjulmaker H.Henriksen
+| eier2     = 
+| arkitekt  = 
+| materiale = tre
+| endringer = 
+| formål    = bolig
+| adresse   = Færgeportgaten 84
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Enigheden i Fredrikstad|Enigheden]]''', Færgeportgaten 84, ligger i [[trettende kvartal i Gamlebyen|trettende kvartal]] i [[Gamlebyen i Fredrikstad]] er oppført i [[1838]] etter at den forrige gården brant ned i 1835. Gården er oppført i en enkelt klassisistisk stil med et høyt [[mansardtak]] av hjulmaker H. Henriksen eller enken.</onlyinclude> 
+
+Bygningen har hatt flere eiere, blant annet flere bakere på 1800-tallet. Frem til 1927 var Theodor Torkildsen eier i flere tiår, frem til 1927 da den ble overtatt av Oskar Larsen som eide den et par tiår. Frem til AS Enigheden overtok gården på 1960-tallet var det igjen flere eiere, men den ha vært i selskapets eie siden det.
+
+
+== Kilde ==
+* Dahle, Erik, ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+
+
+[[Kategori:Bygninger fra 1830-åra]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{artikkelkoord|59.20387|N|10.956|Ø}}
+{{bm}}

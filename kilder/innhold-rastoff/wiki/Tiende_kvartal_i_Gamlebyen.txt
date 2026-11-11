@@ -1,0 +1,27 @@
+# Tiende kvartal i Gamlebyen
+# kilde: https://lokalhistoriewiki.no/Tiende_kvartal_i_Gamlebyen
+# lest: 2026-11-10
+
+<onlyinclude>{{thumb|Fredrikstad, Gamlebyen - Voldportgaten 73.JPG|Voldportgaten 73 huset i 1920-30-årene Fredriksstad Samvirkelag|Siri Johannessen|2016}}
+'''[[Tiende kvartal i Gamlebyen|Tiende kvartal]]''' i [[Gamlebyen i Fredrikstad]] avgrenses av [[Raadhusgaten (Fredrikstad)|Raadhusgaten]] i vest, [[Voldportgaten (Fredrikstad)|Voldportgaten]] i nord, [[Voldgaten (Fredrikstad)|Voldgaten]] i øst og [[Torvgaten (Fredrikstad)|Torvgaten]] i sør. Kvartalet inneholder forretningsgårder og boliger. Kvartalet har vært herjet av branner en rekke ganger.<onlyinclude>
+<!--
+
+== Tidligere bebyggelse i tiende kvartal ==
+
+
+== Kvartalets bygninger ==
+
+-->
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Voldgaten ved vanntroa - no-nb digifoto 20140425 00001 bldsa PK12993.jpg|Tiende kvartal fra Voldgaten (helt til høyre) i 1910-15. {{byline|Ukjent / Nasjonalbiblioteket}}
+Fil:Fredrikstad, Voldgaten i Gamlebyen - no-nb digifoto 20150807 00175 bldsa PK06319.jpg|Tiende kvartal fra Voldgaten (helt til høyre) i 1920-årene. {{byline|Ukjent / Nasjonalbiblioteket}}
+</gallery>
+
+{{Gamlebyens kvartaler}}
+[[Kategori:Tiende kvartal i Fredrikstad|  ]]
+[[Kategori:Gamlebyen i Fredrikstad|#10]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20312|N|10.95522|Ø}}
+{{spire}}
+{{bm}}

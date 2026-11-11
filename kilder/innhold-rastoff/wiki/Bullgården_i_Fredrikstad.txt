@@ -1,0 +1,45 @@
+# Bullgården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Bullg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Bullgården
+| bilde     = bullgaarden.jpg
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1767
+| eier1     = kjøpmann [[Aanen Paus]]
+| eier2     = kjøpmann [[Peter Bull]]
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = bolig
+| adresse   = Toldbodgaten 37
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Bullgården i Fredrikstad|Bullgården]]''', [[Toldbodgaten (Fredrikstad)|Toldbodgaten]] 37, ligger</onlyinclude> i [[åttende kvartal i Gamlebyen|åttende kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Gården ble oppført etter [[bybrannen i Fredrikstad 1764|bybrannen i 1764]], og stod ferdig i 1767. Byggherre var kjøpmann [[Aanen Paus]]. I 1775 kjøpte kjøpmann [[Peter Bull]] gården og hadde her sin meget standsmessige bolig og det er etter ham gården har sitt navn.</onlyinclude>. Peter Bull kjøpte også nabogården, [[Prestegården i Fredrikstad|Prestegården]], på hjørnet mot Voldportgaten. I bakgården oppførte han et to-etasjes gårdshus med leiligheter, [[drengestue]], bryggerhus og diverse lagerrom. Her drev han også sin handelsvirksomhet og tobakksfabrikk, ''Peter Bulls Rapee Fabrique'', som i 1787 hadde ialt syv tobakkspresser. 
+
+Opprinnelig hadde gården fra 1767 [[mansardtak]], mens den i dag har [[saltak]]. Gården ble hardt skadet under [[Bybrannen i Fredrikstad i 1830|bybrannen i 1830]], og store deler av interiøret og taket ble ødelagt. Selv om eksteriøret fremstår som før brannen, ble taket endret. 
+
+Gården ble overtatt av Tollvesenet i 1855 som eide den frem til 1915 da Postverket kjøpte den. «Gamle Fredrikstad» postkontor holdt til i første etasje helt frem til 1988, da det flyttet til [[Raadhusgaten (Fredrikstad)|Raadhusgaten]]. Idag (2008) er det leiligheter i Bullgården, og i kjelleren holder [[Fredrikstad Hvalfangermuseum]] til om sommeren.
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Toldbodgaten i Gamlebyen.jpg|Bullgården helt til høyre. {{byline|Stangebyesamlingen / Fredrikstad Museum|ca 1900}}
+</gallery>
+
+==Kilder ==
+*[http://www.f-b.no/Byleksikon Fredrikstad byleksikon]
+*Hals, Harald: «Gater og hus», i ''Fredrikstad. Gamlebyen og festningen'', utg. Riksantikvariatet, Oslo 1934
+
+[[Kategori:Bygårder]]
+[[Kategori:Bygninger fra 1700-tallet]]
+[[Kategori:Åttende kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20375|N|10.95216|Ø}}
+{{bm}}

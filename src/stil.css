@@ -27,8 +27,11 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #kort .her{list-style:none;margin:8px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
 #kort .ogsa-t{margin:12px 0 0;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);opacity:.6}
 #kort .ogsa{list-style:none;margin:4px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
-#kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty{display:none}
+#kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty,#kort .aar:empty,#kort .hist:empty,#kort .naa:empty{display:none}
 #kort .id{margin-top:8px;font-size:11px;letter-spacing:.02em;opacity:.8}
+#kort .aar{margin:4px 0 0;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);opacity:.55}
+#kort .hist{margin:10px 0 0;font-size:14px;line-height:1.5;color:var(--ink)}
+#kort .naa{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--ink);opacity:.85}
 #kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
 /* «Del» (02.11): kopierer lenka til utsikten og huset (15_lenke); haken er bekreftelsen */
 #kort .del{display:inline-flex;align-items:center;gap:6px;margin-top:12px;border:0;border-radius:18px;padding:8px 13px;background:rgba(43,36,32,.07);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer;transition:background var(--t-kort-ut,240ms) var(--k-flytt,ease)}
@@ -139,6 +142,18 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #gjestemerke{display:flex;align-items:center;height:36px;padding:0 14px;border-radius:22px;background:var(--gjest);color:#fff;font:600 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.02em;box-shadow:0 4px 16px rgba(40,30,20,.18)}
 .gjest #sok,.gjest #kort .her li.vei a{background:var(--gjest)}
 .gjest .naal.valgt .merke{--f:var(--gjest)}
+/* gangtid fra hotellet øverst i kortet (gange.js): én linje med gå-tegn, tallet i aksentfargen, «fra Hotell Kasernen» dempet */
+#kort .her li.gang{display:flex;align-items:center;gap:7px;margin:0 0 3px;color:var(--gjest,var(--ink));font-weight:600}
+#kort .her li.gang .gangikon{flex:none}
+#kort .her li.gang small{font-size:12px;font-weight:400;color:var(--muted)}
+/* det stående merket på hotellet (30_gjest): aksentfarget nål med hus-tegn, navn og at det åpner i 2027 – ingen logo eller profil */
+.gjest-naal{border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;cursor:pointer;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.gjest-naal .flagg{order:-1;display:flex;flex-direction:column;align-items:center;line-height:1.15;background:var(--gjest,#2b2420);color:#fff;padding:5px 11px;border-radius:12px;box-shadow:0 3px 10px rgba(40,30,20,.3);margin-bottom:5px;white-space:nowrap}
+.gjest-naal .flagg b{font-size:12px;font-weight:600;letter-spacing:.01em}
+.gjest-naal .flagg i{font-size:10px;font-style:normal;opacity:.85}
+.gjest-naal .hode{width:34px;height:34px;border-radius:50%;background:var(--gjest,#2b2420);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px #fff,0 2px 6px rgba(0,0,0,.3)}
+.gjest-naal::after{content:"";width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #fff;margin-top:-1px}
+.gjest-naal:focus-visible{outline:none}.gjest-naal:focus-visible .hode{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--gjest,#2b2420)}
 /* smal skjerm: toppen får plass ved siden av «Hele Gamlebyen» (bare ikon på Finn, bare temperatur på været) */
 @media (max-width:560px){
   #topp{gap:6px}

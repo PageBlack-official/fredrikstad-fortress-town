@@ -1,0 +1,37 @@
+# Feiergården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Feierg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Feiergården
+| bilde     = feiergaarden.JPG
+| dato      = 
+| bildetekst    = {{byline|Trond Svandal|2009}}
+| annetnavn = 
+| byggeår   = ca. 1785
+| eier1     = Niels Werenskiold
+| eier2     = [[Fredrikstad kommune|Fredrikstad by]]
+| arkitekt  = 
+| materiale = tre
+| endringer = 
+| formål    = bolig
+| adresse   = Smedjegaten 86
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Feiergården i Fredrikstad|Feiergården]]''', [[Smedjegaten (Fredrikstad)|Smedjegaten]] 86, ligger i [[Fjortende kvartal i Gamlebyen|fjortende kvartal]] i [[Gamlebyen i Fredrikstad]]. Den er oppført etter [[bybrannen i Fredrikstad 1784|brannen i 1784]] av major [[Niels Werenskiold (1727–1810)|Niels Werenskiold]]. Huset var også i mange år offisersbolig og var blant annet eid av kommandantene [[Nicolai Henrik Mecklenburg|Niels Henrik Mecklenburg]] og senere [[Niels Christian Hals]].</onlyinclude> 
+
+Gården har navn etter feierinspektørene Carl Lauritz Nygaard og sønnen Lauritz som eide gården i til sammen nesten 60 år. Den gikk rundt århundreskiftet over i kommunalt eie, men ble i 1964 solgt til arkitekt [[Bjørn Ianke]] som restaurerte gården. Den er fremdeles i privat eie. 
+
+== Kilde ==
+*Dahle, Erik, ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+*Kaurel, Finn: ''Fredrikstad byleksikon''. Utg. Fredriksstad Blads forlag 1996. {{nb.no|NBN:no-nb_digibok_2011021408093}}.
+
+[[Kategori:Bygninger fra 1700-tallet]]
+[[Kategori:Boliger]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{bm}}
+{{artikkelkoord|59.204739|N|10.954951|Ø}}

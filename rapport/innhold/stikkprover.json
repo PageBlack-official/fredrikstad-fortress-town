@@ -1,0 +1,66 @@
+{
+ "dato": "2026-11-10",
+ "metode": "10 tilfeldige fylte hus, kilden hentet paa nytt fra lokalhistoriewiki og byggearets tall sjekket mot artikkelteksten",
+ "resultat": [
+  {
+   "id": "bnr-193868355",
+   "hus": "Det gamle rådhus",
+   "dom": "byggear 1784 -> OK (fant ['1784'])",
+   "kilde": "https://lokalhistoriewiki.no/Det_gamle_rådhus_i_Fredrikstad"
+  },
+  {
+   "id": "bnr-193972012",
+   "hus": "Det nye rådhus",
+   "dom": "byggear 1861–1864 -> OK (fant ['1861', '1864'])",
+   "kilde": "https://lokalhistoriewiki.no/R%C3%A5dhuset_i_Fredrikstad"
+  },
+  {
+   "id": "bnr-193868363",
+   "hus": "Binggården",
+   "dom": "byggear 1830-årene -> OK (fant ['1830'])",
+   "kilde": "https://lokalhistoriewiki.no/Bingg%C3%A5rden"
+  },
+  {
+   "id": "bnr-16308102",
+   "hus": "bnr-16308102",
+   "dom": "byggear slutten av 1990-tallet -> OK (fant ['1990'])",
+   "kilde": "https://lokalhistoriewiki.no/Kasernegaten_54"
+  },
+  {
+   "id": "bnr-193867510",
+   "hus": "Ekserserhuset",
+   "dom": "byggear 1808 -> OK (fant ['1808'])",
+   "kilde": "https://lokalhistoriewiki.no/Ekserserhuset_i_Fredrikstad"
+  },
+  {
+   "id": "bnr-193867979",
+   "hus": "Rokkes hotell",
+   "dom": "byggear ca. 1830 -> OK (fant ['1830'])",
+   "kilde": "https://lokalhistoriewiki.no/Rokkes_hotell"
+  },
+  {
+   "id": "pb-9",
+   "hus": "Færgeporten",
+   "dom": "byggear 1727 -> OK (fant ['1727'])",
+   "kilde": "https://lokalhistoriewiki.no/F%C3%A6rgeporten_i_Fredrikstad"
+  },
+  {
+   "id": "bnr-193868398",
+   "hus": "bnr-193868398",
+   "dom": "byggear 1830-årene -> OK (fant ['1830'])",
+   "kilde": "https://lokalhistoriewiki.no/Toldbodgaten_38_i_Fredrikstad"
+  },
+  {
+   "id": "bnr-193868010",
+   "hus": "Enigheden",
+   "dom": "byggear 1838 -> OK (fant ['1838'])",
+   "kilde": "https://lokalhistoriewiki.no/Enigheden_i_Fredrikstad"
+  },
+  {
+   "id": "pb-11",
+   "hus": "Mellomporten",
+   "dom": "byggear 1727 -> OK (fant ['1727'])",
+   "kilde": "https://lokalhistoriewiki.no/Mellomporten_i_Fredrikstad"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+# Vennehaabet i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Vennehaabet_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Vennehaabet 
+| bilde     = Vennehaabet.JPG
+| dato      = 
+| byline    = 
+| annetnavn = Fredrikstad Klubselskab
+| byggeår   = [[1796]]
+| eier1     = klubbselskapet Vennehaabet
+| arkitekt  = 
+| materiale = tre
+| endringer = 
+| formål    = forsamlingslokale
+| adresse   = Kasernegaten 46
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>{{thumb|Fredrikstad Gamlebyen Vennehaabet01.JPG|Vennehaabet ligger på hjørnet av Kasernegaten og Kirkegaten}}'''[[Vennehaabet i Fredrikstad|Vennehaabet]]''', [[Kasernegaten (Fredrikstad)|Kasernegaten]] 46, ligger</onlyinclude> i [[femte kvartal i Gamlebyen|femte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Bygningen ble oppført i [[1796]] og tjente som forsamlingslokale for klubbselskapet Vennehaabet fra 1796 frem til [[1912]]. I dag holder [[frimurerlogen]] St. Magnus til i huset.
+
+Bygningen var opprinnelig oppført som en symmetrisk én-etasjes tømmerbygning med front mot Kasernegaten. Den opprinnelige hovedinngangen var via en trapp, også fra Kasernegaten. Denne er nå fjernet. I [[1851]] ble det oppført et tilbygg. Foruten klubbaktiviteten tjente også bygningen som konsertlokale og enkelte ganger som teaterlokale, som da en trupp fra [[Christiania]] i [[1850-årene]] opptrådte med «to arabere og en italiener». Under [[Napoleonskrigene]] ([[1807]]-[[1814]]) måtte huset tjene som sykestue. Bygningen ble i 1912 solgt til [[frimurerlogen St. Magnus]] som fremdeles er eier av huset. St. Johanneslogen St. Magnus ble innviet i [[1913]]. </onlyinclude>
+
+==Klubselskabet Vennehaabet==
+Vennehaabet var en lukket [[herreklubb]] for [[Fredrikstad]]s kondisjonerte. Opprinnelig var navnet ''Fredrikstad Klubselskab'', men fra rundt [[1800]] ble den kalt Vennehaabet. I hovedsak var medlemmene fra byens høyere [[borgerskap]] og [[offiser]]er fra [[garnison]]en. Den største gruppen var høyere offiserer, som naturlig var i en festningsby. For å bli opptatt som medlem i selskapet måtte søknaden godkjennes, noe som skjedde ved votering av generalforsamlingen. Ifølge selskapets lover fra [[1811]] skulle det ikke være mer enn 85 medlemmer. Selskapet hadde også en ledelse kalt «direksjonen». I tillegg til fullverdige medlemmer, fantes også en kategori kalt «konverserende medlemmer» eller «dansende medlemmer». Dette var ofte lavere offiserer, og de hadde kun adgang til å delta på selskapeligeter, særlig selskapets ball. Det ble arrangert fem årlige ball: Ett som innledet vintersesongen og ett som avsluttet den, ett andre juledag, ett på kongens fødselsdag og ett under markedet. Utover dette var onsdager og lørdager faste klubbkvelder, og man avholdt såkalte [[assemblé]]er på søndager. I [[1840-årene]] var inngangsprisen her like mye som en vanlig [[arbeider]]s dagslønn, 24 skilling. Byens organist stod for musikken. Lokalene var også åpne for daglig benyttelse for klubbens medlemmer. Her kunne man spille i klubbens eget biljardrom, eller lese [[aviser]] det ble abbonert på. Man møttes vanligvis klokken 17 til et glass [[toddy]], og gikk hjem klokken 19 for å spise middag. Klubben hadde en fast ansatt klubbvert eller vertinne som hadde ansvar for medlemmenes forpleining. 
+  
+==Kilder==
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bind 2 og 3, Fredrikstad 1964/1973.
+*Ulltveit, Gudrun: «Himmelpudding og Hermelinkage». Kokebok for de kondisjonerte, ''Mindre Alv VII'', Fredrikstad 1997.
+
+
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Femte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Forsamlingshus]]
+{{F1}}
+{{artikkelkoord|59.20278|N|10.952|Ø}}
+{{bm}}

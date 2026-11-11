@@ -44,16 +44,22 @@ const SIDEPANEL=window.matchMedia('(min-width: 720px)');
 const kameraNaa=()=>({center:map.getCenter(), zoom:map.getZoom(), bearing:map.getBearing(), pitch:map.getPitch()});
 function fyllKort(b){
   const adr=(ADRESSER.get(b.id)||[]).map(a=>a.adresse), her=VIRKSOMHETER.get(b.id)||[];
-  kort.querySelector('h2').textContent = b.navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
-  kort.querySelector('.a').textContent = (b.navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
-  kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig 
+  // innhold per hus (OPPGAVE5): navn/byggeår/historie/bruk i dag fra kilder/bygg-innhold.json, lagt på bygget i datalag (leservei).
+  // Det historiske navnet vinner som tittel; tomme felt står ikke i objektet, så :empty skjuler linjene og kortet ser ferdig ut.
+  const inn=b.innhold||{}, navn=inn.navn||b.navn;
+  kort.querySelector('h2').textContent = navn || adr[0] || b.adr || 'Bygg i Gamlebyen';
+  kort.querySelector('.a').textContent = (navn ? adr.join(', ') : adr.slice(1).join(', ')) || b.adr || (b.tekst ? 'Fra kartbrosjyren til Visit Fredrikstad (2015)' : ''); // OSM-typen (engelsk, f.eks. «office») vises ikke
+  kort.querySelector('.aar').textContent = inn.byggeaar ? (/^\d/.test(inn.byggeaar) ? 'Oppført '+inn.byggeaar : inn.byggeaar) : '';
+  kort.querySelector('.hist').textContent = inn.historie || '';
+  kort.querySelector('.naa').textContent = inn.bruk_i_dag ? 'I dag: '+inn.bruk_i_dag : '';
+  kort.querySelector('.b').textContent = b.tekst || '';   // tomt kort fremfor plassholder: det som vises, er ferdig
   const liste=(ul,vs)=>{ ul.innerHTML=''; vs.forEach(v=>{ const li=document.createElement('li'); li.textContent=v.navn; ul.appendChild(li); }); };
   // bygg delt i fløyer (husdeling «felles_tak», Tøihuset): fløyas egne steder øverst; de andre fløyenes og de uten kjent plass under «Også i …»
   const fl=b.floyer||[], hele=v=>v.hele_bygget;
   const ogsa=fl.flatMap(i=>(VIRKSOMHETER.get(i)||[]).filter(v=>i!==b.id||hele(v))).sort((x,y)=>(hele(x)?1:0)-(hele(y)?1:0));
   liste(kort.querySelector('.her'), her.filter(v=>!(fl.length&&hele(v))));
   liste(kort.querySelector('.ogsa'), ogsa);
-  kort.querySelector('.ogsa-t').textContent = ogsa.length ? `Også i ${(b.navn||'bygget').split(',')[0]}` : '';
+  kort.querySelector('.ogsa-t').textContent = ogsa.length ? `Også i ${(navn||'bygget').split(',')[0]}` : '';
   const mb=(b.matrikkel&&b.matrikkel[0]) ? b : (b.floyer||[]).map(i=>BYGG_ID.get(i)).find(x=>x&&x.matrikkel&&x.matrikkel[0]) || b;   // fløyene deler bygningsnummeret
   const m=mb.matrikkel&&mb.matrikkel[0];   // statens nøkkel (Matrikkelen): bygningsnummer og kulturminne
   kort.querySelector('.id').textContent = m ? `Bygningsnr. ${m.bygningsnummer}${mb.matrikkel.some(x=>x.kulturminne)?' • Kulturminne':''}` : '';
@@ -89,7 +95,8 @@ function velgPunkt(fyll, x, y){
 function fyllFergeKort(id){ const k=SENERE.ferge.kort(id); if(!k) return;
   kort.querySelector('h2').textContent=k.tittel; kort.querySelector('.a').textContent=k.a; kort.querySelector('.b').textContent=k.b;
   const ul=kort.querySelector('.her'); ul.innerHTML=''; k.linjer.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
-  kort.querySelector('.ogsa').innerHTML=''; kort.querySelector('.ogsa-t').textContent=''; kort.querySelector('.farge').innerHTML=''; kort.querySelector('.id').textContent=k.id; }
+  kort.querySelector('.ogsa').innerHTML=''; kort.querySelector('.ogsa-t').textContent=''; kort.querySelector('.farge').innerHTML=''; kort.querySelector('.id').textContent=k.id;
+  kort.querySelector('.aar').textContent=''; kort.querySelector('.hist').textContent=''; kort.querySelector('.naa').textContent=''; }   // hus-innhold hører ikke til ferga
 function velgFerge(id){
   if(valgt){ valgt.userData.lift=false; valgt=null; }
   const nytt=kort_.ferge!==id; kort_.ferge=id;

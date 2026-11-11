@@ -1,0 +1,45 @@
+# Kommisjonsgården
+# kilde: https://lokalhistoriewiki.no/Kommisjonsg%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Kommisjonsgården
+| bilde     = kommisjon.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = [[1834]]
+| eier1     = [[Fredrikstad festning]]
+| arkitekt  = [[Christian Heinrich Grosch]] (trolig)
+| materiale = mur
+| endringer = 
+| formål    = militært rettslokale
+| adresse   = Færgeportgaten 76
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Kommisjonsgården]]''', Færgeportgaten 76</onlyinclude> ligger i [[ellevte kvartal i Gamlebyen|ellevte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]]. Gården ble bygd som militært rettslokale og stod ferdig i [[1834]]. Den er bygd på tomten etter [[De grundmurede infanteribaraquer]] eller «De gamle kaserner». De gikk med i [[bybrannen i Fredrikstad i 1830|bybrannen i 1830]]. Kommisjonsgården er en enetasjes murbygning i empirestil og er trolig oppført etter tegninger av arkitekten [[Christian Heinrich Grosch]]. Han står også bak [[Rosinggården]]. Kommisjonsgården ble oppført under ledelse av ingeniøroffiseren Sinding, som også signerte tegningene til bygningen. </onlyinclude>
+
+Kjelleren bak den svært høye grunnmuren har doble kammere i høyden, med adgang fra lemmer i grunnmuren. Kjelleren stammer fra de gamle kasernene som sto her. Hovedfasaden er strengt symmetrisk komponert, med rundbuede vinduer i midtpartiet. Flankene er markert med kvaderpuss. Huset har [[valmet tak]]. 
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Toldbodgaten i Gamlebyen.jpg|Kommisjonsgården er nr. 2 fra venstre. {{byline|Stangebyesamlingen / Fredrikstad Museum|ca 1900}}
+Fil:Fredrikstad, Toldbodgaten i Gamlebyen - no-nb digifoto 20150807 00228 bldsa PK06238.jpg|Toldbodgaten ved Færgeporten i 1920-30-årene.
+</gallery>
+
+== Kilde ==
+* [[Clare Sewell Widerberg (1868–1957)|Widerberg, C.S.]]: «Festningen» i ''Fredrikstad. Gamlebyen og festningen'', utg. Riksantikvariatet, Oslo 1934.
+*[http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=97527&a=6 ''Verneplan for Fredrikstad festning'' 2006]
+
+
+[[Kategori:Bygninger fra 1830-åra]]
+[[Kategori:Militære bygninger]]
+[[Kategori:Ellevte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20438|N|10.95332|Ø}}
+{{bm}}

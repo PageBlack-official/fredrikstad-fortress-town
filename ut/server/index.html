@@ -38,8 +38,11 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #kort .her{list-style:none;margin:8px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
 #kort .ogsa-t{margin:12px 0 0;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);opacity:.6}
 #kort .ogsa{list-style:none;margin:4px 0 0;padding:0;font-size:14px;line-height:1.45;color:var(--ink)}
-#kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty{display:none}
+#kort .her:empty,#kort .ogsa:empty,#kort .ogsa-t:empty,#kort .id:empty,#kort .b:empty,#kort .aar:empty,#kort .hist:empty,#kort .naa:empty{display:none}
 #kort .id{margin-top:8px;font-size:11px;letter-spacing:.02em;opacity:.8}
+#kort .aar{margin:4px 0 0;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);opacity:.55}
+#kort .hist{margin:10px 0 0;font-size:14px;line-height:1.5;color:var(--ink)}
+#kort .naa{margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--ink);opacity:.85}
 #kort .farge i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
 /* «Del» (02.11): kopierer lenka til utsikten og huset (15_lenke); haken er bekreftelsen */
 #kort .del{display:inline-flex;align-items:center;gap:6px;margin-top:12px;border:0;border-radius:18px;padding:8px 13px;background:rgba(43,36,32,.07);color:var(--ink);font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer;transition:background var(--t-kort-ut,240ms) var(--k-flytt,ease)}
@@ -150,6 +153,18 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 #gjestemerke{display:flex;align-items:center;height:36px;padding:0 14px;border-radius:22px;background:var(--gjest);color:#fff;font:600 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.02em;box-shadow:0 4px 16px rgba(40,30,20,.18)}
 .gjest #sok,.gjest #kort .her li.vei a{background:var(--gjest)}
 .gjest .naal.valgt .merke{--f:var(--gjest)}
+/* gangtid fra hotellet øverst i kortet (gange.js): én linje med gå-tegn, tallet i aksentfargen, «fra Hotell Kasernen» dempet */
+#kort .her li.gang{display:flex;align-items:center;gap:7px;margin:0 0 3px;color:var(--gjest,var(--ink));font-weight:600}
+#kort .her li.gang .gangikon{flex:none}
+#kort .her li.gang small{font-size:12px;font-weight:400;color:var(--muted)}
+/* det stående merket på hotellet (30_gjest): aksentfarget nål med hus-tegn, navn og at det åpner i 2027 – ingen logo eller profil */
+.gjest-naal{border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;cursor:pointer;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.gjest-naal .flagg{order:-1;display:flex;flex-direction:column;align-items:center;line-height:1.15;background:var(--gjest,#2b2420);color:#fff;padding:5px 11px;border-radius:12px;box-shadow:0 3px 10px rgba(40,30,20,.3);margin-bottom:5px;white-space:nowrap}
+.gjest-naal .flagg b{font-size:12px;font-weight:600;letter-spacing:.01em}
+.gjest-naal .flagg i{font-size:10px;font-style:normal;opacity:.85}
+.gjest-naal .hode{width:34px;height:34px;border-radius:50%;background:var(--gjest,#2b2420);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px #fff,0 2px 6px rgba(0,0,0,.3)}
+.gjest-naal::after{content:"";width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #fff;margin-top:-1px}
+.gjest-naal:focus-visible{outline:none}.gjest-naal:focus-visible .hode{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--gjest,#2b2420)}
 /* smal skjerm: toppen får plass ved siden av «Hele Gamlebyen» (bare ikon på Finn, bare temperatur på været) */
 @media (max-width:560px){
   #topp{gap:6px}
@@ -173,12 +188,12 @@ html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font-family:
 <div id="topp"></div>
 <button id="hjem" aria-label="Vis hele Gamlebyen" title="Vis hele Gamlebyen (Esc)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Hele Gamlebyen</span></button>
 <div id="hint">Dra for å flytte · ctrl og dra for å snu byen · ⌘ og rull, klyp eller +/− for å zoome · dobbeltklikk nærmere, shift og dobbeltklikk lenger vekk</div><script>if(matchMedia("(pointer:coarse)").matches)document.getElementById("hint").textContent="Én finger flytter kartet · to fingre snur og zoomer · trykk på et hus";</script>
-<div id="kort" role="dialog" aria-label="Om bygget" aria-hidden="true"><div class="grep" aria-hidden="true"></div><button class="lukk" aria-label="Lukk">×</button><div class="innhold"><h2></h2><p class="a"></p><p class="b"></p><ul class="her"></ul><p class="ogsa-t"></p><ul class="ogsa"></ul><div class="farge"></div><p class="id"></p></div><button class="del" type="button"><svg class="ikon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 15V4m0 0L8 8m4-4 4 4M6 12v7h12v-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="ok" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Del</span></button></div>
+<div id="kort" role="dialog" aria-label="Om bygget" aria-hidden="true"><div class="grep" aria-hidden="true"></div><button class="lukk" aria-label="Lukk">×</button><div class="innhold"><h2></h2><p class="a"></p><p class="aar"></p><p class="hist"></p><p class="naa"></p><p class="b"></p><ul class="her"></ul><p class="ogsa-t"></p><ul class="ogsa"></ul><div class="farge"></div><p class="id"></p></div><button class="del" type="button"><svg class="ikon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 15V4m0 0L8 8m4-4 4 4M6 12v7h12v-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="ok" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Del</span></button></div>
 <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","maplibre-gl":"https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.mjs"}}</script>
 
 <script type="module">
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/tilstand.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/tilstand.js
 var TILSTAND = {
   skyggeSkitten: true,
   // skyggekartet må tegnes på nytt (sola, husene eller introen har endret seg)
@@ -202,7 +217,7 @@ function registrer(navn) {
   for (const [k, f] of Object.entries(navn)) Object.defineProperty(SENERE, k, { get: f, enumerable: true });
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/00_oppsett.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/00_oppsett.js
 import * as THREE from "three";
 import * as maplibregl from "maplibre-gl";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
@@ -294,7 +309,7 @@ var cam = new THREE.PerspectiveCamera(60, 1, 1, 1e4);
 cam.matrixAutoUpdate = false;
 var kam = { zoomfaktor: 1, mpp: 1, pitch: PITCH0, bearing: -AZ0_GRADER, naer: 1, fjern: 1e4 };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/01_etterbehandling.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/01_etterbehandling.js
 import * as THREE2 from "three";
 import { FXAAShader as FXAAShader2 } from "three/addons/shaders/FXAAShader.js";
 var MAALT = { oppdater: 0, speil: 0, skygge: 0 };
@@ -582,7 +597,7 @@ function fit() {
 }
 map.on("resize", fit);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/02_lys.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/02_lys.js
 import * as THREE3 from "three";
 var hemi = new THREE3.HemisphereLight(16777215, 15131350, 1);
 scene.add(hemi);
@@ -810,7 +825,7 @@ function medSkygge(m) {
 }
 registrer({ sun: () => sun });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/kvalitet.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/kvalitet.js
 import * as THREE4 from "three";
 var KVAL = { skalaStille: 1, skalaMaskin: 1, ssStille: 4, aoStille: 14, nivaa: Q0.get("noadapt") ? 9 : 0, onsket: 0 };
 var MAAL_PAA = !!Q0.get("adapt");
@@ -861,7 +876,7 @@ function feilsokTast(t) {
 if (Q0.get("nivaa")) settNivaa(+Q0.get("nivaa"));
 registrer({ beregnSkala: () => beregnSkala });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/03_bakke-vann-grønt.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/03_bakke-vann-grønt.js
 import * as THREE5 from "three";
 var BK = DATA.bakke || null;
 var VANN_Y = BK ? BK.vann : 0.15;
@@ -1051,7 +1066,7 @@ DATA.vann.forEach((w) => {
 });
 registrer({ waterMat: () => waterMat });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/04_brostein-i-hele-gamlebyen.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/04_brostein-i-hele-gamlebyen.js
 import * as THREE6 from "three";
 var stoneMat = new THREE6.ShaderMaterial({
   uniforms: { base: { value: new THREE6.Color("rgb(146,140,132)") }, fuge: { value: new THREE6.Color("rgb(96,92,88)") }, ang: { value: THREE6.MathUtils.degToRad(DATA.gatevinkel || 0) } },
@@ -1098,7 +1113,7 @@ var plenMat = new THREE6.ShaderMaterial({
 medSkygge(plenMat);
 bakkelag(plenMat, BAKKELAG.gress);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/05_bygg.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/05_bygg.js
 import * as THREE7 from "three";
 import { mergeGeometries as mergeGeometries2 } from "three/addons/utils/BufferGeometryUtils.js";
 var city = new THREE7.Group();
@@ -1378,7 +1393,7 @@ function mat(rgb, dim, sk, opt = {}) {
   return mats.get(key);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/06_kirka-bygget-etter-2017.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/06_kirka-bygget-etter-2017.js
 import * as THREE8 from "three";
 var KIRKE_ENDE = "valm";
 function sentr(p) {
@@ -1670,7 +1685,7 @@ function bygKirke(k, grp) {
 }
 var buildings = [];
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/07_vinduer-dører-og-porter.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/07_vinduer-dører-og-porter.js
 import * as THREE9 from "three";
 import { mergeGeometries as mergeGeometries3 } from "three/addons/utils/BufferGeometryUtils.js";
 var VIND_GEO = new THREE9.PlaneGeometry(1, 1);
@@ -1842,7 +1857,7 @@ window.__fotSjekk = (grense = 0.3) => {
   return ut;
 };
 function vindusData(V2, i2, b, fot = 0) {
-  const mats2 = [], info = new Float32Array(V2.length * 4), nrm = new Float32Array(V2.length * 3), bygg2 = new Float32Array(V2.length).fill(i2 + 1);
+  const mats2 = [], info = new Float32Array(V2.length * 4), nrm = new Float32Array(V2.length * 3), bygg3 = new Float32Array(V2.length).fill(i2 + 1);
   V2.forEach((v, k) => {
     const [x, y, z, tx, ty, nx, ny, w, h, typ, bue, ant] = v;
     _X.set(-tx, 0, ty);
@@ -1853,25 +1868,25 @@ function vindusData(V2, i2, b, fot = 0) {
     info.set([typ, bue, ant, palIx(v[12]) || palIx(b && (typ > 0.5 && typ < 2.5 ? b.dor_farge : b.karm_farge))], k * 4);
     nrm.set([nx, 0, -ny], k * 3);
   });
-  return { mats: mats2, info, nrm, bygg: bygg2 };
+  return { mats: mats2, info, nrm, bygg: bygg3 };
 }
 function lagVinduer(deler) {
   const n = deler.reduce((a, d) => a + d.mats.length, 0);
   const im = new THREE9.InstancedMesh(VIND_GEO.clone(), vindMat, n);
-  const info = new Float32Array(n * 4), nrm = new Float32Array(n * 3), bygg2 = new Float32Array(n);
+  const info = new Float32Array(n * 4), nrm = new Float32Array(n * 3), bygg3 = new Float32Array(n);
   let k = 0;
   deler.forEach((d) => {
     d.mats.forEach((m, j) => {
       im.setMatrixAt(k, m);
       info.set(d.info.subarray(j * 4, j * 4 + 4), k * 4);
       nrm.set(d.nrm.subarray(j * 3, j * 3 + 3), k * 3);
-      bygg2[k] = d.bygg[j];
+      bygg3[k] = d.bygg[j];
       k++;
     });
   });
   im.geometry.setAttribute("aInfo", new THREE9.InstancedBufferAttribute(info, 4));
   im.geometry.setAttribute("aNorm", new THREE9.InstancedBufferAttribute(nrm, 3));
-  im.geometry.setAttribute("aBygg", new THREE9.InstancedBufferAttribute(bygg2, 1));
+  im.geometry.setAttribute("aBygg", new THREE9.InstancedBufferAttribute(bygg3, 1));
   im.frustumCulled = false;
   im.customDepthMaterial = husDybde;
   return im;
@@ -2668,7 +2683,7 @@ samler.clear();
   city.add(m);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/08_festningsterrenget.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/08_festningsterrenget.js
 import * as THREE10 from "three";
 var TER0 = DATA.landskap && DATA.landskap.terreng;
 var TER = BK ? { x0: BK.x0, y0: BK.y0, g: BK.g, nx: BK.nx, ny: BK.ny, off: 0 } : TER0;
@@ -2999,7 +3014,7 @@ function veiflater(VF2, buf) {
   }
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/09_murer-plankegjerder-og-voller.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/09_murer-plankegjerder-og-voller.js
 import * as THREE11 from "three";
 var murer = new THREE11.Group();
 scene.add(murer);
@@ -3039,7 +3054,7 @@ var _iMur = (q) => (DATA.teglmurer || []).some((m) => {
 });
 flatGruppe(murer);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/10_porter.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/10_porter.js
 import * as THREE12 from "three";
 (DATA.porter || []).forEach((pt) => {
   const grp = buildings.find((g) => g.userData.i === pt.bygg);
@@ -3104,7 +3119,7 @@ import * as THREE12 from "three";
   });
 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/11_broer.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/11_broer.js
 import * as THREE13 from "three";
 (DATA.broer || []).forEach((br, bi) => {
   const g = new THREE13.Group();
@@ -3190,7 +3205,7 @@ import * as THREE13 from "three";
   city.add(g);
 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/12_trær.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/12_trær.js
 import * as THREE14 from "three";
 var treBakke = (p) => BK ? bakke(p[0], p[1]) : p[3] || 0;
 var seed = 11;
@@ -3381,7 +3396,7 @@ crowns[0].onBeforeRender = (r, sc_, c) => {
 };
 setCrowns(0);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/13_kart.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/13_kart.js
 import * as THREE15 from "three";
 import * as maplibregl2 from "maplibre-gl";
 var _merc = maplibregl2.MercatorCoordinate.fromLngLat([ORIGO.lon, ORIGO.lat], 0);
@@ -3426,7 +3441,7 @@ function vinkler() {
 var GRENSE = 560;
 map.setMaxBounds([tilLngLat(-GRENSE - 300, -GRENSE - 300), tilLngLat(GRENSE + 300, GRENSE + 300)]);
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/14_speilinger-i-vannet.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/14_speilinger-i-vannet.js
 import * as THREE16 from "three";
 var speil = (() => {
   const Y = VANN_Y, LAG = 1;
@@ -3511,7 +3526,7 @@ function speilStyrke() {
 var _sisteKam = new THREE16.Matrix4();
 map.on("resize", () => speil.size());
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/15_bevegelse.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/15_bevegelse.js
 import * as maplibregl3 from "maplibre-gl";
 var GLID = Q0.get("glid") !== "0";
 var glid = (t) => !GLID ? t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 : t <= 0 ? 0 : t >= 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
@@ -3563,8 +3578,8 @@ function glidKamera(mal, type) {
 }
 var fingerNede = false;
 var SLIPP = { t: 0, rader: [] };
-var slippLogg = (tekst) => {
-  SLIPP.rader.push(`${performance.now() - SLIPP.t | 0} ms: ${tekst}`);
+var slippLogg = (tekst2) => {
+  SLIPP.rader.push(`${performance.now() - SLIPP.t | 0} ms: ${tekst2}`);
   if (SLIPP.rader.length > 8) SLIPP.rader.shift();
 };
 var treghet = (() => {
@@ -3791,7 +3806,7 @@ window.__BEV = BEV;
 map.getCanvasContainer().addEventListener("pointerdown", () => hjulZoom.stopp(), { capture: true, passive: true });
 registrer({ fingerNede: () => fingerNede });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/15_lenke.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/15_lenke.js
 var LENKE = (() => {
   let h = "";
   try {
@@ -3894,7 +3909,7 @@ async function lenkeDel(knapp4) {
   if (knapp4) knapp4.addEventListener("click", () => lenkeDel(knapp4));
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/15_loop.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/15_loop.js
 import * as THREE17 from "three";
 lysFraVenstre();
 var order = buildings.map((g) => {
@@ -4310,7 +4325,7 @@ window.__skjerm3 = (x, y, z) => {
 };
 registrer({ introTilt: () => introTilt, overta: () => overta, vokst: () => vokst });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/16_interaksjon.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/16_interaksjon.js
 import * as THREE18 from "three";
 var ray = new THREE18.Raycaster();
 var ptr = new THREE18.Vector2();
@@ -4379,8 +4394,12 @@ var SIDEPANEL = window.matchMedia("(min-width: 720px)");
 var kameraNaa = () => ({ center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
 function fyllKort(b) {
   const adr = (ADRESSER.get(b.id) || []).map((a) => a.adresse), her = VIRKSOMHETER.get(b.id) || [];
-  kort.querySelector("h2").textContent = b.navn || adr[0] || b.adr || "Bygg i Gamlebyen";
-  kort.querySelector(".a").textContent = (b.navn ? adr.join(", ") : adr.slice(1).join(", ")) || b.adr || (b.tekst ? "Fra kartbrosjyren til Visit Fredrikstad (2015)" : "");
+  const inn2 = b.innhold || {}, navn = inn2.navn || b.navn;
+  kort.querySelector("h2").textContent = navn || adr[0] || b.adr || "Bygg i Gamlebyen";
+  kort.querySelector(".a").textContent = (navn ? adr.join(", ") : adr.slice(1).join(", ")) || b.adr || (b.tekst ? "Fra kartbrosjyren til Visit Fredrikstad (2015)" : "");
+  kort.querySelector(".aar").textContent = inn2.byggeaar ? /^\d/.test(inn2.byggeaar) ? "Oppført " + inn2.byggeaar : inn2.byggeaar : "";
+  kort.querySelector(".hist").textContent = inn2.historie || "";
+  kort.querySelector(".naa").textContent = inn2.bruk_i_dag ? "I dag: " + inn2.bruk_i_dag : "";
   kort.querySelector(".b").textContent = b.tekst || "";
   const liste2 = (ul, vs) => {
     ul.innerHTML = "";
@@ -4394,7 +4413,7 @@ function fyllKort(b) {
   const ogsa = fl.flatMap((i2) => (VIRKSOMHETER.get(i2) || []).filter((v) => i2 !== b.id || hele(v))).sort((x, y) => (hele(x) ? 1 : 0) - (hele(y) ? 1 : 0));
   liste2(kort.querySelector(".her"), her.filter((v) => !(fl.length && hele(v))));
   liste2(kort.querySelector(".ogsa"), ogsa);
-  kort.querySelector(".ogsa-t").textContent = ogsa.length ? `Også i ${(b.navn || "bygget").split(",")[0]}` : "";
+  kort.querySelector(".ogsa-t").textContent = ogsa.length ? `Også i ${(navn || "bygget").split(",")[0]}` : "";
   const mb = b.matrikkel && b.matrikkel[0] ? b : (b.floyer || []).map((i2) => BYGG_ID.get(i2)).find((x) => x && x.matrikkel && x.matrikkel[0]) || b;
   const m = mb.matrikkel && mb.matrikkel[0];
   kort.querySelector(".id").textContent = m ? `Bygningsnr. ${m.bygningsnummer}${mb.matrikkel.some((x) => x.kulturminne) ? " • Kulturminne" : ""}` : "";
@@ -4455,6 +4474,9 @@ function fyllFergeKort(id) {
   kort.querySelector(".ogsa-t").textContent = "";
   kort.querySelector(".farge").innerHTML = "";
   kort.querySelector(".id").textContent = k.id;
+  kort.querySelector(".aar").textContent = "";
+  kort.querySelector(".hist").textContent = "";
+  kort.querySelector(".naa").textContent = "";
 }
 function velgFerge(id) {
   if (valgt) {
@@ -4807,7 +4829,7 @@ draw ${pt.kall || 0} · ${innerWidth}×${innerHeight}·dpr${devicePixelRatio} ·
 }
 registrer({ dbgTegn: () => dbgTegn, maalHud: () => maalHud, hover: () => hover, husBoks: () => husBoks, valgt: () => valgt, velgHus: () => velgHus });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/17_bakkeflater-og-parkering.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/17_bakkeflater-og-parkering.js
 import * as THREE19 from "three";
 {
   const flateMat = (rgb) => medSkygge(new THREE19.ShaderMaterial({
@@ -4928,7 +4950,7 @@ import * as THREE19 from "three";
   });
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/18_brygger.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/18_brygger.js
 import * as THREE20 from "three";
 {
   const PLANKE = 0.9, STOLPE_AVSTAND = 2.6;
@@ -5009,7 +5031,7 @@ import * as THREE20 from "three";
   g.traverse((c) => c.layers.enable(1));
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/19_gardsmurer-og-vinterhager.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/19_gardsmurer-og-vinterhager.js
 import * as THREE21 from "three";
 {
   const anlegg = new THREE21.Group();
@@ -5245,7 +5267,7 @@ import * as THREE21 from "three";
   flatGruppe(anlegg);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/20_statuen-paa-torvet.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/20_statuen-paa-torvet.js
 import * as THREE22 from "three";
 (() => {
   const STEINFARGE = { "mørk": [[66, 68, 72], [40, 41, 44]], lys: [[178, 176, 170], [124, 122, 118]], trinn: [[104, 106, 110], [66, 67, 70]], bronse: [[120, 160, 138], [70, 98, 86]] };
@@ -5424,7 +5446,7 @@ import * as THREE22 from "three";
   });
 })();
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/21_flyt.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/21_flyt.js
 import * as THREE23 from "three";
 import { mergeGeometries as mergeGeometries4 } from "three/addons/utils/BufferGeometryUtils.js";
 var vannRute = (() => {
@@ -5563,7 +5585,7 @@ window.__synsrand = () => synsrand;
 window.__flytInfo = () => ({ flaterFor: flaterSammen.for, flaterEtter: flaterSammen.etter, synsrand, vann: vannISyne() });
 registrer({ vannISyne: () => vannISyne });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/22_byferga.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/22_byferga.js
 import * as THREE24 from "three";
 var ferge = (() => {
   const F = DATA.ferge;
@@ -5908,7 +5930,7 @@ var ferge = (() => {
 })();
 registrer({ ferge: () => ferge });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/23_vaer.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/23_vaer.js
 import * as THREE25 from "three";
 var PUNKT = { lat: 59.2055, lon: 10.9545 };
 var TEST = !!navigator.webdriver;
@@ -6243,19 +6265,148 @@ document.addEventListener("visibilitychange", () => {
 });
 window.__vaer = () => ({ natt: U_SOL.natt.value, naa: VAER.naa, kilde: VAER.kilde, feil: VAER.feil, aarstid: VAER.aarstid, sky: U_SOL.sky.value, sno: U_SOL.sno.value, mal: VAER.mal, nedbor: nedbor.info(), valgt: valgt2 });
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/24_sok.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/gange.js
+var GJEST = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
+var AKTIV = !!(GJEST && GJEST.bygg_id);
+var FART = 5e3 / 60;
+var kart = null;
+var memo = /* @__PURE__ */ new Map();
+function bygg() {
+  if (!AKTIV) return kart = false;
+  const b = (DATA.bygg || []).find((x) => x.id === GJEST.bygg_id);
+  if (!b || !b.p || !b.p.length) return kart = false;
+  let cx = 0, cy = 0;
+  for (const [x, y] of b.p) {
+    cx += x;
+    cy += y;
+  }
+  cx /= b.p.length;
+  cy /= b.p.length;
+  const idx = /* @__PURE__ */ new Map(), adj = [], segs = [];
+  const nid = (x, y) => {
+    const k = Math.round(x * 10) + "," + Math.round(y * 10);
+    let i2 = idx.get(k);
+    if (i2 === void 0) {
+      i2 = adj.length;
+      idx.set(k, i2);
+      adj.push([]);
+    }
+    return i2;
+  };
+  for (const v of DATA.veier || []) {
+    const p = v.p || [];
+    for (let i2 = 0; i2 < p.length - 1; i2++) {
+      const ax = p[i2][0], ay = p[i2][1], bx = p[i2 + 1][0], by = p[i2 + 1][1];
+      const a = nid(ax, ay), bb = nid(bx, by), w = Math.hypot(bx - ax, by - ay);
+      adj[a].push([bb, w]);
+      adj[bb].push([a, w]);
+      segs.push({ ax, ay, bx, by, a, b: bb });
+    }
+  }
+  const snap = (x, y) => {
+    let best = null, bo = Infinity;
+    for (const s of segs) {
+      const dx = s.bx - s.ax, dy = s.by - s.ay, L2 = dx * dx + dy * dy;
+      const t = L2 ? Math.max(0, Math.min(1, ((x - s.ax) * dx + (y - s.ay) * dy) / L2)) : 0;
+      const px = s.ax + t * dx, py = s.ay + t * dy, off = Math.hypot(x - px, y - py);
+      if (off < bo) {
+        bo = off;
+        best = { off, a: s.a, b: s.b, dA: Math.hypot(px - s.ax, py - s.ay), dB: Math.hypot(px - s.bx, py - s.by) };
+      }
+    }
+    return best;
+  };
+  const start3 = snap(cx, cy);
+  if (!start3) return kart = false;
+  const dist = new Float64Array(adj.length).fill(Infinity), heap = [];
+  const opp = (i2) => {
+    while (i2 > 0) {
+      const p = i2 - 1 >> 1;
+      if (heap[p][0] <= heap[i2][0]) break;
+      [heap[p], heap[i2]] = [heap[i2], heap[p]];
+      i2 = p;
+    }
+  };
+  const ned = () => {
+    let i2 = 0;
+    for (; ; ) {
+      let s = i2;
+      const l = 2 * i2 + 1, r = 2 * i2 + 2;
+      if (l < heap.length && heap[l][0] < heap[s][0]) s = l;
+      if (r < heap.length && heap[r][0] < heap[s][0]) s = r;
+      if (s === i2) break;
+      [heap[s], heap[i2]] = [heap[i2], heap[s]];
+      i2 = s;
+    }
+  };
+  const saa = (n, d) => {
+    if (d < dist[n]) {
+      dist[n] = d;
+      heap.push([d, n]);
+      opp(heap.length - 1);
+    }
+  };
+  saa(start3.a, start3.off + start3.dA);
+  saa(start3.b, start3.off + start3.dB);
+  while (heap.length) {
+    const [d, u] = heap[0];
+    const last = heap.pop();
+    if (heap.length) {
+      heap[0] = last;
+      ned();
+    }
+    if (d > dist[u]) continue;
+    for (const [v, w] of adj[u]) {
+      const nd = d + w;
+      if (nd < dist[v]) {
+        dist[v] = nd;
+        heap.push([nd, v]);
+        opp(heap.length - 1);
+      }
+    }
+  }
+  return kart = { dist, snap };
+}
+function meter(x, y) {
+  if (!AKTIV) return Infinity;
+  const n = Math.round(x * 10) + "," + Math.round(y * 10);
+  if (memo.has(n)) return memo.get(n);
+  if (kart === null) bygg();
+  let m = Infinity;
+  if (kart) {
+    const s = kart.snap(x, y);
+    if (s) m = s.off + Math.min(kart.dist[s.a] + s.dA, kart.dist[s.b] + s.dB);
+  }
+  memo.set(n, m);
+  return m;
+}
+function minutter(x, y) {
+  const m = meter(x, y);
+  return isFinite(m) ? Math.max(1, Math.round(m / FART)) : null;
+}
+function tekst(x, y) {
+  const n = minutter(x, y);
+  return n == null ? null : `${n} min å gå`;
+}
+function eier(bygg_id) {
+  return AKTIV && bygg_id === GJEST.bygg_id;
+}
+var IKON2 = '<svg class="gangikon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4.5" r="1.8"/><path d="M12.2 8.3 9 10.5l1.8 3.2 1.1 6.6M12.2 8.3l3.4 1.3 2.1 3.1M12.2 8.3 8.4 20M10.8 13.7l-3.2 2.1-2.1 3.4"/></svg>';
+var GANGE = { aktiv: AKTIV, gjest: GJEST, minutter, tekst, meter, eier, IKON: IKON2 };
+
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/24_sok.js
 import * as maplibregl4 from "maplibre-gl";
 var S = DATA.steder || { kategorier: [], steder: [] };
-var GJEST = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
-if (GJEST && GJEST.anbefalt && GJEST.anbefalt.length) {
-  S.kategorier = [{ id: "anbefalt", navn: `Anbefalt av ${GJEST.navn}` }, ...S.kategorier];
-  for (const id of GJEST.anbefalt) {
+var GJEST2 = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
+if (GJEST2 && GJEST2.anbefalt && GJEST2.anbefalt.length) {
+  S.kategorier = [{ id: "anbefalt", navn: `Anbefalt av ${GJEST2.navn}` }, ...S.kategorier];
+  for (const id of GJEST2.anbefalt) {
     const s = S.steder.find((x) => x.id === id);
     if (s) S.steder.push({ ...s, id: "anbefalt-" + s.id, kategori: "anbefalt" });
   }
 }
 var KAT = new Map(S.kategorier.map((k) => [k.id, k.navn]));
-var IKON2 = {
+var IKON3 = {
   // én strek per kategori, samme stil som knappene
   spise: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M16 3c-2 1.5-2.5 4-2.5 7h2.5v11"/>',
   kultur: '<path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/>',
@@ -6270,7 +6421,7 @@ var IKON2 = {
 };
 var FARGE = { spise: "#f0892b", kultur: "#d6457a", se: "#139a8a", kulturminne: "#9c7350", handle: "#e2a312", sove: "#8657cf", parkering: "#2f6fd6", anbefalt: "#e0483e", toalett: "#7a838e" };
 var merke2 = (k, d = 24) => `<span class="merke" style="--f:${FARGE[k] || "#5f6670"};--d:${d}px">${svg(k, Math.round(d * 0.6), 2.1)}</span>`;
-var svg = (k, s = 18, w = 1.7) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${IKON2[k] || IKON2.se}</svg>`;
+var svg = (k, s = 18, w = 1.7) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${IKON3[k] || IKON3.se}</svg>`;
 var esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 var enkel = (t) => String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/æ/g, "ae").replace(/ø/g, "o").replace(/å/g, "a");
 var IOS = /iP(hone|ad|od)|Macintosh.*Mobile/.test(navigator.userAgent) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
@@ -6279,13 +6430,17 @@ var MND = { Jan: "jan", Feb: "feb", Mar: "mar", Apr: "apr", May: "mai", Jun: "ju
 var aapent = (t) => !t ? "" : t === "24/7" ? "Døgnåpent" : t.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, (m) => MND[m]).replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\b/g, (d) => DAG[d]).replace(/\boff\b/g, "stengt").replace(/;\s*/g, " · ").replace(/,/g, ", ");
 function fyllSted(s, b, p = s) {
   kort.querySelector("h2").textContent = s.navn;
-  const bygg2 = b && (b.navn || b.adr);
-  kort.querySelector(".a").textContent = [p.type ?? s.type, s.adresse || (bygg2 && bygg2 !== s.navn ? bygg2 : "")].filter(Boolean).join(" · ");
+  const bygg3 = b && (b.navn || b.adr);
+  kort.querySelector(".a").textContent = [p.type ?? s.type, s.adresse || (bygg3 && bygg3 !== s.navn ? bygg3 : "")].filter(Boolean).join(" · ");
   {
     const m = p.merknad ?? s.merknad ?? "";
     kort.querySelector(".b").textContent = m && m[0].toUpperCase() + m.slice(1);
   }
   const linjer = [];
+  if (GANGE.aktiv && !GANGE.eier(p.bygg_id ?? s.bygg_id)) {
+    const g = GANGE.tekst(p.x, p.y);
+    if (g) linjer.push(`<li class="gang">${GANGE.IKON}<span>${esc(g)} <small>fra ${esc(GANGE.gjest.navn)}</small></span></li>`);
+  }
   if (s.aapent) linjer.push(`<li>${esc(aapent(s.aapent))}</li>`);
   if (s.mat) linjer.push(`<li>${esc(s.mat[0].toUpperCase() + s.mat.slice(1))}</li>`);
   if (s.easypark) linjer.push(`<li>EasyPark-sone ${esc(s.easypark)}</li>`);
@@ -6299,6 +6454,9 @@ function fyllSted(s, b, p = s) {
   kort.querySelector(".ogsa").innerHTML = "";
   kort.querySelector(".ogsa-t").textContent = "";
   kort.querySelector(".farge").innerHTML = "";
+  kort.querySelector(".aar").textContent = "";
+  kort.querySelector(".hist").textContent = "";
+  kort.querySelector(".naa").textContent = "";
   kort.querySelector(".id").textContent = s.kilde === "OpenStreetMap" ? "© OpenStreetMap-bidragsytere" : s.kilde || "";
 }
 var valgtSted = null;
@@ -6381,7 +6539,12 @@ function treff() {
   let r = INDEKS.filter(({ s, t }) => (!aktivKat || s.kategori === aktivKat) && ord.every((o) => t.includes(o)));
   if (q) r.sort((a, b) => (enkel(b.s.navn).startsWith(q) ? 1 : 0) - (enkel(a.s.navn).startsWith(q) ? 1 : 0));
   const vis2 = q || aktivKat ? r.slice(0, 60) : [];
-  liste.innerHTML = vis2.map(({ s }, i2) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i2 === 0 ? 'aria-selected="true"' : ""}>${merke2(s.kategori, 28)}<span class="tekst"><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? "" : s.type, s.punkter ? `${s.punkter.length} plasser` : "", s.aapent ? aapent(s.aapent).split(" · ")[0] : ""].filter(Boolean).join(" · "))}</small></span></li>`).join("") || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : "");
+  const gang = (s) => {
+    if (!GANGE.aktiv || GANGE.eier(s.bygg_id)) return "";
+    const n = GANGE.minutter(s.x, s.y);
+    return n ? `${n} min å gå` : "";
+  };
+  liste.innerHTML = vis2.map(({ s }, i2) => `<li role="option" tabindex="-1" data-i="${S.steder.indexOf(s)}" ${i2 === 0 ? 'aria-selected="true"' : ""}>${merke2(s.kategori, 28)}<span class="tekst"><b>${esc(s.navn)}</b><small>${esc([enkel(s.type) === enkel(s.navn) ? "" : s.type, s.punkter ? `${s.punkter.length} plasser` : "", gang(s), s.aapent ? aapent(s.aapent).split(" · ")[0] : ""].filter(Boolean).join(" · "))}</small></span></li>`).join("") || (q ? `<li class="tom">Ingen treff på «${esc(inn.value.trim())}»</li>` : "");
 }
 function apne() {
   panel.hidden = false;
@@ -6451,7 +6614,7 @@ window.__sok = { velgSted: (id) => {
   return naaler.size;
 }, antall: () => S.steder.length };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/25_her.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/25_her.js
 import * as maplibregl5 from "maplibre-gl";
 var RADIUS = 1400;
 var vakt = null;
@@ -6463,8 +6626,8 @@ var melding = (() => {
   el.setAttribute("role", "status");
   document.body.appendChild(el);
   let t = null;
-  return (tekst) => {
-    el.textContent = tekst;
+  return (tekst2) => {
+    el.textContent = tekst2;
     el.classList.add("vis");
     clearTimeout(t);
     t = setTimeout(() => el.classList.remove("vis"), 4200);
@@ -6541,7 +6704,7 @@ function stopp() {
   knapp2.b.setAttribute("aria-pressed", "false");
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/26_turer.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/26_turer.js
 var TURER = DATA.turer || [];
 var LEGENDE = new Map((DATA.legende || []).map((l) => [l.nr, l]));
 var tur = null;
@@ -6630,7 +6793,14 @@ if (panel2 && TURER.length) {
   rad.className = "turer";
   rad.setAttribute("role", "group");
   rad.setAttribute("aria-label", "Turer");
-  rad.innerHTML = '<p class="t">Turer</p>' + TURER.map((t) => `<button type="button" data-tur="${t.id}"><b>${t.navn}</b><small>${t.om}</small></button>`).join("");
+  const turGang = (t) => {
+    if (!GANGE.aktiv) return "";
+    const s = stoppData(t.stopp[0]);
+    if (!s) return "";
+    const n = GANGE.minutter(s.x, s.y);
+    return n ? ` · starten ${n} min unna` : "";
+  };
+  rad.innerHTML = '<p class="t">Turer</p>' + TURER.map((t) => `<button type="button" data-tur="${t.id}"><b>${t.navn}</b><small>${t.om}${turGang(t)}</small></button>`).join("");
   panel2.querySelector(".kat").before(rad);
   rad.addEventListener("click", (e) => {
     const b = e.target.closest("[data-tur]");
@@ -6641,7 +6811,7 @@ if (panel2 && TURER.length) {
 }
 window.__tur = { start: start2, gaa, slutt, naa: () => tur && { id: tur.id, i } };
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/27_festival.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/27_festival.js
 import * as THREE26 from "three";
 import { mergeGeometries as mergeGeometries5 } from "three/addons/utils/BufferGeometryUtils.js";
 var ARR = DATA.arrangementer || [];
@@ -6667,8 +6837,8 @@ var aktiv = tving === "0" ? null : ARR.find((a) => a.id === tving) || (tving ? n
   return idag >= fra && idag <= d[1];
 }));
 var anim2 = null;
-if (aktiv) anim2 = bygg(aktiv);
-function bygg(a) {
+if (aktiv) anim2 = bygg2(aktiv);
+function bygg2(a) {
   const S2 = a.scene, g = new THREE26.Group();
   g.name = "festival-" + a.id;
   const M = { gulv: mat([40, 38, 42], false), stål: mat([70, 72, 78], false), høyttaler: mat([28, 28, 30], false), telt: mat([235, 232, 222], false) };
@@ -6790,7 +6960,7 @@ if (anim2) {
 window.__festival = () => anim2 ? { id: anim2.a.id, navn: anim2.a.navn, straler: anim2.straler.length } : null;
 window.__festivalDatoer = (aar) => ARR.map((a) => ({ id: a.id, d: (datoer(a, aar) || []).map((x) => x.toISOString()) }));
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/28_start.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/28_start.js
 var laster = document.getElementById("laster");
 if (laster) {
   const se = () => {
@@ -6802,7 +6972,7 @@ if (laster) {
   requestAnimationFrame(se);
 }
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/29_postkort.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/29_postkort.js
 var MND2 = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
 var knapp3 = document.createElement("button");
 knapp3.id = "postkort";
@@ -6870,21 +7040,58 @@ async function lag() {
 knapp3.addEventListener("click", lag);
 window.__postkort = lag;
 
-// ../../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-pag-1503-39a73cfc-bf1-tKocnC/tmpdz4xlk05/30_gjest.js
+// ../../../../private/var/folders/5b/9vgnl38d36762gj4j9wggc3h0000gn/T/paperclip-run-unassigned-9ed49010-af2-Ml3iwn/tmpsletsse3/30_gjest.js
+import * as maplibregl6 from "maplibre-gl";
 var P = (DATA.partnere || []).find((p) => p.id === Q0.get("gjest"));
 if (P) {
+  let hotellNaal = function() {
+    if (!bygg3) return;
+    const el = document.createElement("button");
+    el.type = "button";
+    el.className = "gjest-naal";
+    el.setAttribute("aria-label", `${P.navn} – åpner 2027`);
+    el.title = P.navn;
+    el.innerHTML = `<span class="hode"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3M7 11.5h.01"/></svg></span><span class="flagg"><b>${P.navn}</b><i>åpner 2027</i></span>`;
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (sted) velgSted(sted);
+      else {
+        const g = hus();
+        if (g) velgHus(g);
+      }
+    });
+    new maplibregl6.Marker({ element: el, anchor: "bottom" }).setLngLat(tilLngLat(cx, cy)).addTo(map);
+  };
   document.documentElement.style.setProperty("--gjest", P.farge || "#2b2420");
   document.documentElement.classList.add("gjest");
   const merke3 = document.createElement("div");
   merke3.id = "gjestemerke";
   merke3.textContent = P.navn;
   (document.getElementById("topp") || document.body).prepend(merke3);
+  const bygg3 = (DATA.bygg || []).find((b) => b.id === P.bygg_id);
   const hus = () => buildings.find((g) => g.userData.b && g.userData.b.id === P.bygg_id);
+  const sted = (DATA.steder && DATA.steder.steder || []).find((s) => s.bygg_id === P.bygg_id && s.kategori === "sove");
+  let cx = 0, cy = 0;
+  if (bygg3 && bygg3.p && bygg3.p.length) {
+    for (const [x, y] of bygg3.p) {
+      cx += x;
+      cy += y;
+    }
+    cx /= bygg3.p.length;
+    cy /= bygg3.p.length;
+  }
+  let satt = false;
   const vent = () => {
-    if (TILSTAND.introDone && hus()) setTimeout(() => velgHus(hus()), 400);
-    else requestAnimationFrame(vent);
+    if (!(TILSTAND.introDone && hus())) {
+      requestAnimationFrame(vent);
+      return;
+    }
+    if (satt) return;
+    satt = true;
+    hotellNaal();
+    if (bygg3 && !location.hash.includes("hus=")) setTimeout(() => glidKamera({ center: tilLngLat(cx, cy), zoom: Math.max(map.getZoom(), zoomFor(2)), offset: [0, 0] }, "hjem"), 400);
   };
-  if (P.bygg_id && !location.hash.includes("hus=")) requestAnimationFrame(vent);
+  requestAnimationFrame(vent);
 }
 window.__gjest = () => P ? { id: P.id, navn: P.navn } : null;
 

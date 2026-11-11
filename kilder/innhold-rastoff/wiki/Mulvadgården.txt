@@ -1,0 +1,38 @@
+# Mulvadgården
+# kilde: https://lokalhistoriewiki.no/Mulvadg%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Mulvadgården
+| bilde     = mulvadgaarden.JPG
+| dato      = 
+| bildetekst    = {{byline|Trond Svandal|2009}}
+| annetnavn = 
+| byggeår   = 1830-årene
+| eier1     = [[Andreas Martin Seip]]
+| eier2     = [[Hans Christian Mulvad]]
+| arkitekt  = ukjent
+| materiale = mur
+| endringer = 
+| formål    = bolig
+| adresse   = Kirkegaten 30
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Mulvadgården]]''', [[Kirkegaten (Fredrikstad)|Kirkegaten]] 30, ligger</onlyinclude> i [[tolvte kvartal i Gamlebyen|tolvte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]] og er oppført etter den store [[bybrannen i Fredrikstad 1830|bybrannen i 1830]] som ødela hele kvartalet. Gården ble oppført etter brannen av [[Andreas Martin Seip]], men den bærer navn etter konsul [[Hans Christian Mulvad]] som overtok gården i 1846.</onlyinclude> Mulvadgården er oppført i enkel empirestil med få dekorative detaljer og har et [[valmet tak|halvvalmet tak]]. Gården har visse trekk felles med [[Rosinggården]] som ligger tvers over gaten.
+
+Mulvadgården har hatt mange eiere. I mange år frem til 1942 ble det drevet meieri i gården. På midten av 1980-tallet hadde [[Fredrikstad kommunale musikkskole]] lokaler i gården. Idag (2008) holder restaurant Mulvadgaarden til i bygningen. 
+
+==Kilder==
+*Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', 1969.
+*Kaurel, Finn: ''Fredrikstad byleksikon''. Utg. Fredriksstad Blads forlag 1996. {{nb.no|NBN:no-nb_digibok_2011021408093}}.
+
+
+[[Kategori:Bygninger fra 1830-åra]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Tolvte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{artikkelkoord|59.20378|N|10.95413|Ø}}
+{{bm}}

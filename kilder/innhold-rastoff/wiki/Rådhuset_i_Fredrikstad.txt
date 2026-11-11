@@ -1,0 +1,46 @@
+# Rådhuset i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/R%C3%A5dhuset_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Rådhuset i Fredrikstad
+| bilde     = det nye radhus.jpg
+| dato      = 
+| byline    = 
+| annetnavn = Det nye rådhuset i Fredrikstad
+| byggeår   = [[1861]]-1864
+| eier1     = Fredrikstad kommune
+| arkitekt  = [[Emil Victor Langlet]]
+| materiale = mur
+| endringer = 
+| formål    = 
+| adresse   = Tøihusgaten 42
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>
+'''[[Rådhuset i Fredrikstad|Rådhuset]]''' eller Det nye rådhus, [[Tøihusgaten (Fredrikstad)|Tøihusgaten]] 42, ligger </onlyinclude>i [[Fjerde kvartal i Gamlebyen|fjerde kvartal]] i [[Gamlebyen i Fredrikstad]] <onlyinclude>med front mot [[Raadhusgaten (Fredrikstad)|Raadhusgaten]] og Tøihusgaten. Rådhuset ble bygget i [[1861]]-1864 og ble tegnet av den svenske arkitekten [[Emil Victor Langlet]], som også var arkitekten bak Stortinget. Bygningen er oppført i importert gul teglsten.</onlyinclude> Den var lite motstandsdyktig mot vær og vind. Særlig det karakteristiske tårnet ble slitt og sten begynte å falle ut. I 1870 vedtok man å rive det, men det ble reddet og reparert. Ny rød teglsten ble satt inn - det er grunnen til det «fargerike» utseende tårnet har i dag. Opprinnelig var det rettsal, arrest og politilokaler i bygningen. I dag benyttes de av Fredrikstad fengsel. Tårnet ble benyttet til tørking av brannslanger. I tillegg var det bystyresal i 2. etasje. Denne benyttes fremdelse av Fredrikstad bystyre. Salen er rikt dekorert, blant annet med Waldemar Dahls store maleri av Gamlebyen, kopier av to relieffmedaljonger av Bertel Thorvaldsen, en rikt dekorert himling og byster av borgermester Wilhelm Ramm og rådmann Håkon Karlsen. Dagens rådhus er det siste i en lang rekke i Fredrikstad. 
+
+==Rådhus i Fredrikstad==
+[[Bilde:Fredrikstad GamleRaadhus.JPG|thumb|left|150px|Det gamle rådhuset på Torvet]]Allerede kort tid etter grunnleggelsen i 1567 har man oppført en rådhusbygning i byen. De tidlige lå ved byens torv, det vil si det gamle torvet fra før festningen ble anlagt. Det lå syd for kirken, der [[Tøihuset i Fredrikstad|Tøihuset]] ligger i dag. Rådhuset, eller rådstuen som den ble kalt, tjente som sentrum for byens rettsutøvelse og her var byens arkiv. Det var også her borgermesteren og rådmennene som ledet byens administrasjon, holdt til. I 1745 kjøpte byen gården etter krigskommisær Lindholz som rådhus. Det lå helt sør i byen, øst for [[Kommandanthagen i Fredrikstad|kommandanthagen]] og Münsterhuset. Tøihusets søndre fløy ligger her i dag. Etter at det brant ned til grunnen i 1764 ble rådhuset flyttet til [[Kongens torv]]. [[Det gamle rådhus i Fredrikstad|Denne bygningen]], Kirkegaten 27, sto ferdig oppført i 1784. Her forble rådhuset her helt frem til 1864 da det nye sto klart. Etter det overtok [[Fredriksstad Sparebank]] gården, og den er også kjent som Sparebankgården.
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Tøihusgaten i Gamlebyen, fjerde kvartal - no-nb digifoto 20140509 00003 bldsa PK13065.jpg|Rådhuset til venstre i bildet 1915-1930.
+</gallery>
+
+==Kilder==
+*[[Martin Dehli|Dehli, Martin]]: ''[[Fredrikstad bys historie]]'', bd. 1 og 2, Fredrikstad 1964/1973
+*Gullord, Per: «Byens 'nye' rådhus», ''[[MindreAlv]]'' VIII, Fredrikstad 1999
+*''Fredrikstad byleksikon'', nettutgave
+{{artikkelkoord|59.2021|N|10.95331|Ø}}
+{{F1}}
+{{bm}}
+
+[[Kategori:Rådhus og kommunehus]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fjerde kvartal i Fredrikstad]]
+[[Kategori:Bygninger fra 1860-åra]]

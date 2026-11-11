@@ -1,0 +1,36 @@
+# Bramergården i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Bramerg%C3%A5rden_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Bramergården
+| bilde     = bramergaarden.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = ca. [[1831 eller 1832]]
+| eier1     = 
+| eier2     = 
+| arkitekt  = 
+| materiale = tømmer
+| endringer = 
+| formål    = bolig 
+| adresse   = Færgeportgaten 85
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Bramergården i Fredrikstad|Bramergården]]''', [[Færgeportgaten]] 85, ligger i [[Trettende kvartal i Gamlebyen|trettende kvartal]] i [[Gamlebyen i Fredrikstad|Gamlebyen]] i [[Fredrikstad]]. Bygningen er oppført etter [[Bybrannen i Fredrikstad 1830|bybrannen i 1830]] og er en to-etasjes tømmerbygning.</onlyinclude>
+Den har navn etter (???)
+
+== Kilder ==
+* Dahle, Erik: ''Bevaringsplan for festningsbyen Fredrikstad'', Fredrikstad 1969
+
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Trettende kvartal i Fredrikstad]]
+[[Kategori:Bygninger fra 1930-åra]]
+{{bm}}
+{{artikkelkoord|59.20376|N|10.95622|Ø}}

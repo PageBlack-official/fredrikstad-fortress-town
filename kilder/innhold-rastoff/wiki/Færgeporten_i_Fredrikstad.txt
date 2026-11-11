@@ -1,0 +1,43 @@
+# Færgeporten i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/F%C3%A6rgeporten_i_Fredrikstad
+# lest: 2026-11-10
+
+<onlyinclude>{{thumb|Færgeporten dag.jpg|Færgeporten.|Trond Svandal|2008}}</onlyinclude>
+{{thumb|Færgeporten sluttsten.jpg|Færgeportens sluttsten.|Trond Svandal|2008}}
+<onlyinclude>'''[[Færgeporten i Fredrikstad|Færgeporten]]''' ble oppført i gråsten og [[klinkermur]] i [[1727]] og er den nordligste av [[Fredrikstad festning]]s tre porter mot [[Glomma]]. Den er den fjerde i rekken av porter på dette stedet og passerer gjennom [[Nordre redang i Fredrikstad|Nordre redang]] ved enden av [[Færgeportgaten (Fredrikstad)|Færgeportgaten]]. Den opprinnelige porten var en treport i et [[palisadeverk]]. I 1675 ble den bygget om til en tømret port i gjennom vollen, og i 1699 ble den tredje porten ble satt opp i murverk på et tømmerfundament. </onlyinclude>
+
+==Historikk==
+I 1675 ble Færgeporten bygget om til en tømret port i gjennom vollen, da denne ble trukket langt sydover under arbeidene på [[Gyldenløves bastion]]. 21 år senere, i 1696, var denne porten råtten og moden for utskiftning. Siden den likevel skulle skiftes ut, ville forsvaret fylle den igjen og flytte den slik at den kom til å ligge i [[Voldportgaten (Fredrikstad)|Voldportgaten]]s forlengelse. Dette fordi den befant seg for nær [[Nordre rendangs batteri]], noe som igjen førte til at [[Mellomporten i Fredrikstad|Mellomporten]] ville bli overfødig og kunne fjernes. Etter forsvarets mening var to strandporter nok. Dette forslaget ble [[approbasjon|approbert]], men borgerskapet aksepterte dette ikke og sendte en [[supplikasjon]] (klage) til kongen. Klagen ble hørt, og porten forble på sin gamle plass.
+
+Den råtne porten måtte skiftes ut, og i 1699 ble den tredje porten murt på et tømmerfundament. Den ytre og indre portalen ble utført i hollandsk mursten, mens sluttstenene og andre forskjønnende elementer ble utført i blåsten. Portens sider og innvendige vegger ble bygget i gråsten eller kampesten. I 1700 fikk Færgeporten et enkelt tretak. Denne porten forble frem til 1727, da den fjerde porten ble oppført.
+
+Murmester Düring fikk da i oppdrag å bygge to porter i vollen mot elven. Sammen med Færgeporten ble også Mellomporten bygget på nytt, begge etter samme tegning. Materialene var gråsten og klinkermur, med blåsten fra [[Halden kommune|Frederikshald]] til portenes sirat. Blåstenene ble hugget til med [[Frederik IV|kong Frederik IVs]] siffer og krone av mesteren selv. Muren porten ble satt inn i var en frittstående gråsteinsmur. Året etter fikk porten tak tekket med rød tegl. 
+
+Muren mellom Færgeporten og Mellomporten ble revet og bygget opp igjen på en fundamentflåte på nedrammede peler i tidsrommet 1735 -37. Etter gjenoppbyggingen var den fem [[alen]] høy og fem alen bred.
+
+Hvorvidt også Færgeporten ble rammet av [[bybrannen i Fredrikstad 1764|bybrannen]] som i 1764 la byen i aske er ikke kjent. Det som er kjent, er at Mellomportens treverk ble ødelagt, og det antas at Færgeportens nåværende utsmykning skriver seg fra perioden etter brannen siden disse ligner hverandre.
+
+Porten er også kjent som ''Fergeporten'' eller ''Ferjeporten''.
+
+==Litteratur== 
+*[http://www.verneplaner.no/?f=fredrikstad&id=104704&a=6 Verneplan for Fredrikstad festning]
+
+== Galleri ==
+<gallery>
+Fil:Balaklava - no-nb digifoto 20140328 00172 bldsa PK12918.jpg|1910-1915
+Fil:Fredrikstad, Gamlebyen fra Cicignon - no-nb digifoto 20140523 00081 bldsa PK13183.jpg|Sett fra Cicignon 1910-1930
+Fil:Fredrikstad, Færgeporten i Gamlebyen - no-nb digifoto 20140425 00024 bldsa PK13048.jpg|1920-1930
+Fil:Fredrikstad, Færgeportgaten i Gamlebyen - no-nb digifoto 20140523 00076 bldsa PK13178.jpg|1920-1930
+
+</gallery>
+
+{{Fredrikstad festning}}
+
+[[Kategori:Porter]]
+[[Kategori:Militære bygninger]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Fredrikstad kommune]]
+{{artikkelkoord|59.20458|N|10.9532|Ø}}
+{{F1}}
+{{bm}}

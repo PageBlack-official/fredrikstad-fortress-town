@@ -1,0 +1,36 @@
+# Binggården
+# kilde: https://lokalhistoriewiki.no/Bingg%C3%A5rden
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Binggården
+| bilde     = binggaarden.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1830-årene
+| eier1     = Magnus Christian Fritzner
+| eier2     = Just Johan Bing
+| arkitekt  = ukjent
+| materiale = tømmer 
+| endringer = 
+| formål    = bolig
+| adresse   = Kirkegaten 31
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}<onlyinclude>'''[[Binggården]]''', Kirkegaten 31, ligger</onlyinclude> i [[ellevte kvartal i Gamlebyen|ellevte kvartal]]<onlyinclude> i [[Gamlebyen i Fredrikstad]] og ble trolig oppført for oberstløytnant Magnus Christian Fritzner som solgte gården i 1845 til [[Leksikon:Byfogd|byfogd]] [[Just Johan Bing]]. Han var eier fra 1835-1859 og gården bærer hans navn. Den er i oppført i tømmer i to etasjer og i en enkel empirestil.</onlyinclude>
+
+Etter en kort periode i en Fredrik Jensens eie, overtok i 1859 premierløytnant [[Ole Wilhelm Ring]] gården, og den forble i Ring-familiens eie til 1952. Gården kalles også for ''Ring-gården'' etter familien. Blant andre ble malerinnen [[Helga Ring Reusch]] født her i 1865.
+
+==Kilde==
+*[http://www.f-b.no/Byleksikon/ Fredrikstad byleksikon]
+*Dahle, Erik: Bevaringsplan for festningsbyen Fredrikstad, 1969
+
+[[Kategori:Bygårder]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Ellevte kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+{{artikkelkoord|59.203877|N|10.953626|Ø}}
+{{bm}}

@@ -1,0 +1,47 @@
+# Det gamle rådhus i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Det_gamle_r%C3%A5dhus_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Det gamle rådhus
+| bilde     = Fredrikstad GamleRaadhus.JPG
+| dato      = 
+| byline    = 
+| annetnavn = Sparebankgården
+| byggeår   = 1784
+| eier1     = [[Fredrikstad kommune|Fredrikstad by]]
+| eier2     = Fredriksstad Sparebank (og arvtagende banker)
+| eier3     = Zwart Arbeid
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = byens rådhus, senere bank og kontorer
+| adresse   = Kirkegaten 27
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Det gamle rådhus i Fredrikstad|Det gamle rådhus]]''', [[Kirkegaten (Fredrikstad)|Kirkegaten]] 27, ligger ved [[Kongens torv i Fredrikstad|Kongens torv]] </onlyinclude>i [[åttende kvartal i Gamlebyen|åttende kvartal]] <onlyinclude>i [[Gamlebyen i Fredrikstad]]. Det ble oppført i etter [[bybrannen i Fredrikstad 1764|bybrannen i 1764]] og stod ferdig i 1784. Bygningen ble skadet i [[bybrannen i Fredrikstad 1830|brannen i 1830]], men gjenoppbygd. Den fungerte som byens rådhus frem til 1864, da [[Rådhuset i Fredrikstad|Det nye rådhus]] i [[fjerde kvartal i Gamlebyen|fjerde kvartal]] stod ferdig.</onlyinclude>
+
+Det gamle rådhus har to etasjer oppført, første etasjes yttervegger er granittmur og andres i pusset teglsten. Den opprinnelige bygningen fra 1784 hadde inngang til annen etasje via et trapp fra torvet. Den ble ikke gjenoppbygd etter brannen i 1830. I første etasje er det fortsatt to arrestrom mot Kirkegaten. Her satt blant andre [[Hans Nielsen Hauge]] arrestert. Rådhuset på torvet erstattet rådhuset som brant ned i 1764 og som lå helt sør i byen (rett øst for [[Münsterhuset]]. Kommunen solgte gården i 1864 og den ble da kjøpt av [[Fredriksstad Sparebank]]. Banken hadde en filial her helt frem til 1990-årene. Idag (2008) eies gården av mediebedriften Zwart Arbeid som har kontorer her. I bakgården drives kaféen Zwart Kaffe i sommerhalvåret.
+
+== Galleri ==
+<gallery>
+Fil:Fredrikstad, Torvet i Gamlebyen, vestlige del - no-nb digifoto 20150206 00099 NB MIT FNR 19083.jpg|Bygningen (helt til høyre). {{byline|Mittet / Nasjonalbiblioteket|1959}}
+Fil:Fredrikstad, Torvet i Gamlebyen.JPG|Rådhuset en face. {{byline|Chris Nyborg|2006}}
+</gallery>
+
+== Kilder ==
+*[http://www.f-b.no/byleksikon Fredrikstad byleksikon]
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bd. 2, 1964
+
+{{DEFAULTSORT:Rådhuset i Fredrikstad (det gamle)}}
+{{F1}}
+{{artikkelkoord|59.20343|N|10.95301|Ø}}
+{{bm}}
+[[Kategori:Rådhus og kommunehus]]
+[[Kategori:Fredrikstad kommune]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Åttende kvartal i Fredrikstad]]
+[[Kategori:Bygninger fra 1780-åra]]

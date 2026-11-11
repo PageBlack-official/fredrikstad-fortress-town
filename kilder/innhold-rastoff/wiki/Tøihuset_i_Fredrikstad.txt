@@ -1,0 +1,62 @@
+# Tøihuset i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/T%C3%B8ihuset_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Tøihuset 
+| bilde     = Toihus port.JPG
+| dato      = 
+| byline    = Portalen til Tøihuset sett fra Kirkegaten
+| annetnavn = 
+| byggeår   = [[1773]]-1775
+| eier1     = [[Fredrikstad festning]]
+| arkitekt  = 
+| materiale = mur
+| endringer = 
+| formål    = lager for militært materiell
+| adresse   = Tøihusgaten 41
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = I sin tid landets største bygning
+|}}
+
+<onlyinclude><includeonly>{{thumb|Toihus port.JPG|Portalen til Tøihuset sett fra Kirkegaten.}}</includeonly>
+'''[[Tøihuset i Fredrikstad|Tøihuset]]''', [[Tøihusgaten]] 41 i [[Gamlebyen i Fredrikstad]], er oppført som lagerbygning for militært materiell. Det ble oppført i årene 1773-1775. Tøihuset er på rundt 4000 kvadratmeter og var i sin tid landets største bygning. Det ble opprinnelig oppført i bordkledd bindingsverk, men ble senere forblendet med tegl, har [[valmet tak]] og noen arker. Bygningen ligger rundt en stor indre gårdsplass og en portal leder fra Kirkegaten og inn. Porten er i marmor og prydet med [[Christian VII]]s monogram (CR) og årstallet 1775. Tøihuset dekker store deler av to kvartaler og ble oppført på tomtene etter blant annet den gamle [[kommandantgården i Fredrikstad|kommandantgården]], [[Gamlebyen skole i Fredrikstad|byens skole]] og det gamle [[Rådhuset i Fredrikstad|rådhuset]]. Alle disse bygningene ble ødelagt i [[bybrannen i Fredrikstad 1764|bybrannen i 1764]], og Militæretaten sikret seg tomtene da det ansås være nødvendig med et nytt lagerbygg tilknyttet festningen.</onlyinclude> 
+
+Foruten å være militært lager for festningen tjente Tøihuset også som depot for flere norske regimenter som i krig skulle forsynes fra Fredrikstad festning. Ved mobilisering skulle disse regimentene hente ut sitt materiell fra Tøihuset. Det kunne være alt fra brød- og høyvogner, til mindre avdelingsutstyr som telt og kokekar. Etter felttoget i 1788, den såkalte [[Tyttebærkrigen]] vet vi at mye materiell ble deponert her, og mye av det ble brukt igjen under [[krigen i 1808]].
+
+== Bygningshistorie ==
+{{thumb|kirke og tøihus.jpg|Tøihuset til høyre en gang rundt 1870. Her ser vi tydelig arkene og mansardtaket som ble endret i 1873. [[Arne Stangebyes samlinger|Stangebyesamlinga]], Fredrikstad museum.}}
+Bygningen opprinnelig oppført i panelt bindingsverk. Det hadde et stort [[mansardtak]] med arker, men disse ble fjernet og taket lagt om til valmtak i 1873.<ref>RA, Fredrikstad festnings ingeniørdetasjement, pk. 27. Arbeidsrapporter, kvartalsarbeider 1872-: Extraordinært Project 1873.</ref>  Tøihuset skulle vært av murverk allerede fra oppførelsen, men av økonomiske årsaker ble bare sokkelen og portinnfatningene murt. Ikke før 1803 tok murforblendingen av Tøihuset til og stod ferdig i 1809. Tøihuset ble oppført på tomten til den gamle kommandantgården, som gikk med i bybrannen i 1764. Bygningen strekker seg over to kvartaler og ble bygget over det som tidligere hadde vært byens opprinnelige torg syd for kirken mellom Kirkegaten og [[Raadhusgaten (Fredrikstad)|Raadhusgaten]]. 
+Planene for et stort militært kompleks syd i byen skjøt fart etter bybrannen, og mange bygninger skulle oppføres. Kun Tøihuset og [[Bakeribygningen i Fredrikstad|bakeriet]] ble oppført. Ny [[Kommandantgården|kommandantgård]] og provianthus syd for hagen ble aldri oppført. 
+
+== Nåværende bruk ==
+Forsvaret flyttet ut av Tøihuset i 2002, og andre leietakere har tatt over. [[Fredrikstad Museum]] har det største arealet med fløyen ut mot Tøihusgaten. I tillegg har [[Fredrikstad husflidslag]], Fredrikstad militærhistoriske museum, Fredrikstad kunstforening, Østfold Teater og [[Studium Actoris]] lokaler her. De gamle offisers- og mannskapsmessene leies ut som selskapslokaler.
+
+== Galleri ==
+<gallery>
+Fil:Toihus nord.JPG|Tøihusets fasade mot nord.
+Fil:toihus s_v.JPG|Tøihuset og Tøihusplassen sett fra Søndre kurtine.
+</gallery>
+
+==Referanser==
+<references />
+
+== Kilder ==
+*[http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=95187&a=6 ''Verneplan. Fredrikstad festning'', utg. Forsvarsbygg, Nasjonale festningsverk, Oslo 2006]
+*[[Dehli, Martin]]: ''Fredrikstad bys historie'', bind 1 og 2, Fredrikstad 1960/1964
+* [[Clare Sewell Widerberg (1868–1957)|Widerberg, C.S.]]: «Festningen» i ''Fredrikstad. Gamlebyen og festningen'', utg. Riksantikvariatet, Oslo 1934.
+
+{{Fredrikstad festning}}
+
+[[Kategori:Bygninger fra 1770-åra]]
+[[Kategori:Første kvartal i Fredrikstad]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Fredrikstad kommune]]
+
+{{artikkelkoord|59.20168|N|10.95196|Ø}}
+{{F2}}
+{{bm}}
+{{utvalgt artikkel}}

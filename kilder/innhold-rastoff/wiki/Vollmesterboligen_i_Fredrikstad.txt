@@ -1,0 +1,41 @@
+# Vollmesterboligen i Fredrikstad
+# kilde: https://lokalhistoriewiki.no/Vollmesterboligen_i_Fredrikstad
+# lest: 2026-11-10
+
+{{Infoboks bygning
+| husnavn   = Vollmesterboligen
+| bilde     = vollmesterbolig.JPG
+| dato      = 
+| byline    = 
+| annetnavn = 
+| byggeår   = 1869
+| eier1     = [[Fredrikstad festning]]
+| eier2     = 
+| eier3     = 
+| arkitekt  = 
+| materiale = Teglstein
+| endringer = 
+| formål    = Bolig for vollmesteren
+| adresse   = [[Voldgaten (Fredrikstad)|Voldgaten]] 97
+| by        = Gamle Fredrikstad
+| kommune   = Fredrikstad
+| fylke     = Østfold
+| diverse   = 
+|}}
+<onlyinclude>'''[[Vollmesterboligen i Fredrikstad|Vollmesterboligen ]]''' i [[Gamlebyen i Fredrikstad]] ble oppført på [[Prins Fredriks bastion]] i 1869 som bolig for festningens vollmester. Den har i 2016 adresse [[Voldgaten (Fredrikstad)|Voldgaten]] 97. På bastionen lå tidligere Materialgården, et bygningskompleks bestående av en toetasjers murbygning mot Voldgaten, en toetasjers sidefløy i vinkel mot nord, en fløy med staller og fjøs mot sør og dessuten lagerbygninger. Rett sør for hovedbygningen mot gaten lå et magasinhus eller materialstall i tegl. Alle disse bygningene brant ned i 1868. På restene av magasinhuset mot gaten ble Vollmesterboligen reist i årene frem mot 1869. 
+
+I Vollmesterboligen ble det innredet bolig for vollmesteren og snekker- og malerverksted. Bygningen ble i mange år kalt «Materialgårdens verkstedbygning», ble senere brukt kun som bolig før den i 1980-årene ble istandsatt til kontorer for [[Artilleriregiment nr 1]]. Bygningen brukes i dag som kontorer for Fredrikstad kommunes Park- og Idrettsavdeling.</onlyinclude>
+
+== Kilde ==
+* [http://www.verneplaner.no/?f=fredrikstad&k=9.3&id=96806&a=6 ''Verneplan. Fredrikstad festning'', 2006]
+
+
+
+[[Kategori:Bygninger fra 1860-åra]]
+[[Kategori:Militære bygninger]]
+[[Kategori:Fredrikstad festning]]
+[[Kategori:Gamlebyen i Fredrikstad]]
+[[Kategori:Fredrikstad kommune]]
+
+{{artikkelkoord|59.202043|N|10.955152|E}}
+{{bm}}
