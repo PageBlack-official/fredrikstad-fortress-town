@@ -1,0 +1,177 @@
+start 2026-11-10 08:40:40
+kilde=b56a916
+bygd enkel -> /Users/vegarbakken/sot-maskin/gate/ut/enkel/index.html 3792 kB versjon 34
+--- render 08:40:42 ---
+OK bnr-13415889-0  bakke -0.29 m  5 hus i bildet  3375 ms
+OK bnr-13415889-3  bakke -1.30 m  2 hus i bildet  2958 ms
+OK bnr-13416362-0  bakke -1.30 m  415 hus i bildet  2864 ms
+OK bnr-13416419-3  bakke -1.25 m  7 hus i bildet  2994 ms
+OK bnr-193867480-0  bakke -4.49 m  82 hus i bildet  3257 ms
+OK bnr-193867626-2  bakke 0.46 m  119 hus i bildet  3564 ms
+OK bnr-193867626-3  bakke 0.40 m  98 hus i bildet  3876 ms
+OK bnr-193867634-2  bakke 0.01 m  44 hus i bildet  4381 ms
+OK bnr-193867723-1  bakke 0.05 m  113 hus i bildet  3304 ms
+OK bnr-193867804-4  bakke 1.21 m  140 hus i bildet  4622 ms
+OK bnr-193867820-3  bakke 0.81 m  143 hus i bildet  3994 ms
+OK bnr-193867855-4  bakke 0.21 m  164 hus i bildet  3339 ms
+OK bnr-193867855-5  bakke 0.23 m  225 hus i bildet  3257 ms
+OK bnr-193867898-2  bakke 0.21 m  241 hus i bildet  3381 ms
+OK bnr-193867901-1  bakke 0.26 m  239 hus i bildet  3225 ms
+OK bnr-193867952-6  bakke 1.39 m  255 hus i bildet  3458 ms
+OK bnr-193868088-1  bakke 0.95 m  194 hus i bildet  3674 ms
+OK bnr-193868576-0  bakke 0.89 m  207 hus i bildet  3452 ms
+OK bnr-193868576-3  bakke 1.04 m  130 hus i bildet  3260 ms
+OK bnr-193971288-3  bakke 0.76 m  139 hus i bildet  3296 ms
+OK bnr-193971946-0  bakke 0.18 m  158 hus i bildet  3153 ms
+OK bnr-193971954-3  bakke -0.03 m  46 hus i bildet  3371 ms
+OK bnr-193972276-3  bakke -1.02 m  12 hus i bildet  3636 ms
+OK bnr-193972292-2  bakke 1.08 m  28 hus i bildet  3449 ms
+OK bnr-193972306-4  bakke 1.01 m  192 hus i bildet  3061 ms
+OK bnr-194006187-1  bakke 0.15 m  105 hus i bildet  3475 ms
+OK bnr-24218023-0  bakke -1.60 m  220 hus i bildet  3707 ms
+OK bnr-6251331-1  bakke 0.91 m  183 hus i bildet  3239 ms
+OK bnr-6276016-4  bakke -0.65 m  45 hus i bildet  3567 ms
+OK bnr-6276016-5  bakke -0.62 m  84 hus i bildet  3478 ms
+OK bnr-6276504-5  bakke -1.93 m  381 hus i bildet  3186 ms
+OK bnr-6276512-1  bakke -1.76 m  355 hus i bildet  3539 ms
+OK bnr-6276822-0  bakke -1.01 m  40 hus i bildet  3710 ms
+bnr-193867634: 1 rader -> rapport/ferdig/bnr-193867634.jpg
+bnr-13415889: 2 rader -> rapport/ferdig/bnr-13415889.jpg
+bnr-13416362: 1 rader -> rapport/ferdig/bnr-13416362.jpg
+bnr-193867480: 1 rader -> rapport/ferdig/bnr-193867480.jpg
+bnr-193867626: 2 rader -> rapport/ferdig/bnr-193867626.jpg
+bnr-6276504: 1 rader -> rapport/ferdig/bnr-6276504.jpg
+bnr-6276512: 1 rader -> rapport/ferdig/bnr-6276512.jpg
+bnr-6276016: 2 rader -> rapport/ferdig/bnr-6276016.jpg
+bnr-6276822: 1 rader -> rapport/ferdig/bnr-6276822.jpg
+bnr-193971954: 1 rader -> rapport/ferdig/bnr-193971954.jpg
+bnr-193867855: 2 rader -> rapport/ferdig/bnr-193867855.jpg
+bnr-193868088: 1 rader -> rapport/ferdig/bnr-193868088.jpg
+bnr-193972276: 1 rader -> rapport/ferdig/bnr-193972276.jpg
+bnr-193972292: 1 rader -> rapport/ferdig/bnr-193972292.jpg
+bnr-24218023: 1 rader -> rapport/ferdig/bnr-24218023.jpg
+bnr-193867901: 1 rader -> rapport/ferdig/bnr-193867901.jpg
+bnr-6251331: 1 rader -> rapport/ferdig/bnr-6251331.jpg
+bnr-193971946: 1 rader -> rapport/ferdig/bnr-193971946.jpg
+bnr-193867952: 1 rader -> rapport/ferdig/bnr-193867952.jpg
+bnr-193867898: 1 rader -> rapport/ferdig/bnr-193867898.jpg
+bnr-193867820: 1 rader -> rapport/ferdig/bnr-193867820.jpg
+bnr-193867804: 1 rader -> rapport/ferdig/bnr-193867804.jpg
+bnr-193867723: 1 rader -> rapport/ferdig/bnr-193867723.jpg
+bnr-194006187: 1 rader -> rapport/ferdig/bnr-194006187.jpg
+bnr-193972306: 1 rader -> rapport/ferdig/bnr-193972306.jpg
+bnr-193971288: 1 rader -> rapport/ferdig/bnr-193971288.jpg
+bnr-13416419: 1 rader -> rapport/ferdig/bnr-13416419.jpg
+bnr-193868576: 2 rader -> rapport/ferdig/bnr-193868576.jpg
+bnr-13416362: 1 rader -> rapport/ferdig/bnr-13416362.jpg
+skrev rapport/ferdig/sot-dom-runde3.jpg (3160x2250, 28 hus)
+kopiert til Dropbox: /Users/vegarbakken/Page Black Dropbox/Page Black Business/20 Paperclip/outputs/teknisk-veikart/status
+--- regler 08:42:55 ---
+OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 3 skjult med grunn)
+OK   02_hoyder_maalt  (200 hus står med Kartverkets målte høyde; 0 avviker; 144 hus uten sikker måling beholder tegning/OSM)
+FEIL 03_fasader_fra_tegning  (141 hus med fasade fra tegning, 202 antatt (må kvalitetssikres kvartal for kvartal))
+OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
+OK   05_kvalitet_bare_kamera  (settSkala(KVAL.skalaStille) uavhengig av bevegelse)
+FEIL 06_bygger_og_laster  (- bygd enkel -> /Users/vegarbakken/sot-maskin/gate/ut/enkel/index.html 3789 kB versjon 34)
+FEIL 07_ingen_feil_i_bruk  (- )
+OK   08_lint  (- ingen feil)
+OK   09_publisert  (- forsiden: versjon 34 (ønsket 34), bygd før kilde-merket (05.11))
+OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19311 px, trinn 2: 18775 px)
+OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)
+OK   12_kontaktskygge  (- 3.9 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
+OK   13_deler_staar_paa_topp  (- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok)
+OK   14_id  (498 bygg, 429 med bygningsnummer fra Matrikkelen (269 av 333 i Gamlebyen), 1637 id-er i registeret)
+OK   15_flater  (0 avvik, 5 advarsler; 19 plener innenfor ortofotoet målt)
+OK   16_vann  (99.24% av kartets vann er vann i ortofotoet (krav 98.5%), 99.41% av ortofotoets vann er dekket (krav 98.5%); før retting (OSM): 96.94% og 98.89%)
+OK   17_vinduer_rytme  (118 antatte hus og Street View-hus, 1461 vinduer, 65 dører; 0 brudd)
+OK   18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
+OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 11 bilder – ingen ny tegning)
+OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 8 unntak (fredet))
+OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 299 modellhus)
+FEIL 22_flyt  (- testen krasjet: ting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not stable',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    - waiting for element to be visible, enabled and stable'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.20.0)
+OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
+OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
+OK   31_overflater  (gruppe 95.9% (krav 95 %), belagt type 98.0% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
+OK   32_gater  (122 av 126 målte veier (Gamlebyen og kommunekartets dekning utenfor vollene) har riktig bredde og kant (96.8%, krav 95 %); 164 kan ikke måles (åpen plass, trær, utenfor kildene))
+OK   33_gjerder  (presisjon 95.3% av 163 m funnet i fotoet (krav 95 %), dekning 99.7% av 195 m sett langs kandidatlinjene (krav 95 %); 0 av 93 stykker krysser gateareal eller hus (krav 0))
+OK   34_traer  (1455 av 1458 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.8%, krav 95 %); 0 i vann, 0 i hus; 1592 trær i alt = 2343 fra 23.10 − 1312 tatt ut + 561 nye fra DOM-toppene, alle med grunn (regnskapet skal gå opp))
+OK   35_mobil_sluttbilde  (ok   asimut 193)
+OK   36_avviksliste  (0 åpne av 16)
+OK   37_egne_fasader  (1 hus med eget fasadeverktøy)
+OK   38_porter_og_murer_fri  (0 feil; 23 murer, 5 portbygg, 32 småbygg under 15 m²)
+OK   39_kjeden_stabil  (0 objekter endres av en ny kjøring av kjeden)
+OK   40_parkering_paa_brostein  (0 feil; 5 parkeringsflater tegnes)
+OK   41_sokkel_skjuler_ikke  (0 feil)
+OK   42_bakkelag  (0 feil; 12 bakkeutseender med lag)
+OK   43_streetview_kobling  (0 feil)
+OK   44_ingen_blanke_vegger  (0 hus med blanke frie vegger uten kilde)
+OK   45_brostein_paa_brostein  (0 feil)
+OK   46_ingen_papirflekk  (- asimut 193: 0.00 % papirfarget i midtfeltet (krav under 1 %; flekken ga 8 %))
+OK   47_steder  (- alle steder har id, kategori, plass, kilde og gyldig bygg)
+OK   48_vinduer_ikke_oppaa_hverandre  (0 overlapp over 5 % i 5040 vinduer (292 bygg))
+Kilde: 38335e2 versjon 34 kjørt 2026-11-10 09:21
+06/07 rødt -> omkjøring
+OK   01_bygg_finnes  (0 bygg med vegetasjon under seg som ikke er skjult; 3 skjult med grunn)
+OK   02_hoyder_maalt  (200 hus står med Kartverkets målte høyde; 0 avviker; 144 hus uten sikker måling beholder tegning/OSM)
+FEIL 03_fasader_fra_tegning  (141 hus med fasade fra tegning, 202 antatt (må kvalitetssikres kvartal for kvartal))
+OK   04_vinduer_ikke_i_hjorner  (0 vinduer for nær et hjørne)
+OK   05_kvalitet_bare_kamera  (settSkala(KVAL.skalaStille) uavhengig av bevegelse)
+OK   06_bygger_og_laster  (- bygd enkel -> /Users/vegarbakken/sot-maskin/gate/ut/enkel/index.html 3792 kB versjon 34)
+OK   07_ingen_feil_i_bruk  (- intro: underveis az -2.93 zoom 1.31 → ferdig az -2.79 zoom 1.00 intro false)
+OK   08_lint  (- ingen feil)
+OK   09_publisert  (- forsiden: versjon 34 (ønsket 34), bygd før kilde-merket (05.11))
+OK   10_mobiltrinn_tegner_likt  (- kronegrønt trinn 0: 19311 px, trinn 2: 18775 px)
+OK   11_kamera_glir  (- alle animerte flytt bruker glid/glidUt)
+OK   12_kontaktskygge  (- 3.8 % av Torvet-bildet er mørkere med kontaktskygge enn uten (krav 0,5–12 %))
+OK   13_deler_staar_paa_topp  (- bygg 230 (Det nye rådhus) del 0: h 20.0, målt topp 20.0, p90 i delen 20.0, kropp p50 10.6 → ok)
+OK   14_id  (498 bygg, 429 med bygningsnummer fra Matrikkelen (269 av 333 i Gamlebyen), 1637 id-er i registeret)
+OK   15_flater  (0 avvik, 5 advarsler; 19 plener innenfor ortofotoet målt)
+OK   16_vann  (99.24% av kartets vann er vann i ortofotoet (krav 98.5%), 99.41% av ortofotoets vann er dekket (krav 98.5%); før retting (OSM): 96.94% og 98.89%)
+OK   17_vinduer_rytme  (118 antatte hus og Street View-hus, 1461 vinduer, 65 dører; 0 brudd)
+OK   18_brygger  (38 av 38 brygger i ortofotoet finnes i kartet (100%, krav 95%); 57 brygger tegnet)
+OK   19_skyggekart_stabilt  (- zoom1.2: R 489 m, bilde 296 m, dekning 1.65; i ro 5 bilder, dra 11 bilder – ingen ny tegning)
+OK   20_grunnmur_fkb  (281 kommunehus i Gamlebyen over 6 m²: 0 uten modellhus med IoU >= 0,7; 0 modellhus dekker flere kommunehus; 8 unntak (fredet))
+OK   21_register  (296 kommunehus i Gamlebyen (281 med modellhus), 245 bygningsnumre, 135 adresser (135 med hus, 135 med kort), 299 modellhus)
+OK   22_flyt  (- ok   klikk på hus, kameraet glir inn: 912 ms, topp 55.8 px/bilde, hopp 0, rykk 0.23 (<= 0.45), bråstopp 0 (<= 0,15))
+OK   23_parkering  (56 plasser fra kommunens lag, 25 med målt flate, 31 med grunn; antall kjent for 19 (411 plasser), ukjent for 37)
+OK   24_statue  (Frederik II (Wilhelm Rasmussen (1879–1965), 1917-09-12 (byens 350-årsjubileum)): 4.60 m høy, ser mot 291°, 0.0 m fra ortofotomålingen, +0.0° fra gatenettet)
+OK   31_overflater  (gruppe 95.9% (krav 95 %), belagt type 98.0% (krav 95 %), prøvepunkter 96% av 24 (krav 95 %), dekning 100.00% (krav 99 %))
+OK   32_gater  (122 av 126 målte veier (Gamlebyen og kommunekartets dekning utenfor vollene) har riktig bredde og kant (96.8%, krav 95 %); 164 kan ikke måles (åpen plass, trær, utenfor kildene))
+OK   33_gjerder  (presisjon 95.3% av 163 m funnet i fotoet (krav 95 %), dekning 99.7% av 195 m sett langs kandidatlinjene (krav 95 %); 0 av 93 stykker krysser gateareal eller hus (krav 0))
+OK   34_traer  (1455 av 1458 trær i rammen rundt Gamlebyen (DOM-dekningen) står på vegetasjon i DOM−DTM (99.8%, krav 95 %); 0 i vann, 0 i hus; 1592 trær i alt = 2343 fra 23.10 − 1312 tatt ut + 561 nye fra DOM-toppene, alle med grunn (regnskapet skal gå opp))
+OK   35_mobil_sluttbilde  (ok   asimut 193)
+OK   36_avviksliste  (0 åpne av 16)
+OK   37_egne_fasader  (1 hus med eget fasadeverktøy)
+OK   38_porter_og_murer_fri  (0 feil; 23 murer, 5 portbygg, 32 småbygg under 15 m²)
+OK   39_kjeden_stabil  (0 objekter endres av en ny kjøring av kjeden)
+OK   40_parkering_paa_brostein  (0 feil; 5 parkeringsflater tegnes)
+OK   41_sokkel_skjuler_ikke  (0 feil)
+OK   42_bakkelag  (0 feil; 12 bakkeutseender med lag)
+OK   43_streetview_kobling  (0 feil)
+OK   44_ingen_blanke_vegger  (0 hus med blanke frie vegger uten kilde)
+OK   45_brostein_paa_brostein  (0 feil)
+OK   46_ingen_papirflekk  (- asimut 193: 0.00 % papirfarget i midtfeltet (krav under 1 %; flekken ga 8 %))
+OK   47_steder  (- alle steder har id, kategori, plass, kilde og gyldig bygg)
+OK   48_vinduer_ikke_oppaa_hverandre  (0 overlapp over 5 % i 5040 vinduer (292 bygg))
+Kilde: 38335e2 versjon 34 kjørt 2026-11-10 09:54
+røde regler utenom 03/09: []
+--- publiser 09:54:59 ---
+røde regler går ut (prove):
+- FEIL 03_fasader_fra_tegning  (141 hus med fasade fra tegning, 202 antatt (må kvalitetssikres kvartal for kvartal))
+Preparing worktree (detached HEAD 38335e2)
+Updating files:  19% (369/1898)Updating files:  20% (380/1898)Updating files:  21% (399/1898)Updating files:  22% (418/1898)Updating files:  23% (437/1898)Updating files:  24% (456/1898)Updating files:  25% (475/1898)Updating files:  26% (494/1898)Updating files:  27% (513/1898)Updating files:  27% (524/1898)Updating files:  28% (532/1898)Updating files:  29% (551/1898)Updating files:  30% (570/1898)Updating files:  31% (589/1898)Updating files:  32% (608/1898)Updating files:  33% (627/1898)Updating files:  34% (646/1898)Updating files:  35% (665/1898)Updating files:  36% (684/1898)Updating files:  37% (703/1898)Updating files:  38% (722/1898)Updating files:  39% (741/1898)Updating files:  40% (760/1898)Updating files:  41% (779/1898)Updating files:  42% (798/1898)Updating files:  43% (817/1898)Updating files:  44% (836/1898)Updating files:  45% (855/1898)Updating files:  46% (874/1898)Updating files:  47% (893/1898)Updating files:  48% (912/1898)Updating files:  49% (931/1898)Updating files:  50% (949/1898)Updating files:  51% (968/1898)Updating files:  52% (987/1898)Updating files:  53% (1006/1898)Updating files:  54% (1025/1898)Updating files:  55% (1044/1898)Updating files:  56% (1063/1898)Updating files:  57% (1082/1898)Updating files:  58% (1101/1898)Updating files:  59% (1120/1898)Updating files:  60% (1139/1898)Updating files:  61% (1158/1898)Updating files:  62% (1177/1898)Updating files:  63% (1196/1898)Updating files:  64% (1215/1898)Updating files:  65% (1234/1898)Updating files:  66% (1253/1898)Updating files:  67% (1272/1898)Updating files:  68% (1291/1898)Updating files:  69% (1310/1898)Updating files:  70% (1329/1898)Updating files:  71% (1348/1898)Updating files:  72% (1367/1898)Updating files:  73% (1386/1898)Updating files:  74% (1405/1898)Updating files:  75% (1424/1898)Updating files:  76% (1443/1898)Updating files:  77% (1462/1898)Updating files:  77% (1473/1898)Updating files:  78% (1481/1898)Updating files:  79% (1500/1898)Updating files:  80% (1519/1898)Updating files:  81% (1538/1898)Updating files:  82% (1557/1898)Updating files:  83% (1576/1898)Updating files:  84% (1595/1898)Updating files:  85% (1614/1898)Updating files:  86% (1633/1898)Updating files:  87% (1652/1898)Updating files:  88% (1671/1898)Updating files:  89% (1690/1898)Updating files:  90% (1709/1898)Updating files:  91% (1728/1898)Updating files:  92% (1747/1898)Updating files:  93% (1766/1898)Updating files:  94% (1785/1898)Updating files:  95% (1804/1898)Updating files:  96% (1823/1898)Updating files:  97% (1842/1898)Updating files:  98% (1861/1898)Updating files:  99% (1880/1898)Updating files: 100% (1898/1898)Updating files: 100% (1898/1898), done.
+To github-sot:PageBlack-official/fredrikstad-fortress-town.git
+   2cb5dab..7beb4c9  pages-1794300901 -> gh-pages
+publisert gh-pages (prove1), versjon 34, kilde 38335e2 (sjekket ute etter 180 s)
+status=PUBLISERT slutt 2026-11-10 09:58:01
+kommentar 201

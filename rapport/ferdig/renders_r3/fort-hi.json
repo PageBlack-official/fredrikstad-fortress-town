@@ -1,0 +1,2585 @@
+{
+ "standpunkt": {
+  "navn": "fort-hi",
+  "pano": "",
+  "dato": "",
+  "lat": 59.202691269252085,
+  "lon": 10.947095443037101,
+  "heading": 47.3,
+  "pitch": 104,
+  "fov": 70,
+  "oye": 16,
+  "bredde": 1280,
+  "hoyde": 760
+ },
+ "kamera": {
+  "x": -321.6401330956665,
+  "y": -15.982118414536037,
+  "bakke": -1.037073461456641,
+  "hoyde": 14.962926538543359,
+  "vfov": 70,
+  "treff": 3
+ },
+ "synlige_hus": [
+  {
+   "id": "bnr-193867537",
+   "navn": "Infanterikasernen",
+   "skjerm": [
+    1242,
+    398
+   ]
+  },
+  {
+   "id": "bnr-193867529",
+   "navn": "Kirken",
+   "skjerm": [
+    1450,
+    410
+   ]
+  },
+  {
+   "id": "bnr-193868363",
+   "navn": "Binggården",
+   "skjerm": [
+    1011,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868061",
+   "navn": "Artillerigården",
+   "skjerm": [
+    1008,
+    384
+   ]
+  },
+  {
+   "id": "bnr-193869556",
+   "navn": "Krutthuset",
+   "skjerm": [
+    1080,
+    384
+   ]
+  },
+  {
+   "id": "bnr-193867502",
+   "navn": "Kiørboegården",
+   "skjerm": [
+    1233,
+    415
+   ]
+  },
+  {
+   "id": "bnr-193867677",
+   "navn": "Ingeniørgården",
+   "skjerm": [
+    1424,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193868568",
+   "navn": "Brannstasjon - uthus til Infanterikasernen",
+   "skjerm": [
+    1325,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193868053",
+   "navn": "Undervisningsbrakke",
+   "skjerm": [
+    1035,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193867308",
+   "navn": "Artillerismiens uthus",
+   "skjerm": [
+    909,
+    383
+   ]
+  },
+  {
+   "id": "bnr-193867634",
+   "navn": "Vollmesterboligen",
+   "skjerm": [
+    1465,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193869548",
+   "navn": "Voldporten med vaktstuen",
+   "skjerm": [
+    1190,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193868045",
+   "navn": "Den gamle spisesal",
+   "skjerm": [
+    1065,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868460",
+   "navn": "Kjørbogårdens sidebygning",
+   "skjerm": [
+    1263,
+    421
+   ]
+  },
+  {
+   "id": "bnr-193867499",
+   "navn": "Kommandantgården",
+   "skjerm": [
+    1438,
+    429
+   ]
+  },
+  {
+   "id": "bnr-193867316",
+   "navn": "Tennishuset",
+   "skjerm": [
+    898,
+    384
+   ]
+  },
+  {
+   "id": "bnr-193867510",
+   "navn": "Ekserserhuset",
+   "skjerm": [
+    1477,
+    419
+   ]
+  },
+  {
+   "id": "bnr-193868428",
+   "navn": "Kommisjonsgården",
+   "skjerm": [
+    933,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193869580",
+   "navn": "Voldportravelinet",
+   "skjerm": [
+    1253,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868037",
+   "navn": "Marketenteriet",
+   "skjerm": [
+    964,
+    384
+   ]
+  },
+  {
+   "id": "bnr-193867324",
+   "navn": "Artillerismien",
+   "skjerm": [
+    912,
+    384
+   ]
+  },
+  {
+   "id": "bnr-13416214",
+   "navn": null,
+   "skjerm": [
+    645,
+    385
+   ]
+  },
+  {
+   "id": "bnr-13416206",
+   "navn": "Cube 8 Gallery",
+   "skjerm": [
+    503,
+    396
+   ]
+  },
+  {
+   "id": "bnr-13416192",
+   "navn": null,
+   "skjerm": [
+    587,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193987494",
+   "navn": null,
+   "skjerm": [
+    604,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193992854",
+   "navn": null,
+   "skjerm": [
+    561,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193992846",
+   "navn": null,
+   "skjerm": [
+    516,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193820751",
+   "navn": null,
+   "skjerm": [
+    73,
+    398
+   ]
+  },
+  {
+   "id": "bnr-193820476",
+   "navn": null,
+   "skjerm": [
+    63,
+    404
+   ]
+  },
+  {
+   "id": "bnr-13416346",
+   "navn": null,
+   "skjerm": [
+    69,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193820778",
+   "navn": null,
+   "skjerm": [
+    42,
+    398
+   ]
+  },
+  {
+   "id": "bnr-13416230",
+   "navn": null,
+   "skjerm": [
+    396,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193820522",
+   "navn": null,
+   "skjerm": [
+    17,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193820964",
+   "navn": null,
+   "skjerm": [
+    15,
+    399
+   ]
+  },
+  {
+   "id": "bnr-13416486",
+   "navn": null,
+   "skjerm": [
+    118,
+    398
+   ]
+  },
+  {
+   "id": "bnr-13416249",
+   "navn": null,
+   "skjerm": [
+    440,
+    389
+   ]
+  },
+  {
+   "id": "bnr-6269281",
+   "navn": null,
+   "skjerm": [
+    217,
+    395
+   ]
+  },
+  {
+   "id": "bnr-13416389",
+   "navn": null,
+   "skjerm": [
+    73,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193820603",
+   "navn": null,
+   "skjerm": [
+    121,
+    399
+   ]
+  },
+  {
+   "id": "bnr-13415919",
+   "navn": null,
+   "skjerm": [
+    8,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193820697",
+   "navn": null,
+   "skjerm": [
+    243,
+    393
+   ]
+  },
+  {
+   "id": "bnr-13416109",
+   "navn": null,
+   "skjerm": [
+    53,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193820689",
+   "navn": null,
+   "skjerm": [
+    218,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193820514",
+   "navn": null,
+   "skjerm": [
+    256,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193820492",
+   "navn": null,
+   "skjerm": [
+    308,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193820719",
+   "navn": null,
+   "skjerm": [
+    152,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193820638",
+   "navn": null,
+   "skjerm": [
+    230,
+    396
+   ]
+  },
+  {
+   "id": "bnr-13416281",
+   "navn": null,
+   "skjerm": [
+    108,
+    396
+   ]
+  },
+  {
+   "id": "bnr-13416478",
+   "navn": null,
+   "skjerm": [
+    10,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193820735",
+   "navn": null,
+   "skjerm": [
+    151,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193820662",
+   "navn": null,
+   "skjerm": [
+    360,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193820727",
+   "navn": null,
+   "skjerm": [
+    150,
+    397
+   ]
+  },
+  {
+   "id": "bnr-13416338",
+   "navn": null,
+   "skjerm": [
+    279,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193820611",
+   "navn": null,
+   "skjerm": [
+    139,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193820670",
+   "navn": null,
+   "skjerm": [
+    318,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193992838",
+   "navn": null,
+   "skjerm": [
+    396,
+    396
+   ]
+  },
+  {
+   "id": "bnr-13416087",
+   "navn": null,
+   "skjerm": [
+    271,
+    393
+   ]
+  },
+  {
+   "id": "bnr-13416354",
+   "navn": null,
+   "skjerm": [
+    256,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193820654",
+   "navn": null,
+   "skjerm": [
+    228,
+    399
+   ]
+  },
+  {
+   "id": "bnr-13416311",
+   "navn": null,
+   "skjerm": [
+    337,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193820506",
+   "navn": null,
+   "skjerm": [
+    317,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193820808",
+   "navn": null,
+   "skjerm": [
+    25,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193820743",
+   "navn": null,
+   "skjerm": [
+    117,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193867464",
+   "navn": "Isegranhuset",
+   "skjerm": [
+    232,
+    468
+   ]
+  },
+  {
+   "id": "bnr-193867472",
+   "navn": null,
+   "skjerm": [
+    200,
+    511
+   ]
+  },
+  {
+   "id": "pb-4",
+   "navn": null,
+   "skjerm": [
+    775,
+    554
+   ]
+  },
+  {
+   "id": "bnr-193867480",
+   "navn": "Widdingstua",
+   "skjerm": [
+    320,
+    479
+   ]
+  },
+  {
+   "id": "bnr-193868355",
+   "navn": "Det gamle raadhus",
+   "skjerm": [
+    1074,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193868339",
+   "navn": null,
+   "skjerm": [
+    1038,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193867626",
+   "navn": null,
+   "skjerm": [
+    1079,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193868347",
+   "navn": null,
+   "skjerm": [
+    1059,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193972373",
+   "navn": null,
+   "skjerm": [
+    990,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193972152",
+   "navn": null,
+   "skjerm": [
+    1115,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193972489",
+   "navn": null,
+   "skjerm": [
+    1232,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868258",
+   "navn": null,
+   "skjerm": [
+    1121,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193868118",
+   "navn": null,
+   "skjerm": [
+    1001,
+    385
+   ]
+  },
+  {
+   "id": "pb-5",
+   "navn": null,
+   "skjerm": [
+    1112,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193971954",
+   "navn": null,
+   "skjerm": [
+    979,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868436",
+   "navn": "Skolebygningen",
+   "skjerm": [
+    938,
+    387
+   ]
+  },
+  {
+   "id": "bnr-6247822",
+   "navn": null,
+   "skjerm": [
+    1107,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193972322",
+   "navn": null,
+   "skjerm": [
+    961,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193971369",
+   "navn": null,
+   "skjerm": [
+    1060,
+    398
+   ]
+  },
+  {
+   "id": "bnr-16312916",
+   "navn": null,
+   "skjerm": [
+    903,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193868223",
+   "navn": "Muldvadgården",
+   "skjerm": [
+    1046,
+    390
+   ]
+  },
+  {
+   "id": "bnr-6242812",
+   "navn": null,
+   "skjerm": [
+    1044,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193868126",
+   "navn": null,
+   "skjerm": [
+    952,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868541",
+   "navn": null,
+   "skjerm": [
+    1154,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193868371",
+   "navn": null,
+   "skjerm": [
+    962,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193868134",
+   "navn": null,
+   "skjerm": [
+    966,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193867979",
+   "navn": null,
+   "skjerm": [
+    1129,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193971199",
+   "navn": null,
+   "skjerm": [
+    966,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193868150",
+   "navn": "Salamandergården",
+   "skjerm": [
+    994,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193867855",
+   "navn": null,
+   "skjerm": [
+    1244,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868088",
+   "navn": null,
+   "skjerm": [
+    1024,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193918247",
+   "navn": null,
+   "skjerm": [
+    1091,
+    411
+   ]
+  },
+  {
+   "id": "bnr-193972276",
+   "navn": null,
+   "skjerm": [
+    896,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868320",
+   "navn": null,
+   "skjerm": [
+    995,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193972292",
+   "navn": null,
+   "skjerm": [
+    1014,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868266",
+   "navn": null,
+   "skjerm": [
+    1141,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868274",
+   "navn": null,
+   "skjerm": [
+    1172,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193974686",
+   "navn": null,
+   "skjerm": [
+    889,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868231",
+   "navn": "Balaklava",
+   "skjerm": [
+    1009,
+    388
+   ]
+  },
+  {
+   "id": "pb-6",
+   "navn": null,
+   "skjerm": [
+    1079,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868312",
+   "navn": "Rosinggården",
+   "skjerm": [
+    1121,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193867936",
+   "navn": null,
+   "skjerm": [
+    1197,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193868029",
+   "navn": null,
+   "skjerm": [
+    1096,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193971334",
+   "navn": null,
+   "skjerm": [
+    1086,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193867863",
+   "navn": null,
+   "skjerm": [
+    1218,
+    392
+   ]
+  },
+  {
+   "id": "bnr-16290424",
+   "navn": null,
+   "skjerm": [
+    1073,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193867618",
+   "navn": null,
+   "skjerm": [
+    1025,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193868282",
+   "navn": null,
+   "skjerm": [
+    1079,
+    391
+   ]
+  },
+  {
+   "id": "bnr-6251323",
+   "navn": null,
+   "skjerm": [
+    1063,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193918239",
+   "navn": "Bullgården",
+   "skjerm": [
+    979,
+    394
+   ]
+  },
+  {
+   "id": "bnr-13414904",
+   "navn": null,
+   "skjerm": [
+    1146,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193987397",
+   "navn": null,
+   "skjerm": [
+    1054,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193868207",
+   "navn": null,
+   "skjerm": [
+    1088,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193972314",
+   "navn": "Feiergården",
+   "skjerm": [
+    958,
+    385
+   ]
+  },
+  {
+   "id": "bnr-24218023",
+   "navn": null,
+   "skjerm": [
+    905,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868630",
+   "navn": null,
+   "skjerm": [
+    1112,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193972365",
+   "navn": null,
+   "skjerm": [
+    1005,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868096",
+   "navn": null,
+   "skjerm": [
+    1025,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193867359",
+   "navn": null,
+   "skjerm": [
+    920,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868002",
+   "navn": null,
+   "skjerm": [
+    1073,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868142",
+   "navn": "Prestegården",
+   "skjerm": [
+    982,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193867901",
+   "navn": null,
+   "skjerm": [
+    1201,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193868525",
+   "navn": null,
+   "skjerm": [
+    996,
+    394
+   ]
+  },
+  {
+   "id": "bnr-6251331",
+   "navn": null,
+   "skjerm": [
+    1052,
+    387
+   ]
+  },
+  {
+   "id": "bnr-6251765",
+   "navn": null,
+   "skjerm": [
+    1055,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193867944",
+   "navn": null,
+   "skjerm": [
+    1142,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193972136",
+   "navn": null,
+   "skjerm": [
+    1120,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193971946",
+   "navn": null,
+   "skjerm": [
+    1018,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193972519",
+   "navn": null,
+   "skjerm": [
+    1169,
+    389
+   ]
+  },
+  {
+   "id": "bnr-6275109",
+   "navn": null,
+   "skjerm": [
+    1045,
+    394
+   ]
+  },
+  {
+   "id": "bnr-300279164",
+   "navn": null,
+   "skjerm": [
+    1137,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193971318",
+   "navn": null,
+   "skjerm": [
+    1102,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193971970",
+   "navn": null,
+   "skjerm": [
+    971,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193972624",
+   "navn": null,
+   "skjerm": [
+    1202,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193867928",
+   "navn": null,
+   "skjerm": [
+    1170,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193972179",
+   "navn": null,
+   "skjerm": [
+    1087,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193867952",
+   "navn": null,
+   "skjerm": [
+    1137,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193867898",
+   "navn": "Gamlebyen modelljernbanesenter",
+   "skjerm": [
+    1222,
+    390
+   ]
+  },
+  {
+   "id": "bnr-6251218",
+   "navn": null,
+   "skjerm": [
+    1073,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193868398",
+   "navn": null,
+   "skjerm": [
+    942,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193868290",
+   "navn": null,
+   "skjerm": [
+    1101,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193868622",
+   "navn": null,
+   "skjerm": [
+    1162,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193868215",
+   "navn": null,
+   "skjerm": [
+    1025,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193868452",
+   "navn": null,
+   "skjerm": [
+    917,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193972039",
+   "navn": null,
+   "skjerm": [
+    1476,
+    404
+   ]
+  },
+  {
+   "id": "bnr-193971938",
+   "navn": null,
+   "skjerm": [
+    1103,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193972012",
+   "navn": "Det nye rådhus",
+   "skjerm": [
+    1530,
+    407
+   ]
+  },
+  {
+   "id": "bnr-193972411",
+   "navn": "Sindinggården",
+   "skjerm": [
+    1120,
+    405
+   ]
+  },
+  {
+   "id": "bnr-193870260",
+   "navn": null,
+   "skjerm": [
+    1557,
+    404
+   ]
+  },
+  {
+   "id": "bnr-193868592",
+   "navn": null,
+   "skjerm": [
+    1296,
+    394
+   ]
+  },
+  {
+   "id": "pb-7",
+   "navn": null,
+   "skjerm": [
+    1538,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193867820",
+   "navn": null,
+   "skjerm": [
+    1334,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193867693",
+   "navn": null,
+   "skjerm": [
+    1487,
+    400
+   ]
+  },
+  {
+   "id": "bnr-13394024",
+   "navn": null,
+   "skjerm": [
+    1091,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193867782",
+   "navn": null,
+   "skjerm": [
+    1268,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193867588",
+   "navn": "Dunkejongården",
+   "skjerm": [
+    1119,
+    400
+   ]
+  },
+  {
+   "id": "bnr-193987370",
+   "navn": null,
+   "skjerm": [
+    1208,
+    405
+   ]
+  },
+  {
+   "id": "bnr-193867707",
+   "navn": null,
+   "skjerm": [
+    1459,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193972594",
+   "navn": null,
+   "skjerm": [
+    1298,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193867790",
+   "navn": null,
+   "skjerm": [
+    1239,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193972101",
+   "navn": null,
+   "skjerm": [
+    1257,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193867804",
+   "navn": null,
+   "skjerm": [
+    1367,
+    396
+   ]
+  },
+  {
+   "id": "pb-8",
+   "navn": null,
+   "skjerm": [
+    1551,
+    406
+   ]
+  },
+  {
+   "id": "bnr-193867596",
+   "navn": "Vennehaabet",
+   "skjerm": [
+    1145,
+    409
+   ]
+  },
+  {
+   "id": "bnr-193867723",
+   "navn": null,
+   "skjerm": [
+    1357,
+    395
+   ]
+  },
+  {
+   "id": "bnr-16308102",
+   "navn": null,
+   "skjerm": [
+    1476,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193868711",
+   "navn": null,
+   "skjerm": [
+    1069,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193972446",
+   "navn": null,
+   "skjerm": [
+    1320,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193867758",
+   "navn": null,
+   "skjerm": [
+    1291,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193867731",
+   "navn": null,
+   "skjerm": [
+    1321,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193867839",
+   "navn": null,
+   "skjerm": [
+    1356,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193867766",
+   "navn": null,
+   "skjerm": [
+    1274,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193867847",
+   "navn": null,
+   "skjerm": [
+    1451,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193867545",
+   "navn": "Arnesgården",
+   "skjerm": [
+    1205,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193867715",
+   "navn": null,
+   "skjerm": [
+    1402,
+    396
+   ]
+  },
+  {
+   "id": "pb-9",
+   "navn": "Færgeporten",
+   "skjerm": [
+    894,
+    389
+   ]
+  },
+  {
+   "id": "pb-10",
+   "navn": "Kongeporten",
+   "skjerm": [
+    1479,
+    447
+   ]
+  },
+  {
+   "id": "pb-11",
+   "navn": "Mellomporten",
+   "skjerm": [
+    1015,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193992765",
+   "navn": null,
+   "skjerm": [
+    654,
+    386
+   ]
+  },
+  {
+   "id": "bnr-6247814",
+   "navn": null,
+   "skjerm": [
+    893,
+    378
+   ]
+  },
+  {
+   "id": "bnr-13397198",
+   "navn": null,
+   "skjerm": [
+    878,
+    378
+   ]
+  },
+  {
+   "id": "bnr-13393524",
+   "navn": null,
+   "skjerm": [
+    1442,
+    388
+   ]
+  },
+  {
+   "id": "bnr-6276024",
+   "navn": null,
+   "skjerm": [
+    1559,
+    390
+   ]
+  },
+  {
+   "id": "bnr-6276547",
+   "navn": null,
+   "skjerm": [
+    1552,
+    388
+   ]
+  },
+  {
+   "id": "bnr-13389616",
+   "navn": null,
+   "skjerm": [
+    1463,
+    387
+   ]
+  },
+  {
+   "id": "bnr-13393540",
+   "navn": null,
+   "skjerm": [
+    1521,
+    389
+   ]
+  },
+  {
+   "id": "bnr-6276032",
+   "navn": null,
+   "skjerm": [
+    1498,
+    389
+   ]
+  },
+  {
+   "id": "bnr-13393532",
+   "navn": null,
+   "skjerm": [
+    1461,
+    388
+   ]
+  },
+  {
+   "id": "bnr-13384479",
+   "navn": null,
+   "skjerm": [
+    1511,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193868533",
+   "navn": null,
+   "skjerm": [
+    1100,
+    391
+   ]
+  },
+  {
+   "id": "pb-13",
+   "navn": null,
+   "skjerm": [
+    1091,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193974767",
+   "navn": null,
+   "skjerm": [
+    920,
+    387
+   ]
+  },
+  {
+   "id": "pb-14",
+   "navn": null,
+   "skjerm": [
+    1181,
+    390
+   ]
+  },
+  {
+   "id": "bnr-300016784",
+   "navn": null,
+   "skjerm": [
+    1517,
+    388
+   ]
+  },
+  {
+   "id": "bnr-194006187",
+   "navn": null,
+   "skjerm": [
+    999,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193991718",
+   "navn": null,
+   "skjerm": [
+    1062,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193972306",
+   "navn": null,
+   "skjerm": [
+    980,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193972098",
+   "navn": null,
+   "skjerm": [
+    1527,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193972071",
+   "navn": null,
+   "skjerm": [
+    1506,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193972144",
+   "navn": null,
+   "skjerm": [
+    1125,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193972128",
+   "navn": null,
+   "skjerm": [
+    1268,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193972195",
+   "navn": null,
+   "skjerm": [
+    1075,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193972187",
+   "navn": null,
+   "skjerm": [
+    1065,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193867995",
+   "navn": null,
+   "skjerm": [
+    1091,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193972225",
+   "navn": null,
+   "skjerm": [
+    1052,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193972209",
+   "navn": null,
+   "skjerm": [
+    1016,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193971911",
+   "navn": null,
+   "skjerm": [
+    1140,
+    404
+   ]
+  },
+  {
+   "id": "bnr-193971903",
+   "navn": null,
+   "skjerm": [
+    1121,
+    407
+   ]
+  },
+  {
+   "id": "bnr-193971873",
+   "navn": null,
+   "skjerm": [
+    1138,
+    407
+   ]
+  },
+  {
+   "id": "bnr-193971962",
+   "navn": null,
+   "skjerm": [
+    957,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193972004",
+   "navn": null,
+   "skjerm": [
+    1469,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193971989",
+   "navn": null,
+   "skjerm": [
+    979,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193972055",
+   "navn": null,
+   "skjerm": [
+    1532,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193971377",
+   "navn": null,
+   "skjerm": [
+    1186,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193971350",
+   "navn": null,
+   "skjerm": [
+    996,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193971342",
+   "navn": null,
+   "skjerm": [
+    1060,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193971385",
+   "navn": null,
+   "skjerm": [
+    1225,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193971229",
+   "navn": null,
+   "skjerm": [
+    1488,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193971202",
+   "navn": null,
+   "skjerm": [
+    1023,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193971288",
+   "navn": null,
+   "skjerm": [
+    1100,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193971261",
+   "navn": null,
+   "skjerm": [
+    1145,
+    392
+   ]
+  },
+  {
+   "id": "bnr-193971253",
+   "navn": null,
+   "skjerm": [
+    1262,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193868010",
+   "navn": null,
+   "skjerm": [
+    1088,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193971296",
+   "navn": null,
+   "skjerm": [
+    1104,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193972772",
+   "navn": null,
+   "skjerm": [
+    1349,
+    398
+   ]
+  },
+  {
+   "id": "bnr-193972578",
+   "navn": null,
+   "skjerm": [
+    1291,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193972543",
+   "navn": null,
+   "skjerm": [
+    1199,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193972535",
+   "navn": null,
+   "skjerm": [
+    1218,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193972616",
+   "navn": null,
+   "skjerm": [
+    1187,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193972608",
+   "navn": null,
+   "skjerm": [
+    1305,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193972632",
+   "navn": null,
+   "skjerm": [
+    1207,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193972349",
+   "navn": null,
+   "skjerm": [
+    1014,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193972438",
+   "navn": null,
+   "skjerm": [
+    1348,
+    397
+   ]
+  },
+  {
+   "id": "bnr-193972454",
+   "navn": null,
+   "skjerm": [
+    1327,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193972497",
+   "navn": null,
+   "skjerm": [
+    1236,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193874487",
+   "navn": null,
+   "skjerm": [
+    1477,
+    389
+   ]
+  },
+  {
+   "id": "bnr-193874444",
+   "navn": null,
+   "skjerm": [
+    1488,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193874436",
+   "navn": null,
+   "skjerm": [
+    1523,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193868665",
+   "navn": null,
+   "skjerm": [
+    1090,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868681",
+   "navn": null,
+   "skjerm": [
+    1002,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868703",
+   "navn": null,
+   "skjerm": [
+    992,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193868584",
+   "navn": null,
+   "skjerm": [
+    1494,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193868517",
+   "navn": null,
+   "skjerm": [
+    1056,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193868657",
+   "navn": null,
+   "skjerm": [
+    1083,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193868606",
+   "navn": null,
+   "skjerm": [
+    1291,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193868614",
+   "navn": null,
+   "skjerm": [
+    1202,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868401",
+   "navn": null,
+   "skjerm": [
+    981,
+    390
+   ]
+  },
+  {
+   "id": "bnr-193868479",
+   "navn": null,
+   "skjerm": [
+    1144,
+    402
+   ]
+  },
+  {
+   "id": "bnr-193868495",
+   "navn": null,
+   "skjerm": [
+    1173,
+    401
+   ]
+  },
+  {
+   "id": "bnr-193868444",
+   "navn": null,
+   "skjerm": [
+    944,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193867987",
+   "navn": null,
+   "skjerm": [
+    1113,
+    388
+   ]
+  },
+  {
+   "id": "bnr-193867812",
+   "navn": null,
+   "skjerm": [
+    1343,
+    398
+   ]
+  },
+  {
+   "id": "bnr-193867774",
+   "navn": null,
+   "skjerm": [
+    1262,
+    393
+   ]
+  },
+  {
+   "id": "bnr-193867685",
+   "navn": null,
+   "skjerm": [
+    1476,
+    395
+   ]
+  },
+  {
+   "id": "bnr-193867553",
+   "navn": null,
+   "skjerm": [
+    1165,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193867332",
+   "navn": null,
+   "skjerm": [
+    897,
+    386
+   ]
+  },
+  {
+   "id": "bnr-23057948",
+   "navn": null,
+   "skjerm": [
+    1461,
+    388
+   ]
+  },
+  {
+   "id": "bnr-23056119",
+   "navn": null,
+   "skjerm": [
+    1462,
+    388
+   ]
+  },
+  {
+   "id": "bnr-16313173",
+   "navn": null,
+   "skjerm": [
+    1125,
+    392
+   ]
+  },
+  {
+   "id": "bnr-6246753",
+   "navn": null,
+   "skjerm": [
+    1358,
+    396
+   ]
+  },
+  {
+   "id": "bnr-193971210",
+   "navn": null,
+   "skjerm": [
+    945,
+    389
+   ]
+  },
+  {
+   "id": "bnr-300635577",
+   "navn": null,
+   "skjerm": [
+    1489,
+    388
+   ]
+  },
+  {
+   "id": "bnr-300399132",
+   "navn": null,
+   "skjerm": [
+    989,
+    386
+   ]
+  },
+  {
+   "id": "bnr-193987699",
+   "navn": null,
+   "skjerm": [
+    22,
+    406
+   ]
+  },
+  {
+   "id": "bnr-193987680",
+   "navn": null,
+   "skjerm": [
+    276,
+    398
+   ]
+  },
+  {
+   "id": "bnr-193867456",
+   "navn": "Lysthuset",
+   "skjerm": [
+    18,
+    474
+   ]
+  },
+  {
+   "id": "bnr-193820956",
+   "navn": null,
+   "skjerm": [
+    13,
+    399
+   ]
+  },
+  {
+   "id": "bnr-193820646",
+   "navn": null,
+   "skjerm": [
+    210,
+    398
+   ]
+  },
+  {
+   "id": "bnr-193820484",
+   "navn": null,
+   "skjerm": [
+    51,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193820581",
+   "navn": null,
+   "skjerm": [
+    42,
+    403
+   ]
+  },
+  {
+   "id": "bnr-193820530",
+   "navn": null,
+   "skjerm": [
+    22,
+    402
+   ]
+  },
+  {
+   "id": "bnr-16293962",
+   "navn": null,
+   "skjerm": [
+    455,
+    388
+   ]
+  },
+  {
+   "id": "bnr-13416400",
+   "navn": null,
+   "skjerm": [
+    30,
+    400
+   ]
+  },
+  {
+   "id": "bnr-13416265",
+   "navn": null,
+   "skjerm": [
+    599,
+    385
+   ]
+  },
+  {
+   "id": "pb-16",
+   "navn": null,
+   "skjerm": [
+    219,
+    451
+   ]
+  },
+  {
+   "id": "bnr-193972160",
+   "navn": null,
+   "skjerm": [
+    1105,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193972047",
+   "navn": null,
+   "skjerm": [
+    1497,
+    404
+   ]
+  },
+  {
+   "id": "bnr-193868673",
+   "navn": null,
+   "skjerm": [
+    1019,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193868576",
+   "navn": null,
+   "skjerm": [
+    1568,
+    412
+   ]
+  },
+  {
+   "id": "bnr-193868649",
+   "navn": null,
+   "skjerm": [
+    1114,
+    387
+   ]
+  },
+  {
+   "id": "pb-23",
+   "navn": null,
+   "skjerm": [
+    1194,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193972217",
+   "navn": null,
+   "skjerm": [
+    1023,
+    388
+   ]
+  },
+  {
+   "id": "pb-25",
+   "navn": null,
+   "skjerm": [
+    859,
+    387
+   ]
+  },
+  {
+   "id": "pb-26",
+   "navn": null,
+   "skjerm": [
+    1180,
+    391
+   ]
+  },
+  {
+   "id": "pb-27",
+   "navn": null,
+   "skjerm": [
+    853,
+    386
+   ]
+  },
+  {
+   "id": "pb-28",
+   "navn": null,
+   "skjerm": [
+    1038,
+    396
+   ]
+  },
+  {
+   "id": "pb-29",
+   "navn": null,
+   "skjerm": [
+    1066,
+    384
+   ]
+  },
+  {
+   "id": "pb-30",
+   "navn": null,
+   "skjerm": [
+    1101,
+    384
+   ]
+  },
+  {
+   "id": "bnr-300002508",
+   "navn": null,
+   "skjerm": [
+    1180,
+    402
+   ]
+  },
+  {
+   "id": "pb-33",
+   "navn": null,
+   "skjerm": [
+    1083,
+    398
+   ]
+  },
+  {
+   "id": "pb-35",
+   "navn": null,
+   "skjerm": [
+    1038,
+    397
+   ]
+  },
+  {
+   "id": "pb-37",
+   "navn": null,
+   "skjerm": [
+    848,
+    386
+   ]
+  },
+  {
+   "id": "pb-41",
+   "navn": null,
+   "skjerm": [
+    658,
+    386
+   ]
+  },
+  {
+   "id": "pb-42",
+   "navn": null,
+   "skjerm": [
+    907,
+    386
+   ]
+  },
+  {
+   "id": "pb-43",
+   "navn": null,
+   "skjerm": [
+    903,
+    386
+   ]
+  },
+  {
+   "id": "pb-45",
+   "navn": null,
+   "skjerm": [
+    1237,
+    391
+   ]
+  },
+  {
+   "id": "pb-46",
+   "navn": null,
+   "skjerm": [
+    1275,
+    397
+   ]
+  },
+  {
+   "id": "pb-47",
+   "navn": null,
+   "skjerm": [
+    1049,
+    398
+   ]
+  },
+  {
+   "id": "pb-48",
+   "navn": null,
+   "skjerm": [
+    964,
+    391
+   ]
+  },
+  {
+   "id": "pb-49",
+   "navn": null,
+   "skjerm": [
+    1161,
+    409
+   ]
+  },
+  {
+   "id": "pb-50",
+   "navn": null,
+   "skjerm": [
+    965,
+    385
+   ]
+  },
+  {
+   "id": "pb-51",
+   "navn": null,
+   "skjerm": [
+    1322,
+    402
+   ]
+  },
+  {
+   "id": "pb-52",
+   "navn": null,
+   "skjerm": [
+    1073,
+    405
+   ]
+  },
+  {
+   "id": "pb-53",
+   "navn": null,
+   "skjerm": [
+    1466,
+    399
+   ]
+  },
+  {
+   "id": "pb-54",
+   "navn": null,
+   "skjerm": [
+    999,
+    386
+   ]
+  },
+  {
+   "id": "pb-56",
+   "navn": null,
+   "skjerm": [
+    1188,
+    402
+   ]
+  },
+  {
+   "id": "pb-57",
+   "navn": null,
+   "skjerm": [
+    1275,
+    392
+   ]
+  },
+  {
+   "id": "pb-58",
+   "navn": null,
+   "skjerm": [
+    1326,
+    394
+   ]
+  },
+  {
+   "id": "pb-59",
+   "navn": null,
+   "skjerm": [
+    1151,
+    388
+   ]
+  },
+  {
+   "id": "pb-60",
+   "navn": null,
+   "skjerm": [
+    1023,
+    389
+   ]
+  },
+  {
+   "id": "pb-61",
+   "navn": null,
+   "skjerm": [
+    1052,
+    387
+   ]
+  },
+  {
+   "id": "pb-62",
+   "navn": null,
+   "skjerm": [
+    1037,
+    386
+   ]
+  },
+  {
+   "id": "pb-63",
+   "navn": null,
+   "skjerm": [
+    1286,
+    416
+   ]
+  },
+  {
+   "id": "pb-64",
+   "navn": null,
+   "skjerm": [
+    1314,
+    418
+   ]
+  },
+  {
+   "id": "pb-65",
+   "navn": null,
+   "skjerm": [
+    1048,
+    399
+   ]
+  },
+  {
+   "id": "pb-66",
+   "navn": null,
+   "skjerm": [
+    1187,
+    389
+   ]
+  },
+  {
+   "id": "pb-67",
+   "navn": null,
+   "skjerm": [
+    1448,
+    404
+   ]
+  }
+ ]
+}

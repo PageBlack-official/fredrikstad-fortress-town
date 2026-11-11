@@ -1,0 +1,119 @@
+{
+ "standpunkt": {
+  "navn": "bnr-193972276-3",
+  "pano": "",
+  "dato": "",
+  "lat": 59.204709641446456,
+  "lon": 10.953887803297286,
+  "heading": 38.31,
+  "pitch": 88.5,
+  "fov": 50,
+  "oye": 2.5
+ },
+ "kamera": {
+  "x": 65.06198752702387,
+  "y": 208.45662746399933,
+  "bakke": -1.0162371020436836,
+  "hoyde": 1.4837628979563164,
+  "vfov": 50,
+  "treff": 4
+ },
+ "synlige_hus": [
+  {
+   "id": "bnr-193867308",
+   "navn": "Artillerismiens uthus",
+   "skjerm": [
+    1132,
+    373
+   ]
+  },
+  {
+   "id": "bnr-193867316",
+   "navn": "Tennishuset",
+   "skjerm": [
+    1038,
+    374
+   ]
+  },
+  {
+   "id": "bnr-193867324",
+   "navn": "Artillerismien",
+   "skjerm": [
+    1174,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193972276",
+   "navn": null,
+   "skjerm": [
+    781,
+    418
+   ]
+  },
+  {
+   "id": "bnr-193974686",
+   "navn": null,
+   "skjerm": [
+    810,
+    390
+   ]
+  },
+  {
+   "id": "bnr-24218023",
+   "navn": null,
+   "skjerm": [
+    1030,
+    484
+   ]
+  },
+  {
+   "id": "bnr-193867359",
+   "navn": null,
+   "skjerm": [
+    1375,
+    390
+   ]
+  },
+  {
+   "id": "bnr-6247814",
+   "navn": null,
+   "skjerm": [
+    1062,
+    364
+   ]
+  },
+  {
+   "id": "bnr-13397198",
+   "navn": null,
+   "skjerm": [
+    1009,
+    364
+   ]
+  },
+  {
+   "id": "bnr-193867332",
+   "navn": null,
+   "skjerm": [
+    885,
+    401
+   ]
+  },
+  {
+   "id": "pb-42",
+   "navn": null,
+   "skjerm": [
+    1132,
+    400
+   ]
+  },
+  {
+   "id": "pb-43",
+   "navn": null,
+   "skjerm": [
+    1016,
+    412
+   ]
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+start 2026-11-09 17:31:30
+bygd enkel -> /Users/vegarbakken/sot-maskin/gate/ut/enkel/index.html 3787 kB versjon 34
+33 standpunkter
+--- render 17:31:32 ---
+OK bnr-13415889-0  bakke -0.29 m  5 hus i bildet  3006 ms
+OK bnr-13415889-3  bakke -1.30 m  2 hus i bildet  2885 ms
+OK bnr-13416362-0  bakke -1.30 m  416 hus i bildet  2934 ms
+OK bnr-13416419-3  bakke -1.25 m  7 hus i bildet  2824 ms
+OK bnr-193867480-0  bakke -4.49 m  82 hus i bildet  3030 ms
+OK bnr-193867626-2  bakke 0.46 m  119 hus i bildet  3366 ms
+OK bnr-193867626-3  bakke 0.40 m  98 hus i bildet  3223 ms
+OK bnr-193867634-2  bakke 0.01 m  44 hus i bildet  3190 ms
+OK bnr-193867723-1  bakke 0.05 m  114 hus i bildet  3211 ms
+OK bnr-193867804-4  bakke 1.21 m  141 hus i bildet  3416 ms
+OK bnr-193867820-3  bakke 0.81 m  144 hus i bildet  3266 ms
+OK bnr-193867855-4  bakke 0.21 m  165 hus i bildet  3127 ms
+OK bnr-193867855-5  bakke 0.23 m  225 hus i bildet  3115 ms
+OK bnr-193867898-2  bakke 0.21 m  241 hus i bildet  3203 ms
+OK bnr-193867901-1  bakke 0.26 m  239 hus i bildet  3040 ms
+OK bnr-193867952-6  bakke 1.39 m  255 hus i bildet  3184 ms
+OK bnr-193868088-1  bakke 0.95 m  194 hus i bildet  3189 ms
+OK bnr-193868576-0  bakke 0.89 m  207 hus i bildet  3352 ms
+OK bnr-193868576-3  bakke 1.04 m  130 hus i bildet  3239 ms
+OK bnr-193971288-3  bakke 0.76 m  139 hus i bildet  3254 ms
+OK bnr-193971946-0  bakke 0.18 m  159 hus i bildet  3091 ms
+OK bnr-193971954-3  bakke -0.03 m  46 hus i bildet  3221 ms
+OK bnr-193972276-3  bakke -1.02 m  12 hus i bildet  3272 ms
+OK bnr-193972292-2  bakke 1.08 m  28 hus i bildet  3433 ms
+OK bnr-193972306-4  bakke 1.01 m  192 hus i bildet  3079 ms
+OK bnr-194006187-1  bakke 0.15 m  105 hus i bildet  3154 ms
+OK bnr-24218023-0  bakke -1.60 m  220 hus i bildet  3343 ms
+OK bnr-6251331-1  bakke 0.91 m  183 hus i bildet  3006 ms
+OK bnr-6276016-4  bakke -0.65 m  45 hus i bildet  3087 ms
+OK bnr-6276016-5  bakke -0.62 m  84 hus i bildet  3270 ms
+OK bnr-6276504-5  bakke -1.93 m  382 hus i bildet  3176 ms
+OK bnr-6276512-1  bakke -1.76 m  356 hus i bildet  3122 ms
+OK bnr-6276822-0  bakke -1.01 m  40 hus i bildet  3050 ms
+render ferdig 17:33:27,       33 png
+bnr-193867634: 1 rader -> rapport/ferdig/bnr-193867634.jpg
+bnr-13415889: 2 rader -> rapport/ferdig/bnr-13415889.jpg
+bnr-13416362: 1 rader -> rapport/ferdig/bnr-13416362.jpg
+bnr-193867480: 1 rader -> rapport/ferdig/bnr-193867480.jpg
+bnr-193867626: 2 rader -> rapport/ferdig/bnr-193867626.jpg
+bnr-6276504: 1 rader -> rapport/ferdig/bnr-6276504.jpg
+bnr-6276512: 1 rader -> rapport/ferdig/bnr-6276512.jpg
+bnr-6276016: 2 rader -> rapport/ferdig/bnr-6276016.jpg
+bnr-6276822: 1 rader -> rapport/ferdig/bnr-6276822.jpg
+bnr-193971954: 1 rader -> rapport/ferdig/bnr-193971954.jpg
+bnr-193867855: 2 rader -> rapport/ferdig/bnr-193867855.jpg
+bnr-193868088: 1 rader -> rapport/ferdig/bnr-193868088.jpg
+bnr-193972276: 1 rader -> rapport/ferdig/bnr-193972276.jpg
+bnr-193972292: 1 rader -> rapport/ferdig/bnr-193972292.jpg
+bnr-24218023: 1 rader -> rapport/ferdig/bnr-24218023.jpg
+bnr-193867901: 1 rader -> rapport/ferdig/bnr-193867901.jpg
+bnr-6251331: 1 rader -> rapport/ferdig/bnr-6251331.jpg
+bnr-193971946: 1 rader -> rapport/ferdig/bnr-193971946.jpg
+bnr-193867952: 1 rader -> rapport/ferdig/bnr-193867952.jpg
+bnr-193867898: 1 rader -> rapport/ferdig/bnr-193867898.jpg
+bnr-193867820: 1 rader -> rapport/ferdig/bnr-193867820.jpg
+bnr-193867804: 1 rader -> rapport/ferdig/bnr-193867804.jpg
+bnr-193867723: 1 rader -> rapport/ferdig/bnr-193867723.jpg
+bnr-194006187: 1 rader -> rapport/ferdig/bnr-194006187.jpg
+bnr-193972306: 1 rader -> rapport/ferdig/bnr-193972306.jpg
+bnr-193971288: 1 rader -> rapport/ferdig/bnr-193971288.jpg
+bnr-13416419: 1 rader -> rapport/ferdig/bnr-13416419.jpg
+bnr-193868576: 2 rader -> rapport/ferdig/bnr-193868576.jpg
+bnr-13416362: 1 rader -> rapport/ferdig/bnr-13416362.jpg
+skrev rapport/ferdig/sot-dom-runde3.jpg (3160x2250, 28 hus)
+kontaktark: 1486831 bytes
+ferdig 2026-11-09 17:33:30
+kommentar 201
