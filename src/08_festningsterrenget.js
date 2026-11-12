@@ -27,7 +27,7 @@ if (BK){
   const FEST=(DATA.landskap&&DATA.landskap.fest)||[];
   const iPol=(x,y,P)=>{ let inne=false; for(let k=0,j=P.length-1;k<P.length;j=k++){ const a=P[k],c=P[j]; if((a[1]>y)!==(c[1]>y) && x<(c[0]-a[0])*(y-a[1])/(c[1]-a[1]+1e-12)+a[0]) inne=!inne; } return inne; };
   // sirkelfortet (Isegran): hele gårdsplassen er plen (Fable 12.11 pkt 4) — fyller hullet der pb-4-bygget sto i det gamle terrengbitmapet
-  const FORT=(DATA.bygg||[]).filter(b=>b&&b.fort).map(b=>({x:b.fort.cx,y:b.fort.cy,r:(b.fort.ri||14)-0.2}));
+  const FORT=(DATA.bygg||[]).filter(b=>b&&b.fort).map(b=>({x:b.fort.cx,y:b.fort.cy,r:(b.fort.ri||14)+0.4}));   // +0,4: gress helt inn under murens innerflate, ingen mørk stripe ved foten
   const gress=(x,y)=>(gammel(x,y) || FEST.some(P=>iPol(x,y,P)) || FORT.some(f=>Math.hypot(x-f.x,y-f.y)<f.r)) ? 1 : 0;
   const pos=new Float32Array(nx*ny*3), gr=new Float32Array(nx*ny);
   for(let j=0;j<ny;j++) for(let i=0;i<nx;i++){ const k=j*nx+i, X=BK.x0+i*G, Y=BK.y0+j*G; pos[k*3]=X; pos[k*3+1]=HV[k]+0.03; pos[k*3+2]=-Y; gr[k]=gress(X,Y); }
