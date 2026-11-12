@@ -445,27 +445,29 @@ DATA.bygg.forEach((b,i)=>{
     });
     const fg=new THREE.BufferGeometry(); fg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); fg.computeVertexNormals();
     const fm=new THREE.Mesh(fg, mat([150,146,138],dim,[98,96,92],{stein:true})); fm.castShadow=fm.receiveShadow=true; legg(fm);
-    // plen inni hele gårdsplassen: ett grasslag som dekker det gamle pb-4-fotavtrykket (ingen lys flekk) — Vegars dom 12.11
-    { const mplen=mat([108,148,90],dim); const pg=new THREE.CylinderGeometry(ri-0.1, ri-0.1, 0.06, 56);
-      const pm=new THREE.Mesh(pg, mplen); pm.position.set(cx,0.04,-cy); pm.receiveShadow=true; legg(pm); }
-    // liten, lav hvelvet inngang (kruttkjeller): grasskledd haug (torvtak) med natursteinsramme og rød teglbue — vender mot åpningen (Vegars dom 12.11)
-    { const dd=ri*0.34, dx=cx+dd*Math.cos(g0+Math.PI), dy=cy+dd*Math.sin(g0+Math.PI);
-      const gv=new THREE.Group(); gv.position.set(dx,0.04,-dy); gv.rotation.y=-g0;   // lokal +x peker mot åpningen (g0)
-      const mstein=mat([150,146,138],dim,[98,96,92],{stein:true}), mtegl=mat([150,70,56],dim), mgress=mat([104,146,92],dim), mmork=mat([24,20,18],false);
-      const torv=new THREE.Mesh(new THREE.SphereGeometry(2.6,32,16,0,2*Math.PI,0,Math.PI/2), mgress);   // lav, bred gresshaug som hvelver seg over døra, smelter i plenen
-      torv.scale.set(1.0,0.52,1.28); torv.position.set(-0.8,0,0); torv.castShadow=torv.receiveShadow=true; gv.add(torv);
-      const ramme=new THREE.Mesh(new THREE.BoxGeometry(0.42,1.85,2.0), mstein); ramme.position.set(1.5,0.93,0); ramme.castShadow=true; gv.add(ramme);   // natursteinsramme i haugens front
-      const tegl=new THREE.Mesh(new THREE.BoxGeometry(0.28,1.4,1.2), mtegl); tegl.position.set(1.66,0.8,0); gv.add(tegl);                               // rød tegl rundt åpningen
-      const hull=new THREE.Mesh(new THREE.BoxGeometry(0.42,0.95,0.78), mmork); hull.position.set(1.78,0.58,0); gv.add(hull);                            // mørkt hull
-      const bue=new THREE.Mesh(new THREE.CylinderGeometry(0.39,0.39,0.44,16,1,false,0,Math.PI), mmork); bue.rotation.z=Math.PI/2; bue.position.set(1.78,1.0,0); gv.add(bue);  // hvelvet overligger
-      [1,-1].forEach(s=>{ const vm=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.62,0.4), mstein); vm.position.set(1.0,0.31,s*1.2); vm.castShadow=true; gv.add(vm); });   // lave vingemurer i naturstein
+    // liten hvelvet inngang (kruttkjeller): grasskledd haug (torvtak) inntil BAKMUREN, vender rett mot åpningen (Fable 12.11, pkt 1–2)
+    { const dd=ri-4.0, dx=cx+dd*Math.cos(g0+Math.PI), dy=cy+dd*Math.sin(g0+Math.PI);   // bakerst, inntil muren motsatt åpningen
+      const gv=new THREE.Group(); gv.position.set(dx,0.04,-dy); gv.rotation.y=g0;   // lokal +x peker MOT åpningen (g0), så man ser rett inn i buen
+      const mstein=mat([150,146,138],dim,[98,96,92],{stein:true}), mtegl=mat([150,70,56],dim), mgress=mat([98,140,86],dim), mmork=mat([24,20,18],false);
+      const torv=new THREE.Mesh(new THREE.SphereGeometry(2.9,32,16,0,2*Math.PI,0,Math.PI/2), mgress);   // høy, bred gresshaug (~1,9 m), hvelver seg over døra, går inn i bakmuren
+      torv.scale.set(1.05,0.66,1.3); torv.position.set(-1.4,0,0); torv.castShadow=torv.receiveShadow=true; gv.add(torv);
+      const ramme=new THREE.Mesh(new THREE.BoxGeometry(0.42,1.95,2.0), mstein); ramme.position.set(1.45,0.98,0); ramme.castShadow=true; gv.add(ramme);   // natursteinsramme i haugens front
+      const tegl=new THREE.Mesh(new THREE.BoxGeometry(0.28,1.5,1.25), mtegl); tegl.position.set(1.61,0.84,0); gv.add(tegl);                              // rød tegl rundt åpningen
+      const hull=new THREE.Mesh(new THREE.BoxGeometry(0.42,1.0,0.8), mmork); hull.position.set(1.73,0.6,0); gv.add(hull);                                // mørkt hull inn i buen
+      const bue=new THREE.Mesh(new THREE.CylinderGeometry(0.4,0.4,0.44,16,1,false,0,Math.PI), mmork); bue.rotation.z=Math.PI/2; bue.position.set(1.73,1.05,0); gv.add(bue);  // hvelvet overligger
+      [1,-1].forEach(s=>{ const vm=new THREE.Mesh(new THREE.BoxGeometry(1.1,0.6,0.4), mstein); vm.position.set(0.95,0.3,s*1.15); vm.castShadow=true; gv.add(vm); });   // lave vingemurer i naturstein
       legg(gv);
     }
-    // lave, uregelmessige murrester (fundamenter i stein) på plenen foran døra, mot åpningen (Vegars dom)
-    { const mm2=mat([146,142,134],dim,[98,96,92],{stein:true}); const nx=Math.cos(g0+Math.PI/2), ny=Math.sin(g0+Math.PI/2);
-      [[ri*0.10,0.0,1.4],[ri*0.19,1.5,0.9],[ri*0.17,-1.6,1.1]].forEach(([rr,off,ln])=>{
-        const bx=cx+rr*Math.cos(g0)+off*nx, by=cy+rr*Math.sin(g0)+off*ny;
-        const mr=new THREE.Mesh(new THREE.BoxGeometry(ln,0.38,0.5), mm2); mr.position.set(bx,0.23,-by); mr.rotation.y=-g0; mr.castShadow=true; legg(mr); }); }
+    // lys steinflate (brostein) fra åpningen inn til døra + ETT rektangulært fundament av lave murer foran døra (Fable 12.11, pkt 3)
+    { const mbro=mat([170,164,152],dim,[122,118,108],{stein:true}), mm2=mat([150,146,138],dim,[98,96,92],{stein:true});
+      const midR=-ri*0.18;                                              // flaten går langs g0-aksen, forskjøvet mot åpningssida
+      const flate=new THREE.Mesh(new THREE.BoxGeometry(ri*1.35,0.08,3.0), mbro); flate.position.set(cx+midR*Math.cos(g0),0.05,-(cy+midR*Math.sin(g0))); flate.rotation.y=-g0; flate.receiveShadow=true; legg(flate);
+      const fcx=cx+ri*0.02*Math.cos(g0+Math.PI), fcy=cy+ri*0.02*Math.sin(g0+Math.PI);   // like foran døra
+      const fg2=new THREE.Group(); fg2.position.set(fcx,0,-fcy); fg2.rotation.y=g0; const RW=3.0, RD=2.0, t=0.32, hh=0.42;
+      [[0,RD/2],[0,-RD/2]].forEach(([ox,oz])=>{ const w=new THREE.Mesh(new THREE.BoxGeometry(RW,hh,t), mm2); w.position.set(ox,hh/2,oz); w.castShadow=true; fg2.add(w); });
+      [[RW/2,0],[-RW/2,0]].forEach(([ox,oz])=>{ const w=new THREE.Mesh(new THREE.BoxGeometry(t,hh,RD), mm2); w.position.set(ox,hh/2,oz); w.castShadow=true; fg2.add(w); });
+      legg(fg2);
+    }
     // trebjelker + stålrekkverk langs gangbanen over murkronen: fra åpningens elvesidevange og rundt mot elva (siden avledet av vannet, ikke av åpningen — Vegars dom 12.11)
     { const mtre=mat([122,98,72],dim), mrk=mat([152,148,140],dim);
       let sweep=((elv-g0)%(2*Math.PI)+2*Math.PI)%(2*Math.PI); const sgn=sweep<Math.PI?1:-1; if(sgn<0) sweep-=2*Math.PI;   // korteste vei fra åpningen mot elvesida

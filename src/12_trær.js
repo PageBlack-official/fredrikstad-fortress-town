@@ -88,8 +88,12 @@ const skyggeMat=new THREE.MeshBasicMaterial({colorWrite:false, depthWrite:false}
 const GREENS=[[96,148,104],[86,140,98],[104,156,106],[90,136,104],[110,160,100],[80,130,96]].map(c=>new THREE.Color(`rgb(${c[0]},${c[1]},${c[2]})`));
 const BARK=[[112,92,78],[100,84,74],[122,100,84]].map(c=>new THREE.Color(`rgb(${c[0]},${c[1]},${c[2]})`));
 const TP = DATA.traer;
-// ingen trær inni sirkelfortet (Isegran): der er det gress, ikke skog (Vegar 10.11)
-const FORTSONER = (DATA.bygg||[]).filter(b=>b && b.fort).map(b=>({x:b.fort.cx, y:b.fort.cy, r:(b.fort.ro||16)+2}));
+// ingen trær inni sirkelfortet (Isegran) OG på grus-tilkomsten utenfor åpningen (Vegar 10.11, Fable 12.11 pkt 5): der er gress/grus, ikke skog
+const FORTSONER = (DATA.bygg||[]).filter(b=>b && b.fort).flatMap(b=>{
+  const f=b.fort, ro=f.ro||16, a=(f.aapning!=null?f.aapning:214)*Math.PI/180;   // åpningens retning mot land
+  return [{x:f.cx, y:f.cy, r:ro+2},                                             // selve fortet
+          {x:f.cx+(ro+7)*Math.cos(a), y:f.cy+(ro+7)*Math.sin(a), r:9}];          // grus-tilkomsten utenfor åpningen (målt i ortofoto)
+});
 const klaseData=[], skyggeData=[], stammeData=[];
 TP.forEach((p,i)=>{
   if(FORTSONER.some(f=>Math.hypot(p[0]-f.x, p[1]-f.y) < f.r)) return;
