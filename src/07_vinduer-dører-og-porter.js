@@ -428,14 +428,14 @@ DATA.bygg.forEach((b,i)=>{
     const P=(r,a,z)=>[cx+r*Math.cos(a), z, -(cy+r*Math.sin(a))];
     // åpningen er et parallelt gjennombrudd: muren fjernes der mid-radius-punktet ligger innenfor ±Wd/2 vinkelrett på åpningsretningen, på åpningssida
     const iGap=a=>{ const da=a-g0; return Math.cos(da)>0 && Math.abs(rmid*Math.sin(da))<Wd/2; };
-    const pos=[];
+    const pos=[], capPos=[];
     for(let i=0;i<N;i++){
       const a0=i*2*Math.PI/N, a1=(i+1)*2*Math.PI/N; if(iGap((a0+a1)/2)) continue;
       const Oo0=P(ro,a0,0),Oo1=P(ro,a1,0),Ot0=P(ro,a0,H),Ot1=P(ro,a1,H);
       const Io0=P(ri,a0,0),Io1=P(ri,a1,0),It0=P(ri,a0,H),It1=P(ri,a1,H);
       pos.push(...Oo0,...Oo1,...Ot1, ...Oo0,...Ot1,...Ot0);     // ytre flate
       pos.push(...Io1,...Io0,...It0, ...Io1,...It0,...It1);     // indre flate
-      pos.push(...Ot0,...Ot1,...It1, ...Ot0,...It1,...It0);     // flat kappe på toppen
+      capPos.push(...Ot0,...Ot1,...It1, ...Ot0,...It1,...It0);  // kappa -> egen jevn flate (pkt 5)
     }
     [1,-1].forEach(s=>{                                          // to rette, parallelle murvanger kuttet vinkelrett på stien
       const ain=g0+s*Math.asin(Math.min(1,Wd/(2*ri))), aout=g0+s*Math.asin(Math.min(1,Wd/(2*ro)));
@@ -445,6 +445,9 @@ DATA.bygg.forEach((b,i)=>{
     });
     const fg=new THREE.BufferGeometry(); fg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); fg.computeVertexNormals();
     const fm=new THREE.Mesh(fg, mat([150,146,138],dim,[98,96,92],{stein:true})); fm.castShadow=fm.receiveShadow=true; legg(fm);
+    // kappa som EGEN, jevn flate uten steinmønster (Fable v7 pkt 5: stein-teksturen laget trappetrinn på toppkanten; kappen skal være jevn hele veien rundt)
+    const cg=new THREE.BufferGeometry(); cg.setAttribute('position',new THREE.Float32BufferAttribute(capPos,3)); cg.computeVertexNormals();
+    const cm=new THREE.Mesh(cg, mat([168,164,156],dim)); cm.castShadow=true; cm.receiveShadow=true; legg(cm);
     // tønnehvelv av torv (kruttkjeller): halvsylinder med akse bakmur→åpning (~4,6 m, topp ~1,7 m), bakre ende inn i muren;
     // front = loddrett natursteinsvegg med liten teglbue + lave vingemurer. Lys topp/mørke sider gir haug-lesning (Fable v7 pkt 3)
     { const dd=ri-4.0, dx=cx+dd*Math.cos(g0+Math.PI), dy=cy+dd*Math.sin(g0+Math.PI);
