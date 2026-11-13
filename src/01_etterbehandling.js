@@ -13,7 +13,13 @@ function maalVent(){ const m=window.__maal; if(!m) return; if(m!=='les'){ gl2.fi
 // ---- etterbehandling: blekkstrek rundt alle former og skygge i hjørner, som i tegningen ----
 const post=(()=>{
   let W=2, H=2, skala=1;
-  const rt=new THREE.WebGLRenderTarget(2,2,{samples: (BERORING && devicePixelRatio>=1.5)?2:4,   /* (Vegar: «refresh-raten + oppløsningen») maskin: alltid 4x MSAA */ type:THREE.HalfFloatType});
+  // Ingen MSAA i 3D-passet (13.11, Vegar: «det lagger på telefonen, og introen lagger også på Mac-en»). Målt på minien med ekte
+  // skjermkort (verktoy/fylle_maal.mjs): MSAA 4x på halvflyt var 38 % av bildetida på 2560×1440 (166 → 103 ms) og 31 % på telefonstørrelse
+  // (68 → 47 ms). Bildet er det samme (verktoy/bilde_ab.mjs: 0,02 % av pikslene avviker mer enn 60/255, ingen synlig forskjell i
+  // utsnittene): blekkstreken ligger over hver kant og FXAA tar resten. ?msaa=N gir N prøver (A/B). ?rt8=1: 8-bits sRGB-mål (ga bare 4 %).
+  const MSAA_Q=Q0.get('msaa'), RT8=Q0.get('rt8')==='1';
+  const rt=new THREE.WebGLRenderTarget(2,2,{samples: MSAA_Q!=null ? +MSAA_Q : 0, type: RT8 ? THREE.UnsignedByteType : THREE.HalfFloatType});
+  if(RT8) rt.texture.colorSpace=THREE.SRGBColorSpace;   // SRGB8_ALPHA8: grafikkortet koder/dekoder, så mørke toner ikke får bånd i 8 bit
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   // minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
   const MIN_TEX=renderer.extensions.has('EXT_color_buffer_float') && !Q0.get('mintex0');
@@ -165,6 +171,11 @@ const post=(()=>{
     settNatt(v){ m.uniforms.uNatt.value=v; },   // kvelden (23_vaer)
     settSkala(s,tving){ if(!tving && Math.abs(s-skala)<0.02) return; skala=s; const w=Math.max(2,Math.round(W*s)), h=Math.max(2,Math.round(H*s)); rt.setSize(w,h); m.uniforms.res.value.set(w,h); rtM.setSize(w,h); mM.uniforms.res.value.set(w,h); try{ SENERE.waterMat.uniforms.res.value.set(w,h); }catch(_){} }, // vannet slår opp speilet i samme pikselrom som bildet det tegnes i
     skala(){ return skala; },
+    // oppvarming (13.11, Vegar: «introen lagger på Mac-en»): spor av introen viste 1,6 s skyggeleggerkompilering midt i kamerabevegelsen
+    // (onFirstUse + getProgramiv). Alle programmer kompileres her, mot de samme målene de skal tegne til (fargerommet i målet er en del
+    // av programnøkkelen i three.js, så en kompilering mot lerretet ville blitt gjort om i første bilde). Kalles én gang fra 15_loop før introen.
+    forvarm(){ renderer.setRenderTarget(rt); renderer.compile(scene,cam); if(MIN_TEX){ renderer.setRenderTarget(rtM); renderer.compile(msc,pc); }
+      renderer.setRenderTarget(rtF); renderer.compile(ps,pc); renderer.setRenderTarget(null); renderer.compile(fs,pc); },
     render(){ const u=m.uniforms; u.mpp.value=kam.mpp*innerWidth/u.res.value.x; u.span.value=kam.mpp; u.naer.value=kam.naer; u.fjern.value=kam.fjern; u.px.value=Math.max(1.,renderer.getPixelRatio()*skala*0.9); u.sk.value=skala; u.dpr.value=renderer.getPixelRatio(); u.tid.value=performance.now()/1000; u.invPV.value.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse).invert(); u.tilt.value=SENERE.introTilt(); // miniatyr-uskarphet bare i introen
       // måling (tast m i feilsøkingsruta): gl.finish() etter hvert pass gir ekte GPU-tid per pass, ikke bare CPU-tid
       const maal=!!window.__maal, fin=maalVent, skyggeNaa=SENERE.sun.shadow.needsUpdate;

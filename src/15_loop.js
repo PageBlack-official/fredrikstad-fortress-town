@@ -166,9 +166,26 @@ function oppdater(){
 // laget: kartet tegner byen gjennom dette. ?tegn=0 (bare flyt-test): kameraet og tilstanden oppdateres hvert bilde, men byen tegnes ikke,
 // så kamerabanen kan måles bilde for bilde uten å vente på programvare-GPU-en
 const TEGN = Q0.get('tegn')!=='0';
+// ---- oppvarming før introen (13.11) ----
+// Spor av introen (verktoy/intro_spor.mjs, minien): 1,6 s gikk med til å kompilere skyggeleggere midt i introen (three kompilerer et
+// program første gang det tegnes: trærne, speilet, skyggekartet, husene i full høyde), og de bildene ble 0,5–0,6 s lange. Nå tegnes
+// alt én gang før introen starter, mens lerretet ennå er usynlig: husene i full høyde, trærne, speilet og skyggekartet, mot de
+// samme målene. Introen starter i bildet etter. ?varm=0 slår det av (A/B, verktoy/intro_maal.mjs).
+let varmet = Q0.get('varm')==='0', venterIntro=false;
+function oppvarming(){
+  const sy=buildings.map(g=>g.scale.y); buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null);
+  post.forvarm();
+  TILSTAND.skyggeSkitten=true; oppdaterSol(); post.render();          // skyggekartet og alle pass tegnes én gang (programmene for dybde og skygge lages her)
+  speil.render(true);                                                   // speilet: samme programmer, speilvendt, eget mål
+  buildings.forEach((g,i)=>{ g.scale.y=sy[i]; husTil(g); });
+  if(!vokst) setCrowns(0);
+  TILSTAND.skyggeSkitten=true;
+}
 const byLag={ id:'byen', type:'custom', renderingMode:'3d',
   onAdd(){ post.size(); speil.size(); },
-  render(gl,args){ window.__vaareBilder++; const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
+  render(gl,args){ window.__vaareBilder++;
+    if(!varmet){ varmet=true; kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); oppvarming(); renderer.resetState();
+      requestAnimationFrame(()=>{ if(venterIntro){ venterIntro=false; clock.start(); startIntro(); } map.triggerRepaint(); }); return; } const t0=performance.now(); window.__mellom=t0-(window.__slutt||t0); kameraFraKartet(args); renderer.resetState(); gl.depthRange(0,1); MAALT.speil=0; MAALT.skygge=0; oppdater(); MAALT.oppdater=performance.now()-t0-MAALT.speil; if(TEGN) post.render(); window.__slutt=performance.now(); window.__ramme=window.__slutt-t0;
     if(window.__logg){ const pt=window.__pt||{}; window.__logg.push({t:t0, r:window.__ramme, o:MAALT.oppdater, sp:MAALT.speil, sk:MAALT.skygge, s:pt.scene, b:pt.blekk, f:pt.fxaa, kall:pt.kall}); } if(!TILSTAND._synlig){ TILSTAND._synlig=true; requestAnimationFrame(()=>map.getCanvas().style.opacity=1); } } };
 // ber kartet tegne på nytt når noe beveger seg; i ro tegnes det 30 ganger i sekundet på maskin (Vegar: «refresh-raten»), 10 på telefon, når vann er i bildet (vannet lever), ellers ikke 
 // også mens en avbrutt intro henter inn lys og uskarphet: før gikk det med 10 bilder/s når kartet stod, så uskarpheten
@@ -181,7 +198,7 @@ map.on('load', ()=>{
   map.addLayer(byLag);
   kobleSol(); if(SOLINTRO) solStart();
   if(Q.get('skip') || LENKE.hopp){ introStartet=true; TILSTAND.introDone=true; vokst=true; buildings.forEach(g=>{ g.scale.y=1; husTil(g); }); setCrowns(null); map.jumpTo({...hjemVisning(), bearing: Q.get('az')?-(+Q.get('az')):-AZ0_GRADER, zoom: Q.get('zoom')?zoomFor(+Q.get('zoom')):Z_HJEM}); lenkeStart(); }
-  else startIntro();
+  else if(varmet) startIntro(); else venterIntro=true;   // introen starter etter oppvarmingen (første bilde i laget)
   puls();
 });
 // testkroker (skjermbilder uten ny sidelasting)
