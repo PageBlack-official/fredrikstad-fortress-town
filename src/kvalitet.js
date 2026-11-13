@@ -35,4 +35,6 @@ export function feilsokTast(t){
   if(t==='x') KVAL.skalaStille = KVAL.skalaStille===1 ? 0.75 : 1; }
 
 if(Q0.get('nivaa')) settNivaa(+Q0.get('nivaa'));
+// test (13.11): ?ao=0|7|14 ?ss=1|2|4 ?skala=0.5-1 overstyrer ett ledd om gangen, for maling av hva hvert fullskjermpass koster
+if(Q0.get('ao')!=null) KVAL.aoStille=+Q0.get('ao'); if(Q0.get('ss')!=null) KVAL.ssStille=+Q0.get('ss'); if(Q0.get('skala')!=null) KVAL.skalaMaskin=+Q0.get('skala');
 registrer({ beregnSkala: () => beregnSkala });   // brukes av tidligere moduler via SENERE (tilstand.js)
