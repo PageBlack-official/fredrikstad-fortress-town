@@ -1091,16 +1091,16 @@
   {
    "id": "bnr-193867928",
    "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
-   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg.",
+   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg. RUNDE2 14.11: 1.etg store butikkvinduer (butikk), 2.etg T-sprosser, dempet vegg/tak, rett (ikke rundbuet) dobbeltport, mørkebrune bånd + hjørnekasse/skråinngang som veggfelt.",
    "sett": {
     "tak": [
-     168,
-     82,
-     62
+     132,
+     74,
+     60
     ],
     "vegg": [
-     204,
-     192,
+     202,
+     197,
      198
     ]
    },
@@ -1111,7 +1111,6 @@
       168,
       42
      ],
-     "stor": true,
      "rader": [
       9,
       9
@@ -1137,7 +1136,7 @@
       },
       {
        "u": 0.7,
-       "typ": 2,
+       "typ": 1,
        "b": 2.4,
        "h": 2.8
       },
@@ -1147,7 +1146,13 @@
        "b": 1.1,
        "h": 2.2
       }
-     ]
+     ],
+     "butikk": {
+      "b": 1.7,
+      "h": 2.4,
+      "sill": 0.4
+     },
+     "spross": "T"
     },
     {
      "side": "SØ",
@@ -1155,7 +1160,6 @@
       172,
       40
      ],
-     "stor": true,
      "rader": [
       6,
       8
@@ -1173,6 +1177,63 @@
        "b": 1.1,
        "h": 2.2
       }
+     ],
+     "butikk": {
+      "b": 1.7,
+      "h": 2.4,
+      "sill": 0.4
+     },
+     "spross": "T"
+    }
+   ],
+   "arker": "ingen",
+   "veggfelt": [
+    {
+     "side": "NØ",
+     "fra": 0.0,
+     "til": 1.0,
+     "farge": [
+      74,
+      52,
+      44
+     ],
+     "z": [
+      2.85,
+      3.3
+     ]
+    },
+    {
+     "side": "SØ",
+     "fra": 0.0,
+     "til": 1.0,
+     "farge": [
+      74,
+      52,
+      44
+     ],
+     "z": [
+      2.85,
+      3.3
+     ]
+    },
+    {
+     "side": "NØ",
+     "fra": 0.0,
+     "til": 0.06,
+     "farge": [
+      70,
+      50,
+      42
+     ]
+    },
+    {
+     "side": "SØ",
+     "fra": 0.94,
+     "til": 1.0,
+     "farge": [
+      70,
+      50,
+      42
      ]
     }
    ]
@@ -1226,12 +1287,12 @@
   {
    "id": "bnr-193868258",
    "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
-   "grunn": "Therese M (Voldportgaten 71): én etasje, hvit mur, eget lavere valmtak takstein. Butikkvinduer med rundbuet topp («ovale topp-vinduer») langs gata, og skrått hjørne med inngang mot gaten.",
+   "grunn": "Therese M (Voldportgaten 71): én etasje, hvit mur, eget lavere valmtak takstein. Butikkvinduer med rundbuet topp («ovale topp-vinduer») langs gata, og skrått hjørne med inngang mot gaten. RUNDE2 14.11: mørk rødbrun tegl; inngangsdør flyttet til det skrå hjørnet mot gaten.",
    "sett": {
     "tak": [
-     176,
-     86,
-     64
+     132,
+     74,
+     60
     ],
     "vegg": [
      236,
@@ -1254,7 +1315,7 @@
      ],
      "dorer": [
       {
-       "u": 0.03,
+       "u": 0.97,
        "typ": 1,
        "b": 1.2,
        "h": 2.3

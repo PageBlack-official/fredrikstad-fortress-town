@@ -28,7 +28,7 @@ const vindMat=new THREE.ShaderMaterial({
       gl_Position=projectionMatrix*viewMatrix*wp;`+glSolVMain('wp','vN')+`}`,
   fragmentShader:GL_SOL_F+`uniform sampler2D uPalTex; uniform float uPalN; varying vec2 vUv; varying vec4 vInfo; varying vec2 vSz; varying vec3 vN; varying float vPaa;
     void main(){
-      float typ=vInfo.x, bue=vInfo.y;
+      float typ=vInfo.x, bue=vInfo.y, spross=vInfo.z;
       vec2 m=vUv*vSz;
       float d=dot(normalize(mat3(viewMatrix)*vN),solRetning());   // kamerarom som husene 
       float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
@@ -52,7 +52,8 @@ const vindMat=new THREE.ShaderMaterial({
         // på nært hold og tones ut når én piksel blir for stor til å bære dem (fw = meter per piksel), så de ikke griser på avstand
         float lo=vSz.y*(typ>2.5?0.5:0.62);
         float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-lo);
-        float qs=(typ<0.5 && vSz.y>1.0)?abs(m.y-lo*0.5):1e3;               // sprossen midt i nedre ramme: seks ruter
+        if(spross>1.5 && m.y<lo) pv=1e3;                                   // T-post (spross 2): loddrett post bare i øvre del -> én stor nedre rute, to små øvre
+        float qs=(typ<0.5 && vSz.y>1.0 && spross<1.5)?abs(m.y-lo*0.5):1e3; // sprossen midt i nedre ramme: seks ruter (ikke på T-post)
         // nærmeste zoom i kartet gir ~0,12–0,17 m per piksel på skjerm med pikseltetthet 1 (0,06–0,08 på mobil): korset (post og
         // losholt) står til 0,2 m/px og er borte ved 0,32; sprossen i nedre ramme bare der det er minst ~8 px per meter
         float bH=max(0.035,0.5*fw), bS=max(0.02,0.45*fw);                    // halv bredde: minst ~1 px
@@ -493,11 +494,12 @@ DATA.bygg.forEach((b,i)=>{
   }
   // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)
   if(b.veggfelt && !dim){
-    b.veggfelt.forEach(([x1,y1,x2,y2,r,g,bb])=>{
+    b.veggfelt.forEach(([x1,y1,x2,y2,r,g,bb,z0,z1])=>{
       const L=Math.hypot(x2-x1,y2-y1); if(L<0.3) return; let nx=(y2-y1)/L, ny=-(x2-x1)/L;
       if(iPoly([(x1+x2)/2+nx*0.2,(y1+y2)/2+ny*0.2],pts)){ nx=-nx; ny=-ny; }
-      const o=0.025, A=[x1+nx*o,y1+ny*o], B=[x2+nx*o,y2+ny*o];
-      const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],0,-A[1], B[0],0,-B[1], B[0],h,-B[1],  A[0],0,-A[1], B[0],h,-B[1], A[0],h,-A[1]],3));
+      const o=0.03, A=[x1+nx*o,y1+ny*o], B=[x2+nx*o,y2+ny*o];   // bånd/felt (f.eks. vannbord): valgfritt z-spenn [z0,z1], ellers hele veggen 0..h
+      const za=(z0!==undefined&&z0!==null)?z0:0, zb=(z1!==undefined&&z1!==null)?z1:h;
+      const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute([A[0],za,-A[1], B[0],za,-B[1], B[0],zb,-B[1],  A[0],za,-A[1], B[0],zb,-B[1], A[0],zb,-A[1]],3));
       gg.computeVertexNormals(); legg(new THREE.Mesh(gg,mat([r,g,bb],dim,null,{ds:true})));
     });
   }

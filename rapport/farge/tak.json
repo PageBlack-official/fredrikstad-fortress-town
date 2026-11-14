@@ -1668,7 +1668,7 @@
  },
  {
   "id": "bnr-193868258",
-  "navn": null,
+  "navn": "Therese M",
   "flytt": [
    -1.26,
    -1.26
@@ -1690,9 +1690,9 @@
    "kvartaltegningen Kvartal8BITMAP (IoU 0.72)"
   ],
   "for_": [
-   246,
-   122,
-   106
+   176,
+   86,
+   64
   ],
   "farge": [
    176,
@@ -3895,9 +3895,9 @@
    "kvartaltegningen Kvartal9 (IoU 0.65)"
   ],
   "for_": [
-   188,
-   188,
-   192
+   168,
+   82,
+   62
   ],
   "farge": [
    105,
@@ -4125,10 +4125,10 @@
  },
  {
   "id": "bnr-193868622",
-  "navn": null,
+  "navn": "Majorens Kro & Stue",
   "flytt": [
-   -1.8299999999999998,
-   -1.8299999999999998
+   -1.686,
+   -1.686
   ],
   "foto": [
    255.0,
@@ -4147,9 +4147,9 @@
    "kvartaltegningen Kvartal9 (IoU 0.76)"
   ],
   "for_": [
-   188,
-   188,
-   192
+   150,
+   120,
+   108
   ],
   "farge": [
    105,

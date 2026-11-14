@@ -3757,7 +3757,7 @@
  },
  {
   "id": "bnr-193868258",
-  "navn": null,
+  "navn": "Therese M",
   "sikkerhet": "middels",
   "side": "SØ (fasade mot Raadhusgaten)",
   "vegg": 2,
@@ -5103,7 +5103,7 @@
  },
  {
   "id": "bnr-193868622",
-  "navn": null,
+  "navn": "Majorens Kro & Stue",
   "sikkerhet": "høy",
   "side": "NØ (gatefasade)",
   "vegg": 2,
@@ -5129,15 +5129,14 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    5,
     4
    ],
-   "dorer": 1,
+   "dorer": 2,
    "arker": 0,
    "piper": 1
   },
-  "avvik": false,
-  "dorer_avvik": false
+  "avvik": true,
+  "dorer_avvik": true
  },
  {
   "id": "bnr-193867979",

@@ -129,7 +129,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193868673 |  | [1] | [1] | ikke synlig | 0 | 0 | 0 | None | 0 |  |
 | bnr-6251218 |  | [4, 6] | [4, 4] | 1 grå/olivengrå tofløyet fyllingsdør med overlys ca. 0.40; 1 grå tofløyet port med overlys til venstre (ca. 0.05–0.25) | 2 | 0 | 0 | 1 murt teglpipe | 1 | ja |
 | bnr-193868266 |  | [3, 3] | [4, 5] | 1 tofløyet port, rød med grønne fyllinger, ca. 0.65–0.90 av synlig vegg | 0 | 0 | 0 | 1 murt teglpipe | 2 | ja |
-| bnr-193868258 |  | [5] | [6, 2] | 0 synlig (busker foran) | 1 | 1 ark midt med 2-rams vindu; 2 små takvinduer | 0 | 2 murte teglpiper | 1 | ja |
+| bnr-193868258 | Therese M | [5] | [6, 2] | 0 synlig (busker foran) | 1 | 1 ark midt med 2-rams vindu; 2 små takvinduer | 0 | 2 murte teglpiper | 1 | ja |
 | bnr-193867944 | restaurantbygning/kafé | [5] | [5] | 1 brun dør midt (ca. 0.55) med steintrinn; butikkvinduer på hver side | 1 | 0 | 0 | 3 murte teglpiper | 4 |  |
 | bnr-193867936 |  | [6, 3] | [6, 3] | teglgården: 2 butikkdører (grønn ca. 0.20, brun/glass ca. 0.45) med steintrapper og store butikkvinduer; gul gård: 1 inngang med glassdør nede (ca. 0.85) | 2 | 1 ark/takoppbygg på teglgården | 0 | 1 på den gule gården | 2 |  |
 | bnr-193868274 |  | [4] | [7] | 1 mørk grå/grønn fyllingsdør med ovalt overlys og husnummer, ca. 0.85 | 0 | 3 små takvinduer | 1 | 2 (murte, en ved hver ende) | 2 | ja |
@@ -150,7 +150,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867774 |  | [4, 5] | [4, 5] | 1 brun tofløyet fyllingsport med overlys, venstre ende (ca. 0.05–0.20), nr. '65' | 1 | 0 | 0 | 2 murte teglpiper | 1 |  |
 | bnr-193972489 | annen forretningsbygning | [1] | [] | ikke synlig | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193867855 |  | [2] | [3] | 1 mørk grønn fyllingsdør med utskåret dekor, høyre (ca. 0.85) | 0 | 1 ark med hvite vinduer og blomsterkasser | 0 | 2 murte teglpiper | 2 | ja |
-| bnr-193868622 |  | [5, 4] | [5, 4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 1 | 0 | 0 | ikke synlig | 1 |  |
+| bnr-193868622 | Majorens Kro & Stue | [5, 4] | [4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 2 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193867979 |  | [5, 6] | [7, 4, 7] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-16290424 | annen lagerbygning | [2, 3] | [2, 3] | 0 på gavlen | 0 | 0 | 0 | 0 | 0 |  |
 | bnr-193972195 | kontor- og administrasjonsbygning | [2] | [1] | skjult bak gjerdet | 0 | 0 | 0 | None | 1 | ja |

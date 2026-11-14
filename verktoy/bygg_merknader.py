@@ -15,7 +15,9 @@ Kilde: kilder/bygg-merknader.json, én post per hus med «kilde» (hvem/hva som 
               «bare_telling»: true: tallene er Vegars/Claudes håndtelling i tegningen til kontrollen (verktoy/kontroll.py), og
               vinduene fra fasadeavlesningen står (de stemmer; det er kontrollens hulltelling som leser feil).
               «bue»: 1 = rundbuet topp på vinduene i denne veggen (typ 0), 2 = segmentbue (src/07; Therese M: «ovale topp-vinduer»).
-              «stor»: true: brede butikkvinduer i 1. etasje (streetview_fasader.lag_fasade).
+              «stor»: true: brede butikkvinduer i hele veggen (streetview_fasader.lag_fasade; samme størrelse i alle etasjer).
+              «butikk»: {b, h, sill}: KUN nederste vindusrad gjøres til store butikkvinduer (bred, høy, lav brystning), etasjene over normale.
+              «spross»: "T": T-postvinduer (én stor nedre rute, to små øvre) på etasjene OVER grunnraden (src/07, vInfo.z); grunnraden/butikkvinduene urørt.
   takvinduer  [{side, andeler: [..], b, h}]  flate vinduer i takflaten som faller mot side, i andel langs takfoten
   piper       "ingen" | [indekser som fjernes]
   arker       "ingen"
@@ -175,11 +177,36 @@ def main(tørt=False):
                     if VG.naermeste_vegg(V, np.array(v[:2]))[0] != wi: return False
                     t = float((np.array(v[:2]) - w['a']) @ w['u'])
                     return -0.05 <= t <= w['L'] + 0.05
+                if vs.get('butikk'):              # store butikkvinduer i 1. etasje: nederste vindusrad gjøres bred og høy med lav brystning
+                    bk = vs['butikk'] if isinstance(vs['butikk'], dict) else {}
+                    bh = bk.get('h', 2.2); sill = bk.get('sill', 0.45); bmaks = bk.get('b', 1.7)
+                    tu = np.array([w['u'][0], w['u'][1]], float)
+                    langs = lambda e: float(e[0] * tu[0] + e[1] * tu[1])
+                    wins = sorted([e for e in el if e[9] == 0], key=langs)
+                    if wins:
+                        zmin = min(e[2] - e[8] / 2 for e in wins)
+                        grunn_rad = sorted([e for e in wins if (e[2] - e[8] / 2) <= zmin + 0.6], key=langs)
+                        for j, e in enumerate(grunn_rad):
+                            gaps = []
+                            if j > 0: gaps.append(abs(langs(e) - langs(grunn_rad[j - 1])))
+                            if j < len(grunn_rad) - 1: gaps.append(abs(langs(grunn_rad[j + 1]) - langs(e)))
+                            bredde = min(bmaks, (min(gaps) - 0.4)) if gaps else bmaks
+                            if bredde > e[7]:                          # bare bredere, aldri smalere
+                                e[7] = round(bredde, 2)
+                            e[8] = bh; e[2] = round(sill + bh / 2, 2)   # høyt vindu, lav brystning
                 if vs.get('bue'):                 # rundbuet topp på vinduene (bue 1) eller segmentbue (bue 2) på denne veggen (src/07)
                     for e in el:
                         if e[9] == 0: e[10] = vs['bue']
+                if vs.get('spross'):              # sprossestil på etasjene OVER grunnraden (T = T-post: én stor nedre rute, to små øvre); grunnraden (butikkvinduer) urørt
+                    stil = {'T': 2}.get(vs['spross'], 0)
+                    wins = [e for e in el if e[9] == 0]
+                    if stil and wins:
+                        zmin = min(e[2] - e[8] / 2 for e in wins)
+                        for e in wins:
+                            if (e[2] - e[8] / 2) > zmin + 0.6: e[11] = stil   # ikke grunnraden
                 vind = [v for v in vind if not paa_delen(v)] + el
-                for e in el: e[11] = 0
+                for e in el:
+                    if e[11] != 2: e[11] = 0      # merknadvinduer merkes 0, men behold sprossestil (e[11]=2)
                 logg.append(f"{i}: vegg mot {vs['side']} (vegg {wi} på {xv['id']}, {t0:.1f}–{t1:.1f} m av {V[wi]['L']:.1f} m): {info.get('rader')} vinduer, {info.get('dorer')} dører")
             sett_v('vind', vind)
         if m.get('takvinduer'):
@@ -217,7 +244,10 @@ def main(tørt=False):
                 def pkt(s_):
                     t = s_ if ltr else 1 - s_
                     q = w['a'] + w['u'] * w['L'] * t; return [round(float(q[0]), 2), round(float(q[1]), 2)]
-                felt.append(pkt(vf['fra']) + pkt(vf['til']) + list(vf['farge']))
+                rad = pkt(vf['fra']) + pkt(vf['til']) + list(vf['farge'])
+                if vf.get('z'):                                   # valgfritt høydespenn [z0, z1] (horisontalt bånd, f.eks. vannbord); ellers hele veggen
+                    rad += [round(float(vf['z'][0]), 2), round(float(vf['z'][1]), 2)]
+                felt.append(rad)
             sett('veggfelt', felt)
         if m.get('piper') == 'ingen':
             sett('piper', [])

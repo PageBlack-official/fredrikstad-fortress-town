@@ -1,19 +1,20 @@
 {
  "standpunkt": {
   "navn": "kryss-voldportgaten-voldgaten",
-  "lat": 59.2032937,
-  "lon": 10.9559304,
-  "heading": 290.9,
+  "lat": 59.2033001,
+  "lon": 10.9561111,
+  "heading": 248,
   "pitch": 88.5,
-  "fov": 80,
-  "oye": 2.5
+  "fov": 84,
+  "oye": 2.6,
+  "grunn": "RUNDE2 pkt 9: standpunktet flyttet ut i krysset (ENE for 75s hjørne), ser WSW mot hjørnet [179.8,46.9] – ikke lenger inne i et hus"
  },
  "kamera": {
-  "x": 181.35094250822988,
-  "y": 51.00552584434738,
-  "bakke": 0.25,
-  "hoyde": 2.75,
-  "vfov": 80,
+  "x": 191.63854070992625,
+  "y": 51.717183981911866,
+  "bakke": 0.15000000596046448,
+  "hoyde": 2.7500000059604646,
+  "vfov": 84,
   "treff": 3
  },
  "synlige_hus": [
@@ -21,2200 +22,2544 @@
    "id": "bnr-193870325",
    "navn": "Hovedvakten – det gamle slaveri",
    "skjerm": [
-    146,
-    353
+    743,
+    374
    ]
   },
   {
    "id": "bnr-193870317",
    "navn": "Det grundmurede provianthus",
    "skjerm": [
-    216,
-    353
+    774,
+    374
    ]
   },
   {
    "id": "bnr-193867537",
    "navn": "Infanterikasernen",
    "skjerm": [
-    285,
-    359
+    815,
+    378
    ]
   },
   {
    "id": "bnr-193867529",
    "navn": "Kirken",
    "skjerm": [
-    127,
-    357
+    738,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193870279",
+   "navn": "Tøihuset, østfløya",
+   "skjerm": [
+    632,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193870198",
+   "navn": "Labratoriet",
+   "skjerm": [
+    511,
+    376
    ]
   },
   {
    "id": "pb-1",
    "navn": "Brannbatteriet",
    "skjerm": [
-    186,
-    353
+    760,
+    374
    ]
   },
   {
    "id": "bnr-193868363",
    "navn": "Binggården",
    "skjerm": [
-    687,
-    357
+    1244,
+    382
    ]
   },
   {
    "id": "bnr-193867502",
    "navn": "Kiørboegården",
    "skjerm": [
-    371,
-    354
+    867,
+    375
+   ]
+  },
+  {
+   "id": "bnr-193867677",
+   "navn": "Ingeniørgården",
+   "skjerm": [
+    81,
+    389
    ]
   },
   {
    "id": "bnr-193868568",
    "navn": "Brannstasjon - uthus til Infanterikasernen",
    "skjerm": [
-    140,
-    360
+    746,
+    378
    ]
   },
   {
    "id": "bnr-193870295",
    "navn": "Bakeriet",
    "skjerm": [
-    178,
-    354
+    757,
+    375
+   ]
+  },
+  {
+   "id": "bnr-193867634",
+   "navn": "Vollmesterboligen",
+   "skjerm": [
+    336,
+    383
    ]
   },
   {
    "id": "bnr-193868460",
    "navn": "Kjørbogårdens sidebygning",
    "skjerm": [
-    364,
-    353
+    862,
+    375
    ]
   },
   {
    "id": "bnr-193867499",
    "navn": "Kommandantgården",
    "skjerm": [
-    296,
-    354
+    818,
+    375
    ]
   },
   {
    "id": "bnr-193870309",
    "navn": "Offisersvakten",
    "skjerm": [
-    187,
-    353
+    761,
+    374
    ]
   },
   {
    "id": "bnr-193867510",
    "navn": "Ekserserhuset",
    "skjerm": [
-    215,
-    355
+    776,
+    376
    ]
   },
   {
    "id": "bnr-193868428",
    "navn": "Kommisjonsgården",
    "skjerm": [
-    789,
-    355
+    1518,
+    383
    ]
   },
   {
    "id": "bnr-193870333",
    "navn": "Kruttårnet",
    "skjerm": [
-    61,
-    353
+    710,
+    374
    ]
   },
   {
    "id": "pb-2",
    "navn": "Sprøytehuset / Proviantboden",
    "skjerm": [
-    238,
-    353
+    786,
+    374
    ]
   },
   {
    "id": "bnr-13415846",
    "navn": null,
    "skjerm": [
-    630,
-    351
+    1156,
+    374
    ]
   },
   {
    "id": "bnr-13415870",
    "navn": null,
    "skjerm": [
-    659,
-    351
+    1209,
+    374
    ]
   },
   {
    "id": "bnr-193820433",
    "navn": null,
    "skjerm": [
-    672,
-    351
+    1235,
+    374
    ]
   },
   {
    "id": "bnr-13415862",
    "navn": null,
    "skjerm": [
-    645,
-    351
+    1182,
+    374
    ]
   },
   {
    "id": "bnr-193820786",
    "navn": null,
    "skjerm": [
-    662,
-    351
-   ]
-  },
-  {
-   "id": "bnr-13416214",
-   "navn": null,
-   "skjerm": [
-    970,
-    352
+    1214,
+    374
    ]
   },
   {
    "id": "bnr-13416206",
    "navn": "Cube 8 Gallery",
    "skjerm": [
-    727,
-    351
-   ]
-  },
-  {
-   "id": "bnr-13416192",
-   "navn": null,
-   "skjerm": [
-    883,
-    352
-   ]
-  },
-  {
-   "id": "bnr-193987494",
-   "navn": null,
-   "skjerm": [
-    933,
-    352
-   ]
-  },
-  {
-   "id": "bnr-193992854",
-   "navn": null,
-   "skjerm": [
-    796,
-    352
+    1361,
+    376
    ]
   },
   {
    "id": "bnr-193992846",
    "navn": null,
    "skjerm": [
-    766,
-    351
+    1475,
+    376
    ]
   },
   {
    "id": "bnr-13415889",
    "navn": null,
    "skjerm": [
-    687,
-    351
+    1267,
+    374
    ]
   },
   {
    "id": "bnr-13416575",
    "navn": null,
    "skjerm": [
-    685,
-    350
+    1263,
+    374
    ]
   },
   {
    "id": "bnr-193820751",
    "navn": null,
    "skjerm": [
-    748,
-    351
+    1424,
+    375
    ]
   },
   {
    "id": "bnr-193820476",
    "navn": null,
    "skjerm": [
-    705,
-    351
+    1307,
+    374
    ]
   },
   {
    "id": "bnr-13416060",
    "navn": null,
    "skjerm": [
-    727,
-    350
+    1367,
+    374
    ]
   },
   {
    "id": "bnr-13416346",
    "navn": null,
    "skjerm": [
-    728,
-    351
+    1369,
+    374
    ]
   },
   {
    "id": "bnr-193820778",
    "navn": null,
    "skjerm": [
-    748,
-    351
+    1425,
+    374
    ]
   },
   {
    "id": "bnr-13416370",
    "navn": null,
    "skjerm": [
-    703,
-    350
+    1305,
+    374
    ]
   },
   {
    "id": "bnr-16300365",
    "navn": null,
    "skjerm": [
-    697,
-    351
-   ]
-  },
-  {
-   "id": "bnr-13416230",
-   "navn": null,
-   "skjerm": [
-    817,
-    351
+    1290,
+    374
    ]
   },
   {
    "id": "bnr-193820522",
    "navn": null,
    "skjerm": [
-    726,
-    351
+    1362,
+    374
    ]
   },
   {
    "id": "bnr-193820417",
    "navn": null,
    "skjerm": [
-    660,
-    351
+    1212,
+    374
    ]
   },
   {
    "id": "bnr-13415900",
    "navn": null,
    "skjerm": [
-    710,
-    351
+    1322,
+    374
    ]
   },
   {
    "id": "bnr-193820883",
    "navn": null,
    "skjerm": [
-    724,
-    350
+    1359,
+    374
    ]
   },
   {
    "id": "bnr-13415897",
    "navn": null,
    "skjerm": [
-    710,
-    350
+    1323,
+    374
    ]
   },
   {
    "id": "bnr-193820964",
    "navn": null,
    "skjerm": [
-    745,
-    351
+    1416,
+    374
    ]
   },
   {
    "id": "bnr-193820832",
    "navn": null,
    "skjerm": [
-    703,
-    350
+    1304,
+    374
    ]
   },
   {
    "id": "bnr-13416486",
    "navn": null,
    "skjerm": [
-    747,
-    351
-   ]
-  },
-  {
-   "id": "bnr-13416249",
-   "navn": null,
-   "skjerm": [
-    837,
-    351
+    1422,
+    375
    ]
   },
   {
    "id": "bnr-6269281",
    "navn": null,
    "skjerm": [
-    765,
-    351
+    1477,
+    375
    ]
   },
   {
    "id": "bnr-13416362",
    "navn": null,
    "skjerm": [
-    708,
-    350
+    1316,
+    374
    ]
   },
   {
    "id": "bnr-13415854",
    "navn": null,
    "skjerm": [
-    645,
-    351
+    1182,
+    374
    ]
   },
   {
    "id": "bnr-13416389",
    "navn": null,
    "skjerm": [
-    742,
-    351
+    1408,
+    374
    ]
   },
   {
    "id": "bnr-193820603",
    "navn": null,
    "skjerm": [
-    733,
-    351
+    1381,
+    375
    ]
   },
   {
    "id": "bnr-13415927",
    "navn": null,
    "skjerm": [
-    734,
-    351
+    1385,
+    374
    ]
   },
   {
    "id": "bnr-13415919",
    "navn": null,
    "skjerm": [
-    748,
-    351
+    1426,
+    374
    ]
   },
   {
    "id": "bnr-193820697",
    "navn": null,
    "skjerm": [
-    782,
-    351
+    1538,
+    375
    ]
   },
   {
    "id": "bnr-13416109",
    "navn": null,
    "skjerm": [
-    755,
-    351
+    1446,
+    375
    ]
   },
   {
    "id": "bnr-193820689",
    "navn": null,
    "skjerm": [
-    774,
-    351
+    1508,
+    375
    ]
   },
   {
    "id": "bnr-193820514",
    "navn": null,
    "skjerm": [
-    738,
-    351
+    1393,
+    375
    ]
   },
   {
    "id": "bnr-193820492",
    "navn": null,
    "skjerm": [
-    739,
-    351
+    1398,
+    375
    ]
   },
   {
    "id": "bnr-13418292",
    "navn": null,
    "skjerm": [
-    715,
-    350
+    1336,
+    374
    ]
   },
   {
    "id": "bnr-193820719",
    "navn": null,
    "skjerm": [
-    767,
-    351
+    1485,
+    375
    ]
   },
   {
    "id": "bnr-193820638",
    "navn": null,
    "skjerm": [
-    749,
-    351
+    1428,
+    375
    ]
   },
   {
    "id": "bnr-13416427",
    "navn": null,
    "skjerm": [
-    720,
-    350
+    1348,
+    374
    ]
   },
   {
    "id": "bnr-13416281",
    "navn": null,
    "skjerm": [
-    761,
-    351
+    1467,
+    375
    ]
   },
   {
    "id": "bnr-13416478",
    "navn": null,
    "skjerm": [
-    719,
-    351
+    1345,
+    374
    ]
   },
   {
    "id": "bnr-193820735",
    "navn": null,
    "skjerm": [
-    760,
-    351
+    1462,
+    375
    ]
   },
   {
    "id": "bnr-193820662",
    "navn": null,
    "skjerm": [
-    751,
-    351
+    1430,
+    375
    ]
   },
   {
    "id": "bnr-13416559",
    "navn": null,
    "skjerm": [
-    692,
-    351
+    1278,
+    374
    ]
   },
   {
    "id": "bnr-193820727",
    "navn": null,
    "skjerm": [
-    752,
-    351
+    1437,
+    375
    ]
   },
   {
    "id": "bnr-193820573",
    "navn": null,
    "skjerm": [
-    698,
-    351
+    1292,
+    374
    ]
   },
   {
    "id": "bnr-13416338",
    "navn": null,
    "skjerm": [
-    756,
-    351
+    1448,
+    375
    ]
   },
   {
    "id": "bnr-193820611",
    "navn": null,
    "skjerm": [
-    713,
-    351
-   ]
-  },
-  {
-   "id": "bnr-193820670",
-   "navn": null,
-   "skjerm": [
-    799,
-    351
+    1327,
+    374
    ]
   },
   {
    "id": "bnr-193992838",
    "navn": null,
    "skjerm": [
-    735,
-    351
+    1384,
+    375
    ]
   },
   {
    "id": "bnr-13416087",
    "navn": null,
    "skjerm": [
-    787,
-    351
+    1557,
+    375
    ]
   },
   {
    "id": "bnr-193820409",
    "navn": null,
    "skjerm": [
-    668,
-    351
+    1227,
+    374
    ]
   },
   {
    "id": "bnr-13416354",
    "navn": null,
    "skjerm": [
-    774,
-    351
+    1510,
+    375
    ]
   },
   {
    "id": "bnr-13416435",
    "navn": null,
    "skjerm": [
-    619,
-    351
+    1138,
+    374
    ]
   },
   {
    "id": "bnr-193820654",
    "navn": null,
    "skjerm": [
-    726,
-    351
+    1362,
+    375
    ]
   },
   {
    "id": "bnr-13416311",
    "navn": null,
    "skjerm": [
-    769,
-    351
+    1490,
+    375
    ]
   },
   {
    "id": "pb-3",
    "navn": null,
    "skjerm": [
-    705,
-    350
+    1310,
+    374
    ]
   },
   {
    "id": "bnr-193820506",
    "navn": null,
    "skjerm": [
-    750,
-    351
+    1430,
+    375
    ]
   },
   {
    "id": "bnr-193820808",
    "navn": null,
    "skjerm": [
-    715,
-    351
+    1333,
+    374
    ]
   },
   {
    "id": "bnr-13416451",
    "navn": null,
    "skjerm": [
-    725,
-    351
+    1361,
+    374
    ]
   },
   {
    "id": "bnr-193820743",
    "navn": null,
    "skjerm": [
-    754,
-    351
+    1443,
+    375
    ]
   },
   {
    "id": "bnr-193867448",
    "navn": "Annekset",
    "skjerm": [
-    477,
-    351
+    956,
+    374
    ]
   },
   {
    "id": "bnr-193867464",
    "navn": "Isegranhuset",
    "skjerm": [
-    523,
-    351
+    1004,
+    374
    ]
   },
   {
    "id": "bnr-193867472",
    "navn": null,
    "skjerm": [
-    492,
-    351
+    971,
+    374
    ]
   },
   {
    "id": "pb-4",
    "navn": null,
    "skjerm": [
-    437,
-    352
+    918,
+    374
    ]
   },
   {
    "id": "bnr-193867480",
    "navn": "Widdingstua",
    "skjerm": [
-    505,
-    351
+    984,
+    374
    ]
   },
   {
    "id": "bnr-193867421",
    "navn": "Kabelmagasinet",
    "skjerm": [
-    457,
-    351
+    937,
+    374
    ]
   },
   {
    "id": "bnr-193867405",
    "navn": null,
    "skjerm": [
-    457,
-    351
+    937,
+    373
    ]
   },
   {
    "id": "bnr-193867413",
    "navn": null,
    "skjerm": [
-    437,
-    351
+    919,
+    373
    ]
   },
   {
    "id": "bnr-193868355",
    "navn": "Det gamle raadhus",
    "skjerm": [
-    541,
-    356
+    1021,
+    379
    ]
   },
   {
    "id": "bnr-193868339",
    "navn": null,
    "skjerm": [
-    616,
-    356
+    1120,
+    380
    ]
   },
   {
    "id": "bnr-193867626",
    "navn": null,
    "skjerm": [
-    514,
-    355
+    992,
+    378
    ]
   },
   {
    "id": "bnr-193868347",
    "navn": null,
    "skjerm": [
-    571,
-    356
+    1058,
+    380
+   ]
+  },
+  {
+   "id": "bnr-6276814",
+   "navn": null,
+   "skjerm": [
+    111,
+    377
+   ]
+  },
+  {
+   "id": "bnr-6276822",
+   "navn": null,
+   "skjerm": [
+    21,
+    378
+   ]
+  },
+  {
+   "id": "bnr-6276792",
+   "navn": null,
+   "skjerm": [
+    167,
+    377
+   ]
+  },
+  {
+   "id": "bnr-6276806",
+   "navn": null,
+   "skjerm": [
+    156,
+    377
+   ]
+  },
+  {
+   "id": "bnr-6276784",
+   "navn": null,
+   "skjerm": [
+    172,
+    376
+   ]
+  },
+  {
+   "id": "bnr-6276768",
+   "navn": null,
+   "skjerm": [
+    197,
+    376
+   ]
+  },
+  {
+   "id": "bnr-6276776",
+   "navn": null,
+   "skjerm": [
+    184,
+    376
+   ]
+  },
+  {
+   "id": "bnr-6276741",
+   "navn": null,
+   "skjerm": [
+    190,
+    376
+   ]
+  },
+  {
+   "id": "bnr-6276369",
+   "navn": null,
+   "skjerm": [
+    91,
+    376
+   ]
+  },
+  {
+   "id": "bnr-6276385",
+   "navn": null,
+   "skjerm": [
+    34,
+    376
    ]
   },
   {
    "id": "bnr-193972152",
    "navn": null,
    "skjerm": [
-    557,
-    362
+    1035,
+    384
+   ]
+  },
+  {
+   "id": "bnr-193972489",
+   "navn": null,
+   "skjerm": [
+    681,
+    388
    ]
   },
   {
    "id": "bnr-193868258",
    "navn": "Therese M",
    "skjerm": [
-    569,
-    364
+    1047,
+    387
    ]
   },
   {
    "id": "pb-5",
    "navn": null,
    "skjerm": [
-    543,
-    360
+    1021,
+    383
    ]
   },
   {
    "id": "bnr-193971954",
    "navn": null,
    "skjerm": [
-    696,
-    356
-   ]
-  },
-  {
-   "id": "bnr-193868436",
-   "navn": "Skolebygningen",
-   "skjerm": [
-    953,
-    357
-   ]
-  },
-  {
-   "id": "bnr-193972322",
-   "navn": null,
-   "skjerm": [
-    1264,
-    362
+    1265,
+    381
    ]
   },
   {
    "id": "bnr-193971369",
    "navn": null,
    "skjerm": [
-    512,
-    355
-   ]
-  },
-  {
-   "id": "bnr-16312916",
-   "navn": null,
-   "skjerm": [
-    902,
-    356
+    990,
+    377
    ]
   },
   {
    "id": "bnr-193868223",
    "navn": "Muldvadgården",
    "skjerm": [
-    698,
-    359
-   ]
-  },
-  {
-   "id": "bnr-6242812",
-   "navn": null,
-   "skjerm": [
-    1048,
-    368
-   ]
-  },
-  {
-   "id": "bnr-193868126",
-   "navn": null,
-   "skjerm": [
-    1208,
-    361
+    1257,
+    385
    ]
   },
   {
    "id": "bnr-193868541",
    "navn": null,
    "skjerm": [
-    444,
-    361
+    924,
+    382
    ]
   },
   {
    "id": "bnr-193868371",
    "navn": null,
    "skjerm": [
-    678,
-    355
-   ]
-  },
-  {
-   "id": "bnr-193868134",
-   "navn": null,
-   "skjerm": [
-    1094,
-    361
+    1233,
+    380
    ]
   },
   {
    "id": "bnr-193867979",
    "navn": null,
    "skjerm": [
-    795,
-    388
+    1332,
+    419
    ]
   },
   {
    "id": "bnr-193971199",
    "navn": null,
    "skjerm": [
-    568,
-    354
+    1057,
+    377
    ]
   },
   {
-   "id": "bnr-193868150",
-   "navn": "Salamandergården",
+   "id": "bnr-193867855",
+   "navn": null,
    "skjerm": [
-    1049,
-    362
+    553,
+    393
    ]
   },
   {
    "id": "bnr-193918247",
    "navn": null,
    "skjerm": [
-    447,
-    353
-   ]
-  },
-  {
-   "id": "bnr-193972276",
-   "navn": null,
-   "skjerm": [
-    981,
-    356
+    927,
+    375
    ]
   },
   {
    "id": "bnr-193868320",
    "navn": null,
    "skjerm": [
-    580,
-    354
-   ]
-  },
-  {
-   "id": "bnr-193972292",
-   "navn": null,
-   "skjerm": [
-    1136,
-    365
+    1072,
+    378
    ]
   },
   {
    "id": "bnr-193868266",
    "navn": null,
    "skjerm": [
-    491,
-    363
+    965,
+    384
    ]
   },
   {
    "id": "bnr-193868274",
    "navn": null,
    "skjerm": [
-    397,
-    362
-   ]
-  },
-  {
-   "id": "bnr-193974686",
-   "navn": null,
-   "skjerm": [
-    1053,
-    357
-   ]
-  },
-  {
-   "id": "bnr-193868231",
-   "navn": "Balaklava",
-   "skjerm": [
-    858,
-    360
+    888,
+    382
    ]
   },
   {
    "id": "bnr-193868312",
    "navn": "Rosinggården",
    "skjerm": [
-    502,
-    359
+    978,
+    381
    ]
   },
   {
    "id": "bnr-193867936",
    "navn": null,
    "skjerm": [
-    292,
-    367
-   ]
-  },
-  {
-   "id": "bnr-193971334",
-   "navn": null,
-   "skjerm": [
-    1072,
-    379
+    824,
+    384
    ]
   },
   {
    "id": "bnr-193867863",
    "navn": null,
    "skjerm": [
-    146,
-    373
+    760,
+    386
    ]
   },
   {
    "id": "bnr-16290424",
    "navn": null,
    "skjerm": [
-    711,
-    362
+    1270,
+    389
    ]
   },
   {
    "id": "bnr-193867618",
    "navn": null,
    "skjerm": [
-    533,
-    354
+    1014,
+    377
    ]
   },
   {
    "id": "bnr-193868282",
    "navn": null,
    "skjerm": [
-    604,
-    359
-   ]
-  },
-  {
-   "id": "bnr-6251323",
-   "navn": null,
-   "skjerm": [
-    884,
-    366
+    1098,
+    383
    ]
   },
   {
    "id": "bnr-193918239",
    "navn": "Bullgården",
    "skjerm": [
-    623,
-    355
+    1134,
+    378
    ]
   },
   {
    "id": "bnr-13414904",
    "navn": null,
    "skjerm": [
-    450,
-    359
+    930,
+    380
    ]
   },
   {
    "id": "bnr-193987397",
    "navn": null,
    "skjerm": [
-    785,
-    362
+    1451,
+    393
    ]
   },
   {
    "id": "bnr-193868207",
    "navn": null,
    "skjerm": [
-    719,
-    365
+    1276,
+    393
    ]
   },
   {
-   "id": "bnr-193972314",
-   "navn": "Feiergården",
-   "skjerm": [
-    1234,
-    362
-   ]
-  },
-  {
-   "id": "bnr-24218023",
+   "id": "bnr-193867901",
    "navn": null,
    "skjerm": [
-    948,
-    356
-   ]
-  },
-  {
-   "id": "bnr-193868630",
-   "navn": null,
-   "skjerm": [
-    1027,
-    391
-   ]
-  },
-  {
-   "id": "bnr-193972365",
-   "navn": null,
-   "skjerm": [
-    1221,
-    366
-   ]
-  },
-  {
-   "id": "bnr-193868096",
-   "navn": null,
-   "skjerm": [
-    1271,
-    370
-   ]
-  },
-  {
-   "id": "bnr-193867359",
-   "navn": null,
-   "skjerm": [
-    1112,
-    358
-   ]
-  },
-  {
-   "id": "bnr-193868142",
-   "navn": "Prestegården",
-   "skjerm": [
-    990,
-    360
+    672,
+    403
    ]
   },
   {
    "id": "bnr-193868525",
    "navn": null,
    "skjerm": [
-    620,
-    355
-   ]
-  },
-  {
-   "id": "bnr-6251331",
-   "navn": null,
-   "skjerm": [
-    977,
-    367
+    1130,
+    379
    ]
   },
   {
    "id": "bnr-6251765",
    "navn": null,
    "skjerm": [
-    525,
-    355
+    1004,
+    378
    ]
   },
   {
    "id": "bnr-193867944",
    "navn": null,
    "skjerm": [
-    542,
-    371
+    1010,
+    392
    ]
   },
   {
    "id": "bnr-193972136",
    "navn": null,
    "skjerm": [
-    513,
-    359
+    989,
+    382
    ]
   },
   {
    "id": "bnr-193971946",
    "navn": null,
    "skjerm": [
-    624,
-    356
+    1134,
+    380
    ]
   },
   {
    "id": "bnr-193972519",
    "navn": null,
    "skjerm": [
-    395,
-    391
+    892,
+    400
    ]
   },
   {
    "id": "bnr-6275109",
    "navn": null,
    "skjerm": [
-    573,
-    356
+    1061,
+    379
    ]
   },
   {
    "id": "bnr-300279164",
    "navn": null,
    "skjerm": [
-    489,
-    361
+    965,
+    383
    ]
   },
   {
    "id": "bnr-193971318",
    "navn": null,
    "skjerm": [
-    838,
-    374
+    1517,
+    411
    ]
   },
   {
    "id": "bnr-193971970",
    "navn": null,
    "skjerm": [
-    749,
-    356
+    1390,
+    383
    ]
   },
   {
    "id": "bnr-193972624",
    "navn": null,
    "skjerm": [
-    32,
-    397
+    737,
+    394
    ]
   },
   {
    "id": "bnr-193867928",
    "navn": null,
    "skjerm": [
-    366,
-    409
+    879,
+    407
+   ]
+  },
+  {
+   "id": "bnr-193867898",
+   "navn": "Gamlebyen modelljernbanesenter",
+   "skjerm": [
+    609,
+    397
    ]
   },
   {
    "id": "bnr-6251218",
    "navn": null,
    "skjerm": [
-    797,
-    365
+    1466,
+    397
    ]
   },
   {
    "id": "bnr-193868398",
    "navn": null,
    "skjerm": [
-    748,
-    355
+    1395,
+    382
    ]
   },
   {
    "id": "bnr-193868290",
    "navn": null,
    "skjerm": [
-    527,
-    358
+    1005,
+    380
    ]
   },
   {
    "id": "bnr-193868622",
    "navn": "Majorens Kro & Stue",
    "skjerm": [
-    447,
-    379
+    926,
+    394
    ]
   },
   {
-   "id": "bnr-193868215",
+   "id": "bnr-193972039",
    "navn": null,
    "skjerm": [
-    906,
-    362
-   ]
-  },
-  {
-   "id": "bnr-193868452",
-   "navn": null,
-   "skjerm": [
-    881,
-    356
+    646,
+    378
    ]
   },
   {
    "id": "bnr-193971938",
    "navn": null,
    "skjerm": [
-    459,
-    354
+    938,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193972012",
+   "navn": "Det nye rådhus",
+   "skjerm": [
+    644,
+    377
    ]
   },
   {
    "id": "bnr-193972411",
    "navn": "Sindinggården",
    "skjerm": [
-    441,
-    354
+    922,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193870260",
+   "navn": null,
+   "skjerm": [
+    571,
+    378
+   ]
+  },
+  {
+   "id": "bnr-193868592",
+   "navn": null,
+   "skjerm": [
+    639,
+    383
+   ]
+  },
+  {
+   "id": "bnr-193870236",
+   "navn": null,
+   "skjerm": [
+    527,
+    377
+   ]
+  },
+  {
+   "id": "pb-7",
+   "navn": null,
+   "skjerm": [
+    501,
+    379
    ]
   },
   {
    "id": "bnr-193867820",
    "navn": null,
    "skjerm": [
-    10,
-    363
+    702,
+    379
+   ]
+  },
+  {
+   "id": "bnr-193867693",
+   "navn": null,
+   "skjerm": [
+    501,
+    380
    ]
   },
   {
    "id": "bnr-13394024",
    "navn": null,
    "skjerm": [
-    475,
-    354
+    953,
+    377
    ]
   },
   {
    "id": "bnr-193867782",
    "navn": null,
    "skjerm": [
-    98,
-    365
+    735,
+    381
    ]
   },
   {
    "id": "bnr-193867588",
    "navn": "Dunkejongården",
    "skjerm": [
-    457,
-    355
+    936,
+    377
    ]
   },
   {
    "id": "bnr-193987370",
    "navn": null,
    "skjerm": [
-    373,
-    355
+    869,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193867707",
+   "navn": null,
+   "skjerm": [
+    509,
+    380
+   ]
+  },
+  {
+   "id": "bnr-193972594",
+   "navn": null,
+   "skjerm": [
+    582,
+    385
    ]
   },
   {
    "id": "bnr-193867790",
    "navn": null,
    "skjerm": [
-    178,
-    365
+    767,
+    382
    ]
   },
   {
    "id": "bnr-193972101",
    "navn": null,
    "skjerm": [
-    3,
-    371
+    708,
+    383
+   ]
+  },
+  {
+   "id": "bnr-193867804",
+   "navn": null,
+   "skjerm": [
+    575,
+    381
+   ]
+  },
+  {
+   "id": "pb-8",
+   "navn": null,
+   "skjerm": [
+    604,
+    378
    ]
   },
   {
    "id": "bnr-193867596",
    "navn": "Vennehaabet",
    "skjerm": [
-    421,
-    354
+    905,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193867723",
+   "navn": null,
+   "skjerm": [
+    493,
+    384
+   ]
+  },
+  {
+   "id": "bnr-16308102",
+   "navn": null,
+   "skjerm": [
+    565,
+    379
+   ]
+  },
+  {
+   "id": "bnr-193972403",
+   "navn": null,
+   "skjerm": [
+    553,
+    377
    ]
   },
   {
    "id": "bnr-193868711",
    "navn": null,
    "skjerm": [
-    483,
-    354
+    961,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193972446",
+   "navn": null,
+   "skjerm": [
+    611,
+    382
+   ]
+  },
+  {
+   "id": "bnr-193867758",
+   "navn": null,
+   "skjerm": [
+    540,
+    387
+   ]
+  },
+  {
+   "id": "bnr-193867731",
+   "navn": null,
+   "skjerm": [
+    514,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193867839",
+   "navn": null,
+   "skjerm": [
+    685,
+    379
+   ]
+  },
+  {
+   "id": "bnr-193867766",
+   "navn": null,
+   "skjerm": [
+    616,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193870252",
+   "navn": null,
+   "skjerm": [
+    529,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193972063",
+   "navn": null,
+   "skjerm": [
+    521,
+    378
+   ]
+  },
+  {
+   "id": "bnr-193867847",
+   "navn": null,
+   "skjerm": [
+    609,
+    379
    ]
   },
   {
    "id": "bnr-193867545",
    "navn": "Arnesgården",
    "skjerm": [
-    370,
-    356
+    867,
+    377
    ]
   },
   {
-   "id": "pb-9",
-   "navn": "Færgeporten",
+   "id": "bnr-193867715",
+   "navn": null,
    "skjerm": [
-    813,
-    355
+    492,
+    382
    ]
   },
   {
    "id": "pb-10",
    "navn": "Kongeporten",
    "skjerm": [
-    323,
-    353
+    835,
+    375
    ]
   },
   {
    "id": "pb-11",
    "navn": "Mellomporten",
    "skjerm": [
-    523,
-    354
+    1003,
+    376
    ]
   },
   {
-   "id": "bnr-193992765",
+   "id": "bnr-6277071",
    "navn": null,
    "skjerm": [
-    932,
-    352
+    389,
+    374
+   ]
+  },
+  {
+   "id": "bnr-6277063",
+   "navn": null,
+   "skjerm": [
+    418,
+    374
+   ]
+  },
+  {
+   "id": "bnr-6277055",
+   "navn": null,
+   "skjerm": [
+    450,
+    374
+   ]
+  },
+  {
+   "id": "bnr-193871119",
+   "navn": null,
+   "skjerm": [
+    463,
+    374
+   ]
+  },
+  {
+   "id": "bnr-300165413",
+   "navn": null,
+   "skjerm": [
+    471,
+    374
+   ]
+  },
+  {
+   "id": "bnr-6277047",
+   "navn": null,
+   "skjerm": [
+    473,
+    374
+   ]
+  },
+  {
+   "id": "pb-12",
+   "navn": null,
+   "skjerm": [
+    465,
+    374
+   ]
+  },
+  {
+   "id": "bnr-6276040",
+   "navn": null,
+   "skjerm": [
+    484,
+    374
+   ]
+  },
+  {
+   "id": "bnr-300053567",
+   "navn": null,
+   "skjerm": [
+    475,
+    374
+   ]
+  },
+  {
+   "id": "bnr-24215326",
+   "navn": null,
+   "skjerm": [
+    467,
+    374
+   ]
+  },
+  {
+   "id": "bnr-24221342",
+   "navn": null,
+   "skjerm": [
+    154,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193870090",
+   "navn": null,
+   "skjerm": [
+    137,
+    376
+   ]
+  },
+  {
+   "id": "bnr-300006318",
+   "navn": null,
+   "skjerm": [
+    133,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193870112",
+   "navn": null,
+   "skjerm": [
+    123,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193870120",
+   "navn": null,
+   "skjerm": [
+    96,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193870139",
+   "navn": null,
+   "skjerm": [
+    84,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193870147",
+   "navn": null,
+   "skjerm": [
+    71,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193870171",
+   "navn": null,
+   "skjerm": [
+    2,
+    377
+   ]
+  },
+  {
+   "id": "bnr-6276709",
+   "navn": null,
+   "skjerm": [
+    328,
+    375
+   ]
+  },
+  {
+   "id": "bnr-6276725",
+   "navn": null,
+   "skjerm": [
+    302,
+    375
+   ]
+  },
+  {
+   "id": "bnr-6276733",
+   "navn": null,
+   "skjerm": [
+    259,
+    375
+   ]
+  },
+  {
+   "id": "bnr-193871232",
+   "navn": null,
+   "skjerm": [
+    242,
+    375
+   ]
+  },
+  {
+   "id": "bnr-6275982",
+   "navn": null,
+   "skjerm": [
+    213,
+    375
    ]
   },
   {
    "id": "bnr-193868533",
    "navn": null,
    "skjerm": [
-    585,
-    361
+    1070,
+    384
    ]
   },
   {
    "id": "pb-13",
    "navn": null,
    "skjerm": [
-    601,
-    360
-   ]
-  },
-  {
-   "id": "bnr-193974767",
-   "navn": null,
-   "skjerm": [
-    924,
-    356
+    1093,
+    384
    ]
   },
   {
    "id": "pb-14",
    "navn": null,
    "skjerm": [
-    287,
-    387
+    831,
+    395
    ]
   },
   {
    "id": "bnr-194006187",
    "navn": null,
    "skjerm": [
-    680,
-    356
+    1231,
+    381
    ]
   },
   {
    "id": "bnr-193991718",
    "navn": null,
    "skjerm": [
-    522,
-    355
+    1001,
+    378
+   ]
+  },
+  {
+   "id": "bnr-193972098",
+   "navn": null,
+   "skjerm": [
+    563,
+    378
+   ]
+  },
+  {
+   "id": "bnr-193972071",
+   "navn": null,
+   "skjerm": [
+    576,
+    378
    ]
   },
   {
    "id": "bnr-193972144",
    "navn": null,
    "skjerm": [
-    541,
-    363
+    1016,
+    385
+   ]
+  },
+  {
+   "id": "bnr-193972128",
+   "navn": null,
+   "skjerm": [
+    701,
+    382
    ]
   },
   {
    "id": "bnr-193972195",
    "navn": null,
    "skjerm": [
-    734,
-    363
+    1314,
+    392
    ]
   },
   {
    "id": "bnr-193972187",
    "navn": null,
    "skjerm": [
-    709,
-    361
-   ]
-  },
-  {
-   "id": "bnr-193867995",
-   "navn": null,
-   "skjerm": [
-    1203,
-    387
+    1270,
+    388
    ]
   },
   {
    "id": "bnr-193972225",
    "navn": null,
    "skjerm": [
-    755,
-    361
-   ]
-  },
-  {
-   "id": "bnr-193972209",
-   "navn": null,
-   "skjerm": [
-    891,
-    361
+    1378,
+    390
    ]
   },
   {
    "id": "bnr-193971911",
    "navn": null,
    "skjerm": [
-    429,
-    354
+    912,
+    376
    ]
   },
   {
    "id": "bnr-193971903",
    "navn": null,
    "skjerm": [
-    437,
-    354
+    919,
+    376
    ]
   },
   {
    "id": "bnr-193971873",
    "navn": null,
    "skjerm": [
-    427,
-    354
+    910,
+    376
    ]
   },
   {
    "id": "bnr-193971962",
    "navn": null,
    "skjerm": [
-    760,
-    356
+    1424,
+    383
+   ]
+  },
+  {
+   "id": "bnr-193972004",
+   "navn": null,
+   "skjerm": [
+    609,
+    378
    ]
   },
   {
    "id": "bnr-193971989",
    "navn": null,
    "skjerm": [
-    719,
-    356
+    1315,
+    382
+   ]
+  },
+  {
+   "id": "bnr-193972055",
+   "navn": null,
+   "skjerm": [
+    551,
+    378
    ]
   },
   {
    "id": "bnr-193971377",
    "navn": null,
    "skjerm": [
-    109,
-    417
+    775,
+    403
    ]
   },
   {
-   "id": "bnr-193971350",
+   "id": "bnr-193971385",
    "navn": null,
    "skjerm": [
-    1245,
-    365
+    673,
+    391
    ]
   },
   {
-   "id": "bnr-193971342",
+   "id": "bnr-193971229",
    "navn": null,
    "skjerm": [
-    830,
-    364
+    597,
+    378
    ]
   },
   {
    "id": "bnr-193971202",
    "navn": null,
    "skjerm": [
-    606,
-    356
+    1107,
+    379
    ]
   },
   {
    "id": "bnr-193971288",
    "navn": null,
    "skjerm": [
-    614,
-    362
+    1107,
+    386
    ]
   },
   {
    "id": "bnr-193971261",
    "navn": null,
    "skjerm": [
-    469,
-    361
+    946,
+    383
    ]
   },
   {
    "id": "bnr-193971253",
    "navn": null,
    "skjerm": [
-    51,
-    368
+    721,
+    382
+   ]
+  },
+  {
+   "id": "bnr-193972772",
+   "navn": null,
+   "skjerm": [
+    679,
+    379
+   ]
+  },
+  {
+   "id": "bnr-193972578",
+   "navn": null,
+   "skjerm": [
+    577,
+    385
    ]
   },
   {
    "id": "bnr-193972543",
    "navn": null,
    "skjerm": [
-    204,
-    378
+    787,
+    389
    ]
   },
   {
    "id": "bnr-193972535",
    "navn": null,
    "skjerm": [
-    26,
-    383
+    725,
+    388
    ]
   },
   {
    "id": "bnr-193972616",
    "navn": null,
    "skjerm": [
-    228,
-    388
+    805,
+    394
+   ]
+  },
+  {
+   "id": "bnr-193972608",
+   "navn": null,
+   "skjerm": [
+    604,
+    383
    ]
   },
   {
    "id": "bnr-193972632",
    "navn": null,
    "skjerm": [
-    50,
-    389
+    738,
+    391
    ]
   },
   {
-   "id": "bnr-193972349",
+   "id": "bnr-193972438",
    "navn": null,
    "skjerm": [
-    1249,
-    368
+    655,
+    380
    ]
   },
   {
-   "id": "bnr-193868703",
+   "id": "bnr-193972381",
    "navn": null,
    "skjerm": [
-    1116,
-    363
+    548,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193972454",
+   "navn": null,
+   "skjerm": [
+    633,
+    381
+   ]
+  },
+  {
+   "id": "bnr-193972497",
+   "navn": null,
+   "skjerm": [
+    630,
+    391
+   ]
+  },
+  {
+   "id": "bnr-193868584",
+   "navn": null,
+   "skjerm": [
+    533,
+    379
    ]
   },
   {
    "id": "bnr-193868517",
    "navn": null,
    "skjerm": [
-    547,
-    355
+    1029,
+    378
    ]
   },
   {
-   "id": "bnr-193868657",
+   "id": "bnr-193868606",
    "navn": null,
    "skjerm": [
-    1244,
-    385
+    674,
+    382
    ]
   },
   {
    "id": "bnr-193868614",
    "navn": null,
    "skjerm": [
-    207,
-    375
+    787,
+    387
    ]
   },
   {
    "id": "bnr-193868401",
    "navn": null,
    "skjerm": [
-    748,
-    356
+    1386,
+    384
    ]
   },
   {
    "id": "bnr-193868479",
    "navn": null,
    "skjerm": [
-    429,
-    355
+    912,
+    377
    ]
   },
   {
    "id": "bnr-193868495",
    "navn": null,
    "skjerm": [
-    402,
-    355
-   ]
-  },
-  {
-   "id": "bnr-193868444",
-   "navn": null,
-   "skjerm": [
-    1026,
-    358
+    891,
+    377
    ]
   },
   {
    "id": "bnr-193867987",
    "navn": null,
    "skjerm": [
-    781,
-    376
+    1361,
+    408
+   ]
+  },
+  {
+   "id": "bnr-193867812",
+   "navn": null,
+   "skjerm": [
+    678,
+    379
+   ]
+  },
+  {
+   "id": "bnr-193867774",
+   "navn": null,
+   "skjerm": [
+    674,
+    384
+   ]
+  },
+  {
+   "id": "bnr-193870244",
+   "navn": null,
+   "skjerm": [
+    551,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193867685",
+   "navn": null,
+   "skjerm": [
+    132,
+    386
    ]
   },
   {
    "id": "bnr-193867553",
    "navn": null,
    "skjerm": [
-    410,
-    355
-   ]
-  },
-  {
-   "id": "bnr-193867332",
-   "navn": null,
-   "skjerm": [
-    1016,
-    357
+    896,
+    377
    ]
   },
   {
    "id": "bnr-16313173",
    "navn": null,
    "skjerm": [
-    519,
-    361
+    993,
+    383
    ]
   },
   {
-   "id": "bnr-193971210",
+   "id": "bnr-6246753",
    "navn": null,
    "skjerm": [
-    805,
-    356
-   ]
-  },
-  {
-   "id": "bnr-300399132",
-   "navn": null,
-   "skjerm": [
-    1193,
-    364
+    583,
+    381
    ]
   },
   {
    "id": "bnr-193987699",
    "navn": null,
    "skjerm": [
-    702,
-    351
+    1300,
+    374
    ]
   },
   {
    "id": "bnr-193987680",
    "navn": null,
    "skjerm": [
-    735,
-    351
+    1384,
+    375
    ]
   },
   {
    "id": "bnr-193971539",
    "navn": null,
    "skjerm": [
-    727,
-    350
+    1366,
+    374
    ]
   },
   {
    "id": "bnr-193867456",
    "navn": "Lysthuset",
    "skjerm": [
-    535,
-    351
+    1019,
+    374
    ]
   },
   {
    "id": "bnr-193820387",
    "navn": null,
    "skjerm": [
-    619,
-    351
+    1138,
+    374
    ]
   },
   {
    "id": "bnr-193820956",
    "navn": null,
    "skjerm": [
-    743,
-    351
+    1410,
+    374
    ]
   },
   {
    "id": "bnr-193820794",
    "navn": null,
    "skjerm": [
-    664,
-    351
+    1219,
+    374
    ]
   },
   {
    "id": "bnr-193820824",
    "navn": null,
    "skjerm": [
-    700,
-    350
+    1298,
+    374
    ]
   },
   {
    "id": "bnr-193820646",
    "navn": null,
    "skjerm": [
-    735,
-    351
+    1385,
+    375
    ]
   },
   {
    "id": "bnr-193820441",
    "navn": null,
    "skjerm": [
-    638,
-    351
+    1170,
+    374
    ]
   },
   {
    "id": "bnr-193820484",
    "navn": null,
    "skjerm": [
-    713,
-    351
+    1327,
+    374
    ]
   },
   {
    "id": "bnr-193820581",
    "navn": null,
    "skjerm": [
-    716,
-    351
+    1337,
+    374
    ]
   },
   {
    "id": "bnr-193820530",
    "navn": null,
    "skjerm": [
-    724,
-    351
+    1358,
+    374
    ]
   },
   {
    "id": "bnr-193820549",
    "navn": null,
    "skjerm": [
-    719,
-    351
+    1345,
+    374
    ]
   },
   {
    "id": "bnr-193820557",
    "navn": null,
    "skjerm": [
-    704,
-    351
+    1308,
+    374
    ]
   },
   {
    "id": "bnr-16324507",
    "navn": null,
    "skjerm": [
-    734,
-    350
-   ]
-  },
-  {
-   "id": "bnr-16293962",
-   "navn": null,
-   "skjerm": [
-    844,
-    351
+    1387,
+    374
    ]
   },
   {
    "id": "bnr-13416419",
    "navn": null,
    "skjerm": [
-    723,
-    350
+    1355,
+    374
    ]
   },
   {
    "id": "bnr-13416400",
    "navn": null,
    "skjerm": [
-    738,
-    351
-   ]
-  },
-  {
-   "id": "bnr-13416265",
-   "navn": null,
-   "skjerm": [
-    946,
-    352
+    1397,
+    374
    ]
   },
   {
    "id": "bnr-13418268",
    "navn": null,
    "skjerm": [
-    729,
-    350
+    1373,
+    374
    ]
   },
   {
    "id": "pb-16",
    "navn": null,
    "skjerm": [
-    545,
-    351
+    1031,
+    374
    ]
   },
   {
    "id": "pb-17",
    "navn": null,
    "skjerm": [
-    497,
-    351
+    976,
+    373
    ]
   },
   {
    "id": "pb-18",
    "navn": null,
    "skjerm": [
-    490,
-    351
+    969,
+    373
+   ]
+  },
+  {
+   "id": "bnr-301395526",
+   "navn": null,
+   "skjerm": [
+    45,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193871291",
+   "navn": null,
+   "skjerm": [
+    22,
+    377
    ]
   },
   {
    "id": "pb-22",
    "navn": "Kruttmagasinet",
    "skjerm": [
-    445,
-    351
+    925,
+    374
+   ]
+  },
+  {
+   "id": "bnr-193870228",
+   "navn": null,
+   "skjerm": [
+    543,
+    377
+   ]
+  },
+  {
+   "id": "bnr-193870201",
+   "navn": null,
+   "skjerm": [
+    547,
+    376
+   ]
+  },
+  {
+   "id": "bnr-193972047",
+   "navn": null,
+   "skjerm": [
+    624,
+    378
+   ]
+  },
+  {
+   "id": "bnr-193868576",
+   "navn": null,
+   "skjerm": [
+    684,
+    376
    ]
   },
   {
    "id": "pb-23",
    "navn": null,
    "skjerm": [
-    279,
-    371
+    819,
+    386
    ]
   },
   {
    "id": "bnr-193870287",
    "navn": null,
    "skjerm": [
-    43,
-    355
-   ]
-  },
-  {
-   "id": "bnr-193972217",
-   "navn": null,
-   "skjerm": [
-    852,
-    361
-   ]
-  },
-  {
-   "id": "pb-25",
-   "navn": null,
-   "skjerm": [
-    927,
-    355
+    705,
+    375
    ]
   },
   {
    "id": "pb-26",
    "navn": null,
    "skjerm": [
-    340,
-    374
-   ]
-  },
-  {
-   "id": "pb-27",
-   "navn": null,
-   "skjerm": [
-    958,
-    355
+    854,
+    389
    ]
   },
   {
    "id": "pb-28",
    "navn": null,
    "skjerm": [
-    548,
-    355
+    1031,
+    378
    ]
   },
   {
    "id": "bnr-300002508",
    "navn": null,
    "skjerm": [
-    396,
-    355
+    886,
+    377
    ]
   },
   {
    "id": "pb-31",
    "navn": null,
    "skjerm": [
-    164,
-    353
+    750,
+    374
    ]
   },
   {
    "id": "pb-33",
    "navn": null,
    "skjerm": [
-    499,
-    355
+    976,
+    378
+   ]
+  },
+  {
+   "id": "pb-34",
+   "navn": null,
+   "skjerm": [
+    562,
+    377
    ]
   },
   {
    "id": "pb-35",
    "navn": null,
    "skjerm": [
-    540,
-    355
-   ]
-  },
-  {
-   "id": "pb-37",
-   "navn": null,
-   "skjerm": [
-    989,
-    355
+    1022,
+    378
    ]
   },
   {
    "id": "bnr-193820565",
    "navn": null,
    "skjerm": [
-    706,
-    351
+    1312,
+    374
    ]
   },
   {
    "id": "pb-40",
    "navn": null,
    "skjerm": [
-    162,
-    353
+    749,
+    374
    ]
   },
   {
-   "id": "pb-41",
+   "id": "pb-45",
    "navn": null,
    "skjerm": [
-    913,
-    352
-   ]
-  },
-  {
-   "id": "pb-42",
-   "navn": null,
-   "skjerm": [
-    1033,
-    357
-   ]
-  },
-  {
-   "id": "pb-43",
-   "navn": null,
-   "skjerm": [
-    999,
-    357
+    648,
+    389
    ]
   },
   {
    "id": "pb-46",
    "navn": null,
    "skjerm": [
-    172,
-    361
+    761,
+    379
    ]
   },
   {
    "id": "pb-47",
    "navn": null,
    "skjerm": [
-    524,
-    355
+    1004,
+    377
    ]
   },
   {
    "id": "pb-48",
    "navn": null,
    "skjerm": [
-    698,
-    355
+    1272,
+    381
    ]
   },
   {
    "id": "pb-49",
    "navn": null,
    "skjerm": [
-    411,
-    354
+    897,
+    376
    ]
   },
   {
    "id": "pb-51",
    "navn": null,
    "skjerm": [
-    191,
-    358
+    767,
+    377
    ]
   },
   {
    "id": "pb-52",
    "navn": null,
    "skjerm": [
-    472,
-    354
+    950,
+    376
    ]
   },
   {
-   "id": "pb-54",
+   "id": "pb-53",
    "navn": null,
    "skjerm": [
-    1220,
-    365
+    529,
+    380
    ]
   },
   {
    "id": "pb-56",
    "navn": null,
    "skjerm": [
-    386,
-    355
+    879,
+    377
+   ]
+  },
+  {
+   "id": "pb-57",
+   "navn": null,
+   "skjerm": [
+    526,
+    389
+   ]
+  },
+  {
+   "id": "pb-58",
+   "navn": null,
+   "skjerm": [
+    566,
+    383
    ]
   },
   {
    "id": "pb-59",
    "navn": null,
    "skjerm": [
-    959,
-    474
+    1305,
+    469
    ]
   },
   {
    "id": "pb-60",
    "navn": null,
    "skjerm": [
-    786,
-    359
-   ]
-  },
-  {
-   "id": "pb-61",
-   "navn": null,
-   "skjerm": [
-    1108,
-    371
+    1475,
+    389
    ]
   },
   {
    "id": "pb-63",
    "navn": null,
    "skjerm": [
-    343,
-    354
+    848,
+    375
    ]
   },
   {
    "id": "pb-64",
    "navn": null,
    "skjerm": [
-    330,
-    354
+    840,
+    375
    ]
   },
   {
    "id": "pb-65",
    "navn": null,
    "skjerm": [
-    513,
-    354
+    992,
+    377
+   ]
+  },
+  {
+   "id": "pb-67",
+   "navn": null,
+   "skjerm": [
+    666,
+    378
    ]
   },
   {
    "id": "pb-68",
    "navn": "Tøihuset, nordfløya",
    "skjerm": [
-    60,
-    356
+    712,
+    375
+   ]
+  },
+  {
+   "id": "pb-69",
+   "navn": "Tøihuset, sørfløya",
+   "skjerm": [
+    634,
+    375
    ]
   }
  ]

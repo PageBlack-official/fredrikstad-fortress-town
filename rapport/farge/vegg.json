@@ -2319,14 +2319,14 @@
  },
  {
   "id": "bnr-193868258",
-  "navn": null,
+  "navn": "Therese M",
   "adr": null,
   "for_": [
-   214,
-   206,
-   190
+   236,
+   236,
+   231
   ],
-  "for_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
+  "for_kilde": null,
   "vegg": [
    236,
    236,
@@ -2334,7 +2334,7 @@
   ],
   "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
   "aar": 2026,
-  "byttet": true
+  "byttet": false
  },
  {
   "id": "bnr-193868118",
@@ -3525,8 +3525,8 @@
   ],
   "for_kilde": null,
   "vegg": [
-   204,
-   192,
+   202,
+   197,
    198
   ],
   "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
@@ -3649,12 +3649,12 @@
  },
  {
   "id": "bnr-193868622",
-  "navn": null,
+  "navn": "Majorens Kro & Stue",
   "adr": null,
   "for_": [
-   236,
-   240,
-   240
+   233,
+   230,
+   222
   ],
   "for_kilde": null,
   "vegg": [
@@ -7566,9 +7566,9 @@
   "navn": null,
   "adr": null,
   "for_": [
-   236,
-   240,
-   240
+   233,
+   230,
+   222
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
@@ -7576,7 +7576,7 @@
    230,
    222
   ],
-  "kilde": "nabohuset bnr-193868622 (retail, 0.0 m unna)",
+  "kilde": "nabohuset bnr-193868622 (Majorens Kro & Stue, 0.0 m unna)",
   "aar": null,
   "byttet": false
  },

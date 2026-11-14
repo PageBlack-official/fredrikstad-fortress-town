@@ -3362,11 +3362,11 @@
  },
  "bnr-193868622": {
   "takform": "sal",
-  "kilde": "tegning+DOM sal langs rms 0.92",
+  "kilde": "tegning+DOM sal tvers rms 1.25",
   "kropper": [
    {
     "form": "sal",
-    "langs": true,
+    "langs": false,
     "ender": [
      "fri",
      "fri"
@@ -3376,8 +3376,8 @@
      16.0
     ],
     "dom": {
-     "rms": 0.92,
-     "h": 6.1,
+     "rms": 1.25,
+     "h": 5.62,
      "th": 0.12,
      "n": 1318
     }

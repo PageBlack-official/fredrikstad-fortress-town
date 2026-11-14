@@ -1,12 +1,13 @@
 [
  {
   "navn": "kryss-voldportgaten-voldgaten",
-  "lat": 59.2032937,
-  "lon": 10.9559304,
-  "heading": 290.9,
+  "lat": 59.2033001,
+  "lon": 10.9561111,
+  "heading": 248.0,
   "pitch": 88.5,
-  "fov": 80,
-  "oye": 2.5
+  "fov": 84,
+  "oye": 2.6,
+  "grunn": "RUNDE2 pkt 9: standpunktet flyttet ut i krysset (ENE for 75s hjørne), ser WSW mot hjørnet [179.8,46.9] – ikke lenger inne i et hus"
  },
  {
   "navn": "voldgaten-mot-75-kortside",
