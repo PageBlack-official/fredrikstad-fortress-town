@@ -14,47 +14,47 @@
 "lengde": 33.537,
 "h": 8.92,
 "godkjent": true,
-"telling": "KJERNE s10-24 lest fra rektifisert mai-2024 4f (Gamlebyen Elektriske + Emm K: brede butikkvinduer + dorer, 2.etg regelmessig). ENDER s0-10/s24-33,5 staar paa dagens data (ingen frontal mai-2024, CEO-dom valg a). Grov +/-0,5 m.",
+"telling": "vegg4: KJERNE s10-24 fra mai-2024 4f (butikker + doerer). MAJOREN-ENDE s0-10 fra aug-2010-frontal 4e0 (52 grader oblikt, grov): brun dobbeltport s3,3-5,3 + butikk + dor + 2 2.etg-vindu. VOLDGATEN-ENDE s24-33,5: INGEN frontal (roedt nabobygg okkluderer 928 fra Voldgaten-sida; 4c/4b ser ikke veggen) -> staar paa dagens data, IKKE kilde-verifisert (CEO-disiplin: flagg, ikke dikt).",
 "elementer": [
 {
 "type": "butikk",
-"s0": 0.35,
-"s1": 2.05,
+"s0": 1.0,
+"s1": 2.6,
 "z0": 0.3,
-"z1": 2.9
+"z1": 2.6
+},
+{
+"type": "port",
+"s0": 3.3,
+"s1": 5.3,
+"z0": 0.0,
+"z1": 2.7
 },
 {
 "type": "butikk",
-"s0": 2.75,
-"s1": 3.85,
+"s0": 6.0,
+"s1": 7.6,
 "z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "butikk",
-"s0": 4.9,
-"s1": 6.6,
-"z0": 0.3,
-"z1": 2.9
+"z1": 2.6
 },
 {
 "type": "vindu",
-"s0": 5.33,
-"s1": 6.17,
+"s0": 6.1,
+"s1": 6.9,
 "z0": 4.3,
 "z1": 6.3
 },
 {
-"type": "butikk",
-"s0": 7.35,
-"s1": 9.05,
-"z0": 0.3,
-"z1": 2.9
+"type": "dor",
+"s0": 8.0,
+"s1": 9.0,
+"z0": 0.0,
+"z1": 2.2
 },
 {
 "type": "vindu",
-"s0": 7.78,
-"s1": 8.62,
+"s0": 8.1,
+"s1": 8.9,
 "z0": 4.3,
 "z1": 6.3
 },

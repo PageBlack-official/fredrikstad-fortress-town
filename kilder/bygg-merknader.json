@@ -1091,17 +1091,17 @@
   {
    "id": "bnr-193867928",
    "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
-   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg. RUNDE2 14.11: 1.etg store butikkvinduer (butikk), 2.etg T-sprosser, dempet vegg/tak, rett (ikke rundbuet) dobbeltport, mørkebrune bånd + hjørnekasse/skråinngang som veggfelt.",
+   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg. RUNDE2 14.11: 1.etg store butikkvinduer (butikk), 2.etg T-sprosser, dempet vegg/tak, rett (ikke rundbuet) dobbeltport, mørkebrune bånd + hjørnekasse/skråinngang som veggfelt. RUNDE3C: vegg middels kjølig grå [150,152,158], tak brunere [116,74,60] (målt SV).",
    "sett": {
     "tak": [
-     132,
+     116,
      74,
      60
     ],
     "vegg": [
-     202,
-     197,
-     198
+     150,
+     152,
+     158
     ]
    },
    "vegg": [
@@ -1301,9 +1301,19 @@
   {
    "id": "bnr-193867944",
    "kilde": "Fable PAG-1591 (identitet) + Street View mai 2024 (bnr-193867944-7, rektifisert vegg7)",
-   "grunn": "Therese M ligger paa bnr-193867944 (ikke 258): OSM-noden ligger inne i 944; Vegars Majoren-bilde viser Therese M-bygget (hvit mur, rundbuede vinduer) vegg i vegg til hoyre for Majoren (622). Hjornebutikk mot Voldportgaten med rundbuede butikkvinduer (arkadevegg = vegg7). Vinduene paa vegg7 er lest i meter fra rektifisert SV (kilder/gate/rett-944-therese.json), ikke jevn rytme. Bygg-bred veggfarge/tak ikke satt (944 er et stort omriss, bare SE-hjornet er den hvite Therese M-butikken).",
+   "grunn": "Therese M ligger paa bnr-193867944 (ikke 258): OSM-noden ligger inne i 944; Vegars Majoren-bilde viser Therese M-bygget (hvit mur, rundbuede vinduer) vegg i vegg til hoyre for Majoren (622). Hjornebutikk mot Voldportgaten med rundbuede butikkvinduer (arkadevegg = vegg7). Vinduene paa vegg7 er lest i meter fra rektifisert SV (kilder/gate/rett-944-therese.json), ikke jevn rytme. Bygg-bred veggfarge/tak ikke satt (944 er et stort omriss, bare SE-hjornet er den hvite Therese M-butikken). RUNDE3C: tak rødbrun tegl [150,84,60]; bygg-bred varm hvit kalkpuss [230,226,218] (944 er den hvite Therese M-bygningen).",
    "sett": {
-    "navn": "Therese M"
+    "navn": "Therese M",
+    "tak": [
+     150,
+     84,
+     60
+    ],
+    "vegg": [
+     230,
+     226,
+     218
+    ]
    }
   }
  ],

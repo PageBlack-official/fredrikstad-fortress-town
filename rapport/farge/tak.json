@@ -3571,9 +3571,9 @@
    "kvartaltegningen Kvartal9 (IoU 0.62)"
   ],
   "for_": [
-   246,
    150,
-   130
+   84,
+   60
   ],
   "farge": [
    176,
@@ -3895,7 +3895,7 @@
    "kvartaltegningen Kvartal9 (IoU 0.65)"
   ],
   "for_": [
-   132,
+   116,
    74,
    60
   ],

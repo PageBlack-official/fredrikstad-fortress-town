@@ -3354,12 +3354,12 @@
   ],
   "for_kilde": null,
   "vegg": [
-   239,
-   240,
-   240
+   230,
+   226,
+   218
   ],
-  "kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.62)",
-  "aar": 2015,
+  "kilde": "merknad: Fable PAG-1591 (identitet) + Street View mai 2024 (bnr-193867944-7, rektifisert vegg7)",
+  "aar": 2024,
   "byttet": false
  },
  {
@@ -3519,15 +3519,15 @@
   "navn": null,
   "adr": null,
   "for_": [
-   202,
-   197,
-   198
+   150,
+   152,
+   158
   ],
   "for_kilde": null,
   "vegg": [
-   202,
-   197,
-   198
+   150,
+   152,
+   158
   ],
   "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
   "aar": 2026,
