@@ -81,10 +81,12 @@ CEO dømte lesningen og ga **75 → GÅ NÅ** (71/73 holdes til PAG-1591). Kjør
   i 2. etg mot Voldgaten»); **1. etg = 7 store butikkvinduer + 2 dører** (sammenhengende glassfasade,
   ikke 6 små boligvinduer). `bnr-193867928.fasade_rett = [5]` → regel 17 dømmer nå veggen mot
   virkeligheten, ikke mot rytmen.
-- **Montasje SV | render:** `rapport/gate/voldport-1411/r3/montasje-75-vegg5.jpg` (2×1280×720).
-  Render fra samme pano-standpunkt (krysset). 75s Voldgaten-face viser nå **butikkvinduer + mørkebrunt
-  vannbord** der modellen før hadde en jevn rad småvinduer. Bygningsrekka (blå → oker → grått
-  hjørnebygg → rosa → rød) matcher fotoet.
+- **Montasje SV | render:** `rapport/gate/voldport-1411/r3/montasje-75-vegg5.jpg`. **Innstrammet etter
+  CEOs jurydom (16f23bf7):** rektifisert SV (ortografisk, meterrutenett) stablet OVER en frontal render
+  av vegg5, **samme 0–20 m meterskala, vegg5 isolert og rammet i begge** — så tellingen er etterprøvbar
+  kolonne mot kolonne, ikke bare i teksten. 2. etg: 8 vinduer (4 + blank hjørnepilar s8–11 + 4) ligger
+  på samme s-kolonner i foto og render; 1. etg: butikkvinduer + 2 dører + mørkebrunt vannbord stemmer.
+  (Første montasje var vidt torgutsnitt mot tettere rekke-utsnitt — ikke overleggbar; erstattet.)
 - Presisjon: skuddet er oblikt (38°, 39 m, lav opplosning) → posisjoner ±0,5 m, grovere enn
   ELEMENTER-målet ±0,3 m. CEO godtok frontal-/grovlesning som nok til å erstatte den oppdiktede
   rytmen; helvegg-pano er en senere forbedring.
