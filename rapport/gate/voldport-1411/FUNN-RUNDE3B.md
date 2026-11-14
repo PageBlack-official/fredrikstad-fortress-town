@@ -58,3 +58,15 @@ deretter `sv_rett_plan` → `sv_hent` → rektifisering. Neste runde.
 ## Ferdig-status
 258 ✓, 944 ✓ (grov), 75 vegg5 ✓ (verifisert). 75 vegg4 og 73 Majoren gjenstår (hel-vegg-pano mangler i katalogen).
 Regel 02/04 grønne. IKKE publisert.
+
+## Fortsettelse etter CEO-jurydom (14.11 kveld, run c6a6aa61)
+CEO-punktene 3 og 4 gjort, 2 eskalert, 1 (modul) bygd:
+- **Punkt 3 (rydd):** 12 regenererte byggutdata committet (commit etter 8e8a44c) — gren-hodet speiler nå den bygde modellen.
+- **Punkt 4 (vegg5-montasje):** render kjørt på nytt med gjeldende modell → `r3/montasje-75-vegg5.jpg` regenerert. 2.etg 4+4 på SV-posisjonene (sentre 2,3/4,6/7,4/9,6 + 12,8/14,8/17,0/19,3), 1.etg butikkvinduer + 2 dører. Beviser de nye posisjonene.
+- **Punkt 1 (vegg4, 33,5 m):** gjenbrukbar stitch-modul `verktoy/rett/rett_lang.py` skrevet + committet (biter → felles meterlerret, myk fjæring i overlapp). Hentet 3 mai-2024-pano (4f/4b/4c) + laget projeksjons-metermerker for hjørnelesing.
+  - **Recon:** `4f` (jI8Kdnvk, 5,6 m, ~37°) dekker KJERNEN av butikkfasaden rent — «Gamlebyen Elektriske AS» + «Emm K» + nedløpsrør + port + 2.etg-vindusrad, ca. s 10–24. Dette er den meningsbærende delen.
+  - **Problem i endene:** `4c` (XIkNoV5l, Voldgaten-hjørnet) ser IKKE vegg4 rent — den ser nedover Voldgaten på et rødt retur/nabobygg i strykende vinkel, og den fjerne enden (s 24–33,5) er sterkt forkortet. `4b` ligner. Dvs. endene (mot begge hjørner) mangler et frontalt mai-2024-pano; bare kjernen (s≈10–24) har det.
+  - **Neste steg:** enten (a) lever vegg4-kjernen (s≈10–24) rektifisert fra 4f som egen bit (den delen Vegars butikkfasade bor i), og la de plane endene stå, eller (b) hent flere pano / aksepter at endene leses grovt. Trenger CEO-pek på ambisjonsnivå for endene før jeg skriver metertall jeg ikke kan stå for.
+
+## Majoren (73) — eskalert, venter CEO-dom (komm. 07c0752b)
+Hovedfasaden (vegg2) har INGEN frontal mai-2024-pano (Googles 2024-bil kjørte ikke tett forbi; bare 75°-hjørneskudd). Frontal finnes bare fra aug. 2010 (t3dSDJSt, forfra, «MAJORENS KRO & STUE» #73 — samme bygg, men gul puss i 2010, malt hvit før 2024). Valg: geometri fra 2010-frontal + farge hvit fra 2024 (anbefalt), vs grov 75°-mai-2024, vs hopp over. Venter dom.
