@@ -1,85 +1,84 @@
 [
-{
-"bilde": "bnr-193868622-2maj10",
-"id": "bnr-193868622",
-"vegg": 2,
-"venstre": [
-137.84,
-65.36
-],
-"hoyre": [
-149.02,
-60.37
-],
-"lengde": 12.24,
-"h": 5.62,
-"godkjent": true,
-"telling": "Majoren hovedfasade (vegg2) lest fra aug-2010-frontal (eneste frontale skudd; fasaden uendret, kun malt gul->hvit for 2024). 5 vinduer 2.etg, midtinngang (MAJORENS KRO & STUE), store doble vinduer begge sider, port til bakgaard til hoyre. Grov +/-0,5 m.",
-"elementer": [
-{
-"type": "port",
-"s0": 0.2,
-"s1": 2.2,
-"z0": 0.0,
-"z1": 3.1,
-"bue": 1
-},
-{
-"type": "butikk",
-"s0": 2.6,
-"s1": 5.0,
-"z0": 0.4,
-"z1": 2.6
-},
-{
-"type": "dor",
-"s0": 5.7,
-"s1": 6.8,
-"z0": 0.0,
-"z1": 2.4
-},
-{
-"type": "butikk",
-"s0": 7.3,
-"s1": 9.7,
-"z0": 0.4,
-"z1": 2.6
-},
-{
-"type": "vindu",
-"s0": 2.9,
-"s1": 3.7,
-"z0": 3.1,
-"z1": 4.8
-},
-{
-"type": "vindu",
-"s0": 4.4,
-"s1": 5.2,
-"z0": 3.1,
-"z1": 4.8
-},
-{
-"type": "vindu",
-"s0": 6.4,
-"s1": 7.2,
-"z0": 3.1,
-"z1": 4.8
-},
-{
-"type": "vindu",
-"s0": 7.9,
-"s1": 8.7,
-"z0": 3.1,
-"z1": 4.8
-},
-{
-"type": "vindu",
-"s0": 9.8,
-"s1": 10.6,
-"z0": 3.1,
-"z1": 4.8
-}
-]
-}
+ {
+  "bilde": "bnr-193868622-2maj10",
+  "id": "bnr-193868622",
+  "vegg": 2,
+  "venstre": [
+   137.84,
+   65.36
+  ],
+  "hoyre": [
+   149.02,
+   60.37
+  ],
+  "lengde": 12.243,
+  "h": 5.62,
+  "godkjent": true,
+  "telling": "Majoren hovedfasade (vegg2) RUNDE 3d, lest fra aug-2010-frontal (eneste frontale; fasaden uendret, kun malt gul->hvit 2024). RETTELSE mot 3c: 1.etg fra venstre = lite vindu (s0,3-1,1), inngang m/trapp (s2,0-3,0), ETT stort butikkvindu ~3,5 m (s3,4-6,9), portrom til hoyre (s8,5-11,8) RETT flat overkant = typ 1 (IKKE rundbue - 3c hadde buet port i feil ende). 2.etg: 4 vinduer (s1,0/2,55/3,95/6,85) + ett bredere til hoyre over porten (s11,1). Oblikt skudd, grov +/-0,5 m.",
+  "elementer": [
+   {
+    "type": "vindu",
+    "s0": 0.3,
+    "s1": 1.1,
+    "z0": 0.9,
+    "z1": 2.0
+   },
+   {
+    "type": "dor",
+    "s0": 2.0,
+    "s1": 3.0,
+    "z0": 0.0,
+    "z1": 2.4
+   },
+   {
+    "type": "butikk",
+    "s0": 3.4,
+    "s1": 6.9,
+    "z0": 0.4,
+    "z1": 2.6
+   },
+   {
+    "type": "port",
+    "s0": 8.5,
+    "s1": 11.8,
+    "z0": 0.0,
+    "z1": 3.0
+   },
+   {
+    "type": "vindu",
+    "s0": 0.6,
+    "s1": 1.4,
+    "z0": 3.1,
+    "z1": 4.8
+   },
+   {
+    "type": "vindu",
+    "s0": 2.1,
+    "s1": 3.0,
+    "z0": 3.1,
+    "z1": 4.8
+   },
+   {
+    "type": "vindu",
+    "s0": 3.5,
+    "s1": 4.4,
+    "z0": 3.1,
+    "z1": 4.8
+   },
+   {
+    "type": "vindu",
+    "s0": 6.4,
+    "s1": 7.3,
+    "z0": 3.1,
+    "z1": 4.8
+   },
+   {
+    "type": "vindu",
+    "s0": 10.3,
+    "s1": 11.9,
+    "z0": 3.1,
+    "z1": 4.8
+   }
+  ]
+ }
 ]

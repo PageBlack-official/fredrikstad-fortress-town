@@ -1,196 +1,209 @@
 [
-{
-"bilde": "bnr-193867928-4fflip",
-"id": "bnr-193867928",
-"vegg": 4,
-"venstre": [
-149.02,
-60.37
-],
-"hoyre": [
-179.75,
-46.94
-],
-"lengde": 33.537,
-"h": 8.92,
-"godkjent": true,
-"telling": "vegg4: KJERNE s10-24 fra mai-2024 4f (butikker + doerer). MAJOREN-ENDE s0-10 fra aug-2010-frontal 4e0 (52 grader oblikt, grov): brun dobbeltport s3,3-5,3 + butikk + dor + 2 2.etg-vindu. VOLDGATEN-ENDE s24-33,5: INGEN frontal (roedt nabobygg okkluderer 928 fra Voldgaten-sida; 4c/4b ser ikke veggen) -> staar paa dagens data, IKKE kilde-verifisert (CEO-disiplin: flagg, ikke dikt).",
-"elementer": [
-{
-"type": "butikk",
-"s0": 1.0,
-"s1": 2.6,
-"z0": 0.3,
-"z1": 2.6
-},
-{
-"type": "port",
-"s0": 3.3,
-"s1": 5.3,
-"z0": 0.0,
-"z1": 2.7
-},
-{
-"type": "butikk",
-"s0": 6.0,
-"s1": 7.6,
-"z0": 0.3,
-"z1": 2.6
-},
-{
-"type": "vindu",
-"s0": 6.1,
-"s1": 6.9,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "dor",
-"s0": 8.0,
-"s1": 9.0,
-"z0": 0.0,
-"z1": 2.2
-},
-{
-"type": "vindu",
-"s0": 8.1,
-"s1": 8.9,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "butikk",
-"s0": 10.0,
-"s1": 11.3,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "vindu",
-"s0": 10.18,
-"s1": 11.02,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "dor",
-"s0": 11.5,
-"s1": 12.1,
-"z0": 0.0,
-"z1": 2.2
-},
-{
-"type": "vindu",
-"s0": 12.68,
-"s1": 13.52,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "butikk",
-"s0": 12.7,
-"s1": 14.3,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "vindu",
-"s0": 15.08,
-"s1": 15.92,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "butikk",
-"s0": 15.3,
-"s1": 17.1,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "vindu",
-"s0": 17.58,
-"s1": 18.42,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "dor",
-"s0": 17.8,
-"s1": 18.4,
-"z0": 0.0,
-"z1": 2.2
-},
-{
-"type": "dor",
-"s0": 19.7,
-"s1": 20.3,
-"z0": 0.0,
-"z1": 2.2
-},
-{
-"type": "vindu",
-"s0": 19.98,
-"s1": 20.82,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "butikk",
-"s0": 20.6,
-"s1": 23.3,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "vindu",
-"s0": 22.48,
-"s1": 23.32,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "butikk",
-"s0": 24.49,
-"s1": 26.19,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "vindu",
-"s0": 24.92,
-"s1": 25.76,
-"z0": 4.3,
-"z1": 6.3
-},
-{
-"type": "butikk",
-"s0": 26.94,
-"s1": 28.64,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "butikk",
-"s0": 29.64,
-"s1": 30.84,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "butikk",
-"s0": 31.49,
-"s1": 33.19,
-"z0": 0.3,
-"z1": 2.9
-},
-{
-"type": "dor",
-"s0": 32.96,
-"s1": 34.06,
-"z0": 0.0,
-"z1": 2.0
-}
-]
-}
+ {
+  "bilde": "bnr-193867928-4fflip",
+  "id": "bnr-193867928",
+  "vegg": 4,
+  "venstre": [
+   149.02,
+   60.37
+  ],
+  "hoyre": [
+   179.75,
+   46.94
+  ],
+  "lengde": 33.537,
+  "h": 8.92,
+  "godkjent": true,
+  "telling": "vegg4 RUNDE 3d (lest i meter fra rektifisert mai-2024 4f, rutenett s10-24). 1.etg KJERNE: Emm K-butikkvindu s10,2-12,4 | dor | Emm K-butikkvindu s13,3-15,4 | nedlopsror ~s16 | Gamlebyen Elektriske AS s16,5-19,0 | dor | Gamlebyen Elektriske s21,0-23,1 | dor s23,4-24,2 - store butikkvinduer i morkebrune rammer, IKKE smaa jevne. 2.etg KJERNE: 5 verifiserte vinduer s12,3 / 15,2 / 16,75 / 18,6 / 20,4 (sentre), hoye ~1,9 m, hvite m/ T-post + morkebrun foring. BLANK BAY s13-14,5 (ingen vindu) - renderens jevne 9-rytme var feil. s21-24 2.etg skjult av Google info-boks i baade 4f og 4f-box -> ett rytme-utledet vindu s22,4 FLAGGET (ikke kilde-verifisert). MAJOREN-ENDE s0-10 fra aug-2010 4e0 (uendret). VOLDGATEN-ENDE s24-33,5: INGEN frontal (roedt nabobygg okkluderer) -> dagens data, flagget.",
+  "elementer": [
+   {
+    "type": "butikk",
+    "s0": 1.0,
+    "s1": 2.6,
+    "z0": 0.3,
+    "z1": 2.6
+   },
+   {
+    "type": "port",
+    "s0": 3.3,
+    "s1": 5.3,
+    "z0": 0.0,
+    "z1": 2.7
+   },
+   {
+    "type": "butikk",
+    "s0": 6.0,
+    "s1": 7.6,
+    "z0": 0.3,
+    "z1": 2.6
+   },
+   {
+    "type": "vindu",
+    "s0": 6.1,
+    "s1": 6.9,
+    "z0": 4.3,
+    "z1": 6.3
+   },
+   {
+    "type": "dor",
+    "s0": 8.0,
+    "s1": 9.0,
+    "z0": 0.0,
+    "z1": 2.2
+   },
+   {
+    "type": "vindu",
+    "s0": 8.1,
+    "s1": 8.9,
+    "z0": 4.3,
+    "z1": 6.3
+   },
+   {
+    "type": "butikk",
+    "s0": 10.2,
+    "s1": 12.4,
+    "z0": 0.3,
+    "z1": 2.9,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "dor",
+    "s0": 12.5,
+    "s1": 13.2,
+    "z0": 0.0,
+    "z1": 2.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "butikk",
+    "s0": 13.3,
+    "s1": 15.4,
+    "z0": 0.3,
+    "z1": 2.9,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "butikk",
+    "s0": 16.5,
+    "s1": 19.0,
+    "z0": 0.3,
+    "z1": 2.9,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "dor",
+    "s0": 19.5,
+    "s1": 20.5,
+    "z0": 0.0,
+    "z1": 2.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "butikk",
+    "s0": 21.0,
+    "s1": 23.1,
+    "z0": 0.3,
+    "z1": 2.9,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "dor",
+    "s0": 23.4,
+    "s1": 24.2,
+    "z0": 0.0,
+    "z1": 2.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "vindu",
+    "s0": 11.75,
+    "s1": 12.85,
+    "z0": 4.3,
+    "z1": 6.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "vindu",
+    "s0": 14.65,
+    "s1": 15.75,
+    "z0": 4.3,
+    "z1": 6.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "vindu",
+    "s0": 16.2,
+    "s1": 17.3,
+    "z0": 4.3,
+    "z1": 6.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "vindu",
+    "s0": 18.05,
+    "s1": 19.15,
+    "z0": 4.3,
+    "z1": 6.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "vindu",
+    "s0": 19.85,
+    "s1": 20.95,
+    "z0": 4.3,
+    "z1": 6.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "vindu",
+    "s0": 21.85,
+    "s1": 22.95,
+    "z0": 4.3,
+    "z1": 6.2,
+    "farge": "#4a342c"
+   },
+   {
+    "type": "butikk",
+    "s0": 24.49,
+    "s1": 26.19,
+    "z0": 0.3,
+    "z1": 2.9
+   },
+   {
+    "type": "vindu",
+    "s0": 24.92,
+    "s1": 25.76,
+    "z0": 4.3,
+    "z1": 6.3
+   },
+   {
+    "type": "butikk",
+    "s0": 26.94,
+    "s1": 28.64,
+    "z0": 0.3,
+    "z1": 2.9
+   },
+   {
+    "type": "butikk",
+    "s0": 29.64,
+    "s1": 30.84,
+    "z0": 0.3,
+    "z1": 2.9
+   },
+   {
+    "type": "butikk",
+    "s0": 31.49,
+    "s1": 33.19,
+    "z0": 0.3,
+    "z1": 2.9
+   },
+   {
+    "type": "dor",
+    "s0": 32.96,
+    "s1": 34.06,
+    "z0": 0.0,
+    "z1": 2.0
+   }
+  ]
+ }
 ]

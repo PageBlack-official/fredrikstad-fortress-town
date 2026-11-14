@@ -616,6 +616,9 @@ Feller (alle sett 07.–08.11):
 - Kirka har egen modell (bygg.kirke.vinduer i fasade_former, tegnes i src/06). Vind på kirka gir doble buevinduer. fasade_rett hopper over `x['kirke']`
   og datalag.EGNE_FASADER (Kaserna).
 - Typ 2 (port) tegnes alltid med rundbue (src/07). Rett port = typ 1. Bue må leses («bue»: 1) for å få typ 2.
+- En vegg kan se «ferdig lest» ut men bare delvis være målt: 75 vegg4 (PAG-1597, 3d) hadde 1. etg lest vindu-for-vindu
+  i 3b/3c, mens 2. etg hele tiden sto som en jevn plassholder-rytme i `rett-v4-kjerne.json`. fasade_rett (sist i kjeden) tegnet
+  plassholderen tro — ingen regel overstyrte. Les ALLE etasjer i meter, ikke bare bakkeplanet, før en vegg kalles ferdig.
 - Vinduer som når over takfot − 0,1 m fjernes av datalag (A13). fasade_rett kapper karmen 0,15 m under takfot.
 - h = 6,0 er standardhøyde på umålte småbygg: rettingen strekkes feil. Avvis.
 - Samme Street View-bilde kan bli valgt for to hus (870317-6 / pb-2-0): avvis begge.
