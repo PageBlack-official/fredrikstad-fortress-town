@@ -1286,43 +1286,17 @@
   },
   {
    "id": "bnr-193868258",
-   "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
-   "grunn": "Therese M (Voldportgaten 71): én etasje, hvit mur, eget lavere valmtak takstein. Butikkvinduer med rundbuet topp («ovale topp-vinduer») langs gata, og skrått hjørne med inngang mot gaten. RUNDE2 14.11: mørk rødbrun tegl; inngangsdør flyttet til det skrå hjørnet mot gaten.",
+   "kilde": "Street View (hovedagenten 29.10)",
+   "grunn": "Voldportgaten 71: siden mot Voldportgaten er beige i bildet fra mai 2024, siden mot Raadhusgaten hvit i bildet fra aug. 2010; huset er trolig malt om, og det nyeste bildet gjelder for hele huset",
    "sett": {
-    "tak": [
-     132,
-     74,
-     60
-    ],
     "vegg": [
-     236,
-     236,
-     231
+     214,
+     206,
+     190
     ],
-    "navn": "Therese M"
-   },
-   "vegg": [
-    {
-     "side": "N",
-     "ved": [
-      109,
-      76
-     ],
-     "stor": true,
-     "bue": 1,
-     "rader": [
-      5
-     ],
-     "dorer": [
-      {
-       "u": 0.97,
-       "typ": 1,
-       "b": 1.2,
-       "h": 2.3
-      }
-     ]
-    }
-   ]
+    "veggs": null,
+    "farge_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)"
+   }
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",
