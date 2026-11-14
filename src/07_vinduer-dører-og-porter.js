@@ -71,6 +71,7 @@ const vindMat=new THREE.ShaderMaterial({
         vec3 dorf=mix(vec3(0.24,0.18,0.15), vec3(0.36,0.26,0.20)*sf, lit);
         if(typ>1.5) dorf=mix(vec3(0.14,0.13,0.13), vec3(0.22,0.20,0.19), lit);
         if(pix>=0) dorf=mix(pf*0.62, pf*sf, lit);                                   // dørfarge lest fra gata
+        if(foring>0.5 && bue<1.5) hvit=mix(pf*0.52, pf*0.82*sf, lit);                // brun dørkarm (opt-in som foringen, R3F): karm i elementets egen farge, litt lysere enn bladet
         c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
         c=mix(c, dorf*0.75, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.6);
         if(bue>1.5){   // grønn fløydør med overlys (bue=2, Kaserna etter ombyggingen)

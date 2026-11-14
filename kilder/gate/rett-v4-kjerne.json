@@ -14,7 +14,7 @@
   "lengde": 33.537,
   "h": 8.92,
   "godkjent": true,
-  "telling": "vegg4 RUNDE 3d (lest i meter fra rektifisert mai-2024 4f, rutenett s10-24). 1.etg KJERNE: Emm K-butikkvindu s10,2-12,4 | dor | Emm K-butikkvindu s13,3-15,4 | nedlopsror ~s16 | Gamlebyen Elektriske AS s16,5-19,0 | dor | Gamlebyen Elektriske s21,0-23,1 | dor s23,4-24,2 - store butikkvinduer i morkebrune rammer, IKKE smaa jevne. 2.etg KJERNE: 5 verifiserte vinduer s12,3 / 15,2 / 16,75 / 18,6 / 20,4 (sentre), hoye ~1,9 m, hvite m/ T-post + morkebrun foring. BLANK BAY s13-14,5 (ingen vindu) - renderens jevne 9-rytme var feil. s21-24 2.etg skjult av Google info-boks i baade 4f og 4f-box -> ett rytme-utledet vindu s22,4 FLAGGET (ikke kilde-verifisert). MAJOREN-ENDE s0-10 fra aug-2010 4e0 (uendret). VOLDGATEN-ENDE s24-33,5: INGEN frontal (roedt nabobygg okkluderer) -> dagens data, flagget. | RUNDE3E: 2.etg-vinduene er T-post (spross 2), IKKE tospeils. Tospeils hoerer til Voldgaten-veggen (v5).",
+  "telling": "vegg4 RUNDE3F (lest paa nytt fra montasje-75-vegg4-3e.jpg, SV mai 2024, samme standpunkt 928-4f). 1.etg SV-rekkefolge fra venstre (lav->hoy s): dor brun ytterst (A, s8.6-9.8) | butikkvindu Gamlebyen (B, s10.2-12.4) | dor m/steintrapp (C, s12.5-13.2) | butikkvindu Gamlebyen Elektriske AS (D, s13.3-15.4) | nedlopsror ~s16 | butikkvindu Emm K (F, s16.5-19.0) | dor m/steintrapp (G, s19.5-20.5) | butikkvindu Emm K (H, s21.0-23.1) | port brun hoyre kant (I, s23.3-24.8). Store butikkvinduer i morkebrune rammer, alle dorer/porter brune karmer (#4a342c, opt-in som foringen). 2.etg: 7 vinduer i synsfeltet med ujevn avstand (stor luke mellom 4. og 5. fra venstre ved nedlopsroret): W0 s8.4-9.4 (kuttet v. kant) / W1 12.5-13.5 / W2 14.2-15.2 / W3 16.1-17.1 / W4 17.7-18.7 / [luke] / W5 20.6-21.6 / W6 23.85-24.85. Hvite T-post (spross 2) m/ morkebrun foring. MAJOREN-ENDE s0-8 (butikk/port/butikk + 2.etg s6.1) off-frame v., uendret. VOLDGATEN-ENDE s24-33.5: INGEN frontal (roedt nabobygg okkluderer) -> dagens data, flagget; butikk s24.49 nudget til 24.9 for port-klaring.",
   "elementer": [
    {
     "type": "butikk",
@@ -43,23 +43,25 @@
     "s0": 6.1,
     "s1": 6.9,
     "z0": 4.3,
-    "z1": 6.3,
+    "z1": 6.2,
+    "farge": "#4a342c",
     "spross": 2
    },
    {
     "type": "dor",
-    "s0": 8.0,
-    "s1": 9.0,
+    "s0": 8.6,
+    "s1": 9.8,
     "z0": 0.0,
     "z1": 2.2,
     "farge": "#4a342c"
    },
    {
     "type": "vindu",
-    "s0": 8.1,
-    "s1": 8.9,
+    "s0": 8.4,
+    "s1": 9.4,
     "z0": 4.3,
-    "z1": 6.3,
+    "z1": 6.2,
+    "farge": "#4a342c",
     "spross": 2
    },
    {
@@ -111,17 +113,17 @@
     "farge": "#4a342c"
    },
    {
-    "type": "dor",
-    "s0": 23.4,
-    "s1": 24.2,
+    "type": "port",
+    "s0": 23.3,
+    "s1": 24.8,
     "z0": 0.0,
-    "z1": 2.2,
+    "z1": 2.7,
     "farge": "#4a342c"
    },
    {
     "type": "vindu",
-    "s0": 11.75,
-    "s1": 12.85,
+    "s0": 12.5,
+    "s1": 13.5,
     "z0": 4.3,
     "z1": 6.2,
     "farge": "#4a342c",
@@ -129,8 +131,8 @@
    },
    {
     "type": "vindu",
-    "s0": 14.65,
-    "s1": 15.75,
+    "s0": 14.2,
+    "s1": 15.2,
     "z0": 4.3,
     "z1": 6.2,
     "farge": "#4a342c",
@@ -138,8 +140,8 @@
    },
    {
     "type": "vindu",
-    "s0": 16.2,
-    "s1": 17.3,
+    "s0": 16.1,
+    "s1": 17.1,
     "z0": 4.3,
     "z1": 6.2,
     "farge": "#4a342c",
@@ -147,8 +149,8 @@
    },
    {
     "type": "vindu",
-    "s0": 18.05,
-    "s1": 19.15,
+    "s0": 17.7,
+    "s1": 18.7,
     "z0": 4.3,
     "z1": 6.2,
     "farge": "#4a342c",
@@ -156,8 +158,8 @@
    },
    {
     "type": "vindu",
-    "s0": 19.85,
-    "s1": 20.95,
+    "s0": 20.6,
+    "s1": 21.6,
     "z0": 4.3,
     "z1": 6.2,
     "farge": "#4a342c",
@@ -165,8 +167,8 @@
    },
    {
     "type": "vindu",
-    "s0": 21.85,
-    "s1": 22.95,
+    "s0": 23.85,
+    "s1": 24.85,
     "z0": 4.3,
     "z1": 6.2,
     "farge": "#4a342c",
@@ -174,18 +176,10 @@
    },
    {
     "type": "butikk",
-    "s0": 24.49,
+    "s0": 24.9,
     "s1": 26.19,
     "z0": 0.3,
     "z1": 2.9
-   },
-   {
-    "type": "vindu",
-    "s0": 24.92,
-    "s1": 25.76,
-    "z0": 4.3,
-    "z1": 6.3,
-    "spross": 2
    },
    {
     "type": "butikk",
