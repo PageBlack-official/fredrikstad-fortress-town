@@ -43,16 +43,19 @@ const vindMat=new THREE.ShaderMaterial({
       else if(typ<0.5 && bue>1.5){ float st=min(vSz.y*0.3,vSz.x*0.25), R=(vSz.x*vSz.x*0.25+st*st)/(2.*st); if(m.y>vSz.y-st) kant=min(kant, R-length(vec2(m.x-vSz.x*0.5,m.y-(vSz.y-R)))); }
       vec3 hvit=mix(vec3(0.70,0.70,0.70)*KALD, vec3(0.96,0.94,0.90)*sf, lit);
       vec3 glas=mix(vec3(0.19,0.21,0.27), vec3(0.27,0.31,0.36), lit);
-      int pix=int(vInfo.w+0.5)-1; vec3 pf=pix>=0 ? texture2D(uPalTex, vec2((float(pix)+0.5)/uPalN, 0.5)).rgb : vec3(0.);
+      float raw=vInfo.w; float foring=step(999.5, raw); int pix=int(mod(raw,1000.)+0.5)-1;   // +1000 = elementets egen farge (foring, opt-in R4)
+      vec3 pf=pix>=0 ? texture2D(uPalTex, vec2((float(pix)+0.5)/uPalN, 0.5)).rgb : vec3(0.);
       if(pix>=0 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.62*KALD, pf*sf, lit);     // karmfarge lest fra gata
+      if(foring>0.5 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.42, pf*0.80*sf, lit);  // foring (elementets egen farge): mørkere, mettet smyg som ikke drukner i glasset
       vec3 c;
       if(typ<0.5 || typ>2.5){
-        float ramme=0.08;
+        float ramme=foring>0.5?0.16:0.08;   // foring: bredere smyg så den leser på avstand
         // sprosser etter zoom : post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
         // på nært hold og tones ut når én piksel blir for stor til å bære dem (fw = meter per piksel), så de ikke griser på avstand
         float lo=vSz.y*(typ>2.5?0.5:0.62);
         float pv=abs(m.x-vSz.x*0.5), ph=abs(m.y-lo);
-        if(spross>1.5 && m.y<lo) pv=1e3;                                   // T-post (spross 2): loddrett post bare i øvre del -> én stor nedre rute, to små øvre
+        if(spross>2.5) ph=1e3;                                             // tospeils (spross 3): full loddrett midtpost, ingen tverrpost (losholt) -> to høye ruter
+        else if(spross>1.5 && m.y<lo) pv=1e3;                             // T-post (spross 2): loddrett post bare i øvre del -> én stor nedre rute, to små øvre
         float qs=(typ<0.5 && vSz.y>1.0 && spross<1.5)?abs(m.y-lo*0.5):1e3; // sprossen midt i nedre ramme: seks ruter (ikke på T-post)
         // nærmeste zoom i kartet gir ~0,12–0,17 m per piksel på skjerm med pikseltetthet 1 (0,06–0,08 på mobil): korset (post og
         // losholt) står til 0,2 m/px og er borte ved 0,32; sprossen i nedre ramme bare der det er minst ~8 px per meter
@@ -118,7 +121,9 @@ function vindusData(V, i, b, fot=0){
     _M.makeBasis(_X.clone().multiplyScalar(w), _Y.clone().multiplyScalar(h), _Z);
     _M.setPosition(x+nx*0.05, z+fot, -(y+ny*0.05));
     mats.push(_M.clone());
-    info.set([typ,bue,ant,palIx(v[12]) || palIx(b && (typ>0.5 && typ<2.5 ? b.dor_farge : b.karm_farge))],k*4); nrm.set([nx,0,-ny],k*3);
+    const egetPix=palIx(v[12]);   // elementets egen farge satt (foring) -> opt-in bredere/mørkere smyg (+1000-flagg)
+    const pix=egetPix || palIx(b && (typ>0.5 && typ<2.5 ? b.dor_farge : b.karm_farge));
+    info.set([typ,bue,ant, egetPix ? pix+1000 : pix],k*4); nrm.set([nx,0,-ny],k*3);
   });
   return {mats, info, nrm, bygg};
 }

@@ -110,7 +110,18 @@ function mat(rgb, dim, sk, opt={}){
           float lit=lam*skyggeMask();
           float k=1.-lit;
           float su=solHer(wq);
-          vec3 c = mix(skygge*KALD, farge*mix(vec3(1.),solFarge(),0.6*su), lit); c=mix(graavaer(c), c, su);
+          // skyggetonen kjøles mildere på fasader og tak enn på bakken: full KALD gjorde lyse vegger blå og
+          // fargede valmtak grå i skyggen (R4, 14.11). Himmelvendte flater (tak) kjøles enda mindre, så valm-
+          // flatene beholder teglfargen i stedet for å vaskes grå. Bakkens kastskygge (medSkygge) rører vi ikke.
+          vec3 nq0=normalize(cross(dFdx(lp),dFdy(lp)));
+          float opp=smoothstep(0.35,0.85,abs(nq0.y));
+          vec3 KALD2=mix(vec3(1.0), KALD, mix(0.40, 0.16, opp));
+          vec3 skg=skygge*KALD2;
+          // skyggetonen ble kuttet kjøligere i rødt (0,72) enn i blått (0,80), så lyse vegger tippet blå i skyggen.
+          // Løft rødt litt tilbake på de lyse tonene; mørke flater rører vi ikke (behold den kjølige skyggen).
+          float sl=max(max(skygge.r,skygge.g),skygge.b);
+          skg.r*=1.0+0.06*smoothstep(0.28,0.70,sl);
+          vec3 c = mix(skg, farge*mix(vec3(1.),solFarge(),0.6*su), lit); c=mix(graavaer(c), c, su);
           c=snoPaa(c, abs(normalize(cross(dFdx(lp),dFdy(lp))).y));   // snø på takene (23_vaer)
           c=kveld(c);
           // ---- malte flater: akvarellvask og penselstrøk, forankret i byen (ikke skjermen) ----
