@@ -31,7 +31,7 @@ const vindMat=new THREE.ShaderMaterial({
       float typ=vInfo.x, bue=vInfo.y;
       vec2 m=vUv*vSz;
       float d=dot(normalize(mat3(viewMatrix)*vN),solRetning());   // kamerarom som husene 
-      float lit=smoothstep(-0.12,0.52,d)*skyggeMask();
+      float lit=d>-0.12 ? smoothstep(-0.12,0.52,d)*skyggeMask() : 0.;
       vec3 sf=mix(vec3(1.),solFarge(),0.6*solHer(vWq));
       if(typ>2.5){ if(length(m-vSz*0.5)>vSz.x*0.5) discard; }   // oksøye: rundt vindu (typ 3)
       else if(typ>1.5 || (typ<0.5 && bue>0.5 && bue<1.5)){ float r=vSz.x*0.5; float cy=vSz.y-r; if(m.y>cy && length(vec2(m.x-r,m.y-cy))>r) discard; }   // buet topp: port (typ 2) og rundbuevindu (typ 0, bue 1; Tøihuset)
