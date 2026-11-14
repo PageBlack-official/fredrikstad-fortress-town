@@ -1091,7 +1091,7 @@
   {
    "id": "bnr-193867928",
    "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
-   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg. RUNDE2 14.11: 1.etg store butikkvinduer (butikk), 2.etg T-sprosser, dempet vegg/tak, rett (ikke rundbuet) dobbeltport, mørkebrune bånd + hjørnekasse/skråinngang som veggfelt. RUNDE3C: vegg middels kjølig grå [150,152,158], tak brunere [116,74,60] (målt SV).",
+   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg. RUNDE2 14.11: 1.etg store butikkvinduer (butikk), 2.etg T-sprosser, dempet vegg/tak, rett (ikke rundbuet) dobbeltport, mørkebrune bånd + hjørnekasse/skråinngang som veggfelt. RUNDE3C: vegg middels kjølig grå [150,152,158], tak brunere [116,74,60] (målt SV). RUNDE3E 14.11: veggfarge satt til varm graa [164,155,156] fra 3d-maalingen (vegg4 sol); motoren rettet.",
    "sett": {
     "tak": [
      116,
@@ -1099,9 +1099,9 @@
      60
     ],
     "vegg": [
-     150,
-     152,
-     158
+     164,
+     155,
+     156
     ]
    },
    "vegg": [

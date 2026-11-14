@@ -14,14 +14,14 @@
   "lengde": 12.243,
   "h": 5.62,
   "godkjent": true,
-  "telling": "Majoren hovedfasade (vegg2) RUNDE 3d, lest fra aug-2010-frontal (eneste frontale; fasaden uendret, kun malt gul->hvit 2024). RETTELSE mot 3c: 1.etg fra venstre = lite vindu (s0,3-1,1), inngang m/trapp (s2,0-3,0), ETT stort butikkvindu ~3,5 m (s3,4-6,9), portrom til hoyre (s8,5-11,8) RETT flat overkant = typ 1 (IKKE rundbue - 3c hadde buet port i feil ende). 2.etg: 4 vinduer (s1,0/2,55/3,95/6,85) + ett bredere til hoyre over porten (s11,1). Oblikt skudd, grov +/-0,5 m.",
+  "telling": "Majoren hovedfasade (vegg2) RUNDE 3d, lest fra aug-2010-frontal (eneste frontale; fasaden uendret, kun malt gul->hvit 2024). RUNDE3E: motoren var speilvendt (fasade_rett s-akse rettet mot utover-normal); 1.etg fra venstre = BREDT vindu (s0,3-1,9, ikke lite), inngang m/trapp (s2,0-3,0), ETT stort butikkvindu ~3,5 m (s3,4-6,9), portrom til hoyre (s8,5-11,8) RETT flat overkant = typ 1 (IKKE rundbue - 3c hadde buet port i feil ende). 2.etg: 4 vinduer (s1,0/2,55/3,95/6,85) + ett bredere til hoyre over porten (s11,1). Oblikt skudd, grov +/-0,5 m.",
   "elementer": [
    {
     "type": "vindu",
     "s0": 0.3,
-    "s1": 1.1,
+    "s1": 1.9,
     "z0": 0.9,
-    "z1": 2.0
+    "z1": 2.2
    },
    {
     "type": "dor",

@@ -47,6 +47,13 @@ def main(tørt):
         for r in rr:
             a, c = np.array(r['venstre'], float), np.array(r['hoyre'], float); L = float(np.linalg.norm(c - a)); u = (c - a) / L
             w = V[r['vegg']]; n = np.array(w['n'], float); lest.add(r['vegg'])
+            # s leses fra bildets venstre (veggen sett forfra fra utsiden). Veggens utovernormal n og leseretningen u
+            # skal danne en høyrehåndsramme: (n × u)_z > 0 betyr at u peker mot utsidens høyre, samme vei som s vokser
+            # i Street View. Er den negativ, står venstre/hoyre i motsatt rekkefølge av det kameraet så, og fasaden ble
+            # speilvendt i renderen (Majoren bnr-193868622 v2, 75 vegg4 bnr-193867928 v4 — RUNDE3E 14.11). Rett opp ved
+            # å måle s fra det hjørnet som faktisk er utsidens venstre, slik at et element på s0 havner til venstre.
+            if n[0] * u[1] - n[1] * u[0] < 0:
+                a, u = c, -u
             for e in r['elementer']:
                 s0, s1, z0, z1 = (float(e[k]) for k in ('s0', 's1', 'z0', 'z1'))
                 # det rettede bildet slutter ved takfoten, så karmen kan leses helt opp til den; datalag fjerner vinduer
@@ -55,6 +62,7 @@ def main(tørt):
                 if s1 - s0 < 0.25 or z1 - z0 < 0.25: continue
                 el = VR.element(P, a + u * (s0 + s1) / 2, round(s1 - s0, 2), n, round((z0 + z1) / 2, 2), round(s1 - s0, 2), round(z1 - z0, 2), (2 if e['type'] == 'port' and e.get('bue') else TYP.get(e['type'], 0) if e['type'] != 'port' else 1))
                 if e.get('bue'): el[10] = int(e['bue'])
+                if e.get('spross'): el[11] = int(e['spross'])   # sprossestil fra lesingen: 2 = T-post, 3 = tospeils (src/07). Uten felt: ingen (1)
                 if e.get('farge'): el.append(e['farge'])
                 ny.append(el)
         resten = [e for e in (x.get('vind') or []) if VG.naermeste_vegg(V, np.array(e[:2]))[0] not in lest]
