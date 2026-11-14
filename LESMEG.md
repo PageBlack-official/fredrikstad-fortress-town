@@ -707,3 +707,12 @@ Fletta hus-innhold + leservei (gate/innhold, def6d24+3a25da8) og Hotell Kasernen
 - **Hakk i introen = kompilering, ikke tegning.** Se i sporet etter `onFirstUse` og `getProgramiv`. Alt som tegnes for første gang midt i en bevegelse (trær som vokser fram, speilet, skyggekartet, en ny variant av et materiale) gir et bilde på 0,5 s. Oppvarmingen i 15_loop må dekke alt nytt som legges til senere: nytt materiale = sjekk intro_maal før og etter.
 - **Fargerommet i målet er en del av programnøkkelen.** renderer.compile() må kalles med det målet passet faktisk tegner til (post.forvarm), ellers kompileres programmet på nytt i første bilde.
 - **Bildet skal se likt ut:** hver ytelsesendring får verktoy/bilde_ab.mjs (hjem + nær) og et utsnittsark før den publiseres.
+
+## Voldportgaten 14.11: bygd fra tekst, ikke fra bildet
+Runde 1–2 leste tre fotograferte hus (Voldportgaten 75/73/71) feil fordi fasadene ble bygd fra en **tekstbeskrivelse**, ikke fra Street View. Reglene:
+
+- **Et hus vi har på foto leses fra fotoet, ikke fra ord.** `bygg_merknader.py` («antall per etasje» → jevn rytme) er verktøyet for ANTATTE hus (kvartaltegning uten foto). For et hus på Street View: rektifiser (`verktoy/rett/`, LESMEG «Rettede fasader fra Street View») og mål **hvert vindu/dør/port/butikkvindu/bånd i METER fra hjørnet** (ELEMENTER.md), sett `fasade_kilde=streetview`. Aldri gi bare et antall og la verktøyet fordele jevnt.
+- **Grønn regel 17 på et fotografert hus er et FARETEGN, ikke en kvittering.** Regel 17 krever lik avstand mellom vinduene. Et ekte bygg har ujevn rytme; legger du de ekte posisjonene inn, blir 17 rød. Blir 17 grønn, er rytmen **pålagt av regelen**, ikke lest av bygget. Kontrollér mot fotoet, ikke mot 17.
+- **Antall fra et muntlig anslag er et anslag.** «8 vinduer i 2. etg» sagt i en setning er ikke en telling per vegg. Tell i det rektifiserte bildet, per vegg, per etasje.
+- **Kontroll = render vs foto side om side (1280×720), element for element i meter (±0,3 m).** Tekst-mot-tekst («✓ på karakter») slipper en fake jevn rytme gjennom. Fås ikke bildet til minien (Vegars skjermbilder i ~/Downloads, tilgang nektet), er jobben ikke gjort — skaff bildet eller hent Street View selv (`sv_hent.mjs`).
+- **«Merknadene vinner over alt» betyr at en feil merknad også vinner.** Tekst-avledede merknader overstyrer alt annet; da må merknaden komme fra en målt kilde, ikke fra en beskrivelse.
