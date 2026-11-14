@@ -70,3 +70,47 @@ CEO-punktene 3 og 4 gjort, 2 eskalert, 1 (modul) bygd:
 
 ## Majoren (73) — eskalert, venter CEO-dom (komm. 07c0752b)
 Hovedfasaden (vegg2) har INGEN frontal mai-2024-pano (Googles 2024-bil kjørte ikke tett forbi; bare 75°-hjørneskudd). Frontal finnes bare fra aug. 2010 (t3dSDJSt, forfra, «MAJORENS KRO & STUE» #73 — samme bygg, men gul puss i 2010, malt hvit før 2024). Valg: geometri fra 2010-frontal + farge hvit fra 2024 (anbefalt), vs grov 75°-mai-2024, vs hopp over. Venter dom.
+
+## CEO-dom utført (14.11 kveld, run c6a6aa61) — alle fire vegger klare
+
+### 75 vegg4 (Voldportgaten, 33,5 m) — KJERNE SV-lest (CEO valg a)
+Stitch-modul `rett_lang.py` brukt på `4f` (jI8Kdnvk, mai 2024). **Eksplisitt kilde-skille:**
+- **s10–24 (kjernen): SV-lest** fra rektifisert 4f. 1.etg = reelle butikker, ikke jevn rytme:
+  brede butikkvinduer (Gamlebyen Elektriske ~s15,3–17,1, Emm K ~s20,6–23,3, + s10–11,3 og s12,7–14,3)
+  med innskutte dører (~s11,5 / 17,8 / 19,7). 2.etg = 6 vinduer, regelmessige (SV-bekreftet venstre; Google-kortet
+  dekker øvre høyre). Montasje `r3/montasje-75-vegg4.jpg`.
+- **s0–10 og s24–33,5 (endene): dagens data**, IKKE kilde-verifisert (ingen frontal mai-2024; `4c`/`4b` ser bare
+  rødt retur/nabobygg i strykende vinkel). Featureless plan vegg. Står urørt fra 14.11-merknaden.
+
+| Street View mai 2024 (4f, kjerne s10–24) | Modell |
+|---|---|
+| 1.etg: brede butikkvinduer + innskutte dører (ikke 6 like vinduer) | butikk + dor-elementer på lest s (rett-v4-kjerne.json) |
+| 2.etg: 6 vinduer, jevn rytme ~2 m | 6 vinduer s 10,6/13,1/15,5/18,0/20,4/22,9 |
+| Vannbord (mørkebrunt bånd) mellom etasjene | veggfelt mørkebrunt bånd (fra 14.11) |
+
+### 73 Majoren (bnr-193868622) — GEOMETRI fra aug-2010-frontal, FARGE fra mai-2024 (CEO valg 1)
+**Kilde-flagg (eksplisitt, CEO-betingelse 1):** Majorens hovedfasade (vegg2) har **ingen** frontal mai-2024-pano
+(Googles 2024-bil kjørte ikke tett forbi; eneste 2024-skudd mot vegg2 er 75° oblikt). Geometrien er derfor lest fra
+**aug-2010-frontalen** `t3dSDJSt` (helt forfra, ~6 m). CEO verifiserte selv at dette ER Majoren (MAJORENS KRO & STUE,
+adresseskilt 73), ikke «det gule trehuset» oppskriften advarte mot (det var L0etK4SO). Fasaden er bygnings-uendret
+2010→2024 (verneverdig Gamlebyen-fasade); **bare malt gul → hvit**. Veggfarge = mai-2024 (hvit, [233,230,222] fra
+14.11-merknaden). Dette kilde-avviket surfaces CEO til Vegar ved review-porten (CEO-betingelse 2).
+
+| Street View aug 2010 (frontal, geometri) | Modell |
+|---|---|
+| 5 vinduer i 2. etg | 5 vinduer s 3,3/4,8/6,8/8,3/10,2 (z 3,1–4,8) |
+| Midtinngang (MAJORENS, steintrapp) | dør s 5,7–6,8 |
+| Store doble vinduer begge sider av inngangen | butikk s 2,6–5,0 og s 7,3–9,7 |
+| Egen port til bakgården til høyre («73») | port s 0,2–2,2 (rundbue) |
+| Farge: gul (2010) → **hvit i mai 2024** | veggfarge hvit [233,230,222] |
+
+Montasje `r3/montasje-73-majoren.jpg` (SV 2010 | render). Grov ±0,5 m.
+
+### Polish vegg5 (CEO-notat): mørkebrun foring på 2.etg-rammer
+Satt `farge:#4a342c` på de 8 vegg5 2.etg-vinduene (karmfarge, `rett-voldport-1411.json`). Ligger i vind-dataen
+(v[12]); renderen viser den dempet. Ikke-blokker per CEO.
+
+## Ferdig — alle fire vegger + montasjer, regler grønne
+944 ✓, 75 vegg5 ✓ (montasje regenerert), 75 vegg4-kjerne ✓, 73 Majoren ✓. Regel 02/04/17 grønne.
+Montasjer: `r3/montasje-{944-vegg7, 75-vegg5, 75-vegg4, 73-majoren}.jpg` (lokale, Google-bilder utenfor git).
+Sendes CEO som **in_review**. Majoren-kildeavviket (2010-geometri) flagget over for Vegar-porten. IKKE publisert.

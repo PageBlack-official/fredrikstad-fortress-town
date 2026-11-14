@@ -1,0 +1,50 @@
+[
+{
+"id": "bnr-193867944",
+"del_": 7,
+"deler": 1,
+"vegg": 7,
+"adresse": "",
+"pano": "5YXEHsoERsCPNZke6SdssA",
+"lat": 59.2034976,
+"lon": 10.9550223,
+"dato": "mai 2024",
+"heading": 152.2,
+"fov": 75.0,
+"pitch": 97.0,
+"avstand": 7.5,
+"skraa": 49
+},
+{
+"id": "bnr-193867928",
+"del_": 5,
+"deler": 1,
+"vegg": 5,
+"adresse": "",
+"pano": "QwfU_FvBrXC5tLRpydtgFg",
+"lat": 59.2028593,
+"lon": 10.956141,
+"dato": "mai 2024",
+"heading": 332.7,
+"fov": 75.0,
+"pitch": 97.0,
+"avstand": 39.5,
+"skraa": 38
+},
+{
+"id": "bnr-193868258",
+"del_": 2,
+"deler": 1,
+"vegg": 2,
+"adresse": "",
+"pano": "5YXEHsoERsCPNZke6SdssA",
+"lat": 59.2034976,
+"lon": 10.9550223,
+"dato": "mai 2024",
+"heading": 242.7,
+"fov": 75.0,
+"pitch": 97.0,
+"avstand": 20.3,
+"skraa": 61
+}
+]
