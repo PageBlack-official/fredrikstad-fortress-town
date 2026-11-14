@@ -2319,21 +2319,21 @@
  },
  {
   "id": "bnr-193868258",
-  "navn": "Therese M",
+  "navn": null,
   "adr": null,
   "for_": [
-   236,
-   236,
-   231
+   214,
+   206,
+   190
   ],
-  "for_kilde": null,
+  "for_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
   "vegg": [
-   236,
-   236,
-   231
+   214,
+   206,
+   190
   ],
-  "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
-  "aar": 2026,
+  "kilde": "merknad: Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
+  "aar": 2024,
   "byttet": false
  },
  {

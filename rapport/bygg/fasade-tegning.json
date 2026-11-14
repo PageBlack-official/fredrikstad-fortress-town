@@ -1510,7 +1510,7 @@
  },
  {
   "id": "bnr-193868258",
-  "navn": "Therese M",
+  "navn": null,
   "vegger": {
    "2": {
     "tegning": "Kvartal8BITMAP",
@@ -1532,7 +1532,7 @@
    }
   },
   "tegnet": 10,
-  "regler": 10,
+  "regler": 20,
   "streetview": 0
  },
  {

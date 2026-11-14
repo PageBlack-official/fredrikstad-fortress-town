@@ -1411,12 +1411,12 @@
   ]
  },
  "bnr-193868258": {
-  "takform": "valm",
-  "kilde": "tegning+DOM valm tvers rms 1.06",
+  "takform": "sal",
+  "kilde": "DOM sal langs rms 1.06",
   "kropper": [
    {
-    "form": "valm",
-    "langs": false,
+    "form": "sal",
+    "langs": true,
     "ender": [
      "fri",
      "fri"
@@ -1427,7 +1427,7 @@
     ],
     "dom": {
      "rms": 1.06,
-     "h": 6.8,
+     "h": 6.6,
      "th": 0.15,
      "n": 848
     }
