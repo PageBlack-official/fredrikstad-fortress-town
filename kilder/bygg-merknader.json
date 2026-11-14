@@ -1297,6 +1297,14 @@
     "veggs": null,
     "farge_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)"
    }
+  },
+  {
+   "id": "bnr-193867944",
+   "kilde": "Fable PAG-1591 (identitet) + Street View mai 2024 (bnr-193867944-7, rektifisert vegg7)",
+   "grunn": "Therese M ligger paa bnr-193867944 (ikke 258): OSM-noden ligger inne i 944; Vegars Majoren-bilde viser Therese M-bygget (hvit mur, rundbuede vinduer) vegg i vegg til hoyre for Majoren (622). Hjornebutikk mot Voldportgaten med rundbuede butikkvinduer (arkadevegg = vegg7). Vinduene paa vegg7 er lest i meter fra rektifisert SV (kilder/gate/rett-944-therese.json), ikke jevn rytme. Bygg-bred veggfarge/tak ikke satt (944 er et stort omriss, bare SE-hjornet er den hvite Therese M-butikken).",
+   "sett": {
+    "navn": "Therese M"
+   }
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

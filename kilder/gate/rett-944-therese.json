@@ -1,0 +1,37 @@
+[
+{
+"bilde": "bnr-193867944-7",
+"id": "bnr-193867944",
+"vegg": 7,
+"venstre": [
+137.84,
+65.36
+],
+"hoyre": [
+128.72,
+68.95
+],
+"lengde": 9.801,
+"h": 4.3,
+"godkjent": true,
+"telling": "vegg7 (arkadevegg mot gata): 2 store rundbuede butikkvinduer; mulig 3. vindu i den fjerne (venstre/c) enden er for forvrengt (49 grader oblikt) til aa leses sikkert",
+"elementer": [
+{
+"type": "butikk",
+"s0": 2.5,
+"s1": 3.7,
+"z0": 0.4,
+"z1": 2.9,
+"bue": 1
+},
+{
+"type": "butikk",
+"s0": 5.4,
+"s1": 7.0,
+"z0": 0.4,
+"z1": 2.9,
+"bue": 1
+}
+]
+}
+]
