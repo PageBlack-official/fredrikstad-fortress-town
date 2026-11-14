@@ -150,7 +150,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867774 |  | [4, 5] | [4, 5] | 1 brun tofløyet fyllingsport med overlys, venstre ende (ca. 0.05–0.20), nr. '65' | 1 | 0 | 0 | 2 murte teglpiper | 1 |  |
 | bnr-193972489 | annen forretningsbygning | [1] | [] | ikke synlig | 0 | 0 | 0 | None | 1 | ja |
 | bnr-193867855 |  | [2] | [3] | 1 mørk grønn fyllingsdør med utskåret dekor, høyre (ca. 0.85) | 0 | 1 ark med hvite vinduer og blomsterkasser | 0 | 2 murte teglpiper | 2 | ja |
-| bnr-193868622 | Majorens Kro & Stue | [5, 4] | [4] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 2 | 0 | 0 | ikke synlig | 1 | ja |
+| bnr-193868622 | Majorens Kro & Stue | [5, 4] | [4, 5] | 1 glassdør midt (ca. 0.50) med steintrapp; åpen port/kjøreport til høyre (ca. 0.85–0.95) med brunt gitter | 2 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193867979 |  | [5, 6] | [7, 4, 7] | 1 beige tofløyet port med fyllinger under rundbue, venstre (ca. 0.05–0.25), nr. '74'; kjellerinngang (restaurant 'No 74') til høyre | 1 | ikke synlig | 0 | ikke synlig | 1 | ja |
 | bnr-16290424 | annen lagerbygning | [2, 3] | [2, 3] | 0 på gavlen | 0 | 0 | 0 | 0 | 0 |  |
 | bnr-193972195 | kontor- og administrasjonsbygning | [2] | [1] | skjult bak gjerdet | 0 | 0 | 0 | None | 1 | ja |

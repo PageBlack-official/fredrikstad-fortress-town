@@ -5129,7 +5129,8 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    4
+    4,
+    5
    ],
    "dorer": 2,
    "arker": 0,

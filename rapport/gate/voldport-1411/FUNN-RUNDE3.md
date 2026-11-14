@@ -71,12 +71,40 @@ butikkvinduene Vegar beskrev hører trolig til **et annet bygg** (den ekte There
    bnr-193868258 Therese M eller bakeriet, og hvilket bygg er Majoren? Uten det risikerer vi å
    rette feil fasade på feil fotavtrykk.
 
+## 5. GJORT etter CEOs klarsignal (komm. 1b9e1b26): 75 rektifisert + montasje
+CEO dømte lesningen og ga **75 → GÅ NÅ** (71/73 holdes til PAG-1591). Kjørte rett-kjeden på 75:
+
+- **vegg5 (Voldgaten, 20,2 m) rektifisert** fra det oblike krysskuddet `bnr-193867928-5` (mai 2024):
+  hjørner → `rett.py` (50 px/m, meterrutenett) → lest i meter (ELEMENTER.md) → `konverter.py` →
+  `kilder/gate/rett-voldport-1411.json` (godkjent) → `bygg_kjede.py` (fasade_rett sist).
+- Lesning: **2. etg = 8 vinduer** (4 + blank hjørnepilar s8–11 + 4 — stemmer med Vegars «8 vinduer
+  i 2. etg mot Voldgaten»); **1. etg = 7 store butikkvinduer + 2 dører** (sammenhengende glassfasade,
+  ikke 6 små boligvinduer). `bnr-193867928.fasade_rett = [5]` → regel 17 dømmer nå veggen mot
+  virkeligheten, ikke mot rytmen.
+- **Montasje SV | render:** `rapport/gate/voldport-1411/r3/montasje-75-vegg5.jpg` (2×1280×720).
+  Render fra samme pano-standpunkt (krysset). 75s Voldgaten-face viser nå **butikkvinduer + mørkebrunt
+  vannbord** der modellen før hadde en jevn rad småvinduer. Bygningsrekka (blå → oker → grått
+  hjørnebygg → rosa → rød) matcher fotoet.
+- Presisjon: skuddet er oblikt (38°, 39 m, lav opplosning) → posisjoner ±0,5 m, grovere enn
+  ELEMENTER-målet ±0,3 m. CEO godtok frontal-/grovlesning som nok til å erstatte den oppdiktede
+  rytmen; helvegg-pano er en senere forbedring.
+
+### Ærlige gjenstående avvik på 75 (ikke løst denne runden)
+1. **vegg4 (Voldportgaten, 33,5 m)** — hovedbutikkfasaden (Gamlebyen Elektriske/Emm K) — kan **ikke**
+   rektifiseres: 33,5 m får ikke plass i ett pano (hjørnene faller på u −0,57 og 1,52 i frontalskuddet,
+   `rett.py` hopper over vegger som går ut av bildet). Den har fortsatt den oppdiktede rytmen. Krever
+   stitchet multi-pano eller eget foto. Beskrevet i §2.
+2. **Veggfarge:** gata viser et **medium, kjølig grått** (ikke modellens lyse [202,197,198]). Målte
+   ikke RGB inn — mine stikkprøver på det oblike skuddet var støyete (skygge/karmer); å gjette en tone
+   ville være samme synd. Venter på et rent, solbelyst 2016+-skudd rektifisert for FARGER.md-måling.
+3. **71 + 73:** urørt, gated på PAG-1591 (CEOs ordre).
+
 ## Status-oppsummering
 - Del A: gjort (sibling, 5368028). Rørt ikke.
-- Del B: **lest på nytt fra ekte Street View** (7 skudd, korrigerer «blokkert»); SV-mot-modell-tabell
-  over. Geometri **ikke** bygd om — 75 gjenstår (ikke blokkert), 71/73 gated på PAG-1591.
-- Del C: montasjer ikke laget — gatekamera tegner ikke pitch > 88,5 (kan ikke matche frontal-pitch 95),
-  og rektifiserte render krever den ombygde modellen som ennå ikke fins. Rå side-om-side er for grov
-  til elementnivå (samme forbehold som PAG-1585).
+- Del B: **lest på nytt fra ekte Street View** (7 skudd, korrigerer «blokkert»); SV-mot-modell-tabell i §2.
+- Del C: **75 vegg5 rektifisert + fasade_rett + montasje levert** (§5). 75 vegg4 (for lang) og veggfarge
+  gjenstår; 71/73 holdt på PAG-1591.
+- `fasade_rett`-kilde: `kilder/gate/rett-voldport-1411.json`. Montasje:
+  `rapport/gate/voldport-1411/r3/montasje-75-vegg5.jpg` (ligger lokalt; Google-bilder holdes utenfor git).
 
 IKKE publisert.
