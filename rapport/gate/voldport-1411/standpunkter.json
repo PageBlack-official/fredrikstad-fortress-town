@@ -1,0 +1,38 @@
+[
+ {
+  "navn": "kryss-voldportgaten-voldgaten",
+  "lat": 59.2032937,
+  "lon": 10.9559304,
+  "heading": 290.9,
+  "pitch": 88.5,
+  "fov": 80,
+  "oye": 2.5
+ },
+ {
+  "navn": "voldgaten-mot-75-kortside",
+  "lat": 59.2031175,
+  "lon": 10.9560625,
+  "heading": 295.0,
+  "pitch": 88.5,
+  "fov": 70,
+  "oye": 2.5
+ },
+ {
+  "navn": "langs-voldportgaten-mot-majoren",
+  "lat": 59.2035064,
+  "lon": 10.9553545,
+  "heading": 204.1,
+  "pitch": 88.5,
+  "fov": 78,
+  "oye": 2.5
+ },
+ {
+  "navn": "mot-therese-m",
+  "lat": 59.2036301,
+  "lon": 10.9547478,
+  "heading": 201.2,
+  "pitch": 88.5,
+  "fov": 80,
+  "oye": 2.5
+ }
+]

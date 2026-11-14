@@ -110,28 +110,17 @@
  "bnr-193867804": [
   {
    "a": [
-    80.92,
-    -53.41
-   ],
-   "b": [
     70.46,
     -49.17
+   ],
+   "b": [
+    107.69,
+    -63.53
    ],
    "segmenter": [
     {
      "fra_m": 0.0,
-     "til_m": 3.85,
-     "vegg": [
-      232,
-      213,
-      198
-     ],
-     "kilde": "kvartaltegningen Kvartal12",
-     "aar": 2015
-    },
-    {
-     "fra_m": 3.85,
-     "til_m": 11.29,
+     "til_m": 7.44,
      "vegg": [
       226,
       170,
@@ -139,6 +128,17 @@
      ],
      "kilde": "Street View 2024 (laks); tegningen har oransje",
      "aar": 2024
+    },
+    {
+     "fra_m": 7.44,
+     "til_m": 39.9,
+     "vegg": [
+      232,
+      213,
+      198
+     ],
+     "kilde": "kvartaltegningen Kvartal12",
+     "aar": 2015
     }
    ]
   }
@@ -423,42 +423,6 @@
       240
      ],
      "kilde": "kvartaltegningen kvartal5",
-     "aar": 2015
-    }
-   ]
-  }
- ],
- "pb-66": [
-  {
-   "a": [
-    171.22,
-    28.61
-   ],
-   "b": [
-    179.75,
-    46.94
-   ],
-   "segmenter": [
-    {
-     "fra_m": 0.0,
-     "til_m": 6.06,
-     "vegg": [
-      250,
-      171,
-      114
-     ],
-     "kilde": "kvartaltegningen Kvartal9",
-     "aar": 2015
-    },
-    {
-     "fra_m": 6.06,
-     "til_m": 20.22,
-     "vegg": [
-      249,
-      224,
-      204
-     ],
-     "kilde": "kvartaltegningen Kvartal9",
      "aar": 2015
     }
    ]

@@ -31,7 +31,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-193870333 | Kruttårnet | [0] | [0] | 0 | 0 | 0 | beholdt (ukjent i Street View) |
 | bnr-193971318 | kontor- og administrasjonsbygning | [2] | [2] | 0 | 0 | 0 |  |
 | bnr-193867820 |  | [4, 3] | [4, 3] | 1 | – | – |  |
-| bnr-193867634 | Vollmesterboligen | [7] | [7] | 0 | 0 | 3 |  |
+| bnr-193867634 | Vollmesterboligen | [7] | [7] | 0 | 0 | 2 |  |
 | bnr-193867847 |  | [4, 5] | [4, 5] | 1 | – | – |  |
 | bnr-193868576 | annen lagerbygning | [0] | [0] | 1 | 0 | 0 |  |
 | bnr-6276016 |  | [2, 4] | [2, 4] | 1 | 0 | 1 |  |
@@ -52,7 +52,7 @@ Kjørt av verktoy/streetview_fasader.py. Kilde: kilder/streetview/avlesning.json
 | bnr-6276830 |  | [3, 3] | [3, 3] | 2 | 0 | 0 |  |
 | bnr-300216650 |  | [3, 3] | [3, 3] | 0 | 0 | 1 | veggen valgt etter retningen i avlesningen (NØ/SØ (~14 m, høyre i bildet)); siktlinja fra kamerapunktet treffer ingen fri vegg som vender mot seeren; beholdt (ukjent i Street View) |
 | bnr-6276822 |  | [3, 3] | [3, 3] | 1 | 0 | 1 |  |
-| bnr-13415889 |  | [3, 2] | [3, 2] | 1 | 2 | 1 |  |
+| bnr-13415889 |  | [3, 2] | [3, 2] | 1 | 3 | 1 |  |
 | bnr-13416060 |  | [4, 4] | [4, 4] | 1 | 0 | 1 |  |
 | bnr-13418292 |  | [0, 1] | [0, 1] | 1 | 0 | 0 |  |
 | bnr-13416370 |  | [3] | [3] | 1 | 0 | 1 |  |
@@ -139,11 +139,11 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867537 | Infanterikasernen | [6, 5] | [13, 13, 13, 6] | 0 på denne fasaden | 0 | ikke synlig | 7 | ikke synlig | 12 | ja |
 | bnr-193867715 |  | [2, 2] | [1, 1] | ikke i utsnittet | 0 | ikke synlig | 0 | ikke synlig | 2 | ja |
 | bnr-16308102 |  | [5, 6] | [] | 1 mørk grønn tofløyet port/dør med overlys, ca. 0.25–0.33 av fasaden | 0 | ikke synlig | 0 | ikke synlig | 0 | ja |
-| bnr-193972462 | bedehus/menighetshus | [5] | [9] | 1 brun rundbuet tofløyet plankeport ca. 0.05–0.15, nummer '50' ved porten | 0 | 0 | 1 | ikke synlig | 1 | ja |
+| bnr-193867804 |  | [2, 2] | [22, 4] | ikke i utsnittet | 1 | 0 | 2 | ikke synlig | 1 | ja |
 | bnr-193868568 | Brannstasjon – uthus til Infanterikasernen | [0] | [] | 1 lys grå ståldør ca. 0.42 | 1 | 0 | 0 | 1 murt pipe med blikkhatt | 1 |  |
 | bnr-193987370 |  | [7] | [13] | 0 i utsnittet | 0 | 1 bred midtark/kvist med saltak og 3 vinduer | 2 | ikke synlig | 1 | ja |
 | pb-33 |  | [0] | [] | 1 plankedør med postkasse i porten (ca. 0.55) | 0 | 0 | 0 | None | 0 |  |
-| bnr-193867626 |  | [2, 2] | [2, 1, 1] | ikke i utsnittet | 0 | 0 | 2 | ikke synlig | 1 | ja |
+| bnr-193867626 |  | [2, 2] | [2, 1, 1] | ikke i utsnittet | 0 | 0 | 2 | ikke synlig | 2 | ja |
 | bnr-193867588 | Dunkejongården | [5, 4] | [5, 4] | 1 brun tofløyet fyllingsdør med overlys og lykter, ca. 0.30 av fasaden; 1 mørk inngang/port høyre ende (ca. 0.85) | 1 | ikke synlig | 0 | 2 murte piper | 3 |  |
 | bnr-13414904 |  | [3, 4] | [4] | 1 hjørneinngang med overbygg på to hvite søyler (sørvesthjørnet) | 0 | ikke synlig | 3 | ikke synlig | 1 | ja |
 | bnr-193867863 |  | [4, 4] | [9, 10] | 1 brun fyllingsdør med glass i rundbuet åpning, venstre ende (ca. 0.05) | 2 | ikke synlig | 1 | ikke synlig | 1 | ja |
@@ -164,7 +164,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 | bnr-193867510 | Ekserserhuset | [3] | [6] | 1 lys grå/blågrå tofløyet plankedør med svarte beslag, ca. 0.60 | 1 | 0 | 0 | ikke synlig | 1 | ja |
 | bnr-193869580 | Voldportravelinet | [2, 2] | [2] | 1 dør på NV-siden (ca. 0.55), benk foran | 0 | 0 | 0 | 1 murt teglpipe på mønet | 2 | ja |
 
-## Hoppet over (170)
+## Hoppet over (171)
 
 - bnr-193869548 Voldporten med vaktstuen: portbygg (data/porter.json røres ikke)
 - bnr-193820883 : ikke synlig fra gata
@@ -249,6 +249,7 @@ Gatesiden (veggen mot kameraet). Rader nederst først. Ingen endring er gjort.
 - bnr-193971903 : ingen vindustall (ukjent)
 - bnr-193971873 : ikke synlig fra gata
 - bnr-193867634 Vollmesterboligen: ingen vindustall (rettet fasade, vegg 2 (verktoy/rett, bnr-193867634-2))
+- bnr-193972462 bedehus/menighetshus: skjult i kartet
 - bnr-193867804 : ingen vindustall (rettet fasade, vegg 4 (verktoy/rett, bnr-193867804-4))
 - bnr-193972772 : ikke synlig fra gata
 - bnr-6246753 : ikke synlig fra gata

@@ -324,20 +324,6 @@
    ]
   },
   {
-   "id": "bnr-193868258",
-   "kilde": "Street View (hovedagenten 29.10)",
-   "grunn": "Voldportgaten 71: siden mot Voldportgaten er beige i bildet fra mai 2024, siden mot Raadhusgaten hvit i bildet fra aug. 2010; huset er trolig malt om, og det nyeste bildet gjelder for hele huset",
-   "sett": {
-    "vegg": [
-     214,
-     206,
-     190
-    ],
-    "veggs": null,
-    "farge_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)"
-   }
-  },
-  {
    "id": "bnr-13394024",
    "kilde": "Street View (hovedagenten 29.10)",
    "grunn": "Torvgaten 58: bare et brukerpanorama med upålitelig retning; den røde teglgården i bildet er bnr-193868711 (gateskilt Toldbodgaten 36, sett i egen avlesning med Torvgaten-siden i rød tegl). Fargen fra Street View gjelder ikke dette huset: 2015-fargen (trykkfila) står til huset er sett",
@@ -1101,6 +1087,181 @@
     "vegg_aar": 2026,
     "farge_kilde": "vegg: Vegar 02.11 (Street View 2026): okergul"
    }
+  },
+  {
+   "id": "bnr-193867928",
+   "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
+   "grunn": "Voldportgaten 75: ett tak/én bygning (husdelingen trukket tilbake). Valmtak rødbrun tegl, 2 etg, stående trepanel lys gråbeige/gråfiolett. Mot Voldportgaten: butikkvinduer + skråinngang på hjørnet, flere butikkinnganger og en brun dobbeltport til bakgården. Mot Voldgaten: 8 vinduer i 2. etg (T-sprosser), store butikkvinduer og to inngangsdører i 1. etg.",
+   "sett": {
+    "tak": [
+     168,
+     82,
+     62
+    ],
+    "vegg": [
+     204,
+     192,
+     198
+    ]
+   },
+   "vegg": [
+    {
+     "side": "NØ",
+     "ved": [
+      168,
+      42
+     ],
+     "stor": true,
+     "rader": [
+      9,
+      9
+     ],
+     "dorer": [
+      {
+       "u": 0.02,
+       "typ": 1,
+       "b": 1.2,
+       "h": 2.2
+      },
+      {
+       "u": 0.3,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.2
+      },
+      {
+       "u": 0.48,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.2
+      },
+      {
+       "u": 0.7,
+       "typ": 2,
+       "b": 2.4,
+       "h": 2.8
+      },
+      {
+       "u": 0.9,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.2
+      }
+     ]
+    },
+    {
+     "side": "SØ",
+     "ved": [
+      172,
+      40
+     ],
+     "stor": true,
+     "rader": [
+      6,
+      8
+     ],
+     "dorer": [
+      {
+       "u": 0.3,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.2
+      },
+      {
+       "u": 0.68,
+       "typ": 1,
+       "b": 1.1,
+       "h": 2.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868622",
+   "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
+   "grunn": "Majorens Kro & Stue (Voldportgaten 73): eget saltak takstein, litt lavere enn 75, hvitaktig murfasade. 5 vinduer i 2. etg; i 1. etg inngang i midten med steintrapp, store doble vinduer på begge sider, og egen port til bakgården til høyre.",
+   "sett": {
+    "tak": [
+     150,
+     120,
+     108
+    ],
+    "vegg": [
+     233,
+     230,
+     222
+    ],
+    "navn": "Majorens Kro & Stue"
+   },
+   "vegg": [
+    {
+     "side": "NØ",
+     "ved": [
+      143,
+      62
+     ],
+     "stor": true,
+     "rader": [
+      4,
+      5
+     ],
+     "dorer": [
+      {
+       "u": 0.5,
+       "typ": 1,
+       "b": 1.2,
+       "h": 2.3
+      },
+      {
+       "u": 0.88,
+       "typ": 2,
+       "b": 2.4,
+       "h": 2.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bnr-193868258",
+   "kilde": "Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
+   "grunn": "Therese M (Voldportgaten 71): én etasje, hvit mur, eget lavere valmtak takstein. Butikkvinduer med rundbuet topp («ovale topp-vinduer») langs gata, og skrått hjørne med inngang mot gaten.",
+   "sett": {
+    "tak": [
+     176,
+     86,
+     64
+    ],
+    "vegg": [
+     236,
+     236,
+     231
+    ],
+    "navn": "Therese M"
+   },
+   "vegg": [
+    {
+     "side": "N",
+     "ved": [
+      109,
+      76
+     ],
+     "stor": true,
+     "bue": 1,
+     "rader": [
+      5
+     ],
+     "dorer": [
+      {
+       "u": 0.03,
+       "typ": 1,
+       "b": 1.2,
+       "h": 2.3
+      }
+     ]
+    }
+   ]
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

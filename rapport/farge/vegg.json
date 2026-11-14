@@ -821,15 +821,15 @@
   "navn": null,
   "adr": null,
   "for_": [
-   242,
-   240,
-   232
+   214,
+   206,
+   190
   ],
   "for_kilde": null,
   "vegg": [
-   242,
-   240,
-   232
+   214,
+   206,
+   190
   ],
   "kilde": "nabohuset bnr-13415889 (house, 7.7 m unna)",
   "aar": null,
@@ -2328,13 +2328,13 @@
   ],
   "for_kilde": "Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
   "vegg": [
-   214,
-   206,
-   190
+   236,
+   236,
+   231
   ],
-  "kilde": "merknad: Street View (mai 2024; Raadhusgaten-siden hvit i 2010, malt om)",
-  "aar": 2024,
-  "byttet": false
+  "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
+  "aar": 2026,
+  "byttet": true
  },
  {
   "id": "bnr-193868118",
@@ -2683,17 +2683,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   178,
    196,
-   206
+   198,
+   196
   ],
   "for_kilde": null,
   "vegg": [
-   178,
    196,
-   206
+   198,
+   196
   ],
-  "kilde": "Street View 2024 (lys blågrå stående panel); tegningen har oransje (kvartaltegningen Kvartal2BITMP (skygge side, IoU 0.64))",
+  "kilde": "Street View 2024 (lys grå); tegningen har oransje (kvartaltegningen Kvartal2BITMP (skygge side, IoU 0.64))",
   "aar": 2024,
   "byttet": false
  },
@@ -3310,17 +3310,17 @@
   "navn": null,
   "adr": null,
   "for_": [
-   249,
-   224,
-   204
+   246,
+   222,
+   160
   ],
   "for_kilde": null,
   "vegg": [
-   249,
-   224,
-   204
+   246,
+   222,
+   160
   ],
-  "kilde": "Street View 2024 (lys gul/strågul) = kvartaltegningen kvartal5 (skygge side, IoU 0.65): tegningens farge",
+  "kilde": "Street View 2024 (lys gul/strågul); tegningen har oransje (kvartaltegningen kvartal5 (skygge side, IoU 0.65))",
   "aar": 2024,
   "byttet": false
  },
@@ -3529,8 +3529,8 @@
    192,
    198
   ],
-  "kilde": "Street View 2024 (gråbeige/lys gråfiolett)",
-  "aar": 2024,
+  "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
+  "aar": 2026,
   "byttet": false
  },
  {
@@ -3658,12 +3658,12 @@
   ],
   "for_kilde": null,
   "vegg": [
-   236,
-   240,
-   240
+   233,
+   230,
+   222
   ],
-  "kilde": "Street View 2024 (hvit/kremhvit) = 2019-trykket (dømt): tegningens farge",
-  "aar": 2024,
+  "kilde": "merknad: Vegar 14.11.2026 (Street View mai 2024, hans 9 bilder; Fable koordinerte)",
+  "aar": 2026,
   "byttet": false
  },
  {
@@ -4271,25 +4271,6 @@
    198
   ],
   "kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.61)",
-  "aar": 2015,
-  "byttet": false
- },
- {
-  "id": "bnr-193972462",
-  "navn": null,
-  "adr": null,
-  "for_": [
-   232,
-   213,
-   198
-  ],
-  "for_kilde": "2019-trykket (visuelt)",
-  "vegg": [
-   232,
-   213,
-   198
-  ],
-  "kilde": "kvartaltegningen Kvartal12 (lys side, IoU 0.64)",
   "aar": 2015,
   "byttet": false
  },
@@ -7399,7 +7380,7 @@
    240,
    240
   ],
-  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl); tegningen har grå (2019-trykket (dømt))",
+  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (lys grå) = 2019-trykket (dømt): tegningens farge",
   "vegg": [
    236,
    240,
@@ -7591,9 +7572,9 @@
   ],
   "for_kilde": "standard: nytt hus fra kommunekartet, farge ikke valgt",
   "vegg": [
-   236,
-   240,
-   240
+   233,
+   230,
+   222
   ],
   "kilde": "nabohuset bnr-193868622 (retail, 0.0 m unna)",
   "aar": null,
@@ -8216,7 +8197,7 @@
    170,
    160
   ],
-  "for_kilde": "vegg: Street View 2024 (rødbrun/terrakotta); tegningen har oransje (kvartaltegningen kvartal6 (skygge side, IoU 0.74)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen kvartal6 (IoU 0.74): tegningens farge",
+  "for_kilde": "vegg: Street View 2024 (rødbrun/terrakotta); tegningen har oransje (kvartaltegningen kvartal6 (skygge side, IoU 0.74)); tak: ortofoto 2024 (lys grå); tegningen har rød (kvartaltegningen kvartal6 (IoU 0.74))",
   "vegg": [
    226,
    170,
@@ -8235,7 +8216,7 @@
    224,
    204
   ],
-  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal5 (IoU 0.56))",
+  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (lys grå); tegningen har rød (kvartaltegningen kvartal5 (IoU 0.56))",
   "vegg": [
    249,
    224,
@@ -8254,7 +8235,7 @@
    240,
    240
   ],
-  "for_kilde": "vegg: Street View 2024 (hvit/gråhvit) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
+  "for_kilde": "vegg: Street View 2024 (hvit/gråhvit) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (lys grå); tegningen har rød (2019-trykket (dømt))",
   "vegg": [
    236,
    240,
@@ -8273,7 +8254,7 @@
    243,
    243
   ],
-  "for_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
+  "for_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (lys grå); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
   "vegg": [
    243,
    243,
@@ -8292,32 +8273,13 @@
    208,
    195
   ],
-  "for_kilde": "vegg: kvartaltegningen kvartal7 (lys side, IoU 0.63); tak: ortofoto 2024 (brungrå) = kvartaltegningen kvartal7 (IoU 0.63): tegningens farge",
+  "for_kilde": "vegg: kvartaltegningen kvartal7 (lys side, IoU 0.63); tak: ortofoto 2024 (lys grå) = kvartaltegningen kvartal7 (IoU 0.63): tegningens farge",
   "vegg": [
    184,
    208,
    195
   ],
   "kilde": "kvartaltegningen kvartal7 (lys side, IoU 0.44)",
-  "aar": 2015,
-  "byttet": false
- },
- {
-  "id": "pb-66",
-  "navn": null,
-  "adr": null,
-  "for_": [
-   214,
-   206,
-   190
-  ],
-  "for_kilde": "vegg: Street View 2024 (gråbeige/lys gråfiolett); tak: ortofoto 2024 (rød tegl); tegningen har grå (kvartaltegningen Kvartal9 (IoU 0.65))",
-  "vegg": [
-   249,
-   224,
-   204
-  ],
-  "kilde": "kvartaltegningen Kvartal9 (skygge side, IoU 0.59)",
   "aar": 2015,
   "byttet": false
  }

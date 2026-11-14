@@ -174,26 +174,6 @@
    ]
   },
   {
-   "id": "bnr-193867928",
-   "tegning": "Kvartal9",
-   "kutt": [
-    [
-     [
-      166.97,
-      29.42
-     ],
-     [
-      176.05,
-      49.69
-     ]
-    ]
-   ],
-   "grunn": "kontrollen fant to tegnede fasader i ulike farger på én modellvegg, og Kartverkets DOM har sprang i mønet: 1,6 m, 2,6 m fra fasadegrensen i tegningen",
-   "nye_id": [
-    "pb-66"
-   ]
-  },
-  {
    "id": "bnr-193972012",
    "tegning": "Kvartal14",
    "kutt": [

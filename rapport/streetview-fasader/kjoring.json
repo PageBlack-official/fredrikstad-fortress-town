@@ -4193,12 +4193,12 @@
     ]
    ],
    "dorer": "0 synlig på langfasaden",
-   "takvinduer": "0",
-   "piper": "3 (2 murte tegl, 1 hvit)"
+   "takvinduer": 0,
+   "piper": "2 (murte tegl)"
   },
   "notat": "",
   "arker": 0,
-  "piper": 3,
+  "piper": 2,
   "status": "endret",
   "info": {
    "droppet_rader": 0,
@@ -4314,19 +4314,30 @@
   "id": "bnr-193972462",
   "navn": "bedehus/menighetshus",
   "sikkerhet": "middels",
-  "side": "S (gatefasade mot Kasernegaten)",
-  "vegg": 11,
-  "vegg_L": 28.6,
-  "avstand": 7.8,
-  "vinkel": 50.0,
+  "status": "hoppet over",
+  "grunn": "skjult i kartet"
+ },
+ {
+  "id": "bnr-193867804",
+  "navn": null,
+  "sikkerhet": "middels",
+  "side": "SØ (gatefasade, venstre kant av bildet)",
+  "vegg": 0,
+  "vegg_L": 39.9,
+  "avstand": 5.1,
+  "vinkel": 4.0,
   "sv": {
    "rader": [
     [
      "etg",
-     5
+     2
+    ],
+    [
+     "etg",
+     2
     ]
    ],
-   "dorer": "1 brun rundbuet tofløyet plankeport ca. 0.05–0.15, nummer '50' ved porten",
+   "dorer": "ikke i utsnittet",
    "takvinduer": "0",
    "piper": "ikke synlig"
   },
@@ -4334,14 +4345,15 @@
   "status": "fasit, bare sammenlignet",
   "modell": {
    "rader": [
-    9
+    22,
+    4
    ],
-   "dorer": 0,
-   "arker": 1,
+   "dorer": 1,
+   "arker": 2,
    "piper": 1
   },
   "avvik": true,
-  "dorer_avvik": true
+  "dorer_avvik": false
  },
  {
   "id": "bnr-193867804",
@@ -4684,7 +4696,7 @@
    ],
    "dorer": 0,
    "arker": 2,
-   "piper": 1
+   "piper": 2
   },
   "avvik": true,
   "dorer_avvik": true
@@ -6747,11 +6759,11 @@
     ]
    ],
    "dorer": "ikke på gatefasaden",
-   "takvinduer": "2 arker med trekantgavl i mansardtaket",
+   "takvinduer": "1 ark med trekantgavl, 1 midtgavl med vindu, 1 ark med trekantgavl",
    "piper": "1 hvit pusset pipe på mønet"
   },
   "notat": "",
-  "arker": 2,
+  "arker": 3,
   "piper": 1,
   "status": "endret",
   "info": {

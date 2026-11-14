@@ -160,6 +160,24 @@
    "retning": 63,
    "tegning": "Kvartal13",
    "grunn": "Kommandantgården: tegningen viser saltak på fløyene. Med husets hovedretning (71°) og tre kropper ble vestfløya flat (th 0,2); DOM−DTM har møne ~10 m og takfot ~6 m der. Vestfløya går 63° (DOM-ryggen, sjekket 30.10): fire kropper i den retningen gir saltak, th 0,48 på vestfløya (rms 1,07 mot 1,57)"
+  },
+  "bnr-193867928": {
+   "form": "valm",
+   "maks_kropper": 1,
+   "tegning": "Kvartal9 / Vegars bilder 14.11",
+   "grunn": "Voldportgaten 75, Vegar 14.11.2026: ETT felles valmtak i rødbrun tegl rundt hjørnet, én mønehøyde (husdelingen 30.10 som laget pb-66 er trukket tilbake; huset er én bygning)"
+  },
+  "bnr-193868622": {
+   "form": "sal",
+   "maks_kropper": 1,
+   "tegning": "Vegars bilder 14.11",
+   "grunn": "Majoren (Voldportgaten 73), Vegar 14.11.2026: eget saltak med takstein, litt lavere enn 75"
+  },
+  "bnr-193868258": {
+   "form": "valm",
+   "maks_kropper": 1,
+   "tegning": "Vegars bilder 14.11",
+   "grunn": "Therese M (Voldportgaten 71), Vegar 14.11.2026: eget lavere valmtak med takstein, 2–3 piper"
   }
  }
 }

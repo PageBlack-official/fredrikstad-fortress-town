@@ -14,6 +14,8 @@ Kilde: kilder/bygg-merknader.json, én post per hus med «kilde» (hvem/hva som 
               «plass»: [fra, til] (andel fra venstre): merknaden gjelder bare den delen av veggen; resten står som før.
               «bare_telling»: true: tallene er Vegars/Claudes håndtelling i tegningen til kontrollen (verktoy/kontroll.py), og
               vinduene fra fasadeavlesningen står (de stemmer; det er kontrollens hulltelling som leser feil).
+              «bue»: 1 = rundbuet topp på vinduene i denne veggen (typ 0), 2 = segmentbue (src/07; Therese M: «ovale topp-vinduer»).
+              «stor»: true: brede butikkvinduer i 1. etasje (streetview_fasader.lag_fasade).
   takvinduer  [{side, andeler: [..], b, h}]  flate vinduer i takflaten som faller mot side, i andel langs takfoten
   piper       "ingen" | [indekser som fjernes]
   arker       "ingen"
@@ -173,6 +175,9 @@ def main(tørt=False):
                     if VG.naermeste_vegg(V, np.array(v[:2]))[0] != wi: return False
                     t = float((np.array(v[:2]) - w['a']) @ w['u'])
                     return -0.05 <= t <= w['L'] + 0.05
+                if vs.get('bue'):                 # rundbuet topp på vinduene (bue 1) eller segmentbue (bue 2) på denne veggen (src/07)
+                    for e in el:
+                        if e[9] == 0: e[10] = vs['bue']
                 vind = [v for v in vind if not paa_delen(v)] + el
                 for e in el: e[11] = 0
                 logg.append(f"{i}: vegg mot {vs['side']} (vegg {wi} på {xv['id']}, {t0:.1f}–{t1:.1f} m av {V[wi]['L']:.1f} m): {info.get('rader')} vinduer, {info.get('dorer')} dører")

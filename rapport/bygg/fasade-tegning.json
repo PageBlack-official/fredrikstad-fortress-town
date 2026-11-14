@@ -363,27 +363,18 @@
   "streetview": 0
  },
  {
-  "id": "bnr-193972462",
+  "id": "bnr-193867804",
   "navn": null,
   "vegger": {
-   "12": {
+   "0": {
     "tegning": "Kvartal12",
     "rader": [
      9
     ],
     "dorer": 0,
     "notat": []
-   }
-  },
-  "tegnet": 9,
-  "regler": 12,
-  "streetview": 0
- },
- {
-  "id": "bnr-193867804",
-  "navn": null,
-  "vegger": {
-   "4": {
+   },
+   "22": {
     "tegning": "Kvartal12",
     "rader": [
      4,
@@ -393,8 +384,8 @@
     "notat": []
    }
   },
-  "tegnet": 9,
-  "regler": 8,
+  "tegnet": 18,
+  "regler": 16,
   "streetview": 0
  },
  {
@@ -1541,7 +1532,7 @@
    }
   },
   "tegnet": 10,
-  "regler": 20,
+  "regler": 10,
   "streetview": 0
  },
  {
@@ -2000,24 +1991,6 @@
   "vegger": {},
   "tegnet": 0,
   "regler": 60,
-  "streetview": 0
- },
- {
-  "id": "pb-66",
-  "navn": null,
-  "vegger": {
-   "2": {
-    "tegning": "Kvartal9",
-    "rader": [
-     4,
-     5
-    ],
-    "dorer": 5,
-    "notat": []
-   }
-  },
-  "tegnet": 14,
-  "regler": 2,
   "streetview": 0
  },
  {
