@@ -1315,6 +1315,66 @@
      218
     ]
    }
+  },
+  {
+   "id": "pb-57",
+   "kilde": "Fable 16.11.2026 (Vegar: «Takspørsmålet: Du bestemmer.»)",
+   "grunn": "takfargen fra husdelingen (tegningen) beholdes: ortofoto 2024 leser lys grå der tegningen har rødt, trolig falmet tegl",
+   "sett": {
+    "tak": [
+     237,
+     119,
+     102
+    ]
+   }
+  },
+  {
+   "id": "pb-58",
+   "kilde": "Fable 16.11.2026 (Vegar: «Takspørsmålet: Du bestemmer.»)",
+   "grunn": "takfargen fra husdelingen (tegningen) beholdes: ortofoto 2024 leser lys grå der tegningen har rødt, trolig falmet tegl",
+   "sett": {
+    "tak": [
+     180,
+     102,
+     84
+    ]
+   }
+  },
+  {
+   "id": "pb-62",
+   "kilde": "Fable 16.11.2026 (Vegar: «Takspørsmålet: Du bestemmer.»)",
+   "grunn": "takfargen fra husdelingen (tegningen) beholdes: ortofoto 2024 leser lys grå der tegningen har rødt, trolig falmet tegl",
+   "sett": {
+    "tak": [
+     170,
+     108,
+     92
+    ]
+   }
+  },
+  {
+   "id": "pb-63",
+   "kilde": "Fable 16.11.2026 (Vegar: «Takspørsmålet: Du bestemmer.»)",
+   "grunn": "takfargen fra husdelingen (tegningen) beholdes: ortofoto 2024 leser lys grå der tegningen har rødt, trolig falmet tegl",
+   "sett": {
+    "tak": [
+     66,
+     66,
+     65
+    ]
+   }
+  },
+  {
+   "id": "pb-67",
+   "kilde": "Fable 16.11.2026 (Vegar: «Takspørsmålet: Du bestemmer.»)",
+   "grunn": "takfargen fra husdelingen (tegningen) beholdes: ortofoto 2024 leser lys grå der tegningen har rødt, trolig falmet tegl",
+   "sett": {
+    "tak": [
+     132,
+     122,
+     112
+    ]
+   }
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

@@ -7380,7 +7380,7 @@
    240,
    240
   ],
-  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (lys grå) = 2019-trykket (dømt): tegningens farge",
+  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (rød tegl); tegningen har grå (2019-trykket (dømt))",
   "vegg": [
    236,
    240,
@@ -8197,7 +8197,7 @@
    170,
    160
   ],
-  "for_kilde": "vegg: Street View 2024 (rødbrun/terrakotta); tegningen har oransje (kvartaltegningen kvartal6 (skygge side, IoU 0.74)); tak: ortofoto 2024 (lys grå); tegningen har rød (kvartaltegningen kvartal6 (IoU 0.74))",
+  "for_kilde": "vegg: Street View 2024 (rødbrun/terrakotta); tegningen har oransje (kvartaltegningen kvartal6 (skygge side, IoU 0.74)); tak: ortofoto 2024 (rød tegl) = kvartaltegningen kvartal6 (IoU 0.74): tegningens farge",
   "vegg": [
    226,
    170,
@@ -8216,7 +8216,7 @@
    224,
    204
   ],
-  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (lys grå); tegningen har rød (kvartaltegningen kvartal5 (IoU 0.56))",
+  "for_kilde": "vegg: 2019-trykket (dømt); tak: ortofoto 2024 (brungrå); tegningen har rød (kvartaltegningen kvartal5 (IoU 0.56))",
   "vegg": [
    249,
    224,
@@ -8235,7 +8235,7 @@
    240,
    240
   ],
-  "for_kilde": "vegg: Street View 2024 (hvit/gråhvit) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (lys grå); tegningen har rød (2019-trykket (dømt))",
+  "for_kilde": "vegg: Street View 2024 (hvit/gråhvit) = 2019-trykket (dømt): tegningens farge; tak: ortofoto 2024 (falmet tegl); tegningen har rød (2019-trykket (dømt))",
   "vegg": [
    236,
    240,
@@ -8254,7 +8254,7 @@
    243,
    243
   ],
-  "for_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (lys grå); tegningen har grå (kvartaltegningen Kvartal13 (IoU 0.66))",
+  "for_kilde": "vegg: Street View 2024 (hvit) = kvartaltegningen Kvartal13 (skygge side, IoU 0.66): tegningens farge; tak: ortofoto 2024 (brungrå) = kvartaltegningen Kvartal13 (IoU 0.66): tegningens farge",
   "vegg": [
    243,
    243,
@@ -8273,7 +8273,7 @@
    208,
    195
   ],
-  "for_kilde": "vegg: kvartaltegningen kvartal7 (lys side, IoU 0.63); tak: ortofoto 2024 (lys grå) = kvartaltegningen kvartal7 (IoU 0.63): tegningens farge",
+  "for_kilde": "vegg: kvartaltegningen kvartal7 (lys side, IoU 0.63); tak: ortofoto 2024 (brungrå) = kvartaltegningen kvartal7 (IoU 0.63): tegningens farge",
   "vegg": [
    184,
    208,

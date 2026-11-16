@@ -8298,9 +8298,9 @@
    "kvartaltegningen kvartal6 (IoU 0.51)"
   ],
   "for_": [
-   188,
-   188,
-   192
+   196,
+   92,
+   72
   ],
   "farge": [
    197,
@@ -9490,9 +9490,9 @@
    "kvartaltegningen kvartal6 (IoU 0.69)"
   ],
   "for_": [
-   176,
-   176,
-   172
+   173,
+   100,
+   86
   ],
   "farge": [
    196,
@@ -9526,9 +9526,9 @@
    "kvartaltegningen kvartal5 (IoU 0.71)"
   ],
   "for_": [
-   176,
-   176,
-   172
+   132,
+   122,
+   112
   ],
   "farge": [
    132,
@@ -9562,9 +9562,9 @@
    "kvartaltegningen kvartal5 (IoU 0.64)"
   ],
   "for_": [
-   176,
-   176,
-   172
+   170,
+   108,
+   92
   ],
   "farge": [
    244,
@@ -9594,9 +9594,9 @@
    "kvartaltegningen Kvartal13 (IoU 0.41)"
   ],
   "for_": [
-   176,
-   176,
-   172
+   66,
+   66,
+   65
   ],
   "farge": [
    198,
