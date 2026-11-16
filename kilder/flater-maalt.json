@@ -624,7 +624,7 @@
   },
   {
    "id": "fl-652",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "trekantbed",
    "p": [
     [
@@ -640,11 +640,11 @@
      116.48
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-653",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "trekantbed",
    "p": [
     [
@@ -660,11 +660,11 @@
      118.01
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-654",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "trekantbed",
    "p": [
     [
@@ -680,11 +680,11 @@
      104.39
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-655",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "trekantbed",
    "p": [
     [
@@ -700,11 +700,11 @@
      102.86
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-656",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "strekbed",
    "p": [
     [
@@ -724,11 +724,11 @@
      119.2
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-657",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "strekbed",
    "p": [
     [
@@ -748,11 +748,11 @@
      119.64
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-658",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "strekbed",
    "p": [
     [
@@ -772,11 +772,11 @@
      120.07
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-659",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "strekbed",
    "p": [
     [
@@ -796,11 +796,11 @@
      120.51
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-660",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "strekbed",
    "p": [
     [
@@ -820,11 +820,11 @@
      120.95
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-661",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "bed",
    "p": [
     [
@@ -848,11 +848,11 @@
      111.02
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   },
   {
    "id": "fl-662",
-   "typ": "bed",
+   "typ": "gress",
    "navn": "bed",
    "p": [
     [
@@ -948,7 +948,7 @@
      112.14
     ]
    ],
-   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "grunn": "ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634) | Fable 16.11: grønne bed i ortofoto 2024 og Vegars foto"
   }
  ]
 }
