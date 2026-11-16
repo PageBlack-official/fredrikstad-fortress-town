@@ -44,3 +44,16 @@ Parterren målt i ortofoto 2024 (flis_-448_64) via rektifisering mot modellmeter
 Lagt inn som `veggfelt` via `kilder/bygg-merknader.json` (ny hus-post) → `bygg_merknader.py` → rettelse. Side `NNV` = vannfasaden (wi 0, L 19,9 m). Bekreftet at `veggfelt.fra`=0 er ØSTRE hjørnet = samme «frac fra østre hjørne sett fra hagen» som del-2-vinduene. Fire grunne lister, bredde ~0,6 m, full vegghøyde (z utelatt → 0..h), 3 cm ut fra veggen, lysere varm veggtone [214,170,120] så de leser som relieff.
 - **Verifisering:** veggfelt-rettelsen gir 4 segmenter på riktig vegg, monotont øst→vest etter frac 0,481/0,661/0,741/0,906, full høyde. I render (fast PITCH0, skrå ovenfra) ligger vannfasaden under takskjegget og pilastrene er ikke tydelige ovenfra; verifisert på datanivå. Tydeligere i bakkenær visning.
 - **Pilaster-farge** er en modelleringsvalg (ingen fasadefoto-farge i briefen) — juster ved behov.
+
+## DEL 3 — Farge på småhusene (bnr-193867456 Lysthuset + pb-16) — RETTET 16.11 (Studio, PAG-1635)
+Fable så etter DEL 1–5-runden at småhusene sto LYS BEIGE med lyst tak i renderen, ikke `#c58c59` som hovedhuset. **Rota var ikke i kilden** — rettelsene (Vegar 16.11) satte riktig `vegg=[197,140,89]`, `tak=[158,78,44]`, og `datalag.alle()` + den bygde `ut/enkel/index.html` bar fargen korrekt for begge husene. Feilen var i **renderen**:
+- `src/05_bygg.js mat()`: `if(dim) c.lerp(new THREE.Color(0xe4e2d8),.8)` — et «dim»-bygg får vegg/tak blandet 80 % mot papirbeige (LOD-tone for bakgrunnshus utenfor Gamlebyen).
+- `src/07_…forEach`: `const dim=!b.gml`. Hovedhuset bnr-193867464 har `gml=1` (full farge); småhusene lå med `gml=0` i grunndata → `#c58c59` bleknet til ~[222,209,191] beige, taket likeså.
+- **Fiks:** rettelse `sett gml=1` på bnr-193867456 og pb-16 (data/rettelser.json, Studio 16.11) — samme detalj-/fargenivå som hovedhuset. Ingen annen bivirkning (husene har ingen sokkel/gesims/veggfelt/tegnede vinduer som `!dim` ellers slår på).
+- **Render verifisert** (ekte GPU, ovenfra `ny_smahus.png`): begge småhusene — ett i hver ende av parterren mot vannet (valm/pyramidetak), slik Vegars ovenfra-foto viser — står nå oransje med rødbrunt tak, likt hovedhuset. Bekrefter også at pb-16 + Lysthuset er «de to småhusene».
+
+## Bilder (ekte GPU, PW_GPU=1, lest før svar)
+- `bilder/ny_fasade_naer.png` — Isegranhuset rett forfra fra hagen: oransje vegg, rødbrunt valmtak, 2×5 vinduer på vannfasaden, 4 grunne pilastre (lysere relieff), parterren foran.
+- `bilder/ny_hage_ovenfra.png` — Renessansehagen ovenfra: grusramme, X-stier, buksbom-kompartement.
+- `bilder/ny_smahus.png` — begge småhusene ovenfra, nå oransje m/rødbrunt tak (DEL 3-fiksen).
+- `bilder/ny_hus_forfra.png` — hele Isegran-spissen med hus + hage fra hagesiden.
