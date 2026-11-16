@@ -107,7 +107,7 @@ function mat(rgb, dim, sk, opt={}){
         void main(){ vec3 n=normalize(normalMatrix*cross(dFdx(lp),dFdy(lp))); float d=dot(n,solRetning()); // normal fra lokale koordinater: presist, ingen stripete skygge
           // tegningens to toner (lys- og skyggetonen fra trykkfila) blandes av ekte lys: Lambert mot sola og kastskygger, myk overgang
           float lam=smoothstep(-0.12,0.52,d);
-          float lit=lam*skyggeMask();
+          float lit=lam>0. ? lam*skyggeMask() : 0.;   // vegger som vender bort fra sola trenger ingen skyggeprøver (samme bilde)
           float k=1.-lit;
           float su=solHer(wq);
           // skyggetonen kjøles mildere på fasader og tak enn på bakken: full KALD gjorde lyse vegger blå og

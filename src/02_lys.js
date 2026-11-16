@@ -126,7 +126,8 @@ struct DirectionalLight { vec3 direction; vec3 color; };
 uniform DirectionalLight directionalLights[NUM_DIR_LIGHTS];
 #endif
 // myk kastskygge: 16 prøver i en roterende spiral, halvskyggen er ca. én meter bred uansett zoom
-float skyggeMask(){ float s=1.;
+float _skC=-1.;   // skyggeMask regnes én gang per piksel (14.11): flere kall i samme shader brukte 16 nye prøver hver gang
+float skyggeMask(){ if(_skC>=0.) return _skC; float s=1.;
 #if defined(USE_SHADOWMAP) && NUM_DIR_LIGHT_SHADOWS>0
   DirectionalLightShadow dl=directionalLightShadows[0];
   vec4 sc=vDirectionalShadowCoord[0]; vec3 p=sc.xyz/sc.w; p.z+=dl.shadowBias;
@@ -138,7 +139,7 @@ float skyggeMask(){ float s=1.;
     s=acc/16.;
   }
 #endif
-  return mix(1., s, solHer(vWq)); }
+  _skC=mix(1., s, solHer(vWq)); return _skC; }
 vec3 solRetning(){
 #if NUM_DIR_LIGHTS>0
   return directionalLights[0].direction;
