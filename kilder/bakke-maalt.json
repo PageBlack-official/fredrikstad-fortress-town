@@ -23148,29 +23148,25 @@
    "h": 0.45,
    "p": [
     [
-     -335.37,
-     116.64
+     -334.07,
+     114.83
     ],
     [
-     -326.06,
-     118.93
+     -327.69,
+     117.29
     ],
     [
-     -319.1,
-     104.23
+     -329.92,
+     113.79
     ],
     [
-     -328.4,
-     101.93
-    ],
-    [
-     -335.37,
-     116.64
+     -334.07,
+     114.83
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23178,17 +23174,25 @@
    "h": 0.45,
    "p": [
     [
-     -335.37,
-     116.64
+     -326.91,
+     117.09
     ],
     [
-     -319.1,
-     104.23
+     -324.99,
+     112.59
+    ],
+    [
+     -329.14,
+     113.59
+    ],
+    [
+     -326.91,
+     117.09
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23196,17 +23200,25 @@
    "h": 0.45,
    "p": [
     [
-     -326.06,
-     118.93
+     -325.41,
+     111.93
     ],
     [
-     -328.4,
-     101.93
+     -331.78,
+     109.39
+    ],
+    [
+     -329.56,
+     112.93
+    ],
+    [
+     -325.41,
+     111.93
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23214,29 +23226,25 @@
    "h": 0.45,
    "p": [
     [
-     -324.21,
-     119.2
+     -332.56,
+     109.59
     ],
     [
-     -322.81,
-     119.55
+     -334.48,
+     114.17
     ],
     [
-     -319.73,
-     113.05
+     -330.34,
+     113.13
     ],
     [
-     -321.13,
-     112.7
-    ],
-    [
-     -324.21,
-     119.2
+     -332.56,
+     109.59
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23244,29 +23252,25 @@
    "h": 0.45,
    "p": [
     [
-     -322.44,
-     119.64
+     -320.69,
+     111.59
     ],
     [
-     -321.03,
-     119.98
+     -314.31,
+     114.15
     ],
     [
-     -317.96,
-     113.49
+     -316.54,
+     110.65
     ],
     [
-     -319.36,
-     113.14
-    ],
-    [
-     -322.44,
-     119.64
+     -320.69,
+     111.59
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23274,29 +23278,167 @@
    "h": 0.45,
    "p": [
     [
-     -320.67,
-     120.07
+     -313.53,
+     113.98
     ],
     [
-     -319.26,
+     -311.6,
+     109.59
+    ],
+    [
+     -315.76,
+     110.48
+    ],
+    [
+     -313.53,
+     113.98
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -312.01,
+     108.92
+    ],
+    [
+     -318.4,
+     106.28
+    ],
+    [
+     -316.17,
+     109.82
+    ],
+    [
+     -312.01,
+     108.92
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -319.18,
+     106.45
+    ],
+    [
+     -321.11,
+     110.92
+    ],
+    [
+     -316.96,
+     109.99
+    ],
+    [
+     -319.18,
+     106.45
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -324.5,
+     118.76
+    ],
+    [
+     -323.45,
+     119.16
+    ],
+    [
+     -320.98,
+     113.44
+    ],
+    [
+     -322.02,
+     113.02
+    ],
+    [
+     -324.5,
+     118.76
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -322.86,
+     119.39
+    ],
+    [
+     -321.82,
+     119.79
+    ],
+    [
+     -319.34,
+     114.09
+    ],
+    [
+     -320.39,
+     113.67
+    ],
+    [
+     -322.86,
+     119.39
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -321.23,
+     120.01
+    ],
+    [
+     -320.19,
      120.42
     ],
     [
-     -316.19,
-     113.92
+     -317.71,
+     114.74
     ],
     [
-     -317.59,
-     113.58
+     -318.75,
+     114.32
     ],
     [
-     -320.67,
-     120.07
+     -321.23,
+     120.01
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23304,29 +23446,29 @@
    "h": 0.45,
    "p": [
     [
-     -318.9,
-     120.51
+     -319.6,
+     120.64
     ],
     [
-     -317.49,
-     120.86
+     -318.55,
+     121.04
     ],
     [
-     -314.42,
-     114.36
+     -316.07,
+     115.39
     ],
     [
-     -315.82,
-     114.01
+     -317.12,
+     114.98
     ],
     [
-     -318.9,
-     120.51
+     -319.6,
+     120.64
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23334,29 +23476,29 @@
    "h": 0.45,
    "p": [
     [
-     -317.13,
-     120.95
+     -317.96,
+     121.27
     ],
     [
-     -315.72,
-     121.3
+     -316.92,
+     121.67
     ],
     [
-     -312.64,
-     114.8
+     -314.44,
+     116.04
     ],
     [
-     -314.05,
-     114.45
+     -315.48,
+     115.63
     ],
     [
-     -317.13,
-     120.95
+     -317.96,
+     121.27
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23364,21 +23506,29 @@
    "h": 0.45,
    "p": [
     [
-     -320.67,
-     111.29
+     -331.87,
+     107.1
     ],
     [
-     -316.58,
-     112.3
+     -323.69,
+     110.39
     ],
     [
-     -313.89,
-     106.63
+     -323.38,
+     109.65
+    ],
+    [
+     -331.56,
+     106.35
+    ],
+    [
+     -331.87,
+     107.1
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23386,21 +23536,29 @@
    "h": 0.45,
    "p": [
     [
-     -317.03,
-     104.93
+     -331.38,
+     105.92
     ],
     [
-     -317.59,
-     104.79
+     -323.2,
+     109.23
     ],
     [
-     -320.67,
-     111.29
+     -322.88,
+     108.49
+    ],
+    [
+     -331.06,
+     105.17
+    ],
+    [
+     -331.38,
+     105.92
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23408,25 +23566,29 @@
    "h": 0.45,
    "p": [
     [
-     -316.13,
-     112.41
+     -330.89,
+     104.75
     ],
     [
-     -311.81,
-     113.47
+     -322.7,
+     108.08
     ],
     [
-     -308.74,
-     106.98
+     -322.39,
+     107.34
     ],
     [
-     -309.98,
-     106.67
+     -330.57,
+     104.0
+    ],
+    [
+     -330.89,
+     104.75
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   },
   {
    "typ": "hekk",
@@ -23434,17 +23596,59 @@
    "h": 0.45,
    "p": [
     [
-     -313.49,
-     106.84
+     -330.4,
+     103.57
     ],
     [
-     -316.13,
-     112.41
+     -322.21,
+     106.92
+    ],
+    [
+     -321.89,
+     106.19
+    ],
+    [
+     -330.08,
+     102.82
+    ],
+    [
+     -330.4,
+     103.57
     ]
    ],
-   "hvem": "Studio",
-   "dato": "2026-11-16",
-   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -329.9,
+     102.39
+    ],
+    [
+     -321.72,
+     105.77
+    ],
+    [
+     -321.4,
+     105.03
+    ],
+    [
+     -329.59,
+     101.64
+    ],
+    [
+     -329.9,
+     102.39
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "buksbom i Renessansehagen v2, ortofoto 2024 flis_-448_64 + Vegars flyfoto (Renessansehagen v2, Fable 17.11)"
   }
  ]
 }
