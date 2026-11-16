@@ -3,6 +3,7 @@ import { DATA } from './00_oppsett.js';
 import { mat } from './05_bygg.js';
 import { buildings } from './06_kirka-bygget-etter-2017.js';
 import { hAt } from './08_festningsterrenget.js';
+import { stoneMat } from './04_brostein-i-hele-gamlebyen.js';
 // ---- porter: huset står oppå en portblokk med buet passasje (retning = veien gjennom bygget) ----
 (DATA.porter||[]).forEach(pt=>{
   const grp=buildings.find(g=>g.userData.i===pt.bygg); if(!grp) return;
@@ -22,9 +23,15 @@ import { hAt } from './08_festningsterrenget.js';
   grp.userData.fot=y0; grp.position.y=y0;
   m.position.set(cx, 0, -cy); m.rotation.y=ang+Math.PI/2;   // ekstruderingsaksen (z) legges langs veien
   grp.add(m);
+  // brosteinsgulv gjennom passasjen (Vegar 16.11: «Det skal være brostein inni tunnelen»), 1 m ut forbi endene, samme stein som gata
+  if(pt.typ!=='mur'){ const gg=new THREE.PlaneGeometry(pw+0.4, D+2); gg.rotateX(-Math.PI/2); gg.rotateY(ang+Math.PI/2);   // som portblokka: x på tvers, z langs veien
+    const gulv=new THREE.Mesh(gg, stoneMat); gulv.position.set(cx, 0.06, -cy); gulv.receiveShadow=true; grp.add(gulv); }
   // VINGEMURER : skrå murer som holder vollen ved porten. [x0, y0, x1, y1, h0, h1, tykk]: innerflaten fra porthjørnet ut til
   // foten, toppen fra h0 (ved porten) til h1 (ved foten) over veien i porten; tykkelsen legges bort fra huset. Mål: verktoy/landemerker.py
   (pt.vingemurer||[]).forEach(([ax,ay,bx,by,h0,h1,t])=>{
+    // muren holder vollen: toppen står minst 0,3 m over bakken ved hver ende (Vegar 16.11: NV-murene på 1,3 m lå under DTM-vollen
+    // ved hjørnene (1,6–1,9 m), så bare biter stakk opp et stykke fra huset og så løse ut)
+    for(let k=0;k<=4;k++){ const f=k/4, hb=hAt(ax+(bx-ax)*f, ay+(by-ay)*f)-y0+0.3; if(hb>h0+(h1-h0)*f){ const d=hb-(h0+(h1-h0)*f); h0+=d; h1+=d; } }
     const L=Math.hypot(bx-ax,by-ay); if(L<0.3) return; const ux=(bx-ax)/L, uy=(by-ay)/L; let nx=-uy, ny=ux;
     if(((ax+bx)/2-cx)*nx+((ay+by)/2-cy)*ny<0){ nx=-nx; ny=-ny; }
     const s2=new THREE.Shape(); s2.moveTo(0,-1); s2.lineTo(L,-1); s2.lineTo(L,h1); s2.lineTo(0,h0); s2.closePath();

@@ -10,6 +10,16 @@ const BK = DATA.bakke || null;
 const VANN_Y = BK ? BK.vann : 0.15;
 let BK_H = null;
 if(BK){ const s=atob(BK.h); BK_H=new Float32Array(s.length); for(let i=0;i<s.length;i++) BK_H[i]=s.charCodeAt(i)*BK.s-BK.off; }
+// portpassasjer (data/porter.json, typ hus): DTM under et porthus måler vollkrona (Voldporten: 3,1 m over veien midt under huset), så
+// terrengnettet og gresset gikk gjennom tunnelen (Vegar 16.11: «Tunellen er gresslagt»). Punktene i passasjen (langs veien til 1 m
+// utenfor endene, på tvers til 1,2 m utenfor buen) senkes til veien i porten. iPort(x,y) kan brukes av andre lag.
+const PORTPASS=(BK?(DATA.porter||[]):[]).filter(pt=>pt&&pt.typ!=='mur'&&DATA.bygg&&DATA.bygg[pt.bygg]&&pt.ret).map(pt=>{
+  const b=DATA.bygg[pt.bygg], L=Math.hypot(pt.ret[0],pt.ret[1])||1;
+  return {cx:b.r[0], cy:b.r[1], ux:pt.ret[0]/L, uy:pt.ret[1]/L, a:pt.dyp/2+1, t:pt.pw/2+1.2, y:(pt.bunn!=null?pt.bunn:null)}; });
+function iPort(x,y,ekstra=0){ return PORTPASS.some(p=>{ const dx=x-p.cx, dy=y-p.cy; return Math.abs(dx*p.ux+dy*p.uy)<=p.a+ekstra && Math.abs(-dx*p.uy+dy*p.ux)<=p.t+ekstra; }); }
+if(BK) PORTPASS.forEach(p=>{ if(p.y==null) return; const r=Math.ceil((p.a+p.t)/BK.g)+1, ci=Math.round((p.cx-BK.x0)/BK.g), cj=Math.round((p.cy-BK.y0)/BK.g);
+  for(let j=cj-r;j<=cj+r;j++) for(let i=ci-r;i<=ci+r;i++){ if(i<0||j<0||i>=BK.nx||j>=BK.ny) continue; const X=BK.x0+i*BK.g, Y=BK.y0+j*BK.g, dx=X-p.cx, dy=Y-p.cy;
+    if(Math.abs(dx*p.ux+dy*p.uy)<=p.a && Math.abs(-dx*p.uy+dy*p.ux)<=p.t){ const k=j*BK.nx+i; BK_H[k]=Math.min(BK_H[k], p.y); } } });
 function bakkeV(i,j){ i=Math.max(0,Math.min(BK.nx-1,i)); j=Math.max(0,Math.min(BK.ny-1,j)); return BK_H[j*BK.nx+i]; }
 function bakke(x,y){ if(!BK) return 0; const fx=(x-BK.x0)/BK.g, fy=(y-BK.y0)/BK.g, i=Math.floor(fx), j=Math.floor(fy), tx=Math.min(1,Math.max(0,fx-i)), ty=Math.min(1,Math.max(0,fy-j));
   return (bakkeV(i,j)*(1-tx)+bakkeV(i+1,j)*tx)*(1-ty)+(bakkeV(i,j+1)*(1-tx)+bakkeV(i+1,j+1)*tx)*ty; }
@@ -128,4 +138,4 @@ DATA.vann.forEach(w=>{ const t=w.t; if (t.natural==='water'||t.water||['riverban
 // elva Glomma rundt byen: fallback-stripe hvis data mangler
 registrer({ waterMat: () => waterMat });   // brukes av tidligere moduler via SENERE (tilstand.js)
 
-export { BAKKELAG, BK, VANN_Y, alleIBrostein, bakke, bakkeFot, bakkelag, flat, flatH, polyShape, waterLayer, waterMat };
+export { BAKKELAG, BK, VANN_Y, alleIBrostein, iPort, bakke, bakkeFot, bakkelag, flat, flatH, polyShape, waterLayer, waterMat };
