@@ -1375,6 +1375,53 @@
      112
     ]
    }
+  },
+  {
+   "id": "bnr-193867464",
+   "kilde": "Vegar/ortofoto 2024 (Isegranhuset vannfasade), PAG-1634",
+   "grunn": "fire grunne pilastre/lister på vannfasaden (NNV, mot Renessansehagen) ved andel fra østre hjorne sett fra hagen 0,481 · 0,661 · 0,741 · 0,906; grunn plasterlist i lysere veggtone, hele vegghoyden",
+   "veggfelt": [
+    {
+     "side": "NNV",
+     "fra": 0.466,
+     "til": 0.496,
+     "farge": [
+      214,
+      170,
+      120
+     ]
+    },
+    {
+     "side": "NNV",
+     "fra": 0.646,
+     "til": 0.676,
+     "farge": [
+      214,
+      170,
+      120
+     ]
+    },
+    {
+     "side": "NNV",
+     "fra": 0.726,
+     "til": 0.756,
+     "farge": [
+      214,
+      170,
+      120
+     ]
+    },
+    {
+     "side": "NNV",
+     "fra": 0.891,
+     "til": 0.921,
+     "farge": [
+      214,
+      170,
+      120
+     ]
+    }
+   ]
   }
  ],
  "om_tegnet_uten_modell": "Dom per flategruppe kontrollen fant i en 2015-tegning uten modellhus under (verktoy/manglende.py, kontaktark rapport/manglende/). Slås opp på tegning + senter_pt (innen radius_pt, standard 12). utfall: «avvik med grunn» (finnes ikke i dag eller er tegnet fritt) eller «lagt inn» (huset er lagt inn eller koblet; gruppen skal forsvinne). Leses av verktoy/kontroll.py avvik.",

@@ -23141,6 +23141,310 @@
    "hvem": "Claude",
    "dato": "2026-10-30",
    "grunn": "Kvartal13 (tegningen 2015): plankegjerde langs eiendomsgrensen mot gata fra Kommandantgården til Ekserserhuset; skyggelinje i ortofoto 2019, DOM−DTM under 1 m (lavt, tynt)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -335.37,
+     116.64
+    ],
+    [
+     -326.06,
+     118.93
+    ],
+    [
+     -319.1,
+     104.23
+    ],
+    [
+     -328.4,
+     101.93
+    ],
+    [
+     -335.37,
+     116.64
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -335.37,
+     116.64
+    ],
+    [
+     -319.1,
+     104.23
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -326.06,
+     118.93
+    ],
+    [
+     -328.4,
+     101.93
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -324.21,
+     119.2
+    ],
+    [
+     -322.81,
+     119.55
+    ],
+    [
+     -319.73,
+     113.05
+    ],
+    [
+     -321.13,
+     112.7
+    ],
+    [
+     -324.21,
+     119.2
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -322.44,
+     119.64
+    ],
+    [
+     -321.03,
+     119.98
+    ],
+    [
+     -317.96,
+     113.49
+    ],
+    [
+     -319.36,
+     113.14
+    ],
+    [
+     -322.44,
+     119.64
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -320.67,
+     120.07
+    ],
+    [
+     -319.26,
+     120.42
+    ],
+    [
+     -316.19,
+     113.92
+    ],
+    [
+     -317.59,
+     113.58
+    ],
+    [
+     -320.67,
+     120.07
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -318.9,
+     120.51
+    ],
+    [
+     -317.49,
+     120.86
+    ],
+    [
+     -314.42,
+     114.36
+    ],
+    [
+     -315.82,
+     114.01
+    ],
+    [
+     -318.9,
+     120.51
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -317.13,
+     120.95
+    ],
+    [
+     -315.72,
+     121.3
+    ],
+    [
+     -312.64,
+     114.8
+    ],
+    [
+     -314.05,
+     114.45
+    ],
+    [
+     -317.13,
+     120.95
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -320.67,
+     111.29
+    ],
+    [
+     -316.58,
+     112.3
+    ],
+    [
+     -313.89,
+     106.63
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -317.03,
+     104.93
+    ],
+    [
+     -317.59,
+     104.79
+    ],
+    [
+     -320.67,
+     111.29
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -316.13,
+     112.41
+    ],
+    [
+     -311.81,
+     113.47
+    ],
+    [
+     -308.74,
+     106.98
+    ],
+    [
+     -309.98,
+     106.67
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "p": [
+    [
+     -313.49,
+     106.84
+    ],
+    [
+     -316.13,
+     112.41
+    ]
+   ],
+   "hvem": "Studio",
+   "dato": "2026-11-16",
+   "grunn": "buksbom-kanting i Renessansehagen, ortofoto 2024 (Renessansehagen); flis_-448_64 (PAG-1634)"
   }
  ]
 }
