@@ -98,7 +98,7 @@ def ortofoto(x0, y0, x1, y1, mpp=0.25):
             continue
         im = cv2.imread(os.path.join(ORTO, fl['fil']))
         if im is None:
-            continue
+            raise FileNotFoundError(f"ortofoto-flis mangler: {fl['fil']} (worktree uten lokale kilder? LESMEG «Lokale kilder i worktree»)")
         im = cv2.resize(im, None, fx=f, fy=f, interpolation=cv2.INTER_AREA)
         c0 = int(round((fl['x0'] - x0) / mpp)); r0 = int(round((y1 - fl['y1']) / mpp))
         a, b = max(c0, 0), max(r0, 0); c, d = min(c0 + im.shape[1], W), min(r0 + im.shape[0], H)
