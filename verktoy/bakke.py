@@ -793,11 +793,20 @@ def gater(skriv=True):
         if flytt: v['p'] = _forskyv(v['p'], fo)
         flatetype()
         v['maalt'] = f'{kilde}: {n} målinger, bredde {b} m' + (f', flyttet {fo:+.1f} m sideveis' if flytt else '')
+    # en vei/gangvei som ligger på en brygge (minst 50 % av lengden inne i et brygge-omriss i data/brygger.json) tegnes ikke:
+    # brygga er flaten (Vegar 16.11, «rare greiene på brygga»). Gjelder alle brygger. Måles før gress-regelen.
+    from shapely.ops import unary_union as _uu
+    from shapely.geometry import Polygon as _Poly
+    _bry = [_Poly(bb['p']).buffer(0) for bb in datalag.les('brygger') if not bb.get('skjul') and len(bb.get('p', [])) >= 3]
+    bryU = _uu(_bry) if _bry else None
     # gangveier som ortofotoet viser som gress nesten hele veien (minst 80 % av båndet der fotoet ser bakken), finnes ikke
     # som sti i dag: tas ut og listes (rapport/bakke/veier-fjernet.json)
     gront = np.isin(kl, GRONT); sett_ = f['sett'] > 0; ut_v, beholdt = [], []
     for v in L['veier']:
-        if v['k'] == 'gang' and LineString([q[:2] for q in v['p']]).intersects(dom):
+        linv = LineString([q[:2] for q in v['p']])
+        if bryU is not None and linv.length > 0 and linv.intersection(bryU).length / linv.length >= 0.5:
+            ut_v.append({'p': [q[:2] for q in v['p']], 'w': v['w'], 'grunn': f"brygge: {linv.intersection(bryU).length / linv.length:.0%} av veien ligger på en brygge (brygga er flaten)"}); continue
+        if v['k'] == 'gang' and linv.intersects(dom):
             xs = [q[0] for q in v['p']]; ys = [q[1] for q in v['p']]
             mm = linjemaske([[q[:2] for q in v['p']]], R, max(1.0, v['w']), mpp) > 0
             n_ = (mm & sett_).sum()
