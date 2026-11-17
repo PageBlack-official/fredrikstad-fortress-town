@@ -473,7 +473,7 @@ DATA.bygg.forEach((b,i)=>{
       legg(gv);
     }
     // SIRKULÆR steinflate (brostein) rett foran døra + smal stein/grus-stripe inn fra åpningen; plen rundt (Fable v8 pkt 1, utsnitt a)
-    { const mbro=mat([166,161,150],dim,[120,116,106],{stein:true}), mm2=mat([137,138,135],dim,[91,92,90],{stein:true});
+    { const mbro=mat([206,196,176],dim,[160,150,132]), mm2=mat([137,138,135],dim,[91,92,90],{stein:true});
       const C=Math.cos(g0), S=Math.sin(g0), pt=t=>[cx+t*C, cy+t*S];   // t>0 mot åpningen, t<0 mot døra
       const [fx,fy]=pt(-5.6); const flate=new THREE.Mesh(new THREE.CylinderGeometry(4.6,4.6,0.09,44), mbro); flate.position.set(fx,0.05,-fy); flate.receiveShadow=true; legg(flate);   // rund plass, Ø~9 m
       const t0=ri-0.2, t1=-1.2, tm=(t0+t1)/2; const [sx,sy]=pt(tm);   // smal stripe fra åpningen til plassen
@@ -510,9 +510,12 @@ DATA.bygg.forEach((b,i)=>{
           if(k%2===0){ const g=new THREE.Group(); g.position.set(cx,0,-cy); g.rotation.y=a;   // skråstiver: fra muren 1,3 m under dekket til dekkets innerkant
             const x0=ri, y0=zd-1.3, x1=ri-bw+0.15, y1=zd-0.06, L=Math.hypot(x1-x0,y1-y0);
             const st=new THREE.Mesh(new THREE.BoxGeometry(L,0.09,0.09), mst); st.position.set((x0+x1)/2,(y0+y1)/2,0); st.rotation.z=Math.atan2(y1-y0,x1-x0); st.castShadow=true; g.add(st); legg(g); } }
-        // trappa: rett ned fra plattformens ende, videre langs muren, ned på plenen (stigning ~0,19 m, inntrinn 0,28 m)
-        const ae=aStart+span, tx=-Math.sin(ae)*sg, ty=Math.cos(ae)*sg, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28;
-        const ex=cx+rr*Math.cos(ae), ey=cy+rr*Math.sin(ae), ang=Math.atan2(ty,tx);
+        // trappa: fra plattformens ende ned på plenen langs muren (stigning ~0,19 m, inntrinn 0,28 m). Den går som en KORDE innenfor
+        // muren (Vegar 17.11 14:48: tangenten gikk inn i steinene), alltid minst 0,3 m fra innerflaten
+        const ae=aStart+span, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28, Lh=ns*run, rc=ri-bw/2-0.35;
+        const dl=2*Math.asin(Math.min(1,Lh/(2*rc)));
+        const ex=cx+rc*Math.cos(ae), ey=cy+rc*Math.sin(ae), e2x=cx+rc*Math.cos(ae+sg*dl), e2y=cy+rc*Math.sin(ae+sg*dl);
+        const tx=(e2x-ex)/Lh, ty=(e2y-ey)/Lh, ang=Math.atan2(ty,tx);
         for(let k=1;k<=ns;k++){ const d=k*run, z=zd-k*rise;
           const tr=new THREE.Mesh(new THREE.BoxGeometry(run,0.05,bw-0.25), mst); tr.position.set(ex+tx*d,z,-(ey+ty*d)); tr.rotation.y=ang; tr.castShadow=tr.receiveShadow=true; legg(tr); }
         const Ls=Math.hypot(ns*run,zd); [1,-1].forEach(sd=>{ const ox=-ty*sd*(bw-0.25)/2, oy=tx*sd*(bw-0.25)/2;   // vanger + håndløper
