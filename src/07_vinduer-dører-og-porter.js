@@ -476,8 +476,8 @@ DATA.bygg.forEach((b,i)=>{
     { const mbro=mat([206,196,176],dim,[160,150,132]), mm2=mat([137,138,135],dim,[91,92,90],{stein:true});
       const C=Math.cos(g0), S=Math.sin(g0), pt=t=>[cx+t*C, cy+t*S];   // t>0 mot åpningen, t<0 mot døra
       const [fx,fy]=pt(-5.6); const flate=new THREE.Mesh(new THREE.CylinderGeometry(4.6,4.6,0.09,44), mbro); flate.position.set(fx,0.05,-fy); flate.receiveShadow=true; legg(flate);   // rund plass, Ø~9 m
-      const t0=ri-0.2, t1=-1.2, tm=(t0+t1)/2; const [sx,sy]=pt(tm);   // smal stripe fra åpningen til plassen
-      const strip=new THREE.Mesh(new THREE.BoxGeometry(t0-t1,0.07,1.7), mbro); strip.position.set(sx,0.045,-sy); strip.rotation.y=g0; strip.receiveShadow=true; legg(strip);
+      const t0=ro+1.2, t1=-1.2, tm=(t0+t1)/2; const [sx,sy]=pt(tm);   // smal stripe fra åpningen til plassen
+      const strip=new THREE.Mesh(new THREE.BoxGeometry(t0-t1,0.07,Wd-0.4), mbro); strip.position.set(sx,0.42,-sy); strip.rotation.y=g0; strip.receiveShadow=true; legg(strip);
       const lx=Math.cos(g0-Math.PI/2), ly=Math.sin(g0-Math.PI/2);   // venstre sett fra åpningen (blikkretning g0+π → venstre = g0−90°)
       const [bx0,by0]=pt(-5.6); const fcx=bx0+1.3*lx, fcy=by0+1.3*ly;   // fundamentet inne i plassen, litt til venstre
       const fg2=new THREE.Group(); fg2.position.set(fcx,0,-fcy); fg2.rotation.y=g0; const RW=2.4, RD=1.6, tk=0.3, hh=0.4;
@@ -499,22 +499,26 @@ DATA.bygg.forEach((b,i)=>{
       // utsiktsplattformen (restaurert 2025, park-anlegg.no 05.2025): mørk stål langs innsiden av muren på elvesida, 1,3 m bred,
       // dekket 1,25 m under murkronen (folk ser over muren), skråstivere inn i muren, rekkverk på innerkanten, trapp ned til plenen i enden
       { const mst=mat([70,72,74],dim), mbr=mat([122,82,50],dim), zd=H+0.03, bw=(ro-ri)+0.8, rr=ri+bw/2, ri2=ri+0.08, sg=span<0?-1:1;   // Vegar 15:02 (dronefoto): plattformen ligger PÅ murkronen, kort, ved åpningen
-        const nseg=Math.max(8,Math.round(Math.abs(span)*rr/0.8));
-        for(let k=0;k<nseg;k++){ const am=aStart+span*(k+0.5)/nseg, len=Math.abs(span/nseg)*rr+0.04;
-          const dk=new THREE.Mesh(new THREE.BoxGeometry(bw,0.12,len), mst); dk.position.set(cx+rr*Math.cos(am),zd,-(cy+rr*Math.sin(am))); dk.rotation.y=am; dk.castShadow=dk.receiveShadow=true; legg(dk); }
-        const npl=Math.max(4,Math.round(Math.abs(span)*ri2/1.5));
-        for(let k=0;k<=npl;k++){ const a=aStart+span*k/npl;
+        // Vegar 15:09: plattformen er den ytterste delen mot elva, en flate man går opp på og står; trappa kommer fra åpningssida
+        const aP=aStart+span*0.55, spanP=span*0.45, mdk=mat([156,156,152],dim);
+        const nseg=Math.max(8,Math.round(Math.abs(spanP)*rr/0.8));
+        for(let k=0;k<nseg;k++){ const am=aP+spanP*(k+0.5)/nseg, len=Math.abs(spanP/nseg)*rr+0.04;
+          const dk=new THREE.Mesh(new THREE.BoxGeometry(bw,0.12,len), mdk); dk.position.set(cx+rr*Math.cos(am),zd,-(cy+rr*Math.sin(am))); dk.rotation.y=am; dk.castShadow=dk.receiveShadow=true; legg(dk); }
+        const npl=Math.max(4,Math.round(Math.abs(spanP)*ri2/1.5));
+        for(let k=0;k<=npl;k++){ const a=aP+spanP*k/npl;
           const po=new THREE.Mesh(new THREE.BoxGeometry(0.07,1.0,0.07), mst); po.position.set(cx+ri2*Math.cos(a),zd+0.5,-(cy+ri2*Math.sin(a))); po.castShadow=true; legg(po);
-          if(k<npl){ const am=aStart+span*(k+0.5)/npl, ln=Math.abs(span/npl)*ri2+0.05;
+          if(k>0 && k<npl){ const am=aP+spanP*(k+0.5)/npl, ln=Math.abs(spanP/npl)*ri2+0.05;
             const hr=new THREE.Mesh(new THREE.BoxGeometry(0.06,0.06,ln), mst); hr.position.set(cx+ri2*Math.cos(am),zd+1.0,-(cy+ri2*Math.sin(am))); hr.rotation.y=am; legg(hr); }
           if(k%2===0){ const g=new THREE.Group(); g.position.set(cx,0,-cy); g.rotation.y=a;   // skråstiver: fra muren 1,3 m under dekket til dekkets innerkant
             const x0=ro, y0=zd-1.4, x1=ro+0.75, y1=zd-0.06, L=Math.hypot(x1-x0,y1-y0);   // brune konsoller på utsiden (fotoet)
             const st=new THREE.Mesh(new THREE.BoxGeometry(L,0.14,0.14), mbr); st.position.set((x0+x1)/2,(y0+y1)/2,0); st.rotation.z=Math.atan2(y1-y0,x1-x0); st.castShadow=true; g.add(st); legg(g); } }
         // trappa: fra plattformens ende ned på plenen langs muren (stigning ~0,19 m, inntrinn 0,28 m). Den går som en KORDE innenfor
         // muren (Vegar 17.11 14:48: tangenten gikk inn i steinene), alltid minst 0,3 m fra innerflaten
-        const ae=aStart+span, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28, Lh=ns*run, rc=ri-0.75;
+        const ae=aP, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28, Lh=ns*run, rc=ri-0.75;
         const dl=2*Math.asin(Math.min(1,Lh/(2*rc)));
-        const ex=cx+rc*Math.cos(ae), ey=cy+rc*Math.sin(ae), e2x=cx+rc*Math.cos(ae+sg*dl), e2y=cy+rc*Math.sin(ae+sg*dl);
+        const ex=cx+rc*Math.cos(ae), ey=cy+rc*Math.sin(ae), e2x=cx+rc*Math.cos(ae-sg*dl), e2y=cy+rc*Math.sin(ae-sg*dl);   // ned MOT åpningen
+        { const rl=(rc-0.5+ri)/2, al=ae+sg*0.6/rc, ld=new THREE.Mesh(new THREE.BoxGeometry(ri-rc+0.6,0.12,1.2), mdk);   // repos: trappa inn på plattformen
+          ld.position.set(cx+rl*Math.cos(al),zd,-(cy+rl*Math.sin(al))); ld.rotation.y=al; ld.castShadow=ld.receiveShadow=true; legg(ld); }
         const tx=(e2x-ex)/Lh, ty=(e2y-ey)/Lh, ang=Math.atan2(ty,tx);
         for(let k=1;k<=ns;k++){ const d=k*run, z=zd-k*rise;
           const tr=new THREE.Mesh(new THREE.BoxGeometry(run,0.05,1.0), mst); tr.position.set(ex+tx*d,z,-(ey+ty*d)); tr.rotation.y=ang; tr.castShadow=tr.receiveShadow=true; legg(tr); }
