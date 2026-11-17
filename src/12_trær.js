@@ -97,7 +97,9 @@ const FORTSONER = (DATA.bygg||[]).filter(b=>b && b.fort).flatMap(b=>{
 const klaseData=[], skyggeData=[], stammeData=[];
 TP.forEach((p,i)=>{
   if(FORTSONER.some(f=>Math.hypot(p[0]-f.x, p[1]-f.y) < f.r)) return;
-  const s=p[2]?p[2]:2.6+rnd()*2.8; const g0=treBakke(p); const col=GREENS[(rnd()*GREENS.length)|0];
+  // PAG-1650: rundt muren er det plen og noen busker (Isegran1B), ikke skog inntil muren -> trær i et 10 m belte utenfor blir busker
+  const buske=FORTSONER.some(f=>f.r>12 && Math.hypot(p[0]-f.x, p[1]-f.y) < f.r+10);
+  const s=buske?Math.min(p[2]||1.4,1.4):(p[2]?p[2]:2.6+rnd()*2.8); const g0=treBakke(p); const col=GREENS[(rnd()*GREENS.length)|0];
   const delay=0.6+1.6*((p[0]+p[1]+500)/1000);
   const x=p[0], z=-p[1];
   const kj=(k)=>col.clone().offsetHSL((rnd()-.5)*0.02,0,(rnd()-.5)*0.05+k);

@@ -6,6 +6,7 @@ import { GL_SOL_F, GL_SOL_V, glSolVMain } from './02_lys.js';
 import { BK, bakke, bakkeFot, polyShape } from './03_bakke-vann-grønt.js';
 import { GL_HUS_V, KONTAKT_BREDDE, KONTAKT_Y, U_HUS, biterAv, city, flatGruppe, fotBaand, husDybde, kontaktMat, mat, settFot } from './05_bygg.js';
 import { buildings, bygKirke } from './06_kirka-bygget-etter-2017.js';
+import { plenMat } from './04_brostein-i-hele-gamlebyen.js';
 // ---- vinduer, dører og porter: plassering og størrelse fra Vegars kvartaltegninger (etter/42_fasader.py); alt tegnes her ----
 const VIND_GEO=new THREE.PlaneGeometry(1,1); VIND_GEO.translate(0,0,0);
 // Fargepaletten for dører og karmer (07.11, gatevandringen): husets dor_farge/karm_farge og elementets egen farge (13. plass).
@@ -47,7 +48,7 @@ const vindMat=new THREE.ShaderMaterial({
       vec3 pf=pix>=0 ? texture2D(uPalTex, vec2((float(pix)+0.5)/uPalN, 0.5)).rgb : vec3(0.);
       if(pix>=0 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.62*KALD, pf*sf, lit);     // karmfarge lest fra gata
       if(foring>0.5 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.42, pf*0.80*sf, lit);  // foring (elementets egen farge): mørkere, mettet smyg som ikke drukner i glasset
-      vec3 c;
+      vec3 c; float gm=0.;   // glassflaten i vinduets egen geometri (karm, foring og sprosser utenfor): der nattlyset tennes (PAG-1651)
       if(typ<0.5 || typ>2.5){
         float ramme=foring>0.5?0.16:(spross>9.5?0.12:0.08);   // foring: bredere smyg så den leser på avstand
         // sprosser etter zoom : post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
@@ -66,7 +67,7 @@ const vindMat=new THREE.ShaderMaterial({
         spr=max(spr,(1.-smoothstep(bS-0.5*fw,bS+0.5*fw,qs))*aS);
         float inn=smoothstep(ramme-0.5*fw,ramme+0.5*fw,kant);
         glas*=mix(1.,0.8,aS);                                                 // mørkere glass på nært hold: sprossene står ut
-        c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn);
+        c=mix(hvit, glas, inn); c=mix(c, hvit, spr*inn); gm=inn*(1.-spr);
         c=mix(c, glas*1.4, smoothstep(0.25,-0.3,(m.x/vSz.x-0.5)+(m.y/vSz.y-0.5))*0.3*inn*(1.-spr));
       } else {
         vec3 dorf=mix(vec3(0.24,0.18,0.15), vec3(0.36,0.26,0.20)*sf, lit);
@@ -80,13 +81,14 @@ const vindMat=new THREE.ShaderMaterial({
           dorf=mix(vec3(0.10,0.17,0.13), vec3(0.19,0.30,0.23)*sf, lit);
           c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
           c=mix(c, dorf*0.7, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.7);
-          float ol=vSz.y-0.78; if(m.y>ol){ c=mix(glas, hvit, 1.-smoothstep(0.05,0.05+fw,min(kant,abs(m.y-ol)))); }
+          float ol=vSz.y-0.78; if(m.y>ol){ float og=smoothstep(0.05,0.05+fw,min(kant,abs(m.y-ol))); c=mix(glas, hvit, 1.-og); gm=og; }   // overlyset er glass; dørbladet lyser ikke
         }
       }
       c=mix(c, mix(glas,hvit,0.35), smoothstep(0.22,0.4,fw)*0.6);   // langt unna: vinduet blir en flate (etter sprossene)
       { float paa=vPaa;   // to av tre vinduer har lys inne om kvelden (per vindu, satt i vertex – PAG-1496)
-        float glass=1.-smoothstep(0.30,0.42,max(c.r,max(c.g,c.b)));   // bare de mørke glassflatene, ikke ramme og sprosser
-        c=kveld(c); c=mix(c, vec3(1.0,0.80,0.46)*1.15, natt*paa*glass*(typ<1.5||typ>2.5?1.:0.)); }
+        // lyset følger glassflaten slik dagvinduet tegner den (gm), ikke fargen: mørk karm, foring og sprosser blir stående, og dører (typ 1) og
+        // porter (typ 2) lyser ikke – før PAG-1651 tente en lyshetsterskel hele dørbladet og alt mørkt treverk rundt glasset
+        c=kveld(c); c=mix(c, vec3(1.0,0.80,0.46)*1.15, natt*paa*gm); }
       gl_FragColor=vec4(c,1.);
       #include <colorspace_fragment>
     }`
@@ -437,101 +439,121 @@ DATA.bygg.forEach((b,i)=>{
     const P=(r,a,z)=>[cx+r*Math.cos(a), z, -(cy+r*Math.sin(a))];
     // åpningen er et parallelt gjennombrudd: muren fjernes der mid-radius-punktet ligger innenfor ±Wd/2 vinkelrett på åpningsretningen, på åpningssida
     const iGap=a=>{ const da=a-g0; return Math.cos(da)>0 && Math.abs(rmid*Math.sin(da))<Wd/2; };
-    const pos=[], capPos=[];
+    const pos=[], capPos=[], ZB=-1.8;   // murfoten går under terrenget: bakken inne ligger opptil 1,2 m under fotpunktet (ellers glipe med vann bak, PAG-1650)
     for(let i=0;i<N;i++){
       const a0=i*2*Math.PI/N, a1=(i+1)*2*Math.PI/N; if(iGap((a0+a1)/2)) continue;
-      const Oo0=P(ro,a0,0),Oo1=P(ro,a1,0),Ot0=P(ro,a0,H),Ot1=P(ro,a1,H);
-      const Io0=P(ri,a0,0),Io1=P(ri,a1,0),It0=P(ri,a0,H),It1=P(ri,a1,H);
+      const Oo0=P(ro,a0,ZB),Oo1=P(ro,a1,ZB),Ot0=P(ro,a0,H),Ot1=P(ro,a1,H);
+      const Io0=P(ri,a0,ZB),Io1=P(ri,a1,ZB),It0=P(ri,a0,H),It1=P(ri,a1,H);
       pos.push(...Oo0,...Oo1,...Ot1, ...Oo0,...Ot1,...Ot0);     // ytre flate
       pos.push(...Io1,...Io0,...It0, ...Io1,...It0,...It1);     // indre flate
       capPos.push(...Ot0,...Ot1,...It1, ...Ot0,...It1,...It0);  // kappa -> egen jevn flate (pkt 5)
     }
     [1,-1].forEach(s=>{                                          // to rette, parallelle murvanger kuttet vinkelrett på stien
       const ain=g0+s*Math.asin(Math.min(1,Wd/(2*ri))), aout=g0+s*Math.asin(Math.min(1,Wd/(2*ro)));
-      const Io=P(ri,ain,0),Oo=P(ro,aout,0),It=P(ri,ain,H),Ot=P(ro,aout,H);
+      const Io=P(ri,ain,ZB),Oo=P(ro,aout,ZB),It=P(ri,ain,H),Ot=P(ro,aout,H);
       const face=(s>0?[Io,Oo,Ot, Io,Ot,It]:[Oo,Io,It, Oo,It,Ot]);
       pos.push(...face.flat());
     });
     const fg=new THREE.BufferGeometry(); fg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); fg.computeVertexNormals();
-    const fm=new THREE.Mesh(fg, mat([116,119,120],dim,[84,86,88],{stein:true})); fm.castShadow=fm.receiveShadow=true; legg(fm);   // grå granitt, begge flater (Fable v8 pkt 3)
+    const fm=new THREE.Mesh(fg, mat([146,145,139],dim,[98,97,93],{stein:true})); fm.castShadow=fm.receiveShadow=true; legg(fm);   // grå granitt, begge flater (Fable v8 pkt 3)
     // kappa som EGEN, jevn flate uten steinmønster (Fable v7 pkt 5: stein-teksturen laget trappetrinn på toppkanten; kappen skal være jevn hele veien rundt)
     const cg=new THREE.BufferGeometry(); cg.setAttribute('position',new THREE.Float32BufferAttribute(capPos,3)); cg.computeVertexNormals();
-    const cm=new THREE.Mesh(cg, mat([156,157,153],dim)); cm.castShadow=true; cm.receiveShadow=true; legg(cm);   // grå kappe
-    // døra = LAV, BRED teglbue satt inn i en gresshaug som stiger mot bakmuren, med lave natursteinsmurer ut til sidene.
-    // Ikke et steinhus med kuppel: ingen høy loddrett front, gresset dekker over og rundt buen (Fable v8 pkt 4, utsnitt c)
-    { const dd=ri-3.0, dx=cx+dd*Math.cos(g0+Math.PI), dy=cy+dd*Math.sin(g0+Math.PI);
-      const gv=new THREE.Group(); gv.position.set(dx,0.0,-dy); gv.rotation.y=g0;   // lokal +x peker MOT åpningen (g0)
-      const mstein=mat([137,138,135],dim,[91,92,90],{stein:true}), mtegl=mat([150,74,58],dim), mgress=mat([122,152,92],dim), mmork=mat([20,16,15],false);
-      // gresshaug: halvsylinder (dome opp) som ligger bakover mot muren og er lav foran; strukket bakover + flatet litt
-      const torv=new THREE.Mesh(new THREE.CylinderGeometry(2.3,2.3,5.4,30,1,false,0,Math.PI), mgress);
-      torv.rotation.z=Math.PI/2; torv.position.set(-2.1,0,0); torv.scale.set(1,0.85,1.45); torv.castShadow=true; torv.receiveShadow=true; gv.add(torv);
-      // lav bred åpning (mørkt hull) + segment-teglbue over, satt inn i haugens front
-      const hull=new THREE.Mesh(new THREE.BoxGeometry(1.0,1.15,2.2), mmork); hull.position.set(0.95,0.55,0); gv.add(hull);   // lavt bredt mørkt hull
-      const bue=new THREE.Mesh(new THREE.CylinderGeometry(1.2,1.2,0.62,24,1,false,0,Math.PI), mtegl); bue.rotation.z=Math.PI/2; bue.scale.set(0.5,1,1); bue.position.set(0.92,1.02,0); gv.add(bue);   // LAV, BRED segment-teglbue (dome opp, flatet i høyden)
-      const kant=new THREE.Mesh(new THREE.BoxGeometry(0.5,0.9,2.9), mstein); kant.position.set(0.82,0.45,0); kant.castShadow=true; gv.add(kant);   // natursteins-sålbenk/ramme under buen
-      [1,-1].forEach(s=>{ const vm=new THREE.Mesh(new THREE.BoxGeometry(1.6,0.72,0.5), mstein); vm.position.set(0.55,0.36,s*1.55); vm.castShadow=true; gv.add(vm); });   // lave natursteinsmurer til sidene
+    const cm=new THREE.Mesh(cg, mat([172,170,163],dim)); cm.castShadow=true; cm.receiveShadow=true; legg(cm);   // grå kappe
+    // PAG-1650 (Studio, 17.11) — tegnet om mot park-anlegg.no 05.2025 (Isegran1B dronefoto, Isegran2B/3B/13B/14B bakkefoto):
+    //  * bakerst: plenen stiger som en voll opp mot bakmuren; den lave teglbuen med natursteinsvanger står i vollens fot
+    //  * rund GRUSplass midt i med lav fundamentruin; grusstripe inn fra åpningen (aldri brostein på Isegran)
+    //  * stålanlegget til høyre for åpningen (sett utenfra), mot elva: rustbrune bøyler (omvendt U) står mot innerflaten og går
+    //    OVER kappa og litt ned på utsida (de brune «konsollene» i 1B), en trapp langs innerflaten fra plenen, og et grått
+    //    ståldekk innenfor muren 0,5 m under kappa, båret av skrå rustbrune stag mot muren (3B), med netting-rekkverk på innerkanten
+    const RAD=THREE.MathUtils.degToRad, sgn=(((elv-g0)%(2*Math.PI)+2*Math.PI)%(2*Math.PI))<Math.PI?1:-1;   // fra åpningen mot elvesida
+    const gapA=Math.asin(Math.min(1,Wd/(2*ri)));
+    const bit=(geo,m,x,y,z,ry)=>{ const o=new THREE.Mesh(geo,m); o.position.set(x,y,z); if(ry) o.rotation.y=ry; o.castShadow=o.receiveShadow=true; legg(o); return o; };
+    const _z=new THREE.Vector3(0,0,1);
+    const stag=(A,B,w,h,m)=>{ const a=new THREE.Vector3(...A), b2=new THREE.Vector3(...B), d=b2.clone().sub(a), L=d.length(); if(L<0.01) return;   // rett stykke fra A til B (three-koord.)
+      const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,L),m); o.position.copy(a).addScaledVector(d,0.5); o.quaternion.setFromUnitVectors(_z,d.normalize()); o.castShadow=true; legg(o); };
+    const sektor=(r0,r1,a0,a1,hf,m,nr=1,na=24)=>{ const pv=[]; const V=(r,a)=>P(r,a,hf(r,a));   // ringsektor-flate med høyde hf(r,a), normal opp
+      for(let i=0;i<nr;i++) for(let j=0;j<na;j++){ const ra=r0+(r1-r0)*i/nr, rb=r0+(r1-r0)*(i+1)/nr, aa=a0+(a1-a0)*j/na, ab=a0+(a1-a0)*(j+1)/na;
+        let q=[V(ra,aa),V(rb,aa),V(rb,ab),V(ra,aa),V(rb,ab),V(ra,ab)]; if((a1-a0)<0) q=[q[0],q[2],q[1],q[3],q[5],q[4]]; q.forEach(v=>pv.push(...v)); }
+      const gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.Float32BufferAttribute(pv,3)); gg.computeVertexNormals(); const o=new THREE.Mesh(gg,m); o.receiveShadow=true; legg(o); };
+    // bakken inne i fortet ligger opptil 1,2 m under fotpunktet (gateFot); plenflata (gr-43) ligger 0,28 over bakken -> alt på bakken følger terrenget
+    const gzr=(x,y)=>BK?bakke(x,y)-fot:0, PL=0.45;   // PL: over plenflata (hTer+0,03+0,28) med margin for dybdeforskyvningen
+    const mgress=mat([128,180,136],dim,[92,142,108]), mstein=mat([146,145,139],dim,[98,97,93],{stein:true});
+    // --- bakre voll + teglbue
+    { const gb=g0+Math.PI, A=RAD(52), r0=ri-4.6, r1=ri-0.05, HV=2.45;   // vollen reiser seg rett bak buefronten (plassen går helt inntil buen, 1B)
+      const ss=t=>{ t=Math.min(1,Math.max(0,t)); return t*t*(3-2*t); };
+      sektor(r0,r1,gb-A,gb+A,(r,a)=>gzr(cx+r*Math.cos(a),cy+r*Math.sin(a))+0.03+HV*ss((r-r0)/1.9)*ss((A-Math.abs(a-gb))/RAD(22)),plenMat,12,48);   // samme plen som gårdsplassen: ingen kant
+      const dd=ri-3.0, dx=cx+dd*Math.cos(gb), dy=cy+dd*Math.sin(gb);
+      const gv=new THREE.Group(); gv.position.set(dx,gzr(dx,dy)-0.05,-dy); gv.rotation.y=g0;   // lokal +x peker ut av buen, mot plassen og åpningen
+      const mtegl=mat([150,74,58],dim), mmork=mat([20,16,15],false);
+      // fronten mot plassen (1B): lav natursteinsfront, mørk buet åpning med teglring; vollen ligger over og bak (ikke en rød «kuppel»)
+      const front=new THREE.Mesh(new THREE.BoxGeometry(0.7,2.2,5.6), mstein); front.position.set(1.0,1.1,0); front.castShadow=front.receiveShadow=true; gv.add(front);
+      const bueForm=(rB,hS,w)=>{ const s=new THREE.Shape(); s.moveTo(-w,0); s.lineTo(-w,hS); s.absarc(0,hS,rB,Math.PI,0,true); s.lineTo(w,0); s.lineTo(-w,0); return s; };
+      const ring=bueForm(1.45,0.6,1.45); ring.holes.push(new THREE.Path(bueForm(1.12,0.6,1.12).getPoints(24)));   // ca. 2,2 m bred, 1,7 m høy åpning (1B)
+      const rg=new THREE.Mesh(new THREE.ExtrudeGeometry(ring,{depth:0.14,bevelEnabled:false,curveSegments:24}), mtegl); rg.rotation.y=Math.PI/2; rg.position.set(1.36,0,0); rg.castShadow=true; gv.add(rg);   // teglbuen
+      const hl=new THREE.Mesh(new THREE.ShapeGeometry(bueForm(1.12,0.6,1.12),24), mmork); hl.rotation.y=Math.PI/2; hl.position.set(1.37,0.001,0); gv.add(hl);   // mørkt hvelv
+      [1,-1].forEach(s=>{
+        const vm=new THREE.Mesh(new THREE.BoxGeometry(0.55,0.7,3.2), mstein); vm.position.set(0.7,0.35,s*4.2); vm.rotation.y=s*0.35; vm.castShadow=true; gv.add(vm); });   // lave murer ut i vollens fot
       legg(gv);
     }
-    // SIRKULÆR steinflate (brostein) rett foran døra + smal stein/grus-stripe inn fra åpningen; plen rundt (Fable v8 pkt 1, utsnitt a)
-    { const mbro=mat([206,196,176],dim,[160,150,132]), mm2=mat([137,138,135],dim,[91,92,90],{stein:true});
-      const C=Math.cos(g0), S=Math.sin(g0), pt=t=>[cx+t*C, cy+t*S];   // t>0 mot åpningen, t<0 mot døra
-      const [fx,fy]=pt(-5.6); const flate=new THREE.Mesh(new THREE.CylinderGeometry(4.6,4.6,0.09,44), mbro); flate.position.set(fx,0.05,-fy); flate.receiveShadow=true; legg(flate);   // rund plass, Ø~9 m
-      const t0=ro+1.2, t1=-1.2, tm=(t0+t1)/2; const [sx,sy]=pt(tm);   // smal stripe fra åpningen til plassen
-      const strip=new THREE.Mesh(new THREE.BoxGeometry(t0-t1,0.07,Wd-0.4), mbro); strip.position.set(sx,0.42,-sy); strip.rotation.y=g0; strip.receiveShadow=true; legg(strip);
-      const lx=Math.cos(g0-Math.PI/2), ly=Math.sin(g0-Math.PI/2);   // venstre sett fra åpningen (blikkretning g0+π → venstre = g0−90°)
-      const [bx0,by0]=pt(-5.6); const fcx=bx0+1.3*lx, fcy=by0+1.3*ly;   // fundamentet inne i plassen, litt til venstre
-      const fg2=new THREE.Group(); fg2.position.set(fcx,0,-fcy); fg2.rotation.y=g0; const RW=2.4, RD=1.6, tk=0.3, hh=0.4;
-      [[0,RD/2],[0,-RD/2]].forEach(([ox,oz])=>{ const w=new THREE.Mesh(new THREE.BoxGeometry(RW,hh,tk), mm2); w.position.set(ox,hh/2,oz); w.castShadow=true; fg2.add(w); });
-      [[RW/2,0],[-RW/2,0]].forEach(([ox,oz])=>{ const w=new THREE.Mesh(new THREE.BoxGeometry(tk,hh,RD), mm2); w.position.set(ox,hh/2,oz); w.castShadow=true; fg2.add(w); });
+    // --- rund grusplass + fundamentruin + grusstripe fra åpningen
+    { const C=Math.cos(g0), S=Math.sin(g0), pt=t=>[cx+t*C, cy+t*S];   // t>0 mot åpningen, t<0 mot buen
+      // grusflatene legges i bakkelaget (src/17, som de målte grusflatene): de følger terrenget og ligger over plenflata (gr-43)
+      const [fx,fy]=pt(-5.5), hw=(Wd-0.3)/2, nx2=-S, ny2=C;
+      F.grus=[ Array.from({length:40},(_,k)=>[fx+4.5*Math.cos(k*Math.PI/20), fy+4.5*Math.sin(k*Math.PI/20)]),   // plassen ligger rett foran buen (1B)
+               [[...pt(-1.0)].map((v,k)=>v+(k?ny2:nx2)*hw), [...pt(ro+1.6)].map((v,k)=>v+(k?ny2:nx2)*hw), [...pt(ro+1.6)].map((v,k)=>v-(k?ny2:nx2)*hw), [...pt(-1.0)].map((v,k)=>v-(k?ny2:nx2)*hw)] ];
+      const lx=Math.cos(g0-Math.PI/2), ly=Math.sin(g0-Math.PI/2), [bx0,by0]=pt(-5.2);
+      const fg2=new THREE.Group(); fg2.position.set(bx0+0.8*lx,gzr(bx0+0.8*lx,by0+0.8*ly)+PL-0.05,-(by0+0.8*ly)); fg2.rotation.y=g0; const RW=2.6, RD=1.8, tk=0.35, hh=0.45;
+      [[0,RD/2],[0,-RD/2]].forEach(([ox,oz])=>{ const w=new THREE.Mesh(new THREE.BoxGeometry(RW,hh,tk), mstein); w.position.set(ox,hh/2,oz); w.castShadow=true; fg2.add(w); });
+      [[RW/2,0],[-RW/2,0]].forEach(([ox,oz])=>{ const w=new THREE.Mesh(new THREE.BoxGeometry(tk,hh,RD), mstein); w.position.set(ox,hh/2,oz); w.castShadow=true; fg2.add(w); });
       legg(fg2);
     }
-    // trebjelker som en VISER på murkronen: hver bjelke RADIELT (vinkelrett på muren, som merker på en urskive), stikker ut over
-    // ytterkanten; rekka går fra åpningens vange og rundt mot elvesida. INGEN bjelke over åpningen (inner ende ved ri) — Vegar v8 pkt 2
-    { const mtre=mat([122,82,50],dim), mrk=mat([150,147,140],dim);
-      const sweep=((elv-g0)%(2*Math.PI)+2*Math.PI)%(2*Math.PI); const sgn=sweep<Math.PI?1:-1;   // retning fra åpningen mot elvesida (med sola)
-      const aStart=g0+sgn*(Math.asin(Math.min(1,Wd/(2*ri)))+0.06);   // like forbi åpningens vange, aldri inn over åpningen
-      const span=sgn*Math.min(Math.abs(elv-aStart),1.25), nb=Math.max(3,Math.round(Math.abs(span)*rmid/1.4));   // bjelke ca. hver 1,4 m
-      const Lbj=(ro-ri)+0.9, rC=ri+Lbj/2;   // sitter på kronen, inner ende ved ri, stikker ~0,9 m ut over ytterkanten
-      for(let k=0;k<=nb;k++){ const a=aStart+span*k/nb;
-        const bj=new THREE.Mesh(new THREE.BoxGeometry(Lbj,0.15,0.24), mtre);
-        bj.position.set(cx+rC*Math.cos(a), H+0.08, -(cy+rC*Math.sin(a))); bj.rotation.y=a; bj.castShadow=true; legg(bj); }   // radielt: rotation.y=a
-      const np=-1;   // stolpene på kronen er erstattet av rekkverket på plattformen under
-      // utsiktsplattformen (restaurert 2025, park-anlegg.no 05.2025): mørk stål langs innsiden av muren på elvesida, 1,3 m bred,
-      // dekket 1,25 m under murkronen (folk ser over muren), skråstivere inn i muren, rekkverk på innerkanten, trapp ned til plenen i enden
-      { const mst=mat([70,72,74],dim), mbr=mat([122,82,50],dim), zd=H+0.03, bw=(ro-ri)+0.8, rr=ri+bw/2, ri2=ri+0.08, sg=span<0?-1:1;   // Vegar 15:02 (dronefoto): plattformen ligger PÅ murkronen, kort, ved åpningen
-        // Vegar 15:09: plattformen er den ytterste delen mot elva, en flate man går opp på og står; trappa kommer fra åpningssida
-        const aP=aStart+span*0.55, spanP=span*0.45, mdk=mat([156,156,152],dim);
-        // dekket går over HELE konsollrekka fra åpningen (Vegar 15:22: «noe er borte» der konsollene sto uten dekk)
-        const nseg=Math.max(8,Math.round(Math.abs(span)*rr/0.8));
-        for(let k=0;k<nseg;k++){ const am=aStart+span*(k+0.5)/nseg, len=Math.abs(span/nseg)*rr+0.04;
-          const dk=new THREE.Mesh(new THREE.BoxGeometry(bw,0.12,len), mdk); dk.position.set(cx+rr*Math.cos(am),zd,-(cy+rr*Math.sin(am))); dk.rotation.y=am; dk.castShadow=dk.receiveShadow=true; legg(dk); }
-        // rekkverket går langs HELE innerkanten fra åpningen (dronefotoet), med åpning der trappa kommer opp
-        const npl=Math.max(6,Math.round(Math.abs(span)*ri2/1.5)), gapA=1.6/ri2;
-        for(let k=0;k<=npl;k++){ const a=aStart+span*k/npl; if(Math.abs(a-aP)<gapA) continue;
-          const po=new THREE.Mesh(new THREE.BoxGeometry(0.07,1.0,0.07), mst); po.position.set(cx+ri2*Math.cos(a),zd+0.5,-(cy+ri2*Math.sin(a))); po.castShadow=true; legg(po);
-          if(k<npl && Math.abs(aStart+span*(k+1)/npl-aP)>=gapA){ const am=aStart+span*(k+0.5)/npl, ln=Math.abs(span/npl)*ri2+0.05;
-            const hr=new THREE.Mesh(new THREE.BoxGeometry(0.06,0.06,ln), mst); hr.position.set(cx+ri2*Math.cos(am),zd+1.0,-(cy+ri2*Math.sin(am))); hr.rotation.y=am; legg(hr); }
-          if(k%2===0){ const g=new THREE.Group(); g.position.set(cx,0,-cy); g.rotation.y=a;   // skråstiver: fra muren 1,3 m under dekket til dekkets innerkant
-            const x0=ro, y0=zd-1.4, x1=ro+0.75, y1=zd-0.06, L=Math.hypot(x1-x0,y1-y0);   // brune konsoller på utsiden (fotoet)
-            const st=new THREE.Mesh(new THREE.BoxGeometry(L,0.14,0.14), mbr); st.position.set((x0+x1)/2,(y0+y1)/2,0); st.rotation.z=Math.atan2(y1-y0,x1-x0); st.castShadow=true; g.add(st); legg(g); } }
-        // trappa: fra plattformens ende ned på plenen langs muren (stigning ~0,19 m, inntrinn 0,28 m). Den går som en KORDE innenfor
-        // muren (Vegar 17.11 14:48: tangenten gikk inn i steinene), alltid minst 0,3 m fra innerflaten
-        const ae=aP, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28, Lh=ns*run, rc=ri-0.75;
-        const dl=2*Math.asin(Math.min(1,Lh/(2*rc)));
-        const ex=cx+rc*Math.cos(ae), ey=cy+rc*Math.sin(ae), e2x=cx+rc*Math.cos(ae-sg*dl), e2y=cy+rc*Math.sin(ae-sg*dl);   // ned MOT åpningen
-        { const rl=(rc-0.5+ri)/2, al=ae+sg*0.6/rc, ld=new THREE.Mesh(new THREE.BoxGeometry(ri-rc+0.6,0.12,1.2), mdk);   // repos: trappa inn på plattformen
-          ld.position.set(cx+rl*Math.cos(al),zd,-(cy+rl*Math.sin(al))); ld.rotation.y=al; ld.castShadow=ld.receiveShadow=true; legg(ld); }
-        const tx=(e2x-ex)/Lh, ty=(e2y-ey)/Lh, ang=Math.atan2(ty,tx);
-        for(let k=1;k<=ns;k++){ const d=k*run, z=zd-k*rise;
-          const tr=new THREE.Mesh(new THREE.BoxGeometry(run,0.05,1.0), mst); tr.position.set(ex+tx*d,z,-(ey+ty*d)); tr.rotation.y=ang; tr.castShadow=tr.receiveShadow=true; legg(tr); }
-        const Ls=Math.hypot(ns*run,zd); [1,-1].forEach(sd=>{ const ox=-ty*sd*0.5, oy=tx*sd*0.5;   // vanger + håndløper
-          const vg=new THREE.Group(); vg.position.set(ex+tx*ns*run/2+ox,zd/2,-(ey+ty*ns*run/2+oy)); vg.rotation.y=ang;
-          const v=new THREE.Mesh(new THREE.BoxGeometry(Ls,0.2,0.06), mst); v.rotation.z=-Math.atan2(zd,ns*run); v.castShadow=true; vg.add(v);
-          const h=new THREE.Mesh(new THREE.BoxGeometry(Ls,0.05,0.05), mst); h.position.y=0.95; h.rotation.z=-Math.atan2(zd,ns*run); vg.add(h); legg(vg); });
+    // --- stålanlegget: trapp -> dekk, med bøyler over kappa
+    { const mcor=mat([98,58,36],dim), mst=mat([62,64,66],dim), mdk=mat([150,152,150],dim), mnett=mat([132,134,132],dim);
+      const zd=H-0.5, ns=Math.round(zd/0.19), rise=zd/ns, run=0.27, rc=ri-0.75, BW=1.0, kL=Math.ceil(ns/2), land=1.0;
+      const aS0=g0+sgn*(gapA+RAD(19));                        // trappas fot: ca. 5 m innenfor åpningens vange, til høyre utenfra (første bøyle i 1B)
+      const aT=k=>aS0+sgn*(k*run+(k>kL?land:0))/rc;            // vinkel til trinn k (k=0 = bakken)
+      const zT=k=>k*rise;
+      const aD0=aT(ns)-sgn*0.5*run/rc, aD1=aD0+sgn*RAD(52);    // dekket: fra trappas topp og ~12 m mot elva (anlegget dekker ca. 80° av ringen i 1B)
+      const rIn=ri-1.6;                                        // dekkets innerkant
+      // gruskant langs muren under trapp og dekk (3B)
+      { const b0=aS0-sgn*RAD(2), b1=aD1+sgn*RAD(1), n=30, ring=[];
+        for(let k=0;k<=n;k++){ const a=b0+(b1-b0)*k/n; ring.push([cx+(ri-0.02)*Math.cos(a), cy+(ri-0.02)*Math.sin(a)]); }
+        for(let k=n;k>=0;k--){ const a=b0+(b1-b0)*k/n; ring.push([cx+(ri-2.1)*Math.cos(a), cy+(ri-2.1)*Math.sin(a)]); }
+        (F.grus=F.grus||[]).push(ring); }
+      // trinn (gitterrister) + repos
+      for(let k=1;k<=ns;k++){ const a=aT(k), z=zT(k); bit(new THREE.BoxGeometry(BW,0.05,run+0.03), mdk, cx+rc*Math.cos(a), z, -(cy+rc*Math.sin(a)), a);
+        if(k===kL){ const al=a+sgn*(land/2+run/2)/rc; bit(new THREE.BoxGeometry(BW,0.06,land+0.02), mdk, cx+rc*Math.cos(al), z, -(cy+rc*Math.sin(al)), al); } }
+      // vanger (begge sider) og håndløper + knelist på plensida, stykke for stykke langs buen
+      const kant=(r,k,dz)=>{ const a=aT(k), a2=(k===kL)?aT(k)+sgn*land/rc:a; return [P(r,a,zT(k)+dz), P(r,a2,zT(k)+dz)]; };
+      for(let k=0;k<ns;k++){
+        [rc-BW/2-0.03, rc+BW/2+0.03].forEach(r=>{ const [,A]=kant(r,k,-0.12), [B]=kant(r,k+1,-0.12); stag(A,B,0.05,0.22,mst); if(k===kL){ const [a1,a2]=kant(r,k,-0.12); stag(a1,a2,0.05,0.22,mst); } });
+        const r=rc-BW/2-0.05; [1.0,0.5].forEach(dz=>{ const [,A]=kant(r,k,dz), [B]=kant(r,k+1,dz); stag(A,B,0.05,0.05,mst); if(k===kL){ const [a1,a2]=kant(r,k,dz); stag(a1,a2,0.05,0.05,mst); } });
+        if(k%3===0 || k===kL){ const [Q]=kant(r,k,0); stag([Q[0],Q[1]-0.12,Q[2]],[Q[0],Q[1]+1.0,Q[2]],0.06,0.06,mst); }
+        if(k===kL){ const [Q]=kant(rc,k,0); stag([Q[0],gzr(Q[0],-Q[2])-0.1,Q[2]],[Q[0],Q[1]-0.1,Q[2]],0.1,0.1,mst); const [,Q2]=kant(rc,k,0); stag([Q2[0],gzr(Q2[0],-Q2[2])-0.1,Q2[2]],[Q2[0],Q2[1]-0.1,Q2[2]],0.1,0.1,mst); }   // reposet står på to stolper
       }
-      
-      for(let k=0;k<=np;k++){ const a=aStart+span*k/np, rr=ri+0.18;      // tynt stålrekkverk langs innerkanten
-        const post=new THREE.Mesh(new THREE.BoxGeometry(0.09,0.95,0.09), mrk); post.position.set(cx+rr*Math.cos(a),H+0.47,-(cy+rr*Math.sin(a))); post.castShadow=true; legg(post); }
+      // dekket: segmenter langs buen, kantbjelke under innerkanten
+      const nd=Math.max(8,Math.round(Math.abs(aD1-aD0)*(ri-0.8)/0.7));
+      for(let k=0;k<nd;k++){ const am=aD0+(aD1-aD0)*(k+0.5)/nd, rm=(ri-0.02+rIn)/2, len=Math.abs(aD1-aD0)/nd*ri+0.03;
+        bit(new THREE.BoxGeometry(ri-0.02-rIn,0.1,len), mdk, cx+rm*Math.cos(am), zd-0.05, -(cy+rm*Math.sin(am)), am);
+        const a0=aD0+(aD1-aD0)*k/nd, a1=aD0+(aD1-aD0)*(k+1)/nd;
+        stag(P(rIn+0.05,a0,zd-0.22),P(rIn+0.05,a1,zd-0.22),0.08,0.22,mst);
+        [1.08,0.55].forEach(dz=>stag(P(rIn+0.03,a0,zd+dz),P(rIn+0.03,a1,zd+dz),0.05,0.05,mst));
+        [0.25,0.8].forEach(dz=>stag(P(rIn+0.03,a0,zd+dz),P(rIn+0.03,a1,zd+dz),0.025,0.025,mnett)); }   // nettingen leses åpen (3B): tynne tråder, ikke tette plater
+      // rekkverk på dekkets ende mot elva (lukker dekket)
+      stag(P(rIn,aD1,zd+1.08),P(ri-0.05,aD1,zd+1.08),0.05,0.05,mst);
+      [0.55,0.25,0.8].forEach(dz=>stag(P(rIn,aD1,zd+dz),P(ri-0.05,aD1,zd+dz),0.025,0.025,mnett));
+      // bøylene: én ca. hver 1,5 m fra trappas fot til dekkets ende. Stolpe mot innerflaten fra bakken, over kappa, ned på utsida
+      const nH=Math.max(4,Math.round(Math.abs(aD1-aS0)*rmid/1.5));
+      for(let j=0;j<=nH;j++){ const a=aS0+sgn*RAD(1.5)+(aD1-aS0-sgn*RAD(1.5))*j/nH, ip=ri-0.07, op=ro+0.06, zt=H+0.45;   // bøylen står ca. en halv meter over kappa (1B/3B)
+        stag(P(ip-0.06,a,zt),P(op+0.06,a,zt),0.1,0.12,mcor);                  // over kappa
+        stag(P(op,a,zt+0.06),P(op,a,H-0.55),0.1,0.1,mcor);                    // ned på utsida
+        const ad=(a-aD0)*sgn, inD=ad>=-1e-6 && (aD1-a)*sgn>=-1e-6;
+        // stolpe mot innerflaten: langs trappa fra bakken (3B); under dekket starter den ved stagets fot, ingen stolpeskog ned i plenen
+        stag(P(ip,a,inD?zd-1.6:Math.min(0,gzr(cx+ip*Math.cos(a),cy+ip*Math.sin(a)))-0.1),P(ip,a,zt+0.06),0.12,0.1,mcor);
+        if(inD){ stag(P(ip,a,zd-1.55),P(rIn+0.12,a,zd-0.15),0.1,0.1,mcor);   // skrått stag under dekket (3B)
+                 stag(P(ip,a,zd-0.15),P(rIn+0.05,a,zd-0.15),0.12,0.12,mcor);  // dekkbjelke
+                 stag(P(rIn+0.03,a,zd-0.1),P(rIn+0.03,a,zd+1.12),0.06,0.06,mst); }   // rekkverksstolpe
+      }
     }
   }
   // veggfelt: del av en vegg i egen farge (to fasader under ett omriss i kommunekartet, f.eks. teglgård + pussgård)

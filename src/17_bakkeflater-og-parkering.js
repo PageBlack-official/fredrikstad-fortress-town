@@ -56,12 +56,18 @@ import { TER, hAt, hTer, paaTerreng } from './08_festningsterrenget.js';
     const m=new THREE.Mesh(g, stoneMat); m.receiveShadow=true; scene.add(m); }
   // plenene (flyttet hit fra 04)
   const plen=(p,y)=>BK ? legg(p,y,plenMat) : flat(p,y,plenMat);
-  DATA.gront.forEach(g=>{ if(!g.skjul) plen(g.p,0.28); });
+  // PAG-1650: plener som ligger helt innenfor Isegran-fortets ringmur (OSM gr-43) tegnes ikke — gårdsplassen er plen fra terrenget
+  // (src/08, FORT), og den løftede plenflata la seg over grusplassen og grusstripa i åpningen («gress i åpningen»)
+  const FORTR=(DATA.bygg||[]).filter(b=>b&&b.fort).map(b=>b.fort);
+  const iFort=p=>FORTR.some(F=>p.every(q=>Math.hypot(q[0]-F.cx,q[1]-F.cy)<(F.ro||16)+0.5));
+  DATA.gront.forEach(g=>{ if(!g.skjul && !iFort(g.p)) plen(g.p,0.28); });
   // gårdsrommene: målt gress (felt «gress») tegnes som polygoner; uten måling gjelder typen for hele gårdsrommet
   (DATA.gardsrom||[]).forEach(g=>{ if(g.skjul) return;
     if(g.gress) g.gress.forEach(p=>plen(p,0.3)); else if(g.typ==='gress') plen(g.p,0.3); });
   // flater målt i ortofotoet
   (DATA.flater||[]).forEach(f=>{ if(!f.skjul && FARGE[f.typ] && !(f.typ==='brostein' && (BR_VF || alleIBrostein(f.p)))) legg(f.p, f.typ==='gress'?0.28:f.typ==='brostein'?0.05:0.09, f.typ==='gress'?plenMat:matFor(f.typ)); });
+  // grusflatene inne i Isegran-fortet (plassen, stripa fra åpningen, kanten under trappa/dekket) regnes i src/07 (b.fort.grus) — PAG-1650
+  (DATA.bygg||[]).forEach(b=>{ if(b && b.fort && b.fort.grus && !b.skjul) b.fort.grus.forEach(p=>legg(p, 0.09, matFor('grus'))); });
   // oppmerkede parkeringsfelt (kommunens lag, verktoy/bakke.py parkeringsfelt): hvite streker på tvers av raden, oppmerket+1 stk
   { const strek=new THREE.MeshBasicMaterial({color:0xf4f2ec}); const G=new THREE.Group(); scene.add(G);
     (DATA.flater||[]).forEach(f=>{ if(f.skjul || !f.linje || !f.oppmerket) return;
