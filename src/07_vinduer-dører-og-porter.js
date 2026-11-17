@@ -487,18 +487,18 @@ DATA.bygg.forEach((b,i)=>{
     }
     // trebjelker som en VISER på murkronen: hver bjelke RADIELT (vinkelrett på muren, som merker på en urskive), stikker ut over
     // ytterkanten; rekka går fra åpningens vange og rundt mot elvesida. INGEN bjelke over åpningen (inner ende ved ri) — Vegar v8 pkt 2
-    { const mtre=mat([128,130,128],dim,[90,92,92],{stein:true}), mrk=mat([150,147,140],dim);
+    { const mtre=mat([122,82,50],dim), mrk=mat([150,147,140],dim);
       const sweep=((elv-g0)%(2*Math.PI)+2*Math.PI)%(2*Math.PI); const sgn=sweep<Math.PI?1:-1;   // retning fra åpningen mot elvesida (med sola)
       const aStart=g0+sgn*(Math.asin(Math.min(1,Wd/(2*ri)))+0.06);   // like forbi åpningens vange, aldri inn over åpningen
-      const span=elv-aStart, nb=Math.max(3,Math.round(Math.abs(span)*rmid/2.2));   // steinblokk ca. hver 2,2 m (foto 1)
+      const span=sgn*Math.min(Math.abs(elv-aStart),1.25), nb=Math.max(3,Math.round(Math.abs(span)*rmid/1.4));   // bjelke ca. hver 1,4 m
       const Lbj=(ro-ri)+0.9, rC=ri+Lbj/2;   // sitter på kronen, inner ende ved ri, stikker ~0,9 m ut over ytterkanten
       for(let k=0;k<=nb;k++){ const a=aStart+span*k/nb;
-        const bj=new THREE.Mesh(new THREE.BoxGeometry(Lbj,0.32,0.55), mtre);
+        const bj=new THREE.Mesh(new THREE.BoxGeometry(Lbj,0.15,0.24), mtre);
         bj.position.set(cx+rC*Math.cos(a), H+0.08, -(cy+rC*Math.sin(a))); bj.rotation.y=a; bj.castShadow=true; legg(bj); }   // radielt: rotation.y=a
       const np=-1;   // stolpene på kronen er erstattet av rekkverket på plattformen under
       // utsiktsplattformen (restaurert 2025, park-anlegg.no 05.2025): mørk stål langs innsiden av muren på elvesida, 1,3 m bred,
       // dekket 1,25 m under murkronen (folk ser over muren), skråstivere inn i muren, rekkverk på innerkanten, trapp ned til plenen i enden
-      { const mst=mat([70,72,74],dim), zd=H-1.25, bw=1.3, rr=ri-bw/2, ri2=ri-bw+0.06, sg=span<0?-1:1;
+      { const mst=mat([70,72,74],dim), mbr=mat([122,82,50],dim), zd=H+0.03, bw=(ro-ri)+0.8, rr=ri+bw/2, ri2=ri+0.08, sg=span<0?-1:1;   // Vegar 15:02 (dronefoto): plattformen ligger PÅ murkronen, kort, ved åpningen
         const nseg=Math.max(8,Math.round(Math.abs(span)*rr/0.8));
         for(let k=0;k<nseg;k++){ const am=aStart+span*(k+0.5)/nseg, len=Math.abs(span/nseg)*rr+0.04;
           const dk=new THREE.Mesh(new THREE.BoxGeometry(bw,0.12,len), mst); dk.position.set(cx+rr*Math.cos(am),zd,-(cy+rr*Math.sin(am))); dk.rotation.y=am; dk.castShadow=dk.receiveShadow=true; legg(dk); }
@@ -508,17 +508,17 @@ DATA.bygg.forEach((b,i)=>{
           if(k<npl){ const am=aStart+span*(k+0.5)/npl, ln=Math.abs(span/npl)*ri2+0.05;
             const hr=new THREE.Mesh(new THREE.BoxGeometry(0.06,0.06,ln), mst); hr.position.set(cx+ri2*Math.cos(am),zd+1.0,-(cy+ri2*Math.sin(am))); hr.rotation.y=am; legg(hr); }
           if(k%2===0){ const g=new THREE.Group(); g.position.set(cx,0,-cy); g.rotation.y=a;   // skråstiver: fra muren 1,3 m under dekket til dekkets innerkant
-            const x0=ri, y0=zd-1.3, x1=ri-bw+0.15, y1=zd-0.06, L=Math.hypot(x1-x0,y1-y0);
-            const st=new THREE.Mesh(new THREE.BoxGeometry(L,0.09,0.09), mst); st.position.set((x0+x1)/2,(y0+y1)/2,0); st.rotation.z=Math.atan2(y1-y0,x1-x0); st.castShadow=true; g.add(st); legg(g); } }
+            const x0=ro, y0=zd-1.4, x1=ro+0.75, y1=zd-0.06, L=Math.hypot(x1-x0,y1-y0);   // brune konsoller på utsiden (fotoet)
+            const st=new THREE.Mesh(new THREE.BoxGeometry(L,0.14,0.14), mbr); st.position.set((x0+x1)/2,(y0+y1)/2,0); st.rotation.z=Math.atan2(y1-y0,x1-x0); st.castShadow=true; g.add(st); legg(g); } }
         // trappa: fra plattformens ende ned på plenen langs muren (stigning ~0,19 m, inntrinn 0,28 m). Den går som en KORDE innenfor
         // muren (Vegar 17.11 14:48: tangenten gikk inn i steinene), alltid minst 0,3 m fra innerflaten
-        const ae=aStart+span, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28, Lh=ns*run, rc=ri-bw/2-0.35;
+        const ae=aStart+span, ns=Math.max(4,Math.round(zd/0.19)), rise=zd/ns, run=0.28, Lh=ns*run, rc=ri-0.75;
         const dl=2*Math.asin(Math.min(1,Lh/(2*rc)));
         const ex=cx+rc*Math.cos(ae), ey=cy+rc*Math.sin(ae), e2x=cx+rc*Math.cos(ae+sg*dl), e2y=cy+rc*Math.sin(ae+sg*dl);
         const tx=(e2x-ex)/Lh, ty=(e2y-ey)/Lh, ang=Math.atan2(ty,tx);
         for(let k=1;k<=ns;k++){ const d=k*run, z=zd-k*rise;
-          const tr=new THREE.Mesh(new THREE.BoxGeometry(run,0.05,bw-0.25), mst); tr.position.set(ex+tx*d,z,-(ey+ty*d)); tr.rotation.y=ang; tr.castShadow=tr.receiveShadow=true; legg(tr); }
-        const Ls=Math.hypot(ns*run,zd); [1,-1].forEach(sd=>{ const ox=-ty*sd*(bw-0.25)/2, oy=tx*sd*(bw-0.25)/2;   // vanger + håndløper
+          const tr=new THREE.Mesh(new THREE.BoxGeometry(run,0.05,1.0), mst); tr.position.set(ex+tx*d,z,-(ey+ty*d)); tr.rotation.y=ang; tr.castShadow=tr.receiveShadow=true; legg(tr); }
+        const Ls=Math.hypot(ns*run,zd); [1,-1].forEach(sd=>{ const ox=-ty*sd*0.5, oy=tx*sd*0.5;   // vanger + håndløper
           const vg=new THREE.Group(); vg.position.set(ex+tx*ns*run/2+ox,zd/2,-(ey+ty*ns*run/2+oy)); vg.rotation.y=ang;
           const v=new THREE.Mesh(new THREE.BoxGeometry(Ls,0.2,0.06), mst); v.rotation.z=-Math.atan2(zd,ns*run); v.castShadow=true; vg.add(v);
           const h=new THREE.Mesh(new THREE.BoxGeometry(Ls,0.05,0.05), mst); h.position.y=0.95; h.rotation.z=-Math.atan2(zd,ns*run); vg.add(h); legg(vg); });
