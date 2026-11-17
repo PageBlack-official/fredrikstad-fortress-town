@@ -501,13 +501,15 @@ DATA.bygg.forEach((b,i)=>{
       { const mst=mat([70,72,74],dim), mbr=mat([122,82,50],dim), zd=H+0.03, bw=(ro-ri)+0.8, rr=ri+bw/2, ri2=ri+0.08, sg=span<0?-1:1;   // Vegar 15:02 (dronefoto): plattformen ligger PÅ murkronen, kort, ved åpningen
         // Vegar 15:09: plattformen er den ytterste delen mot elva, en flate man går opp på og står; trappa kommer fra åpningssida
         const aP=aStart+span*0.55, spanP=span*0.45, mdk=mat([156,156,152],dim);
-        const nseg=Math.max(8,Math.round(Math.abs(spanP)*rr/0.8));
-        for(let k=0;k<nseg;k++){ const am=aP+spanP*(k+0.5)/nseg, len=Math.abs(spanP/nseg)*rr+0.04;
+        // dekket går over HELE konsollrekka fra åpningen (Vegar 15:22: «noe er borte» der konsollene sto uten dekk)
+        const nseg=Math.max(8,Math.round(Math.abs(span)*rr/0.8));
+        for(let k=0;k<nseg;k++){ const am=aStart+span*(k+0.5)/nseg, len=Math.abs(span/nseg)*rr+0.04;
           const dk=new THREE.Mesh(new THREE.BoxGeometry(bw,0.12,len), mdk); dk.position.set(cx+rr*Math.cos(am),zd,-(cy+rr*Math.sin(am))); dk.rotation.y=am; dk.castShadow=dk.receiveShadow=true; legg(dk); }
-        const npl=Math.max(4,Math.round(Math.abs(spanP)*ri2/1.5));
-        for(let k=0;k<=npl;k++){ const a=aP+spanP*k/npl;
+        // rekkverket går langs HELE innerkanten fra åpningen (dronefotoet), med åpning der trappa kommer opp
+        const npl=Math.max(6,Math.round(Math.abs(span)*ri2/1.5)), gapA=1.6/ri2;
+        for(let k=0;k<=npl;k++){ const a=aStart+span*k/npl; if(Math.abs(a-aP)<gapA) continue;
           const po=new THREE.Mesh(new THREE.BoxGeometry(0.07,1.0,0.07), mst); po.position.set(cx+ri2*Math.cos(a),zd+0.5,-(cy+ri2*Math.sin(a))); po.castShadow=true; legg(po);
-          if(k>0 && k<npl){ const am=aP+spanP*(k+0.5)/npl, ln=Math.abs(spanP/npl)*ri2+0.05;
+          if(k<npl && Math.abs(aStart+span*(k+1)/npl-aP)>=gapA){ const am=aStart+span*(k+0.5)/npl, ln=Math.abs(span/npl)*ri2+0.05;
             const hr=new THREE.Mesh(new THREE.BoxGeometry(0.06,0.06,ln), mst); hr.position.set(cx+ri2*Math.cos(am),zd+1.0,-(cy+ri2*Math.sin(am))); hr.rotation.y=am; legg(hr); }
           if(k%2===0){ const g=new THREE.Group(); g.position.set(cx,0,-cy); g.rotation.y=a;   // skråstiver: fra muren 1,3 m under dekket til dekkets innerkant
             const x0=ro, y0=zd-1.4, x1=ro+0.75, y1=zd-0.06, L=Math.hypot(x1-x0,y1-y0);   // brune konsoller på utsiden (fotoet)
