@@ -57,7 +57,6 @@ const vindMat=new THREE.ShaderMaterial({
         if(spross>2.5) ph=1e3;                                             // tospeils (spross 3): full loddrett midtpost, ingen tverrpost (losholt) -> to høye ruter
         else if(spross>1.5 && m.y<lo) pv=1e3;                             // T-post (spross 2): loddrett post bare i øvre del -> én stor nedre rute, to små øvre
         float qs=(typ<0.5 && vSz.y>1.0 && spross<1.5)?abs(m.y-lo*0.5):1e3; // sprossen midt i nedre ramme: seks ruter (ikke på T-post)
-        if(spross>9.5){ float nk=floor(spross/10.+0.01), nr=max(1.,mod(spross,10.)); vec2 cel=vSz/vec2(nk,nr); vec2 g=abs(fract(m/cel+0.5)-0.5)*cel; pv=g.x; ph=g.y; qs=1e3; }   // rutenett (ant >= 10: 10*kolonner+rader, f.eks. 44 = 4x4 småruter i to fløyer; Isegranhuset 17.11)
         // nærmeste zoom i kartet gir ~0,12–0,17 m per piksel på skjerm med pikseltetthet 1 (0,06–0,08 på mobil): korset (post og
         // losholt) står til 0,2 m/px og er borte ved 0,32; sprossen i nedre ramme bare der det er minst ~8 px per meter
         float bH=max(0.035,0.5*fw), bS=max(0.02,0.45*fw);                    // halv bredde: minst ~1 px
