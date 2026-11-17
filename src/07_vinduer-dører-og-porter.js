@@ -49,7 +49,7 @@ const vindMat=new THREE.ShaderMaterial({
       if(foring>0.5 && (typ<0.5||typ>2.5)) hvit=mix(pf*0.42, pf*0.80*sf, lit);  // foring (elementets egen farge): mørkere, mettet smyg som ikke drukner i glasset
       vec3 c;
       if(typ<0.5 || typ>2.5){
-        float ramme=foring>0.5?0.16:0.08;   // foring: bredere smyg så den leser på avstand
+        float ramme=foring>0.5?0.16:(spross>9.5?0.12:0.08);   // foring: bredere smyg så den leser på avstand
         // sprosser etter zoom : post og losholt (3,5 cm) og sprossene i nedre ramme (2 cm) holdes minst ~1 px brede
         // på nært hold og tones ut når én piksel blir for stor til å bære dem (fw = meter per piksel), så de ikke griser på avstand
         float lo=vSz.y*(typ>2.5?0.5:0.62);
@@ -57,6 +57,7 @@ const vindMat=new THREE.ShaderMaterial({
         if(spross>2.5) ph=1e3;                                             // tospeils (spross 3): full loddrett midtpost, ingen tverrpost (losholt) -> to høye ruter
         else if(spross>1.5 && m.y<lo) pv=1e3;                             // T-post (spross 2): loddrett post bare i øvre del -> én stor nedre rute, to små øvre
         float qs=(typ<0.5 && vSz.y>1.0 && spross<1.5)?abs(m.y-lo*0.5):1e3; // sprossen midt i nedre ramme: seks ruter (ikke på T-post)
+        if(spross>9.5){ float nk=floor(spross/10.+0.01), nr=max(1.,mod(spross,10.)); vec2 cel=vSz/vec2(nk,nr); vec2 g=abs(fract(m/cel+0.5)-0.5)*cel; pv=g.x; ph=g.y; qs=1e3; if(fw>0.09){ pv=abs(m.x-vSz.x*0.5); ph=1e3; } }   // rutenett (ant >= 10: 10*kolonner+rader, f.eks. 44 = 4x4 småruter i to fløyer; på avstand (over 9 cm/px) bare de to fløyene, så karmen leser hvit og glasset mørkt; Isegranhuset 17.11)
         // nærmeste zoom i kartet gir ~0,12–0,17 m per piksel på skjerm med pikseltetthet 1 (0,06–0,08 på mobil): korset (post og
         // losholt) står til 0,2 m/px og er borte ved 0,32; sprossen i nedre ramme bare der det er minst ~8 px per meter
         float bH=max(0.035,0.5*fw), bS=max(0.02,0.45*fw);                    // halv bredde: minst ~1 px
@@ -71,6 +72,7 @@ const vindMat=new THREE.ShaderMaterial({
         vec3 dorf=mix(vec3(0.24,0.18,0.15), vec3(0.36,0.26,0.20)*sf, lit);
         if(typ>1.5) dorf=mix(vec3(0.14,0.13,0.13), vec3(0.22,0.20,0.19), lit);
         if(pix>=0) dorf=mix(pf*0.62, pf*sf, lit);                                   // dørfarge lest fra gata
+        if(spross>4.5 && spross<5.5) dorf=mix(vec3(0.72,0.72,0.70)*KALD, vec3(0.95,0.94,0.90)*sf, lit);   // hvit dør (ant 5), Isegranhuset 17.11
         if(foring>0.5 && bue<1.5) hvit=mix(pf*0.52, pf*0.82*sf, lit);                // brun dørkarm (opt-in som foringen, R3F): karm i elementets egen farge, litt lysere enn bladet
         c=mix(hvit, dorf, smoothstep(0.07,0.07+fw,kant));
         c=mix(c, dorf*0.75, (1.-smoothstep(0.02,0.02+fw,abs(m.x-vSz.x*0.5)))*step(0.07,kant)*0.6);
@@ -382,9 +384,9 @@ DATA.bygg.forEach((b,i)=>{
     }
   });
   // piper på mønet (posisjoner fra etter/40_detaljer_piper.py)
-  if(b.piper && !dim && !b.fort){ b.piper.forEach(([x,y,z,ang])=>{
+  if(b.piper && !dim && !b.fort){ b.piper.forEach(([x,y,z,ang,pf])=>{
     const r=THREE.MathUtils.degToRad(ang);
-    const pm=new THREE.Mesh(PIPE_GEO, mat([204,98,82],false,[150,76,64])); pm.position.set(x,z-0.3,-y); pm.rotation.y=r; pm.castShadow=true; legg(pm);
+    const pm=new THREE.Mesh(PIPE_GEO, pf?mat(pf,false):mat([204,98,82],false,[150,76,64])); pm.position.set(x,z-0.3,-y); pm.rotation.y=r; pm.castShadow=true; legg(pm);
     const ck=new THREE.Mesh(KAPP_GEO, mat([74,68,66],false)); ck.position.set(x,z+1.48,-y); ck.rotation.y=r; legg(ck);
   }); }
   // takarker (antall og fordeling fra tegningene): front i veggfarge, saltak i takfarge

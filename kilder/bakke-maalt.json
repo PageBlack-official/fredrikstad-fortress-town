@@ -14555,6 +14555,83 @@
    "grunn": "dømt med øyet (traer_dommer 30.10): takskjegget på Voldporten, ikke et tre",
    "hvem": "Claude",
    "dato": "2026-10-30"
+  },
+  {
+   "p": [
+    -319.9,
+    90.5,
+    3.62,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
+  },
+  {
+   "p": [
+    -314.3028620855046,
+    84.45547985194976,
+    3.44,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
+  },
+  {
+   "p": [
+    -311.5,
+    88.4,
+    3.93,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
+  },
+  {
+   "p": [
+    -323.3977836150555,
+    81.15408937110978,
+    4.33,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
+  },
+  {
+   "p": [
+    -311.9,
+    96.6,
+    3.46,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
+  },
+  {
+   "p": [
+    -325.1913366786677,
+    77.8696934349973,
+    3.52,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
+  },
+  {
+   "p": [
+    -322.5216030457272,
+    82.75857153536033,
+    4.0,
+    0.0
+   ],
+   "grunn": "ortofoto 2024 + Vegars frontfoto 17.11: åpen grusplass foran Isegranhuset, ikke tre",
+   "hvem": "Fable",
+   "dato": "2026-11-17"
   }
  ],
  "traer_dommer": [
@@ -23141,6 +23218,868 @@
    "hvem": "Claude",
    "dato": "2026-10-30",
    "grunn": "Kvartal13 (tegningen 2015): plankegjerde langs eiendomsgrensen mot gata fra Kommandantgården til Ekserserhuset; skyggelinje i ortofoto 2019, DOM−DTM under 1 m (lavt, tynt)"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -327.5,
+     117.5
+    ],
+    [
+     -329.82,
+     113.55
+    ],
+    [
+     -334.35,
+     114.82
+    ],
+    [
+     -327.5,
+     117.5
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -324.9,
+     112.96
+    ],
+    [
+     -324.97,
+     112.86
+    ],
+    [
+     -325.05,
+     112.73
+    ],
+    [
+     -325.12,
+     112.59
+    ],
+    [
+     -325.19,
+     112.45
+    ],
+    [
+     -325.2,
+     112.41
+    ],
+    [
+     -329.07,
+     113.35
+    ],
+    [
+     -326.75,
+     117.3
+    ],
+    [
+     -324.9,
+     112.96
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -331.73,
+     108.55
+    ],
+    [
+     -329.45,
+     112.68
+    ],
+    [
+     -325.36,
+     111.69
+    ],
+    [
+     -325.36,
+     111.69
+    ],
+    [
+     -325.37,
+     111.53
+    ],
+    [
+     -325.37,
+     111.43
+    ],
+    [
+     -331.73,
+     108.55
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -334.73,
+     114.14
+    ],
+    [
+     -330.2,
+     112.88
+    ],
+    [
+     -332.48,
+     108.75
+    ],
+    [
+     -334.73,
+     114.14
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -314.24,
+     114.64
+    ],
+    [
+     -316.57,
+     110.69
+    ],
+    [
+     -320.57,
+     111.42
+    ],
+    [
+     -320.57,
+     111.53
+    ],
+    [
+     -320.57,
+     111.67
+    ],
+    [
+     -314.24,
+     114.64
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -311.5,
+     109.95
+    ],
+    [
+     -315.84,
+     110.57
+    ],
+    [
+     -313.51,
+     114.52
+    ],
+    [
+     -311.5,
+     109.95
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -318.49,
+     105.77
+    ],
+    [
+     -316.22,
+     109.9
+    ],
+    [
+     -311.88,
+     109.27
+    ],
+    [
+     -318.49,
+     105.77
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -321.04,
+     110.11
+    ],
+    [
+     -320.97,
+     110.2
+    ],
+    [
+     -320.89,
+     110.33
+    ],
+    [
+     -320.82,
+     110.47
+    ],
+    [
+     -320.75,
+     110.61
+    ],
+    [
+     -320.72,
+     110.71
+    ],
+    [
+     -316.95,
+     110.02
+    ],
+    [
+     -319.22,
+     105.89
+    ],
+    [
+     -321.04,
+     110.11
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -323.6,
+     119.26
+    ],
+    [
+     -320.97,
+     113.16
+    ],
+    [
+     -321.14,
+     113.08
+    ],
+    [
+     -321.17,
+     113.11
+    ],
+    [
+     -321.27,
+     113.23
+    ],
+    [
+     -321.39,
+     113.33
+    ],
+    [
+     -321.51,
+     113.43
+    ],
+    [
+     -321.64,
+     113.53
+    ],
+    [
+     -321.77,
+     113.61
+    ],
+    [
+     -321.91,
+     113.68
+    ],
+    [
+     -322.05,
+     113.75
+    ],
+    [
+     -322.2,
+     113.8
+    ],
+    [
+     -322.35,
+     113.85
+    ],
+    [
+     -322.5,
+     113.88
+    ],
+    [
+     -322.66,
+     113.91
+    ],
+    [
+     -322.7,
+     113.91
+    ],
+    [
+     -324.8,
+     118.8
+    ],
+    [
+     -323.6,
+     119.26
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -321.89,
+     119.93
+    ],
+    [
+     -319.29,
+     113.93
+    ],
+    [
+     -320.47,
+     113.39
+    ],
+    [
+     -323.09,
+     119.46
+    ],
+    [
+     -321.89,
+     119.93
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -320.17,
+     120.6
+    ],
+    [
+     -317.6,
+     114.69
+    ],
+    [
+     -318.78,
+     114.16
+    ],
+    [
+     -321.37,
+     120.13
+    ],
+    [
+     -320.17,
+     120.6
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -318.46,
+     121.27
+    ],
+    [
+     -315.91,
+     115.46
+    ],
+    [
+     -317.09,
+     114.92
+    ],
+    [
+     -319.66,
+     120.8
+    ],
+    [
+     -318.46,
+     121.27
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -316.75,
+     121.93
+    ],
+    [
+     -314.23,
+     116.22
+    ],
+    [
+     -315.41,
+     115.68
+    ],
+    [
+     -317.95,
+     121.47
+    ],
+    [
+     -316.75,
+     121.93
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -324.52,
+     109.7
+    ],
+    [
+     -324.43,
+     109.63
+    ],
+    [
+     -324.3,
+     109.53
+    ],
+    [
+     -324.17,
+     109.45
+    ],
+    [
+     -324.03,
+     109.38
+    ],
+    [
+     -323.89,
+     109.31
+    ],
+    [
+     -323.74,
+     109.26
+    ],
+    [
+     -323.59,
+     109.21
+    ],
+    [
+     -323.44,
+     109.18
+    ],
+    [
+     -323.28,
+     109.15
+    ],
+    [
+     -323.13,
+     109.14
+    ],
+    [
+     -322.97,
+     109.13
+    ],
+    [
+     -322.92,
+     109.13
+    ],
+    [
+     -322.76,
+     108.76
+    ],
+    [
+     -331.12,
+     104.71
+    ],
+    [
+     -331.78,
+     106.29
+    ],
+    [
+     -324.52,
+     109.7
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -322.5,
+     108.14
+    ],
+    [
+     -321.87,
+     106.67
+    ],
+    [
+     -330.18,
+     102.46
+    ],
+    [
+     -330.84,
+     104.04
+    ],
+    [
+     -322.5,
+     108.14
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 0.45,
+   "b": 0.35,
+   "farge": [
+    138,
+    150,
+    70
+   ],
+   "p": [
+    [
+     -321.6,
+     106.04
+    ],
+    [
+     -320.98,
+     104.58
+    ],
+    [
+     -329.24,
+     100.21
+    ],
+    [
+     -329.9,
+     101.78
+    ],
+    [
+     -321.6,
+     106.04
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "mur",
+   "art": "sokkel",
+   "h": 1.15,
+   "b": 0.5,
+   "farge": [
+    232,
+    228,
+    218
+   ],
+   "p": [
+    [
+     -323.13,
+     111.53
+    ],
+    [
+     -322.81,
+     111.53
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "hekk",
+   "art": "hekk",
+   "h": 1.5,
+   "b": 0.9,
+   "farge": [
+    92,
+    128,
+    72
+   ],
+   "p": [
+    [
+     -337.16,
+     114.95
+    ],
+    [
+     -330.23,
+     98.32
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "mur",
+   "art": "sokkel",
+   "h": 1.0,
+   "b": 0.45,
+   "farge": [
+    226,
+    222,
+    212
+   ],
+   "p": [
+    [
+     -328.32,
+     120.92
+    ],
+    [
+     -328.0,
+     120.92
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "mur",
+   "art": "sokkel",
+   "h": 0.45,
+   "b": 0.3,
+   "farge": [
+    178,
+    180,
+    176
+   ],
+   "y0": 1.0,
+   "p": [
+    [
+     -328.31,
+     120.92
+    ],
+    [
+     -328.01,
+     120.92
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
+  },
+  {
+   "typ": "mur",
+   "art": "kai",
+   "h": 2.5,
+   "b": 0.5,
+   "farge": [
+    86,
+    74,
+    62
+   ],
+   "y0": -1.9,
+   "p": [
+    [
+     -337.6,
+     118.9
+    ],
+    [
+     -335.84,
+     119.64
+    ],
+    [
+     -334.08,
+     120.38
+    ],
+    [
+     -332.32,
+     121.12
+    ],
+    [
+     -330.56,
+     121.86
+    ],
+    [
+     -328.8,
+     122.6
+    ],
+    [
+     -327.04,
+     123.34
+    ],
+    [
+     -325.28,
+     124.08
+    ],
+    [
+     -323.52,
+     124.82
+    ],
+    [
+     -321.76,
+     125.56
+    ],
+    [
+     -320.0,
+     126.3
+    ]
+   ],
+   "hvem": "Fable",
+   "dato": "2026-11-17",
+   "grunn": "Renessansehagen, ortofoto 2024 flis_-448_64 + Vegars foto (Isegran v3, Fable 17.11) + Vegars 3 hagefotoer 13:05"
   }
  ]
 }
