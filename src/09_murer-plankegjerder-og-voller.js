@@ -12,7 +12,8 @@ function wallAlong(pts, hgt, thick, color, y0=0){
     w.position.set((a[0]+c[0])/2, y0+hAt((a[0]+c[0])/2,(a[1]+c[1])/2)+hgt/2, -(a[1]+c[1])/2); w.rotation.y=Math.atan2(dy,dx); w.castShadow=w.receiveShadow=true; murer.add(w);
   }
 }
-(DATA.murer||[]).forEach(w=>{ if(w.t==='ruin') wallAlong(w.p, 3.6, 2.2, [196,188,174]); else wallAlong(w.p, w.t==='fence'?1.8:2.4, 0.6, w.t==='fence'?[206,192,170]:[214,206,192]); });
+const I_FORT=(DATA.bygg||[]).filter(b=>b&&b.fort).map(b=>b.fort);   // sirkelfortet tegner sin egen ringmur (src/07)
+(DATA.murer||[]).forEach(w=>{ if(w.p && w.p.every(q=>I_FORT.some(F=>Math.hypot(q[0]-F.cx,q[1]-F.cy)<(F.ro||16)+1.5))) return; if(w.t==='ruin') wallAlong(w.p, 3.6, 2.2, [196,188,174]); else wallAlong(w.p, w.t==='fence'?1.8:2.4, 0.6, w.t==='fence'?[206,192,170]:[214,206,192]); });
 // gjerdelinjer som ligger i sporet til en teglmur (data/teglmurer.json), tegnes ikke: teglmuren erstatter dem (Kaserna)
 const _iMur=(q)=>(DATA.teglmurer||[]).some(m=>{ const [a,c]=m.p, dx=c[0]-a[0], dy=c[1]-a[1], L2=dx*dx+dy*dy; const t=Math.max(0,Math.min(1,((q[0]-a[0])*dx+(q[1]-a[1])*dy)/L2)); return Math.hypot(q[0]-a[0]-t*dx,q[1]-a[1]-t*dy)<3; });
 // gjerder, murer og hekker sett i ortofoto 2024 (data/gjerder.json, verktoy/bakke.py gjerder): {typ, p, h}; gammel form (bare punkter) = gjerde
