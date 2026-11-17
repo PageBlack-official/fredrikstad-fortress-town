@@ -21,10 +21,23 @@ GRUNN = 'Fasade fra rettet Street View-bilde (verktoy/fasade_rett.py)'
 # Bare port med «bue»: 1 blir typ 2 (08.11 natt: garasjeportene ble buede i modellen).
 TYP = {'vindu': 0, 'butikk': 0, 'dor': 1, 'port': 2, 'oksoye': 3}
 
-def main(tørt):
-    kilder = []
+def duble_lesninger(kilder):
+    """(id, vegg) som har mer enn én godkjent lesning i kilder/gate/rett-*.json (regel 51 bruker samme sjekk)."""
+    sett, dobbel = set(), []
+    for r in kilder:
+        k = (r['id'], r['vegg'])
+        if k in sett and k not in dobbel: dobbel.append(k)
+        sett.add(k)
+    return dobbel
+
+def godkjente():
+    ut = []
     for f in sorted(glob.glob(os.path.join(ROT, 'kilder', 'gate', 'rett-*.json'))):
-        kilder += [r for r in json.load(open(f, encoding='utf8')) if r.get('godkjent')]
+        ut += [r for r in json.load(open(f, encoding='utf8')) if r.get('godkjent')]
+    return ut
+
+def main(tørt):
+    kilder = godkjente()
     ret = [r for r in datalag.les('rettelser') if r.get('grunn') != GRUNN]
     raa = datalag.alle(raa=True); grunn = [dict(x) for x in raa['bygg']]
     d = datalag.hoyden_styrer(datalag.legg_paa_rettelser(raa, ret), grunn)
@@ -32,6 +45,10 @@ def main(tørt):
     omg = VG.Omgivelser(d['bygg'], d['veier'], d['gardsrom'])
     per_hus = {}
     for r in kilder: per_hus.setdefault(r['id'], []).append(r)
+    # én godkjent lesning per vegg: to lesninger av samme vegg legger begge settene med vinduer på veggen, og avdoblingen
+    # krymper dem til smale biter (PAG-1653, Therese M vegg7: rett-runde3 + rett-944-therese ga fire vinduer i stedet for to)
+    dobbel = duble_lesninger(kilder)
+    if dobbel: sys.exit('fasade_rett: samme vegg lest to ganger (sett godkjent: false på den gamle): ' + '; '.join(f'{i} vegg {v}' for i, v in dobbel))
     nye, logg = [], []
     dato = __import__('datetime').date.today().isoformat()
     for id_, rr in per_hus.items():

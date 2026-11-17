@@ -14,23 +14,25 @@
 "lengde": 9.801,
 "h": 4.3,
 "godkjent": true,
-"telling": "vegg7 (arkadevegg mot gata): 2 store rundbuede butikkvinduer; mulig 3. vindu i den fjerne (venstre/c) enden er for forvrengt (49 grader oblikt) til aa leses sikkert",
+"telling": "vegg7 (arkadevegg mot gata): 2 butikkvinduer med flat segmentbue (bue 2) og én stor rute uten sprosser (spross 11). PAG-1653 17.11: målt på nytt i rektifisert SV mai 2024 (s) og i rå SV som andel av takfoten 4,3 m (z): smalt 2,56–3,80 m, z 0,55–3,10; bredt 5,40–7,30 m, z 0,64–3,30. Buen er flat (pil ca. 0,15 m), ikke halvsirkel som bue 1 tegnet.",
 "elementer": [
 {
 "type": "butikk",
-"s0": 2.5,
-"s1": 3.7,
-"z0": 0.4,
-"z1": 2.9,
-"bue": 1
+"s0": 2.56,
+"s1": 3.8,
+"z0": 0.55,
+"z1": 3.1,
+"bue": 2,
+"spross": 11
 },
 {
 "type": "butikk",
 "s0": 5.4,
-"s1": 7.0,
-"z0": 0.4,
-"z1": 2.9,
-"bue": 1
+"s1": 7.3,
+"z0": 0.64,
+"z1": 3.3,
+"bue": 2,
+"spross": 11
 }
 ]
 }

@@ -45,5 +45,15 @@ for p in json.load(open(punkter)):
     if pst > GRENSE: ok = False
     if verst is None or pst > verst[1]: verst = (p['navn'], pst)
     linjer.append(f"- {p['navn']}: {n} px nattlys, {f} utenfor dagglasset ({pst:.1f} %){'  <- FEIL' if pst > GRENSE else ''}")
-hode = f"verst {verst[0]} {verst[1]:.1f} % (krav: høyst {GRENSE:.0f} % av nattlyset utenfor dagvinduene)" if verst else 'ingen bilder'
+# PAG-1653 (Therese M): pikseltesten over ser bare lys som havner utenfor dagglasset. To godkjente Street View-lesninger av
+# samme vegg (rett-runde3 + rett-944-therese, vegg7) ga fire vinduer i stedet for to; avdoblingen krympet dem til smale
+# buevinduer side om side, og nattlyset (helt på/helt av per vindu) lyste i biter som ikke stemte med butikkvinduene. Alt lyset
+# lå i dagglass, så testen var grønn. Datasjekken: én godkjent lesning per vegg (samme sjekk som verktoy/fasade_rett.py stopper på).
+import sys
+sys.path.insert(0, os.path.join(ROT, 'verktoy'))
+import fasade_rett  # noqa: E402
+dobbel = fasade_rett.duble_lesninger(fasade_rett.godkjente())
+if dobbel: ok = False
+linjer += ['', f"- vegger lest to ganger fra Street View (to lag vinduer): {len(dobbel)}" + ''.join(f'\n  - {i} vegg {v}  <- FEIL' for i, v in dobbel)]
+hode = (f"verst {verst[0]} {verst[1]:.1f} % (krav: høyst {GRENSE:.0f} % av nattlyset utenfor dagvinduene)" if verst else 'ingen bilder') + (f'; {len(dobbel)} vegg(er) lest to ganger' if dobbel else '')
 rapport('51_nattlys_i_dagvinduer', ok, [hode, ''] + linjer, f'rapport/_nattlys/{verst[0]}_dagnatt.png' if verst else None)

@@ -1155,7 +1155,8 @@
 }
 ],
 "telling": "1. etg: 2 vinduer",
-"godkjent": true
+"godkjent": false,
+"erstattet": "PAG-1653 (17.11): erstattet av rett-944-therese.json. To godkjente lesninger av samme vegg ga fire vinduer på vegg7 (to par oppå hverandre, avdoblingen krympet dem til smale biter)."
 },
 {
 "bilde": "bnr-193868339-1",
