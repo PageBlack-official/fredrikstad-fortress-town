@@ -17,8 +17,12 @@ const post=(()=>{
   // skjermkort (verktoy/fylle_maal.mjs): MSAA 4x på halvflyt var 38 % av bildetida på 2560×1440 (166 → 103 ms) og 31 % på telefonstørrelse
   // (68 → 47 ms). Bildet er det samme (verktoy/bilde_ab.mjs: 0,02 % av pikslene avviker mer enn 60/255, ingen synlig forskjell i
   // utsnittene): blekkstreken ligger over hver kant og FXAA tar resten. ?msaa=N gir N prøver (A/B). ?rt8=1: 8-bits sRGB-mål (ga bare 4 %).
+  // 19.11: på telefon er det motsatt. Vegars iPhone (393x695, dpr 3), samme utsnitt over byen, samme rute (?d=1): uten MSAA
+  // 13 bilder/s (70 ms mellom bildene), med ?msaa=2 38 bilder/s (25 ms). Regel: berøringsskjerm (BERORING, pointer: coarse) får
+  // 2 prøver, maskin med mus beholder 0 som målt på minien. Mac med Apple-brikke er ikke målt. Ytelse målt på minien gjelder
+  // ikke telefon: mål på telefonen (?maal=1, ?d=1). ?msaa=N overstyrer begge.
   const MSAA_Q=Q0.get('msaa'), RT8=Q0.get('rt8')==='1';
-  const rt=new THREE.WebGLRenderTarget(2,2,{samples: MSAA_Q!=null ? +MSAA_Q : 0, type: RT8 ? THREE.UnsignedByteType : THREE.HalfFloatType});
+  const rt=new THREE.WebGLRenderTarget(2,2,{samples: MSAA_Q!=null ? +MSAA_Q : (BERORING ? 2 : 0), type: RT8 ? THREE.UnsignedByteType : THREE.HalfFloatType});
   if(RT8) rt.texture.colorSpace=THREE.SRGBColorSpace;   // SRGB8_ALPHA8: grafikkortet koder/dekoder, så mørke toner ikke får bånd i 8 bit
   rt.depthTexture=new THREE.DepthTexture(2,2); rt.depthTexture.type=THREE.UnsignedIntType;
   // minimum-dybden til streken: R32F i samme oppløsning som 3D-passet; uten flyttallsmål (svært gamle nettlesere) regnes den i streken som før
